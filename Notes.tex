@@ -246,7 +246,10 @@ innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
 \newcommand{\fraksl}{\mathfrak{sl}}
 \newcommand{\frakso}{\mathfrak{so}}
 \newcommand{\fraksu}{\mathfrak{su}}
+\newcommand{\fraksp}{\mathfrak{sp}}
 
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrF}{\mathscr{F}}
 \newcommand{\scrH}{\mathscr{H}}
 
 \newcommand{\acts}{\curvearrowright}
@@ -258,6 +261,9 @@ innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
 \renewcommand{\i}{\mathrm{i}}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\Adg}{\mathrm{\mathbf{Ad}}}
 
 
 \newcommand{\rmP}{\mathrm{P}}
@@ -285,8 +291,9 @@ innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
 \newcommand{\FB}{\mathsf{Bun}}
 \newcommand{\PFB}{\mathsf{Prin}}
 \newcommand{\VB}{\mathsf{VectBun}}
-
-
+% \DeclareMathOperator{\ad}{ad}
+% \DeclareMathOperator{\Ad}{Ad}
+% \DeclareMathOperator{\Adg}{\mathbf{Ad}}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\ver}{ver}
 \DeclareMathOperator{\hor}{hor}
@@ -294,9 +301,6 @@ innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
 \DeclareMathOperator{\rel}{rel\,}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\ob}{Ob}
-\DeclareMathOperator{\ad}{ad}
-\DeclareMathOperator{\Ad}{Ad}
-\DeclareMathOperator{\Adg}{\mathbf{Ad}}
 \DeclareMathOperator{\Der}{Der}
 \DeclareMathOperator{\Inn}{Inn}
 \DeclareMathOperator{\Mat}{Mat}
@@ -318,7 +322,7 @@ innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
 \DeclareMathOperator{\Pin}{Pin}
 \DeclareMathOperator{\Spin}{Spin}
 \DeclareMathOperator{\Hol}{Hol}
-\DeclareMathOperator{\hol}{hol}
+\DeclareMathOperator{\hol}{\mathfrak{hol}}
 \DeclareMathOperator{\Mon}{Mon}
 \DeclareMathOperator{\Aff}{Aff}
 \DeclareMathOperator{\GL}{GL}
@@ -5138,9 +5142,11 @@ We will eventually incorporate this space $X_G$ as into the so called classifyin
 \end{example}
 
 
-\begin{xca}
-    Show that the above definition of $L_p(q)$ agrees with the definition of $L(p;q)$ from Example~\ref{example Lens space bredon}.
+\begin{xca}\label{xca two definitions of lens spaces}
+    Show that the above definition of $L_p(q)$ agrees with the definition of $L(p;q)$ from Example~\ref{example Lens space bredon}. See illustrations \href{https://math.stackexchange.com/a/1186808/31363}{here}. We will give a more direct solution via bundles in Example~\ref{ex monopole bundles}.
 \end{xca}
+
+
 
 
 
@@ -6410,16 +6416,16 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
 
 \begin{defn}[Orbit map]\index{Orbit map}
     Given a Lie group action $\Phi:G\times M\to M$, for each $p\in M$ we define the smooth orbit map 
-    \[\Phi_p:G\to M,\quad g\mapsto \Phi(g,p).\]
+    \[\Phi^p:G\to M,\quad g\mapsto \Phi(g,p).\]
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~7.26]{Lee}}}]
-    The orbit map $\Phi_p:G\to M$ defined above has constant rank, so the stabilizer $G_p=\Phi_p^{-1}(p)$ is a properly embedded Lie subgroup of $G$. If $G_p=\{e\}$, then $\Phi_p$ is an injective smooth immersion, so the orbit $\Phi(G,p)$ is an immersed submanifold of $M$.
+    The orbit map $\Phi^p:G\to M$ defined above has constant rank, so the stabilizer $G_p=(\Phi^p)^{-1}(p)$ is a properly embedded Lie subgroup of $G$. If $G_p=\{e\}$, then $\Phi^p$ is an injective smooth immersion, so the orbit $\Phi(G,p)$ is an immersed submanifold of $M$.
 \end{prop}
 \begin{proof}
-    First we note that $\Phi_p$ intertwines the left action of $L_g$ on $G$ and $\Phi$ on $M$. Since $G$ acts transitively on itself, $\Phi_p$ has constant rank by Theorem~\ref{thm equivariant rank}. Thus $G_p$ is properly embedded by Theorem~\ref{thm level set submanifold} and a Lie subgroup by Proposition~\ref{prop 7.11 Lee}.
+    First we note that $\Phi^p$ intertwines the left action of $L_g$ on $G$ and $\Phi$ on $M$. Since $G$ acts transitively on itself, $\Phi^p$ has constant rank by Theorem~\ref{thm equivariant rank}. Thus $G_p$ is properly embedded by Theorem~\ref{thm level set submanifold} and a Lie subgroup by Proposition~\ref{prop 7.11 Lee}.
 
-    If $G_p=\{e\}$, then $\Phi_p$ is injective, and therefore by the Equivariant Rank Theorem~\ref{thm equivariant rank} it is a smooth immersion (recall that an injective map of constant rank is an immersion by the Global Rank Theorem~\ref{Global rank}). This makes the orbit an immersed submanifold by Proposition~\ref{prop 5.18 Lee}.
+    If $G_p=\{e\}$, then $\Phi^p$ is injective, and therefore by the Equivariant Rank Theorem~\ref{thm equivariant rank} it is a smooth immersion (recall that an injective map of constant rank is an immersion by the Global Rank Theorem~\ref{Global rank}). This makes the orbit an immersed submanifold by Proposition~\ref{prop 5.18 Lee}.
 \end{proof}
 \begin{rem}
     We will later prove that the condition on the stabilizer subgroup can be dropped.
@@ -7374,9 +7380,9 @@ All of differential geometry that we will cover for finite-dimensional smooth ma
 
 
 \newpage
-\section{Fiber Bundles}
+\section{Fiber Bundles}\label{sec: Fiber bundles}
 
-\subsection{Fiber bundles}
+\subsection{Bundles}
 
 Recall that by the Rank Theorem~\ref{Rank thm}, all submersions when restricted to sufficiently small neighborhoods in the domain look like projections in a direct product. Fiber bundles are a natural special case of this, where the submersion looks like a projection ``locally in the target'', i.e.~is a locally trivial map. 
 
@@ -7497,6 +7503,8 @@ The following fundamental theorem gives us a useful sufficient condition for a m
     \end{tikzcd}\]
     This gives rise to the category $\FB^\infty$ of all smooth \glspl{fb}. A full subcategory is the category $\FB^\infty_M$ of all smooth \glspl{fb} over a given base $M$ with $h=\id_M$ (note that in general there are other bundle morphisms between bundles over $M$ for which $h$ is not even a diffeomorphism). Bundle morphisms covering the identity are also called \emph{vertical}.
 \end{defn}
+
+
 
 
 
@@ -8135,33 +8143,34 @@ The above Corollary shows the importance of the computation of homotopy groups o
     This implies that every plane bundle over $\bbS^2$ is orientable. The integer number that classifies these (oriented) plane or circle bundles over the 2-sphere is called the \emph{Chern number}\index{Chern number} and represents yet another characteristic class of bundles.
 \end{example}
 
-\begin{example}[Hopf bundle revisited]
-    If we cover $\bbS^2$ by two disks $D_\pm$ overlapping along the equator, the Hopf fibration $E\overset\pi\to \bbS^2$ (Example \ref{Hopf bundle}) restricted to each of them is trivial and diffeomorphic to a solid torus in $\bbR^3$. Therefore the 3-sphere $\bbS^3$ can be broken up into two disjoint (aside from their boundary) solid tori that are glued to each other along the 2-torus that is their common boundary.The twists of the boundary performed in this process classify the resulting circle bundles over the 2-sphere, so here we will try to understand the case of the Hopf bundle. In terms of the coordinates on the bundle used in Example \ref{Hopf bundle}, we have 
+\begin{example}[Hopf bundle revisited]\label{ex hopf bundle atlas}
+    If we cover $\bbS^2$ by two disks $D_\pm$ overlapping along the equator, the Hopf fibration $\bbS^3\overset\pi\to \bbS^2$ (Example \ref{Hopf bundle}) restricted to each of them is trivial and diffeomorphic to a solid torus in $\bbR^3$. Therefore the 3-sphere $\bbS^3$ can be broken up into two disjoint (aside from their boundary) solid tori that are glued to each other along the 2-torus that is their common boundary.The twists of the boundary performed in this process classify the resulting circle bundles over the 2-sphere, so here we will try to understand the case of the Hopf bundle. In terms of the coordinates on the bundle used in Example \ref{Hopf bundle}, we have 
     \[\restr{E}{D_+}=\{|\alpha|\geq|\beta|\},\quad \restr{E}{D_-}=\{|\alpha|\leq|\beta|\}.\]
     In addition, over the equator $C$ we have 
-    \[\restr{E}{C}=\{|\alpha|^2=|\beta|^2=\frac12\},\]
+    \[\restr{E}{C}=\left\{|\alpha|^2=|\beta|^2=\frac12\right\},\]
     so the restriction of the Hopf bundle to the equator is a 2-torus with two angular coordinates $\varphi,\psi$, where $\varphi$ is the standard azimuthal coordinate on the sphere and $\psi$ is the coordinate in the fiber:
     \[\restr{E}{C}=\left\{(\alpha,\beta)=\frac{1}{\sqrt{2}}\left(\rme^{\rmi\varphi/2+\rmi\psi},\rme^{-\rmi\varphi/2+\rmi\psi}\right)\right\}.\]
     Identifying $D_\pm$ with the unit disk $\mathbb{D}^2\subset\mathbb{C}$, we construct the bundle atlas
     \begin{align}
-        \chi_+(\alpha,\beta)=\left(\frac{\wb\beta}{\wb\alpha},\frac{\alpha}{|\alpha|}\right)\in\mathbb{D}^2\times \bbS^1,\quad 0\leq|\beta|\leq |\alpha|\;,0<|\alpha|\leq 1,\\
+        \chi_+(\alpha,\beta)=\left(\frac{\beta}{\alpha},\frac{\alpha}{|\alpha|}\right)\in\mathbb{D}^2\times \bbS^1,\quad 0\leq|\beta|\leq |\alpha|\;,0<|\alpha|\leq 1,\\
         \chi_-(\alpha,\beta)=\left(\frac{\alpha}{\beta},\frac{\beta}{|\beta|}\right)\in\mathbb{D}^2\times \bbS^1,\quad 0\leq|\alpha|\leq|\beta|,\; 0<|\beta|\leq 1.
     \end{align}
     Incidentally, this shows once again that the 3-sphere is a union of two solid tori overlapping only at their common $\bbT^2$-boundary. The complex conjugation in $\chi_+$ is there only to make sure that a point above the equator is mapped to the same point on $\partial\mathbb{D}$ by both trivializations. These trivializations are indeed diffeomorphisms because their inverses are
     \begin{align}
-        \chi_+^{-1}(z,\rme^{\rmi\psi})=\left(\frac{\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}},\frac{\wb{z}\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}}\right),\quad (z,\rme^{\rmi\psi})\in \mathbb{D}^2\times \bbS^1,\\
+        \chi_+^{-1}(z,\rme^{\rmi\psi})=\left(\frac{\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}},\frac{z\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}}\right),\quad (z,\rme^{\rmi\psi})\in \mathbb{D}^2\times \bbS^1,\\
         \chi_-^{-1}(z,\rme^{\rmi\psi})=\left(\frac{z\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}},\frac{\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}}\right),\quad (z,\rme^{\rmi\psi})\in \mathbb{D}^2\times \bbS^1.
     \end{align}
     It is clear that the clutching function on the equator $z=\rme^{\rmi\varphi}$ is 
-    \[\tau_{-+}(z)\cdot \rme^{\rmi\psi}=\pr_2\circ \chi_-\circ \chi_+^{-1}(z,\rme^{\rmi\psi})=z^{-1}\cdot \rme^{\rmi\psi},\]
-    that is, $\tau_{-+}(\rme^{\rmi\varphi})=\rme^{-\rmi\varphi}$ (representing the diffeomorphism that acts on the unit circle by multiplication by $\rme^{-i\varphi}$). Therefore, following a standard sign convention, the Chern number of this bundle equals $-1$.\tablefootnote{The sign of the Chern number is usually fixed by the complex structure of the corresponding bundle (which induces a specific orientation on the fibers). The Hopf bundle is the circle bundle of the complex line bundle $\mathcal{O}(-1)$ defined over the Riemann sphere $\bbS^2=\mathbb{C}P^1$ as the complex line bundle with the transition function $t_{0\infty}(z)=z^{-1}$, and the Chern number of any holomorphic line bundle equals its degree, which in this case is $-1$. For the Hopf bundle itself, however, the sign of the Chern number is merely a convention.}
+    \[\tau_{-+}(z)\cdot \rme^{\rmi\psi}=\pr_2\circ \chi_-\circ \chi_+^{-1}(z,\rme^{\rmi\psi})=z\cdot \rme^{\rmi\psi},\]
+    that is, $\tau_{-+}(\rme^{\rmi\varphi})=\rme^{\rmi\varphi}$ (representing the diffeomorphism that acts on the unit circle by multiplication by $\rme^{-i\varphi}$). Therefore, following a standard sign convention, the Chern number of this bundle equals $-1$.\tablefootnote{The sign of the Chern number is usually fixed by the complex structure of the corresponding bundle (which induces a specific orientation on the fibers). The Hopf bundle is the circle bundle of the complex line bundle $\mathcal{O}(-1)$ defined over the Riemann sphere $\bbS^2=\mathbb{C}P^1$ as the complex line bundle with the transition function $\tau_{0\infty}(z)=z^{-1}$, and the Chern number of any holomorphic line bundle equals its degree, which in this case is $-1$. For the Hopf bundle itself, however, the sign of the Chern number is merely a convention.}
 \end{example}
 
 
-\begin{example}[Plane bundles over $\bbS^2$ continued]
+\begin{example}[Plane/circle bundles over $\bbS^2$ continued]\label{ex circle bundles over S2}
      \begin{enumerate}
         \item As we saw above, every plane bundle over $\bbS^2$ is orientable. This can be made more general. We will see later that non-orientability of a vector bundle over a manifold $M$ implies the existence of some nontrivial two-fold covering of $M$. Therefore every vector bundle over a simply connected base is orientable, since such manifolds have no non-trivial covering spaces.
-        \item Since the transition functions of every circle bundle over $\bbS^2$ can always be reduced to $\U_1$, and $\U_1$ is abelian, every such bundle comes with a natural global free (and fiberwise transitive) action of $\U_1$. This bundle can be trivialized over two hemispheres, thus being decomposed into a gluing of two solid tori $\bbD^2\times \bbS^1$. Recall that the lens space $L(p;1)$ (Example~\ref{example Lens space bredon}) can similarly be decomposed into two solid tori glued along a map acting on the boundary torus $\bbT^2$ of one of them by $(\rme^{2\pi\rmi \varphi},\rme^{2\pi\rmi\psi})\mapsto (e^{2\pi\rmi\varphi},e^{2\pi\rmi(p\varphi+\psi)})$. But this is exactly the identification that produces the circle bundle over $\bbS^2$ with the transition function $g(\rme^{2\pi\rmi\varphi})=\rme^{2\pi\rmi p\varphi}$. Thus the total space of every $\bbS^1$-bundle over $\bbS^2$ is a lens space. Note that $p=1$, corresponding to the Hopf bundle, gives the correct total space $L(1;1)=L(1;0)=\bbS^3$. Another example is $p=2$, which gives $\bbR P^3$. \index{Lens spaces}
+        
+        \item Since the transition functions of every circle bundle over $\bbS^2$ can always be reduced to $\U_1$, and $\U_1$ is abelian, every such bundle comes with a natural global free (and fiberwise transitive) action of $\U_1$. This bundle can be trivialized over two hemispheres, thus being decomposed into a gluing of two solid tori $\bbD^2\times \bbS^1$. Recall that the lens space $L(p;1)$ (Example~\ref{example Lens space bredon}) can similarly be decomposed into two solid tori glued along a map acting on the boundary torus $\bbT^2$ of one of them by $(\rme^{2\pi\rmi \varphi},\rme^{2\pi\rmi\psi})\mapsto (e^{2\pi\rmi\varphi},e^{2\pi\rmi(p\varphi+\psi)})$. But this is exactly the identification that produces the circle bundle over $\bbS^2$ with the transition function $\tau_{-+}(\rme^{2\pi\rmi\varphi})=\rme^{2\pi\rmi p\varphi}$. Thus the total space of every $\bbS^1$-bundle over $\bbS^2$ is a lens space. Note that $p=1$, corresponding to the Hopf bundle, gives the correct total space $L(1;1)=L(1;0)=\bbS^3$. Another example is $p=2$, which gives $\bbR P^3$. \index{Lens spaces}
     \end{enumerate}
 \end{example}
    
@@ -9661,8 +9670,8 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
 \begin{rem}[Taylor formula on manifolds]\index{Taylor's formula}
     Successive application of the vector fields $X_1,\ldots,X_r$ to a function $f\in C^\infty(M)$ yields
     \[X_r\cdots X_1 \cdot f=\restr{\frac{\dd}{\dd t_1}}{t_1=0}\cdots \restr{\frac{\dd}{\dd t_r}}{t_r=0}f\circ F^{X_1}_{t_1}\circ \cdots \circ F^{X_r}_{t_r}.\]
-    In particular, the commutator can be expressed as
-    \[[X,Y]f=\restr{\frac{\dd}{\dd t}}{t=0}\restr{\frac{\dd}{\dd s}}{s=0}\left(f\circ F^Y_s\circ F^X_t-f\circ F^X_s\circ F^Y_t\right).\]
+    In particular, the Lie bracket can be expressed as
+    \[[X,Y]f=\restr{\frac{\dd}{\dd t}}{t=0}\restr{\frac{\dd}{\dd s}}{s=0}\left(f\circ F^Y_s\circ F^X_t-f\circ F^X_s\circ F^Y_t\right).\label{eq Lie bracket in terms of flows}\]
     Furthermore, for any $m\in M$, the Taylor expansion of the smooth function $t\mapsto f\circ F^X_t(m)$ at $t=0$ yields the following \emph{Taylor formula for manifolds}:
     \[f\circ F^X_t(m)=\sum_{k=1}^n\frac{t^k}{k!}\left(X^kf\right)(m)+\calO(t^{n+1}), \quad t\in \calD^X_m,\label{eq:Taylor formula for manifolds}\]
     where $\calO(t^{n+1})$ is a smooth function on $\calD_m^X$ such that $\calO(t^{n+1})/t^{n+1}$ is bounded. Repeated application of this formula yields the iterated Taylor formula for manifolds
@@ -11854,9 +11863,12 @@ By differentiating with respect to the time parameter $t$, we now transport the 
 \newpage
 \section{Lie Theory III: Analytic Structure}\label{sec: Lie theory iii}
 
-This section is devoted to the Dynkin/BCH formulas and their deep implications for the analytic structure of Lie groups. In terms of further applications, the main result is the Closed Subgroup Theorem~\ref{thm closed subgroup}, whereas the sections after that are devoted to the correspondence between subgroups and subalgebras.
-
-
+This section is devoted to the Dynkin/BCH formulas and their deep implications for the analytic structure of Lie groups. We have previously defined Lie subgroups as immersed subgroups, and in Theorem~\ref{thm 19.25 Lee} we proved that all Lie groups are in fact weakly embedded. The main unanswered question is what topological conditions are sufficient for an arbitrary subgroup to be an immersed Lie subgroup, and in particular an embedded Lie subgroup. The main results of this section are as follows. The Closed Subgroup Theorem~\ref{thm closed subgroup} says that all closed subgroups are embedded Lie subgroups. It implies, in particular, that every Lie group has a unique structure of a real analytic Lie group, and that all continuous homomorphisms between Lie groups are real analytic. The Analytic Subgroup Theorem~\ref{thm analytic subgroup} states the every Lie subalgebra of the Lie algebra of a Lie group generates a unique immersed Lie subgroup. Yamabe's Theorem~\ref{thm Yamabe} states that every path-connected subgroup of a Lie group is a Lie subgroup.  Finally, the Initial Subgroup Theorem~\ref{thm initial subgroup} states that every subgroup of a Lie group is (or rather can be turned into) a Lie subgroup. Therefore one of the main upshots of this sequence of results is:
+\begin{gather}
+    \text{All subgroups of a Lie group are weakly embedded Lie subgroups.}\\
+    \text{Closed subgroups are embedded Lie subgroups.}
+\end{gather}
+Another fundamental result in this section is Lie's Third Fundamental Theorem~\ref{thm 1.14.3 DK global Lie's third}, which states that every finite-dimensional Lie algebra corresponds to a unique simply-connected Lie group. We prove only a local version of this theorem.
 
 \subsection{Product in logarithmic coordinates}\label{sec: product in log coordinates}
 
@@ -12078,7 +12090,6 @@ We summarize all results about closed subgroups of Lie groups in the following C
 \end{example}
 
 
-Without proof we include the following (fairly intuitive) Corollary of the Closed Subgroup Theorem.
 \begin{cor}[{{\cite[Prop.~1.10.8]{DK}}}]
     Assume $G,H$ are Lie groups and $H$ has only countably many components. Then every homomorphism of groups $\Phi:G\to H$ with a closed graph $\subset G\times H$ is analytic, that is, $\Phi$ is a homomorphism of Lie groups.
 
@@ -12732,15 +12743,15 @@ We begin by recalling a few definitions related to actions of Lie groups on mani
     Let $(M,G,\Phi)$ be a manifold $M$ with a smooth action $\Phi$ of a Lie group $G$. 
     \begin{enumerate}
         \item Two points $m_1,m_2\in M$ are called conjugate under $\Phi$ if $m_2=\Phi_g(m_1)$ for some $g\in G$. Conjugacy is an equivalence relation and its equivalence classes are called orbits of $G$ under $\Phi$. The set of equivalence classes, equipped with the quotient topology, is called the orbit space of $(M,G,\Phi)$ and is denoted by $M\slash G$ (sometimes left and right actions are distinguished so that the quotient by a left action is denoted $G\bslash M$ and by a right action $M\slash G$).
-        \item For $m\in M$, the induced mapping $\Phi_m:G\to M$ is called the orbit map of $m$.
+        \item For $m\in M$, the induced mapping $\Phi^m:G\to M$ is called the orbit map of $m$.
         \item For $m\in M$, the subgroup $G_m=\{g\in G\mid \Phi_g=\id_M\}$ of $G$ is called the stabilizer, or the isotropy group,\index{Isotropy group}\index{Stabilizer} of $m$.
         \item The kernel of $\Phi$ is the subgroup $\ker\Phi=\{g\in G\mid \Phi_g=\id_M\}$ of $G$.
     \end{enumerate}
 \end{defn}
 
-Assuming that $\Phi$ is a left action, the orbit map satisfies $\Phi_m(gh)=\Phi_m(g)$ iff $h\in G_m$, so it induces an injective map
-\[\hat{\Phi}_m:G\slash G_m\to M,\quad \wh{\Phi}_m(g G_m)=\Phi_m(g),\label{eq 6.1.8 RS1}\]
-where $G\slash G_m$ denotes the homogeneous space of left cosets. Since the natural projection $G\to G\slash G_m$ is a surjective submersion, $\wh{\Phi}_m$ is smooth. Moreover, it is equivariant with respect to the action of $G$ on $G\slash G_m$ by the induced left translations $\wh{L}_g$ and its image coincides with the orbit of $m$. Similarly, in the case of a right action, $\wh{\Phi}_m$ is defined on the homogeneous space of right cosets and is equivariant with respect to the induced right translations $\wh{R}_g$. Thus, for every $m$, $\wh{\phi}_m$ yields an equivariant bijection between $G\slash G_m$ and the orbit through $m$. We will use this bijection to induce a smooth structure on $G\cdot m$.
+Assuming that $\Phi$ is a left action, the orbit map satisfies $\Phi^m(gh)=\Phi^m(g)$ iff $h\in G_m$, so it induces an injective map
+\[\hat{\Phi}^m:G\slash G_m\to M,\quad \wh{\Phi}^m(g G_m)=\Phi^m(g),\label{eq 6.1.8 RS1}\]
+where $G\slash G_m$ denotes the homogeneous space of left cosets. Since the natural projection $G\to G\slash G_m$ is a surjective submersion, $\wh{\Phi}^m$ is smooth. Moreover, it is equivariant with respect to the action of $G$ on $G\slash G_m$ by the induced left translations $\wh{L}_g$ and its image coincides with the orbit of $m$. Similarly, in the case of a right action, $\wh{\Phi}^m$ is defined on the homogeneous space of right cosets and is equivariant with respect to the induced right translations $\wh{R}_g$. Thus, for every $m$, $\wh{\Phi}^m$ yields an equivariant bijection between $G\slash G_m$ and the orbit through $m$. We will use this bijection to induce a smooth structure on $G\cdot m$.
 
 
 Some of the statements of the following Proposition should already be familiar.
@@ -12762,7 +12773,7 @@ Some of the statements of the following Proposition should already be familiar.
         \item This follows from $\Phi(V\times U)=\bigcup_{g\in V}\Phi_g(U)$ and the fact that the maps $\Phi_g$ are diffeomorphisms.
         \item Let $U\subset M$ be open. Then, $\Phi_g(U)$ is open for all $g\in G$ and hence $\pi^{-1}(\pi(U))=\bigcup_{g\in G}\Phi_g(U)$ is open. By construction of the quotient topology, then, $\pi(U)$ is open.
         \item Since $M$ is locally compact, every $m\in M$ has a compact neighborhood $U$. Since $\pi$ is open, $\pi(U)$ is a neighborhood of $\pi(m)$ in $M\slash G$. Since the image of a compact space under a continuous mapping is compact, $\pi(U)$ is compact. Hence, $M\slash G$ is locally compact. Second countability holds by definition of the quotient topology.
-        \item For every $m\in M$, the stabilizer $G_m$ is the preimage of $m$ under the orbit map $\Phi_m$. The rest follows from the general facts that $(\Phi_g)_{\ast}:TM\to TM$ is also a Lie group action and that restricting to an initial invariant submanifold (such as $T_mM$ in this case) also produces a smooth action.
+        \item For every $m\in M$, the stabilizer $G_m$ is the preimage of $m$ under the orbit map $\Phi^m$. The rest follows from the general facts that $(\Phi_g)_{\ast}:TM\to TM$ is also a Lie group action and that restricting to an initial invariant submanifold (such as $T_mM$ in this case) also produces a smooth action.
         \item Being the kernel of a group (anti-)homomorphism, $\ker\Phi$ is normal. Being the intersection of the stabilizers of all points of $M$, it is also closed. Hence, by Proposition~\ref{prop quotient group}, $G\slash \ker\Phi$ is a Lie group. Since $\Phi_g=\id_M$ for $g\in\ker\Phi$, $\wh{\Phi}$ is well-defined. Since $\rho$ is a submersion, $\wh{\Phi}$ is smooth by the universal property of submersions (or by an argument via smooth local sections of $\rho$). The rest is obvious.
     \end{enumerate}
 \end{proof}
@@ -12814,7 +12825,7 @@ By the above Proposition, by passing to the induced action of $G\slash\ker\Phi$,
 
 
 
-\subsection{Killing vector fields}
+\subsection{Killing vector fields}\label{sec Killing vectors}
 
 Throughout this section, let $(M,G,\Phi)$ be a Lie group action and let $\frakg$ be the Lie algebra of $G$. For $A\in \frakg$, we have
 \[\Phi_{\rme^{tA}}\circ\Phi_{\rme^{sA}}=\Phi_{\rme^{(t+s)A}},\]
@@ -12822,10 +12833,10 @@ hence the assignment $(m,t)\mapsto \Phi_{\rme^{tA}}(m)$ defines a \gls{ops} of d
 
 \begin{defn}[Killing vector field]\index{Killing vector field}
     The vector field on $M$ defined by the flow $\Phi_{\rme^{tA}}$ is called the Killing vector field generated by $A\in\frakg$. It will be denoted by $A_\ast$. Its value at $m\in M$ may be expressed in several equivalent ways:
-    \[(A_\ast)_m=\restr{\frac{\dd}{\dd t}}{t=0}\Phi_{\rme^{tA}}(m)=\restr{\frac{\dd}{\dd t}}{t=0}\Phi_m\left(\rme^{tA}\right)=\Phi_{m\ast e}\cdot A.\label{eq 6.2.1 RS1}\]
+    \[(A_\ast)_m=\restr{\frac{\dd}{\dd t}}{t=0}\Phi_{\rme^{tA}}(m)=\restr{\frac{\dd}{\dd t}}{t=0}\Phi^m\left(\rme^{tA}\right)=\Phi^m{\ast e}\cdot A.\label{eq 6.2.1 RS1}\]
 \end{defn}
 
-\begin{prop}\label{prop 6.2.2 RS1}
+\begin{prop}[{{\cite[Prop.~6.2.2]{RS1}}}]\label{prop 6.2.2 RS1}
     \begin{enumerate}
         \item For every $g\in G$ and $A\in\frakg$, there holds $\Phi_{g\ast}A_\ast=(\Ad_g A)_\ast$ in case $\Phi$ is a left action and $\Phi_{g\ast}A_\ast=(\Ad_g^{-1} A)_\ast$ in case $\Phi$ is a right action.
         \item The mapping $\frakg\to \fX(M)$ given by $A\mapsto A_\ast$ is an anti-homomorphism of Lie algebras if $\Phi$ is a left action and a homomorphism if it is a right action. The kernel of this map coincides with the Lie algebra of $\ker\Phi\subset G$. In particular, if $\Phi$ is effective, the map $A\mapsto A_\ast$ is injective.
@@ -12836,7 +12847,7 @@ hence the assignment $(m,t)\mapsto \Phi_{\rme^{tA}}(m)$ defines a \gls{ops} of d
     \begin{enumerate}
         \item By naturality of flows with respect to diffeomorphisms (Corollary~\ref{cor naturality of flows}), the flow of $\Phi_{g\ast}A_\ast$ is $\Phi_g\circ \Phi_{\rme^{tA}}\circ \Phi_{g^{-1}}$, which is equal to $\Phi_{\rme^{t\Ad_g A}}$ if $\Phi$ is a left action and $\Phi_{\rme^{t\Ad_g^{-1} A}}$ if $\Phi$ if it is a right action.
         \item We give the proof for a left action. Linearity is obvious. Next we have
-        \[[A_\ast,B_\ast]_m=(\Lie_{A_\ast}B_\ast)_m=\restr{\frac{\dd}{\dd t}}{t=0}\left(\Phi_{\rme^{-tA}\ast}B_\ast\right)_m=\Phi_{m\ast e}\left(\restr{\frac{\dd}{\dd t}}{t=0}\left(\Ad_{\rme^{-tA}}B\right)\right).\]
+        \[[A_\ast,B_\ast]_m=(\Lie_{A_\ast}B_\ast)_m=\restr{\frac{\dd}{\dd t}}{t=0}\left(\Phi_{\rme^{-tA}\ast}B_\ast\right)_m=\Phi^m_{\ast e}\left(\restr{\frac{\dd}{\dd t}}{t=0}\left(\Ad_{\rme^{-tA}}B\right)\right).\]
         Now, the definition of the differential and the fact that $\Ad_\ast=\ad$ yield $[A_\ast,B_\ast]=-[A,B]_\ast$. Furthermore, $A$ belongs to the Lie algebra of $\ker\phi$ iff $\Phi_{\rme^{tA}}=\id_M$ for all $t$. Since $\Phi_{\rme^{tA}}$ is the flow of $A_\ast$, this is equivalent to $A_\ast=0$.
         \item Let $A\in\frakg$. By the Closed Subgroup Theorem~\ref{thm closed subgroup}, $A$ belongs to the Lie algebra $\frakg_m$ of $G_m$ iff $\Phi_{\rme^{tA}}(m)=m$ for all $t$, that is, iff $m$ is an equilibrium of $A_\ast$: $(A_{\ast})_{m}=0$.
  \end{enumerate}
@@ -12898,27 +12909,27 @@ Next, consider the distribution $D^\frakg$ on $M$ spanned by the Killing vector 
 \[D^\frakg_m=\{(A_\ast)_m\in T_m M:A\in \frakg\}.\]
 According to points 1 and 3 of Proposition~\ref{prop 6.2.2 RS1}, we have
 \[D^\frakg_{\Phi_g(m)}=(\Phi_g)_{\ast m}D^\frakg_m\label{eq 6.2.4 RS1}\]
-for all $g\in G$, and $\dim D_m^\frakg=\dim G-\dim G_m$, respectively. In particular, $D^\frakg$ need not be regular; this is so, however, if $\Phi$ is free or transitive. We will show that $D^\frakg$ is integrable and that the integral manifolds are given by the orbits. For that purpose, recall the mapping $\wh{\Phi}_m:G\slash G_m\to M$, defined by (\ref{eq 6.1.8 RS1}).
+for all $g\in G$, and $\dim D_m^\frakg=\dim G-\dim G_m$, respectively. In particular, $D^\frakg$ need not be regular; this is so, however, if $\Phi$ is free or transitive. We will show that $D^\frakg$ is integrable and that the integral manifolds are given by the orbits. For that purpose, recall the mapping $\wh{\Phi}^m:G\slash G_m\to M$, defined by (\ref{eq 6.1.8 RS1}).
 
 \begin{thm}[Orbit Theorem]\label{thm 6.2.8 RS1 orbit}
-    Let $(M,G,\Phi)$ be a Lie group action. For every $m\in M$, $(G\slash G_m,\wh{\Phi}_m)$ is an initial submanifold of $M$ whose connected components are maximal integral manifolds of $D^\frakg$. In particular, $D^\frakg$ is integrable.
+    Let $(M,G,\Phi)$ be a Lie group action. For every $m\in M$, $(G\slash G_m,\wh{\Phi}^m)$ is an initial submanifold of $M$ whose connected components are maximal integral manifolds of $D^\frakg$. In particular, $D^\frakg$ is integrable.
 \end{thm}
 \begin{proof}
-    Assume a left action. Let $m\in M$ and let $\pi^G:G\to G\slash G_m$ be the natural projection. First we show that $\wh{\Phi}_m$ is an injective immersion. Injectivity was already noted before. Since $\wh{\Phi}_m\circ \pi^G=\Phi_m$, for $\left(\wh{\Phi}_m\right)_{\ast gG_m}$ to be injective for all $gG_m\in G\slash G_m$ it suffices to show that
-    \[\ker \left(\Phi_m\right)_{\ast g}\subset \ker \pi^G_{\ast g}\]
-    for all $g\in G$. To see this, let $A\in\frakg$ be such that $\left(\Phi_m\right)_{\ast}A_g=0$. Due to
-    \[\left(\Phi_m\right)_{\ast}A_g=\left(\Phi_m\right)_{\ast}\circ \left(L_g\right)_{\ast}A_e=\left(\Phi_g\right)_{\ast}\circ \left(\Phi_m\right)_{\ast}A_e=\left(\Phi_g\right)_{\ast}(A_\ast)_m,\label{eq 6.2.5 RS1}\]
+    Assume a left action. Let $m\in M$ and let $\pi^G:G\to G\slash G_m$ be the natural projection. First we show that $\wh{\Phi}^m$ is an injective immersion. Injectivity was already noted before. Since $\wh{\Phi}^m\circ \pi^G=\Phi^m$, for $\left(\wh{\Phi}^m\right)_{\ast gG_m}$ to be injective for all $gG_m\in G\slash G_m$ it suffices to show that
+    \[\ker \Phi^m_{\ast g}\subset \ker \pi^G_{\ast g}\]
+    for all $g\in G$. To see this, let $A\in\frakg$ be such that $\Phi^m_{\ast}A_g=0$. Due to
+    \[\Phi^m_{\ast}A_g=\Phi^m_{\ast}\circ \left(L_g\right)_{\ast}A_e=\left(\Phi_g\right)_{\ast}\circ \Phi^m_{\ast}A_e=\left(\Phi_g\right)_{\ast}(A_\ast)_m,\label{eq 6.2.5 RS1}\]
     and since $(\Phi_g)_\ast$ is bijective, we obtain $(A_\ast)_m=0$ and hence $A\in\frakg_m$ by Proposition~\ref{prop 6.2.2 RS1}(3). Then $\rme^{tA}\in G_m$ for all $t\in\bbR$ and hence
     \[\pi^G_{\ast g}(A_g)=\restr{\frac{\dd}{\dd t}}{t=0}\pi^G(g\rme^{tA})=0.\]
-    This proves that $\wh{\Phi}_m$ is an injective immersion.
+    This proves that $\wh{\Phi}^m$ is an injective immersion.
 
-    Secondly, we show that the connected components of $(G\slash G_m,\wh{Psi})$ are maximal integral manifolds for $D^\frakg$. For simplicity, we may assume that $G$ and hence $G\slash G_m$ are connected. Due to $\pi^G$ being a submersion, for $(G\slash G_m,\wh{\Phi})$ to be an integral manifold of $D^\frakg$ it suffices that $\im(\left(\Phi_m\right)_{\ast g})=D^\frakg_{\Phi_g(m)}$ for all $g\in G$. The latter is true because using  (\ref{eq 6.2.5 RS1}) and Proposition~\ref{prop 6.2.2 RS1}(1), for $A\in\frakg$ one finds
-    \[\left(\Phi_m\right)_{\ast}A_g=\left(\Phi_m\right)_{\ast}(A_\ast)_m=(\Phi_{g\ast }A_\ast)_{\Phi_g(m)}=\left(\{\Ad_g A\}_\ast\right)_{\Phi_g(m)}\]
-    and hence $(A_\ast)_{\Phi_g(m)}=\left(\Phi_m\right)_{\ast}\left(\Ad_g^{-1}A\right)_m$. Maximality follows from the fact that the images of the connected components of the submanifolds $(G\slash G_m,\wh{\Phi}_m)$, $m\in M$, establish a disjoint decomposition of $M$. Finally, since $m $ is arbitrary, we can conclude that $D^\frakg$ is integrable. Hence Proposition~\ref{prop 3.5.15 RS1} yields that $(G\slash G_m,\wh{\Phi}_m)$ is weakly embedded.
+    Secondly, we show that the connected components of $(G\slash G_m,\wh{Psi})$ are maximal integral manifolds for $D^\frakg$. For simplicity, we may assume that $G$ and hence $G\slash G_m$ are connected. Due to $\pi^G$ being a submersion, for $(G\slash G_m,\wh{\Phi})$ to be an integral manifold of $D^\frakg$ it suffices that $\im(\Phi^m_{\ast g})=D^\frakg_{\Phi_g(m)}$ for all $g\in G$. The latter is true because using  (\ref{eq 6.2.5 RS1}) and Proposition~\ref{prop 6.2.2 RS1}(1), for $A\in\frakg$ one finds
+    \[\left(\Phi^m\right)_{\ast}A_g=\left(\Phi^m\right)_{\ast}(A_\ast)_m=(\Phi_{g\ast }A_\ast)_{\Phi_g(m)}=\left(\{\Ad_g A\}_\ast\right)_{\Phi_g(m)}\]
+    and hence $(A_\ast)_{\Phi_g(m)}=\left(\Phi^m\right)_{\ast}\left(\Ad_g^{-1}A\right)_m$. Maximality follows from the fact that the images of the connected components of the submanifolds $(G\slash G_m,\wh{\Phi}^m)$, $m\in M$, establish a disjoint decomposition of $M$. Finally, since $m $ is arbitrary, we can conclude that $D^\frakg$ is integrable. Hence Proposition~\ref{prop 3.5.15 RS1} yields that $(G\slash G_m,\wh{\Phi}^m)$ is weakly embedded.
 \end{proof}
 
 
-As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth structures of weakly embedded submanifolds are unique, the smooth structures induced on an orbit $O$ by the submanifolds $(G\slash G_m,\wh{\Phi}_m)$, $m\in O$, coincide for all $m$, so that we can view $O$ itself as a submanifold.  
+As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth structures of weakly embedded submanifolds are unique, the smooth structures induced on an orbit $O$ by the submanifolds $(G\slash G_m,\wh{\Phi}^m)$, $m\in O$, coincide for all $m$, so that we can view $O$ itself as a submanifold.  
 
 \begin{cor}[{{\cite[Cor.~6.2.9]{RS1}}}]
     The orbits of $\Phi$ are weakly embedded (initial) submanifolds of $M$ whose connected components are maximal integral manifolds of $D^\frakg$.
@@ -12928,7 +12939,7 @@ As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth st
     \begin{enumerate}
         \item The subspace $T_mO$ of $T_mM$ is invariant under the isotropy representation and hence the isotropy representation descends to a representation on $N_mO=T_mM\slash T_mO$, which is called the slice representation at $m$. By construction, the natural projection $T_mM\to N_mO$ intertwines the isotropy representation with the slice representation.
 
-        On the other hand, the isotropy representation restricted to $T_mO$ can be brought to the following normal form. By the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, the map $(\Phi_m)_{\ast e}:\frakg\to T_mM$ has image $T_mO$. By point 3 of Proposition~\ref{prop 6.2.2 RS1} it has kernel $\frakg_m$. Hence, this mapping induces a natural vector space isomorphism
+        On the other hand, the isotropy representation restricted to $T_mO$ can be brought to the following normal form. By the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, the map $\Phi^m_{\ast e}:\frakg\to T_mM$ has image $T_mO$. By point 3 of Proposition~\ref{prop 6.2.2 RS1} it has kernel $\frakg_m$. Hence, this mapping induces a natural vector space isomorphism
         \[T_mO\cong \frakg\slash\frakg_m.\]
         In view of (\ref{eq 6.2.1 RS1}), this implies that this isomorphism intertwines the representation of $G_m$ on $\frakg\slash\frakg_m$ induced by the adjoint representation with the isotropy representation on $T_mO$.
         \item Since $O$ is invariant under $\Phi$ and since it is a weakly embedded submanifold of $M$, $\Phi$ restricts to a transitive action of $G$ on $O$. Since the connected components of $O$ are integral manifolds of $D^\frakg$, (\ref{eq 6.2.4 RS1}) implies that the action of $G$ on $TM$ induced by $\Phi$ leaves invariant the submanifold $TO$. The restriction of this action to the invariant submanifold $\restr{(TM)}{O}$ induces an action $\Phi^N$ of $G$ on the normal bundle $NO=\restr{(TM)}{O}\slash TO$ by the vector bundle automorphisms (smoothness follows from the existence of local sections of the submersion $\restr{(TM)}{O}\to NO$)
@@ -12986,14 +12997,14 @@ Proper actions have the following elementary topological properties.
     If $(M,G,\Phi)$ is a proper Lie group action, then:
     \begin{enumerate}
         \item The restriction of $\Phi$ to the product of a closed subgroup $H\sube G$ with an $H$-invariant weakly embedded (initial) submanifold  of $M$ is proper.
-        \item The orbit map $\Phi_m$ is proper for all $m\in M$.
+        \item The orbit map $\Phi^m$ is proper for all $m\in M$.
         \item The orbit space $M\slash G$ is Hausdorff.
     \end{enumerate}
 \end{prop}
 \begin{proof}
     \begin{enumerate}
         \item We apply Corollary~\ref{cor 6.3.3 RS1}(2). $N\subset M$ and $H$-invariant weakly embedded submanifold. Let $(g_n)$ and $(m_n)$ be sequences in $H$ and $N$ such that $(m_n)$ and $(\phi_{g_n}(m_n))$ converge in $N$. Since $N$ is a submanifold, the natural inclusion $N\hookrightarrow M$ is continuous. Therefore $(m_n)$ and $(\Phi_{g_n}(m_n))$ converge in $M$. Since $\Phi $ is proper, $(g_n)$ als contains a subsequence which converges in $G$. Since $H$ is closed, the limit belongs to $H$.
-        \item We apply Lemma~\ref{lem 6.3.2 RS1}(2). Let $(g_n)\in G$ be a sequence such that $(\Phi_m(g_n))$ converges. Then the sequences $(a_n)$ and $(m_n=m)$ (constant sequence) satisfy the assumptions of Corollary~\ref{cor 6.3.3 RS1}(2). Since $\Phi$ is proper, it follows that $(g_n)$ contains a convergent subsequence.
+        \item We apply Lemma~\ref{lem 6.3.2 RS1}(2). Let $(g_n)\in G$ be a sequence such that $(\Phi^m(g_n))$ converges. Then the sequences $(a_n)$ and $(m_n=m)$ (constant sequence) satisfy the assumptions of Corollary~\ref{cor 6.3.3 RS1}(2). Since $\Phi$ is proper, it follows that $(g_n)$ contains a convergent subsequence.
         \item The argument is analogous to that for homogeneous spaces (Lemma~\ref{lem 5.7.1 RS1}(3)). Denote the natural projection by $\pi:M\to M\slash G$. Let $m_1,m_2\in M$ be such that $\pi(m_1)\neq \pi(m_2)$. Then $(m_1,m_2)\notin \im(\Phi_{\mathrm{ext}})$. Since $\Phi_{\mathrm{ext}}$ is closed in $M\times M$, there exist open neighborhoods $U_i$ of $m_i$ in $M$ such that $(U_1\times U_2)\cap \im(\Phi_{\mathrm{ext}})=\varnothing$. Then $\pi(U_1)\cap\pi(U_2)=\varnothing$. Since, by Proposition~\ref{prop 6.1.5 RS1}(2), the map $\pi$ is open, $\pi(U_i)$ is a neighborhood of $\pi(m_i)$, $i=1,2$.
     \end{enumerate}
 \end{proof}
@@ -13005,7 +13016,7 @@ The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} and Proposition~\ref{prop 6.3.4 RS1}
     The orbits of a proper Lie group action are closed embedded submanifolds.
 \end{cor}
 \begin{proof}
-    Let $m\in M$. By Proposition~\ref{prop 6.3.4 RS1}(2) and Lemma~\ref{lem 6.3.2 RS1}(3), $\Phi_m$ is closed. Hence the image $\Phi_m(G)$ is closed and the induced map  $\wh{\Phi}_m:G\slash G_m\to M$ is closed. Since the latter is bijective onto the orbit $\Phi_m(G)$, it is open onto $\Phi_m(G)$ in the subspace topology induced from $M$.
+    Let $m\in M$. By Proposition~\ref{prop 6.3.4 RS1}(2) and Lemma~\ref{lem 6.3.2 RS1}(3), $\Phi^m$ is closed. Hence the image $\Phi^m(G)$ is closed and the induced map  $\wh{\Phi}^m:G\slash G_m\to M$ is closed. Since the latter is bijective onto the orbit $\Phi^m(G)$, it is open onto $\Phi^m(G)$ in the subspace topology induced from $M$.
 \end{proof}
 
 \begin{rem}\label{rem 6.3.6 RS1}
@@ -13992,13 +14003,13 @@ This result is very intuitive: $G$-morphisms $P\to P'$ are identified with secti
 \begin{rem}
     Proposition~\ref{prop 1.2.2 RS2} shows that a morphism of principal bundles, together with an equivariant maps of typical fibers, induces a morphism of associated bundles. It is natural to ask whether every bundle morphism can be obtained this way from some principal bundle morphism. Clearly the answer is no because general bundle morphisms need not be modeled on equivariant maps.
     
-    Recall that principal bundles are just $\mathsf{LieGr}$-bundles as defined in Definition~\ref{def S-bundle}. One can similarly approach a classification of all morphisms between $\calS$-bundles for arbitrary categories $\calS$ of typical fibers. We notice that the maps $\Phi_{\alpha a}$ with transformation law (\ref{eq transformation of Phiab}) define a $C^\infty(F,F')$-valued $(G\times G')$-equivariant map $\varphi:P\times_M h^\ast P'\to C^\infty(F,F')$, where $P$ and $P'$ are the principal bundles associated to $E$ and $E'$, respectively. The values of this map lie in a $(G\times G')$-orbit of an element of $\calS(F,F')$ (which in the case of principal bundles is the set of homomorphisms $\Hom(G,G')$). Therefore general bundle morphisms can be identified with sections of $(P\times_M h^\ast P')\times_{G\times G'}\calS(F,F')$ (assuming $\calS(F,F')$ is at least a topological space). This set is usually very different from the set of morphisms between $P$ and $P'$.
+    Recall that principal bundles are just $\mathsf{LieGr}$-bundles as defined in Definition~\ref{def S-bundle}. One can similarly approach a classification of all morphisms between $\calS$-bundles for arbitrary categories $\calS$ of typical fibers. We notice that the maps $\Phi_{\alpha a}$ with transformation law (\ref{eq transformation of Phiab}) define a $C^\infty(F,F')$-valued $(G\times G')$-equivariant map $\varphi:P\times_M h^\ast P'\to C^\infty(F,F')$, where $P$ and $P'$ are the principal bundles associated to $E$ and $E'$, respectively. The values of this map lie in a $(G\times G')$-orbit of an element of $\calS(F,F')$ (which in the case of principal bundles is the set of homomorphisms $\Hom(G,G')$). Therefore general bundle morphisms can be identified with sections of $(P\times_M h^\ast P')\times_{G\times G'}\calS(F,F')$ (assuming $\calS(F,F')$ carries a sufficiently nice topology). This set is usually very different from the set of morphisms between $P$ and $P'$.
 \end{rem}
 
 \begin{defn}[Gauge transformations]\index{Gauge transformation}\index{Gauge group}
     Let $P\overset{\pi}{\to}M$ be a principal $G$-bundle. Its group of automorphisms in the category $\PFB^G_M$, i.e.\ vertical bundle automorphisms, is denoted 
     \[\Gau(P)\coloneqq \Aut_M(P),\]
-    and is called its group of gauge transformations, or simply the \emph{gauge group}. By Proposition~\ref{prop 1.2.6 RS2} and Corollary~\ref{cor 1.2.7 RS2}, there are natural bijections \[\Gau(P)\cong \Gamma^\infty(P\times_{G,M}P)\cong \Hom_G(P,G)\cong \Gamma^\infty\left(P^{[\Adg]}\right),\]
+    and is called its group of \emph{active local gauge transformations}, or simply the \emph{gauge group}. By Proposition~\ref{prop 1.2.6 RS2} and Corollary~\ref{cor 1.2.7 RS2}, there are natural bijections \[\Gau(P)\cong \Gamma^\infty(P\times_{G,M}P)\cong \Hom_G(P,G)\cong \Gamma^\infty\left(\Adg(P)\right),\]
     where $\Hom_G(P,G)$ is the group (via pointwise multiplication) of equivariant $G$-valued functions on $P$ intertwining the right $G$-action on $P$ with the action of $G$ on itself by conjugations $\Adg$ (i.e.\ $\sigma=\Adg$ in (\ref{eq 1.2.9 RS2})).
 \end{defn}
 
@@ -14134,6 +14145,15 @@ We have previously defined $G$-structures as equivalence classes of $G$-atlases 
 \end{defn}
 
 As we have shown, every reduction of $\calP(E)$ to $G$ can be identified with a section of the bundle $\calP(E)\slash G$, which is equivalent to picking a $G$-equivalence class of frames over each point of the base.
+
+
+Now that we have come full circle and finished defining fiber bundles -- a task that we started in Section~\ref{sec: Fiber bundles} -- we are ready to start looking at more sophisticted additional structures on them. These structures, in turn, will help us find quantitative criterions for the existence of certain $G$-structures on a given bundle, and eventually classify all bundles in terms of certain topological invariants.
+
+
+
+
+
+
 
 
 
@@ -14306,26 +14326,45 @@ Locally Klein geometries can also be defined as principal bundles. This depends 
 
     \emph{Step 2.} The action $\Gamma\times (P\slash H)\to P\slash H$ is proper.
 
-    Let $A,B\subset P\slash H$ be compact. We must show that $\{g\in\Gamma\mid gA\cap B\neq \varnothing\}$ is compact. If we write $A=\bigcup_{1\leq i\leq a}A_i$, $B=\bigcup_{1\leq j\leq b}B_j$, with $A_i$ and $B_j$ compact, then it suffices to show that $\{g\in\Gamma\mid gA_i\cap B_j\neq\varnothing\}$ is compact for all $i,j$. Thus it suffices to assume that $A$ and $B$ are small sets (i.e.\ subordinate to some open covering of $X\slash H$). Since $P\slash P\slash H$ is a principal $H$-bundle, there is an open covering of $P\slash H$ over which $P$ is trivialized. We may assume that $A$ and $B$ are subordinate to this cover.
+    Let $A,B\subset P\slash H$ be compact. We must show that $\{g\in\Gamma\mid gA\cap B\neq \varnothing\}$ is compact. If we write $A=\bigcup_{1\leq i\leq a}A_i$, $B=\bigcup_{1\leq j\leq b}B_j$, with $A_i$ and $B_j$ compact, then it suffices to show that $\{g\in\Gamma\mid gA_i\cap B_j\neq\varnothing\}$ is compact for all $i,j$. Thus it suffices to assume that $A$ and $B$ are small sets (i.e.\ subordinate to some open covering of $X\slash H$). Since $P\to P\slash H$ is a principal $H$-bundle, there is an open covering of $P\slash H$ over which $P$ is trivialized. We may assume that $A$ and $B$ are subordinate to this cover.
 
     Applying a local section to $A$ and $B$, we can obtain compact sets $A'$ and $B'$ in $P$ with images $A$ and $B$ in $P\slash H$. Thus, $\{(g,h)\in\Gamma\times H\mid gA' h^{-1}\cap B'\neq \varnothing\}$ is compact. Therefore the image of this set under the canonical projection $\Gamma\times H\to \Gamma$ is also compact; but this image is clearly $\{g\in\Gamma\mid gA\cap B\neq \varnothing\}$.
 \end{proof}
 
 
+This means that if $P$ has two commuting free and proper group actions on it as in the above theorem, we have the following commuting square of principal bundles:
+\[\begin{tikzcd}
+    P \arrow[r]\arrow[d] & P\slash H\arrow[d]\\
+    \Gamma\bslash P\arrow[r] & \Gamma\bslash P\slash H,
+\end{tikzcd}\]
+where the left and right arrows are principal $\Gamma$-bundles and the top and bottom arrows are principal $H$-bundles.
+
+
 \begin{cor}[{{\cite[Cor.~3.13]{Sharpe}}}]
-    If $(\Gamma,G,H)$ be a locally Klein geometry, then the quotient map $\Gamma\bslash G\to \Gamma\bslash G\slash H$ is a principal $H$-bundle.
+    If $(\Gamma,G,H)$ is a locally Klein geometry, then the quotient map $\Gamma\bslash G\to \Gamma\bslash G\slash H$ is a principal $H$-bundle.
 \end{cor}
 \begin{proof}
     Apply Lemma~\ref{lem 3.12 Sharpe}, taking $P=G$, and use the left and right translation actions of $\Gamma$ and $H$, respectively. Since $\Gamma$ and $H$ are closed subgroups, these actions are proper. Since $(\Gamma,G,H)$ is locally klein, it follows that the action $\Gamma\times(G\slash H)\to G\slash H$ is free and proper. So by the lemma, $(\Gamma\bslash G)\times H\to \Gamma\bslash G$ is also free and proper.
 \end{proof}
 
-According to the last exercise, the principal bundle $\Gamma\bslash \Gamma\to \Gamma\bslash G\slash H$ is the same as the principal bundle $\Gamma'\bslash G'\to \Gamma'\bslash G'\slash H$.
+According to the last exercise, the principal bundle $\Gamma\bslash \Gamma\to \Gamma\bslash G\slash H$ is the same as the principal bundle $\Gamma'\bslash G'\to \Gamma'\bslash G'\slash H$, where $G'=G_0\cdot H$ and $\Gamma'=G'\cap\Gamma$.
 
 Since the Maurer-Cartan form $\Theta_G$ on $G$ is left-invariant, it induces a form $\Theta_{\Gamma\bslash G}$ on $\Gamma\bslash G$ with all the same properties.
 
 
 \begin{example}
     Consider the hyperbolic plan $M=\SL_2(\bbR)\slash \SO_2$. It is known that any closed (compact with no boundary), orientable surface $M_g$ of genus $g>1$ can appear as the quotient $\Gamma\bslash M$ for some choice of $\Gamma<\SL_2(\bbR)$. Let $\Gamma_g$ be such a subgroup. Then $M_g=\Gamma_g\bslash M$ is a locally Klein geometry.
+\end{example}
+
+\begin{example}[Monopole bundles]\label{ex monopole bundles}\index{Monopole!bundles}
+    Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$. Let $m\geq 1$ and $\Gamma=\bbZ_m\subset \U_1$ act on $\bbS^3$ by the restriction of the $\U_1$ action. The space $\Gamma\bslash \bbS^3$ is the loop space $L(m;1)$. We get the principal $\U_1$-bundle
+    \[L(m;1)\to L(m;1)\slash \U_1=\bbS^2\]
+    (since the induced action of $\U_1$ on $L(m;1)$ is trivial).
+    Note that the structure groups here are abelian so right and left actions are indistinguishable.
+    
+    In the standard atlas consisting of two hemispheres (Example~\ref{ex hopf bundle atlas}), the transition function of this new bundle is $\tau_{-+}(z)=z^{-m}$, i.e.\ this is exactly the $\U_1$-bundle with Chern number $-m$ from Example~\ref{ex circle bundles over S2}. This proves that the lens space is simultaneously $\bbS^3\slash \bbZ_m$ and the gluing of two solid tori, thus solving Exercise~\ref{xca two definitions of lens spaces}. As principal $\U_1$-bundles, these bundles are known as \emph{monopole bundles}.
+
+    We thus have the surjective vertical morphism of principal bundles $\vartheta:\bbS^3\to L(m;1)$ given by the quotient by the $\bbZ_m$-action and the group homomorphism $\lambda:\U_1\to \U_1$ given by the $m$-fold covering of the circle. Note that these bundles are also defined for $m$ negative as the duals (inverse transition functions), or via the inverse $\U_1$-action on $\bbS^3$.
 \end{example}
 
 
@@ -14336,8 +14375,11 @@ Since the Maurer-Cartan form $\Theta_G$ on $G$ is left-invariant, it induces a f
 
 
 
-\subsection{Homogeneous bundles}
 
+
+
+
+\subsection{Homogeneous bundles}
 
 
 We now consider the tangent bundle of a Klein geometry. Since it is a locally trivial principal bundle, we have local diffeomorphisms of the form $T(\pi^{-1}(U))\cong T(U\times H)\to TU\times TH$. Local trivializations of $TU$ and $TH$ are given by the Maurer-Cartan forms $\Theta_G$ and $\Theta_H$, respectively, so the diagram
@@ -14594,22 +14636,35 @@ This transformation is called an infinitesimal change of gauge, and the two infi
 \newpage
 \section{Connections}
 
-\subsection{General connections}
+\subsection{General connections}\label{sec general connections}
 
 Connections are a large and varied topic. Our exposition is based on a combination of \cite{Vakar,RS2,Kolar}.
 
 
+The Frobenius Theorem~\ref{thm frobenius} states that a distribution $\calH\subset TM$ is integrable iff it is involutive. However, there is no clear \emph{quantitative measure} of integrability. It turns out that one way to obtain such a quantitative measure is to assume that there is a second distribution, \emph{transverse} to the first one. Namely, let $(\calH,\calV)$ be two distributions on $M$ (subbundles of $TM$) such that
+\[\calH_m\oplus \calV_m=T_pM\]
+for all $m\in M$. This implies that there are globally defined smooth bundle maps (projections), which we denote by the same symbols,
+\[\calH:TM\to \calH,\quad \calV:TM\to \calV,\quad \calH+\calV=\id_{TM}.\]
+Now we can construct a linear map that measures to what extent $H$ fails to be an integrable distribution. Since $\calH$ and $\calV$ are completely interchangeable at this point, we in fact get two maps (the sign choice is conventional):
+\begin{align}
+    \calR:\fX(M)\times\fX(M)\to \Gamma(V),\quad & \calR(X,Y)=-\calV[\calH X,\calH Y],\\
+    \wb{\calR}:\fX(M)\times\fX(M)\to \Gamma(H),\quad & \wb{\calR}(X,Y)=-\calH[\calV X,\calV Y].
+\end{align}
+Indeed, if $\calR=0$, it means that the Lie bracket of two sections of $\calH$ lies in $\calH$, and therefore $\calH$ is integrable, and similarly $\wb \calR$ detects the integrability of $\calV$. It is obvious that these maps are $C^\infty(M)$-linear and hence are tensors. We call $\calR$ \emph{curvature} and $\wb{\calR}$ \emph{cocurvature}\index{Cocurvature}. Note that the value of $\calR$ depends on the choice of $\calV$, but whether it is zero or not doesn't, so in this sense it's still an objective measure of integrability for $\calH$ (as long as $\calH$ and $\calV$ are everywhere transverse). It turns out that fiber bundles are special in that they come with one canonically defined integrable distribution that we define now.
+
 \begin{defn}[Vertical bundle]\index{Vertical bundle}
-    If $E\overset{\pi}{\to}M$ is a smooth \gls{fb}, then its \emph{vertical subbundle} is the subbundle $VE< TE$ defined as 
-    \[VE=\ker \pi_\ast\]
-    (it is a subbundle by virtue of being the kernel of a bundle morphism). At a point $p\in E$ the fiber is denoted $V_pE$. Since each fiber $E_m$, $m\in M$, is an embedded submanifold, and $VE$ restricted to $E_m$ coincides with the tangent bundle $TE_m$, we conclude that $VE$ is an integrable distribution. In particular, it is involutive: for any two \emph{vertical vector fields} $X,Y\in \fX_{\mathrm{ver}}(E)\coloneqq\Gamma(VE)$, we have $[X,Y]\in \fX_{\mathrm{ver}}(E)$.
+    If $E\overset{\pi}{\to}M$ is a smooth \gls{fb}, then its \emph{vertical subbundle} is the subbundle $\calV E< TE$ defined as 
+    \[\calV E=\ker \pi_\ast\]
+    (it is a subbundle by virtue of being the kernel of a bundle morphism). At a point $p\in E$ the fiber is denoted $\calV_pE$. Since each fiber $E_m$, $m\in M$, is an embedded submanifold, and $\calV E$ restricted to $E_m$ coincides with the tangent bundle $TE_m$, we conclude that $\calV E$ is an integrable distribution. In particular, it is involutive: for any two \emph{vertical vector fields} $X,Y\in \fX_{\mathrm{ver}}(E)\coloneqq\Gamma(\calV E)$, we have $[X,Y]\in \fX_{\mathrm{ver}}(E)$.
 \end{defn}
+
+Therefore cocurvature on fiber bundles always vanishes. Crucially, there is no \emph{natural} ``horizontal'' subbundle $\calH E<TE$ such that $\calH E\oplus \calV E=TE$. A connection is, in the broadest sense, a choice of a transverse ``horizontal bundle'' $\calH E$, and its integrability is quantified by the curvature tensor. If it is integrable, then the fiber bundle is not only foliated by its fibers, but also by ``horizontal''  integral submanifolds (locally horizontal sections).
 
 Note that for $m\in M$ and $p\in E$, the sequence
 \[0\to T_p E_m\overset{T_p i_m}{\to}T_p E\overset{T_p\pi}{\to}T_mM\to 0\]
-is a short exact sequence. Here $m=\pi(p)$ and $E_m\overset{i_m}{\hookrightarrow} E$ is the natural inclusion. This sequence means that we can identify the quotient space $T_pE\slash V_pE$ with $T_mM$, so we have the following \emph{natural} isomorphism of \glspl{vb} over $E$:
-\[TE\slash VE\cong \pi^\ast TM.\]
-Crucially, there is no \emph{natural} ``horizontal'' subbundle $HE<TE$ such that $HE\oplus VE=TE$. A connection is essentially a choice of such a subbundle. But first we will approach this problem from another angle.
+is a short exact sequence. Here $m=\pi(p)$ and $E_m\overset{i_m}{\hookrightarrow} E$ is the natural inclusion. This sequence means that we can identify the quotient space $T_pE\slash \calV_pE$ with $T_mM$, so we have the following \emph{natural} isomorphism of \glspl{vb} over $E$:
+\[TE\slash \calV E\cong \pi^\ast TM.\]
+But first we will approach this problem from another angle.
 
 Determining what the ``horizontal'' directions in a bundle are, in particular, provides one with a \emph{unique} way of lifting paths $\gamma$ in $M$ to paths $\wt\gamma$ in $E$. Doing this for every starting point $p\in E_{\gamma(0)}$, we get a map $E_{\gamma(0)}\to E_{\gamma(1)}$. This map has to be bijective because the lifting clearly respects inverses of paths. Moreover, it will depend only on the \emph{shape} of $\gamma$ and not on how exactly it is parametrized. The next three definitions formalize the concept of \emph{reparametrization invariance} of paths.
 
@@ -14656,64 +14711,61 @@ An obvious consequence of the definition of parallel transport is that it endows
 
 
 \begin{defn}[Connection II: general connection]
-    Given a $G$-bundle $(E\overset{\pi}{\to}M,G\acts F,\calG)$, an general connection on it is a smooth vector subbundle $HE<TE$ such that $HE\oplus VE=TE$. The decomposition $T_pE=H_pE\oplus V_pE$ induces the natural projections which we denote by two pairs of symbols:
-    \[T_pE\to H_pE\oplus V_pE,\quad X_p\mapsto (\hor X_p,\ver X_p).\]
+    Given a $G$-bundle $(E\overset{\pi}{\to}M,G\acts F,\calG)$, an general connection on it is a smooth vector subbundle $\calH E<TE$ such that $\calH E\oplus \calV E=TE$. The decomposition $T_pE=\calH_pE\oplus \calV_pE$ induces the natural projections which we denote by two pairs of symbols:
+    \[T_pE\to \calH_pE\oplus \calV_pE,\quad X_p\mapsto (\hor X_p,\ver X_p).\]
     For any smooth vector field $X\in\fX(E)$, the assignments $p\mapsto \hor X_p$ and $p\mapsto \ver X_p$ are also smooth vector fields, denoted $\hor X$ and $\ver X$, respectively.
 
-    The connection $HE$ is called \emph{flat} if it is integrable.
+    The connection $\calH E$ is called \emph{flat} if it is integrable.
 \end{defn}
 
 
-One thing to note immediately is that the map $X\mapsto \ver X$ is  $C^\infty(E)$-linear and can therefore be identified with a $VE$-valued one-form on $E$. We denote it $\calV\in\Omega^1(E;VE)$. We have $HE=\ker \calV$. This leads to the third definition:
+One thing to note immediately is that the map $X\mapsto \ver X$ is  $C^\infty(E)$-linear and can therefore be identified with a $\calV E$-valued one-form on $E$. We denote it $\calV\in\Omega^1(E;\calV E)$. We have $\calH E=\ker \calV$. This leads to the third definition:
 
 \begin{defn}[Connection III: general connection]
-    Given a \gls{fb} $E\overset{\pi}{\to}M$, a general connection on it is a smooth one-form $\calV\in\Omega^1(E;VE)$ with values in the vertical bundle of $E$ such that $\calV\circ\calV=\calV$ and $\im\calV=VE$ (so that it is a projection $TE\to VE$). Given a general connection, we define the vertical and horizontal parts of a vector via
+    Given a \gls{fb} $E\overset{\pi}{\to}M$, a general connection on it is a smooth one-form $\calV\in\Omega^1(E;\calV E)$ with values in the vertical bundle of $E$ such that $\calV\circ\calV=\calV$ and $\im\calV=\calV E$ (so that it is a projection $TE\to \calV E$). Given a general connection, we define the vertical and horizontal parts of a vector via
     \[\ver X=\calV(X),\quad \hor X=X-\calV(X).\]
 \end{defn}
 
 \begin{xca}
-    Crucially, at this point we are not able to take exterior derivatives of connection forms, since they take values in a vector bundle $VE$, and not a vector space. This situation will be remedied on principal bundles, whose vertical bundle is trivial and has a canonical trivialization (the Maurer-Cartan form).
+    Crucially, at this point we are not able to take exterior derivatives of connection forms, since they take values in a vector bundle $\calV E$, and not a vector space. This situation will be remedied on principal bundles, whose vertical bundle is trivial and has a canonical trivialization (the Maurer-Cartan form).
 \end{xca}
 
 \begin{xca}
-    Show that definitions II and III are equivalent, i.e.\ there is a one-to-one correspondence between subbundles $HE$ and one-forms $\calV$.
+    Show that definitions II and III are equivalent, i.e.\ there is a one-to-one correspondence between subbundles $\calH E$ and one-forms $\calV$.
 \end{xca}
 
 
 \begin{prop}
-    Let $\calV$ be a be a connection on $E\overset{\pi}{\to}M$. For any two horizontal vector fields $X,Y\in\Gamma(HE)$, their ``Lie bracket up to $HE$'', i.e.\ the value of $[X,Y]\mod H\in \Gamma(TE\slash HE)$ at a point $p\in E$, is $C^\infty(E)$-linear. In particular, the question of involutivity can be answered pointwise.
+    Let $\calV$ be a be a connection on $E\overset{\pi}{\to}M$. For any two horizontal vector fields $X,Y\in\Gamma(\calH E)$, their ``Lie bracket up to $\calH E$'', i.e.\ the value of $[X,Y]\mod H\in \Gamma(TE\slash \calH E)$ at a point $p\in E$, is $C^\infty(E)$-linear. In particular, the question of involutivity can be answered pointwise.
 \end{prop}
 \begin{proof}
     Let $\alpha\in\Omega^1(E)$. The chain rule and Cartan's formula imply
     \[i_{[X,Y]}\alpha=\Lie_Xi_Y \alpha-i_Y \Lie_X\alpha=\Lie_Xi_Y\alpha-i_Y(\dd (i_X\alpha))-i_Yi_X\dd\alpha.\]
-    Suppose that for an open $U\subset E$ containing $p\in E$, we can find $\alpha_i\in\Omega^1(\restr{E}{U})$, $1\leq i\leq l$, such that $\restr{HE}{U}=\bigcap_i\ker\alpha_i$. Then the fact that $X,Y\subset HE$ implies that $i_X\alpha_i=0$, so
+    Suppose that for an open $U\subset E$ containing $p\in E$, we can find $\alpha_i\in\Omega^1(\restr{E}{U})$, $1\leq i\leq l$, such that $\restr{\calH E}{U}=\bigcap_i\ker\alpha_i$. Then the fact that $X,Y\subset \calH E$ implies that $i_X\alpha_i=0$, so
     \[\alpha_i([X,Y])=-\dd\alpha_i(X,Y).\]
-    The value of the right hand side is $C^\infty(E)$-linear in $X$ and $Y$, and the left hand side uniquely determines $[X,Y]\mod HE$, since $\restr{HE}{U}=\bigcap_i \ker\alpha_i$. 
+    The value of the right hand side is $C^\infty(E)$-linear in $X$ and $Y$, and the left hand side uniquely determines $[X,Y]\mod \calH E$, since $\restr{\calH E}{U}=\bigcap_i \ker\alpha_i$. 
 
-    What remains to show is that such $\alpha_i$ can indeed be chosen. Let $\pi':VE\to E$ denote the induced projection and let $\chi:\pi^{\prime-1}(U)\to U\times\bbR^k$ be a local trivialization. We let $U$ shrink around $p$ until it is contained in a chart $\kappa:U\to \bbR^n$. Then the components $\{\alpha_i\}_{i=1}^{n+k=l}$ of the map
+    What remains to show is that such $\alpha_i$ can indeed be chosen. Let $\pi':\calV E\to E$ denote the induced projection and let $\chi:\pi^{\prime-1}(U)\to U\times\bbR^k$ be a local trivialization. We let $U$ shrink around $p$ until it is contained in a chart $\kappa:U\to \bbR^n$. Then the components $\{\alpha_i\}_{i=1}^{n+k=l}$ of the map
     \[TE\supset (\pi'\circ\calV)^{-1}(U)\overset{\alpha\coloneqq (\kappa\times\id_{\bbR^k})\circ\chi\circ \calV}{\longrightarrow}\kappa(U)\times\bbR^k\subset \bbR^{n+k},\]
-    where we view the connection form as a map $\calV:TE\to VE$, are precisely what we are looking for.
+    where we view the connection form as a map $\calV:TE\to \calV E$, are precisely what we are looking for.
 \end{proof}
 
-We have thus identified the following \emph{tensor} that quantifies the obstruction to the integrability of the horizontal distribution $HE$.
+We have thus identified the following \emph{tensor} that quantifies the obstruction to the integrability of the horizontal distribution $\calH E$.
 
-\begin{defn}[General curvature tensor]\index{Curvature!general}
-    Given a general connection $\calV$ on a bundle $E$, the general curvature $2$-form $\calR\in \Omega^2(E;VE)$ is defined by
+\begin{defn}[General curvature form]\index{Curvature!general}
+    Given a general connection $\calV$ on a bundle $E$, the general curvature $2$-form $\calR\in \Omega^2(E;\calV E)$ is defined by
     \[\calR(X,Y)\coloneqq -\calV([\hor X,\hor Y])=-\calV([X-\calV(X),Y-\calV(Y)]).\]
-    Its value is the unique representative of $[\hor X,\hor Y]\mod HE$ that lies in $\ker(\hor)$. The general connection $\calV$ is called \emph{flat} if $\calR=0$ everywhere.
+    Its value is the unique representative of $[\hor X,\hor Y]\mod \calH E$ that lies in $\ker(\hor)$. The general connection $\calV$ is called \emph{flat} if $\calR=0$ everywhere.
 \end{defn}
 
 
 \begin{xca}
-    Show that flatness (integrability) of $HE$ is equivalent to flatness of $\calV$ and the existence of a flat general connection is equivalent to the flatness of the bundle $E$.
+    Show that flatness (integrability) of $\calH E$ is equivalent to flatness of $\calV$ and the existence of a flat general connection is equivalent to the flatness of the bundle $E$.
 \end{xca}
 
-It follows from the definition of a connection that the restriction of $\pi_{\ast p}$ to $H_pE$ defines a linear isomorphism to $T_{\pi(p)}M$.
-% It follows from the definition of a connection that the restriction of $\pi_{\ast p}$ to $H_pE$ defines a linear isomorphism to $T_{\pi(p)}M$.
-% This allows us to lift a vector $v\in T_{\pi(p)}M$ to a unique horizontal vector $v^h \in H_pE$. 
-% Applying this pointwise to a vector field $X\in\fX(M)$, we construct the \emph{horizontal lift}\index{Horizontal lift} $X^h:E\to HE\subset TE$.
-% This is again a smooth vector field since it can be written as the composition
-\[E\overset{\id_E\times \pi_{TM}}{\longrightarrow}E\times M \overset{\id_E\times X}{\longrightarrow}\pi^\ast TM \overset{i}{\longrightarrow}HE\subset TE,\]
+It follows from the definition of a connection that the restriction of $\pi_{\ast p}$ to $\calH_pE$ defines a linear isomorphism to $T_{\pi(p)}M$.
+This allows us to lift a vector $v\in T_{\pi(p)}M$ to a unique horizontal vector $v^h\in \calH_pE$. Applying this pointwise to a vector field $X\in\fX(M)$, we construct the \emph{horizontal lift} $X^h:E\to \calH E\subset TE$. This is again a smooth vector field since it can be written as the composition
+\[E\overset{\id_E\times \pi_{TM}}{\longrightarrow}E\times M \overset{\id_E\times X}{\longrightarrow}\pi^\ast TM \overset{i}{\longrightarrow}\calH E\subset TE,\]
 where $i$ is the inclusion, we understand the pullback bundle $\pi^\ast TM$ to be embedded in $E\times TM$, and where $\pi_{TM}:TM\to M$ is the bundle projection. How are the flows of $X$ and $X^h$ related? If $\gamma$ is an integral curve of $X^h$, then $\pi\circ\gamma$ is clearly an integral curve of $X$, so we see that 
 \[\pi\circ F^{X^h}_t=F^{X}_t\circ \pi.\]
 Therefore, for any two $X,Y\in \fX(M)$:
@@ -14722,20 +14774,20 @@ and we conclude
 \[\calR(X^h,Y^h)=-\calV([X^h,Y^h])=[X,Y]^h-[X^h,Y^h].\]
 We have proven the following.
 
-\begin{cor}
-    Using the identification $\pi^\ast TM\overset{i}{\cong}HE\subset TE$, we can view $\calR$ as a map $\pi^\ast \wedge^2TM\to VE$ given by 
+\begin{cor}\label{cor curvature in terms of hor}
+    Using the identification $\pi^\ast TM\overset{i}{\cong}\calH E\subset TE$, we can view $\calR$ as a map $\pi^\ast(\bigwedge^2M)\to \calV E$ given by 
     \[(X_m,Y_m,p)\mapsto (X,Y,p)\mapsto [X^h,Y^h](p)-[X,Y]^h(p),\]
-    where $X,Y\in \fX^(M)$ are arbitrary vector fields on $M$ such that $X(m)=X_m$ and $Y(m)=Y_m$, and $m=\pi(p)$.
+    where $X,Y\in \fX(M)$ are arbitrary vector fields on $M$ such that $X(m)=X_m$ and $Y(m)=Y_m$, and $m=\pi(p)$.
 \end{cor}
 
 Let us now take a look at the local representatives of the connection form. Let $(U_\alpha,\chi_\alpha)$ be a local trivialization of our bundle $E\overset{\pi}{\to}M$ around a point $p\in E$, and let $F$ be the typical fiber. Then in this trivialization
 \begin{multline}
-    (\chi_\alpha)_\ast(\restr{HE}{U_\alpha})=(\chi_\alpha)_\ast\circ i(\pi^\ast (\restr{TM}{U_\alpha}))=\{(\chi_\alpha)_\ast\circ i(X,p)\mid \pi_{TM}(X)=\pi(p)\}=\\
+    (\chi_\alpha)_\ast(\restr{\calH E}{U_\alpha})=(\chi_\alpha)_\ast\circ i(\pi^\ast (\restr{TM}{U_\alpha}))=\{(\chi_\alpha)_\ast\circ i(X,p)\mid \pi_{TM}(X)=\pi(p)\}=\\
     =\{(X,-\Gamma^\alpha(X,f))\in TU_\alpha\times TF\mid (X,f)\in \restr{TM}{U_\alpha}\times F\}
 \end{multline}
 for some smooth map $\Gamma^\alpha:\restr{TM}{U_\alpha}\times F\to TF$ known as the \emph{Christoffel form}\index{Christoffel form} for this trivialization. More explicitly,
 \[\Gamma^\alpha(X,f)=\pr_2\circ (\chi_\alpha)_\ast\circ \calV\circ (\chi_\alpha)_\ast^{-1}(X,0),\]
-where $\pr_2:TU_\alpha\times TF\to TF$ is the projection onto the second component and $0 \in T_fF$. Then the projection $\calV:TE\to VE$ is locally represented as follows:
+where $\pr_2:TU_\alpha\times TF\to TF$ is the projection onto the second component and $0 \in T_fF$. Then the projection $\calV:TE\to \calV E$ is locally represented as follows:
 \[\wh{\calV}_\alpha=(\chi_\alpha)_\ast\circ \calV\circ (\chi_\alpha)_\ast^{-1}(X,\xi)=\xi+\Gamma^\alpha(X,\pi_{TF}(\xi)),\quad (X,\xi)\in TU_\alpha\times TF.\]
 
 Finally it is essential to discuss how connections interact with pullbacks of bundles. Recall that categorical pullbacks of smooth fiber bundles exist due to the fact that a fiber bundle is a submersion, and a submersion is transversal to any smooth map (since the topological pullback of a pair of transversal maps $(f,\pi):N\times E\to M$ is a smooth submanifold of $N\times E$).
@@ -14761,11 +14813,11 @@ Finally, let us connect general connections to parallel transport, since that is
 
 We now examine to what extent a connection $\calV$ determines parallel transports.
 
-\begin{thm}[Parallel transport]
-    Let $HE$ be a general connection on a fiber bundle $E\overset{\pi}{\to}M$ and let $\gamma:(a,b)\to M$ be a smooth path with $0\in(a,b)$. Then there exists an open neighborhood $\calD_\gamma\in E\times I$ of $E_{\gamma(0)}\times\{0\}$ and a smooth map $T_\gamma:\calD_\gamma\to E$ such that for all $(p,t)\in \calD_\gamma$: 
+\begin{thm}[Parallel transport]\label{prop parallel tra}
+    Let $\calH E$ be a general connection on a fiber bundle $E\overset{\pi}{\to}M$ and let $\gamma:(a,b)\to M$ be a smooth path with $0\in(a,b)$. Then there exists an open neighborhood $\calD_\gamma\in E\times I$ of $E_{\gamma(0)}\times\{0\}$ and a smooth map $T_\gamma:\calD_\gamma\to E$ such that for all $(p,t)\in \calD_\gamma$: 
     \begin{enumerate}[label=(\arabic*)]
         \item $\pi(T_\gamma(p,t)=\gamma(t)$;
-        \item $\frac{\dd}{\dd t}T_\gamma(p,t)\in HE$;
+        \item $\frac{\dd}{\dd t}T_\gamma(p,t)\in \calH E$;
         \item $T$ is reparametrization invariant: if $\phi:(a',b')\to (a,b)$ is smooth with $0\in(a',b')$, then for all $s\in (a',b')$, 
         \[T_\gamma(p,\phi(s))=T_{\gamma\circ\phi}(T_\gamma(p,\phi(0)),s).\]
     \end{enumerate}
@@ -14782,10 +14834,10 @@ We now examine to what extent a connection $\calV$ determines parallel transport
 For this to extend to a proper parallel transport functor, we need to be able to lift paths globally. This leads us to the following definition.
 
 \begin{defn}[Connection IV: Ehresmann connection]
-    A general connection $HE$ on a bundle $E\overset{\pi}{\to}M$ is called an Ehresmann connection if it is \emph{complete} in the sense that the parallel transport $T_\gamma$ for any smooth curve $\gamma:(a,b)\to M$ (with $0\in (a,b)$) is defined on all of $E_{\gamma(0)}\times (a,b)$. 
+    A general connection $\calH E$ on a bundle $E\overset{\pi}{\to}M$ is called an Ehresmann connection if it is \emph{complete} in the sense that the parallel transport $T_\gamma$ for any smooth curve $\gamma:(a,b)\to M$ (with $0\in (a,b)$) is defined on all of $E_{\gamma(0)}\times (a,b)$. 
 \end{defn}
 We provide the following theorem without proof.
-\begin{thm}[{{\cite{Kolar}}}]
+\begin{thm}[{{\cite{Hoyo}}}]
     Every \gls{fb} admits a complete connection.
 \end{thm}
 
@@ -14802,23 +14854,801 @@ We provide the following theorem without proof.
 Note that parallel transport in fact only requires the path $\gamma$ to be $C^1$-differentiable. Let $C(m)$ be the group of piecewise smooth loops starting and ending at $m\in M$. The parallel transport along $\gamma\in C(m)$ yields an automorphism of the fiber $E_m$. For the trivial curve it coincides with identity. Assuming the parallel transport respects the structure group, the resulting map $C(m)\to G$ is called the \emph{holonomy representation}. The image of this homomorphism forms a subgroup of the structure group. Further, let $C^0(m)\subset C(m)$ be the subgroup of nullhomotopic closed curves.
 
 \begin{defn}[Holonomy group]\index{Holonomy group}
-    Given an Ehresmann connection $HE$ on $E\overset{\pi}{\to}M$, the group of parallel transports along elements of $C(m)$ is called the holonomy group  with basepoint $m$. It will be denoted $\Hol_m(HE)$. The restricted holonomy group is the subgroup $\Hol^0_m(HE)<\Hol_m(HE)$ generated by parallel transports along elements of $C^0(m)$.
+    Given an Ehresmann connection $\calH E$ on $E\overset{\pi}{\to}M$, the group of parallel transports along elements of $C(m)$ is called the holonomy group  with basepoint $m$. It will be denoted $\Hol_m(\calH E)$. The restricted holonomy group is the subgroup $\Hol^0_m(\calH E)<\Hol_m(\calH E)$ generated by parallel transports along elements of $C^0(m)$.
 \end{defn}
 
 \begin{defn}[Monodromy of flat connections]\index{Monodromy}
-    In the special case that $HE$ is flat (integrable), parallel transport is homotopy-invariant, and then we also get a prepresentation of the fundamental group $\pi_1(M,m)\to G$ called the \emph{monodromy representation}. Its image is the \emph{monodromy group}, denoted $\Mon_m(HE)$, and we have the exact sequence
-    \[1\to \Hol^0_m(HE)\to \Hol_m(HE)\to \Mon_m(HE)\to 1.\]
+    In the special case that $\calH E$ is flat (integrable), parallel transport is homotopy-invariant, and then we also get a prepresentation of the fundamental group $\pi_1(M,m)\to G$ called the \emph{monodromy representation}. Its image is the \emph{monodromy group}, denoted $\Mon_m(\calH E)$.
 \end{defn}
 
-Regardless of whether a connection is complete, we can always expect parallel transport to be possible for loops contained in a sufficiently small neighborhood in the base, and a fixed initial condition $p\in E$.
+Regardless of whether a connection is complete, we can always expect parallel transport to be possible for loops contained in a sufficiently small neighborhood in the base, and a fixed initial condition $p\in E$. This allows us to describe curvature in terms of \emph{infinitesimal holonomy}.
 
-The Lie algebra of the group $\Aut(P)$ is the space $\aut(P)=\fX(P)^G$ of $G$-invariant vector fields on $P$, and the Lie algebra of the gauge group is the subspace $\gau(P)$ of vertical $G$-invariant vector fields. One has the exact sequence of Lie algebras
+\begin{prop}[Curvature as infinitesimal holonomy]
+    Let $E\overset{\pi}{\to}M$ be a \gls{fb} and $\calH E$ a connection with curvature tensor $\calR$. If $X,Y\in\fX(M)$ are two commuting vector fields, $[X,Y]=0$, then 
+    \[R(X,Y)(p)=\restr{\frac{\dd^2}{\dd t\dd s}\left(
+    F^{X^h}_{-t}\circ F^{Y^h}_{-s}\circ F^{X^h}_t\circ F^{Y^h}_s(p)
+    \right)}{t=s=0}\]
+\end{prop}
+\begin{proof}
+    Using Corollary~\ref{cor curvature in terms of hor}, combined with $[X,Y]=0$, we have $\calR(X,Y)(p)=-[X^h,Y^h](p)$. The claim then follows from the well-known identity (\ref{eq Lie bracket in terms of flows}) for the Lie bracket of vector fields in terms of their flows.
+\end{proof}
+\begin{cor}
+    A general connection is flat iff all of its restricted holonomy groups are trivial.
+\end{cor}
+
+
+
+
+
+
+\subsection{Horizontal forms}
+
+Before we discuss connections on principal bundles, it will be useful to introduce the concept of horizontal differential forms. The following discussion is independent of any connections on bundles.
+
+\begin{defn}[Horizontal forms]\index{Horizontal form}
+    Let $(P\to M,G\overset{\Phi}{\acts} P)$ be a (right) principal bundle and let $G\overset{\sigma}{\acts}V$ be a finite-dimensional representation of $G$. A $V$-valued differential $k$-form $\wt\eta\in\Omega^k(P;V)$ is called horizontal of type $\sigma$ if
+    \begin{enumerate}
+        \item $\restr{\wt\eta}{VP}=0$, i.e.\ it is annihilated by any vertical vector (always true for $k=0$);
+        \item $\Phi_g^\ast \wt\eta=\sigma_{g^{-1}}\circ\wt\sigma$ for every $g\in G$ (for a left principal bundle replace $\sigma_{g^{-1}}$ with $\sigma_g$).
+    \end{enumerate}
+    The vector space of horizontal $k$-forms of type $\sigma$ is denoted by $\Omega^k_{\hor}(P;V)^\sigma$. Correspondingly, the space of ordinary horizontal $k$-forms is denoted $\Omega^k_{\hor}(P)$. 
+\end{defn}
+
+Now consider the associated bundle $E\coloneqq P^{[\sigma]}=P\times_G V$.
+
+\begin{prop}[{{\cite[Prop.~1.2.12]{RS2}}}]\label{prop 1.2.12 RS2}
+    To every element $\wt{\eta}\in \Omega^k_{\hor}(P;V)^\sigma$ there corresponds a unique element $\eta\in \Omega^k(M;E)$ such that the following diagram commutes
+    \[\begin{tikzcd}
+        \bigwedge^k P\arrow[r,"\pr\times\wt\eta"] \arrow[d,"\bigwedge^k \pi_\ast",swap]& P\times V\arrow[d,"\iota"]\\
+        \bigwedge^kM\arrow[r,"\eta"] & E,
+    \end{tikzcd}\]
+    where $\pr:\bigwedge^k P\to P$ denotes the natural projection. The assignment $\wt\eta\mapsto \eta$ defines a vector space isomorphism $\Omega^k_{\hor}(P;V)^\sigma\to \Omega^k(M;E)$.
+\end{prop}
+\begin{proof}
+    Let $m\in M$ and $X_i\in T_mM$, $i=1,\ldots,k$. Choose $p\in P$ fulfilling $\pi(p)=m$ and $Y_i\in T_pP$ such that $\pi_\ast (Y_i)=X_i$. We define
+    \[\eta_m(X_1,\ldots,X_k)\coloneqq \iota_p\circ \wt\eta_p(Y_1,\ldots,Y_k).\label{eq 1.2.13 RS2}\]
+    We must show that this definition does neither depend on the choice of $p$ nor on the choice of the $Y_i$. Thus, take $p'=\Phi_g(p)$ and tangent vectors $Y_i'$ at $p'$ which also project onto the $X_i$. Then, there exist vertical vectors $Z_i\in T_{p'}P$ such that $Y_i'=\Phi_{g\ast}(Y_i)+Z_i$ and we obtain
+    \begin{multline}
+        \iota_{p'}\circ\wt\eta_{p'}(Y_1',\ldots,Y_k')=\iota_{p\cdot g}\circ \wt\eta_{p\cdot g}(\Phi_{g\ast}(Y_1)+Z_1,\ldots,\Phi_{g\ast}(Y_k)+Z_k)=\\
+        =\iota_p\circ \sigma_g\circ (\Phi_g^\ast \wt\eta)_p(Y_1,\ldots,Y_k)=\iota_p\circ \wt\eta_p(Y_1,\ldots,Y_k).
+    \end{multline}
+    Here, we have used $\iota_{p\cdot g}=\iota_p\circ \sigma_g$ together with the horizontality and equivariance of $\wt\eta$. Bijectivity and linearity of the assignment $\wt\eta\mapsto \eta$ follows from the bijectivity and linearity of $\iota_p$.
+\end{proof}
+
+Note that, conversely, we have
+\[\wt{\eta}_p=\iota_p^{-1}\circ (\pi^\ast\eta)_p.\label{eq 1.2.14 RS2}\]
+
+\begin{rem}
+    Note that elements $\wt\eta\in\Omega^\bullet_{\hor}(P;V)^\sigma$ and $\eta\in \Omega^\bullet(M;E)$ have a well-defined wedge product with any regular form $\beta\in \Omega^\bullet(M)$ on $M$, since $\wt{\beta}\wedge \wt\eta=\widetilde{\beta\wedge\eta}$. Thus both of these spaces are $\Omega^\bullet(M)$-modules.
+\end{rem}
+
+Let us also study local representations of horizontal forms. Let $(U_\alpha,\chi_\alpha)$ be a local trivialization of $P$, let $\varphi_\alpha:\restr{P}{U_\alpha}\to G$ be the corresponding equivariant map and let $s_\alpha:U\to P$ be the corresponding local section. We define the local representative of $\wt\eta\in\Omega^k_{\hor}(P;V)^\sigma$ by
+\[{\wt\eta}_\alpha\coloneqq s_\alpha^\ast\wt\eta.\label{eq 1.2.15 RS2}\]
+This is a $V$-valued  $k$-form on $U$. The following proposition shows that a horizontal form of type $\sigma$ may be reconstructed from its local representatives.
+
+\begin{prop}[{{\cite[Prop.~1.2.14]{RS2}}}]
+    Let $\wt\eta\in \Omega^k_{\hor}(P;V)$ and let $\wt{\eta}_\alpha$ be its representative in a local trivialization $(U_\alpha,\chi_\alpha)$ given by (\ref{eq 1.2.15 RS2}). Then, for every $p\in \restr{P}{U_\alpha}$, we have
+    \[\wt{\eta}_p=\sigma_{\varphi_\alpha(p)^{-1}}\circ (\pi^\ast \wt{\eta}_\alpha)_p.\label{eq 1.2.16 RS2}\]
+\end{prop}
+\begin{proof}
+    By the equivariance of $\wt\eta$, for every $p\in \pi^{-1}(U)$ and $Y_i\in T_pP$, we obtain
+    \begin{multline}
+        \sigma_{\varphi_\alpha(p)}\circ \wt{\eta}_p(Y_1,\ldots,Y_k)=\left(\Phi_{\varphi_\alpha(p)^{-1}}^\ast \wt\eta\right)_p (Y_1,\ldots,Y_k)=\\= \wt{\eta}_{p\cdot \varphi_\alpha(p)^{-1}} \left(\Phi_{\varphi_\alpha(p)^{-1}\ast}(Y_1),\ldots, \Phi_{\varphi_\alpha(p)^{-1}\ast}(Y_k) \right).
+    \end{multline}
+    Since $p\cdot \varphi_\alpha(p)^{-1}=s_\alpha(\pi(p))$, we have $\Phi_{\varphi_\alpha(p)^{-1}\ast}(Y_i)\in T_{s_\alpha(\pi(p))}P$ and
+    \[\pi_\ast\left(\Phi_{\varphi_\alpha(p)^{-1}\ast}(Y_i)-s_{\alpha\ast}\circ \pi_\ast(Y_i)\right)=0.\]
+    Thus, using the horizontality of $\wt\eta$, in the above formula we may replace the tangent vectors $\Phi_{\varphi_\alpha(p)^{-1}\ast}(Y_i)$ by $s_{\alpha\ast}\circ\pi_\ast(Y_i)$. This yields
+    \begin{multline}
+        \sigma_{\varphi_\alpha(p)}\circ \wt{\eta}_p(Y_1,\ldots,Y_k)=\wt{\eta}_{s_\alpha(\pi(p))}(s_{\alpha\ast}\circ \pi_\ast(Y_1),\ldots,s_{\alpha\ast}\circ\pi_\ast(Y_k))=\\
+        =(\pi^\ast(s_\alpha^\ast \wt{\eta}))_p(Y_1,\ldots,Y_k),
+    \end{multline}
+    and thus the assertion.
+\end{proof}
+
+\begin{rem}
+    \begin{enumerate}
+        \item If the transition functions on $P$ are $t_{\beta\alpha}$ on $U_{\alpha\beta}=U_\alpha\cap U_\beta$, then 
+        \[\wt{\eta}_m^{\beta}=\sigma_{t_{\beta\alpha}(m)}\left(\wt{\eta}_m^{\alpha}\right). \label{eq transf law for hor forms}\]
+        In other words, they satisfy the same transformation law as the sections of $P$ itself. It is easy to show that any system of $k$-forms $\{\wt{\eta}_\alpha\}$ fulfilling these conditions defines a unique element of $\Omega^k_{\hor}(P;V)^\sigma$ with these local representatives.
+        
+        \item If $\eta\in\Omega^k(M;E)$ corresponds to $\wt\eta$, and $(U_\alpha,\xi_\alpha)$ is the local trivialization of $E$ induced by $(U_\alpha,\chi_\alpha)$ via (\ref{eq 1.2.1 RS2}). We can define the local representative of $\eta$ by
+        \[\eta_\alpha=\pr_2\circ\xi_\alpha\circ \restr{\eta}{U}.\]
+        Using (\ref{eq 1.2.13 RS2}), (\ref{eq 1.2.16 RS2}) and (\ref{eq 1.2.1 RS2}), we compute 
+        \[(\eta_\alpha)_m(X_1,\ldots,X_k)=\left[\left(s_\alpha(m),(\wt{\eta}_\alpha)_m(X_1,\ldots,X_k)\right)\right]=\xi_\alpha^{-1}\left(m,(\wt{\eta}_\alpha)_m(X_1,\ldots,X_k)\right)\]
+        for $m\in U$ and $X_i\in T_mM$. Thus, $\eta_\alpha=\wt{\eta}_\alpha$ as expected.
+
+        \item In particular, for a section $\rho \in\Gamma^\infty(E)=\Omega^0(M;E)$, its representative $\rho^\alpha=\wt{\rho}^\alpha\in C^\infty(U,V)$ is reconstructed via
+        \[\rho(m)=[(s(m),\rho^\alpha(m))],\quad \wt\rho(p)=\sigma_{\varphi_\alpha(p)^{-1}}\rho^\alpha(\pi(p)),\quad m\in U,p\in\pi^{-1}(U).\]
+    \end{enumerate}
+\end{rem}
+
+
+
+
+
+
+
+\subsection{Principal connections}\label{sec principal connections}
+
+Note that our definition of general connections so far hasn't taken into account any $G$-structure that might exist on the bundle. Only the parallel transport definition I of Ehresmann connections was amenable to $G$-structures. It is not clear, however, how to adapt the definition of a general connection in terms of the horizontal bundle to a $G$-structure (other than indirectly via requiring parallel transports to act by morphisms of $G$-structures). To understand how to construct connections adapted to arbitrary $G$-structures, we will first study equivariant connections on principal bundles, and then learn to use them to induce connections on associated bundles.
+
+We start by examining general connections on principal bundles before we narrow down a natural special class of such connections. In this section we assume that $(P\overset{\pi}{\to}M,G,\Phi)$ is a right principal $G$-bundle with the principal right action $\Phi$. This action induces an action of the Lie algebra $\frakg=\Lief G$, given by the homomorphism $\frakg\to \fX(P)$, $X\mapsto X_\ast$ (see Section~\ref{sec Killing vectors}). Recall that the space $\Gamma(VP)$ of vertical vector fields forms a Lie subalgebra of $\fX(P)$. Since the orbits of $\Phi$ are exactly the fibers of $P$, we have actually constructed a Lie algebra homomorphism $\frakg\to \Gamma(VP)$. As we now show, this map actually trivializes $VP$, much in the same way as the Maurer-Cartan form trivializes the tangent bundle of a Lie group. The triviality of $VP$ is a key property of principal bundles.
+
+\begin{prop}[{{\cite[Lem.~1.3.1]{RS2}}}]
+    The map $\psi:P\times\frakg\to VP$ given by $(p,A)\mapsto A_\ast(p)$ is an isomorphism of \glspl{vb} over $P$. Hence, $\psi^{-1}$ is a global trivialization for $VP$.
+\end{prop}
+\begin{proof}
+    $\psi$ clearly respects the fibers since $A_\ast(p)\in \calV_pP$, so it covers the identity on $P$. It is also fiberwise linear. Now let $p\in P$ and $(U,\chi)$ be a trivialization of $P$ around $p$. We have $\psi(p,A)=\Phi^p_{\ast}(A)$. Note that $\Phi^p$ is a diffeomorphism $G\to P_p$. Therefore $\Phi^{p}_\ast:\frakg\to \calV_pP$ is an isomorphism of vector spaces. $\psi$ is obviously smooth, as $\psi(p,A)=\Phi^p_\ast(A)=\Phi_\ast(0_p,A)$, where $0_p\in T_pP$ is the origin. Since $\psi$ is a smooth vertical bundle morphism that is a fiberwise diffeomorphism, it is a bundle isomorphism.
+\end{proof}
+
+This allows us to interpret the connection $1$-form $\calV\in\Omega^1(P;VP)$ and the curvature $2$-form $\calR\in \Omega^2(P;VP)$ as $\frakg$-valued forms
+\[\omega\coloneqq \psi^{-1}\circ \calV \in\Omega^1(P;\frakg),\quad \Omega^\omega\coloneqq \psi^{-1}\circ \calR\in \Omega^2(P;\frakg).\]
+Now we find the necessary and sufficient condition for such a $1$-form $\omega$ to correspond to a general connection.
+
+\begin{prop}
+    A 1-form $\omega\in\Omega^1(P;\frakg)$ defines a general connection on $P$ iff $\omega(A_\ast)=A$ for any $A\in\frakg$.
+\end{prop}
+\begin{proof}
+    Let $A\in\frakg$ and suppose $\omega(A_\ast)_\ast=\calV(A_\ast)$ (all asterisks here denote taking the corresponding Killing vector field on $P$).  Then $\omega(A_\ast)_\ast=\calV(A_\ast)=A_\ast$. The same claim says that infinitesimal action corresponding to the principal action $\Phi$ defines a linear isomorphism $\frakg\to \calV_pP$ for each $p\in P$, so we conclude that $\omega(A_\ast)=A$. 
+
+    Conversely, note that the post-composition with $\psi$ shows that $\Omega^1(P;\frakg)$ is in one-to-one correspondence with bundle morphisms $TP\to VP$ over $P$. Saying that $\omega\in\Omega^1(P;\frakg)$ then precisely comes down to demanding that $\calV\coloneqq \psi\circ\omega$ is idempotent ($\calV\circ\calV=\calV$). Now, $\omega(A_\ast)=A$ means that $\omega\circ\psi=\id_\frakg$, so the claim follows.
+\end{proof}
+\begin{cor}\label{cor curvature 2-form}
+    $\Omega^\omega(X,Y)=-\omega([\hor X,\hor Y])$.
+\end{cor}
+\begin{proof}
+    Indeed, $-\omega([\hor X,\hor Y])_\ast=-\calV([\hor X,\hor Y])=\calR(X,Y)=\Omega^\omega(X,Y)_\ast$. In particular, $\Omega^\omega$ is horizontal.
+\end{proof}
+
+Obviously we are interested not in general connections on $P$, but in \emph{$G$-equivariant} ones -- we want the distribution $\calH P$ to be invariant under the action $\Phi$:
+\[\Phi_{g\ast}(\calH_pP)=\calH_{\Phi_g(p)}P,\quad \calV\circ \Phi_{g\ast}=\Phi_{g\ast}\circ \calV.\]
+Let us understand this condition in terms of the $1$-form $\omega$.
+
+\begin{prop}
+    Let $\omega\in\Omega^1(P;\frakg)$ be such that $\omega(X_\ast)=X$ for all $X\in\frakg$, and let $\calV$ be the corresponding general connection on $P$. Then $\calV$ is $G$-equivariant iff $\omega$ is \emph{adjoint-equivariant} in the sense that 
+    \[\Phi_g^\ast\omega=\Ad_{g}^{-1}\circ\omega.\]
+    (on a left principal bundle replace $\Ad_g^{-1}$ with $\Ad_g$).
+\end{prop}
+\begin{proof}
+    We have
+    \[\Phi^\ast_g\omega=\Phi^\ast_g\circ\psi^{-1}\circ \calV=\psi^{-1}\circ\calV\circ \Phi_{g\ast}=\psi^{-1}\circ\Phi_{g\ast}\circ\calV=\psi^{-1}\Phi_{g\ast}\psi\circ\omega,\]
+    and according to Proposition~\ref{prop 6.2.2 RS1}, for a right action $\Phi$,
+    \[\psi^{-1}\Phi_{g\ast}\psi(X)=\Ad_g^{-1}X.\]
+\end{proof}
+
+
+We can thus give the following definition.
+
+\begin{defn}[Principal connection]
+    A principal connection on a (right) \gls{pfb} $(P\overset{\pi}{\to}M,G,\Phi)$ is a general connection $\calH P$ that is equivariant in the following sense:
+    \[\Phi_{g\ast}(\calH_pP)=\calH_{\Phi_g(p)}P.\]
+    A \emph{principal connection form} on $P$ is a $\frakg$-valued $1$-form $\omega\in \Omega^1(P;\frakg)$ such that
+    \begin{enumerate}
+        \item $\omega(A_\ast)=A$ for all $A\in\frakg$.
+        \item $\Phi_g^\ast\omega=\Ad_g^{-1}\circ\omega$ for all $g\in G$ (replace $\Ad_g^{-1}$ with $\Ad_g$ on a left \gls{pfb}).
+    \end{enumerate}
+    There is a one-to-one correspondence between principal connections and principal connection forms given by
+    \[\calH P=\ker \omega.\]
+    The space of all principal connection forms is denoted $\calA(P)$ (with topology induced from $\Omega^1(P;\frakg)$).
+\end{defn}
+
+
+\begin{prop}
+    Every \gls{pfb} admits a principal connection.
+\end{prop}
+\begin{proof}
+    Choose a countable, locally finite system of local trivializations $\{(U_i,\chi_i)\}$ of $P$ and a subordinate \gls{pou} $\{f_i\}$ on $M$. At every point $p=\chi_i^{-1}(m,e)$, $m\in M$, define
+    \[\calH_pP\coloneqq \chi_{i\ast}^{-1} \left(T_{(m,e)}(U_i\times\{e\})\right).\]
+    Clearly, $\calH_pP$ is complementary to $\calV_pP$. If we transport this subspace by $\Phi_{g\ast}$, $g\in G$, to the remaining points of the fiber $P_m$, for every $m\in U_i$, then we obtain a principal connection on the trivial principal bundle $\pi^{-1}(U_i)$. Denote the corresponding connection form by $\wt\omega_i$. We defin the following family of $\frakg$-valued $1$-forms on $P$:
+    \[(\omega_i)_p\coloneqq 
+    \begin{cases}
+        0,&p\notin \pi^{-1}(U_i),\\
+        (\pi^\ast f_i)\wt\omega_i, & p\in\pi^{-1}(U_i).
+    \end{cases}
+    \]
+    Since the collection of sets $\{\supp f_i\}$ is locally finite, $\omega\coloneqq\sum_i \omega_i$ is a well-defined smooth $\frakg$-valued $1$-form on $P$. It remains to check the two properties necessary for it to be a principal connection form.
+
+    For $p\in P$ and $A\in\frakg$, we have
+    \[\omega_p(A_\ast(p))=\sum_{i\in I_p} (\omega_i)_p(A_\ast(p))=\sum_{i\in I_p} (\omega_i)_p(A_\ast(p)),\]
+    where $I_p$ is the set of indices $i$ for which $\pi(p)\in U_i$. Since every $\wt\omega_i$ is a connection form, for $i\in I_p$, we obtain
+    \[(\omega_i)_p(A_\ast(p))=f_i(\pi(p))(\wt\omega_i)_p(A_\ast(p))=f_i(\pi(p))A.\]
+    Now, $\sum_{i\in I_p} f_i(\pi(p))=1$ implies that $\omega_p(A_\ast(p))=A$.
+
+    For adjoint-equivariance, it suffices to verify it for every $\omega_i$ restricted to $\pi^{-1}(U_i)$. Since  $\Phi_g^\ast((\pi^\ast f_i)\wt\omega_i)=(\pi^\ast f_i)(\Phi_g^\ast \wt\omega_i)$ and all $\wt\omega_i$ are equivariant, the assertion follows.
+\end{proof}
+
+\begin{prop}
+    Principal connections are complete.
+\end{prop}
+\begin{proof}
+    Let $\omega$ be a principal connection form on $P$ and let $\gamma:I\to M$ be a $C^1$-path. We want to show that parallel transport is defined globally, so, in the notation of \ref{prop parallel tra}, $\calD_\gamma=I\times P$.
+
+    Using local trivializations, it is easy to construct a path $\delta:I\to P$ such that $\pi\circ\delta=\gamma$ and $\delta'(0)=p$, given $p\in P_{\gamma(0)}$. We look for a smooth curve $g:I\to G$ such that $\gamma^h(t)\coloneqq \delta(t)\cdot g(t)$ is a horizontal lift of $\gamma$: $\pi\circ\gamma^h=\gamma$ and $\dot\gamma^h(t)\in \calH P$ for all $t\in I$. 
+
+    We note that the principal right action preserves the fibers of $P$, so the first demand, that $\pi\circ \gamma^h=\gamma$, is immediately satisfied for any choice of $g(t)$. In terms of $\omega$, the second condition on the lift reads
+    \[0=\omega\left(\frac{\dd}{\dd t}(\delta(t)\cdot g(t))\right).\label{1924}\]
+    Now, by the Leibniz rule, $\frac{\dd}{\dd t}(\delta(t)\cdot g(t))=\Phi_{g(t)\ast}(\dot\delta(t))+\Phi^{\delta(t)}_\ast(\dot g(t))$. By equivariance of $\omega$, $\omega(\Phi_{g(t)\ast}(\dot\delta(t)))=\Ad_{g(t)}^{-1}\omega(\dot\delta(t))$. Moreover, by the first defining property of $\omega$, $\omega(\Phi^{\delta(t)}_\ast(\dot g(t)))=\omega((\dot g(t))_{\ast}(\delta(t)))=L_{g(t)\ast}^{-1}\dot g(t)$. Therefore the condition (\ref{1924}) reduces to
+    \[\dot g(t)=-R_{g(t)\ast}\omega(\dot\delta(t)).\label{3794}\]
+    We claim that this equation has a unique global solution $g:I\to G$, which is the integral curve of a time-dependent right-invariant vector field $X: G\times I\to T(G\times I)\cong TG\times I\times \bbR$ given by
+    \[(h,s)\mapsto X_s(h)\coloneqq (-R_{h\ast}\omega(\dot\delta(s)),(\partial_t)_s)\in T_hG\times T_gI\cong T_hG\times \bbR.\]
+    Here, $\partial_t$ denotes the canonical unit vector field in $T_sI\cong\bbR$. Moreover, right-invariance is immediate: $X_s(ha)=-R_{ha\ast}\omega(\dot\delta(s))=R_{a\ast}(-R_{h\ast}\omega(\delta(s)))=R_{a\ast}X_s(h)$. Obviously, solutions of (\ref{3794}) correspond precisely with integral curves of $X$. The assertion now follows from the fact that invariant vector fields on Lie groups are complete (Propositon~\ref{thm invariant fields are complete}).
+\end{proof}
+
+Thus, principal connections are Ehresmann connections and define global parallel transport, which we denote by $\tra^\omega$. We will study it in more detail in Section~\ref{sec holonomy}.
+
+
+\begin{cor}
+    If $\omega$ is a principal connection form, then $\Omega^\omega\in \Omega^2_{\hor}(P;\frakg)^\Ad$.
+\end{cor}
+\begin{proof}
+    From Corollary~\ref{cor curvature 2-form} it is obvious that $\Omega^\omega$ is horizontal since $\hor X=\hor Y=0$ if $X,Y$ are vertical. To verify equivariance, recall that $\hor X=X-\calV(X)$ and note that $\calV\circ \Phi_{g\ast}=\Phi_{g\ast}\circ \calV$. Thus 
+    \[(\Phi_{g}^\ast\Omega^\omega)(X,Y)=\Omega^\omega(\Phi_{g\ast}X,\Phi_{g\ast}Y)=-\omega(\Phi_{g\ast}[\hor X,\hor Y])=-(\Phi_{g}^\ast\omega)([\hor X,\hor Y]),\]
+    so equivariance follows from that of $\omega$.
+\end{proof}
+
+
+\begin{rem}
+    Any principal connection form $\omega\in\Omega^1(P;\frakg)$ is clearly not horizontal because it assigns value $A$ to the vertical Killing vector field $A_\ast$. 
+    However, if $\omega$ and $\omega'$ are two arbitrary principal connection forms on $P$, then their difference is horizontal of type $\Ad$:
+    \[(\omega-\omega')\in \Omega^1_{\hor}(P;\frakg)^\Ad.\]
+    Conversely, $\omega'$ is a principal connection form iff this is true. The crucial implication of this is that, while there is no natural vector space structure on the set $\calA(P)$ of principal connections on $P$, \emph{it can be identified with an affine space modeled on $\Omega^1_{\hor}(P;\frakg)^\Ad$} (recall that an affine space is nothing but a torsor of a vector space as an abelian group).
+\end{rem}
+
+
+\begin{lem}[{{\cite[Lem.~1.4.2]{RS2}}}]\label{lem 1.4.2 RS2}
+    Let $P(M,G)$ be a principal bundle with a connection $\calH P$, let $A_\ast$ be a Killing vector field on $P$, let $X\in\fX(P)$ be horizontal and let $Y\in \fX(M)$. Then $[A_\ast,X]$ is horizontal and $[A_\ast,Y^h]=0$.
+\end{lem}
+\begin{proof}
+    For any $p\in P$, we have
+    \[[A_\ast,X]_p=\left(\Lie_{A_\ast}X\right)_p=\restr{\frac{\dd}{\dd t}}{0} \left(\left(\Phi_{\rme^{-tA}}\right)_\ast X\right)_p.\]
+    Since $X$ is horizontal, $(\Phi_{\rme^{-tA}})_\ast X$ is horizontal for all $t$. Thus $[A_\ast,X]$ is horizontal, too. To prove the second statement, recall that the horizontal lift $Y^h$ is $G$-invariant, that is, the path $t\mapsto \left((\Phi_{\rme^{-tA}})_\ast Y^h\right)_p$ is constant and equal to $Y^h_p$. This yields the assertion.
+\end{proof}
+
+
+\begin{prop}[Structure Equation {{\cite[Prop.~1.4.9]{RS2}}}]
+    Let $P$ be a principal bundle and $\omega$ a principal connection form on it with curvature form $\Omega^\omega$. Then
+    \[\Omega^\omega=\dd\omega+\frac12[\omega,\omega].\label{eq 1.4.9 RS2 structural}\]
+\end{prop}
+\begin{proof}
+    We evaluate both sides on vector fields $X,Y\in\fX(P)$. By the definition of the bracket, we have $\frac12[\omega,\omega](X,Y)=[\omega(X),\omega(Y)]$. Clearly, it is enough to consider the following three cases:
+    \begin{enumerate}
+        \item $X$ and $Y$ are horizontal. Then, $\omega(X)=\omega(Y)=0$ and
+        \[\Omega(X,Y)=\dd\omega(\hor X,\hor Y)=\dd\omega(X,Y).\]
+        
+        \item $X$ is vertical and $Y$ is horizontal. Then $\omega(Y)=0$ and $\Omega(X,\cdot)=0$, so the right hand side of (\ref{eq 1.4.9 RS2 structural}) vanishes. To calculate the left hand side, without loss of generality, we may assume $X=A_\ast$ for some $A\in\frakg$. Then, $\omega(A_\ast)=A$ and we obtain
+        \[\dd\omega(A_\ast,Y)=Y(\omega(A_\ast))-A_\ast(\omega(Y))-\omega([A_\ast,Y])=-\omega([A_\ast,Y])=0,\]
+        because, according to Lemma~\ref{lem 1.4.2 RS2}, $[A_\ast,Y]$ is horizontal.
+
+        \item $X$ and $Y$ are vertical. Then $\Omega(X,Y)=0$. Taking $X=A_\ast$ and $Y=B_\ast$ for some $A,B\in\frakg$ and using $[A_\ast,B_\ast]=[A,B]_\ast$ (cf.\ Proposition~\ref{prop 6.2.2 RS1}), we calculate
+        \[\dd\omega(A_\ast,B_\ast)=-\omega([A_\ast,B_\ast])=-\omega([A,B]_\ast)=-[A,B]=-[\omega(A_\ast),\omega(B_\ast)].\]
+    \end{enumerate}
+\end{proof}
+
+
+
+Now let us look at local representations of connections. Let $s_\alpha\in\Gamma^\infty(\restr{P}{U_\alpha})$ be a local section defining  a local trivialization of $P$. The local representatives of $\omega$ and $\Omega^\omega$ are defined by
+\[\scrA_\alpha\coloneqq s_\alpha^\ast\omega,\quad \scrF_\alpha\coloneqq s_\alpha^\ast \Omega^\omega.\]
+In gauge theories of physics, $\scrF_\alpha$ is precisely the tensor often called the \emph{field strength}. 
+
+\begin{rem}
+    If $(U,\varphi)$ is a local chart on $M$ defining local coordinates $\{x^\mu\}_{\mu=1}^{\dim M}$ and $\{\bm{t}_a\}$ is a basis in $\frakg$, then a local frame in the bundle of $\frakg$-valued $k$-forms on $M$ is given by
+    \[\{\dd x^{\mu_1}\wedge\cdots\wedge \dd x^{\mu_k}\otimes\bm{t}_a\}.\]
+    With respect to this frame, the local representatives $\scrA$ and $\scrF$ take the form (using Einstein notation)
+    \[\scrA=\scrA_\mu^a \dd x^\mu \otimes\bm{t}_a.,\quad \scrF=\frac12 \scrF_{\mu\nu}^a \dd x^\mu\wedge\dd x^\nu\otimes \bm{t}_a.\]
+    The Structure Equation in local form reads
+    \[\scrF=\dd\scrA+ \frac12[\scrA,\scrA],\]
+    and in components
+    \[\scrF_{\mu\nu}^a=\partial_\mu \scrA_\nu^a-\partial_\nu \scrA_\mu^a+c^a_{bc}\scrA^b_\mu \scrA_\nu^c,\]
+    where $c^a_{bc}$ are the structure constants of $\frakg$ with respect to the basis $\{\bm{t}_a\}$.
+
+    In physics, local gauge potentials $\scrA$ are usually defined in different units, and also so as to be Hermitian as opposed to skew-Hermitian in case of unitary structure groups, so that for example in electromagnetism $\scrA$ is replaced by $\frac{\rmi e}{\hbar c}$, where $e,\hbar,c$ are the electron charge, Planck constant, and speed of light, respectively. More generally the physicist's connection form is $ig \scrA$, where $g\in\bbR$ is a \emph{coupling constant}.
+\end{rem}
+
+
+We now show how $\omega$ may be reconstructed from $\scrA_\alpha$ locally. For that purpose, recall that a section $s_\alpha$ defines an equivariant mapping $\varphi_\alpha:P\to G$ by
+\[(s_\alpha\circ\pi(p))\cdot \varphi_\alpha(p)=p,\quad p\in P.\label{eq 1.3.13 RS2}\]
+
+\begin{prop}[{{\cite[Prop.~1.3.11]{RS2}}}]
+    In the above setting, 
+    \[\omega_p=\Ad_{\varphi_\alpha(p)}^{-1}(\pi^\ast\scrA_\alpha)_p+(\varphi_\alpha^\ast \Theta)_p,\quad \Omega^\omega_p=\Ad_{\varphi_\alpha(p)}^{-1}(\pi^\ast \scrF_\alpha)_p, \label{eq 1.3.14 RS2}\]
+    with $\Theta$ denoting the Maurer-Cartan form on $G$.
+\end{prop}
+\begin{proof}
+    We will omit the index $\alpha$ in the proof. Let $X\in T_pP$ and let $t\mapsto \gamma(t)$ be a curve representing $X$. Then, using (\ref{eq 1.3.13 RS2}), we compute
+    \begin{multline}
+        X=\dot\gamma(0)=\restr{\frac{\dd}{\dd t}}{0} \left((s\circ \pi(\gamma(t)))\cdot \varphi(\gamma(t))\right)=\\
+        =(\Phi_{\varphi(p)})_{\ast s(\pi(p))}\circ (s\circ \pi)_{\ast p}(X)+(\Phi_{s(\pi(p))})_{\ast\varphi(p)}\circ \varphi_{\ast p}(X).
+    \end{multline}
+    Denoting the first and the second summand by $X^s$ and $X^v$, respectively, we get a decomposition $X=X^s+X^v$, where $X^s$ is tangent to the submanifold $\Phi_{\varphi(p)}(s(U))$ and $X^v$ is vertical. We calculate
+    \begin{multline}
+        \omega_p(X^s)=\left(\Phi_{\varphi(p)}^\ast\omega\right))_{s(\pi(p))}\left((s\circ\pi)_{\ast p}(X)\right)=\\
+        =\Ad_{\varphi(p)}^{-1}(s^\ast \omega)_{\pi(p)}(\pi_\ast(X))=\Ad_{\varphi(p)}^{-1}(\pi^\ast\scrA)_p(X).
+    \end{multline}
+    This yields the first summand in (\ref{eq 1.3.14 RS2}). On the other hand, by the definition of $\omega$, 
+    \[\omega_p(X^v)=(\Phi^p_{\ast})^{-1}\circ \left(\Phi^{s(\pi(p))}\right)_{\varphi(p)}\circ \varphi_{\ast p}(X).\]
+    Using the obvious identity $(\Phi^p)^{-1}\circ \Phi^{s(\pi(p))}\circ L_{\varphi(p)}=\id_G$, together with
+    \[(\varphi^\ast \Theta)_p(X)=L_{\varphi(p)^{-1}\ast }\circ\varphi_{\ast p}(X),\]
+    we obtain $\omega_p(X)=(\varphi^\ast\Theta)_p(X)$.
+\end{proof}
+The following is immediate from $s_\alpha\cdot t_{\alpha\beta}=s_\beta$  or $\varphi_\alpha=t_{\alpha\beta}\varphi_\beta$. The result can be contrasted with the transformation law (\ref{eq transf law for hor forms}) for horizontal forms such as curvature.
+\begin{cor}[{{\cite[Cor.~1.3.12]{RS2}}}]
+    If the transition functions on $P$ are $\{t_{\beta\alpha}\}$, then the local representatives of $\omega$ are related as follows:
+    \[(\scrA_\beta)_m=\Ad_{t_{\alpha\beta}(m)}^{-1}\circ (\scrA_\alpha)_m+(t_{\alpha\beta}(m)^\ast\Theta)_m,\quad (\scrF_\beta)_m=\Ad_{t_{\alpha\beta}(m)}^{-1}\circ (\scrF_\alpha)_m.\label{eq 1.3.15 RS2}\]
+    Conversely, any system of Lie algebra-valued $1$-forms $\{\scrA_\alpha\}$ fulfilling this transformation law defines a unique principal connection form $\omega$ with these local representatives.
+\end{cor}
+
+\begin{rem}
+    In physics, this transformation law is often written as 
+    \[\scrA\to g^{-1}\scrA g+g^{-1}\dd g,\]
+    where $g(m)$ is the matrix-valued transition function (\emph{passive local gauge transformation}). Meanwhile local curvature transforms by simple conjugation. Notably, if the structure group is abelian, then all local representatives of $\Omega^\omega$ agree with each other, thus defining a \emph{global} curvature form $\bbF\in\Omega^1(M;\frakg)$ on $M$. This is why, for example, in electrostatics, which is a $\U_1$-gauge theory, the field strength $\scrF$ ($\frac{\rmi e}{\hbar c}$ times the magnetic field 2-form) is defined globally.
+\end{rem}
+ 
+
+
+
+\begin{example}[Canonical connection on the product bundle]\label{ex 1.3.18 RS2}
+    Consider the trivial product bundle $P=M\times G\overset{\pr_M}{\to}M$. Take the flat principal connection $\calH P$ defined as 
+    \[\calH_{(m,g)}P\coloneqq T_{(m,g)}(M\times \{g\}).\]
+    The connection form corresponding to $\calH P$ is
+    \[\omega=\pr_G^\ast \Theta,\]
+    where $\pr_G:M\times G\to G$ denotes the canonical projection and $\Theta$ is the Maurer-Cartan form. The curvature vanishes, as expected, by the Structure Equation combined with the Maurer-Cartan equation.
+\end{example}
+
+\begin{example}[Reductive Klein geometry]\label{ex 1.3.19 RS2}
+    Let $(G,H)$ be a Klein geometry (or, more broadly, a homogeneous space). Note that the projection $G\to G\slash H$ as a principal $H$-bundle doesn't carry a natural connection form. The Maurer-Cartan form doesn't satisfy the definition because it is not $\frakh$-valued, where $\frakh=\Lief H$. To find a connection, assume, additionally, that $(G,H)$ is \emph{reductive}, that is, the Lie algebra of $G$ admits a decomposition
+    \[\frakg=\frakh\oplus\frakm\]
+    as $\Ad(H)$-modules, meaning that $\Ad(H)\frakm\subset \frakm$. (If $G$ is semisimple, then $\frakm$ can be chosen to be the orthogonal complement to $\frakh$ in the sense of the Killing form.)
+
+    Clearly, the vertical subspace at $g\in G$ is given by $L_{g\ast}(\frakh)$. Since for any $g\in G$, we have $T_gG=L_{g\ast}(\frakh)\oplus L_{g\ast}(\frakm)$, the left invariant distribution $g\mapsto H_gG\coloneqq L_{g\ast}(\frakm)$ on $G$ is complementary to the canonical vertical bundle. Using the reductivity, it is easy to show that $HG$ is $H$-invariant. Thus, $HG$ defines a connection on $G$. The corresponding connection form is given by
+    \[\omega^0=\pr_\frakh\circ \Theta,\]
+    where $\pr_\frakh$ is the projection $\frakh\to \frakh$ with respect to the above decomposition.
+\end{example}
+
+\begin{example}[Canonical connection on the Stiefel bundle]
+    Recall the Stiefel bundles
+    \[V_k(\bbK^n)=\calO_n\slash \calO_{n-k}\to G_k(\bbK^n)=\calO_n\slash (\calO_{n-k}\times\calO_k).\]
+    Denote the Lie algbera of the group $\calO_i$ by $\fraku_i$, $i=k,n-k,n$ (it is actually $\frakso_i$, $\fraku_i$, and $\fraksp_i$ in the real, complex, and quaternionice cases, respectively). Since $\calO_{n-k}$ and $\calO_k$ acts in complementary orthogonal subspace of $\bbK^n$, the direct sum of the Lie algebras is a Lie subalgebra of $\fraku_i$ and we have a direct sum decomposition
+    \[\fraku_n=\fraku_k\oplus\frakm,\]
+    where $\frakm=\fraku_{n-k}\oplus\frakn$ and $\frakn$ is the orthogonal complement of
+    \[\fraku_k\oplus\fraku_{n-k}\subset \fraku_n\]
+    with respect to the Killing form. The restriction of the adjoint representation $\Ad(\calO_k)$ acts on $\fraku_{n-k}$ trivially and leaves the subspace $\frakn$ invariant. Thus, the above decomposition is reductive. As in Example~\ref{ex 1.3.19 RS2}, we put
+    \[\omega^c\coloneqq \pr_{\fraku_k}\circ\Theta.\]
+    Clearly $\omega^c$ is a $\fraku_k$-valued $1$-form on $\calO_n$. Since $\omega^c$ is invariant under the $\calO_{n-k}$-action on $\calO_n$, it descends to a $\fraku_k$-valued $1$-form on $V_k(\bbK^n)$ which we denote by the same symbol. We claim that $\omega^c$ is a connection form. To prove this, we have to check the defining properties. To check property 1, note that the Killing vector field of the right $\calO_k$-action on $\calO_n$ generated by $A\in \fraku_k$ coincides with $A$ viewed as a left-invariant vector field,
+    \[(A_\ast)g=\restr{\frac{\dd}{\dd t}}{0}(g e^{tA})=gA,\quad g\in\calO_n.\]
+    Since the right actions of $\calO_k$ and $\calO_{n-k}$ on $\calO_n$ commute, the Killing vector field of the right $\calO_k$-action on $V_k(\bbK^n)$ generated by $A\in\fraku_k$ may be identified with $A_\ast$. Now, condition 1 follows from the defining equation of the Maurer-Cartan form, $\Theta(A_\ast)=A$. Condition 2 follows immediately from the right $\calO_n$-equivariance of $\Theta$. The connection defined by $\omega^c$ is called the \emph{canonical}, or \emph{universal}, connection of the Stiefel bundle. By the left-invariance of $\Theta$, the canonical connection is invariant under left translations of $\calO_n$.
+
+    We give an explicit description of $\omega^c$ in terms of matrix-valued functions: let $\{\bm{e}_1,\ldots,\bm{e}_n\}$ be the standard basis in $\bbK^n$. If we choose the $k$-frame $u_0=(\rm{e}_1,\ldots,\rm{e}_k)$, then the subgroups $\calO_k$ and $\calO_{n-k}$ are given in block matrix form by an upper diagonal $(k\times k)$-block and by a lower diagonal $((n-k)\times(n-k))$-block in $\calO_n$, respectively. Let $g\in\calO_n$ and let $a^i_j$ be the corresponding $(n\times n)$-matrix with respect to the standard basis. Since $a^\dagger a=I$, $\omega^c$ is represented by a $(k\times k)$-valued $1$-form on $V_k(\bbK^n)$,
+    \[(\omega^c)^\alpha_\beta=(a^\dagger)^\alpha_j \dd g^j_\beta,\]
+    where $\alpha,\beta=1,\ldots,k$ and $j=1,\ldots,n$. Denoting by $u$ the matrix-valued function which assigns to the $k$-frame $u_\alpha=g^j_\alpha \bm{e}_j$ the $(n\times k)$-matrix $g^j_\alpha$, we obtain
+    \[\omega^c=u^\dagger\dd u.\]
+    Since $g^\dagger g=I$, we have $u^\dagger u=I$.
+\end{example}
+
+\begin{rem}
+    In the above realization, the horizontal vectors of $\omega^c$ at the point $p_0=\left[\begin{smallmatrix}
+        I_k\\0
+    \end{smallmatrix}\right)\in V_k(\bbK^n)$
+    are given by matrices of the form $\left[\begin{smallmatrix}
+        0&-T^\dagger\\
+        T&0
+    \end{smallmatrix}\right]$,
+    where $T$ is an arbitrary $((n-k)\times n)$-matrix.
+\end{rem}
+
+\begin{example}[Canonical connection on the Hopf bundle]\label{ex connection on Hopf bundle}
+    Recall that Hopf bundles coincide with the Stiefel bundles $V_1(\bbK^2)\to G_1(\bbK^2)$, where $\bbK=\bbC$ or $\bbK=\bbH$. First, consider the complex Hopf bundle. In the notation of the above example, we have
+    \[u=\begin{bmatrix}
+        z_1\\z_2
+    \end{bmatrix}
+    \in\bbC^2,\quad |z_1|^2+|z_2|^2=1,\]
+    and this the canonical connection is given by
+    \[\omega^c=\wb{z}_1\dd z_1+\wb{z}_2\dd z_2.\]
+    It takes values in the Lie algebra $\fraku_1=\rmi \bbR$ of $\U_1$. Let us find the local representatives of this connection in terms of the trivializations $\chi_\pm$ given in Example~\ref{ex hopf bundle atlas}. The corresponding local sections $s_\pm=\chi^{-1}_\pm(m,1):\bbD^2\to \bbS^3\subset\bbC^2$ read
+    \[s_+=\frac{1}{\sqrt{1+|z|^2}}(1,z),\quad s_-=\frac{1}{\sqrt{1+|z|^2}}(z,1).\]
+    By direct substitution we compute
+    \[\scrA_+(z)=s_+^\ast \omega^c=\frac12\frac{\wb{z}\dd z-z\dd \wb{z}}{1+|z|^2}=-s_-^\ast\omega^c=-\scrA_-(z).\]
+    In particular, on the equator, $z=\rme^{\rmi \varphi}$, and the transition function is $\tau_{+-}(z)=z^{-1}$, therefore
+    \[\scrA_-(\rme^{\rmi \varphi})=-\frac12\rmi \dd\varphi=\scrA_+(\rme^{-\rmi \varphi})-\rmi\dd\varphi=\scrA_+(\rme^{-\rmi \varphi})+\tau_{+-}^{-1}\dd\tau_{+-},\]
+    which verifies the transformation law (\ref{eq 1.3.15 RS2}) (recall that $\rme^{\mp\rmi \varphi}$ represent the same point in charts $U_\pm$, respectively). In spherical coordinates on $\bbS^2$, we have \[z_+=\tan\frac{\theta}{2}\rme^{\rmi\varphi}, \quad z_-=\cot\frac{\theta}{2}\rme^{-\rmi\varphi},\]
+    and by direct substitution we compute
+    \[\scrA_+=\frac{\rmi}{2}(1-\cos\theta)\dd\varphi,\quad \scrA_-=-\frac{\rmi}{2}(1+\cos\theta)\dd\varphi,\]
+    and their exterior derivatives coincide (as expected) and define the curvature form on $\bbS^2$
+    \[\bbF=\dd \scrA_+=\dd \scrA_-=-\frac{\dd z_\pm\wedge \dd\wb{z}_\pm}{1+|z_\pm|^2}=\frac{\rmi}{2}\sin\theta \dd\theta\wedge\dd\varphi.\]
+    Note that this is proportional the standard area form on $\bbS^2$ induced from $\bbR^3$, as expected from the $\SO_3$-invariance of the canonical connection.
+    % It is actually easier to consider an extension of this bundle to a principal $\bbC^\ast$-bundle $\calO^\ast(-1)$ over $\bbC P^1\cong\bbS^2$ defined over two charts $U_0=\bbC$ and $U_\infty=\wb{\bbC}\setminus \{0\}$, where $\wb{\bbC}=\bbC P^1=\bbC\cup\{\infty\}$, by the transition function $\tau_{0\infty}(z)=z^{-1}$. In this notation, the local coordinate on $U_\infty$ is $w(z)=\frac{1}{z}$, and we can readily verify that on the overlap
+    % \[\scrA_+(z)=\scrA_-(w)+\frac{1}{2}(\frac{1}{w}\dd w-\frac{1}{\wb w}\dd\wb{z})\]
+    We will continue exploring connections related to this one in Example~\ref{ex connection on monopole bundles}.
+
+    In contrast with the Hopf bundle, the canonical flat connection on the product bundle $P=\bbS^2\times\U_1$ in the parametrization $z=\rme^{\rmi \psi}$ of $\U_1$ reads $\omega=\dd\psi$.
+
+    In complete analogy, for the quaternionic Hopf bundle, we have
+    \[u=\begin{bmatrix}
+        \bm{q}_1\\\bm{q}_2
+    \end{bmatrix}
+    \in\bbH^2, \quad |\bm{q}_1|^2 +|\bm{q}_2|^2=1,\]
+    and the canonical connection is given by
+    \[\omega^c=\wb{\bm{q}}_1\dd\bm{q}_1+\wb{\bm{q}}_1\dd \bm{q}_2.\]
+    It takes values in the Lie algebra $\fraksp_1$ of $\Sp_1=\SU(2)$.
+
+\end{example}
+
+
+
+
+
+
+
+
+\subsection{Induced connections}
+
+
+Every principal connection $\calH P$ on a principal bundle $P(M,G)$ induces a connection on any associated bundle $E=P^{[\sigma]}=P\times_G F$. For $f\in F$, we define
+\[\iota_f:P\to E,\quad \iota_f(P)=[(p,f)].\label{eq 1.3.3 RS2}\]
+This mapping satisfies 
+\[\iota_f\circ \Phi_g=\iota_{\sigma_g(f)},\quad \pi_F\circ\iota_f=\pi.\]
+The horizontal subspace at $e=[(p,f)]\in E$ is defined by
+\[H_eE\coloneqq (\iota_f)_\ast (\calH_pE).\]
+By (\ref{eq 1.3.3 RS2}), the right hand side of this equation does not depend on the choice of the representative $(p,f)$. Since $p\mapsto \calH_pP$ is a smooth distribution, $e\mapsto \calH_pE$ is smooth, too. We show that this distribution is complementary to the canonical vertical distribution $e\mapsto V_eE$. By the second equation in (\ref{eq 1.3.3 RS2}), $(\iota_f)_\ast(\calV_pP)$ is contained in $V_eE$ and $\pi_{F\ast}(H_eE)=\pi_\ast(\calH_pP)=T_mM$, where $m=\pi_F(e)$. Thus, we have the direct sum decomposition 
+\[T_eE=V_eE\oplus H_eE,\]
+necessary for $\calH E$ to be a (general) connection. Note that there is generally no guarantee that this connection is complete. Any vector $X\in T_mM$ has unique horizontal lifts $X_e^h\in T_eE$ and $X_p^h\in T_pP$ related by
+\[X^h_e=(\iota_f)_\ast(X^h_p).\]
+
+Now consider the special case where $F=V$ is a linear representation of $G$. Since the map $\iota_p$ is a vector space isomorphism between $V$ and $E_{\pi_V(p)}$, its derivative $(\iota_p)_\ast$ is a linear isomorphism between $T_vV\cong V$ and $V_eE$, where $e=[(p,v)]$. Thus, for any $Z\in V_eE$, there exists a vector $v\in V$ such that $Z=(\iota_p)_\ast(v)$. Via $\iota_p$, the vector $v$ may  be identified with the element $[(p,v)]\in E_{\pi_V(p)}$. Thus, the above mentioned identification is given by 
+\[V_eE\to E,\quad Z\mapsto \iota_p\circ (\iota_p)_\ast^{-1}(Z).\]
+We conclude that in the case of an associated \gls{vb} $E$, endowed with an induced connection $\calH E$, we have the induced connection form $\omega^E\in\omega^1(E;E)$ given by
+\[\calV^E:TE\to E,\quad \omega^E(X)\coloneqq \iota_p\circ (\iota_p)_\ast^{-1}(\calV(X)),\]
+where $\calV^E(X)=X-X^h$ is the vertical projection corresponding to the induced connection $\calH E$. Clearly, $\omega^E$ is a \gls{vb} morphism. Using $\iota_v\circ \Phi^p=\iota_p\circ\sigma^v$, we find the following relation between $\omega$ and $\omega^E$:
+\[\omega^E\circ (\iota_v)_\ast(X)=\iota_p\circ \sigma_{\ast}(\omega(X))v,\quad X\in T_pP.\]
+Here, $\sigma_{\ast}:\frakg\to \End(V)$ is the representation of the Lie algebra $\frakg$ of $G$ induced from $\sigma$.
+
+Next, let us discuss the transformation properties of connections under principal bundle morphisms.
+
+\begin{prop}[{{\cite[Props.~1.3.13, 1.3.15]{RS2}}}]\label{prop 1.3.13/15 RS2}
+    Let $(\vartheta,\lambda)$ be a morphism of the principal bundles $P(M,G)$ and $P'(M',G')$ such that the induced mapping $\theta:M\to M'$ is a diffeomorphism. Let $\calH P$ be a principal connection on $P$ and $\omega$ its connection form.
+    \begin{enumerate}
+        \item There exists a unique connection $\calH P'$ on $P'$ such that $\vartheta_\ast$ maps $\calH P$ to $\calH P'$.
+        \item The connection form $\omega'$ of $\calH P'$ fulfils $\vartheta^\ast\omega'=\lambda_{\ast}\circ \omega$, where $\lambda_\ast:\frakg\to \frakg'$ is the induced homomorphism of Lie algebras. Moreover, $\vartheta^\ast\Omega^{\omega'}=\lambda_\ast\circ\Omega^\omega$.
+    \end{enumerate}
+    We call $\calH P'$ \emph{the image, or pushforward}, of $\calH P$ under the morphism $(\vartheta,\lambda)$. 
+
+    Conversely, if $(\vartheta,\lambda)$ is an arbitrary morphism such that $\lambda$ is an isomorphism, then a principal connection on $P'$ induces a unique principal connection on $P$ that satisfies the two properties above, called the \emph{pullback connection}.
+\end{prop}
+\begin{proof}
+    1. We define the distribution $\calH P'$ as follows. Since $\theta$ is surjective, for a given $p'\in P'$, we can choose a pair $(p,g)\in P\times G'$ such that $p'=\Phi_g'(\vartheta(p))$ and define
+    \[\calH_{p'}P'\coloneqq \Phi_{g\ast}'\circ \vartheta_\ast (\calH_{p}P).\]
+    By equivariance of $\vartheta$, this definition is independent of the choice of $(p,g)$. We show that $\calH P'$ is a connection on $P'$. First we calculate
+    \[\Phi_{h\ast}'(\calH_{p'}P)=\Phi_{h\ast}'\circ \Phi_{g\ast}'\circ\vartheta_\ast(\calH_p P)=\Phi_{gh\ast}'\circ\vartheta_\ast(\calH_pP)=\calH_{\Phi_h(p')}P',\]
+    because $\Phi_h'(p')=\Phi_{gh}'(\vartheta(p))$. Thus, $\calH P'$ is $G'$-equivariant. To prove that it is complementary to $VP'$, it suffices to show that the restriction of $\pi_\ast':TP'\to TM'$ to $\calH P'$ yields fiberwise isomorphisms. Thus, consider the map $\pi_\ast':\calH_{p'}P\to T_{\pi'(p')}M'$. By $G$-equivariance of $\calH P'$, we may assume $p'=\vartheta(p)$. Then, from $\theta\circ\pi-\pi'\circ\vartheta$, we have
+    \[\wt\vartheta_{\ast\pi(p)}\circ \pi_{\ast p}=\pi_{\ast p'}\circ\vartheta_{\ast p}.\]
+    Since, by assumption, $\theta$ is a diffeomorphism and $\calH P$ is a connection, $\theta_\ast$ and $\pi_\ast$ are both isomorphisms of vector spaces. Thus, $\pi_\ast':\calH_{p'}P'\to T_{\pi'(p')}M'$ is an isomorphism, too. We conclude that $\calH P'$ is a connection. By construction, it is unique.
+
+    2. The first assertion is equivalent to
+    \[\omega'_{\vartheta(p)}(\vartheta_\ast(X))=\lambda_\ast(\omega_p(X)),\]
+    for any $p\in P$ and $X\in T_pP$. Since $\vartheta_\ast$ maps horizontal vectors to horizontal vectors, it is enough to prove this equality for vertical vectors, that is, for values of Killing vector fields. Thus, let $A_\ast$ be the Killing vector field generated by $A\in\frakg$. Since for any $g\in G$,
+    \[\omega'_{\vartheta(p)}=\vartheta\circ \Phi_g(p)=\Phi_{\lambda(g)}'\circ\vartheta(p)=\Phi_{\vartheta(p)}'\circ\lambda(g),\]
+    we obtain
+    \[\omega_{\vartheta(p)}'\left(\vartheta_\ast(A_\ast)_p\right)=\omega_{\vartheta(p)}'\left(\Phi_{\vartheta(p)\ast}'\circ \lambda_\ast(A)\right)=\lambda_\ast(A).\]
+    The assertion now follows from the fact that $A=\omega(A_\ast)$. The formula for curvature follows immediately via the Structural Equation (\ref{eq 1.4.9 RS2 structural}).
+
+    The proof of the statement for pullback connections is very similar.
+\end{proof}
+
+\begin{cor}[{{\cite[Cor.~1.3.14]{RS2}}}]\label{cor 1.3.14 RS2}
+    For a Lie group homomorphism $\lambda:H\to H$ and a principal $H$-bundle $Q$, let $P\coloneqq Q^{[\lambda]}$. Then any connection $HQ$ induces a unique connection $\calH P$ on $P$. The corresponding connection forms are related via
+    \[\vartheta^\ast\omega^P=\lambda_\ast\circ \omega^Q,\]
+    where $\vartheta$ is the corresponding bundle morphism. This induced connection on $P$ is called the \emph{$\lambda$-extension} of $\omega^Q$.
+\end{cor}
+
+\begin{cor}[{{\cite[Cor.~1.3.16]{RS2}}}]\label{cor 1.3.16 RS2}
+    If $\vartheta:P\to P'$ is a principal bundle morphism, $G=G'$, and $\lambda=\id_G$, then $\omega=\vartheta^\ast\omega'$. Thus means, in particular:
+    \begin{enumerate}
+        \item The pullback of a principal connection form under an automorphism of a principal bundle is a principal connection form.
+        \item For a principal bundle $P(M,G)$ and a map $f:N\to M$, every connection in $P$ induces a connection on the pullback bundle $f^\ast P$.
+    \end{enumerate}
+\end{cor}
+
+
+\begin{example}[Canonical connection on monopole bundles]\label{ex connection on monopole bundles}
+    Recall the monopole bundles $L(m;1)\to \bbS^2$, $m\in\bbZ$, from Example~\ref{ex monopole bundles}. They come with a surjective principal bundle morphism $\vartheta:\bbS^3\to L(m;1)$ and $\lambda:\U_1\to \U_1$, $z\mapsto z^m$. 
+    
+    Since $\lambda_\ast:\rmi \bbR\to\rmi\bbR$ is just multiplication by $m$, the push-forward connection $\omega^{c,m}$ induced on $L(m;1)$ from the canonical connection $\omega^c$ on the Hopf bundle $\bbS^3$ (defined in Example~\ref{ex connection on Hopf bundle}) via Proposition~\ref{prop 1.3.13/15 RS2} satisfies
+    \[\vartheta^\ast \omega^{c,m}=m \omega^c.\]
+    In particular, since $\vartheta$ is a vertical morphism, the local representatives $\calA$ of this connection on the $2$-sphere are just $m$ times those of $\omega^c$:
+    \[\scrA_+=\frac{m}{2}\frac{z \dd \wb{z}-\wb{z}\dd z}{1+|z|^2}=-\scrA_-,\]
+    and the (globally defined) curvature is
+    \[\scrF=-m\frac{\dd z\wedge\dd \wb{z}}{(1+|z|^2)}.\]
+    This is $\frac{\rmi m}{2}\mathsf{v}_{\bbS^2}$, where $\mathsf{v}_{\bbS^2}=\sin\theta\dd\theta\wedge\dd\varphi$ is the standard area form on $\bbS^2$. Therefore so it is easy to compute the total integral of the curvature:
+    \[\int_{\bbS^2} \scrF =2\pi \rmi m.\]
+    Since the integer $m$ fully classifies all circle bundles over the sphere, this result is pretty surprising in that it relates local connection-dependent information to a global topological invariant of bundles that is independent of a connection.
+    
+    In physics, there is an important electromagnetic interpretation of this result. There, $\scrA_\pm=\frac{\rmi e}{\hbar c}\bbA_\pm$, where $\bbA_\pm$ is the magnetic vector potential, and $\scrF=\frac{\rmi e}{\hbar c} \bbF$ with $\bbF$ the magnetic field $2$-form. We observe that
+    \[\bbF =g\sin\theta \dd\theta\wedge\dd\varphi,\quad g=\frac{m\hbar c}{2e}.\]
+    Since this is proportional to the area form with coefficient $g$, this is interpreted as the magnetic field of a point source of strength $g$, called a \emph{magnetic monopole} of charge $g$. As we will show later, \emph{any} $\U_1$-connection on $\bbS^2$ must have curvature that integrates to $2\pi \rmi m$ for some $m\in \bbZ$, and thus magnetic charges are \emph{quantized}, namely in units of $\hbar=c=1$, we must have $2ge\in\bbZ$. This is our first encounter with characteristic classes, whose mathematical role is to classify fiber bundles, such as the Chern number $(-m)$, playing the role of ``quantum numbers'' in physics.
+\end{example}
+
+
+Now we consider the very important special case of bundle reductions. Given an injective Lie group homomorphism $\lambda:H\to G$ and a principal $H$-bundle $Q$, we can form the associated principal $G$-bundle $P=Q^{[\lambda]}$. Then, $Q$ is a $\lambda$-reduction of $P$ and $P$ is called a $\lambda$-extension of $Q$. By Corollary~\ref{cor 1.3.14 RS2}, the $\lambda$-extension of a connection always exists. The case of a $\lambda$-reduction is a bit more involved. Let us assume that $(G,H)$ is a reductive homogeneous space. Then, in general, a principal bundle reduction induces a decomposition of a connection form into a pair of geometrical objects.
+
+\begin{prop}[{{\cite[Prop.~1.6.8]{RS2}}}]\label{prop 1.6.8 RS2}
+    Let $P(M,G)$ be a principal bundle, $H<G$ a closed subgroup and let $Q(M,H)$ be a reduction of $P$ given by the morphism $(\vartheta,i_H)$ with $i_H:H\hookrightarrow G$ being the natural inclusion. Assume that the Lie algebra $\frakg$ of $G$ admits a reductive decomposition of $\Ad(H)$-modules
+    \[\frakg=\frakh\oplus\frakm,\]
+    with $\frakh=\Lief H$. Let $\omega$ be a connection form on $P$ and let $\omega_\frakh,\omega_\frakm$ be its $\frakh$- and $\frakm$-components, respectively. Then,
+    \begin{enumerate}
+        \item $\vartheta^\ast\omega_\frakh$ is a connection form on $Q$,
+        \item $\vartheta^\ast\omega_\frakm\in \Omega^1_{\hor}(Q;\frakm)^{\Ad(H)}$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Let $\Phi$ and $\Phi'$ be the $G$- and $H$-actions on $P$ and $Q$, respectively. Then
+    \[\vartheta\circ\Phi_h'(q)=\Phi_h\circ \vartheta(q),\label{eq 1.6.3 RS2}\]
+    for any $q\in Q$ and $h\in H$.
+    
+    1. We must check that $\vartheta^\ast\omega_\frakh$ has the properties of a principal connection form. Decomposing $\omega=\omega_\frakh+\omega_\frakm$ on $P$ and using that $\omega$ is a connection form, for any $A\in\frakh$, we have
+    \[A=\omega(A_\ast)=\omega_\frakh(A_\ast)+\omega_\frakm(A_\ast),\]
+    where $A_\ast\in \fX(P)^G$ denotes the Killing vector field generated by $A$. Thus, $\omega_\frakm(A_\ast)=0$, that is, $\omega_\frakh(A_\ast)=A$. Let $\wt{A}_\ast$ deote the Killing vector field on $Q$ generated by $A$. Then, by (\ref{eq 1.6.3 RS2}), $\vartheta_\ast\circ \wt{A}_\ast=A_\ast\circ\vartheta$ and thus $\vartheta^\ast\omega_\frakh(\wt{A}_\ast)=A$. It remains to show $H$-equivariance. For $h\in H$, we have
+    \[\Phi_h^\ast\omega=\Ad_h^{-1}\circ \omega=\Ad_h^{-1}\circ \omega_\frakh+\Ad_h^{-1}\circ\omega_\frakm\]
+    and, on the other hand,
+    \[\Phi^\ast_h\omega=\Phi^\ast_h\omega_\frakh+\Phi^\ast_h\omega_\frakm.\]
+    By reductivity, $\Ad_h^{-1}\circ\omega_\frakm$ takes values in $\frakm$. Hence, $\Phi^\ast_h\omega_\frakh=\Ad_h^{-1}\circ\omega_\frakh$. Then, taking the pullback of this equation under $\vartheta$ and using (\ref{eq 1.6.3 RS2}), we obtain the assertion. Moreover, for later use, note that
+    \[\Phi_h^\ast\omega_\frakm=\Ad_h^{-1}\circ\omega_\frakm.\label{eq 1.6.4 RS2}\]
+
+    2. By (\ref{eq 1.6.4 RS2}), $\vartheta^\ast\omega_\frakm$ is an $\frakm$-valued $1$-form of type $\restr{\Ad(H)}{\frakm}$. It remains to show that it is horizontal: for any $A\in\frakh$, using (\ref{eq 1.6.3 RS2}), we calculate
+    \[(\vartheta^\ast\omega_\frakm)_q(\wt{A}_\ast)=(\vartheta^\ast\omega)_q(\wt{A}_\ast)-(\vartheta^\ast\omega_\frakh)(\wt{A}_\ast).\]
+    The second term yields $-A$. For the first term, we compute
+    \[(\vartheta^\ast\omega)_q(\wt{A}_\ast)=\omega_{\vartheta(q)}(\vartheta_\ast\circ \wt{A}_\ast(q))=\omega_{\vartheta(q)}(A_\ast\circ \vartheta(q))=A.\]
+\end{proof}
+
+
+We conclude that only in the case when $\vartheta^\ast\omega$ takes values in $\frakh$, its restriction to $Q$ is a connection form on $Q$. This suggests the following definition.
+
+\begin{defn}[Reducible connection]\index{Connection!reducible}\index{Connection!irreducible}
+    Let $P(M,G)$ be a principal $G$-bundle with a principal connection $\calH P$ and connection form $\omega$. Let $Q(M,H)$ be a reduction of $P$ given by the morphism $(\vartheta,i_H)$. Then $\calH P$ is called reducible to $H$ if $\vartheta^\ast\omega$ takes values in $\frakh$. $\calH P$ is called irreducible if $P$ is not reducible to any proper Lie subgroup of $G$.
+\end{defn}
+
+
+
+
+
+
+\subsection{Holonomy and reduction}\label{sec holonomy}
+
+In this section we explore the fundamental relationship between bundle reductions and holonomy. The basic question that we would like to answer is: what is the ``smallest possible'' reduction of a given principal bundle with a principal connection? Recall from Section~\ref{sec principal connections} a principal connection $\omega$ defines a global parallel transport functor on the principal bundle $P$ which we denote by $\tra^\omega$. In particular, if $\gamma\in C(m)$ is a loop based at $m\in M$, then $\tra^\omega_\gamma:P_m\to P_m$ is a diffeomorphism. It is equivariant under the principal right $G$-action since if $\gamma^h$ is the horizontal lift of $\gamma$ with starting point $p\in P_m$, then obviously $\gamma^h\cdot g=\Phi_g\circ\gamma^h$ is the horizontal lift starting at $p\cdot g=\Phi_g(p)$. Thus
+\[\tra_\gamma^\omega(p\cdot g)=\tra_\gamma^\omega(p)\cdot g.\]
+In addition, since the $G$-action is free and transitive on $P_m$, there exists a unique $g_\gamma\in G$ such that
+\[\tra_\gamma^\omega(p)=\gamma^h(1)=p\cdot g_\gamma.\label{eq 1.7.5 RS2}\]
+It is easy to see that
+\[\tra_{\gamma}^\omega\circ\tra_{\gamma'}^\omega=\tra_{\gamma\bullet\gamma'}^\omega,\]
+so that $\tra^\omega$, given a basepoint $p\in P$, defines an anti-homomorphism $C(m)\to G$ given by $\gamma\mapsto g_\gamma$ (it would have been a homomorphism if the principal action $\Phi$ were a left action). We can therefore also define the holonomy groups based at $p\in P$ as subgroups of $G$:
+\[\Hol_p(\omega)\coloneqq \{g_\gamma \mid \gamma\in C(m)\}, \quad \Hol_p^0(\omega)\coloneqq\{g_\gamma \mid \gamma\in C^0(m)\}.\]
+Obviously $\Hol_p(\omega)$ and $\Hol_m(\omega)$ are isomorphic as abstract groups, although there is no natural isomorphism since we have to pick a basepoint $p\in P_m$.
+
+\begin{rem}\label{rem 1.7.7 RS2}
+    Consider the following equivalence relation on $P$: $p_1\sim p_2$ iff they can be joined by a $\omega$-horizontal curve. Then $\Hol_p(\omega)$ coincides with the subset of elements $g\in G$ such that $p\sim p\cdot g$.
+\end{rem}
+
+The following proposition is trivial.
+\begin{prop}[{{\cite[Prop.~1.7.8]{RS2}}}]\label{prop 1.7.8 RS2}
+    Let $\omega$ be a principal connection form on a (right) principal bundle $P(M,G)$. 
+    \begin{enumerate}
+        \item The holonomy groups of $\omega$ with base points $p$ and $p\cdot g$, $g\in G$, are conjugate:
+        \[\Hol_{p\cdot g}(\omega)=g^{-1}\Hol_{p}(\omega)g.\]
+        (replace $g\to g^{-1}$ on the right in case of a left principal bundle).
+
+        \item If two points in $P$ can be joined by a horizontal curve, then their holonomy groups coincide.
+    \end{enumerate}
+\end{prop}
+
+
+If $M$ is connected, then for each pair $p_1,p_2\in P$ there exists a group element $g\in G$ such that $p_1$ and $p_2\cdot g$ can be joined by a horizontal curve. In this case all holonomy groups $\Hol_p(\omega)$, $p\in P$, are conjugate in $G$.
+
+\begin{thm}[{{\cite[Thm.~1.7.9]{RS2}}}]\label{thm 1.7.9 RS2}
+    Let $P(M,G)$ be a principal bundle over a connected manifold $M$ and let $\omega$ be a principal connection form on it. Then, for every $p\in P$,
+    \begin{enumerate}
+        \item $\Hol_p^0(\omega)$ is a connected Lie subgroup of $G$,
+        \item $\Hol_p^0(\omega)$ is a normal subgroup of $\Hol_p(\omega)$ and $\Hol_p(\omega)\slash \Hol_p^0(\omega)$ is countable.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Recall that we proved Yamabe's Theorem~\ref{thm Yamabe} with the additional assumption that the subgroup is $C^\infty$-path-connected. We now prove that the restricted holonomy group is $C^\infty$-path-connected and apply Yamabe's Theorem.
+
+    Let $m=\pi(p)$, let $[0,1]\ni s\mapsto \gamma(s)\in M$ be an element of $C^0(m)$ and let $\gamma^h$ be its horizontal lift starting at $p$. Choose a smooth homotopy $\tau:[0,1]^2\to M$ written as $\gamma_t$, $t\in[0,1]$, such that
+    \[\tau(1,s)=\gamma,\quad \tau(0,s)=\tau(t,0)=\tau(t,1)=m,\]
+    for all $(t,s)\in [0,1]^2$.
+
+    By Corollary~\ref{cor 1.3.16 RS2}, the connection $\omega$ induces a connection $\omega^\tau$ on the pullback bundle $\tau^\ast P$. Let $\vartheta:\tau^\ast P\to P$ be the induced morphism projection to $\tau$. Clearly, for every $t\in [0,1]$, the preimage under $\tau$ of the closed curve $s\mapsto \tau(t,s)$ is the line segment $s\mapsto (t,s)$ in $\bbR^2$. Let $F_t$ be the flow of the $\omega^\tau$-horizontal lift of $\partial_s$. Then
+    \[t\mapsto \vartheta\circ F_t(1)\]
+    is a smooth curve in $P$ starting at $p_0$ and ending at $\gamma^h(1)$. Via (\ref{eq 1.7.5 RS2}) , it defines a smooth curve in $G$ starting at the identity and ending at $g_\gamma\in \Hol^0_{p_0}(\omega)$, that is, $\Hol^0_{p_0}(\omega)$ is a $C^\infty$-path-connected subgroup of $G$, and hence a Lie subgroup by Yamabe's Theorem. 
+
+    Now let us prove the second assertion. Clearly, for smooth closed curves $\gamma,\gamma'$ starting at $m_0\in M$, with $\gamma$ nullhomotopic, the curve $\gamma'\bullet\gamma\bullet\gamma^{\prime-1}$ is nullhomotopic, too. Thus $\Hol_p^0(\omega)$ is a normal subgroup of $\Hol_p^0(\omega)$. To prove that the quotient group is countable, we define a homomorphism $F:\pi_1(M,m)\to \Hol_p(\omega)\slash\Hol_p^0(\omega)$ as follows. For a given $\alpha\in\pi_1(M,m)$, let $t\mapsto \gamma(t)$ be a smooth curve representing $\alpha$ (it exists e.g.\ by Whitney approximation). We put $F[\alpha]\coloneqq [g_{\gamma}]$. This map is well-defined because a different choice of $\gamma\in [\alpha]$ differs by a nullhomotopic path, this the corresponding $g_\gamma$ will change by a conjugation by an element of $\Hol^0_p(\omega)$. Clearly $F$ is surjective. Thus, $F$ is a (anti)-homomorphism onto $\calH_p(\omega)\slash \Hol^0_p(\omega)$. Now, countability of this quotient follows from the countability of $\pi_1(M,m)$ (because there is an everywhere dense countable subset in $M$, and each loop can be made homotopic to a product of pre-chosen paths connecting pairs of points of that set; there are countably many such paths).
+\end{proof}
+
+
+\begin{rem}
+    Thus $\Hol_p(\omega)$ is a Lie subgroup of $G$ whose identity component is $\Hol_p^0(\omega)$. In particular, if $M$ is simply connected, then $\Hol_p(\omega)$ is connected.
+\end{rem}
+
+\begin{prop}[{{\cite[Prop.~1.7.12]{RS2}}}]\label{prop 1.7.12 RS2}
+    Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a principal bundle with a connected base $M$ and let $\omega$ be a principal connection form on $P$. Let $p_0\in P$ and let $P_{p_0}(\omega)$ be the subset of points in $P$ which can be joined to $p_0$ by a $\omega$-horizontal path. Then
+    \begin{enumerate}
+        \item $P_{p_0}(\omega)$ is a reduction of $P$ with structure group $\Hol_{p_0}(\omega)$.
+        \item The connection $\omega$ is reducible to a principal connection on $P_{p_0}(\omega)$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    1. Since $M$ is connected, the restriction of $\pi$ to $P_{p_0}(\omega)$ is surjective. By Proposition~\ref{prop 1.7.8 RS2} and Remark~\ref{rem 1.7.7 RS2}, $P_{p_0}(\omega)$ is invariant under the right action of $\Hol_{p_0}(\omega)\subset G$ and $P_{p_0}(\omega)$ intersects the fibers of $P$ in $\Hol_{p_0}(\omega)$-orbits.
+
+    Next we show that $P_{p_0}(\omega)$ is a subbundle of $P$. For that purpose, let $p\in P_{p_0}(\omega)$ and let $(U,\kappa)$ be a local chart for $M$ at $m=\pi(p)$ such that $\kappa(U)\subset\bbR^{\dim M}$ is an open ball and $\kappa(m)=0$. For any $\wt m\in U$, let $t\mapsto \gamma(t)$ be the unique curve  $m\leadsto \wt m$ such that $t\mapsto \kappa\circ\gamma(t)$ is the line segment $0\leadsto \kappa(\wt m)$. Define
+    \[s:U\to P,\quad s(\wt m)\coloneqq g_{\gamma}(p).\]
+    Clearly, $s$ is a smooth local section fulfilling $s(U)\subset P_{p_0}(\omega)$. Now, for every $p\in \pi^{-1}(U)$, there exists a unique $g\in G$ such that $p=s(\pi(p))\cdot g$. Then
+    \[\wt\chi:\pi^{-1}(U)\to U\times G,\quad \wt\chi(p)\coloneqq (\pi(p),g)\]
+    is a bijective map which induces a bijective map
+    \[\chi:P_{p_0}(\omega)\cap\pi^{-1}(U)\to U\times \Hol_{p_0}(\omega).\]
+    Constructing in this way a system of bijective mappings $\{(U_\alpha,\kappa_\alpha)\}$ such that $\{U_\alpha\}$ is a covering of $M$ and requiring that the maps $\chi_\alpha$ are diffeomorphisms, we endow $P_{p_0}(\omega)$ with a manifold structure and a system of local trivializations. To see that it is a submanifold of $P$, note that $\{\pi^{-1}(U_\alpha)\}$ is a covering of $P_{p_0}(\omega)$ with open subsets of $P$ such that every subset $P_{p_0}(\omega)\cap\pi^{-1}(U)$ is a submanifold of $P$. This follows from the fact that $\Hol_{p_0}(\omega)$ is a submanifold of $G$ and that the $\chi_\alpha$ are diffeomorphisms.
+
+    We conclude that $P_{p_0}(\omega)$ is a reduction of $P$ with structure group $\Hol_{p_0}(\omega)$ with the corresponding morphism $(\vartheta,\lambda)$ given by the natural inclusion maps $\vartheta:P_{p_0}(\omega)\to P$ and $\lambda:\Hol_{p_0}(\omega)\to G$.
+
+    2. Let $p\in P_{p_0}(\omega)$ and let $X\in\calH_p P$. Then there exists a curve $\gamma$ in $M$ starting at $\pi(p)$ such that the horizontal lift $\gamma^h$ starting at $p$ fulfils $X=\dot\gamma^h(0)$. Since $p$ van be joined to $p_0$ by a horizontal path, the image of $\gamma^h$ is contained in $P_{p_0}(\omega)$ and $X\in T_p(P_{p_0}(\omega))$. Thus, for every $p\in P_{p_0}(\omega)$, the horizontal subspace $\calH_p P$ is tangent to $P_{p_0}(\omega)$. This means that the connection $\omega$ (or $\calH P$) is reducible to $P_{p_0}(\omega)$ the horizontal subspace at $p\in P_{p_0}(\omega)$ of the reduced connection is given by $\calH_p P$.
+\end{proof}
+
+\begin{defn}[Holonomy bundle]\index{Holonomy bundle}
+    The subbundle $P_{p_0}(\omega)$ constructed above is called the holonomy bundle of $\omega$ with base point $p_0$.
+\end{defn}
+
+Note that $P_{p_0}(\omega)=P_{p_1}(\omega)$ iff $p_0,p_1$ can be joined by a horizontal curve. Thus, for any pair $p_0,p_1\in P$, we have either $P_{p_0}(\omega)=P_{p_1}(\omega)$ or $P_{p_0}(\omega)\cap P_{p_1}(\omega)=\varnothing$, that is, $P$ is \emph{foliated} by disjoint holonomy bundles. One can check that all holonomy bundles of a given connection are isomorphic.
+
+\begin{rem}\label{rem 1.7.14 RS2}
+    Let $P(M,G)$ be a principal bundle, let $H<G$ be a Lie subgroup and let $Q(M,H)$ be a reduction of $P$ given by a morphism $(\vartheta,i_H)$ with $i_H:H\hookrightarrow G$ the natural inclusion. Let $\calH P$ be a principal connection on $P$ that is reducible to a principal connection $\calH Q$. Then, by Proposition~\ref{eq 1.3.13 RS2}, $\calH Q$ defines a connection $\wh\calH P$ on $P$ (the image of $\calH Q$ under $\vartheta$). Now, $\wh\calH P$ is either irreducible or not. In the first case, $\vartheta(Q)$ coincides with the holonomy bundle $P_p(\calH P)$, $p\in\vartheta(Q)$, and $\wh\calH P$ coincides with the reduction of $\calH P$ to $P_p(\calH P)$. In the second case, by Proposition~\ref{prop 1.7.12 RS2}, $\wh\calH P$ is reducible to the holonomy bundle. Thus, in this case, for all $p\in\vartheta(Q)$, we have
+    \[P_p(\calH P)\subset\vartheta(Q),\quad \restr{\wh\calH P}{P_p(\calH P)}=\restr{\calH P}{P_p(\calH P)}.\]
+    \emph{Thus the holonomy bundle is the smallest possible reduction of a principal bundle with connection.} In particular, a principal connection $\calH P$ is irreducible iff $P=P_p(\calH P)$ and $G=\Hol_p(\calH P)$ for all $p\in P$.
+
+    The key consequence of this result is that we have reduced the study of bundle reductions to the study of the affine space of connections $\calA(P)$. In this way the classification of bundles becomes a problem of linear (in fact homological) algebra.
+\end{rem} 
+
+The following classical theorem characterizes the Lie algebra of the holonomy group of a connection in terms of its curvature. The Lie algebra turns out to consist precisely of the values of the curvature form on horizontal vectors along the holonomy bundle.
+
+\begin{thm}[Ambrose-Singer {{\cite[Thm.~1.7.15]{RS2}}}]\label{thm 1.7.15 RS2 Ambrose-Singer}\index{Theorem!Ambrose-Singer}
+    Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a principal bundle with connected base $M$ and let $\calH P$ be a connection on $P$ with connection form $\omega$ and curvature form $\Omega^\omega$. Let $\frakg=\Lief G$ be the Lie algbera of $G$. Then, for any $p_0\in P$, the Lie algebra $\hol_{p_0}$ of the holonomy group $\Hol_{p_0}(\omega)=\Hol_{p_0}(\calH P)$ coincides with the subspace of $\frakg$ generated by elements of the form $\Omega_p(X,Y)$, where $p\in P_{p_0}(\omega)$ and $X,Y\in\calH_p P$.
+\end{thm}
+\begin{proof}
+    By Proposition~\ref{prop 1.7.12 RS2}, \gls{wlog} we may assume $\Hol_{p_0}(\omega)=G$ and $P_{p_0}(\omega)=P$. Let
+    \[\hol\coloneqq \mathrm{span}\left\{\Omega^\omega_p(X,Y)\in\frakg : p\in P_{p_0}(\omega),\, X,Y\in\calH_p P\right\}.\]
+    We must show that $\hol=\frakg$. First, since $\Omega^\omega$ is a horizontal form of type $\Ad$, the subspace $\hol$ is $\Ad(G)$-invariant. Thus $\hol$ is an ideal in $\frakg$. Next, consider the distribution
+    \[p\mapsto D_p\coloneqq \calH_pP \oplus \Phi^p_\ast(\hol).\]
+    We show that $D$ is involutive. Since $\calH_p P$ is spanned by horizontal vector fields and $\Phi^p_\ast(\hol)$ is spanned by Killing vector fields generated by elements of $\hol$, we must consider the following three cases:
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $A,B\in\hol$ and let  $A_\ast,B_\ast$ be the corresponding Killing vector fields. Then $[A,B]\in\hol$ and since $[A_\ast,B_\ast]=[A,B]_\ast$, we have $[A_\ast,B_\ast]_p\in \Phi^p_\ast(\hol)$.
+        \item Let $X$ be a horizontal vector field and let $A\in\hol$. Then, by Lemma~\ref{lem 1.4.2 RS2}, $[X,A_\ast]$ is a horizontal vector field.
+        \item Let $X$ and $Y$ be horizontal vector fields. Then, by definition of the curvature form,
+        \[\calV([X,Y]_p)=-\Phi^p_\ast(\Omega^\omega(X,Y)).\]
+    \end{enumerate}
+    Now, the Frobenius Theorem~\ref{thm frobenius} and Theorem~\ref{thm 3.5.17 RS1} yield the existence of a maximal connected integral manifold $N$ through $p_0\in P$. A point $p\in P$ belongs to $N$ iff there exists a curve $\gamma:p\leadsto p_0$ such that $\dot\gamma(t)\in D_{\gamma(t)}$ for all $t$. Since $\calH P\subset TN$, we conclude $P_{p_0}(\omega)=P\subset N$. Thus $N=P$ and $D=TP$ amnd, consequently,
+    \[\dim\frakg=\dim P-\dim M=\dim N-\dim M=\dim\hol,\]
+    that is, $\frakg=\hol$.
+\end{proof}
+
+\begin{rem}
+    \begin{enumerate}
+        \item As we saw, $P$ is foliated by holonomy bundles. By the proof of the Ambrose-Singer Theorem, this is exactly the foliation of the distribution $D$.
+
+        \item If the curvature $\Omega^\omega$ vanishes, then $\Hol_p^0(\omega)=\{e\}$ and each holonomy bundle $P_p(\omega)$ is isomorphic to the trivial bundle $M\times G$ and the isomorphism maps $\calH P$ to the canonical connection on $M\times G$, cf.\ Example~\ref{ex 1.3.18 RS2}.
+
+        \item If $\Omega^\omega$ vanishes and if, additionally, $M$ is simply connected, then $P$ is isomorphic to the trivial bundle $M\times G$ and the isomorphism again maps $\calH P$ to the canonical connection on $M\times G$.
+        
+        \item If $G$ is connected, then $\calH P$ is irreducible iff $\hol_{p_0}(\omega)=\frakg$.
+
+        \item Using the Ambrose-Singer Theorem, one can show that every \gls{pfb} over a base $M$ with $\dim M\geq 2$ admits an irreducible principal connection.
+    \end{enumerate}
+\end{rem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Gauge transformations}
+
+
+Let us discuss the connection to the gauge group. The Lie algebra of the group of automorphisms (not only vertical ones) $\Aut(P)$ is the space $\aut(P)=\fX(P)^G$ of $G$-invariant vector fields on $P$, and the Lie algebra of the gauge group (of vertical automorphisms) is the subspace $\gau(P)$ of vertical $G$-invariant vector fields. One has the exact sequence of Lie algebras
 \[0\to \gau(P)\to \aut(P)\to \fX(M)\to 0.\]
-The surjectivity of the map $\aut(P)\to \fX(M)$ can be proved using a trivializing open covering of $M$ and a $\gls{pou}$ subordinate to that cover.
+The surjectivity of the map $\aut(P)\to \fX(M)$ can be proved using a trivializing open covering of $M$ and a $\gls{pou}$ subordinate to that cover. 
 
 
+For $\varphi\in \Hom_G(P,G)$, the corresponding vertical automorphism is given by
+\[\vartheta_\varphi:P\to P,\quad p\mapsto p\cdot \varphi(g).\label{eq 1.8.2 RS2}\]
+The equivariance property $\vartheta_\varphi(p\cdot g)=\vartheta_\varphi(p)\cdot g$ is clearly equivalent to $\varphi(p\cdot g)=g^{-1}\varphi(p)g$, which is exactly the defining property of $\Hom_G(P,G)$. It is also easy to check that this correspondence is a group isomorphism (where elements of $\Hom_G(P,G)$ are multiplied pointwise, so $\vartheta_\varphi\circ\vartheta_\psi=\vartheta_{\varphi\cdot\psi}$). Finally, recall from Proposition~\ref{prop 1.2.6 RS2} that the space $\Hom_G(P,G)$ can be identified with the space of sections of the associated group bundle $\Adg(P)=P\times_G G$, where $G$ acts on itself by conjugations. We thus have the isomorphisms
+\[\Aut(P)\cong \Hom_G(P,G)\cong \Gamma^\infty(\Adg(P)).\]
+
+It is also obvious that every vertical automorphism $\vartheta_\varphi\in\Gau(P)$ induces a vertical automorphism $\wh\vartheta_\varphi$ of any associated bundle $P^{[\sigma]}=P\times_G F$ given by
+\[\wh\vartheta_\varphi([(p,f)])=\left[(p,\sigma_{\varphi(p)}(f))\right].\]
+In particular, if $G\overset{\sigma}{\acts}F$ is a linear representation, then $\wh{\vartheta}_\varphi$ is a vertical automorphism of vector bundles.
 
 
+\begin{prop}[{{\cite[Prop.~1.8.7]{RS2}}}]
+    Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a principal bundle and let $\calH P$ be a principal connection. Then, for $\vartheta\in \Gau(P)$ corresponding to $\varphi\in \Hom_G(P,G)$, one has the following transformation laws:
+    \begin{enumerate}
+        \item If $\omega$ is the connection form of $\calH P$, then $\vartheta^\ast \omega$ is the connection form of $\vartheta_\ast^{-1}(\calH P)$ and 
+        \[(\vartheta^\ast\omega)_p=\Ad_{\varphi(p)}^{-1}\circ\omega_p+(\varphi^\ast\Theta)_p,\label{eq 1.8.7 RS2}\]
+        where $\Theta$ is the Maurer-Cartan form on $G$.
+
+        \item If $\Omega^\omega$ is the curvature $2$-form of $\omega$, then $\vartheta^\ast\Omega^\omega$ is the curvature form of $\vartheta^\ast\omega$ and
+        \[(\vartheta^\ast\Omega)_p=\Ad_{\varphi(p)}^{-1}\circ\Omega_p.\label{eq 1.8.8 RS2}\]
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    1. To prove the first equality, we must calculate $\vartheta_\ast(X)$ for $X\in T_pP$. Let $\gamma$ be a path in $P$ representing $X$.  Using (\ref{eq 1.8.2 RS2}), we have
+    \begin{multline}
+        \vartheta_{\ast p}(X)=\restr{\frac{\dd}{\dd t}}{0}\vartheta(\gamma(t))=\restr{\frac{\dd}{\dd t}}{0} (\gamma(t)\cdot \varphi(\gamma(t)))=
+        \\=\restr{\frac{\dd}{\dd t}}{0}(\gamma(t)\cdot \varphi(p))+\restr{\frac{\dd}{\dd t}}{0}(p,\varphi(\gamma(t))=\Phi_{\varphi(p)\ast}(X)+\Phi_{p\ast}\circ \varphi_{\ast p}(X).
+    \end{multline}
+    The second term describes a vertical vector in $\vartheta(p)$. Thus, we may write it in the form $\Phi_{\vartheta(p)\ast}(A)$ with $A\in\frakg$. Explicitly, since $\varphi_{\ast p}(X)\in T_{\varphi(p)}G$, we can write
+    \[\Phi_{p\ast}\circ \varphi_{p\ast }(X)=\Phi_{p\ast}\circ L_{\varphi(p)\ast}\circ L_{\varphi(p)\ast}^{-1}\circ \varphi_{\ast p}(X).\]
+    Using
+    \[L_{\varphi(p)\ast}^{-1}\circ \varphi_{p\ast}(Y)=\Theta(\varphi_{p\ast}(X))=(\varphi^\ast\Theta)_p(X)\]
+    and $\Phi_p\circ L_{\varphi(p)=\Phi_{\vartheta(p)}}$, we obtain
+    \[\vartheta_{p\ast}(X)=\Phi_{\varphi(p)\ast}(X)+\Phi_{\vartheta(p)\ast}(\varphi^\ast\Theta(X)).\label{eq 1.8.10 RS2}\]
+    Using this equation, together with the equivariance of $\omega$, we obtain \ref{eq 1.8.7 RS2}.
+
+    2. Using the Structure Equation, we obtain
+    \[\vartheta^\ast\Omega=\vartheta^\ast(\dd \omega+\frac12[\omega,\omega])=\dd(\vartheta^\ast\omega)+\frac12[\vartheta^\ast\omega,\vartheta^\ast\omega],\]
+    that is, $\vartheta^\ast\Omega$ is the curvature form of $\vartheta^\omega$, indeed. To prove (\ref{eq 1.8.8 RS2}), we must calculate $\vartheta^\ast \Omega(X,Y)$ for any $X,Y\in T_pP$. For that purpose, we use the decomposition (\ref{eq 1.8.10 RS2}) for both vectors. Since $\Omega$ is horizontal, only the first terms of this decomposition contribute. Then, using the equivariance of $\Omega$, one immediately obtains (\ref{eq 1.8.8 RS2}).
+\end{proof}
+
+\begin{rem}\label{rem 1.8.8 RS2}
+    \begin{enumerate}
+        \item Sometimes we will use the following short-hand notation for the above transformation laws:
+        \[\vartheta^\ast\omega=\Ad_{\varphi}^{-1}\circ\omega+\varphi^\ast\vartheta,\quad \vartheta^\ast \Omega=\Ad_\varphi^{-1}\circ\Omega.\]
+        In matrix notation, we have $\varphi^\ast\Theta=\varphi^{-1}\dd\varphi$, and 
+        \[\vartheta^\ast\omega=\varphi^{-1}\omega\varphi+\varphi^{-1}\dd\varphi,\quad \vartheta^\ast\Omega^\omega=\varphi^{-1}\Omega^\omega \varphi.\]
+        \item Using the local representative $\rho^\alpha=\varphi\circ s_\alpha$, we read off the following transformation laws for the local representatives of $\omega$ and $\Omega^\omega$:
+        \[\scrA'=\Ad_\rho^{-1}\circ\scrA+\rho^\ast\Theta,\quad \scrF'=\Ad_\rho^{-1}\scrF.\]
+    \end{enumerate}
+\end{rem}
+
+
+The gauge algebra $\gau(P)$ can be identified with sections of the adjoint bundle $\Ad(P)$:
+\[\gau(P)\cong \Omega^0(M;\Ad(P))=\Omega^0_{\hor}(P;\frakg)^\Ad.\]
+Indeed, each $G$-invariant vector field $X\in\Gamma(VP)$, by composition with the global trivialization $\psi^{-1}:VP\to P\times\frakg$, produces an element of $\Omega^0_{\hor}(P;\frakg)^\Ad$.
+
+An automorphism $\vartheta\in\Aut(P)$ acts on $\calA(P)$ by pullbacks along the inverse, $\omega\mapsto \vartheta_\ast\omega$. For the action of the subgroup $\Gau(P)$, there is an alternative formula for this action which we now derive. 
+
+Recall that each vertical automorphism $\vartheta\in \Gau(P)$ corresponds to a unique equivariant function $\varphi:P\to G$ defined by 
+\[\varphi\in \Hom_G(P,G),\quad \vartheta(p)=p\cdot \varphi(p)^{-1}.\]
+Here, $G$ acts on itself by conjugations, and the equivariance property reads $\varphi(p\cdot g)=g^{-1}\varphi(p)g$ (which immediately follows from $\vartheta(p\cdot g)=\vartheta(p)\cdot g$). Similarly, each invariant vertical vector field $Y\in \gau(P)$ can be identified, via the global trivialization $\psi^{-1}:VP\to P\times\frakg$, with a function 
+\[\wt\zeta\coloneqq \psi^{-1}\circ Y\in \Omega^0_{\hor}(P;\frakg)^\Ad.\]
+Indeed, it is easy to check that $\Phi_g^\ast \zeta=\Ad_g^{-1}\zeta$. This, in turn, is identified via Proposition~\ref{prop 1.2.12 RS2} with a section of the associated adjoint bundle:
+\[\zeta\in \Omega^0(M;\Ad(P))=\Gamma^\infty(\Ad(P)).\]
+Explicitly, the identification is $\zeta(m)=\iota_p(\wt\zeta(p))=[(p,\wt\zeta(p))]\in P\times_G \frakg$, where $p\in P_m$.
+We can write these identifications as isomorphisms
+\[\gau(P)\cong \Omega^0_{\hor}(P;\frakg)^\Ad\cong \Gamma^\infty(\Ad(P)).\]
+
+\begin{prop}
+    Let $\vartheta\in\Gau(P)$ and $\varphi\in \Hom_G(P,G)$ the corresponding equivariant function. For all $X\in\aut(P)=\fX(P)^G$,
+    \[\vartheta_\ast X-X\in\gau(P).\]
+    The corresponding section $\zeta \in\Gamma^\infty(\Ad(P))$ is given by
+    \[\zeta(m)=(\varphi^\ast \Theta^R)(X(m)).\]
+\end{prop}
+\begin{proof}
+    The vector field $\vartheta_\ast X$ is invariant since $\vartheta$ commutes with the principal $G$-action, and under $\pi_\ast$ projects onto the same vector field as $X$ since $\pi\circ\vartheta=\pi$. This shows that $\vartheta_\ast X-X$ is vertical and $G$-invariant, thus an element of $\gau(P)$. Let $F_t$ denote the flow of $X$. Then
+    \begin{multline}
+        (\vartheta_\ast X)_p=\restr{\frac{\dd}{\dd t}}{t=0} \vartheta(F_t(p))=\restr{\frac{\dd}{\dd t}}{t=0} \varphi(F_t(p))^{-1}\cdot F_t(p)=\\=\restr{\frac{\dd}{\dd t}}{t=0} \varphi(p)^{-1}\cdot F_t(p)+\restr{\frac{\dd}{\dd t}}{t=0}\varphi(F_t(p))\cdot p.
+    \end{multline}
+    The first term is $X_{\vartheta(p)}$ since
+    \[\varphi(p)^{-1}\cdot F_t(p)=F_t(\varphi(p)^{-1}\cdot p)=F_t(\vartheta(p)).\]
+    For the second term, define a path $g:I\to G$ starting at $e$ by
+    \[g(t)=\varphi(F_t(p))^{-1} \varphi(p).\]
+    Then 
+    \[\restr{\frac{\dd}{\dd t}}{t=0} \varphi(F_t(p))^{-1}\cdot p=\restr{\frac{\dd}{\dd t}}{t=0} g(t)\varphi(p)^{-1}\cdot p=\restr{\frac{\dd}{\dd t}}{t=0} g(t)\cdot \vartheta(p)=(A_\ast)_{\vartheta(p)},\]
+    with
+    \[A=-\dot g(0)=\Theta_{\varphi(p)}(\varphi_\ast X_p)=(\varphi^\ast \Theta)_p(X_p)=(\varphi^\ast \Theta^R)_{\vartheta(p)}(X(p)).\]
+\end{proof}
 
 
 
@@ -14826,8 +15656,37 @@ The surjectivity of the map $\aut(P)\to \fX(M)$ can be proved using a trivializi
 \subsection{Covariant derivatives}
 
 
+
+
+
+Recall that reductions of $P$ to $H$ are in bijective correspondence with smooth sections of the associated bundle $P\slash H=P\times_G G\slash H$, cf.\ Corollary~\ref{cor 1.6.5 RS2}. Since orbits of Lie group actions are weakly embedded submanifolds, we can carry over Proposition~\ref{prop 1.6.2 RS2} to the case of a general Lie group action $G\overset{\sigma}{\acts}F$ by applying it to elements of $\Hom_G(P,F)$ with values in a single orbit of $\sigma$.
+
+\begin{prop}[{{\cite[Prop.~1.6.10]{RS2}}}]\label{prop 1.6.10 RS2}
+    Let $P(M,G)$ be a principal bundle and let $G\overset{\sigma}{\acts}V$ be a representation. Let $\varphi\in\Hom_G(P,V)$ and assume it takes values in a single orbit $O$ of $\sigma$. Let $Q(M,H)$ be the reduction of $P$ defined by $\varphi$ and some element $f\in O$. Then, a connection $\calH P$ is reducible to a connection $\calH Q$ iff $\varphi$ is parallel with respect to $\calH P$.
+\end{prop}
+\begin{proof}
+    Let 
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
 \section{Cartan geometry}
 Use Sharpe Differential Geometry and RS1.
+
+
+
+
+
+
+
 
 
 
@@ -19575,7 +20434,7 @@ Follow Miller
 \bibitem{Cap} A.~Cap, J.~Slov\'ak, ``Parabolic Geometries I'', 2009.
 \bibitem{Kolar} I.~Kol\'a\v{r}, P.W.~Michor, J.~Slov\'ak, ``Natural operations in differential geometry'', 1993.
 \bibitem{Vakar} M.~V\'ak\'ar, ``Principal Bundles and Gauge Theories'', 2011.
-
+\bibitem{Hoyo} M.~del~Hoyo, \href{https://arxiv.org/abs/1512.03847}{``Complete connections on fiber bundles''}, Indagationes Mathematicae (\textbf{27} 4), 2015.
 
 
 \end{thebibliography}
