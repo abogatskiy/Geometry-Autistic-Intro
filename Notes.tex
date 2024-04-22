@@ -7474,8 +7474,8 @@ The following fundamental theorem gives us a useful sufficient condition for a m
 
 
 \begin{example}[Qubit/Bloch sphere/Hopf fibration]\index{Qubit}\index{Bloch sphere}\index{Hopf fibration}\label{Hopf bundle}
-    A qubit is a two-level system described by a pair of complex numbers $(\alpha,\beta)\in\mathbb{C}^2$ such that $|\alpha|^2+|\beta|^2=1$. The set of such points is the unit sphere $\bbS^3$ in $\mathbb{C}^2\cong\bbR^4$. However, points differing only by a phase correspond to the same physical state: $(\rme^{\rmi\theta}\alpha,\rme^{\rmi\theta}\beta)\sim(\alpha,\beta)$. It turns out that these equivalence classes are in one-to-one correspondence with points of a two-sphere $\bbS^2$, because the quotient map can be given by
-    \[\pi(\alpha,\beta)=(\underbrace{|\alpha|^2-|\beta|^2}_{\in [-1,1]},\underbrace{2\alpha\bar\beta}_{\in \mathbb{D}\subset\mathbb{C}})\in \bbS^2\subset\bbR^3\cong \bbR \times\mathbb{C}.\]
+    A qubit is a two-level system described by a pair of complex numbers $(z_1,z_2)\in\mathbb{C}^2$ such that $|z_1|^2+|z_2|^2=1$. The set of such points is the unit sphere $\bbS^3$ in $\mathbb{C}^2\cong\bbR^4$. However, points differing only by a phase correspond to the same physical state: $(\rme^{\rmi\theta}z_1,\rme^{\rmi\theta}z_2)\sim(z_1,z_2)$. It turns out that these equivalence classes are in one-to-one correspondence with points of a two-sphere $\bbS^2$, because the quotient map can be given by
+    \[\pi(z_1,z_2)=(\underbrace{|z_1|^2-|z_2|^2}_{\in [-1,1]},\underbrace{2z_1\wb{z}_2}_{\in \mathbb{D}\subset\mathbb{C}})\in \bbS^2\subset\bbR^3\cong \bbR \times\mathbb{C}.\]
     This is obviously a smooth and surjective map, and since the sphere $\bbS^3$ is compact, it is proper. It is also easy to check that its differential is everywhere surjective, therefore by Ehresmann's theorem $\pi$ is a \gls{fb} with typical fiber $\bbS^1$ (space of phases). This fibration, often written as $\bbS^3\overset{\bbS^1}{\to}\bbS^2$, is called the Hopf fibration, or the Hopf bundle. Since $\bbS^3$ with one point excluded is homeomorphic to $\bbR^3$, the Hopf fibration is often visualized as a fibration of the 3D space by circles plus one straight line (circle of infinite radius). Any two circles in this fibration happen to be linked with each other, see Fig. \ref{Fig.Hopf}.
     
     $\bbS^2$, which represents the set of physical states of a qubit, is the Bloch sphere. One can show that this fibration is not trivial (the easiest way, perhaps, is to compare the fundamental groups $\pi_1(\bbS^2\times \bbS^1)=\pi_1(\bbS^2)\times\pi_1(\bbS^1)=\bbZ$ and $\pi_1(\bbS^3)=\{e\}$).
@@ -8144,25 +8144,27 @@ The above Corollary shows the importance of the computation of homotopy groups o
 \end{example}
 
 \begin{example}[Hopf bundle revisited]\label{ex hopf bundle atlas}
-    If we cover $\bbS^2$ by two disks $D_\pm$ overlapping along the equator, the Hopf fibration $\bbS^3\overset\pi\to \bbS^2$ (Example \ref{Hopf bundle}) restricted to each of them is trivial and diffeomorphic to a solid torus in $\bbR^3$. Therefore the 3-sphere $\bbS^3$ can be broken up into two disjoint (aside from their boundary) solid tori that are glued to each other along the 2-torus that is their common boundary.The twists of the boundary performed in this process classify the resulting circle bundles over the 2-sphere, so here we will try to understand the case of the Hopf bundle. In terms of the coordinates on the bundle used in Example \ref{Hopf bundle}, we have 
-    \[\restr{E}{D_+}=\{|\alpha|\geq|\beta|\},\quad \restr{E}{D_-}=\{|\alpha|\leq|\beta|\}.\]
-    In addition, over the equator $C$ we have 
-    \[\restr{E}{C}=\left\{|\alpha|^2=|\beta|^2=\frac12\right\},\]
+    If we cover $\bbS^2$ by two disks $D_\pm$ overlapping along the equator, the Hopf fibration $\bbS^3\overset\pi\to \bbS^2$ (Example~\ref{Hopf bundle}) restricted to each of them is trivial and diffeomorphic to a solid torus in $\bbR^3$. Therefore the 3-sphere $\bbS^3$ can be broken up into two disjoint (aside from their boundary) solid tori that are glued to each other along the 2-torus that is their common boundary.The twists of the boundary performed in this process classify the resulting circle bundles over the 2-sphere, so here we will try to understand the case of the Hopf bundle. In terms of the coordinates on the bundle used in Example \ref{Hopf bundle}, we have 
+    \[\restr{E}{D_+}=\{|z_1|\geq|z_2|\},\quad \restr{E}{D_-}=\{|z_1|\leq|z_2|\}.\]
+    Note that $D_+=\bbS^2\setminus \{\pi(0,1)\}$ and $D_-=\bbS^2 P^1\setminus \{\pi(1,0)\}$. It is conventional to define $0\coloneqq \pi(1,0)$ and $\infty\coloneqq \pi(0,1)$. Therefore we can also call these sets $U_0\coloneqq D_+$ and $U_\infty\coloneqq D_-$. The standard complex coordinate on $U_0=D_+$ is $z\coloneqq \frac{z_2}{z_1}$ and on $U_\infty$, $w\coloneqq \frac{z_1}{z_2}$. The transition map is $w(z)=\frac{1}{z}$, which is complex analytic, so this atlas turns $\bbS^2$ into a \emph{complex manifold}, namely the projective complex line $\bbC P^1$.
+    
+    Over the equator $C$ we have 
+    \[\restr{E}{C}=\left\{|z_1|^2=|z_2|^2=\frac12\right\},\]
     so the restriction of the Hopf bundle to the equator is a 2-torus with two angular coordinates $\varphi,\psi$, where $\varphi$ is the standard azimuthal coordinate on the sphere and $\psi$ is the coordinate in the fiber:
-    \[\restr{E}{C}=\left\{(\alpha,\beta)=\frac{1}{\sqrt{2}}\left(\rme^{\rmi\varphi/2+\rmi\psi},\rme^{-\rmi\varphi/2+\rmi\psi}\right)\right\}.\]
+    \[\restr{E}{C}=\left\{(z_1,z_2)=\frac{1}{\sqrt{2}}\left(\rme^{\rmi\varphi/2+\rmi\psi},\rme^{-\rmi\varphi/2+\rmi\psi}\right)\right\}.\]
     Identifying $D_\pm$ with the unit disk $\mathbb{D}^2\subset\mathbb{C}$, we construct the bundle atlas
     \begin{align}
-        \chi_+(\alpha,\beta)=\left(\frac{\beta}{\alpha},\frac{\alpha}{|\alpha|}\right)\in\mathbb{D}^2\times \bbS^1,\quad 0\leq|\beta|\leq |\alpha|\;,0<|\alpha|\leq 1,\\
-        \chi_-(\alpha,\beta)=\left(\frac{\alpha}{\beta},\frac{\beta}{|\beta|}\right)\in\mathbb{D}^2\times \bbS^1,\quad 0\leq|\alpha|\leq|\beta|,\; 0<|\beta|\leq 1.
+        \chi_0(z_1,z_2)=\left(\frac{z_2}{z_1},\frac{z_1}{|z_1|}\right)\in\mathbb{D}^2\times \bbS^1,\quad 0\leq|z_2|\leq |z_1|,\\
+        \chi_\infty(z_1,z_2)=\left(\frac{z_1}{z_2},\frac{z_2}{|z_2|}\right)\in\mathbb{D}^2\times \bbS^1,\quad 0\leq|z_1|\leq|z_2|.
     \end{align}
-    Incidentally, this shows once again that the 3-sphere is a union of two solid tori overlapping only at their common $\bbT^2$-boundary. The complex conjugation in $\chi_+$ is there only to make sure that a point above the equator is mapped to the same point on $\partial\mathbb{D}$ by both trivializations. These trivializations are indeed diffeomorphisms because their inverses are
+    Incidentally, limiting $|z_1|$ and $|z_2|$ to $[0,\frac12]$, this shows once again that the 3-sphere is a union of two solid tori overlapping only at their common $\bbT^2$-boundary. Note that in this atlas, a point over the equator gets mapped to a conjugate pair of points on $\partial\bbD^2$ by $\pr_1\circ \chi_\pm$ (this could be fixed by redefining one of the charts, but that would violate the convenient analytic structure). These trivializations are indeed diffeomorphisms because their inverses are
     \begin{align}
-        \chi_+^{-1}(z,\rme^{\rmi\psi})=\left(\frac{\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}},\frac{z\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}}\right),\quad (z,\rme^{\rmi\psi})\in \mathbb{D}^2\times \bbS^1,\\
-        \chi_-^{-1}(z,\rme^{\rmi\psi})=\left(\frac{z\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}},\frac{\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}}\right),\quad (z,\rme^{\rmi\psi})\in \mathbb{D}^2\times \bbS^1.
+        \chi_0^{-1}(z,\rme^{\rmi\psi})=\left(\frac{\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}},\frac{z\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}}\right),\quad (z,\rme^{\rmi\psi})\in \mathbb{D}^2\times \bbS^1,\\
+        \chi_\infty^{-1}(z,\rme^{\rmi\psi})=\left(\frac{z\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}},\frac{\rme^{\rmi\psi}}{{\sqrt{1+|z|^2}}}\right),\quad (z,\rme^{\rmi\psi})\in \mathbb{D}^2\times \bbS^1.
     \end{align}
-    It is clear that the clutching function on the equator $z=\rme^{\rmi\varphi}$ is 
-    \[\tau_{-+}(z)\cdot \rme^{\rmi\psi}=\pr_2\circ \chi_-\circ \chi_+^{-1}(z,\rme^{\rmi\psi})=z\cdot \rme^{\rmi\psi},\]
-    that is, $\tau_{-+}(\rme^{\rmi\varphi})=\rme^{\rmi\varphi}$ (representing the diffeomorphism that acts on the unit circle by multiplication by $\rme^{-i\varphi}$). Therefore, following a standard sign convention, the Chern number of this bundle equals $-1$.\tablefootnote{The sign of the Chern number is usually fixed by the complex structure of the corresponding bundle (which induces a specific orientation on the fibers). The Hopf bundle is the circle bundle of the complex line bundle $\mathcal{O}(-1)$ defined over the Riemann sphere $\bbS^2=\mathbb{C}P^1$ as the complex line bundle with the transition function $\tau_{0\infty}(z)=z^{-1}$, and the Chern number of any holomorphic line bundle equals its degree, which in this case is $-1$. For the Hopf bundle itself, however, the sign of the Chern number is merely a convention.}
+    We compute the clutching function
+    \[\tau_{\infty0}(z)\cdot \rme^{\rmi\psi}=\pr_2\circ \chi_\infty\circ \chi_0^{-1}(z,\rme^{\rmi\psi})=\frac{z}{|z|}\cdot \rme^{\rmi\psi},\]
+    in particular, on the equator, $\tau_{\infty0}(\rme^{\rmi\varphi})=\rme^{\rmi\varphi}$. Therefore, following a standard sign convention, the Chern number of this bundle equals $-1$.\tablefootnote{The sign of the Chern number is usually fixed by the complex structure of the corresponding bundle (which induces a specific orientation on the fibers). The Hopf bundle is the circle bundle of the complex line bundle $\calO(-1)$ defined over the Riemann sphere $\bbS^2=\mathbb{C}P^1$ as the complex line bundle with the transition function $\tau_{0\infty}(z)=z^{-1}$, and the Chern number of any holomorphic line bundle equals its degree, which in this case is $-1$. For the Hopf bundle itself, however, the sign of the Chern number is merely a convention.}
 \end{example}
 
 
@@ -8242,6 +8244,16 @@ The notion of morphisms between \glspl{vb} is a special case of our definition o
 \begin{example}
 The cylinder and the M\"obius band are vector bundles of rank one over $\bbS^1$.
 \end{example}
+
+\begin{example}[Holomorphic line bundles over $\bbC P^1$]\label{ex holomorphic bundle O(k)}
+    For $k\in\bbZ$, define the complex line bundle $\calO(k)$ over the Riemann sphere $\bbC P^1$ with the standard atlas consisting of $(U_0,z)$ and $(U_\infty,w)$ (see Example~\ref{ex hopf bundle atlas}) by the fiber $\bbC$, structure group $\GL_1(\bbC)=\bbC^\times$, and transition function
+    \[\tau_{0\infty}(z)=z^k.\]
+    This bundle is called \emph{holomorphic}\index{Holomorphic vector bundle} since its transition functions are complex analytic as maps $U_\alpha\beta\to G$.
+    Note that, since the local coordinates on $U_0$ and $U_\infty$ are related by $w=\frac{1}{z}$, the opposite transition function also reads $\tau_{\infty 0}(w)=w^k$. In Example~\ref{ex circle bundles over S2} we fully classified all real plane bundles over the sphere by the same integer $k$, therefore we conclude that every plane bundle over $\bbS^2$ is isomorphic, as real \glspl{vb}, to one of the $\calO(k)$. The number $k$ is called the Chern number of these bundles.
+    
+    As we have seen, the Hopf bundle is the circle bundle of $\calO(-1)$, with its structure group reduced to $\U_1\subset \bbC^\times$.
+\end{example}
+
 
 \begin{rem}
     Pullbacks of \glspl{vb} are \glspl{vb}. Indeed, since pullbacks can be defined via pullbacks of transition functions, this means that the transition functions of the pullback bundle are still $\GL(F)$-valued and hence preserve the vector space structure of the fibers.
@@ -8459,6 +8471,31 @@ The following is an exercise.
 Explicitly, a local trivialization represents a tangent vector $(m,v)$ as $((x^1,\ldots,x^m),v^i\partial_i)$, where $v^i\partial_i=\sum_{i=1}^m v^i\frac{\partial}{\partial x^i}$ is understood as an element of $\bbR^m$ in the symbolic basis $\left\{\frac{\partial}{\partial x^i}\right\}_i$ of $\bbR^m$.
 
 A local chart $\varphi_\alpha$ gives rise to a local frame (the pullback of the standard basis/frame on $\bbR^m$) conventionally denoted by partials, \[\sigma_i=\partial_i\coloneqq \varphi_\ast^{-1}\left(\frac{\partial}{\partial x^i}\right).\]
+
+
+\begin{example}[Tangent bundle of $\bbS^2$]
+    If we embed $\bbS^2$ into $\bbR^3$ in the standard way, then its tangent bundle can be written as
+    \[T\bbS^2=\{(\bm{x},\bm{v})\in \bbS^2\times\bbR^3\mid \bm{x}\perp\bm{v}\}.\label{eq TS2 in R3}\]
+    The easiest way to understand its bundle structure is by using the structure of a complex manifold on $\bbC P^1$ introduced in Example~\ref{ex hopf bundle atlas}. Since the charts $(U_0,z)$ and $(U_\infty,w)$ are related by $w(z)=\frac{1}{z}$, the transition function on the tangent bundle $T\bbC P^1$, which is a complex line bundle, is 
+    \[\tau_{0\infty}(z)=\frac{\dd z}{\dd w}=-\frac{1}{w^2}=-z^2.\]
+    The sign here can be removed by a rotation of a chart, therefore this bundle is isomorphic to $\calO(2)$ as defined in Example~\ref{ex holomorphic bundle O(k)}. In particular, they are also isomorphic as real plane bundles.
+
+    Since the structure group of $\calO(2)$, which is $\bbC^\times$, deformation retracts onto $\U_1$ (of course this necessarily breaks the analytic structure), we should be able to find a real atlas with orthogonal transition functions. Representation (\ref{eq TS2 in R3}) suggests exactly such an atlas. We express the stereographic coordinates $z,w$ in terms of the spherical angles $(\theta,\varphi)$ on the unit sphere:
+    \[z=\tan\frac{\theta}{2}\rme^{\rmi\varphi},\quad w=\cot\frac{\theta}{2}\rme^{-\rmi\varphi}.\]
+    Then the Jacobian of the transition map $z(w)$ in these coordinates reads
+    \[(\varphi_{0\infty})_\ast=\frac{\partial z}{\partial w}=\frac{\partial z}{\partial (\theta,\varphi)}\left(\frac{\partial w}{\partial (\theta,\varphi)}\right)^{-1}=-\tan^2\frac{\theta}{2}
+    \begin{pmatrix}
+        \cos2\varphi&-\sin2\varphi\\
+        \sin2\varphi& \cos2\varphi
+    \end{pmatrix}.
+    \]
+    This matrix is clearly proportional to an orthogonal matrix and once again we see the Chern number 2 show up. Decompose a tangent vector $\bm{v}$ at $(\theta,\varphi)$ in the coordinate basis, $\bm{v}=v^\theta\partial_\theta+v^\varphi\partial_\varphi$, and let $v(\bm{v})=\lVert \bm{v}\rVert \frac{v^\theta+\rmi \sin\theta v^\varphi}{|v^\theta+\rmi \sin\theta v^\varphi|}$.
+    
+    we can define the bundle atlas by 
+    \[\chi_0(\bm{x},\bm{v})=(z,|z| v^\theta\rme^{\rmi v^\varphi}),\quad \chi_\infty(\bm{x},\bm{v})=(w,|w| v^\theta \rme^{\rmi v^\varphi}).\] 
+    In this atlas, the transition function becomes exactly the rotation matrix through $2\varphi$. This atlas endows $T\bbS^2$ with an $\SO_2$-structure, including an orientation.
+\end{example}
+
 
 \begin{defn}[Vector fields]\index{Vector field}
     Vector fields on $M$ are sections of $TM$. The vector space of all smooth vector fields is denoted $\fX(M)\coloneqq \Gamma(TM)$. In a local frame $\{e_i\}$ on $U\mathring{\subset}M$, every vector field can be expanded as $\restr{X}{U}=\sum_i X^i e_i$ with \emph{components} $X^i\in C^\infty(U)$.
@@ -15252,8 +15289,8 @@ The following is immediate from $s_\alpha\cdot t_{\alpha\beta}=s_\beta$  or $\va
     which verifies the transformation law (\ref{eq 1.3.15 RS2}) (recall that $\rme^{\mp\rmi \varphi}$ represent the same point in charts $U_\pm$, respectively). In spherical coordinates on $\bbS^2$, we have \[z_+=\tan\frac{\theta}{2}\rme^{\rmi\varphi}, \quad z_-=\cot\frac{\theta}{2}\rme^{-\rmi\varphi},\]
     and by direct substitution we compute
     \[\scrA_+=\frac{\rmi}{2}(1-\cos\theta)\dd\varphi,\quad \scrA_-=-\frac{\rmi}{2}(1+\cos\theta)\dd\varphi,\]
-    and their exterior derivatives coincide (as expected) and define the curvature form on $\bbS^2$
-    \[\bbF=\dd \scrA_+=\dd \scrA_-=-\frac{\dd z_\pm\wedge \dd\wb{z}_\pm}{1+|z_\pm|^2}=\frac{\rmi}{2}\sin\theta \dd\theta\wedge\dd\varphi.\]
+    and their exterior derivatives coincide (as expected) and define the global representative of the curvature form on $\bbS^2$
+    \[\scrF=-\frac{\dd z_\pm\wedge \dd\wb{z}_\pm}{1+|z_\pm|^2}=\frac{\rmi}{2}\sin\theta \dd\theta\wedge\dd\varphi.\]
     Note that this is proportional the standard area form on $\bbS^2$ induced from $\bbR^3$, as expected from the $\SO_3$-invariance of the canonical connection.
     % It is actually easier to consider an extension of this bundle to a principal $\bbC^\ast$-bundle $\calO^\ast(-1)$ over $\bbC P^1\cong\bbS^2$ defined over two charts $U_0=\bbC$ and $U_\infty=\wb{\bbC}\setminus \{0\}$, where $\wb{\bbC}=\bbC P^1=\bbC\cup\{\infty\}$, by the transition function $\tau_{0\infty}(z)=z^{-1}$. In this notation, the local coordinate on $U_\infty$ is $w(z)=\frac{1}{z}$, and we can readily verify that on the overlap
     % \[\scrA_+(z)=\scrA_-(w)+\frac{1}{2}(\frac{1}{w}\dd w-\frac{1}{\wb w}\dd\wb{z})\]
@@ -15359,11 +15396,11 @@ Next, let us discuss the transformation properties of connections under principa
     \[\scrF=-m\frac{\dd z\wedge\dd \wb{z}}{(1+|z|^2)}.\]
     This is $\frac{\rmi m}{2}\mathsf{v}_{\bbS^2}$, where $\mathsf{v}_{\bbS^2}=\sin\theta\dd\theta\wedge\dd\varphi$ is the standard area form on $\bbS^2$. Therefore so it is easy to compute the total integral of the curvature:
     \[\int_{\bbS^2} \scrF =2\pi \rmi m.\]
-    Since the integer $m$ fully classifies all circle bundles over the sphere, this result is pretty surprising in that it relates local connection-dependent information to a global topological invariant of bundles that is independent of a connection.
+    Since the integer $m$ fully classifies all circle bundles over the sphere, this result is pretty surprising in that it relates local connection-dependent information to a global topological invariant of bundles that is independent of a connection. In fact it is even stronger. Let $\omega'$ be an arbitrary principal connection on this bundle. Then the difference $\omega'-\omega^{c,m}\in\Omega^1(L(m;1);\frakg)^\Ad$ can be identified with a $1$-form $\eta\in\Omega^1(\bbS^2;\rmi \bbR)$. Therefore $\scrF'-\scrF=\dd \eta$ and \emph{the integral of the curvature is independent of the connection}, and is expressed in terms of the only topological invariant that completely classifies $\U_1$-bundles over $\bbS^2$.
     
     In physics, there is an important electromagnetic interpretation of this result. There, $\scrA_\pm=\frac{\rmi e}{\hbar c}\bbA_\pm$, where $\bbA_\pm$ is the magnetic vector potential, and $\scrF=\frac{\rmi e}{\hbar c} \bbF$ with $\bbF$ the magnetic field $2$-form. We observe that
     \[\bbF =g\sin\theta \dd\theta\wedge\dd\varphi,\quad g=\frac{m\hbar c}{2e}.\]
-    Since this is proportional to the area form with coefficient $g$, this is interpreted as the magnetic field of a point source of strength $g$, called a \emph{magnetic monopole} of charge $g$. As we will show later, \emph{any} $\U_1$-connection on $\bbS^2$ must have curvature that integrates to $2\pi \rmi m$ for some $m\in \bbZ$, and thus magnetic charges are \emph{quantized}, namely in units of $\hbar=c=1$, we must have $2ge\in\bbZ$. This is our first encounter with characteristic classes, whose mathematical role is to classify fiber bundles, such as the Chern number $(-m)$, playing the role of ``quantum numbers'' in physics.
+    Since this is proportional to the area form with coefficient $g$, this is interpreted as the magnetic field of a point source of strength $g$, called a \emph{magnetic monopole}\index{Magnetic monopole} of charge $g$, also called a \emph{Dirac monopole}\index{Dirac monopole}. As we just showed, \emph{any} $\U_1$-connection on $\bbS^2$ must have curvature that integrates to $2\pi \rmi m$ for some $m\in \bbZ$, and thus magnetic charges are \emph{quantized}, namely in units of $\hbar=c=1$ we must have $2ge\in\bbZ$. This is our first glimpse of \emph{characteristic classes} (in this case the Chern number, $-m$) whose mathematical role is to classify fiber bundles,  playing the role of ``quantum numbers'' in physics.
 \end{example}
 
 
