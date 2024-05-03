@@ -16835,7 +16835,7 @@ The following vector fields on the frame bundle will turn out to be closely conn
     \[\scrR:\Fr M\to \bigwedge^2(\bbR^n)^\ast \otimes\frakgl_n(\bbR),\quad \scrT:\Fr M\to \bigwedge^2(\bbR^n)^\ast\otimes\bbR^n\]
     by 
     \[\scrR(u)\coloneqq \Omega_u\circ b(u),\quad \scrT(u)\coloneqq \Theta_u\circ b(u).\label{eq 2.1.24 RS2}\]
-    In the sequel, $\scrR$ and $\scrT$ will be referred to as the \emph{curvature and torsion maps}. Using horizontality of $\Theta$ and $\Omega$, together with (\ref{eq 1.2.3 RS2}), we find:
+    In the sequel, $\scrR$ and $\scrT$ will be referred to as the \emph{curvature and torsion maps}. Note also that $b(u)^{-1}(X_u\wedge Y_u)=\theta_u(X_u)\wedge\theta_u(Y_u)$. Using horizontality of $\Theta$ and $\Omega$, together with (\ref{eq 1.2.3 RS2}), we find:
     \begin{align}
         \scrR(\Phi_g(u))(\bm{x},\bm{y})=&\Ad_g^{-1}\circ (\scrR(u)(g\bm{x},g\bm{y})),\\
         \scrT(\Phi_g(u))(\bm{x},\bm{y})=& g^{-1}\circ (\scrT(u)(g\bm{x},g\bm{y})).
@@ -16886,7 +16886,7 @@ We say that a linear connection $\calH M$ on $M$ is complete if every geodesic m
 
 
 
-\begin{prop}\label{prop geodesics coinciding}
+\begin{prop}[{{\cite[p.~249]{Spivak2}}}]\label{prop geodesics coincide}
     Let $\nabla$ and $\wt\nabla$ be two affine connections on $M$. \gls{tfae}:
     \begin{enumerate}[label=(\alph*)]
         \item $\nabla$ and $\wt\nabla$ have the same geodesics,
@@ -16903,9 +16903,9 @@ We say that a linear connection $\calH M$ on $M$ is complete if every geodesic m
     \[\wt\nabla_{\dot\gamma} X=\nabla_{\dot\gamma}X,\]
     thus $\gamma$ is a geodesic for $\wt\nabla$.
 
-    $(b)\Leftrightarrow(c)$: Define $S(X,Y)=(\wt\nabla_X Y+\wt\nabla_Y X)-(\nabla_X Y+\nabla_Y X)$. Then $S(X,Y)=S(Y,X)$ and therefore $S(X+Y,X+Y)-S(X,X)-S(Y,Y)=2S(X,Y)$, so the vanishing of $S$ on the diagonal (b) is equivalent to the vanishing of $S$ (c).
+    $(b)\Leftrightarrow(c)$: Define $S(X,Y)=(\wt\nabla_X Y+\wt\nabla_Y X)-(\nabla_X Y+\nabla_Y X)$. Then $S(X,Y)=S(Y,X)$ and therefore $S(X+Y,X+Y)-S(X,X)-S(Y,Y)=2S(X,Y)$, so the vanishing of $S$ on the diagonal, $(b)$, is equivalent to the vanishing of $S$ everywhere, $(c)$.
 \end{proof}
-\begin{cor}
+\begin{cor}[{{\cite[p.~250]{Spivak2}}}]
     Two affine connections $\nabla$ and $\wt\nabla$ on $M$ coincide iff both their geodesics and torsion tensors coincide.
 \end{cor}
 \begin{proof}
@@ -16913,15 +16913,15 @@ We say that a linear connection $\calH M$ on $M$ is complete if every geodesic m
     \[A(X,Y)=(\wt\nabla_X Y-\wt\nabla_Y X)-(\nabla_X Y-\nabla_Y X),\]
     we have $A(X,Y)=\wt\sfT(X,Y)-\sfT(X,Y)$. By the proposition above, the two connections with the same geodesics coincide iff $A=0$, i.e.\ $\wt\sfT=\sfT$.
 \end{proof}
-\begin{cor}
+\begin{cor}[{{\cite[p.~250]{Spivak2}}}]
     For every affine connection $\wt\nabla$ on $M$ there is a unique torsion-free connection $\nabla$ with the same geodesics.
 \end{cor}
 \begin{proof}
-    Uniqueness follows from the previous corollary. For existence, define $\nabla_X Y=\wt\nabla_X Y-\frac12\wt\sfT(X,Y)$, checking easily that $\nabla$ is a connection. Since $\wt\sfT$ is skew-symmetric, $\wt\nabla$ and $\nabla$ have the same symmetric parts, i.e.\ $S=0$, and thus have the same geodesics. Also $\sfT=\wt T-A=0$, so $\nabla$ is torsion-free.
+    Uniqueness follows from the previous corollary. For existence, define $\nabla_X Y=\wt\nabla_X Y-\frac12\wt\sfT(X,Y)$, checking easily that $\nabla$ is a connection. Since $\wt\sfT$ is skew-symmetric, $\wt\nabla$ and $\nabla$ have the same symmetric parts, i.e.\ $S=0$, and thus have the same geodesics. Also $\sfT=\wt \sfT-A=0$, so $\nabla$ is torsion-free.
 \end{proof}
 
 \begin{rem}
-    In the context of metric connections we will derive the existence of a unique torsion-free connection from general theory of $G$-structures in the next section.
+    This statement should not be confused with the existence of Levi-Civita connections. So far we have not imposed any compatibility constraints on the connections. In the presence of such constraints torsion-free connections may not exist at all. In the context of metric connections we will derive the existence of a unique torsion-free metric connection from general theory of $G$-structures in the next section.
 \end{rem}
 
 \begin{example}[Canonical connections on a Lie group, part 5]\label{ex connections on G, part 5}
@@ -16965,7 +16965,7 @@ be its dual coframe. Recall that $\iota^\vartheta_{\frake(m)}(\bm{e}_i)=e_i(m)$,
     \[\frake^\ast \theta^i=\alpha^i.\]
     Next, the local representative $\scrA=\frake^\ast\omega$ of the principal connection form $\omega$ with values in $\frakgl_n(\bbR)$ may be written as 
     \[\scrA=\scrA^i{}_k E^k{}_l=\Gamma^i{}_{jk}\alpha^j\otimes E^k{}_i.\label{eq 2.1.39 RS2}\]
-    The coefficient functions $\Gamma^i{}_{jk}$ are called the Christoffel symbols of $\calH M$ in the local frame $\frake$.
+    The coefficient functions $\Gamma^i{}_{jk}$ are called the \emph{Christoffel symbols}\index{Christoffel symbols} of $\calH M$ in the local frame $\frake$.
 \end{proof}
 
 \begin{rem}
@@ -17069,7 +17069,7 @@ In Section~\ref{sec: bundle reduction} we have defined $G$-structures and compat
 
 Recall that by Corollary~\ref{cor 1.6.5 RS2}, reductions of $\Fr M$ to $G<\GL_n(\bbR)$ are in one-to-one correspondence with smooth sections of the associated bundle $\Fr M\times_{\GL_n(\bbR)}(\GL_n(\bbR)\slash G)$, or, equivalently, with elements of $\Hom_{\GL_n(\bbR)}(\Fr M,\GL_n(\bbR)\slash G)$. Thus, the existence of a $G$-structure is a topological problem that can be dealt with by applying methods of obstruction theory, as we will see in the future. In particular, if $\GL_n(\bbR)\slash H$ is contractible, then a $G$-structure certainly exists. Note that, geometrically, a $G$-structure should be viewed as a bundle of distinguished frames on $M$.
 
-Recall that a linear connection on $M$ is called compatible with the $G$-structure $P$ if it is reducible to $P$. Recall also Proposition~\ref{prop 1.6.10 RS2} characterizing the reducibility of connections in terms of equivariant maps.
+Recall that a linear connection on $M$ is called \emph{compatible with}, or \emph{adapted to}, the $G$-structure $P$ if it is reducible to $P$. Recall also Proposition~\ref{prop 1.6.10 RS2} characterizing the reducibility of connections in terms of equivariant maps.
 
 \begin{prop}[{{\cite[Prop.~2.2.3]{RS2}}}]\label{prop 2.2.3 RS2}
     Let $P$ be a $G$-structure on $M$ and let $\wt\varphi:\Fr M\to \GL_n(\bbR)\slash G$ be the $\GL_n(\bbR)$-equivariant map defining $P$. Assume that $\GL_n(\bbR)\slash G$ is embedded into a $\GL_n(\bbR)$-module $F$. Then a linear connection $\omega$ on $\Fr M$ is compatible with the $G$-structure $P$ iff $\wt\varphi$ is parallel with respect to $\omega$:
@@ -17142,7 +17142,7 @@ where $ T^\ast M\otimes \Ad(P)$ is the bundle whose space of sections is the gau
 
 Note that the map $\delta$ can be written as acting on $\kappa\in\Hom(V,\frakg)$:
 \[\delta:\Hom(V,\frakg)\to \Hom\left(\bigwedge^2 V,V\right),\quad (\delta\kappa)(v,w)=\kappa(v) w-\kappa(w) v,\quad v,w\in V.\]
-This is a special instance  of a \emph{Spencer differential}. We may summarize this discussion as follows.
+This is a special instance  of a \emph{Spencer differential}. We may summarize this discussion as follows.\index{Spencer differential}
 
 \begin{prop}
     Let $P$ be a $G$-structure on $M$, let $\vartheta:TM\to P\times_G V$ be the soldering map, and let $\omega$ be a principal connection form on $P$ with torsion $2$-form $\Theta\in\Omega^2_{\hor}(P;V)^\sigma$. If $\omega'=\omega+\alpha$ is another principal connection on $P$, then its torsion form is $\Theta'=\Theta+\Delta(\alpha)$, where $\Delta:\Omega^1_{\hor}(P;\frakg)^\Ad\to \Omega^2_{\hor}(P;V)^\sigma$ is induced from the Spencer differential 
@@ -17151,18 +17151,20 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 
 \begin{rem}
     \begin{enumerate}
-        \item Note that for the above construction to go through, it suffices for $\frakg$ to be injectively included into $\frakgl_n(\bbR)$, whereas $G$ itself doesn't need to be a subgroup of $G$. Thus a more general definition of a $G$-structure on $TM$ is as a $\lambda$-reduction of the frame bundle via a homomorphism $\lambda:G\to \GL_n(\bbR)$ such that $\lambda_\ast:\frakg\to \frakgl_n(\bbR)$ is injective (cf.\ Section~\ref{sec: bundle reduction}). This implies that $G$ serves as a covering group of an analytic subgroup of $\GL_n(\bbR)$. The most prominent example of this situation are spin structures.
-        \item We have already established that the intrinsic torsion is independent of the principal connection $\omega$ on $P$. Moreover, unlike torsion, the intrinsic torsion is independent of the choice of the soldering form $\theta$. Therefore it is truly a characteristic of only $P$ and nothing else. The practical implication of this is that we are free to pick a soldering form $\theta$ so that 
+        \item Note that for the above construction to go through, it suffices for $\frakg$ to be injectively included into $\frakgl_n(\bbR)$, whereas $G$ itself doesn't need to be a subgroup of $\GL_n(\bbR)$. Thus a more general definition of a $G$-structure on $TM$ is as a $\lambda$-reduction of the frame bundle via a homomorphism $\lambda:G\to \GL_n(\bbR)$ such that $\lambda_\ast:\frakg\to \frakgl_n(\bbR)$ is injective (cf.\ Section~\ref{sec: bundle reduction}). This implies that $G$ serves as a covering group of an analytic subgroup of $\GL_n(\bbR)$. The most prominent example of this situation are spin structures.
+        \item We have already established that the intrinsic torsion is independent of the principal connection $\omega$ on $P$. Moreover, unlike torsion, the intrinsic torsion is independent of the choice of the soldering form $\theta$. Therefore it is truly a characteristic of only $P$ and nothing else. The practical implication of this is that in the structure equation 
+        \[\dd \theta+\omega\wedge\theta=\Theta=\scrT\circ (\theta\wedge\theta),\]
+        the intrinsic torsion can be identified with the part of $\scrT$ that cannot be absorbed into $\omega\wedge\theta$ by any choice of one-form $\omega\in\Omega^1(P;\frakg)$ (pseudo-connection). There is no guarantee of uniqueness because different choices of $\theta$ will lead to different torsion $\scrT$. Thus the second degree of freedom we have is to deform the soldering form $\theta$ so as to absorb as much of $\scrT$ as possible. 
+        \item For a review of non-Lorentzian $G$-structures on spacetimes, see \cite{OFarrill}.
     \end{enumerate}
-    
 \end{rem}
 
 
-\begin{example}[Orientation]
+\begin{example}[Orientation]\index{Orientation}
     Take $G=\GL_n^+(\bbR)$. Then $\GL_n(\bbR)\slash G\cong \bbZ_2$. As we saw in Proposition~\ref{prop orientation}, a section of the associated bundle $\Fr M\times_{\GL_n(\bbR)}\bbZ^2$ exists iff $M$ is orientable. In this case, the $G$-structure consists of those frames which are compatible with a chosen orientation. Note that this $G$-structure is integrable. Also note that automorphisms of this $G$-structure are exactly the orientation-preserving diffeomorphisms of $M$.
 \end{example}
 
-\begin{example}[Volume form]
+\begin{example}[Volume form]\index{Volume form}
     Now consider $G=\SL_n(\bbR)$. The defining representation of $\GL_n(\bbR)$ on $\bbR^n$ induces the following $\GL_n(\bbR)$-action on $\bigwedge^n(\bbR^n)^\ast$: 
     \[\GL_n(\bbR)\times \bigwedge^n(\bbR^n)^\ast\to  \bigwedge^n(\bbR^n)^\ast,\quad (g,\sfv)\mapsto \det(g)\cdot\sfv.\]
     Restricted to $\bigwedge^n(\bbR^n)^\ast\setminus\{0\}$, this action is transitive and has the common stabilizer $\SL_n(\bbR)$. Thus, 
@@ -17173,7 +17175,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     Show that every $\SL_n(\bbR)$-structure is integrable.
 \end{xca}
 
-\begin{example}[Pseudo-Riemannian structure]\label{ex pseudo-riemannian structure}
+\begin{example}[Pseudo-Riemannian structure]\label{ex pseudo-riemannian structure}\index{Pseudo-Riemannian structure}
     For simplicity let us denote $V=\bbR^n$. Denote the vector space of symmetric covariant tensors of second rank on $V$ by $S^2V^\ast$. Endow $V$ with a pseudo-Euclidean metric $\eta\in S^2V^\ast$ with signature $(k,l)$ where $n=k+l$. The defining representation of $\GL(V)$ induces a $\GL_n(\bbR)$-module structure on $S^2 V$ given by 
     \[\sigma:\GL(V)\to \Aut(S^2 V^\ast),\quad \sigma(g)\coloneqq (g^{-1})^T\otimes (a^{-1})^T.\label{eq 2.2.21 RS2}\]
     As we have noted before, by the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $S^2_{(k,l)}V^\ast\subset S^2 V^\ast$ consisting of elements with fixed signature, and the stabilizer of $\eta$ is $\Or_{k,l}$, that is,
@@ -17192,7 +17194,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     \[\eta(\kappa(v)w,z)=-\eta(w,\kappa(v)z)=-\eta(\kappa(v)z,w).\]
     If $\delta\kappa=0$, then, by definition of $\kappa$, we  also have $\eta(\kappa(v)w,z)=\eta(\kappa(w)v,z)$. Thus, letting
     \[T(v,w,z)\coloneqq \eta(\kappa(v)w,z),\]
-    $\delta\kappa$ becomes equivalent to 
+    $\delta\kappa=0$ becomes equivalent to 
     \[T(v,w,z)=-T(v,z,w)=T(w,v,z),\]
     i.e.\ $T$ needs to be symmetric in the first two arguments and anti-symmetric in the last two. This forces $T=0$. Since $\eta$ is non-degenerate, this implies that $\kappa=0$ and $\ker\delta=0$. 
     
@@ -17206,9 +17208,9 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \end{example}
 
 
-\begin{example}[Conformal structure {{\cite[Example~2.2.17]{RS2}}}]\index{Conformal structure}
+\begin{example}[Conformal structure {{\cite[Example~2.2.17]{RS2}}}]\index{Conformal structure}\index{Conformal structure}
     For $n\geq 3$, consider the conformal group 
-    \[\CO_n\coloneqq \left\{a\in\GL_n(\bbR):a^Ta=cI_n,c\in[0,+\infty)\right\}.\]
+    \[\CO_n\coloneqq \left\{a\in\GL_n(\bbR):a^Ta=cI_n,\; c>0\right\}.\]
     Clearly, $\CO_n=\Or_n\times\bbR_+$. By the previous example, $\GL_n(\bbR)$ acts transitively on the space $S^2_{k,l}V^\ast$. Thus it also acts transitively on the set of conformal equivalence classes of elements of $S^2_{(k,l)}V^\ast$ defined by the relation $\eta\sim\eta'$ iff $\eta'=c\eta$ for some $c>0$. Clearly, the stabilizer of an element $[\eta]$ is $\CO_n$. Thus, $\CO_n$-structures are in one-to-one correspondence with conformal equivalence classes $[\sfg]$ of metrics on $M$, with the equivalence defined as follows: $\sfg'\sim\sfg$ iff $\sfg'_m=\rme^{\varphi(m)}\sfg_m$ for all $m\in M$ for some $\varphi\in C^\infty(M)$. The $\CO_n$-structure corresponding to class $[\sfg]$ is denoted by $\Fr_{\CO_n}M$ and is referred to as the bundle of conformal frames.
     Since $\CO_n=\Or_n\times\bbR_+$, the representation theory of $\CO_n$ is essentially obtained as an extension of that of $\Or_n$. The irreducible representations of $\bbR_+$ on $\bbR$ are labeled by real numbers $r\in\bbR$ and are given by 
     \[\bbR_+\times\bbR\to \bbR,\quad (t,x)\mapsto t^r x.\]
@@ -17221,7 +17223,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \end{example}
 
 
-\begin{example}[Metric connection {{\cite[Example~2.2.22]{RS2}}}]
+\begin{example}[Metric connection {{\cite[Example~2.2.22]{RS2}}}]\index{Metric connection}
     By Example~\ref{ex pseudo-riemannian structure}, pseudo-Riemannian manifolds are in one-to-one correspondence with $\Or_{k,l}$-structures. Thus, let $(M,\sfg)$ be a pseudo-Riemannian manifold and let $\Fr_{\Or_{k,l}} M$ be its $\Or_{k,l}$-structure. In terms of the corresponding equivariant map $\wt\sfg$, 
     \[\Fr_{\Or_{k,l}}M=\{u \in\Fr M:\wt\sfg(u)=\eta,\}\]
     where $\eta$ is the standard inner product on $\bbR^n$ with signature $(k,l)$. By Proposition~\ref{prop 2.2.3 RS2}, a linear principal connection $\omega$ on $M$ is compatible with the $\Or_{k,l}$-structure iff $\sfg$ is parallel with respect to $\omega$. A linear connection fulfilling this condition is called metric. By (\ref{eq 2.2.21 RS2}), the metricity condition $D\wt\sfg=\dd\wt\sfg+\sigma_\ast(\omega)\wt\sfg=0$ reads 
@@ -17232,7 +17234,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     \[\omega_{jk}+\omega_{kj}=0,\]
     that is, iff the reduction takes values in the Lie algebra $\frakso_{k,l}$ (as expected from general theory). Equivalently, the metricity condition is given by $\nabla\sfg=0$. Since $\nabla_X$ is a derivation of the tensor algebra, the latter is equivalent to 
     \[X(\sfg(Y,Z))=\sfg(\nabla_X Y,Z)+\sfg(Y,\nabla_X Z)\label{eq 2.2.37 RS2}\]
-    for all $X,Y,Z\in\fX(M)$. Using this, we can give another classical derivation of the torsion-free Levi-Civita connection. Combining (\ref{eq 2.2.37}) with (\ref{eq 2.1.33 RS2}), 
+    for all $X,Y,Z\in\fX(M)$. Using this, we can give another classical derivation of the torsion-free Levi-Civita connection. Combining (\ref{eq 2.2.37 RS2}) with (\ref{eq 2.1.33 RS2}), 
     \[X(\sfg(Y,Z))=\sfg(\nabla_X Y,Z)+\sfg(Y,\nabla_X Z),\quad 0=\nabla_X Y-\nabla_Y X-[X,Y].\]
     Then, by direct inspection,
     \begin{multline}
@@ -17273,7 +17275,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \end{rem}
 
 
-\begin{example}[Absolute parallelism]
+\begin{example}[Absolute parallelism]\index{Absolute parallelism}
     An absolute parallelism, i.e.\ a global frame $\{e_i\}_{i=1}^n$, is the same thing as an $\{e\}$-structure. Since the Lie algebra is trivial, there exists only one connection $\nabla$ compatible with an absolute parallelism, and it is flat. Namely, if a vector $X\in TM$ has components $X^i$ with respect to $\{e_i\}$, then its parallel transport to any other point of $M$ is defined as the vector with the same components. The vector fields $e_i$ are parallel, as well as their dual covector fields $\alpha^i$:
     \[\nabla e_i=\nabla \alpha^j=0.\]
     Since $\{e\}$ is a subgroup of $\SO_n$, an $\{e\}$-structure also induces an orientation and a Riemannian metric, defined by $\sfg(e_i,e_j)=\delta_{ij}$. We have $\sfg=\sum_i \alpha^i\otimes\alpha^i$. Thus $\nabla$ is a metric connection.
@@ -17324,7 +17326,21 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 
 
 \begin{example}[Almost symplectic structure]
-    Consider $G=\Sp_n(\bbR)$, which is the group of linear transformations of $\bbR^{2n}$ that preserve the standard symplectic form $\omega_{2n}$, cf.\ Example~\ref{ex linear G-structures}(9). 
+    Consider $G=\Sp_n(\bbR)$, which is the group of linear transformations of $\bbR^{2n}$ that preserve the standard symplectic form $\omega_{2n}$, cf.\ Example~\ref{ex linear G-structures}(9). There is a one-to-one correspondence between $\Sp_n(\bbR)$-structures and almost symplectic manifolds, i.e.\ even-dimensional manifolds $M$ with a non-degenerate $2$-form $\omega\in \Omega^2(M)$. The non-degenracy condition is equivalent to saying that the $2n$-form $\omega^n=\omega\wedge\cdots\wedge\omega$ is nowhere vanishing.
+    % Since for every symplectic matrix there are coordinates in which it takes the form $\sfJ_{2n}$, there always exist local coordinates $(q^1,\ldots,q^n,p_1,\ldots,p_n)$ in which the symplectic form takes the canonical form $\omega=\sum_i \dd q^i\wedge\dd p_i$. 
+    Let $V=\bbR^{2n}$, so that the Lie algebra is $\fraksp(V)\cong S^2 V$. It is easy to check that $\ker\delta\cong S^3 V$ by using $\omega_{2n}$ to identify $V$ with $V^\ast$, so the Spencer sequence reads 
+    \[0\to S^3 V\to V^\ast \otimes S^2V\to \bigwedge^2 V^\ast\otimes V\to \bigwedge^3 V^\ast\to 0.\]
+    The associated bundle with fiber $\bigwedge^3 V^\ast$ is simply $\bigwedge^3 T^\ast M$, so intrinsic torsions are $3$-forms on $M$. The intrinsic torsion is exactly the part of $\nabla\omega$ that doesn't depend on the choice of connection under which $\omega$ is parallel. It is also the fully antisymmetric part of $\nabla\omega$ (since it's a $3$-form), so it coincides with $\dd\omega$.
+
+    If we want to classify almost symplectic structures based on some natural constraint on the intrinsic torsion, then we need to decompose $\bigwedge^3 V^\ast$, as a representation of $\Sp_{n}(\bbR)$, into irreducible representations (if possible). Since we can use the non-degenerate form $\omega$ to contract indices, we can use it to reduce a $3$-form to a $1$-form. This operation may be called ``trace''. Thus, $3$-forms that have the form $a\omega_{2n}\wedge\alpha$ with some $a\in\bbR$ and some $\alpha\in V^\ast$ may be called ``diagonal'' (the space of these forms is isomorphic to $V^\ast$ as a representation of $\Sp_n(\bbR)$), and their complement in $\bigwedge^3 V^\ast$ consists of traceless forms:
+    \[\bigwedge^3 V^\ast \cong V^\ast\oplus \left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}.\]
+    These two components can be shown to be irreducible. Now it is easy to classify all choices of sub-representations:
+    \begin{enumerate}
+        \item The trivial representation $\{0\}$ leads to the torsion-free condition $\dd\omega=0$. Such structures are called \emph{symplectic manifolds}. By Darboux's theorem\index{Theorem!Darboux}, they are integrable -- there are always local coordinates in which $\omega$ looks like $\omega_{2n}$. Note the drastic difference with the Riemannian case, where canonical coordinates exist only if curvature vanishes.
+        \item The representation $V^\ast$ leads to the condition $\dd\omega=\omega\wedge \alpha$ for some $\alpha\in\Omega^1(M)$. Since $\dd^2\omega=0$, we also find $\dd\alpha=0$, thus \emph{locally} $\alpha=\dd f$ and $\dd (\rme^{-f}\omega)=0$. Such structures are called \emph{locally conformally symplectic} (L.c.f.) manifolds.
+        \item The representation $\left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}$ is more complicated. First note that for any $f\in C^\infty(M)$ we can consider the \emph{Hamiltonian vector field} $X_f\coloneqq \omega^{-1}(\dd f)$, where $\omega^1:T^\ast M\to TM$ is the fiberwise inverse of $\omega$. The condition that the intrinsic torsion takes values in the bundle associated to $\left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}$ is equivalent to $\Lie_{X_f}\omega^n=0$ for all $f\in C^\infty$ (this condition is known as Liouville's Theorem). It is easy to see that this is equivalent to the condition $\dd\omega^{n-1}=0$. This fact is the basis of so called \emph{symplectic integrators}, which are used in computer simulations where one wants to preserve volume.
+        \item If the intrinsic torsion is unconstrained and belongs only to the entire space $\bigwedge^3 V^\ast$, we call such an almost symplectic structure \emph{generic}.
+    \end{enumerate}
 \end{example}
 
 
@@ -22092,6 +22108,10 @@ Follow Miller
 \bibitem{Vakar} M.~V\'ak\'ar, ``Principal Bundles and Gauge Theories'', 2011.
 \bibitem{Hoyo} M.~del~Hoyo, \href{https://arxiv.org/abs/1512.03847}{``Complete connections on fiber bundles''}, Indagationes Mathematicae (\textbf{27} 4), 2015.
 \bibitem{Kobayashi} S.~Kobayashi, ``Differential Geometry of Complex Vector Bundles'', Princeton University Press, Princeton, 1987.
+\bibitem{Spivak2} M.~Spivak, ``A comprehensive introduction to differential geometry'', vol.~2, 1999.
+\bibitem{OFarrill} J.~Figueroa-O'Farrill, \href{https://arxiv.org/abs/2009.01948v1}{``On the intrinsic torsion of spacetime structures''}, 2020.
+
+
 
 \end{thebibliography}
 \printindex
