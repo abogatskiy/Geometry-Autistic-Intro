@@ -1,463 +1,11 @@
 \documentclass[english,a5paper]{article}%{scrartcl}
-%\setkomafont{disposition}{\normalfont}  %KOMA use serif font for sectioning
-\usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
-\usepackage{anyfontsize}
-\usepackage{geometry}
-\geometry{verbose,tmargin=2cm,bmargin=2.5cm,lmargin=1cm,rmargin=1cm,heightrounded}
-\setlength{\parskip}{\smallskipamount}
-\setlength{\parindent}{0pt}
-\usepackage{color}
-\usepackage{babel}
-\usepackage{amsmath}
-\usepackage{amsthm}
-%\usepackage[amsthm]{ntheorem}
-\usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage{wasysym}
-\usepackage{cancel}
-\usepackage{imakeidx}
-\usepackage{booktabs}
-\usepackage{wrapfig}
-\usepackage{adjustbox}
-% \usepackage{breqn}
 
-\usepackage{stmaryrd}
-\expandafter\def\csname opt@stmaryrd.sty\endcsname{only,shortleftarrow,shortrightarrow} %fake options for stmaryd so that loading extpfeil later doesn't cause a clash
-\usepackage{extpfeil} % lets define multiple long arrows
-\newextarrow{\toto}{{20}{20}{20}{20}}{\bigRelbar\bigRelbar{\bigtwoarrowsleft\rightarrow\rightarrow}}
-
-   
-\usepackage[stable,bottom]{footmisc}
-\interfootnotelinepenalty=10000
-\makeindex
-\usepackage[footnotesize]{caption}
-\captionsetup{width=0.8\textwidth}
-\DeclareCaptionLabelFormat{bf-parens}{\textbf{Fig. #2}}
-\captionsetup{labelformat=bf-parens}
-
-\usepackage{comment}
-% \includecomment{comment}
-\excludecomment{comment}
-
-%%%%%% FONTS
-%\usepackage[onlytext,lf]{MinionPro}      % enable all this to get custom fonts
-%\usepackage[amsbb,subscriptcorrection,mtpcal,mtphrb]{mtpro2}
-%OR
-%\usepackage{pscyr}
-%\usepackage[libertine]{newtxmath}
-%OR
-\usepackage{newtxtext}
-\usepackage[varvw]{newtxmath}
-
-% This fixes math in headings not becoming bold 
-% From https://tex.stackexchange.com/questions/41379/automatically-typeset-math-in-section-headings-in-bold-face
-\makeatletter
-\g@addto@macro\bfseries{\boldmath}
-\makeatother
-
-
-\usepackage{tikz-cd}
-%\usepackage{marginnote}
-
-\usepackage[activate={true},step=1,tracking=true,kerning=true,spacing=false,factor=1100,stretch=20,shrink=20]{microtype}%text appearance improvements
-\UseMicrotypeSet[protrusion]{basictext}
-%\microtypecontext{spacing=nonfrench}
-%\DisableLigatures[N]{encoding=*, family =*}
-
-\usepackage{titlesec} %change title spacing for sections
-\titlespacing*{\section}
-{0pt}{0.7\baselineskip}{0.3\baselineskip}
-\titlespacing*{\subsection}
-{0pt}{0.7\baselineskip}{0.3\baselineskip}
-
-
-%%%%%%%
-\usepackage[unicode=true,pdfusetitle,
- bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
- breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
- {hyperref}
-
- 
-\usepackage[nottoc]{tocbibind} % list bibiliography and other secondary sections in TOC
-\usepackage{tocloft} % needed for the next line
-\setlength\cftsubsecnumwidth{4em} % increase the space given to numbers in TOC
-
-
-\usepackage{enumitem}
-\setlist[itemize]{leftmargin=2em}
-\setlist[enumerate]{leftmargin=2em,topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
-
-
-\makeatletter
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Defining environments
-\usepackage{silence}
-\usepackage[framemethod=tikz]{mdframed}    %  for frames around theorem environments
-\WarningFilter{mdframed}{You got a bad break}  %block mdframed warnings about page breaks
-
-% adjust footnotes inside mdframed so that they're printed at the bottom of the actual page
-\usepackage{tablefootnote} 
-\makeatletter 
-\AfterEndEnvironment{mdframed}{%
- \tfn@tablefootnoteprintout% 
- \gdef\tfn@fnt{0}% 
-}
-\makeatother 
-
-\usepackage{xcolor} % For using `gray!20` for example
-%--------------------------------
-% Redefinition of `\newmdtheoremenv` for accepting a starred version
-\DeclareDocumentCommand\newmdtheoremenv{s O{} m o m o }{%
-\IfBooleanTF{#1}{%
-   \newtheorem*{#3}{#5}%
- }{%
- \ifboolexpr{ test {\IfNoValueTF {#4}} and test {\IfNoValueTF {#6}} }%
-    {\newtheorem{#3}{#5}}{%
-     \IfValueTF{#4}{\newtheorem{#3}[#4]{#5}}{}%
-     \IfValueTF{#6}{\newtheorem{#3}{#5}[#6]}{}%
-    }
-  }%
-  \BeforeBeginEnvironment{#3}{%
-     \begin{mdframed}[#2]}%
-  \AfterEndEnvironment{#3}{%
-     \end{mdframed}}%
-}
-%--------------------------------
-\mdfdefinestyle{myshadedthm}{backgroundcolor=gray!20,linewidth=0pt,innerleftmargin=1ex,innerrightmargin=0.5ex,%
-%--------------------------------
-% If you use `amsthm` can adjust `innertopmargin` to avoid extra space in top.
-innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
-%--------------------------------
-}
-\mdfdefinestyle{linedthm}{linewidth=1pt,topline=false,bottomline=false,rightline=false,innertopmargin=-1ex,innerbottommargin=-0.3ex,innerleftmargin=1ex,innerrightmargin=0ex}
-\mdfdefinestyle{indentthm}{hidealllines=true,innertopmargin=-1ex,innerbottommargin=-0.3ex,innerleftmargin=1ex,innerrightmargin=0ex}
-
-\flushbottom
-\numberwithin{equation}{subsection}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
-\theoremstyle{definition}
-%\newtheorem{defn}{\protect\definitionname}[section]
-\newmdtheoremenv[style=linedthm]{defn}{Definition}[section]
-\theoremstyle{definition}
-%\newtheorem{example}{\protect\examplename}[section]
-\newmdtheoremenv[style=indentthm]{example}{\protect\examplename}[section]
-\theoremstyle{definition}
-%\newtheorem{xca}{\protect\exercisename}[section]
-\newmdtheoremenv[style=indentthm]{xca}{\protect\exercisename}[section]
-\theoremstyle{plain}
-%\newtheorem{prop}{\protect\propositionname}[section]
-\newmdtheoremenv[style=myshadedthm]{prop}{\protect\propositionname}[section]
-\theoremstyle{plain}
-%\newtheorem{thm}[prop]{\protect\theoremname}%thm with counter inherited from prop
-\newmdtheoremenv[style=myshadedthm]{thm}[prop]{\protect\theoremname}
-\theoremstyle{plain}
-%\newtheorem{lem}[prop]{Lemma}%lem with counter inherited from prop
-\newmdtheoremenv[style=myshadedthm]{lem}[prop]{Lemma}
-\theoremstyle{plain}
-%\newtheorem{cor}[prop]{Corollary}%cor with counter inherited from prop
-\newmdtheoremenv[style=myshadedthm]{cor}[prop]{Corollary}
-\theoremstyle{remark}
-%\newtheorem*{rem*}{\protect\remarkname}
-\newmdtheoremenv*[style=linedthm]{rem*}{\protect\remarkname}
-\theoremstyle{remark}
-%\newtheorem{rem}{\protect\remarkname}[section]
-\newmdtheoremenv[style=linedthm]{rem}{\protect\remarkname}[section]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
-
-
-
-% \usepackage[most]{tcolorbox}
-% \newtcbtheorem{thm}{Theorem}{colback=gray!20,fonttitle=\bfseries}{th}
-% \newtcbtheorem[auto counter,number within=chapter]{definition}{Definition}{}{def}
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewenvironment{align*}{\align}{\endalign}
-\renewenvironment{alignat*}{\alignat}{\endalignat}
-\renewenvironment{multline*}{\multline}{\endmultline}
-\renewenvironment{gather*}{\gather}{\endgather}
-\renewenvironment{equation*}{\equation}{\endequation}
-
-
-\usepackage{color}
-\def\white{\color{white}}
-\def\black{\color{black}}
-\def\red{\color{red}}
-\def\green{\color{green}}
-\def\blue{\color{blue}}
-\def\cyan{\color{cyan}}
-\def\magenta{\color{magenta}}
-\def\yellow{\color{yellow}}
-
-
-% backslash for left side quotients
-\newcommand{\bslash}{\mkern-.5mu\backslash\mkern-2mu}
-
-\newcommand{\bbA}{\mathbb{A}}
-\newcommand{\bbR}{\mathbb{R}}
-\newcommand{\bbN}{\mathbb{N}}
-\newcommand{\bbC}{\mathbb{C}}
-\newcommand{\bbF}{\mathbb{F}}
-\newcommand{\bbZ}{\mathbb{Z}}
-\newcommand{\bbH}{\mathbb{H}}
-\newcommand{\bbO}{\mathbb{O}}
-\newcommand{\bbK}{\mathbb{K}}
-\newcommand{\bbP}{\mathbb{P}}
-\newcommand{\bbT}{\mathbb{T}}
-\newcommand{\bbQ}{\mathbb{Q}}
-\newcommand{\bbD}{\mathbb{D}}
-\newcommand{\bbS}{\mathbb{S}}
-
-\newcommand{\calA}{\mathcal{A}}
-\newcommand{\calC}{\mathcal{C}}
-\newcommand{\calD}{\mathcal{D}}
-\newcommand{\calF}{\mathcal{F}}
-\newcommand{\calG}{\mathcal{G}}
-\newcommand{\calL}{\mathcal{L}}
-\newcommand{\calJ}{\mathcal{J}}
-\newcommand{\calE}{\mathcal{E}}
-\newcommand{\calH}{\mathcal{H}}
-\newcommand{\calU}{\mathcal{U}}
-\newcommand{\calV}{\mathcal{V}}
-\newcommand{\calM}{\mathcal{M}}
-\newcommand{\calO}{\mathcal{O}}
-\newcommand{\calP}{\mathcal{P}}
-\newcommand{\calS}{\mathcal{S}}
-\newcommand{\calR}{\mathcal{R}}
-
-\newcommand{\fraka}{\mathfrak{a}}
-\newcommand{\frake}{\mathfrak{e}}
-\newcommand{\frakg}{\mathfrak{g}}
-\newcommand{\frakh}{\mathfrak{h}}
-\newcommand{\frakk}{\mathfrak{k}}
-\newcommand{\fraki}{\mathfrak{i}}
-\newcommand{\frakn}{\mathfrak{n}}
-\newcommand{\frakm}{\mathfrak{m}}
-\newcommand{\frakb}{\mathfrak{b}}
-\newcommand{\frakd}{\mathfrak{d}}
-\newcommand{\fraku}{\mathfrak{u}}
-\newcommand{\frakgl}{\mathfrak{gl}}
-\newcommand{\fraksl}{\mathfrak{sl}}
-\newcommand{\frakso}{\mathfrak{so}}
-\newcommand{\fraksu}{\mathfrak{su}}
-\newcommand{\fraksp}{\mathfrak{sp}}
-
-\newcommand{\scrA}{\mathscr{A}}
-\newcommand{\scrF}{\mathscr{F}}
-\newcommand{\scrH}{\mathscr{H}}
-\newcommand{\scrR}{\mathscr{R}}
-\newcommand{\scrT}{\mathscr{T}}
-
-\newcommand{\acts}{\curvearrowright}
-\newcommand{\lacts}{\curvearrowleft}
-\newcommand{\dd}{{\mathrm{d}}}
-\newcommand{\bm}[1]{\boldsymbol{\mathrm{#1}}}
-\renewcommand{\geq}{\geqslant}
-\renewcommand{\leq}{\leqslant}
-\renewcommand{\i}{\mathrm{i}}
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand{\Ad}{\mathrm{Ad}}
-\newcommand{\ad}{\mathrm{ad}}
-\newcommand{\Adg}{\mathrm{\mathbf{Ad}}}
-
-\newcommand{\rmA}{\mathrm{A}}
-\newcommand{\rmP}{\mathrm{P}}
-\newcommand{\rmD}{\mathrm{D}}
-\newcommand{\rmF}{\mathrm{F}}
-\newcommand{\rmG}{\mathrm{G}}
-\newcommand{\rmV}{\mathrm{V}}
-\newcommand{\rmB}{\mathrm{B}}
-\newcommand{\rmE}{\mathrm{E}}
-\newcommand{\rmK}{\mathrm{K}}
-\newcommand{\rmT}{\mathrm{T}}
-\newcommand{\rmi}{\mathrm{i}}
-\newcommand{\rme}{\mathrm{e}}
-
-\newcommand{\const}{\mathrm{const}}
-\newcommand{\tra}{\mathrm{tra}}
-\newcommand{\Lin}{\bm\mathrm{L}}
-
-\newcommand{\sfg}{\mathsf{g}}
-\newcommand{\sfh}{\mathsf{h}}
-\newcommand{\sfv}{\mathsf{v}}
-\newcommand{\sfw}{\mathsf{w}}
-\newcommand{\sfJ}{\mathsf{J}}
-\newcommand{\sfR}{\mathsf{R}}
-\newcommand{\sfT}{\mathsf{T}}
-
-\newcommand{\mFB}{\mathsf{-Bun}}
-\newcommand{\FB}{\mathsf{Bun}}
-\newcommand{\PFB}{\mathsf{Prin}}
-\newcommand{\VB}{\mathsf{VectBun}}
-% \DeclareMathOperator{\ad}{ad}
-% \DeclareMathOperator{\Ad}{Ad}
-% \DeclareMathOperator{\Adg}{\mathbf{Ad}}
-\DeclareMathOperator{\sign}{sign}
-\DeclareMathOperator{\ver}{ver}
-\DeclareMathOperator{\hor}{hor}
-\DeclareMathOperator{\mor}{Mor}
-\DeclareMathOperator{\rel}{rel\,}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\ob}{Ob}
-\DeclareMathOperator{\Der}{Der}
-\DeclareMathOperator{\Inn}{Inn}
-\DeclareMathOperator{\Mat}{Mat}
-\DeclareMathOperator{\Aut}{Aut}
-\DeclareMathOperator{\aut}{aut}
-\DeclareMathOperator{\Gau}{Gau}
-\DeclareMathOperator{\gau}{gau}
-\DeclareMathOperator{\Fr}{Fr}
-\DeclareMathOperator{\End}{End}
-\DeclareMathOperator{\Int}{int}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\rank}{rank}
-\DeclareMathOperator{\pr}{pr}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Ind}{Ind}
-\DeclareMathOperator{\Res}{Res}
-\DeclareMathOperator{\Diff}{Diff}
-\DeclareMathOperator{\Pin}{Pin}
-\DeclareMathOperator{\Spin}{Spin}
-\DeclareMathOperator{\Hol}{Hol}
-\DeclareMathOperator{\hol}{\mathfrak{hol}}
-\DeclareMathOperator{\Mon}{Mon}
-\DeclareMathOperator{\Aff}{Aff}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\PGL}{PGL}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\PSL}{PSL}
-\DeclareMathOperator{\Or}{O}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\CO}{CO}
-\DeclareMathOperator{\U}{U}
-\DeclareMathOperator{\SU}{SU}
-\DeclareMathOperator{\Sp}{Sp}
-\DeclareMathOperator{\Tr}{Tr}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\codim}{codim}
-\DeclareMathOperator{\Alt}{Alt}
-\DeclareMathOperator{\Sym}{Sym}
-\DeclareMathOperator{\grad}{grad}
-\DeclareMathOperator{\coker}{coker}
-\DeclareMathOperator{\coim}{coim}
-\DeclareMathOperator{\dist}{dist}
-\DeclareMathOperator{\Ext}{Ext}
-\DeclareMathOperator{\ext}{ext}
-\DeclareMathOperator{\Tor}{Tor}
-\DeclareMathOperator{\tor}{tor}
-\DeclareMathOperator{\lcm}{lcm}
-\let\div\relax
-\DeclareMathOperator{\div}{div}
-\DeclareMathOperator*{\res}{res}
-\DeclareMathOperator{\Lief}{Lie}
-
-\newcommand{\Lie}{\mathcal{L}}
-\newcommand{\colimit}{\varinjlim}
-\newcommand{\limit}{\varprojlim}
-\newcommand{\fX}{\mathfrak{X}}
-\newcommand{\sub}{\vartriangleleft}
-\newcommand{\sube}{\trianglelefteqslant}
-\newcommand{\<}{\langle}
-\renewcommand{\>}{\rangle}
-\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
-
-\usepackage{xparse}
-\DeclareDocumentCommand{\restr}{m m o}  
-{%
-  \IfNoValueTF{#3}
-  {
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  #1 % the function
-  \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2}
-  }{
-  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
-  #1 % the function
-  \vphantom{\big|} % pretend it's a little taller at normal size
-  \right|_{#2}^{#3} }
-}
-
-\makeatletter  %define \xoverline, automatically sized overline
-\newsavebox\myboxA
-\newsavebox\myboxB
-\newlength\mylenA
-\newcommand*\xoverline[2][0.75]{%
-    \sbox{\myboxA}{$\m@th#2$}%
-    \setbox\myboxB\null% Phantom box
-    \ht\myboxB=\ht\myboxA%
-    \dp\myboxB=\dp\myboxA%
-    \wd\myboxB=#1\wd\myboxA% Scale phantom
-    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
-    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
-    \addtolength\mylenA{-\the\wd\myboxB}%
-    \ifdim\wd\myboxB<\wd\myboxA%
-       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
-    \else
-        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
-    \fi}
-\makeatother
-
-\usepackage{graphicx}
-\newcommand{\PRLsep}{   %decorative line used to separate sections
-           \noindent\makebox[\linewidth]{
-                \resizebox{0.5\linewidth}{1pt}{$\blacklozenge$}}}
-
-\usepackage{graphicx,scalerel}
-\newcommand\wh[1]{\hstretch{1.42}{\hat{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu} %requires \usepackage{graphicx,scalerel}
-\newcommand\wt[1]{\hstretch{1.42}{\tilde{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
-\newcommand\wb[1]{\hstretch{1.42}{\bar{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
-
-
-\makeatother
-
-\providecommand{\definitionname}{Definition}
-\providecommand{\examplename}{Example}
-\providecommand{\exercisename}{Exercise}
-\providecommand{\propositionname}{Proposition}
-\providecommand{\remarkname}{Remark}
-\providecommand{\theoremname}{Theorem}
-
-
-
-\usepackage[acronym]{glossaries}
-\makeglossaries
-% abbreviations:
-\newacronym{hlp}{HLP}{Homotopy Lifting Property}
-\newacronym{hep}{HEP}{Homotopy Extension Property}
-\newacronym{pou}{POU}{partition of unity}
-\newacronym{fb}{FB}{fiber bundle}
-\newacronym{vb}{VB}{vector bundle}
-\newacronym{pfb}{PFB}{principal fiber bundle}
-\newacronym{wlog}{WLOG}{without loss of generality}
-\newacronym{tfae}{TFAE}{the following are equivalent}
-\newacronym{inmt}{InMT}{Inverse Mapping Theorem}
-\newacronym{immt}{ImMT}{Implicit Mapping Theorem}
-\newacronym{mv}{MV}{Mayer-Vietoris}
-\newacronym{ops}{OPS}{one-parameter subgroup}
-
-
-
-
-
-
+\include{preamble}
 
 
 \begin{document}
 
-
 \title{
-    % {\Large{}Mathematical Physics Seminar 2018/19:}\\
     {\Large{}Differential Geometry:}\\
     \textsc{an autistic introduction}
     }
@@ -465,7 +13,6 @@ innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
 \date{Current draft: \today}
 
 \maketitle
-
 
 \tableofcontents{}
 
@@ -476,19 +23,14 @@ innertopmargin=-0.5ex% % Comment or remove this line if you use `ntheorem`.
 
 
 
+
+
 \part{Basic Topology and Geometry}
-
-
-
 
 \section{Category Theory I}
 
 
-
-
 \subsection{Categories}
-
-
 
 
 \begin{defn}[Categories]
@@ -1352,7 +894,7 @@ Finally, we note that the correspondence $X\to F_X$ is \emph{natural}, i.e.\ fun
 
 This kind of universal construction is the most typical way ``universal properties'' or ``characteristic properties'' come up in mathematics -- as universal objects in categories of morphisms with one fixed end. Indeed, as we have seen, concepts such as surjections and injections can be defined this way. This will also apply to geometric concepts such as submersions, lifting of paths, etc. For more examples and a general description see \cite[Exercise~7.8:24 and Def.~7.8:12]{Bergman}.
 \end{example}
-\begin{rem*}
+\begin{rem}
 In group theory, especially in finite groups, groups are often described
 by a list of \emph{generators} and \emph{relations}. If $\left\{ g_{1},\ldots,g_{n}\right\} $
 is the set of generators, then a relation is a condition of the form
@@ -1378,7 +920,7 @@ S_{3}=\left\langle \sigma_{12},\sigma_{23},\sigma_{13}\mid\sigma_{ij}^{2},\,\sig
 \end{equation}
 Without the first set of relations ($\sigma_{ij}^{2}=e$), this would
 be the braid group $B_{3}$.
-\end{rem*}
+\end{rem}
 %
 \begin{example}[Tensor algebra]\index{Tensor product}\index{Tensor algebra}\label{Tensor algebra}
 Let $V$ be a $K$-vector space of dimension $\dim V=n$. Pick an
@@ -17247,16 +16789,16 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 
 \begin{rem}
     We can derive local formulas for the Levi-Civita connection. In contrast to general linear connections, there are two natural types of local frames here: holonomic frames and orthonormal frames. First let $\frake=\{e_i\}$ be an arbitrary local frame. Formulas (\ref{eq 2.1.42 RS2}), (\ref{eq 2.1.44 RS2}), (\ref{eq 1.5.8 RS2}) and (\ref{eq 2.1.45/46 RS2})-(\ref{eq 2.1.50 RS2}) apply in any frame. By (\ref{eq 2.2.40 RS2}),
-    \[2\sfg(\nabla_{e_i}e_j,e_k)=e_i(\sfg_{jk})+e_j(\sfg_{ik})-e_k(\sfg_{ij})+C^l{}_{ij}\sfg_{lk}+C^l{}_{kl}\sfg_{lj}+C^l{}_{kj}\sfg_{li},\]
+    \[2\sfg(\nabla_{e_i}e_j,e_k)=e_i(\sfg_{jk})+e_j(\sfg_{ik})-e_k(\sfg_{ij})+C^l{}_{ij}\sfg_{lk}+C^l{}_{ki}\sfg_{lj}+C^l{}_{kj}\sfg_{li},\]
     where $\sfg_{ij}=\sfg(e_i,e_j)$. Thus, 
     \begin{multline}
         \Gamma^m{}_{ij}=\frac12\sfg^{mk}\left(e_i(\sfg_{jk})+e_j(\sfg_{ik})-e_k(\sfg_{ij})\right)+\\
-        +\frac12\left(C^m{}_{lj}+\sfg^{km}\sfg_{lj}C^l{}_{ki}+\sfg^{km}\sfg_{li}C^l{}_{kj}\right).
+        +\frac12\left(C^m{}_{ij}+\sfg^{km}\sfg_{lj}C^l{}_{ki}+\sfg^{km}\sfg_{li}C^l{}_{kj}\right).\label{eq 2.2.41 RS2}
     \end{multline}
     For the case of a holonomic frame $\frake=\{\partial_i\}$, we have $\sfg_{ij}=\sfg(\partial_i,\partial_j)$ and $C^i{}_{jk}=0$, so 
-    \[\Gamma^m{}_{ij}=\frac12\sfg^{mk}(\sfg_{jk,i}+\sfg_{ki,k,j}-\sfg_{ji,k}),\quad \Gamma^m{}_{ij}=\Gamma^m{}_{ji},\]
+    \[\Gamma^m{}_{ij}=\frac12\sfg^{mk}(\sfg_{jk,i}+\sfg_{ki,j}-\sfg_{ji,k}),\quad \Gamma^m{}_{ij}=\Gamma^m{}_{ji},\]
     where $\sfg_{ij,k}=\partial_k\sfg_{ij}$. For the case of an orthonormal frame $\frake=\{e_i\}$, we have $\sfg_{ij}=\eta_{ij}$, so 
-    \[\Gamma^m{}_{ij}=\frac12\left(C^m{}_{ij}+\eta^{km}\eta_{lj}C^l{}_{kl}+\eta^{km}\eta_{li}C^l{}_{kj}\right).\]
+    \[\Gamma^m{}_{ij}=\frac12\left(C^m{}_{ij}+\eta^{km}\eta_{lj}C^l{}_{ki}+\eta^{km}\eta_{li}C^l{}_{kj}\right).\]
     Thus, $\Gamma_{kij}=\eta_{km}\Gamma^m{}_{ij}=\frac12(C_{kij}+C_{jki}+C_{ikj}$, and , consequently, in this case we have 
     \[\Gamma_{kij}=-\Gamma_{jik},\quad \Gamma^k{}_{ik}=0.\]
     Using (\ref{eq 2.1.45/46 RS2}), we obtain 
@@ -17303,7 +16845,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
         \item $\Gamma^i{}_{jk}=0$,
         \item $\wt\Gamma^i{}_{jk}=C^i{}_{jk}$,
         \item $\wh\Gamma^i{}_{jk}=\frac12 C^i{}_{jk}$,
-        \item $\mathring{\Gamma}^i{}_{jk}=\frac12\left(C^j{}_{ik}+C^k{}_{ij}-C^i{}_{jk}\right)$.
+        \item $\mathring{\Gamma}^i{}_{jk}=\frac12\left(C^i{}_{jk}+C^j{}_{ik}+C^k{}_{ij}\right)$ (by (\ref{eq 2.2.41 RS2})).
     \end{enumerate}
 \end{example}
 
@@ -17337,7 +16879,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     These two components can be shown to be irreducible. Now it is easy to classify all choices of sub-representations:
     \begin{enumerate}
         \item The trivial representation $\{0\}$ leads to the torsion-free condition $\dd\omega=0$. Such structures are called \emph{symplectic manifolds}. By Darboux's theorem\index{Theorem!Darboux}, they are integrable -- there are always local coordinates in which $\omega$ looks like $\omega_{2n}$. Note the drastic difference with the Riemannian case, where canonical coordinates exist only if curvature vanishes.
-        \item The representation $V^\ast$ leads to the condition $\dd\omega=\omega\wedge \alpha$ for some $\alpha\in\Omega^1(M)$. Since $\dd^2\omega=0$, we also find $\dd\alpha=0$, thus \emph{locally} $\alpha=\dd f$ and $\dd (\rme^{-f}\omega)=0$. Such structures are called \emph{locally conformally symplectic} (L.c.f.) manifolds.
+        \item The representation $V^\ast$ leads to the condition $\dd\omega=\omega\wedge \alpha$ for some $\alpha\in\Omega^1(M)$. Since $\dd^2\omega=0$, we also find $\dd\alpha=0$, thus \emph{locally} $\alpha=\dd f$ and $\dd (\rme^{-f}\omega)=0$. Such structures are called \emph{locally conformally symplectic} (l.c.s.) manifolds.
         \item The representation $\left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}$ is more complicated. First note that for any $f\in C^\infty(M)$ we can consider the \emph{Hamiltonian vector field} $X_f\coloneqq \omega^{-1}(\dd f)$, where $\omega^1:T^\ast M\to TM$ is the fiberwise inverse of $\omega$. The condition that the intrinsic torsion takes values in the bundle associated to $\left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}$ is equivalent to $\Lie_{X_f}\omega^n=0$ for all $f\in C^\infty$ (this condition is known as Liouville's Theorem). It is easy to see that this is equivalent to the condition $\dd\omega^{n-1}=0$. This fact is the basis of so called \emph{symplectic integrators}, which are used in computer simulations where one wants to preserve volume. Such almost symplectic structures are called \emph{balanced}.
         \item If the intrinsic torsion is unconstrained and belongs only to the entire space $\bigwedge^3 V^\ast$, we call such an almost symplectic structure \emph{generic}.
     \end{enumerate}
@@ -18007,7 +17549,7 @@ Recall the notions of products and coproducts, see Section \ref{Sec.Products}. W
     \[\limit (F)\]
     is defined as the \emph{terminal object in the category of commutative cones} over the diagram $F(\mathcal{J})$, see Fig.\ \ref{fig:limits}. That is, it is an object  $L\in\ob(\calC)$ together with a collection of morphisms $L\overset{\psi_i}{\to}F(i)$ for each $i\in\ob(\calJ)$ such that each triangle 
     \[\begin{tikzcd}[every matrix/.append style={name=m},   
-        execute at end picture={\draw [<-] ([xshift=-14mm,yshift=0mm]m-2-2.north) arc[start angle=-90,delta angle=-270,radius=0.25cm];}]
+        execute at end picture={\draw [<-] ([xshift=13mm,yshift=0mm]m-2-2.north) arc[start angle=-90,delta angle=-270,radius=0.25cm];}]
         & L\arrow[dl,swap,"\psi_i" ]\arrow[dr,"\psi_j"] & \\
         F(i) \arrow[rr,swap,"f_{ij}"]& & F(j)
     \end{tikzcd}\]
@@ -18018,7 +17560,7 @@ Recall the notions of products and coproducts, see Section \ref{Sec.Products}. W
     is an initial co-cone (i.e.\ with morphisms pointing towards $L$) over $F(\mathcal{J})$. Like all universal objects, limits and colimits are defined uniquely up to a unique isomorphism (if they exist at all).
 \end{defn}
 
-\begin{figure}[b]
+\begin{figure}[tp]
     \centering
     \includegraphics[scale=0.15]{Images/limits.png}
     \caption{Limit as the terminal cone over a diagram.}
@@ -19197,7 +18739,7 @@ Simplicial homology is the simplest homology theory in that it can be formulated
     See \cite[Prop. 8.1.4 and 13.2.2]{tomDieck}.
 \end{proof}
 
-\begin{figure}[h]
+\begin{figure}[tp]
     \centering
     \includegraphics[scale=0.3]{Images/barycentric.png}
     \caption{Barycentric coodrinates of a 2-simplex. Here, the simplex is $s=\langle A,B,C\rangle$ and the triples of numbers next to each point $\alpha\in |s|$ in this triangle correspond to the list of values $(\alpha(A),\alpha(B),\alpha(C))$. The values of $\alpha$ thus represent the proportions in which $A,B,C$ have to be ``mixed'' to get a point inside this geometric realization of the simplex.\label{fig. simplex}}
@@ -19722,18 +19264,17 @@ The reduced homology of a point is trivial in all degrees. Also $H_n(X)\cong \wt
 
 Here we show that singular homology is homotopy invariant.
 
-
+\begin{figure}[tp]
+    \begin{center}
+        \includegraphics[width=0.2\textwidth]{Images/prism.pdf}
+    \end{center}
+    \caption{Triangulation of a prism, see Proposition~\ref{thm 2.10 Hatcher}.\label{Prism fig}}
+\end{figure}
 \begin{prop}[{{\cite[Thm. 2.10]{Hatcher}}}]\label{thm 2.10 Hatcher}
     If two maps $f,g\in C(X,Y)$ between topological spaces $X,Y$ are homotopic, then they induce the same homomorphism in homology
     \[f_\ast=g_\ast :H_n(X)\to H_n(Y)\]
     for all $n$. In particular, homotopy equivalent spaces have isomorphic homology groups.
 \end{prop}
-\begin{wrapfigure}[10]{r}{0.2\textwidth}
-    \begin{center}
-        \includegraphics[width=0.2\textwidth]{Images/prism.pdf}
-    \end{center}
-    \caption{Triangulation of a prism.\label{Prism fig}}
-\end{wrapfigure}
 \begin{proof}
      The key is learning to subdivide the prism $\Delta^n\times I$ (where $I=[0,1]$) into simplices. If $\langle v_0,\ldots,v_n\rangle$ is the copy of $\Delta^n$ at the bottom of the prism and $\langle w_0,\ldots,w_n\rangle$ is the one at the top, then it is easy to check that the prism is triangulated by the $(n+1)$-simplices $\langle v_0,\ldots,v_i,w_i,\ldots,w_n\rangle$, each intersecting the next in an $n$-simplex face. The cases $n=1,2$ are shown in figure~\ref{Prism fig}.
      
@@ -19815,7 +19356,8 @@ The same sequence exists in reduced homology. This exact sequence has a natural 
 
 For a space $X$, let $\calU=\{U_\alpha\}_\alpha$ be a collection of subspaces of $X$ whose interiors cover $X$ and let $C_n^\calU(X)$ be the subgroup of $C_n(X)$ generated by simplices whose images lie inside one of the sets in the cover. The boundary operator $\partial$ maps $C^\calU_n(X)$ to $C^\calU_{n-1}(X)$ and therefore we have a chain complex $C_\bullet^\calU(X)$ with homology groups denoted $H^\calU_n(X)$.
 
-\begin{prop}
+
+\begin{prop}[{{\cite[Thm. 2.21]{Hatcher}}}]\label{thm 2.21 Hatcher}
     With the notation just described, the inclusion $i:C_n^\calU(X)\hookrightarrow C_n(X)$ is a chain homotopy equivalence and hence induces isomorphisms
     \[H_n^\calU(X)\cong H_n(X),\quad n\geq 0.\]
 \end{prop}
