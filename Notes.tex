@@ -2590,7 +2590,7 @@ Let $(X,\rho)$ be a complete metric space and let $C_n$ be a sequence of closed 
 Consider $\mathbb{N}$ with the metric $\rho (n,m)=\lvert \frac 1 n-\frac 1 m\rvert$. Construct a sequence of balls $B_{r_k}(x_k)$ in this space such that $r_{k+1}<r_k$, $B_{r_{k+1}}(x_{k+1})\subset B_{r_k}(x_k)$, but the intersection of all these balls is empty.
 \end{xca}
 \begin{defn}[Normed vector space]\index{Normed vector space}\index{Norm}
-A normed vector space is a vector space $V$ over a subfield of $\mathbb{C}$ with a function (called the norm) $\lVert \cdot \rVert: V\to \mathbb R_+$ such that for all $x,y\in V$:
+A normed vector space is a vector space $V$ over a subfield of $\mathbb{C}$ with a function (called the norm) $\lVert \cdot \rVert: V\to \mathbb{R}_+$ such that for all $x,y\in V$:
 \begin{enumerate}
     \item $\lVert x\rVert\geq 0$, and $\lVert x\rVert= 0$ iff $x=0$;
     \item $\lVert \alpha  x\rVert=\lvert \alpha \rvert \lVert x\rVert$ for any scalar (element of the structure field) $\alpha$;
@@ -8814,6 +8814,7 @@ Now we can use the procedure in Definition \ref{functors VB} to extend the tenso
     \[
     (f^\ast t)(X_1,\ldots,X_s)=t(f_\ast X_1,\ldots,f_\ast X_s).
     \]
+    Here, $f_\ast X_i$ are the poinwise push-forwards of tangent vectors. Push-forwards of contravariant tensors are always well-defined pointwise, but then only form a global smooth tensor on the target manifold if $f$ is a diffeomorphism.
 \end{defn}
 
 \begin{rem}
@@ -8860,6 +8861,15 @@ In many cases it is helpful to think of abstract manifolds as submanifolds of so
 
     See the general proof in \cite[Thm. 6.15]{Lee}.
 \end{proof}
+
+Recall that a manifold is said to have a compatible analytic structure if its differentiable structure contains an atlas in which all transition functions are real analytic (i.e.\ have Taylor series converging in a non-zero radius at every point). Since the standard smooth structure of $\bbR^n$ is obviously analytic, we get the following.
+
+\begin{cor}
+    Every smooth manifold has a compatible structure of a real analytic manifold.
+\end{cor}
+\begin{rem}
+    The Whitney Embedding Theorem, in fact, holds for all $C^1$-manifolds (in the compact case the proof we gave above suffices). Thus every $C^1$-manifold can be made analytic. Another sophisticated theorem of Morrey and Grauert shows that the analytic structure on a (paracompact) smooth manifold is actually unique.
+\end{rem}
 
 In most applications we will need only the first (the weakest) version of the embedding theorem.
 
@@ -8964,7 +8974,7 @@ a family of smooth maps to contain at least one map that is transverse to a give
 
     Suppose $s\in D$ is a regular value of $\restr{\pi}{W}$. Pick a $p\in F_s^{-1}(S)$ and let $q=F_s(p)\in S$. We need to show that $T_qM=T_qS+F_{s\ast}(T_pN)$. By the hypothesis on $F$, we already know that $T_qM=T_qS+F_\ast(T_{(p,s)}(N\times D))$. Since $s$ is a regular value and $(p,s)\in W$, we also know $T_sD=\pi_\ast(T_{(p,s)}W)$. Transversality also implies $F_\ast(T_{(p,s)}W)=T_qS$. Putting all of this together,
     \begin{multline}
-        T_qM==T_qS+F_\ast(T_{(p,s)}(N\times D))=T_qS+F_\ast(T_pN\oplus \pi_\ast(T_{(p,s)}W))=\\=T_qS+F_{s\ast}\circ\pi_\ast(T_pN)+F_{p\ast}(T_{(p,s)}W),
+        T_qM=T_qS+F_\ast(T_{(p,s)}(N\times D))=T_qS+F_\ast(T_pN\oplus \pi_\ast(T_{(p,s)}W))=\\=T_qS+F_{s\ast}\circ\pi_\ast(T_pN)+F_{p\ast}(T_{(p,s)}W),
     \end{multline}
     where $F_p(s)=F(p,s)$. But $F_{p\ast}\circ\pi_\ast(T_{(p,s)}W)$ is merely a restriction of $F_\ast$, so its image is already inside $T_qS$, thus in fact $T_qM=T_qS+F_{s\ast}(T_pN)$, which proves $F_s\pitchfork S$.
 \end{proof}
@@ -8977,7 +8987,7 @@ Any map $f\in C^\infty(N,M)$ is homotopic to a $g\in C^\infty(N,M)$ that is tran
 \begin{proof}
 The crux of the proof is constructing a smooth map $F:N\times D\to M$ that is transverse to $S$, where $D$ is the ball $\bbD^k$ for some $k$ and $F_0=f$. It then follows from Theorem~\ref{thm 6.35 Lee} that there is some $s\in D$ such that $F_s:N\to M$ is transverse to $S$, and that $F_s$ is homotopic to $f$ (since $D$ is path-connected).
 
-By the Whitney Embedding Theorem~\ref{thm whitney embedding}, we can assume that $M$ is properly embedded into some $\bbR^k$. Let $U$ be a tubular neighborhood of $M$ in $\bbR^k$ and let $r:U\to M$ be a smooth retraction that is also a smooth submersion. If we define $\delta:M\to R_+$ by $\delta(x)=\sup\{\epsilon\leq 1:B_\epsilon(x)\subset U\}$, as in the Whitney approximation theorem~\ref{thm whitney approx}, then Theorem~\ref{cor 6.22 Lee} shows that there exists a smooth function $e:N\to \bbR_+$ that satisfies $0<e(p)<\delta(f(p))$ everywhere. Let $D$ be the unit ball in $\bbR^k$ and define $F:N\times D\to M$ by
+By the Whitney Embedding Theorem~\ref{thm whitney embedding}, we can assume that $M$ is properly embedded into some $\bbR^k$. Let $U$ be a tubular neighborhood of $M$ in $\bbR^k$ and let $r:U\to M$ be a smooth retraction that is also a smooth submersion. If we define $\delta:M\to \bbR_+$ by $\delta(x)=\sup\{\epsilon\leq 1:B_\epsilon(x)\subset U\}$, as in the Whitney Approximation Theorem~\ref{thm whitney approx}, then Theorem~\ref{cor 6.22 Lee} shows that there exists a smooth function $e:N\to \bbR_+$ that satisfies $0<e(p)<\delta(f(p))$ everywhere. Let $D$ be the unit ball in $\bbR^k$ and define $F:N\times D\to M$ by
 \[F(p,s)=r(f(p)+e(p)\cdot s).\]
 Clearly  $F$ is smooth and $F_0=f$ because $r$ is a retraction. 
 
@@ -8986,7 +8996,7 @@ For each $p\in N$, the restriction of $F$ to $\{p\}\times D$ is the composition 
 
 
 \begin{thm}[{{\cite[Thm. II.14.2]{Bredon}}}]\label{every VB is summand of trivial VB}
-    For any \gls{vb} $E\overset{\pi}{\to} M$ there exists a \gls{vb} $E'\overset{\pi}{\to} M$ such that $E\oplus E'$ is trivial.
+    For any \gls{vb} $E\overset{\pi}{\to} M$ there exists a \gls{vb} $E'\overset{\pi'}{\to} M$ such that $E\oplus E'$ is trivial.
 \end{thm}
 \begin{proof}
     Embed a neighborhood $U\subset E$ of the zero section of $E$ into $\bbR^n$ by Whitney embedding. Let $\tau_U$ and $\nu_U$ be the tangent and the normal bundles of $U\subset \bbR^n$, respectively. Then $\tau_U\oplus \nu_U$ is trivial over $U$.
@@ -9022,11 +9032,11 @@ Let $E\overset{\pi}{\to} M$ be a \gls{vb} of rank $k$, and $\dim M=m$. Then:
 \begin{enumerate}
     \item If $k>m$, then there exists a section $\sigma$ that is nowhere zero (doesn't intersect with the zero section). Moreover, by induction there exists a global $(k-m)$-frame, which spans a trivial subbundle of rank $k-m$. We say that a ``generic section'' of this bundle has no zeros.
     \item If $k=m$ (like $E=TM$), then the generic section turns to zero at most on a discrete subset of $M$ ($\dim(\im(\sigma)\cap E_0)=0$). Any non-generic section can be deformed by an arbitrarily small homotopy into one.
-    \item If $k<n$, then the generic section turns to zero along a submanifold of $M$ of dimension at most $m-k$ ($\dim(\im(\sigma)\cap E_0)=m-k$). 
+    \item If $k<m$, then the generic section turns to zero along a submanifold of $M$ of dimension at most $m-k$ ($\dim(\im(\sigma)\cap E_0)=m-k$). 
 \end{enumerate}
 \end{cor}
 \begin{proof}
-    We prove claim 1, the rest are trivial via a similar argument. Take the zero section $\sigma_0:M\to E$ and find a   section $\sigma$ transversal to it by Theorem~\ref{transverse section thm}. Then $\codim(\im (\sigma)\cap E_0)=2k>m+k$, which means that this intersection is empty (two submanifolds whose dimensions add up to less than the dimension of the ambient manifold can only be transverse of they are disjoint; e.g. the intersection of two curves in $\bbR^3$ is generically empty). This theorem is due to J.P.~Serre \cite[Thm.~2]{Atiyah}.
+    We prove claim 1, the rest are trivial via a similar argument. Take the zero section $\sigma_0:M\to E$ and find a   section $\sigma$ transversal to it by Theorem~\ref{transverse section thm}. Then $\codim(\im (\sigma)\cap E_0)=2k>m+k$, which means that this intersection is empty (two submanifolds whose dimensions add up to less than the dimension of the ambient manifold can only be transverse if they are disjoint; e.g.\ the intersection of two curves in $\bbR^3$ is generically empty). This theorem is due to J.P.~Serre \cite[Thm.~2]{Atiyah}.
 \end{proof}
 
 
@@ -9039,7 +9049,7 @@ Let $E\overset{\pi}{\to} M$ be a \gls{vb} of rank $k$, and $\dim M=m$. Then:
 We will denote a trivial vector bundle of rank $k$ by $\varepsilon^k$. We only care about its isomorphism class, so we can safely assume the typical fiber is $\bbK^k$. In the following discussion the base manifold $M$ is fixed.
 
 \begin{defn}[Stable isomorphism of \glspl{vb}]
-We say that $E'$ and $E''$ are \emph{stably isomorphic}\index{Stable isomorphism of vector bundles} ($E'\underset{\mathrm{s}}{\sim}E''$) if there exists a trivial bundle $\varepsilon^n$ such that $E'\oplus \varepsilon^k \cong E''\varepsilon^k$. In particular, a bundle is called \emph{stably trivial} iff its direct sum with some trivial bundle is trivial.
+We say that $E'$ and $E''$ are \emph{stably isomorphic}\index{Stable isomorphism of vector bundles} ($E'\underset{\mathrm{s}}{\sim}E''$) if there exists a trivial bundle $\varepsilon^n$ such that $E'\oplus \varepsilon^k \cong E''\oplus\varepsilon^k$. In particular, a bundle is called \emph{stably trivial} iff its direct sum with some trivial bundle is trivial.
 
 Another equivalence relation which we will denote simply $\sim$ is defined by the existence of \emph{two} trivial bundles $\varepsilon^k$ and $\varepsilon^l$ such that $E'\oplus \varepsilon^k\cong E''\oplus \varepsilon^l$.
 \end{defn}
@@ -9061,8 +9071,8 @@ Therefore any two bundles that complete $E$ to a trivial bundle are $\sim$-equiv
 This means that if $E\oplus E'$ is trivial, then $\sim$-equivalence class of $E'$, which exists by Theorem~\ref{every VB is summand of trivial VB}, can be seen as the ``inverse'' of the corresponding class of $E$ in a certain group defined as follows.
 
 \begin{defn}[Reduced K-groups]
-The set of stable isomorphism classes of real \glspl{vb} over $M$ forms a group under the Whitney sum $\oplus$.
-The inverse is defined as $[E]\oplus [E]^{-1}=[\text{trivial}]$. This group is denoted by $\widetilde{\mathrm{KO}}(M)$ -- the \emph{reduced real K-group}\index{K-group}. K is a functor, and this is the fundamental object of K-theory, and is itself an important topological invariant of manifolds. In the case of complex \glspl{vb} the same definition produces the complex K-group $\wt{K}(M)$.
+The set of $\sim$-equivalence classes of real \glspl{vb} over $M$ forms a group under the Whitney sum $\oplus$.
+The inverse is defined as $[E]\oplus [E]^{-1}=[\text{trivial}]$. This group is denoted by $\widetilde{\mathrm{KO}}(M)$ -- the \emph{reduced real K-group}\index{K-group}. K is a functor, and this is the fundamental object of K-theory, and is itself an important topological invariant of manifolds. In the case of complex \glspl{vb} the same definition produces the complex K-group $\wt{\mathrm{K}}(M)$.
 \end{defn}
 
 \begin{example}[Bott periodicity]\index{Bott periodicity}
@@ -9094,7 +9104,7 @@ The stable isomorphism relation $\underset{\mathrm{s}}{\sim}$ doesn't immediatel
     If $E\oplus E_1\underset{\mathrm{s}}{\sim} E\oplus E_2$, then $E_1\underset{\mathrm{s}}{\sim}E_2$ (by adding to both sides a bundle $E'$ such that $E\oplus E'$ is trivial).
 \end{cor}
 
-Recall that the group $\bbZ$ of integers can be defined as equivalence classes of pairs of natural numbers $(m,n)\in \bbN^2$ under the equivalence relation $(m,n)\sim (m',n')$ iff $m+n'=m'+n$ with neutral element $[(0,0)]$. The inverse of $[(m,n)]$ is $([n,m])$ and therefore we can identify the equivalence class $[(m,n)]$ with the difference $m-n$. Notably, every element of $\bbN$ can be represented as $m=[(m,0)]$, and every negative integer as $-m=[(0,m)]$. This construction is called the \emph{Grothendieck group} and can be applied to any abelian monoid, such as a semigroup. Therefore we can use this to turn the stable isomorphism classes of \glspl{vb} into an honest group by considering pairs, called ``formal differences''.
+Recall that the group $\bbZ$ of integers can be defined as equivalence classes of pairs of natural numbers $(m,n)\in \bbN^2$ under the equivalence relation $(m,n)\sim (m',n')$ iff $m+n'=m'+n$ with neutral element $[(0,0)]$. The inverse of $[(m,n)]$ is $([n,m])$ and therefore we can identify the equivalence class $[(m,n)]$ with the difference $m-n$. Notably, every element of $\bbN$ can be represented as $m=[(m,0)]$, and every negative integer as $-m=[(0,m)]$. This construction is called the \emph{Grothendieck group} and can be applied to any abelian monoid, such as a cancellative semigroup. Therefore we can use this to turn the stable isomorphism classes of \glspl{vb} into an honest group by considering pairs, called ``formal differences''.
 
 \begin{defn}[K-groups]
     The abelian groups $\mathrm{K}(M)$ and $\mathrm{KO}(M)$ consist of ``formal differences'' $E-E'$ of complex or real vector bundles over $M$, respectively, which are equivalence classes of pairs $(E,E')$ under the equivalence relation $(E_1,E_1')\sim (E_2,E_2')$ iff $E_1\oplus E_2'\underset{\mathrm{s}}{\sim} E_2\oplus E_1'$. The transitivity of this relation follows from the cancellation property of Corollary~\ref{cor cancellation property}. The addition of pairs is component-wise, the zero element is $[(E,E)]$, and the inverse of $[(E,E')]$ is $[(E',E)]$.
@@ -16536,7 +16546,7 @@ Unlike general \glspl{pfb}, the frame bundle of $M$ is naturally associated with
 \[\vartheta^{-1}:\Fr M \times_{\GL_n(\bbR)} \bbR^n\to TM,\quad \vartheta^{-1}([(u,\bm{x})])\coloneqq x^iu_i,\label{eq 2.1.2 RS2}\]
 where $x^i$ are the components of $\bm{x}\in\bbR^n$ in the standard basis $\{\bm{e}_i\}$ of $\bbR^n$. It is easy to see that $\vartheta^{-1}$ is an isomorphism, and via dualization and tensor products it produces corresponding isomorphisms for all tensor bundles: $T^k_l M\cong \Fr M\times_{\GL_n(\bbR)}T^k_l\bbR^n$. The presence of the isomorphism $\vartheta$ allows us to identify each frame $u\in \Fr M$ with the isomorphism that computes the coordinates of a given tangent vector in $TM$ in the frame $u$:
 \[\iota_u^\vartheta\coloneqq \vartheta^{-1}\circ\iota_u:\bbR^n\to T_{\pi(u)}M,\quad \bm{x}\mapsto \sum_{i=1}^n x^i u_i.\]
-
+The isomorphism $\iota_u^\vartheta$ is often identified in literature with the frame $u$ itself. We stick to this more explicit notation for clarity.
 
 The isomorphism $\vartheta$ can be viewed as a $1$-form on $TM$ with values in this associated bundle, and by Proposition~\ref{prop 1.2.12 RS2} it corresponds to the following $\bbR^n$-valued horizontal $1$-form on the frame bundle.
 
@@ -16726,7 +16736,7 @@ Finally, $\nabla$ induces parallel transports on all tensor bundles $T^r_s M$, a
     \[\sfT^\lambda(A_L,B_L)=\lambda[A,B]_L,\quad \sfT^\lambda(A_R,B_R)=\lambda [A,B]_R.\]
     Note that the sign doesn't change due to the identity $[A,B]_R=-[A_R,B_R]$, but this is expected since $\sfT$ is a tensor of type $(1,2)$. 
     As a $TG$-valued $2$-form, this tensor can be written as 
-    \[\sfT^\lambda_g=\frac{\lambda} L_{g\ast}[\Theta_G,\Theta_G].\label{3791731}\]
+    \[\sfT^\lambda_g=\frac{\lambda}{2} L_{g\ast}[\Theta_G,\Theta_G].\label{3791731}\]
     Due to these values of the torsion, $\nabla^{+1},\nabla^0$, and $\nabla^{-1}$ are known as (+)-, 0-, and (-)-connections, respectively. 
     Moreover, by the  Bianchi identity for the torsion, $\nabla^{\pm 1}T^{\pm 1}=0$, so the torsion tensor itself is parallel for $\lambda=\pm 1$, i.e.\ its components in the respective global frame are constant and equal to the structure constants of $G$, up to a sign. As we will see, these data are enough to locally characterize the Lie group structure as a special kind of $G$-structure.
 
@@ -16738,9 +16748,7 @@ Finally, $\nabla$ induces parallel transports on all tensor bundles $T^r_s M$, a
     \[\wt\gamma^-(1)=\int_0^1 \Theta_G(\dot\gamma(s))\dd s=\oint_\gamma \Theta_G.\]
     Now suppose $\gamma$ is nullhomotopic and $S$ is a 2-dimensional submanifold of $G$ such that $\partial S=\im(\gamma)$. Then, using the Stokes' theorem and the Maurer-Cartan equation, we have
     \[\wt\gamma^-(1)=-\frac12\int_S [\Theta_G,\Theta_G]=\int_S \Theta_G\circ \sfT^-.\]
-    This formula is also true for $\sfT^+$ if $\wt\gamma^+$ is defined using right translations. Here, $\theta_G$ merely acts so that the values of the integrand belong to one vector space ($\frakg$). In local coordinates, this integral is proportional to the value of $\sfT^-$ at the identity times the area of $S$. This result, in fact, holds for arbitrary affine connections (although in general there is no analog of $\Theta_G$ that can transport all values of $\sfT$ to one point, so the general formula can only be written in local coordinates). Therefore, torsion can be interpreted as the ``displacement of the origin'' of a tangent space as it is being ``rolled without slipping'' along an infinitesimal loop.
-
-    Finally, the torsion-free connection $\nabla^0$ will later be identified with the Levi-Civita connection on those Lie groups that admit a bi-invariant metric, although it is well-defined on all Lie groups.
+    This formula is also true for $\sfT^+$ if $\wt\gamma^+$ is defined using right translations. Here, $\theta_G$ merely acts so that the values of the integrand belong to one vector space ($\frakg$). In local coordinates, this integral is proportional to the value of $\sfT^-$ at the identity times the area of $S$. This result, in fact, holds for arbitrary affine connections (although in general there is no analog of $\Theta_G$ that can transport all values of $\sfT$ to one point, so the general formula can only be written in local coordinates). Therefore, torsion can be interpreted as the ``displacement of the origin'' of a tangent space as it is being \emph{rolled without slipping}\index{Rolling without slipping} along an infinitesimal loop (this is easier to imagine as $M$ rolling on $\bbR^n$ so that the point of contact follows $\gamma$). For this reason the soldering form $\theta$ is also sometimes called the \emph{displacement form}.\index{Displacement form}
 \end{example}
 
 
@@ -16753,14 +16761,14 @@ Finally, $\nabla$ induces parallel transports on all tensor bundles $T^r_s M$, a
 
 
 What distinguishes affine parallel transport from parallel transport on general bundles is that everything happens on the base manifold $M$, so there is a special class of distinguished curves that we discuss now. As before, for any smooth path $\gamma:I_\epsilon\to M$ we have a unique parallel transport of tangent vectors along $\gamma$. Let $\dot\gamma$ be the tangent vector field of $\gamma$:
-\[\dot\gamma(t)=\gamma_{\ast t}\left(\restr{\partial t}{t}\right).\]
+\[\dot\gamma(t)=\gamma_{\ast t}\left(\restr{\partial_t}{t}\right).\]
 Applying the notions developed in the previous section, a vector field $X\in \fX(M)$ is parallel along $\gamma$ iff 
-\[\nabla^\gamma_{\partial t}X=0,\label{eq 2.1.34 RS2}\]
+\[\nabla_{\dot\gamma}X\coloneqq \nabla^\gamma_{\partial_t}X=0,\label{eq 2.1.34 RS2}\]
 where $\nabla^\gamma$ is the covariant derivative along the map $\gamma$ and $X$ must be viewed as a section of $TM$ along $\gamma$ (that is, we should really write $X\circ\gamma$ instead of $X$). In particular, since $\dot\gamma$ is a section of $TM$ along $\gamma$, we may consider the equation 
-\[\frac{D}{D\gamma}\dot\gamma(t)=\nabla^\gamma_{\partial_t}\dot\gamma=0.\label{eq 2.1.35 RS2}\] 
+\[\nabla_{\dot\gamma}\dot\gamma(t)=\nabla^\gamma_{\partial_t}\dot\gamma=0.\label{eq 2.1.35 RS2}\] 
 
 \begin{defn}[Geodesic]\index{Geodesic}
-    Let $\calH M$ be a linear connection. A path $\gamma:I_\epsilon\to M$, $t\mapsto \gamma(t)$ is called a geodesic with respect to $\calH M$ if it fulfils the \emph{geodesic equation} $\frac{D}{D\gamma}\dot\gamma(t)=0$.
+    Let $\calH M$ be a linear connection. A path $\gamma:I_\epsilon\to M$, $t\mapsto \gamma(t)$ is called a geodesic with respect to $\calH M$ if it fulfils the \emph{geodesic equation} $\nabla_{\dot\gamma}\dot\gamma(t)=0$.
 \end{defn}
 
 The following proposition states that the set of geodesics is invariant under affine reparametrizations. This follows immediately from the fact that rescaling the variable $t$ is equivalent to rescaling $\dot\gamma$.
@@ -16847,7 +16855,7 @@ The following vector fields on the frame bundle will turn out to be closely conn
     Let $\bm{x}\in\bbR^n$. By definition, $B(\bm{x})_u$ is the unique $\calH M$-horizontal lift of $\iota_u^\vartheta(\bm{x})\in T_{\pi(u)}M$ to $u\in\Fr M$. Let $t\mapsto \wt\gamma(t)$ be an integral curve of $B(\bm{x})$. Define $\gamma\coloneqq \pi\circ\wt\gamma$. Then, using the natural isomorphism $\vartheta:TM\to \Fr M\times_{\GL_n(\bbR)}\bbR^n$, and defining $\iota_{\bm{x}}^\vartheta\coloneqq \vartheta^{-1}\circ\iota_{\bm{x}}:\Fr M\to TM$,
     \[\dot\gamma(t)=\pi_\ast\circ \dot{\tilde\gamma}(t)=\pi_\ast(B(\bm{x})_{\wt\gamma(t)})=\iota_{\wt\gamma(t)}^\vartheta(\bm{x})=\iota_{\bm{x}}^\vartheta(\wt\gamma(t)).\]
     Thus, by (\ref{eq 1.7.13 RS2}) and (\ref{eq 1.3.4 RS2}), we have 
-    \[\frac{D}{D\gamma(t)}\dot\gamma=\omega^E\left((\iota_{\bm{x}}^\vartheta)_\ast \left(\dot{\tilde\gamma}(t)\right)\right)=0.\]
+    \[\nabla_{\dot\gamma}\dot\gamma(t)=\omega^E\left((\iota_{\bm{x}}^\vartheta)_\ast \left(\dot{\tilde\gamma}(t)\right)\right)=0.\]
     Conversely, let $\gamma$ be a geodesic and let $u_0\in\Fr M$ be such that $\pi(u_0)=\gamma(0)$ and let $\bm{x}\coloneqq (\iota_{u_0}^\vartheta)^{-1}(\dot\gamma(0))\in\bbR^n$. Let $t\mapsto \wt\gamma(t)$ be the horizontal lift of $\gamma$ through $u_0$. If $\bm{x}=0$, we are done. Thus, let $\bm{x}\neq 0$. Then there exists a curve $t\mapsto \sigma(t)$ in $\Fr M$ such that $\dot\gamma(t)=\iota_{\sigma(t)}^\vartheta(\bm{x})$. Hence 
     \[\frac{\dd}{\dd t}\dot\gamma(t)=(\iota^\vartheta_{\bm{x}})_\ast\dot\sigma(t).\] 
     Since $\gamma$ is a geodesic, that is, $\frac{\dd}{\dd t}\dot\gamma(t)\in T(TM)$, this formula implies that $t\mapsto \sigma(t)$ is horizontal in $\Fr M$. Since $\sigma(0)=u_0$ and $\pi\circ \sigma=\gamma$, uniqueness of the horizontal lift implies $\sigma=\wt\gamma$. Thus, $\dot\gamma(t)=\iota_{\wt\gamma(t)}^\vartheta(\bm{x})$ and, since $\wt\gamma$ is horizontal,
@@ -16878,7 +16886,7 @@ We say that a linear connection $\calH M$ on $M$ is complete if every geodesic m
 
 
 
-\begin{prop}
+\begin{prop}\label{prop geodesics coinciding}
     Let $\nabla$ and $\wt\nabla$ be two affine connections on $M$. \gls{tfae}:
     \begin{enumerate}[label=(\alph*)]
         \item $\nabla$ and $\wt\nabla$ have the same geodesics,
@@ -16924,8 +16932,8 @@ We say that a linear connection $\calH M$ on $M$ is complete if every geodesic m
     as an element of $T_{g_1}G\times T_{g_2}G$. Indeed, it is trivial to see that $\omega^\lambda(B^\lambda(A))=0$ and $\theta(B^\lambda(A))=A$. In particular, $B^-(A)$  and $B^+(A)$ generate the flows $(g_1\rme^{tA},g_2)$ and $(g_1,\rme^{-tA}g_2)$, respectively. In either case, therefore, all geodesics on $G$ have the form $g_1\rme^{tA}g_2^{-1}$. 
     
     This allows us to solve for geodesics. It is easy to see that the curves 
-    \[t\mapsto (g_1\exp(\frac{1-\lambda}{2}tA),\exp(\frac{-1-\lambda}{2}tA)g_2)\] 
-    are integral curves of $B^\lambda(A)$ for all $(g_1,g_2)\in P$. In particular, all geodesics starting at the identity have the form $g\rme^{tA}g^{-1}=\rme^{t\Ad_g A}$, i.e.\ all of them are \glspl{ops}. We will examine the torsion-free connection $\nabla^0$ separately in Example~\ref{ex connections on G, part 6}.
+    \[t\mapsto \left(g_1\left(\exp\frac{1-\lambda}{2}tA\right),\exp\left(\frac{-1-\lambda}{2}tA\right)g_2\right)\] 
+    are integral curves of $B^\lambda(A)$ for all $(g_1,g_2)\in P$. In particular, all geodesics starting at the identity have the form $g\rme^{tA}g^{-1}=\rme^{t\Ad_g A}$, i.e.\ all of them are \glspl{ops}. By Proposition~\ref{prop geodesics coincide}, all of the connections $\nabla^\lambda$ have the same symmetric part and differ only in their torsion. We will examine the only torsion-free connection among them, $\nabla^0$, separately in Example~\ref{ex connections on G, part 6}.
 \end{example}
 
 
@@ -16978,7 +16986,7 @@ where $C^i{}_{jk}$ are the structure functions of the local frame $\frake$ defin
 In the same way, taking the pullback of the second equation in (\ref{eq 2.1.15 RS2}), we read off 
 \[\sfT^i{}_{jk}=\Gamma^i{}_{jk}-\Gamma^i{}_{kj}-C^i{}_{jk}.\label{eq 2.1.44 RS2}\]
 
-Next, by Proposition~\ref{prop 1.5.3 RS2}, the local version of the Koszul calculus is based upon the following formula. For a local fram $\frake$, we have 
+Next, by Proposition~\ref{prop 1.5.3 RS2}, the local version of the Koszul calculus is based upon the following formula. For a local frame $\frake$, we have 
 \[\nabla e_j=\Gamma^k{}_{ij}\alpha^i\otimes e_k, \quad \nabla_{e_i}e_j=\Gamma^k{}_{ij}e_k. \label{eq 2.1.45/46 RS2}\]
 Next, acting with $\nabla_{e_i}$ on the pairing $\alpha^j(e_k)=\delta^j{}_k$ and using that the covariant derivative is a derivation of the tensor algebra, we obtain 
 \[\nabla_{e_i}\alpha^j=-\Gamma^k{}_{ik}\alpha^k,\quad \nabla\alpha^j=-\Gamma^j{}_{ik}\alpha^j\otimes\alpha^k.\label{eq 2.1.47/48 RS2}\]
@@ -17132,12 +17140,12 @@ The space $\frakg^{(1)}=\ker\delta$ is called the first \emph{prolongation} of t
 \[ 0\to \ker \Delta \to \underset{\text{``Contorsion''}}{T^\ast M\otimes \Ad(P)}\overset{\Delta}{\to} \underset{\text{``Torsion''}}{\bigwedge^2 T^\ast M\otimes TM}\to \underset{\text{``Intrinsic torsion''}}{\coker \Delta}\to 0,\]
 where $ T^\ast M\otimes \Ad(P)$ is the bundle whose space of sections is the gauge algebra $\gau(P)=\Omega^1(M;\Ad(P))$ (consisting of differences $\wt\alpha$) and $\Delta$ computes  the corresponding change in the torsion map by $\delta(\wt\alpha)$. Note that torsion maps themselves are sections of the bundle $\bigwedge^2 T^\ast M\otimes TM$. Then, by exactness, $\scrT$ and $\scrT'$ have the same image in the last bundle, $\coker\Delta$. In other words, any two connections compatible with $P$ have torsions that map to the same section of $\coker\Delta$, and this section is exactly the intrinsic torsion of $P$, independent of the connection. Finally, sections of $\ker\Delta$ are the contorsions whose addition to the connection form doesn't change the torsion.
 
-Note that the map $\delta$ can be written as follows:
+Note that the map $\delta$ can be written as acting on $\kappa\in\Hom(V,\frakg)$:
 \[\delta:\Hom(V,\frakg)\to \Hom\left(\bigwedge^2 V,V\right),\quad (\delta\kappa)(v,w)=\kappa(v) w-\kappa(w) v,\quad v,w\in V.\]
 This is a special instance  of a \emph{Spencer differential}. We may summarize this discussion as follows.
 
 \begin{prop}
-    Let $P$ be a $G$-structure on $M$, let $\vartheta:TM\to P\times_G V$ be the soldering map, and let $\omega$ be a principal connection form on $P$ with torsion $2$-form $\Theta\Omega^2_{\hor}(P;V)^\sigma$. If $\omega'=\omega+\alpha$ is another principal connection on $P$, then its torsion form is $\Theta'=\Theta+\Delta(\alpha)$, where $\Delta:\Omega^1_{\hor}(P;\frakg)^\Ad\to \Omega^2_{\hor}(P;V)^\sigma$ is induced from the Spencer differential 
+    Let $P$ be a $G$-structure on $M$, let $\vartheta:TM\to P\times_G V$ be the soldering map, and let $\omega$ be a principal connection form on $P$ with torsion $2$-form $\Theta\in\Omega^2_{\hor}(P;V)^\sigma$. If $\omega'=\omega+\alpha$ is another principal connection on $P$, then its torsion form is $\Theta'=\Theta+\Delta(\alpha)$, where $\Delta:\Omega^1_{\hor}(P;\frakg)^\Ad\to \Omega^2_{\hor}(P;V)^\sigma$ is induced from the Spencer differential 
     \[\delta:\Hom(V,\frakg)\to \Hom\left(\bigwedge^2 V,V\right),\quad (\delta\kappa) (v,w)=\kappa(v)w-\kappa(w)v,\quad v,w\in V.\]
 \end{prop}
 
@@ -17150,8 +17158,6 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \end{rem}
 
 
-
-
 \begin{example}[Orientation]
     Take $G=\GL_n^+(\bbR)$. Then $\GL_n(\bbR)\slash G\cong \bbZ_2$. As we saw in Proposition~\ref{prop orientation}, a section of the associated bundle $\Fr M\times_{\GL_n(\bbR)}\bbZ^2$ exists iff $M$ is orientable. In this case, the $G$-structure consists of those frames which are compatible with a chosen orientation. Note that this $G$-structure is integrable. Also note that automorphisms of this $G$-structure are exactly the orientation-preserving diffeomorphisms of $M$.
 \end{example}
@@ -17161,7 +17167,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     \[\GL_n(\bbR)\times \bigwedge^n(\bbR^n)^\ast\to  \bigwedge^n(\bbR^n)^\ast,\quad (g,\sfv)\mapsto \det(g)\cdot\sfv.\]
     Restricted to $\bigwedge^n(\bbR^n)^\ast\setminus\{0\}$, this action is transitive and has the common stabilizer $\SL_n(\bbR)$. Thus, 
     \[\GL_n(\bbR)\slash G\cong \bigwedge^n(\bbR^n)^\ast\setminus\{0\}.\]
-    Via the natural isomorphism $\bigwedge T^\ast M\cong \Fr M\times_{\GL_n(\bbR)}\bigwedge^n(\bbR^n)^\ast$, the sections of the associated bundle $\Fr M\times_{\GL_n(\bbR)} \left(\bigwedge^n(\bbR^n)^\ast\setminus\{0\}\right)$ are in one-to-one correspondence with volume forms on $M$. The $\SL_n(\bbR)$-structure corresponding to a given volume form $\sfv$ consists of those frames $u$ fulfilling $\sfv=\sfv_0\circ \bigwedge^n u$, where $\sfv_0$ is the standard volume form on $\bbR^n$. Since $\GL_n(\bbR)\slash\SL_n(\bbR)$ is homotopy equivalent to $\GL_n(\bbR)\slash \GL_n^+(\bbR)$, $M$ admits an $\SL_n(\bbR)$-structure iff $M$ is orientable. Moreover, it is easy to show that any $\SL_n(\bbR)$-structure is integrable. Finally, note that the automorphisms of this structure are the volume-preserving diffeomorphisms of $M$.
+    Via the natural isomorphism $\bigwedge^n T^\ast M\cong \Fr M\times_{\GL_n(\bbR)}\bigwedge^n(\bbR^n)^\ast$, the sections of the associated bundle $\Fr M\times_{\GL_n(\bbR)} \left(\bigwedge^n(\bbR^n)^\ast\setminus\{0\}\right)$ are in one-to-one correspondence with volume forms on $M$. The $\SL_n(\bbR)$-structure corresponding to a given volume form $\sfv$ consists of those frames $u$ fulfilling $\sfv=\sfv_0\circ \bigwedge^n u$, where $\sfv_0$ is the standard volume form on $\bbR^n$. Since $\GL_n(\bbR)\slash\SL_n(\bbR)$ is homotopy equivalent to $\GL_n(\bbR)\slash \GL_n^+(\bbR)$, $M$ admits an $\SL_n(\bbR)$-structure iff $M$ is orientable. Moreover, it is easy to show that any $\SL_n(\bbR)$-structure is integrable. Finally, note that the automorphisms of this structure are the volume-preserving diffeomorphisms of $M$.
 \end{example}
 \begin{xca}
     Show that every $\SL_n(\bbR)$-structure is integrable.
@@ -17266,6 +17272,55 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     for any set of vector fields $X_0,\ldots,X_k\in\fX(M)$.
 \end{rem}
 
+
+\begin{example}[Absolute parallelism]
+    An absolute parallelism, i.e.\ a global frame $\{e_i\}_{i=1}^n$, is the same thing as an $\{e\}$-structure. Since the Lie algebra is trivial, there exists only one connection $\nabla$ compatible with an absolute parallelism, and it is flat. Namely, if a vector $X\in TM$ has components $X^i$ with respect to $\{e_i\}$, then its parallel transport to any other point of $M$ is defined as the vector with the same components. The vector fields $e_i$ are parallel, as well as their dual covector fields $\alpha^i$:
+    \[\nabla e_i=\nabla \alpha^j=0.\]
+    Since $\{e\}$ is a subgroup of $\SO_n$, an $\{e\}$-structure also induces an orientation and a Riemannian metric, defined by $\sfg(e_i,e_j)=\delta_{ij}$. We have $\sfg=\sum_i \alpha^i\otimes\alpha^i$. Thus $\nabla$ is a metric connection.
+
+    Since $\nabla_{e_i}e_j=0$, the components of torsion are $\sfT(e_i,e_j)=-[e_i,e_j]$. Thus the torsion tensor is
+    \[\sfT(X,Y)=-\alpha^i(X)\alpha^j(Y)[e_i,e_j],\]
+    and its components in the frame $\{e_i\}$ are 
+    \[\sfT^i{}_{jk}=-C^i{}_{jk},\]
+    where $C^i{}_{jk}$, as usual, are the structure functions of the frame, $[e_j,e_k]=C^i{}_{jk}e_i$.
+
+    As a consequence, there are three more natural (but not compatible) connections associated with a global parallelism:
+    \begin{enumerate}
+        \item The dual connection $\wt\nabla$ given by $\wt\nabla_X Y\coloneqq \nabla_Y X+[X,Y]$,
+        \item The symmetric connection $\wh\nabla$ given by $\wh\nabla_X Y\coloneqq \frac12\left(\nabla_X Y+\nabla_Y Z+[X,Y]\right)$,
+        \item The Levi-Civita connection $\mathring{\nabla}$ of the canonical metric $\sfg$.
+    \end{enumerate}
+    It is then easy to see that 
+    \begin{enumerate}
+        \item $\wt\nabla_X Y=\nabla_X Y-\sfT(X,Y)$,
+        \item $\wh\nabla_X Y=\nabla_X Y-\frac12\sfT(X,Y)=\frac12\left(\nabla_X Y+\wt\nabla_X Y\right)$,
+        \item $\wh\nabla$ and $\mathring{\nabla}$ are torsion-free whereas $\nabla$ and $\wt\nabla$ have opposite torsions.
+    \end{enumerate}
+    In particular, the Christoffel symbols of these four connections in the frame $\{e_i\}$ are 
+    \begin{enumerate}
+        \item $\Gamma^i{}_{jk}=0$,
+        \item $\wt\Gamma^i{}_{jk}=C^i{}_{jk}$,
+        \item $\wh\Gamma^i{}_{jk}=\frac12 C^i{}_{jk}$,
+        \item $\mathring{\Gamma}^i{}_{jk}=\frac12\left(C^j{}_{ik}+C^k{}_{ij}-C^i{}_{jk}\right)$.
+    \end{enumerate}
+\end{example}
+
+
+\begin{example}[Lie group structure]
+    Suppose $M$ is a parallelizable connected $n$-dimensional manifold with an absolute parallelism consisting of complete vector fields $\{e_i\}$ whose torsion tensor is covariantly constant, i.e.\ its components w.r.t.\ $\{e_i\}$ are just a set of constants
+    \[\sfT^i{}_{jk}=C^i_{jk}=c^i_{jk}=\const.\]
+    Now consider the dual frame of the parallelism consisting of $1$-forms  $\{\alpha^i\}$. Their exterior derivatives are easily computed using the general formula from Proposition~\ref{prop 4.1.6 RS1}. We do it in the same global frame:
+    \[\dd\alpha^i(e_j,e_k)=e_j(\delta^i_k)+e_k(\delta^i_k)-\alpha^i([e_j,e_k])=-c^i{}_{jk}.\]
+    By inserting arbitrary vector fields $X=X^j e_j$, $Y=Y^k e_k$, we get 
+    \[\dd\alpha^i(X,Y)=-c^i{}_{jk}\alpha^j(X)\alpha^k(Y).\]
+    Since $c^i{}_{jk}=-c^i{}_{kj}$, the right hand side can be written as a wedge product $(c^i{}_{jk}\alpha^j\wedge\alpha^k)(X,Y)$. Let $\frakg$ be the $n$-dimensional Lie subalgebra of $\fX(M)$ spanned by the parallelism $\{e_i\}$, so that its structure constants are $c^i{}_{jk}$. Then, introducing the $\frakg$-valued form $\alpha=(\alpha^1,\ldots,\alpha^n)$ and the above equation reads 
+    \[\dd\alpha +\frac12[\alpha,\alpha]=0,\]
+    where $\frac12[\alpha,\alpha](X,Y)=[\alpha(X),\alpha(Y)]$ as usual, using the Lie bracket in $\frakg$. Since the covariant exterior derivative coincides with $\dd$ here, this equation is nothing but the structure equation for the torsion, identifying $\alpha$ with the soldering form.
+
+    Clearly $\alpha_m:T_mM\to \bbR^n\cong\frakg$ is an isomorphism at every $m\in M$. Thus $\alpha\in\Omega^1(M;\frakg)$ satisfies the conditions of Theorem~\ref{thm 8.7 Sharpe}, and $M$ must be a quotient of a connected $n$-dimensional Lie group $G$ by a discrete subgroup. $\alpha$ plays the role of the Maurer-Cartan form and $\{e_i\}$ are the left-invariant vector fields. The canonical connection of the parallelism then agrees with the canonical connection $\nabla^-$ on the Lie group (Example~\ref{ex connections on G, part 5}). Thus, Lie groups can be defined as quotients (by a normal discrete subgroup) of simply connected absolute parallelisms with covariantly constant torsion, plus an arbitrary choice of the identity. As a consequence, every such structure is automatically real analytic.
+
+    In particular, a torsion-free absolute parallelism is equivalent to a structure of an affine space.
+\end{example}
 
 
 \begin{example}[Almost symplectic structure]
