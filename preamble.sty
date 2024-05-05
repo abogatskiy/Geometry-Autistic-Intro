@@ -1,0 +1,416 @@
+%\setkomafont{disposition}{\normalfont}  %KOMA use serif font for sectioning
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{anyfontsize}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2.5cm,lmargin=1cm,rmargin=1cm,heightrounded}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+%\usepackage[amsthm]{ntheorem}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{cancel}
+\usepackage{imakeidx}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
+% \usepackage{breqn}
+
+\usepackage{stmaryrd}
+\expandafter\def\csname opt@stmaryrd.sty\endcsname{only,shortleftarrow,shortrightarrow} %fake options for stmaryd so that loading extpfeil later doesn't cause a clash
+\usepackage{extpfeil} % lets define multiple long arrows
+\newextarrow{\toto}{{20}{20}{20}{20}}{\bigRelbar\bigRelbar{\bigtwoarrowsleft\rightarrow\rightarrow}}
+
+   
+\usepackage[stable,bottom]{footmisc}
+\interfootnotelinepenalty=10000
+\makeindex
+\usepackage[footnotesize]{caption}
+\captionsetup{width=0.8\textwidth}
+\DeclareCaptionLabelFormat{bf-parens}{\textbf{Fig. #2}}
+\captionsetup{labelformat=bf-parens}
+
+\usepackage{comment}
+% \includecomment{comment}
+\excludecomment{comment}
+
+%%%%%% FONTS
+%\usepackage[onlytext,lf]{MinionPro}      % enable all this to get custom fonts
+%\usepackage[amsbb,subscriptcorrection,mtpcal,mtphrb]{mtpro2}
+%OR
+%\usepackage{pscyr}
+%\usepackage[libertine]{newtxmath}
+%OR
+\usepackage{newtxtext}
+\usepackage[varvw]{newtxmath}
+
+% This fixes math in headings not becoming bold 
+% From https://tex.stackexchange.com/questions/41379/automatically-typeset-math-in-section-headings-in-bold-face
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
+
+
+\usepackage{tikz-cd}
+%\usepackage{marginnote}
+
+\usepackage[activate={true},step=1,tracking=true,kerning=true,spacing=false,factor=1100,stretch=20,shrink=20]{microtype}%text appearance improvements
+\UseMicrotypeSet[protrusion]{basictext}
+%\microtypecontext{spacing=nonfrench}
+%\DisableLigatures[N]{encoding=*, family =*}
+
+\usepackage{titlesec} %change title spacing for sections
+\titlespacing*{\section}
+{0pt}{0.7\baselineskip}{0.3\baselineskip}
+\titlespacing*{\subsection}
+{0pt}{0.7\baselineskip}{0.3\baselineskip}
+
+
+%%%%%%%
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
+ {hyperref}
+
+ 
+\usepackage[nottoc]{tocbibind} % list bibiliography and other secondary sections in TOC
+\usepackage{tocloft} % needed for the next line
+\setlength\cftsubsecnumwidth{4em} % increase the space given to numbers in TOC
+
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=2em}
+\setlist[enumerate]{leftmargin=2em,topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+
+
+\makeatletter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% theorem envs %%%%%%%%%%%%%%%%
+
+\flushbottom
+\renewcommand\qedsymbol{$\blacksquare$}
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\exercisename}{Exercise}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\remarkname}{Remark}
+\providecommand{\theoremname}{Theorem}
+
+\numberwithin{equation}{subsection}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+\theoremstyle{plain}
+\newtheorem{prop}{\protect\propositionname}[subsection]
+\newtheorem{thm}[prop]{\protect\theoremname}%thm 
+\newtheorem{lem}[prop]{Lemma}%lem with counter inherited from prop
+\newtheorem{cor}[prop]{Corollary}%cor with counter inherited from prop
+\theoremstyle{definition}
+\newtheorem{rem}[prop]{\protect\remarkname}
+\newtheorem*{rem*}{\protect\remarkname}
+\newtheorem{example}[prop]{\protect\examplename}
+\newtheorem{defn}[prop]{\protect\definitionname}
+\newtheorem{xca}{\protect\exercisename}[section]
+
+
+\usepackage{tablefootnote}
+\usepackage[many,breakable]{tcolorbox}
+\ExplSyntaxOn
+\NewDocumentCommand{\tcbwrap}{mm}
+ {
+  \clist_map_inline:nn { #1 } { \tcolorboxenvironment{##1}{#2} }
+ }
+\ExplSyntaxOff
+\tcbwrap{thm,lem,cor,prop}{
+    grow to left by=5pt,grow to right by=5pt,
+    boxsep=1pt,left=4pt,right=4pt,
+    top=2pt,bottom=2pt, colback=gray!20, sharp corners,enhanced,
+    leftrule=3pt, rightrule=0pt, toprule=0pt, bottomrule=0pt,
+    breakable=true}
+\tcbwrap{rem,defn}{
+    grow to left by=5pt,grow to right by=5pt,
+    boxsep=1pt,left=4pt,right=4pt,
+    top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1.5pt}{0pt}{black!80},
+    breakable=true}
+\tcbwrap{xca,example}{
+    grow to left by=5pt,grow to right by=5pt,
+    boxsep=1pt,left=4pt,right=4pt,
+    top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
+    borderline west={1.5pt}{0pt}{black!80,dashed},
+    breakable=true}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewenvironment{align*}{\align}{\endalign}
+\renewenvironment{alignat*}{\alignat}{\endalignat}
+\renewenvironment{multline*}{\multline}{\endmultline}
+\renewenvironment{gather*}{\gather}{\endgather}
+\renewenvironment{equation*}{\equation}{\endequation}
+
+
+\usepackage{color}
+\def\white{\color{white}}
+\def\black{\color{black}}
+\def\red{\color{red}}
+\def\green{\color{green}}
+\def\blue{\color{blue}}
+\def\cyan{\color{cyan}}
+\def\magenta{\color{magenta}}
+\def\yellow{\color{yellow}}
+
+
+
+%%%%%%%%%%%%%%%%%%%   MACROS   %%%%%%%%%%%%%%%%%%
+
+% backslash for left side quotients
+\newcommand{\bslash}{\mkern-.5mu\backslash\mkern-2mu}
+
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbS}{\mathbb{S}}
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calR}{\mathcal{R}}
+
+\newcommand{\fraka}{\mathfrak{a}}
+\newcommand{\frake}{\mathfrak{e}}
+\newcommand{\frakg}{\mathfrak{g}}
+\newcommand{\frakh}{\mathfrak{h}}
+\newcommand{\frakk}{\mathfrak{k}}
+\newcommand{\fraki}{\mathfrak{i}}
+\newcommand{\frakn}{\mathfrak{n}}
+\newcommand{\frakN}{\mathfrak{N}}
+\newcommand{\frakm}{\mathfrak{m}}
+\newcommand{\frakM}{\mathfrak{M}}
+\newcommand{\frakb}{\mathfrak{b}}
+\newcommand{\frakd}{\mathfrak{d}}
+\newcommand{\fraku}{\mathfrak{u}}
+\newcommand{\frakgl}{\mathfrak{gl}}
+\newcommand{\fraksl}{\mathfrak{sl}}
+\newcommand{\frako}{\mathfrak{o}}
+\newcommand{\frakso}{\mathfrak{so}}
+\newcommand{\fraksu}{\mathfrak{su}}
+\newcommand{\fraksp}{\mathfrak{sp}}
+\newcommand{\frakeuc}{\mathfrak{euc}}
+
+\newcommand{\scrA}{\mathscr{A}}
+\newcommand{\scrF}{\mathscr{F}}
+\newcommand{\scrH}{\mathscr{H}}
+\newcommand{\scrR}{\mathscr{R}}
+\newcommand{\scrT}{\mathscr{T}}
+
+\newcommand{\acts}{\curvearrowright}
+\newcommand{\lacts}{\curvearrowleft}
+\newcommand{\dd}{{\mathrm{d}}}
+\newcommand{\bm}[1]{\boldsymbol{\mathrm{#1}}}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\i}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Ad}{\mathrm{Ad}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\Adg}{\mathrm{\mathbf{Ad}}}
+
+\newcommand{\rmA}{\mathrm{A}}
+\newcommand{\rmP}{\mathrm{P}}
+\newcommand{\rmD}{\mathrm{D}}
+\newcommand{\rmF}{\mathrm{F}}
+\newcommand{\rmG}{\mathrm{G}}
+\newcommand{\rmV}{\mathrm{V}}
+\newcommand{\rmB}{\mathrm{B}}
+\newcommand{\rmE}{\mathrm{E}}
+\newcommand{\rmK}{\mathrm{K}}
+\newcommand{\rmT}{\mathrm{T}}
+\newcommand{\rmi}{\mathrm{i}}
+\newcommand{\rme}{\mathrm{e}}
+
+\newcommand{\const}{\mathrm{const}}
+\newcommand{\tra}{\mathrm{tra}}
+\newcommand{\Lin}{\bm\mathrm{L}}
+
+\newcommand{\sfg}{\mathsf{g}}
+\newcommand{\sfh}{\mathsf{h}}
+\newcommand{\sfv}{\mathsf{v}}
+\newcommand{\sfw}{\mathsf{w}}
+\newcommand{\sfJ}{\mathsf{J}}
+\newcommand{\sfR}{\mathsf{R}}
+\newcommand{\sfT}{\mathsf{T}}
+
+\newcommand{\mFB}{\mathsf{-Bun}}
+\newcommand{\FB}{\mathsf{Bun}}
+\newcommand{\PFB}{\mathsf{Prin}}
+\newcommand{\VB}{\mathsf{VectBun}}
+\newcommand{\Car}{\mathsf{Car}}
+% \DeclareMathOperator{\ad}{ad}
+% \DeclareMathOperator{\Ad}{Ad}
+% \DeclareMathOperator{\Adg}{\mathbf{Ad}}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\ver}{ver}
+\DeclareMathOperator{\hor}{hor}
+\DeclareMathOperator{\mor}{Mor}
+\DeclareMathOperator{\rel}{rel\,}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ob}{Ob}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\aut}{aut}
+\DeclareMathOperator{\Gau}{Gau}
+\DeclareMathOperator{\gau}{gau}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Int}{int}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Pin}{Pin}
+\DeclareMathOperator{\Spin}{Spin}
+\DeclareMathOperator{\Hol}{Hol}
+\DeclareMathOperator{\hol}{\mathfrak{hol}}
+\DeclareMathOperator{\Mon}{Mon}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\Or}{O}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\CO}{CO}
+\DeclareMathOperator{\Euc}{Euc}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Alt}{Alt}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\ext}{ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\tor}{tor}
+\DeclareMathOperator{\lcm}{lcm}
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+\DeclareMathOperator*{\res}{res}
+\DeclareMathOperator{\Lief}{Lie}
+
+\newcommand{\Lie}{\mathcal{L}}
+\newcommand{\colimit}{\varinjlim}
+\newcommand{\limit}{\varprojlim}
+\newcommand{\fX}{\mathfrak{X}}
+\newcommand{\sub}{\vartriangleleft}
+\newcommand{\sube}{\trianglelefteqslant}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+
+\usepackage{xparse}
+\DeclareDocumentCommand{\restr}{m m o}  
+{%
+  \IfNoValueTF{#3}
+  {
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2}
+  }{
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2}^{#3} }
+}
+
+\makeatletter  %define \xoverline, automatically sized overline
+    \newsavebox\myboxA
+    \newsavebox\myboxB
+    \newlength\mylenA
+    \newcommand*\xoverline[2][0.75]{%
+        \sbox{\myboxA}{$\m@th#2$}%
+        \setbox\myboxB\null% Phantom box
+        \ht\myboxB=\ht\myboxA%
+        \dp\myboxB=\dp\myboxA%
+        \wd\myboxB=#1\wd\myboxA% Scale phantom
+        \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+        \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+        \addtolength\mylenA{-\the\wd\myboxB}%
+        \ifdim\wd\myboxB<\wd\myboxA%
+        \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+        \else
+            \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+        \fi}
+\makeatother
+
+\usepackage{graphicx}
+\newcommand{\PRLsep}{   %decorative line used to separate sections
+           \noindent\makebox[\linewidth]{
+                \resizebox{0.5\linewidth}{1pt}{$\blacklozenge$}}}
+
+\usepackage{graphicx,scalerel}
+\newcommand\wh[1]{\hstretch{1.42}{\hat{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu} %requires \usepackage{graphicx,scalerel}
+\newcommand\wt[1]{\hstretch{1.42}{\tilde{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
+\newcommand\wb[1]{\hstretch{1.42}{\bar{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
+
+
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+% abbreviations:
+\newacronym{hlp}{HLP}{Homotopy Lifting Property}
+\newacronym{hep}{HEP}{Homotopy Extension Property}
+\newacronym{pou}{POU}{partition of unity}
+\newacronym{fb}{FB}{fiber bundle}
+\newacronym{vb}{VB}{vector bundle}
+\newacronym{pfb}{PFB}{principal fiber bundle}
+\newacronym{wlog}{WLOG}{without loss of generality}
+\newacronym{tfae}{TFAE}{the following are equivalent}
+\newacronym{inmt}{InMT}{Inverse Mapping Theorem}
+\newacronym{immt}{ImMT}{Implicit Mapping Theorem}
+\newacronym{mv}{MV}{Mayer-Vietoris}
+\newacronym{ops}{OPS}{one-parameter subgroup}
+
+
