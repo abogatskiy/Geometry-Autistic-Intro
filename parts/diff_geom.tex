@@ -2522,7 +2522,7 @@ The cylinder and the M\"obius band are vector bundles of rank one over $\bbS^1$.
 
 \begin{rem}\label{rem zero section, extending section}
 \begin{enumerate}
-    \item Unlike general \glspl{fb}, \glspl{vb} always have at least one global section. Let $E_0\subset E$ be the set of all points that are neutral elements of their respective fibers as vector spaces (i.e.\ they are mapped to zero by the second component of any local trivialization). Furthermore, the restricted projection $\restr{\pi}{E_0}:E_0\to M$ is a diffeomorphism because locally it is just the first component of any local trivialization, therefore a local diffeo, and it is also clearly bijective. $E_0$, and the corresponding map $\sigma_0:M\to E_0$, are called the \emph{zero section}\index{Zero section} of $E$.
+    \item Unlike general \glspl{fb}, \glspl{vb} always have at least one global section. Let $E_0\subset E$ be the set of all points that are neutral elements of their respective fibers as vector spaces (i.e.\ they are mapped to zero by the second component of any local trivialization). Furthermore, the restricted projection $\restr{\pi}{E_0}:E_0\to M$ is a diffeomorphism because locally it is just the first component of any local trivialization, therefore a local diffeo, and it is also clearly bijective. $E_0$, and the corresponding map $o:M\to E_0$, are called the \emph{zero section}\index{Zero section} of $E$.
     \item Even on a smooth vector bundle, not every smooth local section can be extended to a global one. Consider for example the trivial bundle $\bbR\times\bbR\to \bbR$ and its local section over $(0,+\infty)$ given by $\sigma(x)=(x,\frac 1x)$. It cannot be extended to all of $\bbR$. 
     \item However, for a smooth local section $\sigma:U\to E$ and every point $p\in U$ there exists an open neighborhood $U_p\subset M$ of $p$ such that $\sigma$ can be extended to a section $\wt{\sigma}:U\cup U_p\to E$.
     \item If $S\sub M$ is an embedded submanifold, then any section $\sigma$ of the restricted \gls{vb} $\restr{E}{S}$ can be extended to an open neighborhood of $S$ (which may be $S$ itself if $S$ is open). This can be done by constructing local frames of $E$ adapted to $S$ at every point $p\in S$, using them to extend the section to some neighborhood $U_p$, and stitching these extensions together using a \gls{pou}.
@@ -2849,7 +2849,7 @@ Another important class of bundles, called jet bundles, are a generalization of 
 
 \begin{defn}[Germs, jet bundles, prolongations]\label{def jet bundles}
     \begin{enumerate}
-        \item Given two smooth manifolds $M,N$ and a point $m\in M$ define the equivalence relation $\sim_p$ on $C^\infty(M,N)$ by saying that $f\sim_p g$ iff there exists an open neighborhood $U_p\subset M$ of $p$ such that $\restr{f}{U_p}=\restr{g}{U_p}$. The equivalence class of a given map $f$ under this relation is called the germ of $f$ at $p$, denoted $[f]_p$. The space of germs is denoted
+        \item Given two smooth manifolds $M,N$ and a point $m\in M$ define the equivalence relation $\sim_p$ on $C^\infty(M,N)$ by saying that $f\sim_p g$ iff there exists an open neighborhood $U_p\subset M$ of $p$ such that $\restr{f}{U_p}=\restr{g}{U_p}$. The equivalence class of a given map $f$ under this relation is called the germ of $f$ at $p$, denoted $[f]_p$. The space of germs is denoted\index{Germ of maps}
         \[\calC^\infty_p(M,N)=C^\infty(M,N)\slash \sim_p.\]
         If $f_1\in C^\infty(M,N)$ and $f_2\in C^\infty(N,K)$, then we can compose germs as follows:
         \[[f_2]_{f_1(p)}\circ [f_1]_{p}=[f_2\circ f_1]_p.\]
@@ -2864,7 +2864,7 @@ Another important class of bundles, called jet bundles, are a generalization of 
             \pi^k_l:J^k(M,N)\to J^l(M,N),&\quad  j_p^l f\mapsto p, 0\leq l<k,\\
             \pi^k_0:J^k(M,N)\to M\times N,&\quad j_p^k f\mapsto (p,f(p)).
         \end{align}
-        The projections $\pi^k_0$ induce a unique smooth structure on $J^k(M,N)$ that turns both of the projections into smooth fiber bundles. The map $\pi^k_0$ is called the \emph{$k$-th jet bundle} of maps from $M$ to $N$.
+        The projections $\pi^k_0$ induce a unique smooth structure on $J^k(M,N)$ that turns both of the projections into smooth fiber bundles. The map $\pi^k_0$ is called the \emph{$k$-th jet bundle} of maps from $M$ to $N$.\index{Jet bundle}
         We set
         \[J^k_{p}(M,N)_q=(\pi^k_0)^{-1}((p,q)).\]
         If $\dim M=m$ and $\dim N=n$, then the typical fiber of the jet bundle is the manifold $J^k_{0}(\bbR^m,\bbR^n)_0$, which parametrizes the values of Taylor coefficients (above the $0$-th order) of maps in a local chart.
@@ -2873,8 +2873,8 @@ Another important class of bundles, called jet bundles, are a generalization of 
         Note that $j^k$ is a differential operator. Local sections of $J^k(E)$ that have this form for some local section $\sigma\in\Gamma^\infty(E)$ are called \emph{holonomic}.
         \item For every operator $D:\Gamma^\infty(E\to M)\to \Gamma^\infty(E'\to M)$ that is a $k$-th order differential operator in local coordinates, there exists a bundle morphism $\wt D:J^k(E)\to E'$ such that $D=\wt D\circ j^k$.
         \item An order $k$ \emph{partial differential equation} on $E$ is a closed embedded submanifold $S$ of the jet bundle $J^k_M(E)$. A solution is a local section $\sigma\in\Gamma_U(J^k(E))$ that takes values in $S$. 
-        \item The structure group of an order $k$ jet bundle of maps on an $m$-dimensional manifold is called the \emph{$k$-th differential group}
-        \[G^k_m\coloneqq J^k_{0,0}(\bbR^m,\bbR^m)^\times.\]
+        \item The structure group of an order $k$ jet bundle of maps on an $m$-dimensional manifold is called the \emph{$k$-th order jet group}\index{Jet group}
+        \[\GL^k_m\coloneqq J^k_{0,0}(\bbR^m,\bbR^m)^\times.\]
     \end{enumerate}
 \end{defn}
 
@@ -3271,7 +3271,7 @@ Let $E\overset{\pi}{\to} M$ be a \gls{vb} of rank $k$, and $\dim M=m$. Then:
 \end{enumerate}
 \end{cor}
 \begin{proof}
-    We prove claim 1, the rest are trivial via a similar argument. Take the zero section $\sigma_0:M\to E$ and find a   section $\sigma$ transversal to it by Theorem~\ref{transverse section thm}. Then $\codim(\im (\sigma)\cap E_0)=2k>m+k$, which means that this intersection is empty (two submanifolds whose dimensions add up to less than the dimension of the ambient manifold can only be transverse if they are disjoint; e.g.\ the intersection of two curves in $\bbR^3$ is generically empty). This theorem is due to J.P.~Serre \cite[Thm.~2]{Atiyah}.
+    We prove claim 1, the rest are trivial via a similar argument. Take the zero section $o:M\to E$ and find a   section $\sigma$ transversal to it by Theorem~\ref{transverse section thm}. Then $\codim(\im (\sigma)\cap E_0)=2k>m+k$, which means that this intersection is empty (two submanifolds whose dimensions add up to less than the dimension of the ambient manifold can only be transverse if they are disjoint; e.g.\ the intersection of two curves in $\bbR^3$ is generically empty). This theorem is due to J.P.~Serre \cite[Thm.~2]{Atiyah}.
 \end{proof}
 
 
@@ -3573,6 +3573,37 @@ Let $K=\supp(X)$. Every $p\in K$ we have the flow $F^X$ defined on some $U_p\tim
 Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector field is not complete, there are integral curves that escape any compact domain in finite time.
 
 
+\begin{rem}
+    In rare cases we will need to use flows of \emph{time-dependent vector fields}\index{Vector field!time-dependent}, which are smooth maps $X:J\times M\to TM$ with $J\subset\bbR$ such that $X(t,m)\in T_m M$ for all $(t,m)\in J\times M$. We also write $X_t(m)\coloneqq X(t,m)$. An integral curve $\gamma:I\to M$ with $I\subset J$ is defined by 
+    \[\dot\gamma(t)=X(t,\gamma(t)),\quad t\in I.\]
+    Maximality and completeness are defined as usual. One can reduce the problem of finding integral curves of $X$ to a time-independent problem by adding an extra dimension:
+    \[\wt X_{(t,m)}\coloneqq ((t,1),X(t,m)),\]
+    where we we use the natural identification $T(J\times M)\cong (J\times\bbR)\times TM$. Assume $J=\bbR$ for simplicity and let $\wt F:\wt\calD\to \bbR\times M$ be the flow of $\wt X$. Then it is easy to show that for each $m\in M$ and $t_0\in\bbR$ there is a unique maximal integral curve $\gamma:I\to M$ of $X$ with initial condition $\gamma(t_0)=m$, given explicitly by 
+    \[I=\wt{\calD}_{(t_0,m)}+t_0,\quad \gamma(t)=\pr_M\circ \wt{F}_{(t-t_0)}(t_0,m),\]
+    where $\pr_M:\bbR\times M\to M$ is the projection onto the second component.
+    
+    This allows one to define a \emph{time-dependent flow},\index{Flow!time-dependent} which is a smooth map $F:\calD\to M$, where $\calD$ is an open neighborhood of the diagonal set $\Delta_\bbR\times M$ inside $\bbR\times\bbR \times M$.  For $(t_2,t_1,m)\in\bbR\times\bbR\times M$, we denote 
+    \[\calD_{t_1,m}\coloneqq \{t_2\in\bbR:(t_2,t_1,m)\in\calD\},\quad \calD_{t_2,t_1,m}\coloneqq \{m\in M:(t_2,t_1,m)\in\calD\}\]
+    and let $F_{t_2,t_1}:\calD_{t_2,t_1}\to M$ be the induced map $F_{t_2,t_1}(m)=F(t_2,t_1,m)$. It has to satisfy the followign for all $(t_1,t_2,t_3,m)\in\bbR\times\bbR\times\bbR\times M$:
+    \begin{enumerate}
+        \item $F_{t_1,t_1}=\id_M$,
+        \item if $(t_2,t_1,m),(t_3,t_2,F_{t_2,t_1}(m))\in\calD$, then $(t_3,t_1,m)\in\calD$ and 
+        \[F_{t_3,t_2}(F_{t_2,t_1}(m))=F_{t_3,t_1}(m),\]
+        \item $\calD_{t_1,m}$ is connected,
+        \item $F_{t_2,t_1}(\calD_{t_2,t_1})\subset \calD_{t_1,t_2}$.
+    \end{enumerate}
+    $F$ is called maximal if it does not admit an extension in the sense of mappings. It is called complete if $\calD=\bbR\times\bbR\times M$. 
+    
+    Now, for a time-dependent vector field $X$, define 
+    \[\calD\coloneqq \left\{(t,t_0,m)\in\bbR\times\bbR\times M:(t-t_0,(t_0,m))\in\wt\calD\right\}\]
+    and 
+    \[F^X:\calD\to M,\quad F^X_{t,t_0}(m)\coloneqq \pr_M\circ \wt{F}_{t-t_0}((t_0,m)).\]
+    By the existence of maximal integral curves indicated above, it easily follows that the assignment $X\mapsto F^X$ defines a bijection between time-dependent vector fields on $M$ and maximal time-dependent flows on $M$. In particular, complete time-dependent vector fields correspond to complete time-dependent flows. For more details see \cite[Sec.~3.4]{RS1}.
+\end{rem}
+
+
+
+
 
 
 \subsection{Applications of flows}\label{sec: applications of flows}
@@ -3733,17 +3764,15 @@ Recall that Lie derivatives of functions satisfy $\Lie_{F_\ast X}F_\ast f=F_\ast
 \[\Lie_{\restr{X}{U}}\left(\restr{f}{U}\right)=\restr{\left(\Lie_X f\right)}{U}.\]
 
 \begin{defn}[Derivations]\index{Derivation on an algebra}
-If $A$ is an algebra over a field $K$, then a derivation on $A$ is a $K$-linear map $D:A\to A$ that satisfies the Leibniz rule
+If $A$ is an algebra over a field $\bbK$, then a derivation on $A$ is a $K$-linear map $D:A\to A$ that satisfies the Leibniz rule
 \[D(a\cdot b)=D(a)\cdot b+a\cdot D(b),\;\; a,b\in A.\]
 Is is easy to check that the vector space of all derivations on $A$, denoted by $\mathrm{Der}(A)$, is a Lie algebra under the commutator $[D_1,D_2]=D_1\circ D_2-D_2\circ D_1$.
 An algebra with a distinguished derivation is called a \emph{differential algebra}.
 \end{defn}
 
 Clearly any Lie derivative $\Lie_X, X\in\fX(M)$, is a derivation on the algebra of functions $C^\infty(M)$, because it is a directional derivative in local coordinates.
-
 Moreover, any derivation $D$ on $C^\infty(M)$ satisfies $D(1)=0$, because
 \[D(1)=D(1^2)=D(1)\cdot 1+1\cdot D(1)=2\cdot D(1).\]
-
 Finally, the set of all Lie derivatives $\{\Lie_X\}_{X\in\fX(M)}$ is a $C^\infty(M)$-module:
 \[f\cdot\Lie_X=\Lie_{f\cdot X}.\]
 
@@ -3764,16 +3793,14 @@ The space of all $\bbR $-linear derivations on the algebra $C^\infty(M)$ is isom
     Pick a local chart at $p$, $\varphi:U\to\wh{U}\subset\bbR^m$. Let $x\in\wh{U}$, $a=\varphi(p)$, $f\in C^\infty(M)$, then 
     \[(\varphi_\ast f)(x)=(\varphi_\ast f)(a)+\sum_{j=1}^m (x^j-a^j)\int_0^1 \underbrace{(\varphi_\ast f)_j}_{\partial(\varphi_\ast f)/\partial x^j} [a+t(x-a)]\dd t\]
     on some neighborhood of $a$.
-    
-    Therefore \[f(u)=f(p)+\sum_{i=1}^m (\varphi^i(u)-a^i)g_i(u)\] for some set of local functions, namely $g_i(p)=\frac{\partial(\varphi_\ast f)}{\partial x^i} (a)$. Thus
+    Therefore, \[f(u)=f(p)+\sum_{i=1}^m (\varphi^i(u)-a^i)g_i(u)\] for some set of local functions, namely $g_i(p)=\frac{\partial(\varphi_\ast f)}{\partial x^i} (a)$. Thus
     \[(\theta f)(p)=\sum_i g_i(p)\theta(\varphi^i)(p)=\sum \partial_{x^i}(\varphi_\ast f)(a) \theta \varphi^i(p),\]
     and this is formula is chart-independent! Now we can define a smooth $X$ by its local representation
     \[X^i(u)\coloneqq \theta\varphi^i(u).\]
     It is easy to check that $X$ is independent of the choice of $\varphi$, which means that it is actually a globally well-defined vector field on $M$. For $f\in C^\infty(M)$, the local representative in $x=\varphi(u)\in\wh{U}$ of $\Lie_X f$ is 
     \[(f\circ\varphi^{-1})_{\ast x}\circ \wh{X}(x)=\sum_i \partial_{x^i}(f\circ \varphi^{-1})(x)\cdot \theta \varphi^i (u)=\theta f(u),\]
     hence $\theta=\Lie_X$.
-    
-    Uniqueness follows from the statement that $\Lie_X=0$ iff $X=0$.
+    Uniqueness follows from the obvious statement that $\Lie_X=0$ iff $X=0$.
 \end{proof}
 \begin{cor}
 If $x^i$ is a local coordinate system, then the local vector fields $\partial/\partial x^i$ form a basis of derivations at $p$, therefore 
@@ -4879,6 +4906,32 @@ Next, we derive local criteria for a regular Pfaffian system to be integrable. W
 \newpage
 \section{Lie Theory II: Geometric Structure}\label{sec: Lie theory ii}
 
+\begin{hrem*}
+    \small
+    So far we have been studying basic definitions and properties of smooth manifolds and fiber bundles, which in fact is a language that was only developed in the mid-20th century. In contrast, the geometry of Lie groups, discovered in the late 19th century, may be seen as the true start of modern differential geometry. Euclid's postulates had been debated for millenia, but actual non-Euclidean geometries first appeared in the work of Carl Friedrich Gauss in the 1820's. Due to the dominance of the Kantian view that Euclidean geometry is ``the inevitable necessity of thought'', Gauss kept his ``anti-Euclidean'' work to himself. Over the next few decades, through the work of Bolyai and Lobachevsky, the idea of non-Euclidean geometries steadily gained ground. However, the main obstacle to its widespread acceptance was the lack of \emph{parallelism}: in Euclidean space all vectors can be directly compared with each other regardless of their starting point, because as long as the vector's direction and magnitude remain the same, it can be moved about freely. In non-Euclidean geometries there was no clear way of doing that. 
+    
+    On the way to the discovery of general notions of parallelism, geometry split into two tracks. The first one considered deformations of Euclidean geometry. In the late 1820's, Gauss was able to work around the lack of parallelism by studying 2-dimensional surfaces embedded in Euclidean space, where vectors can always be transported. Each embedding produced a specific \emph{extrinsic} geometry on the surface, so Gauss then proceeded to deliberately derive quantities that are \emph{intrinsic} to the surface in the sense that they are independent of the embedding (under some constraints), such as geodesics and Gauss curvature. Berhnhard Riemann's extension of Gauss' work to higher dimensions involved the discovery of what we now call \emph{$n$-dimensional manifolds}. He then proceeded to define intrinsic quantities on these manifolds, such as Riemann metrics and curvature. By the end of the 19th century this became a vast science now known as Riemannian and pseudo-Riemannian geometry. Nevertheless, the notion of parallelism on Riemannian manifolds remained elusive, and Riemann's philosophical notion of geometry remained largely ignored, until after the publication of Einstein's theory of General Relativity in 1915. In the meantime, Riemannian geometry was regarded and developed as an analytical framework. This is why we delay the discussion of Riemannian \emph{geometry} until we develop a more general approach consistent with the second historical track of differential geometry.
+
+    On the other hand, by the second half of the 19th century mathematicians started recognizing that different types of geometries discovered by that point (Euclidean, projective, Lobachevskian, spherical, affine, M\"obius, Lie sphere, Laguerre, etc.), despite each having its own unique set of theorems, could all be characterized by a certain property of \emph{homogeneity}. Namely, each of these spaces supported a set of \emph{distinguished transformations} (homeomorphisms of the space) that acted on the space \emph{transitively}. The ``geometry'' is then obtained by declaring two figures \emph{equal} if they are related by a distinguished transformation. This equality must naturally be an equivalence relation on the set of all figures (subsets of the space), i.e.\ be reflexive, symmetric, and transitive. This immediately implies that the distinguished transformations must form a \emph{group}. In 1872 Klein published a lecture in which he called for the organization of all geometric knowledge based on the stufy of \emph{groups of transformations}, now known as the \emph{Erlangen program}:
+    \begin{quote}
+        \small
+        \emph{Given a manifoldness and a group of transformations of the same; to investigate the configurations belonging to the manifoldness with regard to such properties as are not altered by the transformation of the group.}
+        
+        \hfill Felix Klein, 1872.
+    \end{quote}
+    By 1874, the theory of continuous groups was born largely thanks to the work of Sophus Lie, who closely collaborated with Klein. Since Riemannian geometry is easier to present in the modern language as a subset of a general class of structured geometries on fiber bundles, we devote the next three Sections to the study of Lie groups and their actions on manifolds. Of particular importance to us will be the \emph{Maurer-Cartan equation} and its role in encoding the group structure of any Lie group. In particular, we will see that every Lie group has a canonical notion of parallelism, which was the main impetus behind the development of the theory in the first place. The Maurer-Cartan equation, also known as the Structure Equation in Klein geometry, can be thus seen as the starting point of all modern differential geometry.
+    
+    Meanwhile, Riemannian geometry remained obviously incompatible with Klein's approach due to the lack of any natural parallelism (outside of the special case of \emph{symmetric spaces}). We will return to the issue of unifying Klein's Erlangen program with Riemannian geometry when we discuss Cartan geometry, which is essentially an infinitesimal version of the Erlangen program much in the same way as Riemannian geometry is an infinitesimal version of Euclidean geometry.
+\end{hrem*}
+
+
+
+
+
+
+
+
+
 \subsection{Invariant vector fields}
 
 In this section we show that the tangent bundle of a Lie group is trivial and has a natural set of global frames.
@@ -5139,13 +5192,13 @@ Using the multiplication map $m:G\times G\to G$, define the map $\theta:TG\times
 \[\theta\circ (\pi_\ast\times \pi_\ast)=m_\ast,\]
 where $\pi_\ast\times \pi_\ast$ is the natural isomorphism $(G\times G)\to TG\times TG$. It is easy to check that $\theta$ can be expressed as
 \[\theta\left((g,\xi),(h,\eta)\right)=(gh,R_{h\ast}\xi+L_{g\ast}\eta).\label{eq m_ast}\]
-Then another way to see that $\theta_G$ is a smooth form is to represent it as the composition of smooth maps, using the zero section $\sigma_0:G\to TG$:
+Then another way to see that $\theta_G$ is a smooth form is to represent it as the composition of smooth maps, using the zero section $o:G\to TG$:
 \[\underset{(g,\xi)}{TG}
 \underset{\mapsto}{\overset{\pi\times\id}{\to}}
 \underset{g\times (g,\xi)}{G\times TG}
 \underset{\mapsto}{\overset{i\times\id}{\to}}
 \underset{g^{-1}\times (g,\xi)}{G\times TG}
-\underset{\mapsto}{\overset{\sigma_0\times\id}{\to}}
+\underset{\mapsto}{\overset{o\times\id}{\to}}
 \underset{(g^{-1},0)\times (g,\xi)}{TG\times TG}
 \underset{\mapsto}{\overset{\theta}{\to}}
 \underset{(e,L_{g\ast}^{-1}\xi)}{TG}.\label{eq MC form as composition}
@@ -5291,7 +5344,7 @@ The Maurer-Cartan form provides the infinitesimal information on the multiplicat
 
 
 \begin{thm}[Fundamental Theorem, local version {{\cite[Thm.~6.1]{Sharpe}}}]\label{thm 6.1 Sharpe fundamental local}
-    Let $G$ be a Lie group and $\frakg$ its Lie algebra, and let $\omega\in\Omega^1(M,\frakg)$ be a $\frakg$-valued $1$-form on a smooth manifold $M$. Then for any $x\in M$ there exists an open neighborhood $U\subset M$ of $x$ and a function $f:U\to G$ such that $\delta f=\omega$ iff $\omega$ satisfies \emph{the structural equation}\index{Structural equation}
+    Let $G$ be a Lie group and $\frakg$ its Lie algebra, and let $\omega\in\Omega^1(M,\frakg)$ be a $\frakg$-valued $1$-form on a smooth manifold $M$. Then for any $x\in M$ there exists an open neighborhood $U\subset M$ of $x$ and a function $f:U\to G$ such that $\delta f=\omega$ iff $\omega$ satisfies \emph{the Structure Equation}\index{Structure equation}
     \[\dd \omega(X,Y)+[\omega(X),\omega(Y)]=0,\quad \forall X,Y\in\fX(M).\]
     If $M$ is connected and $f_1,f_2:M\to G$ satisfy $\delta f_1=\delta f_2$, then there is a unique element $c\in G$ (integration constant) such that $f_2(x)=c\cdot f_1(x)$ for all $x\in M$.
 \end{thm}
@@ -5324,7 +5377,7 @@ The Maurer-Cartan form provides the infinitesimal information on the multiplicat
 The local theorem immediately implies its own global version in the case when $M=[0,1]$ because the one-dimensional Maurer-Cartan equation is always true, and the interval is compact, so only a finite number of local reconstructions of $f$ are needed.
 
 \begin{defn}[Development of $\omega$]
-    Let $M$ be a manifold and $\omega\in\Omega^1(M,\frakg)$ where $\frakg=\Lief G$ for some Lie group $G$. Given a smooth path $\gamma:[0,1]\to M$, the development of $\omega$ along $\gamma$ starting at $g\in G$ is the unique function $\wt{\gamma}:[0,1]\to G$ such that $\wt{g}(0)=g$ and $\wt{\gamma}^\ast\theta_G=\gamma^\ast\omega$.
+    Let $M$ be a manifold and $\omega\in\Omega^1(M;\frakg)$ where $\frakg=\Lief G$ for some Lie group $G$. Given a smooth path $\gamma:[0,1]\to M$, the development of $\omega$ along $\gamma$ starting at $g\in G$ is the unique function $\wt{\gamma}:[0,1]\to G$ such that $\wt{g}(0)=g$ and $\wt{\gamma}^\ast\theta_G=\gamma^\ast\omega$.
 \end{defn}
 
 \begin{xca}
@@ -6766,7 +6819,7 @@ We can now prove a slightly relaxed version of the Closed Subgroup Theorem~\ref{
 
 \subsection{Yamabe's Theorem}\label{sec: Yamabe's theorem}
 
-The central result of this section is Yamabe's theorem, characterizing analytic subgroups of a Lie group by the purely topological property of being path-connected. Groups which are not path-connected can then be dealt with using the concept of initial (weakly embedded) subgroups.
+The central result of this section is Yamabe's theorem, characterizing analytic subgroups of a Lie group by the purely topological property of being path-connected. Groups which are not path-connected can then be dealt with using the concept of initial (weakly embedded) subgroups. As a result, all subgroups of Lie groups are either weakly embedded (if they're not closed) or embedded (if they're closed). This theorem is crucial in many applications, and we will use it for a key result in the theory of connections on fiber bundles.
 
 
 \begin{thm}[Yamabe {{\cite[Thm.~9.6.1]{HN}}}]\label{thm Yamabe}\index{Theorem!Yamabe}
@@ -7109,20 +7162,20 @@ That is, the stabilizers of any two points lying on the same orbit are conjugate
 
 We also reiterate definitions of the main algebraic properties of group actions.
 
-\begin{defn}
+\begin{defn}[Faithful, free, transitive actions]\index{Lie group action!faithful}\index{Lie group action!effective}\index{Lie group action!transitive}\index{Lie group action!free}
     A Lie group action $\Phi$ is called
     \begin{enumerate}
-        \item effective if $\ker\Phi=\{e\}$,
-        \item free if all stabilizers are trivial:$\forall g\in G\; G_m=\{e\}$.
-        \item transitive if it has a single orbit.
+        \item \emph{faithful}, or \emph{effective}, if $\ker\Phi=\{e\}$,
+        \item \emph{free} if all stabilizers are trivial:$\forall g\in G\; G_m=\{e\}$.
+        \item \emph{transitive} if it has a single orbit.
     \end{enumerate}
 \end{defn}
 
-By the above Proposition, by passing to the induced action of $G\slash\ker\Phi$, every action can be replaced by an effective action which has the same orbits. Moreover, it is obvious that free actions and transitive actions have just one single orbit type.
+By the above Proposition, by passing to the induced action of $G\slash\ker\Phi$, every action can be replaced by a faithful action with the same orbits. Moreover, it is obvious that free actions and transitive actions have just one single orbit type.
 
 \begin{example}
 \begin{enumerate}
-    \item  The actions of $G$ on itself by left and right translations are effective, free and transitive. Their restrictions to a proper Lie subgroup $H< G$ are still effective and free but no longer transitive. The action of $G$ on itself by inner automorphisms (conjugations $\Adg$) is neither free nor transitive, because the identity is invariant and the kernel is given by the center $Z(G)$. Hence, the adjoint action is effective iff the center is trivial. Its orbits are the conjugacy classes of elements of $G$. The stabilizer of $g\in G$ is the centralizer  $C(g)$ of $g\in G$. Therefore, the orbit types are given by the conjugacy classes of those subgroups of $G$ which are centralizers of elements of $G$. The orbit space is usually referred to as the adjoint quotient of $G$.
+    \item  The actions of $G$ on itself by left and right translations are effective, free and transitive. Their restrictions to a proper Lie subgroup $H< G$ are still effective and free but no longer transitive. The action of $G$ on itself by inner automorphisms (conjugations $\Adg$) is neither free nor transitive, because the identity is invariant and the kernel is given by the center $Z(G)$. Hence, the adjoint action is effective iff the center is trivial. Its orbits are the conjugacy classes of elements of $G$. The stabilizer of $g\in G$ is the centralizer  $C_G(g)$ of $g\in G$. Therefore, the orbit types are given by the conjugacy classes of those subgroups of $G$ which are centralizers of elements of $G$. The orbit space is usually referred to as the adjoint quotient of $G$.
     \item The action of $G$ on the homogeneous space $G\slash H$, where $H\sube G$ is a nontrivial closed subgroup, by the induced left translations $\wh{L}_g$ is transitive but not free. The stabilizer of a coset $gH$, $g\in G$, is given by $G_{gH}=gHg^{-1}$. Consequently, the kernel of the action is given by $\bigcap_{g\in G}gHg^{-1}$. It lies between $Z(G)\cap H$ and $H$ itself, the latter being the case when $H$ is normal.
     \item For the action of $G=\bbR$ on $M$ defined by the flow $F^X$ of a complete vector field $X\in\fX(M)$, the orbit map of a point $m\in M$ is given by the maximal integral curve $F^X_m$. The stabilizer is $G_m=\bbR$ in the case $X_m=0$, $G_m=\bbZ T$ if the integral curve is periodic with period $T$, and $G_m=\{0\}$ otherwise. Since $G$ is abelian, the orbit types correspond bijectively to the subgroups which appear as stabilizers.
 \end{enumerate}
@@ -7355,7 +7408,7 @@ Now we will discuss the equivariant analog of the Tubular Neighborhood Theorem~\
 \begin{defn}[Tubular Neighborhood and Slice]\index{Tubular neighborhood}
     Let $(M,G,\Phi)$ be a Lie group action and let $O\subset M$ be an orbit.
     \begin{enumerate}
-        \item A (equivariant) tubular neighborhood of $O$ is an equivariant diffeomorphism $\xi:U\to E$  from an open invariant neighborhood $U$ of $O$ in $M$ onto an open neighborhood $V$ of the zero section $\sigma_0$ in a $G$-vector bundle $E$ over $O$ such that $\restr{\chi}{O}=\sigma_0$.
+        \item A (equivariant) tubular neighborhood of $O$ is an equivariant diffeomorphism $\xi:U\to E$  from an open invariant neighborhood $U$ of $O$ in $M$ onto an open neighborhood $V$ of the zero section $o$ in a $G$-vector bundle $E$ over $O$ such that $\restr{\chi}{O}=o$.
         \item For $m\in O$, the $G_m$-invariant neighborhood $V_m=V\cap E_m$ of the origin in $E_m$ is called the linear slice of $\chi$ at $m$ and the $G_m$-invariant embedded submanifold $U_m=\chi^{-1}(V_m)$ of $M$ is called the slice of $\chi$ at $m$.
     \end{enumerate}
     One says that the $G$-vector bundle $E$ provides a local normal form for $\Phi$ near $O$.
@@ -7364,7 +7417,7 @@ Now we will discuss the equivariant analog of the Tubular Neighborhood Theorem~\
 \begin{rem}
     \begin{enumerate}
         \item Recall from Remark~\ref{rem 6.2.10 RS1}(2) that $\Phi$ induces an action $\Phi^N$ of $G$ on the bundle manifold of the normal bundle $NO$, turning $NO$ into a $G$-vector bundle. We will show below that one may always choose $E=NO$.
-        \item Let $m\in O$. Since the orbit map $G\slash G_m\to O$ is an equivariant diffeomorphism, one might as well assume $E$ to be a $G$-vector bundle over $G\slash G_m$. In this case the requirement $\restr{\chi}{O}=\sigma_0$ reduces to $\chi(m)=\sigma(0)([e])$.
+        \item Let $m\in O$. Since the orbit map $G\slash G_m\to O$ is an equivariant diffeomorphism, one might as well assume $E$ to be a $G$-vector bundle over $G\slash G_m$. In this case the requirement $\restr{\chi}{O}=o$ reduces to $\chi(m)=\sigma(0)([e])$.
         \item  The slices $U_m$, $m\in M$, of a tubular neighborhood $\chi:U\to E$ of $O$ jave the following properties.
         \begin{enumerate}[label=(\alph*)]
             \item $G\cdot U_m=U$ and $U_m$ is closed in $U$.
