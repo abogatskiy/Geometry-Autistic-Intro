@@ -2595,13 +2595,13 @@ The following is an exercise.
     \[\Gamma^\infty(E\otimes E')\cong \Gamma^\infty(E)\otimes_{C^\infty(M)}\Gamma^\infty(E').\]
 \end{prop}
 \begin{proof}
-    For simplicity we will write $\Gamma$ instead of $\Gamma^\infty$. Consider the map $\alpha:\Gamma(E)\times\Gamma(E')\to\Gamma(E\otimes E')$ defined by $\alpha(\sigma,\sigma')(m)=\sigma(m)\otimes\sigma'(m)$. Since this map is clearly $C^\infty(M)$-bilinear, it can be interpreted as a map on $\Gamma(E)\otimes\Gamma(E')$. We need to show it is an isomorphism.
+    For simplicity we will write $\Gamma$ instead of $\Gamma^\infty$. Consider the map $\alpha:\Gamma^\infty(E)\times\Gamma^\infty(E')\to\Gamma^\infty(E\otimes E')$ defined by $\alpha(\sigma,\sigma')(m)=\sigma(m)\otimes\sigma'(m)$. Since this map is clearly $C^\infty(M)$-bilinear, it can be interpreted as a map on $\Gamma^\infty(E)\otimes\Gamma^\infty(E')$. We need to show it is an isomorphism.
     
-    First if $E$ and $E'$ are trivial, then $\Gamma(E)$ and $\Gamma(E')$ are both free $C^\infty(M)$ modules because every section is a linear combination of a global frame of sections $\{e_i\}$ (or $\{e_i'\}$ for $E'$) with coefficients that are smooth functions on $M$. Then a global frame on $E\otimes E'$ is $e_i\otimes e_j'$ and $\alpha$ is clearly an isomorphism.
+    First if $E$ and $E'$ are trivial, then $\Gamma^\infty(E)$ and $\Gamma^\infty(E')$ are both free $C^\infty(M)$ modules because every section is a linear combination of a global frame of sections $\{e_i\}$ (or $\{e_i'\}$ for $E'$) with coefficients that are smooth functions on $M$. Then a global frame on $E\otimes E'$ is $e_i\otimes e_j'$ and $\alpha$ is clearly an isomorphism.
     
     Now, if $E$ and $E'$ are still trivial but $E=E_1\oplus E_2$, then we have 
     \begin{multline}
-        (\Gamma(E_1)\otimes\Gamma(E'))\oplus(\Gamma(E_2)\otimes\Gamma(E'))\cong (\Gamma(E_1)\oplus\Gamma(E_2))\otimes\Gamma(E')\cong\\ \cong \Gamma(E\otimes E')\cong \Gamma(E_1\otimes E')\oplus\Gamma(E_2\otimes E'),
+        (\Gamma^\infty(E_1)\otimes\Gamma^\infty(E'))\oplus(\Gamma^\infty(E_2)\otimes\Gamma^\infty(E'))\cong (\Gamma^\infty(E_1)\oplus\Gamma^\infty(E_2))\otimes\Gamma^\infty(E')\cong\\ \cong \Gamma^\infty(E\otimes E')\cong \Gamma^\infty(E_1\otimes E')\oplus\Gamma^\infty(E_2\otimes E'),
     \end{multline}
     which implies that the statement holds for $E_1\otimes E'$ and $E_2\otimes E'$ separately. All isomorphisms here remain natural because we use nothing but the natural projections coming with the definitions of direct sums and tensor products.
     
@@ -2646,11 +2646,11 @@ The following is an exercise.
 \begin{proof}
     The map on sections induced by a bundle morphism is clearly $C^\infty(M)$-linear. Conversely, given $\calF$, first we show its locality: if a section vanishes locally on an open set $U\subset M$, then its image under $\calF$ does as well. This follows by constructing, for each $m\in U$, a local bump function $\chi_m$ supported in $U$ that equals $1$ at $m\in U$ and using  $\calF(\chi_m\sigma)=\chi_m\calF(\sigma)=0$, which, upon evaluation at $m$, gives $\calF(\sigma)(m)=0$.
 
-    Next we show that $\calF$ is pointwise (\emph{hyperlocal}): if $\sigma(m)=0$, then $\calF(\sigma)(m)=0$. This follows by constructing a local frame at $m$, extending it to a collection of global sections $s_i\in\Gamma(E)$, and replacing $\sigma$ by $\sum_i c^is_i$ with $c^i\in C^\infty(M)$ on a neighborhood of $m$. Then, by the locality property we just proved, $\calF(\sigma)(m)=\sum_i\calF(c^is_i)(m)=\sum_i c^i(m)\calF(s_i)(m)=0$.
+    Next we show that $\calF$ is pointwise (\emph{hyperlocal}): if $\sigma(m)=0$, then $\calF(\sigma)(m)=0$. This follows by constructing a local frame at $m$, extending it to a collection of global sections $s_i\in\Gamma^\infty(E)$, and replacing $\sigma$ by $\sum_i c^is_i$ with $c^i\in C^\infty(M)$ on a neighborhood of $m$. Then, by the locality property we just proved, $\calF(\sigma)(m)=\sum_i\calF(c^is_i)(m)=\sum_i c^i(m)\calF(s_i)(m)=0$.
 
-    Now we can construct a bundle morphism $F$ corresponding to $\calF$. For any $m\in M$ and $e\in E_p$ let $F(e)=\calF(s)(m)\in E'_m$, where $s\in \Gamma(E)$ is a clobal section such that $s(m)=e$. Hyperlocality implies that the resulting element of $E_m'$ is independent of the choice of $s$. This map clearly satisfies $\pi'\circ F=\pi$, and is fiberwise linear because of linearity of $\calF$. It also satisfies $F\circ\sigma(m)=\calF(\sigma)(m)$ for all $\sigma\in\Gamma(E)$ by definition. 
+    Now we can construct a bundle morphism $F$ corresponding to $\calF$. For any $m\in M$ and $e\in E_p$ let $F(e)=\calF(s)(m)\in E'_m$, where $s\in \Gamma^\infty(E)$ is a clobal section such that $s(m)=e$. Hyperlocality implies that the resulting element of $E_m'$ is independent of the choice of $s$. This map clearly satisfies $\pi'\circ F=\pi$, and is fiberwise linear because of linearity of $\calF$. It also satisfies $F\circ\sigma(m)=\calF(\sigma)(m)$ for all $\sigma\in\Gamma^\infty(E)$ by definition. 
 
-    It remains to show the smoothness of $F$, which can be done locally. Given $m\in M$, let $s_i\in\Gamma(E)$ be a collection of sections that form a local frame on a neighborhood of $m$. We may also assume that a similar collection $s_i'\in\Gamma(E')$ exists on the same neighborhood. There exist local smooth functions $A_i^j\in C^\infty(U)$ such that $\restr{\calF(s_i)}{U}=\sum_j A_i^j s_j'$.
+    It remains to show the smoothness of $F$, which can be done locally. Given $m\in M$, let $s_i\in\Gamma^\infty(E)$ be a collection of sections that form a local frame on a neighborhood of $m$. We may also assume that a similar collection $s_i'\in\Gamma^\infty(E')$ exists on the same neighborhood. There exist local smooth functions $A_i^j\in C^\infty(U)$ such that $\restr{\calF(s_i)}{U}=\sum_j A_i^j s_j'$.
 
     For any $m\in U$ and $e\in E_m$ we can write $e=e^is_i(m)$ for some numbers $e^i\in\bbR$. Then 
     \[F(e^is_i(m))=\calF(e^is_i)(m)=e^i\calF(s_i)(m)=e^i A_i^j(m)s_j'(m).\]
@@ -3485,12 +3485,12 @@ Let $X\in\fX(M)$. A flow box of $X$ at $p\in M$ is the triple $(U_0,a,F)$, where
 \end{enumerate}
 \end{defn}
 From this definition, we have the basic properties:
-\begin{itemize}
-    \item \[F_{t_1+t_2}=F_{t_1}\circ F_{t_2}=F_{t_2}\circ F_{t_1}, \;\; F_0=\id,\]
+\begin{enumerate}
+    \item $F_{t_1+t_2}=F_{t_1}\circ F_{t_2}=F_{t_2}\circ F_{t_1},$ $F_0=\id$,
     \item On the common domain, $F_t^{-1}=F_{-t}$;
     \item Any vector field $X$ has a flow box at every point $p\in \mathring{M}$. This follows from the results on the local solvability of systems of ODEs and smooth dependence of the solutions on the initial conditions. Since this dependence on the initial conditions has the identity Jacobi matrix at $t=0$, $F_t$ is a local diffeo and $F_{-t}$ is the inverse.
     \item If $F_t$ is the flow of $X$, then \[F_{t\ast}X=X,\] i.e.\ $F_{t\ast}(X(p))=X(F_t(p))$. Moreover, $X$ is the only vector field that satisfies this property for all $(p,t)$ from an open neighborhood of $M\times\{0\}$ in $M\times\bbR $.
-\end{itemize}
+\end{enumerate}
 
 \begin{defn}[Flow]\index{Flow of a vector field}
 The (maximal) flow of $X\in\fX(M)$ is a map $F:\mathcal{D}\to M$ defined on the (automatically open) set $\mathcal{D}\subset M\times \bbR $ that is maximal among all sets such that $(p,t)\in \mathcal{D}$ iff there is an integral curve $\gamma_p$ of $X$ such that $\gamma_p(0)=p$ and $F(p,t)=\gamma_p(t)$ for all $t\in\mathcal{D}\cap (\{p\}\times\bbR )$. $\mathcal{D}$ is called the \emph{flow domain}\index{Flow domain} of $X$. We also denote $\mathcal{D}_p=\mathcal{D}\cap (\{p\}\times\bbR )$, $\mathcal{D}_t=\mathcal{D}\cap (M\times\{t\})$, and $F_p:\calD_p\to M$ is given by $F_p(t)=F(p,t)=\gamma_p(t)$.
@@ -3617,14 +3617,14 @@ Note that every invariant vector field is uniquely determined by its value at th
 \begin{proof}
     Recall that for a smooth map $f$, the image $f\circ\gamma$ of an integral curve of a vector field $X$ is an integral curve of the transformed field $f_\ast X$. 
     
-    Now let $F$ be the flow of a left-invariant field $X\in \fX(G)$, defined on its flow domain $\calD$. Thus for any $g\in G$, $L_g\circ F_e$ is an integral curve of $X$ starting at $g$ and therefore equal to $F_g$. This means that we can apply the uniform time lemma and conclude completeness.
+    Now let $F$ be the flow of a left-invariant field $X\in \fX(G)$, defined on its flow domain $\calD$. Thus for any $g\in G$, $t\mapsto L_g\circ F_t(e)$ is an integral curve of $X$ starting at $g$ and therefore equal to $F_t(g)$. This means that we can apply the uniform time lemma and conclude completeness.
 \end{proof}
 
 \begin{lem}[Escape Lemma]\index{Lemma!Escape}\label{lem escape}
 If an integral curve $\gamma$ of a vector field $X$ cannot be extended to $t>b$, then $\gamma([t_0,b))$ is not contained in any compact subset of $M$ for any $t_0$ in the domain of $\gamma$.
 \end{lem}
 \begin{proof}
-Assume $b<\infty$ and suppose $\gamma([t_0,b))$ \emph{is} contained in a compact set $K$. Then if $t_i\nearrow b$, by compactness we have the convergence $\gamma(t_i)\to q$. Then there is a neighborhood $U$ of $q$ and an $\epsilon>0$ such that the flow $F$ is defined on $U\times I_\epsilon$. Pick $i$ large enough so that $t_i>b-\epsilon$ and $\gamma(t_i)\in U$. Then 
+Assume $b<\infty$ and suppose $\gamma([t_0,b))$ \emph{is} contained in a compact set $K$. Then if $t_i\nearrow b$, by compactness there is a limit $\lim_i\gamma(t_i)=q\in K$. Then there is a neighborhood $U$ of $q$ and an $\epsilon>0$ such that the flow $F$ is defined on $U\times I_\epsilon$. Pick $i$ large enough so that $t_i>b-\epsilon$ and $\gamma(t_i)\in U$. Then 
 \[
     \wt{\gamma}(t)=
     \begin{cases} 
@@ -3641,15 +3641,15 @@ Now we are finally ready to prove Ehresmann's Fibration Theorem \ref{thm Ehresma
 \begin{proof}[Proof of Ehresmann's Fibration Theorem \ref{thm Ehresmann}]
     First we note that since the statement is local, it suffices to prove it for $M=\bbR^n$. Locally (both in $E$ and $M$), all submersions are trivial fibrations. The idea is to use flows of vector fields along the fibers of the submersion and a \gls{pou} to glue these trivial pieces together into a locally trivial fibration.
 
-    We will map the fibers $\pi^{-1}(\bbR^n)$ to the single fiber $\pi^{-1}(0)$ in a diffeomorphic way. This is done by moving the fibers along integral curves of some set of vector fields, in such a way that the flow takes each fiber to $\pi^{-1}(0)$. These vector fields are chosen to be $\pi$-related to some local sections of $TM$, so as to satisfy all the requirements. 
+    We will map the fibers $\pi^{-1}(\bbR^n)$ to the single fiber $\pi^{-1}(0)$ in a diffeomorphic way. This is done by moving the fibers along integral curves of some set of complete vector fields, in such a way that the flow takes each fiber to $\pi^{-1}(0)$. These vector fields are chosen to be $\pi$-related to some local sections of $TM$, so as to satisfy all the requirements. 
     
     Here are the details. Due to the fact that $\pi$ is a submersion, there exist vector fields $X_i\in\fX(E)$ that are $\pi$-related to the coordinate vector fields $\partial_i$ on $M=\bbR^n$, $i=1,\ldots,n$. Indeed, this is obvious locally (both in $E$ and $M$), but a collection of such local vector fields $X_i^\alpha$ on $U_\alpha\subset E$ can be used to define a global vector field $X_i=\sum\chi_\alpha X_i^\alpha$ using a \gls{pou} $\chi_\alpha$ on $E$. 
 
-    We claim that all of the vector fields $X_i$ are complete on $E$. Suppose $e\in E$ and the flow $F^i(t,e)$ of $X^i$ is defined for $t$ in some finite open interval in $\bbR$. Since the flow of $\partial_i$ in the base is given by translations at a constant velocity, the image of this open interval under $\pi\circ F^i(\_,e)$ must be contained inside some compact set $K\subset M$. Hence the image of a finite open interval under $F^i(\_,e)$ must be contained in $\pi^{-1}(K)$, which is compact because $\pi$ is proper. If $F^i(\_,e)$ were not defined on all of $t$, its values would have to escape any compact subset of $E$, leading to a contradiction. Hence $X_i$ is complete.
+    We claim that all of the vector fields $X_i$ are complete on $E$. Suppose $e\in E$ and the flow $F^i(t,e)$ of $X^i$ is defined for $t$ in some finite open interval $J\subset \bbR$. Since the flow of $\partial_i$ in the base is given by translations at a constant velocity, the image of this open interval under $\pi\circ F^i(J,e)$ must be contained inside some compact set $K\subset M$. Hence the image of a finite open interval under $F^i(J,e)$ must be contained in $\pi^{-1}(K)$, which is compact because $\pi$ is proper. If $F^i(\_,e)$ were not defined on all of $t$, its values would have to escape any compact subset of $E$, leading to a contradiction. Hence $X_i$ is complete.
     
     Now let $F^i_t$ be the flow of $X_i$ and define $G:\pi^{-1}(\bbR^n)\to \bbR^n\times \pi^{-1}(0)$ by 
     \[G(z)=\left(\pi(z),F^n_{-t_n}\circ \cdots\circ F^1_{-t_1}(z)\right),\quad \text{where }\pi(z)=(t_1,\ldots,t_n).\]
-    Clearly $G$ is a diffeomorphism and a local trivialization for $\pi$.
+    Clearly $G$ is a diffeomorphism and a trivialization for $\pi$.
 \end{proof}
 
 
@@ -3662,13 +3662,13 @@ Let $S\sub M$ as a subset and pick a vector field $X\in\fX(M)$ that is nowhere p
 \begin{thm}[Flow-out lemma]\index{Lemma!Flow-out}
 With the notation of the above definition,
 \begin{enumerate}
-    \item $\Phi$ is an immersion $\Phi(\mathcal{O}_\delta)<M$ as long as $\delta:S\to \bbR_{>0}$ is chosen so that when restricted to the set $\mathcal{O}_\delta=\{(p,t)\in\mathcal{O}\mid |t|<\delta(p)\}$, $\Phi(\mathcal{O}_\delta)$ is injective. Moreover, such $\delta$ always exists;
+    \item If $\delta:S\to [0,+\infty)$ is chosen so that, when restricted to the set $\mathcal{O}_\delta=\{(p,t)\in\mathcal{O}\mid |t|<\delta(p)\}$, $\Phi$ is injective, then $\Phi:\mathcal{O}_\delta\to M$ is an immersion. Moreover, such a $\delta$ always exists;
     \item $\Phi_\ast (\partial_t)=X$ on $\mathcal{O}$;
     \item If $\codim S=1$, then $\Phi(\mathcal{O}_\delta)\sub M$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
-Exercise. The last part follows because the dimension of $\Phi(\mathcal{O}_\delta)$ coincides with the dimension of $M$, so injectivity and local diffeo implies embedding.
+    Exercise. The last part follows because the dimension of $\Phi(\mathcal{O}_\delta)$ coincides with the dimension of $M$, so injectivity and local diffeo implies embedding.
 \end{proof}
 
 Let $\partial M$ be non-empty and let $\{U_\alpha\}$ be a family of boundary charts that cover $\partial M$. On each of them, define the local coordinate field $X_\alpha=\partial_n$ that points inward from the boundary. Further, let $\chi_\alpha$ be a subordinate \gls{pou}. Then 
@@ -3681,23 +3681,23 @@ Then $\psi$ is a diffeo and $\Phi\circ\psi:[0,1]\times\partial M\to \Phi(\mathca
 \[\Phi(\mathcal{O}_p)\cong [0,1)\times\partial M.\]
 
 \begin{defn}[Collar]
-The embedded submanifold $\Phi(\mathcal{O}_p)$ of a manifold $M$ with a boundary constructed above is called a collar of $M$.
+    The embedded submanifold $\Phi(\mathcal{O}_p)$ of a manifold $M$ with a boundary constructed above is called a collar of $M$.
 \end{defn}
 
 \begin{cor}
-By varying $t$, we find from the above construction that $M$ is homotopy equivalent to $\mathring{M}$.
+    By varying $t$, we find from the above construction that $M$ is homotopy equivalent to $\mathring{M}$.
 \end{cor}
 
 Now, if we have two manifolds $M$ and $N$ with diffeomorphic boundaries, so that
 \[h:\partial M\to \partial N\text{ -- diffeo},\]
 then we can introduce two collar embeddings (which are also diffeo onto their images)
 \[
-\alpha:[0,1)\times\partial M\to V\subset M,\\
+\alpha:[0,1)\times\partial M\to V\subset M,\quad
 \beta:[0,1)\times\partial N\to W\subset N,
 \]
 and unite them by
 \[
-\Phi: V\sqcup W\to \partial M\times (-1,1),\;\; \Phi(x)=
+\Phi: V\sqcup W\to \partial M\times (-1,1),\quad \Phi(x)=
 \begin{cases}
 (p,-t),& x=\alpha(p,t)\in V,\\
 (h(q),t),& x=\beta(q,t)\in W.
@@ -3708,24 +3708,24 @@ Clearly $\Phi$  is a topological embedding with a closed image (it's surjective)
 Now let $\pi:M\sqcup N\to X$ be the quotient map on whose fibers $\Phi$ is constant. Then $\Phi$ descends to $\wt{\Phi}:X\to [-1,1]\times\partial M$. $\Phi$ is continuous and bijective, $\wt{\Phi}(K)=\Phi(\pi^{-1}(K))$ is closed for any compact $K$ (because $\Phi$ is closed and $\pi$ is continuous), so $\wt{\Phi}$ is closed too. Therefore $\wt{\Phi}$ is a homeomorphism and therefore a diffeomorphism, and $X$ is a quotient manifold. Alternatively, this follows from the so-called \emph{closed graph theorem} that we won't cover here.
 
 \begin{defn}[Gluing of manifolds]
-The construction described above is called the gluing of two manifolds with diffeomorphic boundaries. 
+    The construction described above is called the gluing of two manifolds with diffeomorphic boundaries, denoted by $M\cup_h N$.
 \end{defn}
 
 \begin{defn}[Connected sum]\index{Connected sum of manifolds}
-Let $M_i$, $i=1,2$ be two connected manifolds without boundaries and $M_i'=M_i\setminus U_i$, where $U_i$ is a coordinate ball. Then $\partial M_i'\cong \bbS^{m-1}$ and let the diffeomorphisms here be $h_i$. Then we define the connected sum as the gluing along $h_1\circ h_2^{-1}$:
-\[M_1 \# M_2\coloneqq M_1'\cup_{h_1\circ h_2^{-1}}M_2'.\]
+    Let $M_i$, $i=1,2$ be two connected manifolds without boundaries and $M_i'=M_i\setminus U_i$, where $U_i$ is a coordinate ball. We can pick two diffeomorphisms $h_i:\partial M_i'\to \bbS^{m-1}$, $i=1,2$. Then we define the connected sum as the gluing along $h_1\circ h_2^{-1}$:
+    \[M_1 \# M_2\coloneqq M_1'\cup_{h_1\circ h_2^{-1}}M_2'.\]
 \end{defn}
 \begin{example}
-$D(M)=M\cup_{\partial M}M$ is called the \emph{double} of a manifold with a boundary.
+    $D(M)=M\cup_{\partial M}M$ is called the \emph{double} of a manifold with a boundary.
 \end{example}
 \begin{example}
-If $X\parallel \partial D$, $D\subset M$, then $F^X$ leaves $D$ invariant.
+    f $X\parallel \partial D$, $D\subset M$, then $F^X$ leaves $D$ invariant.
 \end{example}
 \begin{cor}
-If $X\parallel \partial M$, then the theorem about the existence of flows applies to $X$.
+    If $X\parallel \partial M$, then the theorem about the existence of flows applies to $X$.
 \end{cor}
 \begin{proof}
-Extend $X$ to the double $D(M)$, apply the flow theorem there, then restrict back to $M$.
+    Extend $X$ to the double $D(M)$, apply the flow theorem there, then restrict to $M$.
 \end{proof}
 \begin{example}
 So far we've only considered time-independent vector fields. In general, we can have a time-dependent vector field $X:M\times J\to TM$, $J\subset\bbR $. All of the results about flows still hold almost unchanged, only now the flow map (``evolution operator'') depends on two time parameters: $F^X(p,t_1,t_2)$.
@@ -3737,19 +3737,17 @@ If $X\in\fX(M)$ and $X(p)\neq 0$, then there exists a local chart $(U,\varphi)$ 
 \begin{proof}
 Since $S\sub M$, it has a slice neighborhood. We can parametrize $S$ by an embedding map $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{m-1}$. We can take $U$ such that $\restr{X}{U}\cap TS=\varnothing$. 
 
-Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F(x(\Omega))\sub M$. This is a diffeo $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=F_t(x(s))$.
-
-Finally, $X=\partial_t=\partial_1$ in this local chart.
+Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F(x(\Omega))\sub M$. This is a diffeo $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=F_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
 \end{proof}
 
 \begin{defn}[Complete solution]\index{Complete solution}
-A complete solution of a vector field $X\in \fX(M^m)$ is a local function $\Psi:U\times I_b\to\bbR^m$ such that $\Psi^{-1}(c)$ for every $c$ in the image of $\Psi$ is an integral curve of $X$ at a $p\in U$. The components $\Psi^i$ of this map are called a \emph{complete set of integrals of motion} for $X$.
+    A complete solution, or \emph{complete integral}, of a vector field $X\in \fX(M)$, $\dim M=n$, is a local function $\Psi:U\times I_\epsilon\to\bbR^n$ such that $\Psi^{-1}(\bm{c})$ for every $\bm{c}\in\bbR^n$ in the image of $\Psi$ is an integral curve of $X$ at a point $m\in U$. The components $\Psi^i:U\times I_\epsilon\to \bbR$ of this map are called a \emph{complete set of integrals of motion} for $X$.
 \end{defn}
 \begin{prop}
-Local complete solutions exists for all vector fields.
+    Local complete solutions exists for all vector fields.
 \end{prop}
 \begin{proof}
-First rectify the vector field, then the coordinates of the point of intersection of each integral curve with the slice $S$ will be the (constant) value of $\Psi$ on this whole curve.
+    First rectify the vector field, then the coordinates $\bm{c}=(\varphi^1(s),\varphi^2(s),\ldots,\varphi^n(s))$ of the point $s$ of intersection of each integral curve with the slice $S$ will be the (constant) value of the diffeomorphism $\Psi:(s,t)\mapsto \varphi(F_t(s))$ on this whole curve.
 \end{proof}
 
 
@@ -3773,29 +3771,31 @@ Moreover, any derivation $D$ on $C^\infty(M)$ satisfies $D(1)=0$, because
 Finally, the set of all Lie derivatives $\{\Lie_X\}_{X\in\fX(M)}$ is a $C^\infty(M)$-module:
 \[f\cdot\Lie_X=\Lie_{f\cdot X}.\]
 
-\begin{prop}
-The space  of Lie derivatives $\Lie_X$ is isomorphic to $\fX(M)$ as $C^\infty(M)$-modules. In particular, $\Lie_X=0$ iff $X=0$.
+\begin{prop}[{{\cite[Prop.~2.2.9]{Marsden}}}]
+    The vector space of Lie derivatives $\{\Lie_X\}_{X\in\fX(M)}$ is isomorphic to $\fX(M)$ as $C^\infty(M)$-modules. In particular, $\Lie_X=0$ iff $X=0$.
 \end{prop}
 \begin{proof}
-The first part is obvious. If $\dd_p f(X_p)=0$ for all $f\in C^\infty(M)$, then $\alpha_p(X_p)=0$ for all $\alpha_p\in T_p^\ast M$. But then $X_p=0$.
+    The map $X\mapsto \calL_X$ is clearly $C^\infty(M)$-linear and surjective by definition. To show that it is an isomorphism, we need to show that its kernel is zero. Suppose $\calL_X=0$ and $m\in M$. Then $\dd_m f(X_m)=0$ for all $f\in C^\infty(M)$, and hence $\alpha_m(X_m)=0$ for all $\alpha_m\in T_m^\ast M$. But then $X_m=0$.
 \end{proof}
-\begin{prop}\label{lie derivatives and vector fields}
+\begin{prop}[{{\cite[Thm.~2.2.10]{Marsden}}}]\label{lie derivatives and vector fields}
 The space of all $\bbR $-linear derivations on the algebra $C^\infty(M)$ is isomorphic to $\fX(M)$ as a vector space. In particular, every derivation $\theta$ coincides with $\Lie_X$ for a unique $X\in\fX(M)$.
 \end{prop}
 \begin{proof}
     Given $\theta$, we construct the vector field $X$.
     First of all, $\theta$ is local, i.e.\ if $h$ vanishes on a neighborhood $V\mathring{\subset} M$ of $p\in V$, then $\theta(h)(p)=0$. Indeed, if $\chi$ is a bump function equal to $1$ around $p$ and zero outside of $V$, then $h=(1-\chi)h$ and
-    \[\theta(h)(p)=\theta(\chi h+(1-\chi)h)(p)=(\theta(1-\chi))\cdot h(p)+\theta(h)\cdot (1-\chi(p))=0.\]
+    \[\theta(h)(p)=(\theta(1-\chi))\cdot h(p)+\theta(h)\cdot (1-\chi(p))=0.\]
 
-    Pick a local chart at $p$, $\varphi:U\to\wh{U}\subset\bbR^m$. Let $x\in\wh{U}$, $a=\varphi(p)$, $f\in C^\infty(M)$, then 
-    \[(\varphi_\ast f)(x)=(\varphi_\ast f)(a)+\sum_{j=1}^m (x^j-a^j)\int_0^1 \underbrace{(\varphi_\ast f)_j}_{\partial(\varphi_\ast f)/\partial x^j} [a+t(x-a)]\dd t\]
-    on some neighborhood of $a$.
-    Therefore, \[f(u)=f(p)+\sum_{i=1}^m (\varphi^i(u)-a^i)g_i(u)\] for some set of local functions, namely $g_i(p)=\frac{\partial(\varphi_\ast f)}{\partial x^i} (a)$. Thus
-    \[(\theta f)(p)=\sum_i g_i(p)\theta(\varphi^i)(p)=\sum \partial_{x^i}(\varphi_\ast f)(a) \theta \varphi^i(p),\]
+    Pick a local chart at $p$, $\varphi:U\to\wh{U}\subset\bbR^m$. Let $\bm{x}\in\wh{U}$, $\bm{a}=\varphi(p)$, $f\in C^\infty(M)$, then 
+    \[(\varphi_\ast f)(\bm{x})=(\varphi_\ast f)(\bm{a})+\sum_{j=1}^m (x^j-a^j)\int_0^1 \frac{\partial(\varphi_\ast f)}{\partial x^j} (\bm{a}+t(\bm{x}-\bm{a}))\dd t\]
+    on some neighborhood of $\bm{a}$.
+    Therefore, for $u\in U$,
+    \[f(u)=f(p)+\sum_{i=1}^m (\varphi^i(u)-a^i)g_i(u),\quad g_i(p)=\frac{\partial(\varphi_\ast f)}{\partial x^i} (\varphi(p)).\] 
+    Thus,
+    \[(\theta f)(p)=\sum_i g_i(p)\theta(\varphi^i)(p)=\sum \partial_{x^i}(\varphi_\ast f)(\bm{a}) \theta \varphi^i(p),\]
     and this is formula is chart-independent! Now we can define a smooth $X$ by its local representation
     \[X^i(u)\coloneqq \theta\varphi^i(u).\]
-    It is easy to check that $X$ is independent of the choice of $\varphi$, which means that it is actually a globally well-defined vector field on $M$. For $f\in C^\infty(M)$, the local representative in $x=\varphi(u)\in\wh{U}$ of $\Lie_X f$ is 
-    \[(f\circ\varphi^{-1})_{\ast x}\circ \wh{X}(x)=\sum_i \partial_{x^i}(f\circ \varphi^{-1})(x)\cdot \theta \varphi^i (u)=\theta f(u),\]
+    It is easy to check that $X$ is independent of the choice of $\varphi$, which means that it is actually a globally well-defined vector field on $M$. For $f\in C^\infty(M)$, the local representative in $\bm{x}=\varphi(u)\in\wh{U}$ of $\Lie_X f$ is 
+    \[(f\circ\varphi^{-1})_{\ast \bm{x}}\circ \wh{X}(\bm{x})=\sum_i \partial_{x^i}(f\circ \varphi^{-1})(x)\cdot \theta \varphi^i (u)=\theta f(u),\]
     hence $\theta=\Lie_X$.
     Uniqueness follows from the obvious statement that $\Lie_X=0$ iff $X=0$.
 \end{proof}
@@ -3863,7 +3863,7 @@ In local coordinates (using Einstein summation),
 All of this allows us to extend the Lie derivative to tensor fields of any rank by the following theorem.
 
 \begin{defn}[Tensor differential operators]\index{Differential operator on the tensor algebra}
-A differential operator on the tensor algebra $\Gamma(M)$ is a collection of maps $\mathbb{D}^r_s(U):\Gamma^r_s(U)\to \Gamma^r_s(U)$ for all $r,s\geq 0$ and each open $U\mathring{\subset}M$ (we denote them all by $\mathbb{D}$) such that:
+A differential operator on the tensor algebra $\Gamma^\infty(M)$ is a collection of maps $\mathbb{D}^r_s(U):\Gamma^r_s(U)\to \Gamma^r_s(U)$ for all $r,s\geq 0$ and each open $U\mathring{\subset}M$ (we denote them all by $\mathbb{D}$) such that:
 \begin{enumerate}
     \item $\mathbb{D}$ is a tensor derivation (w.r.t.\ $\otimes$);
     \item $\mathbb{D}$ is local, i.e.\ for $U\subset V$ and $t\in\Gamma^r_s(V)$, $\restr{\mathbb{D}(t)}{U}=\mathbb{D}(\restr{t}{U})$;
@@ -3873,8 +3873,8 @@ A differential operator on the tensor algebra $\Gamma(M)$ is a collection of map
 
 Note that we don't require $\mathbb{D}\circ\varphi_\ast=\varphi_\ast\circ \mathbb{D}$ because this will not hold for covariant derivatives, which we would still like to consider differential operators.
 
-\begin{thm}[Willmore]\index{Theorem!Willmore}\label{Willmore}
-A collection of local tensor derivations $E_U$ on $C^\infty(U)$ and $F_U$ on $\fX(U)$ (which agree with each other via the mixed rank Leibniz rule) for each $U\mathring{\subset}M$ determines a unique differential operator $\mathbb{D}$ on the tensor algebra $\Gamma(M)$ that coincides with $E_U$ on $C^\infty$ and with $F_U$ on $\fX$.
+\begin{thm}[Willmore {{\cite[Thm.~2.2.17]{Marsden}}}]\index{Theorem!Willmore}\label{Willmore}
+A collection of local tensor derivations $E_U$ on $C^\infty(U)$ and $F_U$ on $\fX(U)$ (which agree with each other via the mixed rank Leibniz rule) for each $U\mathring{\subset}M$ determines a unique differential operator $\mathbb{D}$ on the tensor algebra $\Gamma^\infty(M)$ that coincides with $E_U$ on $C^\infty$ and with $F_U$ on $\fX$.
 \end{thm}
 \begin{proof}
     Suppose we know that such a $\mathbb{D}$ exists. In a local frame $\{e_i\}$ and dual frame $\{\alpha^i\}$, we can write
@@ -3884,7 +3884,7 @@ A collection of local tensor derivations $E_U$ on $C^\infty(U)$ and $F_U$ on $\f
     Namely, since $\mathbb{D}\delta=0$, and $\delta=e_j\otimes \alpha^j$ (Einstein summation), we have 
     \[0=\mathbb{D}(e_j\otimes \alpha^j)=(\mathbb{D}e_j)\otimes \alpha^j+e_j\otimes (\mathbb{D}\alpha^j).\label{535}\]
     Since $\delta^i_j=\alpha^i(e_j)$, if we contract the formula above with $e_i$, we get
-    \[0=F_U e_i+\langle \mathbb{D}\alpha^j, e_i\rangle e_j,\]
+    \[0=F_U e_i+(\mathbb{D}\alpha^j)(e_i) e_j,\]
     which completely determines $\mathbb{D}\alpha^j$. Therefore the action of $\mathbb{D}$ on $\fX^\ast$ is uniquely determined, and the Leibniz rule applied to \ref{535} gives a formula for $\mathbb{D}$ in terms of $E_U$ and $F_U$ on the whole tensor algebra.
     
     The formulas we have derived prove the uniqueness of $\mathbb{D}$. Its existence follows from the fact that these same formulas define a valid differential operator that satisfies all the requirements of the theorem.
@@ -3899,7 +3899,7 @@ This formula essentially states that $\mathbb{D}$ ``commutes with contractions''
 \end{cor}
 
 \begin{defn}[Lie derivatives of tensors]\index{Lie derivative of tensor fields}
-If $X\in\fX(M)$ then the Lie derivative operator $\Lie_X$ on the tensor algebra $\Gamma(M)$ is defined as the unique tensor differential operator (established by Willmore's theorem) that coincides with the previously constructed Lie derivative on $C^\infty(M)$ and $\fX(M)$.
+If $X\in\fX(M)$ then the Lie derivative operator $\Lie_X$ on the tensor algebra $\Gamma^\infty(M)$ is defined as the unique tensor differential operator (established by Willmore's theorem) that coincides with the previously constructed Lie derivative on $C^\infty(M)$ and $\fX(M)$.
 \end{defn}
 
 \begin{prop}[Naturality of Lie derivatives]\label{pullbacks of Lie derivatives}
@@ -3907,7 +3907,7 @@ For a diffeomorphism $F$,
 \[\Lie_{F_\ast X}(F_\ast t)=F_\ast (\Lie_X t).\]
 \end{prop}
 \begin{proof}
-Define an operator $\mathbb{D}$ by $\mathbb{D}t=F^\ast \Lie_{F_\ast t}(F_\ast t)$. We know that $\mathbb{D}$ coincides with $\Lie_X$ on $C^\infty$ and $\fX(M)$. It is also easy to check that $\mathbb{D}$ is a tensor differential operator (Exercise). Then by Willmore's theorem is has to coincide with $\Lie_X$ on the entire tensor algebra.
+Define an operator $\mathbb{D}$ by $\mathbb{D}t=F^\ast \Lie_{F_\ast t}(F_\ast t)$. We know that $\mathbb{D}$ coincides with $\Lie_X$ on $C^\infty$ and $\fX(M)$. It is also easy to check that $\mathbb{D}$ is a tensor differential operator (Exercise). Then, by Willmore's Theorem, is must coincide with $\Lie_X$ on the entire tensor algebra.
 \end{proof}
 
 
@@ -3931,18 +3931,27 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
     \[\Lie_X t(p)=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0}t_\lambda(p).\]
 \end{thm}
 \begin{proof}
-    We have $t_\lambda(p)=(TF_\lambda^{-1})^r_s t(F_\lambda(p))$, which is clearly smooth.
-
-    Define $\theta_X$ as an operator on $\Gamma^r_s(M)$ by $\theta_X t(p)=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} t_\lambda(p).$
-    For $t\in C^\infty(M)$, $t_\lambda(p)$ is smooth, therefore $\theta_X t(p)=(Tt_\bullet)(\partial_\lambda)\in C^\infty(M)$, where the differential $T$ is with respect to the variable $\lambda$ (represented by $\bullet$) and  $\partial_\lambda$ is a vector field on the $\bbR $. $\theta_X$ is a linear derivation because its local representatives are. It is defined locally, therefore it is local. Finally, $\theta_X\delta=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} F^\ast_\lambda \delta=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0}\delta=0$. This proves that $\theta_X$ is a differential operator. It remains to check that $\theta_X=\Lie_X$ on $C^\infty(M)$ and $\fX(M)$.
-
-    For $f\in C^\infty(M)$, $f_\lambda=f\circ F_\lambda$, $\restr{\frac{\dd}{\dd \lambda}}{\lambda=0}f_\lambda(p)=\dd f\circ \restr{\frac{\dd}{\dd \lambda}}{\lambda=0}F_\lambda=\dd f\circ X=\Lie_X f.$
-
-    Now, note that for $f\in C^\infty(M)$ there exists a $g_\lambda\in C^\infty(M)$ such that $g_0=\Lie_X f$ and $f\circ F_\lambda=f+\lambda g_\lambda$. Namely, $\lambda g_\lambda (p)=\int_0^1 \partial_t(f\circ F_{t\lambda}(p))\dd t$. Then for $Y\in\fX(M)$,
-    \begin{multline}
-        \Lie_{\theta_X Y}f(p)=\dd f\circ \restr{\frac{\dd}{\dd \lambda}}{\lambda=0} \left((F_{-\lambda})_{\ast p}\circ Y\circ F_\lambda(p)\right)=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0}\left((f\circ F_{-\lambda})_\ast\circ Y\circ F_\lambda(p)\right)=\\
-        =\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} \left((f-\lambda g_{-\lambda})_\ast\circ Y\circ F_\lambda(p)\right)=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} f_\ast\circ Y\circ F_\lambda (p)-\restr{\left(\frac{\dd}{\dd \lambda}\lambda\right)(g_{-\lambda})_\ast\circ Y\circ F_\lambda(p)}{\lambda=0}=\\=\dd(\underbrace{f_\ast\circ Y}_{\Lie_Yf})\circ \underbrace{\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} F_\lambda(p)}_{X(p)}-(g_0)_\ast \circ Y\circ F_0(p)=\Lie_X\Lie_Y f-\Lie_Y\Lie_X f(p),
-    \end{multline}
+    We have 
+    \[t_\lambda(p)=(\bbT^r_s F_\lambda^{-1})\circ t \circ F_\lambda(p),\] 
+    which is clearly smooth.
+    Define $\theta_X$ as an operator on $\Gamma^r_s(M)$ by 
+    \[\theta_X t(p)=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} t_\lambda(p).\]
+    For $t\in C^\infty(M)$, $t_\lambda(p)$ is smooth, therefore $\theta_X t(p)=(Tt_\bullet)(\partial_\lambda)\in C^\infty(M)$, where the differential $T$ is with respect to the variable $\lambda$ (represented by $\bullet$) and  $\partial_\lambda$ is a vector field on the $\bbR $. $\theta_X$ is a linear derivation because its local representatives are. It is defined locally, therefore it is local. Finally, 
+    \[\theta_X\delta=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} F^\ast_\lambda \delta=\restr{\frac{\dd}{\dd \lambda}}{\lambda=0}\delta=0.\] 
+    This proves that $\theta_X$ is a differential operator. It remains to check that $\theta_X=\Lie_X$ on $C^\infty(M)$ and $\fX(M)$. First, for $f\in C^\infty(M)$, 
+    $f_\lambda=f\circ F_\lambda$, 
+    \[\restr{\frac{\dd}{\dd \lambda}}{\lambda=0}f_\lambda(p)=\dd f\circ \restr{\frac{\dd}{\dd \lambda}}{\lambda=0}F_\lambda=\dd f\circ X=\Lie_X f.\]
+    Now, note that for $f\in C^\infty(M)$ there exists a $g_\lambda\in C^\infty(M)$ such that $g_0=\Lie_X f$ and $f\circ F_\lambda=f+\lambda g_\lambda$. Namely, 
+    \[\lambda g_\lambda (p)=\int_0^1 \partial_t(f\circ F_{t\lambda}(p))\dd t.\] 
+    Then for $Y\in\fX(M)$,
+    \begin{align}
+        \Lie_{\theta_X Y}f(p)=&\dd f\circ \restr{\frac{\dd}{\dd \lambda}}{\lambda=0} \left((F_{-\lambda})_{\ast p}\circ Y\circ F_\lambda(p)\right)=\\
+        =&\restr{\frac{\dd}{\dd \lambda}}{\lambda=0}\left((f\circ F_{-\lambda})_\ast\circ Y\circ F_\lambda(p)\right)=\\
+        =&\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} \left((f-\lambda g_{-\lambda})_\ast\circ Y\circ F_\lambda(p)\right)=\\
+        =&\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} f_\ast\circ Y\circ F_\lambda (p)-\restr{\left(\frac{\dd}{\dd \lambda}\lambda\right)(g_{-\lambda})_\ast\circ Y\circ F_\lambda(p)}{\lambda=0}=\\
+        =&\dd(\underbrace{f_\ast\circ Y}_{\Lie_Yf})\circ \underbrace{\restr{\frac{\dd}{\dd \lambda}}{\lambda=0} F_\lambda(p)}_{X(p)}-(g_0)_\ast \circ Y\circ F_0(p)=\\
+        =&\Lie_X\Lie_Y f-\Lie_Y\Lie_X f(p),
+    \end{align}
     therefore $\theta_X Y=[X,Y]$. By Willmore's theorem, $\theta_X=\Lie_X$.
 \end{proof}
 \begin{cor}
@@ -3999,8 +4008,8 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
     \[[X,Y]f=\restr{\frac{\dd}{\dd t}}{t=0}\restr{\frac{\dd}{\dd s}}{s=0}\left(f\circ F^Y_s\circ F^X_t-f\circ F^X_s\circ F^Y_t\right).\label{eq Lie bracket in terms of flows}\]
     Furthermore, for any $m\in M$, the Taylor expansion of the smooth function $t\mapsto f\circ F^X_t(m)$ at $t=0$ yields the following \emph{Taylor formula for manifolds}:
     \[f\circ F^X_t(m)=\sum_{k=1}^n\frac{t^k}{k!}\left(X^kf\right)(m)+\calO(t^{n+1}), \quad t\in \calD^X_m,\label{eq:Taylor formula for manifolds}\]
-    where $\calO(t^{n+1})$ is a smooth function on $\calD_m^X$ such that $\calO(t^{n+1})/t^{n+1}$ is bounded. By defining the exponential of a differential operator formally as $\rme^{tD}=\sum_{k=0}^\infty \frac{t^k}{k!}D^k$, the above Taylor formula is sometimes written formally as $f\circ F^X_t=\rme^{t X}$.
-    
+    where $\calO(t^{n+1})$ is a smooth function on $\calD_m^X$ such that $\calO(t^{n+1})/t^{n+1}$ is bounded. By defining the exponential of a differential operator formally as $\rme^{tD}=\sum_{k=0}^\infty \frac{t^k}{k!}D^k$, the above Taylor formula is sometimes written formally as $f\circ F^X_t=\rme^{t X}\cdot f$.
+
     Repeated application of this formula yields the iterated Taylor formula for manifolds
     \[f\circ F^X_t\circ F^Y_s(m)=\sum_{k,l=1}^n\frac{t^ks^l}{k!l!}\left(Y^lX^kf\right)(m)+\calO(t^{n+1},s^{n+1}),\label{eq: Taylor formula for two fields}\]
     which easily generalizes to any number of vector fields.
@@ -4010,6 +4019,8 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
 \begin{defn}[Holonomic frame]\index{Holonomic frame}
     A local $k$-frame $\{e_i\}_{i=1}^k$ is called holonomic if $[e_i,e_j]=0$ for all $i,j$.
 \end{defn}
+
+The following shows that this definition of holonomic frames agrees with the one indicated in Example~\ref{def jet bundles}. That is, each holonomic frame arises from some local coordinates.
 
 \begin{thm}[Rectification of frames]\index{Theorem!Rectification}\label{thm rectification}
     Let $\{e_j\}_{j=1}^k$ with $k\leq m=\dim M$ be a holonomic local $k$-frame on $W\mathring{\subset}M$. Assume that $e_j(p)\notin T_p S$ for all $p\in S$, where $S\sub M$ is a submanifold with $\codim S=k$. Then there exists a local chart of coordinates $(s^1,\ldots,s^m)$ in which $S=\{s^1=\cdots=s^k=0\}$ and for $j\leq k$ we have $\partial_j=e_j$.
@@ -4047,7 +4058,7 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_p
 \end{defn}
 
 \begin{defn}[Involutive distributions]\index{Involutive distribution}
-    For a smooth distribution $D\subset TM$, denote by $\Gamma(D)\subset\fX(M)$ the space of $D$-valued vector fields. $D$ is called involutive if $\Gamma(D)$ is a Lie subalgebra of $\fX(M)$, i.e.\ $[X,Y]\in\Gamma(D)$ for all $X,Y\in\Gamma(D)$.
+    For a smooth distribution $D\subset TM$, denote by $\Gamma^\infty(D)\subset\fX(M)$ the space of $D$-valued vector fields. $D$ is called involutive if $\Gamma^\infty(D)$ is a Lie subalgebra of $\fX(M)$, i.e.\ $[X,Y]\in\Gamma^\infty(D)$ for all $X,Y\in\Gamma^\infty(D)$.
 \end{defn}
 
 \begin{thm}[Frobenius Theorem {{\cite[Thm.~19.12]{Lee}}}]\index{Theorem!Frobenius}\label{thm frobenius}
@@ -4055,13 +4066,10 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_p
 \end{thm}
 \begin{proof}
     The backwards direction is trivial: if $D$ is integrable, then $D=TN$ locally, which implies involutivity.
+    For the forward direction, it suffices to prove that $D$ is locally spanned by a set of linearly independent commuting fields. Then, by the rectification theorem, they are coordinate vector fields for a slice chart of an integral manifold.
 
-    For the forward direction, it suffices to prove that $D$ is locally spanned by a set of linearly independent commuting fields. Then by the rectification theorem they are coordinate vector fields for a slice chart of an integral manifold.
-
-    Because of the locality of the statement, it also suffices to prove the theorem for $M=U\subset \bbR^m$. At $p\in M$, we can find a system of Cartesian coordinates such that $D_p$ is complementary to $\mathrm{Span}(\partial_{k+1},\ldots,\partial_m)$. By continuity, this remains true on some neighborhood of $p$. Therefore we have a non-singular projection $\pi:\bbR^m\to\bbR^k$ onto the coordinate hyperplane of the coordinates $(x^1,\ldots,x^k)$. Then $\restr{\pi_\ast}{D}$ is a smooth bundle isomorphism.
-
-    Thus the vector fields $\pi^\ast(\partial_i)$, $i=1,\ldots,k$, locally span $D$. By naturality of Lie derivatives, $[\pi^\ast(\partial_i),\pi^\ast(\partial_j)]=\pi^\ast[\partial_i,\partial_j]=0.$
-    Thus $D$ is indeed spanned by a holonomic $k$-frame and therefore integrable.
+    Because of the locality of the statement, it also suffices to prove the theorem for $M=U\subset \bbR^m$. At $p\in M$, we can find a system of Cartesian coordinates such that $D_p$ is complementary to $\mathrm{Span}(\partial_{k+1},\ldots,\partial_m)$. By continuity, this remains true on some neighborhood of $p$. Therefore, we have a non-singular projection $\pi:\bbR^m\to\bbR^k$ onto the coordinate hyperplane of the coordinates $(x^1,\ldots,x^k)$. Then $\restr{\pi_\ast}{D}$ is a smooth bundle isomorphism, and the vector fields $\pi^\ast(\partial_i)$, $i=1,\ldots,k$, locally span $D$. By naturality of Lie derivatives, $[\pi^\ast(\partial_i),\pi^\ast(\partial_j)]=\pi^\ast[\partial_i,\partial_j]=0.$
+    Thus, $D$ is indeed spanned by a holonomic $k$-frame and therefore integrable.
 \end{proof}
 
 This theorem is of crucial importance in the theory of Lie groups, fiber bundles, and even dynamical systems. The entire concept of \emph{integrability} ultimately stems from it. The rest of this section is devoted to characterizing integral submanifolds and proving a global version of the Frobenius theorem, which will be useful is some applications.
@@ -4098,9 +4106,9 @@ Recall now that a weakly embedded submanifold $H$ is such that any map into $M$ 
     Images of the maximal integral curves of a vector field are weakly embedded submanifolds.
 \end{cor}
 
-\begin{rem}
-    The version of the Frobenius theorem proved above is local, i.e.\ integral submanifolds are guaranteed to exist only in small neighborhoods. However, the full version of the Frobenius theorem is much more powerful as it establishes a bijection between smooth integrable distributions and smooth \emph{foliations} of $M$ by maximal integral submanifolds (analogs of maximal integral curves of vector fields). A foliation is a decomposition of $M$ into a disjoint union of immersed submanifolds, called \emph{leaves}, such that every point has a local chart in which the foliation is flat (i.e.~the leaves are just $k$-dimensional hyperplanes of the form $x^{k+1}=c^{k+1},\ldots, x^{n}=c^n$). For a global version of the Frobenius theorem, see \cite[Ch.~19]{Lee} or \cite[\S~3.5]{RS1}.
-\end{rem}
+% \begin{rem}
+%     The version of the Frobenius theorem proved above is local, i.e.\ integral submanifolds are guaranteed to exist only in small neighborhoods. However, the full version of the Frobenius theorem is much more powerful as it establishes a bijection between smooth integrable distributions and smooth \emph{foliations} of $M$ by maximal integral submanifolds (analogs of maximal integral curves of vector fields). A foliation is a decomposition of $M$ into a disjoint union of immersed submanifolds, called \emph{leaves}, such that every point has a local chart in which the foliation is flat (i.e.~the leaves are just $k$-dimensional hyperplanes of the form $x^{k+1}=c^{k+1},\ldots, x^{n}=c^n$). For a global version of the Frobenius theorem, see \cite[Ch.~19]{Lee} or \cite[\S~3.5]{RS1}.
+% \end{rem}
 
 
 \begin{lem}[{{\cite[Lem.~3.5.14]{RS1}}}]\label{lem 3.5.14 RS1}
@@ -4202,9 +4210,9 @@ Recall now that a weakly embedded submanifold $H$ is such that any map into $M$ 
         \Alt t&=\frac{1}{k!}\sum_{\sigma\in S_k} (\sign\sigma)\cdot t^\sigma,\\
         \Sym t&=\frac{1}{k!}\sum_{\sigma\in S_k} t^\sigma,
     \end{align}
-    where the operation $t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $T^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(T^k V)$ and $\Sigma^k V=\Sym(T^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. If $\dim V=n$, then the dimension of this space is $\dim \bigwedge^k V=\binom{n}{k}$. In particular, $\bigwedge^1 V=V$,  $\dim \bigwedge^0 V=\dim \bigwedge^n V=1$ and $\dim \bigwedge^{>n} V=0$.
+    where the operation $t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $T^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(T^k V)$ and $\rmS^k V=\Sym(T^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. If $\dim V=n$, then the dimension of this space is $\dim \bigwedge^k V=\binom{n}{k}$. In particular, $\bigwedge^1 V=V$,  $\dim \bigwedge^0 V=\dim \bigwedge^n V=1$ and $\dim \bigwedge^{>n} V=0$.
 
-    Both $\bigwedge^k$ and $\Sigma^k$ are covariant functors $\mathsf{FinVect}_\bbK\to\mathsf{FinVect}_\bbK$ that act on morphisms by restrictions $\bigwedge^k f=\restr{f^{\otimes k}}{\bigwedge^k V}$ and $\Sigma^k f=\restr{f^{\otimes k}}{\Sigma^k V}$.
+    Both $\bigwedge^k$ and $\rmS^k$ are covariant functors $\mathsf{FinVect}_\bbK\to\mathsf{FinVect}_\bbK$ that act on morphisms by restrictions $\bigwedge^k f=\restr{f^{\otimes k}}{\bigwedge^k V}$ and $\rmS^k f=\restr{f^{\otimes k}}{\rmS^k V}$.
 \end{defn}
 
 If $V$ has Cartesian coordinates $x^1,\ldots,x^n$, then a basis of $V$ is formed by $\{\partial_{x^i}\}$. The dual basis of $V^\ast$ is conventionally denoted by $\{\dd x^i\}$, so that
@@ -4279,25 +4287,25 @@ Wedge products have the following basic properties:
 
 
 \begin{defn}[Exterior powers of \glspl{vb}]
-Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge^p$ and $\Sigma^p$ to all smooth vector bundles. We focus only on $\bigwedge^p$. For a vector bundle $E\overset{\pi}{\to} M$, we obtain the exterior powers
+Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge^p$ and $\rmS^p$ to all smooth vector bundles. We focus only on $\bigwedge^p$. For a vector bundle $E\overset{\pi}{\to} M$, we obtain the exterior powers
 \[\bigwedge^p E=(E)^{\otimes p}_{\text{asym.}}.\]
-$p$ is called the \emph{degree} of the elements or sections of $\bigwedge^p E$: \[\deg \alpha=p\text{ for }\alpha\in\Gamma\left(\bigwedge^p E\right).\]
+$p$ is called the \emph{degree} of the elements or sections of $\bigwedge^p E$: \[\deg \alpha=p\text{ for }\alpha\in\Gamma^\infty\left(\bigwedge^p E\right).\]
 The wedge product $\wedge$ gets extended to sections of these bundles fiberwise.
-In particular, if $\rank E=k$, then \[\det E\coloneqq \bigwedge^k E\] is called the \emph{determinant (line) bundle}\index{Determinant bundle} of $E$. If the transition functions of $E$ are $\tau_{\alpha\beta}:U_{\alpha\beta}\to GL_k(\bbR )$, then the transition functions of $\det E$ are $\det \tau_{\alpha\beta}$.
+In particular, if $\rank E=k$, then \[\det E\coloneqq \bigwedge^k E\] is called the \emph{determinant (line) bundle}\index{Determinant bundle} of $E$. If the transition functions of $E$ are $\tau_{\alpha\beta}:U_{\alpha\beta}\to \GL_k(\bbR )$, then the transition functions of $\det E$ are $\det \tau_{\alpha\beta}$.
 
 The total rank of the exterior bundles is $\rank \left(\bigoplus_{p\geq 0}\bigwedge^p E\right)=2^k.$
 
-The alternation and symmetrization maps get extended to $\Alt: T^p E\to \bigwedge^p E$ and $\Sym:T^p E\to \Sigma^p E$.
+The alternation and symmetrization maps get extended to $\Alt: T^p E\to \bigwedge^p E$ and $\Sym:T^p E\to \rmS^p E$.
 \end{defn}
 
 All properties of wedge products listed above immediately generalize to sections of the exterior bundles.
 
 \begin{defn}[Determinant of a bundle map]
-If $E\overset\pi\to M$ is a \gls{vb} of rank $k$ and $f:E\to E$ is a bundle map, then we define $\det f=\bigwedge^k f$. If $\omega\in\Gamma(\det E^\ast)$, then $f^\ast \omega=\det f\cdot \omega$.
+If $E\overset\pi\to M$ is a \gls{vb} of rank $k$ and $f:E\to E$ is a bundle map, then we define $\det f=\bigwedge^k f$. If $\omega\in\Gamma^\infty(\det E^\ast)$, then $f^\ast \omega=\det f\cdot \omega$.
 \end{defn}
 
 \begin{defn}[Exterior/Grassmann algebra]\index{Exterior algebra}\index{Grassmann algebra|see {Exterior algebra}}
-For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma(\bigwedge^p E)=\Gamma\left(\bigoplus_{p\geq 0}\bigwedge^p E\right)$ with the product $\wedge$ is called the exterior, or Grassmann, algebra of $E$.
+For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma^\infty(\bigwedge^p E)=\Gamma\left(\bigoplus_{p\geq 0}\bigwedge^p E\right)$ with the product $\wedge$ is called the exterior, or Grassmann, algebra of $E$.
 \end{defn}
 
 \begin{xca}
@@ -4536,7 +4544,7 @@ One can generalize the notion of a tensor field in the following way. Let $w\in\
 \end{defn}
 
 \begin{thm}
-Let $S<M$ be an immersed submanifold of $\codim S=1$, let $N\in\Gamma(\restr{TM}{S})$ be a vector fields such that $N\not\parallel S$ everywhere, and let $M$ be oriented. Then there exists a unique orientation on $S$ such that a frame $(e_1,\ldots,e_{n-1})$ is positively oriented in $TS$ iff $(N,e_1,\ldots,e_{n-1})$ is oriented in $\restr{TM}{S}$.
+Let $S<M$ be an immersed submanifold of $\codim S=1$, let $N\in\Gamma^\infty(\restr{TM}{S})$ be a vector fields such that $N\not\parallel S$ everywhere, and let $M$ be oriented. Then there exists a unique orientation on $S$ such that a frame $(e_1,\ldots,e_{n-1})$ is positively oriented in $TS$ iff $(N,e_1,\ldots,e_{n-1})$ is oriented in $\restr{TM}{S}$.
 \end{thm}
 \begin{proof}
 Let $\mu$ be a positive volume form on $M$. The it is easy to check that $\mu_S=i_N \mu$ is a volume form on $S$ that defines an orientation as stated.
@@ -4726,7 +4734,7 @@ which is not as much a contradiction as a statement that this definition of the 
 
 
 % \begin{thm}[Frobenius theorem]\index{Theorem!Frobenius}
-%     Let $D\subset TM$ be a smooth distribution on $M$ and denote by $\Omega_0^\bullet(D)\subset \Omega^\bullet(M)$ the subspace of all differential forms on $M$ that vanish when applied to elements of $\Gamma(D)$. Then $D$ is integrable iff $\Omega_0^\bullet(D)$ is closed under the exterior derivative $\dd$.
+%     Let $D\subset TM$ be a smooth distribution on $M$ and denote by $\Omega_0^\bullet(D)\subset \Omega^\bullet(M)$ the subspace of all differential forms on $M$ that vanish when applied to elements of $\Gamma^\infty(D)$. Then $D$ is integrable iff $\Omega_0^\bullet(D)$ is closed under the exterior derivative $\dd$.
 % \end{thm}
 % \begin{proof}
 %     Exercise.
