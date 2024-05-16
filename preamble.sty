@@ -52,8 +52,16 @@
 % This fixes math in headings not becoming bold 
 % From https://tex.stackexchange.com/questions/41379/automatically-typeset-math-in-section-headings-in-bold-face
 \makeatletter
-\g@addto@macro\bfseries{\boldmath}
+    \g@addto@macro\bfseries{\boldmath}
 \makeatother
+
+
+% This increases vertical spacing inside matrices
+\usepackage[math]{cellspace}
+\cellspacetoplimit 1pt
+\cellspacebottomlimit 1pt
+\setlength{\arraycolsep}{2pt}
+
 
 
 \usepackage{tikz-cd}
@@ -69,6 +77,14 @@
 {0pt}{0.7\baselineskip}{0.3\baselineskip}
 \titlespacing*{\subsection}
 {0pt}{0.7\baselineskip}{0.3\baselineskip}
+\newcommand{\Sect}{Section }
+\newcommand{\Chap}{Chapter }
+\newcommand{\Subsec}{Subsection}
+\newcommand{\Part}{Part }
+\newcommand{\sect}{section }
+\newcommand{\chap}{chapter }
+\newcommand{\subsec}{subsection }
+\newcommand{\partt}{part }
 
 
 %%%%%%%
@@ -188,6 +204,7 @@
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbN}{\mathbb{N}}
 \newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbE}{\mathbb{E}}
 \newcommand{\bbF}{\mathbb{F}}
 \newcommand{\bbZ}{\mathbb{Z}}
 \newcommand{\bbH}{\mathbb{H}}
@@ -215,6 +232,7 @@
 \newcommand{\calP}{\mathcal{P}}
 \newcommand{\calS}{\mathcal{S}}
 \newcommand{\calR}{\mathcal{R}}
+\newcommand{\calT}{\mathcal{T}}
 
 \newcommand{\fraka}{\mathfrak{a}}
 \newcommand{\frake}{\mathfrak{e}}
@@ -235,7 +253,7 @@
 \newcommand{\frakso}{\mathfrak{so}}
 \newcommand{\fraksu}{\mathfrak{su}}
 \newcommand{\fraksp}{\mathfrak{sp}}
-\newcommand{\frakeuc}{\mathfrak{euc}}
+\newcommand{\frakse}{\mathfrak{se}}
 
 \newcommand{\scrA}{\mathscr{A}}
 \newcommand{\scrF}{\mathscr{F}}
@@ -265,6 +283,8 @@
 \newcommand{\rmB}{\mathrm{B}}
 \newcommand{\rmE}{\mathrm{E}}
 \newcommand{\rmK}{\mathrm{K}}
+\newcommand{\rmI}{\mathrm{I}}
+\newcommand{\rmII}{\mathrm{II}}
 \newcommand{\rmS}{\mathrm{S}}
 \newcommand{\rmT}{\mathrm{T}}
 \newcommand{\rmi}{\mathrm{i}}
@@ -290,6 +310,7 @@
 % \DeclareMathOperator{\ad}{ad}
 % \DeclareMathOperator{\Ad}{Ad}
 % \DeclareMathOperator{\Adg}{\mathbf{Ad}}
+\DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\ver}{ver}
 \DeclareMathOperator{\hor}{hor}
@@ -328,7 +349,7 @@
 \DeclareMathOperator{\Or}{O}
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\CO}{CO}
-\DeclareMathOperator{\Euc}{Euc}
+\DeclareMathOperator{\SE}{SE}
 \DeclareMathOperator{\U}{U}
 \DeclareMathOperator{\SU}{SU}
 \DeclareMathOperator{\Sp}{Sp}
@@ -357,8 +378,8 @@
 \newcommand{\fX}{\mathfrak{X}}
 \newcommand{\sub}{\vartriangleleft}
 \newcommand{\sube}{\trianglelefteqslant}
-\newcommand{\<}{\langle}
-\renewcommand{\>}{\rangle}
+\newcommand{\<}{\left\langle}
+\renewcommand{\>}{\right\rangle}
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
 
 \usepackage{xparse}
@@ -424,5 +445,5 @@
 \newacronym{immt}{ImMT}{Implicit Mapping Theorem}
 \newacronym{mv}{MV}{Mayer-Vietoris}
 \newacronym{ops}{OPS}{one-parameter subgroup}
-
+\newacronym{eds}{EDS}{exterior differential system}
 

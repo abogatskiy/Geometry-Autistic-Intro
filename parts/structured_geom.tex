@@ -4,7 +4,19 @@
 \begin{hrem*}
     \small 
     Now that we have comprehensively reviewed the fundamentals of Lie groups and their actions on manifolds, we are finally read to return to Klein's Erlangen program as described at the beginning of Section~\ref{sec: Lie theory ii}.
+
+    Principal bundles appeared in the last section as a natural special case of Lie group actions on manifolds. In this section, however, they will acquire a special elevated status in the theory general fiber bundles. Recall that any fiber bundle that admits a $G$-atlas  such that the structure group $G$ acts on the typical fiber $F$ faitfully is completely determined by the cocycle of its transition functions. This led to the equivalence of any two categories of fiber bundles $\FB^\sigma$ and $\FB^{\sigma'}$ for any two faithful $G$-actions $G\overset{\sigma}{\acts}F$ and $G\overset{\sigma'}{\acts}F'$ (see (\ref{eq equivalence of bundle categories})). This means that most functorial geometric structures on fiber bundles can be defined by providing their description on any one of these equivalent categories. The choice of the category of principal bundles is natural and convenient for two reasons. 
+    
+    On a fundamental level, principal $G$-bundles are exactly the $G$-bundles whose typical fiber is $G$ itself, and the action $\sigma$ is the action by translations (which is faithful indeed). The definition of this category, therefore, requires no additional information aside from the group $G$ itself. 
+    
+    On a more practical level, however, the particular convenience of working on principal bundles is due to the fact that Lie groups are parallelizable, so the tangent bundle of a principal $G$-bundle is siginificantly simpler than the tangent bundle of a generic bundle with structure group $G$. 
+
+    For these reasons, while everything discussed in this \sect can equally well be introduced without any preference being given to principal bundles, we will usually start with them due to their unique convenience and simplicity of computations. In specific applications, principal bundles are almost never where the ``physical objects'' live, so this style of exposition should not be viewed as anything more than a slight of hand.
 \end{hrem*}
+
+
+
+
 
 
 
@@ -347,7 +359,7 @@ We now discuss the relationship between equivariant maps on principal bundles an
 \[F\circ \Phi_g=\sigma_{g^{-1}}\circ F.\label{eq 1.2.9 RS2}\]
 This definition can be adapted accordingly to the case of a right action $\sigma$ by replacing $\sigma_{g^{-1}}$ with $\sigma_g$. The following proposition shows that there is a natural bijection between such equivariant functions on $P$ and sections of the associated bundle.
 
-\begin{prop}[Cartan's moving frames {{\cite[Prop.~1.2.6]{RS2}}}]\label{prop 1.2.6 RS2}
+\begin{prop}[Cartan's moving frames {{\cite[Prop.~1.2.6]{RS2}}}]\label{prop 1.2.6 RS2}\index{Moving frames}
     For every $\wt{s}\in\Hom_G(P,F)$ there exists a unique section $s\in\Gamma^\infty(P\times_G F)$ such that the following diagram commutes:
     \[\begin{tikzcd}
     P \arrow[r,"\id_P\times \wt{s}"]\arrow[d,swap,"\pi"]& P\times F\arrow[d,"\iota"] \\
@@ -366,7 +378,7 @@ This definition can be adapted accordingly to the case of a right action $\sigma
 \begin{rem}
     Since $F$ is the typical fiber and elements of $P$ are frames for the corresponding fiber of $E$ (cf.\ Example~\ref{ex principal hom spaces}(4)), $\wt{s}$ can be thought of as a ``moving frame'' describing the section $s$. For example, if $F=\bbR^n$, then the values of $\wt{s}(p)$ on $P_m$ are literally the coordinates of $s(m)\in E_m$ in every possible frame for $E_m$. The equivariance of $\wt{s}$ describes the transformations of these coordinates under changes of frames.
 
-    More generally, a Cartan moving frame (\emph{rep\`ere mobile}) on a $G$-manifold $X$ is any equivariant function $\varphi:X\to G$, where $G$ acts on itself by translations. Moving frames exist locally iff the action is free and \emph{regular}. The latter means that the orbits form a regular foliation: every point has a system of arbitrarily small neighborhoods whose intersection with every orbit is connected. Obviously principal bundles are a special case of this. Cartan geometries will be a natural generalization.
+    More generally, a moving frame (\emph{rep\`ere mobile}) \index{Moving frames} on a $G$-manifold $X$ is any equivariant function $\varphi:X\to G$, where $G$ acts on itself by translations. Moving frames exist locally iff the action is free and \emph{regular}. The latter means that the orbits form a regular foliation: every point has a system of arbitrarily small neighborhoods whose intersection with every orbit is connected. Obviously principal bundles are a special case of this. Cartan geometries will be a natural generalization.
 \end{rem}
 
 \begin{example}[Tangent bundle of a Lie group, part 2]\label{ex TG, part 2}
@@ -538,7 +550,7 @@ Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions
     By Proposition~\ref{prop 1.2.6 RS2}, the sections of $P\times_G G\slash H$ are in one-to-one correspondence with elements of $\Hom_G(P,G\slash H)$. Since $G\slash H$ is a transitive $G$-manifold, we can apply Proposition~\ref{prop 1.6.2 RS2} with $f=[e]$.
 \end{proof}
 
-\begin{example}[{{\cite[Ex.~1.6.6]{RS2}}}]
+\begin{example}[{{\cite[Ex.~1.6.6]{RS2}}}]\label{ex 1.6.6 RS2}
     \begin{enumerate}
         \item Let $E$ be a $\bbK$-vector bundle of rank $k$. Recall that $E$ is orientable iff it admits a bundle atlas with transition functions of positive determinant. Equivalently, $E$ is orientable iff it admits a nowhere vanishing section of the determinant line bundle $\det E=\bigwedge^k E^\ast$. Thus, an orientation of $E$ may be viewed as a section of the associated bundle
         \[\Fr(E)\times_{\GL_k(\bbK)}(\GL_k(\bbK)\slash \GL^+_k(\bbK)).\]
@@ -547,10 +559,10 @@ Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions
         \item Let $E$ be a $\bbK$-vector bundle of rank $n$ endowed with a fiber metric $\sfh$ (sesquilinear in the cases $\bbK=\bbC,\bbH$). It need not be positive-definite.
         \begin{enumerate}
             \item If $\bbK=\bbR$, then a bundle metric can be viewed as a section of the associated bundle
-            \[\Fr(E)\times_{\GL_n(\bbR)} S^2(\bbR^n)^\ast,\]
-            where $S^2$ denotes the symmetric tensor square. By the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $S^2_{(k,l)}(\bbR^n)^\ast< S^2(\bbR^n)^\ast$ consisting of elements of rank $n=k+l$ and signature $(k,l)$ and the stabilizer of the element $\eta=I_k\oplus (-I_l)$ is $\Or_{k,l}$. Thus
-            \[\GL_n(\bbR)\slash \Or_{k,l}\cong S^2_{(k,l)}(\bbR^n)^\ast,\]
-            and $E$ admits a fiber metric with signature $(k,l)$ iff $\Fr(E)$ is reducible to a principal $\Or_{k,l}$-bundle. The latter is the bundle of orthonormal frames $\Fr_{\Or_{k,l}}(E,\sfh)$. Note that specifying such a reduction is equivalent to specifying a bundle metric (section of the associated bundle) according to Proposition~\ref{prop 1.6.1 RS2}, or alternatively a metric ($f$ in the language of Proposition~\ref{prop 1.6.2 RS2}) on the model fiber plus an equivariant $S^2_{(k,l)}(\bbR^n)^\ast$-valued (metric-valued) function on the frame bundle.
+            \[\Fr(E)\times_{\GL_n(\bbR)} \rmS^2(\bbR^n)^\ast,\]
+            where $\rmS^2$ denotes the symmetric tensor square. By the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $\rmS^2_{(k,l)}(\bbR^n)^\ast< \rmS^2(\bbR^n)^\ast$ consisting of elements of rank $n=k+l$ and signature $(k,l)$ and the stabilizer of the element $\eta=I_k\oplus (-I_l)$ is $\Or_{k,l}$. Thus
+            \[\GL_n(\bbR)\slash \Or_{k,l}\cong \rmS^2_{(k,l)}(\bbR^n)^\ast,\]
+            and $E$ admits a fiber metric with signature $(k,l)$ iff $\Fr(E)$ is reducible to a principal $\Or_{k,l}$-bundle. The latter is the bundle of orthonormal frames $\Fr_{\Or_{k,l}}(E,\sfh)$. Note that specifying such a reduction is equivalent to specifying a bundle metric (section of the associated bundle) according to Proposition~\ref{prop 1.6.1 RS2}, or alternatively a metric ($f$ in the language of Proposition~\ref{prop 1.6.2 RS2}) on the model fiber plus an equivariant $\rmS^2_{(k,l)}(\bbR^n)^\ast$-valued (metric-valued) function on the frame bundle.
 
             \item If $\bbK=\bbC$, then a fiber metric can be seen as a section of the associated bundle
             \[\Fr(E)\times_{\GL_n(\bbC)} \wb{(\bbC^n)}^\ast\overset{s}{\otimes} (\bbC^n)^\ast,\]
@@ -599,20 +611,25 @@ Now that we have come full circle and finished defining fiber bundles -- a task 
 
 \subsection{Klein geometry}
 
-Felix Klein saw geometry as the study of invariants under actions of Lie groups. This led him to start the famous Erlangen program for the classification of all ``symmetric'' geometries corresponding to simple Lie groups. He noticed that each interesting symmetric geometry is based on a connected manifold with a \emph{transitive} action of a Lie group $G$ of ``motions'', and moreover, all properties of figures studied in the geometry remain invariant under these motions. For example, in the case of Euclidean geometry, the properties studies are angle and length, and the group is the group of rigid motions. Thus Klein unified a wide range of classical geometries by defining a geometry as consisting of a Lie group $G$, a smooth manifold $M$ with a smooth, faithful, and transitive action of $G$. This means that Klein geometries are a special kind of principal bundles. We shall not require faithfulness in our treatment here.
+Felix Klein saw geometry as the study of invariants under actions of Lie groups. This led him to start the famous Erlangen program for the classification of all ``symmetric'' geometries corresponding to simple Lie groups. He noticed that each interesting symmetric geometry is based on a connected manifold with a \emph{transitive} action of a Lie group $G$ of ``motions'', and moreover, all properties of figures studied in the geometry remain invariant under these motions. For example, in the case of Euclidean geometry, the properties studied are angle and length, and the group is the group of rigid motions. Thus Klein unified a wide range of classical geometries by \emph{defining} a geometry as consisting of a Lie group $G$, a smooth manifold $M$ with a smooth, faithful, and transitive action of $G$. This means that Klein geometries are a special kind of principal bundles. We shall not require faithfulness in our treatment here.
 
 Let $H\sub G$ be a closed Lie subgroup and consider the action $H\acts G$ by right translation. Let $K$ be the maximal normal subgroup of $G$ lying inside $H$. By the Initial Subgroup Theorem~\ref{thm initial subgroup}, $K$ is a weakly embedded Lie subgroup of $G$. Since $H$ is closed, the closure $\wb{K}$ is also a normal subgroup of $G$ lying inside $H$. By maximality, we conclude that $K$ is closed, and hence embedded, so $K\sub H\sub G$. By Corollary~\ref{cor 6.5.3 RS1}(1), the canonical map $\pi:G\slash K\to G\slash H$ is a \gls{pfb} with fiber $H\slash K$, inducing a diffeomorphism
 \[(G\slash K)\slash (H\slash K)\to G\slash H\]
 commuting with the canonical left $G\slash K$-actions.
 
+\begin{xca}
+    Show that if a homogeneous space $G\slash H$ contains multiple connected components, then each component is a homogeneous space of $G$ with conjugate stabilizer subgroups.
+\end{xca}
+
 \begin{defn}[Klein geometry]\index{Klein geometry}
-    A Klein geometry is a pair $(G,H)$, where $G$ is a Lie group and $H\sub G$ is a closed subgroup such that the homogeneous space $G\slash H$ is connected. $G$ is called the \emph{principal group} of the geometry. The \emph{kernel} of the Klein geometry is the maximal normal subgroup $K$ of $G$ lying inside $H$. The Klein geometry is called \emph{effective} (or faithful) if $K=\{e\}$ and \emph{locally effective} if $K$ is discrete. A Klein geometry is \emph{geometrically oriented} if $G$ is connected. The homogeneous space $M=G\slash H$ is called the \emph{space of the Klein geometry}. It is called \emph{reductive} if the adjoint representation of $G$ viewed as a $\Ad(H)$-module decomposes into a direct sum $\frakg=\frakh\oplus \frakm$, where $\frakg$ and $\frakh$ are the Lie algebras of $G$ and $H$, respectively. 
+    A Klein geometry is a pair $(G,H)$, where $G$ is a Lie group and $H\sub G$ is a closed subgroup such that the homogeneous space $G\slash H$ is connected. $G$ is called the \emph{principal group} of the geometry. The \emph{kernel} of the Klein geometry is the maximal normal subgroup $K$ of $G$ lying inside $H$, i.e.\ the set of all elements of $G$ that act trivially on $G\slash H$. The Klein geometry is called \emph{effective} (or faithful) if $K=\{e\}$ and \emph{locally effective} if $K$ is discrete. A Klein geometry is \emph{geometrically oriented} if $G$ is connected. The homogeneous space $M=G\slash H$ is called the \emph{space of the Klein geometry}. It is called \emph{reductive} if the adjoint representation of $G$, viewed as a $\Ad(H)$-module, decomposes into a direct sum $\frakg=\frakh\oplus \frakm$, where $\frakg$ and $\frakh$ are the Lie algebras of $G$ and $H$, respectively. 
 \end{defn}
 
 \begin{rem}
     \begin{enumerate}
         \item The same space $M=G\slash H$ might be the space of multiple Klein geometries, so a Klein geometry is not  just a homogeneous space, but rather a principal bundle of the form $G\to G\slash H$. 
-        \item Every Klein geometry is a \emph{tautological bundle} in the sense that the fiber over $gH\in G\slash H$ is the coset $gH\subset G$ itself. 
+        \item Under this definition, $M=G\slash H$ has a canonical basepoint given by the coset of the identity, $[e]=eH$. An alternative definition of a Klein geometry is as a manifold $M$ with a transitive $G$-action of orbit type $[H]$, in which case the subgroup $H$ is determined only up to conjugacy, and a choice of basepoint is an additional structure. We will follow the first definition out of convenience.
+        \item Every Klein geometry is a \emph{tautological principal bundle} in the sense that the fiber over $gH\in G\slash H$ is the coset $gH\subset G$ itself. 
     \end{enumerate}
 \end{rem}
 
@@ -651,11 +668,11 @@ The next result shows that every Klein geometry $(G,H)$ determines a geometrical
 
 \begin{example}
     \begin{enumerate}
-        \item $(\Aff_n(\bbK), \GL_n(\bbK))$ is the affine geometry on $\bbK^n$. Similarly, $(\Aff_n^+(\bbK), \GL_n^+(\bbK))$ is the affine geometry with an orientation.
+        \item $(\Aff_n(\bbK), \GL_n(\bbK))$ is the affine geometry on $\bbK^n$, and the bundle $\Aff_n(\bbK)\to \rmA(\bbK^n)$ is the frome bundle of the affine space $\rmA(\bbK^n)$. Similarly, $(\Aff_n^+(\bbK), \GL_n^+(\bbK))$ is the affine geometry with an orientation.
 
-        \item $(\Euc_n^+(\bbR),\SO_n)$ is the ``school geometry'' of orientation-preserving congruences, or rigid motions, on $\bbR^n$. This adds a metric to the real affine geometry.
+        \item $(\SE_n(\bbR),\SO_n)$ is the ``school geometry'' of orientation-preserving congruences, or rigid motions, on $\rmA(\bbR^n)$. The corresponding principal bundle $\SE_n(\bbR)\to \rmA(\bbR^n)$ is the bundle of orthonormal frames at every point of the Euclidean space. This adds a metric to the real affine geometry.
 
-        \item Let $H$ be the subgroup of $\GL_n^+(\bbR)$ consisting of matrices $A$ such that $AA^T=\lambda I$ for some $\lambda>0$. Every such matrix has the form $\sqrt{\lambda}R$ where $R\in\SO_n$ is a rotation matrix, so this is precisely the group of similarity transformations in Euclidean geometry. Then the Klein geometry $(H\rtimes \bbR^n,H)$ can be called the ``geometry of similarity'' on $\bbR^n$.
+        \item Let $H$ be the subgroup of $\GL_n^+(\bbR)$ consisting of matrices $A$ such that $AA^T=\lambda I$ for some $\lambda>0$. Every such matrix has the form $\sqrt{\lambda}R$ where $R\in\SO_n$ is a rotation matrix, so this is precisely the group of similarity transformations in Euclidean geometry. Then the Klein geometry $(H\ltimes \bbR^n,H)$ can be called the ``geometry of similarity'' on $\bbR^n$.
         
         \item $(\SL_2(\bbR),\SO_2)$ is the \emph{hyperbolic half-plane} $M=\{z\in \bbC\mid \Im z>0\}$ with the transitive action of M\"obius transformations $\SL_2(\bbR)$ acting by 
         \[\begin{pmatrix}
@@ -675,9 +692,9 @@ The next result shows that every Klein geometry $(G,H)$ determines a geometrical
         \end{bmatrix},\]
         is the elliptic geometry on $\bbR P^n$ with Euclidean transformations acting on lines in $\bbR^{n+1}$. This adds a metric to the projective geometry.
 
-        \item $(\Or_{n,1}^+\rtimes\bbR^n,\Or_{n,1}^+)$ is the \emph{Minkowski geometry} on $\bbR^n$.
+        \item $(\Or_{n,1}^+\ltimes\bbR^n,\Or_{n,1}^+)$ is the \emph{Minkowski geometry} on $\bbR^n$.
 
-        \item Recall that under the standard Minkowski metric of signature $(n+1,1)$ on $\bbR^{n+2}$, the light cone $C=\{x\mid \lVert x\rVert=0\}$ is homogeneous in the sense that if $x\in C$, then $\lambda x\in C$ for all $\lambda\in\bbR$. The set $C\slash \sim\cong\bbS^n$ of null lines through the origin thus inherits a transitive $\Or_{n+1,1}$-action with stabilizers isomorphic to the Poincar\'e conformal group $P\cong \CO_n\rtimes \bbR^n$. This is the \emph{conformal geometry} on $\bbS^n$. In the case $n=2$ this is the \emph{M\"obius sphere geometry}.
+        \item Recall that under the standard Minkowski metric of signature $(n+1,1)$ on $\bbR^{n+2}$, the light cone $C=\{x\mid \lVert x\rVert=0\}$ is homogeneous in the sense that if $x\in C$, then $\lambda x\in C$ for all $\lambda\in\bbR$. The set $C\slash \sim\cong\bbS^n$ of null lines through the origin thus inherits a transitive $\Or_{n+1,1}$-action with stabilizers isomorphic to the Poincar\'e conformal group $P\cong \CO_n\ltimes \bbR^n$. This is the \emph{conformal geometry} on $\bbS^n$. In the case $n=2$ this is the \emph{M\"obius sphere geometry}.
 
         \item If $H<G=\Or_{2,2}^+$ (where the metric is $\mathrm{diag}(-1,1,1,-1)$) is the stabilizer of the line spanned by $(1,1,0,0)$, then $Q=G\slash H$ can be identified with the \emph{projective completion} of a 1-sheet hyperboloid in $\bbR^3$ given by $x_1^2+x_2^2-x_3^3=1$, and so is diffeomorphic to the torus $\bbT^2$. This is called the \emph{Lie sphere geometry} on the \emph{Lie quadric} $Q$. In this geometry lines, circles and points are treated on equal footing. This generalizes to $\Or_{n+2,2}$.
 
@@ -724,7 +741,7 @@ In particular, $(G,H)\cong (G,gHg^{-1})$. Another useful notion is that of \emph
 
 
 \begin{xca}
-    Show that $(\Euc_n^+(\bbR),\SO_n(\bbR))$, $(\SO_{n+1},\SO_n)$, and $(\SO_{n,1},\SO_n)$ are all mutations of each other (they are Euclidean space $\bbR^n$, elliptic space $\bbS^n$, and hyperbolic space $H^n\cong\bbR^n$, respectively).
+    Show that $(\SE_n(\bbR),\SO_n(\bbR))$, $(\SO_{n+1},\SO_n)$, and $(\SO_{n,1},\SO_n)$ are all mutations of each other (they are Euclidean space $\bbR^n$, elliptic space $\bbS^n$, and hyperbolic space $H^n\cong\bbR^n$, respectively).
 \end{xca}
 
 
@@ -839,7 +856,7 @@ We can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash\frakh
         =(\pi(g),L_{g\ast}(\pi_\ast X))=\varphi(g,X).
     \end{multline}
     Thus $\varphi$ induces a smooth quotient map $\wb\varphi:G\times_H \frakg\slash\frakh\to T(G\slash H)$. Moreover, this map is injective since $\varphi(g,X)=\varphi(g',X')$ implies $g'=gh$ for some $h\in H$ and $\pi_\ast L_{gh\ast}X'=\pi_\ast L_{g\ast}X$. The latter means that $\pi_\ast L_{h\ast}X'=\pi_\ast X$ and hence that $X'-\Ad_h^{-1}X\in\frakh$. Thus,
-    \[(g',X')=(gh,\Ad_h^{-1}X\mod\frakh)=(g,X)\text{ in } G\times_H\frakg\slash\frakh.\]
+    \[[(g',X')]=[(gh,\Ad_h^{-1}X+\frakh)]=[(g,X+\frakh)]\in G\times_H\frakg\slash\frakh.\]
     Thus $\wb\varphi$ is a vertical \gls{vb} isomorphism.
 \end{proof}
 
@@ -852,11 +869,94 @@ We can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash\frakh
 \end{example}
 
 
-Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of $H$ via $\wh{L}_h$, $h\in H$, thus it generates the \emph{isotropy representation} $H\to \GL(\frakg\slash\frakh)$, which will be denoted by $\underline{\Ad}$. Since tangent bundles involve only first derivatives, we can make the following rough division of Klein geometries into two types according to whether $H$ is faithfully represented by this action.
+Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of $H$ via $\wh{L}_h$, $h\in H$, thus it generates an isotropy representation of $H$, which we specify in the following definition.
+
+\begin{defn}[Isotropy representation]
+    For a Klein geometry $(G,H)$, we call the representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ given by $h\mapsto \wh{L}_{h\ast [e]}$, is called the isotropy representation of the Klein geometry.
+
+    Since $\frakh<\frakg$ is invariant under $\Ad(H)$, the restriction of the adjoint representation to $H$, $\restr{\Ad}{H}:G\to \GL(\frakg)$, which descends to a map $H\to \GL(\frakg\slash h)$, which coincides with $\underline{\Ad}$.
+\end{defn}
+
+Since tangent bundles involve only first derivatives, we can make the following rough division of Klein geometries into two types according to whether $H$ is faithfully represented by this action.
 
 \begin{defn}[First order Klein geometry]
-    A Klein geometry $(G,H)$ is of \emph{first order} if the isotropy representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ is faithful. Otherwise, the geometry is said to have \emph{higher order}.
+    A Klein geometry $(G,H)$ is of first order if the isotropy representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ is faithful. Otherwise, the geometry is said to have \emph{higher order}.
 \end{defn}
+
+\begin{rem}
+    \begin{enumerate}
+        \item First order Klein geometries have a simple intuitive description in terms of $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, via the global trivialization of $TM$ constructed above, it traces out an $H$-orbit in the set of linear frames mapping $T_mM\to \frakg\slash\frakh$ for each $m\in M$. This was exactly our original definition of an $H$-structure on $TM$. Equivalently, this describes the principal bundle $G\to M$ as a reduction of the frame bundle $\Fr M$ to structure group $H$.
+        \item A fundamental problem in Cartan geometry will be the lifting problem for a map into a homogeneous space, which is the problem of finding a map $\wt{f}$ that makes the following diagram commute:
+        \[\begin{tikzcd}
+                                            & G\arrow[d]\\
+            S\arrow[r,"f"]\arrow[ur,"\wt{f}",dashed]& G\slash H.
+        \end{tikzcd}\]
+        Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order Klein geometry $(G,H)$, the choice of a lift $\wt{f}:S\to G$ is equivalent to a choice of frames of $G\slash H$ along the submanifold $S$. In specific examples we will demand that these frames be \emph{adapted} to some structure on $S$ to make the lift unique, e.g.\ that $T_mS$ get mapped by the corresponding frame to a fixed subspace $V\subset \frakg\slash\frakh$ for all $m\in S$. This is the basis of \emph{Cartan's method of moving frames} (``rep\`ere mobile'').\index{Rep\`ere mobile|see {Moving frames}}\index{Moving frames!Cartan's method of} Its power is in the fact that the frame is determined only by the value $f(s)\in M$, and not by any specific way the map $f$ is parametrized. Therefore, this method provides an extremely powerful way for finding \emph{intrinsic} geometric quantities of submanifolds, called \emph{differential invariants}.\index{Differential invariant}
+    \end{enumerate}
+\end{rem}
+
+\begin{example}[Curves in the Euclidean plane]
+    Consider two parametrized curves $\gamma,\gamma':\bbR\to \bbE^2$, where $\bbE^2=\SE_2\slash\SO_2$ is the Euclidean plane. The basic question of Euclidean geometry (which is a type of Cartan geometry) is: what are the necessary and sufficient conditions for the existence of a Euclidean motion $g\in\SE_2$ such that $\gamma'(\bbR)=g\cdot \gamma(\bbR)$ as sets? Further, when are there $g\in\SE_2$ and $t_0\in\bbR$ such that $\gamma'(t+t_0)=g\cdot \gamma(t)$ for all $t$?
+
+    To solve this problem, we introduce an \emph{adapted frame} along each curve $\gamma$. That is, for each $t$ we pick an orthonormal frame in $T_{\gamma(t)}\bbE^2$ such that it maps the direction tangent to $\gamma$ to the first axis of $\bbR^2=\frakse_2\slash\frakso_2$. Namely, assuming $\dot\gamma$ is non-vanishing (so $\gamma$ is an immersion), we put 
+    \[e_1(t)=\dot\gamma(t)\slash \lVert\dot\gamma(t)\rVert,\] 
+    and we let $e_2(t)$ be the unit normal to $\gamma$, namely the unique unit vector such that $\frake(t)\coloneqq (e_1(t),e_2(t))\in\SO_2$. Therefore we have constructed exactly the lift we needed:
+    \[\wt{\gamma}:\bbR\to \SE_2,\quad t\mapsto\begin{pmatrix}
+        \frake(t)&\gamma(t) \\
+        0&  1
+    \end{pmatrix}.\]
+    By Corollary~\ref{cor immersions into G}, two curves $\gamma,\gamma'$ differ by a global Euclidean transform iff their logarithmic derivatives coincide. Denote the speed by $v(t)\coloneqq \lVert\dot\gamma(t)\rVert$, so that $\dot\gamma(t)=v(t)e_1(t)$. There also exists a function $\lambda(t)\in\bbR$ such that 
+    \[\dot e_1(t)=\lambda(t)e_2(t),\quad \dot e_2(t)=-\lambda(t)e_1(t).\]
+    This way, the acceleration $\ddot{\gamma}(t)$ decomposes into a longitudinal and normal components:
+    \[\ddot\gamma=a_{\parallel}e_1+a_{\perp}e_2=\dot ve_1+\lambda ve_2.\]
+    Now we compute the logarithmic derivative:
+    \[\delta\wt\gamma(t)=\wt\gamma(t)^{-1}\dot{\tilde\gamma}(t)=
+    \begin{pmatrix}
+        \frake^T & -\frake^T\cdot\gamma\\
+        0 & 1
+    \end{pmatrix} 
+    \begin{pmatrix}
+        \dot\frake & \dot\gamma\\
+        0 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \lambda\cdot\epsilon & ve_1\\
+        0 & 0
+    \end{pmatrix},
+    \]
+    where $\epsilon=\left(\begin{smallmatrix}
+        0&-1\\
+        1&0
+    \end{smallmatrix}\right)$. Therefore, two paths are congruent with fixed parametrizations iff their velocities and normal components of acceleration coincide. 
+    
+    To compare curves regardless of their parametrization, it suffices to pick natural parametrizations. Namely, we take the unit vector $\partial_t$ on $\bbR$ and require that both $\gamma$ and $\gamma'$ map it to unit vectors in $T\bbE^2$. This is equivalent to requiring that $t$ coincide with the \emph{arclength parameter} $s$, with respect to which the speed is $1$, and then $\frac{\dd}{\dd s} \gamma=e_1$. The scalar function $\lambda(s)$ in this case has a special name -- it is called the curvature of the curve:
+    \[\frac{\dd}{\dd s}e_1=\frac{\dd^2}{\dd s^2}\gamma=\kappa(s)e_2.\]
+    In terms of the original parametrization, we have $\dd s/\dd t=v$ (or $\partial_t=v\partial_s$), therefore 
+    \[\kappa=\frac{\lambda}{v}=\frac{a_{\perp}}{v^2}=\frac{\lVert\dot\gamma\times \ddot\gamma\rVert}{\lVert\dot\gamma\rVert^3}.\]
+    Thus, two curves are congruent irrespective of their parametrization iff their curvatures coincide up to a shift of the arclength parameter $s\mapsto s+s_0$.
+\end{example}
+
+\begin{xca}
+    \begin{enumerate}
+        \item Show that the circle that most closely approximates a curve $\gamma:\bbR\to \bbE^2$ at a given point has radius $1/\kappa$.
+        \item  Show that a curve has constant curvature iff it is a segment of a straight line or a circle.
+    \end{enumerate}
+\end{xca}
+
+\begin{example}[Curves in $\bbE^n$]
+    It is clear how to generalize the description of curves to higher dimensions. To produce a frame of $n$ vectors, we need to construct $n-1$ natural vectors associated with a curve $\gamma$. For this we use its $n$-th jet, i.e.\ the first $n+1$ terms of the Taylor series. Namely we take the vectors 
+    \[\left(\frac{\dd}{\dd s}\gamma,\frac{\dd^2}{\dd s^2}\gamma,\ldots,\frac{\dd^n}{\dd s^n}\gamma\right),\] assume that they are linearly independent (such curves are called nondegenerate) and apply the Gram-Schmidt process to them to get $\{e_1,\ldots,e_{n-1}\}$ (note that the Gram-Schmidt process doesn't change the differential order of these vectors). The final vector is then uniquely defined as $e_n=e_1\times\cdots\times e_{n-1}$. Now we define the \emph{generalized curvatures}
+    \[\kappa_i\coloneqq -\<\frac{\dd}{\dd s}e_i,e_{i+1}\>,\quad i=1,\ldots,n-1.\] 
+    The formula for the logarithmic derivative of the frame $\frake:\bbR\to \SO_n$ is given by the \emph{Frenet-Serret equation}\index{Equation!Frenet-Serret}
+    \[\frac{\dd}{\dd s}\frake=\begin{pmatrix}
+        0 & -\kappa_1 & &\\
+        \kappa_1 &\ddots & \ddots&\\
+         & \ddots &0 &-\kappa_{n-1}\\
+         0 & &\kappa_{n-1} & 0
+    \end{pmatrix}\cdot \frake.\]
+    Therefore, nondegenerate curves in $\bbE^n$ are determined by their generalized curvatures $\{\kappa_1,\ldots,\kappa_{n-1}\}$ up to a rigid motion. We say that the generalized curvatures provide a \emph{complete set of differential invariants}.
+\end{example}
 
 
 The tangent bundle of a Klein geometry is an example of an important class of bundles that are equivariant with respect to the natural $G$-action $\wh L$ on the base $G\slash H$ in the following sense.
@@ -898,7 +998,7 @@ Thus an alternative definition of homogeneous bundles is simply as bundles assoc
 \begin{example}\label{ex 1.4.3 Cap}
     The  tangent  bundle $T(G\slash H)$ that we studied in Proposition~\ref{prop 4.5.1 Sharpe} is clearly homogeneous because the left action $\wh{L}_g$ on $G\slash H$ induces a lifted action $\wh{L}_{g\ast}$ on $T(G\slash H)$, and it corresponds to the $H$-representation on $\frakg\slash \frakh$ coming from the restriction to $H$ of the adjoint representation of $G$. The isomorphism with $G\times_H (\frakg\slash\frakh)$ established in that proposition is exactly the same as what we would obtain from Proposition~\ref{prop 1.4.3 Cap}. Namely, it maps $X\in T_{gH}(G\slash H)$ to $[(g^{-1},\omega(Y)+\frakh)]$, where $Y\in T_g G$ is some lift of $X$, i.e.\ $\pi_\ast Y=X$.
 
-    By the naturality of the correspondence, the cotangent bundle $T^\ast(G\slash H)$ corresponds to the dual representation $(\frakg\slash\frakh)^\ast$. Note that the latter is just the annihilator of $\frakh$ in $\frakg^\ast$, so this is a subrepresentation of the restriction of the coadjoint representation of $G$ to $H$. Again, by naturality, the tensor bundle $T^k_l G\slash H$ corresponds to $T^k_l(\frakg\slash\frakh)=(\frakg\slash\frakh)^{\otimes k}\otimes (\frakg\slash\frakh)^{\ast\otimes l}$.
+    By the naturality of the correspondence, the cotangent bundle $T^\ast(G\slash H)$ corresponds to the dual representation $(\frakg\slash\frakh)^\ast$. Note that the latter is just the annihilator of $\frakh$ in $\frakg^\ast$, so this is a subrepresentation of the restriction of the coadjoint representation of $G$ to $H$. Again, by naturality, the tensor bundle $T^k_l G\slash H$ corresponds to $\bbT^k_l(\frakg\slash\frakh)=(\frakg\slash\frakh)^{\otimes k}\otimes (\frakg\slash\frakh)^{\ast\otimes l}$.
 \end{example}
 
 
@@ -926,52 +1026,52 @@ Finally we provide a similar classification of principal homogeneous bundles.
 
 
 
-\subsection{Frobenius reciprocity}
+\subsection{Frobenius reciprocity}\label{sec: Frobenius reciprocity}
 
-Consider the set $\Gamma(E)$ of sections of a homogeneous vector bundle $E\to G\slash H$. There is a natural left $G$-action on $\Gamma(E)$ defined by
+Consider the set $\Gamma^\infty(E)$ of sections of a homogeneous vector bundle $E\to G\slash H$. There is a natural left $G$-action on $\Gamma^\infty(E)$ defined by
 \[g\cdot \sigma\coloneqq \wt{L}_g\circ \sigma\circ\wh{L}^{-1}_g,\]
 where $\wt L$ and $\wh L$ are the actions on $E$ and $G\slash H$, respectively. Note that this particular combination of the two actions is required so that sections get mapped to sections, i.e.\ so that the action preserves the point in the base.
 
 \begin{defn}[Induced representation]\index{Induced representation}
-    Let $(G,H)$ be a homogeneous space, $G\acts V$ a finite-dimensional linear representation $G$, and $E=G\times_H V$ be the corresponding homogeneous \gls{vb}. The representation of $G$ on $\Gamma(E)$ defined above is called the \emph{induced representation} of $G$, denoted $\Ind^G_H(V)$. The association functor for bundles makes this a functor of $V$.
+    Let $(G,H)$ be a homogeneous space, $G\acts V$ a finite-dimensional linear representation $G$, and $E=G\times_H V$ be the corresponding homogeneous \gls{vb}. The representation of $G$ on $\Gamma^\infty(E)$ defined above is called the \emph{induced representation} of $G$, denoted $\Ind^G_H(V)$. The association functor for bundles makes this a functor of $V$.
 
     In addition, we denote by $\Res^G_H(V)$ the representation of $H$ on $G$ obtained by restriction of the representation of $G$. This is also obviously functorial in $V$.
 \end{defn}
 
-The correspondence between sections of an associated bundle and equivariant functions on the principal bundle (Proposition~\ref{prop 1.2.6 RS2}) gives rise to another interpretation of the induced action of $G$ on sections. This picture is (in the case of homogeneous \glspl{vb}) frequently used in representation theory. Namely, via the isomorphism $E\cong G\times_H E_{[e]}$ from Proposition~\ref{prop 1.4.3 Cap}, we can identify $\Gamma(E)$ with $\Gamma\left(G\times_H E_{[e]}\right)$, which in turn by Proposition~\ref{prop 1.2.6 RS2} is in bijective correspondence with the set $\Hom_H(G,E_{[e]})$. Explicitly, the correspondence between a section $\sigma$ and a function $\varphi$ is characterized by $\sigma(gH)=[(g,\varphi(g))]=g\cdot \varphi(g)$ or by $\varphi(g)=g^{-1}\cdot\sigma(gH)$. In the case of a homogeneous vector bundle, this bijection is clearly a linear isomorphism.
+The correspondence between sections of an associated bundle and equivariant functions on the principal bundle (Proposition~\ref{prop 1.2.6 RS2}) gives rise to another interpretation of the induced action of $G$ on sections. This picture is (in the case of homogeneous \glspl{vb}) frequently used in representation theory. Namely, via the isomorphism $E\cong G\times_H E_{[e]}$ from Proposition~\ref{prop 1.4.3 Cap}, we can identify $\Gamma^\infty(E)$ with $\Gamma\left(G\times_H E_{[e]}\right)$, which in turn by Proposition~\ref{prop 1.2.6 RS2} is in bijective correspondence with the set $\Hom_H(G,E_{[e]})$. Explicitly, the correspondence between a section $\sigma$ and a function $\varphi$ is characterized by $\sigma(gH)=[(g,\varphi(g))]=g\cdot \varphi(g)$ or by $\varphi(g)=g^{-1}\cdot\sigma(gH)$. In the case of a homogeneous vector bundle, this bijection is clearly a linear isomorphism.
 
-To get the action of $G$ on $\Gamma(E)$ in the picture of equivariant functions, we only have to notice that by definition $(g\cdot \sigma)(g'H)=g\cdot \sigma(g^{-1}g'H)$. Consequently, the map $g\cdot f:G\to E_{[e]}$ corresponding to $g\cdot\sigma\in \Gamma(E)$ is given by none other than the natural action by pullbacks $L_g^\ast$:
+To get the action of $G$ on $\Gamma^\infty(E)$ in the picture of equivariant functions, we only have to notice that by definition $(g\cdot \sigma)(g'H)=g\cdot \sigma(g^{-1}g'H)$. Consequently, the map $g\cdot f:G\to E_{[e]}$ corresponding to $g\cdot\sigma\in \Gamma^\infty(E)$ is given by none other than the natural action by pullbacks $L_g^\ast$:
 \[(g\cdot \varphi)(g')=g^{\prime-1}\cdot(g\cdot\sigma(g^{-1}g'H))=(g^{-1}g')^{-1}\cdot\sigma(g^{-1}g'H)=\varphi(g^{-1}g').\]
 
-The next fundamental result shows that in certain situations one can reduce questions about the infinite-dimensional space $\Gamma(E)$ to questions about the finite-dimensional manifold $E_{[e]}$. In particular, determining $G$-invariant sections of a homogeneous bundle always reduces to a finite-dimensional problem.
+The next fundamental result shows that in certain situations one can reduce questions about the infinite-dimensional space $\Gamma^\infty(E)$ to questions about the finite-dimensional manifold $E_{[e]}$. In particular, determining $G$-invariant sections of a homogeneous bundle always reduces to a finite-dimensional problem.
 
 \begin{thm}[Geometric Frobenius reciprocity {{\cite[Thm.~1.4.4]{Cap}}}]\label{thm 1.4.4 Cap}
-    Let $E\to G\slash H$ be a homogeneous bundle with standard fiber $E_{[e]}$ (viewed as an $H$-space), and let $X$ be a smooth manifold endowed with a smooth left $G$-action. Then the evaluation at $[e]$ induces a natural bijection between the set of $G$-equivariant maps $X\to \Gamma(E)$ and the set of $H$-equivariant maps $X\to E_{[e]}$. In particular, there is a natural bijection between the set $\Gamma(E)^G$ of $G$-invariant sections of $E$ and the set $(E_{[e]})^H$ of $H$-invariant elements of the typical fiber.
+    Let $E\to G\slash H$ be a homogeneous bundle with standard fiber $E_{[e]}$ (viewed as an $H$-space), and let $X$ be a smooth manifold endowed with a smooth left $G$-action. Then the evaluation at $[e]$ induces a natural bijection between the set of $G$-equivariant maps $X\to \Gamma^\infty(E)$ and the set of $H$-equivariant maps $X\to E_{[e]}$. In particular, there is a natural bijection between the set $\Gamma^\infty(E)^G$ of $G$-invariant sections of $E$ and the set $(E_{[e]})^H$ of $H$-invariant elements of the typical fiber.
 
     If $E$ is the homogeneous \gls{vb} induced by an $H$-representation $W$, and $V$ is a representation of $G$, then the bijections above are linear and respect the subspaces of linear equivariant maps, so that there is a natural linear isomorphism
     \[\Hom_G\left(V,\Ind^G_H(W)\right)\cong \Hom_H\left(\Res^G_H(V),W\right),\]
     i.e.\ $\Res^G_H$ and $\Ind^G_H$ are adjoint functors.
 \end{thm}
 \begin{proof}
-    Suppose are given a map $X\to\Gamma(E)$ writen as $x\mapsto \sigma_x$. This map is $G$-equivariant iff $\sigma_{g\cdot x}(g'H)=g\cdot\sigma_x(g^{-1}h'H)$. In particular, if we consider the map $X\to E_{[e]}$ defined by $x\mapsto \sigma_x([e])$, then for $h\in H$, we get $\sigma_{h\cdot x}([e])=h\cdot \sigma_x(h^{-1}\cdot[e])=h\cdot\sigma_x([e])$, so this is $H$-equivariant. 
+    Suppose are given a map $X\to\Gamma^\infty(E)$ writen as $x\mapsto \sigma_x$. This map is $G$-equivariant iff $\sigma_{g\cdot x}(g'H)=g\cdot\sigma_x(g^{-1}h'H)$. In particular, if we consider the map $X\to E_{[e]}$ defined by $x\mapsto \sigma_x([e])$, then for $h\in H$, we get $\sigma_{h\cdot x}([e])=h\cdot \sigma_x(h^{-1}\cdot[e])=h\cdot\sigma_x([e])$, so this is $H$-equivariant. 
     
     Conversely, if $\varphi:X\to E_{[e]}$ is $H$-equivariant, then for $x\in X$ we define $\sigma_x:G\slash H\to E$ by $\sigma_x(gH)=g\cdot \varphi(g^{-1}\cdot x)$. This is well defined since $\varphi(h^{-1}g^{-1}\cdot x)=h^{-1}\cdot \varphi(g^{-1}\cdot x)$, and thus $gh\cdot \varphi(h^{-1}g^{-1}\cdot x)=g\cdot \varphi(g^{-1}\cdot x)$. Moreover, $\sigma_x([e])=\varphi(x)$ and 
     \[\sigma_{g\cdot x}(g'H)=g'\cdot \varphi(g^{\prime-1}g\cdot x)=g\cdot g^{-1}g'\cdot \varphi(g^{\prime-1}g\cdot x)=g\cdot\sigma_x(g^{-1}g'H),\]
-    so $x\mapsto \sigma_x$ is $G$-equivariant. Since for any $G$-equivariant map $x\mapsto \sigma_x$ we must have $\sigma_x(gH)=g\cdot g^{-1}\cdot \sigma_x(g^{-1}gH)=g\cdot \sigma_{g\cdot x}([e])$, the two constructions are inverse bijections between the set of $G$-equivariant maps $X\to \Gamma(E)$ and the set of $H$-equivariant maps $X\to E_{[e]}$.
+    so $x\mapsto \sigma_x$ is $G$-equivariant. Since for any $G$-equivariant map $x\mapsto \sigma_x$ we must have $\sigma_x(gH)=g\cdot g^{-1}\cdot \sigma_x(g^{-1}gH)=g\cdot \sigma_{g\cdot x}([e])$, the two constructions are inverse bijections between the set of $G$-equivariant maps $X\to \Gamma^\infty(E)$ and the set of $H$-equivariant maps $X\to E_{[e]}$.
 
-    Taking $X=\{*\}$ a single point with the trivial $G$-action, a $G$-equivariant map $X\to \Gamma(E)$ is just a $G$-invariant section $g\cdot \sigma_*=\sigma_*$, and a $H$-equivariant map $X\to E_{[e]}$ is an $H$-invariant element in $E_{[e]}$. Thus we get a bijection $\Gamma(E)^G\to (E_{[e]})^H$.
+    Taking $X=\{*\}$ a single point with the trivial $G$-action, a $G$-equivariant map $X\to \Gamma^\infty(E)$ is just a $G$-invariant section $g\cdot \sigma_*=\sigma_*$, and a $H$-equivariant map $X\to E_{[e]}$ is an $H$-invariant element in $E_{[e]}$. Thus we get a bijection $\Gamma^\infty(E)^G\to (E_{[e]})^H$.
 
-    Finally, if $E$ is a natural \gls{vb} induced by an $H$-representation $W$ and $X$ is a $G$-representation $V$, then $\Lin(V,\Gamma(E))$ and $\Lin(V,E_{[e]})$ are vector spaces under the pointwise operations, and the evaluation at $[e]$ induces a linear map $\Lin(V,\Gamma(E))\to \Lin(V,E_{[e]})$. If we start from a linear map $\varphi:V\to E_{[e]}$, the construction above produces $\sigma_v(gH)=g\cdot \varphi(g^{-1}\cdot v)$. Since $\varphi$ is linear and $G$ acts by linear maps, this is linear in $v$.
+    Finally, if $E$ is a natural \gls{vb} induced by an $H$-representation $W$ and $X$ is a $G$-representation $V$, then $\Lin(V,\Gamma^\infty(E))$ and $\Lin(V,E_{[e]})$ are vector spaces under the pointwise operations, and the evaluation at $[e]$ induces a linear map $\Lin(V,\Gamma^\infty(E))\to \Lin(V,E_{[e]})$. If we start from a linear map $\varphi:V\to E_{[e]}$, the construction above produces $\sigma_v(gH)=g\cdot \varphi(g^{-1}\cdot v)$. Since $\varphi$ is linear and $G$ acts by linear maps, this is linear in $v$.
 \end{proof}
 
 \begin{example}[Spherical harmonics]
-    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\sub G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma(L_n))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma(L_n)$ into irreps. Therefore the Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
+    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\sub G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma^\infty(L_n))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma^\infty(L_n)$ into irreps. Therefore the Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
 
     Consider $G=\SU_2$ and $T=\U_1$ the subgroup fixing a vector. Then $G\slash T\cong \bbS^2$. Since $T$ is abelian, all of its representations decompose into sums of one-dimensional (hence irreducible) ones, and the one-dimensional representations are labeled by an integer $n\in\bbZ$ (namely the representation is given by multiplication by $z^n$, where $z\in\U_1\subset \bbC$). Meanwhile the irreducible representations $V_k$ of $\SU_2$ are known to be labeled by non-negative integers $k$, where $k$ is the largest integer that occurs when you restrict $V_k$ to be a $\U_1$ representation. Frobenius reciprocity implies
-    \[\dim\Hom_{\SU_2}(V_k,\Gamma(L_n))=\dim \Hom_{\U_1}(V_k,n)\]
-    where $L_n$ is the complex line bundle over $\bbS^2$ corresponding to $n$. The right hand side is the multiplicity of the weight $n$ in $V_k$ (that is, the multiplicity of $n$ in the restriction of the representation on $V_k$ to $T$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we can see that the decomposition of $\Gamma(L_n)$ into irreducibles will include all $V_k$ where $k$ is the same parity as $n$ and $k\geq n$.
+    \[\dim\Hom_{\SU_2}(V_k,\Gamma^\infty(L_n))=\dim \Hom_{\U_1}(V_k,n)\]
+    where $L_n$ is the complex line bundle over $\bbS^2$ corresponding to $n$. The right hand side is the multiplicity of the weight $n$ in $V_k$ (that is, the multiplicity of $n$ in the restriction of the representation on $V_k$ to $T$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we can see that the decomposition of $\Gamma^\infty(L_n)$ into irreducibles will include all $V_k$ where $k$ is the same parity as $n$ and $k\geq n$.
 
-    In the case $n=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $n=0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl theorem, the direct sum of all $V_{2l}$'s, once endowed with a proper topology, is not exactly $C^\infty(\bbS^2)$, but rather the Hilbert space $L^2(\bbS^2)$ of square integrable functions:
+    In the case $n=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma^\infty(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $n=0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl theorem, the direct sum of all $V_{2l}$'s, once endowed with a proper topology, is not exactly $C^\infty(\bbS^2)$, but rather the Hilbert space $L^2(\bbS^2)$ of square integrable functions:
     \[L^2(\bbS^2,\bbC)\cong \bigoplus_{l=0}^\infty V_{2l}.\]
     This holds both over reals and complexes. The space $V_{2l}$ is $(2l+1)$-dimensional and a standard basis is given by the spherical harmonics $Y^l_m(\theta,\varphi)$. If we replace $\SU_2$ by $\SO_3$, the only difference is that $V_k$ with odd $k$ disappear from the list of irreps, so the final result for $n=0$ is the same. This is the beginning of the subject of \emph{harmonic analysis} (and in particular Fourier transforms) on Lie groups.
 \end{example}
@@ -983,10 +1083,10 @@ The next fundamental result shows that in certain situations one can reduce ques
 
 
 
-The geometric version of Frobenius reciprocity immediately allows us to reduce questions about the existence of invariant Riemannian metrics and other invariant tensor fiels to problems of finite-dimensional representation theory: if $M=G\slash H$ is a homogeneous space, then from Proposition~\ref{prop 1.4.3 Cap} we know that the tensor bundle $T^k_lM$ is associated to $G\to M$ with respect to the representation $T^k_l(\frakg\slash \frakh)$. By Frobenius reciprocity, $G$-invariant sections of this bundle are in bijective correspondence with $H$-invariant elements in the representation. Since invariant elemnets are the same as homomorphisms from the trivial representation, this can be rephrased in such a way that the dimension of invariant tensor fields of type $\left(\begin{smallmatrix}k\\l\end{smallmatrix}\right)$
-on $G\slash H$ equals the multiplicity of the trivial representation in $T^k_l(\frakg\slash\frakh)$. Moreover, the proof of Theorem~\ref{thm 1.4.4 Cap} gives an explicit construction of the invariant tensor field from the invariant element in the representation. Clearly, the whole construction respects symmetries of any kind, so invariant tensor fields having certain symmetries are in correspondence with invariant elements of the representations having the same symmetries. Finally, if we consider (poinwise) questions of non-degeneracy they clearly reduce to the analogous non-degeneracy properties in the representation. In particular, the set of $G$-invariant Riemannian metrics on $G\slash H$ is in bijective corespondence with the set of $H$-invariant scalar products on $\frakg\slash\frakh$. Hence, we get
+The geometric version of Frobenius reciprocity immediately allows us to reduce questions about the existence of invariant Riemannian metrics and other invariant tensor fiels to problems of finite-dimensional representation theory: if $M=G\slash H$ is a homogeneous space, then from Proposition~\ref{prop 1.4.3 Cap} we know that the tensor bundle $\bbT^k_lM$ is associated to $G\to M$ with respect to the representation $\bbT^k_l(\frakg\slash \frakh)$. By Frobenius reciprocity, $G$-invariant sections of this bundle are in bijective correspondence with $H$-invariant elements in the representation. Since invariant elemnets are the same as homomorphisms from the trivial representation, this can be rephrased in such a way that the dimension of invariant tensor fields of type $\left(\begin{smallmatrix}k\\l\end{smallmatrix}\right)$
+on $G\slash H$ equals the multiplicity of the trivial representation in $\bbT^k_l(\frakg\slash\frakh)$. Moreover, the proof of Theorem~\ref{thm 1.4.4 Cap} gives an explicit construction of the invariant tensor field from the invariant element in the representation. Clearly, the whole construction respects symmetries of any kind, so invariant tensor fields having certain symmetries are in correspondence with invariant elements of the representations having the same symmetries. Finally, if we consider (poinwise) questions of non-degeneracy they clearly reduce to the analogous non-degeneracy properties in the representation. In particular, the set of $G$-invariant Riemannian metrics on $G\slash H$ is in bijective corespondence with the set of $H$-invariant scalar products on $\frakg\slash\frakh$. Hence, we get
 \begin{cor}
-    A homogeneous space $G\slash H$ admits a $G$-invariant Riemannian metric iff the image $H_1\subset \GL(\frakg\slash\frakh)$ of $H$ under the map induced by the restriction to $H$ of the adjoint representation of $G$ has compact closure in $\GL(\frakg\slash\frakh)$.
+    A homogeneous space $G\slash H$ admits a $G$-invariant Riemannian metric iff the image $H_1=\underline{\Ad}(H)\subset \GL(\frakg\slash\frakh)$ of $H$ under the map induced by the restriction to $H$ of the adjoint representation of $G$ has compact closure in $\GL(\frakg\slash\frakh)$.
 \end{cor}
 \begin{proof}
     From above we know that existence of an invariant Riemannian metric is equivalent to existence of an $H_1$-invariant positive definite scalar product on $\frakg\slash\frakh$. If such an scalar product exists, then $H_1$ is contained in the orthogonal group of this  product, which is compact. Hence $H_1$ has compact closure. Conversely, if $K\subset \GL(\frakg\slash\frakh)$ is a compact subgroup containing $H_1$, then averaging any scalar product on $\frakg\slash\frakh$ over $K$ (as in Proposition~\ref{prop 5.5.6 RS1}) gives a $K$-invariant and thus a $H_1$-invariant scalar product.
@@ -994,8 +1094,8 @@ on $G\slash H$ equals the multiplicity of the trivial representation in $T^k_l(\
 
 \begin{example}
     \begin{enumerate}
-        \item Viewing the sphere $\bbS^n$ as the homogeneous space $\Or_{n+1}\slash \Or_n$, we have $H=\Or_n$ and the $H$-representation $\frakg\slash\frakg\cong\bbR^n$ is just the standard one, so the set of $\Or_{n+1}$-invariant Riemannian metrics on $\bbS^n$ consists exactly of all constant positive multiples of the standard metric (since the same statement holds on $\bbR^{n+1}$).
-        \item The description of invariant Riemannian metrics on $\bbR^n$, viewed as a homogeneous space of the Euclidean group $\Euc_n$ is exactly the same. 
+        \item Viewing the sphere $\bbS^n$ as the homogeneous space $\Or_{n+1}\slash \Or_n$, we have $H=\Or_n$ and the $H$-representation $\frakg\slash\frakh\cong\bbR^n$ is just the standard one, so the set of $\Or_{n+1}$-invariant Riemannian metrics on $\bbS^n$ consists exactly of all constant positive multiples of the standard metric (since the same statement holds on $\bbR^{n+1}$).
+        \item The description of invariant Riemannian metrics on $\bbR^n$, viewed as a homogeneous space of the Euclidean group $\SE_n$ is exactly the same. 
         \item For the projective sphere we have $H_1=\GL(\frakg\slash\frakh)$, so there is certainly no $\SL_{n+1}(\bbR)$-invariant metric on $\bbS^n$. Similarly, one shows that on the contact, conformal, and CR spheres there are no invariant Riemannian metrics.
     \end{enumerate}
 \end{example}
@@ -1027,7 +1127,7 @@ Not every Klein pair can be realized as the pair of a Klein geometry.
 We now provide a local interpretation of Klein geometry, starting with an abstract example.
 
 \begin{example}[Meteor tracking]
-    Suppose we live in a small open set $U\subset M=G\slash H$ and a meteor flashes through $U$. We wish to describe its motion. We formalize the meteor as a point set $X$, and a \emph{configuration} of the meteor is a map $X_0:X\to M$. This is the origin for Cartan's idea of a ``moving frame''.
+    Suppose we live in a small open set $U\subset M=G\slash H$ and a meteor flashes through $U$. We wish to describe its motion. We formalize the meteor as a point set $X$, and a \emph{configuration} of the meteor is a map $X_0:X\to M$. This is the origin for Cartan's idea of a ``moving frame''.\index{Moving frames}
     
     We assume the meteor is \emph{rigid} and \emph{sufficiently complicated}. By the term rigid in the given geometry, we mean that for any two of its positions, where it has the configurations $X_0$ and $X_1$ say, there is an element of $G$ carrying $X_0$ to $X_1$. By sufficiently complicated we mean that the subgroup of $G$ that fixes the body pointwise (its stabilizer) is the identity.  It follows that if $X(t)$ is the configuration of its points at time $t$, then there is a unique path $g(t)\in G$ such that $X(t)=g(t)X(0)$. One way to describe the motion would be to specify the path $g(t)$ itself. However, it is more useful, and closer to what is actually observed, to describe the motion differently. We first describe the motion of one of its points $q\in X(0)$, which we take to be $eH$, by a path $q(t)=g(t)H$ on $U$, and then describe the motion of the rest of the body as turning about this one point as it moves along. For this we will need the concept of a gauge.
 
@@ -1066,6 +1166,260 @@ This transformation is called an infinitesimal change of gauge, and the two infi
 
 
 
+\subsection{Theory of surfaces}\label{sec: theory of surfaces}
+
+In this section we will describe a classical application of the Frobenius Theorem in the context of Gauss' theory of surfaces. 
+
+
+
+Let $\Sigma$ be an oriented $2$-dimensional manifold and let $i:\Sigma\to \bbR^3$ be an immersion. We will view $\Sigma$ as a subset of $\bbR^3$, i.e.\ a \emph{surface}, and we will assume the standard metric on $\bbR^3$. The dot product of vectors will be denoted by $\<\,,\,\>$. This dot product can be restricted to tangent vectors of $\Sigma$ to produce a metric on $T\Sigma$ that has a special name for historic reasons.
+
+\begin{defn}[First fundamental form]
+    The first fundamental form of a surface $\Sigma\subset\bbR^3$ is the quandratic form $\rmI\in\Gamma^0_2(\Sigma)$ defined by 
+    \[\rmI_p(X,Y)=\<X,Y\>.\]
+\end{defn}
+
+Our goal will be to construct a natural orthonormal frame at every point of $\Sigma$. A frame $\frake=\{e_1,e_2,e_3\}$ will be called a \emph{first-order adapted lift} (of the surface) if $e_3(p)\perp T_p \Sigma$. 
+Thus, let $e_3(p)$ for each $p\in\Sigma$ be the unit normal to $\Sigma$, pointing outward in the sense of Theorem~\ref{thm orientation via normal vector}.  If $\Sigma$ is locally parametrized by a function $\bm{x}: \bbR^2\supset U\to\bbR^3$ of two real parameters $u,v\in U$, then 
+\[e_3=\frac{\bm{x}_u\times \bm{x}_v}{\lVert \bm{x}_u\times \bm{x}_v\rVert},\]
+where $\bm{x}_u=\partial_u \bm{x}$ and $\bm{x}_v=\partial_v \bm{x}$. It is easy to verify that this vector is independent of the specific parametrization of $\Sigma$. Since $e_3$ is of unit length, we also conclude that $\partial_u e_3$ and $\partial_v e_3$ are tangent to $\Sigma$.
+
+\begin{defn}[Gauss map]
+    Let us view the unit normal vector $e_3$ as an element of the unit sphere $\bbS^2\subset\bbR^3$ by parallel transporting it to the origin. The resulting map $e_3:\Sigma\to \bbS^2$ is called the Gauss map of the surface $\Sigma\subset \bbR^3$.
+    It is conventional to denote its components in an arbitrary local parametrization of $\Sigma$ by a pair of real variables as follows:
+    \[(\rmI_{ij})=\begin{pmatrix}
+        g_{11}&g_{12}\\
+        g_{21}& g_{22}
+    \end{pmatrix}=\begin{pmatrix}
+        E&F\\
+        F& G
+    \end{pmatrix}.\]
+\end{defn}
+
+The Gauss map is clearly differentiable and thus we have $(e_3)_\ast:T\Sigma\to T\bbS^2$. For a given point $p\in\Sigma$, notice that the tangent planes $T_p\Sigma$ and $T_{e_3(p)}\bbS^2$ are parallel and thus can be identified with each other by parallel transporting tangent vectors in $\bbR^3$. Therefore we obtain the equivalent map $(e_3)_{\ast p}:T_p\Sigma\to T_p\Sigma$, called the \emph{shape operator} of $\Sigma$.
+
+\begin{lem}
+    The shape operator $(e_3)_{\ast p}:T_p\Sigma\to T_p\Sigma$, is a self-adjoint linear map, i.e.\ 
+    \[\<(e_3)_{\ast p}X,Y\>=\<X,(e_3)_{\ast p}Y\>,\quad X,Y\in T_p\Sigma.\]
+\end{lem}
+\begin{proof}
+    Denote $N\coloneqq e_3$ for simplicity. Let $\bm{x}:\bbR^2\supset U\to \bbR^3$ be a local parametrization of $\Sigma$ at $p\in\Sigma$, and let $\{\bm{x}_u, \bm{x}_v\}$ be the corresponding basis of $T_p\Sigma$. It suffices to prove that $\<N_{\ast p}(\bm{x}_u),\bm{x}_v\>=\<\bm{x}_u,N_{\ast p}(\bm{x}_v)\>$. Let $\gamma(t)=\bm{x}(u(t),v(t))$ be a parametrized curve in $\Sigma$ with $\gamma(0)=p$. We have 
+    \[N_{\ast p}\dot\gamma(0)=N_{\ast p}(\bm{x}_u \dot u(0)+\bm{x}_v \dot v(t))=\restr{\frac{\dd}{\dd t}}{t=0}N(u(t),v(t))=N_u \dot u(0)+N_v\dot v(0).\]
+    In particular, $N_{\ast p}(\bm{x}_u)=N_u$ and $N_{\ast p}(\bm{x}_v)=N_v$. Therefore we need to prove that 
+    \[\<N_u,\bm{x}_v\>=\<\bm{x}_u,N_v\>.\]
+    To see this, take the derivatives of $\<N,\bm{x}_u\>=0$ and $\<N,\bm{x}_v\>=0$ relative to $u$ and $v$, repsectively, to obtain 
+    \begin{align}
+        \<N_v,\bm{x}_u\>+\<N,\bm{x}_{uv}\>&=0,\\
+        \<N_u,\bm{x}_v\>+\<N,\bm{x}_{vu}\>&=0.
+    \end{align}
+    Thus, 
+    \[\<N_u,\bm{x}_v\>=-\<N,\bm{x}_{uv}\>=\<N_v,\bm{x}_u\>.\]
+\end{proof}
+
+Therefore $(e_3)_\ast$ can be viewed as a quadratic form (symmetric tensor of type $(0,2)$) on $T\Sigma$.
+
+\begin{defn}[Second fundamental form]
+    The second fundamental form of a surface $\Sigma\subset\bbR^3$ is the quadratic form $\rmII\in\Gamma^0_2(\Sigma)$ defined by 
+    \[\rmII_p(X,Y)=-\<(e_3)_{p\ast}X,Y\>.\]
+    In local parametrization $\bm{x}(u,v)$, the components of $\rmII$ read 
+    \[(\rmII_{ij})=\begin{pmatrix}
+        \<e_3,\partial_u^2 \bm{x}\>& \<e_3,\partial_{uv}^2 \bm{x}\>\\
+        \<e_3,\partial_{vu}^2 \bm{x}\> &\<e_3,\partial_v^2 \bm{x}\>
+    \end{pmatrix}
+    =\begin{pmatrix}
+        L&M\\
+        M&N
+    \end{pmatrix}.
+    \]
+\end{defn}
+
+Since $\rmII$ is a quadratic form, it can be diagonalized, giving rise to the following important data.
+
+\begin{defn}[Principal data]
+    \begin{enumerate}
+        \item The eigenvalues $k_1,k_2$ of the shape operator $N_\ast$ at $p\in \Sigma$ are called the \emph{principal curvatures}.
+        \item The unit eigenvectors $v_1,v_2$ of $(e_3)_\ast$ are called the \emph{principal directions}.
+        \item The \emph{Gaussian curvature} of $\Sigma$ is $K\coloneqq k_1k_2$. It also satisfies the \emph{Gauss equation}
+        \[K=\frac{\det\rmII}{\det\rmI}=\frac{LN-M^2}{EG-F^2}.\]
+        \item The \emph{mean curvature} of $\Sigma$ is $H\coloneqq \frac12(k_1+k_2)=\frac12\tr((\rmII)(\rmI)^{-1})$. Surfaces with identically vanishing mean curvature are called \emph{minimal}.
+    \end{enumerate}
+\end{defn}
+
+Quantities on $\Sigma$ that depend only on the first fundamental form $\rmI$ are called intrinsic. Clearly $\rmII$ is extrinsic because it depends on the construction of a fiber bundle that depends on the embedding of $\Sigma$ into $\bbR^3$ (through the normal vector $e_3$). However, we can obtain intrinsic invariants from $\rmII$. Gauss' most famous result states that $K$ is an intrinsic differential invariant.
+
+\begin{thm}[Gauss' Theorema Egregium, 1827]\label{thm egregium}
+    The Gauss curvature $K$ of a surface $\Sigma\subset\bbR^3$ depends only on the first fundamental form $\rmI$, i.e.\ it is preserved by local isometries.
+\end{thm}
+
+Before we attempt proving this theorem, let us rewrite all of the objects we've constructed so far in a more geometric language.
+Let us parametrize the Euclidean group of $\bbE^3$ as follows 
+\[\SE_3=\SO_3\ltimes\bbR^3=\left\{g=\begin{pmatrix}
+    R & \bm{t}\\
+    0 & 1
+\end{pmatrix}\middle| \bm{t}\in\bbR^3,R\in\SO_3
+\right\}.\]
+Then the Lie algebra and the Maurer-Cartan form of this group in this representation read
+\[ \frakse_3=\left\{\begin{pmatrix}
+    0 & -x_1^2 & -x_1^3& x^1\\
+    x_1^2 & 0 & -x_2^3 & x^2\\
+    x_1^3 & x_2^3 & 0 & x^3\\
+    0 & 0& 0& 0
+\end{pmatrix}\middle| x^i,x^i_j\in\bbR\right\},
+\quad
+\theta_{\SE_3}=
+    \begin{pmatrix}
+        0 & -\omega_1^2 & -\omega_1^3& \omega^1\\
+        \omega_1^2 & 0 & -\omega_2^3 & \omega^2\\
+        \omega_1^3 & \omega_2^3 & 0 & \omega^3\\
+        0 & 0& 0& 0
+    \end{pmatrix},
+\]
+where $\omega^i,\omega^i_j\in\Omega^1(\SE_3)$ form a basis for the space of left-invariant $1$-forms on $\SE_3$. Since $\dd g=g\omega$, the last column implies 
+\[\dd \bm{x}=e_i\omega^i.\]
+Thus, $\omega^i$ has the geometric interpretation of measuring the infinitesimal motion of the point $\bm{x}$ in the direction of $e_i$. Similarly, $\omega^i_j$ measures the infinitesimal motion of $e_j$ toward $e_i$, i.e.\ rotations:
+\[\dd e_j=e_i\omega^i_j.\]
+It's obvious that $\omega^i$ are horizontal for the principal bundle $\pi:\SE_3\to\bbE^3$ since the right $\SO_3$-action changes only the rotational components of $g$.
+
+The fact that the frame $\frake:\Sigma\to \SE_3$ is adapted means that, at every point of $\Sigma$,
+\[\frake^\ast(e_3)=0,\quad \frake^\ast(\omega^1\wedge\omega^2)\neq 0.\label{eq 2.2 Ivey}\]
+Let $\pi:P\to \Sigma$ be the bundle whose fiber over $p\in\Sigma$ is the set of oriented orthonormal bases $(e_1,e_2,e_3)$ of $T_p \bbE^3$ such that $e_3\perp T_{e_3(p)}\Sigma$. The first-order adapted lifts are exactly the sections of $P$. By fixing a frame at the origin in $\bbE^3$, $\SE_3$ is the total space of the bundle of all oriented orthonormal frames of $\bbE^3$, and $P$ is a subbundle of $\restr{\SE_3}{\Sigma}$.
+
+The Maurer-Cartan equation lets us calculate the derivatives of the left-invariant forms on $\SE_3$ algebraically:
+\[\dd \begin{pmatrix}
+    0 & -\omega_1^2 & -\omega_1^3& \omega^1\\
+    \omega_1^2 & 0 & -\omega_2^3 & \omega^2\\
+    \omega_1^3 & \omega_2^3 & 0 & \omega^3\\
+    0 & 0& 0& 0
+\end{pmatrix}=-\begin{pmatrix}
+    0 & -\omega_1^2 & -\omega_1^3& \omega^1\\
+    \omega_1^2 & 0 & -\omega_2^3 & \omega^2\\
+    \omega_1^3 & \omega_2^3 & 0 & \omega^3\\
+    0 & 0& 0& 0
+\end{pmatrix}\wedge \begin{pmatrix}
+    0 & -\omega_1^2 & -\omega_1^3& \omega^1\\
+    \omega_1^2 & 0 & -\omega_2^3 & \omega^2\\
+    \omega_1^3 & \omega_2^3 & 0 & \omega^3\\
+    0 & 0& 0& 0
+\end{pmatrix}.\]
+
+\begin{lem}[Cartan]\label{lem cartan}
+    Let $v_1,\ldots,v_k\in V$ be linearly independent elements of a vector space $V$ and let $w_1,\ldots,w_k\in V$ be such that 
+    \[w_1\wedge v_1+\cdots w_k\wedge v_k=0.\]
+    Then there exist scalars $h_{ij}=h_{ji}$, $1\leq i,j\leq k$, such that $w_i=\sum_j h_{ij}v_j$.
+\end{lem}
+
+Write $i_P:P\hookrightarrow \SE_3$ for the inclusion map. By definition of $P$, $i_P^\ast\omega^3=0$, and hence 
+\[0=i_P^\ast(\dd\omega^3)=-i_P^\ast(\omega_1^3\wedge\omega^1+\omega_2^3\wedge\omega^2).\label{eq 2.3 Ivey}\]
+By (\ref{eq 2.2 Ivey}), $i_P^\ast\omega^1$ and $i_P^\ast\omega^2$ are independent, and we can apply the Cartan Lemma~\ref{lem cartan} to the right hand side of (\ref{eq 2.3 Ivey}). We get 
+\[i_P^\ast 
+\begin{pmatrix}
+    \omega_1^3 \\ \omega_2^3
+\end{pmatrix}
+=
+\begin{pmatrix}
+    h_{11} & h_{12}\\ h_{21} & h_{22}
+\end{pmatrix}\cdot
+i_P^\ast 
+\begin{pmatrix}
+    \omega^1 \\ \omega^2
+\end{pmatrix},
+\]
+where $h_{ij}=h_{ji}$ are some functions defined on $P$ (they are related to the Hessian of the parametrizing immersion $\bm{x}:U\to \bbE^2$). Given an adapted (local) lift $\frake:\Sigma\to P$, we have 
+\[\frake^\ast \begin{pmatrix}
+    \omega_1^3 \\ \omega_2^3
+\end{pmatrix}=
+h_\frake \cdot \frake^\ast \begin{pmatrix}
+    \omega^1 \\ \omega^2
+\end{pmatrix},\quad h_\frake=\frake^\ast h.
+\]
+We now determine the invariance of $h_\frake$. Since $\frake$ is uniquely defined up to a rotation of the tangent plane to $\Sigma$, all other possible adapted lifts are of the form
+\[\wt\frake=\frake\cdot\begin{pmatrix}
+    R &&\\
+    &1 &\\
+    &&1
+\end{pmatrix}\eqqcolon \frake\cdot R,
+\]
+where $R:\Sigma\to \SO_2$. We compare $\wt\frake^\ast \theta_{\SE_3}=\wt\frake^{-1}\dd \wt\frake$ with $\frake^\ast\theta_{\SE_3}=\frake^{-1}\dd\frake$. A direct substitution leads to 
+\[\wt\frake^{-1}\dd\wt\frake=
+\begin{pmatrix}
+    R^{-1} &&\\
+    &1 &\\
+    &&1
+\end{pmatrix}\cdot
+\frake^\ast 
+\begin{pmatrix}
+    0 & -\omega_1^2 & -\omega_1^3& \omega^1\\
+    \omega_1^2 & 0 & -\omega_2^3 & \omega^2\\
+    \omega_1^3 & \omega_2^3 & 0 & \omega^3\\
+    0 & 0& 0& 0
+\end{pmatrix}\cdot
+\begin{pmatrix}
+    R &&\\
+    &1 &\\
+    &&1
+\end{pmatrix}+
+\begin{pmatrix}
+    R^{-1}\dd R &&\\
+    &0 &\\
+    &&0
+\end{pmatrix}.
+\]
+In particular, 
+\[\wt\frake^\ast \begin{pmatrix}
+    \omega^1 \\ \omega^2
+\end{pmatrix}=R^{-1}\cdot \frake^\ast \begin{pmatrix}
+    \omega^1 \\ \omega^2
+\end{pmatrix},
+\quad 
+\wt\frake^\ast(\omega_1^3,\omega_2^3)=\frake^\ast(\omega_1^3,\omega_2^3)R.
+\]
+Since $R^{-1}=R^T$, we conclude that 
+\[h_{\wt\frake}=R^{-1}h_\frake R.\]
+Thus, the properties of $\frake$ that are invariant under conjugation by a rotation matrix are invariants of the parametrizing map $\bm{x}$. By the spectral theorem for symmetric matrices, the functions $H=\frac12 \tr(h_\frake)$ and $K=\det h_\frake$ generate the ideal of invariant functions of $h_\frake$. They are exactly the mean curvature and the Gauss curvature. We see immediately that any two congruent surfaces must have the same $K$ and $H$ at corresponding points.
+
+
+The first and second fundamental forms can be canonically lifted to horizontal forms on $P$ (here the Kronecker tensor $\delta_{ij}$ is used in place of the standard metric on $\bbR^3$):
+\begin{align}
+    \wt{\rmI}&\coloneqq \delta_{ij} \omega^i\otimes\omega^j &\in\Gamma^\infty(\pi^\ast(\rmS^2 T^\ast \Sigma)),\\
+    \wt{\rmII}&\coloneqq \omega^a_j\otimes\omega^j\otimes e_a&\in \Gamma^\infty(\pi^\ast(\rmS^2 T^\ast \Sigma\otimes N\Sigma)).
+\end{align}
+
+\begin{prop}
+    $\wt{\rmII}$ descends to a well-defined tensor on $\Sigma$ with values in $NM$:
+    \[\rmII(X,Y)=-\<\dd e_3(X),Y\>e_3\in\Gamma^\infty(\rmS^2T^\ast\Sigma\otimes N\Sigma).\]
+\end{prop}
+
+\begin{rem}
+    Treat the sphere $\bbS^2$ as the homogeneous space $\SE_3\slash\SE_2$ via the projection $(\bm{x},e_1,e_2,e_3)\mapsto e_3$. As such, the form $\omega_1^3\wedge\omega_2^3$ is the pullback of the area form on $\bbS^2$ because $\dd e_3=-(\omega_1^3 e_1+\omega_2^3 e_2)$. Since $\omega_1^3\wedge\omega_2^3=K\omega^1\wedge\omega^2$, we may interpret $K$ as a measure of how much the area of $\Sigma$ is (infinitesimally) distorted under the Gauss map $e_3:\Sigma\to \bbS^2$.
+\end{rem}
+
+Another way to obtain the Gauss curvature is by differentiating $\omega_1^2$. Using the Maurer-Cartan equation, we obtain the \emph{Gauss equation}\index{Equation!Gauss}\index{Formula|see {Equation}}
+\[\dd\omega_1^2=-K\omega^1\wedge\omega^2.\label{eq 2.14 Ivey}\]
+
+\begin{xca}
+    Let $\gamma(s):\bbR\to \Sigma$ be a curve on the surface $\Sigma$ such that $\lVert\dot\gamma(s)\rVert=1$ and $\ddot\gamma(s)\perp T_{\gamma(s)}\Sigma$ for all $s$. Show that the curvature $\kappa$ of the curve can be expressed as
+    \[\kappa=\left|\<\rmII(\dot\gamma,\dot\gamma),e_3\>\right|.\]
+\end{xca}
+
+\begin{proof}[Proof of Theorema Egregium~\ref{thm egregium}]
+    Let $\bm{x}:U\to \bbE^3$ be a local parametrization and let $\frake:U\to P$ be a first-order adapted lift. Let $\eta^j=\frake^\ast\omega^j$. Since $\eta^1\wedge\eta^2$ is nonvanishing, it spans $\bigwedge^2 T_p^\ast\Sigma$ at each $p\in\Sigma$. Thus, there exist functions $a,b$ such that 
+    \[\dd\eta^1=a\eta^1\wedge\eta^2,\quad \dd\eta^2=b\eta^1\wedge \eta^2.\]
+    By anti-symmetrizing these two formulas, we find that there exists a $1$-form $\alpha$ such that 
+    \[\dd\eta^1=-\alpha\wedge\eta^2,\quad \dd\eta^2=\alpha\wedge\eta^1.\]
+    Now, if $\wt\frake$ is a different adapted lift with $\wt\eta^j=\wt\frake^\ast\omega^j$, then it is easy to show that $\dd\wt\alpha=\dd\alpha$. Thus the function $\kappa$ uniquely determined by $\dd\alpha=\kappa\eta^1\wedge\eta^2$ is also invariant under the change of the lift, and hence depends only on the Riemannian metric $(\eta^1)^2+(\eta^2)^2$.
+
+    Finally, we check that $\alpha=\frake^\ast\omega_2^1$, so, by (\ref{eq 2.14 Ivey}), $\kappa=\frake^\ast K$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1084,15 +1438,15 @@ for all $m\in M$. This implies that there are globally defined smooth bundle map
 \[\calH:TM\to \calH,\quad \calV:TM\to \calV,\quad \calH+\calV=\id_{TM}.\]
 Now we can construct a linear map that measures to what extent $H$ fails to be an integrable distribution. Since $\calH$ and $\calV$ are completely interchangeable at this point, we in fact get two maps (the sign choice is conventional):
 \begin{align}
-    \calR:\fX(M)\times\fX(M)\to \Gamma(V),\quad & \calR(X,Y)=-\calV[\calH X,\calH Y],\\
-    \wb{\calR}:\fX(M)\times\fX(M)\to \Gamma(H),\quad & \wb{\calR}(X,Y)=-\calH[\calV X,\calV Y].
+    \calR:\fX(M)\times\fX(M)\to \Gamma^\infty(V),\quad & \calR(X,Y)=-\calV[\calH X,\calH Y],\\
+    \wb{\calR}:\fX(M)\times\fX(M)\to \Gamma^\infty(H),\quad & \wb{\calR}(X,Y)=-\calH[\calV X,\calV Y].
 \end{align}
 Indeed, if $\calR=0$, it means that the Lie bracket of two sections of $\calH$ lies in $\calH$, and therefore $\calH$ is integrable, and similarly $\wb \calR$ detects the integrability of $\calV$. It is obvious that these maps are $C^\infty(M)$-linear and hence are tensors. We call $\calR$ \emph{curvature} and $\wb{\calR}$ \emph{cocurvature}\index{Cocurvature}. Note that the value of $\calR$ depends on the choice of $\calV$, but whether it is zero or not doesn't, so in this sense it's still an objective measure of integrability for $\calH$ (as long as $\calH$ and $\calV$ are everywhere transverse). It turns out that fiber bundles are special in that they come with one canonically defined integrable distribution that we define now. A more sophisticated way of defining the curvature of general connections is as the F\"olicher-Nijenhuis bracket $[\calV,\calV]$, see \cite[Sec.~9]{Kolar}.
 
 \begin{defn}[Vertical bundle]\index{Vertical bundle}
     If $E\overset{\pi}{\to}M$ is a smooth \gls{fb}, then its \emph{vertical subbundle} is the subbundle $\calV E< TE$ defined as 
     \[\calV E=\ker \pi_\ast\]
-    (it is a subbundle by virtue of being the kernel of a bundle morphism). At a point $p\in E$ the fiber is denoted $\calV_pE$. Since each fiber $E_m$, $m\in M$, is an embedded submanifold, and $\calV E$ restricted to $E_m$ coincides with the tangent bundle $TE_m$, we conclude that $\calV E$ is an integrable distribution. In particular, it is involutive: for any two \emph{vertical vector fields} $X,Y\in \fX_{\mathrm{ver}}(E)\coloneqq\Gamma(\calV E)$, we have $[X,Y]\in \fX_{\mathrm{ver}}(E)$.
+    (it is a subbundle by virtue of being the kernel of a bundle morphism). At a point $p\in E$ the fiber is denoted $\calV_pE$. Since each fiber $E_m$, $m\in M$, is an embedded submanifold, and $\calV E$ restricted to $E_m$ coincides with the tangent bundle $TE_m$, we conclude that $\calV E$ is an integrable distribution. In particular, it is involutive: for any two \emph{vertical vector fields} $X,Y\in \fX_{\mathrm{ver}}(E)\coloneqq\Gamma^\infty(\calV E)$, we have $[X,Y]\in \fX_{\mathrm{ver}}(E)$.
 \end{defn}
 
 Therefore cocurvature on fiber bundles always vanishes. Crucially, there is no \emph{natural} ``horizontal'' subbundle $\calH E<TE$ such that $\calH E\oplus \calV E=TE$. A connection is, in the broadest sense, a choice of a transverse ``horizontal bundle'' $\calH E$, and its integrability is quantified by the curvature tensor. If it is integrable, then the fiber bundle is not only foliated by its fibers, but also by ``horizontal''  integral submanifolds (locally horizontal sections).
@@ -1184,7 +1538,7 @@ One thing to note immediately is that the map $X\mapsto \ver X$ is  $C^\infty(E)
 
 
 \begin{prop}
-    Let $\calV$ be a be a connection on $E\overset{\pi}{\to}M$. For any two horizontal vector fields $X,Y\in\Gamma(\calH E)$, their ``Lie bracket up to $\calH E$'', i.e.\ the value of $[X,Y]\mod H\in \Gamma(TE\slash \calH E)$ at a point $p\in E$, is $C^\infty(E)$-linear. In particular, the question of involutivity can be answered pointwise.
+    Let $\calV$ be a be a connection on $E\overset{\pi}{\to}M$. For any two horizontal vector fields $X,Y\in\Gamma^\infty(\calH E)$, their ``Lie bracket up to $\calH E$'', i.e.\ the value of $[X,Y]\mod H\in \Gamma^\infty(TE\slash \calH E)$ at a point $p\in E$, is $C^\infty(E)$-linear. In particular, the question of involutivity can be answered pointwise.
 \end{prop}
 \begin{proof}
     Let $\alpha\in\Omega^1(E)$. The chain rule and Cartan's formula imply
@@ -1289,6 +1643,14 @@ We provide the following theorem without proof.
     Every \gls{fb} admits a complete connection.
 \end{thm}
 
+Note that the vertical bundle $\calV E$, and hence the concept of general a connection $\calH E$, is well-defined on all surjective submersions $\pi:E\to M$. Then the following generalization of Ehresmann's Fibration Theorem~\ref{thm Ehresmann} is easily established.
+\begin{thm}[Ehresmann]\index{Theorem!Ehresmann}
+    A surjective submersion $\pi:E\to M$ is a locally trivial fibration iff  each $m\in M$ admits a neighborhood $U\subset M$ and a connection $\calH E$ that is complete whence restricted to $U$.
+\end{thm}
+\begin{proof}
+    We can simply repeat the proof given in Section~\ref{proof of Ehresmann thm}, but this time letting $X_i$ be the unique horizontal lifts of $\partial_i$ to the entire trivial pieces $\pi^{-1}(U)$.
+\end{proof}
+
 \begin{example}
     Every general connection on a bundle with compact fibers is complete. 
 \end{example}
@@ -1312,8 +1674,8 @@ Note that parallel transport in fact only requires the path $\gamma$ to be $C^1$
 Regardless of whether a connection is complete, we can always expect parallel transport to be possible for loops contained in a sufficiently small neighborhood in the base, and a fixed initial condition $p\in E$. This allows us to describe curvature in terms of \emph{infinitesimal holonomy}.
 
 \begin{prop}[Curvature as infinitesimal holonomy]
-    Let $E\overset{\pi}{\to}M$ be a \gls{fb} and $\calH E$ a connection with curvature tensor $\calR$. If $X,Y\in\fX(M)$ are two commuting vector fields, $[X,Y]=0$, then 
-    \[R(X,Y)(p)=\restr{\frac{\dd^2}{\dd t\dd s}\left(
+    Let $E\overset{\pi}{\to}M$ be a \gls{fb} and $\calH E$ a connection with curvature form $\calR\in\Omega^2(E;\calV E)$. If $X,Y\in\fX(M)$ are two commuting vector fields, $[X,Y]=0$, then 
+    \[\calR(X,Y)(p)=\restr{\frac{\dd^2}{\dd t\dd s}\left(
     F^{X^h}_{-t}\circ F^{Y^h}_{-s}\circ F^{X^h}_t\circ F^{Y^h}_s(p)
     \right)}{t=s=0}\]
 \end{prop}
@@ -1436,17 +1798,18 @@ This is a $V$-valued  $k$-form on $U$. The following proposition shows that a ho
 
 Note that our definition of general connections so far hasn't taken into account any $G$-structure that might exist on the bundle. Only the parallel transport definition I of Ehresmann connections was amenable to $G$-structures. It is not clear, however, how to adapt the definition of a general connection in terms of the horizontal bundle to a $G$-structure (other than indirectly via requiring parallel transports to act by morphisms of $G$-structures). To understand how to construct connections adapted to arbitrary $G$-structures, we will first study equivariant connections on principal bundles, and then learn to use them to induce connections on associated bundles.
 
-We start by examining general connections on principal bundles before we narrow down a natural special class of such connections. In this section we assume that $(P\overset{\pi}{\to}M,G,\Phi)$ is a right principal $G$-bundle with the principal right action $\Phi$. This action induces an action of the Lie algebra $\frakg=\Lief G$, given by the homomorphism $\frakg\to \fX(P)$, $X\mapsto X_\ast$ (see Section~\ref{sec Killing vectors}). Recall that the space $\Gamma(VP)$ of vertical vector fields forms a Lie subalgebra of $\fX(P)$. Since the orbits of $\Phi$ are exactly the fibers of $P$, we have actually constructed a Lie algebra homomorphism $\frakg\to \Gamma(VP)$. As we now show, this map actually trivializes $VP$, much in the same way as the Maurer-Cartan form trivializes the tangent bundle of a Lie group. The triviality of $VP$ is a key property of principal bundles.
+We start by examining general connections on principal bundles before we narrow down a natural special class of such connections. In this section we assume that $(P\overset{\pi}{\to}M,G,\Phi)$ is a right principal $G$-bundle with the principal right action $\Phi$. This action induces an action of the Lie algebra $\frakg=\Lief G$, given by the homomorphism $\frakg\to \fX(P)$, $A\mapsto A_\ast$ (see Section~\ref{sec Killing vectors}). Recall that the space $\Gamma^\infty(\calV P)$ of vertical vector fields forms a Lie subalgebra of $\fX(P)$. Since the orbits of $\Phi$ are exactly the fibers of $P$, we have actually constructed a Lie algebra homomorphism $\frakg\to \Gamma^\infty(\calV P)$. As we now show, this map actually trivializes $VP$, much in the same way as the Maurer-Cartan form trivializes the tangent bundle of a Lie group. The triviality of $\calV P$ is a key property of principal bundles.
 
 \begin{prop}[{{\cite[Lem.~1.3.1]{RS2}}}]\label{lem 1.3.1 RS2}
-    The map $\psi:P\times\frakg\to VP$ given by $(p,A)\mapsto A_\ast(p)$ is an isomorphism of \glspl{vb} over $P$. Hence, $\psi^{-1}$ is a global trivialization for $VP$.
+    The map $\psi:P\times\frakg\to \calV P$ given by $(p,A)\mapsto A_\ast(p)$ is an isomorphism of \glspl{vb} over $P$. Hence, $\psi^{-1}$ is a global trivialization for $VP$.
 \end{prop}
 \begin{proof}
     $\psi$ clearly respects the fibers since $A_\ast(p)\in \calV_pP$, so it covers the identity on $P$. It is also fiberwise linear. Now let $p\in P$ and $(U,\chi)$ be a trivialization of $P$ around $p$. We have $\psi(p,A)=\Phi^p_{\ast}(A)$. Note that $\Phi^p$ is a diffeomorphism $G\to P_p$. Therefore $\Phi^{p}_\ast:\frakg\to \calV_pP$ is an isomorphism of vector spaces. $\psi$ is obviously smooth, as $\psi(p,A)=\Phi^p_\ast(A)=\Phi_\ast(0_p,A)$, where $0_p\in T_pP$ is the origin. Since $\psi$ is a smooth vertical bundle morphism that is a fiberwise diffeomorphism, it is a bundle isomorphism.
 \end{proof}
 
-This allows us to interpret the connection $1$-form $\calV\in\Omega^1(P;VP)$ and the curvature $2$-form $\calR\in \Omega^2(P;VP)$ as $\frakg$-valued forms
-\[\omega\coloneqq \psi^{-1}\circ \calV \in\Omega^1(P;\frakg),\quad \Omega^\omega\coloneqq \psi^{-1}\circ \calR\in \Omega^2(P;\frakg).\]
+
+The global trivialization $\psi:P\times\frakg\to \calV P$ constructed above can be used to convert the connection $1$-form $\calV\in\Omega^1(P;VP)$ and the curvature $2$-form $\calR\in \Omega^2(P;\calV P)$ into $\frakg$-valued forms
+ \[\omega\coloneqq \psi^{-1}\circ \calV \in\Omega^1(P;\frakg),\quad \Omega^\omega\coloneqq \psi^{-1}\circ \calR\in \Omega^2(P;\frakg).\]
 We also note for the future that for horizontal vectors we have
 \[\ver([X^h,Y^h])_p=-\Phi^p_\ast(\Omega^\omega(X^h,Y^h)).\label{eq 1.4.5 RS2}\]
 Now we find the necessary and sufficient condition for such a $1$-form $\omega$ to correspond to a general connection.
@@ -1457,7 +1820,7 @@ Now we find the necessary and sufficient condition for such a $1$-form $\omega$ 
 \begin{proof}
     Let $A\in\frakg$ and suppose $\omega(A_\ast)_\ast=\calV(A_\ast)$ (all asterisks here denote taking the corresponding Killing vector field on $P$).  Then $\omega(A_\ast)_\ast=\calV(A_\ast)=A_\ast$. The same claim says that infinitesimal action corresponding to the principal action $\Phi$ defines a linear isomorphism $\frakg\to \calV_pP$ for each $p\in P$, so we conclude that $\omega(A_\ast)=A$. 
 
-    Conversely, note that the post-composition with $\psi$ shows that $\Omega^1(P;\frakg)$ is in one-to-one correspondence with bundle morphisms $TP\to VP$ over $P$. Saying that $\omega\in\Omega^1(P;\frakg)$ then precisely comes down to demanding that $\calV\coloneqq \psi\circ\omega$ is idempotent ($\calV\circ\calV=\calV$). Now, $\omega(A_\ast)=A$ means that $\omega\circ\psi=\id_\frakg$, so the claim follows.
+    Conversely, note that the post-composition with $\psi$ shows that $\Omega^1(P;\frakg)$ is in one-to-one correspondence with bundle morphisms $TP\to \calV P$ over $P$. Saying that $\omega\in\Omega^1(P;\frakg)$ then precisely comes down to demanding that $\calV\coloneqq \psi\circ\omega$ is idempotent ($\calV\circ\calV=\calV$). Now, $\omega(A_\ast)=A$ means that $\omega\circ\psi=\id_\frakg$, so the claim follows.
 \end{proof}
 \begin{cor}\label{cor curvature 2-form}
     $\Omega^\omega(X,Y)=-\omega([\hor X,\hor Y])$.
@@ -1544,7 +1907,7 @@ Thus, principal connections are Ehresmann connections and define global parallel
 
 
 \begin{cor}
-    If $\omega$ is a principal connection form, then $\Omega^\omega\in \Omega^2_{\hor}(P;\frakg)^\Ad$.
+    If $\omega$ is a principal connection form, then $\Omega^\omega\in \Omega^2_{\hor}(P;\frakg)^\Ad$. Thus, via Proposition~\ref{prop 1.2.12 RS2}, we can view $\Omega^\omega$ as an element of $\Omega^2(M;\Ad(P))$.
 \end{cor}
 \begin{proof}
     From Corollary~\ref{cor curvature 2-form} it is obvious that $\Omega^\omega$ is horizontal since $\hor X=\hor Y=0$ if $X,Y$ are vertical. To verify equivariance, recall that $\hor X=X-\calV(X)$ and note that $\calV\circ \Phi_{g\ast}=\Phi_{g\ast}\circ \calV$. Thus 
@@ -1556,7 +1919,7 @@ Thus, principal connections are Ehresmann connections and define global parallel
 \begin{rem}
     Any principal connection form $\omega\in\Omega^1(P;\frakg)$ is clearly not horizontal because it assigns value $A$ to the vertical Killing vector field $A_\ast$. 
     However, if $\omega$ and $\omega'$ are two arbitrary principal connection forms on $P$, then their difference is horizontal of type $\Ad$:
-    \[(\omega-\omega')\in \Omega^1_{\hor}(P;\frakg)^\Ad.\]
+    \[(\omega-\omega')\in \Omega^1_{\hor}(P;\frakg)^\Ad\cong \Omega^1(M;\Ad(P)).\]
     Conversely, $\omega'$ is a principal connection form iff this is true. The crucial implication of this is that, while there is no natural vector space structure on the set $\calA(P)$ of principal connections on $P$, \emph{it can be identified with an affine space modeled on $\Omega^1_{\hor}(P;\frakg)^\Ad$} (recall that an affine space is nothing but a torsor of a vector space as an abelian group).
 \end{rem}
 
@@ -1860,7 +2223,7 @@ Next, let us discuss the transformation properties of connections under principa
     
     Since $\lambda_\ast:\rmi \bbR\to\rmi\bbR$ is just multiplication by $m$, the push-forward connection $\omega^{c,m}$ induced on $L(m;1)$ from the canonical connection $\omega^c$ on the Hopf bundle $\bbS^3$ (defined in Example~\ref{ex connection on Hopf bundle}) via Proposition~\ref{prop 1.3.13/15 RS2} satisfies
     \[\vartheta^\ast \omega^{c,m}=m \omega^c.\]
-    In particular, since $\vartheta$ is a vertical morphism, the local representatives $\calA$ of this connection on the $2$-sphere are just $m$ times those of $\omega^c$:
+    In particular, since $\vartheta$ is a vertical morphism, the local representatives of this connection on the $2$-sphere are just $m$ times those of $\omega^c$:
     \[\scrA_+(z)=\frac{m}{2}\frac{z \dd \wb{z}-\wb{z}\dd z}{1+|z|^2},\quad \scrA_-(w)=-\frac{m}{2}\frac{w \dd \wb{w}-\wb{w}\dd w}{1+|w|^2},\]
     and the (globally defined) curvature is
     \[\scrF=-m\frac{\dd z\wedge\dd \wb{z}}{(1+|z|^2)}.\]
@@ -1911,11 +2274,6 @@ We conclude that only in the case when $\vartheta^\ast\omega$ takes values in $\
 
 \begin{defn}[Reducible connection]\index{Connection!reducible}\index{Connection!irreducible}
     Let $P(M,G)$ be a principal $G$-bundle with a principal connection $\calH P$ and connection form $\omega$. Let $Q(M,H)$ be a reduction of $P$ given by the morphism $(\vartheta,i_H)$. Then $\calH P$ is called reducible to $H$ if $\vartheta^\ast\omega$ takes values in $\frakh$. $\calH P$ is called irreducible if $P$ is not reducible to any proper Lie subgroup of $G$.
-\end{defn}
-
-
-\begin{defn}[Compatible connection]\index{Connection!compatible}\label{def compatible connection}
-    Let $Q(M,H)\subset P(M,G)$ be a principal bundle reduction defined by an element $\varphi\in \Hom_G(P,F)$ taking values in a single orbit $O$ and by a point $f\in O$. A principal connection $\calH P$ on $P$ is called compatible with $\varphi$ if it is reducible to $Q$.
 \end{defn}
 
 
@@ -2218,7 +2576,7 @@ In particular, if $G\overset{\sigma}{\acts}F$ is a linear representation, then $
     Using this equation, together with the equivariance of $\omega$, we obtain (\ref{eq 1.8.7 RS2}).
 
     2. Using the Structure Equation, we obtain
-    \[\vartheta^\ast\Omega=\vartheta^\ast(\dd \omega+\frac12[\omega,\omega])=\dd(\vartheta^\ast\omega)+\frac12[\vartheta^\ast\omega,\vartheta^\ast\omega],\]
+    \[\vartheta^\ast\Omega=\vartheta^\ast\left(\dd \omega+\frac12[\omega,\omega]\right)=\dd(\vartheta^\ast\omega)+\frac12[\vartheta^\ast\omega,\vartheta^\ast\omega],\]
     that is, $\vartheta^\ast\Omega$ is the curvature form of $\vartheta^\omega$, indeed. To prove (\ref{eq 1.8.8 RS2}), we must calculate $\vartheta^\ast \Omega(X,Y)$ for any $X,Y\in T_pP$. For that purpose, we use the decomposition (\ref{eq 1.8.10 RS2}) for both vectors. Since $\Omega$ is horizontal, only the first terms of this decomposition contribute. Then, using the equivariance of $\Omega$, one immediately obtains (\ref{eq 1.8.8 RS2}).
 \end{proof}
 
@@ -2237,7 +2595,7 @@ In particular, if $G\overset{\sigma}{\acts}F$ is a linear representation, then $
 
 Since we would like to study bundles up to isomorphism, the action of the gauge group $\Gau(P)=\Aut_M(P)$ on the space of connections $\calA(P)$ will be crucial. We will now characterize the infinitesimal version of this action. The gauge algebra $\gau(P)$ can be identified with sections of the adjoint bundle $\Ad(P)$:
 \[\gau(P)\cong \Omega^0(M;\Ad(P))=\Omega^0_{\hor}(P;\frakg)^\Ad.\]
-Indeed, each $G$-invariant vector field $X\in\Gamma(\calV P)$, by composition with the global trivialization $\psi^{-1}:\calV P\to P\times\frakg$ (cf.\ Lemma~\ref{lem 1.3.1 RS2}), produces an element of $\Omega^0_{\hor}(P;\frakg)^\Ad$.
+Indeed, each $G$-invariant vector field $X\in\Gamma^\infty(\calV P)$, by composition with the global trivialization $\psi^{-1}:\calV P\to P\times\frakg$ (cf.\ Lemma~\ref{lem 1.3.1 RS2}), produces an element of $\Omega^0_{\hor}(P;\frakg)^\Ad$.
 
 An automorphism $\vartheta\in\Aut(P)$ acts on $\calA(P)$ by pullbacks along the inverse, $\omega\mapsto \vartheta_\ast\omega$. For the action of the subgroup $\Gau(P)$, there is an alternative formula for this action which we now derive. 
 
@@ -2337,7 +2695,7 @@ Thus, an infinitesimal gauge transformation $\zeta\in\Omega^0_{\hor}(P;\frakg)^\
 
 \begin{prop}
     The Killing vector field generated by an ininitesimal gauge transformation $\zeta\in\Gamma^\infty(\Ad(P))\cong\gau(P)$ on $\calA(P)$ is given by
-    \[-\zeta_\ast(\omega)=\dd \wt{\zeta}+[\omega,\wt{\zeta}],\]
+    \[-\zeta_\ast(\omega)=\dd \wt{\zeta}+[\omega,\wt{\zeta}],\quad \omega\in\calA(P),\]
     where $\wt{\zeta}\in \Omega^0_{\hor}(P;\frakg)^\Ad$ is the corresponding equivariant function.
 \end{prop}
 \begin{proof}
@@ -2352,7 +2710,7 @@ Since, the action of the gauge group is a left action, the minus sign above is c
 \dd\wt\zeta(X)-\Lie_{\omega(X)_\ast}\wt\zeta=
 \dd\wt\zeta(X)-\dd\wt\zeta(\calV(X))=\dd\wt{\zeta}(\hor X).\label{eq 4791793}\]
 
-This, as well as the definition of curvature, suggests the following general definition. Note that at this point we have to specialize to associated \emph{vector} bundles.
+This, as well as the definition of curvature, suggests the following general definition. Note that at this point we have to specialize to associated \emph{vector} bundles, although slight generalizations are possible.
 
 \begin{defn}[Covariant exterior derivative]
     Let $P$ be a principal bundle with a principal connection $\calH P$ and connection form $\omega$, let $V$ be a finite-dimensional vector space, and let $\alpha\in\Omega^k(P;V)$. The covariant exterior derivative of $\alpha$ with respect to $\omega$ is defined as
@@ -2360,7 +2718,7 @@ This, as well as the definition of curvature, suggests the following general def
     By definition, $D^\omega$ fulfills the same product rule (with respect to $\wedge$) as the ordinary exterior derivative and $D^\omega \alpha$ is horizontal. Moreover, as we will show below, $D^\omega$ preserves the symmetry type of any horizontal form.
 \end{defn}
 
-In particular,
+In particular, the curvature form $\Omega^\omega$ satisfies 
 \[\Omega^\omega=D^\omega\omega.\]
 Now we derive a general formula for the covariant exterior derivative.
 
@@ -2499,12 +2857,25 @@ Recall that reductions of $P$ to $H$ are in bijective correspondence with smooth
 \end{prop}
 \begin{proof}
     Let $\omega$ be the connection form for $\calH P$ and let $(\vartheta,i_H)$ be the morphism corresponding to the reduction $Q$. Since $Q=\{p\in P:\varphi(p)=f\}$, we have $\vartheta^\ast \varphi=f$ on $Q$. Thus,
-    \[\vartheta^\ast(D^\omega\varphi)=\dd (\vartheta^\ast \varphi)+\sigma_\ast(\vartheta^\ast\omega)(\vartheta^\ast\varphi)=\sigma_\ast(\vartheta^\ast\omega)(\vartheta^\ast\varphi).\]
-    Now, $\calH P$ is reducible iff $\varphi^\ast\omega$ takes values in the Lie algebra $\frakh$ of $H$, that is, iff $\sigma_\ast(\vartheta^\ast\omega)(\vartheta^\ast\varphi)=0$, that is, iff $\vartheta^\ast(D^\omega\varphi)=0$. By the $G$-equivariance of $\calH P$ the latter is equivalent to $D^\omega \varphi=0$ on the whole of $P$.
+    \[\vartheta^\ast(D^\omega\varphi)=\dd (\vartheta^\ast \varphi)+\sigma_\ast(\vartheta^\ast\omega)(\vartheta^\ast\varphi)=\sigma_\ast(\vartheta^\ast\omega)(\vartheta^\ast\varphi)=\sigma_\ast(\vartheta^\ast\omega)\cdot f.\]
+    Now, $\calH P$ is reducible iff $\varphi^\ast\omega$ takes values in the Lie algebra $\frakh$ of $H$, that is, iff $\sigma_\ast(\vartheta^\ast\omega)\cdot f=0$ (since the stabilizer of $f$ is exactly $H$), that is, iff $\vartheta^\ast(D^\omega\varphi)=0$. By the $G$-equivariance of $\calH P$ the latter is equivalent to $D^\omega \varphi=0$ on the whole of $P$.
 \end{proof}
 
-Recalling Definition~\ref{def compatible connection}, we conclude that a connection $\calH P$ is compatible with $\varphi\in\Hom_G(P,V)$ iff
-\[D^\omega\varphi=0.\]
+
+\begin{defn}[Compatible connection]\index{Connection!compatible}\label{def compatible connection}
+    Let $Q(M,H)\subset P(M,G)$ be a principal bundle reduction defined by an element $\varphi\in \Hom_G(P,V)$ taking values in a single orbit $O$ and by a point $f\in O$. A principal connection $\calH P$ on $P$ is called compatible with $\varphi$ if it is reducible to $Q$. By the above proposition, $\calH P$ is compatible with $\varphi\in\Hom_G(P,V)$ iff
+    \[D^\omega\varphi=0.\]
+\end{defn}
+
+\begin{rem}\label{rem generalized covariant D}
+    Note that $D^\omega \varphi$ can be easily defined for equivariant functions that take values in a homogeneous space $G\slash H$ instead of a vector space. In this case $G$ acts on $G\slash H$ via the canonical left action $\sigma=\wh{L}$. We simply use the canonical global trivialization $\chi:T(G\slash H)\to (G\slash H)\times(\frakg\slash\frakh)$ from Proposition~\ref{prop 4.5.1 Sharpe} to define
+    \[(D^\omega{\varphi})(X)\coloneqq \pr_2\circ \chi\circ \varphi_\ast(\hor X)=\dd \varphi(X)+\sigma_\ast(\omega(X))\cdot {\varphi},\]
+    where $\dd \varphi\coloneqq \pr_2\circ\chi\circ \varphi_\ast $ and $\frakh$ acts on $\varphi$ via 
+    \[\sigma_\ast(A)\cdot \varphi(p)\coloneqq \chi\circ (A_{\ast})_{\varphi(p)},\]
+    where $A_\ast\in\fX(G\slash H)$ is the Killing vector field generated by $A\in\frakh$. Then $D^\omega {\varphi}\in \Omega^1(P;\frakg\slash\frakh)$. The above criterion for compatibility continues to hold with $V$ replaced by $G\slash H$ for any $H\sub G$.
+\end{rem}
+
+
 
 
 
@@ -2513,7 +2884,7 @@ Recalling Definition~\ref{def compatible connection}, we conclude that a connect
 
 Now we show how the covariant exterior derivative induces certain differential operators on the spaces of sections of associated \emph{vector} bundles. As above, let $P(M,G)$ be a principal bundle, $G\overset{\sigma}{\acts}V$ be a Lie group representation and let $E=P\times_G V$ be the associated \gls{vb}. Connections on vector bundles induced from principal connections via linear representations are commonly called \emph{linear connections}\index{Connection!linear}. The corresponding calculus that we develop below is also known as \emph{Koszul calculus}.\index{Koszul calculus}
 
-Recall that a principal connection $\calH P$ induces a connection $\calH E$ and the connection form $\omega$ on $P$ induces a connection form $\calV^E=\omega^E\in \Omega^1(E;E)$. Using the isomorphism between $\Omega^k_{\hor}(P;V)^\sigma$ and $\Omega^l(M;E)$ provided by Proposition~\ref{prop 1.2.12 RS2}, we can carry over the notion of covariant exterior derivative to $\Omega^k(M;E)$.
+Recall that a principal connection $\calH P$ induces a connection $\calH E$ and the connection form $\omega$ on $P$ induces a connection form $\omega^E\in \Omega^1(E;E)$. Using the isomorphism between $\Omega^k_{\hor}(P;V)^\sigma$ and $\Omega^l(M;E)$ provided by Proposition~\ref{prop 1.2.12 RS2}, we can carry over the notion of covariant exterior derivative to $\Omega^k(M;E)$.
 
 \begin{defn}
     Let $\alpha\in\Omega^k(M;E)$. The covariant exterior derivative $\dd^\omega\alpha$ is defined to be the image of $D^\omega\wt\alpha$ under the isomorphism $\Omega^{k+1}_{\hor}(P;V)^\sigma\to \Omega^{k+1}(M;E)$, that is,
@@ -2648,12 +3019,12 @@ It will often be useful to view the covariant derivative as a differential opera
     \end{enumerate}
 \end{rem}
 
-Next recall that, as a consequence of Proposition~\ref{prop 1.4.13 RS2}, the square of the exterior covariant derivative is related to the curvature. Let us find the analog of this in Koszul calculus. Recall that $\Omega^\omega$ is a horizontal $2$-form on $P$ with values in $\frakg$, thus $\sigma_\ast(\Omega^\omega)$ takes values in $\End(V)$. By Proposition~\ref{prop 1.2.12 RS2}, to $\Omega^\omega$ there corresponds a $2$-form on $M$ with values in the endomorphism bundle $\End(E)=E\otimes E^\ast$:
+Next recall that, as a consequence of Proposition~\ref{prop 1.4.13 RS2}, the square of the exterior covariant derivative is related to the curvature. Let us find the analog of this in Koszul calculus. Recall that $\Omega^\omega$ is a horizontal $2$-form on $P$ with values in $\frakg$, thus $\sigma_\ast\circ \Omega^\omega$ takes values in $\End(V)$. By Proposition~\ref{prop 1.2.12 RS2}, to $\Omega^\omega$ there corresponds a $2$-form on $M$ with values in the endomorphism bundle $\End(E)=E\otimes E^\ast$:
 \[\sfR^\nabla_m(X,Y)\coloneqq \iota_p\circ \sigma_\ast(\Omega^\omega(X^h,Y^h))\circ\iota_p^{-1},\label{eq def Rnabla}\]
 where $m\in M$, $p\in P_m$, $X,Y\in T_mM$ and $X^h,Y^h$ are their horizontal lifts to $p$.
 
-\begin{defn}[Curvature endomorphism]\index{Curvature endomorphism}
-    The $2$-form $\sfR^\nabla$ is called the curvature endomorphism form associated with $\Omega^\omega$.
+\begin{defn}[Curvature endomorphism]\index{Curvature endomorphism}\label{def curvature endomorphism}
+    The $2$-form $\sfR^\nabla\in\Omega^2(M;\End(E))$ is called the curvature endomorphism form associated with $\Omega^\omega$.
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~1.5.11]{RS2}}}]\label{prop 1.5.11 RS2}
@@ -2681,6 +3052,18 @@ where $m\in M$, $p\in P_m$, $X,Y\in T_mM$ and $X^h,Y^h$ are their horizontal lif
         \item Formula (\ref{eq 1.5.14 RS2}) extends to sections in arbitrary tensor bundles $\bbT^k_l E$ over $E$, where $\sfR^\nabla$ acts on $\bbT^k_l E$ by the representation induced by $\sigma_\ast$.
     \end{enumerate}
 \end{rem}
+
+Recall that, by Proposition~\ref{prop 1.6.10 RS2}, a connection $\omega$ is compatible with $\wt\varphi\in\Hom_G(P,V)$ iff $D^\omega\wt\varphi=0$. In the case of linear connections this amounts to 
+\[\nabla^\omega\varphi=0,\label{eq 1.6.6 RS2}\]
+where $\varphi\in\Gamma^\infty(P\times_G V)$ is the corresponding section.  The following example analyzes this condition in the case of a bundle metric.
+
+\begin{example}[Connection compatible with a bundle metric]\label{ex 1.6.12 RS2}
+    We take up Example~\ref{ex 1.6.6 RS2}(2). For $\bbK=\bbR$ or $\bbC$, let $E$ be a $\bbK$-vector bundle of rank $n$ over $M$ endowed with a bundle metric $\sfh$. Recall that $\sfh$ may be viewed as a section of the associated bundle $\Fr (E)\times_{\GL_n(\bbK)}\scrF$, where $\scrF$ is the space of inner products in $\bbK^n$. In the case $\bbK=\bbC$, $\GL_n(\bbK)$ acts transitively on $\scrF$, whereas in the case $\bbK=\bbR$ it does not. If, in the latter case, we assume that $M$ is connected, then $\sfh$ takes values in a single $\GL_n(\bbR)$-orbit on $\scrF$. Now, by (\ref{eq 1.6.6 RS2}), a connection form $\omega$ on $\Fr(E)$ is compatible with $\sfh$ iff 
+    \[\nabla^\omega\sfh=0.\]
+    Since $\nabla_X$ is a derivation of the tensor algebra, this condition takes the following form:
+    \[X(\sfh(s_1,s_2))=\sfh(\nabla_X s_1,s_2)+\sfh(s_1,\nabla_X s_2),\]
+    for any $s_1,s_2\in\Gamma^\infty(E)$ and $X\in\fX(M)$. If $\omega$ is compatible, then it is reducible to the bundle of $\sfh$-orthonormal or $\sfh$-unitary frames of $E$, respectively.
+\end{example}
 
 
 
@@ -2854,8 +3237,8 @@ In the sequel, the defining representation of $\GL_n(\bbR)$ on $\bbR^n$ will be 
 Unlike general \glspl{pfb}, the frame bundle of $M$ is naturally associated with the tangent bundle $TM$, i.e.\ there is a natural isomorphism between $TM$ and  $\Fr M\times_{\GL_n(\bbR)}\bbR^n$, given by
 \[\vartheta^{-1}:\Fr M \times_{\GL_n(\bbR)} \bbR^n\to TM,\quad \vartheta^{-1}([(u,\bm{x})])\coloneqq x^iu_i,\label{eq 2.1.2 RS2}\]
 where $x^i$ are the components of $\bm{x}\in\bbR^n$ in the standard basis $\{\bm{e}_i\}$ of $\bbR^n$. It is easy to see that $\vartheta^{-1}$ is an isomorphism, and via dualization and tensor products it produces corresponding isomorphisms for all tensor bundles: $T^k_l M\cong \Fr M\times_{\GL_n(\bbR)}T^k_l\bbR^n$. The presence of the isomorphism $\vartheta$ allows us to identify each frame $u\in \Fr M$ with the isomorphism that computes the coordinates of a given tangent vector in $TM$ in the frame $u$:
-\[\iota_u^\vartheta\coloneqq \vartheta^{-1}\circ\iota_u:\bbR^n\to T_{\pi(u)}M,\quad \bm{x}\mapsto \sum_{i=1}^n x^i u_i.\]
-The isomorphism $\iota_u^\vartheta$ is often identified in literature with the frame $u$ itself. We stick to this more explicit notation for clarity.
+\[\iota_u^\vartheta\coloneqq \vartheta^{-1}\circ\iota_u:\bbR^n\to T_{\pi(u)}M,\quad \bm{x}\mapsto x^i u_i.\]
+Note that, by definition of the frame bundle, each isomorphism $\bbR^n\to T_mM$ determines a unique frame $u\in (\Fr M)_m$, which is why the map $\iota_u^\vartheta$ is often identified in literature with the frame $u$ itself. We stick to this more explicit notation for clarity.
 
 The isomorphism $\vartheta$ can be viewed as a $1$-form on $TM$ with values in this associated bundle, and by Proposition~\ref{prop 1.2.12 RS2} it corresponds to the following $\bbR^n$-valued horizontal $1$-form on the frame bundle.
 
@@ -3004,7 +3387,7 @@ Finally, $\nabla$ induces parallel transports on all tensor bundles $T^r_s M$, a
 
 
 \begin{rem}\label{rem 1.3.5 Cap}
-    Note that if $H=\GL_n(\bbR)$ is the subgroup of $G=\Aff_n(\bbR)=\GL_n(\bbR)\rtimes \bbR^n$ corresponding to the first factor, then since the second factor $\bbR^n$ is a normal subgroup, $\Ad(H)$ leaves it invariant. Therefore the decomposition of the Lie algebra $\fraka_n(\bbR)=\frakgl_n(\bbR)\oplus \bbR^n$ is $\Ad(H)$-invariant. In other words, $(G,H)$ is a reductive Klein geometry on the affine space $\rmA(\bbR^n)$.
+    Note that if $H=\GL_n(\bbR)$ is the subgroup of $G=\Aff_n(\bbR)=\GL_n(\bbR)\ltimes \bbR^n$ corresponding to the first factor, then since the second factor $\bbR^n$ is a normal subgroup, $\Ad(H)$ leaves it invariant. Therefore the decomposition of the Lie algebra $\fraka_n(\bbR)=\frakgl_n(\bbR)\oplus \bbR^n$ is $\Ad(H)$-invariant. In other words, $(G,H)$ is a reductive Klein geometry on the affine space $\rmA(\bbR^n)$.
 
     The natural projection $\pi:G\to G\slash H\cong \bbR^n$ is a principal $\GL_n(\bbR)$-bundle that carries the Maurer-Cartan form $\theta_G\in\Omega^1(\Aff_n(\bbR),\fraka_n(\bbR))$. Now we may split $\theta_G=\omega+\theta$ according to the above reductive decomposition of $\fraka_n(\bbR)$. Since the splitting is $\GL_n(\bbR)$-invariant, both $\omega$ and $\theta$ are $\GL_n(\bbR)$-equivariant forms. The form $\theta$ associates to each element $g\in \Aff_n(\bbR)$ a linear isomorphism $T_{\pi(g)}\rmA(\bbR^n)\to \bbR^n$, and thus identifies $\Aff_n(\bbR)$ with the frame bundle $\Fr \rmA(\bbR^n)$. Hence, the component $\omega$ may be viewed as an affine connection on $\rmA(\bbR^n)$ and one immediately sees that this gives the canonical flat connection on $\rmA(\bbR^n)$.
 \end{rem}
@@ -3046,7 +3429,7 @@ Finally, $\nabla$ induces parallel transports on all tensor bundles $T^r_s M$, a
     \[\wt\gamma^-(1)=\int_0^1 \theta_G(\dot\gamma(s))\dd s=\oint_\gamma \theta_G.\]
     Now suppose $\gamma$ is nullhomotopic and $S$ is a 2-dimensional submanifold of $G$ such that $\partial S=\im(\gamma)$. Then, using the Stokes' theorem and the Maurer-Cartan equation, we have
     \[\wt\gamma^-(1)=-\frac12\int_S [\theta_G,\theta_G]=\int_S \theta_G\circ \sfT^-.\]
-    This formula is also true for $\sfT^+$ if $\wt\gamma^+$ is defined using right translations. Here, $\theta_G$ merely acts so that the values of the integrand belong to one vector space ($\frakg$). In local coordinates, this integral is proportional to the value of $\sfT^-$ at the identity times the area of $S$. This result, in fact, holds for arbitrary affine connections (although in general there is no analog of $\theta_G$ that can transport all values of $\sfT$ to one point, so the general formula can only be written in local coordinates). Therefore, torsion can be interpreted as the ``displacement of the origin'' of a tangent space as it is being \emph{rolled without slipping}\index{Rolling without slipping} along an infinitesimal loop (this is easier to imagine as $M$ rolling on $\bbR^n$ so that the point of contact follows $\gamma$). For this reason the soldering form $\theta$ is also sometimes called the \emph{displacement form}.\index{Displacement form}
+    This formula is also true for $\sfT^+$ if $\wt\gamma^+$ is defined using right translations. Here, $\theta_G$ merely acts so that the values of the integrand belong to one vector space ($\frakg$). In local coordinates, this integral is proportional to the value of $\sfT^-$ at the identity times the area of $S$. This result, in fact, holds for arbitrary affine connections (although in general there is no analog of $\theta_G$ that can transport all values of $\sfT$ to one point, so the general formula can only be written in local coordinates). Therefore, torsion can be interpreted as the ``displacement of the origin'' of a tangent space as it is being \emph{rolled without slipping}\index{Rolling without slipping} along an infinitesimal loop (this is easier to imagine as $M$ rolling on $\bbR^n$ so that the point of contact follows $\gamma$). For this reason the soldering form $\theta$ is also sometimes called the \emph{displacement form}.\index{Displacement form} This interpretation will be clarified and generalized in Cartan geometry.
 \end{example}
 
 
@@ -3291,12 +3674,12 @@ Now, decomposing an abitrary tensor field with respect to $\frake$ and $\alpha$ 
 \[\nabla_{\partial_k}t_{j_1\ldots j_r}^{i_1\ldots i_s}=\partial_kt_{j_1\ldots j_r}^{i_1\ldots i_s}+\sum_l\Gamma^{i_l}{}_{km}t_{j_1\ldots j_r}^{t_1\ldots t_l=m\ldots i_s}-
 \sum_l\Gamma^{m}{}_{kj_l}t_{j_1\ldots j_l=m\ldots  j_r}^{t_1\ldots i_s}.
 \]
-In particular, for a vector field $X$ and a $1$-form $\alpha$ we obtain 
+In particular, for a vector field $X=X^i e_i$ and a $1$-form $\xi=\xi_i\alpha^i$ we obtain 
 \begin{align}
     \nabla_{e_i}X=&(e_i(X^k)+\Gamma^k{}_{ij}X^j)e_k,\label{eq 2.1.49 RS2}\\
-    \nabla_{e_i}\alpha=&(e_i(\alpha_j)-\Gamma^k{}_{ij}\alpha_k)\alpha^j.\label{eq 2.1.50 RS2}
+    \nabla_{e_i}\xi=&(e_i(\xi_j)-\Gamma^k{}_{ij}\xi_k)\alpha^j.\label{eq 2.1.50 RS2}
 \end{align}
-Using (\ref{eq 1.5.8 RS2}), we get $\nabla X=\alpha^i\otimes\nabla_{e_i}X$ and $\nabla\alpha=\alpha^i\otimes\nabla_{e_i}\alpha$. Clearly, the covariant derivative of any tensor field $t$ may also be decomposed in this way,
+Using (\ref{eq 1.5.8 RS2}), we get $\nabla X=\alpha^i\otimes\nabla_{e_i}X$ and $\nabla\xi=\alpha^i\otimes\nabla_{e_i}\xi$. Clearly, the covariant derivative of any tensor field $t$ may also be decomposed in this way,
 \[\nabla t=\alpha^i\otimes \nabla_{e_i} t,\]
 in accordance with the fact that $\nabla t\in\Omega^1(M;T^r_s M)$.
 
@@ -3366,8 +3749,14 @@ In Section~\ref{sec: bundle reduction} we have defined $G$-structures and compat
 
 Recall that by Corollary~\ref{cor 1.6.5 RS2}, reductions of $\Fr M$ to $G<\GL_n(\bbR)$ are in one-to-one correspondence with smooth sections of the associated bundle $\Fr M\times_{\GL_n(\bbR)}(\GL_n(\bbR)\slash G)$, or, equivalently, with elements of $\Hom_{\GL_n(\bbR)}(\Fr M,\GL_n(\bbR)\slash G)$. Thus, the existence of a $G$-structure is a topological problem that can be dealt with by applying methods of obstruction theory, as we will see in the future. In particular, if $\GL_n(\bbR)\slash H$ is contractible, then a $G$-structure certainly exists. Note that, geometrically, a $G$-structure should be viewed as a bundle of distinguished frames on $M$.
 
+\begin{rem}\label{rem G-structure as soldering}
+    Clearly, for a given $G$-structure $P$, we may pull back (or restrict) the soldering form $\theta$ of $\Fr M$ to $P$, and, thus, for any connection $\omega$ on $P$ we have a torsion $2$-form $\Theta$ on $P$ defined by (\ref{eq 2.1.10 RS2}). Denoting the reduction morphism by $i:P\to \Fr M$, the soldering form on $P$ is $i^\ast\theta$. For given $m\in M$ and $p\in P_m$, consider the map 
+    \[\chi_p:T_m M\to \bbR^n,\quad X\mapsto (i^\ast\theta)_p(X^\ast),\]
+    where $X^\ast$ is an arbitrary lift of $X$ to $p$. This is an isomorphism, and hence can be identified with a unique frame $u\in \Fr M$ such that $\iota_u^\vartheta=\chi_p^{-1}$. Therefore, we can recover the reduction $i:p\mapsto u$ from the soldering form on $P$. Thus, writing simply $\theta$ for $i^\ast\theta$, a first-order $G$-structure on $M$ can be identified with a tuple $(P\to M,\lambda,\theta)$, where $P$ is a principal $G$-bundle, $\lambda:G\to \GL_n(\bbR^n)$ is a homomorphism, and $\theta\in \Omega^1_{\hor}(P;\bbR^n)^{\sigma_0^n\circ\lambda}$ is a soldering form.
+\end{rem}
+
 \begin{rem}
-    There is a natural higher-order generalization of the above definition. An \emph{$r$-th order $G$-structure} is a reduction of the $r$-th order frame bundle $\Fr^r M$ (whose structure group is the jet group $\GL^r_n(\bbR)$, where $n=\dim M$, see Example~\ref{def jet bundles}). It is then called integrable if it admits local holonomic sections, i.e.\ local sections of the form $j^r \varphi_\alpha$, where $(U_\alpha,\varphi_\alpha)$ is some local chart for $M$. In general, a $G$-structure is said to be \emph{integrable to $k$-th order} if its $k$-th order truncation (obtained by the projection $\pi^r_k$ taking $r$-jets to $k$-jets for $k<r$) is integrable.
+    There is a natural higher-order generalization of the above definition. An \emph{$r$-th order $G$-structure} is a reduction of the $r$-th order frame bundle $\Fr^r M$ (whose structure group is the jet group $\GL^r_n(\bbR)$, where $n=\dim M$, see Definition~\ref{def jet bundles}). It is then called integrable if it admits local holonomic sections, i.e.\ local sections of the form $j^r \varphi_\alpha$, where $(U_\alpha,\varphi_\alpha)$ is some local chart for $M$. In general, a $G$-structure is said to be \emph{integrable to $k$-th order} if its $k$-th order truncation (obtained by the projection $\pi^r_k$ taking $r$-jets to $k$-jets for $k<r$) is integrable.
 \end{rem}
 
 \begin{rem}\label{rem higher order Klein geometry}
@@ -3375,24 +3764,28 @@ Recall that by Corollary~\ref{cor 1.6.5 RS2}, reductions of $\Fr M$ to $G<\GL_n(
 
     The kernel of the representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ is a closed subgroup $K_1\sub H$, and we may define $H_1\coloneqq H\slash K_1$. Then we may consider the induced Klein geometry $(G\slash K_1,G\slash H)$ whose structure group is $K_1$. Viewing the manifold $G\slash H$ as being modeled on the vector space $\frakg\slash\frakh$, we may interpret the frame bundle $\Fr (G\slash H)$ as the bundle of linear isomorphisms between $\frakg\slash\frakh$ and tangent spaces of $G\slash H$. Now consider $q\circ \theta_G\in \Omega^1(G;\frakg\slash\frakh)$, where $\theta_G$ is the Maurer-Cartan form and $q:\frakg\to\frakg\slash\frakh$ is the quotient map. This one form is $H$-equivariant and its kernel is exactly the vertical bundle $\calV G$. Hence, there is a unique \gls{pfb} morphism $G\to \Fr(G\slash H)$ such that $q\circ \theta_G$ is the pullback of the soldering form. This morphism factors to a \gls{pfb} morphism $G\slash K_1\to \Fr(G\slash H)$, which defines a first order $H_1$-structure on $G\slash H$.
 
-    There is a natural higher order analog of this construction. We can view $\GL(\frakg\slash\frakh)$ as the group of $1$-jets at $[e]\in G\slash H$ of diffeomorphisms fixing $[e]$. The homomorphism $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$, can be viewed as the map $h\mapsto j^1_{[e]}\wh{L}_h$ producing the first jet at $[e]$ of the action $\wh{L}_h\in\Diff(G\slash H)$. Thus we can replace $\GL(\frakg\slash\frakh)$ by the group of invertible $r$-jets at $[e]$ of diffeomorphisms fixing $[e]$. This group is clearly isomorphic to the $r$-th jet froup $\GL^r_n(\bbR)$ introduced in Example~\ref{def jet bundles}, where $n=\dim(G\slash H)$. The map $h\mapsto j^r_{[e]}\wh{L}_h$ then defines a homomorphism. Letting $K_r$ be the kernel of this homomorphism, and putting $H_r=H\slash K_r$, we have the Klein geometry $(G\slash K_r,G\slash H)$ with structure group $H_r$. By construction, this can be viewed as a reduction of $\Fr^r(G\slash H)$, i.e.\ an $r$-th order $G$-structure.
+    There is a natural higher order analog of this construction. We can view $\GL(\frakg\slash\frakh)$ as the group of $1$-jets at $[e]\in G\slash H$ of diffeomorphisms fixing $[e]$. The homomorphism $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$, can be viewed as the map $h\mapsto j^1_{[e]}\wh{L}_h$ producing the first jet at $[e]$ of the action $\wh{L}_h\in\Diff(G\slash H)$. Thus we can replace $\GL(\frakg\slash\frakh)$ by the group of invertible $r$-jets at $[e]$ of diffeomorphisms fixing $[e]$. This group is clearly isomorphic to the $r$-th jet froup $\GL^r_n(\bbR)$ introduced in Definition~\ref{def jet bundles}, where $n=\dim(G\slash H)$. The map $h\mapsto j^r_{[e]}\wh{L}_h$ then defines a homomorphism $H\to \GL^r(\frakg\slash\frakh)$. Letting $K_r$ be the kernel of this homomorphism, and putting $H_r=H\slash K_r$, we have the Klein geometry $(G\slash K_r,G\slash H)$ with structure group $H_r$. By construction, this can be viewed as a reduction of $\Fr^r(G\slash H)$, i.e.\ an $r$-th order $G$-structure. As $r$ increases, we expect a progressively smaller kernel $K_r$, thus getting a more and more faithful representation of the original Klein geometry on associated \glspl{vb}.
+
+    Thus, a higher order structure is a sequence of first-order structures, each a bundle over the last. We say that the $H$-structure is of \emph{finite type} if the induced sequence of structure groups $H_r$ terminates, i.e.\ $H_r=\{e\}$ for some $r$. This means that on $\Fr^r (G\slash H)$ there is an absolute parallelism, which, as we will see, implies the existence of a Cartan geometry.
 \end{rem}
 
 
+Recall that an affine connection on $M$ is called \emph{compatible with}, or \emph{adapted to}, the $G$-structure $P$ if it is reducible to $P$. Recall also Proposition~\ref{prop 1.6.10 RS2} characterizing the reducibility of connections in terms of equivariant maps. 
 
-Recall that an affine connection on $M$ is called \emph{compatible with}, or \emph{adapted to}, the $G$-structure $P$ if it is reducible to $P$. Recall also Proposition~\ref{prop 1.6.10 RS2} characterizing the reducibility of connections in terms of equivariant maps.
 
 \begin{prop}[{{\cite[Prop.~2.2.3]{RS2}}}]\label{prop 2.2.3 RS2}
-    Let $P$ be a $G$-structure on $M$ and let $\wt\varphi:\Fr M\to \GL_n(\bbR)\slash G$ be the $\GL_n(\bbR)$-equivariant map defining $P$. Assume that $\GL_n(\bbR)\slash G$ is embedded into a $\GL_n(\bbR)$-module $F$. Then an affine connection $\omega$ on $\Fr M$ is compatible with the $G$-structure $P$ iff $\wt\varphi$ is parallel with respect to $\omega$:
+    Let $P$ be a $G$-structure on $M$ and let $\wt\varphi:\Fr M\to \GL_n(\bbR)\slash G$ be the $\GL_n(\bbR)$-equivariant map defining $P$.  Then an affine connection $\omega$ on $\Fr M$ is compatible with the $G$-structure $P$ iff $\wt\varphi$ is parallel with respect to $\omega$:
     \[D^\omega\wt\varphi=0.\]
 \end{prop}
 \begin{proof}
+    To use the regular calculus of linear connections, we would need to assume that $\GL_n(\bbR)\slash G$ is embedded into a $\GL_n(\bbR)$-module $V$, i.e.\ a linear representation $\sigma:\GL_n(\bbR)\to \GL(V)$. But we can drop this assumption by using the generalized definition of the covariant exterior derivative from Remark~\ref{rem generalized covariant D}, working directly with the fiber $\GL_n(\bbR)\slash G$ and using the canonical action $\sigma=\wh{L}$ of $\GL_n(\bbR)$.
+
     By the proof of Proposition~\ref{prop 1.6.2 RS2}, $P=\{u\in \Fr M:\wt\varphi(u)=[e]\}$. Thus, the restriction of $D^\omega\wt\varphi=0$ to $P$ reads 
-    \[\sigma_\ast(\omega)[e]=0,\]
-    which holds iff $\omega$ restricted to $P$ takes values in the Lie algebra of $G$. Thus is equivalent to it being reducible to $P$.
+    \[\wh{L}_\ast(\omega)\cdot[e]=0,\]
+    which holds iff $\omega$ restricted to $P$ takes values in the Lie algebra of $G$ (since the stabilizer of $[e]$ is exactly $G$). This is exactly the definition of reducibility to $P$.
 \end{proof}
 
-Clearly, for a given $G$-structure $P$ we may restrict the soldering form $\theta$ of $\Fr M$ to $P$, and, thus, for any connection $\omega$ on $P$ we have a torsion $2$-form $\Theta$ on $P$ defined by (\ref{eq 2.1.10 RS2}).
+
 
 \begin{prop}[{{\cite[Prop.~2.2.4]{RS2}}}]\label{prop 2.2.4 RS2}
     If $P$ is an integrable $G$-structure on $M$, then it admits a torsion-free connection.
@@ -3453,6 +3846,10 @@ In particular, as an immediate consequence, we obtain
     If $\delta$ is bijective, then $P$ admits a unique torsion-free connection.
 \end{cor}
 
+\begin{rem}
+    If $\tau\neq 0$, then, since $\coker(\delta)$ is a $G$-module (representation), it may contain proper submodules which can be used to define important sub-classes of $G$-structures according to which submodule their intrinsic torsions lie in. In the case of almost symplectic structures, we will perform this classification in Example~\ref{ex almost symplectic structures}.
+\end{rem}
+
 In summary, denoting by $V=\bbR^n$ the typical fiber, we have constructed the (obviously) exact sequence of linear maps of vector spaces
 \[0\to\frakg^{(1)}\coloneqq\ker\delta\to V^\ast\otimes\frakg\overset{\delta}{\to}\bigwedge^2 V^\ast \otimes V\overset{\pr}{\to}\coker\delta\to 0.\]
 The space $\frakg^{(1)}=\ker\delta$ is called the first \emph{prolongation} of the subalgebra $\frakg<\frakgl_n(\bbR)$. Since these maps are $G$-equivariant, given a $G$-structure $P$ on a manifold $M$, we get the corresponding exact sequence of morphisms of associated \glspl{vb}. Namely, we simply apply the association functor $P^{[]}$ to each of the vector spaces above as typical fibers and then follow it with the corresponding bundle isomorphism induced from the soldering map $\vartheta:TM\to P\times_G \bbR^n$:
@@ -3495,10 +3892,10 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \end{xca}
 
 \begin{example}[Pseudo-Riemannian structure]\label{ex pseudo-riemannian structure}\index{Pseudo-Riemannian structure}
-    For simplicity let us denote $V=\bbR^n$. Denote the vector space of symmetric covariant tensors of second rank on $V$ by $S^2V^\ast$. Endow $V$ with a pseudo-Euclidean metric $\eta\in S^2V^\ast$ with signature $(k,l)$ where $n=k+l$. The defining representation of $\GL(V)$ induces a $\GL_n(\bbR)$-module structure on $S^2 V$ given by 
-    \[\sigma:\GL(V)\to \Aut(S^2 V^\ast),\quad \sigma(g)\coloneqq (g^{-1})^T\otimes (a^{-1})^T.\label{eq 2.2.21 RS2}\]
-    As we have noted before, by the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $S^2_{(k,l)}V^\ast\subset S^2 V^\ast$ consisting of elements with fixed signature, and the stabilizer of $\eta$ is $\Or_{k,l}$, that is,
-    \[\GL_n(\bbR)\slash \Or_{k,l}\cong S^2_{(k,l)}V^\ast.\]
+    For simplicity let us denote $V=\bbR^n$. Denote the vector space of symmetric covariant tensors of second rank on $V$ by $\rmS^2V^\ast$. Endow $V$ with a pseudo-Euclidean metric $\eta\in \rmS^2V^\ast$ with signature $(k,l)$ where $n=k+l$. The defining representation of $\GL(V)$ induces a $\GL_n(\bbR)$-module structure on $\rmS^2 V$ given by 
+    \[\sigma:\GL(V)\to \Aut(\rmS^2 V^\ast),\quad \sigma(g)\coloneqq (g^{-1})^T\otimes (a^{-1})^T.\label{eq 2.2.21 RS2}\]
+    As we have noted before, by the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $\rmS^2_{(k,l)}V^\ast\subset \rmS^2 V^\ast$ consisting of elements with fixed signature, and the stabilizer of $\eta$ is $\Or_{k,l}$, that is,
+    \[\GL_n(\bbR)\slash \Or_{k,l}\cong \rmS^2_{(k,l)}V^\ast.\]
     Thus, $\Or_{k,l}$-structures are in one-to-one correspondence with pseudo-Riemannian metrics $\sfg$ on $M$ and the $\Or_{k,l}$-structure corresponding to $\sfg$ coincides with the bundle $\Fr_{\Or_{k,l}}M$ of orthonormal frames with respect to $\sfg$. If $(M,\sfg)$ is oriented, then $\Fr_{\Or_{k,l}}M$ further reduces to a principal $\SO_{k,l}$-bundle, denoted by $\Fr^+_{\Or_{k,l}}M$. 
     
     Note that $\GL_n(\bbR)\slash \Or_n$ is contractible. Thus, an $\Or_n$-structure, that is, a Riemannian metric, always exists. On the contrary, structures with arbitrary signatures $(k,l)$ may note exist. 
@@ -3530,7 +3927,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \begin{example}[Conformal structure {{\cite[Example~2.2.17]{RS2}}}]\index{Conformal structure}\index{Conformal structure}
     For $n\geq 3$, consider the conformal group 
     \[\CO_n\coloneqq \left\{a\in\GL_n(\bbR):a^Ta=cI_n,\; c>0\right\}.\]
-    Clearly, $\CO_n=\Or_n\times\bbR_+$. By the previous example, $\GL_n(\bbR)$ acts transitively on the space $S^2_{k,l}V^\ast$. Thus it also acts transitively on the set of conformal equivalence classes of elements of $S^2_{(k,l)}V^\ast$ defined by the relation $\eta\sim\eta'$ iff $\eta'=c\eta$ for some $c>0$. Clearly, the stabilizer of an element $[\eta]$ is $\CO_n$. Thus, $\CO_n$-structures are in one-to-one correspondence with conformal equivalence classes $[\sfg]$ of metrics on $M$, with the equivalence defined as follows: $\sfg'\sim\sfg$ iff $\sfg'_m=\rme^{\varphi(m)}\sfg_m$ for all $m\in M$ for some $\varphi\in C^\infty(M)$. The $\CO_n$-structure corresponding to class $[\sfg]$ is denoted by $\Fr_{\CO_n}M$ and is referred to as the bundle of conformal frames.
+    Clearly, $\CO_n=\Or_n\times\bbR_+$. By the previous example, $\GL_n(\bbR)$ acts transitively on the space $\rmS^2_{k,l}V^\ast$. Thus it also acts transitively on the set of conformal equivalence classes of elements of $\rmS^2_{(k,l)}V^\ast$ defined by the relation $\eta\sim\eta'$ iff $\eta'=c\eta$ for some $c>0$. Clearly, the stabilizer of an element $[\eta]$ is $\CO_n$. Thus, $\CO_n$-structures are in one-to-one correspondence with conformal equivalence classes $[\sfg]$ of metrics on $M$, with the equivalence defined as follows: $\sfg'\sim\sfg$ iff $\sfg'_m=\rme^{\varphi(m)}\sfg_m$ for all $m\in M$ for some $\varphi\in C^\infty(M)$. The $\CO_n$-structure corresponding to class $[\sfg]$ is denoted by $\Fr_{\CO_n}M$ and is referred to as the bundle of conformal frames.
     Since $\CO_n=\Or_n\times\bbR_+$, the representation theory of $\CO_n$ is essentially obtained as an extension of that of $\Or_n$. The irreducible representations of $\bbR_+$ on $\bbR$ are labeled by real numbers $r\in\bbR$ and are given by 
     \[\bbR_+\times\bbR\to \bbR,\quad (t,x)\mapsto t^r x.\]
     The number $r$ is called the \emph{conformal weight} of the representation under consideration. Let us denote this representation by $L^r$. Then a typical $\CO$-module is a tensor product of an $\Or_n$-module with $L^r$. Note that, with respect to the conformal structure $[\sfg]$, the tangent and the cotangent bundles can no longer be identified, because they correspond to the representations containing factors $L^r$ and $L^{-r}$, respectively. Clearly, at the level of \glspl{vb} over $M$, the additional factors $L^r$ correspond to building the tensor product with an associated line bundle characterized by $r$.
@@ -3547,7 +3944,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     \[\Fr_{\Or_{k,l}}M=\{u \in\Fr M:\wt\sfg(u)=\eta,\}\]
     where $\eta$ is the standard inner product on $\bbR^n$ with signature $(k,l)$. By Proposition~\ref{prop 2.2.3 RS2}, a linear principal connection $\omega$ on $M$ is compatible with the $\Or_{k,l}$-structure iff $\sfg$ is parallel with respect to $\omega$. An affine connection fulfilling this condition is called metric. By (\ref{eq 2.2.21 RS2}), the metricity condition $D\wt\sfg=\dd\wt\sfg+\sigma_\ast(\omega)\wt\sfg=0$ reads 
     \[\dd\wt\sfg-\left(\omega^T\otimes I_n+I_n\otimes \omega^T\right)(\wt\sfg)=0.\label{eq 2.2.35 RS2}\]
-    More explicitly, decomposing $\omega$ with respect to the basis $\{E^j{}_i\}$ in $\frakgl_n(\bbR)$ and $\wt\sfg$ with respect to the basis in $S^2(\bbR^n)^\ast$ induced from the standard basis of $\bbR^n$, (\ref{eq 2.2.35 RS2}) takes the form 
+    More explicitly, decomposing $\omega$ with respect to the basis $\{E^j{}_i\}$ in $\frakgl_n(\bbR)$ and $\wt\sfg$ with respect to the basis in $\rmS^2(\bbR^n)^\ast$ induced from the standard basis of $\bbR^n$, (\ref{eq 2.2.35 RS2}) takes the form 
     \[\dd \wt\sfg_{jk}-\wt\sfg_{jl}\omega^l{}_k-\wt\sfg_{kl}\omega^l{}_j=0.\]
     But, on $\Fr_{\Or_{k,l}} M$ we have $\wt\sfg_{kl}=\eta_{kl}$, and thus $\dd\wt\sfg_{kl}=0$. This shows that $\omega$ is metric iff its reduction to $\Fr_{\Or_{k,l}}M$ fulfills 
     \[\omega_{jk}+\omega_{kj}=0,\]
@@ -3576,7 +3973,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     \[\Gamma^m{}_{ij}=\frac12\sfg^{mk}(\sfg_{jk,i}+\sfg_{ki,j}-\sfg_{ji,k}),\quad \Gamma^m{}_{ij}=\Gamma^m{}_{ji},\]
     where $\sfg_{ij,k}=\partial_k\sfg_{ij}$. For the case of an orthonormal frame $\frake=\{e_i\}$, we have $\sfg_{ij}=\eta_{ij}$, so 
     \[\Gamma^m{}_{ij}=\frac12\left(C^m{}_{ij}+\eta^{km}\eta_{lj}C^l{}_{ki}+\eta^{km}\eta_{li}C^l{}_{kj}\right).\]
-    Thus, $\Gamma_{kij}=\eta_{km}\Gamma^m{}_{ij}=\frac12(C_{kij}+C_{jki}+C_{ikj}$, and , consequently, in this case we have 
+    Thus, $\Gamma_{kij}=\eta_{km}\Gamma^m{}_{ij}=\frac12(C_{kij}+C_{jki}+C_{ikj}$, and, consequently, in this case we have 
     \[\Gamma_{kij}=-\Gamma_{jik},\quad \Gamma^k{}_{ik}=0.\]
     Using (\ref{eq 2.1.45/46 RS2}), we obtain 
     \[\dd\alpha^i(e_j,e_k)=-\alpha^i([e_j,e_k])=\Gamma^i{}_{kj}-\Gamma^i{}_{jk}\]
@@ -3645,11 +4042,11 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     In particular, as we have already seen in the previous example, a torsion-free absolute parallelism is equivalent to a structure of an affine space.
 \end{example}
 
-\begin{example}[Almost symplectic structure]
+\begin{example}[Almost symplectic structure]\label{ex almost symplectic structures}
     Consider $G=\Sp_n(\bbR)$, which is the group of linear transformations of $\bbR^{2n}$ that preserve the standard symplectic form $\omega_{2n}$, cf.\ Example~\ref{ex linear G-structures}(9). There is a one-to-one correspondence between $\Sp_n(\bbR)$-structures and almost symplectic manifolds, i.e.\ even-dimensional manifolds $M$ with a non-degenerate $2$-form $\omega\in \Omega^2(M)$. The non-degeneracy condition is equivalent to saying that the $2n$-form $\omega^n=\omega\wedge\cdots\wedge\omega$ is nowhere vanishing.
     % Since for every symplectic matrix there are coordinates in which it takes the form $\sfJ_{2n}$, there always exist local coordinates $(q^1,\ldots,q^n,p_1,\ldots,p_n)$ in which the symplectic form takes the canonical form $\omega=\sum_i \dd q^i\wedge\dd p_i$. 
-    Let $V=\bbR^{2n}$, so that the Lie algebra is $\fraksp(V)\cong S^2 V$. It is easy to check that $\ker\delta\cong S^3 V$ by using $\omega_{2n}$ to identify $V$ with $V^\ast$, so the Spencer sequence reads 
-    \[0\to S^3 V\to V^\ast \otimes S^2V\to \bigwedge^2 V^\ast\otimes V\to \bigwedge^3 V^\ast\to 0.\]
+    Let $V=\bbR^{2n}$, so that the Lie algebra is $\fraksp(V)\cong \rmS^2 V$. It is easy to check that $\ker\delta\cong \rmS^3 V$ by using $\omega_{2n}$ to identify $V$ with $V^\ast$, so the Spencer sequence reads 
+    \[0\to \rmS^3 V\to V^\ast \otimes \rmS^2V\to \bigwedge^2 V^\ast\otimes V\to \bigwedge^3 V^\ast\to 0.\]
     The associated bundle with fiber $\bigwedge^3 V^\ast$ is simply $\bigwedge^3 T^\ast M$, so intrinsic torsions are $3$-forms on $M$. The intrinsic torsion is exactly the part of $\nabla\omega$ that doesn't depend on the choice of connection under which $\omega$ is parallel. It is also the fully antisymmetric part of $\nabla\omega$ (since it's a $3$-form), so it coincides with $\dd\omega$.
 
     If we want to classify almost symplectic structures based on some natural constraint on the intrinsic torsion, then we need to decompose $\bigwedge^3 V^\ast$, as a representation of $\Sp_{n}(\bbR)$, into irreducible representations (if possible). Since we can use the non-degenerate form $\omega$ to contract indices, we can use it to reduce a $3$-form to a $1$-form. This operation may be called ``trace''. Thus, $3$-forms that have the form $a\omega_{2n}\wedge\alpha$ with some $a\in\bbR$ and some $\alpha\in V^\ast$ may be called ``diagonal'' (the space of these forms is isomorphic to $V^\ast$ as a representation of $\Sp_n(\bbR)$), and their complement in $\bigwedge^3 V^\ast$ consists of traceless forms:
@@ -3667,7 +4064,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \begin{example}\label{ex 1.3.6 Cap}
     Connections on $G$-structures can be treated in a similar style as the affine picture for linear connections on the tangent bundle (Remark~\ref{rem 1.3.6 Cap}). Indeed, given $\lambda:H\to \GL_n(\bbR)$ such that $\lambda_\ast:\frakh\to \frakgl_n(\bbR)$ is injective, consider the \emph{affine extension} $B\coloneqq \bbR^n\rtimes H$ of $H$. This means that the multiplication is given by $(\bm{x},g)\cdot (\bm{y},h)=(\bm{x}+\lambda(g)(\bm{y}),gh)$. If $H$ is a closed subgroup of $\GL_n(\bbR)$, then $B$ is a closed subgroup of $\Aff_n(\bbR)$, and in general there is an obvious homomorphism $\wt\lambda:B\to \Aff_n(\bbR)$ such that $\wt\lambda_{\ast}$  is injective. Now we can equivalently view connections on $G$-structures with structure group $H$ as principal $H$-bundles $P\to M$ endowed with a $1$-form $\eta\in\Omega^1(M,\frakb)$, where $\frakb=\Lief B$, which satisfy the analogs of properties 1-3 from Remark~\ref{rem 1.3.6 Cap} with respect to elements $g\in H$. The interpretation of torsion and curvature as well as geodesics and normal coordinates works exactly the same way as for affine connections.
 
-    As in the case of the affine space $\rmA(\bbR^n)$ (Remark~\ref{rem 1.3.5 Cap}), one may look at the homogeneous space $B\slash H\cong\bbR^n$ and view the Maurer-Cartan form on $B$ as a connection on the $H$-structure $B\to\bbR^n$.  Connections on $H$-structures can thus be thought of as ``curved analogs'' of this homogeneous space. In particular, $H=\Or_n\sub \GL_n(\bbR)$, the affine extension $B$ is exactly the Euclidean group $\Euc_n$. From Example~\ref{ex pseudo-riemannian structure} of Riemannian structures above we see that this picture leads to viewing $n$-dimensional Riemannian manifolds as curved analogs of the Euclidean space $\rmE^n=\Euc_n\slash\Or_n$. This is one of the motivating examples for the concept of Cartan connections.
+    As in the case of the affine space $\rmA(\bbR^n)$ (Remark~\ref{rem 1.3.5 Cap}), one may look at the homogeneous space $B\slash H\cong\bbR^n$ and view the Maurer-Cartan form on $B$ as a connection on the $H$-structure $B\to\bbR^n$.  Connections on $H$-structures can thus be thought of as ``curved analogs'' of this homogeneous space. In particular, $H=\Or_n\sub \GL_n(\bbR)$, the affine extension $B$ is exactly the Euclidean group $\SE_n$. From Example~\ref{ex pseudo-riemannian structure} of Riemannian structures above we see that this picture leads to viewing $n$-dimensional Riemannian manifolds as curved analogs of the Euclidean space $\rmE^n=\SE_n\slash\Or_n$. This is one of the motivating examples for the concept of Cartan connections.
 \end{example}
 
 
@@ -3676,7 +4073,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 
 
 
-\subsection{Invariant connections}
+\subsection{Invariant connections}\label{sec: invariant connections}
 
 The first natural source of easily computable examples of connections, unsurprisingly, are Klein geometries. We will thus study invariant differential operators on a homogeneous space $G\slash H$. A special case of this problem is whether a given homogeneous bundle admits a connection that is compatible with the $G$-action. Since connections can be viewed as section of natural bundles, we could reduce this to the determination of invariant section. First we classify homogeneous principal bundles, as defined in Section~\ref{sec: homogeneous bundles}.
 
@@ -3790,7 +4187,7 @@ The most basic example of a homogeneous principal bundle is of course the bundle
 
 \begin{example}[Canonical connections on a Lie group, part 6]\label{ex connections on G, part 6}
     Going back to Example~\ref{ex connections on G, part 1}, 
-    let us assume that $G$ is a simple Lie group and classify all invariant connections on $P=G\times G\to G$. This corresponds to the above theorem with the substitutions $G\to G\times G$, $H\to G$, $K\to G$, and $\lambda=\id_G$. Thus, we are looking for maps  $\Lambda:\frakg\times\frakg,\frakg$, such that $\Lambda(A,A)=A$ for all $A\in\frakg$ and 
+    let us assume that $G$ is a simple Lie group and classify all invariant connections on $P=G\times G\to G$. This corresponds to the above theorem with the substitutions $G\to G\times G$, $H\to G$, $K\to G$, and $\lambda\to\id_G$. Thus, we are looking for maps  $\Lambda:\frakg\times\frakg\to\frakg$, such that $\Lambda(A,A)=A$ for all $A\in\frakg$ and 
     \[\Lambda(\Ad_{g} A,\Ad_{g}B)=\Ad_g\Lambda(A,B)\]
     for all $A,B\in\frakg$. In particular, $\Lambda(\Ad_g A,0)=\Ad_g \Lambda(A,0)$. Since $G$ is simple, its adjoint representation is irreducible and by Schur's Lemma the only equivariant maps on it are multiplications by a scalar. The same applies to $\Lambda(0,B)$. Since $\Lambda(A,A)=\Lambda(A,0)+\Lambda(0,A)$ must equal $A$, we conclude that there is a $\lambda\in\bbR$ such that 
     \[\Lambda(A,B)=\frac{1-\lambda}{2}A+\frac{1+\lambda}{2}B.\]
@@ -3805,7 +4202,7 @@ The most basic example of a homogeneous principal bundle is of course the bundle
 \begin{example}
     Suppose that the subgroup $H\sub G$ is compact. Then by averaging any positive definite inner product on $\frakg$ over $H$, we obtain and $H$-invariant positive inner product on $\frakg$. Now, the orthogonal projection onto $\frakh$ w.r.t.\ such an inner product is $H$-equivariant, thus giving a $G$-invariant principal connection on $G\to G\slash H$. The complementary subset $\frakm$ is $\frakh^\perp$.
 
-    In particular, consider the case where $H=\Or_n$ and $\frakg\slash\frakh\cong \frakm\cong \bbR^n$ as an $H$-module, which occurs both in the case of the Riemann sphere (with $G=\Or_{n+1}$) and the Euclidean space (with $G=\Euc_n$). In both cases, we not only have a $G$-invariant principal connection on $G\to G\slash H$ but it is also uniquely determined. This is due to the fact that both $\frakm\cong\bbR^n$ and $\frakh\cong \frakso_n$ are irreducible $\Or_n$-modules and thus the zero map is the only $H$-homomorphism $\frakm\to \frakh$. In the case of the Euclidean space, the complement $\frakm$ is an abelian subalgebra, so $[\frakm,\frakm]=\{0\}$ and the principal connection is flat.
+    In particular, consider the case where $H=\Or_n$ and $\frakg\slash\frakh\cong \frakm\cong \bbR^n$ as an $H$-module, which occurs both in the case of the Riemann sphere (with $G=\Or_{n+1}$) and the Euclidean space (with $G=\SE_n$). In both cases, we not only have a $G$-invariant principal connection on $G\to G\slash H$ but it is also uniquely determined. This is due to the fact that both $\frakm\cong\bbR^n$ and $\frakh\cong \frakso_n$ are irreducible $\Or_n$-modules and thus the zero map is the only $H$-homomorphism $\frakm\to \frakh$. In the case of the Euclidean space, the complement $\frakm$ is an abelian subalgebra, so $[\frakm,\frakm]=\{0\}$ and the principal connection is flat.
 
     On the other hand, in the case of the Riemann sphere, the decomposition $\frakg=\frakh\oplus\frakm$ is the unique $H$-invariant decomposition, and one immediately verifies that $[\frakm,\frakm]\subset\frakh$, but the bracket of two elements of $\frakm$ is nonzero in general, so we get nonzero curvature. More precisely, one easily computes that the curvature is induced by the map $\bbR^n\times\bbR^n\to \frakso_n$ defined $(\bm{x},\bm{y})\mapsto \bm{x}\bm{y}^T-\bm{y}\bm{x}^T$. Otherwise put, identifying $\frakso_n$ with $\bigwedge^2\bbR^n$, the curvature is simply induced by $(\bm{x},\bm{y})\mapsto \bm{x}\wedge \bm{y}$. Notice that up to scale this is the unique possibility for an invariant tensor field of this type.
  \end{example}
@@ -3847,7 +4244,7 @@ By functoriality, an invariant principal connection on the principal $H$-bundle 
 
     Then $G$-invariant linear connections on $E$ are in one-to-one correspondence with linear maps $\Lambda:\frakg\to \End(V)$ such that 
     \begin{enumerate}[label=(\roman*)]
-        \item $\restr{\Lambda}{\frakg}=\sigma_\ast$, the derivative of the representation,
+        \item $\restr{\Lambda}{\frakh}=\sigma_\ast$, the derivative of the representation at $e\in H$,
         \item $\Lambda(\Ad_h A)=\sigma(h)\circ\Lambda(A)\circ \sigma(h)^{-1}$ for all $A\in\frakg$ and $h\in H$.
     \end{enumerate}
     In particular, if there is one such connection, then the space of all of them is an affine space modeled on the vector space $\Hom_H(\frakg\slash\frakh,\End(V))$.
@@ -3886,17 +4283,28 @@ Having solved the problem of existence of invariant linear connections, we want 
     (2) As we saw in Example~\ref{ex 1.4.3 Cap}, $X(gH)=[(g,\theta_G(Y(g))_\frakh)]$. This implies that the equivariant function $G\to \frakg\slash \frakh$ corresponding to $X$ is given by $g\mapsto \theta_G(Y(g))+\frakh$. On the other hand, it says that $Y(g)=(\theta_G(Y)(g))_L(g)$, and this projects onto $X(gH)$. Now the result follows from part (1).
 \end{proof}
 
-In particular, if we consider the tangent bundle $T(G\slash H)\cong G\times_{H}(\frakg\slash\frakh)$, we get the following classical theorem.
+If we consider the tangent bundle $T(G\slash H)\cong G\times_{H}(\frakg\slash\frakh)$,  then we can use the fact that 
+\[\Hom_H(\frakg\slash\frakh,\End(\frakg\slash\frakh))=\Hom_H((\frakg\slash\frakh)\otimes (\frakg\slash\frakh),\frakg\slash\frakh)\]
+to get the following classical theorem.
 
 \begin{cor}[Wang]
-    Invariant affine connections $\nabla$ on the space $G\slash H$ of a reductive Klein geometry $(G,H)$, with a fixed reductive decomposition $\frakg=\frakh\oplus\frakm$, are in one-to-one correspondence with $\Ad(H)$-invariant bilinear maps $\nu:\frakm\otimes\frakm\to \frakm$ given by $\nu(A,B)=(\nabla_{A_\ast}B_\ast)_{[e]}$, where $A_\ast$ is the Killing vector field generated on $G\slash H$ by $A\in\frakm\subset\frakg$ via the $G$-action $\wh{L}$. The map $\nu$ is called the Nomizu map. The corresponding torsion and curvature tensors are induced by their values at the basepoint $[e]$:
+    Invariant affine connections $\nabla$ on the space $G\slash H$ of a reductive Klein geometry $(G,H)$, with a fixed reductive decomposition $\frakg=\frakh\oplus\frakm$, are in one-to-one correspondence with $\Ad(H)$-equivariant bilinear maps $\nu:\frakm\otimes\frakm\to \frakm$ given by $\nu(A,B)=(\nabla_{A_\ast}B_\ast)_{[e]}$, where $A_\ast$ is the Killing vector field generated on $G\slash H$ by $A\in\frakm\subset\frakg$ via the $G$-action $\wh{L}$. The map $\nu$ is called the Nomizu map. The corresponding torsion and curvature tensors are induced by their values at the basepoint $[e]$:
     \begin{align}
         \sfT^\nu(A,B)=&\nu(A,B)-\nu(B,A)-\pr_{\frakm}([A,B]),\\
         \sfR^\nu(A,B)C=&\nu(A,\nu(B,C))-\nu(B,\nu(A,C))-\\
-        &-\nu(\pr_\frakm([A,B]),C)-\pr_\frakh([A,B])C,
+        &-\nu(\pr_\frakm([A,B]),C)-\pr_\frakh([A,B])C,\label{eq nomizu curvature}
     \end{align}
-    where $A,B,C\in\frakm$ are identified with tangent vectors at $[e]\in G\slash H$, and $\frakh$ acts on them via the isotropy representation $\frakh\to\End(\frakg\slash\frakh)$. The connection $\nabla^\frakm$ with $\nu=0$ is called \emph{canonical} for $\frakm$ and satisfies $\sfT^\frakm(A,B)=-\pr_\frakm([A,B])$, $\sfR^\frakm(A,B)=-\pr_\frakh([A,B])$.
+    where $A,B,C\in\frakm$ are identified with tangent vectors at $[e]\in G\slash H$, and $\frakh$ acts on them via the isotropy representation $\frakh\to\End(\frakg\slash\frakh)$. The connection $\nabla^\frakm$ with $\nu=0$ is called \emph{canonical} for $\frakm$ and satisfies 
+    \[\sfT^\frakm(A,B)=-\pr_\frakm([A,B]),\quad \sfR^\frakm(A,B)=-\pr_\frakh([A,B]).\]
+    Since invariant connections are in bijective correspondence with reductive decompositions (Corollary~\ref{cor 1.4.6 Cap}), each invariant connection coincides with $\nabla^\frakm$ for some $\frakm$.
 \end{cor}
+
+
+\begin{example}[Invariant connections on affine space]
+    Invariant connections on the affine space $\Aff_n(\bbR)\slash \GL_n(\bbR)$, using the canonical reductive decomposition $\fraka_n=\frakgl_n\oplus \bbR^n$, correspond to elements of $\Hom(\bbR^n\otimes \bbR^n,\bbR^n)$, i.e.\ tensors of rank $(1,2)$. Clearly this is just the constant Christoffel tensor $\Gamma^i{}_{jk}$. The Lie brackets of elements of $\frakm=\bbR^n$ vanish, so torsion and curvature are 
+    \[\sfT^i{}_{jk}=\Gamma^i{}_{jk}-\Gamma^i{}_{kj},\quad \sfR^i{}_{jkl}=\Gamma^m{}_{kl}\Gamma^i{}_{jm}-\Gamma^m{}_{jl}\Gamma^i{}_{km}.\] 
+    Note that this curvature tensor is not zero even though the connection appears ``flat'' in the sense of being constant across space. The fact that it's not flat has to do with the inexistence of parallel sections. The condition for this metric to be compatible with an invariant metric $\sfg$ (constant in space) is $\Gamma_{ijk}+\Gamma_{kji}=0$. If, in addition, it is torsion-free, then $\Gamma_{ijk}=\Gamma_{ikj}$. Even these two formulas do not yet imply that the curvature tensor vanishes. However, to be not just compatible with a metric, but an actual metric connection, the Christoffel form $\Gamma$ needs to be $\frakso_n$-valued, i.e.\ antisymmetric in the first two indices: $\Gamma_{ijk}+\Gamma_{jik}=0$. Thus, compatibility and orthogonality imply that Christoffel symbols are antisymmetric under the index permutations $(13)$ and $(12)$, respectively, whereas the torsion-free condition makes them symmetric under $(23)$. Together, these conditions force every invariant Levi-Civita connection on the affine space to be trivial, $\Gamma_{ijk}=0$.
+\end{example}
 
 If we want to study left-invariant connections on a Lie group $G$, then we take $H=\{e\}$, and the above result puts no restriction on the Nomizu map $\nu$.
 
@@ -4052,7 +4460,7 @@ Any Cartan geometry is derived from a homogeneous space, called the homogeneous 
     \end{enumerate}
     The \emph{homogeneous model} for Cartan geometries of type $(G,H)$ is the canonical Klein geometry (homogeneous principal $H$-bundle) $G\to G\slash H$ endowed with the left Maurer-Cartan form $\theta_G\in\Omega^1(G;\frakg)$.
 
-    Given a Cartan geometry, the \emph{standard vector fields} are $\eta^{-1}(A)\in\fX(P)$ defined for all $A\in\frakg$ by $\eta(\eta^{-1}(A)_p)=A$ at any $p\in P$.
+    Given a Cartan geometry, the \emph{constant vector fields} are $\eta^{-1}(A)\in\fX(P)$ defined for all $A\in\frakg$ by $\eta(\eta^{-1}(A)_p)=A$ at any $p\in P$. Projections of integral curves of constant vector fields to $M$ are called \emph{spirals}, \emph{generalized circles}, or \emph{canonical curves}. The Cartan connection $\eta$ is called \emph{complete} if all of its constant vector fields are complete.
 \end{defn}
 
 By equivariance of $\eta$ we get 
@@ -4061,12 +4469,14 @@ for all $h\in H$.
 
 
 \begin{example}
-    In the case of the homogeneous model, the standard vector field $\theta_G^{-1}(A)$ is the left-invariant vector field $A_L$. Moreover, the pullback of $\eta$ along the orbit map $\Phi^p:H\to P_{\pi(p)}$ (which is a diffeomorphism) is exactly the Maurer-Cartan form $\theta_H$. 
+    In the case of the homogeneous model, the constant vector field $\theta_G^{-1}(A)$ is the left-invariant vector field $A_L$. Moreover, the pullback of $\eta$ along the orbit map $\Phi^p:H\to P_{\pi(p)}$ (which is a diffeomorphism) is exactly the Maurer-Cartan form $\theta_H$. Restrictions of the homogeneous model to an open subset $U\subset G\slash H$ are also flat Cartan geometries. If $U$ is not simply connected, then all of its covering spaces also carry an induced flat Cartan structure.
     % These forms define a global $1$-form on the vertical bundle, $\theta_H:\calV P\to \frakh$, which can be viewed as a global trivialization $\calV P\to P\times\frakh$.
      Thus, general Cartan geometries of type $(G,H)$ are seen as ``curved analogs'' of the Klein geometry $(G,H)$, with the Maurer-Cartan form $\theta_G$ replaced by the Cartan connection form.
 \end{example}
 
-
+\begin{example}
+    The next simplest examples are locally Klein geometries $G\to \Gamma\bslash G\slash H$, where $\Gamma<G$ is a discrete subgroup that acts on $G\slash H$ by left translations. Then $\Gamma$ acts on $G$ by deck transformations and hence isomorphisms of the Cartan geometry. Since $G\to \Gamma\bslash G$ is a covering map, it is a local diffeomorphism, and we can push the Cartan structure forward to the $H$-bundle $\Gamma\bslash \to \Gamma\bslash G\slash H$. This is still a flat Cartan geometry.
+\end{example}
 
 
 \begin{defn}[Curvature form of a Cartan geometry]\index{Curvature!of a Cartan geometry}
@@ -4085,11 +4495,11 @@ for all $h\in H$.
 
 
 
-Since the Cartan conection $\eta$ trivializes $TP$, any differential form on $P$ is determined by its values on the standard vector fields $\eta^{-1}(A)$. Thus, the complete information about $K$ is contained in the \emph{curvature function} $\kappa:P\to \bigwedge^2\frakg^\ast\otimes\frakg$ defined by 
+Since the Cartan conection $\eta$ trivializes $TP$, any differential form on $P$ is determined by its values on the constant vector fields $\eta^{-1}(A)$. Thus, the complete information about $K$ is contained in the \emph{curvature function} $\kappa:P\to \bigwedge^2\frakg^\ast\otimes\frakg$ defined by 
 \[\kappa_p(A,B)=K\left(\eta^{-1}(A)_p,\eta^{-1}(B)_p\right),\]
 and then the standard formula for the exterior derivative yields 
 \[\kappa_p(A,B)=[A,B]-\eta\left(\left[\eta^{-1}(A),\eta^{-1}(B)\right]_p\right).\]
-In other words, curvature measures the failure of the assignment of the standard vector fields $A\mapsto \eta^{-1}(A)$ to be a homomorphism of Lie algebras $\frakg\to \fX(P)$.
+In other words, curvature measures the failure of the assignment of the constant vector fields $A\mapsto \eta^{-1}(A)$ to be a homomorphism of Lie algebras $\frakg\to \fX(P)$.
 
 \begin{lem}[{{\cite[Lem.~1.5.1]{Cap}}}]\label{lem 1.5.1 Cap}
     The curvature form $K\in\Omega^2(P;\frakg)$ is horizontal, so the curvature function may be viewed as $\kappa:P\to \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$. Moreover, $K$ is \emph{of type $\Ad$ with respect to $H$} in the sense that 
@@ -4119,10 +4529,10 @@ In other words, curvature measures the failure of the assignment of the standard
     \begin{enumerate}[label=(\roman*)]
         \item Let $\Aff_n(\bbR)$ be the affine group in dimension $n$. We have seen in Remark~\ref{rem 1.3.6 Cap} that a Cartan geometry of type $(\Aff_n(\bbR),\GL_n(\bbR))$ on an $n$-dimensional manifold $M$ is equivalent to a linear (affine) connection $\omega$ on the frame bundle $\Fr M$. Moreover, the curvature $K$ coincides with the sum $\Omega+\Theta$ of the curvature and the torsion of that linear connection. The Cartan connection is $\eta=\omega+\theta$, where $\theta$ is the soldering form.
         \item For a Lie group $H$ and an infinitesimally injective homomorphism $H\to \GL_n(\bbR)$ consider the affine extension $B=\bbR^n\rtimes H$. In  we saw that a Cartan geometry of type $(B,H)$ is equivalent to a first-order $G$-structure with structure group $H$ endowed with a connection. The curvature of the Cartan connection can again be interpreted as the direct sum of the curvature and torsion of the induced affine connection on the tangent bundle.
-        \item More specifically, consider $H=\Or_n\sub \GL_n(\bbR)$. Then the affine extension $\bbR^n\rtimes H$ is the Eiclidean group $\Euc_n$. By Example~\ref{ex pseudo-riemannian structure} an $\Or_n$-structure is equivalent to a Riemannian metric $\sfg$ on $M$. From (ii) we thus conclude that a Cartan geometry of type $(\Euc_n,\Or_n)$ is equivalent to a connection on the orthonormal frame bundle for $\sfg$ and hence to a unique metric affine connection on $TM$. The Levi-Civita connection then gives a canonical Cartan geometry of type $(\Euc_n,\Or_n)$ on each Riemannian manifold. The curvature then effectively coincides with the usual Riemann curvature, since the torsion vanishes.
+        \item More specifically, consider $H=\Or_n\sub \GL_n(\bbR)$. Then the affine extension $\bbR^n\rtimes H$ is the Euclidean group $\SE_n$. By Example~\ref{ex pseudo-riemannian structure} an $\Or_n$-structure is equivalent to a Riemannian metric $\sfg$ on $M$. From (ii) we thus conclude that a Cartan geometry of type $(\SE_n,\Or_n)$ is equivalent to a connection on the orthonormal frame bundle for $\sfg$ and hence to a unique metric affine connection on $TM$. The Levi-Civita connection then gives a canonical Cartan geometry of type $(\SE_n,\Or_n)$ on each Riemannian manifold. The curvature then effectively coincides with the usual Riemann curvature, since the torsion vanishes.
         
         This is a prototypical example for a Cartan geometry which is determined by an underlying structure. We will analyze this case more systematically below. The interpretation of Riemannian structures as Cartan geometries is one of the motivating examples for the concept. 
-        \item There is no difference between Cartan geometries of the types $(\Or_{n+1},\Or_n)$, $(\Euc_n,\Or_n)$, and $(\Or_{n,1},\Or_n)$. This is because $\frako_{n+1}$, $\frakeuc_{n}$, and $\frako_{n,1}$ are all isomorphic as $\Or_n$-modules. However, the notion of curvature is different for these three types of geometries, since the homogeneous models $\bbS^n$ (Riemann sphere) and $H^n$ (hyperbolic space) of the first and last types have (nonzero) constant curvature unlike the second type. This is an example of model \emph{mutation}.
+        \item There is no difference between Cartan geometries of the types $(\Or_{n+1},\Or_n)$, $(\SE_n,\Or_n)$, and $(\Or_{n,1},\Or_n)$. This is because $\frako_{n+1}$, $\frakse_{n}$, and $\frako_{n,1}$ are all isomorphic as $\Or_n$-modules. However, the notion of curvature is different for these three types of geometries, since the homogeneous models $\bbS^n$ (Riemann sphere) and $H^n$ (hyperbolic space) of the first and last types have (nonzero) constant curvature unlike the second type. This is an example of model \emph{mutation}.
     \end{enumerate}
 \end{example}
 
@@ -4131,14 +4541,14 @@ In other words, curvature measures the failure of the assignment of the standard
 \end{defn}
 
 \begin{lem}[{{\cite[Lem.~1.5.2]{Cap}}}]\label{lem 1.5.2 Cap}
-    Let $\vartheta:P\to P'$ be a morphism of \glspl{pfb} which is a local diffeomorphism. If $\eta'$ is a Cartan connection on $P'$, then $\eta=\vartheta^\ast\eta'$ is a Cartan connection on $P$. If $\eta'$ and $\eta$ are fixed Cartan connections on $P$ and $P'$, then $\vartheta$ is a morphism of Cartan geometries iff it preserves the standard vector fields, i.e.\ $\vartheta_\ast\circ \eta^{-1}(A)=\eta^{\prime-1}(A)\circ\vartheta$. In this case the curvature forms $K$ and $K'$ (or $\kappa$ and $\kappa'$) are $\vartheta^\ast$-related.
+    Let $\vartheta:P\to P'$ be a morphism of \glspl{pfb} which is a local diffeomorphism. If $\eta'$ is a Cartan connection on $P'$, then $\eta=\vartheta^\ast\eta'$ is a Cartan connection on $P$. If $\eta'$ and $\eta$ are fixed Cartan connections on $P$ and $P'$, then $\vartheta$ is a morphism of Cartan geometries iff it preserves the constant vector fields, i.e.\ $\vartheta_\ast\circ \eta^{-1}(A)=\eta^{\prime-1}(A)\circ\vartheta$. In this case the curvature forms $K$ and $K'$ (or $\kappa$ and $\kappa'$) are $\vartheta^\ast$-related.
 \end{lem}
 \begin{proof}
     The Killing vector fields are given by $A_\ast(p)=\restr{\frac{\dd}{\dd t}}{0}p\cdot \rme^{tA}$, so equivariance of $\vartheta$ implies that $\vartheta^\ast \eta'$ reproduces the generators of Killing fields. Similarly, equivariance of $\vartheta$ and $\eta'$ implies equivariance of $\vartheta^\ast\eta'$. Since $\vartheta$ is a local diffeomorphism, $\vartheta^\ast\eta'=\eta'\circ \vartheta_\ast$ restricts to a linear isomorphism on each tangent space, so we have verified that $\vartheta^\ast\eta'$ is a Cartan connection.
 
-    The pullback $\vartheta^\ast\eta'$ evaluates on a standard field as 
+    The pullback $\vartheta^\ast\eta'$ evaluates on a constant field as 
     \[\vartheta^\ast\eta'(\eta^{-1}(A)_p)=\eta'(\vartheta(p))\left(\vartheta_{\ast p}\eta^{-1}(A)_p\right)\]
-    and the right hand side equals $A$ iff $\vartheta_\ast\circ \eta^{-1}(A)_p=\eta^{\prime-1}(A)(\vartheta(p))$. Thus, morphisms morphisms are characterized by the fact that they preserve the standard fields. The relatedness of the curvature forms follows immediately from their definition via the structure equation. Finally, the relation between $K$ and $K'$ implies 
+    and the right hand side equals $A$ iff $\vartheta_\ast\circ \eta^{-1}(A)_p=\eta^{\prime-1}(A)(\vartheta(p))$. Thus, morphisms morphisms are characterized by the fact that they preserve the constant fields. The relatedness of the curvature forms follows immediately from their definition via the structure equation. Finally, the relation between $K$ and $K'$ implies 
     \begin{align}
         \kappa_p(A,B)=&K_p\left(\eta^{-1}(A),\eta^{-1}(B)\right)=K'(\vartheta(p))\left(\eta^{\prime-1}(A),\eta^{\prime-1}(B)\right)=\\=&\kappa'_{\vartheta(p)}(A,B)
     \end{align}
@@ -4148,11 +4558,22 @@ In other words, curvature measures the failure of the assignment of the standard
 
 Various useful subcategories in $\Car_{(G,H)}$ can be defined by restrictions on curvature. Such restrictions are usually necessary to characterize Cartan geometries that are equivalent to simpler structures. The simplest way to restrict curvatures is by requiring the curvature function $\kappa$ to have values in a fixed subspace $\frakM\subset \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$. The simple transformation law $\kappa=\kappa'\circ \vartheta$ immediately implies that this specifies a full subcategory in $\Car_{(G,H)}$. However, as we have seen, $\kappa(p\cdot g)=g^{-1}\cdot \kappa(p)$, so the values of $\kappa$ always span an $H$-invariant subset in $\bigwedge^2(\frakg\slash\frakh)^2\otimes\frakg$. Thus, it is natural to require that $\frakM$ is an $H$-submodule. 
 
-\begin{defn}[$\Car_{(G,H)}^\frakM$]
+\begin{defn}[$\Car_{(G,H)}^\frakM$]\label{def category of cartan geom}
     Consider the category $\Car_{(G,H)}$. If $\frakM\subset \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ is an $H$-submodule, then we denote the full subcategory of Cartan geometries whose curvature functions take values in $\frakM$ by $\Car_{(G,H)}^\frakM$.
 
-    In particular, if $\frakM=0$, such Cartan geometries are called \emph{locally flat}, and if $\frakM=\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakh$, then they are called \emph{torsion-free}.
+    In particular, if $\frakM=0$, such Cartan geometries are called \emph{locally flat}, and if $\frakM=\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakh$, then they are called \emph{torsion-free}. Finally, if $\frakM=\Hom_\frakh(\bigwedge^2(\frakg\slash\frakh), \frakh)$, i.e.\ the set of $\ad(\frakh)$-invariants, then we say the geometry has \emph{constant curvature}.
 \end{defn}
+
+
+\begin{example}
+    When $H$ is compact, it is known from representation theory of Lie groups that $(\frakg\slash\frakh)^\ast\otimes\frakh$ decomposes into a direct sum of irreducible representations of $H$. Each irreducible component defines ``a component of curvature''. For example, in the Riemannian case it splits into three components, corresponding to the scalar, the Ricci, and the Weyl curvatures. In dimension $4$, the Weyl curvature firther splits into a self-dual and an anti-self-dual part. If $H$ is noncompact, then a decomposition into irreducibles may not be possible, but it may still contain submodules worth examining. For example, the composite mapping 
+    \begin{align}
+        \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakh\overset{\id\otimes \ad}{\to}&\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\End(\frakg\slash\frakh)\cong \\
+        \cong &\underset{t^\ast\wedge u^\ast\otimes v\otimes w^\ast}{\bigwedge^2(\frakg\slash\frakh)^\ast\otimes(\frakg\slash\frakh)\otimes (\frakg\slash\frakh)^\ast}
+        \underset{\mapsto}{\to} \underset{(t^\ast(v)u^\ast-u^\ast(v)t^\ast)\otimes w^\ast}{(\frakg\slash\frakh)^\ast\otimes (\frakg\slash\frakh)^\ast}
+    \end{align}
+    is $H$-equivariant, and hence its kernel is an $H$-submodule, called the \emph{normal submodule}. It is indirectly related to normal Cartan geometries, which are defined so that the Cartan geometry is uniquely determined by a set of geometric data that at the outset have no necessary relation to Cartan geometry, but determine one via Cartan's method of equivalence.
+\end{example}
 
 The reason for the naming of torsion-free geometries should be self-evident based on the examples of connections on $G$-structures that we saw. The name for locally flat geometries will be explained after the next proposition.
 
@@ -4166,7 +4587,7 @@ Since the homogeneous model $(G,H)$ will usually be fixed, we will sometimes abb
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    (1) Assume that the curvature vanishes. Then the Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} implies that for each $p\in P$, there is a neighborhood $V$ of $p$ in $P$ and a unique map $\varphi:V\to G$ such that $\varphi(p)=e$ and $\varphi^\ast\theta_G=\eta$. In particular, $\varphi$ respects the standard fields restricted to $V$. This implies that for each $q\in V$, $\varphi(q\cdot \rme^{A})=\varphi(q)\cdot \rme^{A}$ on a $0$-neighborhood in $\frakg$, and so $\varphi$ can be extended uniquely to a \gls{pfb} morphism over a neighborhood $U$ of $\pi(p)$. By equivariance we still have $\varphi^\ast\theta_G=\eta$ on the entire domain of $\varphi$. The other implication is obvious.
+    (1) Assume that the curvature vanishes. Then the Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} implies that for each $p\in P$, there is a neighborhood $V$ of $p$ in $P$ and a unique map $\varphi:V\to G$ such that $\varphi(p)=e$ and $\varphi^\ast\theta_G=\eta$. In particular, $\varphi$ respects the constant fields restricted to $V$. This implies that for each $q\in V$, $\varphi(q\cdot \rme^{A})=\varphi(q)\cdot \rme^{A}$ on a $0$-neighborhood in $\frakg$, and so $\varphi$ can be extended uniquely to a \gls{pfb} morphism over a neighborhood $U$ of $\pi(p)$. By equivariance we still have $\varphi^\ast\theta_G=\eta$ on the entire domain of $\varphi$. The other implication is obvious.
 
     (2) Again, by the Fundamental Theorem, a smooth map $f:G\to G$ satisfies $f^\ast\theta_G=\theta_G$ iff $f=L_g$ for some $g\in G$. Conversely, since left and right multiplications commute, any left multiplication is an automorphism of the bundle $G\to G\slash H$.
 
@@ -4332,7 +4753,7 @@ Thus, a soldering of $E$ to $M$ ``attaches'' a copy of $G\slash H$ to each point
 
     Now consider the map $\wt\theta$ defined by 
     \[\wt\theta:TM\to P\times_H (\frakg\slash\frakh),\quad X\mapsto \left[\left(p,\eta_p(X^\ast_p)+\frakh\right)\right],\]
-    where $p\in P_m$ and $X^\ast_p\in T_p\wt{P}$ is an arbitrary lift of $X$ to $p$ (i.e.\ $\pi_\ast(X^\ast_p)=X$). This is well-defined because $\eta_{p\cdot h}=\Ad_h^{-1}\circ\eta_p$ and because the values of $\eta_p$ on vertical vectors lie in $\frakh$, so $\eta_p(X^\ast_p)+\frakh$ is independent of the choice of the lift. By the Cartan condition on $\eta$, $\wt\theta$ is injective and hence an isomorphism of \glspl{vb}. Since $P$ is a reduction of $\wt{P}$, by Proposition~\ref{prop 1.6.7 RS2} $\wt\theta$ can also be viewed as an isomorphism $TM\to \wt{P}\times_G (\frakg\slash\frakg)$. Thus $\wt\theta\in\Omega^1(M;\wt{P}\times_G (\frakg\slash\frakh))$. It is clear that the 1-form $\theta$ defined in the statement is exactly the one corresponding to $\wt\theta$ via the bijection of Proposition~\ref{prop 1.2.12 RS2}. Therefore it is a soldering form.
+    where $p\in P_m$ and $X^\ast_p\in T_p\wt{P}$ is an arbitrary lift of $X$ to $p$ (i.e.\ $\pi_\ast(X^\ast_p)=X$). This is well-defined because $\eta_{p\cdot h}=\Ad_h^{-1}\circ\eta_p$ and because the values of $\eta_p$ on vertical vectors lie in $\frakh$, so $\eta_p(X^\ast_p)+\frakh$ is independent of the choice of the lift. By the Cartan condition on $\eta$, $\wt\theta$ is injective and hence an isomorphism of \glspl{vb}. Since $P$ is a reduction of $\wt{P}$, by Proposition~\ref{prop 1.6.7 RS2} $\wt\theta$ can also be viewed as an isomorphism $TM\to \wt{P}\times_G (\frakg\slash\frakh)$. Thus $\wt\theta\in\Omega^1(M;\wt{P}\times_G (\frakg\slash\frakh))$. It is clear that the 1-form $\theta$ defined in the statement is exactly the one corresponding to $\wt\theta$ via the bijection of Proposition~\ref{prop 1.2.12 RS2}. Therefore it is a soldering form.
 \end{proof}
 
 Note that $\theta$, in principle, is well-defined on all of $\wt{P}$, but becomes horizontal and $H$-equivariant only after restriction to $P$. Also, as seen in the proof, $o$ is everywhere transversal to the horizontal distribution $\calH E$, so under parallel transport the points $o(m)$ necessarily move. This is another drastic difference from principal $H$-connections: for example, on \glspl{vb} a linear connection must always preserve the zero section $o$.
@@ -4341,6 +4762,10 @@ Note that $\theta$, in principle, is well-defined on all of $\wt{P}$, but become
     Note that under the new definition of soldering, $TM$ is identified with $o^\ast \calV E$. In the case of \glspl{vb} there was a canonical distinguished section (the zero section) and hence a canonical isomorphism $o^\ast\calV E\cong E\cong P\times_H (\frakg\slash\frakh)$. This time, the isomorphism between the first and the last bundle come only via the two isomorphisms we've constructed above and depends on the Cartan connection:
     \[P\times_H(\frakg\slash\frakh)\overset{{\wt\theta}^{-1}}{\to}TM\overset{\vartheta}{\to}o^\ast\calV E.\]
     In the affine case, $\frakg\slash\frakh=\bbR^n$ and both of these maps are associated with the canonical soldering form.
+\end{rem}
+
+\begin{rem}
+    The curvature function $\kappa:P\to \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ is $H$-equivariant by Lemma~\ref{lem 1.5.1 Cap}, and therefore can be identified with a section of the associated bundle $P\times_H \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ via Proposition~\ref{prop 1.2.6 RS2}. By using the soldering isomorphism $\wt\theta:TM\to P\times_H(\frakg\slash\frakh)$, this section can then be converted to a section of $\bigwedge^2T^\ast M\otimes (P\times_H\frakg)$, i.e.\ an element of $\Omega^2(M;P\times_H\frakg)$. It will be useful to keep these isomorphisms implicit and interpret $\kappa$ as such a $2$-form. We will later identify $\kappa$ with the curvature form of the principal connection $\wt\eta$ on the extended bundle $\wt{P}$.
 \end{rem}
 
 
@@ -4356,19 +4781,180 @@ Now, in the special case of an \emph{effective} model $(G,H)$, the $G$-action on
     such that $(o,\calV^E\circ o_\ast)$ is a soldering of $E$ to $M$ in the sense of Definition~\ref{def soldering of E to M}.
 \end{defn}
 
-Recall our discussion of natural bundles following Definition~\ref{def natural bundle}. We showed that all natural bundles on the category of smooth manifolds are associated to a $k$-th order frame bundle. Now, in the context of the category $\Car_{(G,H)}$ of Cartan geometries the most general definition of a natural bundle is a functor $F:\Car_{(G,H)}\to \FB^\infty$, known as a \emph{gauge natural bundle}. However, the following simpler version of this concept will suffice for us. Given a gauge natural bundle $F$ on $\Car_{(G,H)}$, we can apply it to the homogeneous model $(G\to G\slash H,\theta_G)$. Since the left translations $L_g,g\in G$, are exactly the automorphisms of this Cartan geometry, $F$ turns them into automorphisms of $F(G\to G\slash H)$, turning it into a \emph{homogeneous bundle} (as discussed in Section~\ref{sec: homogeneous bundles}). By Proposition~\ref{prop 1.4.3 Cap}, we get an $H$-action on the fiber $S\coloneqq F(G\to G\slash H)_{[e]}$, which determines the homogeneous bundle $F(G\to G\slash H)$ up to isomorphism.
+If the Cartan geometry is not effective, then one cannot reconstruct the principal Cartan bundle from its associated bundles. However, every Cartan geometry has a family of bundles (and certain structures on them akin to soldering) naturally associated with it, which we now turn to. Recall our discussion of natural bundles following Definition~\ref{def natural bundle}. We showed that all natural bundles on the category of smooth manifolds are associated to a $k$-th order frame bundle. Now, in the context of the category $\Car_{(G,H)}$ of Cartan geometries, the most general definition of a natural bundle is a functor $\bm{F}:\Car_{(G,H)}\to \FB^\infty$, known as a \emph{gauge natural bundle}. 
+
+This definition can be made much more concrete. Given a gauge natural bundle $\bm{F}$ on $\Car_{(G,H)}$, we can apply it to the homogeneous model $(G\overset{\pi}{\to} G\slash H,\theta_G)$. Since the left translations $L_g,g\in G$, are exactly the automorphisms of this Cartan geometry, $\bm{F}$ turns them into automorphisms of $\bm{F}(G)$, turning it into a \emph{homogeneous bundle} (as discussed in Section~\ref{sec: homogeneous bundles}). By Proposition~\ref{prop 1.4.3 Cap}, we get an $H$-action $\sigma$ on the fiber $F\coloneqq \bm{F}(G)_{[e]}$, which determines the homogeneous bundle $\bm{F}(G)$ up to isomorphism. This allows us to reconstruct the entire functor $\bm{F}$ as the association functor for the action $\sigma$, which we denote as usual by $[\sigma]$. In other words, there is an equivalence between gauge natural bundles and functors of the form $[\sigma]:(P\to M,\eta)\mapsto P^{[\sigma]}=P\times_H F$. This leads to the following definition.
 
 \begin{defn}[Natural bundle of Cartan geometries]
-    Given a Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ and an $H$-manifold $S$, the associated bundle $P\times_H S$ is called a \emph{natural bundle associated to the Cartan bundle} $P$. By functoriality of associated bundles, each $S$ determines a natural bundle $F_S:\Car_{(G,H)}\to \FB^\infty$.
+    Given a Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ and an $H$-action $H\overset{\sigma}{\to}F$, the associated bundle $P^{[\sigma]}=P\times_H F$ is called a \emph{natural bundle associated to the Cartan bundle} $P$. By functoriality of associated bundles, each $\sigma$ determines a natural bundle $[\sigma]:\Car_{(G,H)}\to \FB^\infty$. Its action on objects and morphisms will be denoted $P\mapsto P^{[\sigma]}$ and $\vartheta\mapsto \vartheta^[{[\sigma]}]$, respectively.
 \end{defn}
 
-In this definition, $F_S(P\to M)$ doesn't depend on the Cartan connection $\eta$. However, as we have seen above, $\eta$ is necessary to produce soldering-like isomorphisms that allow us to identify natural bundles of $P$ with certain natural bundles of $M$, such as the tensor bundles. Using the isomorphism $\wt\theta:TM\to P\times_H(\frakg\slash\frakh)$, we can identify $T^\ast M$ with $P\times_H(\frakg\slash\frakh)^\ast$, and similarly for all higher tensor bundles.
+Thus, natural bundles are to Cartan geometries exactly what homogeneous bundles were to Klein geometries. In this definition, $[\sigma](P\overset{\pi}{\to} M)$ doesn't depend on the Cartan connection $\eta$. However, as we have seen above, $\eta$ is necessary to produce soldering-like isomorphisms that allow us to identify natural bundles of $P$ with certain natural bundles of $M$, such as the tensor bundles. In particular, using the isomorphism $\wt\theta:TM\to P\times_H(\frakg\slash\frakh)$, we can identify $T^\ast M$ with $P\times_H(\frakg\slash\frakh)^\ast$, and similarly for all higher tensor bundles. Thus, a more precise definition of natural bundles would include these $\eta$-induced structures in the value of the functor. The following remark describes what these structures are in a general setting.
 
 \begin{rem}
-    As in the case of the homogeneous model (cf.\ Remark~\ref{rem higher order Klein geometry}), we can describe natural bundles in terms of an underlying $G$-structure. Consider the familiar isotropy action $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ and, as before, let $K^1=\ker \underline{\Ad}$ and $H_1=H\slash K_1$. Then the space $P_1\coloneqq P\slash K_1$ is naturally a principal $H_1$-bundle over $M$. There is an evident projection $\pi_1:P\to P_1$. Now define $\theta\in\Omega^1(P_1,\frakg\slash\frakh)$ as follows. For $p_0\in P_1$ and $X\in T_{p_0}P_1$, choose $p\in P$ such that $\pi_0(p)=p_0$ and $X^\ast\in T_p P$ such that $\pi_{0\ast}(X^\ast)=X$. With this, put 
-    \[\theta(X)\coloneqq \eta(X^\ast)+\frakh.\]
-    Clearly this is indepedent of the choice of $X^\ast$. Moreover, all other choices of $p$ have the form $p\cdot k$ with $k\in K_1$, so we may choose $\Phi_{k\ast}X^\ast$ as the lift of $X$. Equivariance of $\eta$ then implies $\eta(\Phi_{k\ast }X^\ast)=\Ad_k^{-1}\circ \eta(X^\ast)$, and since $k\in K_1=\ker \underline{\Ad}$, the form $\theta$ is strictly horizontal. It is also easy to verify that $\theta$ is $H_1$-equivariant and smooth. Thus, $(P_1\to M,\theta)$ is a first-order $H_1$-structure. Left actions of $H_1$ are the same thing as left actions of $H$ such that $K_1$ acts trivially, and the former correspond to natural bundles for $H_1$-structures. Via the Cartan connection $\eta$ one can view any such bundle as a natural bundle for Cartan geometries of type $(G,H)$.
+    As in the case of the homogeneous model (cf.\ Remark~\ref{rem higher order Klein geometry}), we can describe natural bundles in terms of an underlying $G$-structure. Consider the familiar isotropy action $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ and, as before, let $K_1=\ker \underline{\Ad}$ and $H_1=H\slash K_1$. Then the space $P_1\coloneqq P\slash K_1$ is naturally a principal $H_1$-bundle over $M$. There is an evident projection $\pi_1:P\to P_1$. Now define $\theta_1\in\Omega^1(P_1,\frakg\slash\frakh)$ as follows. For $p_0\in P_1$ and $X\in T_{p_0}P_1$, choose $p\in P$ such that $\pi_0(p)=p_0$ and $X^\ast\in T_p P$ such that $\pi_{0\ast}(X^\ast)=X$. With this, put 
+    \[\theta_1(X)\coloneqq \eta(X^\ast)+\frakh.\]
+    Clearly this is indepedent of the choice of $X^\ast$. Moreover, all other choices of $p$ have the form $p\cdot k$ with $k\in K_1$, so we may choose $\Phi_{k\ast}X^\ast$ as the lift of $X$. Equivariance of $\eta$ then implies $\eta(\Phi_{k\ast }X^\ast)=\Ad_k^{-1}\circ \eta(X^\ast)$, and since $k\in K_1=\ker \underline{\Ad}$, the form $\theta_1$ is strictly horizontal. It is also easy to verify that $\theta_1$ is $H_1$-equivariant and smooth. Thus, $(P_1\to M,\underline{\Ad},\theta_1)$ determines a first-order $H_1$-structure according to Remark~\ref{rem G-structure as soldering}. Left actions of $H_1$ are the same thing as left actions of $H$ such that $K_1$ acts trivially, and the former correspond to natural bundles for $H_1$-structures. Via the Cartan connection $\eta$ one can view any such bundle as a natural bundle for Cartan geometries of type $(G,H)$.
 \end{rem}
+
+\begin{defn}[Natural section]
+    Let $[\sigma]:\Car_{(G,H)}\to \FB^\infty$ be a natural bundle of Cartan geometries $P\overset{\pi}{\to}M$ of type $(G,H)$. Then a natural section of $[\sigma]$ is a family of smooth sections $s_{P}:M\to P^{[\sigma]}$ such that for any morphism $\vartheta:(P\overset{\pi}{\to} M,\eta)\to (P'\overset{\pi'}{\to} M',\eta')$ covering $\underline{\vartheta}:M\to M'$ we have $\vartheta^{[\sigma]}\circ s_P=s_{P'}\circ \underline{\vartheta}$, i.e.\ the following diagram commutes:
+    \[
+    \begin{tikzcd}
+        P^{[\sigma]}\arrow[r,"\vartheta^{[\sigma]}"] & P^{\prime[\sigma]}\\
+        M\arrow[u,"s_P"]\arrow[r,swap,"\underline{\vartheta}"]& M'.\arrow[u,swap,"s_{P'}"]
+    \end{tikzcd}
+    \]
+\end{defn}
+
+The correspondence between natural bundles and typical fibers $F$ extends to natural sections as follows.
+
+\begin{prop}\label{prop natural sections}
+    Given a natural bundle $[\sigma]$ on $\Car_{(G,H)}$ determined by an action $H\overset{\sigma}{\acts}F$, there is a natural one-to-one correspondence between natural sections of $[\sigma]$ and $H$-invariant elements of $F$.
+\end{prop}
+\begin{proof}
+    Considering automorphisms of the homogeneous model $G\to G\slash H$, we see that for any natural section $s$, the section $s_G$ must be a $G$-invariant section of the homogeneous bundle $G^{[\sigma]}$ as introduced in Section~\ref{sec: Frobenius reciprocity}. By the Frobenius Reciprocity Theorem~\ref{thm 1.4.4 Cap}, such sections are in bijective correspondence with $H$-invariant elements of the fiber $F=G^{[\sigma]}_{[e]}$.
+    But for any $H$-invariant element $f_0\in F$ and any Cartan geometry $(P\overset{\pi}{\to}M,\eta)$ of type $(G,H)$ we may define a smooth section $s_\pi:M\to P\times_H F$ by 
+    \[s_P(m)\coloneqq [(p,f_0)],\quad p\in P_m,\]
+    since this is independent of the choice of $p$.  This clearly defines a natural section, and is obviously the inverse to the map $s\mapsto f_0$.
+\end{proof}
+
+\begin{example}[Natural Riemannian metrics]
+    Natural Riemannian metrics are natural sections of the natural bundle that takes $(P\to M,\eta)$ to $\rmS^2 T^\ast M$, where the latter is identified with $P\times_H \rmS^2(\bbR^n)^\ast$ via the soldering. Thus, there exists a natural Riemannian metric on Cartan geometries of type $(G,H)$ iff there is a $G$-invariant Riemannian metric on $G\slash H$, and any choice of a $G$-invariant metric on $G\slash H$ canonically extends to a natural Riemannian metric.
+\end{example}
+
+
+Finally, similar to natural sections, we can define \emph{natural connections}. Just like natural sections, they end up being classified in terms of invariant connections on the homogeneous model. In particular, they exist only for reductive Cartan geometries.
+
+\begin{prop}
+    Given a natural bundle $[\sigma]$ on $\Car_{(G,H)}$, there is a natural one-to-one correspondence between natural connections on $[\sigma]$ and reductive ($H$-invariant) decompositions $\frakg=\frakh\oplus\frakm$.
+\end{prop}
+\begin{proof}
+    Again, in the case of the homogeneous model $G\to G\slash H$, any natural connection on the resulting bundle $G^{[\sigma]}$ over $G\slash H$ must be $G$-invariant. 
+    In Section~\ref{sec: homogeneous bundles}, we showed that such a connection exists iff $(G,H)$ is reductive and corresponds to a unique reductive decomposition $\frakg=\frakh\oplus\frakm$.  
+    
+    Now, any Cartan connection $\eta\in\Omega^1(P;\frakg)$ splits as $\eta=\eta_\frakh+\eta_\frakm$ and it follows immediately from the definition that $\eta_\frakh$ is a principal $H$-connection on $P$. In fact, it is a reduction of $\wt\eta$ to $H$. Forming induced connections, we see that any invariant connection on the homogeneous bundle $G\to G\slash H$ extends to a natural connection on the corresponding natural bundle of Cartan geometries of type $(G,H)$.
+\end{proof}
+
+
+Let us retrace this construction in detail for the special case of natural \glspl{vb}. Given a homogeneous \gls{vb} $E\to G\slash H$, let $E_{[e]}$ be the fiber over the basepoint $[e]=eH$. Then, as we saw in Section~\ref{sec: homogeneous bundles}, we obtain a representation $\sigma:H\to \GL(E_{[e]})$ so that $E\cong G^{[\sigma]}=G\times_H E_{[e]}$. The frame bundle of $E$ is naturally isomorphic to $G\times_H \GL(E_{[e]})$, and in Section~\ref{sec: invariant connections} we saw that homogeneous linear connections on $E$ correspond to homogeneous principal connections on the frame bundle.  For a Cartan geometry $(P\overset{\pi}{\to} M,\eta)$ of type $(G,H)$, we evidently have, by the associativity of fibered products and by the usual cancellation property of the symbol $G\times_G $ for any group $G$,
+\[(P\times_H\GL(E_{[e]}))\times_{\GL(E_{[e]})}E_{[e]}\cong P\times_H E_{[e]}.\]
+Starting from an invariant linear connection on $E$, Theorem~\ref{thm 1.5.6 Cap} gives us a natural principal connection on the principal bundle $P\times_H \GL(E_{[e]})$, and hence a linear connection on its associated bundle $P\times_H E_{[e]}$. Naturality of this connection follows from functoriality of the construction of associated bundles.
+
+
+
+
+
+
+
+
+\subsection{Tractor bundles}
+
+We now consider another important class of natural bundles, which essentially correspond to the case $\Lambda=\id_\frakg$, whereby Theorem~\ref{thm 1.5.6 Cap} gives a natural principal connection $\wt\eta$ on the extended principal bundle $\wt P=P\times_H G$. Correspondingly, there are natural connections on all natural bundles associated to the Cartan bundle with respect to an action of $H$ that is the restriction of an action of $G$. Since these bundles are not generally trivial, the existence of such natural connections is already a nontrivial fact.
+
+\begin{defn}[Tractor bundles]\index{Tractor bundles}
+    For a Cartan geometry $(P\to M,\eta)$, a tractor bundle is an associated \gls{vb} $E=P^{[\sigma]}=P\times_H V$ with the induced $G$-connection $\omega^E$. In particular, the \emph{adjoint tractor bundle} is $\calT\coloneqq P\times_H \frakg\cong \Ad(\wt{P})$, where $H$ acts by restriction of the adjoint representation.
+\end{defn}
+
+The short exact sequence $0\to\frakh\to\frakg\to\frakg\slash\frakh\to 0$ of $H$-modules gives rise to the short exact sequence 
+\[0\to\Ad(P)\to \calT\cong \Ad(\wt{P})\overset{\Pi}{\to} TM\to 0,\]
+where we have identified $TM$ with $P\times_H (\frakg\slash\frakh)$ using the canonical soldering isomorphism $\wt\theta$ induced by the Cartan connection. Thus, we can view $\calT$ as an extension of the tangent bundle. Note that every fiber of $\calT$ carries a natural structure of a Lie algebra, whose bracket will be denoted by $\{\,,\,\}$. Then, the adjoint tractor bundle can act on elements (and sections) of all other tractor bundles via an action that will be denoted by $\bullet$. Finally, the space of sections $\Gamma^\infty(\calT)$ admits another Lie bracket induced from the Lie derivative in the base. The following proposition describes these operations in detail.
+
+\begin{prop}[{{\cite[Prop.~1.5.7]{Cap}}}]\label{prop 1.5.7 Cap}
+    Let $(P\to M,\eta)$ be a Cartan geometry of type $(G,H)$, $\calT\to M$ its adjoint tractor bundle and $\Pi:\calT\to TM$ the natural projection defined above. Let $E=P\times_H V$ be the tractor bundle coresponding to a representation $\sigma:H\to\GL(V)$. Then:
+    \begin{enumerate}[label=(\arabic*)]
+        \item The curvature function $\kappa$ of $\eta$ can be naturally viewed as an element of $\Omega^2(M;\calT)$.
+        \item There is a natural bundle morphism $\{\,,\,\}:\calT\oplus\calT\to \calT$, called the \emph{algebraic bracket of adjoint tractors}, which makes each fiber $\calT_m$, $m\in M$, into a Lie algebra isomorphic to $\frakg$.
+        \item There is an isomorphism between $\Gamma^\infty(\calT)$ and the space $\fX(P)^H$ of invariant vector fields on $P$. This induces a \emph{Lie bracket of adjoint tractors}, denoted $[\,,\,]$, on $\Gamma^\infty(\calT)$. For $s_1,s_2\in\Gamma^\infty(\calT)$, one has $\Pi([s_1,s_2])=[\Pi(s_1),\Pi(s_2)]$, using the Lie derivative on the right hand side.
+        \item There is a natural bundle morphism $\bullet:\calT\oplus E\to E$. For each $m\in M$, this makes the fiber $E_m$ into a module over the Lie algebra $\calT_m$. In particular, for $s_1,s_2\in\Gamma^\infty(\calT)$ and $t\in \Gamma^\infty(E)$, 
+        \[\{s_1,s_2\}\bullet t=s_1\bullet(s_2\bullet t)-s_2\bullet(s_1\bullet t).\]
+        \item The operation introduced in (4) is parallel for the canonical tractor connections. Denoting them by $\nabla^\calT$ and $\nabla^E$, we get 
+        \begin{align}
+            \nabla^\calT_X\{s_1,s_2\}=&\{\nabla^\calT_X s_1,s_2\}+\{s_1,\nabla^\calT_X s_2\},\\
+            \nabla^E_X(s\bullet t)=&(\nabla^\calT_X s)\bullet t+s\bullet (\nabla^E_X t)
+        \end{align}
+        for $s_1,s_2,s\in\Gamma^\infty(\calT)$, $t\in\Gamma^\infty(E)$, and $X\in\fX(M)$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}[label=(\arabic*)]
+        \item The curvature function $\kappa:P\to \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ was shown to be $H$-equivariant in Lemma~\ref{lem 1.5.1 Cap}, thus it corresponds to a smooth section of the associated bundle, which by definition is isomorphic (via $\eta$, or, more precisely, the soldering morphism $\wt\theta$) to $\bigwedge^2T^\ast M\otimes\calT$.
+        \item $\{\,,\,\}$ is simply the morphism between associated bundles induced by the Lie bracket of $\frakg$, which is $H$-equivariant.
+        \item Since $\calT=P\times_H\frakg$, sections of the adjoint tractor bundle are in bijective correspondence with equivariant functions $\varphi\in\Hom_H(P,\frakg)$. On the other hand, since $\eta$ trivializes $TP$, the map $X\mapsto \eta(X)$ defines a linear isomorphism between $\fX(P)$ and $C^\infty(P,\frakg)$. A vector field $X$ corresponds to an $H$-equivariant function exactly when it is invariant since
+        \[\eta(X(p\cdot h))=\Ad_h^{-1}\eta(X(p))=\eta(p\cdot h)(\Phi_{h\ast}X(p)),\]
+        and the actions of $\eta$ on both sides are linear isomorphisms.
+
+        Naturality of the Lie bracket implies that $\Phi_h^\ast([X,Y])=[\Phi_h^\ast X,\Phi_h^\ast Y]$. Therefore, $\fX(P)^H$ is a Lie subalgebra in $\fX(P)$, and we can pull back the Lie bracket via the isomorphism to $\Gamma^\infty(\calT)$. Right invariant vector fields on $P$ are projectable. From the soldering isomorphism $\wt\theta:TM\to P\times_H (\frakg\slash\frakh)$ we see that $\Pi:\calT\to TM$ corresponds to projecting right invariant vector fields. Thus, by naturality of the Lie derivative, $\Pi([s_1,s_2])=[\Pi(s_1),\Pi(s_2)]$.
+        \item By the naturality properties of Lie group actions, for $g\in G$ and $A\in\frakg$, we have
+        \[\sigma_\ast(\Ad_g A)\circ \sigma(g)=\sigma(g)\circ \sigma_\ast(A).\]
+        This means that the bilinear map $\frakg\times V\to V$ induced by $\sigma_\ast$ is $G$-equivariant and hence $H$-equivariant, and thus induced a natural map $\bullet:\calT\oplus E\to E$ on associated bundles.
+        \item The operations in (2) and (4) are actually induced by $G$-equivariant maps on the corresponding representations. Hence, we can also view them as being induced on bundles associated to $\wt{P}$. But then the tractor connections are all induced from $\wt\eta$. Maps between associated bundles coming from equivariant maps between the inducing representations are clearly parallel for these connections. Expanding this leads to the claimed formulas.
+    \end{enumerate}
+\end{proof}
+
+
+\begin{defn}[Torsion tensor]
+    Let $\kappa\in\Omega^2(M;\calT)$ be the curvature of a Cartan geometry. Then $\sfT\coloneqq \Pi\circ\kappa\in\Omega^2(M;TM)$ is called the torsion tensor of the Cartan geometry.
+
+    The torsion tensor vanishes iff the Cartan geometry is torsion-free in the sense of Definition~\ref{def category of cartan geom}, and then its Cartan curvature takes values in the bundle $\Ad(P)=P\times_H \frakh$.
+\end{defn}
+
+Using the interpretation of $\kappa$ as a form with values in $\calT$, we can give a general description of the curvatures of natural principal connections. For a Cartan geometry $(P\to M,\eta)$ of type $(G,H)$, and a Lie group homomorphism $\lambda:H\to K$, consider again the bundle $P^{[\lambda]}=P\times_H K$. Consider now a principal connection form $\omega_\Lambda$ on $P^{[\lambda]}$ determined by a map $\Lambda:\frakg\to\frakk$ via Theorem~\ref{thm 1.5.6 Cap}. This connection then has a curvature form $\Omega_\Lambda=D^{\omega_\Lambda}\omega_\Lambda\in\Omega^2(M;\Ad(P^{[\lambda]}))$.
+
+On the other hand, by Proposition~\ref{prop 1.4.6 Cap}, the map $(A,B)\mapsto [\Lambda(A),\Lambda(B)]-\Lambda([A,B])$ descends to an $H$-equivariant map $\bigwedge^2(\frakg\slash\frakh)\to \frakk$, which can be viewed as an $H$-invariant element of $S=\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakk$. In view of Proposition~\ref{prop natural sections}, this gives rise to a natural section of the associated natural bundle, which is then identified with a natural element $\Omega^0_\Lambda\in\Omega^2(M;P\times_H \frakk)$ via the natural soldering isomorphism $TM\to P\times_H(\frakg\slash\frakh)$.  Using the obvious isomorphism between $P\times_H \frakk$ and $\Ad(P^{[\lambda]})=(P\times_H K)\times_K\frakk$ given by 
+\[P\times_H \frakk\to \Ad(P^{[\lambda]}),\quad [(p,A)]\mapsto [(\iota_e(p),A)],\]
+where $\iota_e(p)=[(p,e)]\in P\times_H K$ is the canonical map $P\to P^{[\lambda]}$, we can view $\Omega^0_\Lambda$ as an element of $\Omega^2(M;\Ad(P^{[\lambda]}))$ as well.
+
+We now establish the relationship between $\Omega^0_\Lambda$ and $\Omega_\Lambda$. First note that $\Lambda:\frakg\to \frakk$ is $H$-equivariant, so it induces a morphism of the corresponding associated bundles $\calT$ and $\Ad(P^{[\lambda]})$, which we denote by the same symbol:
+\[\Lambda: \calT=P\times_H\frakg\to P\times_H \frakk =P^{[\Ad\circ \lambda]}\cong \Ad(P^{[\lambda]}).\]
+
+
+% \begin{defn}[Natural curvature endomorphism]
+%     The $2$-form $\sfR^0_\Lambda\in\Omega^2(M;P\times_H \frakk)$ defined above is called the curvature endomorphism for the natural principal connection on the bundle $P^{[\lambda]}=P\times_H K$ associated to a Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ via a homomorphism $\lambda:H\to K$, and a linear map $\Lambda:\frakg\to\frakk$ satisfying properties (i)-(ii) of Theorem~\ref{thm 1.4.5 Cap}.
+% \end{defn}
+
+\begin{cor}[{{\cite[Cor.~1.5.7]{Cap}}}]\label{cor 1.5.7 Cap}
+    Let $\omega_\Lambda\in\Omega^1(P^{[\lambda]},\frakk)$ be the natural principal connection associated to the Cartan geometry $(P\to M,\eta)$ via the map $\Lambda:\frakg\to\frakk$ as in Theorem~\ref{thm 1.5.6 Cap}. Then its curvature form $\Omega_\Lambda\in\Omega^2(M;\Ad(P^{[\lambda]}))$ satisfies 
+    \[\Omega_\Lambda=\Lambda\circ\kappa+\Omega^0_\Lambda,\]
+    where $\kappa\in\Omega^2(M;\calT)$ is the Cartan curvature of $\eta$.
+
+    In particular, if $E=P^{[\sigma]}=P\times_H V$ is a tractor bundle, then the curvature endomorphism $\sfR^E\in\Omega^2(M;\End(E))$ (see Definition~\ref{def curvature endomorphism}) of the canonical tractor connection $\omega^E$ is given by 
+    \[\sfR^E(X,Y)t=\kappa(X,Y)\bullet t,\quad X,Y\in\fX(M),t\in\Gamma^\infty(E).\]
+\end{cor}
+\begin{proof}
+    Let $\iota_e:P\to P^{[\lambda]}$ be the canonical map $\iota_e(p)=[(p,e)]$ as usual, so the connection satisfies $\iota_e^\ast\omega_\Lambda=\Lambda\circ\eta$. In particular,
+    \[[\iota_e^\ast\omega_\Lambda(X),\iota_e^\ast\omega_\Lambda(Y)]=[\Lambda\circ\eta(X),\Lambda\circ\eta(Y)].\]
+    On the other hand, we also get $\iota_e^\ast\dd\omega_\Lambda=\Lambda\circ\dd\eta$, and inserting the definition of Cartan curvature we obtain 
+    \[\iota_e^\ast\dd\omega_\Lambda(X,Y)=\Lambda\circ\kappa(\eta(X),\eta(Y))-\Lambda([\eta(X),\eta(Y)]).\]
+    Summing with the first formula above, we obtain the pullback of the curvature form $\Omega_\Lambda=D^{\omega_\Lambda}\omega_\Lambda\in \Omega^2(P^{[\lambda]},\frakk)$.
+
+    In the case of a tractor bundle $\Lambda=\id_\frakg$, so $\Omega^0_\Lambda=0$, and we are left with $\iota_e^\ast\Omega_\Lambda=\kappa$. To convert to the curvature endomorphism of the induced connection, we need to interpret the values of $\kappa$ as acting on $E$ via $\sigma_\ast$, i.e.\ $\sfR_\Lambda=\sigma_\ast\circ \Omega_\Lambda$. But this is exactly the definition of $\bullet$ in Proposition~\ref{prop 1.5.7 Cap}.
+\end{proof}
+
+\begin{rem}
+    In the special case of the extended bundle $\wt{P}=P\times_H G$, $\Omega^0_\lambda=0$ since $\Lambda=\id_\frakg$, and the induced principal connection is $\wt\eta$ with curvature $\wt\Omega=D^{\wt\eta}\wt\eta$. Therefore $\wt\Omega=\kappa$. Here, we are implicitly using the isomorphism between $P\times_H\frakg$ and $\Ad(\wt P)$ to build the chain of isomorphisms
+    \[\Omega^2_{\hor}(\wt{P},\frakg)^{\Ad}\to \Omega^2(M;\wt{P}\times_G \frakg)\to \Omega^2(M;P\times_H\frakg)\to \Omega^2_{\hor}(P,\frakg)^{\Ad}.\]
+    Thus, more precisely, $\kappa$ is the pullback of $\wt\Omega\in\Omega^2(\wt{P},\frakg)$ to $P$.
+\end{rem}
+
+
+
+\subsection{Fundamental derivative}
+
+
+Differentiating $H$-equivariant smooth functions with respect to $H$-invariant vector fields, one obtaines $H$-equivariant functions. This observation implies the existence of natural differential operators on arbitrary natural bundles. We focus on natural \glspl{vb} here, and only sketch out the case of general bundles.
+
+Let $E$ be a natural \gls{vb} associated to the Cartan bundle via a representation $\sigma:H\to \GL(V)$. A section $s\in\Gamma^\infty(\calT(P))$ corresponds to an $H$-invariant vector field $X\in\fX(P)^H$, while a section $t\in\Gamma^\infty(E(P))$ corresponds to an $H$-equivariant function $\wt{t}\in\Hom_H(P,V)$. Now for the function $X\cdot \wt{t}:P\to V$ we compute 
+\[X(p\cdot h)\cdot \wt{t}=(\Phi_{h\ast} X(p))\cdot \wt{t}=X(p)\cdot (\wt{t}\circ \Phi_h)=\sigma(h)^{-1}(X(p)\cdot \wt{t}).\]
+Hence, $X\cdot\wt{t}$ is $H$-equivariant, so it corresponds to a unique smooth section $D_s t\in\Gamma^\infty(E(M))$.
+
+
+\begin{defn}[Fundamental derivative]
+    For a given natural \gls{vb} $E$ on Cartan geometries of type $(G,H)$, we define the fundamental derivative $D:\Gamma^\infty(\calT(P))\times\Gamma^\infty(E(P))\to \Gamma^\infty(E(P))$ as the map $(s,t)\mapsto D_s t$ described above.  By construction, this operator is bilinear and tensorial, and thus $C^\infty(M)$-linear in $s$.
+\end{defn}
+
+
+
 
 
 
@@ -4384,9 +4970,9 @@ In this definition, $F_S(P\to M)$ doesn't depend on the Cartan connection $\eta$
 
 
 \begin{defn}[Riemannian metric on a \gls{vb}]\index{Metric!on a bundle}
-Let $E\overset\pi\to M$ be a real \gls{vb}. A (Riemannian) bundle metric on $E$ is a covariant tensor field $h\in\Gamma(T^0_2 E)$ such that
+Let $E\overset\pi\to M$ be a real \gls{vb}. A (Riemannian) bundle metric on $E$ is a covariant tensor field $h\in\Gamma^\infty(T^0_2 E)$ such that
 \begin{enumerate}
-    \item $h$ is symmetric, i.e.\ $h\in\Gamma(\Sigma^2 E^\ast)$;
+    \item $h$ is symmetric, i.e.\ $h\in\Gamma^\infty(\Sigma^2 E^\ast)$;
     \item $h$ is non-degenerate, i.e.\ when viewed as a morphism $h\in\Hom(E,E^\ast)$, it is an isomorphism;
     \item $h$ is positive: $h(e,e)\geq 0$ and $h(e,e)=0$ iff $e=0$. This in fact implies Property 2.
 \end{enumerate}
@@ -4420,7 +5006,7 @@ Let $h$ a bundle metric on $E\overset\pi\to M$ and let $D< E$ be a subbundle. De
 where $\pr_D$ is the fiberwise orthogonal projection onto $D$. Then $D^\perp$ is a subbundle of $E$.
 \end{prop}
 \begin{proof}
-Let $\{E_1,\ldots,E_k\}$ be a local orthonormal frame such that $D=\mathrm{Span}(E_1,\ldots,E_m)$ for some $m\leq k$ (such local frames exist by the standard Gram-Schmidt orthogonalization procedure). Then the orthogonal projection is locally written as
+Let $\{E_1,\ldots,E_k\}$ be a local orthonormal frame such that $D=\Span(E_1,\ldots,E_m)$ for some $m\leq k$ (such local frames exist by the standard Gram-Schmidt orthogonalization procedure). Then the orthogonal projection is locally written as
 \[\pr_D \left(\sum_{j=1}^k s^j E_j\right)=\sum_{j=1}^m s^j E_j.\]
 This definition is in fact basis independent, i.e.\ defines a global bundle morphism $\pr_D:E\to E$. Therefore $D^\perp =\ker (\pr_D)$ and is a subbundle by Theorem \ref{subbundles thm}.
 \end{proof}
@@ -4436,7 +5022,7 @@ A smooth map between two Riemannian manifolds $f:(M,g)\to(M',g')$ is called an i
 \end{defn}
 
 \begin{cor}
-Let $(M^m,g)$ be a Riemannian manifold and $S\sub M$ with $\dim S=k$. Define $D=TS$ and consider the normal bundle $NS\coloneqq D^\perp<\restr{TM}{S}$. Since this is a subbundle of $TM$, we can find local orthonormal $(m-k)$-frames for $NS$. If $\codim S=1$, then $NS=\mathrm{Span}(N)$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{TM}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
+Let $(M^m,g)$ be a Riemannian manifold and $S\sub M$ with $\dim S=k$. Define $D=TS$ and consider the normal bundle $NS\coloneqq D^\perp<\restr{TM}{S}$. Since this is a subbundle of $TM$, we can find local orthonormal $(m-k)$-frames for $NS$. If $\codim S=1$, then $NS=\Span(N)$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{TM}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
 \end{cor}
 
 
@@ -4555,7 +5141,7 @@ In local (positively ordered) coordinates, \[\mu_g=\sqrt{\det(g_{ij})}\dd x^1\we
     Let $(M,g)$ be a Riemannian manifold and $S\sub M$ an orientable submanifold embedded via $i:S\hookrightarrow M$ with a chosen unit normal vector field $N$. Then:
     \begin{enumerate}
         \item $\mu_{\wt{g}}=i^\ast (i_N \mu_g)$, where $\wt{g}=i^\ast g$ is the induced metric on $S$;
-        \item given another vector field $X\in\Gamma(\restr{TM}{S})$, we have 
+        \item given another vector field $X\in\Gamma^\infty(\restr{TM}{S})$, we have 
         \[i^\ast(i_X\mu_g)=\langle X,N\rangle_g \cdot \mu_{\wt{g}}.\]
     \end{enumerate}
 \end{prop}
@@ -4872,7 +5458,7 @@ However, when can a real manifold be turned into a complex one?
     An almost complex structure $\sfJ$ on a real manifold $M$ is called integrable if there is a structure of a complex manifold on $M$ that induces the complex structure $\sfJ$ on $TM$ as described above.
 \end{defn}
 
-Let $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ be the standard coordinates on $\mathbb{C}^n$ (i.e.\ $z^j=x^j+iy^j$) representing a local chart on a complex manifold $M$. We have $TM=\mathrm{Span}\{\partial_{x^j},\partial_{y^j}\}_{j=1}^n$. Then the induced complex structure on $TM$ reads 
+Let $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ be the standard coordinates on $\mathbb{C}^n$ (i.e.\ $z^j=x^j+iy^j$) representing a local chart on a complex manifold $M$. We have $TM=\Span\{\partial_{x^j},\partial_{y^j}\}_{j=1}^n$. Then the induced complex structure on $TM$ reads 
 \[J(\partial_{x^k})=\partial_{y^k},\quad J(\partial_{y^k})=-\partial_{x^k}.\]
 
 \begin{defn}[Holomorphic tangent bundle]\index{Holomorphic tangent bundle}
@@ -4881,7 +5467,7 @@ Let $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ be the standard coordinates on $\mathbb{C}
     Furthermore, define the two eigen-subbundles of $T^\mathbb{C}$
     \[T^{1,0}M\coloneqq \ker(J-i\cdot \id),\quad T^{0,1}M\coloneqq\ker(J+i\cdot\id).\]
     If $M$ was a complex manifold and $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ are coordinates on it as described above, then 
-    \[T^{1,0}M=\mathrm{Span}_\mathbb{C}\left\{\partial_{z^j}\equiv \frac12(\partial_{x^j}-i\partial_{y^j})\right\},\quad T^{0,1}M=\overline{T^{1,0}M}=\mathrm{Span}_\mathbb{C}\left\{\partial_{\bar z^j}\equiv \frac12(\partial_{x^j}+i\partial_{y^j})\right\}.\]
+    \[T^{1,0}M=\Span_\mathbb{C}\left\{\partial_{z^j}\equiv \frac12(\partial_{x^j}-i\partial_{y^j})\right\},\quad T^{0,1}M=\overline{T^{1,0}M}=\Span_\mathbb{C}\left\{\partial_{\bar z^j}\equiv \frac12(\partial_{x^j}+i\partial_{y^j})\right\}.\]
     The subbundles are called the holomorphic and anti-holomorphic tangent bundles, respectively.
 \end{defn}
 
@@ -4926,7 +5512,7 @@ But when is the converse true, i.e.\ what conditions on the almost complex struc
 
 Since $T^\mathbb{C}M=T^{1,0}\oplus T^{0,1}M$, we have
 \begin{gather}
-    (T^\mathbb{C}M)^\ast=(T^{1,0}M)^\ast \oplus (T^{0,1}M)^\ast=T^\ast_{0,1}M\oplus T^\ast_{1,0}M,\\ T^\ast_{0,1}M=\mathrm{Span}(\dd z^j),\;\; T^\ast_{1,0}M=\mathrm{Span}(\dd\bar z^j).
+    (T^\mathbb{C}M)^\ast=(T^{1,0}M)^\ast \oplus (T^{0,1}M)^\ast=T^\ast_{0,1}M\oplus T^\ast_{1,0}M,\\ T^\ast_{0,1}M=\Span(\dd z^j),\;\; T^\ast_{1,0}M=\Span(\dd\bar z^j).
 \end{gather}
 Indeed, $\dd z^j(\partial_{z^k})=\delta^j_k$ and $\dd \bar z^j (\partial_{\bar z^k})=\delta^j_k$.
 Finally, 
@@ -4940,7 +5526,7 @@ We define the corresponding exterior bundles.
 \begin{defn}
     The complex exterior bundles $\bigwedge^{p,q}M$ are defined by the equalities \[\bigwedge^k(T^\ast_\mathbb{C}M)=\bigwedge^k(T^\ast_{1,0}M\oplus T^\ast_{0,1}M)=\bigoplus_{p+q=k}\bigwedge^p(T^\ast_{1,0}M)\otimes \bigwedge^q(T^\ast_{0,1}M)\equiv \bigoplus_{p+q=k}\bigwedge^{p,q}M.\]
     Furthermore, we define the spaces of complex differential forms of degree $(p,q)$, denoted by $\Omega^{p,q}(M)$, as the sections of these bundles:
-    \[\Omega^{p,q}(M)=\Gamma(\bigwedge^{p,q}M).\]
+    \[\Omega^{p,q}(M)=\Gamma^\infty(\bigwedge^{p,q}M).\]
     If $\omega\in\Omega^{p,q}(M)$, then in local coordinates it has the form
     \[\omega=\sum_{I,J}\underbrace{\omega_{i_1\cdots i_pj_1\cdots j_q}}_{\omega_{I,J}}\underbrace{\dd z^i\wedge\cdots\wedge \dd z^{i_p}\wedge\dd \bar z^{j_1}\wedge\cdots\wedge \dd\bar z^{j_q}}_{\dd z^I\wedge \dd\bar z^J},\]
     where the sum is over all multi-indices, e.g. $I=(i_1,\ldots,i_p)$, $1\leq i_1<i_2\ldots<i_p\leq n$. Here, the coefficients are $\omega_{I,J}\in C^\infty (U,\mathbb{C})$.
