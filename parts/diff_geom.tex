@@ -4067,15 +4067,15 @@ We have just established that in the presence of a local holonomic $k$-frame $\{
 Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_p\subset T_p M$ for every $p\in M$. If the dimension of $D_p$ is constant and equal to $k$, then $D$ is said to be of rank $k$. $D$ is called a \emph{smooth distribution} if it is a subbundle of $TM$.
 
 \begin{defn}[Integral manifolds]\index{Integral manifold}
-    Let $D\subset TM$ be a smooth distribution (i.e.\ a subbundle of $TM$). An immersed submanifold $N<M$ is called an integral manifold of $D$ if $T_p N=D_p$ for all $p\in N$.
+    Let $D< TM$ be a smooth distribution (i.e.\ a subbundle of $TM$). An immersed submanifold $N<M$ is called an integral manifold of $D$ if $T_p N=D_p$ for all $p\in N$.
 \end{defn}
 
 \begin{defn}[Integrable distributions]\index{Integrable distribution}
-    A smooth distributions $D\subset TM$ is called integrable if every $p\in M$ is contained in a (local) integral manifold of $D$.
+    A smooth distributions $D< TM$ is called integrable if every $p\in M$ is contained in a (local) integral manifold of $D$.
 \end{defn}
 
 \begin{defn}[Involutive distributions]\index{Involutive distribution}
-    For a smooth distribution $D\subset TM$, denote by $\Gamma^\infty(D)\subset\fX(M)$ the space of $D$-valued vector fields. $D$ is called involutive if $\Gamma^\infty(D)$ is a Lie subalgebra of $\fX(M)$, i.e.\ $[X,Y]\in\Gamma^\infty(D)$ for all $X,Y\in\Gamma^\infty(D)$.
+    For a smooth distribution $D< TM$, denote by $\Gamma^\infty(D)\subset\fX(M)$ the space of $D$-valued vector fields. $D$ is called involutive if $\Gamma^\infty(D)$ is a Lie subalgebra of $\fX(M)$, i.e.\ $[X,Y]\in\Gamma^\infty(D)$ for all $X,Y\in\Gamma^\infty(D)$.
 \end{defn}
 
 \begin{thm}[Frobenius Theorem (Clebsch 1866) {{\cite[Thm.~19.12]{Lee}}}]\index{Theorem!Frobenius}\label{thm frobenius}
@@ -4089,7 +4089,7 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_p
     Thus, $D$ is indeed spanned by a holonomic $k$-frame and therefore integrable.
 \end{proof}
 
-This theorem is of crucial importance in the theory of Lie groups, fiber bundles, and even dynamical systems. The entire concept of \emph{integrability} ultimately stems from it. The rest of this section is devoted to characterizing integral submanifolds and proving a global version of the Frobenius theorem, which will be useful is some applications.
+This theorem is of crucial importance in the theory of Lie groups, fiber bundles, and even dynamical systems. The entire concept of \emph{integrability} ultimately stems from it. The rest of this \subsect is devoted to characterizing integral submanifolds and proving a global version of the Frobenius theorem, which will be useful is some applications.
 
 \begin{cor}[{{\cite[Cor.~19.13]{Lee}}}]\label{cor 19.13 Lee}
     Let $D$ be a rank $k$ involutive distribution on $M$. If $S\sub M$ is a codimension $k$ embedded submanifold such that $T_pS\cap D_p=\{0\}$ for all $p\in S$, then there is a \emph{flat chart}\index{Flat chart} $(U,\{s^i\})$ for $S$ centered at $p$ in which $S\cap U$ is the slice $s^1=\cdots=s^k=0$.
@@ -4099,7 +4099,7 @@ This theorem is of crucial importance in the theory of Lie groups, fiber bundles
 \end{proof}
 
 \begin{prop}[{{\cite[Prop~19.16]{Lee}}}]\label{prop 19.16 Lee}
-    Let $D$ be an involutive distrubtion of rank $k$ on a smooth manifold $M$, and let $(U,\{x^i\})$ be a flat chart for $D$. If $H$ is an integral manifold of $D$, then $H\cap U$ is a union of countably many disjoint open subsets of parallel $k$-dimensional slices of $U$, each of which is open in $H$ and embedded in $M$.
+    Let $D$ be an involutive distribution of rank $k$ on a smooth manifold $M$, and let $(U,\{x^i\})$ be a flat chart for $D$. If $H$ is an integral manifold of $D$, then $H\cap U$ is a union of countably many disjoint open subsets of parallel $k$-dimensional slices of $U$, each of which is open in $H$ and embedded in $M$.
 \end{prop}
 \begin{proof}
     Since the inclusion $i:H\hookrightarrow M$ is continuous, $H\cap U=i^{-1}(U)$ is open in $H$ and this is a coutnable disjoint union of connected components, each open in $H$.
@@ -4109,7 +4109,7 @@ This theorem is of crucial importance in the theory of Lie groups, fiber bundles
     Since $S$ is embedded in $M$, the inclusion $V\hookrightarrow M$ ialso restricts to a smooth map into $S$. The inclusion $V\hookrightarrow S$ is thus an injective smooth immersion between manifolds of the same dimension, and therefore a local diffeomorphism, an open map, and a homeomorphism onto an open subset of $S$. The inclusion map $V\hookrightarrow M$ is a composition of the smooth embeddings $V\hookrightarrow S\hookrightarrow M$ and thus a smooth embedding.
 \end{proof}
 
-Recall now that a weakly embedded submanifold $H$ is such that any map into $M$ whose values fall into $H$ restricts to a smooth map into $H$.
+Recall now that a weakly embedded submanifold $H$ is such that any smooth map into $M$ whose values lie in $H$ restricts to a smooth map into $H$.
 
 \begin{figure}
     \centering
@@ -4140,7 +4140,7 @@ Recall now that a weakly embedded submanifold $H$ is such that any map into $M$ 
 
 
 \begin{lem}[{{\cite[Lem.~3.5.14]{RS1}}}]\label{lem 3.5.14 RS1}
-    Let $D$ be a distribution on $M$.
+    Let $D<TM$ be a smooth distribution on $M$.
     \begin{enumerate}
         \item Let $N_1,N_2\subset M$ be two integral manifolds of $D$. If $N_1\cap N_2\neq \varnothing$ then $N_1\cap N_2$ is open in $N_1$ and $N_2$ and the smooth structures on it induced from either coincide. There is a unique smooth structure on $N_1\cup N_2$ such that $N_1$ and $N_2$ are open submanifolds. W.r.t.~this structure $N_1\cup N_2$ is an integral manifold of $D$.
 
@@ -4149,7 +4149,9 @@ Recall now that a weakly embedded submanifold $H$ is such that any map into $M$ 
 \end{lem}
 \begin{proof}
 \begin{enumerate}
-    \item Let $\dim N_1=\dim N_2\rank D=r$. Choose a local $r$-frame $\{X_i\}_{i=1}^r$ for $D$ at $m$. Since these vector fields are tangent to $N_i$, they are also local vector fields on $N_i$. Then the flows of these vector fields together generate a local coordinate system on $N_i$, mapping $(-\epsilon,\epsilon)^r$ into an open subset of $N_i$. By construction these coordinates will coincide and therefore their values will cover the same subset $V\subset N_1\cap N_2$ open in both $N_i$'s. W.r.t.~the differentiable structure induced from either $N_i$, $V$ is diffeomorphi to $(-\epsilon,\epsilon)^r$. Since the construction works for any $m\in N_1\cap N_2$, the assertion follows. 
+    Note that the number of slices of $U$ intersected by $N$ may be countably infinite, as is the case with a line of ``irrational slope'' on the torus.
+
+    \item The assertion on $N_1\cup N_2$ follows from that on $N_1\cap N_2$, so it suffices to prove the latter. Let $\dim N_1=\dim N_2=\rank D=r$. Choose a local $r$-frame $\{X_i\}_{i=1}^r$ for $D$ at $m$. Since these vector fields are tangent to $N_i$, they are also local vector fields on $N_i$. Then the flows of these vector fields together generate a local coordinate system on $N_i$, mapping $(-\epsilon,\epsilon)^r$ into an open subset of $N_i$. By construction these coordinates will coincide and therefore their values will cover the same subset $V\subset N_1\cap N_2$ open in both $N_i$'s. W.r.t.~the differentiable structure induced from either $N_i$, $V$ is diffeomorphic to $(-\epsilon,\epsilon)^r$. Since the construction works for any $m\in N_1\cap N_2$, the assertion follows. 
 
     \item Let $r=\dim N=\dim D_m$. If $N$ intersects a slice $U_c$, then $U_c$ contains a point where $\rank D=r$. The $U_c$ is an integral manifold of $D$ by dimension-counting. Now assertion 1 implies that $N\cap U_c$ is open in $N$ and hence in $N\cap U$. Since this holds for all slices intersecting $N$ and since
     \[N\cap U_c=(N\cap U)\setminus\left(\bigcup_{c'\neq c}N\cap U_{c'}\right),\]
