@@ -4207,7 +4207,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     \label{fig:foliations}
 \end{figure}
 
-\begin{rem}
+\begin{example}[Linear PDEs]
     Overdetermined systems of linear PDEs are solvable iff the distribution spanned by the differential operators as vector fields is integrable:
     \[\begin{cases}
         X_1\cdot u(x)=f_1(x),&\\
@@ -4220,13 +4220,129 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
         X_i\cdot f_j-X_j\cdot f_i=C^k_{ij}f_k.&
     \end{cases}
     \]
-\end{rem}
+\end{example}
+
+\begin{example}[Zero curvature conditions]
+    Another important case is the following system on an unknown function $\bm{y}:\bbR^2\to \bbC^n$ parametrized as $\bm{y}(x,t)$:
+    \[\begin{cases}
+        \partial_x \bm{y}(x,t)= U(x,t)\bm{y}(x,t),\\
+        \partial_t \bm{y}(x,t)= V(x,t)\bm{y}(x,t),
+    \end{cases}\label{eq UV pair}\]
+    where $U,V:\bbR\times\bbR\to \bbC^{n\times n}$ are given matrix-valued functions. $U$ and $V$ can be viewed as defining a pair of $(x,t)$-dependent linear vector fields on $\bbC^n$. The Frobenius integrability condition in this case is easy to obtain by observing that any solution must satisfy $\partial_t(\partial_x \bm{y})=\partial_x(\partial_t \bm{y})$, which expands to 
+    \[(\partial_t U+UV)\bm{y}=(\partial_x V+VU)\bm{y},\]
+    or (since the initial condition is arbitrary)
+    \[\partial_t U-\partial_x V+[U,V]=0.\]
+    If this condition holds, then the Frobenius theorem guarantees the unique existence of solutions. In the theory of dynamical systems this condition is sometimes called a \emph{zero curvature condition}, and when a given dynamical system can be expressed in the form of a zero curvature condition, the system~(\ref{eq UV pair}) is called a \emph{$UV$-pair}, and the dynamical system is considered \emph{integrable}.\footnote{However, this is not the only test for integrability, and a general definition of integrability for dynamical systems doesn't exist} We will see its relation to the Maurer-Cartan equation in \subsect \ref{subsec: invariant diff forms}.
+\end{example}
+
+\begin{example}[Sine-Gordon equation]\label{ex sine-gordon}
+    Consider the $UV$-pair 
+    \[U(x,t;z)=\frac{\rmi}{2}\begin{pmatrix}
+        2z & u_x\\
+        u_x & -2z
+    \end{pmatrix},\quad 
+    V(x,t;z)=\frac{1}{4\rmi z}\begin{pmatrix}
+        \cos u & -\rmi \sin u\\
+        \rmi \sin u & -\cos u
+    \end{pmatrix},
+    \]
+    where $u(x,t;z)$ is an $\bbR$-valued function, subscripts stand for partial derivatives of $u$, and $z\neq 0$ is a complex parameter. This $UV$-pair defines a system of equations (\ref{eq UV pair}) on the unknown $\bm{y}$. By expanding the zero curvature condition we find that its diagonal components vanish, and both anti-diagonal components impose the \emph{Sine-Gordon equation}\index{Equation!Sine-Gordon} on $u$:
+    \[u_{xt}=\sin u.\]
+\end{example}
+
+\begin{example}[Nonlinear Schr\"odinger equation]
+    Consider now the $UV$-pair 
+    \[
+    U(x,t;z)=\rmi\begin{pmatrix}
+        z & \wb\psi\\
+        \psi & -z
+    \end{pmatrix},\quad 
+    V(x,t;z)=2\rmi\begin{pmatrix}
+        z^2-\frac12|\psi|^2 & z\wb{\psi}-\frac{\rmi}{2}\wb{\psi}_x\\
+        z{\psi}+\frac{\rmi}{2}{\psi}_x & -z^2+\frac12|\psi|^2.
+    \end{pmatrix},
+    \]
+    where $\psi(x,t)\in\bbC$ and $\wb\psi$ is its complex conjugate. The zero curvature condition then leads to the \emph{Nonlinear Schr\"odinger} (NLS) equation on $\psi$, of great importance in optics:\index{Equation!Nonlinear Sch\"odinger}
+    \[\rmi\psi_t+\psi_{xx}+2|\psi|^2\psi=0.\]
+\end{example}
+
+\begin{example}[Lax pairs]\label{ex Lax pairs}\index{Lax pair}
+    Another common way of demonstrating the integrability of a dynamical system is by finding a representation in terms of a \emph{Lax pair},\index{Lax pair} which consists of two matrix-valued operators $L,A$, where $L$ is the linear differential operator
+    \[L(t)=u_m(x,t)\partial_x^m+\cdots u_1(x,t)\partial_x+u_0(x,t)\]
+    with matrix-valued functions $u_i:\bbR^2\to \bbC^{n\times n}$, and $A$ is another matrix-valued differential (only with respect to $x$) operator such that our dynamical system describing the evolution of $u_i(x,t)$ is expressed as 
+    \[L_t=[A,L],\label{eq Lax pair}\]
+    where 
+    \[L_t=\dot u_m(x,t)\partial_x^m+\cdots \dot u_1(x,t)\partial_x+\dot u_0(x,t),\]
+    and $[A,L]$ is computed as the commutator of differential operators acting on smooth functions $\bm{\psi}(x,t)\in\bbC^n$. The core observation here is that the matrices $L(t)$ at different values of $t$ are all similar. That is, $L(t)$ can be written in terms of $L(s)$ as 
+    \[L(t)=M(t,s)L(s)M(t,s)^{-1},\]
+    where (by plugging into (\ref{eq Lax pair})) $M(t,s)$ satisfies the Cauchy problem 
+    \[\partial_t M(t,s)=A(t)M(t,s),\quad M(s,s)=I_n,\]
+    where $I_n$ is the identity matrix of size $n\times n$.
+    Note that while $M$ will implicitly depend on $x$, the derivatives $\partial_x^j$ contained in $L$ do not act on $M$ in this equation. Therefore, $M$ always exists due to the general solvability of Cauchy problems.
+
+    The main consequence of this is that the eigenvalues of $L(t)$ do not depend on $t$. This is known as the \emph{isospectral property} of Lax pairs. Therefore, to solve the eigenvalue problem $L(t)\bm{\psi}(x,t)=\lambda\bm{\psi}(x,t)$ at time $t$, it suffices to solve it at $t=0$ (where $L$ is usually known better due to the initial condition) and then propagate the solution using the formulas
+    \[\begin{cases}
+        \lambda(t)=\lambda(0),\\
+        L(t)\bm{\psi}=\lambda(t)\bm{\psi},\\
+        \partial_t\bm{\psi}=A\bm{\psi}.
+    \end{cases}\label{eq Lax pair 2}\]
+    Let us now take this system as the starting point and differentiate the second equation with respect to $t$, getting $\dot L\bm{\psi}+L\dot{\bm{\psi}}=\lambda\dot{\bm{\psi}}=\lambda A\bm{\psi}=A L\bm{\psi}$. Substituting $\dot{\bm{\psi}}=A\bm{\psi}$ into the left hand side as well, we get back the Lax equation $\dot L=[A,L]$. Therefore, the Lax equation is the compatibility (or integrability) condition for (\ref{eq Lax pair 2}).
+
+    To see the connection to zero curvature conditions, suppose $L$ and $A$ have the form 
+    \begin{align}
+        L=\partial_x^n+\sum_{j=0}^{n-1}u_j(x,t)\partial_x^j,\\
+        A=\partial_x^n+\sum_{j=0}^{n-1}v_j(x,t)\partial_x^j.
+    \end{align}
+    Then the isospectral equation $L\bm{\psi}=\lambda\bm{\psi}$ implies that $x$-derivatives of $\bm{\psi}$ of order $\geq n$ may be expressed as linear combinations of derivatives of orders $<n$. Indeed, we have
+    \[\partial_x^n\bm{\psi}=\lambda\bm{\psi}-\sum_{j=0}^{n-1}u_j(x,t)\partial_x^j\bm{\psi},\]
+    and further differentiations of this equation with respect to $x$ give the higher-order derivatives as well. Now, introducing the vector 
+    \[\bm{y}=(\bm{\psi},\partial_x\bm{\psi},\ldots,\partial_x^{n-1}\bm{\psi}),\]
+    the equation $L\bm{\psi}=\lambda\bm{\psi}$ can be written as 
+    \[\partial_x\bm{y}=U\bm{y},\]
+    where 
+    \[U(x,t;\lambda)=
+    \begin{pmatrix}
+        0 & 1 & 0 & \cdots & 0\\
+        0 & 0 & 1 & \cdots & 0\\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & 0 & \cdots & 1\\
+        \lambda-u_0 & -u_1 & -u_2 & \cdots & -u_{n-1}
+    \end{pmatrix}.
+    \]
+    Now let us act with $\partial_x^i$ on the equation $\dot{\bm{\psi}}=A\bm{\psi}$ to obtain 
+    \[\partial_t(\partial_x^{i-1}\bm{\psi})+\underbrace{\partial_x^{i-1}\left(\sum_{j=0}^{m-1}v_j(x,t)\partial_x^i\bm{\psi}\right)}_{\sum_{j=1}^nV_{ij}(x,t;\lambda)\partial_x^{j-1}\bm{\psi}}=0,\]
+    for some $V_{ij}(x,t;\lambda)$ that can be expressed in terms of $v_j$, $u_i$, and their derivatives of orders $<n$ by our above observation. This equation can be written as 
+    \[\partial_t \bm{y}=V\bm{y}.\]
+    We have shown the equivalence between Lax representations and zero curvature representations:
+    \[
+    \dot L=[A,L]\Leftrightarrow 
+    \begin{cases}
+        L\bm{\psi}=\lambda\bm{\psi},\\
+        \partial_t\bm{\psi}=A\bm{\psi}
+    \end{cases}\Leftrightarrow
+    \begin{cases}
+        \bm{y}_x=U\bm{y},\\
+        \bm{y}_t=V\bm{y}
+    \end{cases}\Leftrightarrow
+    \partial_t U-\partial_x V+[U,V]=0.
+    \]
+\end{example}
 
 \begin{example}
+    In many famous examples of Lax pairs, $n=1$ and $L$ is the second-order \emph{Sturm-Liouville operator} (in physics a Schr\"odinger operator)
+    \[L=-\partial_x^2+u.\]
+    The simplest choice of $A$ is $A=-c\partial_x$ with a constant $c$, which leads to the \emph{1D advection equation}
+    \[A=-c\partial_x\quad \Rightarrow \quad u_t+c u_x=0.\]
+    The following choice of $A$ leads to the celebrated solitonic \emph{Korteweg-de~Vries} (KdV) equation:\index{Equation!Korteweg-de~Vries}
+    \[A=-4\partial_x^3+6u\partial_x+3u_x\quad \Rightarrow\quad u_t-6uu_x+u_{xxx}=0.\]
+\end{example}
+
+
+\begin{xca}
     Show that the distribution on $\bbR^3\setminus \{0\}$ generated by the vector fields
     \[X_1=x_2\partial_3-x_3\partial_2,\quad X_2=x_3\partial_1-x_1\partial_3,\quad X_3=x_1\partial_2-x_2\partial_1,\]
     is regular of rank $2$ and involutive. Find the maximal integral manifolds. How are they related to the action of $\SO(3)$ on $\bbR^3$?
-\end{example}
+\end{xca}
 
 
 
@@ -4254,7 +4370,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     
     If $\dim V=n$, then $\dim \bigwedge^k V=\binom{n}{k}$. In particular, 
     \[\bigwedge^1 V=V,\quad \dim \bigwedge^0 V=\dim \bigwedge^n V=1,\quad \dim \bigwedge^{>n} V=0.\]
-
+    Elements of $\bigwedge^n V$ are called \emph{top forms}.\index{Top form}
     Both $\bigwedge^k$ and $\rmS^k$ are covariant functors $\mathsf{FinVect}_\bbK\to\mathsf{FinVect}_\bbK$ that act on morphisms by restriction: \[\bigwedge^k f=\restr{f^{\otimes k}}{\bigwedge^k V},\quad \rmS^k f=\restr{f^{\otimes k}}{\rmS^k V}.\]
 \end{defn}
 
@@ -4729,26 +4845,26 @@ Exercise.
 
 
 \begin{thm}[Stokes]
-Let $M^m$ be an oriented manifold with or without a boundary, let $\omega\in \Omega^{m-1}(M)$ be a form with \emph{compact support}. Let $i:\partial M\hookrightarrow M$ be the embedding inclusion of the boundary. Then $i^\ast\omega\in\Omega^{m-1}(\partial M)$, which can be treated as the restriction of $\omega$  to $\partial M$, satisfies
+Let $M^n$ be an oriented manifold with or without a boundary, let $\omega\in \Omega^{n-1}(M)$ be a form with \emph{compact support}. Let $i:\partial M\hookrightarrow M$ be the embedding inclusion of the boundary. Then $i^\ast\omega\in\Omega^{n-1}(\partial M)$, which can be treated as the restriction of $\omega$  to $\partial M$, satisfies
 \[\int_{\partial M}i^\ast \omega=\int_M \dd \omega,\]
 where the orientation on $\partial M$ is induced from $M$ by the outward normals.
 \end{thm}
 \begin{proof}
-By coordinate-independence of integrals, it suffices to prove the theorem for $M=U\mathring\subset \bbR^m_+$ and $\omega$ with compact support in $U$. We can write
-\[\omega=\sum_{i=1}^{m-1}\omega_i \dd x^1\wedge\cdots \wedge \widehat{\dd x^i}\wedge \cdots\wedge \dd x^m,\]
+By coordinate-independence of integrals, it suffices to prove the theorem for $M=U\mathring\subset \bbR^n_+$ and $\omega$ with compact support in $U$. We can write
+\[\omega=\sum_{i=1}^{n-1}\omega_i \dd x^1\wedge\cdots \wedge \widehat{\dd x^i}\wedge \cdots\wedge \dd x^n,\]
 where the hat again indicates exclusion. Then
-\[\dd \omega=\sum_{i=1}^m (-1)^{i-1}\partial_i\omega_i \dd x^1\wedge\cdots\wedge\dd x^m,\]
+\[\dd \omega=\sum_{i=1}^n (-1)^{i-1}\partial_i\omega_i \dd x^1\wedge\cdots\wedge\dd x^n,\]
 and 
-\[\int_U \dd\omega=\sum_{i=1}^m(-1)^{i-1}\int_U \partial_i\omega_i\dd x^1\cdots\dd x^m.\]
+\[\int_U \dd\omega=\sum_{i=1}^n(-1)^{i-1}\int_U \partial_i\omega_i\dd x^1\cdots\dd x^n.\]
 If $\partial U=\varnothing$, the answer is zero by compactness of support. If $\partial U\neq\varnothing$, then
-\[\int_{\bbR^{m-1}}\left(\int_0^\infty \partial_m\omega_m\dd x^n\right)\dd x^1\cdots\dd x^m=-\int_{\bbR^{m-1}}\omega_m(x^1,\ldots,x^{m-1},0)\dd x^1\cdots\dd x^{m-1},\]
+\[\int_{\bbR^{n-1}}\left(\int_0^\infty \partial_n\omega_n\dd x^n\right)\dd x^1\cdots\dd x^n=-\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1},\]
 and therefore 
-\[\int_U \dd\omega=(-1)^m\int_{\bbR^{m-1}}\omega_m(x^1,\ldots,x^{m-1},0)\dd x^1\cdots\dd x^{m-1}.\]
-On the other hand, $\int_{\partial U}\omega=\int_{\partial \bbR^m_+}\omega=\int_{\partial \bbR^m_+}\omega(x^1,\ldots,x^{m-1},0)\dd x^1\cdots \dd x^{m-1}$ and the outward normal on $\partial U$ is $-e_m=(0,\ldots,0,-1)$, therefore the induced orientation is $\sign(-e_m,e_1,\ldots,e_{m-1})=(-1)^m$, so
-\[\int_{\partial U}i^\ast\omega=(-1)^{m}\int_{\bbR^{m-1}}\omega_m(x^1,\ldots,x^{m-1},0)\dd x^1\cdots\dd x^{m-1}=\int_U \dd\omega.\]
+\[\int_U \dd\omega=(-1)^n\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}.\]
+On the other hand, $\int_{\partial U}\omega=\int_{\partial \bbR^n_+}\omega=\int_{\partial \bbR^n_+}\omega(x^1,\ldots,x^{n-1},0)\dd x^1\cdots \dd x^{n-1}$ and the outward normal on $\partial U$ is $-e_n=(0,\ldots,0,-1)$, therefore the induced orientation is $\sign(-e_n,e_1,\ldots,e_{n-1})=(-1)^n$, so
+\[\int_{\partial U}i^\ast\omega=(-1)^{n}\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}=\int_U \dd\omega.\]
 \end{proof}
 \begin{cor}
-If $M^m$ is compact and $\partial M=\varnothing$, then for any $\alpha\in\Omega^p(M)$, $\beta\in\Omega^{m-p}(M)$, and $X\in\fX(M)$ the following version of integration by parts holds:
+If $M$ is compact and $\partial M=\varnothing$, then for any $\alpha\in\Omega^p(M)$, $\beta\in\Omega^{n-p}(M)$, and $X\in\fX(M)$ the following version of integration by parts holds:
 \[\int_M (\Lie_X \alpha)\wedge\beta=-\int_M \alpha\wedge\Lie_X\beta.\]
 \end{cor}
 \begin{proof}
@@ -5216,7 +5332,7 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
 
 
 
-\subsection{Invariant differential forms}
+\subsection{Invariant differential forms}\label{subsec: invariant diff forms}
 
 \begin{defn}[Coadjoint representation]
     The duals of the adjoint reprsentations of $G$ and $\frakg$ are called the coadjoint representations of $G$ and $\frakg$ and are denoted by $\Ad^\ast$ and $\ad^\ast$, respectively. By definition,
