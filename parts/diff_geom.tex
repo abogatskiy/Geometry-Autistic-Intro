@@ -1423,7 +1423,7 @@ Throughout this section we assume that $\bbK$ is either $\bbR$ or $\bbC$.
     This is equivalent to $V$ being complete with respect to $\{p_n\}_n$ (i.e.\ if a sequence $(x_i)_i\in V$ is Cauchy with respect to each seminorm $p_n$, then there is a $x\in V$ such that $\lim_{i\to\infty} p_n(x_i)=0$ for each $n$; equivalently, $\alpha_{p_n}(x_i)$ is a Cauchy sequence in $V_p$ for each $n$).
 \end{defn}
 \begin{rem}
-    The introduction of a metric is not necessary for defining Fr\'echet spaces. In fact, a Fr\'echet space is simply a locally convex metrizable topological vector space that is complete as a topological vector space. Note that a metrizable space is complete\tablefootnote{We are omitting the details of how to define completeness for non-metrizable topological vector spaces. For example, the space $C^\infty_c(\bbR)$ of compactly supported smooth functions on the real line is a non-metrizable topological vector space. It is sequentially complete but can't be metrizable. Indeed, $C^\infty_c(\bbR)$ is the union of a countable set of closed linear subspaces, say of functions supported on $[-N,N]$. Each of these subspaces has empty interior in the topology of $C^\infty_c(\bbR)$, and by Baire's category theorem, if it were metrizable, such a union would have to also have an empty interior. This would contradict the fact that this union is the entire space, therefore it is not metrizable.} iff it is sequentially complete. The latter means that every Cauchy sequence has a limit, and a Cauchy sequence in a topological vector space is a sequence $(x_n)_n\in V$ such that for every open neighborhood $U\subset V$ of the origin, $x_n-x_m\in U$ for sufficiently large $n$ and $m$. This definition doesn't rely on the existence of any metric. However, since it is easy to check that $d(x,y)$ based on a separating family of seminorms $\{p_n\}$ defines a translation invariant metric on any locally convex space, it follows that these two definitions are equivalent. 
+    The introduction of a metric is not necessary for defining Fr\'echet spaces. In fact, a Fr\'echet space is simply a locally convex metrizable topological vector space that is complete as a topological vector space. Note that a metrizable space is complete\footnote{We are omitting the details of how to define completeness for non-metrizable topological vector spaces. For example, the space $C^\infty_c(\bbR)$ of compactly supported smooth functions on the real line is a non-metrizable topological vector space. It is sequentially complete but can't be metrizable. Indeed, $C^\infty_c(\bbR)$ is the union of a countable set of closed linear subspaces, say of functions supported on $[-N,N]$. Each of these subspaces has empty interior in the topology of $C^\infty_c(\bbR)$, and by Baire's category theorem, if it were metrizable, such a union would have to also have an empty interior. This would contradict the fact that this union is the entire space, therefore it is not metrizable.} iff it is sequentially complete. The latter means that every Cauchy sequence has a limit, and a Cauchy sequence in a topological vector space is a sequence $(x_n)_n\in V$ such that for every open neighborhood $U\subset V$ of the origin, $x_n-x_m\in U$ for sufficiently large $n$ and $m$. This definition doesn't rely on the existence of any metric. However, since it is easy to check that $d(x,y)$ based on a separating family of seminorms $\{p_n\}$ defines a translation invariant metric on any locally convex space, it follows that these two definitions are equivalent. 
     
     Moreover, Fr\'echet spaces can also be defined as topological vector spaces whose topology can be induced by some translation-invariant metric.
 \end{rem}
@@ -1438,7 +1438,7 @@ Throughout this section we assume that $\bbK$ is either $\bbR$ or $\bbC$.
         \item The preceding example can be generalized to the space $C(X,V)$, were $V$ is a locally convex space. We define for each compact $K\subset X$ and each continuous seminorm $q$ on $V$ a seminorm
         \[p_{K,q}(f)=\sup_{x\in K} q(f(x)).\]
         The family of these seminorms defines a locally convex topology on $C(X,V)$. In fact, it is not difficult to check that this topology coincides with the compact-open topology.
-        \item If $X$ is locally compact and countable at infinity,\tablefootnote{A space is countably infinite if it is the union of countably many compact subspaces. This property is also called $\sigma$-compactness.} then there exists a sequence $K_n$ of compact subsets of $X$ with $\bigcup_n K_n$ and $K_n\subset \Int K_{n+1}$. We call such a sequence an \emph{exhaustion} of $X$. Then each compact subset $K\subset X$ lies in some $K_n$, so that each seminorm $p_K$ is dominated by some $p_{K_n}$. This implies that $C(X,\bbR)$ is metrizable (because the metric $d(x,y)$ can be defined in this case), and since it is also complete, it is a Fr\'echet space. It even is a Fr\'echet algebra in the sense that the multiplication is continuous.
+        \item If $X$ is locally compact and countable at infinity,\footnote{A space is countably infinite if it is the union of countably many compact subspaces. This property is also called $\sigma$-compactness.} then there exists a sequence $K_n$ of compact subsets of $X$ with $\bigcup_n K_n$ and $K_n\subset \Int K_{n+1}$. We call such a sequence an \emph{exhaustion} of $X$. Then each compact subset $K\subset X$ lies in some $K_n$, so that each seminorm $p_K$ is dominated by some $p_{K_n}$. This implies that $C(X,\bbR)$ is metrizable (because the metric $d(x,y)$ can be defined in this case), and since it is also complete, it is a Fr\'echet space. It even is a Fr\'echet algebra in the sense that the multiplication is continuous.
         \item For any set $X$ the space $\bbR^X$ of all real-valued functions $X\to \bbR=\prod_{y\in \bbR} X$ is a locally convex space with respect to the product topology. This topology is defined by the seminorms $p_x(f)=|f(x)|$, $x\in X$. This space is complete, and it is metrizable iff $X$ is countable.
     \end{enumerate}
 \end{example}
@@ -1766,10 +1766,10 @@ So far we have only given a purely topological (or geometric in the smooth case)
     \item The collection $\{(U_\alpha,\chi_\alpha)\}$ is called a \emph{\gls{fb} atlas} for $E\overset{\pi}{\to}M$. Two bundle atlases are \emph{equivalent} if their union is still a bundle atlas. A \emph{bundle structure} on $E$ is an equivalence class of bundle atlases, or, alternatively, a \emph{maximal atlas} given by the union of all atlases belonging to an equivalence class.
     
     \item For any point $(m,f)\in U_{\alpha\beta}\times F$, the transition maps in this atlas have the form \[\chi_\beta\circ\chi_\alpha^{-1} (m,f)=(m, t_{\beta\alpha}(m,f)),\label{eq transition functions}\], 
-    where for every fixed $m\in M$, the map $t_{\beta\alpha}(m,\_):F\to F$ is a diffeomorphism. One can think of $t_{\beta\alpha}$ as a function on $U_{\alpha\beta}$ that takes values in the group $\Diff(F)$ of all diffeomorphisms of $F$, so $t_{\beta\alpha}$ becomes a map $t_{\beta\alpha}:U_{\alpha\beta}\to \Diff(F)$.\tablefootnote{As we will see in Section~\ref{sec: Diff groups}, the group $\Diff(F)$ can be given the structure of an infinite-dimensional Lie group, modeled on the space $\fX(F)$ of vector fields. Unfortunately $t_{\alpha\beta}$ are not always automatically smooth: they are smooth iff their values are contained in the left coset of the open and closed subgroup $\Diff_c(F)$ of diffeomorphisms with compact support. This is in principle true only for bundles which are ``trivial near fiber-wise infinity'' or have ``discrete structure group near diberwise infinity'' (see P.W.~Michor ``Gauge theory for diffeomorphism groups'', 1988). We shall always assume that this is true.}
+    where for every fixed $m\in M$, the map $t_{\beta\alpha}(m,\_):F\to F$ is a diffeomorphism. One can think of $t_{\beta\alpha}$ as a function on $U_{\alpha\beta}$ that takes values in the group $\Diff(F)$ of all diffeomorphisms of $F$, so $t_{\beta\alpha}$ becomes a map $t_{\beta\alpha}:U_{\alpha\beta}\to \Diff(F)$.\footnote{As we will see in Section~\ref{sec: Diff groups}, the group $\Diff(F)$ can be given the structure of an infinite-dimensional Lie group, modeled on the space $\fX(F)$ of vector fields. Unfortunately $t_{\alpha\beta}$ are not always automatically smooth: they are smooth iff their values are contained in the left coset of the open and closed subgroup $\Diff_c(F)$ of diffeomorphisms with compact support. This is in principle true only for bundles which are ``trivial near fiber-wise infinity'' or have ``discrete structure group near diberwise infinity'' (see P.W.~Michor ``Gauge theory for diffeomorphism groups'', 1988). We shall always assume that this is true.}
     These $\Diff(F)$-valued functions are called \emph{bundle transition functions}. They are also sometimes called \emph{clutching functions}, especially when $M$ is a sphere.\index{Clutching functions}\index{Transition functions} We will usually assume that $\Diff(F)$ acts on the typical fiber from the \emph{left} (one can pass to a right action by acting via $t_{\alpha\beta}^{-1}$ instead).
     
-    \item If the bundle structure of $E$ contains a bundle atlas whose transition functions take values in a Lie subgroup $G<\Diff(F)$,\tablefootnote{We will formalize the concept of Lie subgroups in Section\ref{sec: Lie theory iii}. For now all we need to know is that Lie subgroups are weakly embedded, which means that restricting a smooth map into $\Diff(F)$ whose image lies in $G<\Diff(F)$ in its range produces a smooth map into $G$. In fact, all subgroups of a Lie group are Lie subgroups.} then such an atlas is called a \emph{$G$-atlas} for $E$. Two $G$-atlases are called \emph{$G$-equivalent} if their union is still a $G$-atlas. A $G$-equivalence class of $G$-atlases, or, alternatively, the maximal $G$-atlas equal to their union, is called a \emph{$G$-structure}, denoted $\calG$.\index{$G$-structure} If a $G$-structure is fixed on $E$, we say that $G$ is the \emph{structure group} of the bundle. \index{Structure group} The tuple $(E\overset{\pi}{\to}M,G\acts F,\calG)$ is called a \emph{$G$-bundle}.\index{$G$-bundle}
+    \item If the bundle structure of $E$ contains a bundle atlas whose transition functions take values in a Lie subgroup $G<\Diff(F)$,\footnote{We will formalize the concept of Lie subgroups in Section\ref{sec: Lie theory iii}. For now all we need to know is that Lie subgroups are weakly embedded, which means that restricting a smooth map into $\Diff(F)$ whose image lies in $G<\Diff(F)$ in its range produces a smooth map into $G$. In fact, all subgroups of a Lie group are Lie subgroups.} then such an atlas is called a \emph{$G$-atlas} for $E$. Two $G$-atlases are called \emph{$G$-equivalent} if their union is still a $G$-atlas. A $G$-equivalence class of $G$-atlases, or, alternatively, the maximal $G$-atlas equal to their union, is called a \emph{$G$-structure}, denoted $\calG$.\index{$G$-structure} If a $G$-structure is fixed on $E$, we say that $G$ is the \emph{structure group} of the bundle. \index{Structure group} The tuple $(E\overset{\pi}{\to}M,G\acts F,\calG)$ is called a \emph{$G$-bundle}.\index{$G$-bundle}
     
     \item If $H<G$ is a Lie subgroup and a given $G$-structure on $E$ contains an $H$-atlas, then a choice of an $H$-structure (which is a subset of the given $G$-structure) is called a \emph{reduction of the structure group}, or simply a \emph{bundle reduction}\index{Bundle reduction} from $G$ to $H$.
     
@@ -1780,7 +1780,7 @@ So far we have only given a purely topological (or geometric in the smooth case)
     \restr{t_{\alpha\beta}\cdot t_{\beta\gamma}\cdot t_{\gamma\alpha}}{U_{\alpha\beta\gamma}}\equiv e; & \text{(cocycle condition),}
     \end{cases}
     \]
-    where the product in $\Diff(F)$ is just the composition of maps. Any collection of such $G$-valued functions $\{t_{\alpha\beta}\}$ associated to an open covering of $M$ is called a \emph{cocycle}\index{Cocycle} on $M$ with structure group $G$.\tablefootnote{More precisely, a cocycle is a certain equivalence class of such collections, which is discussed below.} Note that these two conditions imply $t_{\alpha\beta}t_{\beta\alpha}=e$.
+    where the product in $\Diff(F)$ is just the composition of maps. Any collection of such $G$-valued functions $\{t_{\alpha\beta}\}$ associated to an open covering of $M$ is called a \emph{cocycle}\index{Cocycle} on $M$ with structure group $G$.\footnote{More precisely, a cocycle is a certain equivalence class of such collections, which is discussed below.} Note that these two conditions imply $t_{\alpha\beta}t_{\beta\alpha}=e$.
 \end{itemize}
 \end{defn}
 
@@ -1796,7 +1796,7 @@ So far we have only given a purely topological (or geometric in the smooth case)
 Since the structure group of a bundle acts on its typical fiber $F$, that is, it acts in the local trivializations, it is natural to ask whether this action ``lifts'' to an action on the actual fibers of the bundle itself. Crucially, the answer is no, however the following restricted concept of a $G$-structure does get naturally translated to the fibers.
 
 \begin{defn}[$G$-fiber]
-    Let $F$ be a smooth manifold diffeomorphic to a given manifold $F_0$ and let $G$ be a Lie group acting faithfully from the left on $F_0$, so $G$ can be identified with a Lie subgroup of $\Diff(F_0)$. Two diffeomorphisms $\chi_1,\chi_2:F\to F_0$ are called $G$-equivalent if $\chi_2\circ \chi_1^{-1}\in G$. A $G$-equivalence class $\calG_0$ of such diffeomorphisms, i.e.~an orbit of the action of $G$ on $\Diff(F,F_0)$ by compositions $\chi\mapsto g\circ \chi$, is called a fiber $G$-structure on $F$.\tablefootnote{This terminology is not standard. Unfortunately by a $G$-structure on a manifold people usually mean a $G$-structure on its tangent bundle, whereas our definition here refers to a $G$-structure on the bundle consisting of one fiber over a single point, $F\overset{\pi}{\to}\ast$.} The tuple $(F,G\acts F_0,\calG_0)$ is called a $G$-fiber modeled on $F_0$. An element of $\calG_0$ is called a \emph{$G$-frame}, or a frame \emph{compatible} with the $G$-structure.
+    Let $F$ be a smooth manifold diffeomorphic to a given manifold $F_0$ and let $G$ be a Lie group acting faithfully from the left on $F_0$, so $G$ can be identified with a Lie subgroup of $\Diff(F_0)$. Two diffeomorphisms $\chi_1,\chi_2:F\to F_0$ are called $G$-equivalent if $\chi_2\circ \chi_1^{-1}\in G$. A $G$-equivalence class $\calG_0$ of such diffeomorphisms, i.e.~an orbit of the action of $G$ on $\Diff(F,F_0)$ by compositions $\chi\mapsto g\circ \chi$, is called a fiber $G$-structure on $F$.\footnote{This terminology is not standard. Unfortunately by a $G$-structure on a manifold people usually mean a $G$-structure on its tangent bundle, whereas our definition here refers to a $G$-structure on the bundle consisting of one fiber over a single point, $F\overset{\pi}{\to}\ast$.} The tuple $(F,G\acts F_0,\calG_0)$ is called a $G$-fiber modeled on $F_0$. An element of $\calG_0$ is called a \emph{$G$-frame}, or a frame \emph{compatible} with the $G$-structure.
 \end{defn}
 
 
@@ -1830,7 +1830,7 @@ Since the structure group of a bundle acts on its typical fiber $F$, that is, it
 
 
 
-\subsection{Fiber morphisms}
+\subsection{Fiber morphisms}\label{sec: fiber morphisms}
 
 Now we examine morphisms (and in particular isomorphisms) between bundles with different structures on them. General bundle morphisms are allowed to be arbitrary smooth maps when restricted to a single fiber, so we will need to find a special subclass of bundle morphisms that ``respects'' given structures in some way. Let us first look at the simpler case of a single fiber. Say we have a $G$-fiber $(F,G\acts F_0,\calG_0)$ and a $G'$-fiber $(F',G'\acts F_0',\calG_0')$. Then any map $h:F\to F'$ can be represented by a map $\wh{h}:F_0\to F_0'$ by using any two diffeomorphisms $\chi\in\calG_0\subset \Diff(F,F_0)$ and $\chi'\in\calG_0'\subset \Diff(F',F_0')$ as follows:
 \[\wh{h}=\chi'\circ h\circ \chi^{-1}.\label{eq g-fiber f-hat}\]
@@ -1969,7 +1969,7 @@ Then every $\hat{h}_{\alpha a}:U_{\alpha a}\times F\to F'$ can be used to define
     \Phi_{\alpha a}: U_{\alpha a}\times (G\times G')\to C^\infty(F,F'),\\
     (m,(g,g'))\mapsto \left(f\mapsto g'\cdot \hat{h}_{\alpha a}\left(\underline{h}(m),g^{-1}\cdot f\right)\right).\label{def Phiab}
 \end{gather}
-It is easy to see that this map is $G\times G'$-equivariant (with $G\times G'$ acting on itself from the left). Moreover, every fiberwise $G\times G'$-equivariant map arises this way ($\hat{h}_{\alpha a}$ can be recovered by substituting $g=g'=e$), although the correspondence of course is not bijective.\tablefootnote{Note how the fact that $\Phi_{\alpha a}$ are defined on sets of the form $U_{\alpha a}\times (G\times G')$ hints that they themselves represent a function defined globally on some fiber bundle with typical fiber $G\times G'$. We will return to this in our discussion of principal bundles.} The transformation rule (\ref{eq transformation of hab}) now becomes
+It is easy to see that this map is $G\times G'$-equivariant (with $G\times G'$ acting on itself from the left). Moreover, every fiberwise $G\times G'$-equivariant map arises this way ($\hat{h}_{\alpha a}$ can be recovered by substituting $g=g'=e$), although the correspondence of course is not bijective.\footnote{Note how the fact that $\Phi_{\alpha a}$ are defined on sets of the form $U_{\alpha a}\times (G\times G')$ hints that they themselves represent a function defined globally on some fiber bundle with typical fiber $G\times G'$. We will return to this in our discussion of principal bundles.} The transformation rule (\ref{eq transformation of hab}) now becomes
 \[\boxed{\Phi_{\beta b}(m,g,g')=\Phi_{\alpha a}\left(m,gt_{\beta\alpha}(m),g't_{ba}'(\underline{h}(m))\right).}\label{eq transformation of Phiab}\]
 We would like to put some restriction on the values of these maps in $C^\infty(F,F')$ that produces a well-defined class of bundle morphisms $\wt h$ which can be interpreted as ``respecting'' the given $G$- and $G'$-structures. This can be easily done by analogy with how we interpreted the structure of a $G$-fiber:
 \begin{gather}
@@ -1997,8 +1997,8 @@ There are a number of other subcategories one may define by additionally either 
 
 
 \begin{defn}[Bundle construction]\label{def bundle construction}
-    \Glspl{fb} can be alternatively defined by specifying the base manifold $M$, the typical fiber $F$, the structure group $G$ acting on the fiber via a \emph{faithful}\tablefootnote{The importance of faithfulness will be explained in Remark~\ref{rem: faithfulness of action on F}.} smooth left action which can be viewed as an injective homomorphism of Lie groups $\Phi:G\to \Diff(F)$ (i.e.\ we will write $g\cdot f=\Phi(g)(f)=\Phi_g(p)$ for $g\in G, f\in F$), a countable open covering $\{U_\alpha\}$ of $M$, and a cocycle  $t_{\beta\alpha}\in C^\infty (U_{\alpha\beta}, G)$. Namely, we can define $E$ as a topological space as the quotient $E\coloneqq \bigslant{(\bigsqcup_\alpha U_\alpha \times F)}{\sim}$, where $(m_1,f_1)\sim(m_2,f_2)$ iff $m_1=m_2=m$ and $f_1=t_{\beta\alpha}(m,f_2)$ for some $\alpha,\beta$, and the projection $\pi$ is defined as the descendent of the projections onto the fist component in each summand.\tablefootnote{In categorical terms, this is literally the cofibered product (pushout) of the sets $U_\alpha \times F$ with pairs of maps $\restr{\chi_\alpha^{-1}}{U_{\alpha\beta}\times F}$ and $\restr{\chi_\beta^{-1}}{U_{\alpha\beta}\times F}$. For instance, if there were only two sets $U_1,U_2$, we would have $E=(U_1\times F)\sqcup_Z (U_2\times F)$, where $Z=U_{12}\times F$ and we have two morphisms $\restr{\chi_i^{-1}}{U_{12}\times F}:Z\to U_i\times F$ that are used in the definition of the pushout.}
-    Then $E$ has a unique smooth structure that makes $\pi$ a smooth submersion (see \cite[Lem.~10.6]{Lee} for the case of vector bundles, which is easily generalized to all \glspl{fb}).\tablefootnote{Essentially we can take an atlas $\{F_\alpha,\psi_\alpha\}$ of $F$ and an atlas $\varphi_\alpha$ of $M$ (\gls{wlog} subordinate to the covering $\{U_\alpha\}$) to construct a smooth atlas $\{(U_\alpha\times F_\beta,\varphi_\alpha\times\psi_\beta)\}$ of $E$.} This construction is called the \emph{clutching construction} of a \gls{fb}.
+    \Glspl{fb} can be alternatively defined by specifying the base manifold $M$, the typical fiber $F$, the structure group $G$ acting on the fiber via a \emph{faithful}\footnote{The importance of faithfulness will be explained in Remark~\ref{rem: faithfulness of action on F}.} smooth left action which can be viewed as an injective homomorphism of Lie groups $\Phi:G\to \Diff(F)$ (i.e.\ we will write $g\cdot f=\Phi(g)(f)=\Phi_g(p)$ for $g\in G, f\in F$), a countable open covering $\{U_\alpha\}$ of $M$, and a cocycle  $t_{\beta\alpha}\in C^\infty (U_{\alpha\beta}, G)$. Namely, we can define $E$ as a topological space as the quotient $E\coloneqq \bigslant{(\bigsqcup_\alpha U_\alpha \times F)}{\sim}$, where $(m_1,f_1)\sim(m_2,f_2)$ iff $m_1=m_2=m$ and $f_1=t_{\beta\alpha}(m,f_2)$ for some $\alpha,\beta$, and the projection $\pi$ is defined as the descendent of the projections onto the fist component in each summand.\footnote{In categorical terms, this is literally the cofibered product (pushout) of the sets $U_\alpha \times F$ with pairs of maps $\restr{\chi_\alpha^{-1}}{U_{\alpha\beta}\times F}$ and $\restr{\chi_\beta^{-1}}{U_{\alpha\beta}\times F}$. For instance, if there were only two sets $U_1,U_2$, we would have $E=(U_1\times F)\sqcup_Z (U_2\times F)$, where $Z=U_{12}\times F$ and we have two morphisms $\restr{\chi_i^{-1}}{U_{12}\times F}:Z\to U_i\times F$ that are used in the definition of the pushout.}
+    Then $E$ has a unique smooth structure that makes $\pi$ a smooth submersion (see \cite[Lem.~10.6]{Lee} for the case of vector bundles, which is easily generalized to all \glspl{fb}).\footnote{Essentially we can take an atlas $\{F_\alpha,\psi_\alpha\}$ of $F$ and an atlas $\varphi_\alpha$ of $M$ (\gls{wlog} subordinate to the covering $\{U_\alpha\}$) to construct a smooth atlas $\{(U_\alpha\times F_\beta,\varphi_\alpha\times\psi_\beta)\}$ of $E$.} This construction is called the \emph{clutching construction} of a \gls{fb}.
 \end{defn}
 
 
@@ -2407,7 +2407,7 @@ The above Corollary shows the importance of the computation of homotopy groups o
     \end{align}
     We compute the clutching function
     \[\tau_{\infty0}(z)\cdot \rme^{\rmi\psi}=\pr_2\circ \chi_\infty\circ \chi_0^{-1}(z,\rme^{\rmi\psi})=\frac{z}{|z|}\cdot \rme^{\rmi\psi},\]
-    in particular, on the equator, $\tau_{\infty0}(\rme^{\rmi\varphi})=\rme^{\rmi\varphi}$. Therefore, following a standard sign convention, the Chern number of this bundle equals $-1$.\tablefootnote{The sign of the Chern number is usually fixed by the complex structure of the corresponding bundle, which induces a specific orientation on the fibers, see more in Example~\ref{ex holomorphic bundle O(k)}.}
+    in particular, on the equator, $\tau_{\infty0}(\rme^{\rmi\varphi})=\rme^{\rmi\varphi}$. Therefore, following a standard sign convention, the Chern number of this bundle equals $-1$.\footnote{The sign of the Chern number is usually fixed by the complex structure of the corresponding bundle, which induces a specific orientation on the fibers, see more in Example~\ref{ex holomorphic bundle O(k)}.}
 \end{example}
 
 
@@ -2795,7 +2795,7 @@ A local chart $\varphi_\alpha$ gives rise to a local frame (the pullback of the 
     $\rho(n)$ &1 & 2 & 4 & 8 & 9 & 10 & 12 & 16\tabularnewline
     \hline 
     \end{tabular}\]
-    In particular, this implies that the only parallelizable spheres are the ones that are Lie groups (in fact, all Lie groups are parallelizable), $\bbS^0=\rm{O}(1),\bbS^1=\rm{U}(1),\bbS^3=\rm{SU}(2)$, plus the exceptional $\bbS^7$.\tablefootnote{$\bbS^7$ is not much of an exception once you realize the connection between unitary groups and real algebras. Namely, if $\bbH $ and $\bbO$ denote the division algebras of quaternions and octonions respectively, and we define for a real normed algebra $A$ the set ${\rm U}(A)$ as the unit sphere in $A$, then $\bbS^0=\rm{U}(\bbR ),\bbS^1=\rm{U}(\bbC),\bbS^3=\rm{U}(\bbH),\bbS^7=\rm{U}(\bbO)$.}
+    In particular, this implies that the only parallelizable spheres are the ones that are Lie groups (in fact, all Lie groups are parallelizable), $\bbS^0=\rm{O}(1),\bbS^1=\rm{U}(1),\bbS^3=\rm{SU}(2)$, plus the exceptional $\bbS^7$.\footnote{$\bbS^7$ is not much of an exception once you realize the connection between unitary groups and real algebras. Namely, if $\bbH $ and $\bbO$ denote the division algebras of quaternions and octonions respectively, and we define for a real normed algebra $A$ the set ${\rm U}(A)$ as the unit sphere in $A$, then $\bbS^0=\rm{U}(\bbR ),\bbS^1=\rm{U}(\bbC),\bbS^3=\rm{U}(\bbH),\bbS^7=\rm{U}(\bbO)$.}
     
     The proof of this theorem includes an explicit construction of the linearly independent vector fields using Clifford algebras and then a difficult proof of the non-existence of a larger set of independent vector fields using K-theory. This proof became the first big success of K-theory.
 \end{rem}
@@ -3804,7 +3804,7 @@ The space of all $\bbR $-linear derivations on the algebra $C^\infty(M)$ is isom
     Uniqueness follows from the obvious statement that $\Lie_X=0$ iff $X=0$.
 \end{proof}
 \begin{cor}
-If $x^i$ is a local coordinate system, then the local vector fields $\partial/\partial x^i$ form a basis of derivations at $p$, therefore 
+If $x^i$ is a local coordinate system, then the local vector fields $\partial_i=\partial_{x^i}$ form a basis of derivations at $p$, therefore 
 \[(\Lie_X f)(p)=\sum_i \partial_{x^i}(f\circ\varphi^{-1})(\varphi(p))\cdot \underbrace{\Lie_X (\varphi^i)(p)}_{X^i}=\sum_i X^i \partial_{x^i}(\varphi_\ast f)=\sum_i X^i \partial_{i} f.\]
 \end{cor}
 
@@ -3885,7 +3885,7 @@ A collection of local tensor derivations $E_U$ on $C^\infty(U)$ and $F_U$ on $\f
     \[t(u)=\underbrace{t_{j_1\ldots j_s}^{i_1\ldots i_r}(u)}_{\in C^\infty(U)} e_{i_1}\otimes \cdots \otimes e_{i_r}\otimes \alpha^{j_1}\otimes \cdots\otimes \alpha^{j_s}(u).\label{535}\]
     By using the tensorial Leibniz rule for $\mathbb{D}$, we express $\mathbb{D}t(u)$ only in terms of $E_U(t_{j_1\ldots j_s}^{i_1\ldots i_r})$ and $F_U(e_{i_k})$.
     
-    Namely, since $\mathbb{D}\delta=0$, and $\delta=e_j\otimes \alpha^j$ (Einstein summation), we have 
+    Namely, since $\mathbb{D}\delta=0$, and $\delta=e_j\otimes \alpha^j$ (using Einstein summation), we have 
     \[0=\mathbb{D}(e_j\otimes \alpha^j)=(\mathbb{D}e_j)\otimes \alpha^j+e_j\otimes (\mathbb{D}\alpha^j).\]
     Since $\delta^i_j=\alpha^i(e_j)$, if we contract the formula above with $e_i$, we get
     \[0=F_U e_i+(\mathbb{D}\alpha^j)(e_i) e_j,\]
@@ -4005,7 +4005,7 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
     $3\Rightarrow 2$. $F_{t\ast}Y=F_{t\ast}\frac{\dd}{\dd s}G_s=F_{t\ast} G_{s\ast} Y=(F_t\circ G_s)_\ast Y=(G_s\circ F_t)_\ast Y=G_{s\ast}F_{t\ast}Y$. But the only vector field invariant under $G_{s\ast}$ is $Y$, therefore $F_{t\ast}Y=Y$.
 \end{proof}
 
-\begin{rem}[Taylor formula on manifolds]\index{Taylor's formula}
+\begin{rem}[Taylor formula on manifolds]\index{Taylor's formula}\label{rem 3.2.9 RS1}
     Successive application of the vector fields $X_1,\ldots,X_r$ to a function $f\in C^\infty(M)$ yields
     \[X_r\cdots X_1 \cdot f=\restr{\frac{\dd}{\dd t_1}}{t_1=0}\cdots \restr{\frac{\dd}{\dd t_r}}{t_r=0}f\circ F^{X_1}_{t_1}\circ \cdots \circ F^{X_r}_{t_r}.\]
     In particular, the Lie bracket can be expressed as
@@ -4051,7 +4051,7 @@ The analog of this Corollary for $k<\dim M$ is a famous theorem that deserves it
 
 \subsection{Frobenius theorem I}\label{sec: frobenius i}
 
-We have just established that in the presence of a local holonomic $k$-frame $\{e_i\}_{i=1}^k$ transversal to a submanifold $S$, each point $m\in S$ admits a $k$-dimensional embedded submanifold $N$ passing through $m$ (defined by holding the values of $s^{k+1},\ldots,s^n$ constant) transversally to $S$ such that $\{e_i\}_{i=1}^k$ is a frame for $TN$. In this section we will replace holonomic frames by the subspaces of tangent spaces that they span and derive the corresponding \emph{integrability condition}. Namely, while we can think of vector fields as fields of velocities, let us unstead think of them as fields of lines, or directions. Then it is easy to generalize the problem as follows: given a field of hyperplanes (subspaces of tangent spaces), what does it mean for a submanifold to be integral for this field, and what is the condition for this kind of integrability?
+We have just established that in the presence of a local holonomic $r$-frame $\{e_i\}_{i=1}^r$ transversal to a submanifold $S$, each point $m\in S$ admits a $r$-dimensional embedded submanifold $N$ passing through $m$ (defined by holding the values of $s^{r+1},\ldots,s^n$ constant) transversally to $S$ such that $\{e_i\}_{i=1}^r$ is a frame for $TN$. In this section we will replace holonomic frames by the subspaces of tangent spaces that they span and derive the corresponding \emph{integrability condition}. Namely, while we can think of vector fields as fields of velocities, let us unstead think of them as fields of lines, or directions. Then it is easy to generalize the problem as follows: given a field of hyperplanes (subspaces of tangent spaces), what does it mean for a submanifold to be integral for this field, and what is the condition for this kind of integrability?
 
 \begin{hrem*}
     Note that while this theorem is universally named after Frobenius, his result (1887) was an application of an older result to the context of systems of differential equations. We will discuss that version of the theorem in \sect~\ref{sec: frobenius ii}. The results discussed in this \sect were obtained by Deahna (sufficient condition, 1840) and Clebsch (necessary condition, 1866), among many others involved in this long process.
@@ -4061,17 +4061,17 @@ We have just established that in the presence of a local holonomic $k$-frame $\{
     \centering
     \includegraphics[scale=0.8]{figures/frobenius_1.pdf}
     \caption{Frobenius Theorem. From \cite{Lee}.}
-    \label{fig:frobenius1}
+    \label{fig: frobenius1}
 \end{figure}
 
-Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_p\subset T_p M$ for every $p\in M$. If the dimension of $D_p$ is constant and equal to $k$, then $D$ is said to be of rank $k$. $D$ is called a \emph{smooth distribution} if it is a subbundle of $TM$.
+Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_m\subset T_m M$ for every $m\in M$. If the dimension of $D_m$ is constant and equal to $r$, then $D$ is said to be \emph{regular of rank} $r$. $D$ is called a \emph{smooth distribution} if it is a subbundle of $TM$.
 
 \begin{defn}[Integral manifolds]\index{Integral manifold}
-    Let $D< TM$ be a smooth distribution (i.e.\ a subbundle of $TM$). An immersed submanifold $N<M$ is called an integral manifold of $D$ if $T_p N=D_p$ for all $p\in N$.
+    Let $D< TM$ be a smooth distribution (i.e.\ a subbundle of $TM$). An immersed submanifold $N<M$ is called an integral manifold of $D$ if $T_m N=D_m$ for all $m\in N$.
 \end{defn}
 
 \begin{defn}[Integrable distributions]\index{Integrable distribution}
-    A smooth distributions $D< TM$ is called integrable if every $p\in M$ is contained in a (local) integral manifold of $D$.
+    A smooth distributions $D< TM$ is called integrable if every $m\in M$ is contained in a (local) integral manifold of $D$.
 \end{defn}
 
 \begin{defn}[Involutive distributions]\index{Involutive distribution}
@@ -4085,37 +4085,39 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_p
     The backwards direction is trivial: if $D$ is integrable, then $D=TN$ locally, which implies involutivity.
     For the forward direction, it suffices to prove that $D$ is locally spanned by a set of linearly independent commuting fields. Then, by the Rectification Theorem~\ref{thm rectification}, they are coordinate vector fields for a slice chart of an integral manifold.
 
-    Because of the locality of the statement, it also suffices to prove the theorem for $M=U\subset \bbR^m$. At $p\in M$, we can find a system of Cartesian coordinates such that $D_p$ is complementary to $\Span\{\partial_{k+1},\ldots,\partial_m\}$. By continuity, this remains true on some neighborhood of $p$. Therefore, we have a non-singular projection $\pi:\bbR^m\to\bbR^k$ onto the coordinate hyperplane of the coordinates $(x^1,\ldots,x^k)$. Then $\restr{\pi_\ast}{D}$ is a smooth bundle isomorphism, and the vector fields $\pi^\ast(\partial_i)$, $i=1,\ldots,k$, locally span $D$. By naturality of Lie derivatives, $[\pi^\ast(\partial_i),\pi^\ast(\partial_j)]=\pi^\ast[\partial_i,\partial_j]=0.$
-    Thus, $D$ is indeed spanned by a holonomic $k$-frame and therefore integrable.
+    Because of the locality of the statement, it also suffices to prove the theorem for $M=U\subset \bbR^n$. Suppose that the rank of $D$ is $r$. Then, at every $m\in M$, we can find a system of Cartesian coordinates such that $D_m$ is complementary to $\Span\{\partial_{r+1},\ldots,\partial_m\}$. By continuity, this remains true on some neighborhood of $m$. Therefore, we have a non-singular projection $\pi:\bbR^m\to\bbR^r$ onto the coordinate hyperplane of the coordinates $(x^1,\ldots,x^r)$. Then $\restr{\pi_\ast}{D}$ is a smooth bundle isomorphism, and the vector fields $\pi^\ast(\partial_i)$, $i=1,\ldots,r$, locally span $D$, see Figure~\ref{fig: frobenius1}. By naturality of Lie derivatives, $[\pi^\ast(\partial_i),\pi^\ast(\partial_j)]=\pi^\ast[\partial_i,\partial_j]=0.$
+    Thus, $D$ is indeed spanned by a holonomic $r$-frame and therefore integrable.
 \end{proof}
 
 This theorem is of crucial importance in the theory of Lie groups, fiber bundles, and even dynamical systems. The entire concept of \emph{integrability} ultimately stems from it. The rest of this \subsect is devoted to characterizing integral submanifolds and proving a global version of the Frobenius theorem, which will be useful is some applications.
 
 \begin{cor}[{{\cite[Cor.~19.13]{Lee}}}]\label{cor 19.13 Lee}
-    Let $D$ be a rank $k$ involutive distribution on $M$. If $S\sub M$ is a codimension $k$ embedded submanifold such that $T_pS\cap D_p=\{0\}$ for all $p\in S$, then there is a \emph{flat chart}\index{Flat chart} $(U,\{s^i\})$ for $S$ centered at $p$ in which $S\cap U$ is the slice $s^1=\cdots=s^k=0$.
+    Let $D$ be a rank $r$ involutive distribution on $M$. If $S\sub M$ is a codimension $r$ embedded submanifold such that $T_mS\cap D_m=\{0\}$ for all $m\in S$, then there is a \emph{flat chart}\index{Flat chart} $(U,\{s^i\})$ for $S$ centered at $m$ in which $S\cap U$ is the slice $s^1=\cdots=s^r=0$.
 \end{cor}
 \begin{proof}
-    The proof of Frobenius theorem showed that locally $D$ is spanned by $k$ commuting vector fields, so this Corollary follows by the Rectification Theorem~\ref{thm rectification}.
+    The proof of Frobenius theorem showed that locally $D$ is spanned by $r$ commuting vector fields, so this Corollary follows by the Rectification Theorem~\ref{thm rectification}.
 \end{proof}
+
+Note also that $U$ gets decomposed into a disjoint union of integral submanifolds $U_{\bm{c}}$ parametrized by a point $\bm{c}\in S$ with coordinates $(0,\ldots,0,c^1,\ldots,c^{n-r})$ in the flat chart and defined as the slices $s^{r+1}=c^1,\ldots, s^n=c^{n-r}$.
 
 \begin{prop}[{{\cite[Prop~19.16]{Lee}}}]\label{prop 19.16 Lee}
-    Let $D$ be an involutive distribution of rank $k$ on a smooth manifold $M$, and let $(U,\{x^i\})$ be a flat chart for $D$. If $H$ is an integral manifold of $D$, then $H\cap U$ is a union of countably many disjoint open subsets of parallel $k$-dimensional slices of $U$, each of which is open in $H$ and embedded in $M$.
+    Let $D$ be an involutive distribution of rank $r$ on a smooth manifold $M$, and let $(U,\{x^i\})$ be a flat chart for $D$. If $N$ is an integral manifold of $D$, then $N\cap U$ is a union of countably many disjoint open subsets of parallel $r$-dimensional slices of $U$, each of which is open in $N$ and embedded in $M$.
 \end{prop}
 \begin{proof}
-    Since the inclusion $i:H\hookrightarrow M$ is continuous, $H\cap U=i^{-1}(U)$ is open in $H$ and this is a coutnable disjoint union of connected components, each open in $H$.
+    Since the inclusion $i:N\hookrightarrow M$ is continuous, $N\cap U=i^{-1}(U)$ is open in $H$ and this is a coutnable disjoint union of connected components, each open in $N$.
 
-    Let $V$ be a component of $H\cap U$. Since the chart is flat, the functions $x^{k+1},\ldots,x^n$ are constant along $D$ and therefore constant on any connected slice like $V$, and $V$ lies in a single slice $S$.
+    Let $V$ be a component of $N\cap U$. Since the chart is flat, the functions $x^{r+1},\ldots,x^n$ are constant along $D$ and therefore constant on any connected slice like $V$, and $V$ lies in a single slice $U_{\bm{c}}$, see Figure~\ref{fig: frobenius2}.
 
-    Since $S$ is embedded in $M$, the inclusion $V\hookrightarrow M$ ialso restricts to a smooth map into $S$. The inclusion $V\hookrightarrow S$ is thus an injective smooth immersion between manifolds of the same dimension, and therefore a local diffeomorphism, an open map, and a homeomorphism onto an open subset of $S$. The inclusion map $V\hookrightarrow M$ is a composition of the smooth embeddings $V\hookrightarrow S\hookrightarrow M$ and thus a smooth embedding.
+    Since $U_{\bm{c}}$ is embedded in $M$, the inclusion $V\hookrightarrow M$ ialso restricts to a smooth map into $U_{\bm{c}}$. The inclusion $V\hookrightarrow U_{\bm{c}}$ is thus an injective smooth immersion between manifolds of the same dimension, and therefore a local diffeomorphism, an open map, and a homeomorphism onto an open subset of $U_{\bm{c}}$. The inclusion map $V\hookrightarrow M$ is a composition of the smooth embeddings $V\hookrightarrow S\hookrightarrow M$ and thus a smooth embedding.
 \end{proof}
 
-Recall now that a weakly embedded submanifold $H$ is such that any smooth map into $M$ whose values lie in $H$ restricts to a smooth map into $H$.
+Recall now that a weakly embedded submanifold $N<M$ is such that any smooth map into $M$ whose values lie in $N$ restricts to a smooth map into $N$.
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.8]{figures/frobenius_2.pdf}
-    \caption{Local structure of a leaf. From \cite{Lee}.}
-    \label{fig:frobenius2}
+    \caption{Local structure of a leaf in a flat chart. From \cite{Lee}.}
+    \label{fig: frobenius2}
 \end{figure}
 
 
@@ -4123,9 +4125,9 @@ Recall now that a weakly embedded submanifold $H$ is such that any smooth map in
     Every integral manifold of an involutive distribution is weakly embedded.
 \end{thm}
 \begin{proof}
-    Let $H\subset M$ be an integral manifold of an involutive rank-$k$ distribution $D$ on $M$ and let $F:N\to M$ be a smooth map such that $F(N)\subset H$. Choose $p\in H$ and set $q=F(p)\in H$. Let $\{y^i\}_{i=1}^n$ be flat coordinates for $D$ on a neighborhood $U$ of $q$, and let $\{x^i\}$ be smooth coordinates for $N$ on a connected neighborhood $B$ of $p$ such that $F(B)\subset U$. With the coordinate representation of $F$ written as 
+    Let $N\subset M$ be an integral manifold of an involutive rank-$r$ distribution $D$ on $M$ and let $F:L\to M$ be a smooth map such that $F(L)\subset N$. Choose $p\in L$ and set $m=F(p)\in N$. Let $\{y^i\}_{i=1}^n$ be flat coordinates for $D$ on a neighborhood $U$ of $m$, and let $\{x^i\}$ be smooth coordinates for $L$ on a connected neighborhood $B$ of $p$ such that $F(B)\subset U$. With the coordinate representation of $F$ written as 
     \[y^i=F^i(x),\]
-    the fact that $F(B)\subset H\cap U$ means that the functions $F^{k+1},\ldots, F^n$ take on only countably many values. Since $B$ is connected, these coordinate functions are constant, and thus $F(B)$ lies in a single slice $S\subset U$. Because $S\cap H$ is an open subset in $H$ that is embedded in $M$, it follows that $\restr{F}{B}$ is smooth from $B$ into $S\cap H$, and thus by composition, $\restr{F}{B}:B\to S\cap H\hookrightarrow H$ is smooth into $H$.
+    the fact that $F(B)\subset N\cap U$ means that the functions $F^{r+1},\ldots, F^n$ take on only countably many values. Since $B$ is connected, these coordinate functions are constant, and thus $F(B)$ lies in a single slice $U_{\bm{c}}\subset U$. Because $U_{\bm{c}}\cap N$ is an open subset in $N$ that is embedded in $M$, it follows that $\restr{F}{B}$ is smooth from $B$ into $U_{\bm{c}}\cap N$, and thus by composition, $\restr{F}{B}:B\to U_{\bm{c}}\cap N\hookrightarrow N$ is smooth into $N$.
 \end{proof}
 \begin{cor}
     Images of the maximal integral curves of a vector field are weakly embedded submanifolds.
@@ -4144,18 +4146,19 @@ Recall now that a weakly embedded submanifold $H$ is such that any smooth map in
     \begin{enumerate}
         \item Let $N_1,N_2\subset M$ be two integral manifolds of $D$. If $N_1\cap N_2\neq \varnothing$ then $N_1\cap N_2$ is open in $N_1$ and $N_2$ and the smooth structures on it induced from either coincide. There is a unique smooth structure on $N_1\cup N_2$ such that $N_1$ and $N_2$ are open submanifolds. W.r.t.~this structure $N_1\cup N_2$ is an integral manifold of $D$.
 
-        \item Let $N\subset M$ be an integral manifold of $D$, let $m\in M$ such that $\dim D_m=\dim N$ and let $(U,\kappa)$ be a local flat chart for $D$ at $m$. If a slice $U_c$ of $U$ intersects $N$, then $U_c$ is an integral manifold of $D$ and $N\cap U_c$ is open and closed w.r.t.~the topology induced from $N$. In particular, the number of slices of $U$ intersecting $N$ is at most countable.  
+        \item Let $N\subset M$ be an integral manifold of $D$, let $m\in M$ such that $\dim D_m=\dim N$ and let $(U,\kappa)$ be a local flat chart for $D$ at $m$. If a slice $U_{\bm{c}}$ of $U$ intersects $N$, then $U_{\bm{c}}$ is an integral manifold of $D$ and $N\cap U_{\bm{c}}$ is open and closed w.r.t.~the topology induced from $N$. In particular, the number of slices of $U$ intersecting $N$ is at most countable.  
     \end{enumerate}
 \end{lem}
+Note that the number of slices of $U$ intersected by $N$ may, in fact, be countably infinite, as is the case with the ``irrational slope'' vector fields $\partial_x+\lambda\partial_y$, $\lambda\in\bbR\setminus\bbQ$, on the torus $\bbR^2\slash \bbZ^2$.
 \begin{proof}
 \begin{enumerate}
-    Note that the number of slices of $U$ intersected by $N$ may be countably infinite, as is the case with a line of ``irrational slope'' on the torus.
+    \item The assertion on $N_1\cup N_2$ follows from that on $N_1\cap N_2$, so it suffices to prove the latter. Let $\dim N_1=\dim N_2=\rank D=r$. Choose a local $r$-frame $\{X_i\}_{i=1}^r$ for $D$ at $m$. Since these vector fields are tangent to $N_i$, they are also local vector fields on $N_i$. Then the flows of these vector fields together generate a local coordinate system on $N_i$, mapping $(-\epsilon,\epsilon)^r$ into an open subset of $N_i$:
+    \[\Phi^{(i)}:(-\epsilon,\epsilon)^r\to U\cap N_i,\quad \Phi^{(i)}(\bm{t})\coloneqq F^{X^{(i)}_1}_{t_1}\circ \cdots\circ F^{X^{(i)}_r}_{t_r}(m),\quad i=1,2.\]
+    By construction these coordinates will coincide, $\Phi^{(1)}(\bm{t})=\Phi^{(2)}(\bm{t})$ (cf.\ Remark~\ref{rem 3.2.9 RS1}), and therefore their values will cover the same subset $V\subset N_1\cap N_2$ open in both $N_i$'s. W.r.t.~the differentiable structure induced from either $N_i$, $V$ is diffeomorphic to $(-\epsilon,\epsilon)^r$. Since the construction works for any $m\in N_1\cap N_2$, the assertion follows. 
 
-    \item The assertion on $N_1\cup N_2$ follows from that on $N_1\cap N_2$, so it suffices to prove the latter. Let $\dim N_1=\dim N_2=\rank D=r$. Choose a local $r$-frame $\{X_i\}_{i=1}^r$ for $D$ at $m$. Since these vector fields are tangent to $N_i$, they are also local vector fields on $N_i$. Then the flows of these vector fields together generate a local coordinate system on $N_i$, mapping $(-\epsilon,\epsilon)^r$ into an open subset of $N_i$. By construction these coordinates will coincide and therefore their values will cover the same subset $V\subset N_1\cap N_2$ open in both $N_i$'s. W.r.t.~the differentiable structure induced from either $N_i$, $V$ is diffeomorphic to $(-\epsilon,\epsilon)^r$. Since the construction works for any $m\in N_1\cap N_2$, the assertion follows. 
-
-    \item Let $r=\dim N=\dim D_m$. If $N$ intersects a slice $U_c$, then $U_c$ contains a point where $\rank D=r$. The $U_c$ is an integral manifold of $D$ by dimension-counting. Now assertion 1 implies that $N\cap U_c$ is open in $N$ and hence in $N\cap U$. Since this holds for all slices intersecting $N$ and since
-    \[N\cap U_c=(N\cap U)\setminus\left(\bigcup_{c'\neq c}N\cap U_{c'}\right),\]
-    the intersection $N\cap U_c$ is also closed in $N\cap U$. It follows that $N\cap U_c$ is a union of connected components of $N\cap U$. Since the slices are disjoint, this implies that the number of slices which intersect $N$ is at most as large as the number of connected components of $N\cap U$. Since the topology on $N\cap U$ is induced from the manifold $N$, it is second countable, hence the number of connected components is at most countable.
+    \item Let $r=\dim N=\dim D_m$. If $N$ intersects a slice $U_{\bm{c}}$, then $U_{\bm{c}}$ contains a point where $\rank D=r$. Then $U_{\bm{c}}$ is an integral manifold of $D$ by dimension-counting. Now assertion 1 implies that $N\cap U_{\bm{c}}$ is open in $N$ and hence in $N\cap U$. Since this holds for all slices intersecting $N$ and since
+    \[N\cap U_{\bm{c}}=(N\cap U)\setminus\left(\bigcup_{\bm{c}'\neq \bm{c}}N\cap U_{\bm{c}'}\right),\]
+    the intersection $N\cap U_{\bm{c}}$ is also closed in $N\cap U$. It follows that $N\cap U_{\bm{c}}$ is a union of connected components of $N\cap U$. Since the slices are disjoint, this implies that the number of slices which intersect $N$ is at most as large as the number of connected components of $N\cap U$. Since the topology on $N\cap U$ is induced from the manifold $N$, it is second countable, hence the number of connected components is at most countable.
 \end{enumerate}
 \end{proof}
 
@@ -4165,7 +4168,7 @@ Recall now that a weakly embedded submanifold $H$ is such that any smooth map in
     Let $D$ be an integrable distribution on $M$. For every $m\in M$ there exists a unique integral manifold $N_m$ of $D$ through $m$ which is maximal in the following sense. For every integral manifold $N$ of $D$ such that $N\cap N_m\neq \varnothing$ it holds that $N\subset N_m$, and $N$ is an open submanifold of $N_m$.
 \end{thm}
 \begin{proof}
-    Let $r=\dim D_m$ and define a subset $N_m\subset M$ by taking the union of all integral manifolds of $D$ through $m$. Equip it with the topology generated by the open subsets of these integral manifolds. The onion of all maximal atlases of these manifolds also defines an atlas on $N_m$. By Lemma~\ref{lem 3.5.14 RS1} this atlas is smooth.  One can then show that $N_m$ is second countable (see \cite[Lem.~19.22]{Lee} or \cite[Thm.~1.64]{Warner}). Then $N_m$ is a manifold of dimension $r$. By construction, the local representatives of the inclusion $N_m\hookrightarrow M$ are smooth, hence $N_m$ is a smooth submanifold of $M$. Also by construction, every $\wt{m}\in N_m$ belongs to an integral manifold $N$ through $m$ and $N$ is an open submanifold of $N_m$, so $N_m$ is also an integral manifold through $m$. It has the maximality property states in the theorem because if some integral manifold $N$ of $D$ intersects $N_m$, then $N\cup N_m$ is also integral and thus already contained in $N_m$. It follows that $N\cap N_m=N$ and hence $N$ is an open submanifold of $N_m$. Uniqueness follows because any two maximal integral manifolds through $m$ would coincide as sets by definition and each of them would be an open submanifold of the other, hence they would also coincide as manifolds.
+    Let $r=\dim D_m$ and define a subset $N_m\subset M$ by taking the union of all integral manifolds of $D$ through $m$. Equip it with the topology generated by the open subsets of these integral manifolds. The onion of all maximal atlases of these manifolds also defines an atlas on $N_m$. By Lemma~\ref{lem 3.5.14 RS1} this atlas is smooth.  One can then show that $N_m$ is second countable (see \cite[Lem.~19.22]{Lee} or \cite[Thm.~1.64]{Warner}). Then $N_m$ is a manifold of dimension $r$. By construction, the local representatives of the inclusion $N_m\hookrightarrow M$ are smooth, hence $N_m$ is a smooth submanifold of $M$. Also by construction, every $\wt{m}\in N_m$ belongs to an integral manifold $N$ through $m$ and $N$ is an open submanifold of $N_m$, so $T_{\wt m}N_m=T_{\wt m}N=D_{\wt m}$, and thus $N_m$ is also an integral manifold through $m$. It has the maximality property stated in the theorem because if some integral manifold $N$ of $D$ intersects $N_m$, then $N\cup N_m$ is also integral and thus already contained in $N_m$. It follows that $N\cap N_m=N$ and hence $N$ is an open submanifold of $N_m$. Uniqueness follows because any two maximal integral manifolds through $m$ would coincide as sets by definition and each of them would be an open submanifold of the other, hence they would also coincide as manifolds.
 \end{proof}
 
 
@@ -4190,7 +4193,7 @@ Recall now that a weakly embedded submanifold $H$ is such that any smooth map in
     The assignment of the family of maximal integral manifolds to an integrable distribution defines a bijection between smooth integrable distributions on $M$ and smooth foliations of $M$. Regular distributions of rank $r$ thereby correspond to regular foliations of rank $r$.
 \end{thm}
 \begin{proof}
-    Theorem~\ref{thm 3.5.17 RS1} implies that condition 1 of the definition of a foliation is satisfied. The invariance of maximal integral manifolds under the flows of local $D$-valued vector fields lets us generate local flat flat charts via a composition (as in rectification for local frames) of the flows and hence condition 2 is satisfied as well. 
+    Theorem~\ref{thm 3.5.17 RS1} implies that condition 1 of the definition of a foliation is satisfied. The invariance of maximal integral manifolds under the flows of local $D$-valued vector fields lets us generate local flat charts via a composition of the flows (as in Rectification Theorem~\ref{rectification}) and hence condition 2 is satisfied as well. 
 
     Conversely, let $\mathcal{N}$ be a smooth foliation. For $m\in M$, let $D_m$ be the tangent space at $m$ of the leaf containing $m$. This defines a subset $D\subset TM$. By definition of a foliation, $D_m$ is spanned by the values of local $D$-valued vector fields at $m$. Hence $D$ is a distribution. By construction, every leaf is an integral manifold of $D$. First, this implies that $D$ is integrable. Second, in view of Theorem~\ref{thm 3.5.17 RS1}, this implies that every leaf of $\mathcal{N}$ is contained in an open subset in a maximal integral manifold of $D$. Thus $N$ is a union of leaves. Since the leaves are disjoint and $N$ is connected, $N$ must coincide with a single leaf. This shows that $\mathcal{N}$ is the family of maximal integral manifolds of $D$, and the assignment is bijective, indeed.
 \end{proof}
@@ -4247,7 +4250,7 @@ Recall now that a weakly embedded submanifold $H$ is such that any smooth map in
         \Alt t&=\frac{1}{k!}\sum_{\sigma\in S_k} (\sign\sigma)\cdot t^\sigma,\\
         \Sym t&=\frac{1}{k!}\sum_{\sigma\in S_k} t^\sigma,
     \end{align}
-    where the operation $t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $T^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(T^k V)$ and $\rmS^k V=\Sym(T^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
+    where $S_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $T^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(T^k V)$ and $\rmS^k V=\Sym(T^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
     
     If $\dim V=n$, then $\dim \bigwedge^k V=\binom{n}{k}$. In particular, 
     \[\bigwedge^1 V=V,\quad \dim \bigwedge^0 V=\dim \bigwedge^n V=1,\quad \dim \bigwedge^{>n} V=0.\]
@@ -4257,13 +4260,13 @@ Recall now that a weakly embedded submanifold $H$ is such that any smooth map in
 
 If $V$ has Cartesian coordinates $x^1,\ldots,x^n$, then a basis of $V$ is formed by $\{\partial_{x^i}\}$. The dual basis of $V^\ast$ is conventionally denoted by $\{\dd x^i\}$, so that
 \[
-    \dd x^i(\partial_{x^j})=\delta^i_j.
+    \dd x^i\left(\partial_{x^j}\right)=\delta^i_j.
 \]
 Then this basis induces a basis of $\bigwedge^k V^\ast$ consisting of the $\binom{n}{k}$ elements
 \[
 \dd x^{i_1}\wedge \cdots \wedge \dd x^{i_k}\coloneqq k!\Alt(\dd x^{i_1}\otimes\cdots\otimes \dd x^{i_k}),\;\;1\leq i_1<i_2<\cdots<i_k\leq n.
 \]
-Together with the wedge product, the direct sum of all exterior powers of $V$ makes up an algebra, called the exterior, or \emph{Grassmann}, algebra of $V$:\index{Grassmann algebra}
+Together with the wedge product, the direct sum of all exterior powers of $V$ makes up an algebra, called the exterior, or \emph{Grassmann}, algebra of $V$, of dimension $2^n$:\index{Grassmann algebra}
 \[\bigwedge V=\bigoplus_{k=0}^\infty \bigwedge^k V.\]
 
 
@@ -4284,8 +4287,8 @@ Being an element of $\Hom(\bigwedge^n V,\bigwedge^n V)$, which is naturally isom
 \begin{proof}
 \begin{enumerate}
     \item By definition of $f^\ast$, if $v\in \bigwedge^n V$, then 
-    \[(f^\ast t)(v)=t(f(v))=t(\det f\cdot v)=\det f\cdot t(v).\]
-    \item A basis element of $\bigwedge^n V$ is $e_1\wedge \cdots \wedge e_n$. Acting on it, $\det f=\bigwedge^n f$ gives
+    \[(f^\ast t)(v)=t\left(f_\ast(v)\right)=t\left(\left(\bigwedge^n f\right)(v)\right)=t(\det f\cdot v)=\det f\cdot t(v).\]
+    \item The one-dimensional space $\bigwedge^n V$ is spanned by the element $e_1\wedge \cdots \wedge e_n$. Acting on it, $\det f=\bigwedge^n f$ gives
     \begin{align}
         \left(\bigwedge^n f\right)(e_1\wedge \cdots \wedge e_n)=&k!f^{\otimes n}\circ \Alt (e_1\otimes \cdots \otimes e_n)=\\
         =&k!\Alt(f(e_1)\otimes\cdots\otimes f(e_n))=\notag
@@ -4301,15 +4304,17 @@ Being an element of $\Hom(\bigwedge^n V,\bigwedge^n V)$, which is naturally isom
 \end{enumerate}
 \end{proof}
 
-\begin{defn}[Exterior/wedge product]\index{Exterior product}\index{Wedge product of differential forms}
-For $\alpha\in T^0_p V$ and $\beta\in T^0_q V$, we define their exterior/wedge product by
-\[\alpha\wedge\beta\coloneqq\frac{(p+q)!}{p!q!}\Alt (\alpha\otimes \beta)\in \bigwedge^{p+q}V.\]
+\begin{defn}[Exterior/wedge product]\index{Exterior product}\index{Wedge product| see {Exterior product}}
+    For $\alpha\in V^{\otimes p}$ and $\beta\in V^{\otimes q}$, we define their exterior/wedge product by
+    \[\alpha\wedge\beta\coloneqq\frac{(p+q)!}{p!q!}\Alt (\alpha\otimes \beta)\quad \in \bigwedge^{p+q}V.\]
 \end{defn}
-Wedge products have the following basic properties:
+Wedge products have the following basic properties (proofs of which are left as exercises):
 \begin{enumerate}
     \item $\alpha\wedge\beta=\Alt(\alpha)\wedge\beta=\alpha\wedge\Alt(\beta)$;
     \item $\wedge$ is bilinear and $\alpha\wedge\beta=(-1)^{\deg\alpha\cdot\deg\beta}\beta\wedge\alpha$;
     \item $\alpha\wedge(\beta\wedge\gamma)=(\alpha\wedge\beta)\wedge\gamma$.
+    \item The notation for basis elements is consistent with the definition of the wedge product:
+    \[(\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p})\wedge (\dd x^{i_{p+1}}\wedge\cdots\wedge \dd x^{i_{p+q}})=\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_{p+q}}.\]
     \item For $\alpha_i\in V^\ast$, $i=1,\ldots,k$, 
     \begin{multline}
         (\alpha_1\wedge\cdots\wedge\alpha_k)(v_1,\ldots,v_k)=\sum_{\sigma\in S_k}(\sign\sigma)\cdot \alpha_1(v_{\sigma(1)})\cdots\alpha_k(v_{\sigma(k)})=\\=\det \begin{bmatrix}
@@ -4327,12 +4332,12 @@ The degree of an exterior form can be lowered by substituting a given vector as 
 
 \begin{defn}[Inner product]\index{Inner product}
     Let $\alpha\in\bigwedge^{p+1}V^\ast, p\geq 0,$ and $v\in V$. The inner product with $v$ is the operator $i_v:\bigwedge^{p+1}V^\ast\to \bigwedge^p(v)$ defined by 
-    \[(i_X \alpha)(v_1,\ldots,v_p)=\omega(v,v_1,\ldots,v_p),\]
-    for $v_1,\ldots,v_p\in V$. We also put $\restr{i_X}{\bigwedge^0V^\ast}=0$.
+    \[(i_v \alpha)(v_1,\ldots,v_p)=\alpha(v,v_1,\ldots,v_p),\]
+    for $v_1,\ldots,v_p\in V$. We also put $\restr{i_v}{\bigwedge^0V^\ast}=0$.
 \end{defn}
 
-Note that $i_v$ is a \emph{derivation} on the exterior algebra (we will say it's a \emph{$\wedge$-derivation}):
-\[i_v(\alpha\wedge\beta)=i_v\alpha\wedge\beta+(-1)^{\deg \alpha}\wedge i_v\beta.\]
+Note that $i_v$ is a ``\emph{$\wedge$-derivation}'' on the exterior algebra (exercise):
+\[i_v(\alpha\wedge\beta)=i_v\alpha\wedge\beta+(-1)^{\deg \alpha}\alpha\wedge i_v\beta.\label{eq inner product derivation}\]
 
 
 
@@ -4349,33 +4354,31 @@ Note that $i_v$ is a \emph{derivation} on the exterior algebra (we will say it's
 
 
 \begin{defn}[Exterior powers of \glspl{vb}]
-Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge^p$ and $\rmS^p$ to all smooth vector bundles. We focus only on $\bigwedge^p$. For a vector bundle $E\overset{\pi}{\to} M$, we obtain the exterior powers
+Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge^p$ and $\rmS^p$ to all smooth \glspl{vb}. We focus only on $\bigwedge^p$. For a \gls{vb} $E\overset{\pi}{\to} M$, we obtain the exterior powers
 \[\bigwedge^p E=(E)^{\otimes p}_{\text{asym.}}.\]
 $p$ is called the \emph{degree} of the elements or sections of $\bigwedge^p E$: \[\deg \alpha=p\;\text{ for }\;\alpha\in\Gamma^\infty\left(\bigwedge^p E\right).\]
 The wedge product $\wedge$ gets extended to sections of these bundles fiberwise.
 In particular, if $\rank E=k$, then \[\det E\coloneqq \bigwedge^k E\] is called the \emph{determinant (line) bundle}\index{Determinant bundle} of $E$. If the transition functions of $E$ are $\tau_{\alpha\beta}:U_{\alpha\beta}\to \GL_k(\bbR )$, then the transition functions of $\det E$ are $\det \tau_{\alpha\beta}$.
 
-The total rank of the exterior bundles is $\rank \left(\bigoplus_{p\geq 0}\bigwedge^p E\right)=2^k.$
-
-The alternation and symmetrization maps get extended to $\Alt: T^p E\to \bigwedge^p E$ and $\Sym:T^p E\to \rmS^p E$.
+The alternation and symmetrization maps get extended to $\Alt: E^{\otimes p}\to \bigwedge^p E$ and $\Sym: E^{\otimes p}\to \rmS^p E$.
 \end{defn}
 
 All properties of wedge products listed above immediately generalize to sections of the exterior bundles.
 
-\begin{defn}[Determinant of a bundle map]
+\begin{defn}[Determinant of a \gls{vb} morphism]
 If $E\overset\pi\to M$ is a \gls{vb} of rank $k$ and $f:E\to E$ is a bundle map, then we define $\det f=\bigwedge^k f$. If $\omega\in\Gamma^\infty(\det E^\ast)$, then $f^\ast \omega=\det f\cdot \omega$.
 \end{defn}
 
 \begin{defn}[Exterior/Grassmann algebra]\index{Exterior algebra}\index{Grassmann algebra|see {Exterior algebra}}
-For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma^\infty(\bigwedge^p E)=\Gamma\left(\bigoplus_{p\geq 0}\bigwedge^p E\right)$ with the product $\wedge$ is called the exterior, or Grassmann, algebra of $E$.
+For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma^\infty(\bigwedge^p E)=\Gamma^\infty\left(\bigoplus_{p\geq 0}\bigwedge^p E\right)$ with the product $\wedge$ is called the exterior, or Grassmann, algebra of $E$.
 \end{defn}
 
-\begin{xca}
-    \begin{enumerate}
-        \item Prove formula \ref{form determinant f-la}.
-        \item Show that $k$ one-forms (or vectors) $\{\alpha_i\}$ are linearly independent iff $\alpha^1\wedge\cdots\wedge\alpha^k\neq 0$. 
-    \end{enumerate}
-\end{xca}
+% \begin{xca}
+%     \begin{enumerate}
+%         \item Prove formula \ref{form determinant f-la}.
+%         \item Show that $k$ one-forms (or vectors) $\{\alpha_i\}$ are linearly independent iff $\alpha^1\wedge\cdots\wedge\alpha^k\neq 0$. 
+%     \end{enumerate}
+% \end{xca}
 
 
 
@@ -4387,24 +4390,33 @@ For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma^\infty(\bigwedge^p E)=\
 We now move from arbitrary bundles to manifolds by applying the exterior power functor to the tangent bundle.
 
 \begin{defn}[Differential forms]\index{Differential form}
-Differential forms of degree $p$ on a smooth manifold $M$ are sections of $\bigwedge^p (T^\ast M)$. The exterior algebra of differential forms is denoted
-\[\Omega^p(M)\coloneqq \Gamma^\infty\left(\bigwedge^p(T^\ast M)\right).\]
-In particular, we have $\Omega^0(M)=C^\infty(M)$, $\Omega^1(M)=\fX^\ast (M)$, and $\Omega^p(M)=\bigwedge^p \fX^\ast(M)$. We also denote the \emph{exterior algebra} of $M$ by
-\[\Omega^\bullet(M)\coloneq\bigoplus_{p=0}^\infty \Omega^p(M)\]
+    Differential forms of degree $p$ on a smooth manifold $M$ are sections of $\bigwedge^p (T^\ast M)$. The exterior algebra of differential forms is denoted
+    \[\Omega^p(M)\coloneqq \Gamma^\infty\left(\bigwedge^p(T^\ast M)\right).\]
+    In particular, we have $\Omega^0(M)=C^\infty(M)$, $\Omega^1(M)=\fX^\ast (M)$, and $\Omega^p(M)=\bigwedge^p \fX^\ast(M)$. We also denote the \emph{exterior algebra} of $M$ by
+    \[\Omega^\bullet(M)\coloneq\bigoplus_{p=0}^\infty \Omega^p(M)\]
 \end{defn}
 
-Recall that for $f\in C^\infty(M)$, $\dd f=\pr_2\circ f_\ast$, where $\pr_2$ is the projection onto the fiber in $T\bbR =\bbR \times\bbR $. As we have established in Example \ref{df is a one-form} using the tensor characterization theorem, the differential is a one-form, $\dd f\in\Omega^1(M)$.
+
+\begin{rem}
+    Since differential forms are covariant tensor fields, they can be expanded in local coordinates $(U,\{x^i\})$ as combinations of terms of the form $\dd x^{i_1}\otimes\cdots\otimes \dd x^{i_p}$ with coefficients in $C^\infty(U)$. By taking into account the antisymmetry of forms, we conclude that every differential form $\omega\in\Omega^p(M)$ has the following coordinate representation, where $n=\dim M$:
+    \[\omega=\sum_{1\leq i_1<\cdots <i_p\leq n}\omega_{i_1 i_2\cdots i_p}\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p},\quad \omega_{i_1 i_2\cdots i_p}\in C^\infty(U).\label{eq local rep of a p-form}\]
+\end{rem}
+
+
+Recall that for $f\in C^\infty(M)$, $\dd f=\pr_2\circ f_\ast$, where $\pr_2$ is the projection onto the fiber in $T\bbR =\bbR \times\bbR $. As we have established in Example \ref{df is a one-form}, using the tensor characterization theorem, the differential is a one-form, $\dd f\in\Omega^1(M)$. We can now verify that our notation for the coframe $\{\dd x^i\}_{i=1}^n$ is consistent with the action of $\dd$ on the coordinate functions $x^i$.
 
 \begin{prop}
-If $x^i\in C^\infty(U),i=1,\ldots,m$ are local coordinate functions on $U\subset M^m$, then the differentials $\dd x^i$ of these functions coincide with the dual coordinate frame, i.e.
+    If $x^i\in C^\infty(U),i=1,\ldots,n$ are local coordinate functions on $U\subset M$, then the differentials $\dd x^i$ of these functions coincide with the dual coordinate frame, i.e.
 \[\dd x^i(\partial_j)=\delta^i_j.\]
 \end{prop}
 \begin{proof}
-By definition, of components of vector fields as push-forwards by $x^i_\ast$,
-\[\dd x^i(\partial_{j})=\pr_2\circ x^i_\ast (\partial_{j})=(\partial_j)^i=\delta^i_j.\]
+    Recall that $x^i_\ast$ are exactly the components of the bundle chart for $TM$. Therefore $x^i_\ast(\partial_j)=(\partial_j)^i$ and
+    \[\dd x^i(\partial_{j})=\pr_2\circ x^i_\ast (\partial_{j})=(\partial_j)^i=\delta^i_j.\]
+    Equivalently, by definition of the Lie derivative, 
+    \[\dd x^i(\partial_j)=\Lie_{\partial_j}x^i=\frac{\partial x^i}{\partial x^j}=\delta^i_j.\]
 \end{proof}
 \begin{cor}
-Locally, the differential $\dd f$ of a function $f\in C^\infty(M)$ is the standard ``total differential'' from multivariable calculus, \[\dd f=\dd f(\partial_i)\cdot\dd x^i=(\partial_i f)\cdot \dd x^i.\]
+    Locally, the differential $\dd f$ of a function $f\in C^\infty(M)$ is the standard ``total differential'' from multivariable calculus, \[\dd f=\dd f(\partial_i)\cdot\dd x^i=(\partial_i f)\cdot \dd x^i.\]
 \end{cor}
 
 \begin{xca}
@@ -4412,7 +4424,7 @@ Locally, the differential $\dd f$ of a function $f\in C^\infty(M)$ is the standa
 \end{xca}
 
 \begin{thm}\label{exterior d existence}
-There exists a unique family of differential operators $\wt{\dd}_p(U):\Omega^p(U)\to \Omega^{p+1}(U)$ for every $U\mathring\subset M$, denoted collectively by $\wt\dd$, such that:
+    There exists a unique family of differential operators $\wt{\dd}_p(U):\Omega^p(U)\to \Omega^{p+1}(U)$ for every $U\mathring\subset M$, denoted collectively by $\wt\dd$, such that:
 \begin{enumerate}
     \item $\wt\dd$ is an $\bbR $-linear $\wedge$-derivation: $\wt\dd(\alpha\wedge\beta)=\wt\dd\alpha\wedge\beta+(-1)^{\deg\alpha}\alpha\wedge\wt\dd\beta$;
     \item $\forall f\in C^\infty(M)$, $\wt\dd f=\dd f$;
@@ -4423,9 +4435,9 @@ There exists a unique family of differential operators $\wt{\dd}_p(U):\Omega^p(U
 \begin{proof}
 Suppose the existence of $\wt\dd$ is established. Then let us consider its action on differential forms of the form $f_0\cdot \dd f_1\wedge \cdots \wedge \dd f_p$ where $f_i\in C^\infty(M)$ (such forms span the entire space $\Omega^p(M)$). Using the properties (1)-(3), we find
 \[\wt\dd (f_0\cdot \dd f_1\wedge \cdots \wedge \dd f_p)\overset{(1),(3)}{=}(\wt\dd f_0) \wedge \dd f_1\wedge \cdots \wedge \dd f_p\overset{(2)}{=}(\partial_i f_0)\cdot \dd x^i\wedge \dd f_1\wedge \cdots \wedge \dd f_p.\]
-This formula in fact completely determines the action of $\wt\dd$ on all differential forms! Namely, if locally $\omega=\sum_{1\leq i_1<\cdots <i_p\leq m}\omega_{i_1 i_2\cdots i_p}\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}$ with $\omega_{i_1\cdots i_p}\in C^\infty(U)$, then
-\[\wt\dd \omega =\sum_{i_0=1}^m\sum_{1\leq i_1<\cdots <i_p\leq m}\partial_{i_0}\omega_{i_1 i_2\cdots i_p}\cdot \dd x^{i_0}\wedge \dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}.\]
-This formula is in fact coordinate-independent and therefore defines a true differential operator on the algebra of differential forms. All four properties immediately follow (Exercise; only property (3) is nontrivial). This proves the existence and uniqueness.
+This formula in fact completely determines the action of $\wt\dd$ on all differential forms! Namely, if locally $\omega$ is expressed as (\ref{eq local rep of a p-form}), then
+\[\wt\dd \omega =\sum_{i_0=1}^n\sum_{1\leq i_1<\cdots <i_p\leq n}\partial_{i_0}\omega_{i_1 i_2\cdots i_p}\cdot \dd x^{i_0}\wedge \dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}.\]
+This formula is in fact coordinate-independent and therefore defines a true differential operator on the algebra of differential forms. All four properties immediately follow (Exercise; only property 3 is nontrivial). This proves the existence and uniqueness.
 \end{proof}
 
 \begin{defn}[Exterior derivative]\index{Exterior derivative}
@@ -4434,19 +4446,38 @@ This formula is in fact coordinate-independent and therefore defines a true diff
     A differential form $\omega\in\Omega^p(M)$ is called \emph{closed} if $\dd\omega=0$ and \emph{exact} if $\omega=\dd\eta$ for some $\eta\in\Omega^{p-1}(M)$. \index{Closed form}\index{Exact form}
 \end{defn}
 
+The following proposition shows that $\dd$ is natural with respect to smooth maps. This property is often described as ``differentials are invariant under changes of variables''.
+
 \begin{prop}
-If $F\in C^\infty(M,N)$, then $F^\ast:\Omega^\bullet(N)\to\Omega^\bullet(M)$ is a homomorphism of algebras and
-\[F^\ast \dd\omega=\dd F^\ast\omega.\]
-Sometimes this property is described as ``differentials are invariant under changes of variables''.
+    If $F\in C^\infty(M,N)$, then $F^\ast:\Omega^\bullet(N)\to\Omega^\bullet(M)$ is a homomorphism of algebras and
+    \[F^\ast \dd\omega=\dd F^\ast\omega.\]
 \end{prop}
 \begin{proof}
-    The homomorphism part follows from (\ref{pullbacks of wedges}). The second part can be checked in local coordinates using the homomorphism property. First, for $f\in C^\infty(M)$, using Proposition \ref{pullbacks of Lie derivatives} (note that $F$ doesn't really have to be a diffeomorphism when the pullback is computed at a separate point),
-    \[(F^\ast \dd f)(X)(p)=\dd f(F_\ast X_p)=(F^\ast \Lie_{F_\ast X}f)(p)=(\Lie_X F^\ast f)(p)=(\dd F^\ast f)(p),\]
-    next we can apply this to every component of a differential form in local coordinates, since these components are functions:
-    \[\dd (F^\ast\omega)=F^\ast(\dd\omega_{i_1\cdots i_p}\wedge \dd x^{i_1}\wedge\cdots \wedge \dd x^{i_p})=(F^\ast\dd\omega_{i_1\cdots i_p})\wedge F^\ast \dd x^{i_1}\wedge\cdots\wedge F^\ast \dd x^{i_p}=F^\ast(\dd\omega). \]
+    The homomorphism part follows from (\ref{pullbacks of wedges}). The second part can be checked in local coordinates using the homomorphism property. First, for $f\in C^\infty(N)$, we have $F^\ast f=f\circ F$, and using Proposition \ref{pullbacks of Lie derivatives} (note that $F$ doesn't have to be a diffeomorphism here because we only need to push $X_m$ at a single point $m\in M$ \emph{forward}), we find
+    \[(F^\ast \dd f)(X)(m)=\dd f(F_\ast X_m)=(F^\ast \Lie_{F_\ast X}f)(m)=(\Lie_X F^\ast f)(m)=(\dd F^\ast f)(X)(m),\label{137964}\]
+    next we can apply this to every term in a local expansion (\ref{eq local rep of a p-form}) of a differential form $\omega\in\Omega^p(N)$:
+    \[F^\ast(\dd\omega)=F^\ast(\dd\omega_{i_1\cdots i_p}\wedge \dd x^{i_1}\wedge\cdots \wedge \dd x^{i_p})=(F^\ast\dd\omega_{i_1\cdots i_p})\wedge F^\ast \dd x^{i_1}\wedge\cdots\wedge F^\ast \dd x^{i_p}.\]
+    But each instance of $\dd$ in this expression commutes with $F^\ast$ according to (\ref{137964}), so we get $\dd F^\ast\omega$.
 \end{proof}
+
+\begin{rem}
+    The proof above explains how pullbacks work in practice. If a differential form is expressed in terms of products of the $1$-forms $\dd x^i$, then $F^\ast\dd x^i$ is simply $\dd (x^i\circ F)$, i.e.\ we merely substitute the values of $F$ into the basic differentials $\dd x^i$.
+\end{rem}
+
+\begin{example}
+    \begin{enumerate}
+        \item If $f\in C^\infty(\bbR)$, written as $y=f(x)$, then $f^\ast \dd y=\dd f(x)=f'(x)\dd x$.
+        \item If $F$ is injective, then $F^\ast\omega$ can be viewed as a ``restriction'' of $\omega$ to the image of $F$. For example, if $F:\bbR^2\to \bbR^3$ is an immersion defining a surface $S<\bbR^3$ parametrized via $F(u,v)=(F^1(u,v),F^2(u,v),F^3(u,v))$, then 
+        \begin{multline}
+            F^\ast(\dd x^1\wedge\dd x^2)=\dd F^1\wedge\dd F^2=(\partial_u F^1\dd u+\partial_v F^1\dd v)\wedge(\partial_u F^2\dd u+\partial_v F^2\dd v)=\\=(\partial_u F^1\partial_vF^2-\partial_uF^2\partial_vF^1)\dd u\wedge\dd v.
+        \end{multline}
+        Since every vector tangent to $S$ can be expressed as the push-forward by $F$ of some vector in $\bbR^2$, this formula essentially expresses the action of the $2$-form $\dd x^1\wedge\dd x^2\in\Omega^2(\bbR^3)$ on pairs of such vectors in local coordinates $(u,v)$ for the surface. In this sense, this is nothing but the restriction of  $\dd x^1\wedge\dd x^2$ to vectors tangent to this surface.
+    \end{enumerate}
+\end{example}
+
+
 \begin{cor}
-    $\Omega:\mathsf{Man}^\infty \to\mathsf{Alg}$ is a functor, and in fact it is a functor into the category of commutative differential graded algebras.\tablefootnote{A commutative graded  algebra is an algebra that can be decomposed as a direct sum $A=\bigoplus_{p\geq 0}A_p $ such that the product acts as $\wedge:A_p\times A_q\to A_{p+q}$ and $\omega\wedge\eta=(-1)^{\deg\omega\cdot\deg\eta}\eta\wedge\omega$. It is also called differential if there is a distinguished graded $\wedge$-derivation $\dd:A_p\to A_{p+1}$ such that $d\circ d=0$.}
+    $\Omega:\mathsf{Man}^\infty \to\mathsf{Alg}$ is a functor, and in fact it is a functor into the category of commutative differential graded algebras.\footnote{A commutative graded  algebra is an algebra that can be decomposed as a direct sum $A=\bigoplus_{p\geq 0}A_p $ such that the product acts as $\wedge:A_p\times A_q\to A_{p+q}$ and $\omega\wedge\eta=(-1)^{\deg\omega\cdot\deg\eta}\eta\wedge\omega$. It is also called differential if there is a distinguished graded $\wedge$-derivation $\dd:A_p\to A_{p+1}$ such that $d\circ d=0$.}
 \end{cor}
 
 \begin{defn}[Inner product]\index{Inner product}
@@ -4462,7 +4493,7 @@ We also put $\restr{i_X}{\Omega^0(M)}=0$.
     \item $i_X$ is a $\wedge$-derivation on the exterior algebra;
     \item $i_{f\cdot X}=f\cdot i_X$;
     \item $i_X\dd f=\Lie_X f$ for $f\in \Omega^0(M)$;
-    \item $\restr{\Lie_X}{\Omega^p(M)}=i_X\circ\dd+\dd\circ i_X$ (Cartan's magic formula);
+    \item $\restr{\Lie_X}{\Omega^p(M)}=i_X\circ\dd+\dd\circ i_X$ (Cartan's magic formula);\index{Equation!Cartan's magic}
     \item $\Lie_{fX}\,\omega=f\Lie_X\omega +\dd f\wedge i_X\omega$;
     \item For any diffeo $F$, $F^\ast i_X\omega =i_{F^\ast X}F^\ast\omega$.
 \end{enumerate}
@@ -4470,16 +4501,15 @@ We also put $\restr{i_X}{\Omega^0(M)}=0$.
 \begin{proof}
 \begin{enumerate}
     \item First we check that the Lie derivative of a differential form is a differential form. It suffices to check the property on differential forms of the form $\alpha^1\wedge\cdots\wedge\alpha^p$, $\alpha^i\in\Omega^1(M)$. We know that $\Lie_X$ is a tensor derivation, so 
-    \[\Lie_X (\alpha^1\wedge\cdots\wedge\alpha^p)=\sum_{i=1}^p \alpha^1\wedge\cdots\wedge\alpha^{i-1}\wedge(\Lie_X\alpha^i)\wedge\alpha^{i+1}\wedge\cdots\wedge\alpha^p.\]
-    Since $\Omega^1(M)=\fX(M)$, we know that $\Lie_X \alpha^i$ are also one-forms, and thus $\Lie_X$ is a differential form.
-    
+    \[\Lie_X (\alpha^1\wedge\cdots\wedge\alpha^p)=\sum_{i=1}^p \alpha^1\wedge\cdots\wedge\alpha^{i-1}\wedge(\Lie_X\alpha^i)\wedge\alpha^{i+1}\wedge\cdots\wedge\alpha^p.\label{17932121}\]
+    Since $\Omega^1(M)=\fX^\ast(M)$, we know that $\Lie_X \alpha^i$ are also one-forms, and thus (\ref{17932121}) is a differential form.
     Furthermore, if $F$ denotes the flow of $X$, then $\Lie_X\alpha (p)=\restr{\frac{\dd}{\dd\lambda}}{\lambda=0}F^\ast_\lambda \alpha$. But we already know that $\dd$ commutes with pullbacks $F^\ast_\lambda$, so the result follows;
-    \item Exercise (direct check by applying the definitions to a basis);
+    \item Follows from (\ref{eq inner product derivation});
     \item Follows from the linearity of $i_X$;
-    \item This is literally the definition of $\Lie_X$;
-    \item Proof by induction in $p=\deg\omega$. The case $p=0$ reduces to part (4). Any $(p+1)$-form can be locally represented as $\sum_i \dd f_i\wedge \omega_i$ with $f_i\in\Omega^0(U), \omega_i\in \Omega^p(U)$. Thus we need to check the property only for forms $\dd f\wedge \omega$:
-    \[\Lie_X(\dd f\wedge\omega)=\Lie_X \dd f\wedge \omega+\dd f\wedge \Lie_X\omega\]
-    and 
+    \item This is just the definition of $\Lie_X$;
+    \item We prove by induction in $p=\deg\omega$. The case $p=0$ reduces to part (4). Any $(p+1)$-form can be locally represented as $\sum_i \dd f_i\wedge \omega_i$ with $f_i\in\Omega^0(U), \omega_i\in \Omega^p(U)$. Thus, we need to check the property only for $\dd f\wedge \omega$. Since $\Lie_X$ is a derivation of the tensor algebra, we have
+    \[\Lie_X(\dd f\wedge\omega)=\Lie_X \dd f\wedge \omega+\dd f\wedge \Lie_X\omega.\]
+    Now, working backwards,
     \begin{multline}
         i_X\dd (\dd f\wedge \omega)+ \dd i_X (\dd f\wedge\omega)=-i_X(\dd f\wedge\dd \omega)+\dd\left(i_X\dd f\wedge\omega-\dd f\wedge i_X\omega\right)\overset{(2)}{=}
         \\
@@ -4493,7 +4523,7 @@ We also put $\restr{i_X}{\Omega^0(M)}=0$.
 \end{proof}
 
 Corollary~\ref{cor willmore formula} implies
-\[(\Lie_X\omega) (X_1,\ldots,X_p)=\Lie_X(\omega(X_1,\ldots,X_p))-\sum_{i=1}^p\omega(X_1,\ldots,[X,X_i],\ldots,X_p).\]
+\[(\Lie_X\omega) (X_1,\ldots,X_p)=\Lie_X(\omega(X_1,\ldots,X_p))-\sum_{i=1}^p\omega(X_1,\ldots,[X,X_i],\ldots,X_p).\label{3170}\]
 We use this property in the proof of the following useful formula.
 
 \begin{prop}[{{\cite[Prop.~4.1.6]{RS1}}}]\label{prop 4.1.6 RS1}
@@ -4507,7 +4537,7 @@ where hats indicate that the corresponding vector fields are excluded from the l
 \begin{proof}
 Proof by induction in $p$. For $p=0$, we have already established this formula, $\dd \omega(X_0)=\Lie_{X_0}\omega$.
 
-For $p>0$, $(\dd\omega)(X_0,\ldots )=(i_{X_0}\dd\omega)(X_1,\ldots)=(\Lie_{X_0}\omega-\dd i_{X_0}\omega)(X_1,\ldots)$, and by the induction step at $p-1$, we can expand $\dd i_{X_0}\omega$ and permute the result to bring it to the required form.
+For $p>0$, $(\dd\omega)(X_0,\ldots )=(i_{X_0}\dd\omega)(X_1,\ldots)=(\Lie_{X_0}\omega-\dd i_{X_0}\omega)(X_1,\ldots)$, and by the induction step at $p-1$, we can expand $\dd i_{X_0}\omega$ and permute the result and use (\ref{3170}) to bring it to the required form.
 \end{proof}
 
 \begin{xca}
@@ -4522,18 +4552,18 @@ For $p>0$, $(\dd\omega)(X_0,\ldots )=(i_{X_0}\dd\omega)(X_1,\ldots)=(\Lie_{X_0}\
 
 \subsection{Orientation}
 
-The group $\GL^+_n(\bbR )$ is defined as the connected component of the identity in $\GL_n(\bbR )$, i.e.\ the group of matrices with a strictly positive determinant.
+The group $\GL^+_n(\bbR )$ is defined as the connected component of the identity in $\GL_n(\bbR )$, i.e.\ the group of matrices with a strictly positive determinant. In accordance with our examples of $G$-structures in \sect \ref{sec: fiber morphisms}, an orientation is equivalent to a $\GL_n^+(\bbR)$-structure. For a vector space, this means selecting one of the two orbits of the action $\GL_n^+(\bbR)$ on the set of all frames. Below we provide a slightly more traditional, detailed definition.
 
 \begin{defn}[Orientation on a vector space]\index{Orientation!on a vector space}
-Let $V$ be an $n$-dimensional real vector space. Two bases $\{e_i\}$ and $\{e_j'\}$ are said to \emph{fix the same orientation} on $V$ if there exists a matrix $A\in\GL^+_n(\bbR )$ such that $e_i=\sum_{j=1}^n A_i^j e_j'$, $1\leq i\leq n$. The two equivalence classes of like-oriented bases on $V$ form the factor-set $\mathcal{O}(V)$. An orientation on $V$ is a choice of an element $\mu\in\mathcal{O}(V)$. Any basis belonging to the chosen orientation, $\{e_i\}\in\mu$, is called \emph{positively oriented} w.r.t.\ that orientation. Since each basis can be identified with a frame $V\to \bbR^n$, an orientation is equivalent to a $\GL_n^+(\bbR)$-structure on $V$ following Definition~\ref{def S-fibers}.
+Let $V$ be an $n$-dimensional real vector space. Two bases $\{e_i\}$ and $\{e_j'\}$ are said to \emph{fix the same orientation} on $V$ if there exists a matrix $A\in\GL^+_n(\bbR )$ such that $e_i=\sum_{j=1}^n A_i^j e_j'$, $1\leq i\leq n$. The two equivalence classes of like-oriented bases on $V$ form the quotient set $\mathcal{O}(V)$. An orientation on $V$ is a choice of an element $\mu\in\mathcal{O}(V)$. Any basis belonging to the chosen orientation, $\{e_i\}\in\mu$, is called \emph{positively oriented} w.r.t.\ that orientation. Since each basis can be identified with a frame $V\to \bbR^n$, an orientation is equivalent to a $\GL_n^+(\bbR)$-structure on $V$ following Definition~\ref{def S-fibers}.
 \end{defn}
 
 Note that even though the set $\calO(V)$ of possible orientations has two elements, there is no way to naturally identify it with the group $\bbZ_2$, because neither of the orientations is distinguished. However, at the level of groups, since $\GL_n(\bbR )\slash\GL^+_n(\bbR )=\bbZ_2$, we have a natural group homomorphism $\vartheta:\GL_n(\bbR )\to \bbZ_2=\{-1,+1\}$ given explicitly by $\vartheta(A)=\sign (\det A)$. The action of the group $\GL(V)$ on the set of bases on $V$ then induces a natural action of the group $\bbZ_2$ on the set $\mathcal{O}(V)$. Namely, if $A\in\GL(V)$ and $\{e_i\}$ is a basis, then $\{A\cdot e_i\}$ is oriented like $\{e_i\}$ if $\vartheta(A)=1$, and it has the opposite orientation if $\vartheta(A)=-1$. Therefore, the generator of the group $\bbZ_2$ simply swaps the two elements of $\mathcal{O}(V)$.
 
-Note that any \emph{linear isomorphism} $f:V\to V'$ induces a map $\mathcal{O}(f):\mathcal{O}(V)\to\mathcal{O}(V)$, namely $\mathcal{O}(f)(\mu)=\mu'$ if for any basis $\{e_i\}\in\mu$ the basis $\{f(e_i)\}$ belongs to $\mu'$. Therefore we have constructed a covariant functor $\mathcal{O}:\mathsf{FinVect}_\bbR \to\mathsf{2Set}$, where $\mathsf{2Set}$ is the category of two-element sets.
+Note that any \emph{linear isomorphism} $f:V\to V'$ induces a map $\mathcal{O}(f):\mathcal{O}(V)\to\mathcal{O}(V)$, namely $\mathcal{O}(f)(\mu)=\mu'$ if for any basis $\{e_i\}\in\mu$ the basis $\{f(e_i)\}$ belongs to $\mu'$. Therefore we have constructed a partial covariant functor $\mathcal{O}:\mathsf{FinVect}_\bbR \to\mathsf{2Set}$, where $\mathsf{2Set}$ is the category of two-element sets.
 
 \begin{defn}[Orientation-preserving linear maps]
-Let $(V,\mu)$ and $(V,\mu')$ be two oriented vector spaces. A linear map $f\in\Hom(V,V')$ is called orientation-preserving if it maps any positively oriented basis on $V$ to a positively oriented basis on $V'$, i.e.\ it is an isomorphism and $\mathcal{O}(f)(\mu)=\mu'$.
+Let $(V,\mu)$ and $(V,\mu')$ be two oriented vector spaces of equal dimensions. A linear isomorphism $f:V\to V'$ is called orientation-preserving if it maps any positively oriented basis on $V$ to a positively oriented basis on $V'$, i.e.\ it is an isomorphism and $\mathcal{O}(f)(\mu)=\mu'$.
 \end{defn}
 
 
@@ -4548,7 +4578,7 @@ Let $(V,\mu)$ and $(V,\mu')$ be two oriented vector spaces. A linear map $f\in\H
 \begin{defn}[Orientation on a bundle, orientation-preserving maps]\index{Orientation!of a bundle}\index{Orientation!of a manifold}\index{Orientation-preserving maps}
     A real vector bundle $E\overset\pi\to M$ is called orientable if its orientation bundle $\mathcal{O}(E)$ is trivial. An orientation on such a bundle is a choice of one of the two connected components of $\mathcal{O}(E)$. A manifold $M$ is called orientable if its tangent bundle $TM$ is orientable. An orientation on $M$ is an orientation on $TM$.
 
-    A bundle map $f:E\to E'$ between two oriented bundles is called \emph{orientation-preserving} if it preserves the orientation of every fiber. A smooth map $f:M\to N$ between manifolds is orientation-preserving if $f_\ast:TM\to TN$ is.
+    A \gls{vb} morphism $f:E\to E'$ between two oriented bundles, such that $f$ restricted to each fiber of $E$ is a linear isomorphism, is called \emph{orientation-preserving} if it preserves the orientation of every fiber. A local diffeomorphism $f:M\to N$ between manifolds of equal dimension is called orientation-preserving if $f_\ast:TM\to TN$ is.
 \end{defn}
 
 \begin{prop}\label{prop orientation}
@@ -4580,10 +4610,12 @@ Let $(V,\mu)$ and $(V,\mu')$ be two oriented vector spaces. A linear map $f\in\H
 \end{enumerate}
 \end{xca}
 
-The following notions can be defined for general vector bundles too, but we will focus on tangent bundles.
+Since $\GL^+_n(\bbR)$ can be deformation retracted onto $\SL_n(\bbR)$, each orientable vector bundle $E$ admits an atlas in which transition functions are unimodular. A choice of such a reduction is equivalent to picking a nowhere vanishing section $\sfv$ of the dual determinant line bundle $\det E^\ast$. Values $\sfv_m$ of this section can be naturally paired with frames $\{e_i\}_{i=1}^k$ on fibers of $E$ to give a nonzero number $\sfv_m(e_1,\ldots,e_k)$. This induces a notion of a signed volume on each fiber, and in particular an orientation: the frame $\{e_i\}_{i=1}^k$ is positively oriented iff $\sfv_m(e_1,\ldots,e_k)>0$.
 
 \begin{defn}[Volume form]\index{Volume form}
-A volume form on an $n$-dimensional manifold $M$ is a nowhere vanishing differential form of the top degree $\sfv\in \Omega^n(M)$. Given an orientation on $M$, $\sfv$ is called \emph{positive} if for any positively oriented local frame $\{e_i\}$ one has $\sfv(e_1,\ldots,e_n)>0$.
+    A volume form on a real \gls{vb} $E\overset{\pi}{\to} M$ is a nowhere vanishing section $\sfv$ of the line bundle $\det E^\ast$. 
+
+    Applying this to the tangent bundle, a volume form on an $n$-dimensional manifold $M$ is a nowhere vanishing differential form of the top degree $\sfv\in \Omega^n(M)$. Given an orientation on $M$, $\sfv$ is called \emph{positive} if for any positively oriented local frame $\{e_i\}$ one has $\sfv(e_1,\ldots,e_n)>0$.
 \end{defn}
 
 \begin{prop}
@@ -4601,26 +4633,26 @@ Exercise.
 \begin{defn}
 Let $M$ and $M'$ be oriented smooth manifolds with chosen volume forms $\sfv$, $\sfv'$, respectively. For a smooth map $f:M\to M'$, we define its determinant with respect to these volume forms by the equality
 \[f^\ast \sfv'=\left(\det_{\sfv,\sfv'}f\right)\cdot \sfv.\]
-We will usually suppress the dependence on the volume forms. Clearly $f$ is orientation-preserving iff $\det f>0$ everywhere, and $f$ is a local diffeo iff $\det f\neq 0$ everywhere.
+We will usually suppress the dependence on the volume forms. Clearly $f$ is orientation-preserving iff $\det f>0$ everywhere, and $f$ is a local diffeomorphism iff $\det f\neq 0$.
 
-The determinant is still multiplicative: $\det(f\circ g)(p)=(\det f)(g(p))\cdot \det g(p)$.
+This determinant is still multiplicative: $\det(f\circ g)(p)=(\det f)(g(p))\cdot \det g(p)$.
 \end{defn}
 
 \begin{defn}[Tensor densities]
-One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $T^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $T^r_s M$) are called tensor densities of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $TM$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions include $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.
+One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $T^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $T^r_s M$) are called \emph{tensor densities}\index{Tensor density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $TM$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions include $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}
 \end{defn}
 
 \begin{thm}\label{thm orientation via normal vector}
-Let $S<M$ be an immersed submanifold of $\codim S=1$, let $N\in\Gamma^\infty(\restr{TM}{S})$ be a vector fields such that $N\not\parallel S$ everywhere, and let $M$ be oriented. Then there exists a unique orientation on $S$ such that a frame $(e_1,\ldots,e_{n-1})$ is positively oriented in $TS$ iff $(N,e_1,\ldots,e_{n-1})$ is oriented in $\restr{TM}{S}$.
+Let $S<M$ be an immersed submanifold of $\codim S=1$, let $N\in\Gamma^\infty\left(\restr{TM}{S}\right)$ be a section such that $N\not\parallel S$ everywhere, and let $M$ be oriented. Then there exists a unique orientation on $S$ such that a frame $(e_1,\ldots,e_{n-1})$ is positively oriented in $TS$ iff $(N,e_1,\ldots,e_{n-1})$ is oriented in $\restr{TM}{S}$.
 \end{thm}
 \begin{proof}
-Let $\sfv$ be a positive volume form on $M$. The it is easy to check that $\sfv_S=i_N \sfv$ is a volume form on $S$ that defines an orientation as stated.
+Let $\sfv$ be a positive volume form on $M$. The it is easy to check that $\sfv_S\coloneqq i_N \sfv$ is a volume form on $S$ that defines an orientation as stated.
 \end{proof}
 \begin{cor}
 Let $M$ be orientable and let a function $f\in C^\infty(M)$ have a regular value $c\in \bbR $. Then the submanifold $S=f^{-1}(c)\sub M$ is orientable.
 \end{cor}
 \begin{proof}
-Embed everything into $\bbR^n$ and define the vector field $N=\nabla f$. Then $N\perp S$ and $N\neq 0$ on $S$ because $\restr{f}{S}$ is regular. Therefore $N$ induces an orientation on $S$ by the theorem above.
+Embed $M$ into $\bbR^n$ using the Whitney Embedding Theorem~\ref{thm whitney embedding} and define the vector field $N=\nabla f$. Then $N\perp S$ and $N\neq 0$ on $S$ because $\restr{f}{S}$ is regular. Therefore $N$ induces an orientation on $S$ by the theorem above.
 \end{proof}
 \begin{cor}
 The boundary $\partial M$ of any orientable manifold with boundary is orientable. The standard orientation is fixed by outward normals.
@@ -4633,8 +4665,18 @@ Consider a collar neighborhood of $\partial M$ and the outward vector field $N$ 
 \begin{defn}[Divergence of a vector field]\index{Divergence}
 Let $\sfv$ be a volume form on $M$ and $X\in \fX(M)$. The divergence of $X$ with respect to $\sfv$ is defined by the equality
 \[\Lie_X\sfv =(\div_{\sfv} X)\cdot \sfv.\]
-$X$ is called \emph{incompressible/volume-preserving} if $\div_\sfv X=0$ (or if $(F^X_\lambda)^\ast\sfv=\sfv$ where $F^X$ is the flow of $X$).
+$X$ is called \emph{incompressible}, or \emph{volume-preserving}, if $\div_\sfv X=0$ (or if $(F^X_\lambda)^\ast\sfv=\sfv$ where $F^X$ is the flow of $X$).
 \end{defn}
+
+
+\begin{xca}
+    Using formula (\ref{3170}), show that, with respect to the standard volume form $\sfv_n=\dd x^1\wedge \cdots\dd x^n$ on $\bbR^n$, the divergence of a vector field $X=\sum_{i=1}^n X^i\partial_i\in\fX(\bbR^n)$ is 
+    \[\div_{\sfv_n} X=\sum_{i=1}^n \partial_i X^i.\]
+\end{xca}
+
+
+
+
 
 
 
@@ -5248,7 +5290,7 @@ Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-
         \[\mathsf{v}_G(g)=\Ad_g^\ast \mathsf{w}_G(g)=\det(\Ad_g)\mathsf{w}_G(g).\]
         Since the adjoint representation is a map $\Ad_g:G\to\GL(\frakg)$, its determinant is everywhere nonzero and is called the \emph{modular quasicharacter}:\index{Modular quasicharacter}
         \[\Delta: G\to \bbK,\quad \Delta(g)=\det(\Ad_g).\]
-        Therefore a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character\tablefootnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field.}.\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
+        Therefore a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character\footnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field.}.\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
         
         If $G$ is a connected real Lie group, then $\Delta>0$ everywhere by continuity (since $\Delta(e)=1$ always). 
         \item Compact Lie groups are unimodular. Indeed, since $\Delta:G\to \bbK^\ast$ is a homomorphism, $\Delta(G)$ must be a compact subgroup of $\bbK^\ast$, which means its image lies inside $\bbS^1\subset\bbC$.
@@ -6337,7 +6379,7 @@ By differentiating with respect to the time parameter $t$, we now transport the 
     \[\rmD(\gamma\cdot \gamma')(t)=\rmD\gamma(t)+\Ad_{\gamma(t)}\rmD \gamma'(t),\label{1794}\]
     and 
     \[\Ad_{\gamma(t)}=A_{\rmD \gamma}(t).\]
-    Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\tablefootnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\rmD(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
+    Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\footnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\rmD(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
     where $\rmP(\frakg)_0$ is the set of the $\delta\in\rmP(\frakg)$ satisfying the following conditions:
     \begin{gather}
         \exists \text{ smooth mapping: } s\mapsto \delta_s:[0,1]\to \rmP(\frakg)\text{ with: } \delta_0=0,\;\delta_1=\delta,\\
