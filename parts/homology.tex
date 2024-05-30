@@ -787,12 +787,12 @@ Thus de Rham cohomology counts non-exact closed differential forms.
 
 \begin{thm}[Poincar\'e lemma]\label{Poincare lem}
     $H^p_{\rm dR}(\bbR^{n})=H^{p}_{\rm dR}(\bbR^{n-1})$. More generally, for any manifold $M$,
-    \[H^\bullet_{\rm dR}(M\times\bbR)=H^{\bullet}_{\rm dR}(M).\]
+    \[H^{\smbullet }_{\rm dR}(M\times\bbR)=H^{\bullet}_{\rm dR}(M).\]
     By induction, $H^p_{\rm dR}(\bbR^{n})=0$ for $p>0$.
 \end{thm}
 \begin{proof}
     We present a proof from \cite{BottTu} that uses the general ideas of homotopy operators that will be useful to us later. Let $\pi:M\times\bbR \to M$ be the projection on the first factor and $s:M\to M\times\bbR^1$ the zero section (or in fact any section). Then we have the corresponding pullback maps on differential forms:
-    \[\pi^\ast:\Omega^\bullet(M)\to \Omega^\bullet(M\times\bbR^1),\quad s^\ast: \Omega^\bullet(M\times\bbR^1)\to \Omega^\bullet(M).\]
+    \[\pi^\ast:\Omega^{\smbullet }(M)\to \Omega^{\smbullet }(M\times\bbR^1),\quad s^\ast: \Omega^{\smbullet }(M\times\bbR^1)\to \Omega^{\smbullet }(M).\]
     Note that $\pi\circ s=1$ and thus $s^\ast\circ\pi^\ast=1$. Also, both $s$ and $\pi$ send closed forms to closed forms, which means that they induce well-defined maps on corresponding cohomology groups, which we will denote by the same symbols.
     
     Let $x$ denote the points of $M$ and $t$ the points of $\bbR^1$. Every differential form on $M\times\bbR^1$ can be uniquely decomposed into a sub of the following types of forms:
@@ -837,7 +837,7 @@ Thus de Rham cohomology counts non-exact closed differential forms.
     We have the homotopy $H:M\times[0,1]\to N$. Let $s_{0,1}:M\to M\times [0,1]$ be two constant sections given by $s_i(m)=(m,i),\;i=0,1$. Then $f=H\circ s_0$ and $g=H\circ s_1$. Their pullback actions are thus
     \[f^\ast=s_0^\ast H^\ast,\quad g^\ast=s_1^\ast H^\ast.\]
     However, we have shown in the proof of Poincar\'e lemma that $s_i^\ast=(\pi^\ast)^{-1}$ in de Rham cohomology (where $\pi:M\times [0,1]\to M$ is the projection), regardless of the specific section. Thus
-    \[s_0^\ast=s_1^\ast\implies f^\ast=g^\ast \text{ in }H^\bullet_{\rm dR}.\]
+    \[s_0^\ast=s_1^\ast\implies f^\ast=g^\ast \text{ in }H^{\smbullet }_{\rm dR}.\]
 \end{proof}
 
 
@@ -846,21 +846,21 @@ Thus de Rham cohomology counts non-exact closed differential forms.
 
 Suppose $M=U\cup V$ with $U,V$ open. We have the inclusions
 \[U\cap V\toto[i_1]{i_0}U\sqcup V\to M \]
-Applying the contravariant functor $\Omega^\bullet$, we get the sequence of restrictions of forms
-\[\Omega^\bullet(M)\to \Omega^\bullet(U)\oplus\Omega^\bullet(V)\toto[i_1^\ast]{i_0^\ast}\Omega^\bullet(U\cap V).\]
+Applying the contravariant functor $\Omega^{\smbullet }$, we get the sequence of restrictions of forms
+\[\Omega^{\smbullet }(M)\to \Omega^{\smbullet }(U)\oplus\Omega^{\smbullet }(V)\toto[i_1^\ast]{i_0^\ast}\Omega^{\smbullet }(U\cap V).\]
 By taking the difference of the last two maps, we obtain the \emph{\gls{mv} sequence}\index{Mayer-Vietoris sequence}
-\[0\to\Omega^\bullet (M)\to\Omega^\bullet(U)\oplus\Omega^\bullet(V)\overset{\text{difference}}\longrightarrow\Omega^\bullet (U\cap V)\to 0\]
+\[0\to\Omega^{\smbullet } (M)\to\Omega^{\smbullet }(U)\oplus\Omega^{\smbullet }(V)\overset{\text{difference}}\longrightarrow\Omega^{\smbullet } (U\cap V)\to 0\]
 
 \begin{prop}
     The \gls{mv} sequence is commutative (i.e.\ the horizontal maps introduced above commute with applications of $\dd$) and exact.
 \end{prop}
 \begin{proof}
-    Commutativity is clear because $\dd$ is local and thus commutes with restrictions. The only nontrivial part is the surjectivity of the difference map. Consider a \gls{pou} $\{\chi_U,\chi_V\}$ subordinate to the open covering $\{U,V\}$ of $M$. Then any differential form $\omega\in\Omega^\bullet(U\cap V)$ can be decomposed as 
-    \[\omega=\underbrace{\chi_U\omega}_{\Omega^\bullet(V)}-\underbrace{(-\chi_V)\omega}_{\Omega^\bullet(U)},\]
+    Commutativity is clear because $\dd$ is local and thus commutes with restrictions. The only nontrivial part is the surjectivity of the difference map. Consider a \gls{pou} $\{\chi_U,\chi_V\}$ subordinate to the open covering $\{U,V\}$ of $M$. Then any differential form $\omega\in\Omega^{\smbullet }(U\cap V)$ can be decomposed as 
+    \[\omega=\underbrace{\chi_U\omega}_{\Omega^{\smbullet }(V)}-\underbrace{(-\chi_V)\omega}_{\Omega^{\smbullet }(U)},\]
     which proves surjectivity.
 \end{proof}
 
-Consider a general exact sequence of differential complexes \[0\to A^\bullet\to B^\bullet\to C^\bullet \to 0,\] which is simply a shortened notation for the \emph{commutative} diagram
+Consider a general exact sequence of differential complexes \[0\to A^{\smbullet }\to B^{\smbullet }\to C^{\smbullet } \to 0,\] which is simply a shortened notation for the \emph{commutative} diagram
 \[\begin{tikzcd}
         \; & \; & \; &\; &\; \\
         0 \arrow[r]& A^{p+1}\arrow[r,"f"]\arrow[u] &B^{p+1}\arrow[u]\arrow[r,"g"]& C^{p+1}\arrow[r]\arrow[u]& 0\\
@@ -934,31 +934,31 @@ Retracing the construction of the connecting homomorphism, we find that
 \subsection{De Rham cohomology with compact support}
 
 \begin{defn}[de Rham cohomology with compact support]\index{Cohomology!with compact support}
-    Define $\Omega_c^\bullet(M)$ as the complex of differential forms with compact support on $M$. Then the cohomology groups $H_c^\bullet(M)$ of differential forms with compact support are defined just like before.
+    Define $\Omega_c^{\smbullet }(M)$ as the complex of differential forms with compact support on $M$. Then the cohomology groups $H_c^{\smbullet }(M)$ of differential forms with compact support are defined just like before.
 \end{defn}
 
 \begin{prop}
-    $\Omega_c^\bullet$ is not a functor with respect to arbitrary smooth maps because pullbacks need not preserve compact supports. However:
+    $\Omega_c^{\smbullet }$ is not a functor with respect to arbitrary smooth maps because pullbacks need not preserve compact supports. However:
     \begin{enumerate}
-        \item $\Omega_c^\bullet$ is a contravariant functor under proper maps;
-        \item $\Omega_c^\bullet$ is a covariant functor under inclusions of open sets. Namely, if $i:U\hookrightarrow M$ is an inclusion of an open set, then $i_\ast:\Omega_c^\bullet(U)\hookrightarrow\Omega_c^\bullet(M)$ is the map that extends forms with compact support in $U$ by zero to all of $M$.
+        \item $\Omega_c^{\smbullet }$ is a contravariant functor under proper maps;
+        \item $\Omega_c^{\smbullet }$ is a covariant functor under inclusions of open sets. Namely, if $i:U\hookrightarrow M$ is an inclusion of an open set, then $i_\ast:\Omega_c^{\smbullet }(U)\hookrightarrow\Omega_c^{\smbullet }(M)$ is the map that extends forms with compact support in $U$ by zero to all of $M$.
     \end{enumerate}
 \end{prop}
-Usually we will interpret $\Omega_c^\bullet$ as its \emph{covariant} version.
+Usually we will interpret $\Omega_c^{\smbullet }$ as its \emph{covariant} version.
 
 A covering by two sets $U,V$ with maps 
 \[U\cap V\toto[i_1]{i_0}U\sqcup V\to M \]
 as before gives rise to a sequence of forms with compcact support:
-\[\Omega_c^\bullet(U\cap V)\overset{j}{\to} \Omega_c^\bullet(U)\oplus\Omega_c^\bullet(V)\overset{\text{sum}}\to M ,\]
+\[\Omega_c^{\smbullet }(U\cap V)\overset{j}{\to} \Omega_c^{\smbullet }(U)\oplus\Omega_c^{\smbullet }(V)\overset{\text{sum}}\to M ,\]
 where $j$ is the ``signed inclusion'' $\omega\mapsto (-i_\ast \omega,i_\ast\omega)$.
 
 \begin{prop}
     The \gls{mv} sequence of forms with compact support
-    \[0\to \Omega_c^\bullet(U\cap V)\to \Omega_c^\bullet(U)\oplus\Omega_c^\bullet(V)\to \Omega_c^\bullet(M)\to 0\]
+    \[0\to \Omega_c^{\smbullet }(U\cap V)\to \Omega_c^{\smbullet }(U)\oplus\Omega_c^{\smbullet }(V)\to \Omega_c^{\smbullet }(M)\to 0\]
     is exact.
 \end{prop}
 \begin{proof}
-    The least trivial step is the last one. Let $\omega\in\Omega_c^\bullet(M)$. Then $\omega$ is the image of $(\chi_U\omega,\chi_V\omega)$. The form $\chi_U\omega$ indeed has compact support in $U$, therefore the map $\Omega_c^\bullet(U)\oplus\Omega_c^\bullet(V)\to \Omega_c^\bullet(M)$ is surjective. Note that unlike in the previous \gls{mv} sequence, here we multiply by $\chi_U$ to get a form on $U$.
+    The least trivial step is the last one. Let $\omega\in\Omega_c^{\smbullet }(M)$. Then $\omega$ is the image of $(\chi_U\omega,\chi_V\omega)$. The form $\chi_U\omega$ indeed has compact support in $U$, therefore the map $\Omega_c^{\smbullet }(U)\oplus\Omega_c^{\smbullet }(V)\to \Omega_c^{\smbullet }(M)$ is surjective. Note that unlike in the previous \gls{mv} sequence, here we multiply by $\chi_U$ to get a form on $U$.
 \end{proof}
 
 This sequence, just like the last one, produces a long exact sequence in cohomology:
@@ -967,7 +967,7 @@ This sequence, just like the last one, produces a long exact sequence in cohomol
 \cdots\to H_c^p(U\cap V)\to H_c^p(U)\oplus H_c^p(V)\to H_c^p(M)\to H_c^{p+1}(U\cap V)\to H_c^{p+1}(U)\oplus H_c^{p+1}(V)\to H_c^{p+1}(M)\to \cdots
 \]
 
-Obviously, for compact manifolds $H^\bullet_c=H^\bullet_{\rm dR}$, so in this case we have two \gls{mv} sequences in both directions!
+Obviously, for compact manifolds $H^{\smbullet }_c=H^{\smbullet }_{\rm dR}$, so in this case we have two \gls{mv} sequences in both directions!
 
 \begin{xca}
     Use this exact sequence to show again that $H_c^0(\bbS^1)=H_c^1(\bbS^1)=\bbR$.
@@ -975,21 +975,21 @@ Obviously, for compact manifolds $H^\bullet_c=H^\bullet_{\rm dR}$, so in this ca
 
 \begin{thm}[Poincar\'e lemma for compact supports]\index{Poincar\'e lemma with compact support}
     For any manifold $M$, 
-    \[H_c^\bullet(M\times \bbR)=H_c^{\bullet-1}(M).\] 
+    \[H_c^{\smbullet }(M\times \bbR)=H_c^{\bullet-1}(M).\] 
     In particular $H_c^p(\bbR^n)=0$ for $p\neq n$ and $H_c^n(\bbR^n)=\bbR$.
 \end{thm}
 \begin{proof}
-    We will use the same ideas and notation as in the first Poincar\'e lemma \ref{Poincare lem}. Consider again the projection $\pi:M\times \bbR\to M$. The pullback $\pi^\ast$ does not map nonzero forms into forms with compact support on $M\times\bbR$, however there is a push-forward map $\pi_\ast:\Omega_c^\bullet(M\times\bbR)\to \Omega_c^{\bullet-1}(M)$ called \emph{integration along the fiber}. We define it separately on the two kinds of forms:
+    We will use the same ideas and notation as in the first Poincar\'e lemma \ref{Poincare lem}. Consider again the projection $\pi:M\times \bbR\to M$. The pullback $\pi^\ast$ does not map nonzero forms into forms with compact support on $M\times\bbR$, however there is a push-forward map $\pi_\ast:\Omega_c^{\smbullet }(M\times\bbR)\to \Omega_c^{\bullet-1}(M)$ called \emph{integration along the fiber}. We define it separately on the two kinds of forms:
     \begin{equation}
         \pi_\ast: \quad\quad f(x,t)\pi^\ast\omega\mapsto  0,\quad\quad f(x,t)\pi^\ast \omega \wedge \dd t\mapsto  \omega\cdot\int_\bbR f(x,t)\dd t. 
     \end{equation}
-    One can check that $\dd\pi_\ast=\pi_\ast \dd$, therefore we have an induced map in cohomology $\pi_\ast:H_c^\bullet\to H_c^{\bullet-1}$.
+    One can check that $\dd\pi_\ast=\pi_\ast \dd$, therefore we have an induced map in cohomology $\pi_\ast:H_c^{\smbullet }\to H_c^{\bullet-1}$.
     
     To define a map in the reverse direction, choose $e=e(t)\dd t$ to be any form on $\bbR$ of total integral $1$ and define
-    \[e_\ast: \; \Omega_c^\bullet(M)\to \Omega_c^{\bullet+1}(M\times\bbR),\quad \omega\mapsto (\pi^\ast \omega)\wedge e.\]
+    \[e_\ast: \; \Omega_c^{\smbullet }(M)\to \Omega_c^{\bullet+1}(M\times\bbR),\quad \omega\mapsto (\pi^\ast \omega)\wedge e.\]
     This map clearly commutes with $\dd$ and thus also descends to cohomology. From the definition is also follows that 
-    \[\pi_\ast\circ e_\ast=1 \text{ on }\Omega_c^\bullet(M).\]
-    To prove that $e_\ast\circ \pi_\ast=1$ in cohomology as well, we introduce the new homotopy operator $K:\Omega_c^\bullet(M\times\bbR)\to \Omega_c^{\bullet-1}(M\times \bbR)$ by
+    \[\pi_\ast\circ e_\ast=1 \text{ on }\Omega_c^{\smbullet }(M).\]
+    To prove that $e_\ast\circ \pi_\ast=1$ in cohomology as well, we introduce the new homotopy operator $K:\Omega_c^{\smbullet }(M\times\bbR)\to \Omega_c^{\bullet-1}(M\times \bbR)$ by
     \begin{equation}
         K: \quad\quad f\cdot\omega\mapsto 0,    \quad\quad f\cdot \omega\wedge\dd t\mapsto  \omega\cdot\int_\bbR f-\omega\cdot E(t)\int_\bbR f,\quad \text{where } E(t)=\int_{-\infty}^t e
     \end{equation}
@@ -1015,7 +1015,7 @@ Obviously, for compact manifolds $H^\bullet_c=H^\bullet_{\rm dR}$, so in this ca
     which proves the needed identity.
     
     The existence of a homotopy operator proves that the maps $\pi_\ast$ and $e_\ast$ provide an isomorphism
-    $H_c^\bullet(M\times\bbR)\cong H_c^{\bullet -1}(M)$.
+    $H_c^{\smbullet }(M\times\bbR)\cong H_c^{\bullet -1}(M)$.
     
     $H_c^n(\bbR^n)\cong \bbR$ by iteration since $H_c^0(\text{point})=H_{\rm dR}^0(\text{point})=\bbR$.
 \end{proof}
@@ -1134,14 +1134,14 @@ Computing Dolbeault cohomology in general requires more sophisticated tools than
 
 
 \begin{example}[Dolbeault cohomology of the Riemann sphere]
-    Here we compute the Dolbeault cohomology of the Riemann sphere $\bbC P^1=\bbS^2$.
+    Here we compute the Dolbeault cohomology of the Riemann sphere $\CP^1=\bbS^2$.
     \begin{enumerate}
-        \item $H^{0,0}(\bbC P^1)=\bbC$ (the only holomorphic functions on the entire sphere are the constant functions, by the Liouville theorem);
-        \item $H^{0,1}(\bbC P^1)$ consists of 1-forms $f\dd\bar z$ (all of which are $\bar\partial$-closed for any $f\in C^\infty(\bbC P^1,\bbC)$) that are not exact, i.e.\ $f\neq \partial_{\bar z} g$ for any $g\in C^\infty(\bbC P^1,\bbC)$. Every such $f$ can be identified with a function on $\bbC$ such that the limit of $f \bar z^2$ as $z\to\infty$ exists. By Poincar\'e lemma there exists a $g$ such that $f=\partial_{\bar z} g$ and clearly it follows that $\lim_{z\to\infty}(\bar zg)$ exists, which makes $g$ a well-defined function on the sphere. Therefore $H^{0,1}(\bbC P^1)=0$;
-        \item $H^{1,0}(\bbC P^1)$ consists of \emph{holomorphic} 1-forms $f\dd z$, which means that $f$ has to be holomorphic such that $\lim_{z\to\infty}z^2f$ exists. However, the only holomorphic function with such a limit is zero. Therefore $H^{1,0}(\bbC P^1)=0$;
-        \item $H^{1,1}(\bbC P^1)$ consists of 2-forms $f\dd z\wedge\dd\bar z$. Such a form is exact iff $\int_{\bbC P^1}f\dd z\wedge\dd \bar z=0$. This is exactly one linear constraint, which means that $H^{1,1}(\bbC P^1)=\bbC$.
+        \item $H^{0,0}(\CP^1)=\bbC$ (the only holomorphic functions on the entire sphere are the constant functions, by the Liouville theorem);
+        \item $H^{0,1}(\CP^1)$ consists of 1-forms $f\dd\bar z$ (all of which are $\bar\partial$-closed for any $f\in C^\infty(\CP^1,\bbC)$) that are not exact, i.e.\ $f\neq \partial_{\bar z} g$ for any $g\in C^\infty(\CP^1,\bbC)$. Every such $f$ can be identified with a function on $\bbC$ such that the limit of $f \bar z^2$ as $z\to\infty$ exists. By Poincar\'e lemma there exists a $g$ such that $f=\partial_{\bar z} g$ and clearly it follows that $\lim_{z\to\infty}(\bar zg)$ exists, which makes $g$ a well-defined function on the sphere. Therefore $H^{0,1}(\CP^1)=0$;
+        \item $H^{1,0}(\CP^1)$ consists of \emph{holomorphic} 1-forms $f\dd z$, which means that $f$ has to be holomorphic such that $\lim_{z\to\infty}z^2f$ exists. However, the only holomorphic function with such a limit is zero. Therefore $H^{1,0}(\CP^1)=0$;
+        \item $H^{1,1}(\CP^1)$ consists of 2-forms $f\dd z\wedge\dd\bar z$. Such a form is exact iff $\int_{\CP^1}f\dd z\wedge\dd \bar z=0$. This is exactly one linear constraint, which means that $H^{1,1}(\CP^1)=\bbC$.
     \end{enumerate}
-    With more tools, one can show that $H^{p,q}(\bbC P^n)$ is in general zero for $p\neq q$ and $H^{p,p}(\bbC P^n)=\bbC$ for $p=0,\ldots,n$.
+    With more tools, one can show that $H^{p,q}(\CP^n)$ is in general zero for $p\neq q$ and $H^{p,p}(\CP^n)=\bbC$ for $p=0,\ldots,n$.
 \end{example}
 
 
@@ -1279,7 +1279,7 @@ Intuitively, $H^\Delta_p$ detects the ``$p$-dimensional holes'' in the complex, 
 \end{xca}
 
 \begin{xca}
-    Triangulate the real projective plane $\bbR P^2$ (which is homeomorphic to a disk whose antipodal boundary points have been identified) as in the figure.
+    Triangulate the real projective plane $\RP^2$ (which is homeomorphic to a disk whose antipodal boundary points have been identified) as in the figure.
     \begin{center}
         \includegraphics[scale=0.2]{figures/projectiveplane.png}
     \end{center}
@@ -1340,8 +1340,8 @@ Note that there is no actual difference between chain and cochain complexes, sin
     For a chain complex $(\bm{C},d)$, $n$-cycles, $n$-boundaries, and homologies are defined as 
     \[Z_n(\bm{C},d)=\ker d_n,\quad\quad B_n(\bm{C},d)=\im d_{n+1},\quad\quad H_n(\bm{C},d)=Z_n(\bm{C},d)/B_n(\bm{C},d).\]
     
-    Similarly, for a cochain complex $(C^\bullet,d)$, we have cocycles, coboundaries, and cohomologies:
-    \[Z^n(C^\bullet,d)=\ker d_n,\quad\quad B^n(C^\bullet,d)=\im d^{n-1},\quad\quad H^n(C^\bullet,d)=Z^n(C^\bullet,d)/B^n(C^\bullet,d).\]
+    Similarly, for a cochain complex $(C^{\smbullet },d)$, we have cocycles, coboundaries, and cohomologies:
+    \[Z^n(C^{\smbullet },d)=\ker d_n,\quad\quad B^n(C^{\smbullet },d)=\im d^{n-1},\quad\quad H^n(C^{\smbullet },d)=Z^n(C^{\smbullet },d)/B^n(C^{\smbullet },d).\]
 \end{defn}
 
 \begin{defn}[Chain map]
@@ -2255,8 +2255,8 @@ since $\partial_n\circ j_n=0$ is a composition of two consecutive maps in an exa
 \end{rem}
 
 \begin{example}
-    Recall that $\bbC P^n$ has one cell in each dimension $0,2,4,\ldots,2n$. So $\bbC P^n$ has no two cells in two dimensions, and we can apply the above remark:
-    \[H_i(\bbC P^n)=\begin{cases}
+    Recall that $\CP^n$ has one cell in each dimension $0,2,4,\ldots,2n$. So $\CP^n$ has no two cells in two dimensions, and we can apply the above remark:
+    \[H_i(\CP^n)=\begin{cases}
         \bbZ, i=0,2,4,\ldots,2n,\\
         0,&\text{otherwise}.
     \end{cases}\]
@@ -2342,10 +2342,10 @@ From now on we will drop the superscript in the name of the cellular boundary op
 \end{example}
 
 \begin{example}
-    Recall that $\bbR P^n$ has a $CW$-structure with one cell $e^k$ in each dimension $0\leq k\leq n$. Moreover, the attaching map of $e^k$ in $\bbR P^n$ is the two-fold cover projection $\varphi:\bbS^{k-1}\to \bbR P^{k-1}$. The cellular chain complex for $\bbR P^n$ is
+    Recall that $\RP^n$ has a $CW$-structure with one cell $e^k$ in each dimension $0\leq k\leq n$. Moreover, the attaching map of $e^k$ in $\RP^n$ is the two-fold cover projection $\varphi:\bbS^{k-1}\to \RP^{k-1}$. The cellular chain complex for $\RP^n$ is
     \[0\to \bbZ\overset{\partial_n}{\to}\cdots \overset{\partial_1}{\to}\bbZ\to 0.\]
     To compute the differential $\partial_k$, we need to compute the degree of the composite map
-    \[\Delta:\bbS^{k-1}\overset{\varphi}{\to}\bbR P^{k-1}\overset{q}{\to}\bbR P^{k-1}\slash \bbR P^{k-2}=\bbS^{k-1}.\]
+    \[\Delta:\bbS^{k-1}\overset{\varphi}{\to}\RP^{k-1}\overset{q}{\to}\RP^{k-1}\slash \RP^{k-2}=\bbS^{k-1}.\]
     The map $\Delta$ is a homomorphism when restricted to each component of $\bbS^{k-1}\setminus \bbS^{k-2}$, and these homeomorphisms are obtained from each other by precomposing with the antipodal map $a$ of $\bbS^{k-1}$, which has degree $(-1)^k$. Hence, by our local degree formula (Proposition~\ref{prop local degree formula}), we get that:
     \[\deg \Delta=\deg\id+\deg a=1+(-1)^k.\label{eq degree of cells in RPn}\]
     In particular,
@@ -2355,7 +2355,7 @@ From now on we will drop the superscript in the name of the cellular boundary op
     \end{cases}\]
     and therefore we obtain that
     \[
-        H_k(\bbR P^n)=
+        H_k(\RP^n)=
         \begin{cases}
             \bbZ_2,& k\text{ odd}, 0<k<n,\\
             \bbZ,& k=0, \text{ or }k=n \text{ odd},\\
@@ -2432,7 +2432,7 @@ Here $\beta_i$ are the Betti number of $X$ and $\tau_k$ are called the torsion n
 \[\beta_k+\tau_k+\tau_{k-1},\]
 where the first two terms comprise the generators of $H_k$ and the last sets the relations for $H_{k-1}$.
 
-These elementary complexes can be realized as the reduced cellular chains of $CW$-complexes (at least if $k>0$). A bouquet of $\beta_k$ copies of $\bbS^k$ has a $CW$ structure with one $0$-cell and $r$ $k$-cells, so it has homology $\bbZ^{\beta_k}$ in exactly one degree. To construct a complex with cellular chain complex given by $\bbZ\overset{\cdot n}{\to}\bbZ$, start with $\bbS^k$ as the $k$-skeleton and attach a $(k+1)$-cell by a map of degree $n$. For example, when $k=1$ and $n=2$, we get $\bbR P^2$. These $CW$-complexes are called ``Moore spaces''\index{Moore space} $M(G,k)$, where in our case $G=\bbZ$ or $\bbZ\slash n$.
+These elementary complexes can be realized as the reduced cellular chains of $CW$-complexes (at least if $k>0$). A bouquet of $\beta_k$ copies of $\bbS^k$ has a $CW$ structure with one $0$-cell and $r$ $k$-cells, so it has homology $\bbZ^{\beta_k}$ in exactly one degree. To construct a complex with cellular chain complex given by $\bbZ\overset{\cdot n}{\to}\bbZ$, start with $\bbS^k$ as the $k$-skeleton and attach a $(k+1)$-cell by a map of degree $n$. For example, when $k=1$ and $n=2$, we get $\RP^2$. These $CW$-complexes are called ``Moore spaces''\index{Moore space} $M(G,k)$, where in our case $G=\bbZ$ or $\bbZ\slash n$.
 
 The maximally efficient construction of a $CW$-complex for a space that is homotopy equivalent to a $CW$-complex of finite type can in fact be achieved, at least in the simply-connected case:
 
@@ -3434,24 +3434,24 @@ However we quickly start to run into issues because, unlike direct sums (which a
 
 \subsection{Homology with coefficients}
 
-Suppose that we are given integer homology (e.g.~singular homology) $H_\ast(X)$. Clearly instead of having the coefficients of simplices in chains be integers, they could be elements of any ring $R$. This way we can define $H_\ast(X;R)$. It satisfies all Eilenberg-Steenrod axioms with the only change that the zeroth homology of a singleton space is $H_0(\{\ast\};R)=R$. Consider, for example, $H_\ast(\bbR P^n;\bbZ_2)$. The cellular chain complex has $C_k(\bbR P^n;\bbZ_2)=\bbZ_2$ for $0\leq k\neq n$, and the boundary operator alternates between multiplication by $2$ and by $0$ (see formula~\ref{eq degree of cells in RPn}). But in $\bbZ_2$, $2=0$, therefore $\partial=0$ and the homology mimics the chain complex itself:
-\[H_k(\bbR P^n;\bbZ_2)=\begin{cases}
+Suppose that we are given integer homology (e.g.~singular homology) $H_\ast(X)$. Clearly instead of having the coefficients of simplices in chains be integers, they could be elements of any ring $R$. This way we can define $H_\ast(X;R)$. It satisfies all Eilenberg-Steenrod axioms with the only change that the zeroth homology of a singleton space is $H_0(\{\ast\};R)=R$. Consider, for example, $H_\ast(\RP^n;\bbZ_2)$. The cellular chain complex has $C_k(\RP^n;\bbZ_2)=\bbZ_2$ for $0\leq k\neq n$, and the boundary operator alternates between multiplication by $2$ and by $0$ (see formula~\ref{eq degree of cells in RPn}). But in $\bbZ_2$, $2=0$, therefore $\partial=0$ and the homology mimics the chain complex itself:
+\[H_k(\RP^n;\bbZ_2)=\begin{cases}
     \bbZ_2,& 0\leq k\leq n,\\
     0, & k>n.
 \end{cases}\]
 On the other hand, suppose $R$ is a ring in which $2$ is invertible, such as $F_p$ for $p$ odd. This time $\partial_{2k+1}=0$ and $\partial_{2k}$ is an isomorphism if $n$ is even, and vice versa if $n$ is odd. Therefore 
-\[H_k(\bbR P^{2n};R)=\begin{cases}
+\[H_k(\RP^{2n};R)=\begin{cases}
     R,&k=0,\\
     0,&k\neq 0,
 \end{cases}\quad
-H_k(\bbR P^{2n+1};R)=\begin{cases}
+H_k(\RP^{2n+1};R)=\begin{cases}
     R,&k=0,n,\\
     0,&k\neq 0,n.
 \end{cases}
 \]
 We get a much simpler result: away from $2$, projective spaces look like points, and odd projective spaces look like spheres.
 
-To pose a more general question: knowing $H_\ast(X)=H_\ast(X;\bbZ)$, can we compute, for example, $H_\ast(X;\bbZ_2)$? One could be tempted to find a map of topological spaces that induces an isomorphism of these homologies. Consider the map $\bbR P^2\to \bbS^2$ that pinches $\bbR P^1\subset \bbR P^2$ to a point. Since $H_2(\bbR P^2;\bbZ)=0$, this map induces a zero map in $H_2$. But in $\bbZ_2$-coefficients, in dimension 2, this map induces an isomorphism. This shows that there is no \emph{natural} (functorial) determination of $H_\ast(X;\bbZ_2)$ in terms of $H_\ast(X;\bbZ)$: the effect of a map in integer homology does not determine its effect in homology mod $2$. 
+To pose a more general question: knowing $H_\ast(X)=H_\ast(X;\bbZ)$, can we compute, for example, $H_\ast(X;\bbZ_2)$? One could be tempted to find a map of topological spaces that induces an isomorphism of these homologies. Consider the map $\RP^2\to \bbS^2$ that pinches $\RP^1\subset \RP^2$ to a point. Since $H_2(\RP^2;\bbZ)=0$, this map induces a zero map in $H_2$. But in $\bbZ_2$-coefficients, in dimension 2, this map induces an isomorphism. This shows that there is no \emph{natural} (functorial) determination of $H_\ast(X;\bbZ_2)$ in terms of $H_\ast(X;\bbZ)$: the effect of a map in integer homology does not determine its effect in homology mod $2$. 
 
 Even more generally, given $H_\ast(X;R)$ for some ring $R$, can be compute $H_\ast(X;M)$ for some $R$-module $M$? For this we will need to first define the latter object.
 
@@ -3946,7 +3946,7 @@ Now we will consider an action of a (discrete) group $G$
     We know that $C_\bullet(X)$ is a complex of $G$-free modules. That $X$ is acyclic sats that $\to C_2(X)\overset{\partial_2}{\to}C_1(X)\overset{\partial_1}{\to}C_0(X)\to 0$ is exact at each $n\geq 1$, hence $\to C_2(X)\overset{\partial_2}{\to}C_1(X)\to \coker \partial_1\to 0$ is exact. But, since $X$ is acyclic, $\coker \partial_1=H_0(X)\cong \bbZ$.
 \end{proof}
 
-Now let $A$ be a $G$-module. $H^\bullet(X,A)$ is defined as the homology of the complex $\Hom_G(C_\bullet(X),A)$. If $X$ is acyclic and $G$ acts freely, then $H^\bullet(G,A)$ is the homology of $\Hom_G(S_\bullet(X),A)$ by Theorem~\ref{thm 9.45 Rotman}. 
+Now let $A$ be a $G$-module. $H^{\smbullet }(X,A)$ is defined as the homology of the complex $\Hom_G(C_\bullet(X),A)$. If $X$ is acyclic and $G$ acts freely, then $H^{\smbullet }(G,A)$ is the homology of $\Hom_G(S_\bullet(X),A)$ by Theorem~\ref{thm 9.45 Rotman}. 
 
 Now suppose, in addition, that the action $G\acts X$ is properly discontinous (in the context of topological actions this is just called proper). Then there is an isomorphism of complexes (see MacLane, ``Homology'', pp.~135-136)
 \[\Hom_\bbZ(C_\bullet(X\slash G),A)\cong \Hom_G(C_\bullet(X),A)\]
