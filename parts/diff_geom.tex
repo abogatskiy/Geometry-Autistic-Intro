@@ -2750,7 +2750,7 @@ A local chart $\varphi_\alpha$ gives rise to a local frame (the pullback of the 
     Note that, despite the spherical coordinates being undefined at the poles, these two formulas can be smoothly extended to cover their respective poles. For example, at the north pole any tangent vector is the limit of vectors $v^\theta\partial_\theta$ as $\theta\to 0$ at fixed $\varphi$. Such a vector is then locally represented by $\frac12 v^\theta \rme^{\rmi\varphi}$, and one can check that this is smooth extension of the bundle chart $z_\ast$.
 
     It is now clear that to reduce this atlas to an $\SO_2$-structure we only need to rescale these chart maps in each fiber by a factor of $\cos^2\frac{\theta}{2}$ or $-\sin^2\frac{\theta}{2}$, respectively:
-    \[\chi_0(\bf{x},\bf{v})\coloneqq \left(z,\frac{\rme^{\rmi\varphi}}{2}(v^\theta+\rmi v^\varphi\sin\theta \right),\quad \chi_\infty(\bf{x},\bf{v})=\left(w,\frac{\rme^{-\rmi\varphi}}{2}(v^\theta+\rmi v^\varphi\sin\theta )\right).\] 
+    \[\chi_0(\bf{x},\bf{v})\coloneqq \left(z,\frac{\rme^{\rmi\varphi}}{2}(v^\theta+\rmi v^\varphi\sin\theta) \right),\quad \chi_\infty(\bf{x},\bf{v})=\left(w,\frac{\rme^{-\rmi\varphi}}{2}(v^\theta+\rmi v^\varphi\sin\theta )\right).\] 
     These charts still extend smoothly over their respective poles, and the transition function becomes $\rme^{2\rmi\varphi}$. This atlas endows $T\bbS^2$ with an $\SO_2$-structure, including an orientation.
 \end{example}
 
@@ -3003,7 +3003,7 @@ Now we can use the procedure in Definition \ref{functors VB} to extend the tenso
 \end{rem}
 
 
-\begin{thm}[Tensor characterization]
+\begin{thm}[Tensor characterization]\label{thm tensor characterization}
     There is a natural isomorphism of $C^\infty (M)$-modules
     \[
     \Gamma^r_s(M)\cong \Hom_{C^\infty(M)}\left( \fX^\ast(M)^{\otimes r}\otimes \fX(M)^{\otimes s},C^\infty(M)\right).
@@ -3750,11 +3750,11 @@ Since $S\sub M$, it has a slice neighborhood. We can parametrize $S$ by an embed
 Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F(x(\Omega))\sub M$. This is a diffeo $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=F_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
 \end{proof}
 
-\begin{defn}[Complete solution]\index{Complete solution}
-    A complete solution, or \emph{complete integral}, of a vector field $X\in \fX(M)$, $\dim M=n$, is a local function $\Psi:U\times I_\epsilon\to\bbR^n$ such that $\Psi^{-1}(\bf{c})$ for every $\bf{c}\in\bbR^n$ in the image of $\Psi$ is an integral curve of $X$ at a point $m\in U$. The components $\Psi^i:U\times I_\epsilon\to \bbR$ of this map are called a \emph{complete set of integrals of motion} for $X$.
+\begin{defn}[Complete integral]\index{Complete integral}\label{def complete integral}
+    A complete integral of a vector field $X\in \fX(M)$, $\dim M=n$, is a local function $\Psi:U\times I_\epsilon\to\bbR^n$ such that $\Psi^{-1}(\bf{c})$ for every $\bf{c}\in\bbR^n$ in the image of $\Psi$ is an integral curve of $X$ at a point $m\in U$. The components $\Psi^i:U\times I_\epsilon\to \bbR$ of this map are called a \emph{complete set of integrals of motion} for $X$.
 \end{defn}
 \begin{prop}
-    Local complete solutions exists for all vector fields.
+    Local complete integrals exists for all vector fields.
 \end{prop}
 \begin{proof}
     First rectify the vector field, then the coordinates $\bf{c}=(\varphi^1(s),\varphi^2(s),\ldots,\varphi^n(s))$ of the point $s$ of intersection of each integral curve with the slice $S$ will be the (constant) value of the diffeomorphism $\Psi:(s,t)\mapsto \varphi(F_t(s))$ on this whole curve.
@@ -3781,7 +3781,7 @@ Moreover, any derivation $D$ on $C^\infty(M)$ satisfies $D(1)=0$, because
 Finally, the set of all Lie derivatives $\{\Lie_X\}_{X\in\fX(M)}$ is a $C^\infty(M)$-module:
 \[f\cdot\Lie_X=\Lie_{f\cdot X}.\]
 
-\begin{prop}[{{\cite[Prop.~2.2.9]{Marsden}}}]
+\begin{prop}[{{\cite[Prop.~2.2.9]{Marsden}}}]\label{prop 2.2.9 Marsden}
     The vector space of Lie derivatives $\{\Lie_X\}_{X\in\fX(M)}$ is isomorphic to $\fX(M)$ as $C^\infty(M)$-modules. In particular, $\Lie_X=0$ iff $X=0$.
 \end{prop}
 \begin{proof}
@@ -4076,11 +4076,11 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_m
     Let $D< TM$ be a smooth distribution (i.e.\ a subbundle of $TM$). An immersed submanifold $N<M$ is called an integral manifold of $D$ if $T_m N=D_m$ for all $m\in N$.
 \end{defn}
 
-\begin{defn}[Integrable distributions]\index{Integrable distribution}
-    A smooth distributions $D< TM$ is called integrable if every $m\in M$ is contained in a (local) integral manifold of $D$.
+\begin{defn}[Integrable distribution]\index{Integrable distribution}
+    A smooth distribution $D< TM$ is called integrable if every $m\in M$ is contained in a (local) integral manifold of $D$.
 \end{defn}
 
-\begin{defn}[Involutive distributions]\index{Involutive distribution}
+\begin{defn}[Involutive distribution]\index{Involutive distribution}
     For a smooth distribution $D< TM$, denote by $\Gamma^\infty(D)\subset\fX(M)$ the space of $D$-valued vector fields. $D$ is called involutive if $\Gamma^\infty(D)$ is a Lie subalgebra of $\fX(M)$, i.e.\ $[X,Y]\in\Gamma^\infty(D)$ for all $X,Y\in\Gamma^\infty(D)$.
 \end{defn}
 
@@ -4526,14 +4526,16 @@ We now move from arbitrary bundles to manifolds by applying the exterior power f
 
 \begin{defn}[Differential forms]\index{Differential form}
     Differential forms of degree $p$ on a smooth manifold $M$ are sections of $\bigwedge^p (T^\ast M)$. The exterior algebra of differential forms is denoted
-    \[\Omega^p(M)\coloneqq \Gamma^\infty\left(\bigwedge^p(T^\ast M)\right).\]
-    In particular, we have $\Omega^0(M)=C^\infty(M)$, $\Omega^1(M)=\fX^\ast (M)$, and $\Omega^p(M)=\bigwedge^p \fX^\ast(M)$. We also denote the \emph{exterior algebra} of $M$ by
-    \[\Omega^{\smbullet }(M)\coloneq\bigoplus_{p=0}^\infty \Omega^p(M)\]
+    \[\Omega^p(M)\coloneqq \Gamma^\infty\left(\bigwedge^p(T^\ast M)\right),\quad 0\leq 0\leq\dim M.\]
+    For $p<0$ and $p>\dim M$ we set $\Omega^p(M)=\{0\}$.
+    In particular, we have $\Omega^0(M)=C^\infty(M)$, $\Omega^1(M)=\fX^\ast (M)$, and $\Omega^p(M)\cong \bigwedge^p \fX^\ast(M)$ by Theorem~\ref{thm tensor characterization}. We also denote the \emph{exterior algebra} of $M$ by
+    \[\Omega^{\smbullet}(M)\coloneq\bigoplus_{p=0}^{\dim M} \Omega^p(M).\]
+    Note that elements of $\Omega^{\smbullet}(M)$ can have mixed degrees, i.e.\ contain terms that are differential forms of differing degrees.
 \end{defn}
 
 
 \begin{rem}
-    Since differential forms are covariant tensor fields, they can be expanded in local coordinates $(U,\{x^i\})$ as combinations of terms of the form $\dd x^{i_1}\otimes\cdots\otimes \dd x^{i_p}$ with coefficients in $C^\infty(U)$. By taking into account the antisymmetry of forms, we conclude that every differential form $\omega\in\Omega^p(M)$ has the following coordinate representation, where $n=\dim M$:
+    Since differential forms are covariant tensor fields, they can be expanded in local coordinates $(U,\bf{x})$ as combinations of terms of the form $\dd x^{i_1}\otimes\cdots\otimes \dd x^{i_p}$ with coefficients in $C^\infty(U)$. By taking into account the antisymmetry of forms, we conclude that every differential form $\omega\in\Omega^p(M)$ has the following coordinate representation, where $n=\dim M$:
     \[\omega=\sum_{1\leq i_1<\cdots <i_p\leq n}\omega_{i_1 i_2\cdots i_p}\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p},\quad \omega_{i_1 i_2\cdots i_p}\in C^\infty(U).\label{eq local rep of a p-form}\]
 \end{rem}
 
@@ -4681,6 +4683,24 @@ For $p>0$, $(\dd\omega)(X_0,\ldots )=(i_{X_0}\dd\omega)(X_1,\ldots)=(\Lie_{X_0}\
         \item What conditions need to be added to make part 1 hold in the reverse direction?
     \end{enumerate}
 \end{xca}
+
+The following classical theorem shows that every closed differential form is locally exact, i.e.\ on simply connected domains every closed differential form can be written as the derivative of another form.
+
+
+\begin{thm}[Poincar\'e Lemma]\index{Lemma!Poincar\'e}
+    Let $\omega\in\Omega^p(M)$ with $\dd\omega=0$. Then every point $m\in M$ has an open neigborhood $U\subset M$ and a differential form $\eta\in\Omega^{p-1}(U)$ such that $\dd\eta=\restr{\omega}{U}$.
+\end{thm}
+\begin{proof}
+    Let $(U,\bf{x})$ be a chart on $M$ centered at $m$ such that $\bf{x}(U)=\bbR^n$. Thus we may just assume that $M=\bbR^n$. We consider a deformation retraction $\alpha:\bbR\times\bbR^n\to \bbR^n$ given by $\alpha(t,\bf{x})=\alpha_t(\bf{x})=t\bf{x}$. Let $I\in \fX(\bbR^n)$ be the linear vector field $I(\bf{x})=\bf{x}$. Then $\alpha(\rme^t,\bf{x})=F^I_t(\bf{x})$, where $F^I_t$ is the flow of $I$. For $t>0$ we have 
+    \[\frac{\dd}{\dd t}\alpha_t^\ast\omega=\frac{\dd}{\dd t}(F^I_{\ln t})^\ast\omega=\frac{1}{t}(F^I_{\ln t})^\ast \Lie_{I}\omega=\frac{1}{t}\alpha_t^\ast(i_{I}\dd\omega+\dd i_{I}\omega)=\frac{1}{t}\dd\alpha_t^\ast i_{I}\omega.\]
+    Note that $T_{\bf{x}}(\alpha_t)=t\rmI_n$, where $\rmI_n$ is the identity matrix. Therefore, for $X_2,\ldots,X_p\in \bbR^n=T_{\bf{x}}(\bbR^n)$,
+    \begin{multline}
+        (\frac{1}{t}\alpha_t^\ast i_{I}\omega)_{\bf{x}}(X_2,\ldots,X_p)=\frac{1}{t}(i_I\omega)_{t\bf{x}}(tX_2,\ldots,tX_p)=\\
+        =\frac{1}{t}\omega_{t\bf{x}}(t\bf{x},tX_2,\ldots,tX_p)=\omega_{t\bf{x}}(\bf{x},tX_2,\ldots,tX_p).
+    \end{multline}
+    So if $p\geq 1$, the $(p-1)$-form $\frac{1}{t}\alpha^\ast_t i_I\omega$ is well-defined and smooth in $(t,\bf{x})$ for all $t\in\bbR$. Clearly $\alpha^\ast_1\omega=\omega$ and $\alpha^\ast_0\omega=0$, so 
+    \[\omega=\alpha_1^\ast\omega-\alpha^\ast_0\omega=\int_0^1\frac{\dd}{\dd t}\alpha_t^\ast\omega\dd t=\int_0^1\dd \left(\frac{1}{t}\alpha_t^\ast i_I\omega\right)\dd t=\dd \left(\int_0^1\frac{1}{t}\alpha_t^\ast i_I\omega\dd t\right).\]
+\end{proof}
 
 
 
@@ -4882,6 +4902,9 @@ and therefore
 On the other hand, $\int_{\partial U}\omega=\int_{\partial \bbR^n_+}\omega=\int_{\partial \bbR^n_+}\omega(x^1,\ldots,x^{n-1},0)\dd x^1\cdots \dd x^{n-1}$ and the outward normal on $\partial U$ is $-\bf{e}_n=(0,\ldots,0,-1)$, therefore the induced orientation is $\det(-\bf{e}_n,\bf{e}_1,\ldots,\bf{e}_{n-1})=(-1)^n$, so
 \[\int_{\partial U}i^\ast\omega=(-1)^{n}\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}=\int_U \dd\omega.\]
 \end{proof}
+\begin{rem}
+    The classical Stokes theorem for line integrals in $3$ dimensions is just the special case of this theorem for $1$-forms $\omega$. Similarly, the Gauss-Ostrogradskii theorem (a.k.a.\ divergence theorem, or Gauss law in physics) is the special case for integrals of $2$-forms. In fact, even Cauchy's residue theorem in complex analysis can be obtained as an application of the Stokes theorem.
+\end{rem}
 \begin{cor}
 If $M$ is compact and $\partial M=\varnothing$, then for any $\alpha\in\Omega^p(M)$, $\beta\in\Omega^{n-p}(M)$, and $X\in\fX(M)$ the following version of integration by parts holds:
 \[\int_M (\Lie_X \alpha)\wedge\beta=-\int_M \alpha\wedge\Lie_X\beta.\]
@@ -4891,13 +4914,18 @@ We use the fact that $\Lie_X$ is a derivation and Cartan's magic formula:
 $\int_M (\Lie_X\alpha)\wedge\beta+\alpha\wedge\Lie_X\beta=\int_M \Lie_X (\alpha\wedge\beta)=\int_M (\dd i_X+i_X\dd)(\alpha\wedge\beta)=\int_M i_X \dd(\alpha\wedge\beta).$
 But the exterior derivative of any top form is zero, so $\dd(\alpha\wedge\beta)=0$.
 \end{proof}
+Applying Cartan's magic formula to a volume form $\sfv\in\Omega^n(M)$, we have $\Lie_X\sfv=\dd i_X\sfv$. Here, $i_X\sfv$ is an $(n-1)$-form, whose restriction to any $(n-1)$-submanifold $S<M$ is a top form on $S$ known as the \emph{flux of $X$ through $S$} (it can be interpreted as a scalar if $S$ carries a volume form as well). Thus we get the following general form of the divergence theorem.
+\begin{cor}[Gauss-Ostrogradskii/Divergence theorem/Gauss law]\index{Theorem!Gauss-Ostrigradskii}
+    Let $X\in\fX(M)$ be a vector field, $\sfv\in\Omega^n(M)$ a volume form, and $i:\partial M\hookrightarrow M$ the inclusion map for the boundary. Then 
+    \[\int_{\partial M}i^\ast(i_X\sfv)=\int_M (\div_{\sfv}X)\sfv.\]
+\end{cor}
+Finally, the next corollary is an exercise.
 \begin{cor}
 Under the conditions of the last Corollary, if $\sfv$ is a volume form on $M$ and $X\in\fX(M)$ is volume-preserving, i.e.\ $\div_\sfv X=0$, then for any $f,g\in C^\infty(M)$
 \[\int_M (\Lie_Xf)\cdot g\cdot \sfv=-\int_M f\cdot (\Lie_Xg)\cdot \sfv\]
 \end{cor}
-\begin{proof}
-Exercise.
-\end{proof}
+
+
 
 \begin{comment}
     \begin{samepage}
@@ -4958,7 +4986,7 @@ Similarly, one can twist complex differential forms on a complex manifold by a  
 \begin{example}
     If we're working with vector-valued forms, i.e.~$\Omega^{\smbullet }(M;V)$ with $V$ a vector space, then these are simply antisymmetric $r$-linear maps from $(TM)^{\otimes r}$ to $V$. The bundle of such $r$-forms can be identified with the tensor product of bundles $\bigwedge^r T^\ast M\otimes (M\times V)$ and the space of its sections is isomorphic to $\Omega^r(M;V)\cong \Omega^r(M)\otimes V$. If a basis $\{e_a\}$ of $V$ is chosen, then every $V$-valued $r$-form $\alpha$ can be written as
     \[\alpha=\sum_a \alpha^a\otimes e_a,\]
-    where $\alpha^a\in \Omega^r(M)$ are uniquely determined ordinary $r$-forms and $e_a$ can be interpreted as either elements of $V$ or as constant global sections of $M\times V$. As a consequence, with respect to a local chart $(U,x)$ the form $\alpha$ has the local representation
+    where $\alpha^a\in \Omega^r(M)$ are uniquely determined ordinary $r$-forms and $e_a$ can be interpreted as either elements of $V$ or as constant global sections of $M\times V$. As a consequence, with respect to a local chart $(U,\bf{x})$ the form $\alpha$ has the local representation
     \[\restr{\alpha}{U}=\sum_{a,i_1,\ldots,i_r}\alpha^a_{i_1,\ldots,i_r}\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_r}\otimes e_a.\]
     Since $e_a$ belongs to a distinct vector space, one can sometimes treat the product $\otimes$ in this formula as a commutative product. This is why it's common to see vector-valued forms written without $\otimes$, implying that $e_a$ gets multiplied by the scalar output of the differential form.
 
@@ -5023,8 +5051,10 @@ For a distribution $\Delta\subset T^\ast M$, let $\Omega^1_\Delta(M)$ denote the
 \begin{defn}[Integral manifold]
     Let $\Delta$ be a Pfaffian system on $M$. A connected immersed submanifold $(N,i)$ of $M$ (where $i:N\to M$ is the immersion) is called an integral manifold of $\Delta$ through $m\in M$ if $m\in\psi(N)$ and 
     \[i_{\ast p}(T_pN)=\Delta_{i(p)}^0\]
-    for all $p\in N$, where $\Delta_{i(p)}^0\subset T_{i(p)}M$ denotes the annihilator of $\Delta_{i(p)}$. The Pfaffian system $\Delta$ is said to be integrable if for every $m\in M$ there exists an integral manifold of $\Delta$ through $m$.
+    for all $p\in N$, where $\Delta_{i(p)}^0\subset T_{i(p)}M$ denotes the annihilator of $\Delta_{i(p)}$. The Pfaffian system $\Delta$ is said to be \emph{completely integrable} if for every $m\in M$ there exists an integral manifold of $\Delta$ through $m$.
 \end{defn}
+
+We note that integral manifolds in this sense are called \emph{complete integrals}, or \emph{complete solutions}. Since there is a unique maximal Frobenius intergal manifold passing through each point, these solutions are completely determined by their values at any one point. While not being the most general type of solution to a Pfaffian system that one may seek (PDE's typically require initial or boundary data specified along a submanifold to guarantee unique solutions), they are the only ones whose existence is characterized by the Frobenius Theorem. The more general kind of solutions will be commented upon in Remark~\ref{rem: complete integrability}.
 
 \begin{rem}
     Assume that $\Delta$ is regular, i.e.~a subbundle of $T^\ast M$. Then its annihilator $\Delta^0\subset TM$ is a regular distribution of complementary rank. Clearly a regular Pfaffian system is integrable iff so is the distribution $\Delta^0$. In this case, the integral manifolds of $\Delta$ and $\Delta^0$ coincide. Similarly, if $D< TM$ is a regular distribution, then the annihilator $D^0$ is a regular Pfaffian system.
@@ -5103,13 +5133,20 @@ Note that both of these sets are algebraic ideals of $\Omega^{\smbullet }(M)$ bu
 Now, we are going to derive Frobenius' integrability criterion for regular Pfaffian systems in the general case. For a Pfaffian system $\Delta$, let $\Omega^{\smbullet }_\Delta(M)$ denote the subspace of $\Omega^{\smbullet }(M)$ spanned by the forms $\alpha\in\Omega^r(M)$, $r\geq 1$, which satisfy $\alpha_m(X_1,\ldots,X_r)=0$ for all $X_1,\ldots,X_r\in \Delta^0_m$ and $m\in M$. $\Omega^{\smbullet }_\Delta(M)$ is an algebraic ideal in the exterior algebra $\Omega^{\smbullet }(M)$.
 
 \begin{thm}[Frobenius Theorem (1887) for Pfaffian systems {{\cite[Thm.~4.7.8]{RS1}}}]\label{thm 4.7.8 RS1}\index{Theorem!Frobenius}
-    A regular Pfaffian system $\Delta$ on $M$ is integrable iff $\Omega^{\smbullet }_\Delta(M)$ is an EDS, i.e.\ $\dd \left(\Omega^{\smbullet }_\Delta(M)\right)\subset \Omega^{\smbullet }_\Delta(M)$.
+    A regular Pfaffian system $\Delta$ on $M$ is integrable iff $\Omega^{\smbullet }_\Delta(M)$ is an \gls{eds}, i.e.\ $\dd \left(\Omega^{\smbullet }_\Delta(M)\right)\subset \Omega^{\smbullet }_\Delta(M)$.
 \end{thm}
 \begin{proof}
     By Frobenius Theorem~\ref{thm frobenius}, we must show that $\dd\Omega^{\smbullet }_\Delta(M)\subset \Omega^{\smbullet }_\Delta(M)$ is a necessary and sufficient condition for $\Delta^0$ to be involutive. That it is necessary follows from Proposition~\ref{prop 4.1.6 RS1}. To see that it is sufficient, let $r$ denote the rank of $\Delta$ and let $m\in M$. Choose $\theta^1,\ldots,\theta^r\in \Omega^1_\Delta(M)$ such that $\{\theta^i_m\}_{i=1}^r$ is a basis in $\Delta_m$. According to Proposition~\ref{prop 4.1.6 RS1}, for $X,Y\in\fX^{\Delta^0}(M)$, 
     \[\left(\dd \theta^j(X,Y)\right)(m)=-\theta^i_m([X,Y]_m),\quad 1\leq i\leq r.\]
     If $\dd\Omega^{\smbullet }_\Delta(M)\subset\Omega^{\smbullet }_\Delta(M)$, the left hand side vanishes, hence $[X,Y]_m\in\Delta_m^0$. Since $m$ was arbitrary, it follows that $\Delta^0$ is involutive.
 \end{proof}
+
+\begin{rem}\label{rem: complete integrability}
+    A Pfaffian system whose algebraic closure $\Omega^{\smbullet}_\Delta(M)$ is a differential ideal is sometimes called \emph{closed} (referring to the fact that $\Omega^{\smbullet}_\Delta(M)$ is closed under the action of $\dd$).
+    The power of the Frobenius Theorem is thus in reducing the question of the existence of \emph{complete solutions} for a system of arbitrary Pfaffian equations to a problem in linear algebra: is a certain subspace of the space of differential forms invariant under the action of the linear operator $\dd$ or not? Problems that have solutions in the Frobenius sense are called \emph{completely integrable}, and the theorem itself states that a system is completely integrable iff it is closed. In the language of dynamical systems, solutions of completely integrable systems can be expressed in terms of a \emph{complete set of conserved quantities} (integrals of motion, cf.\ Definition~\ref{def complete integral}), which are simply the local coordinates in a neighborhood of the integral manifold which are constant along the integral foliation and complementary to the independent variables that parametrize the leaf. By specifying a single point on $M$, parametrized by the independent variables plus the integrals of motion, we get a unique solution. Note that this class of systems does not include systems where the solution depends on arbitrary \emph{functions} as opposed to constants (e.g.\ $u_x=u_y$ or $u_{xy}=0$). These arbitrary functions parametrize the values of the solution along certain submanifolds (e.g.~``boundary conditions''), thus no single point can fix a unique integral manifold, and so this is clearly not a Frobenius setting.
+    
+    In summary, the Frobenius Theorem is not sufficient for studying the solvability of arbitrary PDE's because they almost never have complete integrals, and moreover, we are usually content with integral manifolds of dimension lower than the rank of the system. In fact, if there are $n$ independent variables, then an $n$-dimensional integral manifold is all we need. These general problems will require a much more sophisticated machinery (albeit still nothing but linear algebra), developed by Cartan, that we will turn to in \sect~\ref{sec: PDEs}.
+\end{rem}
 
 Next, we derive local criteria for a regular Pfaffian system to be integrable. We need
 
@@ -5123,7 +5160,7 @@ Next, we derive local criteria for a regular Pfaffian system to be integrable. W
     Since $\alpha\in\Omega^{\smbullet }_\Delta(M)$, we have that $\alpha_{i_1\ldots i_k}=\restr{\alpha}{U}(X_{i_1},\ldots,X_{i_k})=0$ whenever $r<i_1$. Hence $\restr{\alpha}{U}=\sum_{j=1}^r \theta^j\wedge\beta_j$ with $\beta_j=\sum_{j<i_2<\cdots<i_k} \alpha_{ji_2\ldots i_k}\theta^{i_2}\wedge\cdots\wedge \theta^{i_k}$.
 \end{proof}
 
-The following is a more classical formulation of the Frobenius Theorem.
+The following local version is a more classical formulation of the Frobenius Theorem.
 
 \begin{prop}[Frobenius Theorem {{\cite[Prop.~4.7.10]{RS1}}}]\label{prop 4.7.10 RS1}
     Let $\Delta$ be a regular Pfaffian system of rank $r$ on $M$. \gls{tfae}:
@@ -5160,6 +5197,41 @@ For a deep application of the Frobenius Theorem, see \subsect \ref{sec: theory o
     Thus, $\Delta$ is integrable iff the vector field $\sum_i \theta_i\partial_i$ is perpendicular to its curl.
 \end{example}
 
+
+\begin{example}[Wave equation]
+    Consider the wave equation $u_{xy}\coloneqq \partial_x\partial_yu=0$ for a function $u(x,y)$. It is known that the general solution of this equation is $u=\xi(x)+\eta(y)$, where $\xi,\eta$ are arbitrary functions of one variable. For this reason alone, we expect this system to not be completely integrable in the Frobenius sense. To represent it as a Pfaffian system we use coordinates $(x,y,z,p,q,r,s,t)$ on the $8$-dimensional jet space $J^2(\bbR^2,\bbR)$, where $z(x,y)$ will be the unknown function, $(p,q)$ correspond to $(z_x,z_y)$, and $(r,s,t)$ correspond to $(z_{xx},z_{xy},z_{yy})$. Then the wave equation $z_{xy}=0$ is equivalent to the canonical contact system restricted to the $7$-dimensional hyperplane $M\sub J^2(\bbR^2,\bbR)$ given by $s=0$:
+    \begin{align}
+        \theta^1=& \dd z-p\dd x-q\dd y,\\
+        \theta^2=& \dd p- r\dd x,\\
+        \theta^3=& \dd q- t\dd y.
+    \end{align}
+    This system is obviously of rank $3$, so a Frobenius integral manifold would have to be $4$-dimensional. To verify that such integral manifolds cannot exist, we compute the exterior derivatives and try to express them as sums of terms containing $\theta^i$'s:
+    \begin{align}
+        \dd\theta^1=&-\dd p\wedge \dd x-\dd q\wedge\dd y=-\theta^2\wedge\dd x-\theta^3\wedge \dd y,\\
+        \dd\theta^2=&-\dd r\wedge\dd x,\\
+        \dd\theta^3=&-\dd t\wedge \dd y.
+    \end{align}
+    It's clear that $\dd\theta^2$ and $\dd\theta^3$ are independent from $\{\theta^i\}$ since $\dd r$ and $\dd t$ are. Thus, this system is not involutive and can't have $4$-dimensional integral manifolds. Modulo $\{\theta^i\}$, these relations can also be written as 
+    \[
+        \begin{pmatrix}
+            \dd\theta^1\\
+            \dd\theta^2\\
+            \dd\theta^3
+        \end{pmatrix}\equiv
+        \begin{pmatrix}
+            0 & 0 \\
+            -\dd r & 0\\
+            0 & -\dd t
+        \end{pmatrix}\wedge
+        \begin{pmatrix}
+            \dd x\\
+            \dd y
+        \end{pmatrix} \pmod{\<\theta^1,\theta^2,\theta^2\>}.
+    \]
+    All four $1$-forms $\dd r,\dd t,\dd x,\dd y$ involved on the right are linearly independent of $\{\theta^i\}$ (in fact, together these $7$ forms comprise a global coframe). We will be able to reconstruct the general solution using geometric methods in \subsect~\ref{sec: hyperbolic EDS}.
+\end{example}
+
+
 We can now go back to Pfaff's condition from Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1} and restate it in terms of integrating factors.
 
 \begin{defn}[Integrating factor]\index{Integrating factor}
@@ -5172,7 +5244,7 @@ We can now go back to Pfaff's condition from Proposition~\ref{prop 4.7.6 RS1 pfa
 \begin{proof}
     First assume that a local integrating factor $f$ exists on $U$. Then 
     \[0=\dd(f\restr{\theta}{U})=\dd f\wedge\restr{\theta}{U}+f\dd\restr{\theta}{U},\]
-    hence $\dd\restr{\theta}{U}=\restr{\theta}{U}\wedge \dd f/f$, and Proposition~\ref{prop 4.7.10 RS1}(2) yields that $\Delta$ is integrable. Conversely, if $\Delta$ is integrable, so is the regular distribution $\Delta^0$ of rank $n-1$ on $M$. Hence, according, for example, to \ref{cor 19.13 Lee}, for every $m\in M$ there exists a local chart $(U,x)$ at $m$ such that $\{\partial^{x_i}\}_{i=1}^{n-1}$ is a local frame in $\Delta^0$ at $m$. Then $\theta=h\dd x^n$ for some $h\in C^\infty(U)$. Since $\theta$ is nowhere-vanishing, so is $h$. Thus $f=h^{-1}$ is an integrating factor for $\restr{\theta}{U}$.
+    hence $\dd\restr{\theta}{U}=\restr{\theta}{U}\wedge \dd f/f$, and Proposition~\ref{prop 4.7.10 RS1}(2) yields that $\Delta$ is integrable. Conversely, if $\Delta$ is integrable, so is the regular distribution $\Delta^0$ of rank $n-1$ on $M$. Hence, according, for example, to \ref{cor 19.13 Lee}, for every $m\in M$ there exists a local chart $(U,\bf{x})$ at $m$ such that $\{\partial^{x_i}\}_{i=1}^{n-1}$ is a local frame in $\Delta^0$ at $m$. Then $\theta=h\dd x^n$ for some $h\in C^\infty(U)$. Since $\theta$ is nowhere-vanishing, so is $h$. Thus $f=h^{-1}$ is an integrating factor for $\restr{\theta}{U}$.
 
     Next, let $g\in C^\infty(U)$ be such that $f\restr{\theta}{U}=\dd g$ and let $\Sigma$ be a level set component of $g$. Since $\dd g=f\restr{\theta}{U}$ is nowhere-vanishing, every point of $U$ is regular for $g$. Thus $\Sigma$ is an embedded submanifold of dimension $n-1$ of $U$ (and hence of $M$). Let $i:\Sigma\hookrightarrow M$ denote the natural inclusion. Due to
     \[i^\ast\restr{\theta}{U}=\frac{1}{\restr{f}{\Sigma}}i^\ast(f\restr{\theta}{U})=\frac{1}{\restr{f}{\Sigma}}i^\ast(\dd g)=\frac{1}{\restr{f}{\Sigma}}\dd(\restr{g}{\Sigma})=0, \]
@@ -5204,6 +5276,198 @@ We can now go back to Pfaff's condition from Proposition~\ref{prop 4.7.6 RS1 pfa
         The integrability of the $1$-form $\theta=c_V\dd T+p\dd V$ is equivalent to the second law of thermodynamics or, more precisely, it yields the mathematical foundation of this law for the ideal gas.
     \end{enumerate}
 \end{example}
+
+
+
+
+\subsection{(*) Fr\"olicher-Nijenhuis bracket}
+
+
+Here we construct a certain natural Lie algebra structure on the space of $TM$-valued differential forms, following \cite{Kolar}. Throughout this \subsect, $M$ is a fixed smooth $n$-manifold and we consider the graded commutative algebra 
+\[\Omega\coloneqq \Omega^{\smbullet}(M)=\bigoplus_{p\in\bbZ} \Omega^p(M)\] of differential forms on $M$. We also denote its components of fixed degree by $\Omega^p\coloneqq \Omega^p(M)$. 
+
+\begin{defn}[Derivation of degree $k$]
+    We denote by $\Der_k\Omega$ the space of all (graded) derivations of degree $k\in\bbZ$, i.e.\ linear maps $D:\Omega\to \Omega$ such that $D(\Omega^p)\subset \Omega^{p+k}$ and satisfying the graded Leibniz rule:
+    \[D(\alpha\wedge\beta)=(D\alpha)\wedge\beta+(-1)^{pk}\wedge D\beta \;\text{ for all }\;\alpha\in\Omega^p,\beta\in\Omega.\]
+    The space of all derivations is $\Der\Omega\coloneqq \bigoplus_{k\in\bbZ} \Der_k\Omega$.
+\end{defn}
+
+Just like with derivations on regular algebras, $\Der\Omega$ is also a Lie algebra.
+
+\begin{lem}
+    The graded bracket defined by
+    \[[D_1,D_2]\coloneqq D_1\circ D_2-(-1)^{k_1k_2}D_2\circ D_1,\quad D_1\in\Der_{k_1}\Omega,D_2\in\Der_{k_2}\Omega,\]
+    defines a Lie algebra structure on $\Der\Omega$. In other words, the linear operator $\ad_{D_1}\coloneqq [D_1,\_]:\Omega\to \Omega$ is itself a derivation of degree $k_1$.
+\end{lem}
+\begin{proof}
+    This is proved by direct verification of the Jacobi identity.
+\end{proof}
+
+\begin{example}
+    For any vector field $X\in\fX(M)$, the Lie derivative $\Lie_X$ is a derivation of degree $0$, $\Lie_X\in\Der_0\Omega$, and the inner product $i_X:\Omega\to \Omega$ is a derivation of degree $-1$, so $i_X\in\Der_{-1}\Omega$. Similarly, $\dd\in\Der_1\Omega$. Cartan's magic formula can be written as 
+    \[\Lie_X=\dd i_X+i_X \dd=[i_X,\dd].\]
+\end{example}
+
+\begin{defn}[Algebraic derivation]
+    A derivation $D\in\Der_k\Omega$ is called algebraic if $D(\Omega^0)=\{0\}$. The graded Leibniz rule then implies $D(f\omega)=fD(\omega)$ for all $f\in \Omega^0$ and $\omega\in \Omega$, so $D$ can be identified with a tensor field by Theorem~\ref{thm tensor characterization}. Therefore, $D$ induces a derivation $D_m\in \Der_k \bigwedge (T^\ast_m M)$ for each $m\in M$. By Willmore's Theorem~\ref{Willmore}, it is uniquely determined by its action on $1$-forms, $\restr{D}{\Omega^1}:\Omega^1\to \Omega^{k+1}$. This is also $C^\infty(M)$-linear and hence can be identified with a unique vector-valued differential form 
+    \[K\in \Gamma^\infty\left(\bigwedge^{k+1}T^\ast M\otimes TM\right)=\Omega^{k+1}(M;TM).\]
+    Hence $D$ coincides with the algebraic derivation $i_K$ defined uniquely by its action on $1$-forms:
+    \[i_K(\omega)\coloneqq \omega\circ K,\quad \omega\in\Omega^1.\]
+\end{defn}
+
+The action of $i_K$ on forms of arbitrary degree is computed in the following proposition.
+
+\begin{prop}[Nijenhuis-Richardson bracket]
+    \begin{enumerate}[label=(\alph*)]
+        \item For $K\in \Omega^{k+1}(M;TM)$, the formula 
+        \begin{multline}
+            (i_K\omega)(X_1,\ldots,X_{p+k})=\frac{1}{(k+1)!(p-1)!}\\\sum_{\sigma\in S_{p+k}}\sign(\sigma) \omega(K(X_{\sigma(1)},\ldots,X_{\sigma(k+1)}),X_{\sigma(k+2)},\ldots,X_{\sigma(p+k)})
+        \end{multline}
+        for $\omega\in\Omega^p$, $X_i\in\fX(M)$, defines an algeraic graded derivation $i_K\in \Der_k\Omega$ and any algebraic derivation is of this form.
+        \item The \emph{Nijenhuis-Richardson algebraic bracket} $[\,,\,]^{\wedge}$ on the space $\Omega^{\smbullet +1}(M;TM)$ of algebraic derivations defined by 
+        \[i_{[K,L]^{\wedge}}= [i_K,i_L]\]
+        defines a graded Lie algebra structure with the grading as indicated. Moreover, for $K\in\Omega^{k+1}(M;TM)$ and $L\in\Omega^{l+1}(M;TM)$, we have 
+        \[[K,L]^{\wedge}=i_K L-(-1)^{kl}i_L K,\]
+        where the action of $i_K$ on $TM$-valued differential forms is defined trivially by
+        \[i_K(\omega\otimes X)\coloneqq i_K(\omega)\otimes X,\quad X\in\fX(M),\omega\in\Omega.\]
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Since $\bigwedge T^\ast_m M$ is the free graded commutative algebra generated by the vector space $T^\ast_m M$, any $K\in \Omega^{k+1}(M;TM)$ extends to a graded derivation. By applying it to an exterior product of $1$-forms one can derive the formula in (1). The graded commutator of two algebraic derivations is again algebraic, so the injective map $i_{\_}:\Omega^{\smbullet +1}(M;TM)\to \Der_{\smbullet}\Omega$ induces a graded Lie bracket on $\Omega^{\smbullet+1}(M;TM)$ whose form can be seen by applying it to a $1$-form.
+\end{proof}
+
+
+\begin{defn}[Lie derivation]
+    For each algebraic derivation $K\in\Omega^k(M;TM)$, we define the Lie derivation $\Lie_K\in\Der_k\Omega$ by an extension of Cartan's magic formula:
+    \[\Lie_K\coloneqq [i_K,\dd]=i_X\dd+\dd i_X.\]
+    The mapping $\Omega(M;TM)\to \Der\Omega$ given by $K\mapsto \Lie_K$ is injective since $\Lie_K f=i_K\dd f=\dd f\circ K$ for $f\in\Omega^0$.
+\end{defn}
+
+As we will now show, \emph{every} derivation on the exterior algebra is a unique combination of a Lie derivation and an algebraic derivation.
+
+\begin{thm}[{{\cite[8.3]{Kolar}}}]\label{thm 8.3 Kolar}
+    For any graded derivation $D\in\Der_k\Omega$, there are unique $K\in\Omega^k(M;TM)$ and $L\in\Omega^{k+1}(M;TM)$ such that 
+    \[D=\Lie_K+i_L.\]
+    We have $L=0$ iff $[D,\dd]=0$. $D$ is algebraic iff $K=0$.
+\end{thm}
+\begin{proof}
+    Let $X_i\in\fX(M),i=1,\ldots,k,$ be vector fields. Then $f\mapsto (Df)(X_1,\ldots,X_k)$ is a derivation $\Omega^0\to \Omega^0$, so by Proposition~\ref{prop 2.2.9 Marsden}, there is a unique vector field $K(X_1,\ldots,X_k)\in\fX(M)$ such that 
+    \[(Df)(X_1,\ldots,X_k)=K(X_1,\ldots,X_k)f=\dd f(K(X_1,\ldots,X_k)).\]
+    Clearly $K(X_1,\ldots,X_k)$ is $C^\infty(M)$-linear in each $X_i$ and anti-symmetric, so $K$ is tensorial by Theorem~\ref{thm tensor characterization}, $K\in\Omega^k(M;TM)$.
+
+    The defining equation for $K$ is $Df=\dd f\circ K=i_K\dd f-\Lie_K$ for $f\in\Omega^0$. Thus $D-\Lie_K$ is an algebraic derivation, so $D-\Lie_K=i_L$ for a unique $L\in\Omega^{k+1}(M;TM)$. Since we have $[\dd,\dd]=2\dd^2=0$, by the graded Jacobi identity we obtain
+    \[0=[i_K,[\dd,\dd]]=[[i_K,\dd],\dd]+(-1)^{k-1}[\dd,[i_K,\dd]]=2[\Lie_K,\dd].\]
+    The map $K\mapsto [i_K,\dd]=\Lie_K$ is injective, so the remaining assertions follow.
+\end{proof}
+
+
+\begin{rem}
+    In particular, the above theorem implies that $\dd$ can be written as a Lie derivation (we know that $L=0$ since $[\dd,\dd]=2\dd^2=0$). Let $I=\id_{TM}\in\Omega^1(M;TM)$. Then by acting $i_I$ on a $k$-fold exterior product of $1$-forms we see that $i_I \omega=k\omega$ for $\omega\in\Omega^k$. Thus, $\Lie_{I}\omega=i_I\dd\omega-\dd i_I\omega=(k+1)\dd\omega-k\dd\omega=\dd\omega$. We conclude
+    \[\dd=\Lie_{\id_{TM}}.\]
+\end{rem}
+
+\begin{defn}[Fr\"olicher-Nijenhuis bracket]
+    Let $K\in\Omega^k(M;TM)$ and $L\in\Omega^l(M;TM)$. Then $[[\Lie_K,\Lie_L],\dd]=0$ (all terms cancel upon expanding the Lie derivations), so by Theorem~\ref{thm 8.3 Kolar} there exists a unique element $[K,L]\in \Omega^{k+l}(M;TM)$ such that 
+    \[[\Lie_K,\Lie_L]=\Lie_{[K,L]}.\]
+    The vector-valued form $[K,L]$ is called the Fr\"olicher-Nijenhuis bracket of $K$ and $L$.
+\end{defn}
+
+
+\begin{thm}[{{\cite[Thm.~8.5]{Kolar}}}]
+    The Fr\"olicher-Nijenhuis bracket defines a structure of a graded Lie algebra on the space $\Omega^{\smbullet}(M;TM)=\bigoplus_{k=0}^{\dim M}(M;TM)$ with its usual grading. That is, we have 
+    \begin{align}
+        [K,L]=&(-1)^{k+l+1}[L,K],\\
+        [K_1,[K_2,K_3]]=&[[K_1,K_2],K_3]+(-1)^{k_1k_2}[K_2,[K_1,K_3]].
+    \end{align}
+    In addition, $\id_{TM}\in\Omega^1(M;TM)$ lies in the center of this algebra, i.e.\ $[K,\id_{TM}]=0$ for all $K$. Finally, the map $K\mapsto \Lie_K$ is an injective homomorphism of graded Lie algebras. For vector fields the Fr\"olicher-Nijenhuis bracket coincides with the Lie bracket.
+\end{thm}
+\begin{proof}
+    For vector fields $X,Y$ and a function $f$, we have $\dd f\circ [X,Y]=\Lie_{[X,Y]}f=[\Lie_X,\Lie_Y]f$. The rest is clear.
+\end{proof}
+
+The following generalizes the commutator of inner products and Lie derivatives for vector fields: $[\Lie_X,i_Y]=i_{[X,Y]}$.
+\begin{lem}[{{\cite[Lem.~8.6]{Kolar}}}]\label{lem 8.6 Kolar}
+    For $K\in\Omega^k(M;TM)$ and $L\in\Omega^{l+1}(M;TM)$ we have 
+    \begin{align}
+        [\Lie_K,i_L]=&i_{[K,L]}-(-1)^{kl}\Lie_{i_L K}, \text{ or}\\
+        [i_L,K_L]=&\Lie_{i_L K}+(-1)^ki_{[L,K]}.
+    \end{align}
+\end{lem}
+\begin{proof}
+    For $f\in\Omega^0$, we have $[i_L,\Lie_K]f=i_Li_K\dd f-0=i_L(\dd f\circ K)=\dd f\circ (i_L K)=\Lie_{i_L K} f$. So $[i_L,\Lie_K]-\Lie_{i_L K}$ is an algebraic derivation. Now, 
+    \begin{multline}
+        [[i_L,\Lie_K],\dd]=[i_L,[\Lie_K,\dd]]-(-1)^{kl}[\Lie_K,[i_L,\dd]]=\\
+        =0-(-1)^{kl}\Lie_{[K,L]}=(-1)^k[i_{[L,K]},\dd].
+    \end{multline}
+    Since $[\_,\dd]$ annihilates Lie derivations and is injective on algebraic derivations, the algebraic part of $[i_K,\Lie_K]$ is $(-1)^k i_{[L,K]}$.
+\end{proof}
+
+
+Note that the space $\Der \Omega$ is a graded $\Omega$-module with the action $(\omega\wedge D)\varphi=\omega\wedge D(\varphi)$, because $\Omega$ is a graded commutative algebra. The following Theorem lists the algebraic properties of the brackets we've constructed in relation to this module structure.
+
+\begin{thm}
+    Let $\omega\in\Omega^q$, $\varphi\in\Omega^k$, and $\psi\in\Omega^l$. Let the other degrees be as indicated. Then 
+    \begin{enumerate}[label=(\arabic*)]
+        \item $[\omega\wedge D_1,D_2]=\omega\wedge [D_1,D_2]-(-1)^{(q+k_1)k_2}D_2(\omega)\wedge D_1$,
+        \item $i_{\omega\wedge L}=\omega\wedge i_L$,
+        \item $\omega\wedge\Lie_K=\Lie_{\omega\wedge K}+(-1)^{q+k-1}i_{\dd\omega\wedge K}$,
+        \item $[\omega\wedge L_1,L_2]^{\wedge}=\omega\wedge [L_1,L_2]^{\wedge}-(-1)^{(q+l_1-1)(l_2-1)}i_{L_2}\omega\wedge L_1$,
+        \item $[\omega\wedge K_1,K_2]=\omega\wedge [K_1,K_2]-(-1)^{(q+k_1)k_2}\Lie_{K_2}\omega\wedge K_1+(-1)^{q+k_1}\dd\omega\wedge i_{K_1}K_2$,
+        \item \begin{multline}
+            [\varphi\otimes X.\psi\otimes Y]=\varphi\wedge \psi\otimes[X,Y]
+            -(i_Y\dd\varphi\wedge\psi\otimes X-(-1)^{kl}i_X\dd\psi\wedge\varphi\otimes Y)-\\
+            -(\dd(i_Y\varphi\wedge\psi)\otimes X-(-1)^{kl}\dd(i_X\psi\wedge\varphi)\otimes Y)=\\
+            =\varphi\wedge\psi\otimes [X,Y]+\varphi\wedge \Lie_X\psi\otimes Y-\Lie_Y\varphi\wedge\psi\otimes X+(-1)^{k}(\dd\varphi\wedge i_X\psi\otimes Y+i_Y\varphi\wedge\dd\psi\otimes X).
+        \end{multline}
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    (1), (2), and (3) follow by expanding the definitions. For (4) one computes $i_{[\omega\wedge L_1,L_2]^{\wedge}}$. For (5) one computes $\Lie_{[\omega\wedge K_1,K_2]}$. (6) follows from (5).
+\end{proof}
+
+Using these identities, it is easy to obtain explicit formulas for the action of $\Lie_K$ and of $[K,L]$ (analogous to the ones for Lie derivatives), as well as local formulas in terms of components of differential forms. It also follows that $i_K$, $\Lie_K$, and both brackets are natural with respect to all pullbacks. For these statements we direct the reader to \cite[\S8]{Kolar}. In particular, for $X\in\fX(M)$ and $K\in\Omega^k(M;TM)$ the Lie derivative coincides with the Fr\"olicher-Nijenhuis bracket:
+\[\Lie_X K=[X,K]\]
+The most important for us special case applies to the bracket of bundle endomorphisms $K,L\in\Omega^1(M;TM)$.
+
+\begin{lem}
+    For $K,L\in\Omega^1(M;TM)$, the Fr\"olicher-Nijenhuis bracket is 
+    \begin{multline}
+        [K,L](X,Y)=[KX,LY]-[KY,LX]-\\-L([KX,Y]-[KY,X])-K([LX,Y]-[LY,X])+(LK+KL)[X,Y].
+    \end{multline}
+\end{lem}
+
+\begin{rem}
+    Two particularly important cases related to the phenomena of curvature and torsion, respectively, are  Fr\"olicher-Nijenhuis brackets of a certain operator with itself:
+    \begin{enumerate}
+        \item $P\in\Omega^1(M;TM)$ such that $P\circ P=P$. Then $[P,P]=2R+2\wb{R}$, where $R,\wb{R}\in\Omega^2(M;TM)$ are given by 
+        \[R(X,Y)=P[(I-P)X,(I-P)Y],\quad \wb{R}(X,Y)=(I-P)[PX,PY],\]
+        with $I=\id_{TM}$. In this case it is easy to show the so called \emph{Bianchi identities}:\index{Equation!Bianchi} 
+        \[[P,R+\wb{R}]=0,\quad [R,P]=\frac14i_{[P,P]}[P,P]=i_R \wb{R}+i_{\wb{R}}R.\]
+        \item $J\in\Omega^1(M;TM)$ such that $J\circ J=-I$ (i.e.~an almost complex structure). Then 
+        \[[J,J](X,Y)=2([JX,JY]-[X,Y]-J[X,JY]-J[JX,Y]).\]
+        The vector-valued $2$-form $\frac{1}{2}[J,J]$ is called the \emph{Nijenhuis tensor} of $J$. More generally for any $L\in \Omega^1(M;TM)$, the $2$-form $\mathcal{N}_L\coloneqq \frac12[L,L]$ is called the \emph{Nijenhuis torsion} of $L$.
+    \end{enumerate}
+\end{rem}
+
+
+The following final general relation is an immediate consequence of Lemma~\ref{lem 8.6 Kolar}.
+
+\begin{thm}
+    For $K_i\in\Omega^{k_i}(M;TM)$ and $L_i\in\Omega^{k_i+1}(M;TM)$ we have 
+    \begin{multline}
+        [\Lie_{K_1}+i_{L_1},\Lie_{K_2}+i_{L_2}]=\\
+        =\Lie_{[K_1,K_2]+i_{L_1}K_2-(-1)^{k_1k_2}i_{L_2}K_1}+
+        i_{[L_1,L_2]^{\wedge}+[K_1,L_2]-(-1)^{k_1k_2}[K_2,L_1]}.
+    \end{multline}
+\end{thm}
+
+\begin{rem}
+    Each of the summands in the above formula looks like a semidirect product of graded Lie algebras. However, the maps $i:\Omega^{\smbullet}(M;TM)\to \End(\Omega^{\smbullet}(M;TM),[\,,\,])$ and $\ad:\Omega^{\smbullet}(M;TM)\to \End(\Omega^{\smbullet}(M;TM),[\,,\,]^{\wedge})$ do note take values in the subspaces of graded derivations. That is, $i_L[K_1,K_2]$ differs from $[i_LK_1,K_2]+(-1)^{k_1l}[K_1,i_LK_2]$, and $[K,[L_1,L_2]^{\wedge}]$ differs from $[[K,L_1],L_2]^{\wedge}+(-1)^{kk_1}[L_1,[K,L_2]]^{\wedge}$. The formulas containing the right correction terms (see \cite[8.11]{Kolar}) define a so called Zappa-Szep product.
+\end{rem}
+
+
+
+
 
 
 
@@ -5381,14 +5645,14 @@ We will thus identify left-invariant differential $r$-forms with elements of $\b
 \begin{enumerate}
     \item Using the general formula from Proposition~\ref{prop 4.1.6 RS1}, the exterior derivative of $\xi\in\bigwedge^r\frakg^\ast$ is
     \[\dd\xi(X_0,\ldots,X_r)=\sum_{i<j}(-1)^{i+j}\left([X_i,X_j],X_0,\ldots,\wh{X}_i,\ldots,\wh{X}_j,\ldots,X_r)\right),\label{eq 5.5.2 RS1}\]
-    where $X_0,\ldots,X_r\in\frakg$ and as usual hatted arguments are meant to be omitted. The right hand side may be taken as an intrinsic definition of a differential on the exterior algebra $\bigwedge\frakg^\ast$, thus turning the natural isomorphic of algebras $\Omega^{\smbullet }(G)^G\cong\bigwedge\frakg^\ast$ into an isomorphism of differential algebras.
+    where $X_0,\ldots,X_r\in\frakg$ and as usual hatted arguments are meant to be omitted. The right hand side may be taken as an intrinsic definition of a differential on the exterior algebra $\bigwedge\frakg^\ast$, thus turning the natural isomorphism of algebras $\Omega^{\smbullet }(G)^G\cong\bigwedge\frakg^\ast$ into an isomorphism of differential algebras.
     \item For $\xi\in\frakg^\ast$, (\ref{eq 5.5.2 RS1}) yields
     \[\dd\xi(X,Y)=-\xi([X,Y]),\quad X,Y\in\frakg.\label{eq 5.5.3 RS1}\]
     Let $\{e_1,\ldots,e_n\}$ be a basis in $\frakg$, let $c^i_{jk}$  be the corresponding structure constants and let $\{\alpha^1,\ldots,\alpha^n\}$ be the dual basis in $\frakg^\ast$. Then (\ref{eq 5.5.3 RS1}) is equivalent to
     \[\dd \alpha^i=-\frac 12 c^i_{jk}\alpha^j\wedge \alpha^k,\quad i=1,\ldots,n.\label{eq 5.5.4 RS1 MC in coords}\]
-    This can be seen by evaluating both sides on the basis elements $e_i$. This equation is actually another form of the Maurer-Cartan equation \index{Equation!Maurer-Cartan} (\ref{eq Maurer-Cartan}), which we will return to in a basis-free form later in this section.
+    This can be seen by evaluating both sides on the basis elements $e_i$. This equation is actually another form of the Maurer-Cartan equation \index{Equation!Maurer-Cartan} (\ref{eq Maurer-Cartan}), which we will return to in a basis-free form later in this \sect.
     \item In terms of left-invariant 1-forms, the inverse left and right trivializations $(\chi_L^T)^{-1}$ and $(\chi_R^T)^{-1}$ of $T^\ast G$ read
-    \[(\chi_L^T)^{-1}(g,\xi)=\xi_a,\quad (\chi_R^T)^{-1}(g,\xi)=(\Ad_{g}^\ast \xi)_g=\xi_g\circ (\Ad_g)_{\ast g}.\]
+    \[(\chi_L^T)^{-1}(g,\xi)=\xi_g,\quad (\chi_R^T)^{-1}(g,\xi)=(\Ad_{g}^\ast \xi)_g=\xi_g\circ (\Ad_g)_{\ast g}.\]
     Note that the 1-form $\Ad_g^\ast\xi$ need not be left-invariant.
 \end{enumerate}
 \end{rem}
@@ -5400,7 +5664,7 @@ Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-
 \end{cor}
 
 \begin{defn}[Haar measure]\index{Haar measure}
-    The Lebesgue measure $\dd\mu_L$ associated with a left-invariant volume form on $G$ is called a (left) Haar measure on $G$. Thus, Haar measures on $G$ are left-invariant and unique up to a constant.
+    The Lebesgue measure $\dd\mu_L$ associated with a left-invariant volume form on $G$ is called a (left) Haar measure on $G$. Thus, Haar measures on $G$ are left-invariant and unique up to a multiplicative constant.
 \end{defn}
 
 \begin{rem}
@@ -5741,7 +6005,15 @@ Thus, each such $1$-form produces a well-defined map from the fundamental group 
     The reason the above theorem is called fundamental is because in the case $M=G=\bbR$ it becomes the Fundamental Theorem of Calculus. If $M$ is an open subset of $\bbR^n$ and $G=\bbR^n$, then it states that a vector field $v^i(x^1,\ldots,x^n)$ has a potential function iff $\partial_j v^i-\partial_i v^j=0$ for all $1\leq i\leq j\leq n$. Of course, this is exactly the Frobenius integrability condition for the equation $\nabla \varphi=\bf{v}$.
 \end{rem}
 
-The following is an obvious special case of the Fundamental Theorem, but we emphasize it since it is of special significance in differential geometry, and can be seen as the first result of Cartan geometry.
+\begin{example}[Linear ODE's of Lie type]\index{Equation!of Lie type}
+    If $\dim M=1$, then every $\frakg$-valued $1$-form satisfies the Structure equation because there are no nonzero $2$-forms. Say $M=\bbR$ with coordinate $t$, then $\omega(t)=\xi(t)\dd t$ for some $\xi:\bbR\to \frakg$. The Fundamental Theorem then guarantees unique global solutions of initial value problems for all equations of the form $(f^{-1}f')(t)=\xi(t)$ or $(f'f^{-1})(t)=\xi(t)$. If $G$ is a matrix Lie group, then the latter equation is a linear ODE, called an \emph{equation of Lie type}:
+    \[f'(t)=\xi(t)f(t).\]
+    In fact, equations of Lie type also can describe trajectories on any manifold $Y$ with a smooth action of $G$, not just $Y=G$, however uniqueness is guaranteed only if the action is faithful. An important particular case of this situation is the following. In Example~\ref{ex adjoint group} we will show that the \emph{adjoint group}\index{Adjoint group} $\Ad(G)\subset \GL(\frakg)$ consisting of the operators $\Ad_g,g\in G$, has a natural Lie group structure. Therefore, equations of Lie type also include equations on a function $f:\bbR\to \Ad(G)$ of the form $f^{-1}f'(t)=\ad_{\xi(t)}$, where $\xi:\bbR\to \frakg$ and $\ad_{\xi(t)}\in \frakgl(\frakg)$. Again considering the case of matrix groups and acting with boths sides of this equation on some element $y(0)\in\frakg$, equations of this type can be written using matrix commutators as 
+    \[y'(t)=[\xi(t),y(t)],\quad y(0)\in\frakg.\label{394}\]
+    By looking for solutions in the form $y(t)=g(t)y(0)g^{-1}(t)$, we find that $y'(t)=[g'g^{-1},y]$, and so if $g(t)$ is the unique solution of $g'(t)=\xi(t)g(t)$, $g(0)=e$, then $y(t)$ is a solution of (\ref{394}). Note that while $y$ is unique, different $y$'s may correspond to the same $f(t)$ if $G$ is not simple (then $G$ has a non-discrete center, and $\Ad(G)$ strongly differs from $G$). Equations of the form (\ref{394}) are also called \emph{isospectral flows} (since the eigenvalues of $y(t)$ are clearly independent of $t$), or Lax equations (cf.\ Example~\ref{ex Lax pairs}).\index{Equation!Lax}\index{Isospectral flow}
+\end{example}
+
+The following is an obvious special case of the Fundamental Theorem, but we emphasize it since it is of special significance in differential geometry, and can be seen as our first result of Cartan geometry.
 
 \begin{cor}\label{cor immersions into G}
     Let $f_i:M\to G$, $i=1,2$ be two smooth immersions of a connected manifold $M$ into a Lie group $G$. There exists $c\in G$ such that $f_1=c\cdot f_2$ iff $\delta f_1=\delta f_2$.
@@ -7017,7 +7289,7 @@ In the Closed Subgroup Theorem~\ref{thm closed subgroup} we characterized embedd
 
 
 
-\begin{example}[Adjoint group]
+\begin{example}[Adjoint group]\label{ex adjoint group}
     Let $\frakg$ be a finite-dimensional Lie algebra. Since $\ad:\frakg\to \Lin(\frakg)$ is a homomorphism of Lie algebras, $\ad(\frakg)$ is a Lie subalgebra of $\Lin(\frakg)=\Lief\GL(\frakg)$. According to the Analytic Subgroup Theorem, the subgroup of $\GL(\frakg)$ generated by the $\rme^{\ad_X}, X\in\frakg$, is the unique connected Lie subgroup of $\GL(\frakg)$ with Lie algebra $\ad(\frakg)$. It is called the adjoint group $\Ad\frakg$ of the Lie algebra $\frakg$.
     
     By differentiating with respect to $t$ and using the Jacobi identity, it is easy to check that the map $t\mapsto \rme^{-t\ad_X}\left[\rme^{t\ad_X}Y,\rme^{t\ad_X}Z\right]$ is constant and equal to its value $[Y,Z]$ at $t=0$, i.e.
