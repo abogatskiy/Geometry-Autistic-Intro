@@ -3265,7 +3265,7 @@ All Cauchy characteristics (vector fields) together span a well-defined distribu
 THe rank of $\calA(\calI)$ is upper semicontinuous on $M$ (in an open neighborhood of $m$ it can only decrease), so we can restrict to an open set on which it is constant. The dual of $\calA(\calI)$ is a Pfaffian system that we define next.
 
 \begin{defn}[Retracting system of $\calI$]
-    Let $\calI$ be an \gls{eds} on $M$ with characteristic distribution $\calA(\calI)$. The restracting space, or Cartan system, of $\calI$ is the Pfaffian system $\calC(\calI)<T^\ast M$ defined by 
+    Let $\calI$ be an \gls{eds} on $M$ with characteristic distribution $\calA(\calI)$. The retracting space, or Cartan system, of $\calI$ is the Pfaffian system $\calC(\calI)<T^\ast M$ defined by 
     \[\calC(\calI)_m\coloneqq \{\theta\in T^\ast_m M\mid i_X\theta=0 \text{ for all }X\in \calA(\calI)_m\}.\]
     Since the space of sections $\Gamma^\infty(\calA(\calI))$ (taken locally) is closed under Lie brackets of vector fields, $\calC(\calI)$ is closed under $\dd$, so it is Frobenius.\footnote{Because $\dd\theta(X,Y)=-\theta([X,Y])$ for $\theta\in\Gamma^\infty(\calC(\calI))$ and $X,Y\in\Gamma^\infty(\calA(\calI))$.} By the Frobenius Theorem, there exist local coordinates $x^1,\ldots,x^n$ on a neighborhood $U$ such that $\restr{\calC(\calI)}{U}=\<\dd x^1,\ldots,\dd x^n\>_{C^\infty(U)}$.
 \end{defn}
@@ -3758,6 +3758,11 @@ This can be seen by verifying that $\frake^\ast \Psi=0$ via (\ref{def h}):
 
 
 
+
+
+
+
+
 \newpage
 \section{Connections}
 
@@ -3767,15 +3772,15 @@ Connections are a large and varied topic. Our exposition is based on a combinati
 
 
 The Frobenius Theorem~\ref{thm frobenius} states that a distribution $\calH\subset TM$ is integrable iff it is involutive. However, there is no clear \emph{quantitative measure} of integrability. It turns out that one way to obtain such a quantitative measure is to assume that there is a second distribution, \emph{transverse} to the first one. Namely, let $(\calH,\calV)$ be two distributions on $M$ (subbundles of $TM$) such that
-\[\calH_m\oplus \calV_m=T_pM\]
+\[\calH_m\oplus \calV_m=T_mM\]
 for all $m\in M$. This implies that there are globally defined smooth bundle maps (projections), which we denote by the same symbols,
 \[\calH:TM\to \calH,\quad \calV:TM\to \calV,\quad \calH+\calV=\id_{TM}.\]
-Now we can construct a linear map that measures to what extent $H$ fails to be an integrable distribution. Since $\calH$ and $\calV$ are completely interchangeable at this point, we in fact get two maps (the sign choice is conventional):
+Now we can construct a linear map that measures to what extent $\calH$ fails to be an integrable distribution. Since $\calH$ and $\calV$ are completely interchangeable at this point, we in fact get two maps (the sign choice is conventional):
 \begin{align}
-    \calR:\fX(M)\times\fX(M)\to \Gamma^\infty(V),\quad & \calR(X,Y)=-\calV[\calH X,\calH Y],\\
-    \wb{\calR}:\fX(M)\times\fX(M)\to \Gamma^\infty(H),\quad & \wb{\calR}(X,Y)=-\calH[\calV X,\calV Y].
+    \calR:\fX(M)\times\fX(M)\to \Gamma^\infty(\calV),\quad & \calR(X,Y)=-\calV[\calH X,\calH Y],\\
+    \wb{\calR}:\fX(M)\times\fX(M)\to \Gamma^\infty(\calH),\quad & \wb{\calR}(X,Y)=-\calH[\calV X,\calV Y].
 \end{align}
-Indeed, if $\calR=0$, it means that the Lie bracket of two sections of $\calH$ lies in $\calH$, and therefore $\calH$ is integrable, and similarly $\wb \calR$ detects the integrability of $\calV$. It is obvious that these maps are $C^\infty(M)$-linear and hence are tensors. We call $\calR$ \emph{curvature} and $\wb{\calR}$ \emph{cocurvature}\index{Cocurvature}. Note that the value of $\calR$ depends on the choice of $\calV$, but whether it is zero or not doesn't, so in this sense it's still an objective measure of integrability for $\calH$ (as long as $\calH$ and $\calV$ are everywhere transverse). It turns out that fiber bundles are special in that they come with one canonically defined integrable distribution that we define now. A more sophisticated way of defining the curvature of general connections is as the Fr\"olicher-Nijenhuis bracket $[\calV,\calV]$, see \cite[Sec.~9]{Kolar}.
+Indeed, if $\calR=0$, it means that the Lie bracket of two sections of $\calH$ lies in $\calH$, and therefore $\calH$ is integrable, and similarly $\wb \calR$ detects the integrability of $\calV$. It is obvious that these maps are $C^\infty(M)$-linear and hence are tensors. We call $\calR$ \emph{curvature} and $\wb{\calR}$ \emph{cocurvature}\index{Cocurvature}. Note that the value of $\calR$ depends on the choice of $\calV$, but whether it is zero or not doesn't, so in this sense it's still an objective measure of integrability for $\calH$ (as long as $\calH$ and $\calV$ are everywhere transverse). It turns out that fiber bundles are special in that they come with one canonically defined integrable distribution that we define now. A more sophisticated way of defining the curvature of general connections is as the Fr\"olicher-Nijenhuis bracket $[\calV,\calV]$, see Example~\ref{ex frolicher curvature and torsion}.
 
 \begin{defn}[Vertical bundle]\index{Vertical bundle}
     If $E\overset{\pi}{\to}M$ is a smooth \gls{fb}, then its \emph{vertical subbundle} is the subbundle $\calV E< TE$ defined as 
@@ -3791,7 +3796,7 @@ is a short exact sequence. Here $m=\pi(p)$ and $E_m\overset{i_m}{\hookrightarrow
 \[TE\slash \calV E\cong \pi^\ast TM.\]
 But first we will approach this problem from another angle.
 
-Determining what the ``horizontal'' directions in a bundle are, in particular, provides one with a \emph{unique} way of lifting paths $\gamma$ in $M$ to paths $\wt\gamma$ in $E$. Doing this for every starting point $p\in E_{\gamma(0)}$, we get a map $E_{\gamma(0)}\to E_{\gamma(1)}$. This map has to be bijective because the lifting clearly respects inverses of paths. Moreover, it will depend only on the \emph{shape} of $\gamma$ and not on how exactly it is parametrized. The next three definitions formalize the concept of \emph{reparametrization invariance} of paths.
+As we will see later, determining what the ``horizontal'' directions in a bundle are, in particular, provides one with a \emph{unique} way of lifting paths $\gamma$ in $M$ to paths $\wt\gamma$ in $E$. Doing this for every starting point $p\in E_{\gamma(0)}$, we get a map $E_{\gamma(0)}\to E_{\gamma(1)}$. This map has to be bijective because the lifting clearly respects inverses of paths. Moreover, it will depend only on the \emph{shape} of $\gamma$ and not on how exactly it is parametrized. The next three definitions formalize the concept of \emph{reparametrization invariance} of paths.
 
 \begin{defn}[Sitting instants]
     A path $\gamma:I\to M$ in a topological space $M$ is said to have sitting instants if there is a neighborhood of the points $0,1$ in $I$ on which $\gamma$ is locally constant.
@@ -3812,7 +3817,7 @@ This groupoid can in fact be understood as smooth in a certain sense (it is a ``
     \[\tra: \rmP_1(M)\to \calS\mathsf{-Man}^\infty,\]
     such that for any path $\gamma\in\rmP_1(M)$ the map $\tra_\gamma\coloneqq \tra(\gamma)$ is a morphism (hence isomorphism) of the $G$-fibers over the endpoints:
     \[\tra_\gamma:(E_{\gamma(0)},\calG_{\gamma(0)})\to (E_{\gamma(1)},\calG_{\gamma(1)}),\]
-    and which is smooth in the following sense. If $\gamma_t$ is a smooth homotopy of paths in $M$ (not necessarily with fixed ends), then, for any $t\in I$, in some local $\calG$-charts of $E$ at $\gamma_t(0)$ and $\gamma_t(1)$ the representatives of the diffeomorphism $\tra_{\gamma_t}:E_{\gamma_t(0)}\to E_{\gamma_t(1)}$ must depend smoothly on $t$ as elements of $\calS(F,F)$. Since any isomorphism of $G$-fibers is represented by $G$-actions in $G$-frames, this can also be stated as there existing a (finite) collection of $\calG$-charts covering the curves traced out by the endpoints $\gamma_t(0)$ and $\gamma_t(1)$ and a smooth path $g:I\to G$ such that the local representatives of $\tra_{\gamma_t}$ in any of those charts are exactly the action of $g(t)$ on $F$. We will call connections with such parallel transport \emph{$G$-connections}.\index{$G$-connection}
+    and which is smooth in the following sense. If $\gamma_t$ is a smooth homotopy of paths in $M$ (not necessarily with fixed ends), then, for any $t\in I=[0,1]$, in some local $\calG$-charts of $E$ at $\gamma_t(0)$ and $\gamma_t(1)$, the representatives of the diffeomorphism $\tra_{\gamma_t}:E_{\gamma_t(0)}\to E_{\gamma_t(1)}$ must depend smoothly on $t$ as elements of $\calS(F,F)$. Since any isomorphism of $G$-fibers is represented by $G$-actions in $G$-frames, this can also be stated as there existing a (finite) collection of $\calG$-charts covering the curves traced out by the endpoints $\gamma_t(0)$ and $\gamma_t(1)$ and a smooth path $g:I\to G$ such that the local representatives of $\tra_{\gamma_t}$ in any of those charts are exactly the action of $g(t)$ on $F$. We will call connections with such parallel transport \emph{$G$-connections}.\index{$G$-connection}
 
     A \emph{morphism of connections} on $E$ is a natural transformation of two such functors.
 \end{defn}
@@ -3829,7 +3834,7 @@ Note that in the case of principal bundles the complicated condition on the valu
 \end{example}
 
 \begin{example}[Canonical flat connections on a Lie group]\label{ex flat connections on G}
-    If $G$ is a Lie group, then the tangent bundle $TG$ admits two obvious flat connections. The first, called the $(-)$-connection, has parallel transport acting by left translations, i.e.\ $T_g G$ is mapped to $T_h G$ by $L_{gh^{-1}\ast}$. The second, so called $(+)$-connection, has parallel transport given by $L_{gh^{-1}\ast}$ instead. Since these transports are independent of the path, these connections are flat. Both of them derive from absolute parallelisms $TG\to G\times\frakg$ given by the left and right Maurer-Cartan forms, respectively.
+    If $G$ is a Lie group, then the tangent bundle $TG$ admits two obvious flat connections. The first, called the $(-)$-connection, has parallel transport acting by left translations, i.e.\ $T_g G$ is mapped to $T_h G$ by $L_{hg^{-1}\ast}$. The second, so called $(+)$-connection, has parallel transport given by $R_{g^{-1}h\ast}$, instead. Since these transports are independent of the path, these connections are flat. Both of them derive from absolute parallelisms $TG\to G\times\frakg$ given by the left and right Maurer-Cartan forms, respectively.
 \end{example}
 
 
@@ -3843,7 +3848,7 @@ Note that in the case of principal bundles the complicated condition on the valu
     Conversely, given a flat connection $\tra$, we can cover the base manifold with contractible open sets $U_\alpha$, pick a basepoint $x_\alpha$ in each, and use parallel transport along the paths $x_\alpha\leadsto y_\alpha$ inside $U_\alpha$ to obtain diffeomorphisms $\varphi_{\alpha,y_\alpha}:E_{y_\alpha}\to E_{x_\alpha}$ for all $y_\alpha\in U_\alpha$. Due to flatness these diffeomorphisms depend only on $y_\alpha$. Hence we can define a map $\pi^{-1}(U_\alpha)\to U_\alpha\times E_{x_\alpha}$ by $\chi_\alpha(p)=(\pi(p),\varphi_{\alpha,\pi(p)}(p))$. Further we can choose arbitrary diffeomorphisms compatible with the $G$-structure of the bundle between each $E_{x\alpha}$ and the typical fiber $F$. This allows us to treat $\chi_\alpha$'s as local trivializations. The transition functions between them are constant because they can be written in terms of these fixed diffeomorphisms and the transport diffeomorphisms $E_{x_\alpha}\to E_{x_\beta}$, which are entirely independent of any other points in the base.
 \end{proof}
 
-An obvious consequence of the definition of parallel transport is that it endows the bundle with \emph{unique horizontal path liftings}: given a path $\gamma:I\to M$ and a point $p\in\pi^{-1}(\gamma(0))$, its horizontal lifting is the smooth path $\wt{\gamma}(t)=\tra_{\restr{\gamma}{[0,t]}}(p)$.
+An obvious consequence of the definition of parallel transport is that it endows the bundle with \emph{unique horizontal path liftings}: given a path $\gamma:I\to M$ and a point $p\in\pi^{-1}(\gamma(0))$, its horizontal lifting is the smooth path $\wt{\gamma}(t)=\tra_{\restr{\gamma}{[0,t]}}(p)$. By doing this for all paths through $m\in M$ and all $p\in E_m$, each parallel transport functor induces a distribution $\calH E<TE$ consisting of ``horizontal'' vectors. This leads to our second definition of a connection.
 
 
 \begin{defn}[Connection II: general connection]
@@ -3851,7 +3856,7 @@ An obvious consequence of the definition of parallel transport is that it endows
     \[T_pE\to \calH_pE\oplus \calV_pE,\quad X_p\mapsto (\hor X_p,\ver X_p).\]
     For any smooth vector field $X\in\fX(E)$, the assignments $p\mapsto \hor X_p$ and $p\mapsto \ver X_p$ are also smooth vector fields, denoted $\hor X$ and $\ver X$, respectively.
 
-    The connection $\calH E$ is called \emph{flat} if it is integrable.
+    The connection $\calH E$ is called \emph{flat} if it is integrable as a distribution (or, equivalently, by the Frobenius Theorem, if it is involutive).
 \end{defn}
 
 
@@ -4020,6 +4025,11 @@ Regardless of whether a connection is complete, we can always expect parallel tr
     A general connection is flat iff all of its restricted holonomy groups are trivial.
 \end{cor}
 
+\begin{rem}
+    Note that definitions II, III, and IV, of general connections fail to incorporate any $G$-structure that $E$ might carry. The easiest workaround is to say that a general conneciton is \emph{compatible} with a given $G$-structure iff all parallel transport operators induced by it are isomorphisms of $G$-fibers. Clearly, this is an extremely indirect way of defining compatibility. The standard solution to this issue, and the one we shall follow below, is to first define compatible connections on \emph{principal} bundles, where it is easy, and then use them to \emph{induce} compatible connections on associated bundles.
+\end{rem}
+
+
 
 
 
@@ -4027,7 +4037,7 @@ Regardless of whether a connection is complete, we can always expect parallel tr
 
 \subsection{Horizontal forms}
 
-Before we discuss connections on principal bundles, it will be useful to introduce the concept of horizontal differential forms. The following discussion is independent of any connections on bundles.
+Before we discuss connections on principal bundles, it will be useful to introduce the concept of horizontal differential forms. The following discussion is independent of any connections on bundles -- despite the name, horizontal forms rely only on the concept of the vertical bundle.
 
 \begin{defn}[Horizontal forms]\index{Horizontal form}
     Let $(P\to M,G\overset{\Phi}{\acts} P)$ be a (right) principal bundle and let $G\overset{\sigma}{\acts}V$ be a finite-dimensional representation of $G$. A $V$-valued differential $k$-form $\wt\eta\in\Omega^k(P;V)$ is called horizontal of type $\sigma$ if
@@ -4130,7 +4140,7 @@ This is a $V$-valued  $k$-form on $U$. The following proposition shows that a ho
 
 \subsection{Principal connections}\label{sec principal connections}
 
-Note that our definition of general connections so far hasn't taken into account any $G$-structure that might exist on the bundle. Only the parallel transport definition I of Ehresmann connections was amenable to $G$-structures. It is not clear, however, how to adapt the definition of a general connection in terms of the horizontal bundle to a $G$-structure (other than indirectly via requiring parallel transports to act by morphisms of $G$-structures). To understand how to construct connections adapted to arbitrary $G$-structures, we will first study equivariant connections on principal bundles, and then learn to use them to induce connections on associated bundles.
+Our definition of general connections so far hasn't taken into account any $G$-structure that might exist on the bundle. Only the parallel transport definition I of Ehresmann connections was amenable to $G$-structures. It is not clear, however, how to adapt the definition of a general connection in terms of the horizontal bundle to a $G$-structure (other than indirectly via requiring parallel transports to act by morphisms of $G$-structures). To understand how to construct connections adapted to arbitrary $G$-structures, we will first study equivariant connections on principal bundles, and then learn to use them to induce connections on associated bundles.
 
 We start by examining general connections on principal bundles before we narrow down a natural special class of such connections. In this section we assume that $(P\overset{\pi}{\to}M,G,\Phi)$ is a right principal $G$-bundle with the principal right action $\Phi$. This action induces an action of the Lie algebra $\frakg=\Lief G$, given by the homomorphism $\frakg\to \fX(P)$, $A\mapsto A_\ast$ (see Section~\ref{sec Killing vectors}). Recall that the space $\Gamma^\infty(\calV P)$ of vertical vector fields forms a Lie subalgebra of $\fX(P)$. Since the orbits of $\Phi$ are exactly the fibers of $P$, we have actually constructed a Lie algebra homomorphism $\frakg\to \Gamma^\infty(\calV P)$. As we now show, this map actually trivializes $VP$, much in the same way as the Maurer-Cartan form trivializes the tangent bundle of a Lie group. The triviality of $\calV P$ is a key property of principal bundles.
 
@@ -4234,7 +4244,7 @@ We can thus give the following definition.
     \[\dot g(t)=-R_{g(t)\ast}\omega(\dot\delta(t)).\label{3794}\]
     We claim that this equation has a unique global solution $g:I\to G$, which is the integral curve of a time-dependent right-invariant vector field $X: G\times I\to T(G\times I)\cong TG\times I\times \bbR$ given by
     \[(h,s)\mapsto X_s(h)\coloneqq (-R_{h\ast}\omega(\dot\delta(s)),(\partial_t)_s)\in T_hG\times T_gI\cong T_hG\times \bbR.\]
-    Here, $\partial_t$ denotes the canonical unit vector field in $T_sI\cong\bbR$. Moreover, right-invariance is immediate: $X_s(ha)=-R_{ha\ast}\omega(\dot\delta(s))=R_{a\ast}(-R_{h\ast}\omega(\delta(s)))=R_{a\ast}X_s(h)$. Obviously, solutions of (\ref{3794}) correspond precisely with integral curves of $X$. The assertion now follows from the fact that invariant vector fields on Lie groups are complete (Propositon~\ref{thm invariant fields are complete}).
+    Here, $\partial_t$ denotes the canonical unit vector field in $T_sI\cong\bbR$. Moreover, right-invariance is immediate: $X_s(ha)=-R_{ha\ast}\omega(\dot\delta(s))=R_{a\ast}(-R_{h\ast}\omega(\delta(s)))=R_{a\ast}X_s(h)$. Obviously, solutions of (\ref{3794}) correspond precisely with integral curves of $X$. The assertion now follows from the fact that invariant vector fields on Lie groups are complete (Proposition~\ref{thm invariant fields are complete}).
 \end{proof}
 
 Thus, principal connections are Ehresmann connections and define global parallel transport, which we denote by $\tra^\omega$. We will study it in more detail in Section~\ref{sec holonomy}.
