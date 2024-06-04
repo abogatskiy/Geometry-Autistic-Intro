@@ -167,11 +167,20 @@
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt, colback=white,boxrule=1pt,frame hidden, enhanced,
     breakable=true,fontlower=\small}
-\tcbwrap{xca,example}{
+\tcbwrap{xca}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
     borderline west={1.5pt}{0pt}{black!80,dashed},
+    breakable=true}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\tcbuselibrary{skins}
+\tcbwrap{example}{
+    grow to left by=5pt,grow to right by=5pt,
+    boxsep=1pt,left=4pt,right=4pt,
+    top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
+    borderline west={0.75pt}{0pt}{decoration={zigzag,amplitude=1pt,pre=moveto,pre length=12pt},decorate},
     breakable=true}
 
 
@@ -470,6 +479,11 @@
   \right|_{#2}^{#3} }
 }
 
+% This redefines \middle to include spacing similar to \mid
+\let\originalmiddle=\middle
+\def\middle#1{\mathrel{}\originalmiddle#1\mathrel{}}
+
+
 \makeatletter  %define \xoverline, automatically sized overline
     \newsavebox\myboxA
     \newsavebox\myboxB
@@ -519,4 +533,4 @@
 \newacronym{ops}{OPS}{one-parameter subgroup}
 \newacronym{eds}{EDS}{exterior differential system}
 \newacronym{flt}{FLT}{fractional linear transformation}
-
+\newacronym{ma}{MA}{Monge-Amp\`ere}

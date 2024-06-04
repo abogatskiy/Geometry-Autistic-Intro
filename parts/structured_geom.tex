@@ -1389,7 +1389,15 @@ on $G\slash H$ equals the multiplicity of the trivial representation in $\bbT^k_
 
 
 
-\subsection{Rigidity of submanifolds}
+
+
+\section{Curves and Surfaces}
+
+
+This \sect\ is a short introduction into Cartan's \emph{method of moving frames} and will work as motivation for the development of the theory of connections. It can be broadly seen as the application of Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} to submanifolds of a real vector space, where the latter space carries a Klein geometry for some group of motions (most commonly the Euclidean group). Such submanifolds can be described by a finite collection of \emph{differential invariants} that can be found by pulling back the Maurer-Cartan form along a certain canonically chosen \emph{moving frame}. Conversely, the Fundamental Theorem shows that these differential invariants describe the submanifold (almost) uniquely, up to a global motion of the space. This section is also an introduction into the most classical part of Riemannian geometry, namely the theory of surfaces, first developed by Riemann's teacher, Gauss. More results on surfaces will be obtained in the next \sect, after we develop some geometric tools for solving PDE's. Among the natural consequences of these developments will be the miraculous  discovery of complex geometry of Riemann surfaces. Thus, these two \sect s also serve as motivation for our later explorations of Riemannian geometry and complex geometry.
+
+
+\subsection{Curves}
 
 A fundamental problem in Cartan geometry will be the lifting problem for a map into a homogeneous space, which is the problem of finding a map $\wt{f}$ that makes the following diagram commute:
 \[\begin{tikzcd}
@@ -1590,7 +1598,7 @@ Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order K
 
 
 
-\subsection{Theory of surfaces}\label{sec: theory of surfaces}
+\subsection{Surfaces}\label{sec: theory of surfaces}
 
 In this \subsect\ we will describe a classical application of the Frobenius Theorem in the context of Gauss' theory of surfaces in the three-dimensional Euclidean space $\bbE^3$, defined as a homogeneous space of the Euclidean group $\SE_3$. We use Cartan's method of moving frames in a way similar to Examples~\ref{ex curves in E2} and \ref{ex serret-frenet}. The main difference in the case of surfaces is that the Structure Equation on a two-dimensional manifold is nonlinear, so the construction of differential invariants is more complicated. Moreover, nondegenerate curves can always be parametrized by arclength, providing a set of natural unit vectors for an orthonormal frame, whereas surfaces usually don't admit orthonormal coordinate frames. As a result, the specification of differential invariants alone is insufficient for uniqueness of surfaces up to congruence.
 
@@ -1602,14 +1610,19 @@ We will view $\Sigma$ as a subset of $\bbE^3$, i.e.\ a \emph{surface}. The dot p
 \begin{defn}[First fundamental form]\index{First fundamental form}
     The first fundamental form of a surface $\Sigma\subset\bbR^3$ is the non-degenerate quadratic form $\rmI\in\Gamma^0_2(\Sigma)$ defined by 
     \[\rmI_p(X,Y)=\<X,Y\>.\]
-    It is conventional to denote its components in an arbitrary local parametrization of $\Sigma$ by a pair of real variables as follows:
-    \[(\rmI_{ij})=\begin{pmatrix}
-        g_{11}&g_{12}\\
-        g_{21}& g_{22}
-    \end{pmatrix}=\begin{pmatrix}
+    It is obviously positive definite and can be identified with a metric tensor $\sfg$ on $\Sigma$. It is conventional to denote its components in an arbitrary local parametrization of $\Sigma$ by a pair of real variables as follows:
+    \[(\rmI_{ij})=
+    \begin{pmatrix}
+        \<\partial_1\bf{x},\partial_1\bf{x}\> & \<\partial_1\bf{x},\partial_2\bf{x}\>\\
+        \<\partial_2\bf{x},\partial_1\bf{x}\> & \<\partial_2\bf{x},\partial_2\bf{x}\>
+    \end{pmatrix}
+    =\begin{pmatrix}
         E&F\\
         F& G
-    \end{pmatrix}.\]
+    \end{pmatrix}=\begin{pmatrix}
+        g_{11}&g_{12}\\
+        g_{21}& g_{22}
+    \end{pmatrix}=(\sfg_{ij}).\label{eq fff}\]
 \end{defn}
 
 Our goal will be to construct a natural orthonormal frame at every point of $\Sigma$. A frame $\frake=\{e_1,e_2,e_3\}$ will be called a \emph{first-order adapted lift} (of the surface) if $e_3(p)\perp T_p \Sigma$. 
@@ -1647,20 +1660,24 @@ Therefore the shape operator can be viewed as a quadratic form (symmetric tensor
     The Hopf differential of a surface $\Sigma\subset\bbR^3$ is the quadratic form $Q\in\Gamma^0_2(\Sigma)$ defined by 
     \[Q_p(X,Y)=-\<(e_3)_{p\ast}X,Y\>.\]
     From the above proof, in local parametrization $\bf{x}(u^1,u^2)$ enumerated by the indices $\mu,\nu=1,2$, the components of $Q$ read 
-    \[(Q_{\mu\nu})=\left(\<e_3,\partial^2_{\mu\nu}\bf{x}\>\right)
-    =\begin{pmatrix}
-        L&M\\
-        M&N
-    \end{pmatrix}.
+    \[(Q_{\mu\nu})=
+    \begin{pmatrix}
+        \<\partial^2_{11}\bf{x},e_3\>& \<\partial^2_{12}\bf{x},e_3\>\\
+        \<\partial^2_{21}\bf{x},e_3\> & \<\partial^2_{22}\bf{x},e_3\>
+    \end{pmatrix}
+    \eqqcolon\begin{pmatrix}
+        e&f\\
+        g&h
+    \end{pmatrix}.\label{eq hopf differential components}
     \]
-    We thus see that $\frac12Q_{\mu\nu}\dd u^\mu \dd u^\nu$ is exactly the quadratic term in the Taylor expansion of $\<e_3(u^\mu),\bf{x}(u^\mu+\dd u^\mu)\>$, so it measures the ``signed height'' of the surface relative to the tangent plane at $\bf{x}$. In other words, knowledge of $Q$ lets us approximate $\Sigma$ locally as the graph of a quadratic function (provided we have an orthonormal frame at one point).
+    We thus see that $\frac12Q_{\mu\nu}\dd u^\mu \dd u^\nu$ is exactly the quadratic term in the Taylor expansion of $\<e_3(u^\mu),\bf{x}(u^\mu+\dd u^\mu)\>$, so it measures the ``signed height'' of the surface relative to the tangent plane at $\bf{x}$. In other words, knowledge of $Q$ lets us approximate $\Sigma$ locally as the graph of a quadratic function (given an orthonormal frame at one point).
 \end{defn}
 
 \begin{rem}
     Due to the abundance of equivalent representations, there is a lot of confusion in the standard nomenclature. The shape operator and the Hopf differential differ from each other only by a ``lowering of an index'' via the first fundamental form. Moreover, $Q$ as defined above is classically identified with the second fundamental form $\rmII$. To be able to appreciate the difference between these objects, we will define the second fundamental form slightly differently below.
 \end{rem}
 
-Since $Q$ is a quadratic form, it can be diagonalized, giving rise to the following important data.
+Since $Q$ is a quadratic form, it can be diagonalized, giving rise to the following important data. Below we will show that these data are independent of the local parametrization $\bf{x}:U\to \bbE^3$ (as long as the image of $\bf{x}(U)$ still remains in $\Sigma$ and contains the chosen point $m\in\Sigma$).
 
 \begin{defn}[Principal data]
     \begin{enumerate}
@@ -1672,7 +1689,82 @@ Since $Q$ is a quadratic form, it can be diagonalized, giving rise to the follow
     \end{enumerate}
 \end{defn}
 
-Quantities on $\Sigma$ that depend only on the first fundamental form $\rmI$ are called \emph{intrinsic}. Clearly $Q$ is \emph{extrinsic} because it depends on the construction of a fiber bundle that depends (via the normal vector $e_3$) on the embedding of $\Sigma$ into $\bbR^3$. However, we can obtain intrinsic invariants from $Q$. Gauss' most famous result states that $K$ is an intrinsic differential invariant.
+\begin{rem}
+    If $\Sigma$ is locally represented as a graph of a function $z(x,y)$, i.e.\ $\bf(x)(x,y)=(x,y,z(x,y))$, then we can use (\ref{eq fff}) and (\ref{eq hopf differential components}) to compute $K$ and $H$ in terms of $z(x,y)$. Using the unit normal vector 
+    \[e_3=\frac{(-z_x,-z_y,1)}{\sqrt{1+z_x^2+z_y^2}},\]
+    we find
+    \[(\rmI_{\mu\nu})= \begin{pmatrix}
+        1+z_x^2 & z_xz_y\\
+        z_y z_x & 1+z_y^2
+    \end{pmatrix},\quad 
+    (Q_{\mu\nu})=
+    \frac{1}{\sqrt{1+z_x^2+z_y^2}}
+    \begin{pmatrix}
+        z_{xx} & z_{xy}\\
+        z_{yx} & z_{yy}
+    \end{pmatrix}.\]
+    The determinant of the metric is $\det\rmI=1+z_x^2+z_y^2$, therefore,
+    \[((\rmI^{-1}\circ Q)_{\mu\nu})=
+    \frac{1}{(1+z_x^2+z_y^2)^{3/2}}
+    \begin{pmatrix}
+        (1+z_y^2)z_{xx}-z_xz_yz_{xy} & (1+z_y^2)z_{xy}-z_xz_yz_{xy}\\
+        (1+z_x^2)z_{yx}-z_xz_yz_{xy} & (1+z_x^2)z_{yy}-z_xz_yz_{xy}
+    \end{pmatrix}.
+    \]
+    The determinant and the half-trace give us $K$ and $H$:
+    \[K(x,y)=\frac{z_{xx}z_{yy}-z_{xy}^2}{(1+z_x^2+z_y^2)^2},\quad 
+    H(x,y)=\frac{1}{2}\frac{(1+z_y^2)z_{xx}-2z_xz_yz_{xy}+(1+z_x^2)z_{yy}}{(1+z_x^2+z_y^2)^{3/2}}.\label{eq local formulas for K and H}
+    \]
+    One use of these expressions is that they provide relatively simple PDE's for surfaces with given curvatures. For example, surfaces with $K=1$ are locally given by solutions of 
+    \[z_{xx}z_{yy}-z_{xy}^2=(1+z_x^2+z_y^2)^2.\label{eq 1.4 Ivey}\]
+\end{rem}
+
+
+Note that the values of the local integral $\iint \sqrt{\det \sfg}\dd u\dd v$ are invariant under reparametrizations of the surface due to the transformation rule for the metric tensor $\sfg$. In other words, the local formula 
+\[\sfv_{\sfg}=\sqrt{\det\sfg}\dd u\wedge\dd v\]
+actually defines a global volume form, or \emph{area form}, on $\Sigma$. The following proposition shows how the area of an immersed surface is related to its mean curvature. We will allow the immersion $\bm{x}$ to vary in such a way that the surface $\Sigma\subset\bbE^3$ is deformed, and use a non-orthonormal framing on the deformed surface to see how the area form gets distorted.
+
+\begin{prop}
+    An immersed surface $\bf{x}:U\to \bbE^3$ is minimal iff it is a stationary point of the area functional, defined locally in coordinates $(u,v)$ on $U$ in terms of the induced metric $\sfg$ (First Fundamental Form) by
+    \[A[\bf{x}]\coloneqq \iint \sqrt{EG-F^2}\dd u\dd v=\iint \sqrt{\det\sfg}\dd u\dd v.\]
+\end{prop}
+\begin{proof}
+    The statement is local, so fix an orthonormal framing $(e_1,e_2,e_3)$ along $\bm{x}(U)$ and let $\bf{x}^t(u,v)$ be a deformation of $x$, i.e.~a smooth homotopy of immersions with $t\in (-\epsilon,\epsilon)$ for some $\epsilon>0$ and $\bf{x}^0=\bf{x}$. We assume that the deformation is nontrivial, i.e.\ $\dot{\bf{x}}$ is not tangent to $\Sigma$. Then for small $t$ we have 
+    \[\bf{x}^t(u,v)=\bf{x}(u,v)+t s(u,v)e_3(u,v)+\calO(t^2),\]
+    where $s:U\to \bbR$ is a uniquely determined function. At fixed $t$, calculate 
+    \begin{multline}
+        \dd \bf{x}^t=\dd\bf{x}+te_3\dd s+ts\dd e_3+\calO(t^2)=\\
+        =e_1\theta^1+e_2\theta^2+te_3(s_1\theta^1+s_2\theta^2)-ts(e_1\omega_1^3+e_2\omega_2^3)+\calO(t^2).
+    \end{multline}
+    Using the same $\theta^1,\theta^2$, we may write $\dd\bf{x}^t=e_1^t\theta^1+e_2^t\theta^2$ where 
+    \begin{align}
+        e_1^t=& (1-tsh_{11})e_1-t(sh_{12}e_2-s_1e_3)+\calO(t^2),\\
+        e_2^t=& (1-tsh_{22})e_2-t(sh_{12}e_1-s_2e_3)+\calO(t^2).
+    \end{align}
+    This framing is no longer orthonormal. The metric now has the form 
+    \[\sfg^t=\begin{pmatrix}
+        1-2tsh_{11} & -2tsh_{12}\\
+        -2tsh_{12} & 1-2tsh_{22}
+    \end{pmatrix}+\calO(t^2).\]
+    It is easy to see that
+    \[\restr{\frac{\dd}{\dd t}}{t=0}\sqrt{\det \sfg^t}=-2s(h_{11}+h_{22})=-2sH.\]
+    This formula is known as \emph{the first variation of area}, and can be generalized to submanifolds of arbitrary Riemannian manifolds. The stationary point condition for the area functional $\int \sqrt{\det\sfg^t}\dd u\dd v$ is exactly $H=0$.
+\end{proof}
+\begin{rem}
+    Note that while the metric can be considered intrinsic for the surface, in the above statement we assume that this metric is induced from the standard Euclidean metric via the immersion $\bm{x}$. This why, even though the area functional itself is defined in terms of the intrinsic area form, its variation is extrinsic -- because the variation is with respect to the immersion. The intrinsic variation of the area is easy to compute:
+    \[\delta \sqrt{\det\sfg}=\tr (\sfg^{-1}\circ \delta \sfg)\sqrt{\det\sfg},\]
+    where $\delta\sfg$ is the variation of the metric and $\sfg^{-1}\circ \delta \sfg$ is a section of $\End(TM)$, so the trace is well-defined. The proposition above effectively computed the variation $\delta\sfg$ corresponding to a deformation of the surface, namely 
+    \[\delta\sfg=-sH\sfg\delta t.\]
+    As an example, take the round sphere of radius $r$. Taking the standard outward unit normal, the mean curvature is $H=-1/r$. Consider the deformation that simply changes the radius of the sphere, $r\mapsto r+\delta r$. This induces the first variation of the area form equal to $\delta \sfv_{\sfg}=-\tr(sH \rmI_2)\sfv_{\sfg}=\frac{2\delta r}{r}\sfv_{\sfg}$. This obviously agrees with the fact that the area form is proportional to $r^2$.
+\end{rem}
+
+
+
+
+\subsection{Gauss' equation}
+
+
+Quantities on $\Sigma$ that depend only on the first fundamental form $\rmI$, and not on the choice of the local isometric immersion $\bf{x}:U\to \bbE^3$, are called \emph{intrinsic}. Clearly, $Q$ is \emph{extrinsic} because it depends on the construction of a fiber bundle that depends (via the normal vector $e_3$) on the embedding of $\Sigma$ into $\bbR^3$. However, we can obtain intrinsic invariants from $Q$. Gauss' most famous result states that $K$ is an intrinsic differential invariant.
 
 \begin{thm}[Gauss' Theorema Egregium, 1827]\label{thm egregium}
     The Gauss curvature $K$ of a surface $\Sigma\subset\bbR^3$ depends only on the first fundamental form $\rmI$, i.e.\ it is preserved by local isometries.
@@ -1709,7 +1801,7 @@ It's obvious that $\theta^i$ are horizontal for the principal bundle $\pi:\SE_3\
 
 The fact that the frame $\frake:\Sigma\to \SE_3$ is adapted means that, at every point of $\Sigma$,
 \[\frake^\ast(e_3)=0,\quad \frake^\ast(\theta^1\wedge\theta^2)\neq 0.\label{eq 2.2 Ivey}\]
-Let $\pi:P\to \Sigma$ be the bundle whose fiber over $p\in\Sigma$ is the set of oriented orthonormal bases $(e_1,e_2,e_3)$ of $T_p \bbE^3$ such that $e_3\perp T_{e_3(p)}\Sigma$. The first-order adapted lifts are exactly the sections of $P$. By fixing a frame at the origin in $\bbE^3$, $\SE_3$ is the total space of the bundle of all oriented orthonormal frames of $\bbE^3$, and $P$ is a subbundle of $\restr{\SE_3}{\Sigma}$.
+Let $\pi:P\to \Sigma$ be the bundle whose fiber over $p\in\Sigma$ is the set of oriented orthonormal bases $(e_1,e_2,e_3)$ of $T_p \bbE^3$ such that $e_3\perp T_p\Sigma$. The first-order adapted lifts are exactly the sections of $P$. After fixing a frame at an arbitrarily chosen origin in $\bbE^3$, $\SE_3$ is the total space of the bundle of all oriented orthonormal frames of $\bbE^3$, and $P$ is a subbundle of $\restr{\SE_3}{\Sigma}$.
 
 The Maurer-Cartan equation lets us calculate the derivatives of the left-invariant forms on $\SE_3$ algebraically:
 \[\dd \begin{pmatrix}
@@ -1760,7 +1852,7 @@ i_P^\ast
     \theta^1 \\ \theta^2
 \end{pmatrix},\label{def h}
 \]
-where $h_{ij}=h_{ji}$ are some uniquely determined functions defined on $P$ (they are related to the Hessian of the parametrizing immersion $\bf{x}:U\to \bbE^2$). Given an adapted (local) lift $\frake:\Sigma\to P$, we have 
+where $h_{ij}=h_{ji}$ are some uniquely determined functions defined on $P$ (they are related to the Hessian of the parametrizing immersion $\bf{x}:U\to \bbE^3$). Given an adapted (local) lift $\frake:\Sigma\to P$, we have 
 \[\frake^\ast \begin{pmatrix}
     \omega_1^3 \\ \omega_2^3
 \end{pmatrix}=
@@ -1837,10 +1929,37 @@ Another way to obtain the Gauss curvature is by differentiating $\omega_1^2$. Us
 In addition, the definition of $h$ (\ref{def h}) immediately implies, by multiplying its two rows by $\theta^2$ and $\theta^1$, respectively, that
 \[\omega_1^3\wedge\theta^2+\omega_2^3\wedge\theta^1=2H\theta^1\wedge\theta^2.\]
 
+\begin{example}[$K$ in orthogonal coordinates]\label{ex Gauss curvature in orthogonal coords}
+    Let us assume that we have found local \emph{orthogonal} coordinates $(x,y)$ on $\Sigma$, i.e.\ such that $\rmI$ (the metric) takes the form $\rmI=\left(\begin{smallmatrix}
+        E & 0\\
+        0 & G
+    \end{smallmatrix}\right)$. The existence of such coordinates on all surfaces will be shown in Corollary~\ref{cor isothermal coords}. Then a local orthonormal frame and coframe is given by (here we imply pullbacks to $\Sigma$ along $\frake$)
+    \[e_1=\frac{1}{\sqrt{E}}\partial_x,\quad e_2=\frac{1}{\sqrt{G}}\partial_y,\quad \theta^1=\sqrt{E}\dd x,\quad \theta^2=\sqrt{G}\dd y.\]
+    We can find $\omega_1^2$ from the equation $\dd\omega_i(e_1,e_2)=\omega_1^2(e_i)$ (this is part of the Structure Equation~\ref{eq structure for surfaces}):
+    \[\omega_1^2(e_1)=\dd\theta^1(e_1,e_2)=-\frac{E_y}{2\sqrt{E}\sqrt{EG}},\quad \omega_1^2(e_2)=\dd\theta^2(e_1,e_2)=\frac{E_x}{2\sqrt{G}\sqrt{EG}},\]
+    from whcih we conclude 
+    \[\omega_1^2=-\frac{E_y}{2\sqrt{EG}}\dd x+\frac{E_x}{2\sqrt{EG}}\dd y.\]
+    Now we compute its derivative:
+    \[\dd\omega_1^2=\frac12\left(\left(\frac{E_x}{\sqrt{EG}}\right)_x+\left(\frac{E_y}{\sqrt{EG}}\right)_y\right)\dd x\wedge\dd y.\]
+    By the Gauss equation, this should coincide with $-K\theta^1\wedge\theta^2=-K\sqrt{EG}\dd x\wedge\dd y$. We thus find that in orthogonal coordinates ($F=0$), 
+    \[K=-\frac{1}{2\sqrt{EG}}\left(\left(\frac{E_x}{\sqrt{EG}}\right)_x+\left(\frac{E_y}{\sqrt{EG}}\right)_y\right).\label{eq K in orthogonal coords}\]
+\end{example}
+
+
 \begin{xca}
     Let $\gamma(s):\bbR\to \Sigma$ be a curve on the surface $\Sigma$ such that $\lVert\dot\gamma(s)\rVert=1$ and $\ddot\gamma(s)\perp T_{\gamma(s)}\Sigma$ for all $s$. Show that the curvature $\kappa$ of the curve can be expressed as
     \[\kappa=\left|\<\rmII(\dot\gamma,\dot\gamma),e_3\>\right|.\]
 \end{xca}
+
+
+
+
+
+
+
+\subsection{Principal framings}
+
+We are now ready to prove that $K$ is an intrisic quantity, i.e.\ it depends only on the metric $\sfg=\rmI$ on $\Sigma$, and not on the particular isometric immersion $\Sigma\to \bbE^3$.
 
 \begin{proof}[Proof of Theorema Egregium~\ref{thm egregium}]
     Let $\bf{x}:U\to \bbE^3$ be a local parametrization and let $\frake:U\to P$ be a first-order adapted lift. Let $\eta^j=\frake^\ast\theta^j$. Since $\eta^1\wedge\eta^2$ is nonvanishing, it spans $\bigwedge^2 T_p^\ast\Sigma$ at each $p\in\Sigma$. Thus, there exist functions $a,b$ such that 
@@ -1852,7 +1971,7 @@ In addition, the definition of $h$ (\ref{def h}) immediately implies, by multipl
     Finally, we check that $\alpha=\frake^\ast\omega_2^1$, so, by (\ref{eq 2.14 Ivey}), $\kappa=\frake^\ast K$.
 \end{proof}
 
-Having constructed $h$, we can finally define a natural orthonormal frame. Note that when the eigenvalues $k_1,k_2$ coincide, they may not be differentiable functions of the point of $\Sigma$. Such points are called \emph{umbilic}. Away from umbilic points, $k_1$ and $k_2$ are smooth functions, and we may further adapt the frames by diagonalizing $h$.
+Having constructed $h$, we can finally define a natural orthonormal frame. Note that when the eigenvalues $k_1,k_2$ coincide, they may not be differentiable functions of the point of $\Sigma$. Such points, where $k_1=k_2$, are called \emph{umbilic}. For example, all points of the round sphere are umbilic. Away from umbilic points, $k_1$ and $k_2$ are smooth functions, and we may further adapt the frames by diagonalizing $h$. 
 
 \begin{xca}
     \begin{enumerate}
@@ -1938,16 +2057,22 @@ The following proposition clarifies what developable surfaces look like.
     One then shows that $f^\ast(K_{\mathrm{helicoid}})=K_{\mathrm{catenoid}}$, and of course the mean curvatures match as well. But while these two surfaces have the same $H$ and $K$, the helicoid is ruled, whereas the catenoid contains no line segments. Thus, they are not congruent.
 \end{example}
 
-Nevertheless, $H$ and $K$ are usually sufficient to determine $\Sigma$ up to congruence. Those surfaces for which this is not the case either have constant $H$ or belong to a finite-dimensional famile called \emph{Bonnet surfaces}.
+Nevertheless, $H$ and $K$ are usually sufficient to determine $\Sigma$ up to congruence. Those surfaces for which this is not the case either have constant $H$ or belong to a finite-dimensional family called \emph{Bonnet surfaces}.
 
 \begin{xca}
     A surface $\Sigma$ is called \emph{flat} if $K\equiv 0$. Show that if $\Sigma$ is flat, there exist local coordinates $x^1,x^2$ on it and an orthonormal frame $(e_1,e_2,e_3)$ such that $\theta^1=\dd x^1$, $\theta^2=\dd x^2$.
 \end{xca}
 
 
-Let us now derive the compatibility condition on $h$ by setting up a Pfaffian system. Treat $\{h_{11},h_{12},h_{22}\}$ as coordinates in $\rmS^2 \bbR^2\cong\bbR^3$ and let $J\subset \Omega^{\smbullet }(P\times \SE_3\times \bbR^3)$ be generated as follows:
-\[J\coloneqq \<\theta^3,\omega_1^3-h_{11}\theta^1-h_{12}\theta^2,\omega_2^3-h_{12}\theta^1-h_{22}\theta^2\>_{\mathrm{diff}}.\]
-We know that along the hypothetical surface $\Sigma$, these three forms must vanish. We also have the independence condition $\theta^1\wedge\theta^2$, meaning that this differential form must be nowhere-vanishing after pullback to $\Sigma$. The integral manifolds of this system are graphs of immersions $\restr{P}{U}\to \SE_3$ that are adapted frame bundles of isometric immersions $\bf{x}:U\to \bbE^3$ satisfying $j^\ast \rmI=\sfg$ and $j^\ast Q=h$. By the Frobenius Theorem~\ref{thm 4.7.8 RS1}, the surface $\Sigma$ (locally) exists iff $J$ is an \gls{eds}. First, it is easy to check that $\dd\theta^3\equiv 0 \pmod{\Delta}$. The differentials of the other two forms can be combined into a column-vector, giving the following integrability condition:
+
+
+
+\subsection{Codazzi equation}
+
+Let us now derive the compatibility condition on $h$ by setting up a Pfaffian system. Treat $\{h_{11},h_{12},h_{22}\}$ as coordinates in $\rmS^2 \bbR^2\cong\bbR^3$ and define an \gls{eds} $\calJ\subset \Omega^{\smbullet }(P\times \SE_3\times \bbR^3)$ by
+\[\calJ\coloneqq \<\theta^3,\omega_1^3-h_{11}\theta^1-h_{12}\theta^2,\omega_2^3-h_{12}\theta^1-h_{22}\theta^2\>_{\mathrm{diff}}\]
+with independence condition $\theta^1\wedge\theta^2\neq 0$.
+We know that along the hypothetical surface $\Sigma$, these three forms must vanish. The independence condition means that $\theta^1\wedge\theta^2$ must produce a volume form after pullback to $\Sigma$. The integral manifolds of this system are graphs of immersions $\restr{P}{U}\to \SE_3$ that are adapted frame bundles of isometric immersions $\bf{x}:U\to \bbE^3$ satisfying $j^\ast \rmI=\sfg$ and $j^\ast Q=h$. By the Frobenius Theorem~\ref{thm 4.7.8 RS1}, the derivatives of the generators of $\calJ$ must vanish modulo $\calJ$ on $\Sigma$. First, it is easy to check that $\dd\theta^3\equiv 0 \pmod{\calJ}$. The differentials of the other two forms can be combined into a column-vector, giving the following integrability condition:
 \begin{multline}
     \dd \left\{
         \begin{pmatrix}
@@ -1995,7 +2120,7 @@ We know that along the hypothetical surface $\Sigma$, these three forms must van
     \end{pmatrix}\wedge 
     \begin{pmatrix}
         \theta^1\\\theta^2
-    \end{pmatrix}\pmod{\Delta}.
+    \end{pmatrix}\pmod{\calJ}.
 \end{multline}
 Thus, $h$ must satisfy the \emph{Codazzi equation}\index{Equation!Codazzi} 
 \[\left\{\dd h-\left[h,
@@ -2090,11 +2215,16 @@ Note that the immersion $\bf{x}$ needs to be specified to claim uniqueness up to
 
 
 
+
+
+
+
+
 \newpage
 \section{Geometry of PDEs}\label{sec: PDEs}
 
 
-
+This \sect\ is devoted to the second side of Cartan geometry, namely as a study of geometric structures described by systems of PDE's. Much like in the Frobenius Theorem, which is the basic special case, the goal is to reduce the problem of the existence of solutions to a certain problem of linear algebra on the $C^\infty(M)$-module of differential forms on $M$. Since linear algebra on modules is exactly what homological algebra studies, it should not come as a surprise that this \sect\ will also see our first encounter with cohomology.
 
 
 
@@ -2280,8 +2410,7 @@ This allows us to find $s_p$ from the other characters. For even greater simplic
 
 
 
-
-Since it is not obvious whether a given \gls{eds} is a Pfaffian system or not (i.e.\ whether it can be generated by $1$-forms), we can restate the Frobenius Theorem~\ref{sec: frobenius ii} in the form of a criterion on a general \glspl{eds}.
+Note that the Frobenius case corresponds exactly to all characters starting with $s_1$ vanishing, so that the resulting \emph{complete solutions} depend only on constants, and not on arbitrary functions. Since it is not obvious whether a given \gls{eds} is a Pfaffian system or not (i.e.\ whether it can be generated by $1$-forms), we can restate the Frobenius Theorem~\ref{sec: frobenius ii} in the form of a criterion on a general \glspl{eds}.
 
 \begin{thm}[Frobenius III]\index{Theorem!Frobenius}\label{thm frobenius iii}
     Suppose $\calI$ is an \gls{eds} on a manifold $M$. \gls{tfae}, and when they hold we call $\calI$ \emph{Frobenius}:
@@ -2445,9 +2574,12 @@ and so on for all $l$. In general, we define
     A tableau of order $p$ is a linear subspace $A<W\otimes\rmS^p V^\ast$. It determines a homogeneous constant-coefficient system of PDE's of order $p$ for $W$-valued functions on $V$. In particular, the $(p-1)$-st prologation of a tableau (of order one) is a tableau of order $p$. For a tableau $A$ of order $p$, we define its prolongations by $A^{(l)}=(A\otimes V^{\ast \otimes l})\cap (W\otimes \rmS^{p+1}V^\ast)$.
 \end{defn}
 
-\begin{example}
-    The equation $u_{xy}=0$ may be encoded as a tableau of order two for $V=\bbR^2$, $W=\bbR$ as 
-    \[A=\{p_{11}\dd x^1\dd x^1+p_{22}\dd x^2\dd x^2\mid p_{11},p_{22}\in\bbR\}.\]
+\begin{example}[Wave equation]
+    The wave equation $u_{xy}=0$ may be encoded as a tableau of order two for $V=\bbR^2$, $W=\bbR$ as 
+    \[A=\{p_{11}\dd x\dd x+p_{22}\dd y\dd y\mid p_{11},p_{22}\in\bbR\}.\]
+    Then 
+    \[A\otimes\bbR^2_{x,y}=\<(\dd x)^3,\dd x\dd x\dd y,\dd y\dd y \dd x,(\dd y)^3\>,\]
+    and the symmetric elements of this space are spanned by $(\dd x)^3$ and $(\dd y)^3$, so $\dim A^{(1)}=\dim A=2$. Clearly this continues in the same way for higher prolongations, so $\dim A^{(l)}=2$ for all $l$. This system is not involutive and no number of prolongations make it involutive. Nevertheless, it is known that the general solution is $u=\xi(x)+\eta(y)$, where $\xi$ and $\eta$ are arbitrary functions of one variable.
 \end{example}
 
 
@@ -2524,7 +2656,7 @@ In summary, the largest space of solutions one could hope for in a system of thi
 These examples motivate the following general definition.
 
 \begin{defn}
-    Given a tableau $A<W\otimes V^\ast$ expressed in terms of bases $b=(\dd x^1,\ldots,dd x^n)$ of $V^\ast$ and $q=(\partial_{u^1},\ldots,\partial_{u^s})$ of $W$, let $s_1(b),\ldots,s_n(b)$ be defined by 
+    Given a tableau $A<W\otimes V^\ast$ expressed in terms of bases $b=(\dd x^1,\ldots,\dd x^n)$ of $V^\ast$ and $q=(\partial_{u^1},\ldots,\partial_{u^s})$ of $W$, let $s_1(b),\ldots,s_n(b)$ be defined by 
     \begin{align}
         s_1(b)=&\; \#\text{ of indepedent entries in the first column of }A,\\
         s_1(b)+s_2(b)=&\; \#\text{ of indepedent entries in the first 2 columns of }A,\\
@@ -2561,7 +2693,7 @@ Note that
     We have the exact sequence 
     \[0\to A_k{}^{(1)}\to A_{k-1}{}^{(1)}\to A_{k-1},\]
     in which the last map is $p\mapsto i_{\partial_{x^k}}p$ (contraction with the first component of $\rmS^{n-k}V^\ast$). Thus, 
-    \[\dim A_{k-1}{}^{(1)}-\dim A_[k^{(1)}]\leq \dim A_{k-1}.\]   
+    \[\dim A_{k-1}{}^{(1)}-\dim A_k{}^{(1)}\leq \dim A_{k-1}.\]   
     Summing for $1\leq k\leq n$ (and recalling that $A_0=A$), we have 
     \[\dim A^{(1)}\leq \dim A+\dim A_1+\cdots +\dim A_{n-1},\]
     which, along with (\ref{eq 5.17 Ivey}), gives the result.
@@ -2639,13 +2771,17 @@ Let us now \emph{work over $\bbC$ and drop $\bbC$ from the notation}. We estimat
 \end{thm}
 
 
+
+
+
+
 \subsection{Linear Pfaffian systems}
 
 
 Recall that a Pfaffian system is an \gls{eds} on $M$ generated by $1$-forms $\theta^a\in \Omega^1(M)$, $a=1,\ldots,s$, i.e.\ 
 \[\calI=\<I\>_{\mathrm{diff}}, I=\<\theta^1,\ldots,\theta^s\>.\]
-We also specify $n$ $1$-forms $\{\omega^1,\ldots,\omega^n\}$,  which induce our independence condition $\omega^1\wedge\cdots\wedge\omega^n$. We describe this problem by the pair 
-\[(I,J),\quad J=\<I\cup\{\omega^i\}_{i=1}^n\>.\]
+We also specify $n$ $1$-forms $\{\omega^1,\ldots,\omega^n\}$,  which induce our independence condition $\omega^1\wedge\cdots\wedge\omega^n\neq 0$. We describe this problem by the pair 
+\[(I,J),\quad J\coloneqq \<I\cup\{\omega^i\}_{i=1}^n\>.\]
 Note that the set $\{\omega^i\}_{i=1}^n$ must be pointwise linearly independent.
 
 \begin{defn}[Linear Pfaffian system]
@@ -2812,6 +2948,17 @@ for some nonzero $w\in W$. In other words, $\alpha_H\in\Xi_A$ iff the tableau co
     A hyperplane $H<E<T_mM$ is characteristic iff the corresponding element $\alpha_H\in\bbP E^\ast$ is in $\Xi_A$.
 \end{thm}
 
+
+
+
+
+
+
+
+
+\subsection{Applications to surfaces}
+
+
 \begin{example}[Tautological system on $\SE_3\times\bbR^3_{h_{ij}}$ for surfaces in $\bbE^3$]
     The integral manifolds of this system are the first-order adapted lifts of surfaces in $\bbR^3$, together with the components of the second fundamental form $\{h_{ij}\}$, which we view as coordinates of another space $\bbR^3$.
 
@@ -2853,7 +3000,7 @@ for some nonzero $w\in W$. In other words, $\alpha_H\in\Xi_A$ iff the tableau co
 \end{example}
 
 The next two examples are adapted from Cartan's 1945 treatise.
-\begin{example}[Linear Weingarten surfaces]
+\begin{example}[Linear Weingarten surfaces]\label{ex Weingarten surfaces}
     Let $A,B,C\in\bbR$ with $A\neq 0$, and let $AK+2BH+C=0$ be a linear relation between functions $H,K$. We will now set up the space of general integral manifolds for first-order adapted liftings of surfaces in $\bbR^3$, together with the components of the second fundamental form, having Gauss and mean curvatures satisfying this relation.
 
     This is the system above restricted to a codimension one submanifold $M\subset \SE_3\times \bbR^3_{h_{ij}}$. The submanifold is defined by the equation 
@@ -2865,7 +3012,7 @@ The next two examples are adapted from Cartan's 1945 treatise.
     We still have no intrinsic torsion and have characters $(s_1,s_2)=(2,0)$.  This is automatically involutive because any tableau with characters $(s,\ldots,s,0)$, where $s=\dim W$, is involutive. Solutions depend on two functions of one variable. This suggests that an appropriate Cauchy problem for determining such surfaces would be to start out with a space curve (the two functions being its curvature and torsion) and then solve for a unique surface containing the curve. Cartan carries out this construction explicitly in his treatise \emph{Les Syst\`emes Ext\'erieurs et leurs Applications G\'eom\'etriques}.
 \end{example} 
 
-\begin{example}
+\begin{example}[Conformally equivalent surfaces]
     Let $(\Sigma,\sfg)$ and $(\wb\Sigma,\wb \sfg)$ be surfaces with analytic Riemannian metrics. We set up and solve the \gls{eds} for maps $\phi:\Sigma\to \wb \Sigma$ that preserve the metric up to (point-dependent) scale, i.e.\ for \emph{conformal} maps.
 
     Let $P=\Fr^\ast\Sigma$ denote the orthonormal coframe bundle of $\Sigma$, with coframe $\theta^1,\theta^2,\omega^2_1=-\omega^1_2$ satisfying $\dd\theta^i=-\omega^i_j\wedge \theta^j$ as usual. Similarly, let $\wb P$ denote the orthonormal coframe bundle of $\wb\Sigma$ with coframe $\wb\theta^1,\wb\theta^2,\wb\omega^2_1$. The metric on $\Sigma$ is given by the pullback of $(\theta^1)^2+(\theta^2)^2$ (tensor squares) along any section $s:\Sigma\to P$, and that on $\wb P$ by the pullback of $(\wb\theta^1)^2+(\wb\theta^2)^2$. Thus, a conformal map $\phi:\Sigma\to \wb\Sigma$ induces  a map $\Phi:P\to \wb P$ such that $\Phi^\ast \left((\wb\theta^1)^2+(\wb\theta^2)^2\right)=\lambda^2 \left((\theta^1)^2+(\theta^2)^2\right)$ for some positive function $\lambda>0$.
@@ -2912,20 +3059,46 @@ The next two examples are adapted from Cartan's 1945 treatise.
 
 By taking $\wb\Sigma=\bbR^2$ with the standard flat metric in the last example, we get the following statement.
 
-\begin{cor}[Existence of isothermal coordinates]
-    Let $\Sigma$ be a surface with an analytic Riemannian metric $\sfg$ and let $m\in\Sigma$. Then there exist local coordinates $(x,y)$ centered at $m$ such that $\sfg=\lambda^2(\dd x^2+\dd y^2)$, $\lambda\neq 0$, in some neighborhood of $m$. Such coordinates are called \emph{isothermal}. \index{Isothermal coordinates}
+\begin{cor}[Existence of isothermal coordinates]\label{cor isothermal coords}
+    Let $\Sigma$ be a surface with an analytic Riemannian metric $\sfg$ and let $m\in\Sigma$. Then there exist local coordinates $(x,y)$ centered at $m$ such that $\sfg=\lambda^2(\dd x^2+\dd y^2)$, $\lambda\neq 0$, in some neighborhood of $m$. Such coordinates are called \emph{isothermal} and are unique up to isometry. \index{Isothermal coordinates}
 \end{cor}
 
 Note that isothermal coordinates allow us to construct canonical parametrizations of $\Sigma$ that are \emph{conformally orthonormal}, i.e.\ the corresponding coordinate vector fields $\partial_x,\partial_y$ are orthonormal only up to an overall scale. This explains why the Fundamental Theorem of surfaces required a parametrization to guarantee uniqueness: there is no natural orthonormal coordinate system on a curved surface.
 
+\begin{defn}[Conformal structure]
+    Two metric tensors $\sfg,\wt\sfg$ on a manifold $M$ are called \emph{conformally equivalent} if there exists a smooth function $\lambda\neq 0$ such that $\wt\sfg=\lambda^2 \sfg$. A conformal structure on a manifold $M$ is a conformal equivalence class of metrics $[\sfg]$.
+\end{defn}
+
+Crucially, the metric $\sfg$ on a surface cannot be recovered just from its conformal factor $\lambda^2$ in isothermal coordinates. In other words, not any two metrics on a surface are locally conformally equivalent. In the next example we characterize the intrisic information contained in $\lambda^2$.
 
 \begin{example}[Liouville equation]\index{Equation!Liouville}
-    Surfaces with given Gauss curvature have an especially simple description in isothermal coordinates. If the metric (i.e.\ First Fundamental Form) is $\sfg=\lambda^2(\dd x^2+\dd y^2)$, then 
+    Surfaces with given Gauss curvature have an especially simple description in isothermal coordinates. If the metric (i.e.\ First Fundamental Form) is $\sfg=\lambda^2(\dd x^2+\dd y^2)$, then, by (\ref{eq K in orthogonal coords}),
     \[K=-\frac{1}{2\lambda}\left(\left(\frac{\lambda_x}{\lambda}\right)_x+\left(\frac{\lambda_y}{\lambda}\right)_y \right)=-\frac{1}{2\lambda}(\partial_x^2+\partial_y^2)\ln\lambda.\]
-    In particular, when $K$ is constant, this equation for the unknown conformal factor $\varphi\coloneqq \ln\lambda$ is called Liouville's equation:
-    \[\Delta \varphi+2K\rme^{\varphi}=0,\]
+    In particular, when $K$ is constant, this equation for the unknown conformal factor $2\varphi\coloneqq \ln\lambda$ is called the \emph{Liouville equation}:
+    \[\Delta \varphi+K\rme^{2\varphi}=0,\label{eq liouville general}\]
     where $\Delta=\partial_x^2+\partial_y^2$ is the Laplace operator.
 \end{example}
+
+Thus, $\lambda^2$ and $K$ contain the same local information about the metric (up to the necessary boundary conditions that guarantee a unique solution of Liouville's equation). The rest of the information about the metric, namely the conformal structure, is contained in the isothermal coordinates themselves. We will later identify this information with a \emph{complex structure} on the surface.
+
+We can also obtain the following useful formula for the mean curvature in isothermal coordinates. Since the mean curvature is not intrinsic, we need to assume a fixed isometric immersion $\bf{x}:\Sigma\to \bbE^3$.
+\begin{prop}
+    Let $\bf{x}=\bf{x}(x,y)$ be a surface parametrized by isothermal coordinates $(x,y)$ such that the metric is $\lambda^2((\dd x)^2+(\dd y)^2)$. Let $e_3$ be the unit normal vector (Gauss map) of $\Sigma$. Then 
+    \[H e_3=\frac{1}{\lambda^2}\left(\bf{x}_{xx}+\bf{x}_{yy}\right).\]
+\end{prop}
+\begin{proof}
+    Since $\bf{x}(x,y)$ is isothermal, $\<\bf{x}_x,\bf{x}_x\>=\<\bf{x}_y,\bf{x}_y\>$ and $\<\bf{x}_x,\bf{x}_y\>=0$. By differentiation, 
+    \[\<\bf{x}_{xx},\bf{x}_x\>=\<\bf{x}_{yx},\bf{x}_y\>=-\<\bf{x}_x,\bf{x}_{yy}\>.\]
+    Thus, 
+    \[\<\bf{x}_{xx}+\bf{x}_{yy},\bf{x}_x\>=0.\]
+    Similarly, 
+    \[\<\bf{x}_{xx}+\bf{x}_{yy},\bf{x}_y\>=0.\]
+    It follows that $\bf{x}_{xx}+\bf{x}_{yy}$ is parellel to $e_3$. Since $\bf{x}$ is isothermal, from (\ref{eq hopf differential components})
+    \[H=\frac{1}{2}\frac{g+e}{\lambda^2}.\]
+    Thus,
+    \[2\lambda^2 H=g+e=\<e_3,\bf{x}_{xx}+\bf{x}_{yy}\>,\]
+    and the result follows.
+\end{proof}
 
 
 \begin{example}[Minimal surfaces with given curvature]
@@ -2989,7 +3162,7 @@ Note that isothermal coordinates allow us to construct canonical parametrization
 
     We can shortcut the prolongation process by realizing that, since the system contains both $\pi^1_2\wedge\theta^1$ and $\pi^1_2\wedge\theta^2$, then $\pi^1_2$ must vanish on all integral manifolds satisfying the independence condition. Thus, we need to add $\pi\coloneqq \pi^1_2=-2k\omega^2_1+k_2\theta^1-k_1\theta^2$ to the system. Call the new system $I^+$. By counting dimensions, we see that $I^+$ will either be Frobenius at $m$ or have no integral manifold passing through $m$. We have $\dd\theta^3\equiv \dd\theta^3_1\equiv \dd\theta^3_2\pmod{I^+}$ and compute 
     \begin{align}
-        \dd\pi =&d(-2k\omega^2_1+k_2\theta^1-k_1\theta^2)\\
+        \dd\pi =&\dd(-2k\omega^2_1+k_2\theta^1-k_1\theta^2)\\
         \equiv & (-k_{1,1}-k_{2,2}+\frac{k_1^2+k_2^2}{2k}+2kK)\theta^1\wedge\theta^2 \pmod{I^+},
     \end{align}
     where we have written $\dd k_j=k_{j,1}\theta^1+k_{j,2}\theta^2$. The integrability condition we have obtained can be put more simply using the Laplace-Beltrami operator defined in a Darboux frame with principal curvatures $k_1,k_2$ by
@@ -3137,7 +3310,7 @@ If $\calC(\calI)$ has constant rank $k$,  then the maximal integral manifolds of
 
 
 
-\subsection{Hyperbolic second-order EDS}
+\subsection{Hyperbolic second-order EDS}\label{sec: hyperbolic EDS}
 
 
 We now consider a general second-order PDE for a function of two variables as an \gls{eds}. We use the standard coordinates $(x,y,z,p,q,r,s,t)$ on $J^2(\bbR^2,\bbR)$ and contact forms 
@@ -3200,7 +3373,7 @@ Each integral surface is foliated by integral curves of $\calM_1$ and by integra
     Assuming that this has distinct roots $m_1,m_2$, the decomposable $2$-forms in $\calI$ are 
     \[(\dd y-m_1\dd x)\wedge (\pi_2+m_2\pi_3),\quad (\dd y-m_2\dd x)\wedge (\pi_2+m_1\pi_3),\]
     where $\pi_i$ are as above.
-    If the PDE (\ref{eq 7.10 Ivey}) is quasilinear, then the equation (\ref{eq 7.13 Ivey}) only involves $x,y,z,p,q$. More generally, we say that a second-order PDE for one function of two variables has \emph{first-order characteristics} if there exists a rank three Pfaffian system on $J^1(\bbR^2,\bbR)$ whose pullback to $M$ is contained in one of the characteristic systems of $\calI$. This is the case when (\ref{eq 7.10 Ivey}) is a Monge-Ampere equation, which we will consider below. The existence of first-order characteristics is intrinsic to the system, since $J^1(\bbR^2,\bbR)$ is the quotient of $M$ by the foliation dual to the retracting space of $I$'s first derived system.
+    If the PDE (\ref{eq 7.10 Ivey}) is \emph{quasilinear} (i.e.\ the highest-order derivatives enter linearly), then the equation (\ref{eq 7.13 Ivey}) only involves $x,y,z,p,q$. More generally, we say that a second-order PDE for one function of two variables has \emph{first-order characteristics} if there exists a rank $3$ Pfaffian system on $J^1(\bbR^2,\bbR)$ whose pullback to $M$ is contained in one of the characteristic systems of $\calI$. This is the case when (\ref{eq 7.10 Ivey}) is a Monge-Amp\`ere equation, which we will consider below. The existence of first-order characteristics is intrinsic to the system, since $J^1(\bbR^2,\bbR)$ is the quotient of $M$ by the foliation dual to the retracting space of $I$'s first derived system.
 \end{rem}
 We now generalized the notion of Monge characteristics to systems which have structure equations similar to (\ref{eq 7.12 Ivey}).
 
@@ -3224,7 +3397,7 @@ We now turn to \emph{Darboux's method}, which gives a recipe for solving certain
 
 
 \begin{defn}[Derived system]
-    Let $I<T^\ast M$ be a Pfaffian system of constant rank. The derived system $I^{(1)}$ of $I$ is the subbundle spanned by $I$-valued forms whose exterior derivatives modulo $I$ vanish. More explicitly, let $\delta:\Gamma^\infty(I)\to \Gamma^\infty\left(\bigwedge^2(T^\ast M\slash I)\right)$ be defined by $\delta(\theta)=\dd\theta\mod I$. Because $\delta$ is $C^\infty(M)$-linear, it is induced by a \gls{vb} morphism from $I$ to $\bigwedge^2(T^\ast M\slash I)$. Since the coefficients of $\delta$, when expressed in matrix form, are smooth, its rank is upper semicontinuous, so we may restrict to an open set in $M$ on which it has constant rank. On this open set, we define $I^{(1)}\coloneqq \ker\delta$. If $I^{(1)}=I$, then $I$ is Frobenius; otherwise, $I'$ is smaller. In that case, we define a sequence of systems $I^{(k+1)}=(I^{(k)})^{(1)}$, etc, until $I^{(N)}$ is either Frobenius or rank zero. The \emph{derived flag} is 
+    Let $I<T^\ast M$ be a Pfaffian system of constant rank. The derived system $I^{(1)}$ of $I$ is the subbundle spanned by $I$-valued forms whose exterior derivatives modulo $I$ vanish. More explicitly, let $\delta:\Gamma^\infty(I)\to \Gamma^\infty\left(\bigwedge^2(T^\ast M\slash I)\right)$ be defined by $\delta(\theta)=\dd\theta\mod I$. Because $\delta$ is $C^\infty(M)$-linear, it is induced by a \gls{vb} morphism from $I$ to $\bigwedge^2(T^\ast M\slash I)$. Since the coefficients of $\delta$, when expressed in matrix form, are smooth, its rank is upper semicontinuous, so we may restrict to an open set in $M$ on which it has constant rank. On this open set, we define $I^{(1)}\coloneqq \ker\delta$. If $I^{(1)}=I$, then $I$ is Frobenius; otherwise, $I^{(1)}$ is smaller. In that case, we define a sequence of systems interatively by $I^{(k+1)}=(I^{(k)})^{(1)}$, until $I^{(N)}$ is either Frobenius or rank zero. The \emph{derived flag} is 
     \[I=I^{(0)}> I^{(1)}>\cdots >I^{(N)},\]
     and $N$ is the \emph{derived length}.
 \end{defn}
@@ -3248,8 +3421,8 @@ Let $\calI$ be the \gls{eds} we constructed for the PDE (\ref{eq 7.10 Ivey}) for
 Then $W$ and $X$ are both constant along the integral curves of $\calM_i$ (such functions are called \emph{Riemannian invariants} for the PDE). It follows that $W,X$ are functionally related on the integral surface. If we suppose that $\<\dd W,\dd X\>\subset \calM_i$ is linearly independent from $I$, we can assume that, say, $\dd X$ restricts to be nonzero on an open set in the integral surface. Then $W$ must be some function of $X$ on the surface. When both characteristic systems have these properties, the functions may be arbitrarily specified and used to construct a solution.
 
 
-\begin{example}[Liouville equation]\label{ex 7.3.6 Ivey}
-    For Liouville's equation $z_{xy}=\rme^z$, the Pfaffian system $I$ is defined by \index{Equation!Liouville}
+\begin{example}[Hyperbolic Liouville equation]\label{ex 7.3.6 Ivey}
+    For the hyperbolic Liouville's equation $z_{xy}=\rme^z$ ((\ref{eq liouville general}) with $K=-1$ and $\Delta$ replaced by the wave operator in ``lightcone coordinates'' $(x,y)\mapsto (x+y,x-y)$), the Pfaffian system $I$ is defined by \index{Equation!Liouville}
     \[
     \begin{matrix}
         \theta_0=\dd z-p\dd x-q\dd y,\\
@@ -3270,7 +3443,7 @@ Then $W$ and $X$ are both constant along the integral curves of $\calM_i$ (such 
 \end{example}
 
 \begin{defn}[Darboux-integrable system]\index{Darboux integrability}
-    A hyperbolic \gls{eds} $\calI$ is said to be Darboux-integrable if each characteristic system $\calM_i$ contains a Frobenius system $\Delta_i$ of rank two that is independent from $I$.
+    A hyperbolic \gls{eds} $\calI=\<I\>_{\mathrm{diff}}$ is said to be Darboux-integrable if each characteristic system $\calM_i$ contains a Frobenius system $\Delta_i$ of rank two that is independent from $I$.
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~7.3.8]{Ivey}}}]\label{prop 7.3.8 Ivey}
@@ -3476,18 +3649,106 @@ This generic case is very interesting. A complete system of invariants was found
 
 
 
+\subsection{Monge-Amp\`ere systems}
+
+
+Now we will study a class of second-order PDE's for which one can define an \gls{eds} on a smaller-dimensional manifold than the usual $7$-dimensional jet space of \subsect~\ref{sec: hyperbolic EDS}. It will also be our first example of a non-Pfaffian \gls{eds}, i.e.\ which is not generated just by $1$-forms. These equations, called \emph{Monge-Amp\`ere equations}, are of the form 
+\[Az_{xx}+2Bz_{xy}+Cz_{yy}+D+E(z_{xx}z_{yy}-z_{xy}^2)=0,\label{eq 7.18 Ivey}\]
+where $A,B,C,D,E$ are functions of $x,y,z,p=z_x,q=z_y$. As in \subsect~\ref{sec: hyperbolic EDS}, we assume that the partial derivatives of the left hand side w.r.t.\ $z_{xx},z_{xy}$ and $z_{yy}$ are never simultaneously zero. In the next \subsect, we will apply this theory to a special class of surfaces that are locally represented by solutions of such systems.
+
+The first observation is that since, in the notation of \subsect~\ref{sec: hyperbolic EDS}, $r=z_{xx}$, $s=z_{xy}$ and $t=z_{yy}$, the determinant $F_rF_t-\frac14 F_s^2$ is exactly $(A+Et)(C+Er)-(B-Es)^2$. Expanding and using the Monge-Amp\`ere equation itself, this determinant is equal to
+\[AC-B^2-DE.\]
+Thus, the sign of this quantity determines whether (\ref{eq 7.18 Ivey}) is hyperbolic, parabolic, or elliptic.
+
+Let $\theta=\dd z-p\dd x-q\dd y$, the contact form on $J^1(\bbR^2,\bbR)$. Note that its Pfaff rank is $2$ because $\dd\theta$ consists of two monomials. On an integral surface of $\theta$ satisfying the independence condition $\dd x\wedge\dd y\neq 0$, we have $p=z_x$ and $q=z_y$. Then $z(x,y)$ satisfies (\ref{eq 7.18 Ivey}) iff the surface is also an integral of the $2$-form 
+\[
+    \Psi\coloneqq A\dd p\wedge \dd y+B(\dd q\wedge \dd y-\dd p\wedge \dd x)-C\dd q\wedge \dd x+D\dd x\wedge\dd y+E\dd p\wedge \dd q.\label{eq 7.19 Ivey}
+\]
+Therefore, the PDE (\ref{eq 7.18 Ivey}) is equivalent to the \gls{eds} 
+\[\calI\coloneqq \<\theta,\Psi\>_{\mathrm{diff}} \text{ on }J^1(\bbR^2,\bbR).\]
+This can be verified by using the relations $p=z_x,q=z_y$ enforced by $\theta=0$, and noting that $\dd p\wedge\dd y=z_{xx}\dd x\wedge \dd y$ and so on. Note that this is not the only possible choice of generators. For example, since $\dd\theta=-(\dd p\wedge\dd x+\dd q\wedge \dd y)$, the $B$-term in $\Psi$ may be replaced by $2B\dd q\wedge \dd y$ or by $-2B\dd p\wedge \dd x$. The prolongation of $\calI$ recovers the usual rank $3$ Pfaffian system on $J^2(\bbR^2,\bbR)$ described in \subsect~\ref{sec: hyperbolic EDS}.
+
+Thus, the following definition captures the essential features of the Monge-Am\`ere system on $J^1(\bbR^2,\bbR)$.
+
+\begin{defn}[Monge-Amp\`ere system]
+    A \gls{ma} system on a $5$-dimensional manifold $M$ is an \gls{eds} generated differentially by a $1$-form $\theta$ of Pfaff rank $2$ and a $2$-form $\Psi$ that is linearly independent from $\dd\theta$ modulo $\theta$, i.e.\ $\Psi-\dd\theta\neq 0\pmod{\theta}$.
+\end{defn}
+
+\begin{rem}
+    A quasi-linear third-order evolution equation for one function of two variables can also be encoded by an \gls{eds} on a manifold of lower dimension than $J^3(\bbR^2,\bbR)$.
+\end{rem}
+
+\begin{example}
+    \begin{enumerate}
+        \item The Laplace equation $z_{xx}+z_{yy}=0$ is equivalent to the \gls{ma} system on $J^1(\bbR^2,\bbR)$ generated by $\theta$ and $\Psi=\dd p\wedge\dd y-\dd p\wedge \dd x$.
+        \item The sine-Gordon equation $u_{xy}=\sin u\cos u$ is equivalent to the \gls{ma} system on $J^1(\bbR^2,\bbR)$ generated by $\theta$ and the decomposable $2$-form $\Psi=(\dd p-\sin u \cos u\dd y)\wedge\dd x$. (The usual version $u_{xy}=\sin u$ of the sine-Gordon equation is obtained by doubling $u$.) Note that $\Psi+\dd\theta$ is also decomposable.
+    \end{enumerate}
+\end{example}
+
+
+It is no accident that these examples can be derived from \gls{ma} equations. In fact, any \gls{ma} system is locally equivalent to one generated by such an equation. The following proposition is an exercise.
+
+\begin{prop}[{{\cite[Prop.~7.4.7]{Ivey}}}]
+    Let $M^5$ carry a \gls{ma} system $\calI$. In a neighborhood of any point of $M$, there are local coordinates $x,y,z,p,q$ such that $\calI$ is generated by the form $\theta'=\dd z-p\dd x-q\dd y$ and a $2$-form of the form (\ref{eq 7.19 Ivey}) for some functions $A,B,C,D,E$.
+\end{prop}
+
+\begin{example}[Minimal and constant-$K$ surfaces]\label{ex minimal surface EDS}
+    Using the coordinate expression (\ref{eq local formulas for K and H}) for the mean curvature of the graph of $z(x,y)$, we see that the \gls{ma} system corresponding to $H=0$ has 
+    \[\Psi=(1+q^2)\dd p\wedge \dd y+pq(\dd p\wedge \dd x-\dd q\wedge \dd y)-(1+p^2)\dd q\wedge \dd x.\]
+    Similarly, the PDE (\ref{eq 1.4 Ivey}) for graphs with Gauss curvature $K=1$ can be encoded by a \gls{ma} system with 
+    \[\Psi=\dd p\wedge \dd q-(1+p^2+q^2)^2\dd x\wedge \dd y.\]
+    These conditions on the curvatures $H,K$ of a surface are examples of Weingarten equations, and are naturally modeled by an \gls{eds} on the coframe bundle (see below.)
+\end{example}
+
+The characteristic systems for a \gls{ma} equation may be defined in a way similar to \subsect~\ref{sec: hyperbolic EDS}. Namely, suppose $\calI$ is hyperbolic, i.e.\ there exist two decomposable $2$-forms in $\calI$ which are linearly independent modulo $\theta$, and such that $\calI=\<\theta,\omega_1\wedge\pi_1,\omega_2\wedge\pi_2\>_{\mathrm{alg}}$. Then their respective factors form the two characteristic systems 
+\[\calM_i=\<\theta,\omega_i,\pi_i\>.\]
+As explained in  \subsect~\ref{sec: hyperbolic EDS}, these pull back to lie in the characteristic system of the prolongation.
+
+\begin{prop}[{{\cite[7.4.11]{Ivey}}}]
+    If a hyperbolic \gls{ma} system $(M,\calI)$ is Darboux-integrable, then it is locally equivalent to the system defined by the wave equation $z_{xy}=0$.
+\end{prop}
+\begin{proof}
+    Following the argument in \subsect~\ref{sec: hyperbolic EDS}, around every point in $M$ there is a local coframe $\theta,\omega_1,\omega_2,\pi_1,\pi_2$ such that $\theta\in\calI^1$, $\calM_1^{(1)}=\<\omega_1,\pi_1\>$, $\calM_2^{(1)}=\<\omega_2,\pi_2\>$, and 
+    \[\dd\theta\equiv \omega_1\wedge\pi_1 +\omega_2\wedge\pi_2 \pmod{\theta}.\]
+    Since $\calI$ is an ideal, there are $1$-forms $\beta_0,\beta_1,\beta_2$ satisfying the structure equations 
+    \begin{align}
+        \dd\theta=&-\beta_0\wedge\theta +\omega_1\wedge\pi_1+\omega_2\wedge\pi_2,\\
+        \dd(\omega_1\wedge\pi_1)=&-\beta_1\wedge\omega_1\wedge\pi_1,\\
+        \dd(\omega_2\wedge\pi_2)=&-\beta_2\wedge \omega_2\wedge\pi_2.
+    \end{align}
+    Note that $\beta_0$ is uniquely determined modulo $\theta$, whereas $\beta_1$ is determined modulo $\omega_1$ and $\pi_1$, and similarly for $\beta_2$. Thus, we can assume that $\beta_i$ contains no $\omega_i,\pi_i$ components for $i=1,2$. By differentiating the first structure equation, we get 
+    \[(\beta_0-\beta_1)\wedge\omega_1\wedge\pi_1+(\beta_0-\beta_2)\wedge\omega_2\wedge\pi_2=\dd\beta_0\wedge\theta.\label{3913}\]
+    By taking this equation modulo various elements of the coframe, we find that $\beta_0\equiv \beta_1\pmod{\theta,\omega_1,\pi_1}$ and $\beta_0\equiv \beta_2\pmod{\theta,\omega_2,\pi_2}$. Adjusting $\beta_i$, $i=1,2$, so that its $\omega_i,\pi_i$ components match those of $\beta_0$, and adjusting $\beta_0$ by adding some multiple of $\theta$,
+    we can assume that 
+    \[\beta_0-\beta_1=a\theta,\quad \beta_0-\beta_2=-a\theta\] 
+    for some function $a$. Equation~\ref{3913} now implies 
+    \[\dd\beta_0=a(\omega_1\wedge\pi_1-\omega_2\wedge\pi_2).\]
+    Now observe that $\beta_1=\beta_0-a\theta$ implies that
+    \[\dd \beta_1\equiv \dd\beta_0-a\dd \theta=-2a\omega_2\wedge\pi_2\pmod{\theta},\]
+    and on the other hand, the derivative of the second structure equation gives 
+    \[0=\dd\beta_1\wedge\omega_1\wedge\pi_1.\]
+    The only way both of these equalities can hold is if $a=0$ identically, and so 
+    \[\beta_0=\beta_1=\beta_2,\quad \dd\beta_0=0.\]
+    Thus, on a possibly smaller neighborhood, there exist functions $\lambda,p,q,x,y,z$ such that 
+    \begin{align}
+        \beta_0=&\dd \lambda, \quad&
+        \rme^{\lambda}\omega_1\wedge\pi_1=&\dd x\wedge \dd p,\\
+        \rme^\lambda\omega\wedge\pi_2=&\dd y\wedge \dd q, \quad&
+        \rme^\lambda\theta=&\dd z-p\dd x-q\dd y.
+    \end{align}
+    Then $\<e^\lambda\theta,\dd x\wedge\dd p,\dd y\wedge \dd q\>_{\mathrm{diff}}$ is exactly the standard \gls{eds} for the wave equation, because the vanishing of $\dd x\wedge\dd p$ or $\dd y\wedge \dd q$ along $p=z_x,q=z_y$ (which is enforced by $e^\lambda\theta=0$) is equivalent to $z_{xy}=0$.
+\end{proof}
 
 
 
+\subsection{Linear Weingarten surfaces}
 
+We now examine a geometrically natural class of surfaces, called \emph{linear Weingarten surfaces}, which are locally equivalent to solutions of a \gls{ma} equation. Recall from Example~\ref{ex Weingarten surfaces} that a linear Weingarten surface is one whose mean and Gauss curvatures $H,K$ satisfy a linear relation $AK+2BH+C=0$. More generally, a \emph{Weingarten surface} is one with $F(H,K)=0$ for some function $F$.
 
-
-\subsection{Monge-Amp\`ere systems and Weingarten surfaces}
-
-
-
-
-
+Suppose $\Sigma <\bbE^3$ is a smooth surface satisfying a linear Weingarten equation, and $\frake:\Sigma\to P$ is a first-order adapted framing along $\Sigma$. Then the framing gives an integral surface for the $1$-form $\theta^3$ on $P$ and for the $2$-form 
+\[\Psi\coloneqq A\omega_1^3 \wedge\omega_2^3+B(\omega_1^3\wedge\theta^2-\omega_2^3\wedge\theta^1)+C\theta^1\wedge\theta^2.\]
+This can be seen by verifying that $\frake^\ast \Psi=0$ via (\ref{def h}):
+\[\frake^\ast\Psi=(A\det h+B\tr h+C)\theta^1\wedge\theta^2=(AK+2BH+C)\theta^1\wedge\theta^2=0.\]
 
 
 
@@ -3514,7 +3775,7 @@ Now we can construct a linear map that measures to what extent $H$ fails to be a
     \calR:\fX(M)\times\fX(M)\to \Gamma^\infty(V),\quad & \calR(X,Y)=-\calV[\calH X,\calH Y],\\
     \wb{\calR}:\fX(M)\times\fX(M)\to \Gamma^\infty(H),\quad & \wb{\calR}(X,Y)=-\calH[\calV X,\calV Y].
 \end{align}
-Indeed, if $\calR=0$, it means that the Lie bracket of two sections of $\calH$ lies in $\calH$, and therefore $\calH$ is integrable, and similarly $\wb \calR$ detects the integrability of $\calV$. It is obvious that these maps are $C^\infty(M)$-linear and hence are tensors. We call $\calR$ \emph{curvature} and $\wb{\calR}$ \emph{cocurvature}\index{Cocurvature}. Note that the value of $\calR$ depends on the choice of $\calV$, but whether it is zero or not doesn't, so in this sense it's still an objective measure of integrability for $\calH$ (as long as $\calH$ and $\calV$ are everywhere transverse). It turns out that fiber bundles are special in that they come with one canonically defined integrable distribution that we define now. A more sophisticated way of defining the curvature of general connections is as the F\"olicher-Nijenhuis bracket $[\calV,\calV]$, see \cite[Sec.~9]{Kolar}.
+Indeed, if $\calR=0$, it means that the Lie bracket of two sections of $\calH$ lies in $\calH$, and therefore $\calH$ is integrable, and similarly $\wb \calR$ detects the integrability of $\calV$. It is obvious that these maps are $C^\infty(M)$-linear and hence are tensors. We call $\calR$ \emph{curvature} and $\wb{\calR}$ \emph{cocurvature}\index{Cocurvature}. Note that the value of $\calR$ depends on the choice of $\calV$, but whether it is zero or not doesn't, so in this sense it's still an objective measure of integrability for $\calH$ (as long as $\calH$ and $\calV$ are everywhere transverse). It turns out that fiber bundles are special in that they come with one canonically defined integrable distribution that we define now. A more sophisticated way of defining the curvature of general connections is as the Fr\"olicher-Nijenhuis bracket $[\calV,\calV]$, see \cite[Sec.~9]{Kolar}.
 
 \begin{defn}[Vertical bundle]\index{Vertical bundle}
     If $E\overset{\pi}{\to}M$ is a smooth \gls{fb}, then its \emph{vertical subbundle} is the subbundle $\calV E< TE$ defined as 
@@ -4260,7 +4521,7 @@ Next, let us discuss the transformation properties of connections under principa
     \[\omega'_{\vartheta(p)}=\vartheta\circ \Phi_g(p)=\Phi_{\lambda(g)}'\circ\vartheta(p)=\Phi_{\vartheta(p)}'\circ\lambda(g),\]
     we obtain
     \[\omega_{\vartheta(p)}'\left(\vartheta_\ast(A_\ast)_p\right)=\omega_{\vartheta(p)}'\left(\Phi_{\vartheta(p)\ast}'\circ \lambda_\ast(A)\right)=\lambda_\ast(A).\]
-    The assertion now follows from the fact that $A=\omega(A_\ast)$. The formula for curvature follows immediately via the Structural Equation (\ref{eq 1.4.9 RS2 structural}).
+    The assertion now follows from the fact that $A=\omega(A_\ast)$. The formula for curvature follows immediately via the Structure Equation (\ref{eq 1.4.9 RS2 structural}).
 
     The proof of the statement for pullback connections is very similar.
 \end{proof}
