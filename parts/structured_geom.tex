@@ -1,24 +1,15 @@
 % !TEX root = ../geom_autistic_intro.tex
 \section{Principal and Associated Bundles}
 
-\begin{hrem*}
-    \small 
-    Now that we have comprehensively reviewed the fundamentals of Lie groups and their actions on manifolds, we are finally read to return to Klein's Erlangen program as described at the beginning of Section~\ref{sec: Lie theory ii}.
+    Now that we have comprehensively reviewed the fundamentals of Lie groups and their actions on manifolds, we are finally ready to return to Klein's Erlangen program as described at the beginning of Section~\ref{sec: Lie theory ii}.
 
-    Principal bundles appeared in the last section as a natural special case of Lie group actions on manifolds. In this section, however, they will acquire a special elevated status in the theory general fiber bundles. Recall that any fiber bundle that admits a $G$-atlas  such that the structure group $G$ acts on the typical fiber $F$ faitfully is completely determined by the cocycle of its transition functions. This led to the equivalence of any two categories of fiber bundles $\FB^\sigma$ and $\FB^{\sigma'}$ for any two faithful $G$-actions $G\overset{\sigma}{\acts}F$ and $G\overset{\sigma'}{\acts}F'$ (see (\ref{eq equivalence of bundle categories})). This means that most functorial geometric structures on fiber bundles can be defined by providing their description on any one of these equivalent categories. The choice of the category of principal bundles is natural and convenient for two reasons. 
+    Principal bundles appeared in the last \sect\ as a natural special case of Lie group actions on manifolds. In this \sect, however, they will acquire a special elevated status in the theory of general fiber bundles. Recall that any fiber bundle that admits a $G$-atlas such that the structure group $G$ acts on the typical fiber $F$ faitfully is completely determined by the cocycle of its transition functions. This led to the equivalence of any two categories of fiber bundles $\FB^\sigma$ and $\FB^{\sigma'}$ for any two faithful $G$-actions $G\overset{\sigma}{\acts}F$ and $G\overset{\sigma'}{\acts}F'$ (see (\ref{eq equivalence of bundle categories})). This means that most functorial geometric structures on fiber bundles can be defined by providing their description on any one of these equivalent categories. The choice of the category of principal bundles is natural and convenient for two reasons. 
     
     On a fundamental level, principal $G$-bundles are exactly the $G$-bundles whose typical fiber is $G$ itself, and the action $\sigma$ is the action by translations (which is faithful indeed). The definition of this category, therefore, requires no additional information aside from the group $G$ itself. 
     
-    On a more practical level, however, the particular convenience of working on principal bundles is due to the fact that Lie groups are parallelizable, so the tangent bundle of a principal $G$-bundle is siginificantly simpler than the tangent bundle of a generic bundle with structure group $G$. 
+    On a more practical level, however, the particular convenience of working on principal bundles is due to the fact that Lie groups are parallelizable, so the tangent bundle of a principal $G$-bundle is significantly simpler than the tangent bundle of a generic bundle with structure group $G$. 
 
-    For these reasons, while everything discussed in this \sect can equally well be introduced without any preference being given to principal bundles, we will usually start with them due to their unique convenience and simplicity of computations. In specific applications, principal bundles are almost never where the ``physical objects'' live, so this style of exposition should not be viewed as anything more than a slight of hand.
-\end{hrem*}
-
-
-
-
-
-
+    For these reasons, while everything discussed in this \sect\ can equally well be introduced without any preference being given to principal bundles, we will usually start with them due to their unique convenience and simplicity of computations. In specific applications, principal bundles are almost never where the ``physical objects'' live, so this style of exposition should not be viewed as anything more than a slight of hand.
 
 
 
@@ -74,15 +65,15 @@ The existence of local trivializations implies that $\pi$ is a smooth submersion
     By the above proposition, specifying a bundle atlas $\{(U_\alpha,\chi_\alpha)\}$ for a \gls{pfb} $P\to M$ is equivalent to providing a collection of local sections $\{s_\alpha:U_\alpha\to P\}$. The relationship between the two is 
     \[s_\alpha(m)=\chi_\alpha^{-1}(m,e).\]
     According to (\ref{eq transition functions}), if the transition functions of $P$ are $g_{\beta\alpha}:U_{\alpha\beta}\to G$, then the transformation rule for these local sections, assuming a right \gls{pfb}, reads 
-    \[s_\alpha(m)=s_\beta(m)\cdot g_{\beta\alpha}(m),\quad \text{right \gls{pfb}}\label{eq transf rule for sections}\]
+    \[s_\alpha(m)=s_\beta(m)\cdot g_{\beta\alpha}(m)\quad \text{for a right \gls{pfb}},\label{eq transf rule for sections}\]
     where on the right we're using the principal right action. Note that since the $G$-action on the typical fiber is always assumed to be a left one, transition functions in the case of a left principal $G$-bundle should be defined as $t_{\beta\alpha}(m,h)=(m,hg_{\beta\alpha}^{-1})$. This then leads to 
-    \[s_\alpha(m)=g_{\alpha\beta}(m) s_\beta(m) \quad \text{left \gls{pfb}}\]
-    for left principal bundles, and it is easy to see that this implies the regular cocycle condition $g_{\alpha\beta}g_{\beta\gamma}g_{\gamma\alpha}=e$.
+    \[s_\alpha(m)=g_{\alpha\beta}(m) \cdot s_\beta(m) \quad \text{for a left \gls{pfb}},\]
+    and it is easy to see that this implies the regular cocycle condition $g_{\alpha\beta}g_{\beta\gamma}g_{\gamma\alpha}=e$.
 
     Since we will usually work with right principal bundles, we will identify the transition functions with $g_{\beta\alpha}$ and use only the symbol $t_{\beta\alpha}$ for them. To obtain the analogous statements for left principal bundles, one then needs to replace $t_{\beta\alpha}$ multiplying from the left by $t_{\alpha\beta}$ multiplying from the right.
 \end{rem}
 
-Now we need to specify the notion of morphism of \glspl{pfb}. Recall that a morphism between $G_1$- and $G_2$-structures is a bundle morphism whose fiberwise representatives lie in $G_1\times G_2$-orbits of some canonically chosen maps between the typical fibers. Since the typical fibers of principal bundles are the Lie groups themselves, it is clear that these canonical maps should be chosen as Lie group homomorphisms. The $G_1\times G_2$-orbits of homomorphisms are exactly equivariant maps, as we now show. 
+Now we need to specify the notion of morphism of \glspl{pfb}. Recall that a morphism between $G_1$- and $G_2$-structures is a bundle morphism whose fiberwise representatives lie in $G_1\times G_2$-orbits of some canonically chosen maps between the typical fibers (cf.\ Definition~\ref{def S-bundle}). Since the typical fibers of principal bundles are the Lie groups themselves, it is clear that these canonical maps should be chosen as Lie group homomorphisms. The $G_1\times G_2$-orbits of homomorphisms are exactly the sets of equivariant maps, as we now show. 
 
 \begin{defn}[$\lambda$-equivariant map]
     Let $G_1\acts F_1$ and $G_2\acts F_2$ be two right Lie group actions and let $\lambda:G_1\to G_2$ be a Lie group homomorphism. A smooth map $\varphi:F_1\to F_2$ is called (right) $\lambda$-equivariant if $\varphi(f\cdot g_1)=\varphi(f)\cdot \lambda(g_1)$ for all $f\in F,g_1\in G_1$.
@@ -120,7 +111,7 @@ Recall that the maps $\Phi_{\alpha a}:U_{\alpha a}\times (G\times G')\to C^\inft
     Upon restricting to a specific Lie group $G$ and morphisms with $\lambda=\id_G$ one gets the category $\PFB^G$, which coincides with the category $\FB^L$ (Definition~\ref{def FB^sigma}) where $L$ is the action of $G$ on itself by left translations. Upon further restricting the base to a specific manifold $M$ and morphisms to those covering the identity one gets $\PFB^G_M$ (all morphisms in this category are isomorphisms).
 \end{defn}
 
-It might seem that Definition~\ref{def pfb 2} contains more structure in the form of \emph{equivariant} trivializations, however the bundle construction of a $\mathsf{LieGr}$-bundle out of a cocycle (say acting on the left on the typical fiber $G$) allows us to \emph{lift} the right $G$-action to the whole bundle. Right $G$-equivariance of trivializations is therefore automatic under this definition.
+It might seem that Definition~\ref{def pfb 2} contains more structure in the form of \emph{equivariant} trivializations, however the bundle construction of a $\mathsf{LieGr}$-bundle (with action by translations) out of a cocycle (say acting on the left on the typical fiber $G$) allows us to \emph{lift} the right $G$-action to the whole bundle. Right $G$-equivariance of trivializations is therefore automatic under this definition.
 
 \begin{rem}[Special morphisms, bundle reduction]\label{rem 1.1.8 RS2}
     \begin{enumerate}
@@ -3642,7 +3633,7 @@ We continue with the case $s=3,n=5$ represented by the second-order Monge equati
 \[\dd\theta^1\equiv \theta^3\wedge\theta^4,\quad\dd\theta^2\equiv \theta^3\wedge\theta^5 \pmod{\<\theta^1,\theta^2\>}.\]
 By (\ref{eq 31 Bryant}) we also have 
 \[\dd\theta^3\equiv \theta^4\wedge\theta^5 \pmod{\<\theta^1,\theta^2,\theta^3\>}.\]
-This generic case is very interesting. A complete system of invariants was found in Cartan's 1910 ``five variables'' paper using his method of equivalence. The fundamental invariant is a ternary quartic (symmetric) differential form. If it vanishes identically, the Pfaffian system is invariant under the exceptional $14$-dimensional Lie group $G_2$. In particular, this means that $J^1(\bbR^2,\bbR^1)$ is a locally homogeneous space of (the real form of) $G_2$ (the actual homogeneous space is $\bbS^2\times\bbS^3$). This is clearly a very natural way that the split real form of $G_2$ is geometrically realized. The general case, also detailed by Cartan, involves tensorial invariants and consists of sub-cases.
+This generic case is very interesting. A complete system of invariants was found in Cartan's 1910 ``five variables'' paper using his method of equivalence. The fundamental invariant is a ternary quartic (symmetric) differential form. If it vanishes identically, the Pfaffian system is invariant under the exceptional $14$-dimensional Lie group $\rmG_2$. In particular, this means that $J^1(\bbR^2,\bbR^1)$ is a locally homogeneous space of (the real form of) $\rmG_2$ (the actual homogeneous space is $\bbS^2\times\bbS^3$). This is clearly a very natural way that the split real form of $\rmG_2$ is geometrically realized. The general case, also detailed by Cartan, involves tensorial invariants and consists of sub-cases.
 
 
 
@@ -5518,13 +5509,13 @@ Rewriting (\ref{eq 1.7.11 RS2}) as
 we get a geometric interpretation of the covariant derivative. In particular, note that a section $s$ is parallel iff the curve $s\circ \gamma$ in $E$ is horizontal for any integral curve $\gamma$ of $X$.
 
 Now let us consider an arbitrary smooth path $\gamma:I\to M$. By definition, a section of $E$ along $\gamma$ is a map $\phi:I\to E$ such that $\pi_V\circ \phi=\gamma$. We have the canonical isomorphism between $\Gamma_\gamma^\infty(E)$ and $\Gamma^\infty(\gamma^\ast E)$, and there is an associated covariant derivative along $\gamma$. According to (\ref{eq 1.5.16 RS2}), it is given by
-\[\frac{D^\omega}{D\gamma(t)}\coloneqq \nabla^\gamma_{\partial_t}:\Gamma^\infty_\gamma(E)\to \Gamma^\infty_\gamma(E),\quad \frac{D^\omega}{D\gamma(t)}\phi=\omega^E\left(\phi_\ast(\partial_t)\right),\label{eq 1.7.13 RS2}\]
+\[\nabla_{\dot\gamma}\coloneqq \nabla^\gamma_{\partial_t}:\Gamma^\infty_\gamma(E)\to \Gamma^\infty_\gamma(E),\quad \nabla_{\dot\gamma}\phi=\omega^E\left(\phi_\ast(\partial_t)\right),\label{eq 1.7.13 RS2}\]
 where $\partial_t$ is the standard unit vector field on $\bbR$ and $\omega^E$ is the connection form on $E$. Now, clearly, for any $s\in\Gamma^\infty(E)$,
 \[\phi=s\circ\gamma\]
 is a section of $E$ along $\gamma$ and, for this choice of $\phi$, we get
-\[\frac{D^\omega}{D\gamma(t)}(s\circ\gamma)=\omega^E(s_\ast(\dot\gamma))=\omega^E(\partial_t(s\circ \gamma)).\label{eq 1.7.14 RS2}\]
+\[\nabla_{\dot\gamma}(s\circ\gamma)=\omega^E(s_\ast(\dot\gamma))=\omega^E(\partial_t(s\circ \gamma)).\label{eq 1.7.14 RS2}\]
 Thus, a section $s\circ\gamma$ of $E$ along $f$ is parallel iff
-\[\frac{D^\omega}{D\gamma(t)}(s\circ\gamma)=0.\label{eq 1.7.15 RS2}\]
+\[\nabla_{\dot\gamma}(s\circ\gamma)=0.\label{eq 1.7.15 RS2}\]
 
 To summarize, we have the following.
 \begin{prop}
