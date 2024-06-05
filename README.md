@@ -5,7 +5,7 @@ These notes started when I, along with my friend Umang Mehta, taught a series of
 
 In 2024 these notes started getting greatly expanded as part of my effort to continue deepening my understanding of these subjects, as well as to continue teaching my friends. The subtitle *"an autistic introduction"* refers to the only style of teaching that I find fully satisfying: *bottom up*. In short, this means that I try to apply the following principle:
 
-**no sophosticated construction is introduced until it is motivated enough to feel necessary**
+**no sophisticated construction is introduced until it is motivated enough to feel necessary**
 
 Teaching in this way inherently forces one to understand the objects being introduced much deeper, always keeping one's eyes on the ultimate goal. 
 
