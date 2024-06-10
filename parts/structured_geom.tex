@@ -907,7 +907,7 @@ Now we can try to give a local definition of Klein manifolds. Since $\Gamma\bsla
     \label{fig:klein}
 \end{figure}
 
-\begin{defn}[Effective $(G,H)$-structure]
+\begin{defn}[Effective $(G,H)$-structure]\label{def GH-structure}
     A locally homogeneous structure \emph{modeled on} an effective homogeneous space of type $(G,H)$ is a connected manifold $M$ with a \emph{$(G,H)$-atlas} $\{(U_\alpha,\varphi_\alpha)\}_\alpha$, where $\{U_\alpha\}$ is an open covering of $M$ and $\varphi_\alpha:U_\alpha\to \wh{U}_{\alpha}\subset G\slash H$ are diffeomorphisms such that for each non-empty intersection $U_{\alpha\beta}=U_\alpha\cap U_\beta$ there exists $g_{\beta\alpha}\in G$ such that 
     \[\varphi_{\beta}=\wh{L}_{g_{\beta\alpha}}\circ \varphi_\alpha\text{ on }U_{\alpha\beta}.\]
     A \emph{$(G,H)$-structure} on $M$ is a maximal $(G,H)$-atlas.
@@ -974,8 +974,13 @@ Since in the effective case $\theta_\alpha$'s let us recover the local sections 
 
 
 \begin{example}
-    Recall the \emph{hyperbolic upper half-plane} $\bbC^+=\SL_2(\bbR)\slash \SO_2$ from Example~\ref{ex siegel upper half-space}. It is known that any closed (compact with no boundary) orientable surface $\Sigma_g$ of genus $g>1$ appears as the quotient $\Gamma\bslash \bbC^+$ for some choice of $\Gamma<\SL_2(\bbR)$. Let $\Gamma_g$ be such a subgroup. Then $\Sigma_g=\Gamma_g\bslash \bbC^+$ is a locally Klein geometry.
+    Recall the \emph{hyperbolic upper half-plane} $\bbC^+=\SL_2(\bbR)\slash \SO_2$ from Example~\ref{ex siegel upper half-space}. The Uniformization Theorem states that any closed (compact with no boundary) orientable surface $\Sigma_g$ of genus $g>1$ appears as the quotient $\Gamma\bslash \bbC^+$ for some choice of $\Gamma<\SL_2(\bbR)$. Let $\Gamma_g$ be such a subgroup. Then $\Sigma_g=\Gamma_g\bslash \bbC^+$ is a locally Klein geometry.
 \end{example}
+
+\begin{example}[Projective structure]\index{Projective structure}\label{ex projective structure}
+    A \emph{Riemann surface}\index{Riemann surface}, also called a \emph{complex curve}, is a connected $1$-dimensional complex manifold $\Sigma$, i.e.\ its atlas consists of $\bbC$-valued maps with complex-analytic, or \emph{holomorphic}, transition maps (in the $1$-dimensional case holomorphic maps are also called \emph{conformal}, although the equivalence between these terms is nontrivial). Thus, the inverses of the transition maps are also complex-analytic, so that the transition maps are \emph{biholomorphic}.\index{Biholomorphism} Now, a \emph{projective structure} $\calP$ on $\Sigma$ is a $(\PSL_2(\bbC),\U_1)$-structure in the sense of Definition\ \ref{def GH-structure}. In particular, the chart maps are \emph{meromorphic} biholomorphisms, i.e.\ they take values in $\CP^1$ instead of just $\bbC$ (so they are allowed to have simple poles). The pair $(\Sigma,\calP)$ is called a \emph{complex projective surface}. Every Riemann surface admits many non-equivalent projective structures, but the Uniformization Theorem (stating that there is a unique, up to a M\"obius transformation, biholomorphism between the universal cover of $\Sigma$ and one of three standard subsets of $\CP^1$) implies the existence of a \emph{canonical projective structure}.
+\end{example}
+
 
 \begin{example}[Monopole bundles]\label{ex monopole bundles}\index{Monopole!bundles}
     Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$. Let $m\geq 1$ and $\Gamma=\bbZ_m\subset \U_1$ act on $\bbS^3$ by the restriction of the $\U_1$ action. The space $\Gamma\bslash \bbS^3$ is the loop space $L(m;1)$. We get the principal $\U_1$-bundle
@@ -1397,7 +1402,45 @@ A fundamental problem in Cartan geometry will be the lifting problem for a map i
 \end{tikzcd}\]
 Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order Klein geometry $(G,H)$, the choice of a lift $\wt{f}:S\to G$ is equivalent to a choice of frames of $G\slash H$ along the submanifold $S$. In specific examples we will demand that these frames be \emph{adapted} to some structure on $S$ to make the lift unique, e.g.\ that $T_mS$ get mapped by the corresponding frame to a fixed subspace $V\subset \frakg\slash\frakh$ for all $m\in S$. This is the basis of \emph{Cartan's method of moving frames} (``rep\`ere mobile'').\index{Rep\`ere mobile|see {Moving frames}}\index{Moving frames!Cartan's method of} Its power is in the fact that the frame is determined only by the value $f(s)\in M$, and not by any specific way the map $f$ is parametrized. Therefore, this method provides an extremely powerful way for finding \emph{intrinsic} geometric quantities of submanifolds, called \emph{differential invariants}.\index{Differential invariant} In this section we demonstrate the method in action in a few elementary examples, and in the next section we apply it to the classical problem of characterizing surfaces in three-dimensional Euclidean space up to congruence. These examples will be useful to us as motivation for the general theory of connections. The general characterization of submanifolds with structure is a subject of Cartan geometry.
 
+Before diving into the more sophisticated examples, let walk through the classical Galilean principle of relativity in this language, which has to do with affine structures on manifolds.
 
+\begin{example}[Galilean Principle of Relativity]
+    Recall that an affine real space of dimension $n$ is a Klein geometry of type $(\Aff_n(\bbR),\GL_n(\bbR))$. Its space is denoted by $\rmA(\bbR^n)$. Now let $M$ be a manifold with an \emph{affine structure},\index{Affine structure} i.e.\ an atlas $\calA=\{(U_\alpha,\varphi_\alpha)\}$ consisting of maps $\varphi_\alpha:U_\alpha\to \rmA(\bbR^n)$ such that the transition maps $\varphi_{\beta\alpha}=\varphi_\beta\circ\varphi_\alpha^{-1}$ are equivalent to actions on $\rmA(\bbR^n)$ by elements of $\Aff_n(\bbR)$, say $\varphi_{\beta\alpha}=g_{\beta\alpha}\in\Aff_n(\bbR)$. The pair $(M,\calA)$ is called an \emph{affine manifold}. We would like to find all differential invariants characterizing an affine structure on $M$.
+
+    Let $\bf{x},\bf{y}:U\to \rmA(\bbR^n)$ be two (not necessarily charts) chart maps on $U\subset M$. We would like to compute a differential invariant that quantifies the difference between the affine structures induced by these two charts. Denote by $\psi\coloneqq \bf{y}\circ \bf{x}^{-1}$ the transition map. Since it is a diffeomorphism between subsets of $\rmA(\bbR^n)$, its derivative $\psi_\ast$ at any point $\bf{x}$ of its domain is naturally an element of $\GL_n(\bbR^n)$, so we can construct a local \emph{affine frame} corresponding to $\psi$. Following the conventional abuse of notation, we will denote the transition map by $\bf{y}(\bf{x})$, its derivative by $\bf{y}'(\bf{x})$, and define
+    \[\frake(\bf{x})\coloneqq \begin{pmatrix}
+        \bf{y}'(\bf{x}) & \bf{y}(\bf{x}) \\
+        \bf{0}_n^T & 1
+    \end{pmatrix}\quad \in \Aff_n(\bbR),\]
+    where $\bf{y}'$ is the $n\times n$ Jacobi matrix, $\bf{y}$ is a column-vector, and $\bf{0}_n^T$ is the zero row-vector. We now pull back the Maurer-Cartan form along this frame:
+    \begin{multline}
+        \frake^{-1}\dd\frake(\bf{x})=\begin{pmatrix}
+            \bf{y}'(\bf{x})^{-1} & -\bf{y}'(\bf{x})^{-1}\cdot \bf{y}(\bf{x}) \\
+            \bf{0}_n^T & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+            \bf{y}''(\bf{x})\cdot \dd \bf{x} & \bf{y}'(\bf{x})\cdot \dd \bf{x} \\
+            \bf{0}_n^T & 0
+        \end{pmatrix}=\\=
+        \begin{pmatrix}
+            \bf{y}'(\bf{x})^{-1}\cdot \bf{y}''(\bf{x})\cdot \dd \bf{x} & \dd \bf{x} \\
+            \bf{0}_n^T & 0
+        \end{pmatrix}.
+    \end{multline}
+    We see that the only nontrivial quantity involved here is the $\frakgl_n(\bbR)$-valued $1$-form $(\bf{y}')^{-1} \bf{y}'' \dd \bf{x}$. By Cartan's Fundamental Theorem (or, indeed, by elementary calculus), the map $\bf{y}(\bf{x})$ is determined uniquely up to post-composition with a global affine transformation by $(\bf{y}')^{-1} \bf{y}'' \dd \bf{x}$. In particular, this quantity vanishes iff $\bf{y}$ and $\bf{x}$ induce the same affine structures on $U$. 
+    
+    Now consider an arbitrary smooth map $f:M\to \rmA(\bbR^n)$. By another abuse of notation, we will denote its local representatives in affine charts $\bf{x}:U\to \rmA(\bbR^n)$ by $f(\bf{x})$. We can then define local $1$-forms $f'(\bf{x})^{-1}\cdot f''(\bf{x})\dd \bf{x}$ and view them as $1$-forms on $U\subset M$ (i.e.\ a pullback along $\bf{x}$ is implied).  Now let $\bf{y}$ be another local chart and let us compare these $1$-forms defined w.r.t.\ $\bf{x}$ and $\bf{y}$. For simplicity, we take $n=1$ since the higher-dimensional case is analogous:
+    \[(\partial_x f(x))^{-1}\partial_x^2 f(x)\dd x=(\partial_y f(x(y)))^{-1}\partial_y^2 f(x(y))\dd y-(\partial_y x(y))^{-1}\partial_y^2 x(y)\dd y.\]
+    The last term on the right is exactly the Galilean invariant of $y$ relative to $x$. We conclude that the local $1$-forms induced by $f$ via $x$ and $y$ agree with each other iff $x$ and $y$ differ by an affine transformation. Thus, given an affine structure on $M$, each map $f:M\to \rmA(\bbR^n)$ gives rise to a globally defined $1$-form $G(f)\in \Omega^1(M;\frakgl_n(\bbR))$, whose local representatives in affine charts $\bf{x}$ are $(f')^{-1}f''\dd \bf{x}$. Note that $f$ needs to be an immersion for this object to be well-defined.
+
+    We can also define $G(f)$ for maps $f:M\to \wt{M}$ between any two affine manifolds. For this, we pick local affine charts $\bf{z}$ on $\wt M$ and compute $G(\bf{z}\circ f)$ as above. The result is independent of the choice of $\bf{z}$ by construction, so again it defines a $1$-form $G(f)$ on $M$.
+
+    This allows us to compare different affine structures. Let $\calA$ and $\wt\calA$ be two affine structures on $M$. Then $G(\id_M)$ is a $1$-form that vanishes iff the structures are equivalent. Moreover, each $1$-form $\omega$ of this kind defines a unique deformation of the affine structure: indeed, Cartan's Fundamental Theorem guarantees that local representatives of $\omega$ match the Galilean invariants of local diffeomorphisms between subsets of $\rmA(\bbR^n)$ (that is, changes of coordinates on $M$) unique up to global affine transformations. Thus, the set of all affine structures is naturally an affine space modeled on the space $\Omega^1(M;\frakgl_n(\bbR))$.
+    
+    This is the content of the \emph{Galilean Principle of Relativity}: given an affine structure with local affine coordinate $\bf{x}$, there is a bijection between all affine structures and elements of $\Omega^1(M;\frakgl_n(\bbR))$, where locally a chart $\bf{y}$ is identified with $\bf{y}'(\bf{x})^{-1}\bf{y}''(\bf{x})\dd \bf{x}$. In physics, an affine structure on the spacetime corresponds to a choice of inertial observers at each point, and the Galiliean principal says that two observers are inertial relative to each other iff the coordinate transformation between them is linear. Note that in physics, a Galilean affine structure is usually of type $(\rmE_n,\SO_n)$, where $\rmE_n=\SO_n\ltimes\bbR^n$ is the Euclidean group, i.e.\ one deals with orthonormal frames with respect to a spacetime metric. In fact, the Galilean group is even smaller because it should act trivially on one more vector (the time axis). However, the results are similar after a proper normalization of the derivative $\bf{y}'$ to make it orthogonal (e.g.\ by rescaling each column).
+\end{example}
+
+The next two examples deal with curves in Euclidean space of dimension $2$ and higher.
 
 \begin{example}[Curves in the Euclidean plane]\label{ex curves in E2}
     Consider two parametrized curves $\gamma,\gamma':\bbR\to \bbE^2$, where $\bbE^2=\SE_2\slash\SO_2$ is the Euclidean plane. The basic question of Euclidean geometry (which is a type of Cartan geometry) is: what are the necessary and sufficient conditions for the existence of a Euclidean motion $g\in\SE_2$ such that $\gamma'(\bbR)=g\cdot \gamma(\bbR)$ as sets? Further, when are there $g\in\SE_2$ and $t_0\in\bbR$ such that $\gamma'(t+t_0)=g\cdot \gamma(t)$ for all $t$?
@@ -1411,7 +1454,7 @@ Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order K
     \end{pmatrix}.\]
     By Corollary~\ref{cor immersions into G}, two curves $\gamma,\gamma'$ differ by a global Euclidean transform iff their logarithmic derivatives coincide. Denote the speed by $v(t)\coloneqq \lVert\dot\gamma(t)\rVert$, so that $\dot\gamma(t)=v(t)e_1(t)$. There also exists a function $\lambda(t)\in\bbR$ such that 
     \[\dot e_1(t)=\lambda(t)e_2(t),\quad \dot e_2(t)=-\lambda(t)e_1(t).\]
-    This way, the acceleration $\ddot{\gamma}(t)$ decomposes into a longitudinal and normal components:
+    This way, the acceleration $\ddot{\gamma}(t)$ decomposes into longitudinal and normal components:
     \[\ddot\gamma=a_{\parallel}e_1+a_{\perp}e_2=\dot ve_1+\lambda ve_2.\]
     Now we compute the logarithmic derivative:
     \[\delta\wt\gamma(t)=\wt\gamma(t)^{-1}\dot{\tilde\gamma}(t)=
@@ -1452,7 +1495,7 @@ Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order K
     It is clear how to generalize the description of curves to higher dimensions. To produce a frame of $n$ vectors, we need to construct $n-1$ natural vectors associated with a curve $\gamma$. For this we use its $n$-th jet, i.e.\ the first $n+1$ terms of the Taylor series. Namely we take the vectors 
     \[\left(\frac{\dd}{\dd s}\gamma,\frac{\dd^2}{\dd s^2}\gamma,\ldots,\frac{\dd^{n-1}}{\dd s^{n-1}}\gamma\right),\] assume that they are linearly independent (such curves are called \emph{regular}) and apply the Gram-Schmidt process to them to get $\{e_1,\ldots,e_{n-1}\}$ (note that the Gram-Schmidt process doesn't change the differential order of these vectors). The final vector is then uniquely defined as $e_n=e_1\times\cdots\times e_{n-1}$. Now we define the \emph{generalized curvatures}
     \[\kappa_i\coloneqq \<\frac{\dd}{\dd s}e_i,e_{i+1}\>,\quad i=1,\ldots,n-1.\] 
-    In particular, in three dimensions, $\tau\coloneqq \kappa_2$ is called the \emph{torsion}\index{Torsion!of a curve} of $\gamma$. The formula for the logarithmic derivative of the frame $\frake:\bbR\to \SO_n$ is given by the \emph{Frenet-Serret equation}\index{Equation!Frenet-Serret}
+    In particular, in three dimensions, $\tau\coloneqq \kappa_2$ is called the \emph{torsion}\index{Torsion!of a curve} of $\gamma$ since it describes the ``twisting'' of the frame around the curve and vanishes iff the curve is planar. The formula for the logarithmic derivative of the frame $\frake:\bbR\to \SO_n$ is given by the \emph{Frenet-Serret equation}\index{Equation!Frenet-Serret}
     \[\frac{\dd}{\dd s}\frake^T=\begin{pmatrix}
         0 & \kappa_1 & &\\
         -\kappa_1 &\ddots & \ddots&\\
@@ -1489,8 +1532,9 @@ Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order K
     \end{pmatrix}\cdot\frake^T.\]
 \end{example}
 
+The final example is a complex analog of the Galilean principle. It has to do with complex curves and complex projective structures on Riemann surfaces. It has higher-dimensional generalizations, but the one-dimensional case is already sufficiently intricate.
 
-\begin{example}[Holomorphic maps and the M\"obius group {{\cite[\S1.7]{Ivey}}}]
+\begin{example}[Projective structures and Schwarzian derivatives {{\cite[\S1.7]{Ivey}}}]
     Here is an example of a study of curves in a less familiar homogeneous space, the complex projective line $\bbC  P^1$. To find differential invariants in such situations, we generally seek a uniquely defined lift that renders the pullback of the Maurer-Cartan form as simple as possible. Then, after finding differential invariants, we interpret them.
 
     Recall that a \gls{flt} is a map $\CP^1\to \CP^1$ given in terms of the homogeneous coordinates $[z_1:z_2]$ by 
@@ -1506,7 +1550,7 @@ Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order K
             z_1\\z_2
         \end{pmatrix}\right],\quad ad-bc=1.
     \]
-    The group of \glspl{flt} is the M\"obius group\index{M\"obius group} $\PSL_2(\bbC)=\SL_2(\bbC)\slash \{\pm I\}$ (cf.\ Example~\ref{ex Lie group representations}), which acts transitively on $\CP^1$.  Thus, $\CP^1$ is a homogeneous space $\PSL_2(\bbC)\slash P$, where 
+    The group of \glspl{flt} is the M\"obius group\index{M\"obius group} $\PSL_2(\bbC)=\SL_2(\bbC)\slash \{\pm \rmI\}$ (cf.\ Example~\ref{ex Lie group representations}), which acts transitively on $\CP^1$.  Thus, $\CP^1$ is a homogeneous space $\PSL_2(\bbC)\slash P$, where 
     \[P=\left[
         \begin{pmatrix}
             a & b \\
@@ -1515,11 +1559,11 @@ Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order K
     \right]\in\PSL_2(\bbC)\]
     is the stabilizer of $[1:0]$. Although $\PSL_2(\bbC)$, as presented, is not a matrix group, we may avoid problems by working locally. If $D\subset \bbC\subset\CP^1$ is a (connected open) domain, then $g\in\PSL_2(\bbC)$ acts on maps $f:D\to \bbC$ by composition, $f\mapsto g\circ f$.
 
-    Suppose $f,\wt{f}:D\to \bbC$ are two holomorphic (that is, complex analytic) maps with nonzero first derivatives. When are they locally equivalent up to a \gls{flt}, $\wt{f}=g\circ f$? (One can ask the same question in the real category for analytic maps $(0,1)\to \RP^1$ and the answer will be the same.) Note that in this example the target is of the same dimension as the source of the mapping, so we cannot expect an analog of curvature, but there will be an analog of speed.
+    Suppose $f,\wt{f}:D\to \bbC$ are two holomorphic (that is, complex analytic) maps with nonzero first derivatives. When are they locally equivalent up to a \gls{flt}, $\wt{f}=g\circ f$? (One can ask the same question in the real category for analytic maps $(0,1)\to \RP^1$ and the answer will be the same.) Note that in this example the target is of the same dimension as the source of the mapping, so we cannot expect an analog of curvature, but there will be an analog of velocity.
 
     The coordinate approach to getting invariants would be to use an \gls{flt} to normalize the map at some point $z_0$, say by requiring $f(z_0)=0$, $f'(z_0)=1$ and $f''(z_0)=0$. Since this is exactly the extent of normalization that $\PSL_2(\bbC)$ can achieve, then $f'''(z_0)$ must be an invariant. Of course, this is valid only at the point $z_0$.
 
-    Instead we construct a lift to $\PSL_2(\bbC)$, which we will treat as $\SL_2(\bbC)$ in order to work with a matrix Lie group. As an obvious first try, let 
+    Instead we construct a lift to the group $\PSL_2(\bbC)$ of ``projective frames'', which we will treat as $\SL_2(\bbC)$ in order to work with a matrix Lie group -- just keep in mind that the overall sign of the frames doesn't matter. As an obvious first try, let 
     \[F\coloneqq \begin{pmatrix}
         f&-1\\
         1&0
@@ -1561,25 +1605,62 @@ Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order K
         \end{pmatrix}\dd z.
     \end{multline}
     Choose $a(z)=1/\sqrt{f'(z)}$. (This is the analog of setting $f'(z_0)=1$ in the coordinate approach.) The function $b$ is still free. We use it to set the diagonal term in the pullback of the Maurer-Cartan form to zero, i.e.\ to set $abf'+a^{-1}a'=0$. This implies 
-    \[b=-\frac{a'}{a^2f'}=\frac{f''}{2(f')^{3/2}}.\]
-    Now our lift is unique and its Maurer-Cartan form is 
+    \[b=-\frac{a'}{a^2f'}=-a'=\frac{f''}{2(f')^{3/2}}.\]
+    Now our lift is unique and its pullback of the Maurer-Cartan form is 
     \[
-        \begin{pmatrix}
+        \wt{F}^{-1}\dd\wt{F}=\begin{pmatrix}
             0 & -\frac12 \calS_f(z)\\
             -1 & 0
         \end{pmatrix}\dd z,
         \]
     where 
-    \[\calS_f=\frac{f'''}{f'}-\frac32\left(\frac{f''}{f'}\right)^2\]
-    is a differential invariant called the \emph{Schwarzian derivative}.\index{Schwarzian derivative}
+    \[\calS_f=\frac{f'''}{f'}-\frac32\left(\frac{f''}{f'}\right)^2=\left(\ln f'\right)''-\frac12\left((\ln f')'\right)^2.\]
+    is a differential invariant called the \emph{Schwarzian derivative}.\index{Schwarzian derivative} Another canonical frame that can be used to compute this invariant is the following:
+    \[\frake(z)\coloneqq \wt{F}(z)\cdot \begin{pmatrix}
+        -\rmi & 0\\
+        -\rmi z & \rmi 
+    \end{pmatrix}.\]
+    It is an exercise to check that $\frake(z)$ represents the unique \gls{flt} whose $2$-jet at $z$ coincides with that of $f$ (that is, $f(z)$, $f'(z)$, and $f''(z)$ determine this frame). Therefore, $\frake$ is the analog of the Frenet frame for ``complex curves'' in $\CP^1$. The pullback of the Maurer-Cartan form along this frame reads 
+    \[\frake^{-1}\dd\frake=\frac12 \calS_f(z)\begin{pmatrix}
+        -z & 1\\
+        -z^2 & z 
+    \end{pmatrix}\dd z.\]
 \end{example}
 
 \begin{xca}
     \begin{enumerate}
         \item Show that $f$ is an \gls{flt} iff $\calS_f=0$. So, just as the curvature of a curve in $\bbR^2$ measures the failure of the curve to be a line, $\calS_f(z)$ is an infinitesimal measure of the failure of a holomorphic map to be an \gls{flt}. Since \glspl{flt} map circles to circles, $\calS_f$ may be though of as measureing how much circles are distorted under $f$.
         \item Calculate $\calS_f$ for $f(z)=a\rme^{bz}$ and $f(z)=z^n$. How do these compare asymptotically? What does this say about how circles are distorted as one goes out to infinity?
+        \item If $h$ is a \gls{flt}, then $\calS_{h\circ f}=\calS_f$. For arbitrary biholomorphisms (locally invertible holomorphic maps) $f,h$, verify that 
+        \[\calS_{f\circ h}=(h')^2 \calS_f\circ h+\calS_h.\label{schwarzian composition}\]
     \end{enumerate}
 \end{xca}
+
+\begin{rem}[Schwarzian quadratic differential]
+    The appearance of $(h')^2$ in the composition law (\ref{schwarzian composition}) indicates that it may be useful to interpret $\calS_f$ as (the local representative of) a \emph{quadratic differential},\index{Quadratic differential} namely 
+    \[\calS(f)(z)\coloneqq \calS_f\cdot \dd z^{\otimes 2},\] 
+    where $\dd z^{\otimes 2}=\dd z\otimes \dd z$. The above transformation law takes the form 
+    \[\calS(f\circ h)=h^\ast \calS(f)+\calS(h).\]
+    In particular, it is useful to consider the case when $h$ is a biholomorphic change of coordinate, $w=h(z)$. For this, the Schwarzian derivative of $f$ w.r.t.\ a given local coordinate $z$ is denoted by 
+    \[\{f,z\}\coloneqq \calS_f(z).\]
+    Then the transformation law becomes 
+    \[\{f,z\}\dd z^{\otimes 2}=\{f,w\}\dd w^{\otimes 2}+\{w,z\}\dd z^{\otimes 2}.\]
+    Since the second term vanishes for projective changes of coordinates (i.e.\ when $w=h(z)$ is an \gls{flt}), $\calS(f)$ is a projective invariant. This lets us identify this quadratic differential with a canonical global section $\calS(f)$ of a holomorphic \gls{fb} over the domain of $f$ with typical fiber $\CP^1$, provided a fixed projective structure on that domain. 
+    
+    Moreover, this allows us to expand the above discussion to arbitrary \emph{meromorphic functions on a complex projective surface $\Sigma$} (see Example~\ref{ex projective structure}). A meromorphic function is simply a holomorphic map $f:\Sigma\to \CP^1$ (commonly represented by analytic functions with poles), so the above construction produces a well-defined quadratic differential $\calS(f)$ over $\Sigma$. Note that, as long as $f$ is not constant, the quadratic differential is well-defined as meromorphic even at (necessarily isolated) points where $f'=0$. Moreover, $\calS(f)$ is holomorphic iff $f$ is an immersion, i.e.\ $f'\neq 0$.
+    \footnote{The treatment of meromorphic functions as holomorphic might appear confusing at first. For example, the function $f(z)=z^{-1}$ has a pole at zero, so it looks like its derivative is not even well-defined. However, when viewing $w=f(z)$ as a local representative, in local coordinate $w\in\bbC=\CP^1\setminus\{\infty\}$, of a map with values in $\CP^1$, we should pick a local coordinate $\zeta$ on $\CP^1$ near $w=\infty$, for example $\zeta=w^{-1}$. In this local coordinate, $f(z)=z$ and $f'(0)=1$. Thus, in a more careful treatment, we would denote $f$ by different symbols depending on which local charts we are using both on the domain and on $\CP^1$. Similar warnings apply to quadratic differentials and other meromorphic objects. For example, the differential $f(z)\dd z$ on $\bbC$, where $f$ is an analytic function, extends to a holomorphic differential on $\CP^1$ iff $f(z)\dd \frac{1}{w}=-z^2 f(z)\dd w$ stays finite as $w\to \infty$. That is, $f$ needs to decay at infinity at least as fast as $z^2$. }
+    
+    Finally, we can similarly define $\calS(f)$ for arbitrary holomorphic maps between complex projective surfaces, $f:(\Sigma,\calP)\to (\wt\Sigma,\wt\calP)$, by taking projective charts $z$ and $w$ on $\Sigma$ and $\wt\Sigma$, respectively, and defining locally 
+    $\calS(f)(z)\coloneqq \{w\circ f,z\}\dd z^{\otimes 2}.$
+    Once again, this is clearly a globally defined meromorphic quadratic differential on $\Sigma$, and it vanishes iff $f$ is projective, i.e.\ if $f$ is a local isomorphism of the projective structures.
+\end{rem}
+
+\begin{rem}[Quadratic differentials and projective structures]
+    Schwarzian derivatives are useful for quantifying the difference between projective structures on a Riemann surface. Let $\Sigma$ be a Riemann surface and let $\calP,\wt\calP$ be two projective structures on it. Also denote by $\rmQ(\Sigma)$ the vector space of quadratic differentials on $\Sigma$ (i.e.\ sections of the holomorphic line bundle with local frames given by $(\dd z)^2$). Consider the identity map $\id_\Sigma$ and compute its Schwarzian differential with respect to the two projective structures:
+    \[\calS(\id_\Sigma)\in \rmQ(\Sigma).\]
+    As we observed above, this differential vanishes iff $\calP$ and $\wt\calP$ are isomorphic. Moreover, since $\id_\Sigma$ is an immersion, each nonzero holomorphic differential determines a unique deformation of the projective structure: the local representatives of $q\in\rmQ(\Sigma)$ give rise to local biholomorphisms $f(z)$ unique up to an \gls{flt}, and they become the chart maps of the new projective structure. Since the Schwarzian derivative is the only projective invariant, the correspondence between quadratic differentials and changes of the projective structure is bijective. Hence, the difference between two projective structures can be identified with a unique quadratic differential. This proves that the set of all projective structures on $\Sigma$ is an affine space modeled on $\rmQ(\Sigma)$.
+\end{rem}
+
 
 
 
@@ -2592,7 +2673,7 @@ and the corresponding differential equations are
 \[u^a_{x^\rho}-C^a_{\rho b}u^b_{x^1}=0,\quad \rho=2,\ldots,n.\label{eq 5.6 Ivey}\]
 We saw that when $C_\rho= 0$ for all $\rho$, any convergent series with coefficients $p_1^a,p_{11}^a,p^a_{111},\ldots $ determines a solution $u$. The hope is that under some conditions the solutions to (\ref{eq 5.6 Ivey}) can be given in terms of $s$ arbitrary functions of one variable, and will see that this is the largest space of solutions one could hope for.
 
-Assume we are given constants $p_1^a,p_{11}^a,p^a_{111},\ldots $. Then we may determine the remaining $p^a_I$ for any multi-index $I=(i_1,\ldots,i_k)$ as follows: to have $(p^a_i\otimes \partial_{u^a}\otimes \dd x^i)\in A$, the terms $p^a_\rho$ must be given by $p^a_\rho=C^a_{\rho b}p^b_1$. To have $(p^a_{ij}\partial_{u^a}\otimes \dd x^i\dd x^j)\in A^{(1)}$, the other terms are determined by the $p^a_{11}$:
+Assume we are given constants $p_1^a,p_{11}^a,p^a_{111},\ldots $. Then we may determine the remaining $p^a_I$ for any multi-index $I=(i_1,\ldots,i_k)$ as follows: to have $(p^a_i \partial_{u^a}\otimes \dd x^i)\in A$, the terms $p^a_\rho$ must be given by $p^a_\rho=C^a_{\rho b}p^b_1$. To have $(p^a_{ij}\partial_{u^a}\otimes \dd x^i\dd x^j)\in A^{(1)}$, the other terms are determined by the $p^a_{11}$:
 \begin{align}
     p^a_{\rho 1}=&C^a_{\rho b}p^b_{11},\\
     p^a_{\rho\sigma}=&C^a_{\rho b}p^b_{\sigma 1}=C^a_{\rho b}C^b_{\sigma c}p^c_{11},\quad 2\leq \sigma\leq n.
@@ -4826,7 +4907,7 @@ In particular, if $\sigma$ is injective (faithful), then $\Hol_m(\calH E)$ and $
 \end{cor}
 
 
-Denote the subspace of sections of $E$ that are parallel with respect to $\calH^E$ by $\mathscr{P}(E,\calH E)$.  We now show that the holonomy group of $\omega^E$ can be used to characterize the set $\mathscr{P}(E,\calH E)$ of parallel sections. Given $p\in P$, and element of $F$ is called holonomy-invariant if it is invariant under the restriction of the action $\sigma$ to the holonomy group $\Hol_p(\omega)$.
+Denote the subspace of sections of $E$ that are parallel with respect to $\calH E$ by $\mathscr{P}(E,\calH E)$.  We now show that the holonomy group of $\omega^E$ can be used to characterize the set $\mathscr{P}(E,\calH E)$ of parallel sections. Given $p\in P$, and element of $F$ is called holonomy-invariant if it is invariant under the restriction of the action $\sigma$ to the holonomy group $\Hol_p(\omega)$.
 
 \begin{prop}[Holonomy principle {{\cite[Prop.~1.7.20]{RS2}}}]\label{prop 1.7.20 RS2 holonomy principle}
     If $M$ is connected, then there is a bijection between $\mathscr{P}(E,\calH E)$ and the space of holonomy-invariant points in $F$.
@@ -4849,8 +4930,7 @@ Denote the subspace of sections of $E$ that are parallel with respect to $\calH^
 
 
 
-\begin{example}[Canonical connections on a Lie group, part 2]\label{ex connections on G, part 2}
-    We continue Example~\ref{ex connections on G, part 1}.
+\begin{example}[\ref{ex connections on G, part 1}  continued]\label{ex connections on G, part 2}
     Clearly $\omega^{\pm 1}$ are the only two flat canonical connections, so they have trivial holonomy. Conversely, for $\lambda\neq\pm 1$, and assuming $G$ is simple (in particular, $[G,G]=G$), the values of $\Omega^\lambda$ span all of $\frakg$, and therefore, by the Ambrose-Singer Theorem, all holonomy groups are all of $G$, so the connections are irreducible.
 
     For each $\lambda$ we get an induced linear connection $\nabla^\lambda$ on the associated bundle $P\times_G \frakg$, where $G$ acts on $\frakg$ via the adjoint representation. Via the isomorphism $\vartheta:TG\to P\times_G \frakg$ defined in Example~\ref{ex TG, part 1}, we identify $\nabla^\lambda$ with a connection on $TG$. We would like to characterize parallel vector fields under this connection. Note that, by the Holonomy Principle, such vector fields correspond to holonomy-invariant elements of $\frakg$, and under the assumption that $[G,G]=G$, nonzero holonomy-invariant elements exist only if $\lambda=\pm 1$, and the connection is irreducible. Therefore we focus on these two connections, called $\nabla^+$ and $\nabla^-$.
@@ -5402,8 +5482,8 @@ where $\varphi\in\Gamma^\infty(P\times_G V)$ is the corresponding section.  The 
 
 
 
-\begin{example}[Canonical connections on a Lie group, part 3]\label{ex connections on G, part 3}
-    We pick up Example~\ref{ex connections on G, part 2}. For each $\lambda$ we get an induced linear connection $\nabla^\lambda$ on $P\times_G \frakg$, which we identify with $TG$ by means of the isomorphism $\vartheta$ described in Example~\ref{ex TG, part 1}. 
+\begin{example}[\ref{ex connections on G, part 2} continued]\label{ex connections on G, part 3}
+    For each $\lambda$ we get an induced linear connection $\nabla^\lambda$ on $P\times_G \frakg$, which we identify with $TG$ by means of the isomorphism $\vartheta$ described in Example~\ref{ex TG, part 1}. 
 
     Since left-invariant vector fields form a global frame for $TG$, it suffices to compute it for left-invariant fields. The derivative of arbitrary vector fields can then be computed by linearity and via the Leibniz rule. Let $A,B\in\frakg$ and let $A_L,B_L\in\fX(G)$ be the corresponding left-invariant vector fields. 
     For each $B\in\frakg$ we then have a unique equivariant function $\wt{B}_L:G\times G\to \frakg$ which we identified in Example~\ref{ex TG, part 2}:
@@ -5743,8 +5823,8 @@ Finally, $\nabla$ induces parallel transports on all tensor bundles $T^r_s M$, a
 
 
 
-\begin{example}[Canonical connections on a Lie group, part 4]\label{ex connections on G, part 4}
-    We continue Example~\ref{ex connections on G, part 3} and compute the torsion form of $\omega^\lambda$. First, since we are not dealing with a regular frame bundle, we need to pick a soldering form on $P$. This needs to be a $\frakg$-valued horizontal $1$-form of type $\Ad$ whose induced bundle morphism $TM\to P\times_G \frakg$ is an isomorphism. Luckily we have already constructed exactly such a form $\theta$ in Example~\ref{ex TG, part 3}, given by $\theta=\pr_1^\ast\theta_G-\pr_2^\ast\theta_G$. 
+\begin{example}[\ref{ex connections on G, part 3} continued]\label{ex connections on G, part 4}
+    We compute the torsion form of $\omega^\lambda$. First, since we are not dealing with a regular frame bundle, we need to pick a soldering form on $P$. This needs to be a $\frakg$-valued horizontal $1$-form of type $\Ad$ whose induced bundle morphism $TM\to P\times_G \frakg$ is an isomorphism. Luckily we have already constructed exactly such a form $\theta$ in Example~\ref{ex TG, part 3}, given by $\theta=\pr_1^\ast\theta_G-\pr_2^\ast\theta_G$. 
     Using the formula for the covariant exterior derivative from Proposition~\ref{prop 1.4.3 RS2} in conjunction with the expressions we have obtained for $\omega^\lambda$ and $\theta$, and also using the fact that the wedge product of $\frakg$-valued $1$-forms is commutative, we find
     \[\Theta=D^\lambda \theta=\dd \theta+\omega^\lambda\wedge \theta=\lambda[\theta,\theta].\]
 
@@ -5764,7 +5844,7 @@ Finally, $\nabla$ induces parallel transports on all tensor bundles $T^r_s M$, a
     \[\wt\gamma^-(1)=\int_0^1 \theta_G(\dot\gamma(s))\dd s=\oint_\gamma \theta_G.\]
     Now suppose $\gamma$ is nullhomotopic and $S$ is a 2-dimensional submanifold of $G$ such that $\partial S=\im(\gamma)$. Then, using the Stokes' theorem and the Maurer-Cartan equation, we have
     \[\wt\gamma^-(1)=-\frac12\int_S [\theta_G,\theta_G]=\int_S \theta_G\circ \sfT^-.\]
-    This formula is also true for $\sfT^+$ if $\wt\gamma^+$ is defined using right translations. Here, $\theta_G$ merely acts so that the values of the integrand belong to one vector space ($\frakg$). In local coordinates, this integral is proportional to the value of $\sfT^-$ at the identity times the area of $S$. This result, in fact, holds for arbitrary affine connections (although in general there is no analog of $\theta_G$ that can transport all values of $\sfT$ to one point, so the general formula can only be written in local coordinates). Therefore, torsion can be interpreted as the ``displacement of the origin'' of a tangent space as it is being \emph{rolled without slipping}\index{Rolling without slipping} along an infinitesimal loop (this is easier to imagine as $M$ rolling on $\bbR^n$ so that the point of contact follows $\gamma$). For this reason the soldering form $\theta$ is also sometimes called the \emph{displacement form}.\index{Displacement form} This interpretation will be clarified and generalized in Cartan geometry.
+    This formula is also true for $\sfT^+$ if $\wt\gamma^+$ is defined using right translations. Here, $\theta_G$ merely acts so that the values of the integrand belong to one vector space ($\frakg$). In local coordinates, this integral is proportional to the value of $\sfT^-$ at the identity times the area of $S$. This result, in fact, holds for arbitrary affine connections (although in general there is no analog of $\theta_G$ that can transport all values of $\sfT$ to one point, so the general formula can only be written in local coordinates). Therefore, torsion can be interpreted as the ``displacement of the origin'' of a tangent space as it is being \emph{rolled without slipping}\index{Rolling without slipping} along an infinitesimal loop (this is easier to imagine as $M$ rolling on $\bbR^n$ so that the point of contact follows $\gamma$). For this reason the soldering form $\theta$ is also sometimes called the \emph{displacement form}.\index{Displacement form} This interpretation will be clarified and generalized in Cartan geometry. We return to these connections in Example~\ref{ex connections on G, part 5}.
 \end{example}
 
 
@@ -5942,8 +6022,8 @@ We say that an affine connection $\calH M$ on $M$ is complete if every geodesic 
 
 
 
-\begin{example}[Canonical connections on a Lie group, part 5]\label{ex connections on G, part 5}
-    Picking up Example~\ref{ex connections on G, part 4}, recall that the soldering form on $P=G\times G$ was defined as $\theta=\pr_1^\ast\theta_G-\pr_2^\ast\theta_G$. Thus, given $A\in\frakg$, the frame $(g_1,g_2)\in P$ maps $A$ to the tangent vector 
+\begin{example}[\ref{ex connections on G, part 4} continued]\label{ex connections on G, part 5}
+    Recall that the soldering form on $P=G\times G$ was defined as $\theta=\pr_1^\ast\theta_G-\pr_2^\ast\theta_G$. Thus, given $A\in\frakg$, the frame $(g_1,g_2)\in P$ maps $A$ to the tangent vector 
     \[\iota_{(g_1,g_2)}^\vartheta(A)=\vartheta^{-1}\left([(g_1,g_2),A]\right)=L_{g_1g_2^{-1}\ast}\Ad_{g_2}A=L_{g_1\ast}R_{g_2\ast}^{-1}A.\]
     Then the horizontal lift of this vector under the connection $\omega^\lambda$ is 
     \[B^\lambda(A)_{(g_1,g_2)}=(L_{g_1\ast}R_{g_2\ast}^{-1}A)_{(g_1,g_2)}^h=\left(\frac{1-\lambda}{2}L_{g_1\ast}A, \frac{-1-\lambda}{2}L_{g_2\ast}A\right)\]
@@ -6603,8 +6683,8 @@ The most basic example of a homogeneous principal bundle is of course the bundle
 \end{proof}
 
 
-\begin{example}[Canonical connections on a Lie group, part 6]\label{ex connections on G, part 6}
-    Going back to Example~\ref{ex connections on G, part 1}, 
+\begin{example}[\ref{ex connections on G, part 5} continued]\label{ex connections on G, part 6}
+    Going back all the way to Example~\ref{ex connections on G, part 1}, 
     let us assume that $G$ is a simple Lie group and classify all invariant connections on $P=G\times G\to G$. This corresponds to the above theorem with the substitutions $G\to G\times G$, $H\to G$, $K\to G$, and $\lambda\to\id_G$. Thus, we are looking for maps  $\Lambda:\frakg\times\frakg\to\frakg$, such that $\Lambda(A,A)=A$ for all $A\in\frakg$ and 
     \[\Lambda(\Ad_{g} A,\Ad_{g}B)=\Ad_g\Lambda(A,B)\]
     for all $A,B\in\frakg$. In particular, $\Lambda(\Ad_g A,0)=\Ad_g \Lambda(A,0)$. Since $G$ is simple, its adjoint representation is irreducible and by Schur's Lemma the only equivariant maps on it are multiplications by a scalar. The same applies to $\Lambda(0,B)$. Since $\Lambda(A,A)=\Lambda(A,0)+\Lambda(0,A)$ must equal $A$, we conclude that there is a $\lambda\in\bbR$ such that 
@@ -6718,10 +6798,12 @@ to get the following classical theorem.
 \end{cor}
 
 
-\begin{example}[Invariant connections on affine space]
-    Invariant connections on the affine space $\Aff_n(\bbR)\slash \GL_n(\bbR)$, using the canonical reductive decomposition $\fraka_n=\frakgl_n\oplus \bbR^n$, correspond to elements of $\Hom(\bbR^n\otimes \bbR^n,\bbR^n)$, i.e.\ tensors of rank $(1,2)$. Clearly this is just the constant Christoffel tensor $\Gamma^i{}_{jk}$. The Lie brackets of elements of $\frakm=\bbR^n$ vanish, so torsion and curvature are 
+\begin{example}[Invariant connections on an affine space]
+    Invariant connections on the affine space $\rmA(\bbR^n)=\Aff_n(\bbR)\slash \GL_n(\bbR)$, using the canonical reductive decomposition $\fraka_n=\frakgl_n\oplus \bbR^n$, correspond to elements of $\Hom(\bbR^n\otimes \bbR^n,\bbR^n)$, i.e.\ tensors of rank $(1,2)$. Clearly this is just the constant Christoffel tensor $\Gamma^i{}_{jk}$. The Lie brackets of elements of $\frakm=\bbR^n$ vanish, so torsion and curvature are 
     \[\sfT^i{}_{jk}=\Gamma^i{}_{jk}-\Gamma^i{}_{kj},\quad \sfR^i{}_{jkl}=\Gamma^m{}_{kl}\Gamma^i{}_{jm}-\Gamma^m{}_{jl}\Gamma^i{}_{km}.\] 
-    Note that this curvature tensor is not zero even though the connection appears ``flat'' in the sense of being constant across space. The fact that it's not flat has to do with the inexistence of parallel sections. The condition for this metric to be compatible with an invariant metric $\sfg$ (constant in space) is $\Gamma_{ijk}+\Gamma_{kji}=0$. If, in addition, it is torsion-free, then $\Gamma_{ijk}=\Gamma_{ikj}$. Even these two formulas do not yet imply that the curvature tensor vanishes. However, to be not just compatible with a metric, but an actual metric connection, the Christoffel form $\Gamma$ needs to be $\frakso_n$-valued, i.e.\ antisymmetric in the first two indices: $\Gamma_{ijk}+\Gamma_{jik}=0$. Thus, compatibility and orthogonality imply that Christoffel symbols are antisymmetric under the index permutations $(13)$ and $(12)$, respectively, whereas the torsion-free condition makes them symmetric under $(23)$. Together, these conditions force every invariant Levi-Civita connection on the affine space to be trivial, $\Gamma_{ijk}=0$.
+    Note that this curvature tensor is not zero even though the connection appears ``flat'' in the sense of being constant across space. The fact that it's not flat has to do with the inexistence of parallel sections. The condition for this metric to be compatible with an invariant metric $\sfg$ (constant in space) is $\Gamma_{ijk}+\Gamma_{kji}=0$. If, in addition, it is torsion-free, then $\Gamma_{ijk}=\Gamma_{ikj}$ (here, following Einstein's convention, $\Gamma_{ijk}\coloneqq \sfg_{il}\Gamma^l{}_{jk}$). Even these two formulas do not yet imply that the curvature tensor vanishes. However, to be not just compatible with a metric, but an actual metric connection, the Christoffel form $\Gamma$ needs to be $\frakso_n$-valued, i.e.\ antisymmetric in the first two indices: $\Gamma_{ijk}+\Gamma_{jik}=0$. Thus, compatibility and orthogonality imply that Christoffel symbols are antisymmetric under the index permutations $(13)$ and $(12)$, respectively, whereas the torsion-free condition makes them symmetric under $(23)$. Together, these conditions force every invariant Levi-Civita connection on the affine space to be trivial, $\Gamma_{ijk}=0$.
+
+    In summary, we have established the counter-intuitive fact of the existence of translation-invariant torsion-free non-flat connections, and the reason they are hard to visualize is that they are not metric connections.
 \end{example}
 
 If we want to study left-invariant connections on a Lie group $G$, then we take $H=\{e\}$, and the above result puts no restriction on the Nomizu map $\nu$.
@@ -6771,9 +6853,9 @@ Hence, the curvature and the torsion are induced by the $\frakh$-component, resp
 
 \begin{example}
     We show that in general there is no invariant affine connection on a homogeneous space. Consider the projective sphere from Section~\ref{sec: projective, conformal CR spheres}. We know that for $\alpha\in (\bbR^n)^\ast$, the element $h\coloneqq \left(\begin{smallmatrix}
-        1&\alpha \\ 0& I_n
+        1&\alpha \\ 0& \rmI_n
     \end{smallmatrix}\right)$
-    lies in $H$, where $I_n$ is the $n\times n$ identity matrix. For $\bf{x}\in\bbR^n$ one gets 
+    lies in $H$, where $\rmI_n$ is the $n\times n$ identity matrix. For $\bf{x}\in\bbR^n$ one gets 
     \[\Ad_h \begin{pmatrix}
         0&0\\ \bf{x}&0
     \end{pmatrix}=
@@ -6899,7 +6981,7 @@ for all $h\in H$.
 \end{example}
 
 \begin{example}
-    The next simplest examples are locally Klein geometries $G\to \Gamma\bslash G\slash H$, where $\Gamma<G$ is a discrete subgroup that acts on $G\slash H$ by left translations. Then $\Gamma$ acts on $G$ by deck transformations and hence isomorphisms of the Cartan geometry. Since $G\to \Gamma\bslash G$ is a covering map, it is a local diffeomorphism, and we can push the Cartan structure forward to the $H$-bundle $\Gamma\bslash \to \Gamma\bslash G\slash H$. This is still a flat Cartan geometry.
+    The next simplest examples are locally Klein geometries $G\to \Gamma\bslash G\slash H$, where $\Gamma<G$ is a discrete subgroup that acts on $G\slash H$ by left translations. Then $\Gamma$ acts on $G$ by deck transformations and hence isomorphisms of the Cartan geometry. Since $G\to \Gamma\bslash G$ is a covering map, it is a local diffeomorphism, and we can push the Cartan structure forward to the $H$-bundle $\Gamma\bslash G \to \Gamma\bslash G\slash H$. This is still a flat Cartan geometry.
 \end{example}
 
 
@@ -7042,7 +7124,7 @@ Since the homogeneous model $(G,H)$ will usually be fixed, we will sometimes abb
 
 
 
-We will now examine the connection between Cartan connections and principal connections. Recall that, by Theorem~\ref{thm 1.4.5 Cap}, invariant principal connections on induced principal bundles $G^{[\lambda]}\to G\slash H$, where $\lambda:H\to K$ is a homomorphism, are in correspondence with linear maps $\Lambda:\frakg\to\frakk$ that satisfy two conditions. Given such a map, we can construct a functor from the category $\Car_{(G,H)}$ of Cartan geometries to the category of principal bundles with principal connections. First observe that there is the canonical map $\iota_e:P\to P^{[\lambda]}$ give, as usual, by $\iota_e(p)=[(p,e)]$, where $e\in K$ is the identity. 
+We will now examine the connection between Cartan connections and principal connections. Recall that, by Theorem~\ref{thm 1.4.5 Cap}, invariant principal connections on induced principal bundles $G^{[\lambda]}\to G\slash H$, where $\lambda:H\to K$ is a homomorphism, are in correspondence with linear maps $\Lambda:\frakg\to\frakk$ that satisfy two conditions. Given such a map, we can construct a functor from the category $\Car_{(G,H)}$ of Cartan geometries to the category of principal bundles with principal connections. First observe that there is the canonical map $\iota_e:P\to P^{[\lambda]}$ given, as usual, by $\iota_e(p)=[(p,e)]$, where $e\in K$ is the identity. 
 
 
 \begin{thm}[{{\cite[Thm.~1.5.6]{Cap}}}]\label{thm 1.5.6 Cap}
