@@ -4272,7 +4272,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     -\rmi\lambda\begin{pmatrix}
         pq & \rmi p_x\\
         \i q_x & -pq
-    \end{pmatrix},
+    \end{pmatrix},\label{eq AKNS UV pair}
     \]
     where $p(x,t;\lambda),q(x,t;\lambda)\in\bbC$. The zero curvature condition then leads to the \emph{AKNS system} on $q$ and $p$:
     \[
@@ -4281,8 +4281,8 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
             -\i q_t+q_{xx}-2q^2p= &0.
         \end{cases}    
     \]
-    Under the so called self-adjoint reduction $p=-\wb{q}\eqqcolon \psi$ this system turns into the standard \emph{Nonlinear Schr\"odinger} (NLS) equation on $\psi$, of great importance in optics:\index{Equation!Nonlinear Sch\"odinger}
-    \[\rmi\psi_t+\psi_{xx}+2|\psi|^2\psi=0.\]\index{Equation!Nonlinear Schr\"odinger}\index{Equation!AKNS}
+    Under the so called self-adjoint reduction $p=-\wb{q}\eqqcolon \psi$ this system turns into the standard \emph{Nonlinear Schr\"odinger} (NLS) equation on $\psi$, of great importance in optics:\index{Equation!Nonlinear Sch\"odinger}\index{Equation!AKNS}
+    \[\rmi\psi_t+\psi_{xx}+2|\psi|^2\psi=0.\]
 \end{example}
 
 \begin{example}[Lax pairs]\label{ex Lax pairs}\index{Lax pair}
@@ -4352,8 +4352,8 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     \[L=-\partial_x^2+u.\]
     The simplest choice of $A$ is $A=-c\partial_x$ with a constant $c$, which leads to the \emph{1D advection equation}
     \[A=-c\partial_x\quad \Rightarrow \quad u_t+c u_x=0.\]
-    The following choice of $A$ leads to the celebrated solitonic \emph{Korteweg-de~Vries} (KdV) equation:\index{Equation!Korteweg-de~Vries}
-    \[A=-4\partial_x^3+6u\partial_x+3u_x\quad \Rightarrow\quad u_t-6uu_x+u_{xxx}=0.\]
+    The following choice of $A$ leads to the celebrated solitonic \gls{kdv} equation:\index{Equation!Korteweg-de~Vries}
+    \[A=-4\partial_x^3+6u\partial_x+3u_x\quad \Rightarrow\quad u_t-6uu_x+u_{xxx}=0.\label{eq kdv}\]
 \end{example}
 
 
@@ -4383,7 +4383,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     Let $V$ be a $\bbK$-vector space. The alternation and symmetrization maps are defined on the tensor space $T^k V=(V)^{\otimes k}$ respectively as
     \begin{align}
         \Alt t&=\frac{1}{k!}\sum_{\sigma\in S_k} (\sign\sigma)\cdot t^\sigma,\\
-        \Sym t&=\frac{1}{k!}\sum_{\sigma\in S_k} t^\sigma,
+        \Sym t&=\frac{1}{k!}\sum_{\sigma\in S_k} t^\sigma,\label{def sym operator}
     \end{align}
     where $S_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $T^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(T^k V)$ and $\rmS^k V=\Sym(T^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
     
@@ -4573,7 +4573,7 @@ Recall that for $f\in C^\infty(M)$, $\dd f=\pr_2\circ f_\ast$, where $\pr_2$ is 
 Suppose the existence of $\wt\dd$ is established. Then let us consider its action on differential forms of the form $f_0\cdot \dd f_1\wedge \cdots \wedge \dd f_p$ where $f_i\in C^\infty(M)$ (such forms span the entire space $\Omega^p(M)$). Using the properties (1)-(3), we find
 \[\wt\dd (f_0\cdot \dd f_1\wedge \cdots \wedge \dd f_p)\overset{(1),(3)}{=}(\wt\dd f_0) \wedge \dd f_1\wedge \cdots \wedge \dd f_p\overset{(2)}{=}(\partial_i f_0)\cdot \dd x^i\wedge \dd f_1\wedge \cdots \wedge \dd f_p.\]
 This formula in fact completely determines the action of $\wt\dd$ on all differential forms! Namely, if locally $\omega$ is expressed as (\ref{eq local rep of a p-form}), then
-\[\wt\dd \omega =\sum_{i_0=1}^n\sum_{1\leq i_1<\cdots <i_p\leq n}\partial_{i_0}\omega_{i_1 i_2\cdots i_p}\cdot \dd x^{i_0}\wedge \dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}.\]
+\[\wt\dd \omega =\sum_{i_0=1}^n\sum_{1\leq i_1<\cdots <i_p\leq n}\partial_{i_0}\omega_{i_1 i_2\cdots i_p}\cdot \dd x^{i_0}\wedge \dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}.\label{eq local formula for d}\]
 This formula is in fact coordinate-independent and therefore defines a true differential operator on the algebra of differential forms. All four properties immediately follow (Exercise; only property 3 is nontrivial). This proves the existence and uniqueness.
 \end{proof}
 
@@ -4848,35 +4848,35 @@ where the integral on the right-hand side is the standard Riemann integral of a 
 
 Now we can use local charts and the invariance of differentials to define integrals of top forms on oriented manifolds.
 
-\begin{defn}
-Let $M$ be an oriented $n$-manifold (with or without a boundary) and let $\{U_\alpha,\varphi_\alpha\}$ be a positively oriented atlas for it (i.e.\ all $\varphi_\alpha$'s are orientation-preserving, where the standard orientation on $\bbR^n$ is assumed). If $\omega\in\Omega^n(M)$ and $\supp\omega\subset U_\alpha$, then we define
-\[\int_M \omega= \int_{U_\alpha}\omega \coloneqq \int_{\varphi_\alpha( U_\alpha)}(\varphi_\alpha)_\ast \omega.\]
-Finally, letting $\{\chi_\alpha\}$ be a \gls{pou} subordinate to the atlas, we define for all $\omega\in\Omega^n(M)$
-\[\int_M \omega\coloneqq \sum_\alpha \int_{U_\alpha}\chi_\alpha\cdot\omega.\]
-Also, if the dimension is zero, $m=0$, we define integrals of functions (zero-forms) on $M$ as $\int_{M^0}f=\sum_{p\in M}(\pm f(p))$, where the sign in front of $f(p)$ depends of on the orientation of the corresponding point.
+\begin{defn}[Integral of a top form]
+    Let $M$ be an oriented $n$-manifold (with or without a boundary) and let $\{U_\alpha,\varphi_\alpha\}$ be a positively oriented atlas for it (i.e.\ all $\varphi_\alpha$'s are orientation-preserving, where the standard orientation on $\bbR^n$ is assumed). If $\omega\in\Omega^n(M)$ and $\supp\omega\subset U_\alpha$, then we define
+    \[\int_M \omega= \int_{U_\alpha}\omega \coloneqq \int_{\varphi_\alpha( U_\alpha)}(\varphi_\alpha)_\ast \omega.\]
+    Finally, letting $\{\chi_\alpha\}$ be a \gls{pou} subordinate to the atlas, we define for all $\omega\in\Omega^n(M)$
+    \[\int_M \omega\coloneqq \sum_\alpha \int_{U_\alpha}\chi_\alpha\cdot\omega.\]
+    Also, if the dimension is zero, $m=0$, we define integrals of functions (zero-forms) on $M$ as $\int_{M^0}f=\sum_{p\in M}(\pm f(p))$, where the sign in front of $f(p)$ depends of on the orientation of the corresponding point.
 \end{defn}
 
 
 \begin{prop}
-The above definition is consistent, i.e.\ independent of the choice of atlas and of the choice of \gls{pou}.
+    The above definition is consistent, i.e.\ independent of the choice of atlas and of the choice of \gls{pou}.
 \end{prop}
 \begin{proof}
-The integral is independent of the atlas by invariance of integrals on $\bbR^n$. Namely, if $\psi_\alpha$ is an alternative chart on $U_\alpha$, then
-\[\int_{\varphi_\alpha(U_\alpha)}\varphi_{\alpha\ast}\omega=\int_{\psi_\alpha(U_\alpha)}\psi_{\alpha\ast}\omega\]
-by the standard theorem from calculus: Riemann integrals are invariant under changes of variables (if the orientation is taken into account), in this case $x\mapsto \psi_\alpha\circ\varphi_\alpha^{-1}(x)$.
+    The integral is independent of the atlas by invariance of integrals on $\bbR^n$. Namely, if $\psi_\alpha$ is an alternative chart on $U_\alpha$, then
+    \[\int_{\varphi_\alpha(U_\alpha)}\varphi_{\alpha\ast}\omega=\int_{\psi_\alpha(U_\alpha)}\psi_{\alpha\ast}\omega\]
+    by the standard theorem from calculus: Riemann integrals are invariant under changes of variables (if the orientation is taken into account), in this case $x\mapsto \psi_\alpha\circ\varphi_\alpha^{-1}(x)$.
 
-Furthermore, if $\xi_\alpha$ is a different \gls{pou} subordinate to the same atlas, then
-\[\sum_\alpha\int_{U_\alpha}\chi_\alpha\omega=\sum_\beta\sum_\alpha\int \xi_\beta\chi_\alpha\omega=\sum_\beta\int_{U_\beta}\xi_\beta\omega,\]
-which proves independence on the \gls{pou}.
+    Furthermore, if $\xi_\alpha$ is a different \gls{pou} subordinate to the same atlas, then
+    \[\sum_\alpha\int_{U_\alpha}\chi_\alpha\omega=\sum_\beta\sum_\alpha\int \xi_\beta\chi_\alpha\omega=\sum_\beta\int_{U_\beta}\xi_\beta\omega,\]
+    which proves independence on the \gls{pou}.
 
-Finally, it is easy to combine the two arguments above to show that the integral is invariant when both the atlas and the \gls{pou} get replaced (Exercise).
+    Finally, it is easy to combine the two arguments above to show that the integral is invariant when both the atlas and the \gls{pou} get replaced (Exercise).
 \end{proof}
 
 
 \begin{prop}[Invariance of integrals]
-For a diffeomorphism $f:M\to N$ between two oriented manifolds,
-\[\int_M f^\ast \omega=\sign(\det f) \int_N \omega.\]
-The sign of the determinant here is computed with respect to any two positive volume forms on $M$ and $N$.
+    For a diffeomorphism $f:M\to N$ between two oriented manifolds,
+    \[\int_M f^\ast \omega=\sign(\det f) \int_N \omega.\]
+    The sign of the determinant here is computed with respect to any two positive volume forms on $M$ and $N$.
 \end{prop}
 \begin{proof}
 Exercise.
@@ -4884,47 +4884,99 @@ Exercise.
 
 
 \begin{thm}[Stokes]
-Let $M^n$ be an oriented manifold with or without a boundary, let $\omega\in \Omega^{n-1}(M)$ be a form with \emph{compact support}. Let $i:\partial M\hookrightarrow M$ be the embedding inclusion of the boundary. Then $i^\ast\omega\in\Omega^{n-1}(\partial M)$, which can be treated as the restriction of $\omega$  to $\partial M$, satisfies
-\[\int_{\partial M}i^\ast \omega=\int_M \dd \omega,\]
-where the orientation on $\partial M$ is induced from $M$ by the outward normals.
+    Let $M^n$ be an oriented manifold with or without a boundary, let $\omega\in \Omega^{n-1}(M)$ be a form with \emph{compact support}. Let $i:\partial M\hookrightarrow M$ be the embedding inclusion of the boundary. Then $i^\ast\omega\in\Omega^{n-1}(\partial M)$, which can be treated as the restriction of $\omega$  to $\partial M$, satisfies
+    \[\int_{\partial M}i^\ast \omega=\int_M \dd \omega,\]
+    where the orientation on $\partial M$ is induced from $M$ by the outward normals.
 \end{thm}
 \begin{proof}
-By coordinate-independence of integrals, it suffices to prove the theorem for $M=U\mathring\subset \bbR^n_+$ and $\omega$ with compact support in $U$. We can write
-\[\omega=\sum_{i=1}^{n-1}\omega_i \dd x^1\wedge\cdots \wedge \widehat{\dd x^i}\wedge \cdots\wedge \dd x^n,\]
-where the hat again indicates exclusion. Then
-\[\dd \omega=\sum_{i=1}^n (-1)^{i-1}\partial_i\omega_i \dd x^1\wedge\cdots\wedge\dd x^n,\]
-and 
-\[\int_U \dd\omega=\sum_{i=1}^n(-1)^{i-1}\int_U \partial_i\omega_i\dd x^1\cdots\dd x^n.\]
-If $\partial U=\varnothing$, the answer is zero by compactness of support. If $\partial U\neq\varnothing$, then
-\[\int_{\bbR^{n-1}}\left(\int_0^\infty \partial_n\omega_n\dd x^n\right)\dd x^1\cdots\dd x^n=-\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1},\]
-and therefore 
-\[\int_U \dd\omega=(-1)^n\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}.\]
-On the other hand, $\int_{\partial U}\omega=\int_{\partial \bbR^n_+}\omega=\int_{\partial \bbR^n_+}\omega(x^1,\ldots,x^{n-1},0)\dd x^1\cdots \dd x^{n-1}$ and the outward normal on $\partial U$ is $-\bf{e}_n=(0,\ldots,0,-1)$, therefore the induced orientation is $\det(-\bf{e}_n,\bf{e}_1,\ldots,\bf{e}_{n-1})=(-1)^n$, so
-\[\int_{\partial U}i^\ast\omega=(-1)^{n}\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}=\int_U \dd\omega.\]
+    By coordinate-independence of integrals, it suffices to prove the theorem for $M=U\mathring\subset \bbR^n_+$ and $\omega$ with compact support in $U$. We can write
+    \[\omega=\sum_{i=1}^{n-1}\omega_i \dd x^1\wedge\cdots \wedge \widehat{\dd x^i}\wedge \cdots\wedge \dd x^n,\]
+    where the hat again indicates exclusion. Then
+    \[\dd \omega=\sum_{i=1}^n (-1)^{i-1}\partial_i\omega_i \dd x^1\wedge\cdots\wedge\dd x^n,\]
+    and 
+    \[\int_U \dd\omega=\sum_{i=1}^n(-1)^{i-1}\int_U \partial_i\omega_i\dd x^1\cdots\dd x^n.\]
+    If $\partial U=\varnothing$, the answer is zero by compactness of support. If $\partial U\neq\varnothing$, then
+    \[\int_{\bbR^{n-1}}\left(\int_0^\infty \partial_n\omega_n\dd x^n\right)\dd x^1\cdots\dd x^n=-\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1},\]
+    and therefore 
+    \[\int_U \dd\omega=(-1)^n\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}.\]
+    On the other hand, $\int_{\partial U}\omega=\int_{\partial \bbR^n_+}\omega=\int_{\partial \bbR^n_+}\omega(x^1,\ldots,x^{n-1},0)\dd x^1\cdots \dd x^{n-1}$ and the outward normal on $\partial U$ is $-\bf{e}_n=(0,\ldots,0,-1)$, therefore the induced orientation is $\det(-\bf{e}_n,\bf{e}_1,\ldots,\bf{e}_{n-1})=(-1)^n$, so
+    \[\int_{\partial U}i^\ast\omega=(-1)^{n}\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}=\int_U \dd\omega.\]
 \end{proof}
 \begin{rem}
     The classical Stokes theorem for line integrals in $3$ dimensions is just the special case of this theorem for $1$-forms $\omega$. Similarly, the Gauss-Ostrogradskii theorem (a.k.a.\ divergence theorem, or Gauss law in physics) is the special case for integrals of $2$-forms. In fact, even Cauchy's residue theorem in complex analysis can be obtained as an application of the Stokes theorem.
 \end{rem}
 \begin{cor}
-If $M$ is compact and $\partial M=\varnothing$, then for any $\alpha\in\Omega^p(M)$, $\beta\in\Omega^{n-p}(M)$, and $X\in\fX(M)$ the following version of integration by parts holds:
-\[\int_M (\Lie_X \alpha)\wedge\beta=-\int_M \alpha\wedge\Lie_X\beta.\]
+    If $M$ is a \emph{closed} manifold\index{Closed manifold} (compact and $\partial M=\varnothing$), then for any $\alpha\in\Omega^p(M)$, $\beta\in\Omega^{n-p}(M)$, and $X\in\fX(M)$ the following version of integration by parts holds:
+    \[\int_M (\Lie_X \alpha)\wedge\beta=-\int_M \alpha\wedge\Lie_X\beta.\]
 \end{cor}
 \begin{proof}
-We use the fact that $\Lie_X$ is a derivation and Cartan's magic formula:
-$\int_M (\Lie_X\alpha)\wedge\beta+\alpha\wedge\Lie_X\beta=\int_M \Lie_X (\alpha\wedge\beta)=\int_M (\dd i_X+i_X\dd)(\alpha\wedge\beta)=\int_M i_X \dd(\alpha\wedge\beta).$
-But the exterior derivative of any top form is zero, so $\dd(\alpha\wedge\beta)=0$.
+    We use the fact that $\Lie_X$ is a derivation and Cartan's magic formula:
+    $\int_M (\Lie_X\alpha)\wedge\beta+\alpha\wedge\Lie_X\beta=\int_M \Lie_X (\alpha\wedge\beta)=\int_M (\dd i_X+i_X\dd)(\alpha\wedge\beta)=\int_M i_X \dd(\alpha\wedge\beta).$
+    But the exterior derivative of any top form is zero, so $\dd(\alpha\wedge\beta)=0$.
 \end{proof}
 Applying Cartan's magic formula to a volume form $\sfv\in\Omega^n(M)$, we have $\Lie_X\sfv=\dd i_X\sfv$. Here, $i_X\sfv$ is an $(n-1)$-form, whose restriction to any $(n-1)$-submanifold $S<M$ is a top form on $S$ known as the \emph{flux of $X$ through $S$} (it can be interpreted as a scalar if $S$ carries a volume form as well). Thus we get the following general form of the divergence theorem.
 \begin{cor}[Gauss-Ostrogradskii/Divergence theorem/Gauss law]\index{Theorem!Gauss-Ostrigradskii}
     Let $X\in\fX(M)$ be a vector field, $\sfv\in\Omega^n(M)$ a volume form, and $i:\partial M\hookrightarrow M$ the inclusion map for the boundary. Then 
     \[\int_{\partial M}i^\ast(i_X\sfv)=\int_M (\div_{\sfv}X)\sfv.\]
 \end{cor}
-Finally, the next corollary is an exercise.
+The next version of integration by parts is an exercise.
 \begin{cor}
-Under the conditions of the last Corollary, if $\sfv$ is a volume form on $M$ and $X\in\fX(M)$ is volume-preserving, i.e.\ $\div_\sfv X=0$, then for any $f,g\in C^\infty(M)$
-\[\int_M (\Lie_Xf)\cdot g\cdot \sfv=-\int_M f\cdot (\Lie_Xg)\cdot \sfv\]
+    Let $M$ be a closed manifold. If $\sfv$ is a volume form on $M$ and $X\in\fX(M)$ is volume-preserving, i.e.\ $\div_\sfv X=0$, then for any $f,g\in C^\infty(M)$,
+    \[\int_M (\Lie_Xf)\cdot g\cdot \sfv=-\int_M f\cdot (\Lie_Xg)\cdot \sfv\]
 \end{cor}
+\begin{xca}
+    Formulate and prove a generalization of the above  integration by parts formula for the case of arbitrary vector field $X$. How does it change if $M$ has a boundary?
+\end{xca}
 
+The final application requires some familiarity with complex analysis. Some basic notation is introduced in the following remark.
+\begin{rem}[Holomorphic functions and forms on Riemann surfaces]
+    Recall that a smooth complex-valued (or, equivalently, $\bbR^2$-valued) function 
+    \[f(x,y)=u(x,y)+\i v(x,y),\text{ where } u=\Re f,v=\Im f,\]
+    defined on an open domain $D\subset\bbR^2$ is called \emph{holomorphic}\index{Holomorphic!function} if it satisfies the Cauchy-Riemann equations 
+    \[u_x=v_y, \quad u_y=-v_x,\label{eq Cauchy-Riemann}\index{Equation!Cauchy-Riemann}\]
+    which simply express the geometric statement that the derivative (Jacobi matrix) of $f$ must be a combination of rotation and scaling, i.e.\ a \emph{conformal transformation}\index{Conformal transformation} of the plane (or zero). In particular, holomorphic maps locally preserve orientation and angles between tangent vectors. A nontrivial theorem from complex analysis shows that any holomorphic function is automatically \emph{complex analytic}, i.e.\ admits convergent Taylor series in powers of $z=x+\i y$ within some nonzero radius of every point of $D$, and vice versa. Hence we use the terms ``holomorphic'' and ``complex analytic'' interchangeably (whereas ``conformal'' is a true synonym only in the case of surfaces).
+
+    Using the standard complex coordinate $z=x+\i y$ and its complex conjugate $\wb{z}=x-\i y$, we can define the standard coframe for complex $1$-forms
+    \[\dd z=\dd x+\i \dd y,\quad \dd \wb{z}=\dd x-\i \dd y,\]
+    and its dual frame for complex vector fields,
+    \[\partial= \partial_z\coloneqq\frac{1}{2}(\partial_x-\i \partial_y),\quad \wb\partial= \partial_{\wb{z}}\coloneqq\frac{1}{2}(\partial_x+\i \partial_y)\]
+    (it is easy to check that, indeed, $\dd z(\partial)=1$ and $\dd z(\wb\partial)=0$). Then the Cauchy-Riemann equations (\ref{eq Cauchy-Riemann}) can be equivalently written as a single complex equation
+    \[\wb\partial f=0,\]
+    which is why holomorphic functions are often described as ``functions of only $z$ and not $\wb{z}$''.
+
+    Here we will focus only on $1$-dimensional complex manifolds $\Sigma$ (Riemann surfaces),\index{Riemann surface} which means that around every point there is a local complex coordinate $z\in \bbC$ with holomorphic transition maps, and so every complex-valued $1$-form $\omega\in\Omega^1(\Sigma;\bbC)$ can be locally uniquely written as $\omega=\omega_z \dd z+\omega_{\wb{z}} \dd \wb{z}$, where $\omega_z,\omega_{\wb{z}}$ are local smooth complex-valued functions.
+    The local formula (\ref{eq local formula for d}) for $\dd$ can be rewritten in complex cordinates and ends up working the same way as it would in real coordinates:
+    \[\dd\omega=(\partial_{z} \omega_{\wb z}-\partial_{\wb z} \omega_{z})\dd z\wedge \dd \wb{z}.\label{eq d of complex form}\]
+    The space of complex $1$-forms that contain only a $\dd z$ term (this property is independent of the choice of the complex chart) is denoted $\Omega^{1,0}(\Sigma)$, and similarly $\Omega^{0,1}(\Sigma)$ is spanned by $\dd \wb{z}$ (over $C^\infty(\Sigma,\bbC)$). A $(1,0)$-form $\omega\in\Omega^{1,0}(\Sigma)$ is called \emph{holomorphic}\index{Holomorphic!$(1,0)$-form} if it is locally of the form $\omega=f\dd z$, where $f$ is a holomorphic function, so $\wb\partial f=0$ (again, this property is independent of the chart).
+\end{rem}
+\begin{cor}[Cauchy-Goursat Theorem]\index{Theorem!Cauchy-Goursat}
+    Let $\Sigma$ be a Riemann surface (complex $1$-dimensional manifold) and let $\omega\in\Omega^{1,0}(\Sigma)$ be a complex $(1,0)$-form. Then the equality
+    \[\int_{\gamma_1}\omega=\int_{\gamma_2}\omega\]
+    holds for \emph{any} two homotopic paths $\gamma_1,\gamma_2$ with the same endpoints in $\Sigma$ iff $\omega$ is holomorphic.
+\end{cor}
+\begin{proof}
+    Consider $\int_{\gamma_1}\omega-\int_{\gamma_2}\omega=\oint_{\gamma}\omega$, where $\gamma=\gamma_1\bullet \gamma_2^{-1}$ (the integral is well-defined for piecewise smooth paths as well). Then, by the Stokes Theorem, 
+    \[\oint_\gamma \omega=\iint_D \dd\omega,\]
+    where $D$ is the domain enclosed by $\gamma$.
+    By (\ref{eq d of complex form}), this vanishes regardless of the contour iff $0=\dd \omega=-\wb\partial\omega_z \dd z\wedge\dd\wb{z}$. The wedge factor is proportional to a volume form:
+    \[\dd z\wedge\dd {\wb z}=-2\i \dd x\wedge\dd y,\]
+    so this is equivalent to $\wb\partial\omega_z=0$, which is equivalent to $\omega_z$, and hence $\omega$, being holomorphic.
+\end{proof}
+
+\begin{rem}
+    Another way of deriving the Cauchy-Goursat Theorem for domains in $\bbC$ that avoids complex notation is by interpreting holomorphic maps as pairs of closed $1$-forms (or, by dualizing, curl-free vector fields). Indeed, if $f=u+\i v$ is identified with the $1$-form $\alpha=-u\dd x+v\dd y$, then 
+    \[\dd\alpha=(u_y+v_x)\dd x\wedge\dd y.\]
+    Similarly, if $\beta=v\dd x+u\dd y$, then $\dd \beta=(u_x-v_y)\dd x\wedge\dd y$. Hence, the Cauchy-Riemann equations are equivalent to both $\alpha$ and $\beta$ being closed. The regular Stokes Theorem for line integrals then shows that 
+    \[\oint_\gamma f\dd z=\oint_\gamma\alpha+\i \oint_\gamma \beta=0\] for any closed contour $\gamma$ in $D$.
+\end{rem}
+
+\begin{rem}[$\wb\partial$-problem]
+    Similarly, one can derive the Cauchy residue theorem by using the \emph{Sokhotski-Plemelj formula}\index{Equation!Sokhotski-Plemelj} 
+    \[\wb\partial \frac{1}{z}=\pi \delta(z),\label{eq Sokhotski-Plemelj}\] where $\delta(z)=\delta(x)\delta(y)$ is the regular Dirac delta-function in the plane. Its more general form, which follows directly from (\ref{eq Sokhotski-Plemelj}) and the Stokes Theorem, is the so called $\wb\partial$-formula:\index{Equation!$\wb\partial$-formula}
+    \[f(z_0,\wb{z}_0)=\frac{1}{2\pi \i}\oint_{\partial D}\frac{f(z,\wb{z})\dd z}{z-z_0}+\frac{1}{2\pi\i}\iint_D \frac{\wb\partial f}{z-z_0}\dd z\wedge\dd\wb{z},\]
+    which holds as long as $f$ is smooth (in fact it only needs to be differentiable) up to the boundary of the domain $D\subset\bbC$, and $z_0\in D$.
+    This formula provides the solution to the classical \emph{$\wb\partial$-problem}, which is a boundary value problem for PDE's of the form $\wb\partial f=g$, where $g$ is given and $f$ is unknown.
+\end{rem}
 
 
 \begin{comment}
@@ -4937,12 +4989,11 @@ Under the conditions of the last Corollary, if $\sfv$ is a volume form on $M$ an
 \end{comment}
 
 
-\begin{rem}
+\begin{rem}[Integration of $1$-densities]
     Integration can also be defined for $1$-densities (a.k.a.~\emph{pseudo-forms}), i.e.\ sections of the bundle $|\det|(TM)$, whose transition functions are $|\det\tau_{\alpha\beta}|$ if $\tau_{\alpha\beta}$ are those on $TM$ (cf.\ Definition~\ref{def tensor densities}). This bundle can also be identified with $(\det TM)\otimes \calO(TM)$, where $\det (TM)=\bigwedge^n M$ and $\calO(TM)$ is the orientation bundle thought of as a space that can ``absorb'' factors of $- 1$: $(-\omega)\otimes \mu=\omega\otimes (-\mu)$. This bundle is always a trivial line bundle, so we can always pick a nowhere-vanishing $1$-density as an analog of a volume form. Thus, $M$ doesn't need to be orientable and $1$-densities can be identified with smooth absolutely continuous measures. On orientable manifolds, each top form $\omega\in\Omega^n(M)$ defines a $1$-density $|\omega|$ by 
     \[|\omega|(X_1,\ldots,X_n)=|\omega(X_1,\ldots,X_n)|.\]
-    It is an exercise to check that integration of $1$-densities by analogy with forms is well-defined, and that all of the properties carry over with only a potential sign change. Even the Stokes' Theorem holds for pseudo-forms when properly understood, see Theodore Frankel's \emph{Geometry of Physics}.
+    It is an exercise to check that integration of $1$-densities by analogy with forms is well-defined, and that all of the properties carry over with only a potential sign change. Even the Stokes' Theorem holds for pseudo-forms when properly understood, see T.~Frankel's \emph{Geometry of Physics}.
 \end{rem}
-
 
 
 
@@ -5228,7 +5279,7 @@ For a deep application of the Frobenius Theorem, see \subsect \ref{sec: theory o
             \dd y
         \end{pmatrix} \pmod{\<\theta^1,\theta^2,\theta^2\>}.
     \]
-    All four $1$-forms $\dd r,\dd t,\dd x,\dd y$ involved on the right are linearly independent of $\{\theta^i\}$ (in fact, together these $7$ forms comprise a global coframe). We will be able to reconstruct the general solution using geometric methods in \subsect~\ref{sec: hyperbolic EDS}.
+    All four $1$-forms $\dd r,\dd t,\dd x,\dd y$ involved on the right are linearly independent of $\{\theta^i\}$ (in fact, together these $7$ forms comprise a global coframe). We will be able to reconstruct the general solution using geometric methods in \Subsect~\ref{sec: hyperbolic EDS}.
 \end{example}
 
 
@@ -5414,7 +5465,7 @@ Note that the space $\Der \Omega$ is a graded $\Omega$-module with the action $(
         \item $[\omega\wedge L_1,L_2]^{\wedge}=\omega\wedge [L_1,L_2]^{\wedge}-(-1)^{(q+l_1-1)(l_2-1)}i_{L_2}\omega\wedge L_1$,
         \item $[\omega\wedge K_1,K_2]=\omega\wedge [K_1,K_2]-(-1)^{(q+k_1)k_2}\Lie_{K_2}\omega\wedge K_1+(-1)^{q+k_1}\dd\omega\wedge i_{K_1}K_2$,
         \item \begin{multline}
-            [\varphi\otimes X.\psi\otimes Y]=\varphi\wedge \psi\otimes[X,Y]
+            [\varphi\otimes X,\psi\otimes Y]=\varphi\wedge \psi\otimes[X,Y]
             -(i_Y\dd\varphi\wedge\psi\otimes X-(-1)^{kl}i_X\dd\psi\wedge\varphi\otimes Y)-\\
             -(\dd(i_Y\varphi\wedge\psi)\otimes X-(-1)^{kl}\dd(i_X\psi\wedge\varphi)\otimes Y)=\\
             =\varphi\wedge\psi\otimes [X,Y]+\varphi\wedge \Lie_X\psi\otimes Y-\Lie_Y\varphi\wedge\psi\otimes X+(-1)^{k}(\dd\varphi\wedge i_X\psi\otimes Y+i_Y\varphi\wedge\dd\psi\otimes X).
@@ -5443,7 +5494,7 @@ The most important for us special case applies to the bracket of bundle endomorp
         \[R(X,Y)=P[(I-P)X,(I-P)Y],\quad \wb{R}(X,Y)=(I-P)[PX,PY],\]
         with $I=\id_{TM}$. In this case it is easy to show the so called \emph{Bianchi identities}:\index{Equation!Bianchi} 
         \[[P,R+\wb{R}]=0,\quad [R,P]=\frac14i_{[P,P]}[P,P]=i_R \wb{R}+i_{\wb{R}}R.\]
-        \item $J\in\Omega^1(M;TM)$ such that $J\circ J=-I$ (i.e.~an almost complex structure). Then 
+        \item $J\in\Omega^1(M;TM)$ such that $J\circ J=-\id_{TM}$ (i.e.~an almost complex structure). Then 
         \[[J,J](X,Y)=2([JX,JY]-[X,Y]-J[X,JY]-J[JX,Y]).\]
         The vector-valued $2$-form $\frac{1}{2}[J,J]$ is called the \emph{Nijenhuis tensor} of $J$. More generally for any $L\in \Omega^1(M;TM)$, the $2$-form $\mathcal{N}_L\coloneqq \frac12[L,L]$ is called the \emph{Nijenhuis torsion} of $L$.
     \end{enumerate}
@@ -5462,7 +5513,7 @@ The following final general relation is an immediate consequence of Lemma~\ref{l
 \end{thm}
 
 \begin{rem}
-    Each of the summands in the above formula looks like a semidirect product of graded Lie algebras. However, the maps $i:\Omega^{\smbullet}(M;TM)\to \End(\Omega^{\smbullet}(M;TM),[\,,\,])$ and $\ad:\Omega^{\smbullet}(M;TM)\to \End(\Omega^{\smbullet}(M;TM),[\,,\,]^{\wedge})$ do note take values in the subspaces of graded derivations. That is, $i_L[K_1,K_2]$ differs from $[i_LK_1,K_2]+(-1)^{k_1l}[K_1,i_LK_2]$, and $[K,[L_1,L_2]^{\wedge}]$ differs from $[[K,L_1],L_2]^{\wedge}+(-1)^{kk_1}[L_1,[K,L_2]]^{\wedge}$. The formulas containing the right correction terms (see \cite[8.11]{Kolar}) define a so called Zappa-Szep product.
+    Each of the summands in the above formula looks like a semidirect product of graded Lie algebras. However, the maps $i:\Omega^{\smbullet}(M;TM)\to \End(\Omega^{\smbullet}(M;TM),[\,,\,])$ and $\ad:\Omega^{\smbullet}(M;TM)\to \End(\Omega^{\smbullet}(M;TM),[\,,\,]^{\wedge})$ do not take values in the subspaces of graded derivations. That is, $i_L[K_1,K_2]$ differs from $[i_LK_1,K_2]+(-1)^{k_1l}[K_1,i_LK_2]$, and $[K,[L_1,L_2]^{\wedge}]$ differs from $[[K,L_1],L_2]^{\wedge}+(-1)^{kk_1}[L_1,[K,L_2]]^{\wedge}$. The formulas containing the right correction terms (see \cite[8.11]{Kolar}) define a so called Zappa-Szep product.
 \end{rem}
 
 
@@ -5508,21 +5559,20 @@ The following final general relation is an immediate consequence of Lemma~\ref{l
 
 \subsection{Invariant vector fields}
 
-In this section we show that the tangent bundle of a Lie group is trivial and has a natural set of global frames.
+In this section we show that the tangent bundle of any Lie group is trivial and has two natural sets of global frames, i.e.\ \emph{absolute parallelisms}. This makes Lie groups a natural geometric generalization of, say, Euclidean spaces, on which all tangent vectors can be compared to each other via parallel transport to the origin.
 
 \begin{prop}
-    Any Lie group $G$ is parallelizable, with the global trivialization of $TG$ given by
-    \[TG\mapsto G\times \frakg,\quad (g,X_g)\mapsto \left(g, L_{g\ast }^{-1}X_g\right),\]
-    where $\frakg=T_e G$ and $X_g\in T_gG$.
+    Any Lie group $G$ is parallelizable, with the natural global trivialization of $TG$ given by
+    \[\chi_L:TG\mapsto G\times \frakg,\quad (g,X_g)\mapsto \left(g, L_{g\ast }^{-1}X_g\right),\]
+    where $\frakg=T_e G$ and $X_g\in T_gG$. Similarly, replacing $L_g$ with $R_g$ gives another global trivialization, $\chi_R$.
 \end{prop}
 \begin{proof}
     All we need to show is that $L_{g\ast}^{-1}$ is a smooth map that is a fiberwise isomorphism of vector spaces. This is true by virtue of $L_{g\ast}^{-1}$ being the derivative of a diffeomorphism.
 \end{proof}
 
-Obviously there is a second natural trivialization by right translations.
-
-Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is defined by the property $(L_g)_\ast X=X$ for all $g$. As we have shown before, all such vector fiends are automatically smooth and complete (Propositon~\ref{thm invariant fields are complete}). We will now show that, under the Lie bracket of vector fields, they comprise a Lie algebra that is naturally isomorphic to our earlier constructions of the Lie algebra of $G$. When $X\in\frakg=T_eG$, we will often use the notation $X_R$ and $X_L$ to denote the corresponding right- and left-invariant vector fields, respectively:
-\[X_L(g)=(L_g)_\ast X,\quad X_R(g)=(R_g)_\ast X.\]
+Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is defined by the property $(L_g)_\ast X=X$ for all $g$. As we have shown before, all such vector fiends are automatically smooth and complete (Proposition~\ref{thm invariant fields are complete}). We will now show that, under the Lie bracket of vector fields, they comprise a Lie algebra that is naturally isomorphic to our earlier constructions of the Lie algebra of $G$. When $A\in\frakg=T_eG$, we will often use the notation $A_R$ and $A_L$ to denote the corresponding right- and left-invariant vector fields, respectively:
+\[A_L(g)\coloneqq (L_g)_\ast A,\quad A_R(g)\coloneqq (R_g)_\ast A,\]
+(and we will often use Latin capital letters to denote Lie algebra elements).
 
 \paragraph{Construction III} Recall that we denote by $\fX(G)^G$ the space of left-invariant vector fields on $G$. As we will now show, the Lie derivative endows this space with a structure of a Lie algebra that is isomorphic to our earlier constructions of $\Lief G$.
 
@@ -5546,14 +5596,14 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
 \end{lem}
 \begin{proof}
     This follows from the naturalness of Lie derivatives (Proposition~\ref{prop properties of Lie derivatives}):
-    \[(L_g)_\ast \Lie_X Y=\Lie_{(L_g)_\ast}(L_g)_\ast Y=\Lie_X Y.\]
+    \[L_{g\ast} \Lie_X Y=\Lie_{L_{g\ast}}L_{g\ast} Y=\Lie_X Y.\]
 \end{proof}
 
 \begin{thm}
     The evaluation map $E:(\fX(G)^G,\Lie)\to (T_eG,\ad)$, $X\mapsto X_e$ is an isomorphism of Lie algebras.
 \end{thm}
 \begin{proof}
-    It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=(L_g)_{\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
+    It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=L_{g\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
     \begin{multline}
         E\left(\Lie_X Y\right)=E\left(\restr{\frac{\dd}{\dd t}}{t=0} F^\ast_t Y\right)= \restr{\frac{\dd}{\dd t}}{t=0}R_{\gamma(t)}^{\ast}Y_{\gamma(t))}=\\=\restr{\frac{\dd}{\dd t}}{t=0}\left(R_{\gamma(t)}^{-1}\circ L_{\gamma(t)}\right)_{\ast e} Y_{e}=\restr{\frac{\dd}{\dd t}}{t=0}(\Ad_{\gamma(t)}Y_e)=\ad_{X_e} Y_e.
     \end{multline}
@@ -5566,11 +5616,11 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
     for $X,Y\in\fX(G)^G_R$.
 \end{cor}
 
-In summary, if $X,Y\in T_eG$, then we have the following formulas relating the Lie bracket on the Lie algebra to the Lie bracket of vector fields:
-\[[X_L,Y_L]=([X,Y])_L,\quad [X_R,Y_R]=-([X,Y])_R.\]
+In summary, if $A,B\in T_eG$, then we have the following formulas relating the Lie bracket on the Lie algebra to the Lie bracket of vector fields:
+\[[A_L,B_L]=[A,B]_L,\quad [A_R,A_R]=-[A,B]_R.\]
 
 
-The following is an elementary form of the celebrated Maurer-Cartan equation which we will discuss in depth in the next section. On a fundamental level it demonstrates the existence of a canonical flat affine connection on Lie groups. It is usually formulated in terms of differential forms, but first we provide an elementary version adapted from \cite{Onishchik}.
+The following is an elementary form of the celebrated Maurer-Cartan equation which we will discuss in depth in the next \subsect. On a fundamental level, as we will see, it expresses the existence of a canonical flat affine connection on Lie groups. It is usually formulated in terms of differential forms, but first we provide an elementary version adapted from \cite{Onishchik}.
 
 \begin{prop}[Maurer-Cartan equation]\index{Equation!Maurer-Cartan}
     Let $g:[0,1]^2\to G$ be a twice differentiable map $(t,s)\mapsto g(t,s)$. Define the elements $\xi(t,s),\eta(t,s)\in\frakg$ by the equations
@@ -5604,9 +5654,9 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
 
 \begin{defn}[Coadjoint representation]
     The duals of the adjoint reprsentations of $G$ and $\frakg$ are called the coadjoint representations of $G$ and $\frakg$ and are denoted by $\Ad^\ast$ and $\ad^\ast$, respectively. By definition,
-    \[(\Ad^\ast_g \xi)(Y)=\xi\left(\Ad_g^{-1}Y\right),\quad  g\in G,Y\in\frakg,\xi\in\frakg^\ast,\]
+    \[(\Ad^\ast_g \xi)(B)=\xi\left(\Ad_g^{-1}B\right),\quad  g\in G,\;B\in\frakg,\xi\in\frakg^\ast,\]
     and 
-    \[\left(\ad_X^\ast \xi,Y\right)(Y)=-\xi\left([X,Y]\right),\quad X,Y\in\frakg,\xi\in\frakg^\ast.\]
+    \[\left(\ad_A^\ast \xi,B\right)(B)=-\xi\left([A,B]\right),\quad A,B\in\frakg,\xi\in\frakg^\ast.\]
 \end{defn}
 
 Once again, as in Proposition~\ref{prop 5.4.5 RS1 ker(Ad) and ker(ad)}, we have
@@ -5645,12 +5695,12 @@ We will thus identify left-invariant differential $r$-forms with elements of $\b
 \begin{enumerate}
     \item Using the general formula from Proposition~\ref{prop 4.1.6 RS1}, the exterior derivative of $\xi\in\bigwedge^r\frakg^\ast$ is
     \[\dd\xi(X_0,\ldots,X_r)=\sum_{i<j}(-1)^{i+j}\left([X_i,X_j],X_0,\ldots,\wh{X}_i,\ldots,\wh{X}_j,\ldots,X_r)\right),\label{eq 5.5.2 RS1}\]
-    where $X_0,\ldots,X_r\in\frakg$ and as usual hatted arguments are meant to be omitted. The right hand side may be taken as an intrinsic definition of a differential on the exterior algebra $\bigwedge\frakg^\ast$, thus turning the natural isomorphism of algebras $\Omega^{\smbullet }(G)^G\cong\bigwedge\frakg^\ast$ into an isomorphism of differential algebras.
+    where $X_0,\ldots,X_r\in\frakg$ and, as usual, hatted arguments are meant to be omitted. The right hand side may be taken as an intrinsic definition of a differential on the exterior algebra $\bigwedge\frakg^\ast$, thus turning the natural isomorphism of algebras $\Omega^{\smbullet }(G)^G\cong\bigwedge\frakg^\ast$ into an isomorphism of differential algebras.
     \item For $\xi\in\frakg^\ast$, (\ref{eq 5.5.2 RS1}) yields
-    \[\dd\xi(X,Y)=-\xi([X,Y]),\quad X,Y\in\frakg.\label{eq 5.5.3 RS1}\]
-    Let $\{e_1,\ldots,e_n\}$ be a basis in $\frakg$, let $c^i_{jk}$  be the corresponding structure constants and let $\{\alpha^1,\ldots,\alpha^n\}$ be the dual basis in $\frakg^\ast$. Then (\ref{eq 5.5.3 RS1}) is equivalent to
+    \[\dd\xi(A,B)=-\xi([A,B]),\quad A,B\in\frakg.\label{eq 5.5.3 RS1}\]
+    Let $\{\bf{t}_1,\ldots,\bf{t}_n\}$ be a basis in $\frakg$, let $c^i_{jk}$  be the corresponding structure constants and let $\{\alpha^1,\ldots,\alpha^n\}$ be the dual basis in $\frakg^\ast$. Then (\ref{eq 5.5.3 RS1}) is equivalent to
     \[\dd \alpha^i=-\frac 12 c^i_{jk}\alpha^j\wedge \alpha^k,\quad i=1,\ldots,n.\label{eq 5.5.4 RS1 MC in coords}\]
-    This can be seen by evaluating both sides on the basis elements $e_i$. This equation is actually another form of the Maurer-Cartan equation \index{Equation!Maurer-Cartan} (\ref{eq Maurer-Cartan}), which we will return to in a basis-free form later in this \sect.
+    This can be seen by evaluating both sides on the basis elements $\bf{t}_i$. This equation is actually another form of the Maurer-Cartan equation \index{Equation!Maurer-Cartan} (\ref{eq Maurer-Cartan}), which we will return to in a basis-free form later in this \subsect.
     \item In terms of left-invariant 1-forms, the inverse left and right trivializations $(\chi_L^T)^{-1}$ and $(\chi_R^T)^{-1}$ of $T^\ast G$ read
     \[(\chi_L^T)^{-1}(g,\xi)=\xi_g,\quad (\chi_R^T)^{-1}(g,\xi)=(\Ad_{g}^\ast \xi)_g=\xi_g\circ (\Ad_g)_{\ast g}.\]
     Note that the 1-form $\Ad_g^\ast\xi$ need not be left-invariant.
@@ -5672,29 +5722,29 @@ Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-
         \item If $G$ is compact, one way to single out a unique left-invariant volume form is to require that the volume of $G$ be equal to $1$.
         \item Naturally, there is also a right-invariant volume form $\mathsf{w}_G$, unique up to multiplication by a scalar, and a measure $\dd\mu_R$ associated with it. The natural question thus is how the two Haar measures are related. Clearly,
         \[\mathsf{v}_G(g)=\Ad_g^\ast \mathsf{w}_G(g)=\det(\Ad_g)\mathsf{w}_G(g).\]
-        Since the adjoint representation is a map $\Ad_g:G\to\GL(\frakg)$, its determinant is everywhere nonzero and is called the \emph{modular quasicharacter}:\index{Modular quasicharacter}
-        \[\Delta: G\to \bbK,\quad \Delta(g)=\det(\Ad_g).\]
-        Therefore a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character\footnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field.}.\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
+        Since the adjoint representation is a homomorphism $\Ad:G\to\GL(\frakg)$, the determinant of $\Ad_g$ is always nonzero and is called the \emph{modular quasicharacter}:\index{Modular quasicharacter}
+        \[\Delta: G\to \bbK,\quad \Delta(g)\coloneqq\det(\Ad_g).\]
+        Therefore a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character.\footnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field. In the case of complex Lie groups, the Haar measure $\dd \mu_L$ is the $1$-density $|\sfv_G|$, so bi-invariance relies only on the absolute value $|\Delta|$.}\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
         
-        If $G$ is a connected real Lie group, then $\Delta>0$ everywhere by continuity (since $\Delta(e)=1$ always). 
+        If $G$ is a connected real Lie group, then $\Delta>0$ everywhere by continuity (since $\Delta(e)=1$). 
         \item Compact Lie groups are unimodular. Indeed, since $\Delta:G\to \bbK^\ast$ is a homomorphism, $\Delta(G)$ must be a compact subgroup of $\bbK^\ast$, which means its image lies inside $\bbS^1\subset\bbC$.
     \end{enumerate}
 \end{rem}
 
 
 
-For compact Lie groups, where every smooth function is integrable with respect to any volume form, the existence of left-invariant volume forms provides the powerful tool of averaging over the group. This concept can be used, for example, to construct invariants of representations, e.g.~an invariant scalar product.
+For compact Lie groups, where every smooth function is integrable with respect to any volume form, the existence of left-invariant volume forms provides the powerful tool of \emph{averaging over the group}. This concept can be used, for example, to construct invariants of representations, e.g.~an invariant scalar product.
 
 \begin{prop}[Invariant scalar product {{\cite[Prop.~5.5.6]{RS1}}}]\label{prop 5.5.6 RS1}
     Let $G$ be a compact Lie group with a finite-dimensional representation $\rho:G\to \GL(V)$ on a $\bbK$-vector space $V$, where $\bbK=\bbR$ or $\bbC$. The vector space $V$ admits a scalar product $\langle\cdot,\cdot\rangle$ such that
     \[\langle\rho(g)v,\rho(g)w\rangle=\langle v,w\rangle\text{ for all }g\in G,\; v,w\in V.\]
     For the induced representation $\rho_{\ast e}$ of $\frakg$ we have
-    \[\langle \rho_{\ast}(X)v,w\rangle+\langle v,\rho_\ast (X) w\rangle=0\text{ for all }X\in\frakg,\;v,w\in V.\]
+    \[\langle \rho_{\ast}(A)v,w\rangle+\langle v,\rho_\ast (A) w\rangle=0\text{ for all }A\in\frakg,\;v,w\in V.\]
     Thus, every finite-dimensional representation of a compact Lie group may be assumed to be orthogonal (in case $\bbK=\bbR$) or unitary (in case $\bbK=\bbC$).
 \end{prop}
 \begin{proof}
     Choose an arbitrary scalar product $(\cdot,\cdot)$ on $V$, and a left-invariant volume form $\mathsf{v}_G$ on $G$, and define
-    \[ \langle v,w\rangle =\int_G f_{v,w}\mathsf{v}_G, \quad f_{v,w}(g)=\left(\rho(g^{-1})v,\rho(g^{-1})w\right).\]
+    \[ \langle v,w\rangle \coloneqq\int_G f_{v,w}\mathsf{v}_G, \quad f_{v,w}(g)=\left(\rho(g^{-1})v,\rho(g^{-1})w\right).\]
     The integral exists because $G$ is compact. The defining properties of a scalar product carry over from $(\cdot,\cdot)$ to $\langle\cdot,\cdot\rangle$. Let $g\in G$. A brief computation shows that 
     \[\langle\rho(g)v,\rho(g)w\rangle=\int_G \left(L_{g^{-1}}^\ast f_{v,w}\right)\mathsf{v}_G =\int_G f_{v,w}\mathsf{v}_G=\langle v,w\rangle,\]
     as asserted. The formula for the Lie algebra follows by differentiation.
@@ -5732,7 +5782,7 @@ with ordinary differential $r$-forms $\xi^i\in\Omega^r(G)$. The form $\xi$ is le
     \[A\wedge B=\frac12 [A,B],\]
     where the wedge product on the left is defined using (\ref{eq 2.4.17 RS1}) with $\bullet$ standing for the matrix product, whereas on the right $\bullet$ is replaced with the matrix commutator as in (\ref{eq exterior product of g-valued forms}).
 
-    Sometimes the product $[A,B]$ is also denoted $[A\wedge B]$ to remind that these are differential forms. Unfortunately, in physics, where Lie groups are often assumed to consist of matrices, people often use the notation $A\wedge B$ to refer to $[A\wedge B]$, which is the most common source of confusion around various factors of $2$. This gets especially confusing around expressions like $A\wedge A\wedge A$.
+    Sometimes the product $[A,B]$ is also denoted $[A\wedge B]$ to remind that these are differential forms. Unfortunately, in physics, where Lie groups are often assumed to consist of matrices, people often use the notation $A\wedge B$ to refer to $[A\wedge B]$, which is the most common source of confusion around various factors of $2$. This gets especially confusing around expressions like $A\wedge A\wedge A$. This confusion is best avoided by writing out the action on tuples of vectors explicitly, e.g.\ $\frac12[A,A](X,Y)=[A(X),A(Y)]$.
 \end{rem}
 
 
@@ -5749,18 +5799,21 @@ There holds the following analogue of Proposition~\ref{prop 5.5.2 RS1}.
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    The arguments are completely analogous to those for ordinary left-invariant differential forms in Proposition~\ref{prop 5.5.2 RS1}, except for the surjectivity of the map $\xi\mapsto \xi_e$ because $\Omega^{\smbullet }(G,\frakg)$ need not be generated as an algebra by 1-forms. Thus, let $\eta\in\bigwedge^r T^\ast_eG\otimes \frakg$. Choose a basis $\{e_i\}$ on $\frakg$ and write $\eta=\sum_i\eta^i\otimes e_i$ with $\eta^i\in\bigwedge^iT^\ast_eG$. According to Proposition~\ref{prop 5.5.2 RS1}(1), $\eta^i=\xi^i_e$ for certain left-invariant $\xi^i\in\Omega^r(G)$. Then, $\xi=\sum_i\xi^i\otimes e_i$ is a left-invariant differential $r$-form with values in $\frakg$ satisfying $\xi_e=\eta$.
+    The arguments are completely analogous to those for ordinary left-invariant differential forms in Proposition~\ref{prop 5.5.2 RS1}, except for the surjectivity of the map $\xi\mapsto \xi_e$ because $\Omega^{\smbullet }(G,\frakg)$ need not be generated as an algebra by 1-forms. Thus, let $\eta\in\bigwedge^r T^\ast_eG\otimes \frakg$. Choose a basis $\{\bf{t}_i\}$ on $\frakg$ and write $\eta=\sum_i\eta^i\otimes \bf{t}_i$ with $\eta^i\in\bigwedge^iT^\ast_eG$. According to Proposition~\ref{prop 5.5.2 RS1}(1), $\eta^i=\xi^i_e$ for certain left-invariant $\xi^i\in\Omega^r(G)$. Then, $\xi=\sum_i\xi^i\otimes \bf{t}_i$ is a left-invariant differential $r$-form with values in $\frakg$ satisfying $\xi_e=\eta$.
 \end{proof}
 
 According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1-forms can be identified with linear endomorphisms of $\frakg$. One canonical endomorphism, the identity, gives rise to a very important $1$-form.
 
 \begin{defn}[Maurer-Cartan form]
     The left-invariant $\frakg$-valued 1-form on $G$ corresponding to $\id_\frakg$ is called the (left) Maurer-Cartan form of $G$, denoted by $\theta_G$. By definition,
-    \[\theta_G(X_L)(g)=X\text{ for all }X\in\frakg,\; g\in G.\]
-    As a consequence, $\theta_G$ assigns to a tangent vector $Y$ at $g$ the unique left-invariant vector field $X$ such that $X_g=Y$. Moreover, given a basis $\{e_i\}$ on $\frakg$ and its dual basis $\{\alpha^i\}$ on $\frakg^\ast$, identified with left-invariant $1$-forms $\alpha^i\in\fX^\ast_L(G)$, $\theta_G$ is given by
-    \[\theta_G=\sum_i \alpha^i\otimes e_i.\]
+    \[\theta_G(A_L)(g)=A\text{ for all }A\in\frakg,\; g\in G.\]
+    As a consequence, $\theta_G$ assigns to a tangent vector $Y_g$ at $g$ the unique left-invariant vector field $X\in\fX(G)^G$ such that $X_g=Y_g$, and identifies it with an element of $\frakg$:
+    \[\theta_G(Y)(g)=L_{g\ast}^{-1}(Y_g)=\pr_2\circ \chi_L^{-1}(Y_g).\]
+    Given a basis $\{\bf{t}_i\}$ of $\frakg=T_eG$ and its dual basis $\{\alpha^i\}$ on $\frakg^\ast$, identified with left-invariant $1$-forms $\alpha^i\in\fX^\ast_L(G)$, $\theta_G$ is given by
+    \[\theta_G=\sum_i \alpha^i\otimes \bf{t}_i.\]
+    It is also called a \emph{tautological form} because, if we replace $\bf{t}_i$ with their corresponding left-invariant vector fields $e_i=(\bf{t}_i)_L$, then $\sum_i \alpha^i\otimes e_i=\id_{TG}$.
 
-    Using (\ref{eq 5.5.3 RS1}), its exterior derivative is given by
+    Using (\ref{eq 5.5.3 RS1}), the exterior derivative of $\theta_G$ is given by
     \[\dd\theta_G(X,Y)=-\langle\theta_G,[X,Y]\rangle=-[X,Y]=-[\theta_G(X),\theta_G(Y)],\]
     and hence
     \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
@@ -5800,12 +5853,12 @@ Then another way to see that $\theta_G$ is a smooth form is to represent it as t
 \end{rem}
 
 \begin{rem}
-    As we have seen  in Proposition~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by a nowhere-vanishing one-form $\theta$ (or equivalently the distribution $\ker\theta$) is integrable iff $\dd \theta=\xi\wedge\theta$ at least locally for some $1$-form $\xi$. Then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}), expresses the fact that $\theta_G$ defines a canonical integrable Pfaffian system on $G$ spanned by $n=\dim G$ left-invariant $1$-forms (identified e.g.~with any basis of $\frakg^\ast$). Its only maximal integral manifold is $G$ itself. As we will see, the Maurer-Cartan equation can be used to derive the unique real-analytic structure on any Lie group. This is one example of the deep connections between integrability and certain differentiable structures.
+    As we have seen  in Proposition~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by nowhere-vanishing one-forms $\theta^i$ (or equivalently the distribution $\bigcap_i\ker\theta^i$) is integrable iff $\dd \theta^i=\xi^i_j\wedge\theta^j$ at least locally for some matrix of $1$-forms $\xi^i_j$. Then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}), expresses the fact that $\theta_G$ defines a canonical integrable Pfaffian system on $G$ spanned by $n=\dim G$ left-invariant $1$-forms (identified e.g.~with any basis of $\frakg^\ast$). Its only maximal integral manifold is $G$ itself. As we will see, the Maurer-Cartan equation can be used to derive the unique real-analytic structure on any Lie group. This is our first example of the deep connections between integrability and certain differential-geometric structures.
 \end{rem}
 
 
 \begin{rem}
-    The Maurer-Cartan form provides an easy way to write down a left-invariant volume form on a Lie group in coordinates. All one needs to do is compute the Maurer-Cartan form and then take it's $n$-th power, where $n=\dim G$, to get a form $\omega=\theta_G^n=\theta_G\wedge\cdots\wedge \theta_G$. This is still a $\frakg$-valued form which must have the form $\mathsf{v}_G\otimes X$ for some $X\in\frakg$. Whatever basis one chooses on $\frakg$, it will suffice to find any non-zero component of $X$ in this expression to get a volume form on $G$. In practice this is even simpler: one computes the matrix of 1-forms $g^{-1}\dd g$ and then takes the wedge product of all independent components of this matrix (there are $n$ of them). Since each component of $\theta_G$ is left-invariant, the resulting product is also left-invariant.
+    The Maurer-Cartan form provides an easy way to write down a left-invariant volume form on a Lie group in coordinates. All one needs to do is compute the Maurer-Cartan form and then take it's $n$-th power, where $n=\dim G$, to get a form $\omega=\theta_G^{\wedge n}=\theta_G\wedge\cdots\wedge \theta_G$. This is still a $\frakg$-valued form which must have the form $\mathsf{v}_G\otimes A$ for some $A\in\frakg$. Whatever basis one chooses on $\frakg$, it will suffice to find any non-zero component of $A$ in this expression to get a volume form on $G$. In practice this is even simpler: one computes the matrix of 1-forms $g^{-1}\dd g$ and then takes the wedge product of all independent components of this matrix (there are $n$ of them). Since each component of $\theta_G$ is left-invariant, the resulting product is also left-invariant.
 \end{rem}
 
 
@@ -5841,6 +5894,10 @@ Then another way to see that $\theta_G$ is a smooth form is to represent it as t
     \[\mathsf{v}_{\SO_3}=\frac{1}{8\pi^2}\sin\theta\dd\varphi\wedge \dd\theta\wedge \dd\psi.\]
 \end{example}
 
+\begin{rem}
+    Mathematicians often talk of ``the volume of $G$'', which is of course not a well-defined notion until one fixes a volume form. On compact Lie groups whose Lie algebra is \emph{simple} (contains no nontrivial Lie subalgebras) or \emph{semisimple} (is a direct sum of simple subalgebras) one can choose a canonical volume form by taking the natural volume form associated with the invariant Riemannian metric induced by the invariant dot product given by \emph{Cartan-Killing form} on $\frakg$: \[\sfK(A,B)\coloneqq \tr(\ad_A\circ \ad_B).\] 
+    It is a nontrivial result of the structure theory of Lie algebras that $\sfK$ is nondegenerate iff $\frakg$ is semisimple, and moreover $\sfK$ is \emph{negative definite} whenever $\frakg$ belongs to a compact Lie group. Thus, by translating $-\sfK$ to all points of a compact semisimple Lie group, we get an invariant Riemannian metric $\sfg_G$ and hence a natural invariant volume form.
+\end{rem}
 
 \begin{example}[Haar measure on $\Aff_1$]
     Another example is the (identity component of the) affine group of the real line, $G=\Aff^+_1(\bbR)$, which is the space $\bbR\times(0,\infty)$ with the product
@@ -5986,6 +6043,8 @@ Thus, each such $1$-form produces a well-defined map from the fundamental group 
     Let $\omega=\delta f$. Since $(f\circ \gamma)^\ast \theta_G=\gamma^\ast f^\ast\theta_G=\gamma^\ast\omega$, the development of $\omega$ along $\gamma$ is just $f\circ\gamma$.
 \end{proof}
 
+The following theorem is the main result of this \subsect, and it is remarkable in that it presents the Maurer-Cartan equation, which is generally a (system of) nonlinear PDE, as the integrabiity condition for a certain (system of) linear PDE, and guarantees the existence of \emph{global} solutions under a simple topological condition.
+
 \begin{thm}[Cartan's Fundamental Theorem, global version {{\cite[Thm.~7.14]{Sharpe}}}]\label{thm 7.14 Sharpe fundamental global}
     Let $G$ be a Lie group with Lie algebra $\frakg$. Let $M$ be a smooth connected manifold, let $x_0\in M$, and let $\omega \in\Omega^1(M,\frakg)$. Then there exists a smooth map $f:M\to G$ such that $\delta f=\omega$ iff $\dd\omega+\frac12[\omega,\omega]=0$ and the monodromy representation $\Phi_\omega:\pi_1(M,x_0)\to G$ is trivial. Moreover, if there are two solutions $f_1$ and $f_2$, then $f_1\equiv c\cdot f_2$ for some $c\in G$.
 \end{thm}
@@ -6008,7 +6067,7 @@ Thus, each such $1$-form produces a well-defined map from the fundamental group 
 \begin{example}[Linear ODE's of Lie type]\index{Equation!of Lie type}
     If $\dim M=1$, then every $\frakg$-valued $1$-form satisfies the Structure equation because there are no nonzero $2$-forms. Say $M=\bbR$ with coordinate $t$, then $\omega(t)=\xi(t)\dd t$ for some $\xi:\bbR\to \frakg$. The Fundamental Theorem then guarantees unique global solutions of initial value problems for all equations of the form $(f^{-1}f')(t)=\xi(t)$ or $(f'f^{-1})(t)=\xi(t)$. If $G$ is a matrix Lie group, then the latter equation is a linear ODE, called an \emph{equation of Lie type}:
     \[f'(t)=\xi(t)f(t).\]
-    In fact, equations of Lie type also can describe trajectories on any manifold $Y$ with a smooth action of $G$, not just $Y=G$, however uniqueness is guaranteed only if the action is faithful. An important particular case of this situation is the following. In Example~\ref{ex adjoint group} we will show that the \emph{adjoint group}\index{Adjoint group} $\Ad(G)\subset \GL(\frakg)$ consisting of the operators $\Ad_g,g\in G$, has a natural Lie group structure. Therefore, equations of Lie type also include equations on a function $f:\bbR\to \Ad(G)$ of the form $f^{-1}f'(t)=\ad_{\xi(t)}$, where $\xi:\bbR\to \frakg$ and $\ad_{\xi(t)}\in \frakgl(\frakg)$. Again considering the case of matrix groups and acting with boths sides of this equation on some element $y(0)\in\frakg$, equations of this type can be written using matrix commutators as 
+    In fact, equations of Lie type also can describe trajectories on any manifold $M$ with a smooth action of $G$, not just $M=G$, however uniqueness is guaranteed only if the action is faithful. An important particular case of this situation is the following, where $M=\frakg$. In Example~\ref{ex adjoint group} we will show that the \emph{adjoint group}\index{Adjoint group} $\Ad(G)\subset \GL(\frakg)$ consisting of the operators $\Ad_g,g\in G$, has a natural Lie group structure. Therefore, equations of Lie type also include equations on a function $f:\bbR\to \Ad(G)$ of the form $f^{-1}f'(t)=\ad_{\xi(t)}$, where $\xi:\bbR\to \frakg$ and $\ad_{\xi(t)}\in \frakgl(\frakg)$. Again considering the case of matrix groups and acting with boths sides of this equation on some element $y(0)\in \frakg$, equations of this type can be written using matrix commutators as 
     \[y'(t)=[\xi(t),y(t)],\quad y(0)\in\frakg.\label{394}\]
     By looking for solutions in the form $y(t)=g(t)y(0)g^{-1}(t)$, we find that $y'(t)=[g'g^{-1},y]$, and so if $g(t)$ is the unique solution of $g'(t)=\xi(t)g(t)$, $g(0)=e$, then $y(t)$ is a solution of (\ref{394}). Note that while $y$ is unique, different $y$'s may correspond to the same $f(t)$ if $G$ is not simple (then $G$ has a non-discrete center, and $\Ad(G)$ strongly differs from $G$). Equations of the form (\ref{394}) are also called \emph{isospectral flows} (since the eigenvalues of $y(t)$ are clearly independent of $t$), or Lax equations (cf.\ Example~\ref{ex Lax pairs}).\index{Equation!Lax}\index{Isospectral flow}
 \end{example}
@@ -6701,119 +6760,132 @@ Recall that a Banach algebra is a complete normed vector space with a multiplica
 
 
 
-\subsection{(*) Technical lemmas}
+% \subsection{(*) Technical lemmas}
 
 
-Here we provide the more conventional, but longer, proof of Theorem~\ref{thm differential of exp} that doesn't use the Maurer-Cartan equation. It is essentially the same proof, but it rederives the basic results on developments of Lie algebra-valued $1$-forms from Section~\ref{sec: existence of homs} as statements about the existence of solutions for certain ODEs. First we will need the following technical lemma about ODEs dependent on a parameter.
-\begin{lem}[{{\cite[Lem.~B.4, Thm.~B.3]{DK}}}]\label{lem variation formula}
-    Consider an ODE of the form $\dot \gamma(t)=f(\gamma(t))$ on some domain in $\bbR^n$ with a differentiable $f$. Fix an initial value $\gamma(0)=x$. As is well known, this problem has a unique solution $\gamma(t,x)$ defined for sufficiently small $t$, $C^1$ in $t$, and of the same smoothness class as $f$ in $x$. If $f$ in addition depends differentiably on a parameter $\epsilon$, then 
-    \[\partial_\epsilon \gamma(t,x,\epsilon)=\int_0^t \frac{\partial \gamma}{\partial x}(t-s,\gamma(s,x,\epsilon),\epsilon)\frac{\partial f}{\partial\epsilon}(\gamma(s,x,\epsilon),\epsilon)\dd s.\]
+% Here we provide the more conventional, but longer, proof of Theorem~\ref{thm differential of exp} that doesn't use the Maurer-Cartan equation. It is essentially the same proof, but it rederives the basic results on developments of Lie algebra-valued $1$-forms from Section~\ref{sec: existence of homs} as statements about the existence of solutions for certain ODEs. First we will need the following technical lemma about ODEs dependent on a parameter.
+% \begin{lem}[{{\cite[Lem.~B.4, Thm.~B.3]{DK}}}]\label{lem variation formula}
+%     Consider an ODE of the form $\dot \gamma(t)=f(\gamma(t))$ on some domain in $\bbR^n$ with a differentiable $f$. Fix an initial value $\gamma(0)=x$. As is well known, this problem has a unique solution $\gamma(t,x)$ defined for sufficiently small $t$, $C^1$ in $t$, and of the same smoothness class as $f$ in $x$. If $f$ in addition depends differentiably on a parameter $\epsilon$, then 
+%     \[\partial_\epsilon \gamma(t,x,\epsilon)=\int_0^t \frac{\partial \gamma}{\partial x}(t-s,\gamma(s,x,\epsilon),\epsilon)\frac{\partial f}{\partial\epsilon}(\gamma(s,x,\epsilon),\epsilon)\dd s.\]
 
-    On a manifold $M$, if $X_\epsilon\in \fX(M)$ is a vector field that smoothly depends on a parameter $\epsilon$, then its flow $F^\epsilon_t$ also depends smoothly on $\epsilon$ and satisfies
-    \[\partial_\epsilon F^\epsilon_t(m)=\int_0^t\left(T_{F^\epsilon_s(m)}F^{\epsilon}_{t-s}\right)\cdot \frac{\partial X_\epsilon}{\partial \epsilon}\left(F^\epsilon_s(m)\right)\dd s\; \in T_{F^\epsilon_t(m)}M.\label{2702}\]
-\end{lem}
-\begin{proof}
-    First we rewrite the ODE in the form of an integral equation
-    \[\gamma(t)=x+\int_0^t f(\gamma(s))\dd s.\]
-    Differentiating this with respect to $\epsilon$ we get
-    \[\partial_\epsilon\gamma(t,x,\epsilon)=\int_0^t \left(\partial_x f(\gamma(s,x,\epsilon),\epsilon)\partial_\epsilon\gamma(s,x,\epsilon)+\partial_\epsilon f(\gamma(s,x,\epsilon),\epsilon)\right)\dd s.\]
-    Differentiating this with respect to $t$ we see that $\partial_\epsilon \gamma$ satisfies the inhomogenous linear differential equation
-    \[\partial_\epsilon \dot\gamma(t)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_\epsilon \gamma(t,x,\epsilon)+\partial_\epsilon f(\gamma(t,x,\epsilon),\epsilon),\quad \partial_\epsilon\gamma(0,x,\epsilon)=0.\label{19804}\]
-    Meanwhile differentiating the original ODE $\dot\gamma(t)=f(\gamma(t))$ with respect to $x$ gives
-    \[ \partial_x\dot \gamma(t,x,\epsilon)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_x\gamma(t,x,\epsilon),\]
-    and therefore $t\mapsto \partial_x \gamma(t,x,\epsilon)$ is a solution of the homogenous equation associated with (\ref{19804}). The classical variation-of-constants formula of Lagrange yields the claimed formula as the solution of (\ref{19804}).
+%     On a manifold $M$, if $X_\epsilon\in \fX(M)$ is a vector field that smoothly depends on a parameter $\epsilon$, then its flow $F^\epsilon_t$ also depends smoothly on $\epsilon$ and satisfies
+%     \[\partial_\epsilon F^\epsilon_t(m)=\int_0^t\left(T_{F^\epsilon_s(m)}F^{\epsilon}_{t-s}\right)\cdot \frac{\partial X_\epsilon}{\partial \epsilon}\left(F^\epsilon_s(m)\right)\dd s\; \in T_{F^\epsilon_t(m)}M.\label{2702}\]
+% \end{lem}
+% \begin{proof}
+%     First we rewrite the ODE in the form of an integral equation
+%     \[\gamma(t)=x+\int_0^t f(\gamma(s))\dd s.\]
+%     Differentiating this with respect to $\epsilon$ we get
+%     \[\partial_\epsilon\gamma(t,x,\epsilon)=\int_0^t \left(\partial_x f(\gamma(s,x,\epsilon),\epsilon)\partial_\epsilon\gamma(s,x,\epsilon)+\partial_\epsilon f(\gamma(s,x,\epsilon),\epsilon)\right)\dd s.\]
+%     Differentiating this with respect to $t$ we see that $\partial_\epsilon \gamma$ satisfies the inhomogenous linear differential equation
+%     \[\partial_\epsilon \dot\gamma(t)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_\epsilon \gamma(t,x,\epsilon)+\partial_\epsilon f(\gamma(t,x,\epsilon),\epsilon),\quad \partial_\epsilon\gamma(0,x,\epsilon)=0.\label{19804}\]
+%     Meanwhile differentiating the original ODE $\dot\gamma(t)=f(\gamma(t))$ with respect to $x$ gives
+%     \[ \partial_x\dot \gamma(t,x,\epsilon)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_x\gamma(t,x,\epsilon),\]
+%     and therefore $t\mapsto \partial_x \gamma(t,x,\epsilon)$ is a solution of the homogenous equation associated with (\ref{19804}). The classical variation-of-constants formula of Lagrange yields the claimed formula as the solution of (\ref{19804}).
 
-    The formula on manifolds is just the same formula if $|t|$ is sufficiently small. It extends to the full flow domain of $X_\epsilon$ by ``continuous induction'' in $t$, namely applying the chain rule to the group law of flows, $F^\epsilon_{t+\tau}=F^\epsilon_\tau\circ F^\epsilon_t$. One assumes that the formula already holds for $|t|<\delta$ and then replaces $x$ with $F_t^\epsilon(x)$ and $t$ with $\tau,|\tau|<\delta$. Unpacking $\partial_\epsilon F_{t+\tau}^{\epsilon}$ via a double application of the formula then confirms that the formula extends to $t+\tau$.
-\end{proof}
+%     The formula on manifolds is just the same formula if $|t|$ is sufficiently small. It extends to the full flow domain of $X_\epsilon$ by ``continuous induction'' in $t$, namely applying the chain rule to the group law of flows, $F^\epsilon_{t+\tau}=F^\epsilon_\tau\circ F^\epsilon_t$. One assumes that the formula already holds for $|t|<\delta$ and then replaces $x$ with $F_t^\epsilon(x)$ and $t$ with $\tau,|\tau|<\delta$. Unpacking $\partial_\epsilon F_{t+\tau}^{\epsilon}$ via a double application of the formula then confirms that the formula extends to $t+\tau$.
+% \end{proof}
 
-\begin{proof}[Second proof of Theorem~\ref{thm differential of exp}]
-    Now we apply formula (\ref{2702}) to $s\mapsto R_{\rme^{s(X+\epsilon Y)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(X+\epsilon Y)_L$ on $G$. Hence:
-    \begin{multline}
-        \exp_{\ast X}Y=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(X+\epsilon Y)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}R_{\exp(X+\epsilon Y)}(e)=\\
-        =\int_0^1T_{\rme^{sX}}R_{\rme^{(1-s)X}}\cdot Y_L\left(\rme^{sX}\right)\dd s=
-        \int_0^1 T_e R_{\rme^X}\circ T_{\rme^{sX}}R_{\rme^{-sX}}\circ T_e L_{\rme^{sX}}\cdot Y \dd s=\\
-        =T_e R_{\rme^X}\circ\int_0^1 T_e\left(R_{\rme^{-sX}}\circ L_{\rme^{sX}}\right)\dd s \cdot Y=
-        T_e R_{\rme^X}\circ \int_0^1 \Ad_{\rme^{sX}}\dd s\cdot Y=\\
-        =T_eR_{\rme^X}\circ \int_0^1 \rme^{s\ad_X}\dd s\cdot Y.
-    \end{multline}
-    In the last equality we used Theorem~\ref{thm 1.5.2 DK}. This proves the first identity. The second one follows from:
-    \begin{multline}
-        T_e R_{\rme^X}^{-1}\circ T_eL_{\rme^X}\circ \int_0^1 \rme^{-s\ad_X}\dd s=\\
-        =\Ad_{\rme^X}\circ\int_0^1 \rme^{-s\ad_X}\dd s=\int_0^1 \rme^{(1-s)\ad_X}\dd s=\int_0^1 \rme^{u\ad_X}\dd u,
-    \end{multline}
-    by means of the substitution $1-s=u$.
-\end{proof}
+% \begin{proof}[Second proof of Theorem~\ref{thm differential of exp}]
+%     Now we apply formula (\ref{2702}) to $s\mapsto R_{\rme^{s(X+\epsilon Y)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(X+\epsilon Y)_L$ on $G$. Hence:
+%     \begin{multline}
+%         \exp_{\ast X}Y=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(X+\epsilon Y)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}R_{\exp(X+\epsilon Y)}(e)=\\
+%         =\int_0^1T_{\rme^{sX}}R_{\rme^{(1-s)X}}\cdot Y_L\left(\rme^{sX}\right)\dd s=
+%         \int_0^1 T_e R_{\rme^X}\circ T_{\rme^{sX}}R_{\rme^{-sX}}\circ T_e L_{\rme^{sX}}\cdot Y \dd s=\\
+%         =T_e R_{\rme^X}\circ\int_0^1 T_e\left(R_{\rme^{-sX}}\circ L_{\rme^{sX}}\right)\dd s \cdot Y=
+%         T_e R_{\rme^X}\circ \int_0^1 \Ad_{\rme^{sX}}\dd s\cdot Y=\\
+%         =T_eR_{\rme^X}\circ \int_0^1 \rme^{s\ad_X}\dd s\cdot Y.
+%     \end{multline}
+%     In the last equality we used Theorem~\ref{thm 1.5.2 DK}. This proves the first identity. The second one follows from:
+%     \begin{multline}
+%         T_e R_{\rme^X}^{-1}\circ T_eL_{\rme^X}\circ \int_0^1 \rme^{-s\ad_X}\dd s=\\
+%         =\Ad_{\rme^X}\circ\int_0^1 \rme^{-s\ad_X}\dd s=\int_0^1 \rme^{(1-s)\ad_X}\dd s=\int_0^1 \rme^{u\ad_X}\dd u,
+%     \end{multline}
+%     by means of the substitution $1-s=u$.
+% \end{proof}
 
-The next technical lemma is useful in many important theorems, and we've already used it in the proof of Theorem~\ref{thm second principle}.
+% The next technical lemma is useful in many important theorems, and we've already used it in the proof of Theorem~\ref{thm second principle}.
 
-\begin{defn}[Path space]
-    The space of all paths in a smooth manifold $M$ starting at $x_0\in M$ is denoted by $\rmP(M,x_0)$ and is provided with the topology of uniform convergence on $M$. Paths are considered equivalent if they are homotopic with fixed ends.
+% \begin{defn}[Path space]
+%     The space of all paths in a smooth manifold $M$ starting at $x_0\in M$ is denoted by $\rmP(M,x_0)$ and is provided with the topology of uniform convergence on $M$. Paths are considered equivalent if they are homotopic with fixed ends.
 
-    The path space $\rmP(\frakg)$ of a Lie algebra $\frakg$ (or any finite-dimensional vector space) is the space of all continuous paths $\delta:[0,1]\to \frakg$ with the topology of uniform convergence defined by the supremum under some norm on $\frakg$ (all choices of norms are equivalent). This space is linear and complete, hence Banach.
+%     The path space $\rmP(\frakg)$ of a Lie algebra $\frakg$ (or any finite-dimensional vector space) is the space of all continuous paths $\delta:[0,1]\to \frakg$ with the topology of uniform convergence defined by the supremum under some norm on $\frakg$ (all choices of norms are equivalent). This space is linear and complete, hence Banach.
 
-    When considering only differentiable paths, e.g.~the set $\rmP(M,x_0)\cap C^1([0,1],M)$, we will simply write $\rmP(M,x_0)\cap C^1$. 
-\end{defn}
+%     When considering only differentiable paths, e.g.~the set $\rmP(M,x_0)\cap C^1([0,1],M)$, we will simply write $\rmP(M,x_0)\cap C^1$. 
+% \end{defn}
 
-Recall that the quotient of the path space $\rmP(M,x_0)$ by the equivalence relation between paths homotopic with fixed ends, with the induced quotient topology, is exactly the universal covering space $\wt{M}$.
+% Recall that the quotient of the path space $\rmP(M,x_0)$ by the equivalence relation between paths homotopic with fixed ends, with the induced quotient topology, is exactly the universal covering space $\wt{M}$.
 
-% \begin{prop}[{{\cite[Prop.~1.13.2]{DK}}}]
-%     Let $G$ be a connected Lie group. Then $\rmP(G,e)$ provided with the pointwise multiplication, $(\gamma\cdot\gamma')(t)=\gamma(t)\gamma'(t)$ fro $t\in [0,1]$, is a group, called the \emph{path group} of $G$. Furthermore,
-%     \[\Lambda(G)=\{\gamma\in \rmP(G,e)\mid \gamma(1)=e\}\]
-%     is a normal subgroup of $\rmP(G,e)$ called the \emph{loop group} of $G$, while
-%     \[\Lambda(G)^\circ=\{\gamma\in \rmP(G,e)\mid \gamma\sim \underbar{e}\},\]
-%     which is the path component of the constant loop $\underbar{e}$, is closed and normal in $\rmP(G,e)$ as well. Now $\gamma\sim\gamma'$ in $\rmP(G,e)$ iff $\gamma'\in \gamma\Lambda(G)^\circ$, so that the universal covering space
-%     \[\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ,\]
-%     becomes a group, which we earlier called the universal covering group.
-% \end{prop}
+% % \begin{prop}[{{\cite[Prop.~1.13.2]{DK}}}]
+% %     Let $G$ be a connected Lie group. Then $\rmP(G,e)$ provided with the pointwise multiplication, $(\gamma\cdot\gamma')(t)=\gamma(t)\gamma'(t)$ fro $t\in [0,1]$, is a group, called the \emph{path group} of $G$. Furthermore,
+% %     \[\Lambda(G)=\{\gamma\in \rmP(G,e)\mid \gamma(1)=e\}\]
+% %     is a normal subgroup of $\rmP(G,e)$ called the \emph{loop group} of $G$, while
+% %     \[\Lambda(G)^\circ=\{\gamma\in \rmP(G,e)\mid \gamma\sim \underbar{e}\},\]
+% %     which is the path component of the constant loop $\underbar{e}$, is closed and normal in $\rmP(G,e)$ as well. Now $\gamma\sim\gamma'$ in $\rmP(G,e)$ iff $\gamma'\in \gamma\Lambda(G)^\circ$, so that the universal covering space
+% %     \[\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ,\]
+% %     becomes a group, which we earlier called the universal covering group.
+% % \end{prop}
 
-By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}\right)_{\ast}\dot\gamma(t)=\xi(t)$. Of course, such a path is guaranteed to exist on some time interval $[0,\epsilon)$, but our goal is to show that in fact it exists on the entire interval $[0,1]$. We formulate this as a homeomorphism because we also want to know that these solutions depend on $\xi$ continuously and smoothly.
+% By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}\right)_{\ast}\dot\gamma(t)=\xi(t)$. Of course, such a path is guaranteed to exist on some time interval $[0,\epsilon)$, but our goal is to show that in fact it exists on the entire interval $[0,1]$. We formulate this as a homeomorphism because we also want to know that these solutions depend on $\xi$ continuously and smoothly.
 
-\begin{lem}[{{\cite[Prop.~1.13.4]{DK}}}]\label{lem invertibility of D}
-    Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the mapping
-    \[\rmD=\rmD^R:\quad \gamma\mapsto \left(t\mapsto \left(R_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
-    is a homeomorphism from $\rmP(G,e)\cap C^1$ onto $\rmP(\frakg)$. For $\delta\in \rmP(\frakg)$, let $A_\delta\in C^1([0,1],\Lin(\frakg))$
-    be the solution $A$ of the initial value problem
-    \[\dot A(t)=\ad_{\delta(t)}\circ A(t),\quad A(0)=I=\id_{\frakg}.\label{1792}\]
-    Then, for all $\gamma,\gamma'\in \rmP(G,e)\cap C^1$ and $t\in [0,1]$:
-    \[\rmD(\gamma\cdot \gamma')(t)=\rmD\gamma(t)+\Ad_{\gamma(t)}\rmD \gamma'(t),\label{1794}\]
-    and 
-    \[\Ad_{\gamma(t)}=A_{\rmD \gamma}(t).\]
-    Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\footnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\rmD(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
-    where $\rmP(\frakg)_0$ is the set of the $\delta\in\rmP(\frakg)$ satisfying the following conditions:
-    \begin{gather}
-        \exists \text{ smooth mapping: } s\mapsto \delta_s:[0,1]\to \rmP(\frakg)\text{ with: } \delta_0=0,\;\delta_1=\delta,\\
-        \int_0^1 A_{\delta_s}(t)^{-1}\partial_s\delta_s(t)\dd t=0\quad (s\in [0,1]).
-    \end{gather}
-\end{lem}
-\begin{proof}
-    The statement that $\rmD$ is bijective means that for every continuous curve $\delta:[0,1]\to\frakg$ there is a unique $C^1$ solution curve $\gamma:[0,1]\to G$ of the equation
-    \[\dot\gamma(t)=(\xi(t))_R(\gamma(t),\]
-    where $(\xi(t))_R$ is the right-invariant vector field corresponding to $\xi(t)\in\frakg$. The mapping $t\mapsto (\xi(t))_R$ is continuous from $[0,1]$ to the space of analytic vector fields on $G$. Thus for each $s\in[0,1]$ and $g\in G$, there is a unique maximal solution $\gamma(t,s,g)$ defined on the flow domain $\calD_{(s,g)}\subset [0,1]$ such that $\gamma(s,s,x)=x$ and $s\in \calD_{(s,g)}$. Defining the flow
-    \[\Phi^{t,s}:x\mapsto \gamma(t,s,x)\text{ from time }s\text{ to time }t,\text{ on }G^{t,s}=\{x\in G\mid t\in \calD_{(s,g)}\},\]
-    we also have the group property $\Phi^{t,s}\circ \Phi^{s,u}\subset \Phi^{t,u}$. Now, if $\gamma$ satisfies the ODE above, then for any $g\in G$:
-    \[\partial_t(\gamma(t)g)=\left(R_{g}\right)_{\ast \gamma(t)} \left(R_{\gamma(t)}\right)_{\ast e}\xi(t)=\left(R_{\gamma(t)g}\right)_{\ast}\xi(t).\]
-    Hence $t\mapsto \gamma(t)g$ tatisfies the same ODE. This shows that $G^{t,s}=G$ and $\Phi^{t,s}(g)=\Phi^{t,s}(e)g$ for all $g\in G$. The group property implies that the flow $\Phi^{t,s}$, constructed first only for small $|t-s|$, is globally defined on $G$ and all $t,s\in[0,1]$; in particular, the solution $\gamma$ exists for all $s,t\in [0,1]$. The continuous dependence of the solution on the vector fields implies that the inverse $\rmD^{-1}$ is continuous, so the first statement of the Lemma is proved.
+% \begin{lem}[{{\cite[Prop.~1.13.4]{DK}}}]\label{lem invertibility of D}
+%     Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the mapping
+%     \[\rmD=\rmD^R:\quad \gamma\mapsto \left(t\mapsto \left(R_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
+%     is a homeomorphism from $\rmP(G,e)\cap C^1$ onto $\rmP(\frakg)$. For $\delta\in \rmP(\frakg)$, let $A_\delta\in C^1([0,1],\Lin(\frakg))$
+%     be the solution $A$ of the initial value problem
+%     \[\dot A(t)=\ad_{\delta(t)}\circ A(t),\quad A(0)=I=\id_{\frakg}.\label{1792}\]
+%     Then, for all $\gamma,\gamma'\in \rmP(G,e)\cap C^1$ and $t\in [0,1]$:
+%     \[\rmD(\gamma\cdot \gamma')(t)=\rmD\gamma(t)+\Ad_{\gamma(t)}\rmD \gamma'(t),\label{1794}\]
+%     and 
+%     \[\Ad_{\gamma(t)}=A_{\rmD \gamma}(t).\]
+%     Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\footnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\rmD(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
+%     where $\rmP(\frakg)_0$ is the set of the $\delta\in\rmP(\frakg)$ satisfying the following conditions:
+%     \begin{gather}
+%         \exists \text{ smooth mapping: } s\mapsto \delta_s:[0,1]\to \rmP(\frakg)\text{ with: } \delta_0=0,\;\delta_1=\delta,\\
+%         \int_0^1 A_{\delta_s}(t)^{-1}\partial_s\delta_s(t)\dd t=0\quad (s\in [0,1]).
+%     \end{gather}
+% \end{lem}
+% \begin{proof}
+%     The statement that $\rmD$ is bijective means that for every continuous curve $\delta:[0,1]\to\frakg$ there is a unique $C^1$ solution curve $\gamma:[0,1]\to G$ of the equation
+%     \[\dot\gamma(t)=(\xi(t))_R(\gamma(t),\]
+%     where $(\xi(t))_R$ is the right-invariant vector field corresponding to $\xi(t)\in\frakg$. The mapping $t\mapsto (\xi(t))_R$ is continuous from $[0,1]$ to the space of analytic vector fields on $G$. Thus for each $s\in[0,1]$ and $g\in G$, there is a unique maximal solution $\gamma(t,s,g)$ defined on the flow domain $\calD_{(s,g)}\subset [0,1]$ such that $\gamma(s,s,x)=x$ and $s\in \calD_{(s,g)}$. Defining the flow
+%     \[\Phi^{t,s}:x\mapsto \gamma(t,s,x)\text{ from time }s\text{ to time }t,\text{ on }G^{t,s}=\{x\in G\mid t\in \calD_{(s,g)}\},\]
+%     we also have the group property $\Phi^{t,s}\circ \Phi^{s,u}\subset \Phi^{t,u}$. Now, if $\gamma$ satisfies the ODE above, then for any $g\in G$:
+%     \[\partial_t(\gamma(t)g)=\left(R_{g}\right)_{\ast \gamma(t)} \left(R_{\gamma(t)}\right)_{\ast e}\xi(t)=\left(R_{\gamma(t)g}\right)_{\ast}\xi(t).\]
+%     Hence $t\mapsto \gamma(t)g$ tatisfies the same ODE. This shows that $G^{t,s}=G$ and $\Phi^{t,s}(g)=\Phi^{t,s}(e)g$ for all $g\in G$. The group property implies that the flow $\Phi^{t,s}$, constructed first only for small $|t-s|$, is globally defined on $G$ and all $t,s\in[0,1]$; in particular, the solution $\gamma$ exists for all $s,t\in [0,1]$. The continuous dependence of the solution on the vector fields implies that the inverse $\rmD^{-1}$ is continuous, so the first statement of the Lemma is proved.
 
-    The product rule for $\rmD(\gamma\cdot\gamma')$ is easy to verify:
-    \[\partial_t(\gamma(t)\gamma'(t))=\left(R_{\gamma'}\right)_{\ast \gamma}\dot\gamma+ \left(L_{\gamma}\right)_{\ast \gamma'}\dot\gamma',\]
-    which then recombines into the claimed equality (\ref{1794}).
+%     The product rule for $\rmD(\gamma\cdot\gamma')$ is easy to verify:
+%     \[\partial_t(\gamma(t)\gamma'(t))=\left(R_{\gamma'}\right)_{\ast \gamma}\dot\gamma+ \left(L_{\gamma}\right)_{\ast \gamma'}\dot\gamma',\]
+%     which then recombines into the claimed equality (\ref{1794}).
 
-    In addition we check 
-    \[\partial_t \Ad_{\gamma(t)}=\restr{\frac{\dd}{\dd s}}{s=0}\Ad_{\gamma(t+s)\gamma(t)^{-1}}\Ad_{\gamma(t)}=\ad_{\rmD \gamma(t)}\Ad_{\gamma(t)},\quad \Ad_{\gamma(0)}=\Ad_e=I,\]
-    and this shows that $A:t\mapsto \Ad_{\gamma(t)}$ satisfies (\ref{1792}) with $\delta=\rmD\gamma$.
+%     In addition we check 
+%     \[\partial_t \Ad_{\gamma(t)}=\restr{\frac{\dd}{\dd s}}{s=0}\Ad_{\gamma(t+s)\gamma(t)^{-1}}\Ad_{\gamma(t)}=\ad_{\rmD \gamma(t)}\Ad_{\gamma(t)},\quad \Ad_{\gamma(0)}=\Ad_e=I,\]
+%     and this shows that $A:t\mapsto \Ad_{\gamma(t)}$ satisfies (\ref{1792}) with $\delta=\rmD\gamma$.
 
-    If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\rmD\gamma_u(t))_R$, we have the variational formula from Lemma~\ref{lem variation formula}:
-    \[\partial_u\gamma_u(e)=\int_0^1 \left(T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\rmD\gamma_u(s)\right)_R\right)\gamma_u(s)\dd s.\]
-    Now 
-    \begin{multline}
-        T_{\gamma_u(s)}\Phi^{1,s}_u=T_{\gamma_u(s)}\left(\Phi_u^{1,0}\circ (\Phi^{s,0}_u)^{-1}\right)=\\=T_{\gamma_u(s)}\Phi_u^{1,0}\circ \left(T_e\Phi^{s,0}_u\right)^{-1}= T_{e}L_{\gamma_u(1)}\circ T_e L_{\gamma_u(s)}^{-1},
-    \end{multline}
-    using the fact that the flow of a right-invariant field is performed by left translations.  On the other hand,
-    \[((\rmD \gamma_u)(s))_R(g)=\left(R_g\right)_\ast \rmD\gamma_u(s),\]
-    so the variational formula takes the form
-    \[\partial_u\gamma(1)=\left(L_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\rmD\gamma_u)(s)\dd s.\]
-    Then $u\mapsto\gamma_u(1)$ is constant iff $\int_0^1\Ad_{\gamma_u(s)}^{-1}\partial_u\rmD\gamma_u(s)\dd s=0$. Again using $\Ad_{\gamma_u(s)}=A_{\rmD \gamma_u}(s)$, we now obtain the last statement of this Lemma.
-\end{proof}
+%     If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\rmD\gamma_u(t))_R$, we have the variational formula from Lemma~\ref{lem variation formula}:
+%     \[\partial_u\gamma_u(e)=\int_0^1 \left(T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\rmD\gamma_u(s)\right)_R\right)\gamma_u(s)\dd s.\]
+%     Now 
+%     \begin{multline}
+%         T_{\gamma_u(s)}\Phi^{1,s}_u=T_{\gamma_u(s)}\left(\Phi_u^{1,0}\circ (\Phi^{s,0}_u)^{-1}\right)=\\=T_{\gamma_u(s)}\Phi_u^{1,0}\circ \left(T_e\Phi^{s,0}_u\right)^{-1}= T_{e}L_{\gamma_u(1)}\circ T_e L_{\gamma_u(s)}^{-1},
+%     \end{multline}
+%     using the fact that the flow of a right-invariant field is performed by left translations.  On the other hand,
+%     \[((\rmD \gamma_u)(s))_R(g)=\left(R_g\right)_\ast \rmD\gamma_u(s),\]
+%     so the variational formula takes the form
+%     \[\partial_u\gamma(1)=\left(L_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\rmD\gamma_u)(s)\dd s.\]
+%     Then $u\mapsto\gamma_u(1)$ is constant iff $\int_0^1\Ad_{\gamma_u(s)}^{-1}\partial_u\rmD\gamma_u(s)\dd s=0$. Again using $\Ad_{\gamma_u(s)}=A_{\rmD \gamma_u}(s)$, we now obtain the last statement of this Lemma.
+% \end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \newpage

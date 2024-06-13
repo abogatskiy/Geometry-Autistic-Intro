@@ -1437,7 +1437,7 @@ Before diving into the more sophisticated examples, let walk through the classic
 
     This allows us to compare different affine structures. Let $\calA$ and $\wt\calA$ be two affine structures on $M$. Then $G(\id_M)$ is a $1$-form that vanishes iff the structures are equivalent. Moreover, each $1$-form $\omega$ of this kind defines a unique deformation of the affine structure: indeed, Cartan's Fundamental Theorem guarantees that local representatives of $\omega$ match the Galilean invariants of local diffeomorphisms between subsets of $\rmA(\bbR^n)$ (that is, changes of coordinates on $M$) unique up to global affine transformations. Thus, the set of all affine structures is naturally an affine space modeled on the space $\Omega^1(M;\frakgl_n(\bbR))$.
     
-    This is the content of the \emph{Galilean Principle of Relativity}: given an affine structure with local affine coordinate $\bf{x}$, there is a bijection between all affine structures and elements of $\Omega^1(M;\frakgl_n(\bbR))$, where locally a chart $\bf{y}$ is identified with $\bf{y}'(\bf{x})^{-1}\bf{y}''(\bf{x})\dd \bf{x}$. In physics, an affine structure on the spacetime corresponds to a choice of inertial observers at each point, and the Galiliean principal says that two observers are inertial relative to each other iff the coordinate transformation between them is linear. Note that in physics, a Galilean affine structure is usually of type $(\rmE_n,\SO_n)$, where $\rmE_n=\SO_n\ltimes\bbR^n$ is the Euclidean group, i.e.\ one deals with orthonormal frames with respect to a spacetime metric. In fact, the Galilean group is even smaller because it should act trivially on one more vector (the time axis). However, the results are similar after a proper normalization of the derivative $\bf{y}'$ to make it orthogonal (e.g.\ by rescaling each column).
+    This is the content of the \emph{Galilean Principle of Relativity}: given an affine structure with local affine coordinate $\bf{x}$, there is a bijection between all affine structures and elements of $\Omega^1(M;\frakgl_n(\bbR))$, where locally a chart $\bf{y}$ is identified with $\bf{y}'(\bf{x})^{-1}\bf{y}''(\bf{x})\dd \bf{x}$. In physics, an affine structure on the spacetime corresponds to a choice of inertial observers at each point, and the Galiliean principal says that two observers are inertial relative to each other iff the coordinate transformation between them is linear. Note that in physics, a Galilean affine structure is usually of type $(\SE_n,\SO_n)$, where $\SE_n=\SO_n\ltimes\bbR^n$ is the Euclidean group, i.e.\ one deals with orthonormal frames with respect to a spacetime metric. In fact, the Galilean group is even smaller because it should act trivially on one more vector (the time axis). However, the results are similar after a proper normalization of the derivative $\bf{y}'$ to make it orthogonal (e.g.\ by rescaling each column).
 \end{example}
 
 The next two examples deal with curves in Euclidean space of dimension $2$ and higher.
@@ -1872,7 +1872,7 @@ Thus, $\theta^i$ has the geometric interpretation of measuring the infinitesimal
 It's obvious that $\theta^i$ are horizontal for the principal bundle $\pi:\SE_3\to\bbE^3$ since the right $\SO_3$-action changes only the rotational components of $g$.
 
 The fact that the frame $\frake:\Sigma\to \SE_3$ is adapted means that, at every point of $\Sigma$,
-\[\frake^\ast(e_3)=0,\quad \frake^\ast(\theta^1\wedge\theta^2)\neq 0.\label{eq 2.2 Ivey}\]
+\[\frake^\ast(\theta^3)=0,\quad \frake^\ast(\theta^1\wedge\theta^2)\neq 0.\label{eq 2.2 Ivey}\]
 Let $\pi:P\to \Sigma$ be the bundle whose fiber over $p\in\Sigma$ is the set of oriented orthonormal bases $(e_1,e_2,e_3)$ of $T_p \bbE^3$ such that $e_3\perp T_p\Sigma$. The first-order adapted lifts are exactly the sections of $P$. After fixing a frame at an arbitrarily chosen origin in $\bbE^3$, $\SE_3$ is the total space of the bundle of all oriented orthonormal frames of $\bbE^3$, and $P$ is a subbundle of $\restr{\SE_3}{\Sigma}$.
 
 The Maurer-Cartan equation lets us calculate the derivatives of the left-invariant forms on $\SE_3$ algebraically:
@@ -2005,7 +2005,7 @@ In addition, the definition of $h$ (\ref{def h}) immediately implies, by multipl
     Let us assume that we have found local \emph{orthogonal} coordinates $(x,y)$ on $\Sigma$, i.e.\ such that $\rmI$ (the metric) takes the form $\rmI=\left(\begin{smallmatrix}
         E & 0\\
         0 & G
-    \end{smallmatrix}\right)$. The existence of such coordinates on all surfaces will be shown in Corollary~\ref{cor isothermal coords}. Then a local orthonormal frame and coframe is given by (here we imply pullbacks to $\Sigma$ along $\frake$)
+    \end{smallmatrix}\right)$. They are also called \emph{line of curvature coordinates}.\index{Line of curvature coordinates} The existence of such coordinates on all surfaces will be shown in Corollary~\ref{cor isothermal coords}. Then a local orthonormal frame and coframe is given by (here we imply pullbacks to $\Sigma$ along $\frake$)
     \[e_1=\frac{1}{\sqrt{E}}\partial_x,\quad e_2=\frac{1}{\sqrt{G}}\partial_y,\quad \theta^1=\sqrt{E}\dd x,\quad \theta^2=\sqrt{G}\dd y.\]
     We can find $\omega_1^2$ from the equation $\dd\omega_i(e_1,e_2)=\omega_1^2(e_i)$ (this is part of the Structure Equation~\ref{eq structure for surfaces}):
     \[\omega_1^2(e_1)=\dd\theta^1(e_1,e_2)=-\frac{E_y}{2\sqrt{E}\sqrt{EG}},\quad \omega_1^2(e_2)=\dd\theta^2(e_1,e_2)=\frac{E_x}{2\sqrt{G}\sqrt{EG}},\]
@@ -2019,8 +2019,8 @@ In addition, the definition of $h$ (\ref{def h}) immediately implies, by multipl
 
 
 \begin{xca}
-    Let $\gamma(s):\bbR\to \Sigma$ be a curve on the surface $\Sigma$ such that $\lVert\dot\gamma(s)\rVert=1$ and $\ddot\gamma(s)\perp T_{\gamma(s)}\Sigma$ for all $s$. Show that the curvature $\kappa$ of the curve can be expressed as
-    \[\kappa=\left|\<\rmII(\dot\gamma,\dot\gamma),e_3\>\right|.\]
+    Let $\gamma(s):\bbR\to \Sigma$ be a curve on the surface $\Sigma$ such that $\lVert\dot\gamma(s)\rVert=1$ and $\ddot\gamma(s)\perp T_{\gamma(s)}\Sigma$ for all $s$ (such curves are \emph{geodesics}, as we will see in \Subsect~\ref{sec: pseudospherical surfaces}).\index{Geodesic} Show that the curvature $\kappa$ of the curve can then be expressed as
+    \[\kappa=\left|\<\rmII(\dot\gamma,\dot\gamma),e_3\>\right|=|Q(\dot\gamma,\dot\gamma|.\]
 \end{xca}
 
 
@@ -2029,7 +2029,11 @@ In addition, the definition of $h$ (\ref{def h}) immediately implies, by multipl
 
 
 
-\subsection{Principal framings}
+
+
+
+
+\subsection{Darboux framings}\label{sec: principal framings}
 
 We are now ready to prove that $K$ is an intrisic quantity, i.e.\ it depends only on the metric $\sfg=\rmI$ on $\Sigma$, and not on the particular isometric immersion $\Sigma\to \bbE^3$.
 
@@ -2063,10 +2067,16 @@ Having constructed $h$, we can finally define a natural orthonormal frame. Note 
 \end{defn}
 
 
-Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$, and $H,K$ become well-defined differential invariants. The main question now is now: to what extent do the functions $H$ and $K$ determine the surface. That is, given an open subset $U\subset\bbR^2$, does there exist (locally) a map $\bf{x}:U\to \bbE^3$ such that $H$ and $K$ are the mean and Gauss curvatures of $\Sigma=\bf{x}(U)$. There are certain inequalities on admissible pairs of functions because $H,K$ are symmetric functions of the principal curvatures (so, e.g., $H=0$ implies $K\leq 0$). However, stronger restrictions are uncovered when one differentiates and checks that mixed partials commute (in the spirit of the Frobenius Theorem). But first, consider the following two examples of surfaces, which demonstrate that $H$ and $K$ don't uniquely determine a surface even in the absence of umbilic points.
+Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$, and $H,K$ become well-defined differential invariants. The main question now is now: to what extent do the functions $H$ and $K$ determine the surface. That is, given an open subset $U\subset\bbR^2$, does there exist (locally) a map $\bf{x}:U\to \bbE^3$ such that $H$ and $K$ are the mean and Gauss curvatures of $\Sigma=\bf{x}(U)$. There are certain inequalities on admissible pairs of functions because $H,K$ are symmetric functions of the principal curvatures (so, e.g., $H=0$ implies $K\leq 0$). However, stronger restrictions are uncovered when one differentiates and checks that mixed partials commute (in the spirit of the Frobenius Theorem). But first, consider the following two examples of surfaces which demonstrate that $H$ and $K$ don't uniquely determine an immersed surface even in the absence of umbilic points.
 
+\begin{figure}[tp]
+    \centering
+    \includegraphics[scale=0.5]{figures/helicoid.jpeg}
+    \caption{A $1$-parameter family of minimal ($H=0$) isometric immersions of a surface connecting the helicoid (top left) to the catenoid (bottom right).}
+    \label{fig:helicoid}
+\end{figure}
 
-\begin{example}[Helicoid]
+\begin{example}[Helicoid]\label{ex helicoid}
     Let $a>0$ be a constant and consider the following map $\bf{x}:\bbR^2\to \bbR^3$:
     \[\bf{x}(s,t)=(s\cos t,s\sin t,at).\]
     Its image is called the \emph{helicoid}. Note that the $z$-axis is contained in the surface, as is a horizontal line emanating out of each point on the $z$-axis, and this line rotates as we move up the $z$-axis.
@@ -2091,7 +2101,7 @@ Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$,
     \end{multline}
     So, using (\ref{eq 2.7 Ivey}) and (\ref{eq 2.8 Ivey}), we obtain 
     \[\omega_1^3=-a(s^2+a^2)^{-1}\theta^2,\quad \omega_2^3=-a(s^2+a^2)^{-1}\theta^1.\]
-    The coefficients in front of $\theta^i$ are the principal curvatures $k^i$. We conclude that $H(s,t)=0$ and $K(s,t)=-\frac{a^2}{(s^2+a^2)^2}$. Thus, the helicoid is a umbilic-free minimal surface.
+    The coefficients in front of $\theta^i$ are the principal curvatures $k_i$. We conclude that $H(s,t)=0$ and $K(s,t)=-\frac{a^2}{(s^2+a^2)^2}$. Thus, the helicoid is a umbilic-free minimal surface.
 \end{example}
 
 Being a union of disjoint straight lines, the helicoid is an example of a \emph{ruled} surface.
@@ -2120,7 +2130,7 @@ The following proposition clarifies what developable surfaces look like.
 \end{proof}
 
 
-\begin{example}[Catenoid]
+\begin{example}[Catenoid]\label{ex catenoid}
     Let $a>0$ be a constant and consider the following map $\bf{x}:\bbR^2\to \bbR^3$:
     \[\bf{x}(u,v)=(a\cosh v\cos u,a\cosh v\sin u,av).\]
     Its image is called the \emph{catenoid}.\index{Catenoid}
@@ -2647,7 +2657,7 @@ and so on for all $l$. In general, we define
 \end{defn}
 
 \begin{example}[Wave equation]
-    The wave equation $u_{xy}=0$ may be encoded as a tableau of order two for $V=\bbR^2$, $W=\bbR$ as 
+    The wave equation $u_{xy}=0$ may be encoded as a tableau of order two for $V=\bbR^2$, $W=\bbR$ as (omitting tensor products again)
     \[A=\{p_{11}\dd x\dd x+p_{22}\dd y\dd y\mid p_{11},p_{22}\in\bbR\}.\]
     Then 
     \[A\otimes\bbR^2_{x,y}=\<(\dd x)^3,\dd x\dd x\dd y,\dd y\dd y \dd x,(\dd y)^3\>,\]
@@ -3154,7 +3164,7 @@ Crucially, the metric $\sfg$ on a surface cannot be recovered just from its conf
 Thus, $\lambda^2$ and $K$ contain the same local information about the metric (up to the necessary boundary conditions that guarantee a unique solution of Liouville's equation). The rest of the information about the metric, namely the conformal structure, is contained in the isothermal coordinates themselves. We will later identify this information with a \emph{complex structure} on the surface.
 
 We can also obtain the following useful formula for the mean curvature in isothermal coordinates. Since the mean curvature is not intrinsic, we need to assume a fixed isometric immersion $\bf{x}:\Sigma\to \bbE^3$.
-\begin{prop}
+\begin{prop}\label{prop mean curvature laplace}
     Let $\bf{x}=\bf{x}(x,y)$ be a surface parametrized by isothermal coordinates $(x,y)$ such that the metric is $\lambda^2((\dd x)^2+(\dd y)^2)$. Let $e_3$ be the unit normal vector (Gauss map) of $\Sigma$. Then 
     \[H e_3=\frac{1}{\lambda^2}\left(\bf{x}_{xx}+\bf{x}_{yy}\right).\]
 \end{prop}
@@ -3292,7 +3302,7 @@ The condition for finding Cauchy characteristics is thus algebraic, which makes 
 \end{proof}
 
 \begin{example}[Surfaces in $\bbE^3$]\label{ex 7.1.10 Ivey}
-    Recall tbat the integral manifolds of $\calI=\<\theta^3\>_{\mathrm{diff}}$ on the orthonormal frame bundle $P\to \bbE^3$   are the first-order adapted lifts of surfaces $\Sigma\subset\bbE^3$. This system admits a Cauchy characteristic vector field as follows.
+    Recall tbat the integral manifolds of $\calI=\<\theta^3\>_{\mathrm{diff}}$ on the orthonormal frame bundle $\SE_3\to \bbE^3$   are the first-order adapted lifts of surfaces $\Sigma\subset\bbE^3$. This system admits a Cauchy characteristic vector field as follows.
 
     Let $\{E_j,E^i_j\}$ be a global frame for $TP$ dual to the one given by the entries of the Maurer-Cartan form $\{\theta^j,\omega^i_j\}$. Expand $X=X^jE_j+X^j_i E^i_j$. Then $i_X\theta^3=0$ implies that $X_3=0$ and 
     \[i_X \dd\theta^3=i_X(-\omega^3_1\wedge\theta^1-\omega^3_2\wedge\theta^2)=X_1\omega^3_1-X^1_3\theta^1+X_2\omega^3_2-X^2_3\theta^2\]
@@ -3363,11 +3373,11 @@ This means that we can calculate the retracting space by finding a minimal set o
 
 If $\calC(\calI)$ has constant rank $k$,  then the maximal integral manifolds of $\calC(\calI)$ form a foliation of $M$ by smooth manifolds of codimension $k$. In some cases, the leaf space of this foliation is a manifold, called the \emph{quotient by the Cauchy characteristics}.
 
-\begin{example}[Example~\ref{ex 7.1.10 Ivey} continued]
-    For our tautological \gls{eds} for lifts of surfaces, $\calC(\calI)$ is the Frobenius system on $P$ spanned by $\theta^1,\theta^2,\theta^3,\omega^3_1,\omega^3_2$. Integral curves of $\calC(\calI)$ form a foliation of $P$. The leaf space for this foliation is a 5-dimensional homogeneous space which we identify with $S(T\bbE^3)$, the unit sphere bundle of the tangent bundle of $\bbE^3$, by letting $m$ be the basepoint and $e_3$ the unit vector in $T_m\bbE^3$.
+\begin{example}[Example~\ref{ex 7.1.10 Ivey} continued]\label{ex 7.1.10 Ivey contd}
+    For our tautological \gls{eds} for lifts of surfaces, $\calC(\calI)$ is the Frobenius system on $\SE_3$ spanned by $\theta^1,\theta^2,\theta^3,\omega^3_1,\omega^3_2$. Integral curves of $\calC(\calI)$ form a foliation of $\SE_3$. The leaf space for this foliation is a 5-dimensional homogeneous space which we identify with $S(T\bbE^3)$, the unit sphere bundle of the tangent bundle of $\bbE^3$, by letting $m$ be the basepoint and $e_3$ the unit vector in $T_m\bbE^3$.
 \end{example}
 
-
+In the above example, the leaf space is a manifold. Generally, whenever the leaf space is a smooth manifold, the original \gls{eds} $\calI$ can be factored to give a well-defined equivalent \gls{eds} $\wt\calI$ on the quotient manifold such that $\calI=\<\pi^\ast\wt\calI\>_{\mathrm{alg}}$, where $\pi$ is the leaf quotient map. For the proof of this fact we direct the reader to \cite[Prop.~7.1.20]{Ivey}.
 
 
 
@@ -3447,13 +3457,13 @@ Each integral surface is foliated by integral curves of $\calM_1$ and by integra
     where $\pi_i$ are as above.
     If the PDE (\ref{eq 7.10 Ivey}) is \emph{quasilinear} (i.e.\ the highest-order derivatives enter linearly), then the equation (\ref{eq 7.13 Ivey}) only involves $x,y,z,p,q$. More generally, we say that a second-order PDE for one function of two variables has \emph{first-order characteristics} if there exists a rank $3$ Pfaffian system on $J^1(\bbR^2,\bbR)$ whose pullback to $M$ is contained in one of the characteristic systems of $\calI$. This is the case when (\ref{eq 7.10 Ivey}) is a Monge-Amp\`ere equation, which we will consider below. The existence of first-order characteristics is intrinsic to the system, since $J^1(\bbR^2,\bbR)$ is the quotient of $M$ by the foliation dual to the retracting space of $I$'s first derived system.
 \end{rem}
-We now generalized the notion of Monge characteristics to systems which have structure equations similar to (\ref{eq 7.12 Ivey}).
+As a final remark, we can generalize the notion of Monge characteristics to systems which have structure equations similar to (\ref{eq 7.12 Ivey}).
 
 \begin{defn}
     An \gls{eds} is hyperbolic of class $k$ if near any point it is algebraically generated by $k$ independent $1$-forms and two decomposable $2$-forms with no common factors.
 \end{defn}
 
-Thus, the retracting space of such a system has dimension $k+4$. For this rason, a hyperbolic \gls{eds} of class $k$ may be assumed to be defined on a $(k+4)$-dimensional manifold. This generalization will be useful for studying hyperbolic PDE's because the prolongation of a hyperbolic system of class $k$ is hyperbolic of class $k+2$. Hyperbolic systems of even class arise when we consider PDE's for two functions of two variables.
+Thus, the retracting space of such a system has dimension $k+4$. For this reason, a hyperbolic \gls{eds} of class $k$ may be assumed to be defined on a $(k+4)$-dimensional manifold. This generalization will be useful for studying hyperbolic PDE's because the prolongation of a hyperbolic system of class $k$ is hyperbolic of class $k+2$. Hyperbolic systems of even class arise when we consider PDE's for two functions of two variables.
 
 
 
@@ -3494,7 +3504,7 @@ Then $W$ and $X$ are both constant along the integral curves of $\calM_i$ (such 
 
 
 \begin{example}[Hyperbolic Liouville equation]\label{ex 7.3.6 Ivey}
-    For the hyperbolic Liouville's equation $z_{xy}=\rme^z$ ((\ref{eq liouville general}) with $K=-1$ and $\Delta$ replaced by the wave operator in ``lightcone coordinates'' $(x,y)\mapsto (x+y,x-y)$), the Pfaffian system $I$ is defined by \index{Equation!Liouville}
+    For the hyperbolic Liouville equation $z_{xy}=\rme^z$ ((\ref{eq liouville general}) with $K=-1$ and $\Delta$ replaced by the wave operator in ``lightcone coordinates'' $(x,y)\mapsto (x+y,x-y)$), the Pfaffian system $I$ is defined by \index{Equation!Liouville}
     \[
     \begin{matrix}
         \theta_0=\dd z-p\dd x-q\dd y,\\
@@ -3527,10 +3537,10 @@ Then $W$ and $X$ are both constant along the integral curves of $\calM_i$ (such 
 
 
 \begin{example}[\ref{ex 7.3.6 Ivey} continued]
-    We saw that Liouville's equation is Darboux-integrable. Now, to obtain a solution, it seems that we must solve Ricatti differential equations (\ref{eq 7.15 Ivey}) for $p$ and $q$. There is no general formula for solutions of Ricatti equations in quadratures. However, since $f(x)$ is arbitrary, we may make convenient choices for the form of $f(x)$. In particular, if we set $f(x)=F'(x)-\frac12 F(x)^2$, then $F(x)$ is another solution of the Ricatti equation that $p$ satisfies. The standard trick is to notice that $v=1/(p-F(x))$ satisfies a linear differential equation. Solving that equation using an integrating factor leads to 
+    We saw that the hyperbolic Liouville equation is Darboux-integrable. Now, to obtain a solution, it seems that we must solve Ricatti differential equations (\ref{eq 7.15 Ivey}) for $p$ and $q$. There is no general formula for solutions of Ricatti equations in quadratures. However, since $f(x)$ is arbitrary, we may make convenient choices for the form of $f(x)$. In particular, if we set $f(x)=F'(x)-\frac12 F(x)^2$, then $F(x)$ is another solution of the Ricatti equation that $p$ satisfies. The standard trick is to notice that $v=1/(p-F(x))$ satisfies a linear differential equation. Solving that equation using an integrating factor leads to 
     \[p=\frac{X''}{X'}-\frac{2X'}{X+Y'},\]
     where $X$ and $Y$ are arbitrary functions of $x$ and $y$, respectively, and $F(x)=X''/X'$. Integrating gives 
-    \[z=\ln \frac{2X'Y'}{(X+Y)^2.}\]
+    \[z=\ln \frac{2X(x)'Y(y)'}{(X(x)+Y(y))^2.}\label{eq Liouville general solution}\]
     This is the general solution to Liouville's equation $z_{xy}=\rme^z$.
 \end{example}
 
@@ -3724,11 +3734,11 @@ This generic case is very interesting. A complete system of invariants was found
 \subsection{Monge-Amp\`ere systems}
 
 
-Now we will study a class of second-order PDE's for which one can define an \gls{eds} on a smaller-dimensional manifold than the usual $7$-dimensional jet space of \subsect~\ref{sec: hyperbolic EDS}. It will also be our first example of a non-Pfaffian \gls{eds}, i.e.\ which is not generated just by $1$-forms. These equations, called \emph{Monge-Amp\`ere equations}, are of the form 
+Now we will study a class of second-order PDE's for which one can define an \gls{eds} on a smaller-dimensional manifold than the usual $7$-dimensional jet space of \Subsect~\ref{sec: hyperbolic EDS}. It will also be our first example of a non-Pfaffian \gls{eds}, i.e.\ which is not generated just by $1$-forms. These equations, called \emph{Monge-Amp\`ere equations}, are of the form 
 \[Az_{xx}+2Bz_{xy}+Cz_{yy}+D+E(z_{xx}z_{yy}-z_{xy}^2)=0,\label{eq 7.18 Ivey}\]
-where $A,B,C,D,E$ are functions of $x,y,z,p=z_x,q=z_y$. As in \subsect~\ref{sec: hyperbolic EDS}, we assume that the partial derivatives of the left hand side w.r.t.\ $z_{xx},z_{xy}$ and $z_{yy}$ are never simultaneously zero. In the next \subsect, we will apply this theory to a special class of surfaces that are locally represented by solutions of such systems.
+where $A,B,C,D,E$ are functions of $x,y,z,p=z_x,q=z_y$. As in \Subsect~\ref{sec: hyperbolic EDS}, we assume that the partial derivatives of the left hand side w.r.t.\ $z_{xx},z_{xy}$ and $z_{yy}$ are never simultaneously zero. In the next \subsect, we will apply this theory to a special class of surfaces that are locally represented by solutions of such systems.
 
-The first observation is that since, in the notation of \subsect~\ref{sec: hyperbolic EDS}, $r=z_{xx}$, $s=z_{xy}$ and $t=z_{yy}$, the determinant $F_rF_t-\frac14 F_s^2$ is exactly $(A+Et)(C+Er)-(B-Es)^2$. Expanding and using the Monge-Amp\`ere equation itself, this determinant is equal to
+The first observation is that since, in the notation of \Subsect~\ref{sec: hyperbolic EDS}, $r=z_{xx}$, $s=z_{xy}$ and $t=z_{yy}$, the determinant $F_rF_t-\frac14 F_s^2$ is exactly $(A+Et)(C+Er)-(B-Es)^2$. Expanding and using the Monge-Amp\`ere equation itself, this determinant is equal to
 \[AC-B^2-DE.\]
 Thus, the sign of this quantity determines whether (\ref{eq 7.18 Ivey}) is hyperbolic, parabolic, or elliptic.
 
@@ -3738,9 +3748,9 @@ Let $\theta=\dd z-p\dd x-q\dd y$, the contact form on $J^1(\bbR^2,\bbR)$. Note t
 \]
 Therefore, the PDE (\ref{eq 7.18 Ivey}) is equivalent to the \gls{eds} 
 \[\calI\coloneqq \<\theta,\Psi\>_{\mathrm{diff}} \text{ on }J^1(\bbR^2,\bbR).\]
-This can be verified by using the relations $p=z_x,q=z_y$ enforced by $\theta=0$, and noting that $\dd p\wedge\dd y=z_{xx}\dd x\wedge \dd y$ and so on. Note that this is not the only possible choice of generators. For example, since $\dd\theta=-(\dd p\wedge\dd x+\dd q\wedge \dd y)$, the $B$-term in $\Psi$ may be replaced by $2B\dd q\wedge \dd y$ or by $-2B\dd p\wedge \dd x$. The prolongation of $\calI$ recovers the usual rank $3$ Pfaffian system on $J^2(\bbR^2,\bbR)$ described in \subsect~\ref{sec: hyperbolic EDS}.
+This can be verified by using the relations $p=z_x,q=z_y$ enforced by $\theta=0$, and noting that $\dd p\wedge\dd y=z_{xx}\dd x\wedge \dd y$ and so on. Note that this is not the only possible choice of generators. For example, since $\dd\theta=-(\dd p\wedge\dd x+\dd q\wedge \dd y)$, the $B$-term in $\Psi$ may be replaced by $2B\dd q\wedge \dd y$ or by $-2B\dd p\wedge \dd x$. The prolongation of $\calI$ recovers the usual rank $3$ Pfaffian system on $J^2(\bbR^2,\bbR)$ described in \Subsect~\ref{sec: hyperbolic EDS}.
 
-Thus, the following definition captures the essential features of the Monge-Am\`ere system on $J^1(\bbR^2,\bbR)$.
+Thus, the following definition captures the essential features of the Monge-Amp\`ere system on $J^1(\bbR^2,\bbR)$.
 
 \begin{defn}[Monge-Amp\`ere system]
     A \gls{ma} system on a $5$-dimensional manifold $M$ is an \gls{eds} generated differentially by a $1$-form $\theta$ of Pfaff rank $2$ and a $2$-form $\Psi$ that is linearly independent from $\dd\theta$ modulo $\theta$, i.e.\ $\Psi-\dd\theta\neq 0\pmod{\theta}$.
@@ -3750,7 +3760,7 @@ Thus, the following definition captures the essential features of the Monge-Am\`
     A quasi-linear third-order evolution equation for one function of two variables can also be encoded by an \gls{eds} on a manifold of lower dimension than $J^3(\bbR^2,\bbR)$.
 \end{rem}
 
-\begin{example}
+\begin{example}\label{ex 7.4.6 Ivey}
     \begin{enumerate}
         \item The Laplace equation $z_{xx}+z_{yy}=0$ is equivalent to the \gls{ma} system on $J^1(\bbR^2,\bbR)$ generated by $\theta$ and $\Psi=\dd p\wedge\dd y-\dd p\wedge \dd x$.
         \item The sine-Gordon equation $u_{xy}=\sin u\cos u$ is equivalent to the \gls{ma} system on $J^1(\bbR^2,\bbR)$ generated by $\theta$ and the decomposable $2$-form $\Psi=(\dd p-\sin u \cos u\dd y)\wedge\dd x$. (The usual version $u_{xy}=\sin u$ of the sine-Gordon equation is obtained by doubling $u$.) Note that $\Psi+\dd\theta$ is also decomposable.
@@ -3772,15 +3782,15 @@ It is no accident that these examples can be derived from \gls{ma} equations. In
     These conditions on the curvatures $H,K$ of a surface are examples of Weingarten equations, and are naturally modeled by an \gls{eds} on the coframe bundle (see below.)
 \end{example}
 
-The characteristic systems for a \gls{ma} equation may be defined in a way similar to \subsect~\ref{sec: hyperbolic EDS}. Namely, suppose $\calI$ is hyperbolic, i.e.\ there exist two decomposable $2$-forms in $\calI$ which are linearly independent modulo $\theta$, and such that $\calI=\<\theta,\omega_1\wedge\pi_1,\omega_2\wedge\pi_2\>_{\mathrm{alg}}$. Then their respective factors form the two characteristic systems 
+The characteristic systems for a \gls{ma} equation may be defined in a way similar to \Subsect~\ref{sec: hyperbolic EDS}. Namely, suppose $\calI$ is hyperbolic, i.e.\ there exist two decomposable $2$-forms in $\calI$ which are linearly independent modulo $\theta$, and such that $\calI=\<\theta,\omega_1\wedge\pi_1,\omega_2\wedge\pi_2\>_{\mathrm{alg}}$. Then their respective factors form the two characteristic systems 
 \[\calM_i=\<\theta,\omega_i,\pi_i\>.\]
-As explained in  \subsect~\ref{sec: hyperbolic EDS}, these pull back to lie in the characteristic system of the prolongation.
+As explained in  \Subsect~\ref{sec: hyperbolic EDS}, these pull back to lie in the characteristic system of the prolongation.
 
 \begin{prop}[{{\cite[7.4.11]{Ivey}}}]
     If a hyperbolic \gls{ma} system $(M,\calI)$ is Darboux-integrable, then it is locally equivalent to the system defined by the wave equation $z_{xy}=0$.
 \end{prop}
 \begin{proof}
-    Following the argument in \subsect~\ref{sec: hyperbolic EDS}, around every point in $M$ there is a local coframe $\theta,\omega_1,\omega_2,\pi_1,\pi_2$ such that $\theta\in\calI^1$, $\calM_1^{(1)}=\<\omega_1,\pi_1\>$, $\calM_2^{(1)}=\<\omega_2,\pi_2\>$, and 
+    Following the argument in \Subsect~\ref{sec: hyperbolic EDS}, around every point in $M$ there is a local coframe $\theta,\omega_1,\omega_2,\pi_1,\pi_2$ such that $\theta\in\calI^1$, $\calM_1^{(1)}=\<\omega_1,\pi_1\>$, $\calM_2^{(1)}=\<\omega_2,\pi_2\>$, and 
     \[\dd\theta\equiv \omega_1\wedge\pi_1 +\omega_2\wedge\pi_2 \pmod{\theta}.\]
     Since $\calI$ is an ideal, there are $1$-forms $\beta_0,\beta_1,\beta_2$ satisfying the structure equations 
     \begin{align}
@@ -3801,7 +3811,7 @@ As explained in  \subsect~\ref{sec: hyperbolic EDS}, these pull back to lie in t
     \[0=\dd\beta_1\wedge\omega_1\wedge\pi_1.\]
     The only way both of these equalities can hold is if $a=0$ identically, and so 
     \[\beta_0=\beta_1=\beta_2,\quad \dd\beta_0=0.\]
-    Thus, on a possibly smaller neighborhood, there exist functions $\lambda,p,q,x,y,z$ such that 
+    By Poincar\'e Lemma, on a possibly smaller neighborhood, there exist functions $\lambda,p,q,x,y,z$ such that 
     \begin{align}
         \beta_0=&\dd \lambda, \quad&
         \rme^{\lambda}\omega_1\wedge\pi_1=&\dd x\wedge \dd p,\\
@@ -3813,14 +3823,519 @@ As explained in  \subsect~\ref{sec: hyperbolic EDS}, these pull back to lie in t
 
 
 
+
+
+
+
+
 \subsection{Linear Weingarten surfaces}
 
 We now examine a geometrically natural class of surfaces, called \emph{linear Weingarten surfaces}, which are locally equivalent to solutions of a \gls{ma} equation. Recall from Example~\ref{ex Weingarten surfaces} that a linear Weingarten surface is one whose mean and Gauss curvatures $H,K$ satisfy a linear relation $AK+2BH+C=0$. More generally, a \emph{Weingarten surface} is one with $F(H,K)=0$ for some function $F$.
 
-Suppose $\Sigma <\bbE^3$ is a smooth surface satisfying a linear Weingarten equation, and $\frake:\Sigma\to P$ is a first-order adapted framing along $\Sigma$. Then the framing gives an integral surface for the $1$-form $\theta^3$ on $P$ and for the $2$-form 
+Suppose $\Sigma <\bbE^3$ is a smooth surface satisfying a linear Weingarten equation, and $\frake:\Sigma\to \SE_3$ is a first-order adapted framing along $\Sigma$. Then the framing gives an integral surface for the $1$-form $\theta^3$ on $\SE_3$ and for the $2$-form 
 \[\Psi\coloneqq A\omega_1^3 \wedge\omega_2^3+B(\omega_1^3\wedge\theta^2-\omega_2^3\wedge\theta^1)+C\theta^1\wedge\theta^2.\]
 This can be seen by verifying that $\frake^\ast \Psi=0$ via (\ref{def h}):
 \[\frake^\ast\Psi=(A\det h+B\tr h+C)\theta^1\wedge\theta^2=(AK+2BH+C)\theta^1\wedge\theta^2=0.\]
+Thus, the Weingarten equation is equivalent to the \gls{eds} $\calI=\<\theta^3,\Psi,\Theta\>$ on $\SE_3$, where 
+\[\Theta\coloneqq -\dd\theta^3=\omega_1^3\wedge\theta^1+\omega_2^3\wedge\theta^2.\]
+The \gls{eds} described in Example~\ref{ex Weingarten surfaces}, which encodes the same Weingarten equation, is the prolongation of $\calI$. Note that this system is hyperbolic, elliptic, or parabolic according to the sign of $B^2-AC$.
+
+As in Example~\ref{ex 7.1.10 Ivey contd}, the retracting space for $\calI$ is spanned by $\{\theta^1,\theta^2,\theta^3,\omega_3^1,\omega_3^2\}$, and the Cauchy characteristic curves are the fibers of the submersion from $\SE_3$ onto the $5$-dimensional unit sphere bundle $E\coloneqq S(T\bbE^3)$: the projection takes a frame $(e_1,e_2,e_3)$ and returns $e_3$, and the Cauchy vector field generates rotations of the frames about $e_3$.
+
+Thus, $E$ is the leaf space of the Cauchy characteristics of $\calI$, and so there is a reduced \gls{eds} $\wt\calI$ on $E$ that pulls back to $\calI$ and is of \gls{ma} type. In fact, the Maurer-Cartan equation on $\SE_3$ implies that $\theta^3$, $\dd\theta^3$, and all three terms of $\Psi$ are pullbacks of well-defined forms on $E$.
+
+\begin{example}[Parallel surfaces]\label{xca 7.4.15 Ivey}
+    A point in $E$ is determined by the basepoint $\bf{x}\in\bbE^3$ and the unit vector $e_3$. Consider the map $F_r:E\to E$ defined by $(\bf{x},e_3)\mapsto (\bf{x}+re_3,e_3)$.
+
+    First we use the fact that $\theta^i=\<e_i,\dd \bf{x}\>$ to compute 
+    \[F_r^\ast\theta^3=\<e_3,\dd \bf{x}\>+r\<e_3,\dd e_3\>=\<e_3,\dd\bf{x}\>=\theta^3.\]
+    What's important here is that $F_r^\ast\theta^3$ is a multiple of $\theta^3$, so $F_r$ is a \emph{contact transformation} and preserves the set of adapted (\emph{contact}) framings of surfaces. Similarly, we can use $\omega^i_j=\<e_i,\dd e_j\>$ to verify that $\omega^i_j$'s are invariant under $F_r$. Finally, we have 
+    \[F_r^\ast\theta^1=\<e_1,\dd\bf{x}+r\dd e_3\>=\theta^1-r\omega^3_1,\quad F_r^\ast\theta^2=\<e_1,\dd\bf{x}+r\dd e_3\>=\theta^2-r\omega^3_2.\]
+
+    Now, let $M< E$ be an integral surface of $\theta^3$ and of $\Psi=\omega_1^3\wedge\omega_2^3-r^{-2}\theta^1\wedge\theta^2$ with the independence condition $\theta^1\wedge\theta^2\neq 0$. Then, according to our \gls{ma} system for linear Weingarten surfaces, $M$ is a lifting of a surface of constant positive Gauss curvature $K=r^{-2}$ in $\bbE^3$.
+
+    Now we consider the translated surface $F_{\pm r}(M)$ and the pullback of the above \gls{eds} to it. $\theta^3$ and $\Theta$ remain unchanged, and we easily compute 
+    \[F_{\pm r}^\ast \Psi=\pm r^{-1}(\omega^3_1\wedge\theta^1-\omega^3_2\wedge\theta^2)-r^{-2}\theta^1\wedge\theta^2.\]
+    Thus, $F_{\pm r}(M)$ is an integral surface of the \gls{eds} $ \<\theta^3,F_{\pm r}^\ast\Psi,\Theta\>$, which is a Weingarten system for a surface of constant mean curvature $H=\pm 1/(2r)$. Since the distance between parallel tangent planes of $M$ and $F_{\pm r}(M)$ is constant and equal to $r$, such surfaces are called \emph{parallel}, and in this special case we have established that each surface of constant positive $K$ corresponds to two surfaces of constant $H$ of either sign. This theorem was first obtained by Bonnet.
+\end{example}
+
+
+From the above example it follows that solutions of the PDE (\ref{eq 1.4 Ivey}) for surfaces of constant positive Gauss curvature may be obtained by a contact transformation from solutions of the \gls{ma} system for \gls{cmc} surfaces. Moreover, we will see below that any \gls{cmc} surface admits a family of noncongruent isometric deformations, so similar deformations become available for surfaces of constant positive Gauss curvature.
+
+
+
+
+
+
+
+
+\subsection{Pseudospherical surfaces}\label{sec: pseudospherical surfaces}
+
+In this section we apply the methods of hyperbolic \gls{eds} to study a special class of surfaces related to the sine-Gordon equation. But first we need to briefly discuss curves on surfaces.
+
+Let $\gamma(s)$ be a regular curve in $\bbE^3$ parametrized by arclength. Recall that we can adapt the frames so that the Frenet-Serret equations for the Frenet frame, which we will now denote by $(\bf{T},\bf{N},\bf{B})$ (for tangent, normal, and binormal) take the form
+\[\dd(\gamma,\bf{T},\bf{N},\bf{B})=(\gamma,\bf{T},\bf{N},\bf{B})\begin{pmatrix}
+    0 & 0&0&0\\
+    1&0&-\kappa &0\\
+    0& \kappa &0 &-\tau \\
+    0 & 0& \tau & 0
+\end{pmatrix}\dd s,\]
+where $\kappa$ is the curvature of $\gamma$ and $\tau$ is the torsion. Now say that $\gamma$ lies on a surface $\Sigma <\bbE^3$. Let $(e_1,e_2,e_3)$ be a first-order adapted framing of $\Sigma$ (so $e_3\perp T\Sigma$). Let $\varphi$ denote the angle from $e_1$ to $\bf{T}$, and let $\bf{\epsilon}$ be $\bf{T}$ rotated clockwise by $\pi/2$ in the plane $T_m\Sigma$, so that 
+\[\begin{pmatrix}
+    \bf{T}\\\bf{\epsilon}
+\end{pmatrix}=\begin{pmatrix}
+    \cos\varphi & \sin\varphi\\
+    -\sin\varphi & \cos\varphi
+\end{pmatrix}\begin{pmatrix}
+    e_1\\ e_2
+\end{pmatrix}.\]
+Then the $\{e_3,\bf{\epsilon}\}$-plane is orthogonal to $\bf{T}$. The angle between $\bf{N}$ and $e_3$ is traditionally denoted by $\varpi$ (``var-pi''), so that 
+\[\begin{pmatrix}
+    \bf{N}\\\bf{B}
+\end{pmatrix}=\begin{pmatrix}
+    \cos\varpi & \sin\varpi\\
+    -\sin\varpi & \cos\varpi
+\end{pmatrix}\begin{pmatrix}
+    e_3\\ \bf{\epsilon}
+\end{pmatrix}.\]
+Since $(\bf{T},\bf{\epsilon},e_3)$ gives an orthonormal frame of $\bbE^3$, when we restrict this frame to $\gamma$ we have 
+\[\dd (\gamma,\bf{T},\bf{\epsilon},e_3)=(\gamma,\bf{T},\bf{\epsilon},e_3)\begin{pmatrix}
+    0&0&0&0\\
+    1&0&-\kappa_g &-\kappa_n\\
+    0&\kappa_g&0&-\tau_g\\
+    0&\kappa_n&\tau_g&0
+\end{pmatrix}\dd s\]
+for some functions $\kappa_g(s),\kappa_n(s),\tau_g(s)$. To interpret these functions, notice that 
+\begin{align}
+    \kappa_g=&\kappa\sin\varpi=\<\kappa \bf{N},\bf{\epsilon}\>;\\
+    \kappa_n=&\kappa\cos\varpi=\<\kappa \bf{N},e_3\>.\\
+\end{align}
+
+\begin{rem}[Covariant derivative and geodesic curvature]\label{rem covariant derivative on surfaces}
+    Let $\eta^1,\eta^2\in\Omega^1(\Sigma)$ be a local coframe for $T^\ast M$ dual to $(e_1,e_2)$. Write $\eta^1_2$ for the form $\alpha$ from the proof of Theorema Egregium in \Subsect~\ref{sec: principal framings}, and for convenience $\eta^2_1\coloneqq -\eta^1_2$.
+
+    For $X\in T_m \Sigma$ and $Y\in\fX(\Sigma)$, write $Y=Y^ie_i$ for some component functions $X^1,X^2$. Define the tangent vector 
+    \[\nabla_X Y\coloneqq (\dd Y^1-Y^2\eta^1_2)(X)e_1+(\dd Y^2-Y^1\eta^2_1)(X)e_2.\]
+    From the transformation rules for components of vector fields, it is easy to see that this expression is independent of the choice of the orthonormal frames, so $\nabla_X Y$ is well-defined as a tangent vector. The operator $\nabla:\fX(\Sigma)\times \fX(\Sigma)\to \fX(\Sigma)$ given by $(X,Y)\to \nabla_X Y$ is called the \emph{covariant derivative}.\index{Covariant derivative}
+
+    For now, the most important property of $\nabla$ for us is that $Y$ doesn't necessarily have to be defined on an open set of $\Sigma$. Given a smooth curve $\gamma$ on $\Sigma$, we can extend its velocity $\dot \gamma$ to a vector field $Y\in\fX(\Sigma)$ such that $Y\circ\gamma=\dot\gamma$. Then we can consider the object $(\nabla_{\dot\gamma}\dot\gamma)(s)\coloneqq (\nabla_{\dot\gamma}Y)\circ\gamma(s)$ and verify that this is actually independent of the specific choice of the extension $Y$ (indeed, only the components of $\dd Y^i$ along $\dot\gamma$ contribute to the result, and these are simply derivatives of $Y$ along $\gamma$, which don't depend on the extension). 
+    
+    Curves such that $\nabla_{\dot\gamma}\dot\gamma=0$ are called \emph{geodesics}.\index{Geodesic} The quantity $\kappa_g$, in fact, satisfies 
+    \[\kappa_g=\lVert\nabla_{\dot\gamma}\dot\gamma\rVert,\]
+    which is why this quantity is called the \emph{geodesic curvature}. \index{Geodesic curvature}
+\end{rem}
+
+Note that if $\kappa_g\equiv 0$, then all of the curvature of the curve lies in the normal direction to the surface, and $\bf{\epsilon}\parallel \bf{B}$. Next, the Frenet-Serret equations show that $\kappa_n$ measures the curving of the surface in the direction of $\bf{T}$ (by measuring how the surface normal $e_3$ is turning); it is called the \emph{normal curvature}\index{Normal curvature} of $\Sigma$ along $\gamma$. Since it depends on the pointwise value of $\bf{T}$, it is really an invariant of the surface, independent of the parametrization of $\gamma$. We say $\gamma$ is an \emph{asymptotic line}\index{Asymptotic line} on $\Sigma$ if $\kappa_n\equiv 0$.
+
+Finally, $\tau_g$ measures what the torsion (as a curve in $\bbE^3$) of a geodesic having tangent vector $\bf{T}$ would be; it is called the \emph{geodesic torsion}\index{Geodesic torsion} of $\gamma$. Using the definition of the Second Fundamental Form $\rmII$, it is not hard to see that 
+\[\kappa_n=-\<\rmII(\bf{T},\bf{T}),e_3\>,\quad \tau_g=\<\rmII(\bf{\epsilon},\bf{T}),e_3\>,\quad \kappa_g=-(\dd \varphi+\omega^2_1)(\bf{T}).\]
+
+\begin{xca}
+    \begin{enumerate}
+        \item Show that $\kappa_g\equiv 0$ iff the \emph{osculating plane}\index{Osculating plane} to $\gamma$ spanned by $(\bf{T},\bf{N})$ is perpendicular to $\Sigma$ at each point.
+        \item Show that $\kappa_n=0$ (i.e.\ $\dot\gamma$ is an asymptotic direction) iff the tangent plane $T_{\gamma}\Sigma$ is an osculating plane of the curve.
+        \item Show that $\nabla_{\dot\gamma}\dot\gamma=\kappa_g\bf{\epsilon}$.
+        \item Find formulas for $\kappa_n,\tau_g$ in terms of the principal curvatures $k_1,k_2$ when our surface is given a principal (Darboux) framing.
+        \item Find formulas for $\kappa_n,\tau_g$ when our surface is given a framing such that $e_1=\bf{T}$.
+        \item Calculate $\tau_g$ of a curve $\gamma$ such that $\dot\gamma$ is a principal direction (i.e.\ a direction where $\kappa_n$ is a principal curvature) at each point along $\gamma$. Such curves are called \emph{lines of curvature}.\index{Lines of curvature}
+    \end{enumerate}
+\end{xca}
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[scale=1]{figures/geodesic.pdf}
+    \caption{Geodesic and normal curvatures of a curve on a surface.}
+    \label{fig:geodesic curvature}
+\end{figure}
+
+A \emph{pseudospherical surface}\index{Pseudospherical surface} is a surface with Gauss curvature $K\equiv -1$. Setting $A=C=-1$ and $B=0$ in the \gls{eds} $\calI$ described in the last \subsect. This system is hyperbolic since $B^2-AC=-1<0$, and indeed, the $2$-forms of $\calI$ are spanned by two decomposable forms 
+\[\Psi\pm \Theta=(\omega_1^3\mp \theta^2)\wedge(\omega_2^3\pm \theta^1).\]
+Moreover, we may use the factors of the decomposable forms to express the second fundamental form as 
+\[\rmII =\left[\frac12(\omega_1^3+\theta^2)\odot (\omega_2^3+\theta^1)-\frac12(\omega_1^3-\theta^2)\odot(\omega_2^3-\theta^1)\right]\otimes e_3,\]
+where $\odot$ is the symmetric tensor product (i.e.\ $\alpha\odot \beta=\Sym(\alpha\otimes\beta)$, cf.\ \ref{def sym operator}). 
+This shows that each characteristic curve projects to be an asymptotic line on $\Sigma$.
+
+On an open subset of a pseudospherical surface that is free of umbilic points, we may choose a Darboux framing. This breaks the Cauchy characteristic symmetry of the \gls{eds}, but allows us to see how pseudospherical surfaces are connected to solutions of the sine-Gordon equation (see Examples~\ref{ex sine-gordon} and \ref{ex 7.4.6 Ivey}).
+
+Since we are using Darboux frames,
+\[\begin{pmatrix}
+    \omega^3_1\\\omega^3_2
+\end{pmatrix}=\begin{pmatrix}
+    \tan u & 0\\
+    0 & -\cot u
+\end{pmatrix}\begin{pmatrix}
+    \theta^1\\\theta^2
+\end{pmatrix},\]
+where $u\in (0,\pi/2)$ is half of the angle between the asymptotic lines. We adjoin $u$ as a new variable, and enlarge our \gls{eds} to a Pfaffian system 
+\[I=\<\theta^3,\omega^3_1-(\tan u)\theta^1,\omega^3_2+(\cot u)\theta^2\>\]
+on $\SE_3\times \bbR$. Then a Darboux framing along a pseudospherical surface corresponds to an integral surface of $\calI=\<I\>_{\mathrm{diff}}$ satisfying the independence condition $\theta^1\wedge\theta^2\neq 0$, and vice versa.
+
+The vanishing of the exterior derivatives modulo $I$ of the last two $1$-forms generating $I$ implies that $\theta^1/\cos u$ and $\theta^2/\sin u$ pull back to be closed $1$-forms on any integral surface. Hence, there exist local coordinates $(t_1,t_2)$ such that 
+\[\theta^1=\cos u\dd t_1,\quad \theta^2=\sin u\dd t_2.\]
+Moreover, 
+\[x\coloneqq (t_1+ t_2)/2,\quad y\coloneqq (t_1-t_2)/2,\] are exactly the arclength parameters along the asymptotic lines. This implies that asymptotic lines form what is called a \emph{Chebyshev net} on the surface: parallel transport of one of the two families of curves along the other preserves it. In other words, opposite edges of the net quadrilaterals have the same length. Thus you can stretch a flexible ``knitted'' square mesh over this surface. Note also that the asymptotic lines are bisected by the lines of curvature.
+
+Substituting $\dd u=u_x\dd x+u_y\dd y$ into the $2$-forms of the \gls{eds} shows that $\omega_2^1=u_x\dd x-u_y\dd y$ along any integral surface. Then it is easy to see that the structure equation $\dd\omega^1_2=\omega^3_1\wedge\omega^3_2$ implies that $u$ (or rather $2u$) satisfies the sine-Gordon equation:
+\[u_{xy}=\sin u\cos u.\]
+
+Conversely, we may start with a solution of the sine-Gordon equation and produce a pseudospherical surface by integration. On a fundamental level, note that the First and Second Fundamental Forms of a pseudospherical surface in the asymptotic coordinates $(x,y)$ read 
+\[
+    \rmI=\begin{pmatrix}
+        1 &\cos 2u\\
+        \cos 2u & 1
+    \end{pmatrix},\quad
+    \rmII=\begin{pmatrix}
+        0 & \sin 2u\\
+        \sin 2u & 0
+    \end{pmatrix},
+\]
+and $2u$ is the angle between the $x$ and $y$-curves. From here it is easy to see that $H=-2\cot(2u)$. The sine-Gordon equation is equivalent to the Gauss-Kodazzi equations on $H$ with $K=-1$, so by the Fundamental Theorem of Surfaces, each solution of the sine-Gordon equation determines a unique immersed surface up to a rigid motion. 
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[scale=0.5]{figures/SG1soliton.png}
+    \caption{The $1$-soliton solution (\ref{eq SGE 1-soliton}) (with lines of constant $y$) of the sine-Gordon equation and the corresponding pseudospherical surfaces for different values of $\lambda^2$. The first three surfaces have the lines of curvature marked on them. The rightmost is the pseudosphere $\lambda=1$ with the asymptotic lines marked on it. Note the asymptotic lines becoming tangent at the edge of the surface.}
+    \label{fig: SGE 1-soliton}
+\end{figure}
+
+More explicitly, if we let $\frake=(e_1,e_2,e_3)$, then the structure equations $\dd e_i=e_j\omega_i^j$ imply that 
+\[\partial_x\frake=\frake \begin{pmatrix}
+    0 & u_x & -\sin u\\
+    -u_x & 0 & -\cos u\\
+    \sin u& \cos u & 0
+\end{pmatrix},\quad 
+\partial_y\frake=\frake \begin{pmatrix}
+    0 & -u_y & -\sin u\\
+    u_y & 0 & \cos u\\
+    \sin u& -\cos u & 0
+\end{pmatrix}.\label{eq 7.21 Ivey}
+\]
+This is an overdetermined system for the matrix $\frake(x,y)$, and its Frobenius integrability condition is the sine-Gordon equation for $u$. In fact, the above pair of equations is a $UV$-pair for the sine-Gordon equation (see Example~\ref{ex UV pairs}). So, given a solution to sine-Gordon, we may obtain the framing $\frake$ by solving linear systems of ODE's, and then solve for the surface $\bf{x}(x,y)\in\bbR^3$ by integrating 
+\[\bf{x}_x=e_1\cos u-e_2\sin u,\quad \bf{x}_y=e_1\cos u+e_2\sin u.\label{eq 7.22 Ivey}\]
+For example, the famous \emph{1-soliton}\index{soliton} solution (also called a \emph{traveling wave} due to its translational invariance, or in the context of the sine-Gordon, a \emph{kink})
+\[u=2\arctan(c\exp(\lambda x+\lambda^{-1}y)),\quad c\neq 0, \lambda\neq 0,\label{eq SGE 1-soliton}\]
+gives the standard \emph{pseudosphere} when $\lambda^2=1$ and \emph{Dini's surfaces} when $\lambda^2\neq 1$, see Figure~\ref{fig: SGE 1-soliton}.\index{Pseudosphere}\index{Dini's surface} (Note that $c$ can be assumed to be $1$ after a shift and/or flip of one of the axes.)
+
+A theorem of Hilbert states that pseudospherical surfaces in Euclidean space cannot be geodesically complete (i.e.\ geodesics terminate in finite time). The standard proof proceeds by showing that the area of \emph{any} net parallelogram (of any size) has area bounded by a constant. However, a simply connected complete surface of constant negative curvature has necessarily infinite area, which leads to a contradiction. This was one of the earliest global results in differential geometry.
+
+Hence, even if the sine-Gordon solution is defined for all $x$ and $y$, the corresponding surface will become singular. In fact, $\theta^1\wedge\theta^2=\sin 2u \dd x\wedge \dd y$ shows that the surface will be singular whenever $u$ is a multiple of $\pi/2$, i.e.\ when the asymptotic lines are tangent to each other. This is why the surfaces in Figure~\ref{fig: SGE 1-soliton} have singularities and are made by joining two pseudospherical surfaces along an edge: the values of the $1$-soliton solution always span $(0,\pi)$.
+
+\begin{rem}
+    The sine-Gordon has an obvious scaling symmetry given by $x\mapsto \lambda x$, $y\mapsto \lambda^{-1}y$. Hence, each immersion of $\Sigma$ belongs to a one-parameter family of isometric immersions. These deformations of pseudospherical surfaces are called \emph{Lie transformations}. In the next \subsect\ we will find a similar one-parameter family of deformations of minimal surfaces (but parametrized by an element of $\U_1$ instead of $\bbR$ because the coresponding system is elliptic).
+\end{rem}
+
+\begin{xca}\label{xca 7.4.19 Ivey}
+    Note that each of $x+y$ and $x-y$ is constant along one of the two sets of lines of curvature. 
+    This observation is useful if we suppose that $\Sigma$ is a pseudospherical surface of revolution (i.e.\ is spanned by a curve when rotated about a fixed axis). Show that the corresponding sine-Gordon solution can be assumed to be of the form $u=f(x+y)$ (this is easier using the ansatz $u=2\arctan f(x+y)$). Determine all sine-Gordon solutions of this form. 
+\end{xca}
+
+
+
+
+
+
+
+\subsection{Minimal and \texorpdfstring{\gls{cmc}}{CMC} surfaces}
+
+Recall that a minimal surface is an immersed surface $\Sigma<\bbE^3$ with vanishing mean curvature. From Proposition~\ref{prop mean curvature laplace}, an isometric immersion $\bf{x}:\Sigma\to \bbE^3$ is minimal iff it is \emph{harmonic in isothermal coordinates} $(x,y)$:
+\[(\partial_x^2+\partial_y^2)\bf{x}=0.\]
+In particular, $\bf{x}$ is \emph{conformal}, i.e.\ it preserves angles between tangent vectors in the $(x,y)$-plane after they're mapped to tangent vectors on $\Sigma$.
+
+Introducing a local isothermal complex coordinate $z\coloneqq x+\i y$ (so that the metric volume form is $\sfv_\sfg=\lambda^2\dd x\wedge\dd y=\lambda^2\frac{\i}{2}\dd z\wedge\dd\wb{z}$), this suggests that there exist $3$ (locally) holomorphic functions of $z$ whose real parts are exactly the Cartesian components of $\bf{x}$. We seek to find this representation now.
+
+Setting $A=C=0$ and $B=1$ in the \gls{eds} for a general linear Weingarten equation shows that the $2$-forms of $\calI$ are spanned 
+\[\Theta=-\dd\theta^3,\quad \Psi=\omega^3_2\wedge\theta^1-\omega^3_1\wedge\theta^2.\]
+This system is elliptic since $B^2-AC=1>0$, so we will have to adjust our method of characteristics to solve it. We will see below that studying the characteristic systems of $\calI$ leads to the classical \emph{Weierstrass representation} for minimal surfaces, which relates them to complex Riemann surfaces.
+
+When we attempt to form the characteristic systems, we find that the decomposability equation 
+\[(\Theta+\lambda\Psi)^{\wedge 2}=0\]
+has constant roots $\lambda=\pm\i$. So, we need to introduce complex-valued differential forms. For example,
+\[\Theta\pm \i \Psi=(\omega^3_1\mp \i \omega^3_2)\wedge(\theta^1\pm\i \theta^2),\]
+and so if we define 
+\[\omega\coloneqq \omega^3_1-\i \omega^3_2,\quad \theta\coloneqq \theta^1+\i \theta^2,\]
+then the characteristic systems are 
+\[\calM=\<\theta^3,\omega,\theta\>,\quad \wb\calM=\<\theta^3,\wb\omega,\wb\theta\>.\]
+
+When we attempt to apply Darboux's method, we find that neither of these systems contains a rank-$2$ integrable subsystem. In fact, $\dd\omega\equiv 0\pmod{\omega}$, but $\dd\theta\equiv \wb\omega\wedge\theta^3\pmod{\theta}$. However, this shows that the distribution
+\[\Re\<\omega,\wb\omega\>=\<\omega^3_1,\omega^3_2\>\eqqcolon J\]
+is a Frobenius system on $\SE_3$. The quotient of $\SE_3$ by the leaves of the distribution dual to $J$ is a $2$-sphere, and the quotient map $\gamma:\SE_3\to \bbS^2$ is given by the unit vector $e_3$. Thus, the restriction of $\gamma$ to an integral surface $M$ of $\calI$ is just the Gauss map of the minimal surface $\Sigma=\pi(M)$, where $\pi:\SE_3\to \bbE^3$ is the bundle projection.
+
+Since $\omega$ descends, via $\gamma$, to a well-defined (up to multiple) form on $\bbS^2$, we can define a complex structure on the sphere for which $\omega$ spans the \emph{$(1,0)$-forms}, i.e.\ the subbundle of $T^\ast \bbS^2$ locally spanned by $\dd w$ for a local complex coordinate $w$. We have shown the following fundamental fact.
+
+\begin{cor}
+    The Gauss map of a minimal surface $\Sigma$ is holomorphic with respect to the complex structure on $\Sigma$ defined by $\theta=\theta^1+\i \theta^2$ (as a $(1,0)$-form).
+\end{cor}
+
+Now let us fix a standard complex coordinate on $\bbS^2$. We identify $\bbS^2$ with the null quadric $N\subset \CP^2$ defined by $z_1^2+z_2^2+z_3^2=0$ on $\bbC^3$, by mapping $e_3$ to the vector 
+\[\mathsf{z}\coloneqq e_1-\i e_2 \quad \in\bbC^3\cong \bbR^3\otimes\bbC.\]
+In fact, this vector can be determined from $e_3$ in a unique way, up to a scale, by the requirement that $e_3\times \mathsf{z}=\i \mathsf{z}$. Note that the equation defining $N$ implies that $\lVert\Re \mathsf{z}\rVert^2=\lVert\Im \mathsf{z}\rVert^2=\frac12\lVert \mathsf{z}\rVert^2$.
+
+We then use the stereographic projection 
+\[\mathsf{z}=\begin{pmatrix}
+    1-w^2\\ \i(1+w^2)\\ 2w
+\end{pmatrix},\quad w\in\bbC,\]
+to define a complex local coordinate $w$ on $N$ (this actually agrees with the standard stereographic projection $\bbC\to \CP^1\setminus\{\infty\}$ given by $w\mapsto \frac{1}{1+|w|^2}(2w,1-|w|^2)=(x^1+\i x^2,x^3)$, so the resulting complex structure induced by $\omega$ on $\bbS^2$ is the standard one). Computing $\dd\mathsf{z}$ and comparing with $\dd(e_1-\i e_2)=\i(e_1-\i e_2)\omega^1_2+e_3\omega$ shows that $\gamma^\ast\dd w$ is a multiple of $\omega$.
+
+Now suppose $z$ is a complex coordinate on our minimal surface $\Sigma$. Then $\theta=f(z)\dd z$ for a nonvanishing holomorphic function $f$, and $\gamma^\ast w=g(z)$ for some holomorphic function $g$ (we can think of $g(z)$ as another local complex coordinate). Notice that the point $\bf{x}\in \Sigma$ satisfies 
+\[\dd \bf{x}=e_1\theta^1+e_2\theta^2=\Re((e_1-\i e_2)(\theta^1+\i \theta^2))=\Re(\mathsf{z}\theta).\]
+As a consequence, the First Fundamental Form $\rmI=\<\dd\bf{x},\dd\bf{x}\>$ reads 
+\[\rmI=\frac12\lVert\mathsf{z}\rVert^2 |\theta|^2=\frac14 \left(1+|g|^2\right)^2 |f|^2 |\dd z|^2,\quad |\theta|^2\coloneqq \theta\odot\wb\theta.\]
+Thus, $z$ is an isothermal coordinate. Similarly, the Second Fundamental Form is 
+\[\rmII=-\<\dd e_3,\dd\bf{x}\>e_3=-\Re(\theta \otimes \dd g)e_3.\]
+(This is automatically symmetric because $\theta\wedge\dd g\propto \dd z\wedge\dd z=0$.)
+In particular, a vector $X$ is an asymptotic direction iff $\theta(X)\dd g(X)$ is imaginary, and principal iff it is real. The Gauss curvature is easy to compute from the conformal factor since the metric is already diagonalized (here we're using informal notation for dividing tensors; the trickiest part is the sign):
+\[K=-\frac{|\theta|^2|\dd g|^2}{\left(\frac12\Vert \mathsf{z}\rVert^2 |\theta|^2\right)^2}=-\left(\frac{4|g'|}{(1+|g|^2)^2|f|}\right)^2.\]
+
+Finally, by substituting the expressions for $\mathsf{z}$ and $\theta$ in terms of $z$, we find the \emph{Weierstrass-Enneper representation} of $\Sigma$:
+\[\bf{x}=\Re\int \mathsf{z}\theta=\Re\int 
+\begin{pmatrix}
+    (1-g^2)f\\ \i (1+g^2)f\\ 2gf
+\end{pmatrix}\dd z.\label{eq Weiestrass-Enneper}\]
+Here, the integral is a contour integral of a holomorphic $1$-form, taken from an arbitrary basepoint to the given point, and is independent of homotopic deformations of the contour with fixed endpoints. Hence, it produces a well-defined function of the endpoint. 
+
+Note that, generally, $g$ is allowed to be a meromorphic function on a domain with nontrivial topology ($\gamma$ takes values in $\bbS^2=\CP^1$, and thus can have poles), which allows $\Sigma$ to have nontrivial topology as well. Moreover, it is obvious from the formulas that the Weierstrass parametrization is regular as long as the poles of $g$ coincide with (and are at most half of the order of) the zeros of $f$.
+
+\begin{cor}[Weiestrass-Enneper representation]\index{Weierstrass-Enneper representation}
+    Each nonplanar minimal surface $\Sigma<\bbE^3$ is determined, up to rigid motions, by its Weierstrass data consisting of a meromorphic function $g:\Sigma\to \CP^1$ and a $1$-form $\theta\in\Omega^1(\Sigma;\bbC)$ that is holomorphic with respect to the complex structure on $\Sigma$ induced by the metric and orientation. Conversely, every such pair $(g,\theta)$ determines a minimal surface as long as the poles of $g$ overlap with zeros of $\theta$ so that $g^2\theta$ is holomorphic.
+\end{cor}
+
+\begin{defn}[Conjugate surface]
+    Given a minimal surface $\bf{x}:\Sigma\to \bbE^3$ with Weierstrass-Enneper representation $(g,\theta)$, its conjugate surface is the surface obtained by multiplying $\theta$ by $\rmi$, or equivalently, by replacing $\Re$ with $\Im$ in (\ref{eq Weiestrass-Enneper}).
+\end{defn}
+
+\begin{example}[Catenoid and helicoid]
+    The Weierstrass-Enneper representation for the catenoid as parametrized in Example~\ref{ex catenoid} (coordinates $(u,v)$ there are, in fact, isothermal) is 
+    \[f(z)=-\i a\rme^{-\i z},\quad g(z)=a\rme^{\i z},\quad a>0,\]
+    and its conjugate surface is the helicoid (although a slight reparametrization will be necessary to bring to the same form as in Example~\ref{ex helicoid}). The rest of this $1$-parameter family of surfaces is shown in Figure~\ref{fig:helicoid}.
+\end{example}
+
+We also can observe that multiplying $f$ by a unit complex number $\rme^{\i t}$, $t\in (0,2\pi)$, will produce a one-parameter family of isometric minimal surfaces. The catenoid and helicoid are members of one such family.
+
+\begin{xca}
+    \begin{enumerate}
+        \item Identify the surfaces corresponding to $f=1$ and $g$ being one of $0,z,z^{-1},\i z^{-1}$. 
+        \item Conclude that the surface obtained by using $(f,g)=(\cos^2\frac{z}{2},\tan\frac{z}{2})$ is regular, and identify it with one of the surfaces in item 1. This shows that the Weierstrass representation of a given minimal surface is not unique.
+    \end{enumerate}
+\end{xca}
+
+Now let us expand the scope to include \gls{cmc} surfaces. Setting $A=0$, $B=1$, and $C=-2H$, with $H$ a given constant, we get a Weingarten \gls{eds} with $2$-forms 
+\[\Theta=-\dd\theta^3,\quad \Psi=\omega^3_1\wedge\theta^2+\theta^1\wedge\omega^3_2-2H\theta^1\wedge\theta^2.\]
+As with the minimal surface system, the characteristics are complex. The decomposable $2$-forms are 
+\[\Theta+ \i \Psi=(\omega-H\wb\theta)\wedge\theta\]
+and its complex conjugate. This complex coframe, adapted as it is to the characteristics, leads to a simple basis for the \gls{eds} and a simple description of its prolongation. Namely, we adjoin a complex variable $q$ and define the $1$-form 
+\[\tau\coloneqq \omega-H\wb\theta-q\theta.\]
+The prolongation is the Pfaffian system $\<\theta^3,\tau,\wb\tau\>$ on $\SE_3\times\bbC$. The system $2$-forms are 
+\[\dd\tau\equiv -(\dd q+2iq\omega^1_2)\wedge\theta\pmod{\theta^3,\tau,\wb\tau}\]
+and its complex conjugate. Note that $q$ parametrizes the components of the traceless part of the Second Fundamental Form. For, $\tau=0$ implies that 
+\[\begin{pmatrix}
+    \omega^3_1\\\omega^3_2
+\end{pmatrix}=\begin{pmatrix}
+    H+q_1 & -q_2\\
+    -q_2 & H-q_1
+\end{pmatrix}\begin{pmatrix}
+    \theta^1\\\theta^2
+\end{pmatrix},\]
+where $q=q_1+\i q_2$. Thus, the zeros of $q$ are the umbilic points of the surface.
+
+\begin{prop}[{{\cite[Prop.~7.4.25]{Ivey}}}]\label{prop 7.4.25 Ivey}
+    Let $\Sigma$ be an oriented surface with a Riemannian metric, and let $P$ be its oriented orthonormal frame bundle, with the canonical forms $\eta^1,\eta^2$ and connection form $\eta^1_2$ (see Remark~\ref{rem covariant derivative on surfaces}). Endow $\Sigma$ with the complex structure which it inherits from the metric and orientation. Suppose $q$ is a complex-valued function on $P$ that satisfies 
+    \[(\dd q+2\i q\eta^1_2)\wedge(\eta^1+\i \eta^2)=0.\label{eq 7.28 Ivey}\]
+    Then the \emph{Hopf differential}
+    \[Q\coloneqq q(\eta^1+\i \eta^2)^{\otimes 2}\]
+    is a well-defined holomorphic quadratic differential on $\Sigma$ and it coincides with the traceless part of the $Q$ defined in \Subsect~\ref{sec: theory of surfaces}. Moreover, for any constant $H$, $q$ determines a unique local isometric embedding of $\Sigma$ as a \gls{cmc} surface of mean curvature $H$ into $\bbE^3$ up to rigid motions.
+\end{prop}
+\begin{proof}
+    To see that the differential $Q$ is well-defined, let $X$ be the vector field tangent to the fibers of $P$ that is dual to $\eta^1_2$. Then it is easy to check that $\Lie_X Q=0$. To see that it is holomorphic, let $Q=p\dd z^{\otimes 2}$, where $z$ is a local complex coordinate such that $\dd z$ is a multiple of $\eta^1+\i \eta^2$. Then (\ref{eq 7.28 Ivey}) implies that $\partial_{\wb z}p=0$.
+
+    Any isometric immersion of $\Sigma$ into $\bbE^3$ will induce an immersion from $P$ to $\SE_3$, and the graph of this map will be an integral $3$-manifold of the Pfaffian system on $P\times \SE_3$ generated by 
+    \[\<\theta^3,\theta^1-\eta^1,\theta^2-\eta^2,\omega^1_2-\eta^1_2\>.\]
+    To this system we adjoin the form $\tau$ and its conjugate, where $q$ is now given. Our hypothesis about $q$ implies that this enlarged system is Frobenius. Thus, there exists a unique integral $3$-manifold through each point, and any two isometric immersions differ by a rigid motion.
+\end{proof}
+
+\begin{rem}
+    On minimal surfaces, the Second Fundamental Form is traceless, so $Q$ coincides with the full $Q$ as defined in \Subsect~\ref{sec: theory of surfaces}. Thus, minimal isometric immersions are completely parametrized by a holomorphic quadratic differential.
+\end{rem}
+
+\begin{cor}[Bonnet {{\cite[Cor.~7.4.26]{Ivey}}}]
+    Any \gls{cmc} surface has a circle's worth of isometric deformations as a \gls{cmc} surface.
+\end{cor}
+\begin{proof}
+    Given $f:\Sigma\to \bbR^3$, let $q$ be the coefficient of the Hopf differential as above and let 
+    \[q^t\coloneqq \rme^{\i t}q,\quad t\in(0,2\pi).\label{eq 7.29 Ivey}\]
+    Then $q^t$ also satisfies the conditions of Proposition~\ref{prop 7.4.25 Ivey}, and the First Fundamental Form remains unchanged.
+\end{proof}
+
+Moreover, if the surface is not totally umbilic, then at most points $q\neq 0$ and the Second Fundamental Form is changed by (\ref{eq 7.29 Ivey}). So, the surface constructed using $q^t$ is, in general, not congruent to the original surface by rigid motions. This is the \gls{cmc} generalization of the isometric deformations of minimal surfaces that we saw above.
+
+\begin{rem}[Bonnet surfaces]
+    The above deformations show that there are noncongruent surfaces with the same $K$ and $H$ (in this case, $H$ is the same constant). Bonnet discovered that, besides \gls{cmc} surfaces, there is a finite-dimensional family of surfaces that admit noncongruent isometric deformations preserving $H$. These \emph{Bonnet surfaces} may be characterized by the property that they admit isothermal coordinates (so $q$ is real) and in these coordinates $1/q$ is harmonic, i.e.\ $(1/q)_{z\wb z}=0$.
+\end{rem}
+
+
+
+
+
+
+
+
+
+
+\subsection{B\"acklund transformations}
+
+
+Equations which are integrable by the method of Darboux give one example where we can construct integral manifolds of an \gls{eds} by restricting to a submanifold where the system becomes Frobenius. Another example arises when the integrability condition for an overdetermined system of PDE can be reduced to finding the solution of another PDE. Then any solution of that PDE enables us to construct (using ODE techniques) a solution of the system.
+
+\begin{example}\label{ex 7.5.1 Ivey}
+    For example, the $UV$-pair representation (\ref{eq 7.21 Ivey}) of the sine-Gordon equation enables us to construct a solution to the \gls{ma} system for pseudospherical surfaces by integrating a Frobenius system.
+\end{example}
+
+When this transformation works in both directions, the two PDE's are said to be related by a B\"acklund transformation, which we will define later in the section. First, we formalize the relationship between the systems seen in the above examples.
+
+\begin{defn}
+    Let $\calI$ be an \gls{eds} on a manifold $M$, let $\pi:B\to M$ be a submersion, and let $\calE$ be an \gls{eds} on $B$. Then $\calE$ is an integrable extension of $\calI$ if there exists a Pfaffian system $J<T^\ast B$ such that 
+    \[\calE=\<J\cup \pi^\ast\calI\>_{\mathrm{alg}}\label{eq 7.31 Ivey}\]
+    and $J$ is transverse to the fibers of $\pi$ (i.e. a frame of $J$ pulls back to form coframes on each fiber of $\pi$).  The \emph{rank} of an integrable extension is the rank of $J$, or the dimension of the fibers of $\pi$.
+\end{defn}
+
+The condition that $\calE$, as defined by (\ref{eq 7.31 Ivey}), is a differential ideal is equivalent to 
+\[\dd\theta\equiv 0\pmod{J,\pi^\ast\calI}\text{ for any }\theta\in\Gamma^\infty(J).\label{eq 7.32 Ivey}\]
+
+If $(B,\calE)$ is an integrable extension of rank $k$ and $N\subset M$ is a $p$-dimensional integral manifold of $\calI$, then (\ref{eq 7.32 Ivey}) implies that the pullback of $J$ to $\pi^{-1}(N)$ is Frobenius. In this way, an integral manifold of $\calI$ gives a $k$-parameter family of integral manifolds of $\calE$. In Example~\ref{ex 7.5.1 Ivey}, the $6$-parameter family of surfaces corresponding to a single sine-Gordon solution are congruent under rigid motions of $\bbE^3$.
+
+
+\begin{example}[\ref{ex 7.5.1 Ivey} continued]
+    Let $M=\bbR^5$ and let $\calI$ be the \gls{ma} system for the sine-Gordon equation given in Example~\ref{ex 7.4.6 Ivey}. Let $B=M\times \SE_3$. The equations (\ref{eq 7.21 Ivey}) and (\ref{eq 7.22 Ivey}) show that a Darboux framing for a pseudospherical surface associated to a sine-Gordon solution $u(x,y)$ is an integral surface for the Pfaffian system 
+    \begin{multline}
+        J\coloneqq \<\theta^1-\cos u(\dd x+\dd y),\theta^2+\sin u(\dd x-\dd y),\omega^1_2-u_x \dd x+u_y\dd y,\right.\\
+        \left. {}\omega^3_1-\sin u(\dd x+\dd y),\omega^3_2+\cos u(\dd x-\dd y)\vphantom{|}\>.
+    \end{multline}
+    The one can check that $J$ satisfies (\ref{eq 7.32 Ivey}).
+\end{example}
+
+
+\begin{rem}\label{rem 7.5.4 Ivey}
+    Suppose $\calI$ is a \gls{eds} on a manifold $M$ with a $2$-form $\Phi\in\calI^2$ closed. Then, by the Poincar\'e Lemma, in some contractible neighborhood of any given point in $M$ there exists a differential form $\phi$ such that $\dd\phi=\Phi$. We may define a rank-$1$ integrable extension of $\calI$ by introducing a new coordinate $y$ and letting the Pfaffian system $J$ on $U\times\bbR$ be spanned by $\dd y-\phi$. Because such forms $\Phi$ are examples of conservations laws for an \gls{eds}, we call this construction an \emph{extension via conservation law}.
+\end{rem}
+
+
+\begin{rem}
+    One could trivially produce an integrable extension by choosing $J$ to be Frobenius. Such extensions are called \emph{flat}. More generally, if the derived flag of $J$ terminates in a Frobenius system $K$ of rank $k'$, then $\calE$ defines an intgerable extension when pulled back to any leaf of the foliation dual to $K$. In this case $(B,\calE)$ is called a \emph{$k'$-parameter family} of integrable extensions.
+\end{rem}
+
+\begin{example}\label{ex 7.5.6 Ivey}
+    Parametric families of integrable extensions are frequently encountered in the study of completely integrable PDE's, i.e.\ \emph{solitonic equations}. We now describe the integrable extensions of the \gls{kdv} equation 
+    \[u_t+u_{xxx}+6uu_x=0\label{eq 7.33 Ivey}\]
+    (it coincides with (\ref{eq kdv})) after flipping the sign of $u$). Let $M=\bbR^5$ with coordinates $(x,t,u,p,r)$. Let 
+    \begin{align}
+        \Theta_1\coloneqq &(\dd u-p\dd x)\wedge\dd t,\\
+        \Theta_2\coloneqq &(\dd p-r\dd x)\wedge\dd t,\\
+        \Theta_3\coloneqq &(\dd r+6u p\dd x)\wedge \dd t-\dd u\wedge\dd x,
+    \end{align}
+    and let $\calI=\<\Theta_1,\Theta_2,\Theta_3\>_{\mathrm{diff}}$. Then solutions of (\ref{eq 7.33 Ivey}) correspond to integral surfaces of $\calI$ satisfying the independence condition $\dd x\wedge\dd t\neq 0$. (Note that $M$ is a quotient of $J^2(\bbR^2,\bbR)$, and $p,r$ have their classical meanings as $u_x$ and $u_{xx}$ respectively. One could also use the \gls{eds} obtained by pulling back the standard contact system on $J^3(\bbR^2,\bbR)$ to the hypersurface defined by (\ref{eq 7.33 Ivey}), but the extra variables are not needed here.)
+
+    On $B=M\times\bbR^2$ with fiber coordinates $(\mu,y)$, let $J=\<\dd \mu,\eta\>$, where 
+    \[\eta\coloneqq \dd y-(y^2+u-\mu)\dd x+(r+2py+2(u+2\mu)(y^2+u-\mu))\dd t,\]
+    and let $\calE=\<J\cup \calI\>_{\mathrm{alg}}$. It is an exercise to verify that $\calE$ is an integrable extension of $\calI$.
+
+    Since $J$ contains a rank-$1$ Frobenius system, we have a $1$-parameter family of extensions, with $\mu$ as a parameter. Along an integral surface of $\calE$ that satisfies the independence condition, $y(x,t)$ satisfies 
+    \[y_y+y_{xxx}+6(\mu-y^2)y_x=0\label{eq 7.34 Ivey}\]
+    for some constant $\mu$. This family of equations may be said to be extensions of \gls{kdv}. When $\mu=0$, it is a version of another well-known PDE, the \emph{modified \gls{kdv} equation}, and the passage from $u$ to $y$ is known as the \emph{Miura transformation}.
+    % All integrable extensions of \gls{kdv} have been classified, and each of them corresponds to a finite-dimensional representation of a certain infinite-dimensional Lie algebra, known as the \emph{\gls{kdv} prolongation algebra}. Moreover, this algebra has a $1$-parameter family of finite-dimensional quotients, each of which is isomorphic to a semidirect product of $\fraksl_2(\bbR)$ with $\bbR^5$. Representations of the latter algebra allow us to construct $1$-parameter families of \gls{kdv} extensions, the most well-known of which is the AKNS system (\ref{eq AKNS UV pair})
+\end{example}
+
+
+B\"acklund transformations are a particular form of integrable extension which allows a two-way transformation of solutions of a PDE to solutions of another (or the same) PDE. One of the most well-known is the following transformation, which can produce new solutions of the sine-Gordon equation.
+
+\begin{example}\label{ex 7.5.9 Ivey}
+    \begin{align}
+        u_x-\wb{u}_x=\lambda&\sin(u+\wb{u}),\\
+        u_y+\wb{u}_y=\frac{1}{\lambda}&\sin(u-\wb{u}).
+    \end{align}
+    If $u(x,y),\wb{u}(x,y)$ are smooth functions that satisfy this system for some $\lambda\neq 0$, the differentiating and equating mixed partials implies that $u$ and $\wb{u}$ must be solutions of sine-Gordon $u_{xy}=\sin u\cos u$. Conversely, given a solution $u(x,y)$ of sine-Gordon, we can determine $\wb{u}_x$ and $\wb{u}_y$ from the above, and integrate to get the new solution $\wb{u}(x,y)$ (since we are guaranteed that mixed partials commute). Since this can be done for any $\lambda$, and there will be a constant of integration of the first-order ODE, we get a $2$-parameter family of solutions. For example, the kink solution (\ref{eq SGE 1-soliton}) can be produced in this way by starting with $u\equiv 0$. However, the constants of integration amount to translating the solution in the plane, so we can omit them, keeping the translational invariance in mind. Thus, the kink has one parameter $\lambda$. By iterating this procedure, we get a $2$-parameter family of $2$-soliton solutions, a $3$-parameter family of $3$-soliton solutions, and so on. All of them can be obtained by solving simple ODE's and are expressed in terms of trigonometric and exponential functions. For example, the $2$-soliton solution (Figure~\ref{fig:2-soliton}) is 
+    \[u=2\arctan \frac{\lambda_1+\lambda_2}{\lambda_1-\lambda_2}\frac{\rme^{\lambda_1x+\lambda_1^{-1}y}-\rme^{\lambda_2 x+\lambda_2^{-1}y}}{1+\rme^{(\lambda_1+\lambda_2)x+(\lambda_1^{-1}+\lambda_2^{-1})y}}.\]
+    One can also obtain other interesting exact solutions from these formulas. While $\lambda_1$ and $\lambda_2$ are real, we can put $\lambda_1=\rme^{\i t}=-\lambda_2^{-1}$ for $t\in \bbR$, and discover that the formula for the $2$-soliton solution gives another real solution of sine-Gordon, which is periodic in $x-y$ and is called a \emph{breather} (Figure~\ref{fig:breather}).
+\end{example}
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[scale=0.5]{figures/SG2soliton.pdf}
+    \caption{$2$-soliton solution of the sine-Gordon equation (height profiles at constant $y$) and the corresponding pseudospherical surface.}
+    \label{fig:2-soliton}
+\end{figure}
+
+
+\begin{defn}[B\"acklund transformation]
+    Let $M_1,M_2$ carry \glspl{eds} $\calI_1$ and $\calI_2$, respectively, and let $B\subset M_1\times M_2$ be a submanifold such that the projections $\pr_i:B\to M_i$, $i=1,2$, give $B$ the structure of a double fiber bundle. Then $(B,\calE)$ defines a B\"acklund transformation between $\calI_1$ and $\calI_2$ if $\calE$ is an \gls{eds} on $B$ that is an integrable extension of both $\calI_1$ and $\calI_2$.
+\end{defn}
+
+We will often define B\"acklund transformations by giving a Pfaffian system $J<T^\ast B$ such that 
+\begin{align}
+    &\<J\cup \pr_1^\ast \calI_1\>_{\mathrm{alg}}=\<J\cup \pr_2^\ast\calI_2\>_{\mathrm{alg}},\label{eq 7.37a Ivey}\\
+    &\calE\coloneqq \<J\cup \pr_1^\ast \calI_1\cup \pr_2^\ast \calI_2\>_{\mathrm{alg}}\text{ is a differential ideal}.\label{eq 7.37b Ivey}
+\end{align}
+Note that $J$ need not be transverse to the fibers of $\pr_1$ or $\pr_2$.
+
+\begin{example}[\ref{ex 7.5.9 Ivey} continued]
+    Let $M_1$ and $M_2$ be two copies of $J^1(\bbR^2,\bbR)$ where we denote the forms and coordinates on $M_2$ with bars. For $i=1,2$ let the \gls{eds} $\calI_i$ on $M_i$ be a copu of the \gls{ma} system for the sine-Gordon equation from Example~\ref{ex 7.4.6 Ivey}. For any $\lambda\neq 0$, let $B_\lambda<M_1\times M_2$ be defined by $\wb{x}=x$, $\wb{y}=y$ and 
+    \begin{align}
+        p-\wb{p}=&\lambda\sin(u+\wb{u}),\\
+        q+\wb{q}=&\frac{1}{\lambda}\sin(u-\wb{u}).
+    \end{align}
+    Let $\theta$ be the standard cotact form on $J^1(\bbR^2,\bbR)$. On $B_\lambda$, let $J=\<\pr_1^\ast\theta,\pr_2^\ast\wb\theta\>$. Then it is easy to check that (\ref{eq 7.37a Ivey}-\ref{eq 7.37b Ivey}) are satisfied.
+\end{example}
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[scale=0.5]{figures/SGbreather.pdf}
+    \caption{A breather wave solution of the sine-Gordon equation and the corresponding pseudospherical surface.}
+    \label{fig:breather}
+\end{figure}
+
+
+\begin{example}[\ref{ex 7.5.6 Ivey} continued]
+    Let $M_1,M_2$ be two copies of $\bbR^5$, each carrying a copy of the \gls{kdv} \gls{eds}. (Again, we use barred coordinates on $M_2$.) Define $B=M_1\times\bbR^2$ as before, and define a submersion $\pr_2:B\to M_2$ by 
+    \begin{align}
+        \wb{x}&=x,\\
+        \wb{y}&=y,\\
+        \wb{u}&=2(\mu-y^2)-u,\\
+        \wb{p}&=4y(\mu-u-y^2)-p,\\
+        \wb{r}&=-4(u+y^2-\mu)(u+3y^2-\mu)-4yp-r.
+    \end{align}
+    Then $J$, as defined above, gives a B\"acklund transformation between the \gls{kdv} equation and itself. One can check that 
+    \[
+    \begin{rcases}
+        \pr_2^\ast\Theta_1&\equiv -\pr_1^\ast\Theta_1\\
+        \pr_2^\ast\Theta_2&\equiv -\pr_1^\ast\Theta_2-4y\pr_1^\ast\Theta_1 \\
+        \pr_2^\ast\Theta_3&\equiv -\pr_1^\ast\Theta_3-4y\pr_1^\ast\Theta_2-8(u+2y^2-\mu)\pr_1^\ast\Theta_1
+    \end{rcases} \pmod{J}.
+    \]
+    The presence of an arbitrary parameter in the B\"acklund transformation for \gls{kdv} is central to its complete integrability, both in the sense of inverse scattering and in the Hamiltonian sense.
+\end{example}
+
+In many important cases B\"acklund transformations relate two \emph{different} PDE's.
+
+\begin{example}[Wave and Liouville equations]
+    Let $M_1\subset J^2(\bbR^2,\bbR)$ be the submanifold defined by the hyperbolic Liouville equation $z_{xy}=\rme^z$, with the standard contact system $\calI_1$ generated by $\theta_0,\theta_1,\theta_2$ defined in Example~\ref{ex 7.3.6 Ivey}. We use the standard notation $(p,q,r,s,t)$ for the jet coordinates restricted to $M_1$. Then (\ref{eq 7.14 Ivey}) implies that $(r-\frac12p^2)_y=0$ and $(t-\frac12q^2)_x=0$ for any solution. Thus, on $B=M_1\times \bbR$ with coordinate $v$ on the second factor, we may define an extension by letting $J=\<\theta_0,\theta_1,\theta_2,\eta\>$, where 
+    \[\eta\coloneqq \dd v-(r-\frac12 p^2)\dd x-(t-\frac12 q^2)\dd y.\]
+    Because $\dd\eta\equiv 0\pmod{\calI_1}$, $\calE=\<J\cup\calI_1\>_{\mathrm{alg}}$ is an integrable extension of $\calI_1$.
+
+    Furthermore, let $M_2=J^2(\bbR^2,\bbR)$ with coordinates $(\wb{x},\wb{y},\wb u,\wb p,\wb q)$ and let $\calI_2$ be the standard \gls{ma} system for the wave equation $\wb{u}_{\wb x\wb y}=0$. Define a submersion $\pr_2:B\to M_2$ by 
+    \[\wb{x}=x,\quad\wb{y}=y,\quad \wb{u}=v,\quad \wb{p}=r-\frac12 p^2,\quad \wb{q}=t-\frac12 q^2.\]
+    Then $\calE$ is an integrable extension of $\calI_2$ (with the role of the transverse Pfaffian system played by $\<\theta_0,\theta_1,\theta_2\>$). Thus, $(B,\calE)$ defines a B\"acklund transformation between Liouville and wave equations.
+
+    Explicitly, the system $\calE$ is equivalent to the two PDE's
+    \begin{align}
+        u_x+\wb{u}_x=&2\lambda \exp\frac{u-\wb{u}}{2},\\
+        u_y-\wb{u}_y=&\frac{1}{\lambda}\exp \frac{u+\wb{u}}{2}.
+    \end{align}
+    Whenever this system is satisfied, $u$ must be a solution of the Liouville equation, whereas $\wb{u}$ must be a solution of the wave equation. By taking $\wb{u}$, we can recover $u$ up to a constant of integration, thus producing the general solution of the Liouville equation. Letting  $\wb{u}(x,u)=\xi(x)+\eta(y)$, which is the general solution of the wave equation, we separate variables in the above system to find
+    \[\exp\left(-\frac{u}{2}\right)=-\exp\left(\frac{\xi-\eta}{2}\right)\left(\lambda\int \rme^{-\xi(x)}\dd x+\frac{1}{2\lambda}\int \rme^{\eta(y)}\dd y\right).\label{eq 9.31 Clellan}\]
+    Setting $X(x)\coloneqq -\lambda\int \rme^{-\xi(x)}\dd x$ and $Y(y)\coloneqq -\frac{1}{2\lambda}\int \rme^{\eta(y)}\dd y$, it is easy to solve (\ref{eq 9.31 Clellan}) and get the general solution (\ref{eq Liouville general solution}), where $X(x)$ and $Y(y)$ are arbitrary functions of a single variable, with the property that $X'$ and $Y'$ are nonzero and have the same sign.
+\end{example}
+
+
+
+
 
 
 
@@ -7861,6 +8376,10 @@ which means the parametrization of a geodesic is proportional to its length. In 
 
 
 
+\subsection{Geometry of submanifolds}
+
+
+
 \subsection{Morse theory}
 
 Use RS1, Shen (review). 
@@ -8081,5 +8600,7 @@ Huybrechts 6.1 or Voisin. There's a factor of 1/2 in the MC equation missing in 
 
 \section{Symplectic geometry}
 
+Lagrangian submanifolds, Hamiltonian and Lagrangian systems, caustics, Maslov classes, symmetries and conservation laws, momentum maps.
 
+Use Bryant's ``Exterior Differential Systems and Euler-Lagrange Partial Differential Equations''.
 
