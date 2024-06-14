@@ -10,10 +10,10 @@
 Topological groups form a very big class and include things like ``infinite-dimensional Lie groups'', $p$-adic numbers, rational numbers, etc. It turns out that every locally compact and locally contractible topological group (in particular topological groups that are also topological manifolds) have a unique smooth structure compatible with the group structure, which is what a Lie group is. Hence we skip right to the definition of Lie groups, and for the most part will assume that they are smooth.
 
 \begin{defn}[Lie group]
-    A Lie group is a group $G$ with a structure of a differentiable (or $C^k$-differentiable, $C^\infty$-smooth, $C^\omega$-analytic) manifold on it that is compatible with the group structure. That is, the map $G\times G\to G$ given by $(g,h)\mapsto gh^{-1}$ is differentiable (resp.~$C^k$, $C^\infty$, $C^\omega$).
+    A (real) Lie group is a group $G$ with a structure of a differentiable (or $C^k$-differentiable, $C^\infty$-smooth, $C^\omega$-analytic) manifold on it that is compatible with the group structure. That is, the map $G\times G\to G$ given by $(g,h)\mapsto gh^{-1}$ is differentiable (resp.~$C^k$, $C^\infty$, $C^\omega$). A complex Lie group is defined similarly, with both the manifold structure and the group structure being holomorphic (complex analytic).
 \end{defn}
 
-We will show that any differentiable Lie group has a unique compatible real analytic structure. In fact, one can show that differentiability is not required at all, and any topological manifold with a continuous group structure has a unique structure of an analytic Lie group. This is why most authors assume that Lie groups are smooth by definition.
+We will show that any twice differentiable Lie group has a unique compatible real analytic structure. In fact, one can show that differentiability is not required at all, and any topological manifold with a continuous group structure has a unique structure of an analytic Lie group. This is why most authors assume that Lie groups are smooth by definition.
 
 \begin{prop}[{{\cite[Thm.~1.6.3]{DK}}}]
     Any twice-differentiable Lie group $G$ has a unique structure of a real analytic manifold which turns it into a real analytic Lie group, and such that the identity map on $G$ is a $C^2$-diffeomorphism between the two structures.
@@ -3839,7 +3839,7 @@ If $X,Y\in\fX(M)$, then the Lie derivative of $Y$ along $X$ is denoted by
 \[\Lie_{[X,Y]}=[\Lie_X,\Lie_Y].\]
 With this bracket, $\fX(M)$ becomes a Lie algebra that is isomorphic to the Lie algebra of derivations on $C^\infty(M)$ (i.e.\ Lie derivatives).
 In local coordinates (using Einstein summation),
-\[[X,Y]^j=X^i \partial_i Y^j-Y^i \partial_i X^j.\]
+\[[X,Y]^j=X^i \partial_i Y^j-Y^i \partial_i X^j.\label{eq Lie derivative in components}\]
 \end{defn}
 
 \begin{prop}\label{prop properties of Lie derivatives}
@@ -5727,7 +5727,8 @@ Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-
         \[\mathsf{v}_G(g)=\Ad_g^\ast \mathsf{w}_G(g)=\det(\Ad_g)\mathsf{w}_G(g).\]
         Since the adjoint representation is a homomorphism $\Ad:G\to\GL(\frakg)$, the determinant of $\Ad_g$ is always nonzero and is called the \emph{modular quasicharacter}:\index{Modular quasicharacter}
         \[\Delta: G\to \bbK,\quad \Delta(g)\coloneqq\det(\Ad_g).\]
-        Therefore a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character.\footnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field. In the case of complex Lie groups, the Haar measure $\dd \mu_L$ is the $1$-density $|\sfv_G|$, so bi-invariance relies only on the absolute value $|\Delta|$.}\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
+        (Here, $\bbK$ is the underlying field of $G$, i.e.\ either $\bbR$ or $\bbC$.)
+        Therefore, a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character.\footnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field. In the case of complex Lie groups, the Haar measure $\dd \mu_L$ is the $1$-density $|\sfv_G|$, so bi-invariance relies only on the absolute value $|\Delta|$.}\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
         
         If $G$ is a connected real Lie group, then $\Delta>0$ everywhere by continuity (since $\Delta(e)=1$). 
         \item Compact Lie groups are unimodular. Indeed, since $\Delta:G\to \bbK^\ast$ is a homomorphism, $\Delta(G)$ must be a compact subgroup of $\bbK^\ast$, which means its image lies inside $\bbS^1\subset\bbC$.
@@ -5903,7 +5904,7 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
 \end{example}
 
 \begin{rem}
-    Mathematicians often speak of ``the volume of $G$'', which is of course not a well-defined notion until one fixes a volume form. On compact Lie groups whose Lie algebra is \emph{simple} (contains no nontrivial Lie subalgebras) or \emph{semisimple} (is a direct sum of simple subalgebras) one can choose a canonical volume form by taking the natural volume form associated with the invariant Riemannian metric induced by the invariant dot product given by the \emph{Cartan-Killing form}\index{Cartan-Killing form}\index{Killing form!see {Cartan-Killing form}} on $\frakg$: \[\sfK(A,B)\coloneqq -\tr(\ad_A\circ \ad_B).\] 
+    Mathematicians often speak of ``the volume of $G$'', which is of course not a well-defined notion until one fixes a volume form. On compact Lie groups whose Lie algebra is \emph{simple} (contains no nontrivial Lie subalgebras) or \emph{semisimple} (is a direct sum of simple subalgebras) one can choose a canonical volume form by taking the natural volume form associated with the invariant Riemannian metric induced by the invariant dot product given by the \emph{Cartan-Killing form}\index{Cartan-Killing form}\index{Killing form!see {Cartan-Killing form}} on $\frakg$: \[\sfK(A,B)\coloneqq \tr(\ad_A\circ \ad_B).\] 
     It is a nontrivial result of the structure theory of Lie algebras that $\sfK$ is nondegenerate iff $\frakg$ is semisimple, and moreover $\sfK$ is \emph{negative definite} whenever $\frakg$ belongs to a compact Lie group. Thus, by translating $-\sfK$ to all points of a compact semisimple Lie group, we get an invariant Riemannian metric $\sfg_G$ and hence a natural invariant volume form.
 \end{rem}
 
@@ -6087,7 +6088,7 @@ The following is an obvious special case of the Fundamental Theorem, but we emph
 \end{cor}
 
 
-\begin{thm}[Integrability Theorem {{\cite[Prop.~7.15]{Sharpe}}}]\label{thm second principle}
+\begin{thm}[Lie's Second Fundamental (Integrability) Theorem {{\cite[Prop.~7.15]{Sharpe}}}]\label{thm second principle}\index{Theorem!Lie II}
     Let $G$ and $H$ be Lie groups with $G$ simply connected. Then for every homomorphism of Lie algebras $\phi:\frakg\to\frakh$ there is a unique homomorphism of Lie groups $\Phi:G\to H$ such that $\Phi_{\ast e}=\phi$.
 \end{thm}
 \begin{proof}
@@ -6775,119 +6776,119 @@ Recall that a Banach algebra is a complete normed vector space with a multiplica
 
 
 
-% \subsection{(*) Technical lemmas}
+\subsection{(*) Technical lemmas}
 
 
-% Here we provide the more conventional, but longer, proof of Theorem~\ref{thm differential of exp} that doesn't use the Maurer-Cartan equation. It is essentially the same proof, but it rederives the basic results on developments of Lie algebra-valued $1$-forms from Section~\ref{sec: existence of homs} as statements about the existence of solutions for certain ODEs. First we will need the following technical lemma about ODEs dependent on a parameter.
-% \begin{lem}[{{\cite[Lem.~B.4, Thm.~B.3]{DK}}}]\label{lem variation formula}
-%     Consider an ODE of the form $\dot \gamma(t)=f(\gamma(t))$ on some domain in $\bbR^n$ with a differentiable $f$. Fix an initial value $\gamma(0)=x$. As is well known, this problem has a unique solution $\gamma(t,x)$ defined for sufficiently small $t$, $C^1$ in $t$, and of the same smoothness class as $f$ in $x$. If $f$ in addition depends differentiably on a parameter $\epsilon$, then 
-%     \[\partial_\epsilon \gamma(t,x,\epsilon)=\int_0^t \frac{\partial \gamma}{\partial x}(t-s,\gamma(s,x,\epsilon),\epsilon)\frac{\partial f}{\partial\epsilon}(\gamma(s,x,\epsilon),\epsilon)\dd s.\]
+Here we provide the more conventional, but longer, proof of Theorem~\ref{thm differential of exp} that doesn't use the Maurer-Cartan equation. It is essentially the same proof, but it rederives the basic results on developments of Lie algebra-valued $1$-forms from Section~\ref{sec: existence of homs} as statements about the existence of solutions for certain ODEs. First we will need the following technical lemma about ODEs dependent on a parameter.
+\begin{lem}[{{\cite[Lem.~B.4, Thm.~B.3]{DK}}}]\label{lem variation formula}
+    Consider an ODE of the form $\dot \gamma(t)=f(\gamma(t))$ on some domain in $\bbR^n$ with a differentiable $f$. Fix an initial value $\gamma(0)=x$. As is well known, this problem has a unique solution $\gamma(t,x)$ defined for sufficiently small $t$, $C^1$ in $t$, and of the same smoothness class as $f$ in $x$. If $f$ in addition depends differentiably on a parameter $\epsilon$, then 
+    \[\partial_\epsilon \gamma(t,x,\epsilon)=\int_0^t \frac{\partial \gamma}{\partial x}(t-s,\gamma(s,x,\epsilon),\epsilon)\frac{\partial f}{\partial\epsilon}(\gamma(s,x,\epsilon),\epsilon)\dd s.\]
 
-%     On a manifold $M$, if $X_\epsilon\in \fX(M)$ is a vector field that smoothly depends on a parameter $\epsilon$, then its flow $F^\epsilon_t$ also depends smoothly on $\epsilon$ and satisfies
-%     \[\partial_\epsilon F^\epsilon_t(m)=\int_0^t\left(T_{F^\epsilon_s(m)}F^{\epsilon}_{t-s}\right)\cdot \frac{\partial X_\epsilon}{\partial \epsilon}\left(F^\epsilon_s(m)\right)\dd s\; \in T_{F^\epsilon_t(m)}M.\label{2702}\]
-% \end{lem}
-% \begin{proof}
-%     First we rewrite the ODE in the form of an integral equation
-%     \[\gamma(t)=x+\int_0^t f(\gamma(s))\dd s.\]
-%     Differentiating this with respect to $\epsilon$ we get
-%     \[\partial_\epsilon\gamma(t,x,\epsilon)=\int_0^t \left(\partial_x f(\gamma(s,x,\epsilon),\epsilon)\partial_\epsilon\gamma(s,x,\epsilon)+\partial_\epsilon f(\gamma(s,x,\epsilon),\epsilon)\right)\dd s.\]
-%     Differentiating this with respect to $t$ we see that $\partial_\epsilon \gamma$ satisfies the inhomogenous linear differential equation
-%     \[\partial_\epsilon \dot\gamma(t)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_\epsilon \gamma(t,x,\epsilon)+\partial_\epsilon f(\gamma(t,x,\epsilon),\epsilon),\quad \partial_\epsilon\gamma(0,x,\epsilon)=0.\label{19804}\]
-%     Meanwhile differentiating the original ODE $\dot\gamma(t)=f(\gamma(t))$ with respect to $x$ gives
-%     \[ \partial_x\dot \gamma(t,x,\epsilon)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_x\gamma(t,x,\epsilon),\]
-%     and therefore $t\mapsto \partial_x \gamma(t,x,\epsilon)$ is a solution of the homogenous equation associated with (\ref{19804}). The classical variation-of-constants formula of Lagrange yields the claimed formula as the solution of (\ref{19804}).
+    On a manifold $M$, if $X_\epsilon\in \fX(M)$ is a vector field that smoothly depends on a parameter $\epsilon$, then its flow $F^\epsilon_t$ also depends smoothly on $\epsilon$ and satisfies
+    \[\partial_\epsilon F^\epsilon_t(m)=\int_0^t\left(T_{F^\epsilon_s(m)}F^{\epsilon}_{t-s}\right)\cdot \frac{\partial X_\epsilon}{\partial \epsilon}\left(F^\epsilon_s(m)\right)\dd s\; \in T_{F^\epsilon_t(m)}M.\label{2702}\]
+\end{lem}
+\begin{proof}
+    First we rewrite the ODE in the form of an integral equation
+    \[\gamma(t)=x+\int_0^t f(\gamma(s))\dd s.\]
+    Differentiating this with respect to $\epsilon$ we get
+    \[\partial_\epsilon\gamma(t,x,\epsilon)=\int_0^t \left(\partial_x f(\gamma(s,x,\epsilon),\epsilon)\partial_\epsilon\gamma(s,x,\epsilon)+\partial_\epsilon f(\gamma(s,x,\epsilon),\epsilon)\right)\dd s.\]
+    Differentiating this with respect to $t$ we see that $\partial_\epsilon \gamma$ satisfies the inhomogenous linear differential equation
+    \[\partial_\epsilon \dot\gamma(t)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_\epsilon \gamma(t,x,\epsilon)+\partial_\epsilon f(\gamma(t,x,\epsilon),\epsilon),\quad \partial_\epsilon\gamma(0,x,\epsilon)=0.\label{19804}\]
+    Meanwhile differentiating the original ODE $\dot\gamma(t)=f(\gamma(t))$ with respect to $x$ gives
+    \[ \partial_x\dot \gamma(t,x,\epsilon)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_x\gamma(t,x,\epsilon),\]
+    and therefore $t\mapsto \partial_x \gamma(t,x,\epsilon)$ is a solution of the homogenous equation associated with (\ref{19804}). The classical variation-of-constants formula of Lagrange yields the claimed formula as the solution of (\ref{19804}).
 
-%     The formula on manifolds is just the same formula if $|t|$ is sufficiently small. It extends to the full flow domain of $X_\epsilon$ by ``continuous induction'' in $t$, namely applying the chain rule to the group law of flows, $F^\epsilon_{t+\tau}=F^\epsilon_\tau\circ F^\epsilon_t$. One assumes that the formula already holds for $|t|<\delta$ and then replaces $x$ with $F_t^\epsilon(x)$ and $t$ with $\tau,|\tau|<\delta$. Unpacking $\partial_\epsilon F_{t+\tau}^{\epsilon}$ via a double application of the formula then confirms that the formula extends to $t+\tau$.
-% \end{proof}
+    The formula on manifolds is just the same formula if $|t|$ is sufficiently small. It extends to the full flow domain of $X_\epsilon$ by ``continuous induction'' in $t$, namely applying the chain rule to the group law of flows, $F^\epsilon_{t+\tau}=F^\epsilon_\tau\circ F^\epsilon_t$. One assumes that the formula already holds for $|t|<\delta$ and then replaces $x$ with $F_t^\epsilon(x)$ and $t$ with $\tau,|\tau|<\delta$. Unpacking $\partial_\epsilon F_{t+\tau}^{\epsilon}$ via a double application of the formula then confirms that the formula extends to $t+\tau$.
+\end{proof}
 
-% \begin{proof}[Second proof of Theorem~\ref{thm differential of exp}]
-%     Now we apply formula (\ref{2702}) to $s\mapsto R_{\rme^{s(X+\epsilon Y)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(X+\epsilon Y)_L$ on $G$. Hence:
-%     \begin{multline}
-%         \exp_{\ast X}Y=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(X+\epsilon Y)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}R_{\exp(X+\epsilon Y)}(e)=\\
-%         =\int_0^1T_{\rme^{sX}}R_{\rme^{(1-s)X}}\cdot Y_L\left(\rme^{sX}\right)\dd s=
-%         \int_0^1 T_e R_{\rme^X}\circ T_{\rme^{sX}}R_{\rme^{-sX}}\circ T_e L_{\rme^{sX}}\cdot Y \dd s=\\
-%         =T_e R_{\rme^X}\circ\int_0^1 T_e\left(R_{\rme^{-sX}}\circ L_{\rme^{sX}}\right)\dd s \cdot Y=
-%         T_e R_{\rme^X}\circ \int_0^1 \Ad_{\rme^{sX}}\dd s\cdot Y=\\
-%         =T_eR_{\rme^X}\circ \int_0^1 \rme^{s\ad_X}\dd s\cdot Y.
-%     \end{multline}
-%     In the last equality we used Theorem~\ref{thm 1.5.2 DK}. This proves the first identity. The second one follows from:
-%     \begin{multline}
-%         T_e R_{\rme^X}^{-1}\circ T_eL_{\rme^X}\circ \int_0^1 \rme^{-s\ad_X}\dd s=\\
-%         =\Ad_{\rme^X}\circ\int_0^1 \rme^{-s\ad_X}\dd s=\int_0^1 \rme^{(1-s)\ad_X}\dd s=\int_0^1 \rme^{u\ad_X}\dd u,
-%     \end{multline}
-%     by means of the substitution $1-s=u$.
-% \end{proof}
+\begin{proof}[Second proof of Theorem~\ref{thm differential of exp}]
+    Now we apply formula (\ref{2702}) to $s\mapsto R_{\rme^{s(X+\epsilon Y)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(X+\epsilon Y)_L$ on $G$. Hence:
+    \begin{multline}
+        \exp_{\ast X}Y=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(X+\epsilon Y)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}R_{\exp(X+\epsilon Y)}(e)=\\
+        =\int_0^1T_{\rme^{sX}}R_{\rme^{(1-s)X}}\cdot Y_L\left(\rme^{sX}\right)\dd s=
+        \int_0^1 T_e R_{\rme^X}\circ T_{\rme^{sX}}R_{\rme^{-sX}}\circ T_e L_{\rme^{sX}}\cdot Y \dd s=\\
+        =T_e R_{\rme^X}\circ\int_0^1 T_e\left(R_{\rme^{-sX}}\circ L_{\rme^{sX}}\right)\dd s \cdot Y=
+        T_e R_{\rme^X}\circ \int_0^1 \Ad_{\rme^{sX}}\dd s\cdot Y=\\
+        =T_eR_{\rme^X}\circ \int_0^1 \rme^{s\ad_X}\dd s\cdot Y.
+    \end{multline}
+    In the last equality we used Theorem~\ref{thm 1.5.2 DK}. This proves the first identity. The second one follows from:
+    \begin{multline}
+        T_e R_{\rme^X}^{-1}\circ T_eL_{\rme^X}\circ \int_0^1 \rme^{-s\ad_X}\dd s=\\
+        =\Ad_{\rme^X}\circ\int_0^1 \rme^{-s\ad_X}\dd s=\int_0^1 \rme^{(1-s)\ad_X}\dd s=\int_0^1 \rme^{u\ad_X}\dd u,
+    \end{multline}
+    by means of the substitution $1-s=u$.
+\end{proof}
 
-% The next technical lemma is useful in many important theorems, and we've already used it in the proof of Theorem~\ref{thm second principle}.
+The next technical lemma can be used for an alternative proof of Theorem~\ref{thm second principle}, and we will refer back to it as a starting point for the proof of Lie's Third Fundamental Theorem.
 
-% \begin{defn}[Path space]
-%     The space of all paths in a smooth manifold $M$ starting at $x_0\in M$ is denoted by $\rmP(M,x_0)$ and is provided with the topology of uniform convergence on $M$. Paths are considered equivalent if they are homotopic with fixed ends.
+\begin{defn}[Path space]
+    The space of all paths in a smooth manifold $M$ starting at $x_0\in M$ is denoted by $\rmP(M,x_0)$ and is provided with the topology of uniform convergence on $M$. Paths are considered equivalent if they are homotopic with fixed ends.
 
-%     The path space $\rmP(\frakg)$ of a Lie algebra $\frakg$ (or any finite-dimensional vector space) is the space of all continuous paths $\delta:[0,1]\to \frakg$ with the topology of uniform convergence defined by the supremum under some norm on $\frakg$ (all choices of norms are equivalent). This space is linear and complete, hence Banach.
+    The path space $\rmP(\frakg)$ of a Lie algebra $\frakg$ (or any finite-dimensional vector space) is the space of all continuous paths $\delta:[0,1]\to \frakg$ with the topology of uniform convergence defined by the supremum under some norm on $\frakg$ (all choices of norms are equivalent). This space is linear and complete, hence Banach.
 
-%     When considering only differentiable paths, e.g.~the set $\rmP(M,x_0)\cap C^1([0,1],M)$, we will simply write $\rmP(M,x_0)\cap C^1$. 
-% \end{defn}
+    When considering only differentiable paths, e.g.~the set $\rmP(M,x_0)\cap C^1([0,1],M)$, we will simply write $\rmP(M,x_0)\cap C^1$. 
+\end{defn}
 
-% Recall that the quotient of the path space $\rmP(M,x_0)$ by the equivalence relation between paths homotopic with fixed ends, with the induced quotient topology, is exactly the universal covering space $\wt{M}$.
+Recall that the quotient of the path space $\rmP(M,x_0)$ by the equivalence relation between paths homotopic with fixed ends, with the induced quotient topology, is exactly the universal covering space $\wt{M}$.
 
-% % \begin{prop}[{{\cite[Prop.~1.13.2]{DK}}}]
-% %     Let $G$ be a connected Lie group. Then $\rmP(G,e)$ provided with the pointwise multiplication, $(\gamma\cdot\gamma')(t)=\gamma(t)\gamma'(t)$ fro $t\in [0,1]$, is a group, called the \emph{path group} of $G$. Furthermore,
-% %     \[\Lambda(G)=\{\gamma\in \rmP(G,e)\mid \gamma(1)=e\}\]
-% %     is a normal subgroup of $\rmP(G,e)$ called the \emph{loop group} of $G$, while
-% %     \[\Lambda(G)^\circ=\{\gamma\in \rmP(G,e)\mid \gamma\sim \underbar{e}\},\]
-% %     which is the path component of the constant loop $\underbar{e}$, is closed and normal in $\rmP(G,e)$ as well. Now $\gamma\sim\gamma'$ in $\rmP(G,e)$ iff $\gamma'\in \gamma\Lambda(G)^\circ$, so that the universal covering space
-% %     \[\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ,\]
-% %     becomes a group, which we earlier called the universal covering group.
-% % \end{prop}
+% \begin{prop}[{{\cite[Prop.~1.13.2]{DK}}}]
+%     Let $G$ be a connected Lie group. Then $\rmP(G,e)$ provided with the pointwise multiplication, $(\gamma\cdot\gamma')(t)=\gamma(t)\gamma'(t)$ fro $t\in [0,1]$, is a group, called the \emph{path group} of $G$. Furthermore,
+%     \[\Lambda(G)=\{\gamma\in \rmP(G,e)\mid \gamma(1)=e\}\]
+%     is a normal subgroup of $\rmP(G,e)$ called the \emph{loop group} of $G$, while
+%     \[\Lambda(G)^\circ=\{\gamma\in \rmP(G,e)\mid \gamma\sim \underbar{e}\},\]
+%     which is the path component of the constant loop $\underbar{e}$, is closed and normal in $\rmP(G,e)$ as well. Now $\gamma\sim\gamma'$ in $\rmP(G,e)$ iff $\gamma'\in \gamma\Lambda(G)^\circ$, so that the universal covering space
+%     \[\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ,\]
+%     becomes a group, which we earlier called the universal covering group.
+% \end{prop}
 
-% By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}\right)_{\ast}\dot\gamma(t)=\xi(t)$. Of course, such a path is guaranteed to exist on some time interval $[0,\epsilon)$, but our goal is to show that in fact it exists on the entire interval $[0,1]$. We formulate this as a homeomorphism because we also want to know that these solutions depend on $\xi$ continuously and smoothly.
+By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}\right)_{\ast}\dot\gamma(t)=\xi(t)$. Of course, such a path is guaranteed to exist on some time interval $[0,\epsilon)$, but our goal is to show that in fact it exists on the entire interval $[0,1]$. We formulate this as a homeomorphism because we also want to know that these solutions depend on $\xi$ continuously and smoothly.
 
-% \begin{lem}[{{\cite[Prop.~1.13.4]{DK}}}]\label{lem invertibility of D}
-%     Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the mapping
-%     \[\rmD=\rmD^R:\quad \gamma\mapsto \left(t\mapsto \left(R_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
-%     is a homeomorphism from $\rmP(G,e)\cap C^1$ onto $\rmP(\frakg)$. For $\delta\in \rmP(\frakg)$, let $A_\delta\in C^1([0,1],\Lin(\frakg))$
-%     be the solution $A$ of the initial value problem
-%     \[\dot A(t)=\ad_{\delta(t)}\circ A(t),\quad A(0)=I=\id_{\frakg}.\label{1792}\]
-%     Then, for all $\gamma,\gamma'\in \rmP(G,e)\cap C^1$ and $t\in [0,1]$:
-%     \[\rmD(\gamma\cdot \gamma')(t)=\rmD\gamma(t)+\Ad_{\gamma(t)}\rmD \gamma'(t),\label{1794}\]
-%     and 
-%     \[\Ad_{\gamma(t)}=A_{\rmD \gamma}(t).\]
-%     Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\footnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\rmD(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
-%     where $\rmP(\frakg)_0$ is the set of the $\delta\in\rmP(\frakg)$ satisfying the following conditions:
-%     \begin{gather}
-%         \exists \text{ smooth mapping: } s\mapsto \delta_s:[0,1]\to \rmP(\frakg)\text{ with: } \delta_0=0,\;\delta_1=\delta,\\
-%         \int_0^1 A_{\delta_s}(t)^{-1}\partial_s\delta_s(t)\dd t=0\quad (s\in [0,1]).
-%     \end{gather}
-% \end{lem}
-% \begin{proof}
-%     The statement that $\rmD$ is bijective means that for every continuous curve $\delta:[0,1]\to\frakg$ there is a unique $C^1$ solution curve $\gamma:[0,1]\to G$ of the equation
-%     \[\dot\gamma(t)=(\xi(t))_R(\gamma(t),\]
-%     where $(\xi(t))_R$ is the right-invariant vector field corresponding to $\xi(t)\in\frakg$. The mapping $t\mapsto (\xi(t))_R$ is continuous from $[0,1]$ to the space of analytic vector fields on $G$. Thus for each $s\in[0,1]$ and $g\in G$, there is a unique maximal solution $\gamma(t,s,g)$ defined on the flow domain $\calD_{(s,g)}\subset [0,1]$ such that $\gamma(s,s,x)=x$ and $s\in \calD_{(s,g)}$. Defining the flow
-%     \[\Phi^{t,s}:x\mapsto \gamma(t,s,x)\text{ from time }s\text{ to time }t,\text{ on }G^{t,s}=\{x\in G\mid t\in \calD_{(s,g)}\},\]
-%     we also have the group property $\Phi^{t,s}\circ \Phi^{s,u}\subset \Phi^{t,u}$. Now, if $\gamma$ satisfies the ODE above, then for any $g\in G$:
-%     \[\partial_t(\gamma(t)g)=\left(R_{g}\right)_{\ast \gamma(t)} \left(R_{\gamma(t)}\right)_{\ast e}\xi(t)=\left(R_{\gamma(t)g}\right)_{\ast}\xi(t).\]
-%     Hence $t\mapsto \gamma(t)g$ tatisfies the same ODE. This shows that $G^{t,s}=G$ and $\Phi^{t,s}(g)=\Phi^{t,s}(e)g$ for all $g\in G$. The group property implies that the flow $\Phi^{t,s}$, constructed first only for small $|t-s|$, is globally defined on $G$ and all $t,s\in[0,1]$; in particular, the solution $\gamma$ exists for all $s,t\in [0,1]$. The continuous dependence of the solution on the vector fields implies that the inverse $\rmD^{-1}$ is continuous, so the first statement of the Lemma is proved.
+\begin{lem}[{{\cite[Prop.~1.13.4]{DK}}}]\label{lem invertibility of D}
+    Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the mapping
+    \[\rmD=\rmD^R:\quad \gamma\mapsto \left(t\mapsto \left(R_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
+    is a homeomorphism from $\rmP(G,e)\cap C^1$ onto $\rmP(\frakg)$. For $\delta\in \rmP(\frakg)$, let $A_\delta\in C^1([0,1],\Lin(\frakg))$
+    be the solution $A$ of the initial value problem
+    \[\dot A(t)=\ad_{\delta(t)}\circ A(t),\quad A(0)=I=\id_{\frakg}.\label{1792}\]
+    Then, for all $\gamma,\gamma'\in \rmP(G,e)\cap C^1$ and $t\in [0,1]$:
+    \[\rmD(\gamma\cdot \gamma')(t)=\rmD\gamma(t)+\Ad_{\gamma(t)}\rmD \gamma'(t),\label{1794}\]
+    and 
+    \[\Ad_{\gamma(t)}=A_{\rmD \gamma}(t).\]
+    Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\footnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\rmD(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
+    where $\rmP(\frakg)_0$ is the set of the $\delta\in\rmP(\frakg)$ satisfying the following conditions:
+    \begin{gather}
+        \exists \text{ smooth mapping: } s\mapsto \delta_s:[0,1]\to \rmP(\frakg)\text{ with: } \delta_0=0,\;\delta_1=\delta,\\
+        \int_0^1 A_{\delta_s}(t)^{-1}\partial_s\delta_s(t)\dd t=0\quad (s\in [0,1]).
+    \end{gather}
+\end{lem}
+\begin{proof}
+    The statement that $\rmD$ is bijective means that for every continuous curve $\delta:[0,1]\to\frakg$ there is a unique $C^1$ solution curve $\gamma:[0,1]\to G$ of the equation
+    \[\dot\gamma(t)=(\xi(t))_R(\gamma(t),\]
+    where $(\xi(t))_R$ is the right-invariant vector field corresponding to $\xi(t)\in\frakg$. The mapping $t\mapsto (\xi(t))_R$ is continuous from $[0,1]$ to the space of analytic vector fields on $G$. Thus for each $s\in[0,1]$ and $g\in G$, there is a unique maximal solution $\gamma(t,s,g)$ defined on the flow domain $\calD_{(s,g)}\subset [0,1]$ such that $\gamma(s,s,x)=x$ and $s\in \calD_{(s,g)}$. Defining the flow
+    \[\Phi^{t,s}:x\mapsto \gamma(t,s,x)\text{ from time }s\text{ to time }t,\text{ on }G^{t,s}=\{x\in G\mid t\in \calD_{(s,g)}\},\]
+    we also have the group property $\Phi^{t,s}\circ \Phi^{s,u}\subset \Phi^{t,u}$. Now, if $\gamma$ satisfies the ODE above, then for any $g\in G$:
+    \[\partial_t(\gamma(t)g)=\left(R_{g}\right)_{\ast \gamma(t)} \left(R_{\gamma(t)}\right)_{\ast e}\xi(t)=\left(R_{\gamma(t)g}\right)_{\ast}\xi(t).\]
+    Hence $t\mapsto \gamma(t)g$ tatisfies the same ODE. This shows that $G^{t,s}=G$ and $\Phi^{t,s}(g)=\Phi^{t,s}(e)g$ for all $g\in G$. The group property implies that the flow $\Phi^{t,s}$, constructed first only for small $|t-s|$, is globally defined on $G$ and all $t,s\in[0,1]$; in particular, the solution $\gamma$ exists for all $s,t\in [0,1]$. The continuous dependence of the solution on the vector fields implies that the inverse $\rmD^{-1}$ is continuous, so the first statement of the Lemma is proved.
 
-%     The product rule for $\rmD(\gamma\cdot\gamma')$ is easy to verify:
-%     \[\partial_t(\gamma(t)\gamma'(t))=\left(R_{\gamma'}\right)_{\ast \gamma}\dot\gamma+ \left(L_{\gamma}\right)_{\ast \gamma'}\dot\gamma',\]
-%     which then recombines into the claimed equality (\ref{1794}).
+    The product rule for $\rmD(\gamma\cdot\gamma')$ is easy to verify:
+    \[\partial_t(\gamma(t)\gamma'(t))=\left(R_{\gamma'}\right)_{\ast \gamma}\dot\gamma+ \left(L_{\gamma}\right)_{\ast \gamma'}\dot\gamma',\]
+    which then recombines into the claimed equality (\ref{1794}).
 
-%     In addition we check 
-%     \[\partial_t \Ad_{\gamma(t)}=\restr{\frac{\dd}{\dd s}}{s=0}\Ad_{\gamma(t+s)\gamma(t)^{-1}}\Ad_{\gamma(t)}=\ad_{\rmD \gamma(t)}\Ad_{\gamma(t)},\quad \Ad_{\gamma(0)}=\Ad_e=I,\]
-%     and this shows that $A:t\mapsto \Ad_{\gamma(t)}$ satisfies (\ref{1792}) with $\delta=\rmD\gamma$.
+    In addition we check 
+    \[\partial_t \Ad_{\gamma(t)}=\restr{\frac{\dd}{\dd s}}{s=0}\Ad_{\gamma(t+s)\gamma(t)^{-1}}\Ad_{\gamma(t)}=\ad_{\rmD \gamma(t)}\Ad_{\gamma(t)},\quad \Ad_{\gamma(0)}=\Ad_e=I,\]
+    and this shows that $A:t\mapsto \Ad_{\gamma(t)}$ satisfies (\ref{1792}) with $\delta=\rmD\gamma$.
 
-%     If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\rmD\gamma_u(t))_R$, we have the variational formula from Lemma~\ref{lem variation formula}:
-%     \[\partial_u\gamma_u(e)=\int_0^1 \left(T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\rmD\gamma_u(s)\right)_R\right)\gamma_u(s)\dd s.\]
-%     Now 
-%     \begin{multline}
-%         T_{\gamma_u(s)}\Phi^{1,s}_u=T_{\gamma_u(s)}\left(\Phi_u^{1,0}\circ (\Phi^{s,0}_u)^{-1}\right)=\\=T_{\gamma_u(s)}\Phi_u^{1,0}\circ \left(T_e\Phi^{s,0}_u\right)^{-1}= T_{e}L_{\gamma_u(1)}\circ T_e L_{\gamma_u(s)}^{-1},
-%     \end{multline}
-%     using the fact that the flow of a right-invariant field is performed by left translations.  On the other hand,
-%     \[((\rmD \gamma_u)(s))_R(g)=\left(R_g\right)_\ast \rmD\gamma_u(s),\]
-%     so the variational formula takes the form
-%     \[\partial_u\gamma(1)=\left(L_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\rmD\gamma_u)(s)\dd s.\]
-%     Then $u\mapsto\gamma_u(1)$ is constant iff $\int_0^1\Ad_{\gamma_u(s)}^{-1}\partial_u\rmD\gamma_u(s)\dd s=0$. Again using $\Ad_{\gamma_u(s)}=A_{\rmD \gamma_u}(s)$, we now obtain the last statement of this Lemma.
-% \end{proof}
+    If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\rmD\gamma_u(t))_R$, we have the variational formula from Lemma~\ref{lem variation formula}:
+    \[\partial_u\gamma_u(e)=\int_0^1 \left(T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\rmD\gamma_u(s)\right)_R\right)\gamma_u(s)\dd s.\]
+    Now 
+    \begin{multline}
+        T_{\gamma_u(s)}\Phi^{1,s}_u=T_{\gamma_u(s)}\left(\Phi_u^{1,0}\circ (\Phi^{s,0}_u)^{-1}\right)=\\=T_{\gamma_u(s)}\Phi_u^{1,0}\circ \left(T_e\Phi^{s,0}_u\right)^{-1}= T_{e}L_{\gamma_u(1)}\circ T_e L_{\gamma_u(s)}^{-1},
+    \end{multline}
+    using the fact that the flow of a right-invariant field is performed by left translations.  On the other hand,
+    \[((\rmD \gamma_u)(s))_R(g)=\left(R_g\right)_\ast \rmD\gamma_u(s),\]
+    so the variational formula takes the form
+    \[\partial_u\gamma(1)=\left(L_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\rmD\gamma_u)(s)\dd s.\]
+    Then $u\mapsto\gamma_u(1)$ is constant iff $\int_0^1\Ad_{\gamma_u(s)}^{-1}\partial_u\rmD\gamma_u(s)\dd s=0$. Again using $\Ad_{\gamma_u(s)}=A_{\rmD \gamma_u}(s)$, we now obtain the last statement of this Lemma.
+\end{proof}
 
 
 
@@ -7093,7 +7094,7 @@ Recall that in Theorem~\ref{thm 7.21 Lee} we stated without proof that a Lie sub
 \end{proof}
 
 
-\begin{thm}[Closed Subgroup Theorem {{\cite[Thm.~5.6.8]{RS1}}}]\index{Theorem!Closed subgroup}\label{thm closed subgroup}
+\begin{thm}[Cartan (1930) Closed Subgroup Theorem {{\cite[Thm.~5.6.8]{RS1}}}]\index{Theorem!Closed subgroup (Cartan)}\label{thm closed subgroup}
     If $G$ is a Lie group and $H\subset G$ is a subgroup that is also a closed subset of $G$, then $H$ is an embedded Lie subgroup. The corresponding Lie subalgebra of $\frakg=\Lief G$ is 
     \[\frakh=\{X\in\frakg: \rme^{tX}\in H \text{ for all }t\in\bbR\}.\]
 \end{thm}
@@ -7223,7 +7224,7 @@ It is almost obvious that the definition of the exponential map together with it
     Then for each $X,Y\in\frakg$, the map $X\mapsto X^R$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[X^R,Y^R]=-([X,Y])^R$.
 \end{lem}
 \begin{proof}
-    Recall that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials as a point by $\rmD v(x)\in \End(\bbR^n)$, then
+    Recall from (\ref{eq Lie derivative in components}) that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials as a point by $\rmD v(x)\in \End(\bbR^n)$, then the Lie bracket is
     \[[v,w](x)=\rmD w(x)\cdot v(x)-\rmD v(x)\cdot w(x).\label{10707}\]
     So in order to compute $[X^R,Y^R](Z)$, we start by differentiating~\ref{dexp series}:
     \[\int_0^1 \rme^{t\ad_Z}\dd t \left(X^R(Z)\right)=X\quad (Z\in\frakg_e),\]
@@ -7254,7 +7255,7 @@ It is almost obvious that the definition of the exponential map together with it
 
 
 \begin{thm}[{{\cite[Thm.~1.8.3]{DK}}}]\label{thm 1.8.3 DK}
-    Let $M$ be a $C^2$ manifold and let $\frakg\subset \fX^1(M)$ be a finite-dimensional Lie subalgebra of the algebra of $C^1$ vector fields on $M$. Then, for every relatively compact open subset $V$ of $M$ (i.e.\ such that the closure $\wb{V}$ is compact), there is an open neighborhood $U$ of $0\in\frakg$ such that:
+    Let $M$ be a $C^2$ manifold and let $\frakg\subset \fX^1(M)$ be a finite-dimensional Lie subalgebra of the algebra of $C^1$ vector fields on $M$. Then, for every relatively compact open subset $V$ of $M$ (i.e.\ such that the closure $\wb{V}$ is compact), there is an open $0$-neighborhood $U\subset\frakg$ such that:
     \begin{enumerate}[label=(\alph*)]
         \item For every $X\in U$, the set $\calD^X_{1}$, the slice of the flow domain of $X$ at time $t=1$, contains $V$.
         \item If $X,Y\in U$, then $F^X_1(V)\subset \calD^X_1$ and $\restr{\left(F^X_1\circ F^Y_1\right)}{V}=\restr{F_1^{\mu(X,Y)}}{V}$.
@@ -7298,43 +7299,45 @@ It is almost obvious that the definition of the exponential map together with it
 \end{proof}
 
 
-\begin{thm}[Lie's Third Fundamental Theorem {{\cite[Thm.~1.8.1]{DK}}}]\label{thm local Lie's third}
+\begin{thm}[Lie's Third Fundamental Theorem {{\cite[Thm.~1.8.1]{DK}}}]\label{thm local Lie's third}\index{Theorem!Lie III}
     For every finite-dimensional Lie algebra $\frakg$ there exists a local Lie group whose Lie algebra is $\frakg$. Namely, an open neighborhood of $0$ in $\frakg$ becomes a local Lie group, provided with $\mu$ defined in (\ref{def local mu}) as the local multiplication and $X\mapsto -X$ as the local inversion.
 \end{thm}
 \begin{proof}
     The properties of $\mu$ are easily verified except for the associativity. Associativity follows from the associativity of compositions of flows as well as (b) and (c) of Theorem~\ref{thm 1.8.3 DK}.
 \end{proof}
 
-In fact, a global version of this theorem holds. We only provide the statement without proof. The proof relies on the theory of infinite-dimensional Lie groups, and the basic idea is to show that equation (\ref{1794}) defines a group structure on the path space $\rmP(\frakg)$ which makes it a Banach Lie group, and the identity component $\rmP(\frakg)_0$ into a closed normal subgroup. Then the quotient $\rmP(\frakg)/\rmP(\frakg)_0$ turns out to be a simply connected Lie group with Lie algebra isomorphic to $\frakg$. Showing that $\rmP(\frakg)_0$ is closed requires either a deep exploration of the topology of Lie groups (one needs to show that $\pi_2(G)=0$ for any Lie group, or at least that the second cohomology group is trivial, as in \cite{DK}), or structure theory of Lie algebras (via Ado's theorem).
+In fact, a global version of this theorem holds, first obtained by Elie Cartan. We only provide the statement without proof. The proof relies on the theory of infinite-dimensional Lie groups, and the basic idea is to show that equation (\ref{1794}) defines a group structure on the path space $\rmP(\frakg)$ (of all continuous paths $[0,1]\to \frakg$) which makes it a Banach Lie group, and the identity component $\rmP(\frakg)_0$ into a closed normal subgroup. Then the quotient group $\rmP(\frakg)/\rmP(\frakg)_0$ turns out to be a simply connected Lie group with Lie algebra isomorphic to $\frakg$. Showing that $\rmP(\frakg)_0$ is closed requires either a deep exploration of the topology of Lie groups (one needs to show that $\pi_2(G)=0$ for any Lie group, or at least that the second cohomology group is trivial, as in \cite{DK}), or structure theory of Lie algebras (via Ado's theorem). See Remark~\ref{rem Lie III} below for more comments on the proof.
 
-\begin{thm}[Global Lie's Third Fundamental Theorem {{\cite[Thm.~1.14.3]{DK}}}]\label{thm 1.14.3 DK global Lie's third}
+\begin{thm}[Cartan-Lie (1936)/Global Lie's Third Fundamental Theorem {{\cite[Thm.~1.14.3]{DK}}}]\label{thm 1.14.3 DK global Lie's third}\index{Theorem!Cartan-Lie (Global Lie III)}
     For every finite-dimensional Lie algebra $\frakg$ there exists a simply connected Lie group $\wt{G}$ whose Lie algebra is equal to $\frakg$. The restriction of the exponential mapping $\exp:\frakg\to\wt{G}$ to the center $\mathfrak{z}=\rmC(\frakg)$ induces an isomorphism from the vector group $(\mathfrak{z},+)$ onto the identity component of the center $\rmZ(\wt{G})$.
 \end{thm}
 \begin{cor}[Lie-Palais]\label{thm Lie-Palais}\index{Theorem!Lie-Palais}
     If $M$ is a connected $C^2$ manifold and a collection of \emph{complete} $C^1$ vector fields forms a finite-dimensional Lie subalgebra $\frakg<\fX^1(M)$, then there exists a connected Lie group with a $C^2$ action on $M$ faithfully inducing the action of $\frakg$, unique up to a unique isomorphism of Lie group actions. In particular, the flows $\{F^X_1\}_{X\in \frakg}$ form a finite-dimensional Lie group with Lie algebra $\frakg$.
 \end{cor}
 
-\begin{rem}
-    Lie's Third Fundamental Theorem, combined with Theorem~\ref{thm second principle}, states that the Lie functor provides an equivalence of categories
+\begin{rem}[Lie correspondence]
+    The Cartan-Lie Theorem, combined with Theorem~\ref{thm second principle}, states that the Lie functor provides an equivalence of categories
     \[\Lief:\mathsf{SLieGr}\to \mathsf{LieAlg}_\bbR,\]
-    where $\mathsf{SLieGr}$ is the category of simply connected Lie groups.
+    where $\mathsf{SLieGr}$ is the category of simply connected Lie groups. Notably, the infinite-dimensional analog of this statement does not hold (due to the presence of the topological obstruction $\pi_2(G)$).
 
-    One of the other two fundamental theorems have already been covered by us. Their original statements were about local groups, but since we won't use them, we provide the following alternative versions.
+    The other two fundamental theorems have already been covered by us. Note that in Lie's time the concept of a global Lie group didn't exist, so Lie's original statements were all about local Lie groups. Following Elie Cartan's treatment of Lie theory from the global point of view, we provide modernized global statements.
 
-    \paragraph{Lie's First Fundamental Theorem} Lie groups $G$ and $H$ are locally isomorphic, iff their Lie algebras $\Lief G$ and $\Lief H$ are isomorphic. This was shown in Proposition~\ref{prop 1.1.3 DK} and Theorem~\ref{thm second principle}.
+    \paragraph{Lie's First Fundamental Theorem} If Lie groups $G$ and $H$ are locally isomorphic, then their Lie algebras $\Lief G$ and $\Lief H$ are isomorphic. This was shown in Proposition~\ref{prop 1.1.3 DK}.\index{Theorem!Lie I}
 
-    \paragraph{Lie's Second Fundamental Theorem} There is a bijective correspondence between Lie subalgebras of $\Lief G$ and connected Lie subgroups of $G$. This will be shown in the Analytic Subgroup Theorem~\ref{thm analytic subgroup}.
+    \paragraph{Lie's Second Fundamental Theorem} If $G$ and $H$ are Lie groups with $G$ simply connected, then any morphism $\frakg\to\frakh$ of their Lie algebras determines a unique homomorphism $G\to H$. This was shown in Theorem~\ref{thm second principle}.\index{Theorem!Lie II}
+    
+    The final crucial part of the Lie group-Lie algebra correspondence is the following result, first obtained by Chevalley. It will be our main focus in the next \subsect.
+
+    \paragraph{The Subgroups-subalgebras Theorem} There is a bijective correspondence between Lie subalgebras of $\Lief G$ and connected Lie subgroups of $G$. This will be shown in the Analytic Subgroup Theorem~\ref{thm analytic subgroup}.\index{Theorem!Subgroups-subalgebras}
 \end{rem}
 
 
-\begin{rem}
-    Lie's Third Fundamental Theorem gives a one-to-one correspondence between local data (Lie algebra) and global nonlinear data (group multiplication). There are several explicit ways of constructing the global Lie group:
+\begin{rem}\label{rem Lie III}
+    The Cartan-Lie Theorem gives a one-to-one correspondence between local data (Lie algebra) and global nonlinear data (group multiplication). There are several explicit ways of constructing the global Lie group:
     \begin{enumerate}
-        \item As a quotient of something simpler -- e.g.~the path space considered above. More concretely, given a simply connected lie group $G$, one can consider the space of all smooth paths from $e$ to $g\in G$ and declare two paths to be equivalent iff there is a pair of functions $\xi(t,s),\eta(t,s)\in\frakg$ such that the Maurer-Cartan equation (\ref{eq Maurer-Cartan}) holds for it, $\partial_t\eta-\partial_s\xi=[\xi,\eta]$ with proper boundary conditions. This equation describes the vanishing of curvature along the surface swept out by the homotopy. Therefore $G$ can be reconstructed as the space of paths in $\frakg$ starting at the origin modulo solutions of this nonlinear equation. Fortunately, the analysis reduces to first-order deformations.
+        \item As a quotient of something simpler -- e.g.\ the path space considered above. More concretely, given a simply connected lie group $G$, one can consider the space of all smooth paths from $e$ to $g\in G$ and declare two paths to be equivalent iff there is a pair of functions $\xi(t,s),\eta(t,s)\in\frakg$ such that the Maurer-Cartan equation (\ref{eq Maurer-Cartan}) holds for it, $\partial_t\eta-\partial_s\xi=[\xi,\eta]$, with proper boundary conditions. This equation describes the vanishing of curvature along the surface swept out by the homotopy. Therefore $G$ can be reconstructed as the space of paths in $\frakg$ starting at the origin modulo solutions of this nonlinear equation. Fortunately, the analysis reduces to first-order deformations.
 
-        \item As a ``submanifold'' of something simpler. Each Lie algebra $\frakg$ can be embedded into a matrix Lie algebra $\mathfrak{gl}_n(\bbR)$. Then we have a map $G\to \GL_n(\bbR)$ with some kernel $\Gamma$ and $G$ is the universal covering group of $G\slash\Gamma\subset \GL_n(\bbR)$. Thus, at least locally, every element of the Lie group is a matrix. The problem with this approach is that $G\slash \Gamma$ need not be a manifold. Generally, for an immersed subgroup $H\subset G$, we have a foliation of $G$ by the cosets of $H$. In particular, we have the distribution consisting of translated copies of $\frakh$, i.e.~$(R_g)_\ast \frakh$. Thus the cosets can be reconstructed as integral manifolds of this integrable distribution.
-
-        Thus we can define the distribution $D_g=\frakg\cdot g$ on $\GL_n(\bbR)$, verify that it is involutive, and consider the integral manifold through $I\in\GL_n(\bbR)$. Since the distribution is right-invariant, the integral manifold, which we can call $G$, is too. If $h\in G$, then $G\cdot h^{-1}$ is also integral and contains $I$, thus $G\cdot h^{-1}=G$, hence $G$ is a connected group. If $G$ is not simply connected, we can take its universal covering group instead. This is the essence of Ado's Theorem, which says that every Lie group can be realized as an immersed Lie subgroup of a matrix group $\GL_n$. This is another strategy for proving the Third Fundamental Theorem.
+        \item As a subgroup of something simpler. According to Ado's Theorem (1935), each finite-dimensional Lie algebra $\frakg$ can be embedded into a matrix Lie algebra $\mathfrak{gl}_n(\bbK)$. Thus, by the Analytic Subgroup Theorem\ \ref{thm analytic subgroup} from the next \subsect, there exists a connected Lie subgroup of $\GL_n(\bbK)$ whose Lie algebra is $\frakg$. This is another very common strategy for proving the Cartan-Lie Theorem.
     \end{enumerate}
 \end{rem}
 
@@ -7359,13 +7362,14 @@ In fact, a global version of this theorem holds. We only provide the statement w
 In the Closed Subgroup Theorem~\ref{thm closed subgroup} we characterized embedded Lie subgroups and described their Lie algebras. We now study the connection between general Lie subgroups and Lie subalgebras. Already from the simple example of one-dimensional subgroups of the torus $\bbT^2$ it is clear that the answer will be subtle: some Lie subalgebras will generate embedded subgroups, while generically they're only guaranteed to generate weakly embedded subgroups, that is, subgroups that become Lie groups only after adjusting their topology and smooth structure away from the ones induced from $G$. The connected subgroup generated by a subalgebra $\frakh< \Lief G$ is often called an \emph{analytic subgroup}, and the following important theorem shows that it can always be made into an immersed Lie subgroup.
 
 
-\begin{thm}[Analytic Subgroup Theorem {{\cite[Thm.~1.10.3]{DK}}}, {{\cite[Prop.~5.6.5]{RS1}}}, {{\cite[Thm.~9.4.8]{HN}}}]\label{thm analytic subgroup}\index{Theorem!Analytic Subgroup}
+\begin{thm}[Analytic Subgroup Theorem {{\cite[Thm.~1.10.3]{DK}}}, {{\cite[Prop.~5.6.5]{RS1}}}, {{\cite[Thm.~9.4.8]{HN}}}]\label{thm analytic subgroup}\index{Theorem!Analytic subgroup}
     Given a Lie group $G$, for each Lie subalgebra $\frakh\subset \frakg=\Lief G$ there is a unique connected immersed Lie subgroup $H$ of $G$ whose Lie algebra is $\frakh$. Moreover, the Lie algebra $\frakh$ satisfies
     \[\frakh=\{X\in\frakg: \rme^{tX}\in H\text{ for all }t\in\bbR\}.\]
 \end{thm}
-\begin{proof}
+\begin{proof}[First proof]
     One proof of the first statement, taken from \cite[Prop.~5.6.5]{RS1}, is based on the Global Frobenius Theorem~\ref{prop 3.5.21 RS1}. The Lie subalgebra of $\fX(G)^G$ that consists of left-invariant vector fields corresponding to elements of $\frakh$ spans an involutive distribution on $G$. Then $H$ can be defined as the maximal integral submanifold through $e\in G$. Now since the distribution is left-invariant, $L_h^{-1}$ for $h\in H$ takes the integral manifold through $h\in H$ to the one through $e$, which is $H$. Therefore $L_h(H)=H$, and thus $H$ is a subgroup. The multiplication on $H$ is smooth by virtue of being the restriction of the smooth multiplication map $m:H\times H\to G$ in range to an weakly embedded submanifold of $G$ (which an integral manifold is by Proposition~\ref{prop 3.5.15 RS1}).
-    
+\end{proof}
+\begin{proof}[Second proof]
     Now we present the proof from \cite[Thm.~1.10.3]{DK}, which avoids the Frobenius Theorem and is instead based on the exponential map. For each $X\in\frakh$, the vector field $X^R$ on $\frakg_e$ defined in (\ref{def X^R}) is tangent to $\frakh$ in the sense that $X^R(Z)\in\frakh$ for all $Z\in\frakg_e\cap\frakh$. This follows because $\ad_Z\in\Lin(\frakh)$ if $Z\in\frakh$. Moreover $\frakh$ is a closed subspace of $\frakg$ as a finite-dimensional subspace, hence the power series in the right hand side of (\ref{def X^R}) converges to an element of $\frakh$. (In the case of Banach Lie groups we have to make the additional assumption that $\frakh$ is a closed linear subspace.) If we solve (\ref{eq Z(t)}) with $Z(0)=Y\in\frakh$, regarded as an ODE in $\frakg_e\cap\frakh$, the solution will also be in $\frakg_e\cap\frakh$. However, it is also equal to the solution of the same ODE viewed in $\frakg_e$, which is equal to $\ln(\rme^{tX}\rme^Y)$. So the conclusion is that $\ln(\rme^X\rme^Y)\in\frakh$ if $X,Y\in\frakg_e\cap\frakh$. Denote by $H$ the subgroup generated by $\exp(\frakh)$, then the chart maps $\restr{\kappa^h}{H}$, for $h\in H$, with $\kappa^g=\ln\circ L_g^{-1}$), form an atlas for $H$, mapping it into $\frakh$. This can be checked to be an analytic atlas for $H$ (see again \cite[Thm.~1.6.3]{DK}). The inclusion $H\hookrightarrow G$ is an immersion because, in the charts $\kappa^h$, it is equal to the inclusion of open subsets of $\frakh$ into $\frakg$. In view of Proposition~\ref{prop 7.14 Lee}, $H$ is connected, and it is the only connected Lie group of $G$ having $\frakh$ as its Lie algebra. The uniqueness of the structure of a real-analytic group on $H$ with prescribed Lie algebra $\frakh$ is also very easy to show by a standard argument, see \cite[Prop.~1.6.4]{DK}.
 
     Finally we need to show that if $\rme^{tX}\in H$ for all $t\in\bbR$, then $X\in\frakh$. Let $V\subset\frakg$ be an open convex symmetric neighborhood the origin such that $U_H^{-1}U_H\subset \exp(V\cap \frakh)$ and $\restr{\exp}{V}$ is a diffeomorphism. Given a neighborhood $U_H\subset H$ of the identity in $H$, there exists a sequence $(h_n)\in G$ such that $H=\bigcup_n h_nU_H$. Choose $\epsilon>0$ with $\exp([-2\epsilon,2\epsilon]X)\subseteq \exp(V)$. Since the interval $[0,\epsilon]$ is uncountable, there exists some $n$ for which $\{t\in [0,\epsilon]:\rme^{tX}\in h_nU_H\}$ is uncountable. In particular, there are two such elements $t_1<t_2$ and $u_1,u_2\in U_H$ such that $\rme^{t_1X}=h_nu_1\neq \rme^{t_2X}=h_nu_2$. Then
@@ -8532,7 +8536,7 @@ Our next example is certainly the best studied example of a parabolic geometry, 
 \begin{defn}[Conformal sphere]
     Consider the standard action of $\Or_{n+1,1}$ on $\bbR^{n+2}$ which leaves the null cone $C$ invariant. Since it acts linearly, it factors to a smooth action on $\bbS^n\cong C\slash \sim$. In fact the action on $C$ is transitive and this we get a diffeomorphism
     \[\bbS^n\cong \Or_{n+1,1}\slash P,\]
-    where $P$ is the stabilizer subgroup of some point of $\bbS^n$. The subgroup $P$ is usually called the Poincar\'e conformal group. For now we just note that $P$ is parabolic and is the semidirect product of the conformal group $\CO_n$ with an $n$-dimensional vector group.
+    where $P$ is the stabilizer subgroup of some point of $\bbS^n$. The subgroup $P$ is usually called the Poincar\'e conformal group. For now we just note that $P$ is parabolic and is the semidirect product of the conformal group $\CO_n=\Or_n\times\bbR_+$ with an $n$-dimensional vector group.
 \end{defn}
 
 Clearly the Riemannian metric induced on this sphere $\bbS^n$ is only determined up to overall scale, and $\Or_{n+1,1}$ acts on $\bbS^n$ by diffeomorphisms that preserve the standard conformal structure on $\bbS^n$. One may also replace $\Or_{n+1,1}$ with $\SO_{n+1,1}$ or $\Spin_{n+1,1}(\bbR)$. However, there is no analog to the flat Euclidean space, i.e.\ conformal geometry does not allow a homogeneous model isomorphic to $\bbR^n$. On $\bbR^n$ there are certain local conformal transformations which do not globalize.
