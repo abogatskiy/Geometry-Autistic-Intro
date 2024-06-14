@@ -701,7 +701,7 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
 It is easy to check that the product defined above is a valid group product, and it's clearly smooth along with its inverse $(n,h)^{-1}=(\Phi_h^{-1}(n^{-1}),h^{-1})$.
 
 \begin{example}[The Euclidean group]\index{Group!Euclidean}
-    $\Or_n(\bbR)$ acts by automorphisms on the translation group $\bbR^n$. Their semidirect product is the Euclidean group $\SE_n=\bbR^n\rtimes \Or_n(\bbR)$:
+    $\Or_n(\bbR)$ acts by automorphisms on the translation group $\bbR^n$. Their semidirect product is the Euclidean group $\rmE_n=\bbR^n\rtimes \Or_n(\bbR)$:
     \[(b,A)(b',A')=(n+An',AA').\]
     It also acts on $\bbR^n$ via 
     \[(b,A)\cdot x=b+Ax.\]
@@ -733,6 +733,34 @@ This kind of a semiproduct is called \emph{internal}, but this theorem essential
     \end{enumerate}
     Prove that none of these groups are isomorphic to the analogous direct product groups by comparing the centers (the center is the set of all elements that commute with all of $G$).
 \end{xca}
+
+
+
+An important class of matrix Lie groups closely related to classical groups are affine groups, extending the definition of the Euclidean group above.
+
+\begin{defn}[Affine extension]\index{Affine extension}
+    Let $G\sub \GL_n(\bbK)$, where $\bbK=\bbR$ or $\bbC$, be a matrix Lie group. The \emph{affine extension} of $G$ is the semidirect product 
+    \[\rmA G\coloneqq G\ltimes \bbK^n,\]
+    where the canonical action of $G$ on $\bbK^n$ is implied. The resulting normal subgroup $\bbK^n$ is called the \emph{group of translations}. $\rmA G$ is isomorphic to the subgroup of $\GL_{n+1}(\bbK)$ consisting of matrices of the block form
+    \[\begin{bmatrix}
+        g & \bf{x}\\
+        \bf{0}_n^T & 1
+    \end{bmatrix},\quad g\in G,\; \bf{x}\in\bbK^n,\]
+    where $\bf{0}_n^T$ is a row of $n$ zeros. From here, it is easy to see that the correspondence $G\mapsto \rmA G$ is a functor.
+\end{defn}
+
+\begin{example}
+    \begin{enumerate}
+        \item $\Aff_n(\bbK)\coloneqq \rmA \GL_n(\bbK)=\GL_n(\bbK)\ltimes\bbK^n$ is the \emph{affine group}.\index{Group!Affine}
+        \item $\rmA \SL_n(\bbR)=\SL_n(\bbR)\ltimes \bbR^n$ is the \emph{equi-affine group}.\index{Group!Equi-affine}
+        \item $\SE_n\coloneqq \rmA \SO_n{}= \SO_n\ltimes\bbR^n$ is the \emph{special Euclidean group}.\index{Group!Special Euclidean}
+    \end{enumerate}
+\end{example}
+
+
+
+
+
 
 
 
@@ -782,7 +810,7 @@ Note that in principle it is possible do define infinite-dimensional representat
 \end{xca}
 
 \begin{rem}
-    Classical Lie groups are defined as groups of invertible matrices, and those matrices comprise the so called \emph{defining representations} of those groups. Moreover, very often in introductory courses on Lie groups it is assumed that all groups under consideration are matrix groups. It is therefore natural to ask whether every Lie group is isomorphic to some matrix group (such groups are also called \emph{linear}). The answer is no: not every finite-dimensional Lie group has a finite-dimensional faithful representation. The simplest example of a \emph{nonlinear} group is $\widetilde{\SL_2}(\bbR)$, the universal covering group of $\SL_2(\bbR)$. We will be able to show that it can't have a faithful representation later. Spin groups in even dimensions are also nonlinear. The fact of existence of such Lie groups is the ultimate justification for using general differential geometry to study them.
+    Classical Lie groups are defined as groups of invertible matrices, and those matrices comprise the so called \emph{defining representations} of those groups. Moreover, very often in introductory courses on Lie groups it is assumed that all groups under consideration are matrix groups. It is therefore natural to ask whether every Lie group is isomorphic to some matrix group (such groups are also called \emph{linear}).\index{Linear group} The answer is no: not every finite-dimensional Lie group has a finite-dimensional faithful representation. The simplest example of a \emph{nonlinear} group is $\widetilde{\SL_2}(\bbR)$, the universal covering group of $\SL_2(\bbR)$. \index{Nonlinear group} We will be able to show that it can't have a faithful representation later (see Example~\ref{ex SL2R nonlinear}). Spin groups in even dimensions are also nonlinear. The fact of existence of such Lie groups is the ultimate justification for using general differential geometry to study them.
 \end{rem}
 
 Every Lie group has a canonical representation on its own tangent space at the identity.
@@ -817,13 +845,13 @@ Since Lie group homomorphisms preserve the identity, their derivatives map $T_e 
 
 
 First let us try to gain some intuition for how the group structure of $G$ might be ``encoded'' in $T_e G$ by working in local coordinates. Suppose $(U,\varphi)$ is a symmetric (i.e.~$U^{-1}=U$) open neighborhood of $e\in G$ and $\varphi:U\to \bbR^n$ a chart map on it such that $\varphi(e)=0$. We can find a smaller open neighborhood $U_0\subset U$ such that the the multiplication map $m:G\to G\to G$ restricts to $m:U_0\times U_0\to U$. The inversion map also restricts to $i:U\to U$. Then let $\mu:\varphi (U_0)^2\to \varphi(U)$ and $\iota:\varphi(U)\to \varphi(U)$ be their representatives in the local chart. Since these are now smooth maps on Euclidean spaces, we can study their Taylor series at the origin. Since $m(e,g)=m(g,e)=g$ for all $g$, we have
-\[\mu(0,x)=\mu(x,0)=x\]
-for all $x\in U_0$. This implies that both partial derivatives of $\mu$ computed at $(0,0)$ are the identity. Therefore the Taylor series of $\mu$ around the origin has the form
-\[\mu(x,y)=x+y+\beta(x,y)+\gamma(x,y)+\calO(4),\]
-where $\beta(x,y):\varphi(U_0)^2\to \bbR^n$ is some vector-valued bilinear form of $x,y\in\bbR^n$, $\gamma(x,y)$ is a similar cubic term, and $\calO(4)$ stands for terms that are quartic in $x$ and $y$ together ($x^4, x^3 y,$ etc.). In addition, since $m(g,i(g))=e$, we also have
-\[\mu(x,\iota(x))=\mu(\iota(x),x)=0,\]
+\[\mu(0,\bf{x})=\mu(\bf{x},0)=\bf{x}\]
+for all $\bf{x}\in U_0$. This implies that both partial derivatives of $\mu$ computed at $(0,0)$ are the identity. Therefore the Taylor series of $\mu$ around the origin has the form
+\[\mu(\bf{x},\bf{y})=\bf{x}+\bf{y}+\beta(\bf{x},\bf{y})+\gamma(\bf{x},\bf{y})+\calO(4),\]
+where $\beta(\bf{x},\bf{y}):\varphi(U_0)^2\to \bbR^n$ is some vector-valued bilinear form of $\bf{x},\bf{y}\in\bbR^n$, $\gamma(\bf{x},\bf{y})$ is a similar cubic term, and $\calO(4)$ stands for terms that are quartic in $\bf{x}$ and $\bf{y}$ together ($\bf{x}^4, \bf{x}^3 \bf{y},$ etc.). In addition, since $m(g,i(g))=e$, we also have
+\[\mu(\bf{x},\iota(\bf{x}))=\mu(\iota(\bf{x}),\bf{x})=0,\]
 which implies that the Taylor series of the inversion map has the form
-\[\iota(x)=-x+\beta(x,x)+\calO(x^3).\]
+\[\iota(\bf{x})=-\bf{x}+\beta(\bf{x},\bf{x})+\calO(\bf{x}^3).\]
 
 The extra constraints on the forms $\beta$ and $\gamma$ will come from the fact that they're not just some vector-valued forms, but that due to the group structure $m:G\times G\to G$ the domain and codomain of these forms are closely connected to each other. 
 
@@ -831,22 +859,22 @@ The extra constraints on the forms $\beta$ and $\gamma$ will come from the fact 
 
 \begin{lem}
     The antisymmetric quadratic form
-    \[b:\bbR^n\times\bbR^n\to \bbR^n,\quad b(x,y)=\beta(x,y)-\beta(y,x),\]
+    \[b:\bbR^n\times\bbR^n\to \bbR^n,\quad b(\bf{x},\bf{y})=\beta(\bf{x},\bf{y})-\beta(\bf{y},\bf{x}),\]
     is natural with respect to local coordinate transformations on $G$. That is, for any matrix $A\in\GL_n(\bbR)$,
-    \[A b(x,y)=b(Ax,Ay).\]
+    \[A b(\bf{x},\bf{y})=b(A\bf{x},A\bf{y}).\]
 \end{lem}
 \begin{proof}
     Any local coordinate transformation on $U_0$, represented by a transition diffeomorphism $f$ with $f(0)=0$, will transform the local multiplication map $\mu$ into $\wt{\mu}$ with
-    \[f(\wt\mu(x,y))=\mu(f(x),f(y)).\]
+    \[f(\wt\mu(\bf{x},\bf{y}))=\mu(f(\bf{x}),f(\bf{y})).\]
     Writing the Taylor series of $f$ as
-    \[f(x)=Ax+f_2(x)+\calO(3),\]
-    where $A$ is the Jacobi matrix of $f$ at the origin and $f_2(x)$ is the quadratic term, we have
-    \[\mu(f(x),f(y))=Ax+Ay+f_2(x)+f_2(y)+\beta(Ax,Ay)+\calO(3)\]
+    \[f(\bf{x})=A\bf{x}+f_2(\bf{x})+\calO(3),\]
+    where $A$ is the Jacobi matrix of $f$ at the origin and $f_2(\bf{x})$ is the quadratic term, we have
+    \[\mu(f(\bf{x}),f(\bf{y}))=A\bf{x}+A\bf{y}+f_2(\bf{x})+f_2(\bf{y})+\beta(A\bf{x},A\bf{y})+\calO(3)\]
     and
-    \[f(\wt\mu(x,y))=Ax+Ay+A\wt\beta(x,y)+f_2(x+y)+\calO(3).\]
+    \[f(\wt\mu(\bf{x},\bf{y}))=A\bf{x}+A\bf{y}+A\wt\beta(\bf{x},\bf{y})+f_2(\bf{x}+\bf{y})+\calO(3).\]
     By comparing these two expressions we conclude that
-    \[f_2(x)+f_2(y)+\beta(Ax,Ay)=A\wt\beta(x,y)+f_2(x+y).\]
-    In other words, the quadratic part of the multiplication map also depends on the quadratic part of the coordinate map itself. However, by noticing that the terms depending on $f_2$ are symmetric in $x$ and $y$, we get the statement of the theorem.
+    \[f_2(\bf{x})+f_2(\bf{y})+\beta(A\bf{x},A\bf{y})=A\wt\beta(\bf{x},\bf{y})+f_2(\bf{x}+\bf{y}).\]
+    In other words, the quadratic part of the multiplication map also depends on the quadratic part of the coordinate map itself. However, by noticing that the terms depending on $f_2$ are symmetric in $\bf{x}$ and $\bf{y}$, we get the statement of the theorem.
 \end{proof}
 
 This indicates the existence of a natural antisymmetric bilinear form $T_e G\times T_eG\to T_e G$. So far we have only used the property of the identity $eg=ge=g$. Aside from this, group multiplication also satisfies associativity.
@@ -854,47 +882,47 @@ This indicates the existence of a natural antisymmetric bilinear form $T_e G\tim
 \begin{lem}\label{3975}
     The associativity of group multiplication implies that
     \[
-        \beta(\beta(x,y),z)+\gamma(x,y)+\gamma(x+y,z)
-        =\beta(x,\beta(y,z))+\gamma(y,z)+\gamma(x,y+z).
+        \beta(\beta(\bf{x},\bf{y}),\bf{z})+\gamma(\bf{x},\bf{y})+\gamma(\bf{x}+\bf{y},\bf{z})
+        =\beta(\bf{x},\beta(\bf{y},\bf{z}))+\gamma(\bf{y},\bf{z})+\gamma(\bf{x},\bf{y}+\bf{z}).
     \]
 \end{lem}
 \begin{proof}
     We have 
     \begin{multline}
-        \mu(\mu(x,y),z)=x+y+\beta(x,y)+\gamma(x,y)
-        +z+\beta(x+y,z)+\beta(\beta(x,y),z)+\\+\gamma(x+y,z)+\calO(4)
+        \mu(\mu(\bf{x},\bf{y}),\bf{z})=\bf{x}+\bf{y}+\beta(\bf{x},\bf{y})+\gamma(\bf{x},\bf{y})
+        +\bf{z}+\beta(\bf{x}+\bf{y},\bf{z})+\beta(\beta(\bf{x},\bf{y}),\bf{z})+\\+\gamma(\bf{x}+\bf{y},\bf{z})+\calO(4)
     \end{multline}
     and 
     \begin{multline}
-        \mu(x,\mu(y,z))=x+y+z+\beta(x,y+z)+\beta(y,z)
-        +\gamma(y,z)+\beta(x,\beta(y,z))+\\+\gamma(x,y+z)+\calO(4).
+        \mu(\bf{x},\mu(\bf{y},\bf{z}))=\bf{x}+\bf{y}+\bf{z}+\beta(\bf{x},\bf{y}+\bf{z})+\beta(\bf{y},\bf{z})
+        +\gamma(\bf{y},\bf{z})+\beta(\bf{x},\beta(\bf{y},\bf{z}))+\\+\gamma(\bf{x},\bf{y}+\bf{z})+\calO(4).
     \end{multline}
     These two expressions must be equal by associativity. All terms of degree less than 3 cancel out because $\beta$ is bilinear, and we get the claimed formula.
 \end{proof}
 
 \begin{lem}
-    The antisymmetric form $b(x,y)$ satisfies the Jacobi identity
-    \[b(x,b(y,z))+b(y,b(z,x))+b(z,b(x,y))=0.\]
+    The antisymmetric form $b(\bf{x},\bf{y})$ satisfies the Jacobi identity
+    \[b(\bf{x},b(\bf{y},\bf{z}))+b(\bf{y},b(\bf{z},\bf{x}))+b(\bf{z},b(\bf{x},\bf{y}))=0.\]
 \end{lem}
 \begin{proof}
-    We antisymmetrize the equation from Lemma~\ref{3975} with respect to permutations of all three arguments. First we notice that the antisymmetrization of $\gamma(x,y)$ will be the same as that of $\gamma(y,z)$ since they are related to each other by a cyclic (and thus even) permutation. Moreover, the antisymmetizations of both $\gamma(x+y,z)$ and $\gamma(x,y+z)$ vanish since both of these are symmetric under a transposition of two of the arguments, and the only function that is both symmetric and antisymmetric is zero.
+    We antisymmetrize the equation from Lemma~\ref{3975} with respect to permutations of all three arguments. First we notice that the antisymmetrization of $\gamma(\bf{x},\bf{y})$ will be the same as that of $\gamma(\bf{y},\bf{z})$ since they are related to each other by a cyclic (and thus even) permutation. Moreover, the antisymmetizations of both $\gamma(\bf{x}+\bf{y},\bf{z})$ and $\gamma(\bf{x},\bf{y}+\bf{z})$ vanish since both of these are symmetric under a transposition of two of the arguments, and the only function that is both symmetric and antisymmetric is zero.
 
     What remains is 
-    \[\Alt \beta(\beta(x,y),z)=\Alt \beta(x,\beta(y,z)),\]
+    \[\Alt \beta(\beta(\bf{x},\bf{y}),\bf{z})=\Alt \beta(\bf{x},\beta(\bf{y},\bf{z})),\]
     where $\Alt$ is the antisymmetrization operator 
-    \[\Alt f(x_1,x_2,x_3)=\sum_{\sigma\in S_3}\sign(\sigma)f(x_{\sigma(1)},x_{\sigma(2)},x_{\sigma(3)}).\]
+    \[\Alt f(\bf{x}_1,\bf{x}_2,\bf{x}_3)=\sum_{\sigma\in S_3}\sign(\sigma)f(\bf{x}_{\sigma(1)},\bf{x}_{\sigma(2)},\bf{x}_{\sigma(3)}).\]
 
-    This equation has six terms on each side, and we are going to group them into three groups of four by gathering terms that have the same variable standing alone. We start with those having $z$ as a lone variable. On the left hand side we combine two terms coming from the transposition $(1\Leftrightarrow2)$
-    \[\beta(\beta(x,y),z)-\beta(\beta(y,x),z)=\beta(b(x,y),z),\]
+    This equation has six terms on each side, and we are going to group them into three groups of four by gathering terms that have the same variable standing alone. We start with those having $\bf{z}$ as a lone variable. On the left hand side we combine two terms coming from the transposition $(1\Leftrightarrow2)$
+    \[\beta(\beta(\bf{x},\bf{y}),\bf{z})-\beta(\beta(\bf{y},\bf{x}),\bf{z})=\beta(b(\bf{x},\bf{y}),\bf{z}),\]
     whereas on the right hand side we find
-    \[\beta(z,\beta(x,y))-\beta(z,\beta(y,x))=\beta(z,b(x,y)).\]
+    \[\beta(\bf{z},\beta(\bf{x},\bf{y}))-\beta(\bf{z},\beta(\bf{y},\bf{x}))=\beta(\bf{z},b(\bf{x},\bf{y})).\]
     Finally, bringing these two expressions to the same side we find
-    \[\beta(b(x,y),z)-\beta(z,b(x,y))=b(b(x,y),z).\]
+    \[\beta(b(\bf{x},\bf{y}),\bf{z})-\beta(\bf{z},b(\bf{x},\bf{y}))=b(b(\bf{x},\bf{y}),\bf{z}).\]
     The full antisymmetrization is just a sum of cyclic permutations of this one, which gives us the Jacobi identity.
 \end{proof}
 
 \begin{rem}
-    It's always possible to find some local coordinates in which $\beta(x,y)=\frac12 b(x,y)$ is antisymmetric right away (namely the coordinates in which $\iota(x)=-x+\calO(x^3)$). Later we will prove the miraculous result that there is a special coordinate system in which $\iota(x)\equiv-x$ and not only the quadratic term, but \emph{all} higher terms in the Taylor series of $\mu(x,y)$ can be written in terms of \emph{only} $b(x,y)$, and there is a \emph{universal} formula giving this dependence (the Baker-Campbell-Hausdorff formula). In other words, the entire local structure of the Lie group is encoded in the bilinear form $b$.
+    It's always possible to find some local coordinates in which $\beta(\bf{x},\bf{y})=\frac12 b(\bf{x},\bf{y})$ is antisymmetric right away (namely the coordinates in which $\iota(\bf{x})=-\bf{x}+\calO(\bf{x}^3)$). Later we will prove the miraculous result that there is a special coordinate system in which $\iota(\bf{x})\equiv-\bf{x}$ and not only the quadratic term, but \emph{all} higher terms in the Taylor series of $\mu(\bf{x},\bf{y})$ can be written in terms of \emph{only} $b(\bf{x},\bf{y})$, and there is a \emph{universal} formula giving this dependence (the Baker-Campbell-Hausdorff formula). In other words, the entire local structure of the Lie group is encoded in the bilinear form $b$.
 \end{rem}
 
 
@@ -902,66 +930,68 @@ This indicates the existence of a natural antisymmetric bilinear form $T_e G\tim
 \subsection{Lie algebras: Construction II}
 
 The above calculations can be circumvented if we display a manifestly functorial object that gives an antisymmetric bilinear form on $T_eG$. To this end, let us take a look at the local representation of the conjugation map $\Ad_g h=ghg^{-1}$:
-\[c(x,y)=\mu(\mu(x,y),\iota(x)).\]
+\[c(\bf{x},\bf{y})=\mu(\mu(\bf{x},\bf{y}),\iota(\bf{x})).\]
 
 \begin{lem}
     The Taylor series of the local conjugation map reads
-    \[c(x,y)=y+b(x,y)+\calO(3).\]
+    \[c(\bf{x},\bf{y})=\bf{y}+b(\bf{x},\bf{y})+\calO(3).\]
 \end{lem}
 \begin{proof}
 Combining the Taylor series of $\mu$ and $\iota$, we have
     \begin{multline}
-        \mu(\mu(x,y),\iota(x))= x+y+\iota(x)+\beta(x+y,\iota(x)) +\beta(x,y)+\calO(3)=\\
-        =x+y-x+\beta(x,x)+\beta(x,-x)+ \beta(y,-x)+ \beta(x,y)+\calO(3)=\\
-        =y+\beta(x,y)-\beta(y,x) +\calO(3)=y+b(x,y)+\calO(3).
+        \mu(\mu(\bf{x},\bf{y}),\iota(\bf{x}))= \bf{x}+\bf{y}+\iota(\bf{x})+\beta(\bf{x}+\bf{y},\iota(\bf{x})) +\beta(\bf{x},\bf{y})+\calO(3)=\\
+        =\bf{x}+\bf{y}-\bf{x}+\beta(\bf{x},\bf{x})+\beta(\bf{x},-\bf{x})+ \beta(\bf{y},-\bf{x})+ \beta(\bf{x},\bf{y})+\calO(3)=\\
+        =\bf{y}+\beta(\bf{x},\bf{y})-\beta(\bf{y},\bf{x}) +\calO(3)=\bf{y}+b(\bf{x},\bf{y})+\calO(3).
     \end{multline}
 \end{proof}
 
-Moreover, since $c(x,0)=0$ for all $x$ in some neighborhood of the origin, we know that the error term $\calO(3)$ vanishes when $y=0$ and therefore is $\calO(3)=y\calO(x^2,xy,y^2)$. This means that the double derivative with respect to $x$ and $y$, which naturally acts on two vectors $X,Y\in\bbR^n$ reads
-\[\left(\frac{\partial^2}{\partial x\partial y}c(x,y)\right)(X,Y)=b(X,Y)+\calO(x,y)(X,Y).\]
-At $x=y=0$ the error term vanishes and we get
-\[\left(\restr{\frac{\partial^2}{\partial x\partial y}}{x=y=0}c(x,y)\right)(X,Y)=b(X,Y).\]
+Moreover, since $c(\bf{x},0)=0$ for all $\bf{x}$ in some neighborhood of the origin, we know that the error term $\calO(3)$ vanishes when $\bf{y}=0$ and therefore is $\calO(3)=\bf{y}\calO(\bf{x}^2,\bf{x}\bf{y},\bf{y}^2)$. This means that the double derivative with respect to $\bf{x}$ and $\bf{y}$, which naturally acts on two vectors $\bf{X},\bf{Y}\in\bbR^n$ reads
+\[\left(\frac{\partial^2}{\partial \bf{x}\partial \bf{y}}c(\bf{x},\bf{y})\right)(\bf{X},\bf{Y})=b(\bf{X},\bf{Y})+\calO(\bf{x},\bf{y})(\bf{X},\bf{Y}).\]
+At $\bf{x}=\bf{y}=0$ the error term vanishes and we get
+\[\left(\restr{\frac{\partial^2}{\partial \bf{x}\partial \bf{y}}}{\bf{x}=\bf{y}=0}c(\bf{x},\bf{y})\right)(\bf{X},\bf{Y})=b(\bf{X},\bf{Y}).\]
 
 Obviously this double derivative is nothing but the local chart representation of the double derivative of $\Adg_g(h)= ghg^{-1}$ viewed as a map $G\times G\to G$ with respect to both variables. Recall that we call its derivative at the identity $(\Adg_g)_{\ast e}:T_eG\to T_e G$ by the symbol $\Ad_g$. We can now think of this as a map $\Ad_\bullet:G\to \GL(T_e G)$. With this, we have
 \[T_{g=e}T_{h=e}(\Ad_g(h))=T_e \Ad_\bullet.\]
-Note that the two derivatives commute because partial derivatives of smooth maps on $\bbR^n$ commute. This is a linear operator $T_e \Ad_\bullet:T_eG\to T_e\GL(T_e G)\cong \End(T_eG)$ from the tangent space $T_e G$ to the space of linear operators on it (this can also be thought of as a tensor on $T_e G$ of contravariant rank 1 and covariant rank 2).
+Note that the two derivatives commute because partial derivatives of smooth maps on $\bbR^n$ commute. This is a linear operator $T_e \Ad_\bullet:T_eG\to T_e\GL(T_e G)\cong \End(T_eG)$ from the tangent space $T_e G$ to the space of linear operators on it (this can also be thought of as a tensor on $T_e G$ of contravariant rank 1 and covariant rank 2). 
+
+We will commonly denote elements of the Lie algebra by capital Latin letters to distinguish them from general tangent vectors and vector fields on Lie groups.
 
 \begin{defn}[Adjoint operator, Lie bracket]
     The linear adjoint operator is
     \[\ad=T_e \Ad: \quad T_eG\to \End(T_eG).\]
-    More explicitly, for every $X,Y\in T_eG$, the action of $\ad_X:T_eG\to T_eG$ is defined by
-    \[\ad_X Y=(T_e(\Ad_\bullet Y))(X).\]
+    More explicitly, for every $A,B\in T_eG$, the action of $\ad_A:T_eG\to T_eG$ is defined by
+    \[\ad_A B=(T_e(\Ad_\bullet B))(A).\]
 \end{defn}
 
 Equivalently, using the definition of tangent vectors as equivalence classes of curves, we have
 \begin{multline}
-    \ad_X Y=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}g(t)h(s)g^{-1}(t)=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}g(t)h(s)g^{-1}(t)h^{-1}(s)=\\=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}{} [g(t),h(s)].\label{30071}
+    \ad_A B=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}g(t)h(s)g^{-1}(t)=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}g(t)h(s)g^{-1}(t)h^{-1}(s)=\\=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}{} [g(t),h(s)].\label{30071}
 \end{multline}
-for any two curves $g(t)$ and $h(s)$ such that $X=g'(0)$ and $Y=h'(0)$. The fact that inserting the extra $h^{-1}(s)$ doesn't change the result is due to the fact that it can't contribute anything to the $\calO(ts)$ term in the Taylor series since the $\calO(t)$ term in $ghg^{-1}$ is already zero (to first order $ghg^{-1}$ in local coordinates reads $tX+sY-tX=sY$ as follows from our local functions $\mu$ and $\iota$). This identity can be treated as yet another construction of the Lie algebra, but we already know that it is equivalent to the others.
+for any two curves $g(t)$ and $h(s)$ such that $A=g'(0)$ and $B=h'(0)$. The fact that inserting the extra $h^{-1}(s)$ doesn't change the result is due to the fact that it can't contribute anything to the $\calO(ts)$ term in the Taylor series since the $\calO(t)$ term in $ghg^{-1}$ is already zero (to first order $ghg^{-1}$ in local coordinates reads $tA+sB-tA=sB$ as follows from our local functions $\mu$ and $\iota$). This identity can be treated as yet another construction of the Lie algebra, but we already know that it is equivalent to the others.
 
 Note that in local coordinates the anti-symmetric form that we derived in the first construction is exactly the Lie bracket written in a local chart $(U,\varphi)$:
-\[b(\varphi_{\ast e} X,\varphi_{\ast e} Y)=\varphi_{\ast e}(\ad_X Y).\]
-The anti-symmetry and the Jacobi identity for $\ad_X Y$ follow from those for $b(X,Y)$.
+\[b(\varphi_{\ast e} A,\varphi_{\ast e} B)=\varphi_{\ast e}(\ad_A B).\]
+The anti-symmetry and the Jacobi identity for $\ad_A B$ follow from those for $b(A,B)$.
 
 \begin{defn}[Lie algebra]\index{Lie algebra}
-    A Lie algebra is a pair $(\frakg,[\cdot,\cdot])$ where $\frakg$ is a finite-dimensional vector field over the field $\bbK$ and $[\cdot,\cdot]:\frakg\times\frakg\to\frakg$ is a map called a Lie bracket that satisfies the following properties for all $X,Y,Z\in \frakg$:
+    A Lie algebra is a pair $(\frakg,[\cdot,\cdot])$ where $\frakg$ is a finite-dimensional vector field over the field $\bbK$ and $[\cdot,\cdot]:\frakg\times\frakg\to\frakg$ is a map called a Lie bracket that satisfies the following properties for all $A,B,C\in \frakg$:
     \begin{enumerate}
         \item bilinearity: for all $a,b\in \bbK$,
-        \[[aX+bY,Z]=a[X,Z]+b[Y,Z],\quad [X,aY+bZ]=a[X,Y]+b[X,Z];\]
+        \[[aA+bB,C]=a[A,C]+b[B,C],\quad [A,aB+bC]=a[A,B]+b[A,C];\]
         \item alternating property:
-        \[[X,X]=0;\]
+        \[[A,A]=0;\]
         \item Jacobi identity:
-        \[[[X,Y],Z]+[[Y,Z],X]+[[Z,X],Y]=0.\]
+        \[[[A,B],C]+[[B,C],A]+[[C,A],B]=0.\]
     \end{enumerate}
-    Note that over fields of characteristic other than 2, like $\bbR$ or $\bbC$ the last two properties together imply skew-symmetry (anticommutativity) $[X,Y]=-[Y,X]$.
+    Note that over fields of characteristic other than 2, like $\bbR$ or $\bbC$ the last two properties together imply skew-symmetry (anticommutativity) $[A,B]=-[B,A]$.
 
     A Lie subalgebra of $\frakg$ is a linear subspace $\frakh\subset\frakg$ such that $[\frakh,\frakh]\subset\frakh$, i.e.~the restriction of the Lie bracket to $\frakh$ produces a Lie bracket on $\frakh$ and the inclusion map is a homomorphism of Lie algebras. In this case we write $\frakh\leq \frakg$.
 \end{defn}
 
 
 \begin{example}
-    Any associative algebra $(A,\cdot)$ (i.e.~a vector space with a binary associative multiplication operation) can be endowed with a structure of a Lie group by setting the Lie bracket as the commutator
-    \[[X,Y]=X\cdot Y-X\cdot Y.\]
+    Any associative algebra $(\calA,\cdot)$ (i.e.~a vector space with a binary associative multiplication operation) can be endowed with a structure of a Lie group by setting the Lie bracket as the commutator
+    \[[A,B]=A\cdot B-A\cdot B.\]
     For example, the algebra $\Lin(V)=\End(V)$ of linear maps on a vector space $V$ admits this structure. In fact this is a forgetful functor $\mathsf{AssAlg}\to\mathsf{LieAlg}$.
 \end{example}
 
@@ -979,7 +1009,7 @@ Historically, most Lie algebras were ``discovered'' as not just the Lie algebras
 
 \begin{defn}[Lie algebra homomorphism]
     Given two Lie algebras $\frakg,\frakg'$, a homomorphism $\phi:\frakg\to\frakg'$ is a linear map such that 
-    \[\phi[X,Y]_{\frakg}=[\phi X,\phi Y]_{\frakg'}.\]
+    \[\phi[A,B]_{\frakg}=[\phi A,\phi B]_{\frakg'}.\]
     These maps comprise the morphisms in the category $\mathsf{LieAlg}_{\bbK}$ of Lie algebras over the field $\bbK$.
 \end{defn}
 
@@ -994,23 +1024,27 @@ Historically, most Lie algebras were ``discovered'' as not just the Lie algebras
 
 
 
-Knowing from Construction I that $\ad_X Y$ satisfies the properties of a Lie bracket, we can finally define the Lie algebra corresponding to a Lie group.
+Knowing from Construction I that $\ad_A B$ satisfies the properties of a Lie bracket, we can finally define the Lie algebra corresponding to a Lie group.
 
 \begin{defn}[Lie algebra of a Lie group]
-    Given a Lie group $G$, its Lie algebra is $\frakg=T_e  G$ with the Lie bracket $[X,Y]=\ad_X Y$. 
+    Given a Lie group $G$, its Lie algebra is $\frakg=T_e  G$ with the Lie bracket $[A,B]=\ad_A B$. 
     
     The Jacobi identity can be alternatively written as
-    \[\ad_X[Y,Z]=[\ad_X Y,Z]+[Y,\ad_X Z],\]
-    which is equivalent to saying that the adjoint $\ad_X$ is a derivation with respect to the Lie bracket.
+    \[\ad_A[B,C]=[\ad_A B,C]+[B,\ad_A C],\]
+    which is equivalent to saying that the adjoint $\ad_A$ is a derivation with respect to the Lie bracket. 
 \end{defn}
 
+\begin{rem}[Gothic notation]
+    It is conventional to use the gothic version of the symbol denoting the group for its Lie algebra, so $\GL_n\mapsto \frakgl_n$, $\SO_n\mapsto \frakso_n$, and so on. Sometimes we will use pairs of symbols $(G,\frakg)$, $(H,\frakh)$, etc., for Lie groups and their Lie algebras without explicitly stating that they correspond to each other. Moreover, since we will have several equivalent definitions of the Lie algebra $\frakg$ of a Lie group $G$, we will use $\frakg$ to refer to any of its isomorphic constructions depending on the situation.
+\end{rem}
+
 \begin{lem}\label{lem gl(V)}
-    If $G=\GL(V)$ and $X,Y\in T_e G\cong \End(V)$, then 
-    \[\ad_X Y=[X,Y]=XY-YX.\]
+    If $G=\GL(V)$ and $A,B\in T_e G\cong \End(V)$, then 
+    \[\ad_A B=[A,B]=AB-BA.\]
 \end{lem}
 \begin{proof}
-    As we've shown before, on matrix groups $\Ad_A Y=AYA^{-1}$. Letting $A=I+tX$ and noting that $A^{-1}=I-tX+\calO(t^2)$, we find
-    \[\Ad_{I+tX} Y=t(XY-YX)+\calO(t^2),\]
+    As we've shown before, on matrix groups $\Ad_A B=ABA^{-1}$. Letting $a=\rmI+tA$ and noting that $a^{-1}=\rmI-tA+\calO(t^2)$, we find
+    \[\Ad_{\rmI+tA} B=t(AB-BA)+\calO(t^2),\]
     which upon differentiation at $t=0$ implies the claimed formula.
 \end{proof}
 
@@ -1019,7 +1053,7 @@ Knowing from Construction I that $\ad_X Y$ satisfies the properties of a Lie bra
     The so called \emph{general linear Lie algebra} constructed in Lemma~\ref{lem gl(V)} is denoted $\mathfrak{gl}(V)=\End(V)^{(-)}$ (recall that $R\mapsto R^{(-)}$ is the forgetful functor that turns a ring into its associated Lie ring by defining the Lie bracket as the commutator). In fact it can be defined over all associative rings. Usually we use the standard basis consisting of the \emph{standard matrix units} $e_{ij},i\leq j$. Since $e_{jh}e_{ik}=\delta_{jh}e_{ik}$, the commutator reads
     \[[e_{ij},e_{hk}]=\delta_{jh}e_{ij}-\delta_{ki}e_{hj}.\]
 
-    Later we will see that the Poincar\'e-Birkhoff-Witt Theorem implies that any Lie algebra $L$ is isomorphic to a subalgebra of some Lie algebra $A^{(-)}$ associated with some associative algebra $A$. Moreover, the theorem of Ado and Iwasawa implies that for a finite-dimensional $L$ the algebra $A$ can be taken to be finite-dimensional.
+    Later we will see that the Poincar\'e-Birkhoff-Witt Theorem implies that any Lie algebra $L$ is isomorphic to a subalgebra of some commutator Lie algebra $\calA^{(-)}$ of some associative algebra $\calA$. Moreover, the theorem of Ado and Iwasawa implies that for a finite-dimensional $L$ the algebra $\calA$ can be taken to be finite-dimensional.
 \end{example}
 
 \begin{example}[$\mathfrak{sl}_n(R)$]
@@ -1045,10 +1079,10 @@ Now it is instructive to repeat the derivation of the properties of this Lie bra
 \begin{proof}
     Differentiating:
     \[\Phi(\Adg_g(h))=\Phi(ghg^{-1})=\Phi(g)\Phi(h)\Phi(g)^{-1}=\Adg_{\Phi(g)}(\Phi(h))\]
-    with respect to $h$ at the identity in the direction of $Y$, we get
-    \[\Phi_{\ast e} \Ad_g Y=\Ad_{\Phi(g)} \Phi_{\ast e}Y.\]
-    Differentiating again with respect to $g$ at the identity in the direction of $X$ we get
-    \[\Phi_{\ast e}([X,Y]_{\frakg})=[\Phi_{\ast e}X,\Phi_{\ast e}Y]_{\frakg'}\]
+    with respect to $h$ at the identity in the direction of $B$, we get
+    \[\Phi_{\ast e} \Ad_g B=\Ad_{\Phi(g)} \Phi_{\ast e}B.\]
+    Differentiating again with respect to $g$ at the identity in the direction of $A$ we get
+    \[\Phi_{\ast e}([A,B]_{\frakg})=[\Phi_{\ast e}A,\Phi_{\ast e}B]_{\frakg'}\]
     as claimed.
 \end{proof}
 \begin{cor}
@@ -1066,21 +1100,21 @@ Now it is instructive to repeat the derivation of the properties of this Lie bra
 \end{rem}
 
 
-Now we are finally ready show (once again) that $\ad_X Y$ indeed satisfies the properties of a Lie bracket.
+Now we are finally ready show (once again) that $\ad_A B$ indeed satisfies the properties of a Lie bracket.
 
 \begin{thm}
-    Let $G$ be a Lie group and let $[X,Y]=\ad_X Y$ be the Lie bracket in the Lie algebra $\frakg=\Lief G$. Then for all $X,Y,Z\in\frakg$:
+    Let $G$ be a Lie group and let $[A,B]=\ad_A B$ be the Lie bracket in the Lie algebra $\frakg=\Lief G$. Then for all $A,B,C\in\frakg$:
     \begin{gather}
-        [X,Y]=-[Y,X],\\
-        [[X,Y],Z]=[X,[Y,Z]]-[Y,[X,Z]].
+        [A,B]=-[B,A],\\
+        [[A,B],C]=[A,[B,C]]-[B,[A,C]].
     \end{gather}
 \end{thm}
 \begin{proof}
     $\Ad:G\to \GL(\frakg)$ is a smooth homomorphism, hence Proposition~\ref{prop 1.1.3 DK} shows that $\ad=T_e\Ad$ is a homomorphism of Lie algebras $\frakg\to \Lin(\frakg)$ (as usual, $\Lin(V)$ denotes the space all linear maps $V\to V$ in the category of vector spaces). Recall now that the Lie algebra on $\End(\frakg)$ is given by the commutator, therefore
-    \[\ad_{[X,Y]}=\ad_X \ad_Y-\ad_Y \ad_X.\]
-    Applying this to $Z\in\frakg$ we get the Jacobi identity. For skew-symmetry we observe that the group commutator 
+    \[\ad_{[A,B]}=\ad_A \ad_B-\ad_B \ad_A.\]
+    Applying this to $C\in\frakg$ we get the Jacobi identity. For skew-symmetry we observe that the group commutator 
     \[(g,h)\mapsto [g,h]=ghg^{-1}h^{-1}\]
-    defines a smooth mapping $G\times G\to G$ whose derivative at $(e,e)$ is zero (this expresses the fact that $X+Y=Y+X$ in $\frakg$). As a consequence, its second-order derivative at $(e,e)$ is an intrinsically defined symmetric bilinear mapping from $(\frakg\times\frakg)\times(\frakg\times\frakg)$ into $\frakg$. The derivative of $[g,h]$ with respect to $h$ at $e$ in the direction of $Y\in\frakg$ is equal to $(\Ad_g-I)(Y)$. Then the derivative of this with respect to $g$ at $e$ in the direction of $X\in\frakg$ is equal to $\ad_X Y$. Applying these differentiations in the opposite order, we first get $(I-\Ad_h)(X)$, and then $-\ad_Y X$. Since the order of these differentiations doesn't actually matter for $C^2$ maps, we conclude skew-symmetry.
+    defines a smooth mapping $G\times G\to G$ whose derivative at $(e,e)$ is zero (this expresses the fact that $A+B=B+A$ in $\frakg$). As a consequence, its second-order derivative at $(e,e)$ is an intrinsically defined symmetric bilinear mapping from $(\frakg\times\frakg)\times(\frakg\times\frakg)$ into $\frakg$. The derivative of $[g,h]$ with respect to $h$ at $e$ in the direction of $B\in\frakg$ is equal to $(\Ad_g-\id_\frakg)(B)$. Then the derivative of this with respect to $g$ at $e$ in the direction of $A\in\frakg$ is equal to $\ad_A B$. Applying these differentiations in the opposite order, we first get $(\id_\frakg-\Ad_h)(A)$, and then $-\ad_B A$. Since the order of these differentiations doesn't actually matter for $C^2$ maps, we conclude skew-symmetry.
 \end{proof}
 
 
@@ -1116,7 +1150,7 @@ Now we are finally ready show (once again) that $\ad_X Y$ indeed satisfies the p
 
 \begin{example}
     As an example of how functoriality simplifies computations, recall the adjoint representation $\Ad_g=(\Adg_g)_{\ast e}:\frakg\to \frakg$. Since $\Adg_g$ is a Lie group isomorphism, we automatically conclude that $\Ad_g$ is a Lie algebra isomorphism, i.e.:
-    \[\Ad_g[X,Y]=[\Ad_g X,\Ad_g Y].\]
+    \[\Ad_g[A,B]=[\Ad_g A,\Ad_g B].\]
 \end{example}
 
 \begin{example}[Adjoint representation of $\SO_3(\bbR)$]
@@ -1164,19 +1198,19 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 \begin{defn}[Adjoint representation of a Lie algebra]
     For any Lie algebra $\frakg$, its adjoint representation is defined by the homomorphism
-    \[\ad:\frakg\to \Der(\frakg)\leq \mathfrak{gl}(\frakg),\quad X\mapsto \ad_X.\]
+    \[\ad:\frakg\to \Der(\frakg)\leq \mathfrak{gl}(\frakg),\quad A\mapsto \ad_A.\]
     The image of this homomorphism is $\Inn(\frakg)$, the algebra if inner derivations.
 \end{defn}
 
 
 \begin{example}[The Heisenberg group and algebra]\label{example Heisenberg group}
-    Let $H_3$ be the group of real $3\times 3$ matrices of the form
+    Let $\Heis_3(\bbR)$ be the group of real $3\times 3$ matrices of the form
     \[\begin{pmatrix}
         1&a&c\\0&1&b\\0&0&1
     \end{pmatrix}.\]
     Its Lie algebra has the basis $X,Y,Z$ where each of these matrices is zero except for a $1$ in the position of $a,b,c$, respectively. The Lie bracket on this basis is $[X,Y]=Z$, $[Y,Z]=[X,Z]=0$.
     
-    Let $C^\infty(\bbR)$ be the vector space of all smooth functions on $\bbR$. We define a representation of the Heisenberg algebra $\frakh_3=\Lief{H_3}$ on this space via the following linear operators;
+    Let $C^\infty(\bbR)$ be the vector space of all smooth functions on $\bbR$. We define a representation of the Heisenberg algebra $\mathfrak{heis}_3=\Lief{\Heis_3}$ on this space via the following linear operators;
     \[\rho(X)f=\frac{\dd}{\dd x}f,\quad \rho(Y)f=xf,\quad \rho(Z)f=f.\]
     It is easy to check that this is indeed a representation of $\frakh$. In quantum mechanics the Heisenberg algebra consists of the position and momentum operators plus the identity.
 \end{example}
@@ -1197,8 +1231,8 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 \begin{example}
     \begin{enumerate}
         \item Every 1-dimensional subspace of a Lie algebra is a Lie subalgebra.
-        \item All upper triangular matrices ($X_{ij}=0$ for $i>j$) form a subalgebra $\frakb_n(\bbK)$ of $\frakgl_n(\bbK)$. We will later identify this is the Borel subalgebra of $\frakgl_n(\bbK)$.
-        \item All strictly upper triangular matrices ($X_{ij}=0$ for $i\geq j$) form a subalgebra $\frakn_n(\bbK)$ of $\frakgl_n(\bbK)$.
+        \item All upper triangular matrices ($A_{ij}=0$ for $i>j$) form a subalgebra $\frakb_n(\bbK)$ of $\frakgl_n(\bbK)$. We will later identify this is the Borel subalgebra of $\frakgl_n(\bbK)$.
+        \item All strictly upper triangular matrices ($A_{ij}=0$ for $i\geq j$) form a subalgebra $\frakn_n(\bbK)$ of $\frakgl_n(\bbK)$.
         \item All diagonal matrices form an abelian subalgebra $\frakd_n(\bbK)$ of $\frakgl_n(\bbK)$. We will later identify this is the Cartan subalgebra of $\frakgl_n(\bbK)$.
     \end{enumerate}
 \end{example}
@@ -1220,7 +1254,7 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 \begin{defn}[Normalizer of a Lie algebra]\index{Normalizer}
     The normalizer of a subset $S\subset \frakg$ is
-    \[N_\frakg(S)=\{X\in\frakg\mid [X,S]\subset S\}.\]
+    \[N_\frakg(S)=\{A\in\frakg\mid [A,S]\subset S\}.\]
     If $S$ is a Lie subalgebra, then this is exactly the largest Lie subalgebra in which $S$ is an ideal. A subalgebra is called self-normalizing if $N_\frakg(S)=S$.
 \end{defn}
 
@@ -1233,13 +1267,13 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 \begin{defn}[Center of a Lie algebra]\index{Center}
     The center of a Lie algebra $\frakg$ is the set
-    \[C(\frakg)=\{X\in\frakg\mid [X,\frakg]=\{0\}\}.\]
+    \[C(\frakg)=\{A\in\frakg\mid [A,\frakg]=\{0\}\}.\]
     It is automatically a Lie subalgebra of $\frakg$ by virtue of being the kernel of the Lie algebra homomorphism $\ad:\frakg\to \frakgl(\frakg)$.
 \end{defn}
 
 \begin{defn}[Centralizer]
     The centralizer of a subset $S\subset\frakg$ is the set
-    \[C_\frakg(S)=\{X\in\frakg\mid [X,S]=\{0\}\}.\]
+    \[C_\frakg(S)=\{A\in\frakg\mid [A,S]=\{0\}\}.\]
     It is automatically a Lie subalgebra.
 \end{defn}
 
@@ -1260,8 +1294,8 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 \end{xca}
 
 \begin{defn}[Quotient algebra]
-    For an ideal $\frakn\sube\frakg$, one can define the quotient Lie algebra $\frakg\slash \frakn$ as the quotient of vector spaces (whose elements are all the subspaces of the form $X+\frakn$) with the Lie bracket
-    \[[X+\frakn,Y+\frakn]=[X,Y]+\frakn.\]
+    For an ideal $\frakn\sube\frakg$, one can define the quotient Lie algebra $\frakg\slash \frakn$ as the quotient of vector spaces (whose elements are all the subspaces of the form $A+\frakn$) with the Lie bracket
+    \[[A+\frakn,B+\frakn]=[A,B]+\frakn.\]
 \end{defn}
 
 \begin{defn}[Simple Lie algebra]
@@ -1277,7 +1311,7 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 \begin{defn}[Semidirect product of Lie algebras]\index{Semidirect product}
     Let $\frakh\leq \frakg$ and $\frakn\sube \frakg$. We say that $\frakg$ is the semidirect product of $\frakh$ and $\frakn$ if the restriction of the canonical projection $\frakg\to \frakg\slash\frakn$ to $\frakh$ induces an isomorphism $\frakh\cong \frakg\slash\frakn$.
 
-    Every semidirect product can be constructed as the modification of the direct sum of the Lie algebras $\frakh\oplus\frakn$ where for any $X\in \frakh$ and $Y\in\frakn$ we set $[X,Y]=\theta(X)Y$ with some Lie algebra homomorphism $\theta:\frakh\to \Der(\frakn)$.
+    Every semidirect product can be constructed as the modification of the direct sum of the Lie algebras $\frakh\oplus\frakn$ where for any $A\in \frakh$ and $B\in\frakn$ we set $[A,B]=\theta(A)B$ with some Lie algebra homomorphism $\theta:\frakh\to \Der(\frakn)$.
 \end{defn}
 
 \begin{example}
@@ -1346,7 +1380,7 @@ Recall that an ideal is a subspace that is stable under only inner derivations o
 Now we are ready to classify all 3-dimensional Lie algebras. Let $s=\dim[\frakg,\frakg]$.
 \begin{itemize}
     \item If $s=0$, then $\frakg$ is abelian.
-    \item If $s=1$, we can assume that $[\frakg,\frakg]$ is generated by $z$. We distinguish two cases. If $z$ is non-central, then $\frakg$ is the direct sum of the non-abelian 2-dimensional algebra $M$ constructed above, and of the 1-dimensional algebra. If $z$ is central, ther exist $x,y$ such that $[x,y]=z$. Clearly $x,y,z$ must be linearly independent, so the algebra is isomorphic to the algebra of strictly upper-triangular matrices $\frakn_3(\bbK)$, which is the Heisenberg algebra $H_3(\bbK)$.
+    \item If $s=1$, we can assume that $[\frakg,\frakg]$ is generated by $z$. We distinguish two cases. If $z$ is non-central, then $\frakg$ is the direct sum of the non-abelian 2-dimensional algebra $M$ constructed above, and of the 1-dimensional algebra. If $z$ is central, ther exist $x,y$ such that $[x,y]=z$. Clearly $x,y,z$ must be linearly independent, so the algebra is isomorphic to the algebra of strictly upper-triangular matrices $\frakn_3(\bbK)$, which is the Heisenberg algebra $\Heis_3(\bbK)$.
     \item If $s=2$, then $[\frakg,\frakg]$ must be abelian: if it isn't, by Lemma~\ref{lem 2} it must be a direct summand, and thus $s=1$, a contradiction. Thus we may assume that $[\frakg,\frakg]$ is generated by $y,z$ with $[y,z]=0$. Let $x\in \frakg\setminus[\frakg,\frakg]$. Then
     \[[x,y]=ay+bz,\quad [x,z]=cy+dz\]
     for some $a,b,c,d\in\bbK$ such that $ad-bc\neq 0$. Clearly one can replace the matrix $\begin{pmatrix}
@@ -1375,7 +1409,7 @@ Now we are ready to classify all 3-dimensional Lie algebras. Let $s=\dim[\frakg,
 
 
 \begin{xca}
-    Show that all classical Lie algebras (that is, the algebras of matrices that preserve a non-degenerate bilinear form $B$ in the sense that $BX+X^tB=0$) over a field of characteristic 0 are simple with the exception of
+    Show that all classical Lie algebras (that is, the algebras of matrices that preserve a non-degenerate bilinear form $\bf{B}$ in the sense that $\bf{B}A+A^t\bf{B}=0$) over a field of characteristic 0 are simple with the exception of
     \[\frakso_4(\bbK)=\fraksl_2(\bbK)\oplus\fraksl_2(\bbK).\]
 
     To prove this, first show that, for $\mathrm{char}(\bbK)\neq 2$, the smallest ideal of $\fraksl_n(\bbK)$ containing any standard unit $e_{ij}$ is $\fraksl_n(\bbK)$ itself. Furthermore, letting $\mathrm{char}(K)=p$ and assuming that $p\neq 2$ and $p$ doesn't divide $n$, use this result to show that $\fraksl_n(K)$ is simple for any $n\geq 2$. 
@@ -1628,7 +1662,7 @@ All of differential geometry that we will cover for finite-dimensional smooth ma
 
 
 
-\newpage
+\clearpage
 \section{Fiber Bundles}\label{sec: Fiber bundles}
 
 \subsection{Bundles}
@@ -2452,7 +2486,7 @@ The above Corollary shows the importance of the computation of homotopy groups o
 
 
 
-\newpage
+\clearpage
 \section{Vector Bundles}
 
 
@@ -3465,7 +3499,7 @@ One final homotopy invariant coming from the algebra of vector bundles derives f
 
 
 
-\newpage
+\clearpage
 \section{Vector Fields and Lie Derivatives}
 
 
@@ -4380,7 +4414,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
 
 
 
-\newpage
+\clearpage
 \section{Differential Forms and Integration}
 
 \subsection{Exterior algebra}
@@ -5535,7 +5569,7 @@ The following final general relation is an immediate consequence of Lemma~\ref{l
 
 
 
-\newpage
+\clearpage
 \section{Lie Theory II: Geometric Structure}\label{sec: Lie theory ii}
 
 \begin{hrem*}
@@ -6088,7 +6122,7 @@ The following is an obvious special case of the Fundamental Theorem, but we emph
 \end{cor}
 
 
-\begin{thm}[Lie's Second Fundamental (Integrability) Theorem {{\cite[Prop.~7.15]{Sharpe}}}]\label{thm second principle}\index{Theorem!Lie II}
+\begin{thm}[Lie's Second Fundamental Theorem {{\cite[Prop.~7.15]{Sharpe}}}]\label{thm second principle}\index{Theorem!Lie II}
     Let $G$ and $H$ be Lie groups with $G$ simply connected. Then for every homomorphism of Lie algebras $\phi:\frakg\to\frakh$ there is a unique homomorphism of Lie groups $\Phi:G\to H$ such that $\Phi_{\ast e}=\phi$.
 \end{thm}
 \begin{proof}
@@ -6696,15 +6730,15 @@ Combining this with the fact that every Lie group is the quotient of its univers
     \[G=\wt{G}\slash (\bbZ_2\times \{I\})\cong \SO_3\times \SU_2,\quad H=\wt{G}\slash \{\pm (I,I)\}\cong \SO_4,\]
     where the latter isomorphism was demonstrated in Example~\ref{example universal covering groups of so3 and so4}. Then $\pi_1(G)\cong \pi_1(H)\cong \bbZ_2$, but there is no automorphism of $\wt{G}$ mapping $\pi_1(G)$ to $\pi_1(H)$.
 
-    Indeed,one can show that the two direct factors are the only nontrivial connected normal subgroups of $\wt{G}$, so that each automorphism of $\wt{G}$ either preserves both or exchanges them. Since $\pi_1(H)$ is not contained in any of them, it cannot be mapped to $\pi_1(G)$ by an automorphism of $\wt G$.
+    Indeed, one can show that the two direct factors are the only nontrivial connected normal subgroups of $\wt{G}$, so that each automorphism of $\wt{G}$ either preserves both or exchanges them. Since $\pi_1(H)$ is not contained in any of them, it cannot be mapped to $\pi_1(G)$ by an automorphism of $\wt G$.
 \end{example}
 
 \begin{example}
     Here are some examples of pairs of linear Lie groups with isomorphic Lie algebras:
     \begin{enumerate}
         \item $\SO_3$ and $\SU_2$, see Example~\ref{example su2 and so3}.
-        \item $(\SO_{2,1})_0$ and $\SL_2(\bbR)$. Just like in the previous case, there is a covering homomorphism $\Phi:H\to G$ coming from the adjoint representation $\Ad:\SL_2(\bbR)\to \GL(\Lief \SL_2(\bbR))\cong \GL_3(\bbR)$.
-        \item $\SL_2(\bbC)$ and $\SO_{3,1}(\bbR)_0$, see Example~\ref{example so13 and sl2c}.
+        \item $\SO^+_{1,2}$ (plus denotes the identity component) and $\SL_2(\bbR)$. Just like in the previous case, there is a covering homomorphism $\Phi:H\to G$ coming from the adjoint representation $\Ad:\SL_2(\bbR)\to \GL(\fraksl_2(\bbR))\cong \GL_3(\bbR)$.
+        \item $\SL_2(\bbC)$ and $\SO_{1,3}^+$, see Example~\ref{example so13 and sl2c}.
         \item Lie groups that are homeomorphic as spaces don't have to be isomorphic as groups. As an example, $\SO_4$ is homeomorphic to $\SO_3\times \Sp_1$, whereas the only related isomorphism is $\SO_4\cong \Sp_1\times\Sp_1\slash \{\pm \rmI\}$. Another example is the homeomorphic pair $\U_2$ and $\SU_2\times \U_1$. However, if two Lie groups are homeomorphic and their Lie algebras are isomorphic, then the groups are isomorphic.
     \end{enumerate}
 \end{example}
@@ -6717,9 +6751,24 @@ Combining this with the fact that every Lie group is the quotient of its univers
 %     Therefore $G$ and $H$ are not isomorphic but have isomorphic Lie algebras and fundamental groups.
 % \end{example}
 
-Determining which of the groups $\wt{G}\slash \Gamma$ in general is a very subtle question. We now demonstrate an example of a nonlinear Lie group. 
+Determining which of the groups $\wt{G}\slash \Gamma$ are linear is in general a very subtle question requiring a detailed study of the structure of finite-dimensional Lie algebras. We now demonstrate two examples of nonlinear Lie groups.
 
-Recall that a Banach algebra is a complete normed vector space with a multiplication operation such that $\lVert xy\rVert\leq \lVert x\rVert \lVert y\rVert$. Any finite-dimensional algebra can be represented as a sub-algebra of some matrix algebra $\Mat_n(\bbK)$, and the commutator of any two matrices is traceless. The following analog of this statement on general Banach algebras turns out to hold.
+\begin{example}[$\widetilde{\SL_2(\bbR)}$ is nonlinear]\label{ex SL2R nonlinear}
+    Let $G=\widetilde{\SL_2(\bbR)}$ be the universal covering group of $\SL_2(\bbR)$ (recall that $\SL_2(\bbR)$ deformation retracts onto $\SO_2$, so its fundamental group is $\bbZ$). We will show that every continuous homomorphism $\Phi:G\to \GL_n(\bbR)$ satisfies $D\coloneqq \pi_1(\SL_2(\bbR))\subset \ker\Phi$, hence factors through $G\slash D\cong \SL_2(\bbR)$. This implies that a faithful finite-dimensional representation of $G$ doesn't exist.
+
+    Consider the Lie algebra homomorphism $\phi=\Phi_{\ast e}:\fraksl_2(\bbR)\to \frakgl_n(\bbR)$. Then it is easy to see that its complexification 
+    \[\phi^\bbC (A+\i B)\coloneqq \phi(A)+\i \phi(B)\]
+    defines an extension of $\phi$ to a complex linear Lie algebra homomorphism 
+    \[\phi^\bbC:\fraksl_2(\bbC)\to \frakgl_n(\bbC).\]
+    Since $\SL_2(\bbC)$ is simply connected (it deformation retracts onto $\SU_2$), there exists a unique group homomorphism $\Psi:\SL_2(\bbC)\to \GL_n(\bbC)$ with $\Psi_{\ast e}=\phi^\bbC$. 
+
+    Let $Q:G\to G\slash D\cong \SL_2(\bbR)\to \SL_2(\bbC)$ be the canonical quotient-then-inclusion homomorphism. Then 
+    \[\phi=\phi^\bbC\circ Q_{\ast e}=\Psi_{\ast e}\circ Q_{\ast e}=(\Psi\circ Q)_{\ast e}\]
+    implies $\Phi=\Psi\circ Q$. We conclude that $D=\ker Q\subset \ker\Phi$. Therefore, $G$ has no faithful linear representations.
+\end{example}
+
+
+For the second example, we will need a minor lemma. Recall that a \emph{Banach algebra}\index{Banach algebra} is a complete normed vector space with a structure of an algebra such that $\lVert xy\rVert\leq \lVert x\rVert \lVert y\rVert$. Any finite-dimensional algebra can be represented as a sub-algebra of some matrix algebra $\Mat_n(\bbK)$, and the commutator of any two matrices is traceless. The following is an extension of this statement to general Banach algebras.
 
 \begin{lem}
     If $A$ is a Banach algebra with unit $\bf{1}$ and $p,q\in A$ with $[p,q]=pq-qp=\lambda \bf{1}$, then $\lambda=0$.
@@ -6733,7 +6782,7 @@ Recall that a Banach algebra is a complete normed vector space with a multiplica
 \end{proof}
 
 
-\begin{example}[Quantum Heisenberg group]\index{Heisenberg group}\label{example quantum heisenberg}
+\begin{example}[Nonlinear quotients of the Heisenberg group]\index{Heisenberg group}\label{example quantum heisenberg}
     The Heisenberg group from Example~\ref{example Heisenberg group} contains a normal subgroup consisting of matrices of the form
     \[
     \begin{pmatrix}
@@ -6742,9 +6791,9 @@ Recall that a Banach algebra is a complete normed vector space with a multiplica
         0&0&1
     \end{pmatrix},\quad n\in\bbZ,
     \]
-    where $\hbar >0$ is a fixed constant. In fact this is a discrete central subgroup $D\subset H_3$, isomorphic to $\bbZ$, which gives the exact sequence
-    \[0\to \bbR\slash \hbar\bbZ\hookrightarrow H_3\slash \hbar\bbZ \overset{p}{\to} \bbR^2\to 0,\]
-    where of course $\bbR\slash\bbZ$ can be identified with the circle group $\U_1$ and $p$ is the homomorphism
+    where $\hbar >0$ is a fixed constant. In fact this is a discrete central subgroup $D\subset \Heis_3$, isomorphic to $\bbZ$, which gives the exact sequence
+    \[0\to \bbR\slash \hbar\bbZ\hookrightarrow \Heis_3\slash \hbar\bbZ \overset{p}{\to} \bbR^2\to 0,\]
+    where of course $\bbR\slash\hbar\bbZ$ can be identified with the circle group $\U_1$ and $p$ is the homomorphism
     \[p: 
      \begin{pmatrix}
         1&x&z+\hbar\bbZ\\
@@ -6753,9 +6802,9 @@ Recall that a Banach algebra is a complete normed vector space with a multiplica
     \end{pmatrix}
     \mapsto (x,y)\in\bbR^2
     \]
-    The group $H_3\slash \hbar\bbZ$ is also often called the Heisenberg group (it appears in the context of quantum mechanics) and it is nonlinear, as we will show now.
+    Thus, $\Heis_3\slash\hbar \bbZ$ for different $\hbar$ are non-isomorphic \emph{central extensions} of $\bbR^2$ by $\U_1$ (whereas $\Heis_3$ is a central extension by $\bbR$).\index{Central extension} The group $\Heis_3\slash \hbar\bbZ$ appears in the context of quantum mechanics (the Stone-von Neumann theorem describes its unique faithful unitary irreducible representation on a Hilbert space) and it is nonlinear, as we will show now.\index{Theorem!Stone-von Neumann}
     
-    Let $G=H_3$. Note that $\exp_G$ is a diffeomorphism whose inverse is given by 
+    Let $G=\Heis_3$. Note that $\exp_G$ is a diffeomorphism whose inverse is given by 
     \[\ln(g)=(g-I)-\frac12(g-I)^2,\]
     see Corollary~\ref{cor 5.16 Sepanski} below. Recall the commutation relations $[X,Y]=Z$, $[Y,Z]=[X,Z]=0$ (Example~\ref{example Heisenberg group}). Therefore, by the BCH formula,
     \[\exp(\bbR Z)=I+\bbR Z\subset \rmZ(G),\]
@@ -6765,8 +6814,6 @@ Recall that a Banach algebra is a complete normed vector space with a multiplica
     \[P\coloneqq \phi(X), \quad Q\coloneqq \phi(Y),\quad C\coloneqq \phi(\hbar Z)\]
     with $[P,Q]=C/\hbar$. Now $\rme^{\hbar Z}\in D\subset\ker\Phi$ implies that $\rme^{C}=\Phi(\rme^{\hbar Z})=I$, and hence that $C$ is diagonalizable with all eigenvalues contained in $2\pi\rmi\bbZ$. Let $V_\lambda=\ker (C-\lambda I)$. Since $Z$ is central in $\frakg$, the space $V_\lambda$ is invariant under $G$, hence also under $\frakg$. Therefore the restrictions $P_\lambda=\restr{P}{V_\lambda}$ and $Q_\lambda=\restr{Q}{V_\lambda}$ satisfy $[P_\lambda,Q_\lambda]=\lambda \id$ in the Banach algebra $\End(V_\lambda)$. In view of the preceding lemma, we have $\lambda=0$. Therefore, the diagonalizability of $C$ entails that $C=0$ and hence that $\bbR Z\subset \ker\phi$. It follows in particular that the group $G\slash D$ has no faithful finite-dimensional linear representations.
 \end{example}
-
-
 
 
 
@@ -6841,53 +6888,53 @@ Recall that the quotient of the path space $\rmP(M,x_0)$ by the equivalence rela
 %     becomes a group, which we earlier called the universal covering group.
 % \end{prop}
 
-By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}\right)_{\ast}\dot\gamma(t)=\xi(t)$. Of course, such a path is guaranteed to exist on some time interval $[0,\epsilon)$, but our goal is to show that in fact it exists on the entire interval $[0,1]$. We formulate this as a homeomorphism because we also want to know that these solutions depend on $\xi$ continuously and smoothly.
+By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}\right)_{\ast}\dot\gamma(t)=\xi(t)$. We already know that the solution exists by Cartan's Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global}, but we now show a stronger result that this correspondence establishes a homeomorphism between the two path spaces.
 
 \begin{lem}[{{\cite[Prop.~1.13.4]{DK}}}]\label{lem invertibility of D}
-    Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the mapping
-    \[\rmD=\rmD^R:\quad \gamma\mapsto \left(t\mapsto \left(R_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
-    is a homeomorphism from $\rmP(G,e)\cap C^1$ onto $\rmP(\frakg)$. For $\delta\in \rmP(\frakg)$, let $A_\delta\in C^1([0,1],\Lin(\frakg))$
+    Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the (right) logarithmic derivative as a map of paths
+    \[\delta=\delta^R:\quad \gamma\mapsto \left(t\mapsto \left(R_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
+    is a homeomorphism from $\rmP(G,e)\cap C^1$ onto $\rmP(\frakg)$. For $\tau\in \rmP(\frakg)$, let $A_\tau\in C^1([0,1],\Lin(\frakg))$
     be the solution $A$ of the initial value problem
-    \[\dot A(t)=\ad_{\delta(t)}\circ A(t),\quad A(0)=I=\id_{\frakg}.\label{1792}\]
+    \[\dot A(t)=\ad_{\tau(t)}\circ A(t),\quad A(0)=I=\id_{\frakg}.\label{1792}\]
     Then, for all $\gamma,\gamma'\in \rmP(G,e)\cap C^1$ and $t\in [0,1]$:
-    \[\rmD(\gamma\cdot \gamma')(t)=\rmD\gamma(t)+\Ad_{\gamma(t)}\rmD \gamma'(t),\label{1794}\]
+    \[\delta(\gamma\cdot \gamma')(t)=\delta\gamma(t)+\Ad_{\gamma(t)}\delta \gamma'(t),\label{1794}\]
     and 
-    \[\Ad_{\gamma(t)}=A_{\rmD \gamma}(t).\]
-    Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\footnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\rmD(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
-    where $\rmP(\frakg)_0$ is the set of the $\delta\in\rmP(\frakg)$ satisfying the following conditions:
+    \[\Ad_{\gamma(t)}=A_{\delta \gamma}(t).\]
+    Finally, denoting by $\Lambda(G)^\circ$ the space of all nullhomotopic based loops in $G$ (with $e$ being the basepoint)\footnote{This space $\Lambda(G)^\circ$ in fact becomes a topological group under the pointwise multiplication of loops in $G$. It is the identity component, hence a normal subgroup, of the group $\Lambda(G)$ of all loops based at $e$, and the universal covering group is exactly $\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ$. See \cite[Prop.~1.13.2]{DK}.}, we have $\delta(\Lambda(G)^\circ\cap C^1)=\rmP(\frakg)_0$,
+    where $\rmP(\frakg)_0$ is the set of the $\tau\in\rmP(\frakg)$ satisfying the following conditions:
     \begin{gather}
-        \exists \text{ smooth mapping: } s\mapsto \delta_s:[0,1]\to \rmP(\frakg)\text{ with: } \delta_0=0,\;\delta_1=\delta,\\
-        \int_0^1 A_{\delta_s}(t)^{-1}\partial_s\delta_s(t)\dd t=0\quad (s\in [0,1]).
+        \exists \text{ smooth mapping: } s\mapsto \tau_s:[0,1]\to \rmP(\frakg)\text{ with: } \tau_0=0,\;\tau_1=\tau,\\
+        \int_0^1 A_{\tau_s}(t)^{-1}\partial_s\tau_s(t)\dd t=0\quad (s\in [0,1]).
     \end{gather}
 \end{lem}
 \begin{proof}
-    The statement that $\rmD$ is bijective means that for every continuous curve $\delta:[0,1]\to\frakg$ there is a unique $C^1$ solution curve $\gamma:[0,1]\to G$ of the equation
+    The statement that $\delta$ is bijective means that for every continuous curve $\tau:[0,1]\to\frakg$ there is a unique $C^1$ solution curve $\gamma:[0,1]\to G$ of the equation
     \[\dot\gamma(t)=(\xi(t))_R(\gamma(t),\]
     where $(\xi(t))_R$ is the right-invariant vector field corresponding to $\xi(t)\in\frakg$. The mapping $t\mapsto (\xi(t))_R$ is continuous from $[0,1]$ to the space of analytic vector fields on $G$. Thus for each $s\in[0,1]$ and $g\in G$, there is a unique maximal solution $\gamma(t,s,g)$ defined on the flow domain $\calD_{(s,g)}\subset [0,1]$ such that $\gamma(s,s,x)=x$ and $s\in \calD_{(s,g)}$. Defining the flow
     \[\Phi^{t,s}:x\mapsto \gamma(t,s,x)\text{ from time }s\text{ to time }t,\text{ on }G^{t,s}=\{x\in G\mid t\in \calD_{(s,g)}\},\]
     we also have the group property $\Phi^{t,s}\circ \Phi^{s,u}\subset \Phi^{t,u}$. Now, if $\gamma$ satisfies the ODE above, then for any $g\in G$:
     \[\partial_t(\gamma(t)g)=\left(R_{g}\right)_{\ast \gamma(t)} \left(R_{\gamma(t)}\right)_{\ast e}\xi(t)=\left(R_{\gamma(t)g}\right)_{\ast}\xi(t).\]
-    Hence $t\mapsto \gamma(t)g$ tatisfies the same ODE. This shows that $G^{t,s}=G$ and $\Phi^{t,s}(g)=\Phi^{t,s}(e)g$ for all $g\in G$. The group property implies that the flow $\Phi^{t,s}$, constructed first only for small $|t-s|$, is globally defined on $G$ and all $t,s\in[0,1]$; in particular, the solution $\gamma$ exists for all $s,t\in [0,1]$. The continuous dependence of the solution on the vector fields implies that the inverse $\rmD^{-1}$ is continuous, so the first statement of the Lemma is proved.
+    Hence $t\mapsto \gamma(t)g$ tatisfies the same ODE. This shows that $G^{t,s}=G$ and $\Phi^{t,s}(g)=\Phi^{t,s}(e)g$ for all $g\in G$. The group property implies that the flow $\Phi^{t,s}$, constructed first only for small $|t-s|$, is globally defined on $G$ and all $t,s\in[0,1]$; in particular, the solution $\gamma$ exists for all $s,t\in [0,1]$. The continuous dependence of the solution on the vector fields implies that the inverse $\delta^{-1}$ is continuous, so the first statement of the Lemma is proved.
 
-    The product rule for $\rmD(\gamma\cdot\gamma')$ is easy to verify:
+    The product rule for $\delta(\gamma\cdot\gamma')$ is easy to verify:
     \[\partial_t(\gamma(t)\gamma'(t))=\left(R_{\gamma'}\right)_{\ast \gamma}\dot\gamma+ \left(L_{\gamma}\right)_{\ast \gamma'}\dot\gamma',\]
     which then recombines into the claimed equality (\ref{1794}).
 
     In addition we check 
-    \[\partial_t \Ad_{\gamma(t)}=\restr{\frac{\dd}{\dd s}}{s=0}\Ad_{\gamma(t+s)\gamma(t)^{-1}}\Ad_{\gamma(t)}=\ad_{\rmD \gamma(t)}\Ad_{\gamma(t)},\quad \Ad_{\gamma(0)}=\Ad_e=I,\]
-    and this shows that $A:t\mapsto \Ad_{\gamma(t)}$ satisfies (\ref{1792}) with $\delta=\rmD\gamma$.
+    \[\partial_t \Ad_{\gamma(t)}=\restr{\frac{\dd}{\dd s}}{s=0}\Ad_{\gamma(t+s)\gamma(t)^{-1}}\Ad_{\gamma(t)}=\ad_{\delta \gamma(t)}\Ad_{\gamma(t)},\quad \Ad_{\gamma(0)}=\Ad_e=I,\]
+    and this shows that $A:t\mapsto \Ad_{\gamma(t)}$ satisfies (\ref{1792}) with $\tau=\delta\gamma$.
 
-    If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\rmD\gamma_u(t))_R$, we have the variational formula from Lemma~\ref{lem variation formula}:
-    \[\partial_u\gamma_u(e)=\int_0^1 \left(T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\rmD\gamma_u(s)\right)_R\right)\gamma_u(s)\dd s.\]
+    If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\delta\gamma_u(t))_R$, we have the variational formula from Lemma~\ref{lem variation formula}:
+    \[\partial_u\gamma_u(e)=\int_0^1 \left(T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\delta\gamma_u(s)\right)_R\right)\gamma_u(s)\dd s.\]
     Now 
     \begin{multline}
         T_{\gamma_u(s)}\Phi^{1,s}_u=T_{\gamma_u(s)}\left(\Phi_u^{1,0}\circ (\Phi^{s,0}_u)^{-1}\right)=\\=T_{\gamma_u(s)}\Phi_u^{1,0}\circ \left(T_e\Phi^{s,0}_u\right)^{-1}= T_{e}L_{\gamma_u(1)}\circ T_e L_{\gamma_u(s)}^{-1},
     \end{multline}
     using the fact that the flow of a right-invariant field is performed by left translations.  On the other hand,
-    \[((\rmD \gamma_u)(s))_R(g)=\left(R_g\right)_\ast \rmD\gamma_u(s),\]
+    \[((\delta \gamma_u)(s))_R(g)=\left(R_g\right)_\ast \delta\gamma_u(s),\]
     so the variational formula takes the form
-    \[\partial_u\gamma(1)=\left(L_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\rmD\gamma_u)(s)\dd s.\]
-    Then $u\mapsto\gamma_u(1)$ is constant iff $\int_0^1\Ad_{\gamma_u(s)}^{-1}\partial_u\rmD\gamma_u(s)\dd s=0$. Again using $\Ad_{\gamma_u(s)}=A_{\rmD \gamma_u}(s)$, we now obtain the last statement of this Lemma.
+    \[\partial_u\gamma(1)=\left(L_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\delta\gamma_u)(s)\dd s.\]
+    Then $u\mapsto\gamma_u(1)$ is constant iff $\int_0^1\Ad_{\gamma_u(s)}^{-1}\partial_u\delta\gamma_u(s)\dd s=0$. Again using $\Ad_{\gamma_u(s)}=A_{\delta \gamma_u}(s)$, we now obtain the last statement of this Lemma.
 \end{proof}
 
 
@@ -6904,7 +6951,7 @@ By differentiating with respect to the time parameter $t$, we now transport the 
 
 
 
-\newpage
+\clearpage
 \section{Lie Theory III: Analytic Structure}\label{sec: Lie theory iii}
 
 This section is devoted to the Dynkin/BCH formulas and their deep implications for the analytic structure of Lie groups. We have previously defined Lie subgroups as immersed subgroups, and in Theorem~\ref{thm 19.25 Lee} we proved that all Lie groups are in fact weakly embedded. The main unanswered question is what topological conditions are sufficient for an arbitrary subgroup to be an immersed Lie subgroup, and in particular an embedded Lie subgroup. The main results of this section are as follows. The Closed Subgroup Theorem~\ref{thm closed subgroup} says that all closed subgroups are embedded Lie subgroups. It implies, in particular, that every Lie group has a unique structure of a real analytic Lie group, and that all continuous homomorphisms between Lie groups are real analytic. The Analytic Subgroup Theorem~\ref{thm analytic subgroup} states the every Lie subalgebra of the Lie algebra of a Lie group generates a unique immersed Lie subgroup. Yamabe's Theorem~\ref{thm Yamabe} states that every path-connected subgroup of a Lie group is a Lie subgroup.  Finally, the Initial Subgroup Theorem~\ref{thm initial subgroup} states that every subgroup of a Lie group is (or rather can be turned into) a Lie subgroup. Therefore one of the main upshots of this sequence of results is:
@@ -6916,31 +6963,31 @@ Another fundamental result in this section is Lie's Third Fundamental Theorem~\r
 
 \subsection{Product in logarithmic coordinates}\label{sec: product in log coordinates}
 
-The exponential map introduces a canonical (logarithmic) coordinate system in a neighborhood of the identity of a Lie group. This implies that the group structure, namely the multiplication map (the inversion map is trivial since $\left(\rme^X\right)^{-1}=\rme^{-X}$), can be expressed in these local coordinates. Namely let us introduce the multiplication map in logarithmic coordinates:
-\[\mu(X,Y)=\ln(\rme^X\rme^Y),\quad X,Y\in\frakg.\]
-As we will show, $\mu$ has the -- perhaps unsurprising but definitely not obvious -- property that it can be expressed only in terms of repeated Lie brackets of $X$ and $Y$, or, in other words, only in terms of the operators $\ad_X$ and $\ad_Y$. Explicit expressions for $\mu(X,Y)$ in terms of these operators are collectively called the \emph{Baker-Campbell-Hausdorff formula}, although the first complete and explicit version was obtained by Dynkin.
+The exponential map introduces a canonical (logarithmic) coordinate system in a neighborhood of the identity of a Lie group. This implies that the group structure, namely the multiplication map (the inversion map is trivial since $\left(\rme^A\right)^{-1}=\rme^{-A}$), can be expressed in these local coordinates. Namely let us introduce the multiplication map in logarithmic coordinates:
+\[\mu(A,B)=\ln(\rme^A\rme^B),\quad A,B\in\frakg.\]
+As we will show, $\mu$ has the -- perhaps unsurprising but definitely not obvious -- property that it can be expressed only in terms of repeated Lie brackets of $A$ and $B$, or, in other words, only in terms of the operators $\ad_A$ and $\ad_B$. Explicit expressions for $\mu(A,B)$ in terms of these operators are collectively called the \emph{Baker-Campbell-Hausdorff formula}, although the first complete and explicit version was obtained by Dynkin.
 
-We will later show that every finite-dimensional real Lie algebra is the Lie algebra of some Lie group. Therefore it will be worthwhile to give an independent definition of $\mu(X,Y)$ on an abstract Lie algebra. This is a bit tricky because in the absence of a Lie group there is no exponential map. The only object we have access to in the Lie algebra is a Lie bracket, or the adjoint operator $\ad$. Therefore let us proceed in the following roundabout way.
+We will later show that every finite-dimensional real Lie algebra is the Lie algebra of some Lie group. Therefore it will be worthwhile to give an independent definition of $\mu(A,B)$ on an abstract Lie algebra. This is a bit tricky because in the absence of a Lie group there is no exponential map. The only object we have access to in the Lie algebra is a Lie bracket, or the adjoint operator $\ad$. Therefore let us proceed in the following roundabout way.
 
-For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $X\in \frakg$ such that the operator $f(\ad_X)=(\rme^{\ad_X}-I)(\ad_X)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule,
-\[X\to \phi(\ad_X)=(f(\ad_X))^{-1}=\frac{\ad_X}{\rme^{\ad_X}-I}\]
-is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylor series are the Bernoulli numbers $B_k$). Let $\frakg_e^2$ be the set of $(X,Y)\in \frakg\times\frakg_e$ such that the equation
-\[\dot Z(t)=\phi(\ad_{Z(t)}),\quad Z(0)=Y,\label{eq Z(t)}\]
+For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $A\in \frakg$ such that the operator $f(\ad_A)=(\rme^{\ad_A}-I)(\ad_A)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule,
+\[A\to \phi(\ad_A)=(f(\ad_A))^{-1}=\frac{\ad_A}{\rme^{\ad_A}-I}\]
+is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylor series are the Bernoulli numbers $B_k$). Let $\frakg_e^2$ be the set of $(A,B)\in \frakg\times\frakg_e$ such that the equation
+\[\dot Z(t)=\phi(\ad_{Z(t)}),\quad Z(0)=B,\label{eq Z(t)}\]
 has a solution $Z(t)$ defined for all $t\in [0,1]$. We now define
-\[\mu(X,Y)=Z(1)\quad ((X,Y)\in\frakg_e^2) \label{def local mu}\]
+\[\mu(A,B)=Z(1)\quad ((A,B)\in\frakg_e^2) \label{def local mu}\]
 and claim that this formula defines an analytic mapping which matches the one obtained from the Lie group.
 
 
 \begin{thm}[{{\cite[Thm.~1.6.1]{DK}}}]
     The set $\frakg_e^2$ is an open neighborhood of $(0,0)$ in $\frakg^2$ and the map $\mu:\frakg_e^2\to \frakg$ defined above is real-analytic. If $\frakg$ is the Lie algebra of a Lie group $G$, with exponential mapping $e^\cdot=\exp:\frakg\to G$, then
-    \[\rme^X \rme^Y=\rme^{\mu(X,Y)}\quad ((X,Y)\in\frakg_e^2).\]
+    \[\rme^A \rme^B=\rme^{\mu(A,B)}\quad ((A,B)\in\frakg_e^2).\]
     If $\frakg$ is a complex vector space and $\ad:\frakg^2\to \frakg$ is complex bilinear, then $\mu$ is complex-analytic.
 \end{thm}
 \begin{proof}
-    The fact that $\frakg_e^2$ is open and $\mu$ is real- (or complex-)analytic on $\frakg_e^2$ follows from the fact that the map $(X,Z)\mapsto (f(\ad_Z))^{-1}(X)$ is real-, or complex-, analytic: $\frakg\times\frakg_e\to \frakg$, respectively, combined with the analytic dependence on initial values and parameters of solutions of analytic vector fields depending analytically on parameters. Now the formula for the differential of $\exp$ combined with the equation for $Z(t)$ gives
-    \[\partial_t \rme^{Z(t)}=(T_{Z(t)}\exp )\dot Z(t)=\left(T_e R_{\rme^{Z(t)}}\right)(X)=X_R\left(\rme^{Z(t)}\right).\]
+    The fact that $\frakg_e^2$ is open and $\mu$ is real- (or complex-)analytic on $\frakg_e^2$ follows from the fact that the map $(A,Z)\mapsto (f(\ad_Z))^{-1}(A)$ is real-, or complex-, analytic: $\frakg\times\frakg_e\to \frakg$, respectively, combined with the analytic dependence on initial values and parameters of solutions of analytic vector fields depending analytically on parameters. Now the formula for the differential of $\exp$ combined with the equation for $Z(t)$ gives
+    \[\partial_t \rme^{Z(t)}=(T_{Z(t)}\exp )\dot Z(t)=\left(T_e R_{\rme^{Z(t)}}\right)(A)=A_R\left(\rme^{Z(t)}\right).\]
     In view of our previous result showing that the flow of a right-invariant vector field is performed by left translations, we have
-    \[\rme^{Z(t)}=\rme^{tX}\rme^{Z(0)}=\rme^{tX}\rme^Y,\label{8284}\]
+    \[\rme^{Z(t)}=\rme^{tA}\rme^{Z(0)}=\rme^{tA}\rme^B,\label{8284}\]
     for all $t$ in the interval in the definition of $Z(t)$. Taking $t=1$ gives the result.
 \end{proof}
 
@@ -6960,26 +7007,26 @@ and claim that this formula defines an analytic mapping which matches the one ob
 \subsection{Dynkin's formula}
 
 From the definition of $Z(t)$ in the last section combined with $\Adg\circ \exp=\exp\circ\ad$, we get
-\[\rme^{\ad_{Z(t)}}=\rme^{t\ad_X}\circ \rme^{\ad_Y}.\]
-This can also be verified without reference to the Lie group by applying $\ad$ to the differential equation (\ref{eq Z(t)}) defining $Z(t)$ and then reading (\ref{8284}) with $X,Y,$ and $Z$ replaced by $\ad_X,\ad_Y$, and $\ad_Z$, respectively (which can always be done by sticking both sides into $\Adg$ and using $\Adg\circ\exp=\exp\circ\ad$). Now:
+\[\rme^{\ad_{Z(t)}}=\rme^{t\ad_A}\circ \rme^{\ad_B}.\]
+This can also be verified without reference to the Lie group by applying $\ad$ to the differential equation (\ref{eq Z(t)}) defining $Z(t)$ and then reading (\ref{8284}) with $A,B,$ and $Z$ replaced by $\ad_A,\ad_B$, and $\ad_Z$, respectively (which can always be done by sticking both sides into $\Adg$ and using $\Adg\circ\exp=\exp\circ\ad$). Now:
 \begin{multline}
-    \dot Z(t)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{\ad_{Z(t)}}-I)^k(X)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{t\ad_X}\circ \rme^{\ad_Y}-I)^k(X)=\\
-    =\sum_{k=0}^\infty \frac{(-1)^k}{k+1}\left(\sum_{l,m\geq 0,l+m>0}t^l\frac{(\ad_X)^l}{l!}\circ \frac{(\ad_Y)^m}{m!}\right)^k (X)=\\
+    \dot Z(t)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{\ad_{Z(t)}}-I)^k(A)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{t\ad_A}\circ \rme^{\ad_B}-I)^k(A)=\\
+    =\sum_{k=0}^\infty \frac{(-1)^k}{k+1}\left(\sum_{l,m\geq 0,l+m>0}t^l\frac{(\ad_A)^l}{l!}\circ \frac{(\ad_B)^m}{m!}\right)^k (A)=\\
     =\sum_{k=0}^\infty \sum t^{l_1+\ldots l_k}
     \left(
-    \frac{(\ad_X)^{l_1}}{l_1!}\circ
-    \frac{(\ad_Y)^{m_1}}{m_1!}\circ\cdots\circ
-    \frac{(\ad_X)^{l_k}}{l_k!}\circ
-    \frac{(\ad_Y)^{m_k}}{m_k!}
-    \right)(X),
+    \frac{(\ad_A)^{l_1}}{l_1!}\circ
+    \frac{(\ad_B)^{m_1}}{m_1!}\circ\cdots\circ
+    \frac{(\ad_A)^{l_k}}{l_k!}\circ
+    \frac{(\ad_B)^{m_k}}{m_k!}
+    \right)(A),
 \end{multline}
-where the sum is taken over all $l_1,\ldots,l_k,m_1,\ldots,m_k\geq 0$ such that $l_j+m_j>0$, for all $j$. Integrating this over $t$ from $0$ to $1$ and using $Z(0)=Y$, we find \emph{Dynkin's formula}\index{Dynkin's formula}:
+where the sum is taken over all $l_1,\ldots,l_k,m_1,\ldots,m_k\geq 0$ such that $l_j+m_j>0$, for all $j$. Integrating this over $t$ from $0$ to $1$ and using $Z(0)=B$, we find \emph{Dynkin's formula}\index{Dynkin's formula}:
 \begin{multline}
-    \mu(X,Y)=X+Y+\\+\sum_{k=1}^\infty \frac{(-1)^k}{k+1}\sum \frac{1}{l_1+\cdots+l_k+1}\left(    
-    \frac{(\ad_X)^{l_1}}{l_1!}\circ
-    \frac{(\ad_Y)^{m_1}}{m_1!}\circ\cdots\circ
-    \frac{(\ad_X)^{l_k}}{l_k!}\circ
-    \frac{(\ad_Y)^{m_k}}{m_k!}\right)(X).
+    \mu(A,B)=A+B+\\+\sum_{k=1}^\infty \frac{(-1)^k}{k+1}\sum \frac{1}{l_1+\cdots+l_k+1}\left(    
+    \frac{(\ad_A)^{l_1}}{l_1!}\circ
+    \frac{(\ad_B)^{m_1}}{m_1!}\circ\cdots\circ
+    \frac{(\ad_A)^{l_k}}{l_k!}\circ
+    \frac{(\ad_B)^{m_k}}{m_k!}\right)(A).
 \end{multline}
 
 \begin{rem}
@@ -6992,13 +7039,13 @@ Recall that an element $a$ of a ring is called nilpotent if $a^n=0$ for some $n$
     Let $N$ be a connected Lie subgroup of $\GL_n(\bbC)$ whose Lie algebra $\mathfrak{n}$ lies in the set of \emph{strictly upper triangular matrices}. Then the map $\exp:\mathfrak{n}\to N$ is bijective. 
 \end{cor}
 \begin{proof}
-    It is a simple exercise to see that $[X_n,\ldots,X_3,X_2,X_1]=[X_n,[\ldots,[X_3,[X_2,X_1]]\cdots ]=0$ for any strictly upper triangular matrices $X,X_i\in \mathfrak{gl}_n(\bbC)$ and that $\rme^X$ is polynomial in $X$ (because all strictly triangular matrices are nilpotent). In particular, for $X,Y\in\mathfrak{n}$ near the origin, Dynkin's Formula gives a polynomial expression for $Z\in\mathfrak{n}$ solving $\rme^X\rme^Y=\rme^Z$. Since both sides of this expression are polynomials in $X$ and $Y$ that agree on a neighborhood, they agree everywhere. Since the formula for $Z$ involves only the Lie algebra structure of $\mathfrak{n}$, $Z$ remains in $\mathfrak{n}$ for any $X,Y\in\mathfrak{n}$. In other words, $(\exp\mathfrak{n})^2\subset \exp\mathfrak{n}$. Since $\exp\mathfrak{n}$ generates all of $N$ by Proposition~\ref{prop 7.14 Lee}, this shows that $\exp\mathfrak{n}=N$. This proves surjectivity.
+    It is a simple exercise to see that $[A_n,\ldots,A_3,A_2,A_1]=[A_n,[\ldots,[A_3,[A_2,A_1]]\cdots ]=0$ for any strictly upper triangular matrices $A,A_i\in \mathfrak{gl}_n(\bbC)$ and that $\rme^A$ is polynomial in $A$ (because all strictly triangular matrices are nilpotent). In particular, for $A,B\in\mathfrak{n}$ near the origin, Dynkin's Formula gives a polynomial expression for $Z\in\mathfrak{n}$ solving $\rme^A\rme^B=\rme^Z$. Since both sides of this expression are polynomials in $A$ and $B$ that agree on a neighborhood, they agree everywhere. Since the formula for $Z$ involves only the Lie algebra structure of $\mathfrak{n}$, $Z$ remains in $\mathfrak{n}$ for any $A,B\in\mathfrak{n}$. In other words, $(\exp\mathfrak{n})^2\subset \exp\mathfrak{n}$. Since $\exp\mathfrak{n}$ generates all of $N$ by Proposition~\ref{prop 7.14 Lee}, this shows that $\exp\mathfrak{n}=N$. This proves surjectivity.
 
-    The image of $\exp$, i.e.~$N$, clearly consists of unipotent matrices: $\rme^X-1$ is a polynomial in $X$ with no constant term, therefore it is nilpotent just as $X$ is. Bijectivity of $\exp$ then follows from the fact that the inverse is given by $a\mapsto \ln (I+(a-I))\in\frakn$, which is also a terminating series due to the fact that $(a-I)$ is nilpotent.
+    The image of $\exp$, i.e.~$N$, clearly consists of unipotent matrices: $\rme^A-1$ is a polynomial in $A$ with no constant term, therefore it is nilpotent just as $A$ is. Bijectivity of $\exp$ then follows from the fact that the inverse is given by $a\mapsto \ln (I+(a-I))\in\frakn$, which is also a terminating series due to the fact that $(a-I)$ is nilpotent.
 \end{proof}
 
 \begin{rem}
-    A Lie algebra is called nilpotent\index{Nilpotent!Lie algebra}\index{Nilpotent!Lie group} if there exists an $n\in\bbN$ such that $\ad_{X_1}\ad_{X_2}\cdots \ad_{X_n}=0$ for any sequence $X_1,\ldots,X_n\in\frakg$. A fundamental theorem of Engel\index{Theorem!Engel} states that a finite-dimensional Lie algebra is nilpotent iff each adjoint operator is nilpotent, i.e.~$\ad_X^n=0$ for all $X$. A Lie group $G$ is called nilpotent if $\Adg_{g_1}\cdots \Adg_{g_n}g=e$ for all $g_1\ldots,g_n,g\in G$. Assuming $G$  is connected, this is equivalent to its Lie algebra being nilpotent. The above Corollary is then a special case of a general statement that the exponential map is bijective for any \emph{nilpotent} Lie algebra, and thus any nilpotent Lie group is diffeomorphic to a vector space.
+    A Lie algebra is called nilpotent\index{Nilpotent!Lie algebra}\index{Nilpotent!Lie group} if there exists an $n\in\bbN$ such that $\ad_{A_1}\ad_{A_2}\cdots \ad_{A_n}=0$ for any sequence $A_1,\ldots,A_n\in\frakg$. A fundamental theorem of Engel\index{Theorem!Engel} states that a finite-dimensional Lie algebra is nilpotent iff each adjoint operator is nilpotent, i.e.~$\ad_A^n=0$ for all $A$. A Lie group $G$ is called nilpotent if $\Adg_{g_1}\cdots \Adg_{g_n}g=e$ for all $g_1\ldots,g_n,g\in G$. Assuming $G$  is connected, this is equivalent to its Lie algebra being nilpotent. The above Corollary is then a special case of a general statement that the exponential map is bijective for any \emph{nilpotent} Lie algebra, and thus any nilpotent Lie group is diffeomorphic to a vector space.
 
     Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''.
 \end{rem}
@@ -7017,35 +7064,35 @@ or by its Taylor series at $z=1$ (which converges in a disk of radius $1$)
 \begin{thm}
 The geometric Baker-Campbell-Hausdorff formula states that, with $\psi(z)$ defined by the above formal series, the group product in logarithmic coordinates can be expressed as
 \begin{multline}
-    \mu(X,Y) =\ln(\rme^X\rme^Y)=
-    Y+\int_0^1\psi\left(\rme^{-\ad_Y}\rme^{-t\ad_X}\right)X\dd t=\\
-    =X+\int_0^1\psi\left(\rme^{\ad_X}\rme^{t\ad_Y}\right)Y\dd t.\label{eq geom BCH}
+    \mu(A,B) =\ln(\rme^A\rme^B)=
+    B+\int_0^1\psi\left(\rme^{-\ad_B}\rme^{-t\ad_A}\right)A\dd t=\\
+    =A+\int_0^1\psi\left(\rme^{\ad_A}\rme^{t\ad_B}\right)B\dd t.\label{eq geom BCH}
 \end{multline}
 \end{thm}
 
 This means that we are meant to substitute 
-\[u=\rme^{\ad_X}\rme^{t\ad_Y}-I\]
-into the formal series for $\psi(1+u)$, apply each term to $Y$ and then integrate. In doing this, we can ignore all terms where a factor of $\ad_Y$ shows up on the right since $\ad_Y Y=0$. To obtain the expansion through terms of degree three, we need only retain quadratic and lower terms in $u$:
+\[u=\rme^{\ad_A}\rme^{t\ad_B}-I\]
+into the formal series for $\psi(1+u)$, apply each term to $B$ and then integrate. In doing this, we can ignore all terms where a factor of $\ad_B$ shows up on the right since $\ad_B B=0$. To obtain the expansion through terms of degree three, we need only retain quadratic and lower terms in $u$:
 \begin{align}
-    u  &=\ad_X+\frac12(\ad_X)^2+t\ad_Y+\frac{t^2}{2}(\ad_Y)^2+\cdots,\\
-    u^2&=(\ad_X)^2+t\ad_Y\ad_X+\cdots,\\
-    \int_0^1\left(1+\frac u2-\frac{u^2}{6}\right)\dd t&= 1+\frac 12\ad_X+\frac{1}{12}(\ad_X)^2-\frac{1}{12}\ad_Y \ad_X+\cdots,
+    u  &=\ad_A+\frac12(\ad_A)^2+t\ad_B+\frac{t^2}{2}(\ad_B)^2+\cdots,\\
+    u^2&=(\ad_A)^2+t\ad_B\ad_A+\cdots,\\
+    \int_0^1\left(1+\frac u2-\frac{u^2}{6}\right)\dd t&= 1+\frac 12\ad_A+\frac{1}{12}(\ad_A)^2-\frac{1}{12}\ad_B \ad_A+\cdots,
 \end{align}
-where the dots indicate either higher order terms or terms with $\ad_Y$ occurring on the right. So the cubic Taylor expansion of $\mu(X,Y)$ reads
-\[\mu(X,Y)=X+Y+\frac12[X,Y]+\frac{1}{12}[X,[X,Y]]-\frac{1}{12}[Y,[X,Y]]+\cdots,\]
+where the dots indicate either higher order terms or terms with $\ad_B$ occurring on the right. So the cubic Taylor expansion of $\mu(A,B)$ reads
+\[\mu(A,B)=A+B+\frac12[A,B]+\frac{1}{12}[A,[A,B]]-\frac{1}{12}[B,[A,B]]+\cdots,\]
 agreeing with our previous results, including Dynkin's formula.
 
 \begin{proof}
     Our direct aim will be to prove the differential version of the formula:
-    \[\frac{\dd}{\dd t}\ln\left(\rme^{tX} \rme^Y\right)=\psi\left(\rme^{-\ad_Y}\rme^{-t\ad_X}\right)X.\]
-    Since $\ln \rme^{tX} \rme^{Y}=Y$ when $t=0$, integrating the above formula from $0$ to $1$ will prove the geometric BCH formula. Let us define the curve $\gamma$ by
-    \[\gamma(t)=\ln \rme^{tX} \rme^{Y}.\]
+    \[\frac{\dd}{\dd t}\ln\left(\rme^{tA} \rme^B\right)=\psi\left(\rme^{-\ad_B}\rme^{-t\ad_A}\right)A.\]
+    Since $\ln \rme^{tA} \rme^{B}=B$ when $t=0$, integrating the above formula from $0$ to $1$ will prove the geometric BCH formula. Let us define the curve $\gamma$ by
+    \[\gamma(t)=\ln \rme^{tA} \rme^{B}.\]
     Then
-    \[\frac{\dd}{\dd t} \rme^{\gamma(t)}=\left(R_{\rme^{\gamma(t)}}\right)_\ast X,\]
+    \[\frac{\dd}{\dd t} \rme^{\gamma(t)}=\left(R_{\rme^{\gamma(t)}}\right)_\ast A,\]
     so
-    \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast\frac{\dd}{\dd t}\rme^{\gamma(t)}=X.\label{2379}\]
+    \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast\frac{\dd}{\dd t}\rme^{\gamma(t)}=A.\label{2379}\]
     By applying $\Adg$ we also have
-    \[\ad_\gamma(t)=\ln\left(\rme^{t\ad_X}\rme^{\ad_{Y}}\right).\label{3168}\]
+    \[\ad_\gamma(t)=\ln\left(\rme^{t\ad_A}\rme^{\ad_{B}}\right).\label{3168}\]
     
     Let us apply the Maurer-Cartan equation (\ref{eq Maurer-Cartan}) to
     \[g(t,s)=\rme^{s\gamma(t)},\]
@@ -7065,12 +7112,12 @@ agreeing with our previous results, including Dynkin's formula.
     \end{multline}
     With the earlier notation $\phi(z)=(\rme^z-1)/z$, we have then at $s=1$
     \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast \partial_t \rme^{\gamma(t)}=\xi(t,1)=\phi(\ad_{\gamma(t)})\gamma'(t).\label{1793}\]
-    Now to the proof of the BCH formula. Suppose that $X,Y$ are chosen small enough to be within the domain of $\mu(X,Y)$, so that $\gamma(t)=\mu(tX,Y)$ is defined for all $|t|\leq 1$. Then, by (\ref{3168}) and (\ref{2379}), (\ref{1793}) becomes
-    \[\phi\left(\ln \rme^{t\ad_X}\rme^{\ad_Y}\right)\gamma'(t)=X.\]
+    Now to the proof of the BCH formula. Suppose that $A,B$ are chosen small enough to be within the domain of $\mu(A,B)$, so that $\gamma(t)=\mu(tA,B)$ is defined for all $|t|\leq 1$. Then, by (\ref{3168}) and (\ref{2379}), (\ref{1793}) becomes
+    \[\phi\left(\ln \rme^{t\ad_A}\rme^{\ad_B}\right)\gamma'(t)=A.\]
     Now for $|z-1|<1$,
     \[\phi(-\ln z)=\frac{z-1}{z\ln z}=\psi(z)^{-1},\]
     thus
-    \[\gamma'(t)=\psi\left(\rme^{-\ad_Y}\rme^{-t\ad_X}\right)X.\]
+    \[\gamma'(t)=\psi\left(\rme^{-\ad_B}\rme^{-t\ad_A}\right)A.\]
     This finishes the proof.
 \end{proof}
 
@@ -7086,32 +7133,32 @@ Recall that in Theorem~\ref{thm 7.21 Lee} we stated without proof that a Lie sub
 
 \begin{lem}[{{\cite[Lem.~5.6.7]{RS1}}}]\label{lem 5.6.7 RS1}
     If $\frakg=\frakm_1\oplus\frakm_2$, then there exist open neighborhoods $U_i$ of the origin in $\frakm_i$, $i=1,2$, and $V$ of $e\in G$ such that the mapping
-    \[\varphi:\frakm_1\times\frakm_2\to G,\quad (X_1,X_2)\mapsto \rme^{X_1}\rme^{X_2},\]
+    \[\varphi:\frakm_1\times\frakm_2\to G,\quad (A_1,A_2)\mapsto \rme^{A_1}\rme^{A_2},\]
     restricts to a diffeomorphism $U_1\times U_2\to V$.
 \end{lem}
 \begin{proof}
-    The differential $\varphi_{\ast 0}:\frakm_1\times\frakm_2\to\frakg$ is given by $(X_1,X_2)\mapsto X_1+X_2$. Since $\frakm_1$ and $\frakm_2$ are complementary, it is bijective. Hence, the assertion follows from the \gls{inmt}.
+    The differential $\varphi_{\ast 0}:\frakm_1\times\frakm_2\to\frakg$ is given by $(A_1,A_2)\mapsto A_1+A_2$. Since $\frakm_1$ and $\frakm_2$ are complementary, it is bijective. Hence, the assertion follows from the \gls{inmt}.
 \end{proof}
 
 
 \begin{thm}[Cartan (1930) Closed Subgroup Theorem {{\cite[Thm.~5.6.8]{RS1}}}]\index{Theorem!Closed subgroup (Cartan)}\label{thm closed subgroup}
     If $G$ is a Lie group and $H\subset G$ is a subgroup that is also a closed subset of $G$, then $H$ is an embedded Lie subgroup. The corresponding Lie subalgebra of $\frakg=\Lief G$ is 
-    \[\frakh=\{X\in\frakg: \rme^{tX}\in H \text{ for all }t\in\bbR\}.\]
+    \[\frakh=\{A\in\frakg: \rme^{tA}\in H \text{ for all }t\in\bbR\}.\]
 \end{thm}
 \begin{proof}
     By Proposition~\ref{prop 7.11 Lee} it suffices to show that $H$ is an embedded submanifold. We begin by identifying a subspace of $\Lief G$ with what will turn out to be the Lie algebra of $H$.
 
-    Let $\frakg=\Lief G$ and define $\frakh$ as in the statement of the Theorem. We need to show that $\frakh$ is a linear subspace of $\frakg$. It is obvious from the definition that $\frakh$ is closed under scalar multiplication: if $X\in\frakh$, then $tX\in\frakh$ for all $t\in \bbR$. Suppose $X,Y\in\frakh$, and let $t \in\bbR$ be arbitrary. Then $\exp(tX/n)$ and $\exp(tY/n)$ are in $H$ for any $n\in \bbN$, and since $H$ is a closed subgroup, Corollary~\ref{cor 20.11 Lee} implies that $\exp t(X+Y)\in H$. Thus $X+Y\in\frakh$ and $\frakh$ is a subspace.
+    Let $\frakg=\Lief G$ and define $\frakh$ as in the statement of the Theorem. We need to show that $\frakh$ is a linear subspace of $\frakg$. It is obvious from the definition that $\frakh$ is closed under scalar multiplication: if $A\in\frakh$, then $tA\in\frakh$ for all $t\in \bbR$. Suppose $A,B\in\frakh$, and let $t \in\bbR$ be arbitrary. Then $\exp(tA/n)$ and $\exp(tB/n)$ are in $H$ for any $n\in \bbN$, and since $H$ is a closed subgroup, Corollary~\ref{cor 20.11 Lee} implies that $\exp t(A+B)\in H$. Thus $A+B\in\frakh$ and $\frakh$ is a subspace.
 
     Next equip $H$ with the subspace topology from $G$. Choose a neighborhood $V$ of $e\in G$ such that $\ln=\exp^{-1}:V\to \frakg$ is defined and smooth and hence a local chart. We claim that $V$ can be adjusted so that 
     \[\ln(V\cap H)=\ln(V)\cap \frakh.\label{1983}\]
     If so, then the family consisting of local slice charts $\{(L_h(V),\ln\circ L_{h}^{-1})\}_{h\in H}$ satisfies the definition of a smooth structure on $H$ and turns it into an embedded submanifold of $G$. Then $H$ is also a Lie group because restricting the multiplication and inversion maps in range to an embedded submanifold keeps them smooth. The corresponding Lie subalgebra of $\frakg$ contains $\frakh$ and by (\ref{1983}) has the same dimension as $\frakh$, hence coincides with $\frakh$.
 
-    To show (\ref{1983}) assume, on the contrary, that $V$ cannot be chosen so that (\ref{1983}) holds. Since $\exp(\frakh)\subset H$, this means that $V\cap \exp(\frakh)$ is properly contained in $V\cap H$, for arbitrarily small $V$. Thus there is a sequence $(h_n)\in H$ converging to $e$ sich that $h_n\notin \exp(\frakh)$ for all $n$. Choose a subspace $\frakm\subset\frakg$ complementary to $\frakh$. By Lemma~\ref{lem 5.6.7 RS1}, for large enough $n$, $h_n$ defines unique sequences $(X_n)\in \frakh$ and $(Y_n)\in \frakm$ by $h_n=\rme^{X_n}\rme^{Y_n}$ and both of these sequences converge to the origin. Since $H$ is a subgroup, we obtain $\rme^{Y_n}\in H$. Since $h_n\notin\exp(\frakh)$, we conclude $Y_n\neq 0$. Now, choose a norm $\lVert\cdot\rVert$ on $\frakm$. Since the corresponding unit sphere in $\frakm$ is compact, by possibly removing some members we may assume that the sequence $(Y_n/\lVert Y_n\rVert)$ converges to some $Y\in\frakm$ with $\lVert Y\rVert=1$. 
+    To show (\ref{1983}) assume, on the contrary, that $V$ cannot be chosen so that (\ref{1983}) holds. Since $\exp(\frakh)\subset H$, this means that $V\cap \exp(\frakh)$ is properly contained in $V\cap H$, for arbitrarily small $V$. Thus there is a sequence $(h_n)\in H$ converging to $e$ sich that $h_n\notin \exp(\frakh)$ for all $n$. Choose a subspace $\frakm\subset\frakg$ complementary to $\frakh$. By Lemma~\ref{lem 5.6.7 RS1}, for large enough $n$, $h_n$ defines unique sequences $(A_n)\in \frakh$ and $(B_n)\in \frakm$ by $h_n=\rme^{A_n}\rme^{B_n}$ and both of these sequences converge to the origin. Since $H$ is a subgroup, we obtain $\rme^{B_n}\in H$. Since $h_n\notin\exp(\frakh)$, we conclude $B_n\neq 0$. Now, choose a norm $\lVert\cdot\rVert$ on $\frakm$. Since the corresponding unit sphere in $\frakm$ is compact, by possibly removing some members we may assume that the sequence $(B_n/\lVert B_n\rVert)$ converges to some $B\in\frakm$ with $\lVert B\rVert=1$. 
     
-    Now pick any $t\in \bbR$ and define the sequence of integer parts $k_n=\lfloor\frac{t}{\lVert Y_n\rVert}\rfloor$. Then $k_n\lVert Y_n\rVert\to t$ as $n\to\infty$ and hence
-    \[\exp tY=\lim_{n\to \infty}\exp\left(k_n\lVert Y_n\rVert\cdot \frac{Y_n}{\lVert Y_n\rVert}\right)=\lim_{n\to\infty}\left(\exp Y_n\right)^{k_n}\in H,\]
-    as $H$ is closed. This means that $\exp tY\in H$ for all $t\in\bbR$ and hence $Y\in\frakh$, which is a contradiction.
+    Now pick any $t\in \bbR$ and define the sequence of integer parts $k_n=\lfloor\frac{t}{\lVert B_n\rVert}\rfloor$. Then $k_n\lVert B_n\rVert\to t$ as $n\to\infty$ and hence
+    \[\exp tB=\lim_{n\to \infty}\exp\left(k_n\lVert B_n\rVert\cdot \frac{B_n}{\lVert B_n\rVert}\right)=\lim_{n\to\infty}\left(\exp B_n\right)^{k_n}\in H,\]
+    as $H$ is closed. This means that $\exp tB\in H$ for all $t\in\bbR$ and hence $B\in\frakh$, which is a contradiction.
 \end{proof}
 
 We summarize all results about closed subgroups of Lie groups in the following Corollary.
@@ -7208,49 +7255,49 @@ Due to this, we may think of Lie groups as a special class of topological groups
 \subsection{Lie's fundamental theorems}
 
 \begin{defn}[Local Lie group]
-    A local Lie group is a triple $(U,\mu,\iota)$ where $U$ is an open neighborhood of the origin in a finite-dimensional vector space $\frakg$, and two real-analytic maps $\mu:U\times U\to\frakg$, $\iota:U\to\frakg$ such that for $X,Y,Z\in\frakg$ sufficiently close to $0$:
+    A local Lie group is a triple $(U,\mu,\iota)$ where $U$ is an open neighborhood of the origin in a finite-dimensional vector space $\frakg$, and two real-analytic maps $\mu:U\times U\to\frakg$, $\iota:U\to\frakg$ such that for $A,B,Z\in\frakg$ sufficiently close to $0$:
     \begin{gather}
-        \mu(X,0)=X=\mu(0,X),\\
-        \mu(X,\iota(X))=\mu(\iota(X),X)=0,\quad \mu(\mu(X,Y),Z)=\mu(X,\mu(Y,Z)).
+        \mu(A,0)=A=\mu(0,A),\\
+        \mu(A,\iota(A))=\mu(\iota(A),A)=0,\quad \mu(\mu(A,B),Z)=\mu(A,\mu(B,Z)).
     \end{gather}
-    Two local Lie groups $(U,\mu,\iota)$ and $(U',\mu',\iota')$ are considered isomorphic if there are open neighborhoods $U_{00}\subset U_0\subset U$ of $0$ and a diffeomorphism $\phi:U_0\to U_0'\subset U'$ with $0\in U_0'$ such that for any $X,Y\in U_{00}$, $\mu(X,Y)\in U_0$, $\phi(\mu(X,Y))=\mu'(\phi(X),\phi(Y))$ and $\iota(X)\in U_0$, $\phi(\iota(X))=\iota'(\phi(X))$ whenever $X,Y\in U_{00}$. An isomorphism class of triples $(U,\mu,\iota)$ is called a \emph{Lie group germ}.
+    Two local Lie groups $(U,\mu,\iota)$ and $(U',\mu',\iota')$ are considered isomorphic if there are open neighborhoods $U_{00}\subset U_0\subset U$ of $0$ and a diffeomorphism $\phi:U_0\to U_0'\subset U'$ with $0\in U_0'$ such that for any $A,B\in U_{00}$, $\mu(A,B)\in U_0$, $\phi(\mu(A,B))=\mu'(\phi(A),\phi(B))$ and $\iota(A)\in U_0$, $\phi(\iota(A))=\iota'(\phi(A))$ whenever $A,B\in U_{00}$. An isomorphism class of triples $(U,\mu,\iota)$ is called a \emph{Lie group germ}.
 \end{defn}
 
 It is almost obvious that the definition of the exponential map together with its properties have local versions that are valid for any local Lie group. The first big result of this section will be the converse: every Lie algebra generates a local Lie group. Less obvious is the global version of this statement, known as Lie's Third Fundamental Theorem: every Lie algebra is the Lie algebra of a unique simply-connected Lie group. The Lie group will be reconstructed as the group of flows of certain vector fields on the Lie algebra. Let us now show, in several steps, that these flows form a local Lie group.
 
 \begin{lem}[{{\cite[Lem.~1.8.2]{DK}}}]
-    For each $X\in\frakg$ define the vector field $X^R\in \fX(\frakg_e)$, where $\frakg_e$ was defined in Section~\ref{sec: product in log coordinates}:
-    \[ X^R(Z)=\frac{\ad_Z}{\rme^{\ad_Z}-I}X\quad \quad (Z\in\frakg_e). \label{def X^R}\]
-    Then for each $X,Y\in\frakg$, the map $X\mapsto X^R$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[X^R,Y^R]=-([X,Y])^R$.
+    For each $A\in\frakg$ define the vector field $A^R\in \fX(\frakg_e)$, where $\frakg_e$ was defined in Section~\ref{sec: product in log coordinates}:
+    \[ A^R(Z)=\frac{\ad_Z}{\rme^{\ad_Z}-I}A\quad \quad (Z\in\frakg_e). \label{def A^R}\]
+    Then for each $A,B\in\frakg$, the map $A\mapsto A^R$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[A^R,B^R]=-([A,B])^R$.
 \end{lem}
 \begin{proof}
     Recall from (\ref{eq Lie derivative in components}) that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials as a point by $\rmD v(x)\in \End(\bbR^n)$, then the Lie bracket is
     \[[v,w](x)=\rmD w(x)\cdot v(x)-\rmD v(x)\cdot w(x).\label{10707}\]
-    So in order to compute $[X^R,Y^R](Z)$, we start by differentiating~\ref{dexp series}:
-    \[\int_0^1 \rme^{t\ad_Z}\dd t \left(X^R(Z)\right)=X\quad (Z\in\frakg_e),\]
-    with respect to $Z$, in the direction of $Y^R(Z)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
+    So in order to compute $[A^R,B^R](Z)$, we start by differentiating~\ref{dexp series}:
+    \[\int_0^1 \rme^{t\ad_Z}\dd t \left(A^R(Z)\right)=A\quad (Z\in\frakg_e),\]
+    with respect to $Z$, in the direction of $B^R(Z)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
     \begin{multline}
-        \int_0^1 \left(\int_0^1\rme^{st\ad_{\ad_Z}} \dd s\circ t\ad_{Y^R(Z)}\right)\circ \rme^{t\ad_Z}\dd t\left(X^R(Z)\right)+\\
-        +\int_0^1\rme^{t\ad_Z}\dd t\circ \rmD X^R(Z)\left(Y^R(Z)\right)=0.\label{09830}
+        \int_0^1 \left(\int_0^1\rme^{st\ad_{\ad_Z}} \dd s\circ t\ad_{B^R(Z)}\right)\circ \rme^{t\ad_Z}\dd t\left(A^R(Z)\right)+\\
+        +\int_0^1\rme^{t\ad_Z}\dd t\circ \rmD A^R(Z)\left(B^R(Z)\right)=0.\label{09830}
     \end{multline} 
     Since $\ad$ is a Lie algebra homomorphism $\frakg\to\mathfrak{gl}(\frakg)$ (this is equivalent to the Jacobi identity), one has:
-    \[\rme^{\ad_{\ad_X}}\circ \ad_Y=\ad_{\rme^{\ad_X} Y}\quad \quad (X,Y\in\frakg).\]
-    Reading this with $X$, and $Y$, replaced by $stZ$, and $Y^R(Z)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand size of (\ref{09830}) as
-    \[\iint_{0\leq u\leq t\leq 1}\left[\rme^{u\ad_Z}\left(Y^R(Z)\right),\rme^{t\ad_Z}\left(X^R(Z)\right)\right]\dd u\dd t.\]
-    Antisymmetrizing this formula over $X$ and $Y$  we get, also using the antisymmetry of the Lie bracket, the quantity
+    \[\rme^{\ad_{\ad_A}}\circ \ad_B=\ad_{\rme^{\ad_A} B}\quad \quad (A,B\in\frakg).\]
+    Reading this with $A$, and $B$, replaced by $stZ$, and $B^R(Z)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand size of (\ref{09830}) as
+    \[\iint_{0\leq u\leq t\leq 1}\left[\rme^{u\ad_Z}\left(B^R(Z)\right),\rme^{t\ad_Z}\left(A^R(Z)\right)\right]\dd u\dd t.\]
+    Antisymmetrizing this formula over $A$ and $B$  we get, also using the antisymmetry of the Lie bracket, the quantity
     \begin{multline}
-        -\int_0^1\int_0^1\left[\rme^{u\ad_Z}\left(X^R(Z)\right),\rme^{t\ad_Z}\left(Y^R(Z)\right)\right]\dd u\dd t=\\
-        =-\left[\int_0^1\rme^{u\ad_Z}\dd u\, \left(X^R(Z)\right),\int_0^1\rme^{t\ad_Z}\dd t\, \left(Y^R(Z)\right)\right]=-[X,Y].
+        -\int_0^1\int_0^1\left[\rme^{u\ad_Z}\left(A^R(Z)\right),\rme^{t\ad_Z}\left(B^R(Z)\right)\right]\dd u\dd t=\\
+        =-\left[\int_0^1\rme^{u\ad_Z}\dd u\, \left(A^R(Z)\right),\int_0^1\rme^{t\ad_Z}\dd t\, \left(B^R(Z)\right)\right]=-[A,B].
     \end{multline}
 
-    So, if we antisymmetrize (\ref{09830}) over $X$ and $Y$, we arrive, using (\ref{10707}) with $v=X^R$, $w=Y^R$ and $x=Z$, at:
-    \[-[X,Y]=\int_0^1 \rme^{t\ad_Z}\dd t\left([X^R,Y^R](Z)\right),\]
-    which shows that $[X^R,Y^R]=-([X,Y])^R$ in view of the definition (\ref{def X^R}) applied to $([X,Y])^R$. The linearity of the map $X\mapsto X^R$ is obvious from the definition, and its injectivity follows from $X^R(0)=X$.
+    So, if we antisymmetrize (\ref{09830}) over $A$ and $B$, we arrive, using (\ref{10707}) with $v=A^R$, $w=B^R$ and $x=Z$, at:
+    \[-[A,B]=\int_0^1 \rme^{t\ad_Z}\dd t\left([A^R,B^R](Z)\right),\]
+    which shows that $[A^R,B^R]=-([A,B])^R$ in view of the definition (\ref{def X^R}) applied to $([A,B])^R$. The linearity of the map $A\mapsto A^R$ is obvious from the definition, and its injectivity follows from $A^R(0)=A$.
 \end{proof}
 \begin{rem}
-    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $X^R(Z)=\left(R_{\rme^{-Z}}\right)_{\ast \rme^Z} \circ \exp_{\ast Z}(Z)$, which is nothing but the right-invariant vector field $X_R(g)=\left(R_g\right)_{\ast e} X$ written in logarithmic coordinates $g=\rme^Z$.
+    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $A^R(Z)=\left(R_{\rme^{-Z}}\right)_{\ast \rme^Z} \circ \exp_{\ast Z}(Z)$, which is nothing but the right-invariant vector field $A_R(g)=\left(R_g\right)_{\ast e} A$ written in logarithmic coordinates $g=\rme^Z$.
 
-    If all vector fields $X^R$ were complete on $\frakg_e$, their flows would form a Lie group consisting of diffeomorphisms of $\frakg_e$, and we would prove the global Lie's Third Fundamental Theorem, which states that every Lie algebra has a Lie group that it corresponds to. Unfortunately, these vector fields are not always complete, and the most we can claim at this point is that their flows generate a \emph{local} Lie group.
+    If all vector fields $A^R$ were complete on $\frakg_e$, their flows would form a Lie group consisting of diffeomorphisms of $\frakg_e$, and we would prove the global Lie's Third Fundamental Theorem, which states that every Lie algebra has a Lie group that it corresponds to. Unfortunately, these vector fields are not always complete, and the most we can claim at this point is that their flows generate a \emph{local} Lie group.
 \end{rem}
 
 
@@ -7300,7 +7347,7 @@ It is almost obvious that the definition of the exponential map together with it
 
 
 \begin{thm}[Lie's Third Fundamental Theorem {{\cite[Thm.~1.8.1]{DK}}}]\label{thm local Lie's third}\index{Theorem!Lie III}
-    For every finite-dimensional Lie algebra $\frakg$ there exists a local Lie group whose Lie algebra is $\frakg$. Namely, an open neighborhood of $0$ in $\frakg$ becomes a local Lie group, provided with $\mu$ defined in (\ref{def local mu}) as the local multiplication and $X\mapsto -X$ as the local inversion.
+    For every finite-dimensional Lie algebra $\frakg$ there exists a local Lie group whose Lie algebra is $\frakg$. Namely, an open neighborhood of $0$ in $\frakg$ becomes a local Lie group, provided with $\mu$ defined in (\ref{def local mu}) as the local multiplication and $A\mapsto -A$ as the local inversion.
 \end{thm}
 \begin{proof}
     The properties of $\mu$ are easily verified except for the associativity. Associativity follows from the associativity of compositions of flows as well as (b) and (c) of Theorem~\ref{thm 1.8.3 DK}.
@@ -7364,34 +7411,34 @@ In the Closed Subgroup Theorem~\ref{thm closed subgroup} we characterized embedd
 
 \begin{thm}[Analytic Subgroup Theorem {{\cite[Thm.~1.10.3]{DK}}}, {{\cite[Prop.~5.6.5]{RS1}}}, {{\cite[Thm.~9.4.8]{HN}}}]\label{thm analytic subgroup}\index{Theorem!Analytic subgroup}
     Given a Lie group $G$, for each Lie subalgebra $\frakh\subset \frakg=\Lief G$ there is a unique connected immersed Lie subgroup $H$ of $G$ whose Lie algebra is $\frakh$. Moreover, the Lie algebra $\frakh$ satisfies
-    \[\frakh=\{X\in\frakg: \rme^{tX}\in H\text{ for all }t\in\bbR\}.\]
+    \[\frakh=\{A\in\frakg: \rme^{tA}\in H\text{ for all }t\in\bbR\}.\]
 \end{thm}
 \begin{proof}[First proof]
     One proof of the first statement, taken from \cite[Prop.~5.6.5]{RS1}, is based on the Global Frobenius Theorem~\ref{prop 3.5.21 RS1}. The Lie subalgebra of $\fX(G)^G$ that consists of left-invariant vector fields corresponding to elements of $\frakh$ spans an involutive distribution on $G$. Then $H$ can be defined as the maximal integral submanifold through $e\in G$. Now since the distribution is left-invariant, $L_h^{-1}$ for $h\in H$ takes the integral manifold through $h\in H$ to the one through $e$, which is $H$. Therefore $L_h(H)=H$, and thus $H$ is a subgroup. The multiplication on $H$ is smooth by virtue of being the restriction of the smooth multiplication map $m:H\times H\to G$ in range to an weakly embedded submanifold of $G$ (which an integral manifold is by Proposition~\ref{prop 3.5.15 RS1}).
 \end{proof}
 \begin{proof}[Second proof]
-    Now we present the proof from \cite[Thm.~1.10.3]{DK}, which avoids the Frobenius Theorem and is instead based on the exponential map. For each $X\in\frakh$, the vector field $X^R$ on $\frakg_e$ defined in (\ref{def X^R}) is tangent to $\frakh$ in the sense that $X^R(Z)\in\frakh$ for all $Z\in\frakg_e\cap\frakh$. This follows because $\ad_Z\in\Lin(\frakh)$ if $Z\in\frakh$. Moreover $\frakh$ is a closed subspace of $\frakg$ as a finite-dimensional subspace, hence the power series in the right hand side of (\ref{def X^R}) converges to an element of $\frakh$. (In the case of Banach Lie groups we have to make the additional assumption that $\frakh$ is a closed linear subspace.) If we solve (\ref{eq Z(t)}) with $Z(0)=Y\in\frakh$, regarded as an ODE in $\frakg_e\cap\frakh$, the solution will also be in $\frakg_e\cap\frakh$. However, it is also equal to the solution of the same ODE viewed in $\frakg_e$, which is equal to $\ln(\rme^{tX}\rme^Y)$. So the conclusion is that $\ln(\rme^X\rme^Y)\in\frakh$ if $X,Y\in\frakg_e\cap\frakh$. Denote by $H$ the subgroup generated by $\exp(\frakh)$, then the chart maps $\restr{\kappa^h}{H}$, for $h\in H$, with $\kappa^g=\ln\circ L_g^{-1}$), form an atlas for $H$, mapping it into $\frakh$. This can be checked to be an analytic atlas for $H$ (see again \cite[Thm.~1.6.3]{DK}). The inclusion $H\hookrightarrow G$ is an immersion because, in the charts $\kappa^h$, it is equal to the inclusion of open subsets of $\frakh$ into $\frakg$. In view of Proposition~\ref{prop 7.14 Lee}, $H$ is connected, and it is the only connected Lie group of $G$ having $\frakh$ as its Lie algebra. The uniqueness of the structure of a real-analytic group on $H$ with prescribed Lie algebra $\frakh$ is also very easy to show by a standard argument, see \cite[Prop.~1.6.4]{DK}.
+    Now we present the proof from \cite[Thm.~1.10.3]{DK}, which avoids the Frobenius Theorem and is instead based on the exponential map. For each $A\in\frakh$, the vector field $A^R$ on $\frakg_e$ defined in (\ref{def X^R}) is tangent to $\frakh$ in the sense that $A^R(Z)\in\frakh$ for all $Z\in\frakg_e\cap\frakh$. This follows because $\ad_Z\in\Lin(\frakh)$ if $Z\in\frakh$. Moreover $\frakh$ is a closed subspace of $\frakg$ as a finite-dimensional subspace, hence the power series in the right hand side of (\ref{def X^R}) converges to an element of $\frakh$. (In the case of Banach Lie groups we have to make the additional assumption that $\frakh$ is a closed linear subspace.) If we solve (\ref{eq Z(t)}) with $Z(0)=B\in\frakh$, regarded as an ODE in $\frakg_e\cap\frakh$, the solution will also be in $\frakg_e\cap\frakh$. However, it is also equal to the solution of the same ODE viewed in $\frakg_e$, which is equal to $\ln(\rme^{tA}\rme^B)$. So the conclusion is that $\ln(\rme^A\rme^B)\in\frakh$ if $A,B\in\frakg_e\cap\frakh$. Denote by $H$ the subgroup generated by $\exp(\frakh)$, then the chart maps $\restr{\kappa^h}{H}$, for $h\in H$, with $\kappa^g=\ln\circ L_g^{-1}$), form an atlas for $H$, mapping it into $\frakh$. This can be checked to be an analytic atlas for $H$ (see again \cite[Thm.~1.6.3]{DK}). The inclusion $H\hookrightarrow G$ is an immersion because, in the charts $\kappa^h$, it is equal to the inclusion of open subsets of $\frakh$ into $\frakg$. In view of Proposition~\ref{prop 7.14 Lee}, $H$ is connected, and it is the only connected Lie group of $G$ having $\frakh$ as its Lie algebra. The uniqueness of the structure of a real-analytic group on $H$ with prescribed Lie algebra $\frakh$ is also very easy to show by a standard argument, see \cite[Prop.~1.6.4]{DK}.
 
-    Finally we need to show that if $\rme^{tX}\in H$ for all $t\in\bbR$, then $X\in\frakh$. Let $V\subset\frakg$ be an open convex symmetric neighborhood the origin such that $U_H^{-1}U_H\subset \exp(V\cap \frakh)$ and $\restr{\exp}{V}$ is a diffeomorphism. Given a neighborhood $U_H\subset H$ of the identity in $H$, there exists a sequence $(h_n)\in G$ such that $H=\bigcup_n h_nU_H$. Choose $\epsilon>0$ with $\exp([-2\epsilon,2\epsilon]X)\subseteq \exp(V)$. Since the interval $[0,\epsilon]$ is uncountable, there exists some $n$ for which $\{t\in [0,\epsilon]:\rme^{tX}\in h_nU_H\}$ is uncountable. In particular, there are two such elements $t_1<t_2$ and $u_1,u_2\in U_H$ such that $\rme^{t_1X}=h_nu_1\neq \rme^{t_2X}=h_nu_2$. Then
-    \[\rme^{(-t_1+t_2)X}=\rme^{-t_1X}\rme^{t_2X}=u_1^{-1}h_n^{-1}h_nu_2\in U_H^{-1}U_H\subseteq \exp(V\cap\frakh).\]
-    In particular, there is a nonzero $Y\in V\cap\frakh$ with $\rme^Y=\rme^{(-t_1+t_2)X}$. Since $Y$ and $(t_2-t_1)X$ are contained in $V$, it follows that $X=\frac{1}{t_2-t_1}Y\in\frakh$.
+    Finally we need to show that if $\rme^{tA}\in H$ for all $t\in\bbR$, then $A\in\frakh$. Let $V\subset\frakg$ be an open convex symmetric neighborhood the origin such that $U_H^{-1}U_H\subset \exp(V\cap \frakh)$ and $\restr{\exp}{V}$ is a diffeomorphism. Given a neighborhood $U_H\subset H$ of the identity in $H$, there exists a sequence $(h_n)\in G$ such that $H=\bigcup_n h_nU_H$. Choose $\epsilon>0$ with $\exp([-2\epsilon,2\epsilon]A)\subseteq \exp(V)$. Since the interval $[0,\epsilon]$ is uncountable, there exists some $n$ for which $\{t\in [0,\epsilon]:\rme^{tA}\in h_nU_H\}$ is uncountable. In particular, there are two such elements $t_1<t_2$ and $u_1,u_2\in U_H$ such that $\rme^{t_1A}=h_nu_1\neq \rme^{t_2A}=h_nu_2$. Then
+    \[\rme^{(-t_1+t_2)A}=\rme^{-t_1A}\rme^{t_2A}=u_1^{-1}h_n^{-1}h_nu_2\in U_H^{-1}U_H\subseteq \exp(V\cap\frakh).\]
+    In particular, there is a nonzero $B\in V\cap\frakh$ with $\rme^B=\rme^{(-t_1+t_2)A}$. Since $B$ and $(t_2-t_1)A$ are contained in $V$, it follows that $A=\frac{1}{t_2-t_1}B\in\frakh$.
  \end{proof}
 
 
 
 
 \begin{example}[Adjoint group]\label{ex adjoint group}
-    Let $\frakg$ be a finite-dimensional Lie algebra. Since $\ad:\frakg\to \Lin(\frakg)$ is a homomorphism of Lie algebras, $\ad(\frakg)$ is a Lie subalgebra of $\Lin(\frakg)=\Lief\GL(\frakg)$. According to the Analytic Subgroup Theorem, the subgroup of $\GL(\frakg)$ generated by the $\rme^{\ad_X}, X\in\frakg$, is the unique connected Lie subgroup of $\GL(\frakg)$ with Lie algebra $\ad(\frakg)$. It is called the adjoint group $\Ad\frakg$ of the Lie algebra $\frakg$.
+    Let $\frakg$ be a finite-dimensional Lie algebra. Since $\ad:\frakg\to \Lin(\frakg)$ is a homomorphism of Lie algebras, $\ad(\frakg)$ is a Lie subalgebra of $\Lin(\frakg)=\Lief\GL(\frakg)$. According to the Analytic Subgroup Theorem, the subgroup of $\GL(\frakg)$ generated by the $\rme^{\ad_A}, A\in\frakg$, is the unique connected Lie subgroup of $\GL(\frakg)$ with Lie algebra $\ad(\frakg)$. It is called the adjoint group $\Ad\frakg$ of the Lie algebra $\frakg$.
     
-    By differentiating with respect to $t$ and using the Jacobi identity, it is easy to check that the map $t\mapsto \rme^{-t\ad_X}\left[\rme^{t\ad_X}Y,\rme^{t\ad_X}Z\right]$ is constant and equal to its value $[Y,Z]$ at $t=0$, i.e.
-    \[\left[\rme^{\ad_X}Y,\rme^{\ad_X}Z\right]=\rme^{\ad_X}[Y,Z] \text{ for all }X,Y,Z\in\frakg;\]
-    and this shows that $\rme^{\ad_X}$ is an automorphism of $\frakg$ for any $X\in\frakg$. It follows that $\Ad\frakg$ is a subgroup of the group $\Aut(\frakg)$ of all automorphisms of $\frakg$. The elements of $\Ad\frakg$ are therefore also called the \emph{inner automorpisms} of $\frakg$. It is easy to see from the definition that $\Aut(\frakg)$ is an analytic submanifold, hence a closed Lie subgroup, of $\GL(\frakg)$. Furthermore, the Lie algebra of $\Aut(\frakg)$ is exactly the algebra of derivations
-    \[\Der(\frakg)=\{\phi\in \Lin(\frakg)\mid \forall X,Y\in\frakg\;\phi ([X,Y])=[\phi(X),Y]+[X,\phi(Y)]\}.\]
+    By differentiating with respect to $t$ and using the Jacobi identity, it is easy to check that the map $t\mapsto \rme^{-t\ad_A}\left[\rme^{t\ad_A}B,\rme^{t\ad_A}Z\right]$ is constant and equal to its value $[B,Z]$ at $t=0$, i.e.
+    \[\left[\rme^{\ad_A}B,\rme^{\ad_A}Z\right]=\rme^{\ad_A}[B,Z] \text{ for all }A,B,Z\in\frakg;\]
+    and this shows that $\rme^{\ad_A}$ is an automorphism of $\frakg$ for any $A\in\frakg$. It follows that $\Ad\frakg$ is a subgroup of the group $\Aut(\frakg)$ of all automorphisms of $\frakg$. The elements of $\Ad\frakg$ are therefore also called the \emph{inner automorpisms} of $\frakg$. It is easy to see from the definition that $\Aut(\frakg)$ is an analytic submanifold, hence a closed Lie subgroup, of $\GL(\frakg)$. Furthermore, the Lie algebra of $\Aut(\frakg)$ is exactly the algebra of derivations
+    \[\Der(\frakg)=\{\phi\in \Lin(\frakg)\mid \forall A,B\in\frakg\;\phi ([A,B])=[\phi(A),B]+[A,\phi(B)]\}.\]
     Notice that $\ad\frakg\subset \Der(\frakg)$. In general $\Ad\frakg$ need not be closed in $\Aut(\frakg)$, hence in $\GL(\frakg)$, whereas on the other hand $\Aut(\frakg)$ need not be connected.
 
     Further it should be observed that \emph{if} $G$ is a Lie group with Lie algebra $\frakg$, then $\Ad$ is a homomorphism of Lie groups $G\to\GL(V)$ with $(\Ad)_{\ast e}=\ad$, so it follows that $\Ad$ actually maps $G_0$ homomorphically onto $\Ad\frakg$. The point is that nonisomorphic connected Lie groups with isomorphic Lie algebras do exist; the result above shows that their adjoint groups then are isomorphic and can be defined intrinsically in terms of the Lie algebras.
 
-    In Theorem~\ref{thm 1.5.2 DK}(b) we have seen that $g\rme^X g^{-1}=\rme^{\Ad_g X}$ for any $g\in G,X\in\frakg$. So if $g\in\ker \Ad$, then $ghg^{-1}=h$ for all $h\in \exp(\frakg)$, hence also for all $h\in G_0$ (the subgroup generated by $\exp(\frakg)$). Conversely, this implies that $g\in\ker \Ad$. In particular, $\ker\Ad\cap G_0=\rmZ(G_0)$, the center of $G_0$. From Example~\ref{example kernel subgroup}(1) below we get that $Z(G_0)$ is a closed Lie subgroup of $G_0$ and that the surjection $\Ad:G_0\to \Ad\frakg$ induces an isomorphism of Lie groups $G_0\slash Z(G_0)\cong \Ad\frakg$.
+    In Theorem~\ref{thm 1.5.2 DK}(b) we have seen that $g\rme^A g^{-1}=\rme^{\Ad_g A}$ for any $g\in G,A\in\frakg$. So if $g\in\ker \Ad$, then $ghg^{-1}=h$ for all $h\in \exp(\frakg)$, hence also for all $h\in G_0$ (the subgroup generated by $\exp(\frakg)$). Conversely, this implies that $g\in\ker \Ad$. In particular, $\ker\Ad\cap G_0=\rmZ(G_0)$, the center of $G_0$. From Example~\ref{example kernel subgroup}(1) below we get that $Z(G_0)$ is a closed Lie subgroup of $G_0$ and that the surjection $\Ad:G_0\to \Ad\frakg$ induces an isomorphism of Lie groups $G_0\slash Z(G_0)\cong \Ad\frakg$.
 \end{example}
 
 
@@ -7417,24 +7464,24 @@ So far to prove the uniqueness of analytic structures on Lie groups we only had 
 \begin{proof}
     Since the statement is totally local, we may restrict ourselves to a logarithmic chart and make use of a norm $|\cdot |$ on $\frakg$.
 
-    Let $\frakh$ be the set of $X\in\frakg$ for which there exist sequences $(h_n)\in H_0$ and $t_n\in[0,\infty)$ such that 
+    Let $\frakh$ be the set of $A\in\frakg$ for which there exist sequences $(h_n)\in H_0$ and $t_n\in[0,\infty)$ such that 
     \[\lim_{n\to\infty} h_n=1\;\text{ in }\;H_0\] and 
-    \[\lim_{n\to\infty} t_n \ln h_n=X\;\text{ in }\;\frakg.\]
-    We first show that there is a neighborhood $U\subset \frakh$ of $0\in\frakh$ such that $\exp(U)\subset H_0$. By continuity of $\exp$ at $0$, there is an $\delta>0$ such that $\rme^X\in V$ whenever $|X|<\delta$. Choose $0<\epsilon<\delta$ and select $X\in U=\{X\in\frakh\mid |X|\leq \epsilon\}$. Let $h_n,t_n$ be as above. Since $\lim_n \ln h_n=0$, we get $(t_n-\lfloor t_n\rfloor)\ln h_n\to 0$; so $\lfloor t_n\rfloor \ln h_n\to X$. If $0\leq k\leq \lfloor t_n\rfloor -1$, then:
+    \[\lim_{n\to\infty} t_n \ln h_n=A\;\text{ in }\;\frakg.\]
+    We first show that there is a neighborhood $U\subset \frakh$ of $0\in\frakh$ such that $\exp(U)\subset H_0$. By continuity of $\exp$ at $0$, there is an $\delta>0$ such that $\rme^A\in V$ whenever $|A|<\delta$. Choose $0<\epsilon<\delta$ and select $A\in U=\{A\in\frakh\mid |A|\leq \epsilon\}$. Let $h_n,t_n$ be as above. Since $\lim_n \ln h_n=0$, we get $(t_n-\lfloor t_n\rfloor)\ln h_n\to 0$; so $\lfloor t_n\rfloor \ln h_n\to A$. If $0\leq k\leq \lfloor t_n\rfloor -1$, then:
     \begin{multline}
         |k\ln h_n|=\frac{k}{\lfloor t_n\rfloor}|\lfloor t_n\rfloor \ln h_n|\leq 
-    \frac{k}{\lfloor t_n\rfloor}(|X|+|\lfloor t_n\rfloor \ln h_n-X|)\leq \\
-    \leq \epsilon+|\lfloor t_n\rfloor \ln h_n-X|<\delta,
+    \frac{k}{\lfloor t_n\rfloor}(|A|+|\lfloor t_n\rfloor \ln h_n-A|)\leq \\
+    \leq \epsilon+|\lfloor t_n\rfloor \ln h_n-A|<\delta,
     \end{multline}
     for sufficiently large $n$. So $h_n^k=\exp(k\ln h_n)\in V$, for $0\leq k\leq \lfloor t_n\rfloor -1$; but now $h_n\in H_0\cap V$ yields that $h_n^{\lfloor t_n\rfloor}\in H_0$ because of the assumptions. Using the continuity of $\exp$, we get that
-    \[\exp X=\lim_{n\to \infty}\exp\left(\lfloor t_n\rfloor \ln h_n\right)=\lim_{n\to\infty} h_n^{\lfloor t_n\rfloor},\]
+    \[\exp A=\lim_{n\to \infty}\exp\left(\lfloor t_n\rfloor \ln h_n\right)=\lim_{n\to\infty} h_n^{\lfloor t_n\rfloor},\]
     and the limit belongs to $H_0$ since $H_0$ is closed. Thus proves $\exp(U)\subset H_0$.
 
-    Next we show that $\frakh$ is a linear subspace of $\frakg$. Obviously $tX\in\frakh$ for any $X\in\frakh$ and $t\geq 0$. Also $-X\in\frakh$ because $V\cap H_0$ is symmetric. If now $X,Y\in\frakh$ then by the result just proved $\rme^{tX},\rme^{tY}\in H_0\cap V$ for all sufficiently small $t$; hence $\rme^{tX}\rme^{tY}\in H_0$ for small $t$. On the other hand, from the first term of the BCH formula,
-    \[\lim_{t\downarrow 0}\frac{1}{t} \ln \rme^{tX}\rme^{tY}=X+Y,\]
-    from which we read off that $X+Y\in\frakh$.
+    Next we show that $\frakh$ is a linear subspace of $\frakg$. Obviously $tA\in\frakh$ for any $A\in\frakh$ and $t\geq 0$. Also $-A\in\frakh$ because $V\cap H_0$ is symmetric. If now $A,B\in\frakh$ then by the result just proved $\rme^{tA},\rme^{tB}\in H_0\cap V$ for all sufficiently small $t$; hence $\rme^{tA}\rme^{tB}\in H_0$ for small $t$. On the other hand, from the first term of the BCH formula,
+    \[\lim_{t\downarrow 0}\frac{1}{t} \ln \rme^{tA}\rme^{tB}=A+B,\]
+    from which we read off that $A+B\in\frakh$.
 
-    Thirdly we prove that for any neighborhood $U\subset\frakh$ of the origin the set $\exp(U)$ contains a neighborhood of the identity in $H_0$. For if not, then there exists a sequence $h_n\in H_0\setminus \exp(U)$ such that $h_n\to e$. Choose a linear subspace $\frakm$ of $\frakg$ such that $\frakg=\frakh\oplus\frakm$. Then $(X,Y)\mapsto \rme^X \rme^Y$ is a diffeomorphism from a neighborhood of $(0,0)$ in $\frakh\times\frakm$ to a neighborhood of $e\in G$. Hence there exist sequences $X_n\in\frakh, Y_n\in\frakm$, both converging to $0$, such that $h_n=\rme^{X_n}\rme^{Y_n}$. Note that $Y_n\neq 0$ because $h_n\notin \exp(U)$. Since $h_n\in H_0$ and $\rme^{X_n}\in H_0$, it follows that $\rme^{Y_n}\in H_0$ for sufficiently large $n$, according to the assumption of the theorem. On the other hand, a subsequence of $Y_n/|Y_n|$ converges to some $Y\in\frakm$ with $|Y|=1$. By definition of $\frakh$ we conclude that $Y\in\frakh$, a contradiction with $\frakh\cap\frakm=0$.
+    Thirdly we prove that for any neighborhood $U\subset\frakh$ of the origin the set $\exp(U)$ contains a neighborhood of the identity in $H_0$. For if not, then there exists a sequence $h_n\in H_0\setminus \exp(U)$ such that $h_n\to e$. Choose a linear subspace $\frakm$ of $\frakg$ such that $\frakg=\frakh\oplus\frakm$. Then $(A,B)\mapsto \rme^A \rme^B$ is a diffeomorphism from a neighborhood of $(0,0)$ in $\frakh\times\frakm$ to a neighborhood of $e\in G$. Hence there exist sequences $A_n\in\frakh, B_n\in\frakm$, both converging to $0$, such that $h_n=\rme^{A_n}\rme^{B_n}$. Note that $B_n\neq 0$ because $h_n\notin \exp(U)$. Since $h_n\in H_0$ and $\rme^{A_n}\in H_0$, it follows that $\rme^{B_n}\in H_0$ for sufficiently large $n$, according to the assumption of the theorem. On the other hand, a subsequence of $B_n/|B_n|$ converges to some $B\in\frakm$ with $|B|=1$. By definition of $\frakh$ we conclude that $B\in\frakh$, a contradiction with $\frakh\cap\frakm=0$.
 
     Taking $U=U'\cap \frakh$ with $U'$ a sufficiently small open neighborhood of $o$ in $\frakg$ such that $\restr{\exp}{U'}$ is a diffeomorphism from $U'$ onto an open neighborhood $V'\subset G$ of $e\in G$, one obtains that $V=\exp(U)$ is a real-analytic submanifold of $G$ and $\restr{\exp}{U}$ is a real-analytic diffeomorphism from $U$ onto $V$. Because on the other hand $V$ is an open neighborhood of $e$ in $H_0$, it follows that $V$ is a real-analytic local Lie group, with Lie algebra $\frakh$, which apparently is a Lie subalgebra of $\frakg$. If $H$ denotes the group generated by $V$, then $H$ is the connected Lie subgroup of $G$ with Lie algebra equal to $\frakh$ that was introduced in the Analytic Subgroup Theorem~\ref{thm analytic subgroup}.
 \end{proof}
@@ -7517,7 +7564,7 @@ The central result of this section is Yamabe's theorem, characterizing analytic 
 
 \begin{thm}[Yamabe {{\cite[Thm.~9.6.1]{HN}}}]\label{thm Yamabe}\index{Theorem!Yamabe}
     A subgroup $H$ of a connected Lie group $G$ is path-connected iff it is an analytic subgroup, i.e.~it is of the form $\<\exp_G\frakh\>$ for the Lie subalgebra $\frakh$ of $\Lief G$ determined by
-    \[\frakh=\{X\in\Lief G: \exp_G(\bbR\cdot X)\subset H\}.\]
+    \[\frakh=\{X\in\Lief G: \exp_G(\bbR\cdot A)\subset H\}.\]
 \end{thm}
 \begin{proof}
     We will not present the proof of the strong version of the theorem here. Instead we will prove it under the additional assumption (following \cite[Lem.~1.7.10]{RS2}) that $H$ is \emph{$C^\infty$-pathwise connected}, meaning that any two points in $H$ can be connected by a path inside $H$ that is smooth as a path in $G$. Consider the set
@@ -7535,18 +7582,18 @@ The following theorem, based on Yamabe's Theorem, states that \emph{every} (set-
 
 \begin{thm}[Initial Subgroup Theorem {{\cite[Thm.~9.6.13]{HN}}}]\label{thm initial subgroup}\index{Theorem!Initial Subgroup}
     Each subgroup $H$ of a Lie group $G$ carries a structure of a weakly embedded (initial) Lie subgroup for which the identity component $H_0$ coincides with the path-component of $H$ with respect to the subspace topology and
-    \[\frakh=\{X\in\Lief G: \exp_G(\bbR\cdot X)\subset H\}.\]
+    \[\frakh=\{A\in\Lief G: \exp_G(\bbR\cdot A)\subset H\}.\]
 \end{thm}
 \begin{proof}
     Let $H_a\subset H$ be the path-component of $H$, viewed as a topological subgroup of $G$. According to Yamabe's Theorem, $H_a$ is an analytic subgroup with Lie algebra
-    \[\{\frakh=\{X\in\frakg:\exp(\bbR\cdot X)\subseteq H\}\}.\]
+    \[\{\frakh=\{A\in\frakg:\exp(\bbR\cdot A)\subseteq H\}\}.\]
     Let $H_a^L$ denote the group $H_a$ endowed with its intrinsic Lie group topology for which $\exp=\restr{\exp_G}{\frakh}:\frakh\to H_a^L$ is a local diffeomorphism at $0$. Then $H\subseteq\{g\in G:\Ad_g\frakh=\frakh\}$ and $\Adg_g\circ \exp=\exp\circ\restr{\Ad_h}{\frakh}$ imply that for each $h\in H$ the conjugation $\Ad_h$ defines a smooth automorphism on $H_a^L$, so that $H$ carries a Lie group structure for which $H_a^L$ is an open subgroup (see \cite[Thm.~9.4.4, Cor.~9.4.5]{HN}). Let $H^L$ denote this Lie group. Now the inclusion map $i:H^L\to G$ is an immersion whose differential at $e$ is the inclusion $\frakh\hookrightarrow\frakg$.
 
     We claim that $i:H^L\to G$ is a weakly embedded Lie subgroup. In fact, let $f:M\to G$ be a smooth map from the smooth manifold $M$ to $G$ with $f(M)\subseteq H$. We need to show that $f$ is smooth. It suffices to show smoothness at each point $m\in M$ and by replacing $f$ with $f\cdot f(m)^{-1}$ we can assume $f(m)=e$.
 
-    Let $U\subset \frakh$ be an open 0-neighborhood, $\frakm\subseteq\frakg$ be a vector space complement to $\frakh$, and $V\subseteq \frakm$ an open 0-neighborhood for which the map $\Phi:U\times V\to G$ given by $(X,Y)\mapsto \rme^X\rme^Y$ is a diffeomorphism. Then 
-    \[H_a\cap(\exp_G U\exp_G V)=\bigsqcup_{y\in V,\exp_G Y\in H_a}\exp_GU \cdot \rme^Y,\]
-    where the union is disjoint because $\Phi$ is bijective and each set $\exp_GU\cdot \rme^Y$ contained in $H_a$ also is an open subset of $H^L$. Since the topology of $H^L_a$ is second countable, the set $\exp^{-1}_G(H_a)\cap V$ is countable. Every smooth path $\gamma:I\to \exp_GU\exp_GV$ is of the form $\gamma(t)=\exp_G\alpha(t)\exp_G\beta(t)$ with smooth arcs $\alpha:I\to U$ and $\beta:I\to V$, and for every smooth path contained in $H_a$, the countability of $\beta(I)$ implies that $\beta$ is constant.
+    Let $U\subset \frakh$ be an open 0-neighborhood, $\frakm\subseteq\frakg$ be a vector space complement to $\frakh$, and $V\subseteq \frakm$ an open 0-neighborhood for which the map $\Phi:U\times V\to G$ given by $(A,B)\mapsto \rme^A\rme^B$ is a diffeomorphism. Then 
+    \[H_a\cap(\exp_G U\exp_G V)=\bigsqcup_{y\in V,\exp_G B\in H_a}\exp_GU \cdot \rme^B,\]
+    where the union is disjoint because $\Phi$ is bijective and each set $\exp_GU\cdot \rme^B$ contained in $H_a$ also is an open subset of $H^L$. Since the topology of $H^L_a$ is second countable, the set $\exp^{-1}_G(H_a)\cap V$ is countable. Every smooth path $\gamma:I\to \exp_GU\exp_GV$ is of the form $\gamma(t)=\exp_G\alpha(t)\exp_G\beta(t)$ with smooth arcs $\alpha:I\to U$ and $\beta:I\to V$, and for every smooth path contained in $H_a$, the countability of $\beta(I)$ implies that $\beta$ is constant.
 
     We conclude that if $W\subseteq M$ is an open connected neighborhood of $m$ with $f(W)\subseteq \exp_GU\exp_GV$, then $f(W)\subseteq \exp_GU$. Then the map $\restr{\exp_G}{U}^{-1}\circ \restr{f}{W}:W\to\frakh$ is smooth, so that the corresponding restriction in range
     \[i^{-1}\circ \restr{f}{W}=\exp_{H^L}\circ \restr{\exp_G}{U}^{-1}\circ \restr{f}{W}:W\to H^L\]
@@ -7565,7 +7612,7 @@ In all of these results we still have the overarching Lie group $G$ that needs t
 
 
 
-\newpage
+\clearpage
 \section{Group Actions on Manifolds}
 
 
@@ -7603,10 +7650,10 @@ The two quotients coincide only in Abelian groups. The topological structure on 
     It suffices to prove existence, because uniqueness holds for any submersion. Choose a subspace $\frakm\subset \frakg$ complementary to $\frakh$. The manifold structure of $G\slash H$ will be modelled on this subspace.
 
     According to Lemma~\ref{lem 5.6.7 RS1}, there exist open neighborhoods $W_\frakh$ and $W_\frakm$ of the origins in $\frakh$ and $\frakm$, respectively, and an open neighborhood $V$ of $e\in G$ such that the mapping
-    \[\varphi:W_\frakm\times W_\frakh\to V,\quad (X,Y)\mapsto \rme^X \rme^Y,\]
+    \[\varphi:W_\frakm\times W_\frakh\to V,\quad (A,B)\mapsto \rme^A \rme^B,\]
     is a diffeomorphism. Since $H$ is closed and hence embedded, $\exp (W_\frakh)$ is open with respect to the relative topology on $H$ induced from $G$. As a consequence, $W_\frakm$ may be shrunk so that $(\exp(W_\frakm))^2\cap H\subset \exp(W_\frakh)$. Consider the mapping $\pi\circ \exp:W_\frakm\to G\slash H$. It is
     \begin{enumerate}[label=(\alph*)]
-        \item injective: if $X,Y\in W_\frakm$ satisfy $\rme^{-X}\rme^Y\in H$, then $\rme^{-X}\rme^Y=\rme^Z$ for some $Z\in W_\frakh$, hence $\varphi(Y,0)=\varphi(X,Z)$ and injectivity of $\varphi$ implies $X=Y$ (and $Z=0$);
+        \item injective: if $A,B\in W_\frakm$ satisfy $\rme^{-A}\rme^B\in H$, then $\rme^{-A}\rme^B=\rme^Z$ for some $Z\in W_\frakh$, hence $\varphi(B,0)=\varphi(A,Z)$ and injectivity of $\varphi$ implies $A=B$ (and $Z=0$);
         \item open: if $U$ is open in $W_\frakm$, then $U\times W_\frakh$ is open in $W_\frakm\times W_\frakh$. Since $\varphi$ and $\pi$ are open, $\pi\circ\exp(U)=\pi\circ\varphi(U\times W_\frakh)$ is open in $G\slash H$.
     \end{enumerate}
     Thus $\pi\circ\exp$ maps $W_\frakm$ homeomorphically onto the subset $\wh{U}=\pi\circ\exp(W_\frakm)\subset G\slash H$ and hence induces a local chart $\wh{\kappa}=(\pi\circ\exp)^{-1}L\wh{U}\to \frakm$ on $G\slash H$. Since the mappings $\wh{L}_a$ are homemomorphisms, the collection
@@ -7769,7 +7816,7 @@ Next we investigate the special case where $H$ is a normal subgroup. This means 
     \[\bbR^n\times \bbT^k.\]
 \end{cor}
 \begin{proof}
-    When $G$ is abelian, the exponential map is actually a homomorphism of abelian groups (since $\rme^{X+Y}=\rme^X\rme^Y$ in this case). Being a homomorphism, it has constant rank (by Theorem~\ref{thm equivariant rank}) equal to the dimension of the group, therefore it is a submersion and hence open. Since any neighborhood of the identity generates the entire connected Lie group, any open homomorphism is surjective. Further, the fact that $\exp:\frakg\to G$ is a local homeomorphism means that $\ker\exp $ is a discrete subgroup of $\frakg$. By Corollary~\ref{cor discrete subgroups of Rn}, this subgroup is a lattice $\Lambda$ generated by a set of linearly independent vectors $x_1,\ldots,x_k\in\frakg$. Thus
+    When $G$ is abelian, the exponential map is actually a homomorphism of abelian groups (since $\rme^{A+B}=\rme^A\rme^B$ in this case). Being a homomorphism, it has constant rank (by Theorem~\ref{thm equivariant rank}) equal to the dimension of the group, therefore it is a submersion and hence open. Since any neighborhood of the identity generates the entire connected Lie group, any open homomorphism is surjective. Further, the fact that $\exp:\frakg\to G$ is a local homeomorphism means that $\ker\exp $ is a discrete subgroup of $\frakg$. By Corollary~\ref{cor discrete subgroups of Rn}, this subgroup is a lattice $\Lambda$ generated by a set of linearly independent vectors $x_1,\ldots,x_k\in\frakg$. Thus
     \[G\cong \frakg\slash \Lambda\cong \bbR^n\times \bbT^k,\]
     where $n=\dim G-k$.
 \end{proof}
