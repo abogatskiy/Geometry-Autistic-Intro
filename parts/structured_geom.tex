@@ -5543,8 +5543,8 @@ The next proposition computes the action of the gauge group on the Lie algebra o
 \begin{prop}
     Let $\vartheta\in\Gau(P)$ and $\varphi\in \Hom_G(P,G)$ the corresponding equivariant function. For all $X\in\aut(P)=\fX(P)^G$,
     \[\vartheta_\ast X-X\in\gau(P).\]
-    The corresponding section $\zeta \in\Gamma^\infty(\Ad(P))$ is represented by
-    \[\wt\zeta(m)=\Ad_{\varphi(m)}\circ(\varphi^\ast \theta_G)(X(m)).\]
+    The corresponding section $\zeta \in\Gamma^\infty(\Ad(P))$ is represented by the equivariant function
+    \[\wt\zeta(p)=\Ad_{\varphi(p)}\circ(\varphi^\ast \theta_G)(X(p)),\quad p\in P.\]
 \end{prop}
 \begin{proof}
     The vector field $\vartheta_\ast X$ is invariant since $\vartheta$ commutes with the principal $G$-action, and under $\pi_\ast$ projects onto the same vector field as $X$ since $\pi\circ\vartheta=\pi$. This shows that $Y=\vartheta_\ast X-X$ is vertical and $G$-invariant, thus an element of $\gau(P)$. Now we evaluate both sides of (\ref{eq 1.8.7 RS2}) on the vector field $X$:
@@ -5563,7 +5563,7 @@ The next proposition computes the action of the gauge group on the Lie algebra o
 
 \begin{prop}\label{prop action of Gau(P) on calA(P)}
     The natural action of $\Gau(P)$ on $\calA(P)$ is given by
-    \[\vartheta\cdot\omega\coloneqq (\vartheta^{-1})^\ast\omega=\Ad_\varphi \circ (\omega-\varphi^\ast \theta_G),\]
+    \[\vartheta\cdot\omega\coloneqq (\vartheta^{-1})^\ast\omega=\Ad_\varphi \circ (\omega-\varphi^\ast \theta_G),\quad \omega\in\calA(P),\]
     where $\varphi\in \Hom_G(P,G)$ is the element representing $\vartheta\in \Gau(P)$.
 \end{prop}
 \begin{proof}
@@ -5635,7 +5635,7 @@ Thus, an infinitesimal gauge transformation $\zeta\in\Omega^0_{\hor}(P;\frakg)^\
 \end{proof}
 
 
-Since, the action of the gauge group is a left action, the minus sign above is convenient to make the map to Killing vector fields a homomorphism of Lie algebras. Now observe that due to $\wt{\zeta}$ being of type $\Ad$, we can rewrite the Lie bracket above as a Lie derivative along a Killing vector field $\omega(X_p)_\ast(p)=\psi(\omega(X_p))=\calV(X_p)$ and simplify:
+Since the action of the gauge group is a left action, the minus sign above is convenient to make the map to Killing vector fields a homomorphism of Lie algebras. Now observe that due to $\wt{\zeta}$ being of type $\Ad$, we can rewrite the Lie bracket above as a Lie derivative along a Killing vector field $\omega(X_p)_\ast(p)=\psi(\omega(X_p))=\calV(X_p)$ and simplify:
 \[(\dd\wt{\zeta}+[\omega,\wt{\zeta}])(X)=
 \dd\wt\zeta(X)-\Lie_{\omega(X)_\ast}\wt\zeta=
 \dd\wt\zeta(X)-\dd\wt\zeta(\calV(X))=\dd\wt{\zeta}(\hor X).\label{eq 4791793}\]
@@ -5716,7 +5716,7 @@ Now we derive a general formula for the covariant exterior derivative.
 \begin{proof}
     It suffices to show that $\dd\Omega^\omega(X,Y,Z)=0$ for horizontal vector fields $X,Y,Z$ on $P$. Using the Structure Equation, we calculate
     \begin{align}
-        \dd\Omega^\omega(X,Y,Z)=&\frac12\dd([\omega,\omega])(X,Y,Z)=\\
+        \dd\Omega^\omega&(X,Y,Z)=\frac12\dd([\omega,\omega])(X,Y,Z)=\\
         =&X([\omega(Y),\omega(Z)])-Y([\omega(X),\omega(Z)])+Z([\omega(X),\omega(Y)])-\\
         &-[\omega([X,Y]),\omega(Z)]+[\omega([X,Z]),\omega(Y)]-[\omega([Y,Z]),\omega(X)]=\\
         =&0,
@@ -5725,9 +5725,9 @@ Now we derive a general formula for the covariant exterior derivative.
 \end{proof}
 
 \begin{rem}
-    As a special case, for $\wt\alpha\in\Omega^k_{\hor}(P;\frakg)^\Ad$, since $\ad(\omega)\wedge\wt\alpha=[\omega,\wt\alpha]$, Proposition~\ref{prop 1.4.3 RS2} implies the formula we obtained at the beginning of this section:
+    As a special case, for $\wt\alpha\in\Omega^k_{\hor}(P;\frakg)^\Ad$, since $\ad(\omega)\wedge\wt\alpha=[\omega,\wt\alpha]$, Proposition~\ref{prop 1.4.3 RS2} implies the formula we obtained at the beginning of this \subsect:
     \[D^\omega\wt\alpha=\dd\wt\alpha+[\omega,\wt\alpha].\]
-    Thus, in particular, $D^\omega\Omega^\omega=\dd\Omega^\omega+[\omega,\Omega]$, and the Bianchi identity takes the form
+    Thus, in particular, $D^\omega\Omega^\omega=\dd\Omega^\omega+[\omega,\Omega^\omega]$, and the Bianchi identity takes the form
     \[\dd\Omega^\omega+[\omega,\Omega^\omega]=0.\label{eq 1.4.11 RS2 Bianchi}\]
 \end{rem}
 
@@ -6938,7 +6938,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 
 
 \begin{example}[Conformal structure {{\cite[Example~2.2.17]{RS2}}}]\index{Conformal structure}\index{Conformal structure}
-    For $n\geq 3$, consider the conformal group 
+    For $n\geq 3$, consider the conformal group \index{Conformal group}
     \[\CO_n\coloneqq \left\{a\in\GL_n(\bbR):a^Ta=cI_n,\; c>0\right\}.\]
     Clearly, $\CO_n=\Or_n\times\bbR_+$. By the previous example, $\GL_n(\bbR)$ acts transitively on the space $\rmS^2_{k,l}V^\ast$. Thus it also acts transitively on the set of conformal equivalence classes of elements of $\rmS^2_{(k,l)}V^\ast$ defined by the relation $\eta\sim\eta'$ iff $\eta'=c\eta$ for some $c>0$. Clearly, the stabilizer of an element $[\eta]$ is $\CO_n$. Thus, $\CO_n$-structures are in one-to-one correspondence with conformal equivalence classes $[\sfg]$ of metrics on $M$, with the equivalence defined as follows: $\sfg'\sim\sfg$ iff $\sfg'_m=\rme^{\varphi(m)}\sfg_m$ for all $m\in M$ for some $\varphi\in C^\infty(M)$. The $\CO_n$-structure corresponding to class $[\sfg]$ is denoted by $\Fr_{\CO_n}M$ and is referred to as the bundle of conformal frames.
     Since $\CO_n=\Or_n\times\bbR_+$, the representation theory of $\CO_n$ is essentially obtained as an extension of that of $\Or_n$. The irreducible representations of $\bbR_+$ on $\bbR$ are labeled by real numbers $r\in\bbR$ and are given by 
