@@ -5587,7 +5587,7 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
     Since these flows are complete, to show their equality it is sufficient to prove that the vector fields generating them coincide:
     \[\restr{\frac{\dd}{\dd t}}{t=0}(gF(h,t))=(L_g)_{\ast}X_{h}=X_{gh}=\restr{\frac{\dd}{\dd t}}{t=0} F^X(gh,t).\]
     To prove the second equation, it suffices to show that $R_{\gamma(t)}(g)$ is the integral curve of $X$ starting at $g$, which follows trivially from the above:
-    \[R_{\gamma(t)(g)=L_g \gamma(t)}=L_g F^X_t(e)=F^X_t(g).\]
+    \[R_{\gamma(t)}(g)=L_g \gamma(t)=L_g F^X_t(e)=F^X_t(g).\]
 \end{proof}
 
 
@@ -5596,7 +5596,7 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
 \end{lem}
 \begin{proof}
     This follows from the naturalness of Lie derivatives (Proposition~\ref{prop properties of Lie derivatives}):
-    \[L_{g\ast} \Lie_X Y=\Lie_{L_{g\ast}}L_{g\ast} Y=\Lie_X Y.\]
+    \[L_{g\ast} \Lie_X Y=\Lie_{L_{g\ast}X}(L_{g\ast} Y)=\Lie_X Y.\]
 \end{proof}
 
 \begin{thm}
@@ -5659,15 +5659,12 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
     \[\left(\ad_A^\ast \xi,B\right)(B)=-\xi\left([A,B]\right),\quad A,B\in\frakg,\xi\in\frakg^\ast.\]
 \end{defn}
 
-Once again, as in Proposition~\ref{prop 5.4.5 RS1 ker(Ad) and ker(ad)}, we have
-\[\ker \Ad^\ast=C_G(G_0),\quad \ker\ad^\ast=C(\frakg).\]
-
 
 \begin{defn}
     A differential form $\xi$ on a Lie group $G$ is called left-invariant if $L_g^\ast\xi =\xi $ for all $g\in G$, and right-invariant if $R_g^\ast\xi=\xi$.
 
-    The set of left-invariant differential forms on $G$ is denoted by $\Omega^{\smbullet }(G)^G$. Written pointwise, for $1$-forms, the defining condition reads $\xi_{gh}\circ (L_g)_{\ast h}=\xi_b$ for all $g,h\in G$ or, equivalently,
-    \[\xi_a=\xi_e\circ (L_{g}^{-1})_{g\ast}\text{ for all }g\in G.\label{eq 5.5.1 RS1}\]
+    The set of left-invariant differential forms on $G$ is denoted by $\Omega^{\smbullet }(G)^G$. Written pointwise, for $1$-forms, the defining condition reads $\xi_{gh}\circ (L_g)_{\ast h}=\xi_g$ for all $g,h\in G$ or, equivalently,
+    \[\xi_g=\xi_e\circ (L_{g}^{-1})_{g\ast}\text{ for all }g\in G.\label{eq 5.5.1 RS1}\]
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~5.5.2]{RS1}}}]\label{prop 5.5.2 RS1}
@@ -5710,7 +5707,7 @@ We will thus identify left-invariant differential $r$-forms with elements of $\b
 Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-invariant $n$-forms (where $n=\dim G$) is one-dimensional and is spanned by $\alpha^1\wedge\ldots\wedge\alpha^n$ for any basis $\{\alpha^i\}$ in $\frakg^\ast$. By left-invariance, every nonzero element of this space is a volume form.
 
 \begin{cor}
-    One every Lie group there exists a left-invariant volume form $\mathsf{v}_G$, also often written as $\mathsf{v}_G(g)=\dd g$. This form is unique up to multiplication by a nonzero scalar. 
+    On every Lie group there exists a left-invariant volume form $\mathsf{v}_G$, also often written as $\mathsf{v}_G(g)=\dd g$. This form is unique up to multiplication by a nonzero scalar. 
 \end{cor}
 
 \begin{defn}[Haar measure]\index{Haar measure}
@@ -5809,19 +5806,19 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
     \[\theta_G(A_L)(g)=A\text{ for all }A\in\frakg,\; g\in G.\]
     As a consequence, $\theta_G$ assigns to a tangent vector $Y_g$ at $g$ the unique left-invariant vector field $X\in\fX(G)^G$ such that $X_g=Y_g$, and identifies it with an element of $\frakg$:
     \[\theta_G(Y)(g)=L_{g\ast}^{-1}(Y_g)=\pr_2\circ \chi_L^{-1}(Y_g).\]
-    Given a basis $\{\bf{t}_i\}$ of $\frakg=T_eG$ and its dual basis $\{\alpha^i\}$ on $\frakg^\ast$, identified with left-invariant $1$-forms $\alpha^i\in\fX^\ast_L(G)$, $\theta_G$ is given by
+    Given a basis $\{\bf{t}_i\}$ of $\frakg=T_eG$ and its dual basis $\{\alpha^i\}$ on $\frakg^\ast$, identified with left-invariant $1$-forms $\alpha^i\in\fX^\ast(G)^G$, $\theta_G$ is given by
     \[\theta_G=\sum_i \alpha^i\otimes \bf{t}_i.\]
     It is also called a \emph{tautological form} because, if we replace $\bf{t}_i$ with their corresponding left-invariant vector fields $e_i=(\bf{t}_i)_L$, then $\sum_i \alpha^i\otimes e_i=\id_{TG}$.
 
     Using (\ref{eq 5.5.3 RS1}), the exterior derivative of $\theta_G$ is given by
-    \[\dd\theta_G(X,Y)=-\langle\theta_G,[X,Y]\rangle=-[X,Y]=-[\theta_G(X),\theta_G(Y)],\]
+    \[\dd\theta_G(X,Y)=-\theta_G([X,Y])=-[X,Y]=-[\theta_G(X),\theta_G(Y)],\]
     and hence
     \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
     This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords}) in a basis-free form. It is also equivalent to our original Maurer-Cartan equation (\ref{eq Maurer-Cartan}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$. 
 \end{defn}
 Using the multiplication map $m:G\times G\to G$, define the map $\theta:TG\times TG\to TG$ by the identity
 \[\theta\circ (\pi_\ast\times \pi_\ast)=m_\ast,\]
-where $\pi_\ast\times \pi_\ast$ is the natural isomorphism $(G\times G)\to TG\times TG$. It is easy to check that $\theta$ can be expressed as
+where $\pi_\ast\times \pi_\ast$ is the natural isomorphism $T(G\times G)\to TG\times TG$. It is easy to check that $\theta$ can be expressed as
 \[\theta\left((g,\xi),(h,\eta)\right)=(gh,R_{h\ast}\xi+L_{g\ast}\eta).\label{eq m_ast}\]
 Then another way to see that $\theta_G$ is a smooth form is to represent it as the composition of smooth maps, using the zero section $o:G\to TG$:
 \[\underset{(g,\xi)}{TG}
@@ -5853,12 +5850,13 @@ Then another way to see that $\theta_G$ is a smooth form is to represent it as t
 \end{rem}
 
 \begin{rem}
-    As we have seen  in Proposition~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by nowhere-vanishing one-forms $\theta^i$ (or equivalently the distribution $\bigcap_i\ker\theta^i$) is integrable iff $\dd \theta^i=\xi^i_j\wedge\theta^j$ at least locally for some matrix of $1$-forms $\xi^i_j$. Then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}), expresses the fact that $\theta_G$ defines a canonical integrable Pfaffian system on $G$ spanned by $n=\dim G$ left-invariant $1$-forms (identified e.g.~with any basis of $\frakg^\ast$). Its only maximal integral manifold is $G$ itself. As we will see, the Maurer-Cartan equation can be used to derive the unique real-analytic structure on any Lie group. This is our first example of the deep connections between integrability and certain differential-geometric structures.
+    As we have seen  in Proposition~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by nowhere-vanishing one-forms $\theta^i$ (or equivalently the distribution $\bigcap_i\ker\theta^i$) is integrable iff $\dd \theta^i=\xi^i_j\wedge\theta^j$ at least locally for some matrix of $1$-forms $\xi^i_j$. Now let $\pi:TG\to G$ be the bundle projection and consider the lifted differential form $\pi^\ast\theta_G$. If $\dim G=n$, then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}) or (\ref{eq 5.5.4 RS1 MC in coords}), is also satisfied by $\pi^\ast\theta_G$, and expresses the fact that the $n$ components (in an arbitrary basis of $\frakg$) of $\theta_G$ span a canonical integrable Pfaffian system of rank $n$ on $TG$. Its maximal integral manifolds are $n$-dimensional and are nothing but the orbits $\chi_L^{-1}(G\times \{A\})$, $A\in\frakg$, each of which is diffeomorphic to $G$ itself. 
+    
+    The full power of this method will be seen when we apply it to subgroups of $G$. Moreover, as we will see, the Maurer-Cartan equation can be used to derive the unique real-analytic structure on any Lie group. This is our first example of the deep connections between integrability and certain differential-geometric structures.
 \end{rem}
 
-
-\begin{rem}
-    The Maurer-Cartan form provides an easy way to write down a left-invariant volume form on a Lie group in coordinates. All one needs to do is compute the Maurer-Cartan form and then take it's $n$-th power, where $n=\dim G$, to get a form $\omega=\theta_G^{\wedge n}=\theta_G\wedge\cdots\wedge \theta_G$. This is still a $\frakg$-valued form which must have the form $\mathsf{v}_G\otimes A$ for some $A\in\frakg$. Whatever basis one chooses on $\frakg$, it will suffice to find any non-zero component of $A$ in this expression to get a volume form on $G$. In practice this is even simpler: one computes the matrix of 1-forms $g^{-1}\dd g$ and then takes the wedge product of all independent components of this matrix (there are $n$ of them). Since each component of $\theta_G$ is left-invariant, the resulting product is also left-invariant.
+\begin{rem}[Finding a Haar measure from the Maurer-Cartan form]
+    The Maurer-Cartan form provides an easy way to write down a left-invariant volume form on a Lie group in coordinates. Whatever basis for $\frakg$ we choose, each component of $\theta_G$ in this basis is a nowhere-vanishing $1$-form. Thus, it suffices to compute $\theta_G$ and take the wedge product of all of its components. In the case of matrix groups, one computes the matrix of $1$-forms $g^{-1}\dd g$ and takes the wedge product of all independent components of this matrix (there are necessarily $n$ of them). While this procedure feels very basis-dependent, the result is guaranteed to be unique up to a multiplicative constant.
 \end{rem}
 
 
@@ -5895,12 +5893,12 @@ Then another way to see that $\theta_G$ is a smooth form is to represent it as t
 \end{example}
 
 \begin{rem}
-    Mathematicians often talk of ``the volume of $G$'', which is of course not a well-defined notion until one fixes a volume form. On compact Lie groups whose Lie algebra is \emph{simple} (contains no nontrivial Lie subalgebras) or \emph{semisimple} (is a direct sum of simple subalgebras) one can choose a canonical volume form by taking the natural volume form associated with the invariant Riemannian metric induced by the invariant dot product given by \emph{Cartan-Killing form} on $\frakg$: \[\sfK(A,B)\coloneqq \tr(\ad_A\circ \ad_B).\] 
+    Mathematicians often speak of ``the volume of $G$'', which is of course not a well-defined notion until one fixes a volume form. On compact Lie groups whose Lie algebra is \emph{simple} (contains no nontrivial Lie subalgebras) or \emph{semisimple} (is a direct sum of simple subalgebras) one can choose a canonical volume form by taking the natural volume form associated with the invariant Riemannian metric induced by the invariant dot product given by the \emph{Cartan-Killing form}\index{Cartan-Killing form}\index{Killing form!see {Cartan-Killing form}} on $\frakg$: \[\sfK(A,B)\coloneqq -\tr(\ad_A\circ \ad_B).\] 
     It is a nontrivial result of the structure theory of Lie algebras that $\sfK$ is nondegenerate iff $\frakg$ is semisimple, and moreover $\sfK$ is \emph{negative definite} whenever $\frakg$ belongs to a compact Lie group. Thus, by translating $-\sfK$ to all points of a compact semisimple Lie group, we get an invariant Riemannian metric $\sfg_G$ and hence a natural invariant volume form.
 \end{rem}
 
 \begin{example}[Haar measure on $\Aff_1$]
-    Another example is the (identity component of the) affine group of the real line, $G=\Aff^+_1(\bbR)$, which is the space $\bbR\times(0,\infty)$ with the product
+    Another example is the (identity component of the) affine group of the real line, $G=\Aff^+_1(\bbR)=\bbR\rtimes\GL_1^+(\bbR)$, which is the space $\bbR\times(0,\infty)$ with the product
     \[(a,b)\cdot (x,y)=(a+bx,by),\quad a,x\in\bbR,\;b,y>0,\]
     and has a faithful representation by $2\times 2$ real matrices of the form
     \[g(a,b)=\begin{pmatrix}
@@ -6393,7 +6391,8 @@ The following is a well known fact of linear algebra.
     That is, $g$ commutes with all elements of $\exp(\frakg)$. Since $\exp(\frakg)$ generates $G_0$, we conclude $\ker\Ad\subset C_G(G_0)$.
 \end{proof}
 
-
+Similarly, for the coadjoint representation we have
+\[\ker \Ad^\ast=C_G(G_0),\quad \ker\ad^\ast=C(\frakg).\]
 
 \begin{prop}\label{prop 20.9 Lee}
     If $H\subset G$ is a Lie subgroup, then the exponential map of $H$ coincides with the restriction of the exponential map of $G$, and 
