@@ -3604,6 +3604,13 @@ Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector fie
 
 
 
+
+
+
+
+
+
+
 \subsection{Applications of flows}\label{sec: applications of flows}
 
 
@@ -5578,24 +5585,24 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
 
 \begin{lem}\label{lem 471841}
     If $X\in\fX(G)^G$, then the flow $F^X:G\times \bbR \to G$ is left-invariant, i.e.
-    \[gF^X(h,t)=F^X(gh,t).\]
+    \[gF^X_t(h)=F^X_t(gh).\]
     Moreover, if $\gamma(t)$ is an integral curve of $X$ starting at $e\in G$, then
-    \[F^X(g,t)=R_{\gamma(t)}(g).\]
-    The analogous formula for right-invariant vector fields is $F^X(g,t)=L_{\gamma(t)}(g)$.
+    \[F^X_t(g)=R_{\gamma(t)}(g)=g\gamma(t).\]
+    The analogous formula for right-invariant vector fields is $F^X_t(g)=L_{\gamma(t)}(g)=\gamma(t)g$.
 \end{lem}
 \begin{proof}
     Since these flows are complete, to show their equality it is sufficient to prove that the vector fields generating them coincide:
-    \[\restr{\frac{\dd}{\dd t}}{t=0}(gF(h,t))=(L_g)_{\ast}X_{h}=X_{gh}=\restr{\frac{\dd}{\dd t}}{t=0} F^X(gh,t).\]
-    To prove the second equation, it suffices to show that $R_{\gamma(t)}(g)$ is the integral curve of $X$ starting at $g$, which follows trivially from the above:
-    \[R_{\gamma(t)}(g)=L_g \gamma(t)=L_g F^X_t(e)=F^X_t(g).\]
+    \[\restr{\frac{\dd}{\dd t}}{t=0}\left(gF^X_t(h)\right)=(L_g)_{\ast}X_{h}=X_{gh}=\restr{\frac{\dd}{\dd t}}{t=0} F^X_t(gh).\]
+    To prove the second equation, it suffices to show that $g\gamma(t)$ is the integral curve of $X$ starting at $g$, which follows trivially from the above:
+    \[g\gamma(t)=g F^X_t(e)=F^X_t(ge)=F^X_t(g).\]
 \end{proof}
 
 
 \begin{lem}
-    The space $\fX^G(G)$ is closed under the Lie bracket of vector fields (i.e.~Lie derivatives).
+    Both spaces $\fX(G)^G$ and $\fX(G)^G_R$ of invariant vector fields are closed under the Lie bracket of vector fields (i.e.~Lie derivatives).
 \end{lem}
 \begin{proof}
-    This follows from the naturalness of Lie derivatives (Proposition~\ref{prop properties of Lie derivatives}):
+    It suffices to consider the left-invariant case. We use the naturalness of Lie derivatives (Proposition~\ref{prop properties of Lie derivatives}):
     \[L_{g\ast} \Lie_X Y=\Lie_{L_{g\ast}X}(L_{g\ast} Y)=\Lie_X Y.\]
 \end{proof}
 
@@ -5603,7 +5610,7 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
     The evaluation map $E:(\fX(G)^G,\Lie)\to (T_eG,\ad)$, $X\mapsto X_e$ is an isomorphism of Lie algebras.
 \end{thm}
 \begin{proof}
-    It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=L_{g\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
+    It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=L_{g\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$ and let $F$ be the flow of $X$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
     \begin{multline}
         E\left(\Lie_X Y\right)=E\left(\restr{\frac{\dd}{\dd t}}{t=0} F^\ast_t Y\right)= \restr{\frac{\dd}{\dd t}}{t=0}R_{\gamma(t)}^{\ast}Y_{\gamma(t))}=\\=\restr{\frac{\dd}{\dd t}}{t=0}\left(R_{\gamma(t)}^{-1}\circ L_{\gamma(t)}\right)_{\ast e} Y_{e}=\restr{\frac{\dd}{\dd t}}{t=0}(\Ad_{\gamma(t)}Y_e)=\ad_{X_e} Y_e.
     \end{multline}
@@ -5612,8 +5619,7 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
 \end{proof}
 \begin{cor}
     The space $\fX(G)^G_R$ of right-invariant vector fields, together with the Lie derivative, forms a Lie algebra that is anti-isomorphic to $\Lief G$, with the \emph{anti-isomorphism} given by the same evaluation map $E$:
-    \[E\left(\Lie_{X}Y\right)=-\ad_{X_e} Y_e\]
-    for $X,Y\in\fX(G)^G_R$.
+    \[E\left(\Lie_{X}Y\right)=-\ad_{X_e} Y_e,\quad X,Y\in\fX(G)^G_R.\]
 \end{cor}
 
 In summary, if $A,B\in T_eG$, then we have the following formulas relating the Lie bracket on the Lie algebra to the Lie bracket of vector fields:
@@ -5656,11 +5662,11 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
     The duals of the adjoint reprsentations of $G$ and $\frakg$ are called the coadjoint representations of $G$ and $\frakg$ and are denoted by $\Ad^\ast$ and $\ad^\ast$, respectively. By definition,
     \[(\Ad^\ast_g \xi)(B)=\xi\left(\Ad_g^{-1}B\right),\quad  g\in G,\;B\in\frakg,\xi\in\frakg^\ast,\]
     and 
-    \[\left(\ad_A^\ast \xi,B\right)(B)=-\xi\left([A,B]\right),\quad A,B\in\frakg,\xi\in\frakg^\ast.\]
+    \[\left(\ad_A^\ast \xi\right)(B)=-\xi\left([A,B]\right),\quad A,B\in\frakg,\xi\in\frakg^\ast.\]
 \end{defn}
 
 
-\begin{defn}
+\begin{defn}[Invariant differential form]
     A differential form $\xi$ on a Lie group $G$ is called left-invariant if $L_g^\ast\xi =\xi $ for all $g\in G$, and right-invariant if $R_g^\ast\xi=\xi$.
 
     The set of left-invariant differential forms on $G$ is denoted by $\Omega^{\smbullet }(G)^G$. Written pointwise, for $1$-forms, the defining condition reads $\xi_{gh}\circ (L_g)_{\ast h}=\xi_g$ for all $g,h\in G$ or, equivalently,
@@ -5707,7 +5713,7 @@ We will thus identify left-invariant differential $r$-forms with elements of $\b
 Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-invariant $n$-forms (where $n=\dim G$) is one-dimensional and is spanned by $\alpha^1\wedge\ldots\wedge\alpha^n$ for any basis $\{\alpha^i\}$ in $\frakg^\ast$. By left-invariance, every nonzero element of this space is a volume form.
 
 \begin{cor}
-    On every Lie group there exists a left-invariant volume form $\mathsf{v}_G$, also often written as $\mathsf{v}_G(g)=\dd g$. This form is unique up to multiplication by a nonzero scalar. 
+    On every Lie group there exists a left-invariant volume form $\mathsf{v}_G$.\footnote{Invariant volume forms on Lie groups are also sometimes denoted by $\dd g$, but we will avoid this notation due to its likely confusion with the identity tensor on $TG$.} This form is unique up to multiplication by a nonzero scalar. 
 \end{cor}
 
 \begin{defn}[Haar measure]\index{Haar measure}
@@ -5816,21 +5822,25 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
     \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
     This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords}) in a basis-free form. It is also equivalent to our original Maurer-Cartan equation (\ref{eq Maurer-Cartan}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$. 
 \end{defn}
-Using the multiplication map $m:G\times G\to G$, define the map $\theta:TG\times TG\to TG$ by the identity
-\[\theta\circ (\pi_\ast\times \pi_\ast)=m_\ast,\]
-where $\pi_\ast\times \pi_\ast$ is the natural isomorphism $T(G\times G)\to TG\times TG$. It is easy to check that $\theta$ can be expressed as
-\[\theta\left((g,\xi),(h,\eta)\right)=(gh,R_{h\ast}\xi+L_{g\ast}\eta).\label{eq m_ast}\]
-Then another way to see that $\theta_G$ is a smooth form is to represent it as the composition of smooth maps, using the zero section $o:G\to TG$:
-\[\underset{(g,\xi)}{TG}
-\underset{\mapsto}{\overset{\pi\times\id}{\to}}
-\underset{g\times (g,\xi)}{G\times TG}
-\underset{\mapsto}{\overset{i\times\id}{\to}}
-\underset{g^{-1}\times (g,\xi)}{G\times TG}
-\underset{\mapsto}{\overset{o\times\id}{\to}}
-\underset{(g^{-1},0)\times (g,\xi)}{TG\times TG}
-\underset{\mapsto}{\overset{\theta}{\to}}
-\underset{(e,L_{g\ast}^{-1}\xi)}{TG}.\label{eq MC form as composition}
-\]
+
+\begin{rem}
+    Using the multiplication map $m:G\times G\to G$, define the map $\theta:TG\times TG\to TG$ by the identity
+    \[\theta\circ (\pi_\ast\times \pi_\ast)=m_\ast,\]
+    where $\pi_\ast\times \pi_\ast$ is the natural isomorphism $T(G\times G)\to TG\times TG$. It is easy to check that $\theta$ can be expressed as
+    \[\theta\left((g,\xi),(h,\eta)\right)=(gh,R_{h\ast}\xi+L_{g\ast}\eta).\label{eq m_ast}\]
+    Then another way to see that $\theta_G$ is a smooth form is to represent it as the composition of smooth maps, using the zero section $o:G\to TG$ and the inversion map $i:G\to G$:
+    \[\underset{(g,\xi)}{TG}
+    \underset{\mapsto}{\overset{\pi\times\id}{\to}}
+    \underset{g\times (g,\xi)}{G\times TG}
+    \underset{\mapsto}{\overset{i\times\id}{\to}}
+    \underset{g^{-1}\times (g,\xi)}{G\times TG}
+    \underset{\mapsto}{\overset{o\times\id}{\to}}
+    \underset{(g^{-1},0)\times (g,\xi)}{TG\times TG}
+    \underset{\mapsto}{\overset{\theta}{\to}}
+    \underset{(e,L_{g\ast}^{-1}\xi)}{TG}.\label{eq MC form as composition}
+    \]
+\end{rem}
+
 % \begin{rem}
 %     You may notice that expressed in the global left-invariant frame and its dual, the Maurer-Cartan form looks identical to the identity tensor $\delta\in \Gamma_1^1G$. The difference is that $\theta_g$ takes values in $T_eG$, not $T_gG$, i.e.~it includes a composition with the global left trivialization. Alternatively, it can be seen as the left-invariant continuation of the identity matrix at $\frakg=T_eG$.
 % \end{rem}
@@ -6122,31 +6132,9 @@ The following is an obvious special case of the Fundamental Theorem, but we emph
     \paragraph{Second Principle} Assuming $G$ is simply connected, for any homomorphism of Lie algebras $\phi:\Lief G\to \Lief H$ there is a unique Lie group homomorphism $G\to H$ whose differential at the identity is $\phi$.
 \end{rem}
 
-\begin{cor}
+\begin{cor}\label{cor generated homomorphism}
     Let $G$ be a connected and simply connected Lie group. For every representation $\rho:\frakg\to \frakgl(V)$ of the Lie algebra $\frakg=\Lief G$ there is a unique representation $R:G\to \GL(V)$ such that $R_{\ast e}=\rho$.
 \end{cor}
-
-\begin{example}
-    The Lie group $\SU_2$, being homeomorphic to the sphere $\bbS^3$, is simply-connected. Therefore every homomorphism $\phi:\fraksu_2\to\frakg$ into any other Lie algebra $\frakg$ of some Lie group $G$ determines a unique homomorphism $\Phi:\SU_2\to G$. 
-    
-    On the other hand, from Example~\ref{example su2 and so3}, the homomorphism $\Ad:\SU_2\to \SO_3(\bbR)$ is a double covering map since $\ker\Ad=\{\pm \rmI\}$, thus $\SO_3(\bbR)$ doesn't satisfy the condition on the domain group for the same theorem, and it must be possible to find a Lie algebra homomorphism $\psi:\frakso_3(\bbR)\to\frakg$ that doesn't extend to a group homomorphism $\Psi:\SO_3(\bbR)\to G$. Namely, the group homomorphism $\Psi$ exists if and only if 
-    \[\exp \psi(A_{x}(2\pi))=e_G,\text{ where }A_x(2\pi)=
-    \begin{pmatrix}
-        0&0&0\\
-        0&0&-2\pi\\
-        0&2\pi &0
-    \end{pmatrix}.
-    \]
-    To see this, apply the previous statement to $\phi=\psi\circ\ad$, where we view the adjoint as a map $\ad:\fraksu_2\to\frakso_3(\bbR)$. From this homomorphism, $\Psi$ is determined by $\Phi=\Psi\circ \Ad$; therefore such a homomorphism of Lie groups $\Psi$ exists iff $\Phi(-\rmI)=e_G$, which translates to $\Psi\circ \Ad(-I)=e_G$. Since $\Phi\circ\exp=\exp\circ\phi$ and 
-    \[\exp(\rmi\sigma_1)=\exp \begin{pmatrix}
-        0&\rmi\pi\\\rmi\pi &0
-    \end{pmatrix}=-\rmI,\]
-    the condition that $\Phi(-\rmI)=e$ becomes
-    \[e=\Phi\circ \exp (\rmi\sigma_1)=\exp\circ\phi (\rmi\sigma_1)=\exp\circ\psi( \ad_{\rmi\sigma_1})=\exp\circ\psi (R_x(2\pi)),\]
-    where at the end we used formula (\ref{eq ad: su2->so3}).
-    
-    This picture generalizes to all Lie groups. For any group $H$ one can specify a finite set of $X_i\in\frakh$ such that any homomorphism of Lie algebras $\phi:\frakh\to\frakg$ generates a homomorphism of Lie groups $\Phi:H\to G$ iff $\exp\phi(X_i)=e_G$ for all $i$.
-\end{example}
 
 The following proposition interprets the monodromy representation in terms of deck transformations of the universal covering acting on $G$.
 
@@ -6337,6 +6325,8 @@ The following is a well known fact of linear algebra.
     where $\gamma_X$ is the \gls{ops} generated by $X$. As a consequence, the \gls{ops} generated by $X$ can be written as \[\gamma_X(t)=\gamma_{tX}(1)=\exp tX=\rme^{tX}.\]
 \end{defn}
 
+When multiple groups are involved, we will sometimes specify the group to which the exponential map belongs by writing, for example, $\exp_G$.
+
 \begin{prop}\label{prop properties of exp} The exponential map $\exp:\frakg\to G$ has the following properties.
 \begin{enumerate}[label=(\alph*)]
     \item $\exp$ is smooth.
@@ -6345,7 +6335,8 @@ The following is a well known fact of linear algebra.
     \item $\left(\rme^X\right)^{n}=\rme^{nX}$ for $n\in \bbZ$.
     \item $\exp_{\ast 0}=\id_\frakg$.
     \item $\exp$ restricts to a diffeomorphism from some neighborhood of $0\in \frakg$ to a neighborhood of $e\in G$. Its inverse is often denoted by $\ln$.
-    \item $\exp$ is natural: if $H$ is another Lie group with $\frakh=\Lief H$, and $\Phi:G\to H$ is a Lie group homomorphism, then $\exp\circ\Phi_{\ast e}=\Phi\circ \exp$.
+    \item $\exp$ is natural: if $H$ is another Lie group with $\frakh=\Lief H$, and $\Phi:G\to H$ is a Lie group homomorphism, then 
+    \[\exp_H\circ\Phi_{\ast e}=\Phi\circ \exp_G.\]
     \item The flow $F^X$ of a left-invariant vector field $X\in \fX(G)^G$ is given by $F_t=R_{\rme^{tX_e}}$.
 \end{enumerate}
 \end{prop}
@@ -6415,6 +6406,31 @@ Similarly, for the coadjoint representation we have
 \begin{proof}
     For (a) we apply the naturality of $\exp$ (Proposition~\ref{prop properties of exp} (g)) to the homomorphism $\Ad:G\to \GL(\frakg)$, and for (b) we apply it to the homomorphism $\Ad_g:G\to G$.
 \end{proof}
+
+
+
+\begin{example}
+    Recall Corollary~\ref{cor generated homomorphism}, where we showed that Lie group homomorphisms with a simply connected source group are uniquely determined by their derivatives at the identity. The Lie group $\SU_2$, being homeomorphic to the sphere $\bbS^3$, is simply-connected. Therefore, every homomorphism $\phi:\fraksu_2\to\frakg$ into any other Lie algebra $\frakg$ of some Lie group $G$ determines a unique homomorphism $\Phi:\SU_2\to G$. 
+    
+    On the other hand, from Example~\ref{example su2 and so3}, the homomorphism $\Ad:\SU_2\to \SO_3(\bbR)$ is a double covering map since $\ker\Ad=\{\pm \rmI\}$, thus $\SO_3(\bbR)$ doesn't satisfy the condition on the domain group for the same theorem, and it must be possible to find a Lie algebra homomorphism $\psi:\frakso_3(\bbR)\to\frakg$ that doesn't extend to a group homomorphism $\Psi:\SO_3(\bbR)\to G$. Namely, the group homomorphism $\Psi$ exists if and only if 
+    \[\exp \psi(A_{x}(2\pi))=e_G,\text{ where }A_x(2\pi)=
+    \begin{pmatrix}
+        0&0&0\\
+        0&0&-2\pi\\
+        0&2\pi &0
+    \end{pmatrix}.
+    \]
+    To see this, apply the previous statement to $\phi=\psi\circ\ad$, where we view the adjoint as a map $\ad:\fraksu_2\to\frakso_3(\bbR)$. From this homomorphism, $\Psi$ is determined by $\Phi=\Psi\circ \Ad$; therefore such a homomorphism of Lie groups $\Psi$ exists iff $\Phi(-\rmI)=e_G$, which translates to $\Psi\circ \Ad(-I)=e_G$. Since $\Phi\circ\exp=\exp\circ\phi$ and 
+    \[\exp(\rmi\sigma_1)=\exp \begin{pmatrix}
+        0&\rmi\pi\\\rmi\pi &0
+    \end{pmatrix}=-\rmI,\]
+    the condition that $\Phi(-\rmI)=e$ becomes
+    \[e=\Phi\circ \exp (\rmi\sigma_1)=\exp\circ\phi (\rmi\sigma_1)=\exp\circ\psi( \ad_{\rmi\sigma_1})=\exp\circ\psi (R_x(2\pi)),\]
+    where at the end we used formula (\ref{eq ad: su2->so3}).
+    
+    This picture generalizes to all Lie groups. For any group $H$ one can specify a finite set of $X_i\in\frakh$ such that any homomorphism of Lie algebras $\phi:\frakh\to\frakg$ generates a homomorphism of Lie groups $\Phi:H\to G$ iff $\exp\phi(X_i)=e_G$ for all $i$.
+\end{example}
+
 
 \begin{prop}
     If $X,Y\in\frakg$ commute, i.e.~$[X,Y]=0$, then
