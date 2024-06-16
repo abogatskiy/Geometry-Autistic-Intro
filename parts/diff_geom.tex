@@ -6409,16 +6409,19 @@ When multiple groups are involved, we will sometimes specify the group to which 
 
 
 \begin{prop}\label{prop 5.4.5 RS1 ker(Ad) and ker(ad)}
-    The kernels of the adjoint representations of $G$ and $\frakg$ are given by $\ker \Ad=C_G(G_0)$ (centralizer of the identity component) and $\ker \ad=C(\frakg)$ (center of the Lie algebra), respectively.
+    The kernels of the adjoint representations of $G$ and $\frakg$ are given by the centralizer of the identity component and the center of the Lie algebra, respectively:
+    \[\ker \Ad=\rmC_G(G_0),\quad \ker \ad=\rmC(\frakg).\]
+    In particular, the \emph{adjoint group of $G$} is \index{Adjoint group}
+    \[\Ad(G)\cong G\slash \rmC_G(G_0),\quad \ad(\frakg)\cong \frakg\slash \rmC(\frakg).\]
 \end{prop}
 \begin{proof}
-    The statement $\ker\ad=C(\frakg)$ is obvious. Since for $g\in C_G(G_0)$ there holds $\restr{\Adg_g}{G_0}=\id_{G_0}$ and since $(\id_G)_{\ast e}=\id_\frakg$, we obtain $C_G(G_0)\subset \ker\Ad$. Conversely, if $g\in G$ satisfies $\Ad_g=\id_\frakg$. The naturality of the exponential map implies 
+    The statement $\ker\ad=C(\frakg)$ is obvious. Since for $g\in \rmC_G(G_0)$ there holds $\restr{\Adg_g}{G_0}=\id_{G_0}$ and since $(\id_G)_{\ast e}=\id_\frakg$, we obtain $\rmC_G(G_0)\subset \ker\Ad$. Conversely, if $g\in G$ satisfies $\Ad_g=\id_\frakg$. The naturality of the exponential map implies 
     \[\rme^X=\rme^{\Ad_g X}=\Adg_g(\rme^X)\text{ for all }X\in\frakg.\]
-    That is, $g$ commutes with all elements of $\exp(\frakg)$. Since $\exp(\frakg)$ generates $G_0$, we conclude $\ker\Ad\subset C_G(G_0)$.
+    That is, $g$ commutes with all elements of $\exp(\frakg)$. Since $\exp(\frakg)$ generates $G_0$, we conclude $\ker\Ad\subset \rmC_G(G_0)$.
 \end{proof}
 
 Similarly, for the coadjoint representation we have
-\[\ker \Ad^\ast=C_G(G_0),\quad \ker\ad^\ast=C(\frakg).\]
+\[\ker \Ad^\ast=\rmC_G(G_0),\quad \ker\ad^\ast=\rmC(\frakg).\]
 
 \begin{prop}\label{prop 20.9 Lee}
     If $H\subset G$ is a Lie subgroup, then the exponential map of $H$ coincides with the restriction of the exponential map of $G$, and 
@@ -7267,7 +7270,7 @@ It is almost obvious that the definition of the exponential map together with it
 
 \begin{lem}[{{\cite[Lem.~1.8.2]{DK}}}]
     For each $A\in\frakg$ define the vector field $A^R\in \fX(\frakg_e)$, where $\frakg_e$ was defined in Section~\ref{sec: product in log coordinates}:
-    \[ A^R(Z)=\frac{\ad_Z}{\rme^{\ad_Z}-I}A\quad \quad (Z\in\frakg_e). \label{def A^R}\]
+    \[ A^R(Z)=\frac{\ad_Z}{\rme^{\ad_Z}-I}A\quad \quad (Z\in\frakg_e). \label{def X^R}\]
     Then for each $A,B\in\frakg$, the map $A\mapsto A^R$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[A^R,B^R]=-([A,B])^R$.
 \end{lem}
 \begin{proof}
@@ -7434,15 +7437,16 @@ In the Closed Subgroup Theorem~\ref{thm closed subgroup} we characterized embedd
     
     By differentiating with respect to $t$ and using the Jacobi identity, it is easy to check that the map $t\mapsto \rme^{-t\ad_A}\left[\rme^{t\ad_A}B,\rme^{t\ad_A}C\right]$ is constant and equal to its value $[B,C]$ at $t=0$, i.e.
     \[\left[\rme^{\ad_A}B,\rme^{\ad_A}C\right]=\rme^{\ad_A}[B,C] \text{ for all }A,B,C\in\frakg;\]
-    and this shows that $\rme^{\ad_A}$ is an automorphism of $\frakg$ for any $A\in\frakg$. It follows that $\Ad(\frakg)$ is a subgroup of the group $\Aut(\frakg)$ of all automorphisms of $\frakg$. The elements of $\Ad(\frakg)$ are therefore also called the \emph{inner automorpisms} of $\frakg$. It is easy to see from the definition that $\Aut(\frakg)$ is an analytic submanifold, hence a closed Lie subgroup, of $\GL(\frakg)$. Furthermore, the Lie algebra of $\Aut(\frakg)$ is exactly the algebra of derivations
+    and this shows that $\rme^{\ad_A}$ is an automorphism of $\frakg$ for any $A\in\frakg$. It follows that $\Ad(\frakg)$ is a subgroup of the group $\Aut(\frakg)$ of all automorphisms of $\frakg$. The elements of $\Ad(\frakg)$ are therefore also called the \emph{inner automorpisms} of $\frakg$.\footnote{Sometimes elements of $\Ad(G)$ are also called inner automorphisms of $\frakg$, but that terminology is problematic since not all such transformations can be obtained from $\frakg$ itself.} It is easy to see from the definition that $\Aut(\frakg)$ is an analytic submanifold, hence a closed Lie subgroup, of $\GL(\frakg)$. Furthermore, the Lie algebra of $\Aut(\frakg)$ is exactly the algebra of derivations
     \[\Der(\frakg)=\{\phi\in \Lin(\frakg)\mid \forall A,B\in\frakg\;\phi ([A,B])=[\phi(A),B]+[A,\phi(B)]\}.\]
-    Notice that $\ad\frakg\subset \Der(\frakg)$. In general $\Ad(\frakg)$ need not be closed in $\Aut(\frakg)$, hence in $\GL(\frakg)$, whereas on the other hand $\Aut(\frakg)$ need not be connected.
+    Notice that $\ad(\frakg)\subset \Der(\frakg)$. In general $\Ad(\frakg)$ need not be closed in $\Aut(\frakg)$, hence in $\GL(\frakg)$, whereas on the other hand $\Aut(\frakg)$ need not be connected.
 
-    Further it should be observed that \emph{if} $G$ is a Lie group with Lie algebra $\frakg$, then $\Ad$ is a homomorphism of Lie groups $G\to\GL(V)$ with $(\Ad)_{\ast e}=\ad$, so it follows that $\Ad$ actually maps $G_0$ homomorphically onto $\Ad(\frakg)$. The point is that nonisomorphic connected Lie groups with isomorphic Lie algebras do exist; the result above shows that their adjoint groups then are isomorphic and can be defined intrinsically in terms of the Lie algebras.
+    Further it should be observed that \emph{if} $G$ is a Lie group with Lie algebra $\frakg$, then $\Ad$ is a homomorphism of Lie groups $G\to\GL(\frakg)$ with $(\Ad)_{\ast e}=\ad$, so it follows that $\Ad$ actually maps $G_0$ homomorphically onto $\Ad(\frakg)$. The point is that nonisomorphic connected Lie groups with isomorphic Lie algebras do exist; the result above shows that their adjoint groups then are isomorphic and can be defined intrinsically in terms of the Lie algebras.
 
-    In Theorem~\ref{thm 1.5.2 DK}(b) we have seen that $g\rme^A g^{-1}=\rme^{\Ad_g A}$ for any $g\in G,A\in\frakg$. So if $g\in\ker \Ad$, then $ghg^{-1}=h$ for all $h\in \exp(\frakg)$, hence also for all $h\in G_0$ (the subgroup generated by $\exp(\frakg)$). Conversely, this implies that $g\in\ker \Ad$. In particular, $\ker\Ad\cap G_0=\rmZ(G_0)$, the center of $G_0$. From Example~\ref{example kernel subgroup}(1) below we get that $\rmZ(G_0)$ is a closed Lie subgroup of $G_0$ and that the surjection $\Ad:G_0\to \Ad(\frakg)$ induces an isomorphism of Lie groups $G_0\slash \rmZ(G_0)\cong \Ad(\frakg)$.
+    In Theorem~\ref{thm 1.5.2 DK}(b) we have seen that $g\rme^A g^{-1}=\rme^{\Ad_g A}$ for any $g\in G,A\in\frakg$. So if $g\in\ker \Ad$, then $ghg^{-1}=h$ for all $h\in \exp(\frakg)$, hence also for all $h\in G_0$ (the subgroup generated by $\exp(\frakg)$). Conversely, this implies that $g\in\ker \Ad$. In particular, $\ker\Ad\cap G_0=\rmZ(G_0)$, the center of $G_0$. From Example~\ref{example kernel subgroup}(1) below we get that $\rmZ(G_0)$ is a closed Lie subgroup of $G_0$ and that the surjection $\Ad:G_0\to \Ad(\frakg)$ induces an isomorphism of Lie groups $G_0\slash \rmZ(G_0)\cong \Ad(\frakg)$. Since the center of a connected Lie group is exactly the kernel of
+    the adjoint representation by virtue of Proposition~\ref{prop 5.4.5 RS1 ker(Ad) and ker(ad)}, we have 
+    \[\Ad(\frakg)\cong \Ad(G_0).\]
 \end{example}
-
 
 
 
@@ -7962,7 +7966,7 @@ By the above Proposition, by passing to the induced action of $G\slash\ker\Phi$,
 
 \begin{example}
 \begin{enumerate}
-    \item  The actions of $G$ on itself by left and right translations are effective, free and transitive. Their restrictions to a proper Lie subgroup $H< G$ are still effective and free but no longer transitive. The action of $G$ on itself by inner automorphisms (conjugations $\Adg$) is neither free nor transitive, because the identity is invariant and the kernel is given by the center $\rmZ(G)$. Hence, the adjoint action is effective iff the center is trivial. Its orbits are the conjugacy classes of elements of $G$. The stabilizer of $g\in G$ is the centralizer  $C_G(g)$ of $g\in G$. Therefore, the orbit types are given by the conjugacy classes of those subgroups of $G$ which are centralizers of elements of $G$. The orbit space is usually referred to as the adjoint quotient of $G$.
+    \item  The actions of $G$ on itself by left and right translations are effective, free and transitive. Their restrictions to a proper Lie subgroup $H< G$ are still effective and free but no longer transitive. The action of $G$ on itself by inner automorphisms (conjugations $\Adg$) is neither free nor transitive, because the identity is invariant and the kernel is given by the center $\rmZ(G)$. Hence, the adjoint action is effective iff the center is trivial. Its orbits are the conjugacy classes of elements of $G$. The stabilizer of $g\in G$ is the centralizer  $\rmC_G(g)$ of $g\in G$. Therefore, the orbit types are given by the conjugacy classes of those subgroups of $G$ which are centralizers of elements of $G$. The orbit space is usually referred to as the adjoint quotient of $G$.
     \item The action of $G$ on the homogeneous space $G\slash H$, where $H\sube G$ is a nontrivial closed subgroup, by the induced left translations $\wh{L}_g$ is transitive but not free. The stabilizer of a coset $gH$, $g\in G$, is given by $G_{gH}=gHg^{-1}$. Consequently, the kernel of the action is given by $\bigcap_{g\in G}gHg^{-1}$. It lies between $\rmZ(G)\cap H$ and $H$ itself, the latter being the case when $H$ is normal.
     \item For the action of $G=\bbR$ on $M$ defined by the flow $F^X$ of a complete vector field $X\in\fX(M)$, the orbit map of a point $m\in M$ is given by the maximal integral curve $F^X_m$. The stabilizer is $G_m=\bbR$ in the case $X_m=0$, $G_m=\bbZ T$ if the integral curve is periodic with period $T$, and $G_m=\{0\}$ otherwise. Since $G$ is abelian, the orbit types correspond bijectively to the subgroups which appear as stabilizers.
 \end{enumerate}

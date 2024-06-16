@@ -1798,7 +1798,7 @@ actually defines a global volume form, or \emph{area form}, on $\Sigma$. The fol
 
 \begin{prop}
     An immersed surface $\bf{x}:U\to \bbE^3$ is minimal iff it is a stationary point of the area functional, defined locally in coordinates $(u,v)$ on $U$ in terms of the induced metric $\sfg$ (First Fundamental Form) by
-    \[A[\bf{x}]\coloneqq \iint \sqrt{EG-F^2}\dd u\dd v=\iint \sqrt{\det\sfg}\dd u\dd v.\]
+    \[\mathsf{vol}[\bf{x}]\coloneqq \iint \sqrt{EG-F^2}\dd u\dd v=\iint \sqrt{\det\sfg}\dd u\dd v.\]
 \end{prop}
 \begin{proof}
     The statement is local, so fix an orthonormal framing $(e_1,e_2,e_3)$ along $\bm{x}(U)$ and let $\bf{x}^t(u,v)$ be a deformation of $x$, i.e.~a smooth homotopy of immersions with $t\in (-\epsilon,\epsilon)$ for some $\epsilon>0$ and $\bf{x}^0=\bf{x}$. We assume that the deformation is nontrivial, i.e.\ $\dot{\bf{x}}$ is not tangent to $\Sigma$. Then for small $t$ we have 
@@ -2071,8 +2071,8 @@ Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$,
 
 \begin{figure}[tp]
     \centering
-    \includegraphics[scale=0.5]{figures/helicoid.jpeg}
-    \caption{A $1$-parameter family of minimal ($H=0$) isometric immersions of a surface connecting the helicoid (top left) to the catenoid (bottom right).}
+    \includegraphics[scale=0.5]{figures/helicoid.pdf}
+    \caption{A $1$-parameter family of minimal ($H=0$) isometric immersions of a surface connecting the helicoid (top left) to the catenoid (bottom right). From \cite{Spivak3}.}
     \label{fig:helicoid}
 \end{figure}
 
@@ -2597,7 +2597,13 @@ Often it will be convenient to identify $V$ with $\bbR^n$ and $W$ with $\bbR^s$ 
     The integral manifolds coframed by $\{\theta^i\}_{i=1}^3$ are locally precisely the triply orthogonal webs. The reader can find the characters: $(s_1,s_2,s_3)=(0,3,0)$, and the integral elements coframed by $\{\theta^i\}$ form a manifold of dimension $12$ (parametrized by a choice of a point of $P$ and $3\times 2=6$ coefficients determining the values of $\omega^i{}_j$). Again we conclude involution. As a result, triply orthogonal webs exist locally and depend on $3$ functions of $2$ variables.
 \end{example}
 
-
+\begin{hrem*}
+    The classification of webs is equivalent to Cartan's equivalence problem for certain differential equations. in 1908, he posed the problem of the equivalence of two ODE's:
+    \[y_x=f(x,y),\quad \text{ and }\quad Y_X=F(X,Y),\]
+    with respect to coordinate transformations that don't mix the coordinates:
+    \[\wh{x}=X(x),\quad \wh{y}=Y(y).\label{6914}\]
+    This transformation leaves invariant the coordinate lines $x=a$, $y=b$ in the $xy$-plane as well as the integral lines of the equations. These three families of lines form a $3$-web \emph{in the plane}. Thus, the problem considered by Cartan is equivalent to classifying curvilinear $3$-webs in the plane. He distinguished $3$ classes of ODE's of the above type: those admitting a $3$-parameter group of transformations (\ref{6914}), those admitting a $1$-parameter such group, and those not admitting any such symmetries. This corresponds to $3$ classes of $3$-webs in the plane.
+\end{hrem*}
 
 In the rest of this \subsect, we will develop a test for a tableau such that if it passes, we will know exactly what initial data one should specify to determine an analytic solution. Given a tableau $A$, we can try to look for an analytic solution in the form of a power series ansatz
 \[u^a(x)=p^a+p^a_i x^i p^a_{ij}x^ix^j+p^a_{ijk}x^ix^jx^k+\cdots.\]
@@ -3154,11 +3160,11 @@ Note that isothermal coordinates allow us to construct canonical parametrization
 Crucially, the metric $\sfg$ on a surface cannot be recovered just from its conformal factor $\lambda^2$ in isothermal coordinates. In other words, not any two metrics on a surface are locally conformally equivalent. In the next example we characterize the intrisic information contained in $\lambda^2$.
 
 \begin{example}[Liouville equation]\index{Equation!Liouville}
-    Surfaces with given Gauss curvature have an especially simple description in isothermal coordinates. If the metric (i.e.\ First Fundamental Form) is $\sfg=\lambda^2(\dd x^2+\dd y^2)$, then, by (\ref{eq K in orthogonal coords}),
-    \[K=-\frac{1}{2\lambda}\left(\left(\frac{\lambda_x}{\lambda}\right)_x+\left(\frac{\lambda_y}{\lambda}\right)_y \right)=-\frac{1}{2\lambda}(\partial_x^2+\partial_y^2)\ln\lambda.\]
-    In particular, when $K$ is constant, this equation for the unknown conformal factor $2\varphi\coloneqq \ln\lambda$ is called the \emph{Liouville equation}:
-    \[\Delta \varphi+K\rme^{2\varphi}=0,\label{eq liouville general}\]
-    where $\Delta=\partial_x^2+\partial_y^2$ is the Laplace operator.
+    Surfaces with given Gauss curvature have an especially simple description in isothermal coordinates. If the metric (i.e.\ First Fundamental Form) is $\sfg=\lambda^2(\dd x^2+\dd y^2)$, then, by (\ref{eq K in orthogonal coords}) with $E=G=\lambda^2$,
+    \[K=-\frac{1}{\lambda^2}\left(\left(\frac{\lambda_x}{\lambda}\right)_x+\left(\frac{\lambda_y}{\lambda}\right)_y \right)=-\frac{1}{\lambda^2}(\partial_x^2+\partial_y^2)\ln\lambda.\label{eq K in isothermal coords}\]
+    In particular, when $K$ is constant, the conformal factor $\varphi\coloneqq \ln\lambda$ is called the \emph{Liouville equation}:
+    \[\Delta_0 \varphi+K\rme^{\varphi}=0,\label{eq liouville general}\]
+    where $\Delta_0=\partial_x^2+\partial_y^2$ is the ``flat'' Laplace operator.
 \end{example}
 
 Thus, $\lambda^2$ and $K$ contain the same local information about the metric (up to the necessary boundary conditions that guarantee a unique solution of Liouville's equation). The rest of the information about the metric, namely the conformal structure, is contained in the isothermal coordinates themselves. We will later identify this information with a \emph{complex structure} on the surface.
@@ -4016,7 +4022,46 @@ For example, the famous \emph{1-soliton}\index{soliton} solution (also called a 
 \[u=2\arctan(c\exp(\lambda x+\lambda^{-1}y)),\quad c\neq 0, \lambda\neq 0,\label{eq SGE 1-soliton}\]
 gives the standard \emph{pseudosphere} when $\lambda^2=1$ and \emph{Dini's surfaces} when $\lambda^2\neq 1$, see Figure~\ref{fig: SGE 1-soliton}.\index{Pseudosphere}\index{Dini's surface} (Note that $c$ can be assumed to be $1$ after a shift and/or flip of one of the axes.)
 
-A theorem of Hilbert states that pseudospherical surfaces in Euclidean space cannot be geodesically complete (i.e.\ geodesics terminate in finite time). The standard proof proceeds by showing that the area of \emph{any} net parallelogram (of any size) has area bounded by a constant. However, a simply connected complete surface of constant negative curvature has necessarily infinite area, which leads to a contradiction. This was one of the earliest global results in differential geometry.
+\begin{figure}[tp]
+    \centering 
+    \includegraphics[scale=0.8]{figures/poincare.png}
+    \caption{Poincar\'e's hyperbolic half-plane and disk models with some of their geodesics.}
+    \label{fig:hyperbolic plane}
+\end{figure}
+
+\begin{example}[Hyperbolic plane and disk]
+    The hyperbolic (half-)plane is the set $\bbC^+=\{z=x+\i y\in\bbC\mid \Im z>0\}$ with the Riemannian metric 
+    \[\sfg=\frac{|\dd z|^2}{(\Im z)^2}=\frac{\dd x^{\otimes 2}+\dd y^{\otimes 2}}{y^2}.\]
+    This metric is conformal to the Euclidean one with the conformal factor of $\lambda^2=\frac{1}{y^2}$. The Gauss curvature is found from formula (\ref{eq K in isothermal coords}): $K=\frac12y^2\partial_y^2\ln y=-1$. The geodesics of this surface are semi-circles perpendicular to the $x$-axis and vertical lines.
+    
+    Another hyperbolic surface of constant negative curvature is the \emph{hyperbolic disk}  $\bbD\coloneqq \{z=x+\i y\in\bbC \mid |z|<1\}$ with the metric 
+    \[\sfg=\frac{|\dd z|^2}{(1-|z|^2)^2}=\frac{\dd x^{\otimes 2}+\dd y^{\otimes 2}}{(1-x^2-y^2)^2}.\]
+    It is easy to check that $K=-1$ again, and in fact the disk model is isometric to the half-plane one with the isometry given by the biholomorphic \emph{Cayley transform}\index{Cayley transform} 
+    \[\bbC^+\to \bbD,\quad z\mapsto \frac{z-\i }{z+\i}.\]
+    Since this is a M\"obius transformation, it takes circles and lines to circles and lines. As a consequence, the geodesics of the disk model are diametric lines and arcs of circles perpendicular to the bounding circle, see Figure~\ref{fig:hyperbolic plane}.
+\end{example}
+
+
+A Riemannian surface $(\Sigma,\sfg)$ is called \emph{(geodesically) complete} if every geodesic $\gamma(t)$ on it can be extended to all $t\in\bbR$. Equivalently, all vector fields of bounded norm are complete. The following theorem of Hilbert states that pseudospherical surfaces in Euclidean space cannot be complete. This was one of the earliest \emph{global} results in differential geometry. 
+
+\begin{thm}[Hilbert (1901)]\index{Theorem!Hilbert}
+    There is no complete immersed surface of constant negative Gauss curvature in $\bbE^3$.
+\end{thm}
+\begin{proof}
+    Hilbert's original proof is a bit lengthy because first one has to establish that the asymptotic lines of any \emph{complete} immersed surface of constant negative curvature can be extended endlessly. Detailed expositions of this proof can be found in \cite[\S5-11]{doCarmo} and \cite[p.~251]{Spivak3}.  We will instead take an advanced shortcut by using the Uniformization Theorem (widely believed to be true since 1882 but first proved by Poincar\'e only in 1907).
+
+    The Uniformization Theorem (in one of its formulations) states that the universal covering of any complete surface $\Sigma$ of constant negative curvature, say $K\equiv -1$, together with the pullback of the metric from $\Sigma$, is isometric to the hyperbolic plane $\bbC^+$. Now, if we prove that $\bbC^+$ cannot be isometrically immersed into $\bbE^3$, Hilbert's theorem will follow because the universal covering map $\pi:\bbC^+\to \Sigma$ is a local isometry, and so any isometric immersion  $\bf{x}:\Sigma\to \bbE^3$ would allow us to define an isometric immersion $\bf{x}\circ \pi:\bbC^+\to \bbE^3$ (note that we never required the immersions to be injective), leading to a contradiction.
+
+    Now let $2u$ be the solution of the sine-Gordon equation $(2u)_{xy}=\sin 2u$ correspoding to $\bf{x}(\bbC^+)$. Here $(x,y)$ are the asymptotic coordinates on $\bf{x}(\bbC^+)$, not to be confused with the Cartesian coordinates on $\bbC^+$. Since $\bf{x}$ is an immersion, this surface must have linearly independent asymptotic directions at each point, and hence 
+    \[0<u(x,y)<\frac{\pi}{2},\quad (x,y)\in \bbC^+.\]
+    Now consider a rectangle $R=[a,b]\times [c,d]\subset\bbC^+$ and compute the area of the quadrilateral $\bf{x}(R)$:
+    \begin{multline}
+        \mathsf{vol}\left[\restr{\bf{x}}{R}\right]=\int_R \sqrt{\det \sfg}\dd x\dd y=\int_R \sin 2 u\dd x\dd y=\int_R (2u)_{xy}\dd x\dd y=\\
+        =2(u(b,d)-u(b,c)-u(a,d)+u(a,c))<2\pi.
+    \end{multline}
+    Since $\bbC^+$ is complete and simply connected, its asymptotic coordinates are globally defined, so the rectangle $R$ can be made arbitrarily large. Since the area of $\bbC^+$ is infinite, the area of $R$ can become arbitrarily large. This contradicts the above result showing that $\bf{x}(R)$ has bounded area, since $\bf{x}$ is supposed to be an isometry.
+\end{proof}
+
 
 Hence, even if the sine-Gordon solution is defined for all $x$ and $y$, the corresponding surface will become singular. In fact, $\theta^1\wedge\theta^2=\sin 2u \dd x\wedge \dd y$ shows that the surface will be singular whenever $u$ is a multiple of $\pi/2$, i.e.\ when the asymptotic lines are tangent to each other. This is why the surfaces in Figure~\ref{fig: SGE 1-soliton} have singularities and are made by joining two pseudospherical surfaces along an edge: the values of the $1$-soliton solution always span $(0,\pi)$.
 
@@ -4435,7 +4480,7 @@ Note that in the case of principal bundles the complicated condition on the valu
     Conversely, given a flat connection $\tra$, we can cover the base manifold with contractible open sets $U_\alpha$, pick a basepoint $x_\alpha$ in each, and use parallel transport along the paths $x_\alpha\leadsto y_\alpha$ inside $U_\alpha$ to obtain diffeomorphisms $\varphi_{\alpha,y_\alpha}:E_{y_\alpha}\to E_{x_\alpha}$ for all $y_\alpha\in U_\alpha$. Due to flatness these diffeomorphisms depend only on $y_\alpha$. Hence we can define a map $\pi^{-1}(U_\alpha)\to U_\alpha\times E_{x_\alpha}$ by $\chi_\alpha(p)=(\pi(p),\varphi_{\alpha,\pi(p)}(p))$. Further we can choose arbitrary diffeomorphisms compatible with the $G$-structure of the bundle between each $E_{x\alpha}$ and the typical fiber $F$. This allows us to treat $\chi_\alpha$'s as local trivializations. The transition functions between them are constant because they can be written in terms of these fixed diffeomorphisms and the transport diffeomorphisms $E_{x_\alpha}\to E_{x_\beta}$, which are entirely independent of any other points in the base.
 \end{proof}
 
-An obvious consequence of the definition of parallel transport is that it endows the bundle with \emph{unique horizontal path liftings}: given a path $\gamma:I\to M$ and a point $p\in\pi^{-1}(\gamma(0))$, its horizontal lifting is the smooth path $\wt{\gamma}(t)=\tra_{\restr{\gamma}{[0,t]}}(p)$. By doing this for all paths through $m\in M$ and all $p\in E_m$, each parallel transport functor induces a distribution $\calH E<TE$ consisting of ``horizontal'' vectors. This leads to our second definition of a connection.
+An obvious consequence of the definition of parallel transport is that it endows the bundle with \emph{unique horizontal path liftings}: given a path $\gamma:I\to M$ and a point $p\in\pi^{-1}(\gamma(0))$, its horizontal lifting is the smooth path $\wt{\gamma}(t)=\tra_{\restr{\gamma}{[0,t]}}(p)$. By doing this for all paths through $m\in M$ and all $p\in E_m$, each parallel transport functor induces a distribution $\calH E<TE$ consisting of ``horizontal'' vectors. This leads to our second definition of a connection (as we will see, it is a bit more general than Definition I).
 
 
 \begin{defn}[Connection II: general connection]
@@ -4454,9 +4499,9 @@ One thing to note immediately is that the map $X\mapsto \ver X$ is  $C^\infty(E)
     \[\ver X=\calV(X),\quad \hor X=X-\calV(X).\]
 \end{defn}
 
-\begin{xca}
+\begin{rem}
     Crucially, at this point we are not able to take exterior derivatives of connection forms, since they take values in a vector bundle $\calV E$, and not a vector space. This situation will be remedied on principal bundles, whose vertical bundle is trivial and has a canonical trivialization (the Maurer-Cartan form).
-\end{xca}
+\end{rem}
 
 \begin{xca}
     Show that definitions II and III are equivalent, i.e.\ there is a one-to-one correspondence between subbundles $\calH E$ and one-forms $\calV$.
@@ -4464,7 +4509,7 @@ One thing to note immediately is that the map $X\mapsto \ver X$ is  $C^\infty(E)
 
 
 \begin{prop}
-    Let $\calV$ be a be a connection on $E\overset{\pi}{\to}M$. For any two horizontal vector fields $X,Y\in\Gamma^\infty(\calH E)$, their ``Lie bracket up to $\calH E$'', i.e.\ the value of $[X,Y]\mod H\in \Gamma^\infty(TE\slash \calH E)$ at a point $p\in E$, is $C^\infty(E)$-linear. In particular, the question of involutivity can be answered pointwise.
+    Let $\calV$ be a be a connection on $E\overset{\pi}{\to}M$. For any two horizontal vector fields $X,Y\in\Gamma^\infty(\calH E)$, their ``Lie bracket up to $\calH E$'', i.e.\ the value of $([X,Y]\mod \calH E)\in \Gamma^\infty(TE\slash \calH E)$ at a point $p\in E$, is $C^\infty(E)$-linear. In particular, the question of involutivity can be answered pointwise.
 \end{prop}
 \begin{proof}
     Let $\alpha\in\Omega^1(E)$. The chain rule and Cartan's formula imply
@@ -4483,7 +4528,7 @@ We have thus identified the following \emph{tensor field} that quantifies the ob
 \begin{defn}[General curvature form]\index{Curvature!general}
     Given a general connection $\calV$ on a bundle $E$, the general curvature $2$-form $\calR\in \Omega^2(E;\calV E)$ is defined by
     \[\calR(X,Y)\coloneqq -\calV([\hor X,\hor Y])=-\calV([X-\calV(X),Y-\calV(Y)]).\]
-    Its value is the unique representative of $[\hor X,\hor Y]\mod \calH E$ that lies in $\ker(\hor)$. The general connection $\calV$ is called \emph{flat} if $\calR=0$ everywhere.
+    Its value is the unique representative of $[\hor X,\hor Y]\mod \calH E$ that lies in $\ker(\hor)$. The general connection $\calV$ is called \emph{flat} if $\calR\equiv 0$.
 \end{defn}
 
 
@@ -4492,7 +4537,7 @@ We have thus identified the following \emph{tensor field} that quantifies the ob
 \end{xca}
 
 It follows from the definition of a connection that the restriction of $\pi_{\ast p}$ to $\calH_pE$ defines a linear isomorphism to $T_{\pi(p)}M$.
-This allows us to lift a vector $v\in T_{\pi(p)}M$ to a unique horizontal vector $v^h\in \calH_pE$. Applying this pointwise to a vector field $X\in\fX(M)$, we construct the \emph{horizontal lift} $X^h:E\to \calH E\subset TE$. This is again a smooth vector field since it can be written as the composition
+This allows us to lift a vector $X_m\in T_{\pi(p)}M$, $m=\pi(p)$, to a unique horizontal vector $X_p^h\in \calH_pE$. Applying this pointwise to a vector field $X\in\fX(M)$, we construct the \emph{horizontal lift} $X^h:E\to \calH E\subset TE$. This is again a smooth vector field since it can be written as the composition
 \[E\overset{\id_E\times \pi_{TM}}{\longrightarrow}E\times M \overset{\id_E\times X}{\longrightarrow}\pi^\ast TM \overset{i}{\longrightarrow}\calH E\subset TE,\]
 where $i$ is the inclusion, we understand the pullback bundle $\pi^\ast TM$ to be embedded in $E\times TM$, and where $\pi_{TM}:TM\to M$ is the bundle projection. How are the flows of $X$ and $X^h$ related? If $\gamma$ is an integral curve of $X^h$, then $\pi\circ\gamma$ is clearly an integral curve of $X$, so we see that 
 \[\pi\circ F^{X^h}_t=F^{X}_t\circ \pi.\]
@@ -4553,7 +4598,7 @@ We now examine to what extent a connection $\calV$ determines parallel transport
 \begin{proof}
     The standard proof is the following. Let $F$ be the typical fiber and let $\chi_\alpha:\pi^{-1}(U_\alpha)\to U_\alpha\times F$ be a local trivialization for $E$ around $\gamma(0)$. Property (2) can equivalently be states as demanding that $\calV(\frac{\dd}{\dd t}T_\gamma(p,t))=0$. In the local chart this condition becomes
     \[\frac{\dd}{\dd t}\Phi_\gamma(p',t)=-\Gamma^\alpha\left(\dot\gamma(t),\Phi_\gamma(p',t)\right),\]
-    whee $\Phi_\gamma(p',t)=\pr_2\circ \chi_\alpha\circ T_\gamma(\chi_\alpha^{-1}(p'),t)\in F$. Now, the right hand side of this equation is a smooth time-dependent vector field, therefore from general theory of ODEs this equation has a unique maximal integral solution $\Phi_\gamma:U_\gamma'\to U_\alpha\times F$ on some open domain $D_\gamma'\subset U_\alpha\times F\times I$. Since $\chi_\alpha$ is a diffeomorphism, we obtain a map $T_\gamma:\calD_\gamma\to E$ by $T_\gamma(p,t)=\chi_\alpha^{-1}(\gamma(t),\Phi_\gamma(\chi_\alpha(p),t))$.
+    where $\Phi_\gamma(p',t)=\pr_2\circ \chi_\alpha\circ T_\gamma(\chi_\alpha^{-1}(p'),t)\in F$. Now, the right hand side of this equation is a smooth time-dependent vector field, therefore from general theory of ODEs this equation has a unique maximal integral solution $\Phi_\gamma:U_\gamma'\to U_\alpha\times F$ on some open domain $D_\gamma'\subset U_\alpha\times F\times I$. Since $\chi_\alpha$ is a diffeomorphism, we obtain a map $T_\gamma:\calD_\gamma\to E$ by $T_\gamma(p,t)=\chi_\alpha^{-1}(\gamma(t),\Phi_\gamma(\chi_\alpha(p),t))$.
 
     Property (3) is also easily checked. Indeed, write $\gamma^h(t)\coloneqq T_\gamma(p,t)$ for a horizontal lift of $\gamma$. Then $\frac{\dd}{\dd s}(\gamma^h\circ \phi(s))=\dot\phi(s)\cdot \gamma^{h\prime}(\phi(s))$, and $\pi\circ\gamma^h\circ\phi=\gamma\circ\phi$, so $\gamma^h\circ\phi$ is a horizontal lift of $\gamma\circ\phi$. Finally, $\gamma^h\circ\phi(0)=T_\gamma(p,\phi(0))$, so the conclusion follows from uniqueness.
 \end{proof}
@@ -5584,12 +5629,12 @@ Its image $\Hol_p(\omega)< G$ is the holonomy group based at $p\in P_m$, and its
 
 \begin{prop}
     The restriction map $\Gau(P)_\omega\to \Diff(P_m)^G$, $\vartheta\mapsto \vartheta_m\coloneqq\restr{\vartheta}{P_m}$ is injective and defines an isomorphism of the stabilizer $\Gau(P)_\omega$ with the centralizer in $G$ of the holonomy group:
-    \[\Gau(P)_\omega\cong C_G(\Hol_p(\omega)).\]
+    \[\Gau(P)_\omega\cong \rmC_G(\Hol_p(\omega)).\]
 \end{prop}
 \begin{proof}
     A gauge transformation preserves $\omega$ iff it preserves $\calH P$. Equivalently, by Lemma~\ref{lem 31794} (applied to $\vartheta^{-1}$), $\vartheta\in\Gau(P)_\omega$ iff for all paths $\gamma:[0,1]\to M$, $\vartheta$ commutes with parallel transport:
     \[\vartheta(\gamma(1))=\tra_\gamma^\omega\circ \vartheta(\gamma(0))\circ(\tra_\gamma^\omega)^{-1}.\label{18041}\]
-    Taking paths with $\gamma(0)=m$, it follows that if $\vartheta_m=\id_{P_m}$, then $\vartheta=\id_P$. That is, the map $\vartheta\mapsto\vartheta_m$ is injective. Taking $\gamma\in C(m)$, (\ref{18041}) shows that $\vartheta_m$ centralizes $\Hol_p(\omega)$. Conversely, if $\vartheta_m\in C_G(\Hol_p(\omega))$, then we can define $\vartheta$ fiberwise by putting
+    Taking paths with $\gamma(0)=m$, it follows that if $\vartheta_m=\id_{P_m}$, then $\vartheta=\id_P$. That is, the map $\vartheta\mapsto\vartheta_m$ is injective. Taking $\gamma\in C(m)$, (\ref{18041}) shows that $\vartheta_m$ centralizes $\Hol_p(\omega)$. Conversely, if $\vartheta_m\in \rmC_G(\Hol_p(\omega))$, then we can define $\vartheta$ fiberwise by putting
     \[\vartheta_{m'}\coloneqq \tra_\gamma^\omega\circ \vartheta_m\circ (\tra_\gamma^\omega)^{-1},\]
     where $\gamma$ is any path $m\leadsto m'$. The condition $\vartheta\in \Gau(P)_\omega$ guarantees that the right hand side does not depend on the choice of $\gamma$ and hence globally defines a smooth automorphism.
 \end{proof}

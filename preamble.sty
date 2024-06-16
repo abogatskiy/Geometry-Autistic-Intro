@@ -72,7 +72,8 @@
 \usepackage[activate={true},step=1,tracking=true,kerning=true,spacing=false,factor=1100,stretch=20,shrink=20]{microtype}%text appearance improvements
 \UseMicrotypeSet[protrusion]{basictext}
 %\microtypecontext{spacing=nonfrench}
-%\DisableLigatures[N]{encoding=*, family =*}
+\DisableLigatures[N]{encoding=*, family =*}
+\SetTracking{encoding=*, shape=sc}{0} %reduce spacing in small caps
 
 \usepackage{titlesec} %change title spacing for sections
 \titlespacing*{\section}
@@ -521,6 +522,146 @@
 \newcommand\wb[1]{\hstretch{1.42}{\bar{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
 
 
+
+
+
+
+
+% WIDTH OF CAPTIONS
+\usepackage{caption}
+\usepackage{subcaption}
+% \captionsetup{width=0.6\columnwidth}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{csquotes}
+
+% \usepackage[backend=biber,
+% sorting=none, % nyt for alphabetical sorting, none for citation order
+% backref=true,
+% sortcites=true,
+% firstinits=true,
+% language=english,
+% maxbibnames=99,
+% isbn=false,url=false,doi=false,eprint=false
+% ]{biblatex}
+\AtBeginDocument{
+
+%\AtEveryBibitem{\clearfield{month}} %remove day and month from dates
+%\AtEveryBibitem{\clearfield{day}}
+
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\iffieldundef{url}{\printfield{doi}}{}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {\usebibmacro{url+urldate}}
+    {}}
+
+\newbibmacro{string+doiurlisbn}[1]{%
+  \iffieldundef{url}{%
+    \iffieldundef{doi}{%
+     \iffieldundef{eprint}{%
+      \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+          #1%
+        }{%
+          \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
+        }%
+      }{%
+        \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
+      }%
+     }{
+        \href{http://arxiv.org/abs/\thefield{eprint}}{#1}
+     }%
+    }{%
+      \href{http://dx.doi.org/\thefield{doi}}{#1}%
+    }%
+  }{%
+    \href{\thefield{url}}{#1}%
+  }%
+}
+
+
+\renewbibmacro*{journal}{%
+  \ifboolexpr{ test {\ifcitation} and not test {\iffieldundef{shortjournal}} }
+    {\printfield[journaltitle]{shortjournal}}
+    {\iffieldundef{journaltitle}
+       {}
+       {\printtext[journaltitle]{%
+          \printfield[titlecase]{journaltitle}%
+          \setunit{\subtitlepunct}%
+          \printfield[titlecase]{journalsubtitle}}}}}
+
+\renewbibmacro*{journal+sub}{%
+  \ifboolexpr{ test {\ifcitation} and not test {\iffieldundef{shortjournal}} }
+    {\printfield[journaltitle]{shortjournal}}
+    {\iffieldundef{journaltitle}
+       {}
+       {\printtext[journaltitle]{%
+        \printfield[noformat]{journaltitle}%
+        \setunit{\addcolon\addspace}%
+        \printfield[noformat]{journalsubtitle}}}}}
+
+\DeclareSourcemap{%
+  \maps[datatype=bibtex]{
+    % Journal abbreviations
+    \map[overwrite]{
+      \step[fieldsource=shortjournal]
+      \step[fieldset=journaltitle,origfieldval]
+    }
+  }
+}
+
+% remove "in" word before journal name for articles
+%\renewbibmacro{in:}{}
+\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+
+% removes period at the very end of bibliographic record
+\renewcommand{\finentrypunct}{}
+
+% back reference text preceding the page number ("see p.")
+\DefineBibliographyStrings{english}{%
+    backrefpage  = {\lowercase{s}ee p.}, % for single page number
+    backrefpages = {\lowercase{s}ee pp.} % for multiple page numbers
+}
+
+% removes period after DOI and suppresses capitalization
+% of the word following DOI ("See p. xx" -> "see p. xx")
+%\renewcommand{\newunitpunct}{\addspace\midsentence}
+
+\DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{#1}}
+\DeclareFieldFormat[article, incollection, inproceedings]{title}{\usebibmacro{string+doiurlisbn}{\mkbibquote{#1}}}
+\DeclareFieldFormat{journaltitle}{\mkbibemph{#1},} % italic journal title with comma
+\DeclareFieldFormat[inbook,thesis]{title}{\mkbibemph{#1}\addperiod} % italic title with period
+\DeclareFieldFormat[article]{volume}{\textbf{#1}} % makes volume of journal bold and adds colon
+\DeclareFieldFormat{pages}{#1} % removes pagination (p./pp.) before page numbers
+
+\usepackage{setspace} % to change line spacing in bibliography with \setstretch
+\renewcommand*{\bibfont}{\small}
+
+} % end of AtBeginDocument{...}
+
+\usepackage[backend=biber, bibstyle=custom-numeric-comp,citestyle=numeric, sorting=nyt, backref=false, sortcites=true, firstinits=true, language=english, maxbibnames=6, isbn=false, url=false, doi=false, eprint=false]{biblatex}
+\renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+
+\addbibresource{bib.bib}
+
+
+
+
+%%%%%%%%%%             %%%%%%%%%%%%%%%%%
+%%%%%%%%%%   GLOSSARY  %%%%%%%%%%%%%%%%%
+%%%%%%%%%%             %%%%%%%%%%%%%%%%%
 
 \usepackage[acronym]{glossaries}
 \makeglossaries
