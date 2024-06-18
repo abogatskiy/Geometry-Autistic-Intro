@@ -2828,16 +2828,16 @@ The main property of regular values of smooth maps is that they are generic, as 
 \subsection{Inverse \& Implicit Mapping Theorems}
 
 In this section we just recall the statements of two basic theorems in multivariable calculus.
-\begin{thm}[\Gls{inmt}]\label{InMT}\index{Theorem!Inverse mapping}
-    Let $U,V\subset\bbR^n$ be open and $f\in C^\infty(U,V)$. If the Jacobi matrix $\frac{\partial f^i}{\partial x^j} (a)$ is invertible for some $a\in U$, then there are neighborhoods $a\in U_a\subset U$ and $f(a)\in V_{f(a)}\subset V$ such that $\restr{f}{U_a}:U_a\to V_{f(a)}$ is a diffeomorphism.
+\begin{thm}[\gls{inmt}]\label{InMT}\index{Theorem!Inverse mapping}
+    Let $U,V\subset\bbR^n$ be open and $f\in C^\infty(U,V)$. If the Jacobi matrix $\frac{\partial f^i}{\partial x^j} (\bf{a})$ is invertible for some $\bf{a}\in U$, then there are neighborhoods $\bf{a}\in U_{\bf{a}}\subset U$ and $f(\bf{a})\in V_{f(\bf{a})}\subset V$ such that $\restr{f}{U_{\bf{a}}}:U_{\bf{a}}\to V_{f(\bf{a})}$ is a diffeomorphism.
 \end{thm}
 Meaning: any smooth map whose Jacobi matrix is non-singular at a point is locally a diffeomorphism around that point.
 
-\begin{thm}[\Gls{immt}]\label{ImMT}\index{Theorem!Implicit mapping}
-    Let $U\subset \bbR^n\times \bbR^k$ be open, $(x,y)=(x^1,\ldots,x^n,y^1,\ldots,y^k)\in U$. Let $\Phi\in C^\infty(U,\bbR^k)$ and $\Phi(x,y)=c$. If the matrix $\left(\frac{\partial\Phi^i}{\partial y^j}(x,y)\right)_{i,j=1}^k$  is non-singular, then there are open neighborhoods $x\in V_x\subset \bbR^n$ and $y\in W_y\subset\bbR^k$ and a smooth map $f\in C^\infty (V_x,W_y)$ such that 
-\[\forall\,(v,w)\in V_x\times W_y,\;\; \Phi (v,w)=c \Leftrightarrow w=f(v).\]
+\begin{thm}[\gls{immt}]\label{ImMT}\index{Theorem!Implicit mapping}
+    Let $U\subset \bbR^n\times \bbR^k$ be open, $(\bf{x},\bf{y})=(x^1,\ldots,x^n,y^1,\ldots,y^k)\in U$. Let $\Phi\in C^\infty(U,\bbR^k)$ (with components $\Phi^j$) and $\Phi(\bf{x},\bf{y})=\bf{c}$ for all $(\bf{x},\bf{y})\in U$. If the matrix $\left(\frac{\partial\Phi^i}{\partial y^j}(\bf{y},\bf{x})\right)_{i,j=1}^k$  is non-singular, then there are open neighborhoods $\bf{x}\in V_{\bf{x}}\subset \bbR^n$ and $\bf{y}\in W_{\bf{y}}\subset\bbR^k$ and a smooth map $f\in C^\infty (V_{\bf{x}},W_{\bf{y}})$ such that 
+\[\forall\,(\bf{v},\bf{w})\in V_{\bf{x}}\times W_{\bf{y}},\;\; \Phi (\bf{v},\bf{w})=\bf{c} \Leftrightarrow \bf{w}=f(\bf{v}).\]
 \end{thm}
-Meaning: the equation $\Phi(x,y)=c$ can be locally solved for $y=y(x)$ if the matrix $\partial\Vec{\Phi}/\partial\Vec{y}$ is invertible.
+Meaning: the equation $\Phi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for $\bf{y}=\bf{y}(\bf{x})$ if the matrix $\partial \Phi/\partial\bf{y}$ is invertible.
 
 \begin{comment}
 \PRLsep
@@ -2847,7 +2847,7 @@ Meaning: the equation $\Phi(x,y)=c$ can be locally solved for $y=y(x)$ if the ma
 \end{comment}
 
 \subsection{Tangent spaces}
-    In $\bbR^n$, vectors don't have ``base points'' becase they can always be parallel transported to the origin. On a manifold, this is impossible, which is why there is a tangent space ``attached'' to every point $p\in M$. 
+    In $\bbR^n$, vectors don't have ``base points'' because they can always be parallel transported to the origin. On a manifold, this is impossible without additional structure, which is why there is a tangent space ``attached'' to every point $p\in M$. 
 \begin{defn}[Tangent vector]\index{Tangent vector}\index{Vector}
     Let $p\in M$. If $p\in \mathring M$, consider all curves $\gamma\in C^\infty((-1,1),M)$ such that $\gamma(0)=p$. If $p\in \partial M$, consider instead all curves with domains $(-1,0]$ or $[0,1)$. Introduce the equivalence relation $\gamma_1\sim \gamma_2$  iff $\restr{\frac{\dd}{\dd t}}{t=0}(\varphi_\alpha\circ \gamma_1)(t)=\restr{\frac{\dd}{\dd t}}{t=0}(\varphi_\alpha\circ \gamma_2)(t)$ for any chart $\varphi_\alpha$ around $p$. A tangent vector at $x$ is an equivalence class $[\gamma]_p$ of curves passing through $p$. The set of all tangent vectors at $p$ is denoted by $T_p M$.
 \end{defn}
