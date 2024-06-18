@@ -6,6 +6,11 @@
 
 **Reading guidance**: top-level ``parts'' of the book (Roman numerals) are well separated so that cross-references between them are pretty minimal. Thus, for example, if you are broadly familiar with the topics in parts 1-3, you are probably safe reading from part 4.
 
+
+##    If you would like to support the continuing work on this book, consider buying me a coffee: 
+##    https://buymeacoffee.com/abogatskiy
+
+
 # Description
 
 These notes started when I, along with my friend Umang Mehta, taught a series of seminars to our fellow physics grad students at UChicago in 2018/19. My desire to do so was based, in part, on the fact that another friend of mine, Sam Pramodh, taught me many of these topics in a similar fashion two years earlier.
