@@ -2097,7 +2097,7 @@ Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$,
 \begin{example}[Helicoid]\label{ex helicoid}
     Let $a>0$ be a constant and consider the following map $\bf{x}:\bbR^2\to \bbR^3$:
     \[\bf{x}(s,t)=(s\cos t,s\sin t,at).\]
-    Its image is called the \emph{helicoid}. Note that the $z$-axis is contained in the surface, as is a horizontal line emanating out of each point on the $z$-axis, and this line rotates as we move up the $z$-axis.
+    Its image is called the \emph{helicoid}.\index{Helicoid} Note that the $z$-axis is contained in the surface, as is a horizontal line emanating out of each point on the $z$-axis, and this line rotates as we move up the $z$-axis.
     
     We now compute the first-order adapted frame $\frake:\bbR^2\to \bbE^3$ for the helicoid (as usual, we identify the surface with its domain in $\bbR^2$ under the parametrization). Note that 
     \begin{align}
@@ -4171,24 +4171,27 @@ Here, the integral is a contour integral of a holomorphic $1$-form, taken from a
 Note that, generally, $g$ is allowed to be a meromorphic function on a domain with nontrivial topology ($\gamma$ takes values in $\bbS^2=\CP^1$, and thus can have poles), which allows $\Sigma$ to have nontrivial topology as well. Moreover, it is obvious from the formulas that the Weierstrass parametrization is regular as long as the poles of $g$ coincide with (and are at most half of the order of) the zeros of $f$.
 
 \begin{cor}[Weiestrass-Enneper representation]\index{Weierstrass-Enneper representation}
-    Each nonplanar minimal surface $\Sigma<\bbE^3$ is determined, up to rigid motions, by its Weierstrass data consisting of a meromorphic function $g:\Sigma\to \CP^1$ and a $1$-form $\theta\in\Omega^1(\Sigma;\bbC)$ that is holomorphic with respect to the complex structure on $\Sigma$ induced by the metric and orientation. Conversely, every such pair $(g,\theta)$ determines a minimal surface as long as the poles of $g$ overlap with zeros of $\theta$ so that $g^2\theta$ is holomorphic.
+    Each nonplanar minimal surface $\Sigma<\bbE^3$ is determined, up to rigid motions, by its Weierstrass data consisting of a meromorphic function $g:\Sigma\to \CP^1$ and a $1$-form $\theta\in\Omega^1(\Sigma;\bbC)$ that is holomorphic with respect to the complex structure on $\Sigma$ induced by the metric and orientation. Conversely, every such pair $(g,\theta)$ determines a minimal surface via (\ref{eq Weiestrass-Enneper}) as long as the poles of $g$ overlap with zeros of $\theta$ so that $g^2\theta$ is holomorphic.
 \end{cor}
 
-\begin{defn}[Conjugate surface]
-    Given a minimal surface $\bf{x}:\Sigma\to \bbE^3$ with Weierstrass-Enneper representation $(g,\theta)$, its conjugate surface is the surface obtained by multiplying $\theta$ by $\rmi$, or equivalently, by replacing $\Re$ with $\Im$ in (\ref{eq Weiestrass-Enneper}).
+We can immediately observe that multiplying $f$ (or $\theta$) by a unit complex number produces another valid minimal immersion of the same metric surface.
+
+\begin{defn}[Associate family, conjugate surface]\index{Associate family}\index{Conjugate surface}
+    Given a minimal surface $\bf{x}:\Sigma\to \bbE^3$ with Weierstrass-Enneper representation $(g,\theta)$, the one-parameter family of isometric minimal surfaces corresponding to $(g,\rme^{\i t}\theta)$, $t\in (0,2\pi)$, is called the associate family of minimal surfaces.
+    
+    In particular, the conjugate surface to $\Sigma$ is the surface obtained by multiplying $\theta$ by $\rmi$, or equivalently, by replacing $\Re$ with $\Im$ in (\ref{eq Weiestrass-Enneper}).
 \end{defn}
 
 \begin{example}[Catenoid and helicoid]
     The Weierstrass-Enneper representation for the catenoid as parametrized in Example~\ref{ex catenoid} (coordinates $(u,v)$ there are, in fact, isothermal) is 
-    \[f(z)=-\i a\rme^{-\i z},\quad g(z)=a\rme^{\i z},\quad a>0,\]
-    and its conjugate surface is the helicoid (although a slight reparametrization will be necessary to bring to the same form as in Example~\ref{ex helicoid}). The rest of this $1$-parameter family of surfaces is shown in Figure~\ref{fig:helicoid}.
+    \[f(z)=-\i \rme^{-\i z/a},\quad g(z)=\rme^{\i z/a},\quad a>0,\]
+    and its conjugate surface is the helicoid (although a slight reparametrization will be necessary to bring to the same form as in Example~\ref{ex helicoid}). This agrees with the standard way of picturing the Riemann surface of $z=\ln w$ as a helicoid. The rest of this $1$-parameter family of surfaces is shown in Figure~\ref{fig:helicoid}.
 \end{example}
 
-We also can observe that multiplying $f$ by a unit complex number $\rme^{\i t}$, $t\in (0,2\pi)$, will produce a one-parameter family of isometric minimal surfaces. The catenoid and helicoid are members of one such family.
 
 \begin{xca}
     \begin{enumerate}
-        \item Identify the surfaces corresponding to $f=1$ and $g$ being one of $0,z,z^{-1},\i z^{-1}$. 
+        \item Identify the surfaces corresponding to $f=1$ and $g$ being one of $0,z,z^{-1},\i z^{-1}$. The surface with $g(z)=z$ is called the \emph{Enneper surface}\index{Enneper surface} and is the only member of its associate family (in particular, conjugate to itself).
         \item Conclude that the surface obtained by using $(f,g)=(\cos^2\frac{z}{2},\tan\frac{z}{2})$ is regular, and identify it with one of the surfaces in item 1. This shows that the Weierstrass representation of a given minimal surface is not unique.
     \end{enumerate}
 \end{xca}
