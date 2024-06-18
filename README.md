@@ -1,5 +1,12 @@
 # Differential Geometry: an autistic introduction
 
+**TL;DR**: this is an attempt at a bottom-up approach to modern differential geometry, covering very deep topics in maximum detail with minimal prerequisites.
+
+**Prerequisites**: although a short reference section on point set topology is included, it is not comprehensive. Thus, apart from general calculus, some familiarity with basic topology definitely helps. In certain applications and examples, other topics such as PDE's or complex analysis will come in handy.
+
+**Reading guidance**: top-level ``parts'' of the book (Roman numerals) are well separated so that cross-references between them are pretty minimal. Thus, for example, if you are broadly familiar with the topics in parts 1-3, you are probably safe reading from part 4.
+
+# Description
 
 These notes started when I, along with my friend Umang Mehta, taught a series of seminars to our fellow physics grad students at UChicago in 2018/19. My desire to do so was based, in part, on the fact that another friend of mine, Sam Pramodh, taught me many of these topics in a similar fashion two years earlier.
 
