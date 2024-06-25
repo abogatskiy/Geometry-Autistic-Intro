@@ -4,26 +4,24 @@
 
 \subsection{Categories}
 
+The language of category theory is extremely useful throughout all modern mathematics, but historically it came out of developments in algebraic topology and geometry. Here we try to give a short but intuitive introduction that is focused on ``unlearning'' certain bad habits from traditional mathematics and pushing the reader towards this higher-level way of thinking, which will come in very handy for us later in geometry and group theory. For a more comprehensive introduction for beginners see for example \cite{Leinster, Perrone}.
+
 
 \begin{defn}[Categories]
-
-The language of category theory is extremely useful throughout all modern mathematics, but historically it came out of developments in algebraic topology and geometry. Here we tr
-y to give a short but intuitive introduction that is focused on ``unlearning'' certain bad habits from traditional mathematics and pushing the reader towards this higher-level way of thinking, which will come in very handy for us later in geometry and group theory. For a more comprehensive introduction for beginners see for example \cite{Leinster, Perrone}.
-
-A category\index{Category} $\mathcal{C}$ consists of
-\begin{enumerate}
-\item A class $\ob(\mathcal{C})$ of \emph{objects};
-\item For any $X,Y\in\ob(\mathcal{C})$ there is a set $\mor_{\mathcal{C}}(X,Y)$ (also denoted by $\Hom_{\mathcal{C}}(X,Y)$) of \emph{morphisms}\index{Morphism} (arrows) from $X$ to $Y$ with the following properties:
-\begin{enumerate}
-\item The set of morphisms is closed under \emph{composition}: $\forall f\in\mor(A,B)$
-and $\forall g\in\mor(B,C)$, $\exists h=fg=g\circ f\in\mor(A,C)$.
-\item The composition is associative, $\left(fg\right)h=f\left(gh\right)$.
-\item There is an identity morphism for every object: $\forall A\in\ob(\mathcal{C})$
-$\exists\,\id_{A}\in\mor(A,A)$ such that for any morphisms $f,g$ with
-appropriate domains and codomains, $\id_{A}f=f$ and $g\,\id_{A}=g$.
-\end{enumerate}
-\end{enumerate}
-The set $\mor(A,A)=\Hom(A,A)$ is also denoted $\End(A,A)$ or just $\End(A)$, its elements are called \emph{endomorphisms}\index{Endomorphism} of $A$.
+    A category\index{Category} $\mathcal{C}$ consists of
+    \begin{enumerate}
+    \item A class $\ob(\mathcal{C})$ of \emph{objects};
+    \item For any $X,Y\in\ob(\mathcal{C})$ there is a set $\mor_{\mathcal{C}}(X,Y)$ (also denoted by $\Hom_{\mathcal{C}}(X,Y)$) of \emph{morphisms}\index{Morphism} (arrows) from $X$ to $Y$ with the following properties:
+    \begin{enumerate}
+    \item The set of morphisms is closed under \emph{composition}: $\forall f\in\mor(A,B)$
+    and $\forall g\in\mor(B,C)$, $\exists h=fg=g\circ f\in\mor(A,C)$.
+    \item The composition is associative, $\left(fg\right)h=f\left(gh\right)$.
+    \item There is an identity morphism for every object: $\forall A\in\ob(\mathcal{C})$
+    $\exists\,\id_{A}\in\mor(A,A)$ such that for any morphisms $f,g$ with
+    appropriate domains and codomains, $\id_{A}f=f$ and $g\,\id_{A}=g$.
+    \end{enumerate}
+    \end{enumerate}
+    The set $\mor(A,A)=\Hom(A,A)$ is also denoted $\End(A,A)$ or just $\End(A)$, its elements are called \emph{endomorphisms}\index{Endomorphism} of $A$.
 \end{defn}
 
 Notice how the notation $fg$ for the composition where $f$ acts first and $g$ second is more natural for category theory than it is for set theory, because we usually don't refer to arguments of functions here, which means that we'll never have to write strange-looking formulas like $(fg)(x)=g(f(x))$. In the cases where we do need arguments, we will use the set-theoretical notation $g\circ f$. We will always use the set-theoretical notation outside of this section on categories.
@@ -40,30 +38,30 @@ being the objects of the category and the arrows being the morphisms.
 \end{example}
 
 \begin{example}
-The most basic example of a large category is the category $\mathsf{Set}$\index{Category!of sets},
-whose objects are all sets and the morphisms are all maps between
-sets, i.e.\ $\mor\left(A,B\right)=\mathrm{Map}\left(A,B\right)$. 
+    The most basic example of a large category is the category $\mathsf{Set}$\index{Category!of sets},
+    whose objects are all sets and the morphisms are all maps between
+    sets, i.e.\ $\mor\left(A,B\right)=\mathrm{Map}\left(A,B\right)$. 
 
-One \emph{subcategory} of $\mathsf{Set}$ is $\mathsf{FinSet}$,
-i.e.\ the category of finite sets. $\mathsf{FinSet}$ is a \emph{full
-subcategory} of $\mathsf{Set}$, meaning that $\mor_{\mathsf{FinSet}}(A,B)=\mor_{\mathsf{Set}}(A,B)$.
-In other words, a full subcategory is a subcategory in which only
-the class of objects is truncated and not the sets of morphisms.
+    One \emph{subcategory} of $\mathsf{Set}$ is $\mathsf{FinSet}$,
+    i.e.\ the category of finite sets. $\mathsf{FinSet}$ is a \emph{full
+    subcategory} of $\mathsf{Set}$, meaning that $\mor_{\mathsf{FinSet}}(A,B)=\mor_{\mathsf{Set}}(A,B)$.
+    In other words, a full subcategory is a subcategory in which only
+    the class of objects is truncated and not the sets of morphisms.
 \end{example}
 %
 \begin{example}
-One can truncate the set of morphisms in $\mathsf{Set}$ to obtain
-the categories $\mathsf{Bij}$, $\mathsf{Surj}$, $\mathsf{Inj}$,
-where the morphisms are now bijections, surjections and injections,
-respectively.
+    One can truncate the set of morphisms in $\mathsf{Set}$ to obtain
+    the categories $\mathsf{Bij}$, $\mathsf{Surj}$, $\mathsf{Inj}$,
+    where the morphisms are now bijections, surjections and injections,
+    respectively.
 \end{example}
 %
 \begin{example}
-We can also consider $\mathsf{Set}_{\bullet}$ \index{Category!of pointed sets}, the category of ``pointed
-sets''. The objects of the category are doubles $(A,x)$ where $A$
-is a set and $x\in A$ is an element of the set (a ``basepoint'').
-The morphisms $\mor((A,x),(B,y))$ are restricted to those maps $f:A\rightarrow B$
-such that $f(x)=y$, i.e., maps that preserve basepoints.
+    We can also consider $\mathsf{Set}_{\bullet}$ \index{Category!of pointed sets}, the category of ``pointed
+    sets''. The objects of the category are doubles $(A,x)$ where $A$
+    is a set and $x\in A$ is an element of the set (a ``basepoint'').
+    The morphisms $\mor((A,x),(B,y))$ are restricted to those maps $f:A\rightarrow B$
+    such that $f(x)=y$, i.e., maps that preserve basepoints.
 \end{example}
 %
 \begin{example}
@@ -77,8 +75,8 @@ in the sense that $f(B)\subset D$.
 For any category $\mathcal{C}$ one can define its \emph{dual category}\index{Category!dual}
 $\mathcal{C}^{\ast}$ by
 \begin{align}
-\ob\left(\mathcal{C}^{\ast}\right) & =\ob\left(\mathcal{C}\right),\nonumber \\
-\mor_{\mathcal{C}^{\ast}}\left(A,B\right) & =\mor_{\mathcal{C}}\left(B,A\right).
+    \ob\left(\mathcal{C}^{\ast}\right) & =\ob\left(\mathcal{C}\right),\nonumber \\
+    \mor_{\mathcal{C}^{\ast}}\left(A,B\right) & =\mor_{\mathcal{C}}\left(B,A\right).
 \end{align}
 In most cases, duals of categories are very difficult to interpret
 in any other way than directed graphs. For instance, the dual of $\mathsf{Set}$
@@ -88,6 +86,10 @@ Thus the arrows in $\mathsf{Set}^{\ast}$ cannot be interpreted as
 maps between sets.
 \end{example}
 
+
+
+
+
 \subsection{Functors}
 
 We can now construct ``maps'' from categories to categories.
@@ -95,41 +97,41 @@ Crucially, we want these maps to preserve as much of the categorical
 structure as possible, which is why they have to act not only on objects,
 but also on morphisms, in a consistent way.
 \begin{defn}[Functors]
-A functor\index{Functor} $F:\mathcal{C}\rightarrow\mathcal{D}$ is a correspondence
-between two categories $\mathcal{C}$ and $\mathcal{D}$ with the
-following properties 
-\begin{enumerate}
-\item $\forall A\in\ob(\mathcal{C})$, $F(A)\in\ob(\mathcal{D})$.
-\item $F$ maps objects to objects, \emph{and} morphisms between objects to
-morphisms between their images:
-\begin{equation}
-\forall f\in\mor_{\mathcal{C}}(A,B),\quad F(f)\in\begin{cases}
-\mor_{\mathcal{D}}(F(A),F(B)), & \text{if \emph{covariant} functor},\\
-\mor_{\mathcal{D}}(F(B),F(A)), & \text{if \emph{contravariant} functor}.
-\end{cases}
-\end{equation}
- 
-\item $F$ respects compositions: $\forall~A\in\ob(\mathcal{C})$ we have $F(\id_{A})=\id_{F(A)}$
-and
-\begin{equation}
-F(fg)=\begin{cases}
-F(f)F(g), & \text{if covariant},\\
-F(g)F(f), & \text{if contravariant}.
-\end{cases}
-\end{equation}
-\end{enumerate}
-Covariant functors can be thought of as functors that preserve the direction
-of arrows between objects while contravariant functors reverse the
-arrows.
+    A functor\index{Functor} $F:\mathcal{C}\rightarrow\mathcal{D}$ is a correspondence
+    between two categories $\mathcal{C}$ and $\mathcal{D}$ with the
+    following properties 
+    \begin{enumerate}
+        \item $\forall A\in\ob(\mathcal{C})$, $F(A)\in\ob(\mathcal{D})$.
+        \item $F$ maps objects to objects, \emph{and} morphisms between objects to
+        morphisms between their images:
+        \begin{equation}
+            \forall f\in\mor_{\mathcal{C}}(A,B),\quad F(f)\in\begin{cases}
+            \mor_{\mathcal{D}}(F(A),F(B)), & \text{if \emph{covariant} functor},\\
+            \mor_{\mathcal{D}}(F(B),F(A)), & \text{if \emph{contravariant} functor}.
+            \end{cases}
+        \end{equation}
+        
+        \item $F$ respects compositions: $\forall~A\in\ob(\mathcal{C})$ we have $F(\id_{A})=\id_{F(A)}$
+        and
+        \begin{equation}
+            F(fg)=\begin{cases}
+            F(f)F(g), & \text{if covariant},\\
+            F(g)F(f), & \text{if contravariant}.
+            \end{cases}
+        \end{equation}
+    \end{enumerate}
+    Covariant functors can be thought of as functors that preserve the direction
+    of arrows between objects while contravariant functors reverse the
+    arrows.
 \end{defn}
 
 The definition of a (covariant) functor is set up in such a way that any sequence of morphisms $A_1\overset{f_1}{\to}A_2\to\cdots\overset{f_n}\to A_{n+1}$ (or simply $f_1f_2\cdots f_n$) in $\mathcal{C}$ is mapped to exactly one morphism $F(f_1)F(f_2)\cdots F(f_n)$ in $\mathcal{D}$. This seemingly trivial property has incredibly deep implications. Represented as a diagram for the case $n=2$, this property looks like this:
 \begin{equation}
-\begin{tikzcd}[column sep=small, every matrix/.append style={name=m},   
-execute at end picture={\draw [<-] ([xshift=0em,yshift=.5em]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
-F(A_1) \arrow[rr, "F(f_1f_2)"] \arrow[dr, "F(f_1)", swap] & & F(A_3)\\
-& F(A_2)  \arrow[ru, "F(f_2)"'] & 
-\end{tikzcd}
+    \begin{tikzcd}[column sep=small, every matrix/.append style={name=m},   
+    execute at end picture={\draw [<-] ([xshift=0em,yshift=.5em]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
+    F(A_1) \arrow[rr, "F(f_1f_2)"] \arrow[dr, "F(f_1)", swap] & & F(A_3)\\
+    & F(A_2)  \arrow[ru, "F(f_2)"'] & 
+    \end{tikzcd}
 \end{equation}
 The circular arrow here indicates that the composition of morphism along any path in this triangle must give the same morphism, i.e.\ precisely that $F(f_1f_2)=F(f_1)F(f_2)$. When this holds, we say that ``the diagram commutes''. Now suppose $A_3=A_1$ and $f_1=f_2^{-1}$ is an isomorphism between $A_1$ and $A_2$. Then for any functor $F$, not only is it true that $F(\mathrm{id}_{A_1})$ is still an identity morphism, but also that $F(f_1)$ is still an isomorphism, since $F(f_1)F(f_2)=\mathrm{id}_{F(A_1)}$ and $F(f_2)F(f_1)=\mathrm{id}_{F(A_2)}$. Intuitively, this means that \emph{the definition of $F$ itself cannot use any information contained in the objects of $\mathcal{C}$ that is not preserved by isomorphisms}. 
 
@@ -150,66 +152,66 @@ The word ``functorial'' is a general adjective that expresses the idea
 that many useful constructions in mathematics respect morphisms. Very
 roughly, this ``principle of naturality'' can be stated as: 
 \begin{gather*}
-\boxed{\begin{array}{c}
-\text{Isomorphic inputs must produce isomorphic outputs.}\\
-\text{In particular, all constructions should not give preference to any}\\ \text{specific representatives of isomorphism classes,}\\
-\text{i.e.\ they must be \emph{natural}.}
-\end{array}}
+    \boxed{\begin{array}{c}
+    \text{Isomorphic inputs must produce isomorphic outputs.}\\
+    \text{In particular, all constructions should not give preference to any}\\ \text{specific representatives of isomorphism classes,}\\
+    \text{i.e.\ they must be \emph{natural}.}
+    \end{array}}
 \end{gather*}
 Looking ahead, an even deeper generalization of this principle will arise when we go up to the level of \emph{morphisms between functors} (called natural transformations).
 
 \begin{example}[Hom-functors]\label{hom-functor example}
-\label{Representable functors}\index{Functor!hom-} One can always construct a functor
-from any category $\mathcal{C}$ to $\mathsf{Set}$, as in the following
-example: for a fixed object $A\in\ob(\mathcal{C})$ consider the quantity
-\begin{equation}
-h^{A}(\_)=\mor_{\mathcal{C}}(A,\_),
-\end{equation}
-where the $\_$ is where the argument of $h^{A}$ goes, i.e., $h_{A}(B)=\mor_{\mathcal{C}}(A,B)$.
-Since the morphisms between any two objects by definition form a set,
-$h^{A}$ is a map from $\ob(\mathcal{C})$ to $\ob(\mathsf{Set})$.
-Can we extend $h^{A}$ to a functor by defining a correspondence between
-morphisms? The answer is yes, and here's how.
+    \label{Representable functors}\index{Functor!hom-} One can always construct a functor
+    from any category $\mathcal{C}$ to $\mathsf{Set}$, as in the following
+    example: for a fixed object $A\in\ob(\mathcal{C})$ consider the quantity
+    \begin{equation}
+    h^{A}(\_)=\mor_{\mathcal{C}}(A,\_),
+    \end{equation}
+    where the $\_$ is where the argument of $h^{A}$ goes, i.e., $h_{A}(B)=\mor_{\mathcal{C}}(A,B)$.
+    Since the morphisms between any two objects by definition form a set,
+    $h^{A}$ is a map from $\ob(\mathcal{C})$ to $\ob(\mathsf{Set})$.
+    Can we extend $h^{A}$ to a functor by defining a correspondence between
+    morphisms? The answer is yes, and here's how.
 
-Consider a morphism $f:B\rightarrow C$ in the category $\mathcal{C}$.
-We require correspondingly a map $h^{A}(f):h^{A}(B)\rightarrow h^{A}(C)$.
-$h^{A}(B)$ is the set of maps from $A$ to $B$ and $h^{A}(C)$ is
-the set of maps from $A$ to $C$. Hence, what we require is the following:
-Given a map from $B$ to $C$, how do we transform a map $g:A\rightarrow B$
-into a map from $A$ to $C$? The answer is composition, of course! Hence the map $h^{A}(f)$ acts on $g$ by the action
-\begin{equation}
-h^{A}(f)(g)=gf=f\circ g.
-\end{equation}
+    Consider a morphism $f:B\rightarrow C$ in the category $\mathcal{C}$.
+    We require correspondingly a map $h^{A}(f):h^{A}(B)\rightarrow h^{A}(C)$.
+    $h^{A}(B)$ is the set of maps from $A$ to $B$ and $h^{A}(C)$ is
+    the set of maps from $A$ to $C$. Hence, what we require is the following:
+    Given a map from $B$ to $C$, how do we transform a map $g:A\rightarrow B$
+    into a map from $A$ to $C$? The answer is composition, of course! Hence the map $h^{A}(f)$ acts on $g$ by the action
+    \begin{equation}
+    h^{A}(f)(g)=gf=f\circ g.
+    \end{equation}
 
-\begin{equation}
-\begin{tikzcd}[column sep=small] 
-B \arrow[rr, "f"] & & C\\
-& A \arrow[lu, "g"] \arrow[ru, "gf"'] & 
-\end{tikzcd}
-\end{equation}
+    \begin{equation}
+    \begin{tikzcd}[column sep=small] 
+    B \arrow[rr, "f"] & & C\\
+    & A \arrow[lu, "g"] \arrow[ru, "gf"'] & 
+    \end{tikzcd}
+    \end{equation}
 
-One can check that $h^{A}$ is now a \emph{covariant} functor (Exercise).
+    One can check that $h^{A}$ is now a \emph{covariant} functor (Exercise).
 
-Similarly, we can also construct the \emph{contravariant} \emph{hom-functor}
-by defining\begin{equation} 
-h_A(\_) = \mor_\mathcal{C}(\_, A). 
-\end{equation} In this case, its action on morphisms will be achieved by composition
-in the opposite direction. These functors are called \emph{representable
-functors}, or \emph{hom-functors}.
+    Similarly, we can also construct the \emph{contravariant} \emph{hom-functor}
+    by defining\begin{equation} 
+    h_A(\_) = \mor_\mathcal{C}(\_, A). 
+    \end{equation} In this case, its action on morphisms will be achieved by composition
+    in the opposite direction. These functors are called \emph{representable
+    functors}, or \emph{hom-functors}.
 \end{example}
 %
 \begin{example}\label{poset example}
-Any partially ordered set (``\emph{poset}'') $\left(I,\leq\right)$
-can be represented by a directed graph where we draw an arrow from
-$i\in I$ to $j\in I$ if and only if $i\leq j$. By reflexivity and
-transitivity of inequality, this satisfies the definition of a category.
-Therefore each poset $(I,\leq)$ is also a category $\mathcal{I}$.
-Functors between posets are exactly the \emph{monotonic} maps.
+    Any partially ordered set (``\emph{poset}'') $\left(I,\leq\right)$
+    can be represented by a directed graph where we draw an arrow from
+    $i\in I$ to $j\in I$ if and only if $i\leq j$. By reflexivity and
+    transitivity of inequality, this satisfies the definition of a category.
+    Therefore each poset $(I,\leq)$ is also a category $\mathcal{I}$.
+    Functors between posets are exactly the \emph{monotonic} maps.
 \end{example}
 %
 \begin{defn}[Arrow category]\index{Category!of arrows}
-For any category $\mathcal{C}$ we can construct its arrow category
-$\mathsf{Arr}\left(\mathcal{C}\right)$ as follows:
+    For any category $\mathcal{C}$ we can construct its arrow category
+    $\mathsf{Arr}\left(\mathcal{C}\right)$ as follows:
 \begin{enumerate}
 \item Objects are all arrows in $\mathcal{C}$: 
 \[
@@ -228,163 +230,163 @@ that the square commutes. % We didn't have to require commutativity to make this
 \end{enumerate}
 \end{defn}
 \begin{xca}
-Check that this is a category.
+    Check that this is a category.
 \end{xca}
 \begin{defn}[Categories of diagrams]\index{Category!of diagrams}\label{categories of diagrams}
-We can generalize the definition of arrow categories to define \emph{categories
-$\mathcal{C}^\mathcal{J}$ of $\mathcal{J}$-shaped
-diagrams in} $\mathcal{C}$. First, let $\mathcal{J}$ be a so-called \emph{index
-category}, which is an arbitrary, usually small (in most cases even finite), category.
-It should be thought of as nothing but a directed graph. A \emph{$\mathcal{J}$-shaped
-diagram} in $\mathcal{C}$ is defined as a covariant functor $F:\mathcal{J}\to\mathcal{C}$.
-Note that we don't require this functor to be faithful (injective
-on objects), so some of the ``vertices'' of $\mathcal{J}$ might
-map to the same object in $\mathcal{C}$.
+    We can generalize the definition of arrow categories to define \emph{categories
+    $\mathcal{C}^\mathcal{J}$ of $\mathcal{J}$-shaped
+    diagrams in} $\mathcal{C}$. First, let $\mathcal{J}$ be a so-called \emph{index
+    category}, which is an arbitrary, usually small (in most cases even finite), category.
+    It should be thought of as nothing but a directed graph. A \emph{$\mathcal{J}$-shaped
+    diagram} in $\mathcal{C}$ is defined as a covariant functor $F:\mathcal{J}\to\mathcal{C}$.
+    Note that we don't require this functor to be faithful (injective
+    on objects), so some of the ``vertices'' of $\mathcal{J}$ might
+    map to the same object in $\mathcal{C}$.
 
-Now, the category of $\mathcal{J}$-shaped diagrams in $\mathcal{C}$
-has all $\mathcal{J}$-shaped diagrams as its objects, and morphisms
-between two $\mathcal{J}$-shaped diagrams $F_{1}$ and $F_{2}$ are
-sets of pairwise morphisms $\alpha_{i}:F_{1}\left(i\right)\to F_{2}\left(i\right),$
-$i\in\ob\left(\mathcal{J}\right)$, such that all ``vertical'' squares
-commute: for $f_{1}:i\to j$ and $f_{2}:i\to j$, we have a commuting
-square
-\[\begin{tikzcd}[every matrix/.append style={name=m},   
-execute at end picture={\draw [<-] ([xshift=-2.7em,yshift=.3em]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
-   F_1(i)\arrow[r,"F_1(f_1)" ]\arrow[d,swap,"\alpha_i" ]& F_1(j) \arrow[d,"\alpha_j" ] \\
-   F_2(i)\arrow[r,swap,"F_2(f_2)" ]& F_2(j)
-\end{tikzcd}\]
-A morphism in this category can be visualized as a prism with the
-top and bottom sides being two copies of $\mathcal{J}$, all vertical
-arrows in the same direction, and all side squares commuting. This
-construction is also called a \emph{natural transformation} between
-the functors $F_{1}$ and $F_{2}$ (written as $F_{1}\Longrightarrow F_{2}$)
-and is a higher-level generalization of morphisms (acting on objects)
-and functors (acting on morphisms), now acting on functors.
+    Now, the category of $\mathcal{J}$-shaped diagrams in $\mathcal{C}$
+    has all $\mathcal{J}$-shaped diagrams as its objects, and morphisms
+    between two $\mathcal{J}$-shaped diagrams $F_{1}$ and $F_{2}$ are
+    sets of pairwise morphisms $\alpha_{i}:F_{1}\left(i\right)\to F_{2}\left(i\right),$
+    $i\in\ob\left(\mathcal{J}\right)$, such that all ``vertical'' squares
+    commute: for $f_{1}:i\to j$ and $f_{2}:i\to j$, we have a commuting
+    square
+    \[\begin{tikzcd}[every matrix/.append style={name=m},   
+    execute at end picture={\draw [<-] ([xshift=-2.7em,yshift=.3em]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
+    F_1(i)\arrow[r,"F_1(f_1)" ]\arrow[d,swap,"\alpha_i" ]& F_1(j) \arrow[d,"\alpha_j" ] \\
+    F_2(i)\arrow[r,swap,"F_2(f_2)" ]& F_2(j)
+    \end{tikzcd}\]
+    A morphism in this category can be visualized as a prism with the
+    top and bottom sides being two copies of $\mathcal{J}$, all vertical
+    arrows in the same direction, and all side squares commuting. This
+    construction is also called a \emph{natural transformation} between
+    the functors $F_{1}$ and $F_{2}$ (written as $F_{1}\Longrightarrow F_{2}$)
+    and is a higher-level generalization of morphisms (acting on objects)
+    and functors (acting on morphisms), now acting on functors.
 
-Of course, if the index category is just one arrow, $\mathcal{J}=\left\{ 1\to2\right\} $
-(identity morphisms are implicit), then we get back the arrow category
-$\mathsf{Arr}\left(\mathcal{C}\right)$.
+    Of course, if the index category is just one arrow, $\mathcal{J}=\left\{ 1\to2\right\} $
+    (identity morphisms are implicit), then we get back the arrow category
+    $\mathsf{Arr}\left(\mathcal{C}\right)$.
 \end{defn}
 %
 \begin{example}
-A yet further generalization of the above construction is one where
-some vertices and/or morphisms in $F\left(\mathcal{J}\right)$ are
-fixed, which would be a full subcategory of $\mathcal{J}\text{-}\mathsf{Diag}\left(\mathcal{C}\right)$.
-Moreover, in concrete categories some of the fixed vertices may even
-belong to a different category than $\mathcal{C}$, with morphisms
-attached to them being a special kind of maps between objects of different
-categories (e.g. maps from a set into a group, which is an example
-we will need when defining free groups).
+    A yet further generalization of the above construction is one where
+    some vertices and/or morphisms in $F\left(\mathcal{J}\right)$ are
+    fixed, which would be a full subcategory of $\mathcal{J}\text{-}\mathsf{Diag}\left(\mathcal{C}\right)$.
+    Moreover, in concrete categories some of the fixed vertices may even
+    belong to a different category than $\mathcal{C}$, with morphisms
+    attached to them being a special kind of maps between objects of different
+    categories (e.g. maps from a set into a group, which is an example
+    we will need when defining free groups).
 \end{example}
 %
 \begin{example}
-Let's consider some slightly more complicated examples of categories,
-starting with $\mathsf{Pow}$, the power set category.\footnote{Recall that the power set $2^{X}$ of a set $X$ is defined as the
-set of subsets of $X$.} The objects of this category are sets, as usual. But the morphisms
-are defined as $\mor_{\mathsf{Pow}}(X,Y)=\text{Map}(2^{X},2^{Y})$.
+    Let's consider some slightly more complicated examples of categories,
+    starting with $\mathsf{Pow}$, the power set category.\footnote{Recall that the power set $2^{X}$ of a set $X$ is defined as the
+    set of subsets of $X$.} The objects of this category are sets, as usual. But the morphisms
+    are defined as $\mor_{\mathsf{Pow}}(X,Y)=\text{Map}(2^{X},2^{Y})$.
 
-One can always construct a map $P$ that takes a set $X$ to its power
-set $2^{X}$. How can this map be extended to a functor from $\mathsf{Set}$
-to itself? In other words, how can we define, for a morphism $f:X\rightarrow Y$,
-a morphism $P(f):2^{X}\rightarrow2^{Y}$ for a covariant functor or
-$2^{Y}\rightarrow2^{X}$ for a contravariant functor? The answer is
-simple. For the covariant case, pick a subset $A\subset X$ and define
-\begin{equation}
-P_{+}(f)(A\subset X)=f(A),
-\end{equation}
-i.e., the image of $A$ in $Y$. It is easy to check the \emph{functoriality}
-property $P_{+}\left(fg\right)=P_{+}\left(f\right)P_{+}\left(g\right)$.
+    One can always construct a map $P$ that takes a set $X$ to its power
+    set $2^{X}$. How can this map be extended to a functor from $\mathsf{Set}$
+    to itself? In other words, how can we define, for a morphism $f:X\rightarrow Y$,
+    a morphism $P(f):2^{X}\rightarrow2^{Y}$ for a covariant functor or
+    $2^{Y}\rightarrow2^{X}$ for a contravariant functor? The answer is
+    simple. For the covariant case, pick a subset $A\subset X$ and define
+    \begin{equation}
+    P_{+}(f)(A\subset X)=f(A),
+    \end{equation}
+    i.e., the image of $A$ in $Y$. It is easy to check the \emph{functoriality}
+    property $P_{+}\left(fg\right)=P_{+}\left(f\right)P_{+}\left(g\right)$.
 
-For the contravariant case we can similarly define
-\begin{equation}
-P_{-}(f)(B\subset Y)=f^{-1}(B),
-\end{equation}
-where $f^{-1}(B)$ is the pre-image of $B$ in $X$, i.e., the set
-of elements of $X$ that map into $B$ under $f$. The two functors
-above are called the \emph{power functors}.
+    For the contravariant case we can similarly define
+    \begin{equation}
+        P_{-}(f)(B\subset Y)=f^{-1}(B),
+    \end{equation}
+    where $f^{-1}(B)$ is the pre-image of $B$ in $X$, i.e., the set
+    of elements of $X$ that map into $B$ under $f$. The two functors
+    above are called the \emph{power functors}.
 \end{example}
 
 \subsection{Further examples in concrete categories}
 
-\emph{Concrete categories} are categories whose objects are sets
+\emph{Concrete categories}\index{Concrete category} are categories whose objects are sets
 with some additional structure and whose morphisms are maps respecting
 that structure. For instance, the category $\mathsf{Gr}$ of groups\footnote{Recall that groups are sets with a closed, associative, invertible
 multiplication and an identity element.} with the morphisms being group homomorphisms.
 \begin{example}[Commutant and abelianization functors]
-For any group $G$, we can define its \emph{commutant} subgroup
-$[G,G]$ as the group of elements of the form $\{ghg^{-1}h^{-1}\mid g,h\in G\}$.
-Correspondingly, we can define a functor $F:\mathsf{Gr}\rightarrow\mathsf{Gr}$
-that takes every group $G$ to its commutant subgroup $[G,G]$. The
-functor acts on homomorphisms by restricting them to their action
-on the commutant subgroup, i.e., for $f:G\rightarrow H$, $F(f)=\restr f{[G,G]}$.
+    For any group $G$, we can define its \emph{commutant} subgroup
+    $[G,G]$ as the group of elements of the form $\{ghg^{-1}h^{-1}\mid g,h\in G\}$.
+    Correspondingly, we can define a functor $F:\mathsf{Gr}\rightarrow\mathsf{Gr}$
+    that takes every group $G$ to its commutant subgroup $[G,G]$. The
+    functor acts on homomorphisms by restricting them to their action
+    on the commutant subgroup, i.e., for $f:G\rightarrow H$, $F(f)=\restr f{[G,G]}$.
 
-Commutant subgroups are also normal subgroups\footnote{$H$is a normal subgroup of $G$ if $ghg^{-1}\in H~\forall~g\in G,h\in H$.}
-and one can verify that the quotient\footnote{The quotient group is the group of equivalence classes under conjugation
-with multiplication inherited from the original group.} $G/[G,G]$ is an abelian group, called the \emph{abelianization}
-of $G$. Hence, one can define the abelianization functor
-$F:\mathsf{Gr}\rightarrow\mathsf{Ab}$ from the category of groups
-to the category of abelian groups (the morphisms are still group homomorphisms).
-For a group homomorphism $f$ in $\mathsf{Gr}$, the homomorphism
-$F(f)$ can be defined by considering it's action on any representative
-element of an equivalence class (under the conjugation relation) in
-$G$. The abelianization functor with be useful later when we study
-the relation between homotopy and homology groups of a topological
-space.
+    Commutant subgroups are also normal subgroups\footnote{$H$is a normal subgroup of $G$ if $ghg^{-1}\in H~\forall~g\in G,h\in H$.}
+    and one can verify that the quotient\footnote{The quotient group is the group of equivalence classes under conjugation
+    with multiplication inherited from the original group.} $G/[G,G]$ is an abelian group, called the \emph{abelianization}
+    of $G$. Hence, one can define the abelianization functor
+    $F:\mathsf{Gr}\rightarrow\mathsf{Ab}$ from the category of groups
+    to the category of abelian groups (the morphisms are still group homomorphisms).
+    For a group homomorphism $f$ in $\mathsf{Gr}$, the homomorphism
+    $F(f)$ can be defined by considering it's action on any representative
+    element of an equivalence class (under the conjugation relation) in
+    $G$. The abelianization functor with be useful later when we study
+    the relation between homotopy and homology groups of a topological
+    space.
 \end{example}
 %
 \begin{example}[Quotient functor]
-\label{quotient functor}Another example from category theory is
-the category $\mathsf{GrPair}$ of pairs $\left(G,H\right)$, where
-$G$ is a group and $H$ is its normal subgroup, $H\trianglelefteqslant G$.
-Morphisms are group homomorphisms $f:G_{1}\to G_{2}$ such that the
-image of $H_{1}$ is contained in $H_{2}$, $f\left(H_{1}\right)\leq H_{2}$
-(inequality sign signifies that the l.h.s is also a subgroup in the
-r.h.s.). We can construct the \emph{quotient functor} $F:\mathsf{GrPair}\to\mathsf{Gr}$
-such that $F\left(\left(G,H\right)\right)=G/H$ and $F\left(f\right):G_{1}/H_{1}\to G_{2}/H_{2}$
-is the induced homomorphism of the quotients. The existence and uniqueness
-(i.e.\ naturality) of this homomorphism (and that it preserves compositions)
-is ensured by the \href{https://en.wikipedia.org/wiki/Fundamental_theorem_on_homomorphisms}{fundamental homomorphism theorem}.
-Therefore the fundamental homomorphism theorem is nothing but the
-statement that $F$\emph{ is naturally a functor}. Note that by
-construction, $H_{1}\leq\ker F(f)$. If $H_{1}=\ker F\left(f\right)$,
-then $H_{2}=\left\{ e\right\} $ and $F(f):G_{1}/\ker f\to G_{2}$
-must be an isomorphism by uniqueness, so we get back the \href{https://en.wikipedia.org/wiki/Isomorphism_theorems\#First_isomorphism_theorem}{first isomorphism theorem}
-that $f\left(G_{1}\right)=G_{2}\cong G_{1}/\ker f$.
+    \label{quotient functor}Another example from category theory is
+    the category $\mathsf{GrPair}$ of pairs $\left(G,H\right)$, where
+    $G$ is a group and $H$ is its normal subgroup, $H\trianglelefteqslant G$.
+    Morphisms are group homomorphisms $f:G_{1}\to G_{2}$ such that the
+    image of $H_{1}$ is contained in $H_{2}$, $f\left(H_{1}\right)\leq H_{2}$
+    (inequality sign signifies that the l.h.s is also a subgroup in the
+    r.h.s.). We can construct the \emph{quotient functor} $F:\mathsf{GrPair}\to\mathsf{Gr}$
+    such that $F\left(\left(G,H\right)\right)=G/H$ and $F\left(f\right):G_{1}/H_{1}\to G_{2}/H_{2}$
+    is the induced homomorphism of the quotients. The existence and uniqueness
+    (i.e.\ naturality) of this homomorphism (and that it preserves compositions)
+    is ensured by the \href{https://en.wikipedia.org/wiki/Fundamental_theorem_on_homomorphisms}{fundamental homomorphism theorem}.
+    Therefore the fundamental homomorphism theorem is nothing but the
+    statement that $F$\emph{ is naturally a functor}. Note that by
+    construction, $H_{1}\leq\ker F(f)$. If $H_{1}=\ker F\left(f\right)$,
+    then $H_{2}=\left\{ e\right\} $ and $F(f):G_{1}/\ker f\to G_{2}$
+    must be an isomorphism by uniqueness, so we get back the \href{https://en.wikipedia.org/wiki/Isomorphism_theorems\#First_isomorphism_theorem}{first isomorphism theorem}
+    that $f\left(G_{1}\right)=G_{2}\cong G_{1}/\ker f$.
 \end{example}
 %
 \begin{example}\index{Category!of group-valued maps}
-One more useful example of a category is the category $\mathcal{C}$
-of all maps between sets and groups (both of these can be replaced
-by other concrete categories):
-\begin{enumerate}
-\item $\ob\left(\mathcal{C}\right)=\bigcup_{X,G}\mathrm{Map}\left(X,G\right)$,
-where the union is over all $X\in\ob\left(\mathsf{Set}\right)$ and
-$G\in\ob\left(\mathsf{Gr}\right)$.
-\item $\mor\left(X\overset{g}{\to}G,Y\overset{h}{\to}H\right)$ consists
-of pairs of morphisms, $X\overset{\alpha}{\to}Y$ in $\mathsf{Set}$,
-and $G\overset{\beta}{\to}H$ in $\mathsf{Gr}$, which make the following
-square commute: \[\begin{tikzcd}[every matrix/.append style={name=m},   
-execute at end picture={\draw [<-] ([xshift=-2em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
-   X \arrow[r,"\alpha"]\arrow[d,swap,"g"]& Y\arrow[d,"h"] \\
-   G\arrow[r,swap,"\beta"]& H
-\end{tikzcd}\]
-\end{enumerate}
+    One more useful example of a category is the category $\mathcal{C}$
+    of all maps between sets and groups (both of these can be replaced
+    by other concrete categories):
+    \begin{enumerate}
+        \item $\ob\left(\mathcal{C}\right)=\bigcup_{X,G}\mathrm{Map}\left(X,G\right)$,
+        where the union is over all $X\in\ob\left(\mathsf{Set}\right)$ and
+        $G\in\ob\left(\mathsf{Gr}\right)$.
+        \item $\mor\left(X\overset{g}{\to}G,Y\overset{h}{\to}H\right)$ consists
+        of pairs of morphisms, $X\overset{\alpha}{\to}Y$ in $\mathsf{Set}$,
+        and $G\overset{\beta}{\to}H$ in $\mathsf{Gr}$, which make the following
+        square commute: \[\begin{tikzcd}[every matrix/.append style={name=m},   
+        execute at end picture={\draw [<-] ([xshift=-2em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
+        X \arrow[r,"\alpha"]\arrow[d,swap,"g"]& Y\arrow[d,"h"] \\
+        G\arrow[r,swap,"\beta"]& H
+        \end{tikzcd}\]
+    \end{enumerate}
 \end{example}
 \begin{xca}
-Come up with more examples of categories following the structure of
-the last example, including where morphisms are not necessarily squares
-(triangles, prisms,...).
+    Come up with more examples of categories following the structure of
+    the last example, including where morphisms are not necessarily squares
+    (triangles, prisms,...).
 \end{xca}
 \begin{defn}[Rings]\index{Ring}
-A ring $(R,+,\cdot)$ is defined as a set $R$ with two binary operations
-$+$ and $\cdot$ such that 
-\begin{enumerate}
-\item $(R,+)$ is an abelian group.
-\item $\cdot$ is distributive over $+$, i.e.\ $a\cdot(b+c)=a\cdot b+a\cdot c$.
-\item (If the ring is associative) $\cdot$ is associative.
-\item (If the ring is associative and has a unity) there is a multiplicative
-neutral element denoted by $1$, and $1\neq0$, so that $R\neq\left\{ 0\right\} $.
-\end{enumerate}
+    A ring $(R,+,\cdot)$ is defined as a set $R$ with two binary operations
+    $+$ and $\cdot$ such that 
+    \begin{enumerate}
+        \item $(R,+)$ is an abelian group.
+        \item $\cdot$ is distributive over $+$, i.e.\ $a\cdot(b+c)=a\cdot b+a\cdot c$.
+        \item (If the ring is associative) $\cdot$ is associative.
+        \item (If the ring is associative and has a unity) there is a multiplicative
+        neutral element denoted by $1$, and $1\neq0$, so that $R\neq\left\{ 0\right\} $.
+    \end{enumerate}
 \end{defn}
 Some examples of rings include the ring of integers $(\bbZ,+,\cdot)$,
 and the ring $\bbR [x]$ of polynomials in a variable $x$ with
@@ -393,72 +395,73 @@ is sometimes relaxed in the definition of a ring.
 
 We can define two categories:
 \begin{itemize}
-\item $\mathsf{Ring}$ of all rings, associative or not, with morphisms
-being ring homomorphisms (maps that preserve addition, multiplication).
-\item $\mathsf{AssRing}$ of associative rings with $1$, the multiplicative
-identity, such that $1\neq0$, and the morphisms being ring homomorphisms
-(preserving the unity).
-\item $\mathsf{CommRing}$ of associative, commutative rings with $1\neq0$. 
+    \item $\mathsf{Ring}$ of all rings, associative or not, with morphisms
+    being ring homomorphisms (maps that preserve addition, multiplication).
+    \item $\mathsf{AssRing}$ of associative rings with $1$, the multiplicative
+    identity, such that $1\neq0$, and the morphisms being ring homomorphisms
+    (preserving the unity).
+    \item $\mathsf{CommRing}$ of associative, commutative rings with $1\neq0$. 
 \end{itemize}
 \begin{example}
-Since every ring is an abelian group with respect to $+$ by definition,
-we can define a \emph{forgetful functor} $F:\mathsf{AssRing}\rightarrow\mathsf{Ab}$
-that maps every ring to its corresponding abelian group by 'forgetting'
-the multiplication structure of the ring.
+    Since every ring is an abelian group with respect to $+$ by definition,
+    we can define a \emph{forgetful functor} $F:\mathsf{AssRing}\rightarrow\mathsf{Ab}$
+    that maps every ring to its corresponding abelian group by 'forgetting'
+    the multiplication structure of the ring.
 \end{example}
 %
 \begin{example}
-We can also define a functor $F:\mathsf{Ring}\rightarrow\mathsf{Ring}$
-that maps every ring $R$ to the ring $R[x]$ defined as the ring
-of polynomials in $x$ whose coefficients are taken from $R$. Then
-for a morphism $f$ acting on elements of the ring $R$, $F\left(f\right)$
-simply applies $f$ to every coefficient of the polynomial.
+    We can also define a functor $F:\mathsf{Ring}\rightarrow\mathsf{Ring}$
+    that maps every ring $R$ to the ring $R[x]$ defined as the ring
+    of polynomials in $x$ whose coefficients are taken from $R$. Then
+    for a morphism $f$ acting on elements of the ring $R$, $F\left(f\right)$
+    simply applies $f$ to every coefficient of the polynomial.
 \end{example}
 %
 \begin{example}
-Just as we can define square matrices of real numbers, we can also
-define square matrices with coefficients taken from a commutative
-ring $R$, the set of matrices being denoted by $\Mat(n,R)$,
-$n$ being the size of the matrix. $\Mat(n,R)$ forms an associative
-ring. Hence, we have a covariant functor $F:\mathsf{CommRing}\rightarrow\mathsf{AssRing}$
-that takes a commutative ring to matrices of the ring. 
+    Just as we can define square matrices of real numbers, we can also
+    define square matrices with coefficients taken from a commutative
+    ring $R$, the set of matrices being denoted by $\Mat(n,R)$,
+    $n$ being the size of the matrix. $\Mat(n,R)$ forms an associative
+    ring. Hence, we have a covariant functor $F:\mathsf{CommRing}\rightarrow\mathsf{AssRing}$
+    that takes a commutative ring to matrices of the ring. 
 \end{example}
 \begin{xca}
-How does this functor act on morphisms? Check its functoriality.
+    How does this functor act on morphisms? Check its functoriality.
 \end{xca}
 \begin{example}
-If we restrict to invertible matrices the associative ring $\Mat(n,R)$
-reduces to the group $\GL(n,R)$ of invertible matrices with
-coefficients in $R$ and we have a functor $F:\mathsf{CommRing}\rightarrow\mathsf{Gr}$.
+    If we restrict to invertible matrices the associative ring $\Mat(n,R)$
+    reduces to the group $\GL(n,R)$ of invertible matrices with
+    coefficients in $R$ and we have a functor $F:\mathsf{CommRing}\rightarrow\mathsf{Gr}$.
 \end{example}
 %
 \begin{example}
-For every associative ring $R$ we can define the \emph{opposite
-ring} $R^{\text{op}}$ which has the same elements and addition as
-$R$, but the ``opposite'' multiplication defined by $a\cdot^{\text{op}}b=b\cdot^{R}a$,
-where $\cdot^{R}$ is the multiplication from $R$. This is a contravariant
-functor $\mathsf{AssRing}\to\mathsf{AssRing}$.
+    For every associative ring $R$ we can define the \emph{opposite
+    ring} $R^{\text{op}}$ which has the same elements and addition as
+    $R$, but the ``opposite'' multiplication defined by $a\cdot^{\text{op}}b=b\cdot^{R}a$,
+    where $\cdot^{R}$ is the multiplication from $R$. This is a contravariant
+    functor $\mathsf{AssRing}\to\mathsf{AssRing}$.
 \end{example}
-\begin{defn}[Lie rings]\index{Lie ring}
-A Lie ring is a set $R$ with a binary operation $[\cdot,\cdot]$
-(called the \textsf{Lie bracket}) that obeys the following properties
-$\forall~a,b,c\in R$ 
-\begin{enumerate}
-\item Alternativity: $[a,a]=0$;
-\item Antisymmetry: $[a,b]=-[b,a]$; 
-\item Jacobi identity: $[a,[b,c]]+\mathrm{cyclic~permutations}=0$.\footnote{Alternatively, introducing the \emph{adjoint} operator $\mathrm{ad}_{a}b\equiv\left[a,b\right]$,
-this can be written as $\mathrm{ad}_{a}\left[b,c\right]=\left[\mathrm{ad}_{a}b,c\right]+\left[b,\mathrm{ad}_{a}c\right]$,
-i.e.\ $\mathrm{ad}_{a}$ is a \emph{derivation}, meaning
-it follows the Leibniz (product) rule just like derivatives do when
-acting on products (and in Lie algebras ``product'' means Lie bracket).
-Therefore the Jacobi identity is nothing but the statement that the
-Lie bracket must be a derivation.}
-\end{enumerate}
-The category $\mathsf{LieRing}$ consists of all Lie rings as objects
-with Lie ring homomorphisms (maps that preserve the Lie bracket) as
-the morphisms.
 
+\begin{defn}[Lie rings]\index{Lie ring}
+    A Lie ring is a set $R$ with a binary operation $[\cdot,\cdot]$
+    (called the \textsf{Lie bracket}) that obeys the following properties
+    $\forall~a,b,c\in R$ 
+    \begin{enumerate}
+    \item Alternativity: $[a,a]=0$;
+    \item Antisymmetry: $[a,b]=-[b,a]$; 
+    \item Jacobi identity: $[a,[b,c]]+\mathrm{cyclic~permutations}=0$.\footnote{Alternatively, introducing the \emph{adjoint} operator $\mathrm{ad}_{a}b\equiv\left[a,b\right]$,
+    this can be written as $\mathrm{ad}_{a}\left[b,c\right]=\left[\mathrm{ad}_{a}b,c\right]+\left[b,\mathrm{ad}_{a}c\right]$,
+    i.e.\ $\mathrm{ad}_{a}$ is a \emph{derivation}, meaning
+    it follows the Leibniz (product) rule just like derivatives do when
+    acting on products (and in Lie algebras ``product'' means Lie bracket).
+    Therefore the Jacobi identity is nothing but the statement that the
+    Lie bracket must be a derivation.}
+    \end{enumerate}
+    The category $\mathsf{LieRing}$ consists of all Lie rings as objects
+    with Lie ring homomorphisms (maps that preserve the Lie bracket) as
+    the morphisms.
 \end{defn}
+
 \begin{example}
 For any ring $R$ we can define an associated Lie ring $R^{(-)}$
 by defining $[a,b]=a\cdot b-b\cdot a$ and ignoring the multiplication
@@ -466,105 +469,104 @@ and addition structure after defining the Lie bracket. One can check
 that this obeys the properties of a Lie ring. This defines a functor
 $F:\mathsf{AssRing}\rightarrow\mathsf{LieRing}$.
 \end{example}
-\begin{defn}[Fields]\index{Field}
-A field $K$ is a set with two binary operations $+$ (addition)
-and $\cdot$ (multiplication) such that
-\begin{enumerate}
-\item $(K,+,\cdot)$ is a \emph{commutative} ring;
-\item Every element in $K^{\ast}=K\setminus\{0\}$ has a multiplicative
-inverse ($0$ being the additive identity), i.e.\ $K^{\ast}$ is an
-abelian group.
-\end{enumerate}
-A morphism between fields is a map that preserves addition, multiplication,
-zero and unity. The category of fields is rarely referred to because
-of its much weaker properties than that of $\mathsf{Ring}$ and others
-(it is not ``algebraic'' is some strict sense).
+\begin{defn}[Field]\index{Field}
+    A field $\bbK$ is a set with two binary operations $+$ (addition)
+    and $\cdot$ (multiplication) such that
+    \begin{enumerate}
+    \item $(\bbK,+,\cdot)$ is a \emph{commutative} ring;
+    \item Every element in the \emph{group of units}\index{Group of units} $\bbK^{\times}=\bbK\setminus\{0\}$ has a multiplicative
+    inverse ($0$ being the additive identity), i.e.\ $\bbK^{\times}$ is an abelian group.
+    \end{enumerate}
+    A morphism between fields is a map that preserves addition, multiplication,
+    zero and unity. The category of fields is rarely referred to because
+    of its much weaker properties than that of $\mathsf{Ring}$ and others
+    (it is not ``algebraic'' is some strict sense).
 
-$K^{\ast}$ is called the multiplicative group of the field. 
+    $\bbK^{\times}$ is called the multiplicative group of the field. 
 \end{defn}
 %
 \begin{defn}[Ring modules]\index{Ring module}\index{Module}
-A (left) module $\mathcal{M}$ over a ring $R$ (also called a left
-$R$-module) is an abelian group $(\mathcal{M},+)$ with an operation
-$\bullet:R\times\mathcal{M}\rightarrow\mathcal{M}$ such that $\forall~r,s\in R$
-and $x,y\in\mathcal{M}$ the following properties hold 
-\begin{enumerate}
-\item $r\bullet(x+y)=r\bullet x+r\bullet y$;
-\item $(r+s)\bullet x=r\bullet x+s\bullet x$;
-\item $(r\cdot s)\bullet x=r\bullet(s\bullet x)$;
-\item (If the ring is unital, i.e., consists of a unit multiplicative element)
-$1_{R}\bullet x=x$. 
-\end{enumerate}
-Similarly one can define \emph{right} $R$-modules where elements
-of the ring act from the right, $x\bullet r$. Note that a left $R$-module
-is exactly the same as a right $R^{op}$-module, so for general constructions
-and arguments left modules suffice.
+    A (left) module $\mathcal{M}$ over a ring $R$ (also called a left
+    $R$-module) is an abelian group $(\mathcal{M},+)$ with an operation
+    $\bullet:R\times\mathcal{M}\rightarrow\mathcal{M}$ such that $\forall~r,s\in R$
+    and $x,y\in\mathcal{M}$ the following properties hold 
+    \begin{enumerate}
+    \item $r\bullet(x+y)=r\bullet x+r\bullet y$;
+    \item $(r+s)\bullet x=r\bullet x+s\bullet x$;
+    \item $(r\cdot s)\bullet x=r\bullet(s\bullet x)$;
+    \item (If the ring is unital, i.e., consists of a unit multiplicative element)
+    $1_{R}\bullet x=x$. 
+    \end{enumerate}
+    Similarly one can define \emph{right} $R$-modules where elements
+    of the ring act from the right, $x\bullet r$. Note that a left $R$-module
+    is exactly the same as a right $R^{op}$-module, so for general constructions
+    and arguments left modules suffice.
 
-An $R_{1}$\emph{-$R_{2}$-bimodule} is a left $R_{1}$-module and
-a right $R_{2}$-module at the same time, with the compatibility requirement
-$\left(r_{1}\bullet x\right)\bullet r_{2}=r_{1}\bullet\left(x\bullet r_{2}\right)$
-(denoting both products by $\bullet$ because confusion is not possible
-here).
+    An $R_{1}$\emph{-$R_{2}$-bimodule} is a left $R_{1}$-module and
+    a right $R_{2}$-module at the same time, with the compatibility requirement
+    $\left(r_{1}\bullet x\right)\bullet r_{2}=r_{1}\bullet\left(x\bullet r_{2}\right)$
+    (denoting both products by $\bullet$ because confusion is not possible
+    here).
 
-A \emph{morphism} of (left) $R$-modules is a group homomorphism
-$f:M\to L$ that respects the action of the ring, i.e.\ $f\left(r\bullet_{M}x\right)=r\bullet_{L}f\left(x\right)$.
+    A \emph{morphism} of (left) $R$-modules is a group homomorphism
+    $f:M\to L$ that respects the action of the ring, i.e.\ $f\left(r\bullet_{M}x\right)=r\bullet_{L}f\left(x\right)$.
 
-The categories of left and right $R$-modules are denotes by $R\text{-}\mathsf{Mod}$
-and $\mathsf{Mod}\text{-}R$, respectively.
+    The categories of left and right $R$-modules are denotes by $R\text{-}\mathsf{Mod}$
+    and $\mathsf{Mod}\text{-}R$, respectively.
 \end{defn}
 The symbol for ring multiplication is often omitted in order to simplify
 notation and avoid confusion with the scalar multiplication operator
 $\bullet$.
 \begin{example}
-For any ring $R$, its Cartesian powers $R^{n}$ are called \emph{free
-$R$-modules}. The action of $R$ on it is defined component-wise:
-$r\cdot\left(r_{1},\ldots,r_{n}\right)=\left(rr_{1},\ldots,rr_{n}\right)$.
+    For any ring $R$, its Cartesian powers $R^{n}$ are called \emph{free
+    $R$-modules}. The action of $R$ on it is defined component-wise:
+    $r\cdot\left(r_{1},\ldots,r_{n}\right)=\left(rr_{1},\ldots,rr_{n}\right)$.
 \end{example}
 %
 \begin{example}
-$R^{n}$ is an example of a left $\Mat\left(n,R\right)$-module,
-where the action is defined by the usual matrix multiplication.
+    $R^{n}$ is an example of a left $\Mat\left(n,R\right)$-module,
+    where the action is defined by the usual matrix multiplication.
 \end{example}
 Vector spaces are nothing but a special case of ring modules, where
 the ring is replaced by a field.
 \begin{defn}[Vector spaces]\index{Vector space}
-A vector space $V$ over a field $K$ is simply a $K$-module, i.e.
-an abelian group with a multiplicative action of the field $K$. Morphisms
-between vector spaces are therefore $K$-module morphisms (a.k.a.
-``linear maps''). The category of $K$-vector spaces is $\mathsf{Vect}_{K}$.
-The category of finite-dimensional $K$-vector spaces is $\mathsf{FinVect}_{K}$.
+    A vector space $V$ over a field $\bbK$ is simply a $\bbK$-module, i.e.
+    an abelian group with a multiplicative action of the field $\bbK$. Morphisms
+    between vector spaces are therefore $\bbK$-module morphisms (a.k.a.
+    ``linear maps''). The category of $\bbK$-vector spaces is $\mathsf{Vect}_{\bbK}$.
+    The category of finite-dimensional $\bbK$-vector spaces is $\mathsf{FinVect}_{\bbK}$.
 \end{defn}
 \begin{xca}
-Show that abelian groups are essentially the same as $\bbZ$-modules.
+    Show that abelian groups are essentially the same as $\bbZ$-modules.
 \end{xca}
 \begin{defn}[Algebras over fields]\index{Algebra}
-An algebra $\mathcal{A}$ over a field $K$ is a $K$-vector space
-with a binary, $K$-bilinear multiplication operation $\cdot$. In
-other words, $\forall x,y,z\in\mathcal{A}$ and $\forall a,b\in K$ 
-\begin{enumerate}
-\item $(x+y)\cdot z=x\cdot z+y\cdot z$;
-\item $z\cdot(x+y)=z\cdot x+z\cdot y$;
-\item $(ax)\cdot(by)=(ab)(x\cdot y)$.
-\end{enumerate}
+    An algebra $\mathcal{A}$ over a field $\bbK$ is a $\bbK$-vector space
+    with a binary, $\bbK$-bilinear multiplication operation $\cdot$. In
+    other words, $\forall x,y,z\in\mathcal{A}$ and $\forall a,b\in K$ 
+    \begin{enumerate}
+        \item $(x+y)\cdot z=x\cdot z+y\cdot z$;
+        \item $z\cdot(x+y)=z\cdot x+z\cdot y$;
+        \item $(ax)\cdot(by)=(ab)(x\cdot y)$.
+    \end{enumerate}
 \end{defn}
 Notice that we do not require all algebras to be associative (this
 way Lie brackets are allowed as the multiplication operation). Algebra
 morphisms are already defined by the above definitions. The category
-of $K$-algebras is denoted by $\mathsf{Alg}_{K}$.
+of $K$-algebras is denoted by $\mathsf{Alg}_{\bbK}$.
 \begin{example}
-Some examples of algebras are $\bbR [t]$, the algebra of polynomials
-in $t$ with real coefficients; $\mathbb{C}$, the set of complex
-numbers viewed as an algebra over $\bbR $; and $(\bbR^{3},+,\times)$
-with $\times$ being the cross product for vectors\footnote{Note that $(\bbR^{3},\times)$ is a Lie algebra.}.
+    Some examples of algebras are $\bbR [t]$, the algebra of polynomials
+    in $t$ with real coefficients; $\mathbb{C}$, the set of complex
+    numbers viewed as an algebra over $\bbR $; and $(\bbR^{3},+,\times)$
+    with $\times$ being the cross product for vectors\footnote{Note that $(\bbR^{3},\times)$ is a Lie algebra.}.
 \end{example}
 \begin{xca}
-Give the definitions of:
-\begin{itemize}
-\item division rings (non-abelian analog of fields, e.g. quaternions);
-\item group modules (category $G\text{-}\mathsf{Mod}$);
-\item algebras over a commutative ring $R$ (category $\mathsf{Alg}_{R}$);
-\item Lie algebras (category $\mathsf{LieAlg})$.
-\end{itemize}
+    Give the definitions of:
+    \begin{itemize}
+        \item division rings (non-abelian analog of fields, e.g. quaternions);
+        \item group modules (category $G\text{-}\mathsf{Mod}$);
+        \item algebras over a commutative ring $R$ (category $\mathsf{Alg}_{R}$);
+        \item Lie algebras (category $\mathsf{LieAlg})$.
+    \end{itemize}
 \end{xca}
 
 \subsection{Classes of morphisms}
@@ -602,131 +604,131 @@ The generalization of these definitions to categories is now straightforward
 (up to switching ``left'' and ``right'' because our categorical
 notation is opposite of the set theoretical one, $gf=f\circ g$).
 \begin{defn}[Epimorphism]\index{Morphism!epi}
-A morphism $f$ is an \emph{epimorphism} if $fg=fh$ for any $g,h$
-implies $g=h$ (i.e.\ left cancellative). We use the arrow $\twoheadrightarrow$ to denote epimorphisms.
+    A morphism $f$ is an \emph{epimorphism} if $fg=fh$ for any $g,h$
+    implies $g=h$ (i.e.\ left cancellative). We use the arrow $\twoheadrightarrow$ to denote epimorphisms.
 \end{defn}
 %
 \begin{defn}[Monomorphism]\index{Morphism!mono}
-A morphism $f$ is a \emph{monomorphism} if $gf=hf$ for any $g,h$
-implies $g=h$ (i.e.\ right cancellative). We use the arrow $\rightarrowtail$ to denote monomorphisms.
+    A morphism $f$ is a \emph{monomorphism} if $gf=hf$ for any $g,h$
+    implies $g=h$ (i.e.\ right cancellative). We use the arrow $\rightarrowtail$ to denote monomorphisms.
 \end{defn}
 %
 \begin{defn}[Bimorphism]\index{Morphism!bi}
-A morphism $f$ is a \emph{bimorphism} if it is both an epimorphism
-and a monomorphism.
+    A morphism $f$ is a \emph{bimorphism} if it is both an epimorphism
+    and a monomorphism.
 \end{defn}
 %
 \begin{defn}[Retraction/Split epi]\index{Morphism!split epi}\index{Retraction}
-A morphism $f:A\rightarrow B$ is a \emph{retraction}, or a\emph{
-split epi}, if $\exists\,g$ such that $gf=\id_{B}$ (i.e.\ $f$ is
-left invertible in categorical notation). In this case $g$ is a split
-mono.
+    A morphism $f:A\rightarrow B$ is a \emph{retraction}, or a\emph{
+    split epi}, if $\exists\,g$ such that $gf=\id_{B}$ (i.e.\ $f$ is
+    left invertible in categorical notation). In this case $g$ is a split
+    mono.
 \end{defn}
 %
 \begin{defn}[Coretraction/Section/Split mono]\index{Morphism!split mono}\index{Coretraction}\index{Section}
-A morphism $f:A\rightarrow B$ is a \emph{coretraction}, or a \emph{section},
-or a \emph{split mono}, if $\exists\,g$ such that $fg=\id_{A}$
-(i.e.\ $f$ is right invertible). In this case $g$ is a split epi, $f$ is a section of $g$, and $g$ is a retraction of $f$.
+    A morphism $f:A\rightarrow B$ is a \emph{coretraction}, or a \emph{section},
+    or a \emph{split mono}, if $\exists\,g$ such that $fg=\id_{A}$
+    (i.e.\ $f$ is right invertible). In this case $g$ is a split epi, $f$ is a section of $g$, and $g$ is a retraction of $f$.
 \end{defn}
 %
 \begin{defn}[Isomorphism]\index{Morphism!iso}
-A morphism $f$ is an \emph{isomorphism} if it's a retraction and
-a coretraction (i.e.\ invertible). Sometimes we use the arrow $\leftrightarrow$ to denote isomorphisms. If two objects $A$ and $B$ are related by an isomorphism $f$, we might write $A\overset f\cong B$ or just $A\cong B$.
+    A morphism $f$ is an \emph{isomorphism} if it's a retraction and
+    a coretraction (i.e.\ invertible). Sometimes we use the arrow $\leftrightarrow$ to denote isomorphisms. If two objects $A$ and $B$ are related by an isomorphism $f$, we might write $A\overset f\cong B$ or just $A\cong B$.
 \end{defn}
 Note in particular that, unlike for sets, left(right) invertibility
 is not equivalent to left(right) cancellability. An important characteristic
 of a category is whether all bimorphisms are isomorphisms.
 \begin{prop}
-In $\mathsf{Set}$, monomorphism = coretraction = injectivity, and
-epimorphism = retraction = surjectivity.
+    In $\mathsf{Set}$, monomorphism = coretraction = injectivity, and
+    epimorphism = retraction = surjectivity.
 \end{prop}
 %
 \begin{prop}
-In $\mathsf{Gr}$, the category of groups, a monomorphism is equivalent
-to an injective homomorphism and an epimorphism is identical to a
-surjective homomorphism.
+    In $\mathsf{Gr}$, the category of groups, a monomorphism is equivalent
+    to an injective homomorphism and an epimorphism is identical to a
+    surjective homomorphism.
 \end{prop}
 In all concrete categories, the following implications hold 
 \begin{gather}
-\text{Retraction}\implies\text{Surjectivity},\quad\text{Surjectivity}\implies\text{Epimorphism},\\
-\text{Coretraction}\implies\text{Injectivity},\quad\text{Injectivity}\implies\text{Monomorphism.}
+    \text{Retraction}\implies\text{Surjectivity},\quad\text{Surjectivity}\implies\text{Epimorphism},\\
+    \text{Coretraction}\implies\text{Injectivity},\quad\text{Injectivity}\implies\text{Monomorphism.}
 \end{gather}
 while the converse don't. Here are some counterexamples. 
 \begin{example}[$\text{Epi}\nRightarrow\text{Surj}$]
-Consider the inclusion map\footnote{The hooked arrow $\hookrightarrow$ is the standard symbol for an
-inclusion map.} $i:\bbZ\hookrightarrow\mathbb{Q}$ in the category $\mathsf{Ring}$.
-We will show that $i$ is an epimorphism in the category of rings,
-while it is clearly not surjective. For two arbitrary ring morphisms
-$f,g:\mathbb{Q}\rightarrow R,f\circ i=g\circ i\implies\restr{f}{\bbZ}=\restr{g}{\bbZ}$.
-Since $f$ and $g$ are ring homomorphisms and any rational number
-can be written as a ratio of integers, we see that 
-\begin{equation}
-f\left(\frac{m}{n}\right)=\frac{f(m)}{f(n)}=\frac{g(m)}{g(n)}=g\left(\frac{m}{n}\right).
-\end{equation}
-Hence, $f=g$ for all rational numbers and $i$ is an epimorphism.
-A nearly identical proof holds for the inclusion map $\mathbb{Q}\hookrightarrow\bbR $
-in the category $\mathsf{TopRing}$ of topological rings\footnote{Topological rings are rings that have the additional structure of
-a topological space such that $+$ and $\cdot$ are continuous maps.
-More on this in later sections.} is an epimorphism, except that in this case we use the fact that
-a continuous function defined on the rational numbers uniquely defines
-a continuous function on the real line because rationals are dense
-in the real line.
+    Consider the inclusion map\footnote{The hooked arrow $\hookrightarrow$ is the standard symbol for an
+    inclusion map.} $i:\bbZ\hookrightarrow\mathbb{Q}$ in the category $\mathsf{Ring}$.
+    We will show that $i$ is an epimorphism in the category of rings,
+    while it is clearly not surjective. For two arbitrary ring morphisms
+    $f,g:\mathbb{Q}\rightarrow R,f\circ i=g\circ i\implies\restr{f}{\bbZ}=\restr{g}{\bbZ}$.
+    Since $f$ and $g$ are ring homomorphisms and any rational number
+    can be written as a ratio of integers, we see that 
+    \begin{equation}
+    f\left(\frac{m}{n}\right)=\frac{f(m)}{f(n)}=\frac{g(m)}{g(n)}=g\left(\frac{m}{n}\right).
+    \end{equation}
+    Hence, $f=g$ for all rational numbers and $i$ is an epimorphism.
+    A nearly identical proof holds for the inclusion map $\mathbb{Q}\hookrightarrow\bbR $
+    in the category $\mathsf{TopRing}$ of topological rings\footnote{Topological rings are rings that have the additional structure of
+    a topological space such that $+$ and $\cdot$ are continuous maps.
+    More on this in later sections.} is an epimorphism, except that in this case we use the fact that
+    a continuous function defined on the rational numbers uniquely defines
+    a continuous function on the real line because rationals are dense
+    in the real line.
 \end{example}
 %
 \begin{example}[$\text{Surj}\nRightarrow\text{Split epi}$]
-Another example is the ''mod 2'' function $\bbZ\xrightarrow{\text{mod}~2}\bbZ/2\bbZ=\{0,1\}$,
-which is clearly surjective but is not a split epimorphism. In order
-for the map to be a split epimorphism, there must exist a morphism
-$f$ from $\bbZ/2\bbZ$ to the integers such that $\left(\text{mod}\,2\right)\circ f=\id_{\bbZ/2\bbZ}$.
-However, besides the trivial morphism $f=0$, there are no ring morphisms
-$\bbZ/2\bbZ\to\bbZ$ at all! The identity element
-0 must be mapped to itself, so all that remains is to pick an integer
-$n$ that 1 maps into. But, in $\bbZ/2\bbZ$, $1+1=0$
-while $n+n=2n\ne0$. Thus a section for $\text{mod}\,2$ does not exist.
+    Another example is the ''mod 2'' function $\bbZ\xrightarrow{\text{mod}~2}\bbZ/2\bbZ=\{0,1\}$,
+    which is clearly surjective but is not a split epimorphism. In order
+    for the map to be a split epimorphism, there must exist a morphism
+    $f$ from $\bbZ/2\bbZ$ to the integers such that $\left(\text{mod}\,2\right)\circ f=\id_{\bbZ/2\bbZ}$.
+    However, besides the trivial morphism $f=0$, there are no ring morphisms
+    $\bbZ/2\bbZ\to\bbZ$ at all! The identity element
+    0 must be mapped to itself, so all that remains is to pick an integer
+    $n$ that 1 maps into. But, in $\bbZ/2\bbZ$, $1+1=0$
+    while $n+n=2n\ne0$. Thus a section for $\text{mod}\,2$ does not exist.
 \end{example}
 \begin{xca}
-Come up with examples that show that $\text{Mono}\nRightarrow\text{Inj}$
-and $\text{Inj}\nRightarrow\text{Split mono}$.
+    Come up with examples that show that $\text{Mono}\nRightarrow\text{Inj}$
+    and $\text{Inj}\nRightarrow\text{Split mono}$.
 \end{xca}
 \begin{example}[Arithmetic isn't trivial]
- Let $f:G\rightarrow K$ be a group homomorphism in $\mathsf{Gr}$.
-By the first isomorphism theorem 
-\begin{equation}
-f(G)\cong G/\ker(f)
-\end{equation}
-and $H=\ker(f)$ is a normal subgroup of $G$. Hence we can construct
-the following sequence of maps
-\begin{equation}
-1\xhookrightarrow{\text{mono}}H\xhookrightarrow{\text{mono}}G\xrightarrow{f}G/H\xrightarrow{\text{epi}}1
-\end{equation}
-The first map is unique because $1$ has to map to $e\in H$. The second map is the inclusion of the subgroup $H\hookrightarrow G$. These two maps are monomorphisms because they are injective, while
-the other two are epimorphisms because they are surjective. The question
-we seek to answer is whether the group $G$ can always be written as
-a direct product of its normal subgroup $H$ and the quotient group $G/H$.
-This statement is equivalent to the statement that there exists a morphism
-$g:G/H\rightarrow G$ such that $gf=\id_{G/H}$, i.e.\ $g$ is a section
-of the split epimorphism $f$. 
+    Let $f:G\rightarrow K$ be a group homomorphism in $\mathsf{Gr}$.
+    By the first isomorphism theorem 
+    \begin{equation}
+        f(G)\cong G/\ker(f)
+    \end{equation}
+    and $H=\ker(f)$ is a normal subgroup of $G$. Hence we can construct
+    the following sequence of maps
+    \begin{equation}
+        1\xhookrightarrow{\text{mono}}H\xhookrightarrow{\text{mono}}G\xrightarrow{f}G/H\xrightarrow{\text{epi}}1
+    \end{equation}
+    The first map is unique because $1$ has to map to $e\in H$. The second map is the inclusion of the subgroup $H\hookrightarrow G$. These two maps are monomorphisms because they are injective, while
+    the other two are epimorphisms because they are surjective. The question
+    we seek to answer is whether the group $G$ can always be written as
+    a direct product of its normal subgroup $H$ and the quotient group $G/H$.
+    This statement is equivalent to the statement that there exists a morphism
+    $g:G/H\rightarrow G$ such that $gf=\id_{G/H}$, i.e.\ $g$ is a section
+    of the split epimorphism $f$. 
 
-We already know from the last example that not every epimorphism has a section, but for another example let us go back to the kindergarten and
-re-learn how to add integer numbers in their decimal representation. For simplicity we will restrict ourselves
-to two digit numbers, i.e.\ elements of the cyclic group $\bbZ/100\bbZ$.
-The units and tens digits of these numbers both form their own cyclic
-groups $\bbZ/10\bbZ=\{0,1,\ldots,9\}$ and we have the following
-sequence of maps 
-\begin{equation}
-0\hookrightarrow\underbrace{\bbZ/10\bbZ}_\text{tens}\xrightarrow{\times10}\bbZ/100\bbZ\xrightarrow{\mod 10}\underbrace{\bbZ/10\bbZ}_\text{units}\rightarrow0
-\end{equation}
+    We already know from the last example that not every epimorphism has a section, but for another example let us go back to the kindergarten and
+    re-learn how to add integer numbers in their decimal representation. For simplicity we will restrict ourselves
+    to two digit numbers, i.e.\ elements of the cyclic group $\bbZ/100\bbZ$.
+    The units and tens digits of these numbers both form their own cyclic
+    groups $\bbZ/10\bbZ=\{0,1,\ldots,9\}$ and we have the following
+    sequence of maps 
+    \begin{equation}
+    0\hookrightarrow\underbrace{\bbZ/10\bbZ}_\text{tens}\xrightarrow{\times10}\bbZ/100\bbZ\xrightarrow{\mod 10}\underbrace{\bbZ/10\bbZ}_\text{units}\rightarrow0
+    \end{equation}
 
-Just like in the example with $\bbZ/2\bbZ$ above, the map ``$\mod 10$'' is epi but not a split epi, so $\bbZ/100\bbZ$ is not a trivial extension of $\bbZ/10\bbZ$ by itself. If we had $\bbZ/100\bbZ\cong\bbZ/10\bbZ\times\bbZ/10\bbZ$,
-addition would be trivial and we would never have to ``carry over''
-from the units digit to the tens digit. Clearly, that is not true
-and this isomorphism doesn't exist. 
+    Just like in the example with $\bbZ/2\bbZ$ above, the map ``$\mod 10$'' is epi but not a split epi, so $\bbZ/100\bbZ$ is not a trivial extension of $\bbZ/10\bbZ$ by itself. If we had $\bbZ/100\bbZ\cong\bbZ/10\bbZ\times\bbZ/10\bbZ$,
+    addition would be trivial and we would never have to ``carry over''
+    from the units digit to the tens digit. Clearly, that is not true
+    and this isomorphism doesn't exist. 
 
-When $f$ above isn't split, we say that $G$ is a nontrivial \emph{extension}
-of the group $H$.\footnote{The concept of extensions of symmetry groups often shows up in quantum
-mechanics where the Hilbert space is a projective representation of
-the symmetry group which is related to representations of central
-extensions of the group.}
+    When $f$ above isn't split, we say that $G$ is a nontrivial \emph{extension}
+    of the group $H$.\footnote{The concept of extensions of symmetry groups often shows up in quantum
+    mechanics where the Hilbert space is a projective representation of
+    the symmetry group which is related to representations of central
+    extensions of the group.}
 \end{example}
 
 
@@ -746,77 +748,77 @@ extensions of the group.}
 
 The notion of universal constructions is one of the most common ways category theory shows up in applications. Here we only give a brief introduction to these concepts, but the reader is encouraged to check out the great book \cite{Bergman} for a much deeper yet very pedagogical exploration of universality.
 \begin{defn}[Initial and terminal objects]\index{Universal object}\index{Initial object}\index{Terminal object}
- An object $A\in\ob\left(\mathcal{C}\right)$ is called \emph{initial}
-(\emph{terminal}) if for any object $B\in\ob\left(\mathcal{C}\right)$,
-the set $\mor\left(A,B\right)$ (respectively, $\mor\left(B,A\right)$)
-consists of exactly one element. It is called a \emph{zero} (or
-\emph{null}) object if it is both initial and terminal.
+    An object $A\in\ob\left(\mathcal{C}\right)$ is called \emph{initial}
+    (\emph{terminal}) if for any object $B\in\ob\left(\mathcal{C}\right)$,
+    the set $\mor\left(A,B\right)$ (respectively, $\mor\left(B,A\right)$)
+    consists of exactly one element. It is called a \emph{zero} (or
+    \emph{null}) object if it is both initial and terminal.
 \end{defn}
 \begin{prop}
-If $A$ and $A'$ are both initial (terminal, null) objects in $\mathcal{C}$,
-then they are isomorphic via a unique isomorphism.
+    If $A$ and $A'$ are both initial (terminal, null) objects in $\mathcal{C}$,
+    then they are isomorphic via a unique isomorphism.
 \end{prop}
 \begin{proof}
-We have $\exists!\;f:A\to A'$ and $\exists!\;g:A'\to A$. In addition,
-$\mor\left(A,A\right)=\left\{ \id_{A}\right\} $ and $\mor\left(A',A'\right)=\left\{ \id_{A'}\right\} $.
-At the same time, $fg\in\mor\left(A,A\right)$, which means that $fg=\id_{A}$.
-Similarly, $gf=\id_{A'}$. Therefore $f$ is an isomorphism, and it
-is unique.
+    We have $\exists!\;f:A\to A'$ and $\exists!\;g:A'\to A$. In addition,
+    $\mor\left(A,A\right)=\left\{ \id_{A}\right\} $ and $\mor\left(A',A'\right)=\left\{ \id_{A'}\right\} $.
+    At the same time, $fg\in\mor\left(A,A\right)$, which means that $fg=\id_{A}$.
+    Similarly, $gf=\id_{A'}$. Therefore $f$ is an isomorphism, and it
+    is unique.
 \end{proof}
 In particular categories, the existence of universal objects often has to be shown by an explicit construction of one. However, the concept is still very powerful because it defines these objects up to isomorphism and, as such, distills their essential properties down to a very simple recipe.
 \begin{example}
-In $\mathsf{Set}$, $\varnothing$ is an initial object, because there
-is a unique map from $\varnothing$ to any other set (this map is
-also denoted by $\varnothing:\varnothing\to A$). Terminal objects
-here are all one-element sets (``singletons''), collectively denoted
-by $\left\{ \ast\right\} $, emphasizing that they are important only
-up to isomorphism.
+    In $\mathsf{Set}$, $\varnothing$ is an initial object, because there
+    is a unique map from $\varnothing$ to any other set (this map is
+    also denoted by $\varnothing:\varnothing\to A$). Terminal objects
+    here are all one-element sets (``singletons''), collectively denoted
+    by $\left\{ \ast\right\} $, emphasizing that they are important only
+    up to isomorphism.
 \end{example}
 
 \begin{example}
-Following Example \ref{poset example}, in a category that is a \emph{totally ordered} set (i.e.\ any two elements can be compared), a terminal object is a maximal element and an initial object is a minimal element (if they exist).
+    Following Example \ref{poset example}, in a category that is a \emph{totally ordered} set (i.e.\ any two elements can be compared), a terminal object is a maximal element and an initial object is a minimal element (if they exist).
 \end{example}
 %
 \begin{example}
-$\mathsf{Set}_{\bullet}$ has a significantly different structure
-from $\mathsf{Set}$, and this shows in its universal objects, because
-the empty set is no longer in this category. Thus one-element sets
-become zero objects!
+    $\mathsf{Set}_{\bullet}$ has a significantly different structure
+    from $\mathsf{Set}$, and this shows in its universal objects, because
+    the empty set is no longer in this category. Thus one-element sets
+    become zero objects!
 \end{example}
 %
 \begin{example}
-In $\mathsf{Gr}$ and $\mathsf{Ab}$, the trivial one-element group
-is a zero object for reasons very similar to $\mathsf{Set}_{\bullet}$.
+    In $\mathsf{Gr}$ and $\mathsf{Ab}$, the trivial one-element group
+    is a zero object for reasons very similar to $\mathsf{Set}_{\bullet}$.
 \end{example}
 %
 \begin{example}
-In $\mathsf{CommRing}$, the ring $\bbZ$ of integers is initial.
-There are no terminal objects here, because the trivial ring $\left\{ 0\right\} $
-is forbidden by the requirement of the existence of unity $1\neq0$.
+    In $\mathsf{CommRing}$, the ring $\bbZ$ of integers is initial.
+    There are no terminal objects here, because the trivial ring $\left\{ 0\right\} $
+    is forbidden by the requirement of the existence of unity $1\neq0$.
 \end{example}
 %
 
 \subsubsection{Universal properties}
 
 \begin{defn}[Free group]\index{Free group}
-The \emph{free group} $F_{X}$ \emph{generated by a set} $X$
-is usually defined as the group whose elements are all the finite-length
-``words'' formed out of elements $x$ of $X$ and their formal inverses
-$x^{-1}$ as letters, so $F_{X}=\left\{ "x_{1}^{\epsilon_{1}}x_{2}^{\epsilon_{2}}\cdots x_{n}^{\epsilon_{n}}"|n\geq0,\epsilon_{i}\in\left\{ \pm1\right\} ,x_{i}\in X,i=1,\ldots,n\}\right\} $.
-The group operation is simply the concatenation of words and the inversion
-involves reversing the order of the letters and inverting each one. Two words are considered equivalent if one is obtained from the other by removals or insertions of any trivial sub-strings of the form $x^{\epsilon}x^{-\epsilon}$. We will also sometimes denote $F_X$ by $\<X\>$.
+    The \emph{free group} $\rmF_{X}$ \emph{generated by a set} $X$
+    is usually defined as the group whose elements are all the finite-length
+    ``words'' formed out of elements $x$ of $X$ and their formal inverses
+    $x^{-1}$ as letters, so $\rmF_{X}=\left\{ "x_{1}^{\epsilon_{1}}x_{2}^{\epsilon_{2}}\cdots x_{n}^{\epsilon_{n}}"|n\geq0,\epsilon_{i}\in\left\{ \pm1\right\} ,x_{i}\in X,i=1,\ldots,n\}\right\} $.
+    The group operation is simply the concatenation of words and the inversion
+    involves reversing the order of the letters and inverting each one. Two words are considered equivalent if one is obtained from the other by removals or insertions of any trivial sub-strings of the form $x^{\epsilon}x^{-\epsilon}$. We will also sometimes denote $\rmF_X$ by $\<X\>$.
 \end{defn}
-Now, this definition constructs $F_{X}$ as an explicit set of elements
+Now, this definition constructs $\rmF_{X}$ as an explicit set of elements
 using set-theoretical language. However, in group theory we are only
 interested in objects up to isomorphism. In particular, one could
-come up with infinitely many other ways to construct $F_{X}$ by introducing
+come up with infinitely many other ways to construct $\rmF_{X}$ by introducing
 extra letters, replacing them with other elements whatsoever, allowing for exponents other than $\pm 1$, etc. This
 would not change the group as far as category theory is concerned.
 Therefore it is important to understand how this construction, up
 to isomorphism, can be expressed in purely categorical terms. The
 following example shows how free groups can be defined as universal
 objects in a certain category. Such properties of special constructions
-are called \emph{universal properties}.
+are called \emph{universal properties}.\index{Universal property}
 \begin{example}[Over/undercategory]\index{Overcategory}\index{Undercategory}\index{Coslice category}
 This example will be a very common special case of what's called a ``comma category'', known as an \emph{undercategory} or a \emph{coslice category}. Fix a set $X$ and consider the ``arrow category'' $\mathcal{C}$
 where objects are all maps from $X$ to any group
@@ -841,15 +843,15 @@ execute at end picture={\draw [<-] ([xshift=0mm,yshift=-6mm]m-2-2.north) arc[sta
    & \, & \\
    G_X \arrow[rr,dashed,swap,"\exists!\,\psi_\ast"]& & G
 \end{tikzcd}\]In other words, any group-valued function $\psi$ on $X$ ``\emph{factors}''
-through $G_{X}$ and the universal map $i$ as $\psi=\rmi\psi_{\ast}$.
+through $G_{X}$ and the universal map $i$ as $\psi=i\psi_{\ast}$.
 
 We can now easily verify that such an object exists and it is isomorphic
-(in $\mathcal{C}$) to the object $X\overset{i}{\to}F_{X}$ where
+(in $\mathcal{C}$) to the object $X\overset{i}{\to}\rmF_{X}$ where
 $i\left(x\right)=``x"$. Indeed, if any $G$-valued map $\psi$ factors
-through $F_{X}$ via a homomorphism $\psi_{\ast}:F_{X}\to G$, then
+through $\rmF_{X}$ via a homomorphism $\psi_{\ast}:\rmF_{X}\to G$, then
 by commutativity of the triangle, $\psi_{\ast}\left(``x"\right)=\psi_{\ast}\left(i\left(x\right)\right)=\psi(x)$.
-However, one-letter words generate the whole $F_{X}$, so this equality
-\emph{uniquely} defines $\psi_{\ast}$ as a homomorphism on $F_{X}$,
+However, one-letter words generate the whole $\rmF_{X}$, so this equality
+\emph{uniquely} defines $\psi_{\ast}$ as a homomorphism on $\rmF_{X}$,
 namely
 \begin{equation}
 \psi_{\ast}\left(``x_{1}^{\epsilon_{1}}x_{2}^{\epsilon_{2}}\cdots x_{n}^{\epsilon_{n}}"\right)=\psi\left(x_{1}\right)^{\epsilon_{1}}\cdots\psi\left(x_{n}\right)^{\epsilon_{n}}.
@@ -862,13 +864,13 @@ in their categories, and in many cases the easiest way to show it
 is to construct one explicitly (not up to iso), like we did for the
 free groups at first.
 
-Finally, we note that the correspondence $X\to F_X$ is \emph{natural}, i.e.\ functorial. Namely, any map between sets $f:X\to Y$ generates a unique homomorphism between the corresponding free groups $F_f:F_X\to F_Y$ defined on the generators by $F_f (i_X(x))=i_Y(f(x))$. Sometimes mathematicians describe equations of this form as ``$f$ intertwines the action of $i_X$ and $i_Y$''. Of course, this is a bit of an abuse of terminology, since $f$ and $F_f$ are not quite the same, although $f$ can be thought of as a restriction of $F_f$. In any case, in the end we have a functor $F:\mathsf{Set}\to\mathsf{Gr}$.
+Finally, we note that the correspondence $X\mapsto \rmF_X$ is \emph{natural}, i.e.\ functorial. Namely, any map between sets $f:X\to Y$ generates a unique homomorphism between the corresponding free groups $\rmF_f:\rmF_X\to \rmF_Y$ defined on the generators by $\rmF_f (i_X(x))=i_Y(f(x))$. Sometimes mathematicians describe equations of this form as ``$f$ intertwines the action of $i_X$ and $i_Y$''. Of course, this is a bit of an abuse of terminology, since $f$ and $\rmF_f$ are not quite the same, although $f$ can be thought of as a restriction of $\rmF_f$. In any case, in the end we have a functor $\rmF:\mathsf{Set}\to\mathsf{Gr}$.
 
 This kind of universal construction is the most typical way ``universal properties'' or ``characteristic properties'' come up in mathematics -- as universal objects in categories of morphisms with one fixed end. Indeed, as we have seen, concepts such as surjections and injections can be defined this way. This will also apply to geometric concepts such as submersions, lifting of paths, etc. For more examples and a general description see \cite[Exercise~7.8:24 and Def.~7.8:12]{Bergman}.
 \end{example}
-\begin{rem}
-In group theory, especially in finite groups, groups are often described
-by a list of \emph{generators} and \emph{relations}. If $\left\{ g_{1},\ldots,g_{n}\right\} $
+\begin{rem}[Presentations of countable groups]
+In group theory, countable groups are often described
+by a list of \emph{generators} and \emph{relations}.\index{Generators of a discrete group}\index{Relations in a discrete group} If $\left\{ g_{1},\ldots,g_{n}\right\} $
 is the set of generators, then a relation is a condition of the form
 $g_{i_{1}}^{\epsilon_{1}}\cdots g_{i_{k}}^{\epsilon_{k}}=e$. Then
 our group is understood to be the quotient of the free group $F_{\left\{ g_{i}\right\} }$
@@ -885,13 +887,13 @@ $\sigma_{ij}^{2}=e$ and two extra relations
 \sigma_{12}\sigma_{23}\sigma_{12} & =\sigma_{23}\sigma_{12}\sigma_{23},\nonumber \\
 \sigma_{23}\sigma_{13}\sigma_{23} & =\sigma_{13}\sigma_{23}\sigma_{13},
 \end{align}
-also known as \emph{braid relations} in the theory of braid groups.
-The notation for this \emph{presentation} of the group is
+also known as \emph{braid relations} in the theory of braid groups.\index{Braid relations}
+The notation for this \emph{presentation} of the group is \index{Presentation of a group}
 \begin{equation}
 S_{3}=\left\langle \sigma_{12},\sigma_{23},\sigma_{13}\mid\sigma_{ij}^{2},\,\sigma_{12}\sigma_{23}\sigma_{12}=\sigma_{23}\sigma_{12}\sigma_{23},\,\sigma_{23}\sigma_{13}\sigma_{23}=\sigma_{13}\sigma_{23}\sigma_{13}\right\rangle .
 \end{equation}
 Without the first set of relations ($\sigma_{ij}^{2}=e$), this would
-be the braid group $B_{3}$.
+be the \emph{braid group} $B_{3}$.\index{Braid group}
 \end{rem}
 %
 \begin{example}[Tensor algebra]\index{Tensor product}\index{Tensor algebra}\label{Tensor algebra}
@@ -899,20 +901,20 @@ Let $V$ be a $K$-vector space of dimension $\dim V=n$. Pick an
 arbitrary basis $\left\{ e_{i}\right\} _{i=1}^{n}$ of $V$. Its (contravariant)
 tensor algebra is explicitly constructed as 
 \begin{equation}
-T\left(V\right)=\bigoplus_{k=1}^{\infty}V^{\otimes k},\label{eq: tensor alg}
+\bbT\left(V\right)=\bigoplus_{k=1}^{\infty}V^{\otimes k},\label{eq: tensor alg}
 \end{equation}
-where $V^{\otimes k}$ is the tensor power of $V$,\footnote{For now we will pretend that we know what direct products and sums are. As categorical constructions, they will be introduced in Section \ref{Sec.Products}.} formally defined
+where $V^{\otimes k}$ is the tensor power of $V$,\footnote{For now we will pretend that we know what direct products and sums are. As categorical constructions, they will be introduced in \S\ref{Sec.Products}.} formally defined
 as the vector space of dimension $kn$ spanned by the basis consisting
 of $kn$ symbols \[\left\{ e_{i_{1}}\otimes e_{i_{2}}\otimes\ldots\otimes e_{i_{k}},i_{j}\in\left\{ 1,2\ldots,n\right\} ,j=1,\ldots,k\right\}.\]
-The multiplication operation $\otimes$ on $T(V)$ is just defined
+The multiplication operation $\otimes$ on $\bbT(V)$ is just defined
 on this large basis as the concatenation of these strings of tensor products
-of $e_{i}$'s, and extended to all of $T\left(V\right)$ by linearity.
+of $e_{i}$'s, and extended to all of $\bbT\left(V\right)$ by linearity.
 
 Note how strongly this construction depends on the initial choice
 of basis on $V$. We call such constructions \emph{unnatural}, because
 they rely on a lot of extra choices, and require a proof that the
 result, up to isomorphism, is independent of these choices. To give
-a natural construction of $T\left(V\right)$, we need to discuss multilinear
+a natural construction of $\bbT\left(V\right)$, we need to discuss multilinear
 maps. A $k$-linear map $f:V^{k}\to A$ (where $V^k=V^{\times k}=V^{\oplus k}$ is just the direct power of $V$ and $A$ is a $K$-vector space or a $K$-algebra),
 is a map satisfying for all $\alpha,\alpha'\in K$
 \begin{multline}
@@ -949,32 +951,32 @@ execute at end picture={\draw [<-] ([xshift=0mm,yshift=-6mm]m-2-2.north) arc[sta
 \end{tikzcd}\]
 Our argument above shows that in that explicit construction, if we pick $t(v,w)=v\otimes w$ then the commutation of the triangle says $f_\ast (v\otimes w)=f(v,w)$, which is exactly what we had before. Thus our construction with this $t$ indeed has this universal porperty and defines a unique isomorphism class of objects that are collectively denoted by  $V\oplus W\overset{t}{\to}V\otimes W $. Note that the above diagram lives completely within the category of vector spaces: all arrows are just linear maps, i.e.\ morphisms of vector spaces.
 
-Now we can finally extend this construction to find the universal property of $T\left(V\right)$. As a vector space, $T(V)=\bigoplus_{k\geq 1}V^{\otimes k}$, and we know that linear functions on every $V^{\otimes k}$ need to correspond to multilinear maps on $V$. However, since $T(V)$ is supposed to be a tensor algebra and not just a vector space, we need to capture this extra structure in the requirements for our morphisms.
+Now we can finally extend this construction to find the universal property of $\bbT\left(V\right)$. As a vector space, $\bbT(V)=\bigoplus_{k\geq 1}V^{\otimes k}$, and we know that linear functions on every $V^{\otimes k}$ need to correspond to multilinear maps on $V$. However, since $T(V)$ is supposed to be a tensor algebra and not just a vector space, we need to capture this extra structure in the requirements for our morphisms.
 
-We claim that the tensor algebra $T(V)$ is defined up to unique isomorphism by the universal property\index{Universal property!of tensor algebras} that any \emph{linear}, \emph{algebra-valued} function $f:V\to A$ on $V$ factors through $T(V)$ via a universal map $i:V\to T(V)$ and a unique \emph{algebra homomorphism} $f_{\ast}:T(V)\to A$:
+We claim that the tensor algebra $\bbT(V)$ is defined up to unique isomorphism by the universal property\index{Universal property!of tensor algebras} that any \emph{linear}, \emph{algebra-valued} function $f:V\to A$ on $V$ factors through $\bbT(V)$ via a universal map $i:V\to \bbT(V)$ and a unique \emph{algebra homomorphism} $f_{\ast}:\bbT(V)\to A$:
 \[\begin{tikzcd}[every matrix/.append style={name=m},   
 execute at end picture={\draw [<-] ([xshift=0mm,yshift=-6mm]m-2-2.north) arc[start angle=-90,delta angle=-270,radius=0.25cm];}]
    & V\arrow[ddl,swap,"i" ]\arrow[ddr,"\forall f\text{ - linear}"] & \\
    & \, & \\
-   T(V) \arrow[rr,dashed,swap,"\exists!\,f_\ast\text{ - algebra hom.}"]& & A
+   \bbT(V) \arrow[rr,dashed,swap,"\exists!\,f_\ast\text{ - algebra hom.}"]& & A
 \end{tikzcd}\]
 Indeed, we have already constructed this $f_{\ast}$ on the individual
-summands in (\ref{eq: tensor alg}), can extend it to all of $T(V)$
+summands in (\ref{eq: tensor alg}), can extend it to all of $\bbT(V)$
 by linearity, and turn it into a true algebra homomorphism by mapping
-tensor products in $T(V)$ to algebra products in $A$. It is easy
+tensor products in $\bbT(V)$ to algebra products in $A$. It is easy
 to check that $f_{\ast}$ is uniquely defined by the requirement that
-the triangle commute, since $i:V\to T(V)$ in our explicit example
+the triangle commute, since $i:V\to \bbT(V)$ in our explicit example
 is nothing but the inclusion of $V$ as the first direct summand in
 (\ref{eq: tensor alg}), and the values of $f_{\ast}$ on $V$ uniquely
-define $f_{\ast}$ on all of $T(V)$.
+define $f_{\ast}$ on all of $\bbT(V)$.
 \end{example}
 \begin{xca}
-Check that the correspondence $V\mapsto T(V)$ extends to the covariant
-\emph{tensor functor} $T:\mathsf{FinVect}_{K}\to\mathsf{Alg}_{K}$.
+Check that the correspondence $V\mapsto \bbT(V)$ extends to the covariant
+\emph{tensor functor} $\bbT:\mathsf{FinVect}_{\bbK}\to\mathsf{Alg}_{\bbK}$.
 In other words, show that every linear map of vector spaces $\psi:V\to W$
-extends to an algebra homomorphism $\psi_{\ast}:T(V)\to T(W)$. Confusingly,
-elements of $T(V)$ are called \emph{contravariant tensors} on $V$,
-but $T$ is a covariant functor.
+extends to an algebra homomorphism $\psi_{\ast}:\bbT(V)\to \bbT(W)$. Confusingly,
+elements of $\bbT(V)$ are called \emph{contravariant tensors} on $V$,
+but $\bbT$ is a covariant functor.
 \end{xca}
 
 \subsubsection{Adjoint functors}
@@ -1056,7 +1058,7 @@ theory.
 \end{example}
 %
 \begin{example}\label{hom-functor adjoint}
-On $\mathsf{Ab}$, $\mathsf{Vect}_{K}$, $R\text{-}\mathsf{Mod}$
+On $\mathsf{Ab}$, $\mathsf{Vect}_{\bbK}$, $R\text{-}\mathsf{Mod}$
 and many other categories, $\otimes$ and $\Hom$ are adjoint:
 \[
 \Hom\left(U\otimes V,W\right)\cong\Hom\left(U,\Hom\left(V,W\right)\right).
@@ -1088,7 +1090,7 @@ by
 \Hom\left(\rmF(X),G\right)\cong\mathrm{Map}\left(X,\Box\left(G\right)\right).
 \]
 This equality says that every $G$-valued function on $X$ (right-hand
-side) uniquely extends to a group homomorphism $F(X)\to G$. This
+side) uniquely extends to a group homomorphism $\rmF(X)\to G$. This
 is literally the universal property of the free group $F_{X}$! And, as we saw earlier, $\rmF$ is indeed a functor.
 \end{example}
 %
@@ -1266,7 +1268,7 @@ called \emph{amalgamated free products}. Namely $G\ast_K H$ is the factor of the
 \end{example}
 %
 \begin{example}
-In $\mathsf{CommRing}$, $\mathsf{Vect}_{K}$, $\mathsf{Alg}_{K}$,
+In $\mathsf{CommRing}$, $\mathsf{Vect}_{\bbK}$, $\mathsf{Alg}_{\bbK}$,
 $R\text{-}\mathsf{Mod}$ and many others, we have the direct product
 $R\times S$, and the tensor product $R\otimes S$ for the coproduct.
 \end{example}
@@ -1376,8 +1378,8 @@ The identity transformation $1_{F}:F\Longrightarrow F$, $\tau_{X}=\id_{F(X)}$.
 This can be interpreted as saying that the embedding $\sigma_X$ looks the same regardless of any relabeling of the elements of $X$ (is equivariant with respect to bijections on $X$). In formal language, this diagram represents a natural transformation from the identity functor to $P$: $\mathsf{id}_{\mathsf{Set}}\Longrightarrow P$. This is what we mean when we say that the embedding $\sigma$ is \emph{natural} or \emph{canonical} (canonical usually implies uniqueness but it's not a strictly defined term in category theory).
 \end{example}
 %
-\begin{example}
-$\mathcal{C}=\mathcal{D}=\mathsf{FinVect}_{K}$. We have the identity
+\begin{example}[Duals and double duals]
+$\mathcal{C}=\mathcal{D}=\mathsf{FinVect}_{\bbK}$. We have the identity
 functor $1_{\mathcal{C}}$ and the double dual functor $F:V\to V^{\ast\ast}$.
 A \href{https://en.wikipedia.org/wiki/Dual_space\#Double_dual}{classical theorem in linear algebra}
 states that $V^{\ast\ast}$ is naturally isomorphic to $V$, i.e.
@@ -1396,7 +1398,7 @@ The only way to construct an isomorphism of this kind is to explicitly introduce
 a basis $\left\{ e_{i}\right\} _{i=1}^{n}$ on $V$ and define its
 dual basis $\left\{ \alpha^{i}\right\} _{i=1}^{n}$ by $\alpha^{i}\left(e_{j}\right)=\delta_{j}^{i}$ (or any other basis of $V^\ast$).
 Then we have an isomorphism $V\to V^{\ast}$ that maps $e_{i}\mapsto\alpha^{i}$.
-However, this isomorphism is \emph{not natural} because it strongly
+However, this isomorphism is \emph{not natural} because it
 depends on the choice of basis, i.e.\ it is not invariant under isomorphisms
 of $V$. In categorical language, there simply are no natural transformations between a covariant functor (the identity functor) and a contravariant one (the dualization functor). Even if we were to define what's called \emph{dinatural transformations} (where the analogous square with only the arrow $G(Y)\to G(X)$ reversed must commute), one can show that the only such transformation from the identity to the dualization functor is the zero transformation.
 
@@ -1428,10 +1430,10 @@ the class of cardinal numbers. $\ob\left(\mathsf{Sk}\left(\mathsf{FinSet}\right)
 \end{example}
 %
 \begin{example}
-$\ob\left(\mathsf{Sk}\left(\mathsf{Vect}_{K}\right)\right)$ consists
-of all powers of $K$, $K^{\alpha}$, where $\alpha$ is any cardinal
-number. $\ob\left(\mathsf{Sk}\left(\mathsf{FinVect}_{K}\right)\right)$
-is the set of ``column-vector spaces'' $K^{n}$.
+$\ob\left(\mathsf{Sk}\left(\mathsf{Vect}_{\bbK}\right)\right)$ consists
+of all powers of $\bbK$, $\bbK^{\alpha}$, where $\alpha$ is any cardinal
+number. $\ob\left(\mathsf{Sk}\left(\mathsf{FinVect}_{\bbK}\right)\right)$
+is the set of ``column-vector spaces'' $\bbK^{n}$.
 \end{example}
 %
 \begin{example}
@@ -1609,7 +1611,7 @@ and the double $(X,\mathcal{{T}})$ is called a \emph{topological
 space}.
 \end{defn}
 
-The intuitive meaning of a topology is that we ``distinguish'' two points in $X$ only if one of them can be put in an open set not containing the other. Thus, we tend to associate the property of belonging to the same ``small'' open set with proximity (the smaller the open set, in terms of inclusion, the ``closer'' the points), even though there is no notion of distance at this point. There are variations of this interpretation of topology, see Section \ref{Separation Axioms}.
+The intuitive meaning of a topology is that we ``distinguish'' two points in $X$ only if one of them can be put in an open set not containing the other. Thus, we tend to associate the property of belonging to the same ``small'' open set with proximity (the smaller the open set, in terms of inclusion, the ``closer'' the points), even though there is no notion of distance at this point. There are variations of this interpretation of topology, see \S\ref{Separation Axioms}.
 
 \begin{example} Some elementary examples of topologies:
 \begin{enumerate}
@@ -1703,7 +1705,7 @@ Note that replacing `open' by `closed' in the above definition gives an equivale
 A continuous map is defined to be a homeomorphism if it has a continuous inverse.
 \end{defn}
 
-Homeomorphisms are isomorphisms in the category of topological spaces. Properties of topological spaces that are preserved by homeomorphisms (and more generally, by homotopies, which are essentially continuous deformations as opposed to isomorphisms, see Section \ref{sec.homotopy}) are called \emph{topological invariants}. Topological invariants can take values in words (``connected''/``disconnected'', ``compact''/``non-compact''), in integers (winding numbers, Chern numbers, Euler characteristic, genus, etc.), in groups (homotopy groups, homology groups, etc.), and even in more complicated classes like algebras, bundles, differential forms... The only way to show that two spaces are \emph{not} homeomorphic is to find a topological invariant that is different between the two spaces.
+Homeomorphisms are isomorphisms in the category of topological spaces. Properties of topological spaces that are preserved by homeomorphisms (and more generally, by homotopies, which are essentially continuous deformations as opposed to isomorphisms, see \S\ref{sec.homotopy}) are called \emph{topological invariants}. Topological invariants can take values in words (``connected''/``disconnected'', ``compact''/``non-compact''), in integers (winding numbers, Chern numbers, Euler characteristic, genus, etc.), in groups (homotopy groups, homology groups, etc.), and even in more complicated classes like algebras, bundles, differential forms... The only way to show that two spaces are \emph{not} homeomorphic is to find a topological invariant that is different between the two spaces.
 \begin{gather*}
 \boxed{\begin{array}{c}
 \text{The problem topology serves to solve is:}\\
@@ -2499,7 +2501,7 @@ Notice that the set of endomorphisms of any $x\in X$ viewed as an object in $\Pi
 \begin{thm}[Seifert-van~Kampen]\index{Theorem!Seifert-van~Kampen}
     Let $\mathscr{U}=\{U_\alpha\}_\alpha$ be an open covering of a space $X$ that is closed under finite intersections. Regard $\mathscr{U}$ as an index category whose morphisms are the inclusions of sets. The functor $\Pi$, restricted to sets and maps in $\mathscr{U}$, produces a diagram of groupoids $\Pi(\mathscr{U})$, i.e.
     \[\restr{\Pi}{\mathscr{U}}: \mathscr{U}\to \mathsf{Grpd}.\]
-    Then the groupoid $\Pi(X)$ is the colimit (or pushout) of this diagram (that is, the initial object in the category of cones over $\restr{\Pi}{\mathscr{U}}$, see Section~\ref{Limits and colimits}).
+    Then the groupoid $\Pi(X)$ is the colimit (or pushout) of this diagram (that is, the initial object in the category of cones over $\restr{\Pi}{\mathscr{U}}$, see \S\ref{Limits and colimits}).
 \end{thm}
 \begin{proof}
     We can verify the universal property. For a groupoid $G$ and a set of groupoid homomorphisms $\eta_\alpha:\Pi(U_\alpha)\to G$ (forming a cone over $\restr{\Pi}{\mathscr{U}}$), we must construct a groupoid homomorphism $\wt{\eta}:\Pi(X)\to G$ (which is nothing but a functor between categories) that restricts to $\eta_\alpha$ on $\Pi(U_\alpha)$ for all $\alpha$. On objects, that is on points of $X$, we have no choice but to define $\wt{\eta}(x)=\eta_\alpha(x)$ for $x\in U_\alpha$. This is independent of the choice of $\alpha$ since the cover is closed under finite intersections.
@@ -3007,7 +3009,7 @@ A topological embedding is a continuous map $f:X\to Y$ that is a homeomorphism o
 \end{defn}
 
 
-In this way the concept of a topological embedding map is dual to that of a topological quotient maps. In the smooth category the picture is a bit different. First, the intuitive smooth version of a quotient map is a smooth submersion that is a topological quotient map. However, as we will see in Section~\ref{sec: submersions}, every smooth submersion is automatically a quotient map, so the second requirement can be dropped. On the other hand, smooth immersions are not always topological embeddings (although they are topological immersions). This is why smooth submersions and smooth immersions are not dual concepts, but instead the concept dual to smooth submersions is the following concept of a smooth embedding.
+In this way the concept of a topological embedding map is dual to that of a topological quotient maps. In the smooth category the picture is a bit different. First, the intuitive smooth version of a quotient map is a smooth submersion that is a topological quotient map. However, as we will see in \S\ref{sec: submersions}, every smooth submersion is automatically a quotient map, so the second requirement can be dropped. On the other hand, smooth immersions are not always topological embeddings (although they are topological immersions). This is why smooth submersions and smooth immersions are not dual concepts, but instead the concept dual to smooth submersions is the following concept of a smooth embedding.
 
 \begin{defn}[Smooth embedding]\index{Embedding!smooth}
 A smooth embedding is a smooth immersion that is topological embedding.
@@ -3546,7 +3548,7 @@ In the category of non-pointed covering spaces, the universal cover is not an in
     \]
     In other words, right actions are the same thing as left actions on the opposite group $G^{\mathrm{op}}$. For this reason right actions are usually written as $x\cdot g=\Phi_g(x)$ and left actions as $g\cdot x=\Phi_g(x)$. The sets $G(x)=\Phi_x(G)$ are called \emph{orbits}.
 \end{defn}
-In the topological and smooth categories one usually considers continuous or smooth group actions, provided $G$ is a Lie group, but we will delay that discussion until Section~\ref{sec: Lie group actions}. For now $G$ will always be a discrete group (i.e.\ a group with discrete topology), so any condition of continuity or smoothness on the action is simply a condition on each $\Phi_g$ individually.
+In the topological and smooth categories one usually considers continuous or smooth group actions, provided $G$ is a Lie group, but we will delay that discussion until \S\ref{sec: Lie group actions}. For now $G$ will always be a discrete group (i.e.\ a group with discrete topology), so any condition of continuity or smoothness on the action is simply a condition on each $\Phi_g$ individually.
 
 \begin{defn}[$G$-equivariant maps]\index{Equivariant maps}\index{$G$-Set}
     The category of sets (spaces, manifolds) carrying a (left) action of $G$ is called $G\mathsf{-Set}$. Morphisms in this category are maps $f:X\to Y$ such that for all $g\in G$, $f(g\cdot x)=g\cdot f(x)$. These maps are called $G$-equivariant. Similarly, $G\mathsf{-Set}_\bullet$ consists of pointed sets with equivariant maps that respect basepoints. 
@@ -3620,7 +3622,7 @@ Obviously any covering space decomposes into a disjoint union of connected compo
 \end{proof}
 
 This proof actually shows that not only automorphisms are $G$-equivariant, but all morphisms in the category $\mathsf{Cov}_M$ are. This means that the action of $\pi_1(M)$ that we've constructed is \emph{natural}. These results can be summarized by the following Theorem.
-\begin{thm}[Monodromy Action]\index{Monodromy}
+\begin{thm}[Monodromy Action]\index{Monodromy (covering spaces)}
 For any covering space $E\overset{\pi}\to M$, 
 \begin{enumerate}
     \item there is a natural homomorphism $\pi_1(M)\to \Aut(\pi)$ called the \emph{monodromy action};
@@ -3865,7 +3867,7 @@ We thus have the following abstract reformulation of the classification theorem,
 Note that for a fixed $G$ there are many non-isomorphic universal $G$-principal coverings: the universal covering of any space $B$ whose fundamental group is $G$ will work. 
 
 \begin{rem}\label{rem: classifying space for discrete G}
-    We will later learn to construct, for any discrete group $G$, a space $X_G$ whose fundamental group is isomorphic to $G$ and which admits a universal covering. Therefore for every group $G$ there exists a universal $G$-principal covering, although it is not unique. Once we learn about $CW$-complexes we will be able to define a special universal $G$-principal covering that is unique up to homotopy (namely the universal covering of the first Eilenberg-MacLane space $\rmK(G,1)$, see Section~\ref{sec: CW approx}). This fact will eventually have a natural extension to all groups and fiber bundles: for any group $G$ we will construct a so called classifying space $\rmB G$ and a principal $G$-bundle $\rmE G\to \rmB G$ such that $\rmE G$ is contractible. There will hold isomorphisms $\pi_{n+1}(\rmB G)\cong \pi{n}(G)$ for all $n\geq 0$. In the case of discrete $G$ the bundle $\rmE G\to \rmB G$ is obviously a covering space, and the aforementioned space $X_G$ provides a universal covering that is an ``approximation'' of this space, and for which only the first isomorphism $\pi_1(B)\cong \pi_0(G)\cong G$ holds.
+    We will later learn to construct, for any discrete group $G$, a space $X_G$ whose fundamental group is isomorphic to $G$ and which admits a universal covering. Therefore for every group $G$ there exists a universal $G$-principal covering, although it is not unique. Once we learn about $CW$-complexes we will be able to define a special universal $G$-principal covering that is unique up to homotopy (namely the universal covering of the first Eilenberg-MacLane space $\rmK(G,1)$, see \S\ref{sec: CW approx}). This fact will eventually have a natural extension to all groups and fiber bundles: for any group $G$ we will construct a so called classifying space $\rmB G$ and a principal $G$-bundle $\rmE G\to \rmB G$ such that $\rmE G$ is contractible. There will hold isomorphisms $\pi_{n+1}(\rmB G)\cong \pi{n}(G)$ for all $n\geq 0$. In the case of discrete $G$ the bundle $\rmE G\to \rmB G$ is obviously a covering space, and the aforementioned space $X_G$ provides a universal covering that is an ``approximation'' of this space, and for which only the first isomorphism $\pi_1(B)\cong \pi_0(G)\cong G$ holds.
 \end{rem}
 
 Since every covering space is a disjoint union of its connected components, let us separately address the classification of \emph{connected} covering spaces in terms of equivalence of certain categories. Let $\pi:E\to B$ be a universal right $G$-principal covering. A left $G$-set $A$ is a disjoint sum of its orbits. We thus have a corresponding decomposition of the total space $E\times_G F$ into the sum of $E\times_G C$, where $C$ runs over the orbits of $F$. An orbit is a transitive $G$-set and is isomorphic to a homogeneous set (set of cosets) $G\slash H$ of some subgroup $H<G$. The homeomorphism $E\times_G G\slash H\cong E\slash H$ shows that the summands $E\times_G C$ are path-connected. The action of $H$ on $E$ is properly discontinuous and therefore $E\to E\slash H$ is an $H$-principal covering. Also the induced map $\pi_H:E\slash H\to B$ is a covering.

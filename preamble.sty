@@ -51,6 +51,9 @@
 \usepackage{newtxtext}
 \usepackage[varvw]{newtxmath}
 
+%%%% THIS ALLOWS PAGE BREAKS IN DISPLAY MATH GLOBALLY %%%%%
+\allowdisplaybreaks
+
 % This fixes math in headings not becoming bold 
 % From https://tex.stackexchange.com/questions/41379/automatically-typeset-math-in-section-headings-in-bold-face
 \makeatletter
@@ -323,7 +326,8 @@
 \newcommand{\acts}{\curvearrowright}
 \newcommand{\lacts}{\curvearrowleft}
 \newcommand{\dd}{{\mathrm{d}}}
-\newcommand{\bm}[1]{\boldsymbol{\mathrm{#1}}}
+% \usepackage{bm}
+\newcommand{\bm}[1]{\boldsymbol{#1}}
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\i}{\mathrm{i}}
@@ -350,6 +354,7 @@
 \newcommand{\rmQ}{\mathrm{Q}}
 \newcommand{\rmS}{\mathrm{S}}
 \newcommand{\rmT}{\mathrm{T}}
+\newcommand{\T}{\mathrm{T}}
 \newcommand{\rmV}{\mathrm{V}}
 \newcommand{\rmZ}{\mathrm{Z}}
 \newcommand{\rmi}{\i}
@@ -435,7 +440,7 @@
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Alt}{Alt}
 \DeclareMathOperator{\Sym}{Sym}
-\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\gr}{gr}
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\coim}{coim}
 \DeclareMathOperator{\dist}{dist}
@@ -446,8 +451,13 @@
 \DeclareMathOperator{\lcm}{lcm}
 \let\div\relax
 \DeclareMathOperator{\div}{div}
+\DeclareMathOperator{\curl}{curl}
+\let\grad\relax
+\DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator*{\res}{res}
 \DeclareMathOperator{\Lief}{\bf{Lie}}
+\DeclareMathOperator{\PDO}{PDO}
+\DeclareMathOperator{\OP}{OP}
 
 \newcommand{\Lie}{\mathcal{L}}
 \newcommand{\colimit}{\varinjlim}
