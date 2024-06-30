@@ -141,7 +141,7 @@ The simplest nonabelian examples of compact Lie groups are the 3-dimensional rot
 Recall that not every topological space has a universal covering space, and in particular not every topological group has one. However Lie groups are manifolds and therefore always have a universal covering manifold. We now show that the universal cover naturally becomes a Lie group itself.
 
 \begin{thm}[Existence of a universal covering group {{\cite[Thm.~7.7]{Lee}}}]\label{thm 7.7. Lee covering group}
-    Let $G$ be a connected Lie group. There exists a simply connected Lie group $\wt{G}$, called the \emph{universal covering group of $G$}, that admits a smooth covering map $\wt\pi:\wt{G}\to G$ that is also a Lie group homomorphism. This group is unique up to Lie group isomorphism.
+    Let $G$ be a connected Lie group. There exists a simply connected Lie group $\wt{G}$, called the \emph{universal covering group of $G$}, that admits a smooth covering map $\wt\pi:\wt{G}\to G$ that is also a Lie group homomorphism. This group is unique up to unique Lie group isomorphism.
 \end{thm}
 \begin{proof}
     Let $\wt G$ be the universal covering manifold of $G$ and $\wt\pi$ the corresponding smooth covering map. Then $\wt\pi\times\wt\pi:\wt G\times\wt G\to G\times G$ is also a smooth covering map.
@@ -557,7 +557,7 @@ If $\varphi^i:\bbD^i\to P^i$ is the standard characteristic map for the $i$-cell
     The next statement is that the map of pairs
     \[H:\left(P^{n-1}\times\SO_{n-1},P^{n-2}\times\SO_{n-1}\right)\to \left(\SO_n,\SO_{n-1}\right),\;h(v,g)=\rho(v)g,\]
     is a homeomorphism from $(P^{n-1}\setminus P^{n-2})\times\SO_{n-1}$ onto $\SO_n\setminus\SO_{n-1}$. Here we view $\SO_{n-1}$ as the subgroup of $\SO_n$ fixing the vector $\bf{e}_n$. To construct an inverse to this homeomorphism, let $h\in\SO_n\setminus \SO_{n-1}$ be given. Then $h\cdot \bf{e}_n\neq \bf{e}_n$ so by the preceding paragraph there is a unique $v_h\in P^{n-1}\setminus P^{n-2}$ with $\rho(v_h)\cdot \bf{e}_n=h\cdot \bf{e}_n$, and $v_h$ depends continuously on $h$ since $h\cdot \bf{e}_n$ does. The composition $g_h=\rho(v_h)^{-1}h$ then fixes $h$, hence lies in $\SO_{n-1}$. Since $\rho(v_h)g_h=h$, the map $h\mapsto (v_h,g_h)$ is an inverse to $H$ on $\SO_n\setminus\SO_{n-1}$.
-    \begin{figure}
+    \begin{figure}[tp]
         \centering
         \includegraphics[scale=0.7]{figures/CW_SOn.pdf}
         \caption{Reflections defined in the proof of Proposition~\ref{prop 3D.1 Hatcher}.}
@@ -828,8 +828,8 @@ Every Lie group has a canonical representation on its own tangent space at the i
     Note that any abelian Lie group has a trivial adjoint representation ($\Ad_g=0$ for all $g\in G$).
 
 \begin{example}[Adjoint representation of matrix groups]
-    Let $G\subset \GL(V)$ be a matrix group. Then $\T_e G\cong \Mat(V)$ and we can explicitly compute the adjoint representation. Since $\GL(V)$ is open in $\Mat(V)$, we can define a straight path $\gamma(t)=A+tX$ for any $A\in \GL(V)$ and $X\in \Mat(V)$. In particular, let $h(t)=I+tX$. Then for any $A\in \GL(V)$, using formula (\ref{eq differential in local coordinates}) for the action of a differential of a smooth map,
-    \[\Ad_A X=\restr{\frac{\dd}{\dd t}}{t=0}A(I+tX)A^{-1}=AXA^{-1}.\]
+    Let $G\subset \GL(V)$ be a matrix group. Then $\T_e G\cong \Mat(V)$ and we can explicitly compute the adjoint representation. Since $\GL(V)$ is open in $\Mat(V)$, we can define a straight path $\gamma(t)=A+tX$ for any $A\in \GL(V)$ and $X\in \Mat(V)$. In particular, let $h(t)=\rmI+tX$. Then for any $A\in \GL(V)$, using formula (\ref{eq differential in local coordinates}) for the action of a differential of a smooth map,
+    \[\Ad_A X=\restr{\frac{\dd}{\dd t}}{t=0}A(\rmI+tX)A^{-1}=AXA^{-1}.\]
     In other words, on matrix groups the Lie algebraic version of the adjoint map is still just matrix conjugation.
 \end{example}
 
@@ -1090,7 +1090,7 @@ Now it is instructive to repeat the derivation of the properties of this Lie bra
     as claimed.
 \end{proof}
 \begin{cor}
-    The above Proposition shows that we have constructed a functor called the Lie functor:
+    The above proposition shows that we have constructed a functor called the Lie functor:
     \[\Lief:\quad \mathsf{LieGr}\to \mathsf{LieAlg}\]
     that takes Lie groups to their Lie algebras and Lie group homomorphisms to their derivatives at the identity.
 \end{cor}
@@ -1100,7 +1100,7 @@ Now it is instructive to repeat the derivation of the properties of this Lie bra
 \end{rem}
 
 \begin{rem}
-    Looking ahead, we will ultimately show that the Lie functor, under proper restrictions, becomes an equivalence of categories. Namely, homomorphisms between \emph{connected} Lie groups are uniquely determined by their derivatives at $e$, and every finite-dimensional Lie algebra has a unique simply connected Lie group corresponding to it. Taken together, these statements were originally proven by Sophus Lie and are sometimes called Lie's Fundamental Theorems.
+    Looking ahead, we will ultimately show that the Lie functor, under proper restrictions, becomes an equivalence of categories. Namely, homomorphisms between \emph{connected} Lie groups are uniquely determined by their derivatives at $e$, and every finite-dimensional Lie algebra has a unique simply connected Lie group corresponding to it. Taken together, these statements were originally proven by Sophus Lie and \'Elie Cartan and are sometimes called Lie's Fundamental Theorems, see \subsect~\ref{sec: Lie III}.
 \end{rem}
 
 
@@ -1176,8 +1176,6 @@ Now we are finally ready show (once again) that $\ad_A B$ indeed satisfies the p
     \end{pmatrix}.\label{eq ad: su2->so3}\]
     The factor of $2$ here is a manifestation of the fact that $\SU_2$ is a double cover of $\SO_3$.
 \end{example}
-
-
 
 
 
@@ -3569,7 +3567,7 @@ $X\in\fX(M)$ is called complete if its flow domain is $\mathcal{D}=M\times\bbR $
     Let $V$ be a finite-dimensional real vector space.  Vector fields on $V$ can be naturally represented as smooth maps $X:V\to V$, so the flow equation reads $\dot v=X(v(t))$. A vector field is called linear if the corresponding mapping is linear, i.e.~$X(v)=Av$ for some $A\in\End(V)$. In this case, $X$ is said to be generated by $A$. As is well known, the solution with initial condition $v_0$ is $v(t)=\rme^{tA}v_0$ using the matrix exponential. Thus the flow is given by the ``one-parameter group'' of automorphisms $F_t=\rme^{tA}\in \GL(V)$.
 \end{example}
 
-\begin{thm}[Fundamental Theorem on Flows {{\cite[Thm.~9.12]{Lee}}}]
+\begin{thm}[Fundamental Theorem on Flows {{\cite[Thm.~9.12]{Lee}}}]\label{thm fundamental of flows}
     For any smooth vector field $X\in\fX(M)$, its maximal flow $F$ exists, is unique and:
     \begin{enumerate}
         \item For each $p\in M$, the curve $F_p$ is the unique maximal intergral curve of $X$ starting at $p$;
@@ -3617,8 +3615,8 @@ Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector fie
     In rare cases we will need to use flows of \emph{time-dependent vector fields}\index{Vector field!time-dependent}, which are smooth maps $X:J\times M\to \T M$ with $J\subset\bbR$ such that $X(t,m)\in \T_m M$ for all $(t,m)\in J\times M$. We also write $X_t(m)\coloneqq X(t,m)$. An integral curve $\gamma:I\to M$ with $I\subset J$ is defined by 
     \[\dot\gamma(t)=X(t,\gamma(t)),\quad t\in I.\]
     Maximality and completeness are defined as usual. One can reduce the problem of finding integral curves of $X$ to a time-independent problem by adding an extra dimension:
-    \[\wt X_{(t,m)}\coloneqq ((t,1),X(t,m)),\]
-    where we we use the natural identification $T(J\times M)\cong (J\times\bbR)\times \T M$. Assume $J=\bbR$ for simplicity and let $\wt F:\wt\calD\to \bbR\times M$ be the flow of $\wt X$. Then it is easy to show that for each $m\in M$ and $t_0\in\bbR$ there is a unique maximal integral curve $\gamma:I\to M$ of $X$ with initial condition $\gamma(t_0)=m$, given explicitly by 
+    \[\wt X_{(t,m)}\coloneqq (\partial_t,X(t,m)),\]
+    where we we use the natural identification $\T(J\times M)\cong (J\times\bbR)\times \T M$ and $\partial_t$ is the standard vector field on $J\subset \bbR$. Assume $J=\bbR$ for simplicity and let $\wt F:\wt\calD\to \bbR\times M$ be the flow of $\wt X$. Then it is easy to show that for each $m\in M$ and $t_0\in\bbR$ there is a unique maximal integral curve $\gamma:I\to M$ of $X$ with initial condition $\gamma(t_0)=m$, given explicitly by 
     \[I=\wt{\calD}_{(t_0,m)}+t_0,\quad \gamma(t)=\pr_M\circ \wt{F}_{(t-t_0)}(t_0,m),\]
     where $\pr_M:\bbR\times M\to M$ is the projection onto the second component.
     
@@ -5703,8 +5701,16 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
 \end{proof}
 
 \begin{rem}
-    The Maurer-Cartan equation in the above form for $G=\GL_n(\bbC)$ is obviously equivalent to the zero curvature condition from Example~\ref{ex UV pairs}. As we will see throughout this \partt{} of the book, this rapprochement between the integrability of PDEs (Frobenius Theorem) and group theory is the ultimate key to the unification of geometry of manifolds (e.g.\ Riemannian geometry), theory of differential equations, and classical geometry (in the form of homogeneous spaces). This culminates in the development of Cartan geometry.
+    \begin{enumerate}
+        \item The left-invariant version of the Maurer-Cartan equation, where $\xi=L_{g\ast}^{-1}\partial_t g$ and $\eta =L_{g\ast}^{-1}\partial_s g$, differs only in the sign of the Lie bracket: 
+        \[\partial_t\eta-\partial_s\xi+[\xi,\eta]=0.\label{eq Maurer-Cartan left xi eta}\]
+        \item The Maurer-Cartan equation in the above form for $G=\GL_n(\bbC)$ is obviously equivalent to the zero curvature condition from Example~\ref{ex UV pairs}. As we will see throughout this \partt{} of the book, this rapprochement between the integrability of PDEs (Frobenius Theorem) and group theory is the ultimate key to the unification of geometry of manifolds (e.g.\ Riemannian geometry), theory of differential equations, and classical geometry (in the form of homogeneous spaces). This culminates in the development of Cartan geometry.
+    \end{enumerate}
 \end{rem}
+
+
+
+
 
 
 
@@ -5758,7 +5764,7 @@ We will thus identify left-invariant differential $r$-forms with elements of $\b
     \[\dd\xi(A,B)=-\xi([A,B]),\quad A,B\in\frakg.\label{eq 5.5.3 RS1}\]
     Let $\{\bf{t}_1,\ldots,\bf{t}_n\}$ be a basis in $\frakg$, let $c^i_{jk}$  be the corresponding structure constants and let $\{\alpha^1,\ldots,\alpha^n\}$ be the dual basis in $\frakg^\ast$. Then (\ref{eq 5.5.3 RS1}) is equivalent to
     \[\dd \alpha^i=-\frac 12 c^i_{jk}\alpha^j\wedge \alpha^k,\quad i=1,\ldots,n.\label{eq 5.5.4 RS1 MC in coords}\]
-    This can be seen by evaluating both sides on the basis elements $\bf{t}_i$. This equation is actually another form of the Maurer-Cartan equation \index{Equation!Maurer-Cartan} (\ref{eq Maurer-Cartan}), which we will return to in a basis-free form later in this \subsect.
+    This can be seen by evaluating both sides on the basis elements $\bf{t}_i$. This equation is actually another form of the Maurer-Cartan equation \index{Equation!Maurer-Cartan} (\ref{eq Maurer-Cartan left xi eta}), which we will return to in a basis-free form later in this \subsect.
     \item In terms of left-invariant 1-forms, the inverse left and right trivializations $(\chi_L^T)^{-1}$ and $(\chi_R^T)^{-1}$ of $\T^\ast G$ read
     \[(\chi_L^T)^{-1}(g,\xi)=\xi_g,\quad (\chi_R^T)^{-1}(g,\xi)=(\Ad_{g}^\ast \xi)_g=\xi_g\circ (\Ad_g)_{\ast g}.\]
     Note that the 1-form $\Ad_g^\ast\xi$ need not be left-invariant.
@@ -5876,7 +5882,7 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
     \[\dd\theta_G(X,Y)=-\theta_G([X,Y])=-[X,Y]=-[\theta_G(X),\theta_G(Y)],\]
     and hence
     \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
-    This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords}) in a basis-free form. It is also equivalent to our original Maurer-Cartan equation (\ref{eq Maurer-Cartan}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$. 
+    This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords}) in a basis-free form. It is also equivalent to our original Maurer-Cartan equation (\ref{eq Maurer-Cartan left xi eta}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$. 
 \end{defn}
 
 \begin{rem}
@@ -6025,13 +6031,19 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
     Write down the left-invariant volume form on $\SU_2$ in these coordinates and normalize it so that the volume of the group is $1$. It is easy to predict the result: it is the same expression as on $\SO_3$, except the normalizing factor will be $16\pi^2$ because the range of $\psi$ is twice as large; this agrees with the fact that $\SU_2$ is a double cover of $\SO_3$.
 \end{xca}
 
+\begin{xca}
+    We have already seen that left translations are the flows of right-invariant vector fields. Thus, the left-invariant Maurer-Cartan form must have vanishing Lie derivatives w.r.t.\ any right-invariant vector field, $\Lie_{A_R}\theta_G=0$. Show that this also follows from the Maurer-Cartan equation via Cartan's magic formula.
+\end{xca}
 
 
 
 
 
 
-\subsection{Integrability of Lie groups}\label{sec: existence of homs}
+
+
+
+\subsection{Cartan's fundamental theorem}\label{sec: Cartan's fundamental}
 
 The Maurer-Cartan form provides the infinitesimal information about the group structure while the Maurer-Cartan equation gives the only local obstruction to its integrability. The explicit local formulation is contained in the following theorem, which is a consequence of the Frobenius Theorem.
 
@@ -6043,61 +6055,87 @@ The Maurer-Cartan form provides the infinitesimal information about the group st
     In particular, $\theta_G=\delta\id_G$.
 \end{defn}
 
+For a given $\eta\in \Omega^1(M;\frakg)$, a function such that $\delta f=\eta$ is called a \emph{primitive}.\index{Primitive} The following theorem shows that primitives always exist and become unique after one value is provided.
 
 \begin{thm}[Cartan's Fundamental Theorem, local version {{\cite[Thm.~6.1]{Sharpe}}}]\label{thm 6.1 Sharpe fundamental local}
-    Let $G$ be a Lie group and $\frakg$ its Lie algebra, and let $\omega\in\Omega^1(M,\frakg)$ be a $\frakg$-valued $1$-form on a smooth manifold $M$. Then for any $x\in M$ there exists an open neighborhood $U\subset M$ of $x$ and a function $f:U\to G$ such that $\delta f=\omega$ iff $\omega$ satisfies \emph{the Structure Equation}\index{Equation!Structure}
-    \[\dd \omega(X,Y)+[\omega(X),\omega(Y)]=0,\quad \forall X,Y\in\fX(M).\]
+    Let $G$ be a Lie group and $\frakg$ its Lie algebra, and let $\omega\in\Omega^1(M;\frakg)$ be a $\frakg$-valued $1$-form on a smooth manifold $M$. Then for any $x\in M$ there exists an open neighborhood $U\subset M$ of $x$ and a function $f:U\to G$ such that $\delta f=\omega$ iff $\omega$ satisfies \emph{the Structure Equation}\index{Equation!Structure}
+    \[\dd \omega(X,Y)+[\omega(X),\omega(Y)]=0\quad \text{ for all } X,Y\in\fX(M).\]
     If $M$ is connected and $f_1,f_2:M\to G$ satisfy $\delta f_1=\delta f_2$, then there is a unique element $c\in G$ (integration constant) such that $f_2(x)=c\cdot f_1(x)$ for all $x\in M$.
 \end{thm}
 \begin{proof}
     By explicit expansion using (\ref{eq MC form as composition}), one can verify that the Maurer-Cartan form behaves in the following way with respect to the multiplication and inversion maps: for $\xi_g\in \T_g G$ and $\eta_h\in \T_hG$,
     \begin{align}
-       ( m^\ast\theta_G)(\xi_g,\eta_h)&=\Ad_{h}^{-1}\circ \theta_G(\xi_g)+\theta_G(\eta_h),   \label{eq MC form under m}  \\
-       (i^\ast\theta_G)(\xi_g)&=-\Ad_g\circ\theta_G(\xi_g). \label{eq MC form under i}
+       (\delta m)(\xi_g,\eta_h)&=\Ad_{h}^{-1}\circ \theta_G(\xi_g)+\theta_G(\eta_h),   \label{eq MC form under m}  \\
+       (\delta i)(\xi_g)&=-\Ad_g\circ\theta_G(\xi_g). \label{eq MC form under i}
     \end{align}
-    Now we prove the last statement of the theorem. Define $h:M\to G$ by $h(x)=f_2(x)f_1(x)^{-1}$. We have to show that $h$ is constant, for which it suffices to show that $h^\ast\theta_G=0$ since this implies that $\theta_G\circ h_\ast$ and thus $h_\ast$ is zero. By definition, we have $h=m\circ (\id,i)\circ(f_2,f_1)\circ \Delta$, where $\Delta(x)=(x,x)$ and $i(g)=g^{-1}$ is the inversion map. Using the above formulas we thus compute that for $X\in \T_xM$,
+    Now we prove the uniqueness statement first. Define $h:M\to G$ by $h(x)=f_2(x)f_1(x)^{-1}$. We have to show that $h$ is constant, for which it suffices to show that $\delta h=h^\ast\theta_G=0$ since this implies that $\theta_G\circ h_\ast$ and thus $h_\ast$ is zero. By definition, we have $h=m\circ (\id,i)\circ(f_2,f_1)\circ \Delta$, where $\Delta(x)=(x,x)$ and $i(g)=g^{-1}$ is the inversion map. Using the above formulas we thus compute that for $X\in \T_xM$,
     \begin{multline}
-        (h^\ast\theta_G)(X)=(m^\ast \theta_G)(\T_x f_2\cdot X,\T_x(i\circ f_1)\cdot X)=\\
+        (\delta h)(X)=(m^\ast \theta_G)(\T_x f_2\cdot X,\T_x(i\circ f_1)\cdot X)=\\
         =\Ad_{f_1(x)}\left(\theta_G(\T_xf_2\cdot X)\right)+(i^\ast\theta_G)(\T_xf_1\cdot X)=\\
         =\Ad_{f_1(x)}\left(\delta f_2(x)(X)-\delta f_1(x)(X)\right)=0.
     \end{multline}
-    Concerning existence, $\dd(f^\ast\theta_G)(X,Y)+[f^\ast\theta_G(X),f^\ast\theta_G(Y)]$ clearly vanishes by virtue of being the pullback of the Maurer-Cartan equation. Thus, it suffices to prove that for $\omega\in\Omega^1(M,\frakg)$ satisfying the equation we can find a function $f:M\to G$ such that $\omega=\delta f$. To do this, we (locally) construct the graph of $f$ as a leaf of an integrable distribution on $M\times G$. Consider $\Omega=\pi^\ast_M\omega-\pi^\ast_G \theta_G$, where $\pi_M,\pi_G$ are the natural projections of the direct product $M\times G$. Identifying $\T(M\times G)$ with $\T M\times \T G$, the kernel of $\Omega$ is given by the set of all $(X,Y)$ such that $\omega(X)=\theta_G(Y)$. Since $\theta_G$ restricts to a linear isomorphism on each tangent space, there is a unique solution $Y$ for this equation for any chosen $X$, so the distribution $\ker\Omega$ is regular, its rank equals the dimension of $M$, and $\T\pi_M$ restricts to a linear isomorphism on each fiber of $\ker \Omega$. To check involutivity, we note that by construction
+    Concerning existence, $\dd(f^\ast\theta_G)(X,Y)+[f^\ast\theta_G(X),f^\ast\theta_G(Y)]$ clearly vanishes by virtue of being the pullback of the Maurer-Cartan equation. Thus, it suffices to prove that for $\omega\in\Omega^1(M;\frakg)$ satisfying the equation we can find a function $f:M\to G$ such that $\omega=\delta f$. To do this, we (locally) construct the graph of $f$ as a leaf of an integrable distribution on $M\times G$. Consider $\Omega=\pi^\ast_M\omega-\pi^\ast_G \theta_G$, where $\pi_M,\pi_G$ are the natural projections of the direct product $M\times G$. Identifying $\T(M\times G)$ with $\T M\times \T G$, the kernel of $\Omega$ is given by the set of all $(X,Y)$ such that $\omega(X)=\theta_G(Y)$. Since $\theta_G$ restricts to a linear isomorphism on each tangent space, there is a unique solution $Y$ for this equation for any chosen $X$, so the distribution $\ker\Omega$ is regular, its rank equals the dimension of $M$, and $\T\pi_M$ restricts to a linear isomorphism on each fiber of $\ker \Omega$. To check involutivity, we note that by construction
     \[\dd\Omega\left((X_1,Y_1),(X_2,Y_2)\right)=\dd\omega(X_1,X_2)-\dd \theta_G(Y_1,Y_2)=-[\omega(X_1),\omega(X_2)]+[\theta_G(Y_1),\theta_G(Y_2)],\]
     and this obviously vanishes if both $(X_i,Y_i)$ lie in $\ker\Omega$.
 
-    By Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1}, this implies integrability of the distribution $\ker\Omega$. Given $x\in M$ and $g\in G$, there is a submanifold $N\subset M\times G$ containing $(x,g)$ integral for $\ker\Omega$. We have observed that $\T\pi_M$ restricts to an isomorphism on each fiber of $\ker \Omega$, so $\pi_M:N\to M$ is a local diffeomorphism. Hence, we can find a neighborhood $U\subset M$ of $x$ and a local inverse $j:U\to N$ of this projection. Defining $f\coloneqq \pi_G\circ j$ we obtain a smooth function $f:U\to G$ and for $X\in \T_xM$ we get $(\T_x j)(X)=(X,\theta_G^{-1}(\omega(X)))$, and thus $\theta_G((\T_xf)(X))=\omega(X)$, which means $\omega=f^\ast\theta_G$.
+    By Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1}, this implies integrability of the distribution $\ker\Omega$. Given $x\in M$ and $g\in G$, there is a submanifold $N\subset M\times G$ containing $(x,g)$ integral for $\ker\Omega$. We have observed that $\T\pi_M$ restricts to an isomorphism on each fiber of $\ker \Omega$, so $\pi_M:N\to M$ is a local diffeomorphism. Hence, we can find a neighborhood $U\subset M$ of $x$ and a local inverse $j:U\to N$ of this projection. Defining $f\coloneqq \pi_G\circ j$ we obtain a smooth function $f:U\to G$ and for $X\in \T_xM$ we get $j_{\ast x}(X)=(X,\theta_G^{-1}(\omega(X)))$, and thus $\theta_G(f_{\ast x}(X))=\omega(X)$, which means $\omega=f^\ast\theta_G$.
 \end{proof}
+
+
+The local theorem immediately implies its own global version in the case when $M=[0,1]$ because the one-dimensional Maurer-Cartan equation is always true, and the interval is compact, so only a finite number of local reconstructions of $f$ are needed, and they can be stitched together because we can pick the integration constants $c$ to align the values on overlapping segments. This allows us to define the following concept.
 
 \begin{defn}[Development of $\omega$]
     Let $M$ be a manifold and $\omega\in\Omega^1(M;\frakg)$ where $\frakg=\Lief G$ for some Lie group $G$. Given a smooth path $\gamma:[0,1]\to M$, the development of $\omega$ along $\gamma$ starting at $g\in G$ is the unique function $\wt{\gamma}:[0,1]\to G$ such that $\wt{g}(0)=g$ and $\wt{\gamma}^\ast\theta_G=\gamma^\ast\omega$.
 \end{defn}
 
-
-\begin{cor}[{{\cite[Cor.~5.3]{Sharpe}}}]\label{cor 5.3 Sharpe}
-    Let $G$ be a Lie group with Lie algebra. Then $\Ad:G\to \GL(\frakg)$ is the unique map $f:G\to \GL(\frakg)$ satisfying $f(e)=e$ and $f^\ast\theta_{\GL(\frakg)}=\ad_{\theta_G}$. If $g:[0,1]\to G$ is a path starting at $e$, then $\Ad_g:[0,1]\to \GL(\frakg)$ is the development, starting at $e\in\GL(\frakg)$, of $\ad_{g^\ast\theta_G}$ on $\GL(\frakg)$ along $g$.
-\end{cor}
+\begin{lem}\label{lem log derivative of homomorphism}
+    Let $f:M\to G$ be smooth and let $\Phi:G\to H$ be a Lie group homomorphism with derivative $\Phi_{\ast e}=\phi$. Then 
+    \[\delta_H (\Phi\circ f)=\phi\circ\delta_G f.\]
+\end{lem}
 \begin{proof}
-    The first statement follows because $\Ad$ satisfies both conditions and is unique by Theorem~\ref{thm 6.1 Sharpe fundamental local}. The second statement follows by
-    \[\Ad_g^\ast \theta_{\GL(\frakg)}=g^\ast\Ad^\ast_{\theta_{\GL(\frakg)}}=g^\ast\ad_{\theta_G}=\ad_{g^\ast\theta_G}.\]
+    Let $X_x\in T_x M$. Then
+    \begin{multline}
+        \delta(\Phi\circ f)(X)=L_{\Phi\circ f(x)}^{-1}(\Phi\circ f)_\ast(X)=L_{\Phi\circ f(x)}^{-1}(\Phi\circ  L_{f(x)})_\ast\circ  \delta_G f(X)=\\
+        =L_{\Phi\circ f(x)}^{-1}(L_{\Phi\circ f(x)}\circ \Phi)_\ast\circ  \delta_G f(X)=\Phi_\ast\delta_G f(X)=\phi\circ \delta_G f(X),
+    \end{multline}
+    where $\Phi\circ L_{f(x)}=L_{\Phi\circ f(x)}\circ \Phi$ because $\Phi$ is a homomorphism.
 \end{proof}
 
-The local theorem immediately implies its own global version in the case when $M=[0,1]$ because the one-dimensional Maurer-Cartan equation is always true, and the interval is compact, so only a finite number of local reconstructions of $f$ are needed.
+\begin{cor}[{{\cite[Cor.~5.3]{Sharpe}}}]\label{cor 5.3 Sharpe}
+    Let $G$ be a Lie group with Lie algebra. Then $\Ad:G\to \GL(\frakg)$ is the unique map $f:G\to \GL(\frakg)$ satisfying  
+    \[\delta_{\GL} f=\ad_{\theta_G},\quad f(e)=\rmI,\]
+    where $\ad:\frakg\to \frakgl(\frakg)$ is the adjoint map, $\ad_{\theta_G}=\ad\circ\theta_G$, and $\rmI=\id_\frakg$. 
+    If $g:[0,1]\to G$ is a path starting at $e$, then $\Ad_g:[0,1]\to \GL(\frakg)$ is the development, starting at $e\in\GL(\frakg)$, of $\ad_{\delta_G g}=g^\ast \ad_{\theta_G}\in\Omega^1([0,1];\frakgl(\frakg))$ on $\GL(\frakg)$ along $g$.
+\end{cor}
+\begin{proof}
+    The first statement follows because $\Ad$ satisfies both conditions and is unique by Theorem~\ref{thm 6.1 Sharpe fundamental local}. 
+    The second statement follows from Lemma~\ref{lem log derivative of homomorphism} and $\Ad_{\ast e}=\ad$:
+    \[\delta_{\GL}\Ad_g=\delta_{\GL}(\Ad\circ g)=\ad\circ \delta_G g=\ad_{\delta_G g}=\ad_{g^\ast\theta_G}.\]
+\end{proof}
 
 \begin{thm}[{{\cite[Thm.~7.7]{Sharpe}}}]\label{thm 7.7 Sharpe}
-    If $\gamma_0,\gamma_1:[0,1]\to M$ are two smooth homotopic (with fixed ends) paths in a manifold $M$ and $\omega\in \Omega^1(M,\frakg)$ satisfies the structural equation $\dd \omega+\frac 12[\omega,\omega]=0$, then its developments, starting at $g\in G$, along $\gamma_0$ and $\gamma_1$ have the same endpoints.
+    If $\gamma_0,\gamma_1:[0,1]\to M$ are two smooth homotopic (with fixed ends) paths in a manifold $M$ and $\omega\in \Omega^1(M;\frakg)$ satisfies the Structure Equation $\dd \omega+\frac 12[\omega,\omega]=0$, then its developments, starting at $g\in G$, along $\gamma_0$ and $\gamma_1$ have the same endpoints.
 \end{thm}
 \begin{proof}
-    Suppose $\gamma_0(1)=\gamma_1(1)=q$. Let $h:I\times I\to M$ be the homotopy from $\gamma_0$ to $\gamma_1$. Now $h^\ast\omega$ is a $\frakg$-valued $1$-form on $I\times I$ that satisfies the structural equation.  By Theorem~\ref{thm 6.1 Sharpe fundamental local} each point of $I\times I$ lies in a neighborhood on which $h^\ast\omega$ is the logarithmic derivative of a map into $G$. By compactness of $I\times I$ these local maps stitch into a global map $H:I\times I\to G$ such that $H(0,0)=g$ and $H^\ast\theta_G=h^\ast\omega$. Since $h(1,s)=q$ is constant for $s\in I$, it follows that $h^\ast\omega=H^\ast\theta_G$ vanishes along the right edge of $I\times I$, and hence $H$ is also constant there. In particular, $H(1,0)=H(1,1)$ and so the developments of $\omega$ along $\gamma_0$ and $\gamma_1$ end at the same point.
+    Suppose $\gamma_0(1)=\gamma_1(1)=q$. Let $h:I\times I\to M$ be the homotopy from $\gamma_0$ to $\gamma_1$. Now $h^\ast\omega$ is a $\frakg$-valued $1$-form on $I\times I$ that satisfies the Structure Equation.  By Theorem~\ref{thm 6.1 Sharpe fundamental local} each point of $I\times I$ lies in a neighborhood on which $h^\ast\omega$ is the logarithmic derivative of a map into $G$. By compactness of $I\times I$, finitely many such local maps can be chosen so as to form a smooth global map $H:I\times I\to G$ such that $H(0,0)=g$ and $H^\ast\theta_G=h^\ast\omega$. Since $h(1,s)=q$ is constant for $s\in I$, it follows that $h^\ast\omega=H^\ast\theta_G$ vanishes along the right edge of $I\times I$, and hence $H$ is also constant there. In particular, $H(1,0)=H(1,1)$ and so the developments of $\omega$ along $\gamma_0$ and $\gamma_1$ end at the same point.
 \end{proof}
 
 \begin{xca}
     Show that the endpoint $\wt{\gamma}(1)$ of the development of a smooth path is invariant under smooth reparametrizations of the path.
 \end{xca}
 
-Thus, each such $1$-form produces a well-defined map from the fundamental group $\pi_1(M,x_0)$ to $G$ by $\Phi([\gamma])=\wt{\gamma}(1)$. We immediately observe that the concatenation of loops in $M$ produces products of corresponding group elements in $G$: $\Phi(\gamma_1\ast \gamma_2)=(\wt{\gamma}_1\ast\wt{\gamma}_2)(1)=\Phi(\gamma_1)\wt{\gamma}_2(1)=\Phi(\gamma_1)\Phi(\gamma_2)$. Thus this is a homomorphism.
+\begin{rem}
+    The Maurer-Cartan form can be thought of as a global way of measuring the velocity of a path in $G$: for a path $\gamma:I\to G$, its velocity is the $\frakg$-valued function $\xi(t)=\theta_G(\dot\gamma(t))$. It is related to the logarithmic derivative by $\xi\dd t=\delta\gamma$. Thus, the development of $\omega$ along $\gamma$ is the unique path $\wt\gamma:I\to G$ such that 
+    \[\eta(\dot\gamma)=\theta_G(\dot{\tilde\gamma}).\]
+    Since $\theta_G$ defines a bundle isomorphism $\T G\to G\times\frakg$, this means that 
+    \[\dot{\tilde\gamma}=\omega^{-1}(\xi(t))(\wt\gamma(t)),\]
+    where on the right hand side we have the value of the constant vector field $\omega^{-1}(\xi(t))$ at the point $wt\gamma(t)$. Since the developed curve is independent of the parametrization of $\gamma$, the geometric interpretation of development is that $G$ is being ``rolled without slipping'' on $M$ in such a way that the velocity of the contact point between $M$ and $G$ is equal to the velocity of $\gamma$. See Figure~\ref{fig:development}.
+\end{rem}
+
+Thus, each such $1$-form produces a well-defined map from the fundamental group $\pi_1(M,x_0)$ to $G$ by $\Phi([\gamma])=\wt{\gamma}(1)$. We immediately observe that the concatenation of loops in $M$ produces products of corresponding group elements in $G$: $\Phi(\gamma_1\bullet \gamma_2)=(\wt{\gamma}_1\bullet\wt{\gamma}_2)(1)=\Phi(\gamma_1)\wt{\gamma}_2(1)=\Phi(\gamma_1)\Phi(\gamma_2)$. Thus this is a homomorphism.
 
 \begin{defn}[Monodromy representation]\index{Monodromy representation}
-    If $\omega\in\Omega^1(M,\frakg)$ satisfies the structural equation, then its developments along closed loops starting at $x_0\in M$ determine a homomorphism $\Phi_\omega:\pi_1(M,x_0)\to G$, called the monodromy representation of $\omega$. The image of $\Phi_\omega$ denoted by $\Gamma\subset G$ is called the \emph{period group}, or the \emph{monodromy group}. Assuming $M$ is path-connected, different choices of $x_0$ lead to conjugate monodromy groups.
+    If $\omega\in\Omega^1(M;\frakg)$ satisfies the Structure Equation, then its developments along closed loops starting at $x_0\in M$ determine a homomorphism $\Phi_\omega:\pi_1(M,x_0)\to G$, called the monodromy representation of $\omega$. The image of $\Phi_\omega$ denoted by $\Gamma\subset G$ is called the \emph{period group}, or the \emph{monodromy group}. Assuming $M$ is path-connected, different choices of $x_0$ lead to conjugate monodromy groups.
 \end{defn}
 
 \begin{prop}\label{prop 7.13 Sharpe}
@@ -6110,7 +6148,7 @@ Thus, each such $1$-form produces a well-defined map from the fundamental group 
 The following theorem is the main result of this \subsect, and it is remarkable in that it presents the Maurer-Cartan equation, which is generally a (system of) nonlinear PDE, as the integrabiity condition for a certain (system of) linear PDE, and guarantees the existence of \emph{global} solutions under a simple topological condition.
 
 \begin{thm}[Cartan's Fundamental Theorem, global version {{\cite[Thm.~7.14]{Sharpe}}}]\label{thm 7.14 Sharpe fundamental global}
-    Let $G$ be a Lie group with Lie algebra $\frakg$. Let $M$ be a smooth connected manifold, let $x_0\in M$, and let $\omega \in\Omega^1(M,\frakg)$. Then there exists a smooth map $f:M\to G$ such that $\delta f=\omega$ iff $\dd\omega+\frac12[\omega,\omega]=0$ and the monodromy representation $\Phi_\omega:\pi_1(M,x_0)\to G$ is trivial. Moreover, if there are two solutions $f_1$ and $f_2$, then $f_1\equiv c\cdot f_2$ for some $c\in G$.
+    Let $G$ be a Lie group with Lie algebra $\frakg$. Let $M$ be a smooth connected manifold, let $x_0\in M$, and let $\omega \in\Omega^1(M;\frakg)$. Then there exists a smooth map $f:M\to G$ such that $\delta f=\omega$ iff $\dd\omega+\frac12[\omega,\omega]=0$ and the monodromy representation $\Phi_\omega:\pi_1(M,x_0)\to G$ is trivial. Moreover, if there are two solutions $f_1$ and $f_2$, then $f_1\equiv c\cdot f_2$ for some $c\in G$.
 \end{thm}
 \begin{proof}
     The uniqueness part was already shown in the local theorem~\ref{thm 6.1 Sharpe fundamental local}. The forward implication  was shown in Proposition~\ref{prop 7.13 Sharpe}.
@@ -6125,7 +6163,7 @@ The following theorem is the main result of this \subsect, and it is remarkable 
 \end{proof}
 
 \begin{rem}
-    The reason the above theorem is called fundamental is because in the case $M=G=\bbR$ it becomes the Fundamental Theorem of Calculus. If $M$ is an open subset of $\bbR^n$ and $G=\bbR^n$, then it states that a vector field $v^i(x^1,\ldots,x^n)$ has a potential function iff $\partial_j v^i-\partial_i v^j=0$ for all $1\leq i\leq j\leq n$. Of course, this is exactly the Frobenius integrability condition for the equation $\nabla \varphi=\bf{v}$.
+    The reason the above theorem is called fundamental is because in the case $M=G=\bbR$ it becomes the Fundamental Theorem of Calculus. If $M$ is an open subset of $\bbR^n$ and $G=\bbR^n$, then it states that a vector field $v^i(x^1,\ldots,x^n)$ (identified with $\omega=\sum_iv^i\dd x^i$) has a potential function iff $\partial_j v^i-\partial_i v^j=0$ for all $1\leq i\leq j\leq n$. This is exactly the Frobenius integrability condition for the equation $\grad \varphi=\bf{v}$.
 \end{rem}
 
 \begin{example}[Linear ODE's of Lie type]\index{Equation!of Lie type}
@@ -6143,13 +6181,22 @@ The following is an obvious special case of the Fundamental Theorem, but we emph
 \end{cor}
 
 
-\begin{thm}[Lie's Second Fundamental Theorem {{\cite[Prop.~7.15]{Sharpe}}}]\label{thm second principle}\index{Theorem!Lie II}
+
+
+
+\subsection{Integrability of Lie groups}\label{sec: existence of homs}
+
+
+In this \subsect\ we apply Cartan's Fundamental Theorem to study to what extent global Lie group structures and morphisms can be recovered from infinitesimal or differential information.
+
+
+\begin{thm}[Lie II {{\cite[Prop.~7.15]{Sharpe}}}]\label{thm second principle}\index{Theorem!Lie II}
     Let $G$ and $H$ be Lie groups with $G$ simply connected. Then for every homomorphism of Lie algebras $\phi:\frakg\to\frakh$ there is a unique homomorphism of Lie groups $\Phi:G\to H$ such that $\Phi_{\ast e}=\phi$.
 \end{thm}
 \begin{proof}
     We give a simple proof based on developments of $1$-forms. We will also provide another instructive proof in \S\ref{sec: analytic subgroup theorem} after we cover the exponential map. For yet another proof via group actions, see \cite[Thm.~20.19]{Lee}.
 
-    Consider $\omega=\phi\circ \theta_G\in \Omega^1(G,\frakh)$. This $1$-form satisfies the structural equation because $\phi$ is linear and a Lie algebra homomorphism. Thus there is a unique map $\Phi:(G,e)\to (H,e)$ satisfying $\Phi^\ast \theta_H=\omega$. We claim that $\Phi$ is a homomorphism. To see this, consider $f:(G,e)\to (H,e)$ defined by $f(g)=\Phi(g_0)^{-1}\Phi(g_0g)$ for some fixed $g_0$. Now $f=L_{\Phi(g_0)}^{-1}\circ\Phi\circ L_{g_0}$, and so
+    Consider $\omega=\phi\circ \theta_G\in \Omega^1(G,\frakh)$. This $1$-form satisfies the Structure Equation because $\phi$ is linear and a Lie algebra homomorphism. Thus there is a unique map $\Phi:(G,e)\to (H,e)$ satisfying $\Phi^\ast \theta_H=\omega$. We claim that $\Phi$ is a homomorphism. To see this, consider $f:(G,e)\to (H,e)$ defined by $f(g)=\Phi(g_0)^{-1}\Phi(g_0g)$ for some fixed $g_0$. Now $f=L_{\Phi(g_0)}^{-1}\circ\Phi\circ L_{g_0}$, and so
     \[f^\ast\theta_H=L_{g_0}^\ast \Phi^\ast L_{\Phi(g_0)}^{\ast-1}\theta_H=L_{g_0}^\ast \Phi^\ast\theta_H=L_{g_0}^\ast \omega=\omega.\]
     Since $f$ and $\Phi$ agree at the identity and have the same logarithmic derivative, it follows that $f=\Phi$ and hence $\Phi(g)=\Phi(g_0)^{-1}\Phi(g_0g)$, that is, $\Phi(g_0)\Phi(g)=\Phi(g_0g)$ for all $g,g_0\in G$.
     % Let $g\in G$ and pick a path $\gamma(t):[0,1]\to G$ with $\gamma(0)=e$ and $\gamma(1)=g$. Denote its Lie algebra-valued velocity vector by
@@ -6195,7 +6242,7 @@ The following is an obvious special case of the Fundamental Theorem, but we emph
 The following proposition interprets the monodromy representation in terms of deck transformations of the universal covering acting on $G$.
 
 \begin{prop}[Monodromy and coverings {{\cite[Prop.~8.1]{Sharpe}}}]\label{prop 8.1 Sharpe}\index{Monodromy!of Lie groups}
-    Let $\omega\in\Omega^1(M,\frakg)$ satisfy the structural equation. Let $\pi:(\wt{M},p_0)\to (M,x_0)$ be the universal covering map of $M$ and let $\Aut(\pi)\cong \pi_1(M,x_0)$ be its group of deck transformations. The Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global} applied to the pair $(\wt{M},\pi^\ast\omega)$ gives a unique map $f:\wt{M}\to G$ with $f(p_0)=e$. Then there is a unique homomorphism $\wt{\Phi}: \Aut(\pi)\to G$ satisfying $f\circ A=\wt{\Phi}(A)\cdot f$ for all $A\in\Aut(\pi)$.
+    Let $\omega\in\Omega^1(M;\frakg)$ satisfy the Structure Equation. Let $\pi:(\wt{M},p_0)\to (M,x_0)$ be the universal covering map of $M$ and let $\Aut(\pi)\cong \pi_1(M,x_0)$ be its group of deck transformations. The Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global} applied to the pair $(\wt{M},\pi^\ast\omega)$ gives a unique map $f:\wt{M}\to G$ with $f(p_0)=e$. Then there is a unique homomorphism $\wt{\Phi}: \Aut(\pi)\to G$ satisfying $f\circ A=\wt{\Phi}(A)\cdot f$ for all $A\in\Aut(\pi)$.
 \end{prop}
 \begin{proof}
     Every deck transformation $A\in \Aut(\pi)$ preserves the form $\pi^\ast\omega$ (since $A^\ast \pi^\ast\omega=(\pi\circ A)^\ast\omega=\pi^\ast\omega$), and so we have
@@ -6207,39 +6254,93 @@ The following proposition interprets the monodromy representation in terms of de
 The final result shows that in a certain sense the Maurer-Cartan form determines the group up to a covering map. (It is this description of a Lie group that will generalize to the notion of a Cartan connection on a principal bundle.)
 
 \begin{defn}[Constant vector fields]\label{def constant vector field}
-    Given a vector-valued $1$-form $\omega\in\Omega^1(M;V)$, a vector field $X\in\fX(M)$ such that $\omega(X)=\const=v$ everywhere for some $v\in V$ is called constant. If $\omega:\T_m M\to V$ is an isomorphism at each $m$, then the unique constant vector field with value $v$ is denoted by $\omega^{-1}(v)$.
+    Given a vector-valued $1$-form $\omega\in\Omega^1(M;V)$, a vector field $X\in\fX(M)$ such that $\omega(X)=\const=v$ everywhere for some $v\in V$ is called constant. If $\omega_x:\T_x M\to V$ is an isomorphism at each $x\in M$, then the unique constant vector field corresponding to value $v$ is denoted by $\omega^{-1}(v)$.
 \end{defn}
 \begin{defn}[Complete $1$-form]\label{def complete form}
     A vector-valued $1$-form $\omega\in\Omega^1(M;V)$ is called complete if every constant vector field is complete.
 \end{defn}
 
+Note that the Maurer-Cartan form is always complete because its constant vector fields are exactly the left-invariant vector fields on $G$, which are complete by Theorem~\ref{thm invariant fields are complete}. We now prove an important geometric consequence of the Fundamental Theorem, which essentially states that the structure of any simply connected Lie group can be uniquely reconstructed from a Maurer-Cartan-like $1$-form.
+
+
 \begin{thm}[{{\cite[Thm.~8.7]{Sharpe}}}]\label{thm 8.7 Sharpe}
-    Let $M$ be a connected smooth manifold and let $\frakg$ be a Lie algebra. Let $\omega\in\Omega^1(M,\frakg)$ satisfy the conditions
+    Let $M$ be a connected smooth manifold and let $\frakg$ be a Lie algebra. Let $\omega\in\Omega^1(M;\frakg)$ satisfy the conditions
     \begin{enumerate}[label=(\roman*)]
         \item $\dd\omega+\frac12[\omega,\omega]=0$,
         \item $\omega:\T M\to \frakg$ is an isomorphism on each fiber (i.e.\ is a global trivialization of $\T M$),
         \item $\omega$ is complete.
     \end{enumerate}
+    (Such a tuple $(M,\omega)$ is called a \emph{complete flat Cartan geometry}.)\index{Cartan geometry!Complete flat}
     Then
     \begin{enumerate}[label=(\alph*)]
         \item The universal cover of $M$, $\pi:G\to M$, has, for an arbitrary choice $e\in G$, a unique (up to unique isomorphism) structure of a Lie group with identity element $e$ and Lie algebra $\frakg$ whose Maurer-Cartan form is $\pi^\ast\omega$.
         \item The period group $\Gamma=\Phi_\omega(\pi_1(M,x_0))\subset G$ acts by left multiplication on $G$ as the group of deck transformations for $\pi$.
     \end{enumerate}
 \end{thm}
+
+Before we prove this, we will need the following generalization of the Fundamental Theorem, which relies on the completeness property of $\omega$. We will only need it in the case of a simply connected $M$, although the general case is easy to state after replacing the monodromy representation with a ``monododromy map''.
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[scale=0.2]{figures/development.png}
+    \caption{Development of a path in $(M,\eta)$ to a path in $(G,\theta_G)$. As the mouse follows the path in $M$, the contact point traces out a developed path in $G$.}
+    \label{fig:development} 
+\end{figure}
+
+
+\begin{thm}[Generalized Fundamental Theorem]\label{prop generalization of fundamental thm}
+    The Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global} continues to hold for maps $f:M\to G$ if $G$ is replaced with an arbitrary connected manifold with a $1$-form $\omega$ satisfying all $3$ conditions in Theorem~\ref{thm 8.7 Sharpe}. Namely, let $M$ be connected and simply connected, let $\eta\in\Omega^1(M;\frakg)$, and $x_0\in M$. Then for each $g_0\in G$ there exists a unique smooth map $f:M\to G$ such that $f(x_0)=g_0$ and $f^\ast\omega=\eta$ iff $\eta$ satisfies the Structure Equation.
+\end{thm}
 \begin{proof}
+    Local solutions exist by the same argument as in the Local Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}. The main ingredient leading to global existence is the ability to develop $\eta$ along arbitrary paths (thus lifting those paths to $G$) with the help of the completeness of $\omega$.
+
+    \emph{Step 1:} existence of developments. Let $\gamma:I\to M$ be a path and $g_0\in G$ a point. We would like to show that the form $\gamma^\ast \eta\in \Omega^1(I;\frakg)$ can be developed to give a path $\wt\gamma$ in $G$ starting at $g_0$ such that $\omega(\dot{\tilde\gamma}(t))=\eta(\dot\gamma(t))$. The completeness of $\omega$ will be crucial in constructing $\wt\gamma$.
+
+    \emph{Step 2:} construct \emph{exponential maps} on $G$. At every point $g\in G$, we define the exponential map $\exp_g:\frakg\to G$ using the flows of the constant vector fields $\omega^{-1}(A)$, $A\in\frakg$. Let us denote the flow of $\omega^{-1}(A)$ by $F^A_t$, and put 
+    \[\exp_g(A)\coloneqq F^A_1(g),\quad g\in G,\;A\in\frakg.\]
+    This is well-defined because the flows $F^A_t$ are complete by assumption. This map is smooth by the same exact argument that we will use for the actual exponential map in Proposition~\ref{prop properties of exp}(a). Its differential at the origin is easy to compute. We identify $\T_0\frakg$ with $\frakg$. Let $X_g\in T_g G$ and let $A=\omega(X_g)$ (recall that this correspondence $\T_g G\to \frakg$ is bijective), so that the constant vector field $\omega^{-1}(A)$ has value $X_g$ at $g$. Then 
+    \[(\exp_g)_{\ast 0}(A)=\restr{\frac{\dd}{\dd t}}{t=0}F^A_t(g)=\omega^{-1}(A)_g=X_g,\]
+    in other words $(\exp_g)_{\ast 0}=\omega^{-1}_g$, which is an isomorphism. Thus, $\exp_g$ is a local diffeomorphism mapping some $0$-neighborhood $U\subset \frakg$ diffeomorphically to an open neighborhood $V\subset G$ of $g$. We will call such sets $V$ \emph{exponential neighborhoods}.
+
+    % \emph{Step 3:} approximate paths in $G$ with ``piecewise-linear'' ones. Consider any path $\wt\gamma:I\to G$ and break it up into a finite (by compactness of $I$) collection of segments each of which is contained in an exponential neighborhood $V_i$ of a point $g_i\in \gamma(I)\subset G$. We can assume that $V_i$ is contractible, so any smooth path $\wt\gamma_i:[a_i,a_{i+1}]\to V_i$ passing through $g_i$ is homotopic, with a fixed value $g_i$, to a path of the form 
+    % \[\sigma_i=\exp_{g_i}(A_i t),\quad A_i\in\frakg.\]
+    % Then along $\sigma_i$ the value of $\omega$ is constant: $\omega(\dot\sigma_i)=A_i$.  All together, $\wt\gamma$ is homotopic to a piecewise smooth path $\sigma:I\to G$ such that $\sigma(I)\subset \bigcup_i V_i$ and $\omega(\dot\sigma)$ is piecewise-constant. We can also assume that $V_i$ is mapped by $\exp_{g_i}^{-1}$ to a ball of a fixed radius $\epsilon>0$ in $\frakg$. 
+    
+    % \emph{Step 4:} construct the development of $\sigma$. By assumption, the constant vector fields $\omega^{-1}(A_i)$ are complete and the segments $\sigma_i$ are integral curves for them. Thus, given a starting point $g_0$, we can define the ``development'' $\wt\sigma$ of $\eta$ along $\sigma$ as the path obtained by applying, sequentially, the flows $F^{A_i}_t$ for $t\in [a_i,a_{i+1}]$. 
+    
+    % \emph{Step 5:} show invariance of the endpoint. Different choices of the approximating path $\sigma$ are homotopic to each other. Let $h:I\times I\to G$ be such a homotopy. The pullback $h^\ast \omega\in \Omega^1(I^2;\frakg)$ still satisfies the Structure Equation, so by the same argument as in Theorem~\ref{thm 7.7 Sharpe}, the endpoint $\wt\sigma(1)$ is independent of the choice of $\sigma$. Since $\epsilon$ can be made arbitrarily small, by continuity the endpoint also remains stationary during homotopic deformations of $\gamma$ itself (with fixed endpoints).
+
+    \emph{Step 3:} construct ``piecewise-linear'' developments of $1$-forms. Any $1$-form $\xi(t)\dd t\in\Omega^1(I;\frakg)$ can be approximated (under some supremum norm on $\frakg$-valued functions) by a $1$-form $\xi_c(t)\dd t$ such that $\xi_c:I\to \frakg$ is piecewise-constant, $\xi_c(t)=A_i$, $t\in[a_i,b_i]$. Each constant segment of this $1$-form can be developed to a path in $G$ from any given starting point $g_i$, using the flow $F^{A_i}_t$:
+    \[\sigma_i(t)=\exp_{g_i}(A_i t).\]
+    We do this inductively, starting with the given $g_0\in G$ and letting $g_{i+1}=\exp_{g_i}(A_i (b_i-a_i))$, see Figure~\ref{fig:develop}. By refining the approximation we can guarantee that the developed segments stay within exponential neighborhoods of their starting points, and that the images of those neighborhoods in $\frakg$ are balls of fixed radius $\epsilon>0$. This allows us to lift any homotopy that deforms $\xi_c$ into an approximation with even smaller $\epsilon$ to a homotopy $h$ of the developed path in $G$ (by lifting it inside each exponential neighborhood separately). The pullback $h^\ast \omega\in \Omega^1(I^2;\frakg)$ still satisfies the Structure Equation, so by the same argument as in Theorem~\ref{thm 7.7 Sharpe}, the endpoint $\sigma(1)$ is independent of the choice of approximation.
+
+    \emph{Step 4:} develop $\eta$ along paths in $M$ to paths in $G$. For any path $\gamma:I\to M$, we can develop approximations of the $1$-form $\gamma^\ast \eta$ from any starting point $g_0\in G$, getting a unique endpoint that doesn't depend on the approximation. Since $\eta$ satisfies the Structure Equation, the endpoint is \emph{also} independent of homotopic deformations of $\gamma$ itself (with fixed endpoints). By replacing the interval $I$ with $[0,t]$, we define not just the endpoint but the whole development $\wt\gamma(t)$ of $\eta$ along $\gamma$. It has to be smooth because $\wt\gamma^\ast \omega$ is uniformly approximated by developable $1$-forms whose limit is $\gamma^\ast\eta$, and local primitives of the latter are smooth by the argument in the local Fundamental Theorem.
+
+    \emph{Step 5:} construct $f$. Now take our $1$-form $\eta$ and define its primitive $f:M\to G$ subject to the condition $f(x_0)=g_0$ as follows. For each $x\in M$, we pick a path $\gamma:x_0\leadsto x$, develop $\gamma^\ast\eta$ to $\wt\gamma$ as above starting at $g_0$ and put $f(x)\coloneqq \wt\sigma(1)$. Since $M$ is simply connected, all choices of $\gamma$ are homotopic to each other, hence their piecewise smooth approximations are also homotopic, and $f(x)$ is independent of these choices. By the same argument as in Theorem~\ref{thm 7.14 Sharpe fundamental global}, locally near $x$, $f(x)$ has to coincide with the unique local primitive, and hence is smooth and $f^\ast\omega=\eta$. Global uniqueness follows from local uniqueness.
+\end{proof}
+
+\begin{figure}[tp]
+    \def\svgwidth{0.5\linewidth}
+    \centering
+    \import{figures/}{develop.pdf_tex}
+    % \includegraphics[scale=0.5]{figures/develop.pdf}
+    \caption{Piecewise-linear approximations to a development.\label{fig:develop}}
+\end{figure}
+
+\begin{proof}[Proof of Theorem~\ref{thm 8.7 Sharpe}]
     First we discuss the case of simply connected $M$, so that $G=M$. This case involves five steps. First we construct a map $f:M\to \GL(\frakg)$ that will eventually be given by $f(g)=\Ad_g$. The second step constructs a map $m:M\times M\to M$ satisfying the conditions $m(e,e)=e$ and $m^\ast \omega=(\pr_2^\ast f)^{-1} \circ \pr_1^\ast\omega+\pr_2^\ast\omega$ (see (\ref{eq MC form under m})). The third step shows that $f$ is a homomorphism with respect to the multiplication $m$. The fourth shows that $m$ is associative. The fifth step constructs a map $i:M\to M$ and shows that it is the inversion with respect to $m$.
 
-    \emph{Step 1.} Corollary~\ref{cor 5.3 Sharpe} shows that any map $f:M\to \Aut(\frakg)\subset \GL(\frakg)$ should have logarithmic derivative $\ad_{\omega}\in \frakgl(\frakg)$ and satisfy $f(e)=e$. Thus the form $\omega$ will determine $f$, provided $\eta=\ad_\omega$ is integrable. But
+    \emph{Step 1.} Corollary~\ref{cor 5.3 Sharpe} shows that any map $f:M\to \Aut(\frakg)\subset \GL(\frakg)$ should have logarithmic derivative $\ad_{\omega}\in \frakgl(\frakg)$ and satisfy $f(e)=e$. Thus the form $\omega$ will determine $f$, provided $\eta=\ad_\omega$ is integrable (i.e.\ satisfies the Structure Equation). But
     \[\dd\eta+\frac12[\eta,\eta]=\ad_{\dd\omega}+\frac12[\ad_\omega,\ad_\omega]=\ad_{\dd\omega+\frac12[\omega,\omega]}=0,\]
-    and since $M$ is simply connected, it follows from the Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global} that $\eta$ is the logarithmic derivative of a unique map $f:M\to \GL(\frakg)$ satisfying $f(e)=e$. In particular, $\dd f=f\circ \ad_\omega$, where the product on the right is the composition of elements in $\frakgl(\frakg)$ as linear maps.
+    and since $M$ is simply connected, it follows from the Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global} that $\eta$ is the logarithmic derivative of a unique map $f:M\to \GL(\frakg)$ satisfying $f(e)=e$. In particular, $\dd f=f\cdot \ad_\omega$, where the product on the right is the composition of elements in $\frakgl(\frakg)$ as linear maps.
 
-    \emph{Step 2.} We construct the multiplication map. First equation (\ref{eq MC form under m}) shows that any multiplication map $m:M\times M\to M$ should have logarithmic derivative at $(x,y)\in M\times M$ given by (\ref{eq MC form under m}):
+    \emph{Step 2.} We construct the multiplication map. Any potential multiplication map $m:M\times M\to M$ should have logarithmic derivative at $(x,y)\in M\times M$ given by the analog of (\ref{eq MC form under m}):
     \[\eta=\pr_1^\ast (f(y)^{-1}\omega)+\pr_2^\ast\omega=(\pr_2^\ast f^{-1})\pr_1^\ast\omega+\pr_2^\ast\omega.\]
-    Thus the form $\omega$ will determine $m$, provided $\eta$ is integrable. Now one checks that $\dd\eta+\frac12[\eta,\eta]=0$ by a lengthy direct substitution and using the structural equation on $\omega$, the equality $\dd (f^{-1})=-\ad_\omega\circ f^{-1}$, and the symmetry of the bracket of Lie algebra-valued $1$-forms. Since $M$ is simply connected, the Fundamental Theorem shows that $\eta$ is the log-derivative of a unique map $m:M\times M\to M$ satisfying $m(e,e)=e$.
+    Thus the form $\omega$ will determine $m$, provided $\eta$ is integrable. Now one checks that $\dd\eta+\frac12[\eta,\eta]=0$ by a lengthy direct substitution and using the Structure Equation on $\omega$, the equality $\dd (f^{-1})=-\ad_\omega\circ f^{-1}$, and the commutativity of the wedge product of $\frakg$-valued $1$-forms. Since $M$ is simply connected, the generalized Fundamental Theorem~\ref{prop generalization of fundamental thm} shows that $\eta$ is the log-derivative of a unique map $m:M\times M\to M$ satisfying $m(e,e)=e$.
 
     \emph{Step 3.} We show that $f:M\to \GL(\frakg)$ is a homomorphism with respect to $m$ in the sense that $f(m(x,y))=f(x)f(y)$ for all $x,y\in M$. We shall prove the commutativity of the square consisting of $m,m_{\GL},f$, and $f\times f$:
     \[m_{\GL}\circ (f\times f)=f\circ m.\]
-    It is clear that this square commutes at $(e,e)$. Since $M$ is connected it suffices to show that the Maurer-Cartan form $\theta_{\GL}$ on $\GL(\frakg)$ pulls back to the same form on $M\times M$ along the two possible routes. Indeed, $\theta_{\GL(\frakg)}$ trivializes the tangent bundle of $\GL(\frakg)$ and thus its composition with the derivative of any map identifies that derivative, and hence the map itself, up to a constant. Thus, we must show that
+    It is clear that this square commutes at $(e,e)$. Since $M$ is connected it suffices to show that the Maurer-Cartan form $\theta_{\GL}$ on $\GL(\frakg)$ pulls back to the same form on $M\times M$ along the two possible routes. Indeed, $\theta_{\GL(\frakg)}$ trivializes the tangent bundle of $\GL(\frakg)$ and thus its composition with the derivative of any map identifies that derivative, and hence the map itself, up to a constant. Thus, we must show that two logarithmic derivatives coincide:
     \[(f\circ m)^\ast\theta_{\GL}=(m_{\GL}\circ (f\times f))^\ast \theta_{\GL}.\]
     Once again, a lengthy substitution of $m^\ast\omega=\pr_2^\ast(f^{-1}(\pr_1^\ast\omega))+\pr_2^\ast\omega$ and $m_{\GL}^\ast\theta_{\GL}=\pr_2^\ast \Ad^{-1}_{\pr_1^\ast\theta_{\GL}}+\pr_2^\ast \theta_{\GL}$ confirms that the above identity is true.
 
@@ -6247,11 +6348,11 @@ The final result shows that in a certain sense the Maurer-Cartan form determines
     \[m\circ (m\times \id)=m\circ (\id\times m).\]
     Again, this diagram clearly commutes at $(e,e,e)$, and since $M$ is connected, it suffices to show that the form $\omega$ on $M$ pulls back to the same form on $M\times M\times M$ along the two possible routes. Another lengthy substitution using the same identities verifies that this holds.
 
-    \emph{Step 5.} Finally we construct an inversion map. Another trivial exercise is to check using (\ref{eq MC form under i}) that any inversion map $i:M\to M$ must have log-derivative given by
+    \emph{Step 5.} Finally we construct an inversion map. Another trivial exercise is to check using (\ref{eq MC form under i}) that any inversion map $i:M\to M$ must have ``log-derivative'' (pullback of $\omega$) given by
     \[\eta_x(X)=-\Ad_x\omega(X)=-(f\omega)(X).\]
     Thus the form $\omega$ will determine $i$, provided we can show that $-f\omega$ is integrable. But since
     \[\dd\eta+\frac12[\eta,\eta]=-(\dd f)\omega -f\dd \omega+\frac12 f[\omega,\omega]=-f\ad_\omega\omega +f[\omega,\omega]=0\]
-    and $M$ is simply connected, it folows from the Fundamental Theorem that $\eta$ is the log-derivative of a unique map $i:M\to M$ satisfying $i(e)=e$. However, we must still verify that $i$ is the inverse map, i.e.\ that $m(i(x),x)=e$. This identity can be written as the composition
+    and $M$ is simply connected, it folows from the generalized Fundamental Theorem~\ref{prop generalization of fundamental thm} that $\eta$ is the pullback of $\omega$ by a unique map $i:M\to M$ satisfying $i(e)=e$. However, we must still verify that $i$ is the inverse map, i.e.\ that $m(i(x),x)=e$. This identity can be written as the composition
     \[m\circ(i\times\id)\circ\Delta=e\in M,\]
     where $\Delta:M\to M\times M$ is the diagonal map $\Delta(x)=(x,x)$. Since $M$ is connected, it suffices to show that the form $\omega$ on $M$ pulls back to the same form on $M$ along the two possible routes. Since it obviously pulls back to $0$ via the right hand side, we must show that $(m\circ(i\times\id)\circ\Delta)^\ast\omega=0$. As in the previous steps, a lengthy substitution using the formula for $m^\ast\omega$ verifies this identity. Thus, $i$ is an inverse for $m$.
 
@@ -6260,17 +6361,19 @@ The final result shows that in a certain sense the Maurer-Cartan form determines
 
 \begin{rem}
     \begin{enumerate}
-        \item Dropping condition (iii) in Theorem~\ref{thm 8.7 Sharpe} still leads to a manifold with a structure of a \emph{local Lie group}.
-        \item If we drop condition (i), we are left with what may be regarded as a ``deformation'' of a Lie group. We will later see that this produces a Cartan geometry with nonzero curvature.
-        \item Except in special cases, we cannot weaken condition (ii) to $\omega_x$ being merely an injection for all $x\in M$ and still expect to obtain a discrete monodromy group.
+        \item Dropping the completeness condition (iii) in Theorem~\ref{thm 8.7 Sharpe} still leads to a manifold with a structure of a \emph{local Lie group}, for example, an open subset of a Lie group.
+        \item If we drop condition (i) (the Structure Equation), we are left with what may be regarded as a ``deformation'' of a Lie group. We will later see that this produces a Cartan geometry with nonzero curvature.
+        \item Except in special cases, we cannot weaken the isomorphism condition (ii) to $\omega_x$ being merely an injection for all $x\in M$ and still expect to obtain a discrete monodromy group. Therefore, this condition will remain a crucial part of the definition of a Cartan geometry.
     \end{enumerate}
 \end{rem}
 
 Theorem~\ref{thm 8.7 Sharpe} provides an easy proof of the existence and uniqueness of universal covering groups (Theorem~\ref{thm 7.7. Lee covering group}).
 
 \begin{proof}[Proof of Theorem~\ref{thm 7.7. Lee covering group}]
-    Let the universal covering map be $\pi:\wt{G}\to G$. First note that if a Lie group structure on $\wt{G}$ exists, then the Maurer-Cartan form on $\wt{G}$ is $\pi^\ast \theta_G$. Thus we are led to define $\omega=\pi^\ast\theta_G$ on $\wt{G}$. This form satisfies the structural equation by naturality of exterior derivatives and Lie brackets. Since $\pi$ is a local diffeomorphism, not only is $\omega$ an isomorphism on each fiber, but also $\omega$ is complete, since integral curves for $\theta_G$ on $G$ will lift to integral curves for $\omega$ on $\wt{G}$. By Theorem~\ref{thm 8.7 Sharpe}, given $\wt{e}\in \pi^{-1}(e)$, $\wt{G}$ has a unique Lie group structure with $\wt e$ as the identity and for which $\omega$ is the Maurer-Cartan form. By Theorem~\ref{thm 6.1 Sharpe fundamental local}, $\pi$ is the unique map $(\wt{G},\wt{e})\to (G,e)$ pulling back $\omega$ from $\theta_G$, and then by Theorem~\ref{thm second principle} it must be a homomorphism.
+    Let the universal covering map be $\pi:\wt{G}\to G$. First note that if a Lie group structure on $\wt{G}$ exists, then the Maurer-Cartan form on $\wt{G}$ is $\pi^\ast \theta_G$. Thus we are led to define $\omega=\pi^\ast\theta_G$ on $\wt{G}$. This form satisfies the Structure Equation by naturality of exterior derivatives and Lie brackets. Since $\pi$ is a local diffeomorphism, not only is $\omega$ an isomorphism on each fiber, but also $\omega$ is complete, since integral curves for $\theta_G$ on $G$ will lift to integral curves for $\omega$ on $\wt{G}$. By Theorem~\ref{thm 8.7 Sharpe}, given $\wt{e}\in \pi^{-1}(e)$, $\wt{G}$ has a unique Lie group structure with $\wt e$ as the identity and for which $\omega$ is the Maurer-Cartan form. By Theorem~\ref{thm 6.1 Sharpe fundamental local}, $\pi$ is the unique map $(\wt{G},\wt{e})\to (G,e)$ pulling back $\omega$ from $\theta_G$, and then by Theorem~\ref{thm second principle} it must be a homomorphism.
 \end{proof}
+
+
 
 
 
@@ -6401,7 +6504,7 @@ When multiple groups are involved, we will sometimes specify the group to which 
     \[\Xi_{(g,X)}=(X_g,0)\in \T_gG\oplus \T_X \frakg.\]
     This is a smooth vector field because it acts on functions by differentiating them along $X$. It is easy to verify that the flow $F^\Xi$ is given by
     \[F^\Xi_t(g,X)=\left(F^X(g,t),X\right).\]
-    By the fundamental theorem of flows, $F^\Xi$ is smooth. Since $\exp X=\pr_1\left((F^\Xi_1(e,X)\right)$, where $\pr_1:G\times\frakg\to G$ is the projection, it follows that $\exp$ is smooth.
+    By the fundamental Theorem~\ref{thm fundamental of flows} of flows, $F^\Xi$ is smooth. Since $\exp X=\pr_1\left((F^\Xi_1(e,X)\right)$, where $\pr_1:G\times\frakg\to G$ is the projection, it follows that $\exp$ is smooth.
 
     (b-d) follow trivially from the fact that $\exp(tX)$ is a \gls{ops}.
     
@@ -6993,8 +7096,8 @@ As we will show, $\mu$ has the -- perhaps unsurprising but definitely not obviou
 
 We will later show that every finite-dimensional real Lie algebra is the Lie algebra of some Lie group. Therefore it will be worthwhile to give an independent definition of $\mu(A,B)$ on an abstract Lie algebra. This is a bit tricky because in the absence of a Lie group there is no exponential map. The only object we have access to in the Lie algebra is a Lie bracket, or the adjoint operator $\ad$. Therefore let us proceed in the following roundabout way.
 
-For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $A\in \frakg$ such that the operator $f(\ad_A)=(\rme^{\ad_A}-I)(\ad_A)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule,
-\[A\to \phi(\ad_A)=(f(\ad_A))^{-1}=\frac{\ad_A}{\rme^{\ad_A}-I}\]
+For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $A\in \frakg$ such that the operator $f(\ad_A)=(\rme^{\ad_A}-\rmI)(\ad_A)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule,
+\[A\to \phi(\ad_A)=(f(\ad_A))^{-1}=\frac{\ad_A}{\rme^{\ad_A}-\rmI}\]
 is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylor series are the Bernoulli numbers $B_k$). Let $\frakg_e^2$ be the set of $(A,B)\in \frakg\times\frakg_e$ such that the equation
 \[\dot Z(t)=\phi(\ad_{Z(t)}),\quad Z(0)=B,\label{eq Z(t)}\]
 has a solution $Z(t)$ defined for all $t\in [0,1]$. We now define
@@ -7034,7 +7137,7 @@ From the definition of $Z(t)$ in the last \subsect\ combined with $\Adg\circ \ex
 \[\rme^{\ad_{Z(t)}}=\rme^{t\ad_A}\circ \rme^{\ad_B}.\]
 This can also be verified without reference to the Lie group by applying $\ad$ to the differential equation (\ref{eq Z(t)}) defining $Z(t)$ and then reading (\ref{8284}) with $A,B,$ and $Z$ replaced by $\ad_A,\ad_B$, and $\ad_Z$, respectively (which can always be done by sticking both sides into $\Adg$ and using $\Adg\circ\exp=\exp\circ\ad$). Now:
 \begin{multline}
-    \dot Z(t)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{\ad_{Z(t)}}-I)^k(A)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{t\ad_A}\circ \rme^{\ad_B}-I)^k(A)=\\
+    \dot Z(t)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{\ad_{Z(t)}}-\rmI)^k(A)=\sum_{k=0}^\infty \frac{(-1)^k}{k+1}(\rme^{t\ad_A}\circ \rme^{\ad_B}-\rmI)^k(A)=\\
     =\sum_{k=0}^\infty \frac{(-1)^k}{k+1}\left(\sum_{l,m\geq 0,l+m>0}t^l\frac{(\ad_A)^l}{l!}\circ \frac{(\ad_B)^m}{m!}\right)^k (A)=\\
     =\sum_{k=0}^\infty \sum t^{l_1+\ldots l_k}
     \left(
@@ -7093,8 +7196,7 @@ The geometric Baker-Campbell-Hausdorff formula states that, with $\psi(z)$ defin
     =A+\int_0^1\psi\left(\rme^{\ad_A}\rme^{t\ad_B}\right)B\dd t.\label{eq geom BCH}
 \end{multline}
 \end{thm}
-
-This means that we are meant to substitute 
+At sufficiently small $A$ and $B$, where the series for $\psi$ converges, this formula can be taken literally. For general $A$ and $B$, it requires us to substitute 
 \[u=\rme^{\ad_A}\rme^{t\ad_B}-\rmI\]
 into the formal series for $\psi(1+u)$, apply each term to $B$ and then integrate. In doing this, we can ignore all terms where a factor of $\ad_B$ shows up on the right since $\ad_B B=0$. To obtain the expansion through terms of degree three, we need only retain quadratic and lower terms in $u$:
 \begin{align}
@@ -8742,10 +8844,10 @@ have a unique solution given by $\eta(t)=\Ad_{\xi(t)}^{-1
     Since $(\xi-\wh{\xi})(t,0)=0$, the uniqueness of solutions applied to $\eta(t,\cdot)$ implies that $\xi=\wh{\xi}$ on all of $I^2$. Thus $L_{f\ast}^{-1}f=\xi\dd t+\eta\dd s$.
 \end{rem}
 
-The following familiar theorem holds for solutions of the Maurer-Cartan equation on regular Lie groups. We call a one-form $\alpha\in\Omega^1(M,\frakg)$ integrable if there exists a smooth function $f:M\to G$ such that $L_f^\ast \dd f=\alpha$.
+The following familiar theorem holds for solutions of the Maurer-Cartan equation on regular Lie groups. We call a one-form $\alpha\in\Omega^1(M;\frakg)$ integrable if there exists a smooth function $f:M\to G$ such that $L_f^\ast \dd f=\alpha$.
 
 \begin{thm}[Fundamental Theorem for Lie group valued functions]
-    Let $M$ be a simply connected manifold and $G$ a regular Lie group. Then $\alpha\in\Omega^1(M,\frakg)$ is integrable iff it satisfies the Maurer Cartan equation
+    Let $M$ be a simply connected manifold and $G$ a regular Lie group. Then $\alpha\in\Omega^1(M;\frakg)$ is integrable iff it satisfies the Maurer Cartan equation
     \[\dd\alpha +\frac12[\alpha,\alpha]=0.\]
 \end{thm}
 
