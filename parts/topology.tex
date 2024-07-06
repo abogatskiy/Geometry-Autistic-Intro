@@ -2896,78 +2896,78 @@ Meaning: the equation $\Phi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for $\b
 
 \subsection{Tangent spaces}
     In $\bbR^n$, vectors don't have ``base points'' because they can always be parallel transported to the origin. On a manifold, this is impossible without additional structure, which is why there is a tangent space ``attached'' to every point $p\in M$. 
-\begin{defn}[Tangent vector]\index{Tangent vector}\index{Vector}
-    Let $p\in M$. If $p\in \mathring M$, consider all curves $\gamma\in C^\infty((-1,1),M)$ such that $\gamma(0)=p$. If $p\in \partial M$, consider instead all curves with domains $(-1,0]$ or $[0,1)$. Introduce the equivalence relation $\gamma_1\sim \gamma_2$  iff $\restr{\frac{\dd}{\dd t}}{t=0}(\varphi_\alpha\circ \gamma_1)(t)=\restr{\frac{\dd}{\dd t}}{t=0}(\varphi_\alpha\circ \gamma_2)(t)$ for any chart $\varphi_\alpha$ around $p$. A tangent vector at $x$ is an equivalence class $[\gamma]_p$ of curves passing through $p$. The set of all tangent vectors at $p$ is denoted by $T_p M$.
+\begin{defn}[Tangent vector I]\index{Tangent vector}\index{Vector}
+    Let $m\in M$. If $m\in \mathring M$, consider all curves $\gamma\in C^\infty((-1,1),M)$ such that $\gamma(0)=m$. If $m\in \partial M$, consider instead all curves with domains $(-1,0]$ or $[0,1)$. Introduce the equivalence relation $\gamma_1\sim \gamma_2$  iff $\restr{\frac{\dd}{\dd t}}{t=0}(\varphi_\alpha\circ \gamma_1)(t)=\restr{\frac{\dd}{\dd t}}{t=0}(\varphi_\alpha\circ \gamma_2)(t)$ for any chart $\varphi_\alpha$ around $p$. A tangent vector at $x$ is an equivalence class $[\gamma]_m$ of curves passing through $m$. The set of all tangent vectors at $m$ is denoted by $\T_m M$.
 \end{defn}
 
 \begin{enumerate}
-    \item $T_x M$ is imbued with the structure of a real vector space as follows:
+    \item $T_m M$ is imbued with the structure of a real vector space as follows:
     \begin{enumerate}
-        \item $\lambda\cdot [\gamma(t)]_p\coloneqq [\gamma(\lambda t)]_p$ for $\lambda\in\bbR $.
-        \item $[\gamma_1(t)]_p+[\gamma_2(t)]_p\coloneqq [\varphi_\alpha^{-1}(\varphi_\alpha(\gamma_1(t))+\varphi_\alpha(\gamma_2(t)))]_p.$
+        \item $\lambda\cdot [\gamma(t)]_m\coloneqq [\gamma(\lambda t)]_m$ for $\lambda\in\bbR $.
+        \item $[\gamma_1(t)]_m+[\gamma_2(t)]_m\coloneqq [\varphi_\alpha^{-1}(\varphi_\alpha(\gamma_1(t))+\varphi_\alpha(\gamma_2(t)))]_m.$
     \end{enumerate}
-    \item We will show later that $\dim T_p M=\dim M$.
+    \item We will show later that $\dim \T_m  M=\dim M$.
 \end{enumerate}
 
 
-\begin{defn}[Tangent vector, alternative def.]
-$T_p M$ can be alternatively defined as the set of all \emph{derivations}\index{Derivation} at $p$, i.e.\ linear functionals $v:C^\infty(M)\to \bbR $ such that $v[f\cdot g]=f(p)v[g]+g(p)v[f]$. This is obviously a vector space. Notably, this definition doesn't need to be modified if $p\in\partial M$.
+\begin{defn}[Tangent vector II]
+    $\T_m  M$ can be alternatively defined as the set of all \emph{derivations}\index{Derivation} at $m$, i.e.\ linear functionals $v:C^\infty(M)\to \bbR $ such that $v[f\cdot g]=f(m)v[g]+g(m)v[f]$. This is obviously a vector space. Notably, this definition doesn't need to be modified if $m\in\partial M$.
 \end{defn}
 
 \begin{prop}
-The two definitions of tangent spaces given above are isomorphic as vector spaces.
+    The two definitions of tangent spaces given above are isomorphic as vector spaces.
 \end{prop}
 \begin{proof}
-An explicit linear isomorphism between the two constructions is $[\gamma]_p\mapsto v[f]=\restr{\frac{\dd}{\dd t}}{t=0}f(\gamma(t))$ (this is called the \emph{directional derivative} along the tangent vector $[\gamma]_p$). 
+    An explicit linear isomorphism between the two constructions is $[\gamma]_m\mapsto v[f]=\restr{\frac{\dd}{\dd t}}{t=0}f(\gamma(t))$ (this is called the \emph{directional derivative} along the tangent vector $[\gamma]_m$). 
 
-All derivations on the algebra of smooth functions can be shown to be directional derivatives, which allows us to invert this mapping. Namely, for a chart map $\varphi_\alpha$, the $n$ numbers $v[\varphi_\alpha^i]$ are components of a vector $\wh{v}\in \bbR^n$. Now we can let $\wh{\gamma}(t)=\varphi_\alpha(p)+t\wh{v}$ and $\gamma(t)=\varphi_\alpha^{-1}(\wh{\gamma}(t))$. It is easy to show that this is a linear inverse to the above mapping.
+    All derivations on the algebra of smooth functions can be shown to be directional derivatives, which allows us to invert this mapping. Namely, for a chart map $\varphi_\alpha$, the $n$ numbers $v[\varphi_\alpha^i]$ are components of a vector $\wh{v}\in \bbR^n$. Now we can let $\wh{\gamma}(t)=\varphi_\alpha(m)+t\wh{v}$ and $\gamma(t)=\varphi_\alpha^{-1}(\wh{\gamma}(t))$. It is easy to show that this is a linear inverse to the above mapping.
 \end{proof}
 
 
 \begin{xca}
-Check that the definition of a tangent vector and all of the following constructions are consistent, i.e.\ independent of the choices of charts $\varphi_\alpha$ or representatives $\gamma(t)$ of equivalence classes.
-\end{xca}
-\begin{defn}[Differential/push-forward]\index{Push-forward}
-Let $F\in C^\infty(M,N)$ and $p\in M$. The push-forward of $F$ at $p$ is the linear map $D_p F=F_{\ast p}:T_p M\to T_{F(p)} N$ defined via \[F_{\ast p}([\gamma]_p)=[F\circ\gamma]_{F(p)},\] or equivalently \[F_{\ast p}(v)[f]=v[f\circ F]\] for any $f\in C^\infty (N)$.
+    Check that the definition of a tangent vector and all of the following constructions are consistent, i.e.\ independent of the choices of charts $\varphi_\alpha$ or representatives $\gamma(t)$ of equivalence classes.
+    \end{xca}
+    \begin{defn}[Differential/push-forward]\index{Push-forward}
+    Let $F\in C^\infty(M,N)$ and $p\in M$. The push-forward of $F$ at $m$ is the linear map $D_m F=F_{\ast m}:T_m M\to T_{F(m)} N$ defined via \[F_{\ast m}([\gamma]_m)=[F\circ\gamma]_{F(m)},\] or equivalently \[F_{\ast m}(v)[f]=v[f\circ F]\] for any $f\in C^\infty (N)$.
 \end{defn}
 
 \begin{rem}[Coordinate expressions for derivatives]
     In local coordinates (i.e.~replacing $F$ with some function $\wh{F}:\bbR^m\to\bbR^n$,
-    \[F_{\ast p}([\gamma]_p)=\restr{\frac{\dd}{\dd t}}{t=0} \wh{F}(\gamma(t)).\label{eq differential in local coordinates}\]
+    \[F_{\ast m}([\gamma]_m)=\restr{\frac{\dd}{\dd t}}{t=0} \wh{F}(\gamma(t)).\label{eq differential in local coordinates}\]
     and 
-    \[\wh{F}_{\ast p}(v)[f]=\restr{\frac{\dd}{\dd t}}{t=0}f(F(\gamma(t)).\]
+    \[\wh{F}_{\ast m}(v)[f]=\restr{\frac{\dd}{\dd t}}{t=0}f(F(\gamma(t)).\]
 \end{rem}
 
 
 \begin{thm}\label{prop of push-forwards}
-Consider smooth maps between manifolds $M\overset{f}{\to}N\overset{g}{\to}P$. Then
+    Consider smooth maps between manifolds $M\overset{f}{\to}N\overset{g}{\to}P$. Then
 \begin{enumerate}
-    \item $f_{\ast p}:T_p M\to T_{f(p)} N$ is linear;
-    \item $(g\circ f)_{\ast p}=g_{\ast f(p)}\circ f_{\ast p}$ (chain rule);
-    \item $(\id_M)_{\ast p}=\id_{T_p M}$;
-    \item if $f$ is a local diffeo at $x$ then $f_{\ast p}$ is invertible and $(f_{\ast p})^{-1}=(f^{-1})_{\ast p}$ (the converse is also true by \gls{inmt});
-    \item In local coordinates, $f_{\ast p}$ is represented by the Jacobi matrix of the local representative $f_{\beta\alpha}$;
-    \item $\dim T_p M=\dim M$, even for points on $\partial M$;
+    \item $f_{\ast m}:\T_m M\to \T_{f(m)} N$ is linear;
+    \item $(g\circ f)_{\ast m}=g_{\ast f(m)}\circ f_{\ast m}$ (chain rule);
+    \item $(\id_M)_{\ast m}=\id_{\T_m M}$;
+    \item if $f$ is a local diffeo at $x$ then $f_{\ast m}$ is invertible and $(f_{\ast m})^{-1}=(f^{-1})_{\ast m}$ (the converse is also true by \gls{inmt});
+    \item In local coordinates, $f_{\ast m}$ is represented by the Jacobi matrix of the local representative $f_{\beta\alpha}$;
+    \item $\dim T_m M=\dim M$, even for points on $\partial M$;
     \item \gls{inmt} doesn't hold at the boundary.
 \end{enumerate}
 \end{thm}
 \begin{proof}
-The first few statements are trivial and are left as an exercise.
-6) A local chart map $\varphi_\alpha$ can be viewed as a local diffeo to an open subset of $\bbR^n$. Since $T_{\varphi_\alpha(p)}(\bbR^n)=\bbR^n$ (because we know that equivalence classes of curves at a point of $\bbR^n$ are uniquely characterized by their tangent vectors), we have a linear map $(\varphi_\alpha)_{\ast p}:T_p M\to \bbR^n$, which is an isomorphism by 4). Therefore the dimensions coincide. Nothing really changes at the boundary.
+    The first few statements are trivial and are left as an exercise.
+    6) A local chart map $\varphi_\alpha$ can be viewed as a local diffeo to an open subset of $\bbR^n$. Since $T_{\varphi_\alpha(m)}(\bbR^n)=\bbR^n$ (because we know that equivalence classes of curves at a point of $\bbR^n$ are uniquely characterized by their tangent vectors), we have a linear map $(\varphi_\alpha)_{\ast m}:\T_m M\to \bbR^n$, which is an isomorphism by 4). Therefore the dimensions coincide. Nothing really changes at the boundary.
 
-7) Consider the inclusion map $i:\bbR^n_+\hookrightarrow \bbR^n$. Clearly $i_{\ast 0}=\id$ is invertible, but $i$ itself is not a local diffeo because $i(B^n\cap \bbR^n_+)$ is the image of an open set that is not open in $\bbR^n$.
+    7) Consider the inclusion map $i:\bbR^n_+\hookrightarrow \bbR^n$. Clearly $i_{\ast 0}=\id$ is invertible, but $i$ itself is not a local diffeo because $i(B^n\cap \bbR^n_+)$ is the image of an open set that is not open in $\bbR^n$.
 \end{proof}
 
-All of this implies that $T:(M,p)\mapsto T_p M$ is a covariant functor $T:\mathsf{Man}_\bullet^\infty\to \mathsf{Vect}_\bbR$. It respects morphisms (smooth maps) $f:M\to N$ between pointed\footnote{The requirement that these manifolds be pointed is a mere technicality for the sake of the definition of a functor. Given a map $f:M\to N$ and a point $f\in M$, we can always create the pairs $(M,p)$ and $(N,f(p))$ and treat $f$ as a pointed map.} manifolds because the following diagram commutes:
+All of this implies that the map $\T_m:(M,m)\mapsto \T_m M$ extends to a covariant functor $\T_m:\mathsf{Man}_\bullet^\infty\to \mathsf{Vect}_\bbR$. It respects morphisms (smooth maps) $f:M\to N$ between pointed\footnote{The requirement that these manifolds be pointed is a mere technicality for the sake of the definition of a functor. Given a map $f:M\to N$ and a point $f\in M$, we can always create the pairs $(M,m)$ and $(N,f(m))$ and treat $f$ as a pointed map.} manifolds because the following diagram commutes:
 \[
 \begin{tikzcd}[every matrix/.append style={name=m},   
     execute at end picture={\draw [<-] ([xshift=-2.6em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
-   M \arrow[r,"f"]\arrow[d,swap,"T_p"]& N\arrow[d,"T_{f(p)}"] \\
-   T_pM\arrow[r,swap, "T_p f"]& T_{f(p)}N.
+   M \arrow[r,"f"]\arrow[d,swap,"\T_m"]& N\arrow[d,"T_{f(m)}"] \\
+   \T_m M\arrow[r,swap, "\T_m  f"]& T_{f(m)}N.
 \end{tikzcd}
 \]
 
-As we will show later, the tangent space over $p\in M$ in a certain sense ``varies smoothly with $p$'' and together all of the tangent spaces comprise a single object called the \emph{tangent bundle}. A similar thing happens to the functors $T_p$.
+As we will show later, the tangent space over $m\in M$ in a certain sense ``varies smoothly with $m$'' and together all of the tangent spaces comprise a single object called the \emph{tangent bundle}. A similar thing happens to the functors $\T_m$.
 
 \subsection{Rank}
 We have defined rank in Def.~\ref{def.rank}. However, that definition is not practical because it's an existence statement rather than a constructive ``measurement''.
@@ -2975,41 +2975,39 @@ We have defined rank in Def.~\ref{def.rank}. However, that definition is not pra
 Recall that for a matrix $A\in \Mat(n\times m,\bbR )$ its rank $\rank A$ is defined as the maximal number of linearly independent columns (equivalently, rows) in it. More abstractly, the rank of a linear operator is the dimension of its image, $\rank A=\dim(\im (A))$. The following theorem establishes the equality between the rank of a smooth map and the rank of its differential.
 
 \begin{thm}[Rank theorem]\index{Rank theorem}\label{Rank thm}
-For $f\in C^\infty(M,N)$, $\rank_p f=\rank (f_{\ast p})$.
+    For $f\in C^\infty(M,N)$, $\rank_m f=\rank (f_{\ast m})$.
 \end{thm}
 \begin{proof}
-This is the \gls{inmt} in disguise. Since this theorem is local, we can safely replace $M$ and $N$ by open $U\subset \bbR^m$ and $V\subset \bbR^n.$
+    This is the \gls{inmt} in disguise. Since this theorem is local, we can safely replace $M$ and $N$ by open $U\subset \bbR^k$ and $V\subset \bbR^n.$
 
-Assume $\rank(f_{\ast p})=r$. Introduce coordinates $(x^1,\ldots,x^r$, $y^1,\ldots,y^{m-r})$ on $U$ and $(v^1,\ldots,v^r$, $w^1,\ldots,w^{n-r})$ on $V$. In these coordinates, we can write \[f(x,y)=(F(x,y),G(x,y)).\] \Gls{wlog}, $p=0$, $f(p)=0$, and  $F_{\ast (0,0)}$ is a nonsingular square matrix.
+    Assume $\rank(f_{\ast m})=r$. Introduce coordinates $(x^1,\ldots,x^r$, $y^1,\ldots,y^{k-r})$ on $U$ and $(v^1,\ldots,v^r$, $w^1,\ldots,w^{n-r})$ on $V$. In these coordinates, we can write \[f(x,y)=(F(x,y),G(x,y)).\] \Gls{wlog}, $m=0$, $f(m)=0$, and  $F_{\ast (0,0)}$ is a nonsingular square matrix.
 
-Define $\varphi:U\to\bbR^m$ by $\varphi(x,y)=(F(x,y),y)$. Its differential at $(0,0)$ is nonsingular by assumption, so by the \gls{inmt} we locally have an inverse and by definition of $\varphi$, the composition of $\varphi^{-1}$ with $f$ will have the form 
-\[
-f\circ\varphi^{-1}=(x,\wt{G}(x,y)).
-\]
-Finally, by a trivial change of coordinates $\psi(v,w)=(v,w-\wt{G}(v,0))$ we can bring the local form of $f$ to \[\psi\circ f\circ \varphi^{-1}(x,y)=(x,0),\] which means that $\rank_p f=r$.
-
-The converse direction is obvious.
+    Define $\varphi:U\to\bbR^m$ by $\varphi(x,y)=(F(x,y),y)$. Its differential at $(0,0)$ is nonsingular by assumption, so by the \gls{inmt} we locally have an inverse and by definition of $\varphi$, the composition of $\varphi^{-1}$ with $f$ will have the form 
+    \[
+    f\circ\varphi^{-1}=(x,\wt{G}(x,y)).
+    \]
+    Finally, by a trivial change of coordinates $\psi(v,w)=(v,w-\wt{G}(v,0))$ we can bring the local form of $f$ to \[\psi\circ f\circ \varphi^{-1}(x,y)=(x,0),\] which means that $\rank_m f=r$. The converse direction is obvious.
 \end{proof}
 
 \begin{prop}\label{domain of maximal rank}
-    For any smooth map $f\in C^\infty (M,N)$ the set of points $p$ where the rank is maximal, i.e.\ $\rank_p f=\min(\dim M,\dim N)$, is open in $M$.
+    For any smooth map $f\in C^\infty (M,N)$ the set of points $m\in M$ where the rank is maximal, i.e.\ $\rank_m f=\min(\dim M,\dim N)$, is open in $M$.
 \end{prop}
 \begin{proof}
-    Let $\dim M=m$ and $\dim N=n$. The mapping $D:p\mapsto \wh{f}_{\ast p}$ is a continuous (in fact, smooth) map $U_\alpha\subset M\to \Mat(n\times m,\bbR )$. The subset of all matrices of maximal rank is open in $\Mat(n\times m,\bbR )$ (essentially because small perturbations can't make linearly independent vectors dependent\footnote{The converse is not true, which is why the set of matrices of any fixed non-maximal rank is not open.}). By continuity of $D$, the set of $p$'s at which the rank is maximal is also open (in every $U_\alpha$ and thus in all of $M$).
+    Let $\dim M=k$ and $\dim N=n$. The mapping $D:m\mapsto \wh{f}_{\ast m}$ is a continuous (in fact, smooth) map $U_\alpha\subset M\to \Mat(n\times k,\bbR )$. The subset of all matrices of maximal rank is open in $\Mat(n\times k,\bbR )$ (essentially because small perturbations can't make linearly independent vectors dependent\footnote{The converse is not true, which is why the set of matrices of any fixed non-maximal rank is not open.}). By continuity of $D$, the set of $m$ at which the rank is maximal is also open (in every $U_\alpha$ and thus in all of $M$).
 \end{proof}
 
 Therefore we see that maps of maximal rank are of special significance. Moreover, they fall into two categories: if $\dim M\leq \dim N$, then the maximal rank equals $\dim M$; if $\dim M\geq \dim N$, the maximal rank is $\dim N$. In the first case, matrices of maximal rank are exactly the injective ones, whereas in the second case they are the surjective ones.
 
 \begin{defn}[Smooth immersions and submersions]
-Among all maps of \emph{constant rank} we single out two special classes.\index{Immersion!smooth}\index{Submersion!smooth}
+    Among all maps of \emph{constant rank} we single out two special classes.\index{Immersion!smooth}\index{Submersion!smooth}
 \begin{enumerate}
-    \item $f\in C^\infty(M,N)$ is called an immersion if $f_{\ast p}:T_p M\to T_{f(p)} N$ is injective for all $p$. Equivalently, $f$ is an immersion iff it has everywhere maximal rank and $\dim M\leq \dim N$.
-    \item $f\in C^\infty(M,N)$ is called a submersion if $f_{\ast p}:T_p M\to T_{f(p)} N$ is surjective for all $p$. Equivalently, $f$ is a submersion iff it has everywhere maximal rank and $\dim M\geq \dim N$.
+    \item $f\in C^\infty(M,N)$ is called an immersion if $f_{\ast m}:\T_m  M\to T_{f(m)} N$ is injective for all $m$. Equivalently, $f$ is an immersion iff it has everywhere maximal rank and $\dim M\leq \dim N$.
+    \item $f\in C^\infty(M,N)$ is called a submersion if $f_{\ast m}:\T_m  M\to T_{f(m)} N$ is surjective for all $m$. Equivalently, $f$ is a submersion iff it has everywhere maximal rank and $\dim M\geq \dim N$.
 \end{enumerate}
 \end{defn}
 
 \begin{rem}
-As is clear from Theorem \ref{Rank thm}, a submersion is a map that is locally an orthogonal projection onto a subspace (in some coordinates), and an immersion is one that is locally an inclusion as a lower-dimensional subspace. A map that is both a submersion and an immersion is a local diffeomorphism. Note that ``locality'' here is understood both in domain and in range -- we have to pick out open neighborhoods of both $x$ and $f(x)$. An immersion for which this property holds globally on the entire domain (i.e.~locally only in the target manifold) is just an injective immersion. Meanwhile, the attempt to define maps that are ``projections locally in the target'' will lead us to the concept of fiber bundles, and it will not be enough for them to be surjective submersions.
+    As is clear from Theorem \ref{Rank thm}, a submersion is a map that is locally an orthogonal projection onto a subspace (in some coordinates), and an immersion is one that is locally an inclusion as a lower-dimensional subspace. A map that is both a submersion and an immersion is a local diffeomorphism. Note that ``locality'' here is understood both in domain and in range -- we have to pick out open neighborhoods of both $m$ and $f(m)$. An immersion for which this property holds globally on the entire domain (i.e.~locally only in the target manifold) is just an injective immersion. Meanwhile, the attempt to define maps that are ``projections locally in the target'' will lead us to the concept of fiber bundles, and it will not be enough for them to be surjective submersions.
 \end{rem}
 
 
@@ -3135,45 +3133,45 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 \end{proof}
 
 
-\begin{prop}
-A subset $S\subset M$ is an embedded submanifold iff every point $p\in S$ has a local \emph{``slice chart''}, that is, a local chart map $\varphi$ on a neighborhood $U_p\subset M$  such that its image is a slice ball: $\varphi(S\cap U_p)=\{(x^1,\ldots,x^k,0,\ldots,0)\}$, where $k$ is a fixed number called the dimension of $S$. In particular, given the existence of slice charts, there is a unique smooth structure on $S$ (given by a codomain restriction of the slice atlas) compatible with the subset topology such that $S\sub M$.
+\begin{prop}[Slice charts]\index{Slice chart}
+    A subset $S\subset M$ is an embedded submanifold iff every point $m\in S$ has a local \emph{slice chart}, that is, a local chart map $\varphi$ on a neighborhood $U_m\subset M$  such that its image is a slice ball: $\varphi(S\cap U_m)=\{(x^1,\ldots,x^k,0,\ldots,0)\}$, where $k$ is a fixed number called the \emph{dimension} of $S$. In particular, given the existence of slice charts, there is a unique smooth structure on $S$ (given by a codomain restriction of the slice atlas) compatible with the subset topology such that $S\sub M$.
 \end{prop}
 \begin{proof}
-It suffices to check that slice charts, whose existence was proved above, form a smooth atlas on $S$. This also proves that, given a topologically embedded submanifold $S$ in a smooth manifold $M$, one can induce a smooth structure on $S$, essentially by defining the slice atlas. See all details in \cite[Thm 5.8]{Lee}. 
+    It suffices to check that slice charts, whose existence was proved above, form a smooth atlas on $S$. This also proves that, given a topologically embedded submanifold $S$ in a smooth manifold $M$, one can induce a smooth structure on $S$, essentially by defining the slice atlas. See all details in \cite[Thm 5.8]{Lee}. 
 \end{proof}
 
 
 \begin{cor}
-$\partial M$ has slice charts by definition, therefore it is an embedded submanifold.
+    $\partial M$ has slice charts by definition, therefore it is an embedded submanifold.
 \end{cor}
 
 \begin{prop}
-An embedded submanifold  $S\subset M$ is properly embedded iff it is a closed subset of $M$.
+    An embedded submanifold  $S\subset M$ is properly embedded iff it is a closed subset of $M$.
 \end{prop}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 \begin{thm}[Level Set Theorem]\index{Theorem!Level set}\label{thm level set submanifold}
     If $f\in C^\infty(M,N)$ has constant rank $r$ then the level set $f^{-1}(q)$ for any $q\in N$ is a properly embedded codimension $r$ submanifold.
 \end{thm}
 \begin{proof}
-    By definition of rank, there are coordinates in which the local representative is $\wh{f}(x^1,\ldots,x^m)=(x^1,\ldots,x^r,0,\ldots,0)$. Therefore, assuming $q$ is the origin of its coordinate system, $f^{-1}(q)=(0,\ldots,0,\underbrace{y^1,\ldots,y^{m-k}}_{\text{arbitrary}})$. This means that $f^{-1}(q)$ is a local ball slice and therefore an embedded submanifold. It is closed as a pre-image of a closed set under a continuous map, and therefore properly embedded.
+    By definition of rank, there are coordinates in which the local representative is $\wh{f}(x^1,\ldots,x^n)=(x^1,\ldots,x^r,0,\ldots,0)$. Therefore, assuming $q$ is the origin of its coordinate system, $f^{-1}(q)=(0,\ldots,0,\underbrace{y^1,\ldots,y^{n-k}}_{\text{arbitrary}})$. This means that $f^{-1}(q)$ is a local ball slice and therefore an embedded submanifold. It is closed as a pre-image of a closed set under a continuous map, and therefore properly embedded.
 \end{proof}
 \begin{cor}
-Each level set of a smooth submersion $f:M\to N$ is properly embedded and of dimension $\dim N$.
+    Each level set of a smooth submersion $f:M\to N$ is properly embedded and of dimension $\dim N$.
 \end{cor}
 \begin{cor}[Regular level set theorem]
-Every regular level set (i.e.\ level set of a regular value) of a smooth map $f:M\to N$ is a properly embedded submanifold of codimension $\dim N$.
+    Every regular level set (i.e.\ level set of a regular value) of a smooth map $f:M\to N$ is a properly embedded submanifold of codimension $\dim N$.
 \end{cor}
 \begin{proof}
-Since the set of all regular points, being the set of points where $f_{\ast}$ has maximal rank, is open (Proposition \ref{domain of maximal rank}), the level set is contained in it together with an open neighborhood $U$ of itself: $f^{-1}(q)\subset U\subset M$. Then $\restr{f}{U}$ is a smooth submersion and we can use the last Corollary.
+    Since the set of all regular points, being the set of points where $f_{\ast}$ has maximal rank, is open (Proposition \ref{domain of maximal rank}), the level set is contained in it together with an open neighborhood $U$ of itself: $f^{-1}(q)\subset U\subset M$. Then $\restr{f}{U}$ is a smooth submersion and we can use the last Corollary.
 \end{proof}
 
 \begin{prop}
 \begin{enumerate}
     \item All embedded submanifolds $S\subset M$ have local defining functions, i.e.\ $\varphi:C^\infty((U\subset M, \bbR )$ such that $\varphi^{-1}(0)=S\cap U$.
-    \item An immersion is a local embedding (i.e.\ its restriction to a sufficiently small neighborhood $U\subset S$ of a point $p\in S$ is an embedding\footnote{Not true for sufficiently small neighborhoods $V\subset M$ of $p\in S\subset M$ that the restriction of the immersion to $S\cap V$ becomes an embedding!}).
+    \item An immersion is a local embedding (i.e.\ its restriction to a sufficiently small neighborhood $U\subset S$ of a point $m\in S$ is an embedding\footnote{Not true for sufficiently small neighborhoods $V\subset M$ of $m\in S\subset M$ that the restriction of the immersion to $S\cap V$ becomes an embedding!}).
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -3266,12 +3264,12 @@ An alternative way to define topological submersions would be to read the Rank T
 We will now show that smooth submersions are the exact analog of topological submersions: a smooth map is a submersion iff each point in the domain admits a smooth local section through it.
 
 \begin{thm}[Local Section Theorem {{\cite[Thm.~4.26]{Lee}}}]\index{Theorem!Local Section}\label{thm: local section}
-    $\pi\in C^\infty(M,N)$ is a submersion iff every $p\in M$ lies in the image of a smooth local section of $\pi$.
+    $\pi\in C^\infty(M,N)$ is a submersion iff every $m\in M$ lies in the image of a smooth local section of $\pi$.
 \end{thm}
 \begin{proof}
-    For the forward direction, we have in some local coordinates $f_{\alpha\beta}(x^1,\ldots,x^m)=(x^1,\ldots,x^n)$, where we assume that $p$ is the origin of the coordinate system. Therefore the map locally defined by $\sigma_{\alpha\beta}(y^1,\ldots,y^n)=(y^1,\ldots,y^n,0,\ldots,0)$ is indeed a local section and its image passes through $p$.
+    For the forward direction, we have in some local coordinates $f_{\alpha\beta}(x^1,\ldots,x^m)=(x^1,\ldots,x^n)$, where we assume that $m$ is the origin of the coordinate system. Therefore the map locally defined by $\sigma_{\alpha\beta}(y^1,\ldots,y^n)=(y^1,\ldots,y^n,0,\ldots,0)$ is indeed a local section and its image passes through $m$.
     
-    For the backward direction, let $p\in M$ and find a local section $\sigma$ such that $p\in \sigma(U)$. Then $p=\sigma(q)$ for some $q\in N$ and $\pi\circ\sigma=\id_U$. Therefore, by taking the differential, $\pi_{\ast p} \sigma_{\ast q}=\id_{T_q N}$, which implies that $\pi_\ast$ is surjective.
+    For the backward direction, let $m\in M$ and find a local section $\sigma$ such that $m\in \sigma(U)$. Then $m=\sigma(q)$ for some $q\in N$ and $\pi\circ\sigma=\id_U$. Therefore, by taking the differential, $\pi_{\ast m} \sigma_{\ast q}=\id_{T_q N}$, which implies that $\pi_\ast$ is surjective.
     \end{proof}
     
     Next we would like to find the smooth analog for the concept of a quotient map. Recall that a \emph{topological quotient map} is a surjective, strongly continuous map (i.e.\ $V$ is open iff $f^{-1}(V)$ is open). Openness implies strong continuity, thus open surjective maps are necessarily quotient maps, but not every topological quotient map is open (e.g.\ the gluing $\bbD^n\slash \partial \bbD^n$ of the boundary of a ball that gives a sphere is not open). In fact, a surjective continuous map $q$ is a quotient map iff it takes open sets that are unions of fibers of $q$ to open sets. However, these subtleties turns out to be irrelevant in the smooth case as the natural smooth analogs of surjective continuous maps, \emph{submersions}, turn out to be open by the following proposition.
@@ -3280,7 +3278,7 @@ We will now show that smooth submersions are the exact analog of topological sub
     Any smooth surjective submersion is an open topological quotient map.
     \end{prop}
 \begin{proof}
-Call the map in question $\pi$. Let $W\mathring{\subset} M$ be an open set and $p\in W$. Pick a local section $\sigma $ passing through $p$, and pick a point $y\in \sigma^{-1}(W)$. Then $y=\pi\circ\sigma(y)\in\pi(W)$. Therefore $\sigma^{-1}(W)$ is an open neighborhood of $\pi(p)$ contained inside $\pi(W)$. Since $\pi(p)$ can be any point in $\pi(W)$, this means that $\pi(W)$ is open, making $\pi$ an open map.
+Call the map in question $\pi$. Let $W\mathring{\subset} M$ be an open set and $m\in W$. Pick a local section $\sigma $ passing through $m$, and pick a point $y\in \sigma^{-1}(W)$. Then $y=\pi\circ\sigma(y)\in\pi(W)$. Therefore $\sigma^{-1}(W)$ is an open neighborhood of $\pi(m)$ contained inside $\pi(W)$. Since $\pi(m)$ can be any point in $\pi(W)$, this means that $\pi(W)$ is open, making $\pi$ an open map.
 
 We have thus proved that a smooth submersion is open. A surjective submersion is then a topological quotient map.
 \end{proof}
@@ -3326,11 +3324,11 @@ A very special type of a submersion is a covering map (which, as we will see, is
 
 
 \begin{defn}[Topological covering map]\index{Covering map!topological}
-A continuous map $E\overset{\pi}{\to} M$, where $E$ is called the \emph{total space}\index{Total space}, $M$ the \emph{base space}\index{Base space} and $\pi$ the projection, is a \emph{topological} covering map if it is surjective and every $m\in M$ has an open neighborhood $U$ such that $\pi^{-1}(U)$ consists of at most countably many connected components $\wt{U}_i$ and each restriction $\restr{\pi}{\wt{U}_i}:\wt{U}_i\to U$ is a homeomorphism. Such $U_i$ are called \emph{elementary} or \emph{evenly covered}, and we say that $\pi$ is \emph{trivial} over $U_i$. The pre-image $\pi^{-1}(m)$ of a point in the base is called the \emph{fiber above} $m$\index{Fiber}.
+    A continuous map $E\overset{\pi}{\to} M$, where $E$ is called the \emph{total space}\index{Total space}, $M$ the \emph{base space}\index{Base space} and $\pi$ the projection, is a \emph{topological} covering map if it is surjective and every $m\in M$ has an open neighborhood $U$ such that $\pi^{-1}(U)$ consists of at most countably many connected components $\wt{U}_i$ and each restriction $\restr{\pi}{\wt{U}_i}:\wt{U}_i\to U$ is a homeomorphism. Such $U_i$ are called \emph{elementary} or \emph{evenly covered}, and we say that $\pi$ is \emph{trivial} over $U_i$. The pre-image $\pi^{-1}(m)$ of a point in the base is called the \emph{fiber above} $m$\index{Fiber}.
 \end{defn}
 
 \begin{defn}[Smooth covering map]\index{Covering map!smooth}
-A smooth map $E\overset{\pi}{\to} M$ between smooth manifolds $E$ and $M$ is a \emph{smooth} covering map if it is a topological covering map and each restriction $\restr{\pi}{\wt{U}_i}$ is a diffeomorphism.
+    A smooth map $E\overset{\pi}{\to} M$ between smooth manifolds $E$ and $M$ is a \emph{smooth} covering map if it is a topological covering map and each restriction $\restr{\pi}{\wt{U}_i}$ is a diffeomorphism.
 \end{defn}
 
 In other words, the total space $E$ is locally isomorphic to parts of $M$, but the pre-image of an open set in $M$ can consist of countably many copies of itself embedded in $E$.
@@ -3340,7 +3338,7 @@ In other words, the total space $E$ is locally isomorphic to parts of $M$, but t
     \item The neighborhood $U$ whose existence is required in the definition has to be connected.
     \item Covering maps are local diffeomorphisms, submersions, open maps, and quotient maps.
     \item If $\pi $ is injective then it is diffeo.
-    \item For $p\in \pi^{-1}(q)$ and $U$ a neighborhood of $q$ as in the definition, there is a unique local section $\sigma:U\to E$ of $\pi$ such that $\sigma(q)=p$.
+    \item For $m\in \pi^{-1}(q)$ and $U$ a neighborhood of $q$ as in the definition, there is a unique local section $\sigma:U\to E$ of $\pi$ such that $\sigma(q)=m$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -3348,7 +3346,7 @@ In other words, the total space $E$ is locally isomorphic to parts of $M$, but t
     \item Obvious because every connected component of the pre-image can't be diffeomorphic to a disconnected $U$.
     \item Obviously a local diffeo. Submersion because local diffeo. Open for the same reason (or because a submersion). Quotient because surjective and submersion.
     \item If $\pi$ is injective, it's an immersion by the Global Rank Theorem \ref{Global rank}. A map that is an immersion and a submersion is a diffeo.
-    \item A section is guaranteed by definition. Just let $\wt{U}$ be the connected component of $\pi^{-1}(U)$ that contains $p$. Then $\restr{\pi}{\wt{U}}$ is a diffeomorphism whose inverse is obviously a section passing through $p$ defined on $U$. Now, suppose there is another section $\sigma':U\to E$ with the same properties. Then $\sigma'(U)\subset \wt{U}$ since $U$ is connected and $\sigma'(q)=p$. But then both $\sigma$ and $\sigma'$ are right inverses to the bijective map $\restr{\pi}{\wt{U}}$, so they have to coincide.
+    \item A section is guaranteed by definition. Just let $\wt{U}$ be the connected component of $\pi^{-1}(U)$ that contains $m$. Then $\restr{\pi}{\wt{U}}$ is a diffeomorphism whose inverse is obviously a section passing through $m$ defined on $U$. Now, suppose there is another section $\sigma':U\to E$ with the same properties. Then $\sigma'(U)\subset \wt{U}$ since $U$ is connected and $\sigma'(q)=m$. But then both $\sigma$ and $\sigma'$ are right inverses to the bijective map $\restr{\pi}{\wt{U}}$, so they have to coincide.
 \end{enumerate}
 \end{proof}
 
@@ -3368,10 +3366,10 @@ For now we consider arbitrary covering spaces, not just smooth ones.
 \end{proof}
 
 \begin{thm}[Path Lifting Property]\index{Path lifting property}\label{Path lifting property}\index{Path Lifting Property}
-Consider a topological covering space $E\overset{\pi}{\to}M$ and let $\gamma:[0,1]\to M$ be a path in $M$. Given a point $p$ in the fiber above $\gamma(0)$, there is a unique path $\wt{\gamma}:[0,1]\to E$ such that $\wt{\gamma}(0)=p$ and $\pi\circ\wt{\gamma}=\gamma$. We call $\wt{\gamma}$ the \emph{lift} of $\gamma$ based at $p$.\index{Lift of a path}
+    Consider a topological covering space $E\overset{\pi}{\to}M$ and let $\gamma:[0,1]\to M$ be a path in $M$. Given a point $m$ in the fiber above $\gamma(0)$, there is a unique path $\wt{\gamma}:[0,1]\to E$ such that $\wt{\gamma}(0)=m$ and $\pi\circ\wt{\gamma}=\gamma$. We call $\wt{\gamma}$ the \emph{lift} of $\gamma$ based at $m$.\index{Lift of a path}
 \end{thm}
 \begin{proof}
-By the Lebesque Lemma, there is an $n$ such that each $\gamma([i/n,(i+1)/n])$ lies in an elementary set. Then we can lift by induction in $i$ on each elementary set using the local homeomorphism. At each stage of the induction, the list is already defined at the left-hand endpoint, leading to uniqueness since it singles out a connected component in the pre-image of the elementary set.
+    By the Lebesque Lemma, there is an $n$ such that each $\gamma([i/n,(i+1)/n])$ lies in an elementary set. Then we can lift by induction in $i$ on each elementary set using the local homeomorphism. At each stage of the induction, the list is already defined at the left-hand endpoint, leading to uniqueness since it singles out a connected component in the pre-image of the elementary set.
 \end{proof}
 This property is a characteristic property of covering maps and is key in many applications of this theory, such as complex analysis, where the Riemann surfaces of analytic functions are obtained via analytic continuation along paths in the complex plane. The uniqueness of analytic continuation is what guarantees the existence of such a covering map. In fact, the lifting property can be used to define the notion of a covering map.
 
@@ -3452,7 +3450,7 @@ execute at end picture={\draw [<-] ([xshift=-5mm,yshift=0mm]m-2-2.north) arc[sta
    W \arrow[r,"f", swap] \arrow[ur,"\wt f",dashed] & M
 \end{tikzcd}
 \]
-Aside from homotopies, one can try to lift arbitrary mappings into the base space of a fibration. In general the existence of these liftings is difficult to establish. In the case of covering spaces, however, the answer is quite simple: a map from a space $W$ into $M$ can be lifted into the total space of $\pi:E\to M$ iff the images of all nontrivial loops in $W$ are among those loops in $M$ that can be lifted to $E$, and the lifting is unique. This is formalized in the following Theorem.
+Aside from homotopies, one can try to lift arbitrary mappings into the base space of a fibration. In general the existence of these liftings is difficult to establish. In the case of covering spaces, however, the answer is quite simple: a map from a space $W$ into $M$ can be lifted into the total space of $\pi:E\to M$ iff the images of all nontrivial loops in $W$ are among those loops in $M$ that can be lifted to $E$, and the lifting is unique. This is formalized in the following theorem.
 
 \begin{figure}
     \centering
@@ -3641,7 +3639,7 @@ By Corollary~\ref{cor 3.5 Bredon} this does not depend on the choice of $\gamma$
     where $\pi_\ast:\pi_1(E,p_0)\to \pi_1(M,x_0)=G$ is the homomorphism induced by $\pi$. This is true because $g\in G_{x_0}$ iff $g=[\gamma]$ and $\gamma$ lifts to a loop at $p_0$, i.e.\ iff $g\in \im p_\ast$.
     \item Assuming $E$ is connected, the map $\phi: \ _{G_{p_0}}\bslash^{G}\to F$ taking the right coset $G_{x_0}g$ to $p_0\cdot (G_{p_0}g)=p_0\cdot g$ is a bijection.
 \end{enumerate}
-Obviously any covering space decomposes into a disjoint union of connected components, and the action of $\pi_1(M)$ is transitive on the fiber of each component separately. In what follows, we generally assume that $E$ is connected. In summary, we have the following Theorem.
+Obviously any covering space decomposes into a disjoint union of connected components, and the action of $\pi_1(M)$ is transitive on the fiber of each component separately. In what follows, we generally assume that $E$ is connected. In summary, we have the following theorem.
 \begin{thm}
     Given a connected covering space $\pi:E\to M$, there is a one-to-one correspondence between the set $_{\pi_\ast(\pi_1(E,p_0))}\bslash^{\pi_1(M,x_0)}$ of right cosets, and the fiber $\pi^{-1}(x_0)$. (Note that $\pi_\ast(\pi_1(E,p_0))\cong \pi_1(E,p_0)$ since $\pi_\ast$ is a monomorphism by Corollary~\ref{cor 3.7 Bredon}.)
 \end{thm}
@@ -3656,8 +3654,8 @@ Obviously any covering space decomposes into a disjoint union of connected compo
     Since $\bbS^n$ is simply connected for $n>1$ and $\bbS^n$ is a double covering of the real projective space $\RP^n$, it follows that $\pi_1(\RP^n)\cong \bbZ_2$.
 \end{example}
 
-\begin{defn}
-    For a covering space $E\overset{\pi}{\to}{M}$, define the group $\Aut(\pi)$ of automorphisms of this covering space in the category $\mathsf{Cov}_M$ (also called \emph{deck transformations}\index{Deck transformations}). Its elements are homeomorphisms of $E$ that cover the identity map on $M$. For a given elementary open set $U\subset M$, they permute the connected components $U_i$ of the pre-image $\pi^{-1}(U)$. In other words, the group $\mathrm{Aut}(\pi)$ acts on $E$ via morphisms of covering spaces.
+\begin{defn}[Deck transformations]\index{Deck transformations}
+    For a covering space $E\overset{\pi}{\to}{M}$, consider the group $\Aut(\pi)$ of automorphisms of this covering space in the category $\mathsf{Cov}_M$ (also called \emph{deck transformations}). Its elements are homeomorphisms of $E$ that cover the identity map on $M$. For a given elementary open set $U\subset M$, they permute the connected components $U_i$ of the pre-image $\pi^{-1}(U)$. In other words, the group $\mathrm{Aut}(\pi)$ acts on $E$ via morphisms of covering spaces.
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~6.2]{Bredon}}}]\label{prop 6.2 Bredon}
@@ -3667,7 +3665,7 @@ Obviously any covering space decomposes into a disjoint union of connected compo
     Let $\gamma$ be a loop at $x_0$ representing $g$ and lift it to a path $\wt\gamma$ starting at $p$. Then $\wt\gamma(1)=p\cdot g$ by definition. Look at the path $a\circ \wt{\gamma}$. It is a lifting of $\gamma$ and starts at $a(p)$. Thus is ends at $a(p)\cdot g$ by definition of the latter. But it also ends at $a(\wt\gamma(1))$, which is $a(p\cdot g)$.
 \end{proof}
 
-This proof actually shows that not only automorphisms are $G$-equivariant, but all morphisms in the category $\mathsf{Cov}_M$ are. This means that the action of $\pi_1(M)$ that we've constructed is \emph{natural}. These results can be summarized by the following Theorem.
+This proof actually shows that not only automorphisms are $G$-equivariant, but all morphisms in the category $\mathsf{Cov}_M$ are. This means that the action of $\pi_1(M)$ that we've constructed is \emph{natural}. These results can be summarized by the following theorem.
 \begin{thm}[Monodromy Action]\index{Monodromy (covering spaces)}
 For any covering space $E\overset{\pi}\to M$, 
 \begin{enumerate}
@@ -3699,7 +3697,7 @@ Similarly, for left actions, $G_{g\cdot p_0}=gG_{p_0}g^{-1}$.
 The most important question in the study of deck transformations is: given two points in the fiber, when does there exist a deck transformation mapping one to the other? This is answered in the following theorem.
 \begin{thm}[{{\cite[Thm.~6.3]{Bredon}}}]\label{thm 6.3 Bredon}
     Provided $E$ is connected, let $p,p_0\in F=\pi^{-1}(x_0)$, $G=\pi_1(M,x_0)$ and $G_{q}=\pi_\ast(\pi_1(E,q))$ for any $q\in E$. Then \gls{tfae}:
-    \begin{enumerate}
+    \begin{enumerate}[label=(\arabic*)]
         \item $\exists\, a\in \mathrm{Aut}(\pi)$ such that $a(p_0)=p$.
         \item $\exists\, g\in \rmN_G(G_{p_0})$ such that $p_0\cdot g=p$.
         \item $G_{p_0}=G_p$.
@@ -3708,9 +3706,9 @@ The most important question in the study of deck transformations is: given two p
 \begin{proof}
     Recall that $G_{p_0}=\pi_\ast(\pi_1(E,p_0))$ and $G_{p}=\pi_\ast(\pi_1(E,p))$. By the Lifting Theorem~\ref{Lifting Theorem} a map $a$ covering the identity and taking $p_0$ to $p$ exists iff $\pi_\ast(\pi_1(E,p_0))\subset \pi_\ast(\pi_1(E,p))$. Similarly, a map $a'$ covering the identity and mapping $p$ to $p_0$ exists iff the opposite inclusion holds. If both exist then $a\circ a'$ covers the identity and has a point in common with the identity, therefore $a\circ a'=\mathrm{id}_E$ by Lemma~\ref{lem 4.4 Bredon}. This proves the equivalence $(1)\Leftrightarrow (3)$.
 
-    Now we can prove $(2)\Rightarrow(3)$: if $p=p_0\cdot g$ and $g\in \rmN(G_{p_0})$ then $G_p=G_{p_0\cdot g}=g^{-1}G_{p_0}g=G_{p_0}$ as claimed.
+    Now we can prove $(2)\Rightarrow(3)$: if $p=p_0\cdot g$ and $g\in \rmN_G(G_{p_0})$ then $G_p=G_{p_0\cdot g}=g^{-1}G_{p_0}g=G_{p_0}$ as claimed.
 
-    For $(3)\Rightarrow (2)$, suppose $G_{p_0}=G_p$ and $p=p_0\cdot g$ (such a $g$ exists since $G$ acts transitively on $F$). Then $G_{p_0}=G_p=G_{p_0\cdot g}=g^{-1}G_{p_0}g$, so $g\in \rmN(G_{p_0})$.
+    For $(3)\Rightarrow (2)$, suppose $G_{p_0}=G_p$ and $p=p_0\cdot g$ (such a $g$ exists since $G$ acts transitively on $F$). Then $G_{p_0}=G_p=G_{p_0\cdot g}=g^{-1}G_{p_0}g$, so $g\in \rmN_G(G_{p_0})$.
 \end{proof}
 From $(2)\Leftrightarrow(1)$ and the last part of the proof we have the following Corollary.
 \begin{cor}[{{\cite[Cor.~6.4]{Bredon}}}]\label{cor 6.4 Bredon}
@@ -3733,7 +3731,7 @@ From $(2)\Leftrightarrow(1)$ and the last part of the proof we have the followin
     A covering map $\pi$ is called regular if $\mathrm{Aut}(\pi)$ is transitive on the fiber. In the case of a connected total space this is equivalent to $G_{p_0}=\pi_\ast(\pi_1(E,p_0))$ being normal in $\pi_1(M,x_0)$.
 \end{defn}
 
-In other words, normal subgroups of $\pi_1(M,x_0)$ correspond to regular connected covering spaces of $M$. A regular covering space is one whose fundamental group ``looks the same'' in terms of the generators of $\pi_1(M,x_0)$ regardless of the choice of the basepoint $p_0$ in the fiber. Such covering spaces have an inherent ``symmetry'' given by the factor $G/G_{p_0}$ (which exists because $G_{p_0}$ is normal). Obviously any covering space that is not connected can't be regular. For an example of a connected non-regular covering space see Figure~\ref{fig:threefold-cover}.
+In other words, normal subgroups of $\pi_1(M,x_0)$ correspond to regular connected covering spaces of $M$. A regular covering space is one whose fundamental group ``looks the same'' in terms of the generators of $\pi_1(M,x_0)$ regardless of the choice of the basepoint $p_0$ in the fiber. Such covering spaces have an inherent ``symmetry'' given by the quotient group $G/G_{p_0}$ (which exists because $G_{p_0}$ is normal). Obviously any covering space that is not connected can't be regular. For an example of a connected non-regular covering space, see Figure~\ref{fig:threefold-cover}.
 
 \begin{figure}
     \centering
@@ -3756,7 +3754,7 @@ In other words, normal subgroups of $\pi_1(M,x_0)$ correspond to regular connect
 \begin{proof}
     First, 
     \[a_h(a_g(p_0))=a_h(p_0\cdot g)=a_h(p_0)\cdot g=(p_0\cdot h)\cdot g=p_0\cdot (hg)=a_{hg}(p_0).\]
-    This proves that $\Theta$ is a homomorphism. Next note that if $a\in \mathrm{Aut}(\pi)$ then there is an $g\in \rmN(G_{p_0})$ such that $a(p_0)=p_0\cdot g=a_g(p_0)$. Therefore $a=a_g$, which shows the surjectivity of $\Theta$.
+    This proves that $\Theta$ is a homomorphism. Next note that if $a\in \mathrm{Aut}(\pi)$ then there is an $g\in \rmN_G(G_{p_0})$ such that $a(p_0)=p_0\cdot g=a_g(p_0)$. Therefore $a=a_g$, which shows the surjectivity of $\Theta$.
 
     Finally we compute the kernel of $\Theta$. The result follows from the chain of equivalences
     \[a_g=\mathrm{id}_E \Leftrightarrow p_0\cdot g=p_0\Leftrightarrow g\in G_{p_0}.\]
@@ -3840,7 +3838,7 @@ We now examine the relationship between principal and regular coverings.
 
 \begin{prop}[{{\cite[Prop.~3.1.8]{tomDieck}}}]
     Let $\pi:E\to B$ be a covering map. Then:
-    \begin{enumerate}[label=(\alph*)]
+    \begin{enumerate}[label=(\arabic*)]
         \item If $E$ is connected, then the action of $\Aut(\pi)$ (an any of its subgroups) is properly discontinuous.
         \item Let $B$ be locally path connected and let $H$ be a subgroup of $\Aut(\pi)$. Then the map $\pi':E\slash H\to B$ induced by $\pi$ is a covering map.
     \end{enumerate}
@@ -4188,7 +4186,7 @@ The acronym $CW$ refers to the following properties.
 A  more general concept of cellular complexes drops these requirements. Note that, due to the inductive definition of $CW$-complexes as a collection of attaching maps, we get (C) automatically.
 \end{rem}
 
-% The following Proposition shows that the weak topology induced by any \emph{finite} $CW$-structure consisting of continuous characteristic maps  on a Hausdorff space coincides with the original topology.
+% The following proposition shows that the weak topology induced by any \emph{finite} $CW$-structure consisting of continuous characteristic maps  on a Hausdorff space coincides with the original topology.
 
 % \begin{prop}[{{\cite[Prop.~3.1.9]{RS2}}}]\label{prop 3.1.9 RS2}
 %     Let $X$ be a Hausdorff space and let $\calF $ be a finite $CW$-structure on $X$. For $\calF $ to make $X$ into a $CW$-complex it suffices that every $f_\alpha^n\in\calF $ be continuous.
@@ -4895,7 +4893,7 @@ It is also useful to introduce the notion of the \emph{relative} \gls{hlp} with 
     \end{tikzcd} \label{relative HLP diagram}
 \]
 
-The following Proposition shows that instead of having to prepare spaces in the form $\bbD^n\times I$, we can always lift maps relatively from the pair $(\bbD^{n+1},\bbS^n)$ directly into a Serre fibration.
+The following proposition shows that instead of having to prepare spaces in the form $\bbD^n\times I$, we can always lift maps relatively from the pair $(\bbD^{n+1},\bbS^n)$ directly into a Serre fibration.
 
 \begin{prop}[{{\cite[Prop.~3.2.4]{tomDieck}}}]\label{prop 3.2.4 tomDieck}
     A map $p:E\to B$ has the \gls{hlp} for the disk $\bbD^n$ iff it has the relative \gls{hlp} w.r.t.~the pair $(\bbD^{n+1},\bbS^{n})$, i.e.\ for each commutative diagram

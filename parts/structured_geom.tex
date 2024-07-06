@@ -16,7 +16,7 @@
 \subsection{Principal fiber bundles}\label{sec: principal bundles}
 
 
-Recall that in Definition \ref{def pfb} we defined principal bundles as free and proper Lie group actions, and provided an equivalent characterization in terms of equivariant local trivializations. We now make the latter definition explicit.
+In Definition \ref{def pfb}, we defined principal bundles as free and proper Lie group actions, and provided an equivalent characterization in terms of equivariant local trivializations given by the equivariant tubular neighborhoods. We now make the latter definition explicit.
 
 \begin{defn}[Principal fiber bundle II]\index{Principal fiber bundle}\label{def pfb 2}
     Let $(P,G,\Phi)$ be a free Lie group action, let $M$ be a manifold and let $\pi:P\to M$ be a smooth mapping. The tuple $(P\overset{\pi}{\to}M,G,\Phi)$ is called a principal $G$-bundle if for every $m\in M$ there exists an open neighborhood $U_m$ of $m$ and a diffeomorphism $\chi:\pi^{-1}(U_m)\to U_m\times G$ such that
@@ -3744,11 +3744,11 @@ where $\bf{x}_u=\partial_u \bf{x}$ and $\bf{x}_v=\partial_v \bf{x}$. It is easy 
     Let us view the unit normal vector $e_3$ as an element of the unit sphere $\bbS^2\subset\bbR^3$ by parallel transporting it to the origin. The resulting map $e_3:\Sigma\to \bbS^2$ is called the Gauss map of the surface $\Sigma\subset \bbR^3$.
 \end{defn}
 
-The Gauss map is clearly differentiable and thus we have $(e_3)_\ast:\T\Sigma\to \T\bbS^2$. For a given point $p\in\Sigma$, notice that the tangent planes $\T_p\Sigma$ and $\T_{e_3(p)}\bbS^2$ are parallel and thus can be identified with each other by parallel transporting tangent vectors in $\bbR^3$. Therefore we obtain the equivalent map $(e_3)_{\ast p}:\T_p\Sigma\to \T_p\Sigma$, called the \emph{shape operator}, or the \emph{Weingarten map}, of $\Sigma$.\index{Shape operator}\index{Weingarten map|see {Shape operator}}
+The Gauss map is clearly differentiable and thus we have $(e_3)_\ast:\T\Sigma\to \T\bbS^2$. For a given point $p\in\Sigma$, notice that the tangent planes $\T_p\Sigma$ and $\T_{e_3(p)}\bbS^2$ are parallel and thus can be identified with each other by parallel transporting tangent vectors in $\bbR^3$. Therefore we obtain the equivalent map $(\dd e_3)_{p}:\T_p\Sigma\to \T_p\Sigma$ (it can be viewed as a bundle-valued $1$-form), called the \emph{shape operator}, or the \emph{Weingarten map}, of $\Sigma$.\index{Shape operator}\index{Weingarten map|see {Shape operator}}
 
 \begin{lem}
-    The shape operator $(e_3)_{\ast p}:\T_p\Sigma\to \T_p\Sigma$, is a self-adjoint linear map, i.e.\ 
-    \[\<(e_3)_{\ast p}X,Y\>=\<X,(e_3)_{\ast p}Y\>,\quad X,Y\in \T_p\Sigma.\]
+    The shape operator $(\dd e_3)_{p}:\T_p\Sigma\to \T_p\Sigma$, is a self-adjoint linear map, i.e.\ 
+    \[\<(\dd e_3)_{p}X,Y\>=\<X,(\dd e_3)_{p}Y\>,\quad X,Y\in \T_p\Sigma.\]
 \end{lem}
 \begin{proof}
     Denote $N\coloneqq e_3$ for simplicity. Let $\bf{x}:\bbR^2\supset U\to \bbR^3$ be a local parametrization of $\Sigma$ at $p\in\Sigma$, and let $\{\bf{x}_u, \bf{x}_v\}$ be the corresponding basis of $\T_p\Sigma$. It suffices to prove that $\<N_{\ast p}(\bf{x}_u),\bf{x}_v\>=\<\bf{x}_u,N_{\ast p}(\bf{x}_v)\>$. Let $\gamma(t)=\bf{x}(u(t),v(t))$ be a parametrized curve in $\Sigma$ with $\gamma(0)=p$. We have 
@@ -3768,7 +3768,7 @@ Therefore the shape operator can be viewed as a quadratic form (symmetric tensor
 
 \begin{defn}[Second Fundamental Form]\index{Second Fundamental Form}
     The scalar Second Fundamental Form of a surface $\Sigma\subset\bbR^3$ is the quadratic form $Q\in\Gamma^0_2(\Sigma)$ defined by 
-    \[\wt{Q}_p(X,Y)=-\<(e_3)_{p\ast}X,Y\>.\]
+    \[\wt{Q}_p(X,Y)=-\<(\dd e_3)_{p}X,Y\>.\]
     From the above proof, in local parametrization $\bf{x}(u^1,u^2)$ indexed by $\mu,\nu=1,2$, the components of $\wt{Q}$ read 
     \[(\wt{Q}_{\mu\nu})=
     \begin{pmatrix}
@@ -3795,7 +3795,7 @@ Since $\wt{Q}$ is a $\rmI$-symmetric quadratic form, it can be diagonalized by a
 \begin{defn}[Principal data]
     \begin{enumerate}
         \item The eigenvalues $k_1\geq k_2$ of the shape operator $N_\ast$ at $p\in \Sigma$ are called the \emph{principal curvatures}.
-        \item The unit eigenvectors $v_1,v_2$ of $(e_3)_\ast$ are called the \emph{principal directions}.
+        \item The unit eigenvectors $v_1,v_2$ of $\dd e_3$ are called the \emph{principal directions}.
         \item The \emph{Gaussian curvature} of $\Sigma$ is $K\coloneqq \kappa_1\kappa_2$. It also satisfies the \emph{Gauss equation}
         \[K=\det\left(\rmI^{-1}\circ \wt{Q}\right)=\frac{LN-M^2}{EG-F^2}.\]
         \item The \emph{mean curvature} of $\Sigma$ is $H\coloneqq \frac12(\kappa_1+\kappa_2)=\frac12\tr\left(\rmI^{-1}\circ \wt{Q}\right)$. Note that its sign depends on the orientation of the surface, so it is a \emph{pseudoscalar}. Surfaces with identically vanishing mean curvature are called \emph{minimal}. $\wt{Q}$ can be uniquely decomposed as
@@ -4090,7 +4090,11 @@ In addition, the definition of $h$ (\ref{def h}) immediately implies, by multipl
 \end{xca}
 
 
-
+% \begin{rem}[Covariant derivative]
+%     Let $\{\bf{e}_i\}_{i=1}^3$ be the standard unit basis vectors of $\bbR^3$ and let $\bf{x}:\Sigma\to\bbR^3$ be an immersed surface. We can write $\bf{x}=x^i\bf{e}_i$ for a unique triple of functions $x^i\in C^\infty(\Sigma)$. This allows us to consider the $1$-form 
+%     \[\dd \bf{x}=(\dd x^i) \bf{e}_i\in\Omega^1(\Sigma;\bbR^3)\]
+%     taking values in the restriction of $\T\bbE^3$ to $\Sigma$. For any vector field $X\in\fX(\Sigma)$, the quantity $(\dd\bf{x})(X)$ measures the displacement in $\bbE^3$ caused by a displacement along $\Sigma$ in the direction of $X$. 
+% \end{rem}
 
 
 
