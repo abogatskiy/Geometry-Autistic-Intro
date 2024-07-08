@@ -1475,7 +1475,8 @@ Consider an equation of the form
 \[u_t=f(u,u_x)\] 
 with initial condition $u(0,x)=u_0(x)$. The PDE then allows us to compute all $t$-derivatives at $t=0$ from the unitial condition: $u_{tt}=f\partial_1f+(u_x\partial_1 f+u_{xx}\partial_2f)\partial_2f$, where $\partial_i$ stand for partial derivatives of $f$ with respect to its arguments, and so on for higher derivatives. Thus, we have a \emph{formal solution} in the form of a formal power series 
 \[u(t,x)=\sum_{k\geq 0}t^k u_k(x),\]
-where each $u_k$ is some computable expression involving $f$, $u_0(x)$, and their derivatives. Crucially, there is no guarantee that this series will converge for any $t\neq 0$ (see example below). The same applies to all \emph{evolution equations} of the form $u_t=f(u,u_x,u_{xx},\ldots)$.\index{Evolution equation}
+where each $u_k$ is some computable expression involving $f$, $u_0(x)$, and their derivatives. This property of being able to compute all higher-order terms given a finite collection of lower-order ones is called \emph{involutivity}. We may also say that the infinite system of recurrence relations resulting from the substitution of the power series ansatz is \emph{closed}.
+Crucially, there is no guarantee that this series will converge for any $t\neq 0$ (see example below). Finally, note that this discussion also applies to all \emph{evolution equations} of the form $u_t=f(u,u_x,u_{xx},\ldots)$.\index{Evolution equation}
 
 \begin{example}\label{example heat equation}
     The initial value problem for the heat equation 
@@ -1485,7 +1486,7 @@ where each $u_k$ is some computable expression involving $f$, $u_0(x)$, and thei
     which doesn't converge for any $t>0$.
 \end{example}
 
-The following classical theorem establishes a sufficient (and, in some general sense, necessary) condition for the existence of convergent formal solutions to analytic initial value problems.
+The following classical theorem establishes a sufficient (and, in some general sense, necessary) condition for the convergence of formal solutions to initial value problems of this involutive type.
 
 \begin{thm}[Cauchy-Kovalevskaya (1842, 1874)]
     An analytic system of PDE's of the form $\bf{u}_t=\bf{f}(t,\bf{x},\bf{u},\bf{u}_{\bf x})$, defined in an open set of $(t,\bf{x},\bf{u})\in \bbR\times\bbR^n\times\bbR^s$, with any analytic initial condition $\bf{u}(t_0,\bf{x})=\bf{u}_0(\bf{x})$, has an analytic solution near $t=t_0$. Any two solutions agree near $t=t_0$.
@@ -1574,7 +1575,7 @@ The following classical theorem establishes a sufficient (and, in some general s
     Conversely, any solution to this system recovers our solution $u$ to the wave equation. Thus, the general solution of the wave equation depends on two arbitrary functions, for example the initial height and velocity.
 \end{example}
 
-Crucially, for the Cauchy-Kovalevskaya Theorem to be applicable, the first-order system must first be solved for the derivatives with respect to \emph{any one} of the independent variables (we've been calling it $t$ so far). If this is not possible, a more general approach is necessary to construct analytic solutions. The following two examples demonstrate how this condition can fail and provide some intuition for our upcoming description of Cartan's analysis of differential equations.
+Crucially, for the Cauchy-Kovalevskaya Theorem to be applicable, the first-order system must first be solved for the derivatives with respect to \emph{any one} of the independent variables (we've been calling it $t$ so far). If this is not possible, a more general approach is necessary to construct analytic solutions. The following two examples demonstrate how this condition can fail and provide some intuition for our upcoming description of Cartan's analysis of differential equations, which essentially boils down to finding (when possible) the right variables to \emph{adjoin} to our system to bring it to the Cauchy-Kovalevskaya form, i.e., to make it involutive.
 
 \begin{example}
     Consider the equation 
@@ -1929,7 +1930,7 @@ We can finally give a coordinate-free formulation of the Cauchy-Kovalevskaya The
     Consider an initial value problem for a determined system of PDE's with noncharacteristic initial data specified along an embedded hypersurface, all real analytic. Then there is an analytic solution to the problem in some open neighborhood of the initial hypersurface, and any two such solutions agree in any connected open set on which both are defined.
 \end{thm}
 \begin{proof}
-    If we can prove uniqueness of local solutions near local patches of the initial hypersurface, and then we can glue them together to get a unique ``global'' solution. Thus it suffices to prove the result locally. By an analytic change of variables, arrange that our hypersurface  is $t=0$ in some $(t,\bf{x})$ variables. By the \gls{immt}, if we have a smooth map $\bf{F}(t,\bf{x},\bf{u},\bf{p},\bf{q})$ (where $\bf{p},\bf{q}$ correspond to $\bf{u}_t,\bf{u}_{\bf x}$), we are able to locally smoothly solve $\bf{F}=0$ for a variable $\bf{p}$ as a function of the other variables iff $\bf{F}_{\bf{p}}$ is a matrix of full rank. In other words, we can rewrite the PDE $\bf{F}=0$ in the Cauchy-Kovalevskaya form, i.e.\ solve for $\bf{u}_t$ as a function of the other variables, iff $\bf{F}_{\bf{u}_t}$ is a matrix of full rank, i.e.\ exactly when the hypersurface $t=0$ is not characteristic for the linearization of the equation. The classic Cauchy-Kovalevskaya Theorem now yields a unique local analytic solution.
+    If we can prove uniqueness of local solutions near local patches of the initial hypersurface, and then we can glue them together to get a unique ``global'' solution. Thus it suffices to prove the result locally. By an analytic change of variables, arrange that our hypersurface  is $t=0$ in some $(t,\bf{x})$ variables. By the \gls{immt}, if we have a smooth map $\bf{F}(t,\bf{x},\bf{u},\bf{p},\bf{q})$ (where $\bf{p},\bf{q}$ correspond to $\bf{u}_t,\bf{u}_{\bf x}$), we are able to locally smoothly solve $\bf{F}=0$ for a variable $\bf{p}$ as a function of the other variables iff $\bf{F}_{\bf{p}}$ is a matrix of full rank. In other words, we can rewrite the PDE $\bf{F}=0$ in the Cauchy-Kovalevskaya form, i.e.\ solve for $\bf{u}_t$ as a function of the other variables, iff $\bf{F}_{\bf{u}_t}$ is a matrix of full rank, i.e.\ exactly when the hypersurface $t=0$ is not characteristic for the linearization of the equation. The classical Cauchy-Kovalevskaya Theorem now yields a unique local analytic solution.
 \end{proof}
 \begin{cor}
     A determined analytic initial value problem has a local analytic solution near every point.
@@ -3428,7 +3429,7 @@ A fundamental problem in Cartan geometry will be the lifting problem for a map i
                                     & G\arrow[d]\\
     S\arrow[r,"f"]\arrow[ur,"\wt{f}",dashed]& G\slash H.
 \end{tikzcd}\]
-Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order Klein geometry $(G,H)$, the choice of a lift $\wt{f}:S\to G$ is equivalent to a choice of frames of $G\slash H$ along the submanifold $S$. In specific examples we will demand that these frames be \emph{adapted} to some structure on $S$ to make the lift unique, e.g.\ that $\T_mS$ get mapped by the corresponding frame to a fixed subspace $V\subset \frakg\slash\frakh$ for all $m\in S$. This is the basis of \emph{Cartan's method of moving frames} (``rep\`ere mobile'').\index{Rep\`ere mobile|see {Moving frames}}\index{Moving frames!Cartan's method of} Its power is in the fact that the frame is determined only by the value $f(s)\in M$, and not by any specific way the map $f$ is parametrized. Therefore, this method provides an extremely powerful way for finding \emph{intrinsic} geometric quantities of submanifolds, called \emph{differential invariants}.\index{Differential invariant} In this section we demonstrate the method in action in a few elementary examples, and in the next \subsect\ we apply it to the classical problem of characterizing surfaces in three-dimensional Euclidean space up to congruence. These examples will be useful to us as motivation for the general theory of connections. The general characterization of submanifolds with structure is a subject of Cartan geometry.
+Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order Klein geometry $(G,H)$, the choice of a lift $\wt{f}:S\to G$ is equivalent to a choice of frames of $G\slash H$ along the submanifold $S$. In specific examples we will demand that these frames be \emph{adapted} to some structure on $S$ to make the lift unique, e.g.\ that $\T_mS$ get mapped by the corresponding frame to a fixed subspace $V\subset \frakg\slash\frakh$ for all $m\in S$. This is the basis of \emph{Cartan's method of moving frames} (``rep\`ere mobile'').\index{Rep\`ere mobile|see {Moving frames}}\index{Moving frames!Cartan's method of} Its power is in the fact that the frame is determined only by the value $f(s)\in G\slash H$, and not by any specific way the map $f$ is parametrized. Therefore, this method provides an extremely powerful way for finding \emph{intrinsic} geometric quantities of submanifolds, called \emph{differential invariants}.\index{Differential invariant} In this section we demonstrate the method in action in a few elementary examples, and in the next \subsect\ we apply it to the classical problem of characterizing surfaces in three-dimensional Euclidean space up to congruence. These examples will be useful to us as motivation for the general theory of connections. The general characterization of submanifolds with structure is a subject of Cartan geometry.
 
 Before diving into the more sophisticated examples, let walk through the classical Galilean principle of relativity in this language, which has to do with affine structures on manifolds.
 
@@ -3922,7 +3923,7 @@ Then the Lie algebra and the Maurer-Cartan form of this group in this representa
 where $\theta^i,\omega^i_j\in\Omega^1(\SE_3)$ form a basis for the space of left-invariant $1$-forms on $\SE_3$. Since $\dd g=g\omega$, the last column implies 
 \[\dd \bf{x}=e_i\theta^i.\]
 Thus, $\theta^i$ has the geometric interpretation of measuring the infinitesimal motion of the point $\bf{x}$ in the direction of $e_i$. Similarly, $\omega^i_j$ measures the infinitesimal motion of $e_j$ toward $e_i$, i.e.\ rotations:
-\[\dd e_j=e_i\omega^i_j.\]
+\[\dd e_j=e_i\omega^i_j.\label{eq def of omegas}\]
 It's obvious that $\theta^i$ are horizontal for the principal bundle $\pi:\SE_3\to\bbE^3$ since the right $\SO_3$-action changes only the rotational components of $g$.
 
 The fact that the frame $\frake:\Sigma\to \SE_3$ is adapted means that, at every point of $\Sigma$,
@@ -4090,11 +4091,67 @@ In addition, the definition of $h$ (\ref{def h}) immediately implies, by multipl
 \end{xca}
 
 
-% \begin{rem}[Covariant derivative]
-%     Let $\{\bf{e}_i\}_{i=1}^3$ be the standard unit basis vectors of $\bbR^3$ and let $\bf{x}:\Sigma\to\bbR^3$ be an immersed surface. We can write $\bf{x}=x^i\bf{e}_i$ for a unique triple of functions $x^i\in C^\infty(\Sigma)$. This allows us to consider the $1$-form 
-%     \[\dd \bf{x}=(\dd x^i) \bf{e}_i\in\Omega^1(\Sigma;\bbR^3)\]
-%     taking values in the restriction of $\T\bbE^3$ to $\Sigma$. For any vector field $X\in\fX(\Sigma)$, the quantity $(\dd\bf{x})(X)$ measures the displacement in $\bbE^3$ caused by a displacement along $\Sigma$ in the direction of $X$. 
-% \end{rem}
+
+
+
+
+
+\subsection{Covariant calculus}
+
+
+This \subsect connects the above moving frame formalism to the more conventional formalism of Riemannian geometry and can be safely skipped on first reading. We begin by outlining the original, completely non-geometric discovery of connections, which was only recognized as such decades later.
+
+
+\begin{rem}[Christoffel symbols]
+    Much of the history of the concept of a connection can be described as a \emph{pursuit of a second derivative}. On vector spaces, we know how to take arbitrarily many derivatives of vector-valued functions due to the fact that tangent vectors to a vector space can be identified with elements of the vector space itself (by translation to the origin). On general manifolds, we only know how to take one derivative so far -- via the tangent functor $\T$, i.e.\ by defining tangent vectors. A major natural question is: how can one take derivatives of tangent vector fields, or second derivatives of manifold-valued functions?
+
+    The first step in this direction actually had nothing to do with curved manifolds, and was made by Elwin Bruno Christoffel in 1869. He considered a structure $(V,\sfg)$, where $V$ is a vector space and $\sfg\in \Gamma(\rmS^2 \T^\ast V)$ is a nondegenerate quadratic form (a pseudo-Riemannian metric). (Christoffel, in fact studied forms of degree higher than $2$ as well.) He then considered a (nonlinear) change of coordinates $\bf{x}'\mapsto \bf{x}$, i.e.\ a (local) diffeomorphism $f(\bf{x}')=\bf{x}$. The first derivative $\partial\bf{x}\slash \partial\bf{x}'$ is simply the Jacobi matrix of the transformation. Write out the components of $\sfg$ in both coordinate systems and substitute $\bf{x}=\varphi(\bf{x}')$:
+    \[\sfg=\sfg_{ij}(\bf{x})\dd x^i\otimes \dd x^j=\sfg_{ij}(f(\bf{x'}))\frac{\partial \varphi^i}{\partial x^{\prime \alpha}}\frac{\partial \varphi^j}{\partial x^{\prime \beta}}\dd x^{\prime\alpha}\otimes \dd x^{\prime\beta}.\label{eq 1215}\]
+    Christoffel was interested in a \emph{local equivalence problem}, similar to the one we have been considering for surfaces. Given two metric tensors $\sfg_{ij}(\bf{x})\dd x^i\otimes \dd x^j$ and $\sfg'_{\alpha\beta}(\bf{x}')\dd x^{\prime\alpha}\otimes \dd x^{\prime\beta}$, when is there a diffeomorphism $\bf{x}'\mapsto \bf{x}$ that transforms one tensor to the other? He found that the answer can be given by \emph{adjoining} extra quantities that depend on the first derivatives of the metric tensor. Decades later, geometers realized that this result is equivalent to the ability to express second derivatives in terms of lower order objects. We now demonstrate this.
+
+    The question is whether second partial derivatives of $\bf{x}$ w.r.t.\ $\bf{x}'$ can be expressed in terms of the metric tensor. To isolate a second partial derivative, we can consider the basis vector fields $e_i=\partial_{x^i}=\partial_i$. A second partial derivative $\frac{\partial^2}{\partial x^j\partial x^k}$ can then be identified with $\partial_{j}e_k$. The reason this makes sense is that $e_k$ takes values in a vector space and thus we can differentiate it as if a scalar function.  The resulting vector field can be decomposed in the same basis:
+    \[\partial_{k}e_j=\Gamma^i{}_{jk}e_i,\label{eq 12451}\]
+    where $\Gamma^i{}_{jk}$ are some smooth functions now known as the \emph{Christoffel symbols}.\index{Christoffel symbols} These functions can be isolated with the help of the metric:
+    \[\Gamma_{ijk}\coloneqq\Gamma^l{}_{jk}\sfg_{li}=\<\partial_{k}e_j,e_i\>.\label{eq 1242308}\]
+    Since $\sfg_{li}$ is an invertible matrix, we can freely go between $\Gamma_{ijk}$ and $\Gamma^l{}_{jk}$. Since partial derivatives commute, we immediately observe that $\Gamma^l{}_{jk}=\Gamma^l{}_{kj}$. Now, by using the Leibniz rule, one can compute the partial derivative of the metric tensor (\ref{eq 1215}):
+    \[\partial_k \sfg_{ij}=\partial_k \<e_i,e_j\>= \<\partial_k e_i,e_j\>+ \<e_i,\partial_k e_j\>=\Gamma_{jik}+\Gamma_{ijk}.\label{eq 180512}\]
+    By permuting the indices and using the symmetry of the Christoffel symbols established above, we get three linear equations on three unknowns, giving
+    \[\Gamma^i{}_{jk}=\frac{1}{2}\left(\partial_j \sfg_{ik}+\partial_k\sfg_{ij}-\partial_{i}\sfg_{jk}\right).\]
+    This is a deeper result than might seem at first: we have established that the ``second derivative'' (\ref{eq 12451}) can be expressed only in terms of first derivatives (basis vector fields) and first derivatives of the metric tensor, and the formulas are \emph{invariant} in the sense that their form is the same in any coordinate system. It is this fact that interested Christoffel -- that there exists an \emph{intrinsic} description of second derivatives in terms of invariants such as the metric. To answer the original question about second derivatives, one uses the transformation rule (\ref{eq 1215}) for the metric tensor to compute the transformation of the Christoffel symbols. The miraculous result is that the second derivative can be once again isolated:
+    \[\frac{\partial x^i}{\partial x^{\prime\alpha}\partial x^{\prime\beta}}=\Gamma^{\prime \gamma}{}_{\alpha\beta}\frac{\partial x^i}{\partial x^{\prime \gamma}}-\Gamma^i_{jk}\frac{\partial x^j}{\partial x^{\prime\alpha}}\frac{\partial x^k}{\partial x^{\prime\beta}}.\label{eq christoffel second derivative}\]
+    This also shows that the Christoffel symbols are \emph{not} components of a tensor, and in fact this formula is exactly quantifying the violation of the transformation law for a tensor of rank $(1,2)$, identifying it with the second derivative. This error vanishes iff the second derivative is zero, i.e.\ iff the change of coordinates is linear. The major consequence of this is that while the Christoffel symbols themselves are not tensor fields, the \emph{difference} of the Christoffel symbols of any two metrics is a tensor field. Thus, the Christoffel symbols solve the equivalence problem for metric tensors: a coordinate transformation $\bf{x}'\mapsto \bf{x}$ maps $\sfg$ to $\sfg'$, up to a linear isomorphism of $V$, iff (\ref{eq christoffel second derivative}) is satisfied. In the ``if'' direction, the statement that the transformation is an isometry follows via the Frobenius Theorem, where (\ref{eq christoffel second derivative}) is seen as the compatibility condition on the system 
+    \[\sfg_{ij}=\sfg'_{\alpha\beta}\frac{\partial x^i}{\partial x^{\prime\alpha}}\frac{\partial x^j}{\partial x^{\prime\beta}}.\]
+    The remaining ambiguity (linear changes of coordinates) can be eliminated if one provides an initial condition, namely that $\sfg$ is mapped to $\sfg'$ at any one point. 
+    
+    Christoffel went a step further and also examined the compatibiity condition on the new system (\ref{eq christoffel second derivative}). This led him to introduce yet another collection of functions, which were eventually recognized as the components of the Riemann curvature tensor $\sfR^{i}{}_{jkl}$, which we will not detail now. He showed that, at least generically, if two sets of such functions are related to each other under some change of coordinates in the same way that the components of a tensor of rank $(1,3)$ would be, then this change of coordinates is an isometry. Thus, the curvature tensor provides an alternative complete set of differential invariants for generic metric structures. Despite it being a second order object, the practical benefit of using curvature to solve the equivalence problem is that it is a tensor field, unlike the Christoffel symbols.
+\end{rem}
+
+\begin{rem}[Covariant derivatives]
+    Equation (\ref{eq 180512}) was interpreted by Christoffel as defining a new kind of derivative acting on the metric tensor $\sfg$, which, aside from taking a partial derivative, adds terms where $\sfg$ is contracted with a Christoffel symbol, one term per index. Formula (\ref{eq 180512}) in condensed form is written as $\nabla_k \sfg=0$, where $\nabla_k$ is the \emph{covariant derivative} along $e_k=\partial_{x^k}$.
+
+    One cannot help but notice the similarity between formula (\ref{eq 1242308}) and (\ref{eq def of omegas}), the latter of which can be rewritten as $\omega^j_i=\<\dd e_i,e_j\>$. We may conclude that the components of the $1$-form $\omega^j_i$ are exactly the Christoffel symbols $\Gamma^j{}_{i\alpha}$, $\alpha=1,2$, except this time they are written with respect to an orthonormal frame as opposed to a holonomic (coordinate) frame. One of the consequences of this is that $\Gamma^j{}_{i\alpha}$ is skew-symmetric in the first two indices.
+    
+    Let us once again consider the problem of defining a ``second partial derivative'', or rather a derivative of one vector field with respect to another, but this time on an immersed surface $\bf{x}:\Sigma\to \bbE^3$. The Lie derivative doesn't work because it is not tensorial w.r.t.\ either of the vector fields: it differentiates both vector fields, which is not what we expect from a ``partial derivative''. Let $X,Y\in\fX(\Sigma)$. We can use $\bf{x}$ to push both vector fields forward to $\Sigma\subset \bbE^3$. This allows us to view the values of these vector fields as tangent vectors to $\bbE^3$, which are naturally identified with elements of $\bbR^3$. Thus, $\wt{X}\coloneqq \bf{x}_\ast X$ and $\wt{Y}\coloneqq \bf{x}_\ast Y$ are $\bbR^3$-valued \emph{functions} on $\Sigma$. Now we can take a regular Lie derivative of one of them with respect to the other vector field:
+    \[\Lie_X \wt{Y}\in C^\infty(\Sigma,\bbR^3).\]
+    This describes the rate at which the direction of $Y$ changes in $\bbR^3$ as one flows along $X$. This does not yet define an intrinsic derivative on $\Sigma$ because the result is not guaranteed to be tangent to $\Sigma\subset \bbE^3$. We would like to find a correction term to the above expression that gives a true vector field $\nabla_X Y$ on $\Sigma$. Moreover, note that $\wt{Y}$ can also be \emph{any} $\bbR^3$-valued function on $\Sigma$, not necessarily one associated with a tangent vector field, and we will define covariant derivatives of such functions as well. It is intuitively clear that we should define $\nabla_X \wt{Y}$ in such a way that the unit normal vector field $e_3$ is \emph{parallel}:
+    \[\nabla_X e_3=0.\]
+    We also want $\nabla_X$ to satisfy the Leibniz rule $\nabla_X (fY)=(\nabla_X f)Y+f\nabla_X Y$ and $\nabla_X f=\Lie_X f$. This implies that if we locally decompose $\wt{Y}=\wt{Y}^i e_i$, then 
+    \[\nabla_X \wt{Y}=\nabla_X\left(\wt{Y}^\alpha e_\alpha\right)+(\Lie_X\wt{Y}^3)e_3,\quad \alpha=1,2.\]
+    $\wt{Y}^\alpha e_\alpha$ is tangent to $\Sigma$ and thus can be identified with an intrinsic vector field $Y\in\fX(\Sigma)$. We can now define $\nabla_X\left(\wt{Y}^\alpha e_\alpha\right)$ by identifying it with a $\wt{Z}\in C^\infty(\Sigma,\bbR^3)$. To define this object, the only natural projection that we have is the orthogonal projection onto $\Sigma$:
+    \[\wt{Z}\coloneqq \Lie_X \wt{Y}-\<\Lie_X \wt{Y},e_3\>e_3.\]
+    This is manifestly tangent to $\Sigma$ and is thus associated with a vector field $Z\in\fX(\Sigma)$ which we call $\nabla_X Y$. Since the Lie derivative is acting on functions, it behaves tensorially w.r.t.\ $X$ as required. Thus, the covariant derivative computes the rate at which $Y$ changes along $X$ as a vector in $\bbR^3$ and then projects the resulting vector orthogonally onto $\Sigma$.
+
+    Let us go back to our adapted orthonormal frame $\{e_i\}$ and compute its covariant derivative:
+    \[\nabla e_\alpha=\dd e_\alpha-\<\dd e_\alpha,e_3\>e_3=\omega^i_\alpha e_i-\omega^3_\alpha e_3=\omega^\beta_\alpha e_\beta,\]
+    where Greek indices range over $1,2$. Any vector field $X\in\fX(\Sigma)$ can be decomposed as $X=X^\alpha e_\alpha$, so the Leibniz rule implies 
+    \[\nabla(X^\alpha e_\alpha)=(\dd X^\alpha)e_\alpha+\omega^\beta_\alpha e_\beta.\]
+    Much like in Christoffel's original setting, we get the miraculous result that the covariant derivative is expressed purely intrinsically, i.e.\ only in terms of tensor fields on $\Sigma$ itself.
+    Willmore's Theorem~\ref{Willmore} helps us extend this operator to all tensor fields on $\Sigma$ via the tensorial Leibniz rule, and we see that
+    \[\nabla\sfg=\nabla(\theta^\alpha\otimes \theta^\alpha)=(\dd \theta^\alpha-\omega^\alpha_i\wedge \theta^i)\odot \theta^\alpha,\]
+    where sums over $\alpha=1,2$ and $i=1,2,3$ are implied. Now we can use $\dd\theta^\alpha=\omega^\alpha_\beta\wedge\theta^\beta$ to conclude that 
+    \[\nabla\sfg=-(\omega^\alpha_3\wedge\theta^3)\odot \theta^\alpha=0\]
+    by skew-symmetry of $\omega^i_j$. This is another form of equation (\ref{eq 180512}) saying that $\sfg$ is parallel.
+\end{rem}
 
 
 
@@ -7740,6 +7797,7 @@ in accordance with the fact that $\nabla t\in\Omega^1(M;\bbT^r_s M)$.
     \Gamma^i{}_{jk}\frac{\partial x^j}{\partial x^{\prime m}}  \frac{\partial x^k}{\partial x^{\prime n}}\cdot \frac{\partial x^{\prime l}}{\partial x^i}+
     \frac{\partial^2 x^i}{\partial x^{\prime m}\partial x^{\prime n}}\frac{\partial x^{\prime l}}{\partial x^i}.
     \]
+    This reproduces Christoffel's original formula (\ref{eq christoffel second derivative}), which was obtained outside of the context of connections.
 \end{rem}
 
 
