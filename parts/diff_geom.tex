@@ -6388,7 +6388,7 @@ If one assumes Theorem~\ref{thm 7.7. Lee covering group} to be known (via our or
     Consider again the Pfaffian system on $M\times G$ spanned by the (components of the) $1$-form $\pr_M^\ast\omega-\pr_G^\ast\theta_G$. By the proof of the local Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, it is integrable and the leaves of the integral foliation are locally graphs of maps $M\to G$. Moreover, since both $\omega$ and $\theta_G$ are fiberwise isomorphisms, these maps are local diffeomorphisms that pull $\theta_G$ back to $\omega$. Let $L$ be a leaf of the foliation. The constant vector fields of both $M$ and $G$ can be locally pulled back to form global complete vector fields on $L$ (the two pullbacks will match each other). Since these vector fields are complete, we can use the Ehresmann Fibration Theorem in the form of Corollary~\ref{thm Ehresmann vector fields} to conclude that $L$ is a fiber bundle over both $M$ and $G$. It has the same dimension, therefore it is actually a covering space. Now it suffices to consider simply connected $M$, as the general case will follow by the same argument as above. In this case, the covering map $\pr_M:L\to M$ has to be a diffeomorphism, thus $L$ is also a universal covering of $G$. By Theorem~\ref{thm 7.7. Lee covering group}, $L$ has a unique Lie group structure (for each choice of identity) that makes $\pr_G:L\to G$ a local isomorphism. This makes $M$ a Lie group as well.
 \end{proof}
 
-
+Note that if $M$ is not simply connected, then $L$ is still a Lie group because \emph{any} covering space of a Lie group is a Lie group, namely a quotient of the universal covering group of $G$ by some central discrete (and hence normal) subgroup. In this picture, developments of $\omega$ correspond to unique liftings of curves in $M$ to curves in $L$ and then projection to $G$.
 
 
 
@@ -7109,7 +7109,7 @@ Another fundamental result in this \sect\ is Lie's Third Fundamental Theorem~\re
 
 
 
-\subsection{Product in logarithmic coordinates}\label{sec: product in log coordinates}
+\subsection{Logarithmic charts}\label{sec: product in log coordinates}
 
 The exponential map introduces a canonical (logarithmic) coordinate system in a neighborhood of the identity of a Lie group. This implies that the group structure, namely the multiplication map (the inversion map is trivial since $\left(\rme^A\right)^{-1}=\rme^{-A}$), can be expressed in these local coordinates. Namely let us introduce the multiplication map in logarithmic coordinates:
 \[\mu(A,B)=\ln(\rme^A\rme^B),\quad A,B\in\frakg.\]
@@ -7454,35 +7454,35 @@ It is almost obvious that the definition of the exponential map together with it
 
 \begin{lem}[{{\cite[Lem.~1.8.2]{DK}}}]
     For each $A\in\frakg$ define the vector field $A^R\in \fX(\frakg_e)$, where $\frakg_e$ was defined in \S\ref{sec: product in log coordinates}:
-    \[ A^R(Z)=\frac{\ad_Z}{\rme^{\ad_Z}-\rmI}A\quad \quad (Z\in\frakg_e). \label{def X^R}\]
+    \[ A^R(C)=\frac{\ad_C}{\rme^{\ad_C}-\rmI}A\quad \quad (C\in\frakg_e). \label{def X^R}\]
     Then for each $A,B\in\frakg$, the map $A\mapsto A^R$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[A^R,B^R]=-([A,B])^R$.
 \end{lem}
 \begin{proof}
-    Recall from (\ref{eq Lie derivative in components}) that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials as a point by $\rmD v(x)\in \End(\bbR^n)$, then the Lie bracket is
+    Recall from (\ref{eq Lie derivative in components}) that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials at a point by $\rmD v(x)\in \End(\bbR^n)$, then the Lie bracket is
     \[[v,w](x)=\rmD w(x)\cdot v(x)-\rmD v(x)\cdot w(x).\label{10707}\]
-    So in order to compute $[A^R,B^R](Z)$, we start by differentiating~\ref{dexp series}:
-    \[\int_0^1 \rme^{t\ad_Z}\dd t \left(A^R(Z)\right)=A\quad (Z\in\frakg_e),\]
-    with respect to $Z$, in the direction of $B^R(Z)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
+    So in order to compute $[A^R,B^R](C)$, we start by differentiating~\ref{dexp series}:
+    \[\int_0^1 \rme^{t\ad_C}\dd t \left(A^R(C)\right)=A\quad (C\in\frakg_e),\]
+    with respect to $C$, in the direction of $B^R(C)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
     \begin{multline}
-        \int_0^1 \left(\int_0^1\rme^{st\ad_{\ad_Z}} \dd s\circ t\ad_{B^R(Z)}\right)\circ \rme^{t\ad_Z}\dd t\left(A^R(Z)\right)+\\
-        +\int_0^1\rme^{t\ad_Z}\dd t\circ \rmD A^R(Z)\left(B^R(Z)\right)=0.\label{09830}
+        \int_0^1 \left(\int_0^1\rme^{st\ad_{\ad_C}} \dd s\circ t\ad_{B^R(C)}\right)\circ \rme^{t\ad_C}\dd t\left(A^R(C)\right)+\\
+        +\int_0^1\rme^{t\ad_C}\dd t\circ \rmD A^R(C)\left(B^R(C)\right)=0.\label{09830}
     \end{multline} 
-    Since $\ad$ is a Lie algebra homomorphism $\frakg\to\mathfrak{gl}(\frakg)$ (this is equivalent to the Jacobi identity), one has:
+    Since $\ad$ is a Lie algebra homomorphism $\frakg\to\mathfrak{gl}(\frakg)$ (by the Jacobi identity), one has:
     \[\rme^{\ad_{\ad_A}}\circ \ad_B=\ad_{\rme^{\ad_A} B}\quad \quad (A,B\in\frakg).\]
-    Reading this with $A$, and $B$, replaced by $stZ$, and $B^R(Z)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand size of (\ref{09830}) as
-    \[\iint_{0\leq u\leq t\leq 1}\left[\rme^{u\ad_Z}\left(B^R(Z)\right),\rme^{t\ad_Z}\left(A^R(Z)\right)\right]\dd u\dd t.\]
+    Reading this with $A$, and $B$, replaced by $stC$, and $B^R(C)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand size of (\ref{09830}) as
+    \[\iint_{0\leq u\leq t\leq 1}\left[\rme^{u\ad_C}\left(B^R(C)\right),\rme^{t\ad_C}\left(A^R(C)\right)\right]\dd u\dd t.\]
     Antisymmetrizing this formula over $A$ and $B$  we get, also using the antisymmetry of the Lie bracket, the quantity
     \begin{multline}
-        -\int_0^1\int_0^1\left[\rme^{u\ad_Z}\left(A^R(Z)\right),\rme^{t\ad_Z}\left(B^R(Z)\right)\right]\dd u\dd t=\\
-        =-\left[\int_0^1\rme^{u\ad_Z}\dd u\, \left(A^R(Z)\right),\int_0^1\rme^{t\ad_Z}\dd t\, \left(B^R(Z)\right)\right]=-[A,B].
+        -\int_0^1\int_0^1\left[\rme^{u\ad_C}\left(A^R(C)\right),\rme^{t\ad_C}\left(B^R(C)\right)\right]\dd u\dd t=\\
+        =-\left[\int_0^1\rme^{u\ad_C}\dd u\, \left(A^R(C)\right),\int_0^1\rme^{t\ad_C}\dd t\, \left(B^R(C)\right)\right]=-[A,B].
     \end{multline}
 
-    So, if we antisymmetrize (\ref{09830}) over $A$ and $B$, we arrive, using (\ref{10707}) with $v=A^R$, $w=B^R$ and $x=Z$, at:
-    \[-[A,B]=\int_0^1 \rme^{t\ad_Z}\dd t\left([A^R,B^R](Z)\right),\]
+    So, if we antisymmetrize (\ref{09830}) over $A$ and $B$, we arrive, using (\ref{10707}) with $v=A^R$, $w=B^R$ and $x=C$, at:
+    \[-[A,B]=\int_0^1 \rme^{t\ad_C}\dd t\left([A^R,B^R](C)\right),\]
     which shows that $[A^R,B^R]=-([A,B])^R$ in view of the definition (\ref{def X^R}) applied to $([A,B])^R$. The linearity of the map $A\mapsto A^R$ is obvious from the definition, and its injectivity follows from $A^R(0)=A$.
 \end{proof}
 \begin{rem}
-    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $A^R(Z)=\left(R_{\rme^{-Z}}\right)_{\ast \rme^Z} \circ \exp_{\ast Z}(Z)$, which is nothing but the right-invariant vector field $A_R(g)=\left(R_g\right)_{\ast e} A$ written in logarithmic coordinates $g=\rme^Z$.
+    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $A^R(C)=\left(R_{\rme^{-C}}\right)_{\ast \rme^C} \circ \exp_{\ast C}(C)$, which is nothing but the right-invariant vector field $A_R(g)=\left(R_g\right)_{\ast e} A$ written in logarithmic coordinates $g=\rme^C$.
 
     If all vector fields $A^R$ were complete on $\frakg_e$, their flows would form a Lie group consisting of diffeomorphisms of $\frakg_e$, and we would prove the global Lie's Third Fundamental Theorem, which states that every Lie algebra has a Lie group that it corresponds to. Unfortunately, these vector fields are not always complete, and the most we can claim at this point is that their flows generate a \emph{local} Lie group.
 \end{rem}
