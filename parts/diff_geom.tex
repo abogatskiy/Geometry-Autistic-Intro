@@ -98,9 +98,9 @@ The simplest nonabelian examples of compact Lie groups are the 3-dimensional rot
     .\]
     It is easy to check two important equalities 
     \[A_{\omega\times \xi}=A_\omega A_\xi-A_\xi A_\omega=[A_\omega,A_\xi],\quad \omega\cdot\xi=-\tr(A_\omega A_\xi).\label{eq R3->so(3) hom}\]
-    If $|\bf{n}|\in 2\pi\bbZ$, then $R_{\bf{n}}$ is a rotation around the axis through $\bf{n}$, through the angle $|\bf{n}|$. Furthermore, if $0<|\bf{n}|<\pi$, then $R_{\bf{n}}$ is the unique rotation such that, for each nonzero vector $\bf{x}\perp \bf{n}$ in the plane of the rotation, the triple $(\bf{x},R_{\bf{n}}\cdot \bf{x},\bf{n})$ has positive orientation, i.e.~$\det (\bf{x},R_{\bf{n}} \bf{x},\bf{n})>0$. The mapping $\bf{n}\mapsto R_{\bf{n}}$ is surjective from the closed ball $|\bf{n}|\leq \pi$ onto $\SO_3(\bbR)$, and a diffeomorphism from the open ball $|\bf{n}|<\pi$ onto the dense subset of $\SO_3(\bbR)$ of rotations through an angle $<\pi$. Near the boundary sphere $S_\pi=\{\bf{n}\in\bbR^3\mid |\bf{n}|=\pi\}$, one can check that $\bf{n}\mapsto R_{\bf{n}}$ is a smooth two-fold covering map mapping $\bf{n}$ and $(|\bf{n}|-2\pi)\frac{\bf{n}}{|\bf{n}|}$ to the same element of $\SO_3(\bbR)$. In particular, $\bf{n}\to R_{\bf{n}}$ is a smooth two-fold covering from the sphere $S_\pi$ onto the subset of rotations through the angle $\pi$, mapping the antipodal points $\pm \bf{n}$ to the same element of $\SO_3(\bbR)$. We thus see that $\SO_3(\bbR)$ is diffeomorphic to the real projective space $\RP^3$, which is the quotient of the closed ball $\bbD^3$ by the map that identifies antipodal boundary points, or equivalently the antipodal quotient of $\bbS^3$.
+    If $|\bf{n}|\notin 2\pi\bbZ$, then $R_{\bf{n}}$ is a rotation around the axis through $\bf{n}$, through the angle $|\bf{n}|$. Furthermore, if $0<|\bf{n}|<\pi$, then $R_{\bf{n}}$ is the unique rotation such that, for each nonzero vector $\bf{x}\perp \bf{n}$ in the plane of the rotation, the triple $(\bf{x},R_{\bf{n}}\cdot \bf{x},\bf{n})$ has positive orientation, i.e.~$\det (\bf{x},R_{\bf{n}} \bf{x},\bf{n})>0$. The mapping $\bf{n}\mapsto R_{\bf{n}}$ is surjective from the closed ball $|\bf{n}|\leq \pi$ onto $\SO_3(\bbR)$, and a diffeomorphism from the open ball $|\bf{n}|<\pi$ onto the dense subset of $\SO_3(\bbR)$ of rotations through an angle $<\pi$. Near the boundary sphere $S_\pi=\{\bf{n}\in\bbR^3\mid |\bf{n}|=\pi\}$, one can check that $\bf{n}\mapsto R_{\bf{n}}$ is a smooth two-fold covering map mapping $\bf{n}$ and $(|\bf{n}|-2\pi)\frac{\bf{n}}{|\bf{n}|}$ to the same element of $\SO_3(\bbR)$. In particular, $\bf{n}\to R_{\bf{n}}$ is a smooth two-fold covering from the sphere $S_\pi$ onto the subset of rotations through the angle $\pi$, mapping the antipodal points $\pm \bf{n}$ to the same element of $\SO_3(\bbR)$. We thus see that $\SO_3(\bbR)$ is diffeomorphic to the real projective space $\RP^3$, which is the quotient of the closed ball $\bbD^3$ by the map that identifies antipodal boundary points, or equivalently the antipodal quotient of $\bbS^3$.
     
-    The group $\SU_2$ is defined as the set of $2\times2$ complex matrices that preserve the standard Hermitian dot product $(z,w)^2=|z|^2+|w|^2$ on $\bbC^2$:
+    The group $\SU_2$ is defined as the set of $2\times2$ complex matrices that preserve the standard Hermitian dot product $\lVert(z,w)\rVert^2=|z|^2+|w|^2$ on $\bbC^2$:
     \[\SU_2=\left\{g(a,b)=
     \begin{pmatrix}
         a&b\\-\wb{b}&\wb{a}
@@ -1750,7 +1750,7 @@ One is tempted to say that the \gls{hlp} property of automatically applies to sm
 
 The following fundamental theorem gives us a useful sufficient condition for a map to be a locally trivial fibration. We delay its proof until \S\ref{sec: applications of flows} because it requires some theory of flows of vector fields. Nevertheless we present it now because it will be useful for constructing specific examples of fiber bundles. Recall that a map is proper iff it is closed and its fibers (preimages of points) are compact.
 
-\begin{thm}[Ehresmann fibration theorem]\index{Ehresmann fibration theorem}\label{thm Ehresmann}
+\begin{thm}[Ehresmann Fibration Theorem (1961)]\index{Ehresmann fibration theorem}\label{thm Ehresmann}
     If $\pi:E\to M$ is a \emph{proper} surjective submersion, then $\pi$ is a locally trivial fibration.
 \end{thm}
 
@@ -3706,6 +3706,11 @@ Now we are finally ready to prove Ehresmann's Fibration Theorem \ref{thm Ehresma
     Clearly $G$ is a diffeomorphism and a trivialization for $\pi$.
 \end{proof}
 
+From the above proof, it is clear that the following generalization holds.
+
+\begin{cor}[Ehresmann (1961)]\label{thm Ehresmann vector fields}
+    Let $\pi:E\to M$ be a submersion of connected manifolds such that, for each $m\in M$, there are complete vector fields on $E$ that project to complete vector fields on $M$ whose values at $m$ span $T_m M$. Then $\pi$ is a smooth fiber bundle.
+\end{cor}
 
 
 
@@ -5664,7 +5669,7 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
 \end{proof}
 
 \begin{thm}
-    The evaluation map $E:(\fX(G)^G,\Lie)\to (\T_eG,\ad)$, $X\mapsto X_e$ is an isomorphism of Lie algebras.
+    The evaluation map $E:(\fX(G)^G,\Lie)\to (\T_eG,\ad)$, $X\mapsto X_e$, is an isomorphism of Lie algebras.
 \end{thm}
 \begin{proof}
     It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=L_{g\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$ and let $F$ be the flow of $X$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
@@ -5679,7 +5684,7 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
     \[E\left(\Lie_{X}Y\right)=-\ad_{X_e} Y_e,\quad X,Y\in\fX(G)^G_R.\]
 \end{cor}
 
-In summary, if $A,B\in \T_eG$, then we have the following formulas relating the Lie bracket on the Lie algebra to the Lie bracket of vector fields:
+We will hence use the notation $A_L$ arbitrary left-invariant fields, implying that the value at $e$ is $A$.\footnote{Note that in literature, Lie algebras are often \emph{defined} as the spaces of left-invariant vector fields, so $A_L$ and $A$ can get confused.} In summary, if $A,B\in \T_eG$, then we have the following formulas relating the Lie bracket on the Lie algebra to the Lie bracket of vector fields:
 \[[A_L,B_L]=[A,B]_L,\quad [A_R,A_R]=-[A,B]_R.\]
 
 
@@ -6377,6 +6382,13 @@ Theorem~\ref{thm 8.7 Sharpe} provides an easy proof of the existence and uniquen
     Let the universal covering map be $\pi:\wt{G}\to G$. First note that if a Lie group structure on $\wt{G}$ exists, then the Maurer-Cartan form on $\wt{G}$ is $\pi^\ast \theta_G$. Thus we are led to define $\omega=\pi^\ast\theta_G$ on $\wt{G}$. This form satisfies the Structure Equation by naturality of exterior derivatives and Lie brackets. Since $\pi$ is a local diffeomorphism, not only is $\omega$ an isomorphism on each fiber, but also $\omega$ is complete, since integral curves for $\theta_G$ on $G$ will lift to integral curves for $\omega$ on $\wt{G}$. By Theorem~\ref{thm 8.7 Sharpe}, given $\wt{e}\in \pi^{-1}(e)$, $\wt{G}$ has a unique Lie group structure with $\wt e$ as the identity and for which $\omega$ is the Maurer-Cartan form. By Theorem~\ref{thm 6.1 Sharpe fundamental local}, $\pi$ is the unique map $(\wt{G},\wt{e})\to (G,e)$ pulling back $\omega$ from $\theta_G$, and then by Theorem~\ref{thm second principle} it must be a homomorphism.
 \end{proof}
 
+If one assumes Theorem~\ref{thm 7.7. Lee covering group} to be known (via our original proof), then a much shorter proof of Theorem~\ref{thm 8.7 Sharpe} can be given based on the Ehresmann Fibration Theorem. We have avoided this proof due to the value of the concepts developed over the course of the longer proof.
+
+\begin{proof}[Shorter proof of Theorem~\ref{thm 8.7 Sharpe}]
+    Consider again the Pfaffian system on $M\times G$ spanned by the (components of the) $1$-form $\pr_M^\ast\omega-\pr_G^\ast\theta_G$. By the proof of the local Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, it is integrable and the leaves of the integral foliation are locally graphs of maps $M\to G$. Moreover, since both $\omega$ and $\theta_G$ are fiberwise isomorphisms, these maps are local diffeomorphisms that pull $\theta_G$ back to $\omega$. Let $L$ be a leaf of the foliation. The constant vector fields of both $M$ and $G$ can be locally pulled back to form global complete vector fields on $L$ (the two pullbacks will match each other). Since these vector fields are complete, we can use the Ehresmann Fibration Theorem in the form of Corollary~\ref{thm Ehresmann vector fields} to conclude that $L$ is a fiber bundle over both $M$ and $G$. It has the same dimension, therefore it is actually a covering space. Now it suffices to consider simply connected $M$, as the general case will follow by the same argument as above. In this case, the covering map $\pr_M:L\to M$ has to be a diffeomorphism, thus $L$ is also a universal covering of $G$. By Theorem~\ref{thm 7.7. Lee covering group}, $L$ has a unique Lie group structure (for each choice of identity) that makes $\pr_G:L\to G$ a local isomorphism. This makes $M$ a Lie group as well.
+\end{proof}
+
+
 
 
 
@@ -6401,7 +6413,7 @@ The Frobenius theorem now gives us the first the first ``enhancement'' result ab
     Every Lie subgroup is an integral manifold of an involutive distrubution, and therefore is a weakly embedded submanifold.
 \end{thm}
 \begin{proof}
-    Let $H\subset G$ be a Lie subgroup. Then $\Lief H$ is canonically isomorphic to the Lie subalgebra $i_\ast(\Lief H)\subset \Lie G$, where $i:H\hookrightarrow G$ is the inclusion. Let $D\subset \T G$ be the left-invariant involutive distribution corresponding to $\frakh$ as in Lemma~\ref{3972}. It follows that $\T_hH=D_h$, so $H$ is an integral manifold of $D$ and is weakly embedded by Theorem~\ref{thm 19.17 Lee}.
+    Let $H\subset G$ be a Lie subgroup. Then $\Lief H$ is canonically isomorphic to the Lie subalgebra $i_\ast(\Lief H)\subset \Lief G$, where $i:H\hookrightarrow G$ is the inclusion. Let $D\subset \T G$ be the left-invariant involutive distribution corresponding to $\frakh$ as in Lemma~\ref{3972}. It follows that $\T_hH=D_h$, so $H$ is an integral manifold of $D$ and is weakly embedded by Theorem~\ref{thm 19.17 Lee}.
 \end{proof}
 
 Recall from Theorems~\ref{thm 5.31 Lee} and \ref{thm 5.32 Lee} that while an immersed submanifold can have its topology (and, in a uniquely corresponding way, smooth structure) adjusted in many ways while still remaining immersed, a weakly embedded submanifold has \emph{only one} topology and smooth structure under which it's still immersed. This means that the topology of an immersed Lie subgroup is much more rigid than we originally assumed in the definition.
@@ -6443,16 +6455,16 @@ Note that a \gls{ops} is \emph{not} a Lie subgroup of $G$, but a specific homomo
 \begin{proof}
     Given a left-invariant vector field, its integral curve at $e$ will automatically be a \gls{ops} due to the general group property of flows and completeness (or alternatively from the uniqueness of maximal integral curves).
 
-    Conversely, every \gls{ops} $\gamma$ is the integral curve of the left-invariant field $X$ whose value at the identity is $X_e=\gamma'(0)\in\Lief G$ because 
-    \[\gamma'(t)=\restr{\frac{\dd}{\dd s}}{s=0}L_{\gamma(t)}\gamma(s)=L_{\gamma(t)}X_e=X_{\gamma(t)}.\]
+    Conversely, every \gls{ops} $\gamma$ is the integral curve of the left-invariant field $A_L$ whose value at the identity is $A=\gamma'(0)\in\Lief G$ because 
+    \[\gamma'(t)=\restr{\frac{\dd}{\dd s}}{s=0}L_{\gamma(t)}\gamma(s)=L_{\gamma(t)\ast e}A=(A_L)_{\gamma(t)}.\]
 \end{proof}
 
 This leads us to yet another common way of defining the Lie algebra of a Lie group.
 
 \paragraph{Construction IV} In summary, there is a natural one-to-one correspondence between elements of the Lie algebra and \gls{ops}'s
-\[X\in \frakg\cong \fX(G)^G\mapsto \gamma_X(t)=F^X(e,t).\]
-We say that $\gamma_X$ is \emph{generated} by $X\in\frakg$. The Lie bracket is recovered as the double derivative of the group commutator
-\[[X,Y]=\restr{\frac{\dd}{\dd t}\frac{\dd}{\dd s}}{t=s=0}\gamma_X(t)\gamma_Y(s)\gamma_X(t)^{-1}\gamma_Y(s)^{-1}.\]
+\[A\in \frakg\cong \fX(G)^G\mapsto \gamma_A(t)=F^{A_L}(e,t).\]
+We say that $\gamma_A$ is \emph{generated} by $A\in\frakg$. The Lie bracket is recovered as the double derivative of the group commutator
+\[[A,B]=\restr{\frac{\dd}{\dd t}\frac{\dd}{\dd s}}{t=s=0}\gamma_A(t)\gamma_B(s)\gamma_A(t)^{-1}\gamma_B(s)^{-1}.\]
 
 The following is a well known fact of linear algebra.
 
@@ -6483,48 +6495,49 @@ The following is a well known fact of linear algebra.
 
 
 \begin{defn}[Exponential map]\index{Exponential map}
-    Given a Lie group $G$ with Lie algebra $\frakg=\Lief G$, the exponential map $\exp:\frakg\to G$ assigns to each $X\in \frakg$ the group element
-    \[\exp X=\gamma_X(1),\]
-    where $\gamma_X$ is the \gls{ops} generated by $X$. As a consequence, the \gls{ops} generated by $X$ can be written as \[\gamma_X(t)=\gamma_{tX}(1)=\exp tX=\rme^{tX}.\]
+    Given a Lie group $G$ with Lie algebra $\frakg=\Lief G$, the exponential map $\exp:\frakg\to G$ assigns to each $A\in \frakg$ the group element
+    \[\exp A=\gamma_A(1),\]
+    where $\gamma_A$ is the \gls{ops} generated by $A$. As a consequence, the \gls{ops} generated by $A$ can be written as \[\gamma_A(t)=\gamma_{tA}(1)=\exp tA=\rme^{tA}.\]
+    (While we use the notations $\exp A$ and $\rme^A$ interchangeably, the exponential map is related to the Euler number only in the case of linear Lie groups.)
 \end{defn}
 
 When multiple groups are involved, we will sometimes specify the group to which the exponential map belongs by writing, for example, $\exp_G$.
 
-\begin{prop}\label{prop properties of exp} The exponential map $\exp:\frakg\to G$ has the following properties.
+\begin{prop}\label{prop properties of exp} The exponential map $\exp:\frakg\to G$ has the following properties for all $A\in\frakg$.
 \begin{enumerate}[label=(\alph*)]
     \item $\exp$ is smooth.
-    \item $\rme^{sX}\rme^{tX}=\rme^{(s+t)X}$ for $s,t\in\bbR$.
-    \item $\left(\rme^X\right)^{-1}=\rme^{-X}$.
-    \item $\left(\rme^X\right)^{n}=\rme^{nX}$ for $n\in \bbZ$.
+    \item $\rme^{sA}\rme^{tA}=\rme^{(s+t)A}$ for $s,t\in\bbR$.
+    \item $\left(\rme^A\right)^{-1}=\rme^{-A}$.
+    \item $\left(\rme^A\right)^{n}=\rme^{nA}$ for $n\in \bbZ$.
     \item $\exp_{\ast 0}=\id_\frakg$.
     \item $\exp$ restricts to a diffeomorphism from some neighborhood of $0\in \frakg$ to a neighborhood of $e\in G$. Its inverse is often denoted by $\ln$.
     \item $\exp$ is natural: if $H$ is another Lie group with $\frakh=\Lief H$, and $\Phi:G\to H$ is a Lie group homomorphism, then 
     \[\exp_H\circ\Phi_{\ast e}=\Phi\circ \exp_G.\]
-    \item The flow $F^X$ of a left-invariant vector field $X\in \fX(G)^G$ is given by $F_t=R_{\rme^{tX_e}}$.
+    \item The flow $F^{A_L}$ of a left-invariant vector field $A_L\in \fX(G)^G$, $(A_L)_e=A$, is given by $F_t=R_{\rme^{tA}}$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-    (a) We need to show that the flow $F^X$ of a vector field varies smoothly with $X$. This is a situation not covered by the fundamental theorem of flows, but we can reduce it to that situation by a simple trick. Define a vector field $\Xi\in\fX(G\times\frakg)$, where $\frakg\cong \fX(G)^G$, by
-    \[\Xi_{(g,X)}=(X_g,0)\in \T_gG\oplus \T_X \frakg.\]
-    This is a smooth vector field because it acts on functions by differentiating them along $X$. It is easy to verify that the flow $F^\Xi$ is given by
-    \[F^\Xi_t(g,X)=\left(F^X(g,t),X\right).\]
-    By the fundamental Theorem~\ref{thm fundamental of flows} of flows, $F^\Xi$ is smooth. Since $\exp X=\pr_1\left((F^\Xi_1(e,X)\right)$, where $\pr_1:G\times\frakg\to G$ is the projection, it follows that $\exp$ is smooth.
+    (a) We need to show that the flow $F^A$ of a vector field varies smoothly with $A$. This is a situation not covered by the fundamental theorem of flows, but we can reduce it to that situation by a simple trick. Define a vector field $\Xi\in\fX(G\times\frakg)$, where $\frakg\cong \fX(G)^G$, by
+    \[\Xi_{(g,A)}=((A_L)_g,0)\in \T_gG\oplus \T_X \frakg.\]
+    This is a smooth vector field because it acts on functions by differentiating them along $A_L$. It is easy to verify that the flow $F^\Xi$ is given by
+    \[F^\Xi_t(g,A)=\left(F^{A_L}(g,t),A\right).\]
+    By the fundamental Theorem~\ref{thm fundamental of flows} of flows, $F^\Xi$ is smooth. Since $\exp A=\pr_1\left((F^\Xi_1(e,A)\right)$, where $\pr_1:G\times\frakg\to G$ is the projection, it follows that $\exp$ is smooth.
 
-    (b-d) follow trivially from the fact that $\exp(tX)$ is a \gls{ops}.
+    (b-d) follow trivially from the fact that $\exp(tA)$ is a \gls{ops}.
     
     To show (e) we compute
-    \[\exp_{\ast 0}X=\restr{\frac{\dd}{\dd t}}{t=0}\Phi_t^X(e)=X_e,\]
-    i.e.~$\exp_{\ast e}$ coincides with the natural isomorphism $\fX(G)^G\cong \T_e G$. Then by the \gls{inmt}, $\exp$ is a local diffeomorphism and (f) follows.
+    \[\exp_{\ast 0}A=\restr{\frac{\dd}{\dd t}}{t=0}F_t^{A_L}(e)=A,\]
+    i.e.~$\exp_{\ast 0}$ coincides with the natural isomorphism $\fX(G)^G\cong \T_e G$. Then by the \gls{inmt}, $\exp$ is a local diffeomorphism and (f) follows.
 
     (g) follows from the naturality of flows of vector fields:
-    \[F^{\Phi_\ast X}_t\circ \Phi=\Phi\circ F^X_t,\]
+    \[F^{\Phi_\ast A_L}_t\circ \Phi=\Phi\circ F^{A_L}_t,\]
     and setting $t=1$ and evaluating at the identity yields (g).
 
     (h) was already proven in Lemma~\ref{lem 471841}.
 \end{proof}
 
 \begin{rem}
-    The naturality of $\exp$ implies, in particular, that $g\rme^{tX}g^{-1}=\rme^{t\Ad_g X}$. This confirms the intuitive picture that conjugate subgroups are generated by conjugate elements of the Lie algebra. For example, on $\SO_3$, let $H\cong\SO_2$ be the \gls{ops} of rotations about the $z$-axis. Then if $g$ is a rotation which maps $\bf{e}_z=(0,0,1)$ to some vector $n$, then the subgroup of rotations about $n$ is $gHg^{-1}$ and is generated by $gL_z g^{-1}$, where $L_z$ generates 
+    The naturality of $\exp$ implies, in particular, that $g\rme^{tA}g^{-1}=\rme^{t\Ad_g A}$. This confirms the intuitive picture that conjugate subgroups are generated by conjugate elements of the Lie algebra. For example, on $\SO_3$, let $H\cong\SO_2$ be the \gls{ops} of rotations about the $z$-axis. Then if $g$ is a rotation which maps $\bf{e}_3=(0,0,1)$ to some vector $\bf{n}$, then the subgroup of rotations about $\bf{n}$ is $gHg^{-1}$ and is generated by $\Ad_g L_3=gL_3 g^{-1}$, where $L_3$ generates rotations about $\bf{e}_3$.
 \end{rem}
 \begin{cor}
     The identity component $G_0$ is generated by $\exp(U)$ for any neighborhood $U$ of the origin $0\in\frakg$.
@@ -6544,7 +6557,7 @@ When multiple groups are involved, we will sometimes specify the group to which 
 \end{prop}
 \begin{proof}
     The statement $\ker\ad=\rmZ(\frakg)$ is obvious. Since for $g\in \rmC_G(G_0)$ there holds $\restr{\Adg_g}{G_0}=\id_{G_0}$ and since $(\id_G)_{\ast e}=\id_\frakg$, we obtain $\rmC_G(G_0)\subset \ker\Ad$. Conversely, if $g\in G$ satisfies $\Ad_g=\id_\frakg$. The naturality of the exponential map implies 
-    \[\rme^X=\rme^{\Ad_g X}=\Adg_g(\rme^X)\text{ for all }X\in\frakg.\]
+    \[\rme^A=\rme^{\Ad_g A}=\Adg_g(\rme^A)\text{ for all }A\in\frakg.\]
     That is, $g$ commutes with all elements of $\exp(\frakg)$. Since $\exp(\frakg)$ generates $G_0$, we conclude $\ker\Ad\subset \rmC_G(G_0)$.
 \end{proof}
 
@@ -6553,20 +6566,20 @@ Similarly, for the coadjoint representation we have
 
 \begin{prop}\label{prop 20.9 Lee}
     If $H\subset G$ is a Lie subgroup, then the exponential map of $H$ coincides with the restriction of the exponential map of $G$, and 
-    \[\Lief H=\{X\in\Lief G: \exp(tX)\in H \text{ for all } t\in \bbR\}.\]
+    \[\Lief H=\{A\in\Lief G: \exp(tA)\in H \text{ for all } t\in \bbR\}.\]
 \end{prop}
 \begin{proof}
     The fact that $\exp_H=\restr{\exp_G}{\frakh}$ follows immediately from Proposition~\ref{prop 20.3 Lee}.
 
-    Next assume that $\rme^{tX}\in H$ for all $t$. Since $H$ is weakly embedded in $G$ by Theorem~\ref{thm 19.25 Lee}, it follows that the curve $t\mapsto \rme^{tX}$ is smooth as a map into $H$, and thus $X=\gamma'(0)\in \T_eH$. Conversely, if $X\in \T_e H$ then Proposition~\ref{prop 20.3 Lee} implies that $\rme^{tX}\in H$ for all $t$.
+    Next assume that $\rme^{tA}\in H$ for all $t$. Since $H$ is weakly embedded in $G$ by Theorem~\ref{thm 19.25 Lee}, it follows that the curve $t\mapsto \rme^{tA}$ is smooth as a map into $H$, and thus $A=\gamma'(0)\in \T_eH$. Conversely, if $A\in \T_e H$ then Proposition~\ref{prop 20.3 Lee} implies that $\rme^{tA}\in H$ for all $t$.
 \end{proof}
 
 
 \begin{thm}\label{thm 1.5.2 DK}
-    The following formulas hold for all $X\in\frakg,g\in G$:
+    The following formulas hold for all $A\in\frakg,g\in G$:
     \begin{enumerate}[label=(\alph*)]
-        \item $\Ad_{\rme^X}=\rme^{\ad_X}$.
-        \item $\Adg_g \rme^X=\rme^{\Ad_g X}$.
+        \item $\Ad_{\rme^A}=\rme^{\ad_A}$.
+        \item $\Adg_g \rme^A=\rme^{\Ad_g A}$.
     \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -6586,87 +6599,87 @@ Similarly, for the coadjoint representation we have
         0&2\pi &0
     \end{pmatrix}.
     \]
-    To see this, apply the previous statement to $\phi=\psi\circ\ad$, where we view the adjoint as a map $\ad:\fraksu_2\to\frakso_3(\bbR)$. From this homomorphism, $\Psi$ is determined by $\Phi=\Psi\circ \Ad$; therefore such a homomorphism of Lie groups $\Psi$ exists iff $\Phi(-\rmI)=e_G$, which translates to $\Psi\circ \Ad(-I)=e_G$. Since $\Phi\circ\exp=\exp\circ\phi$ and 
+    To see this, apply the previous statement to $\phi=\psi\circ\ad$, where we view the adjoint as a map $\ad:\fraksu_2\to\frakso_3(\bbR)$. From this homomorphism, $\Psi$ is determined by $\Phi=\Psi\circ \Ad$; therefore such a homomorphism of Lie groups $\Psi$ exists iff $\Phi(-\rmI)=e_G$, which translates to $\Psi\circ \Ad(-\rmI)=e_G$. Since $\Phi\circ\exp=\exp\circ\phi$ and 
     \[\exp(\rmi\sigma_1)=\exp \begin{pmatrix}
         0&\rmi\pi\\\rmi\pi &0
     \end{pmatrix}=-\rmI,\]
-    the condition that $\Phi(-\rmI)=e$ becomes
-    \[e=\Phi\circ \exp (\rmi\sigma_1)=\exp\circ\phi (\rmi\sigma_1)=\exp\circ\psi( \ad_{\rmi\sigma_1})=\exp\circ\psi (R_x(2\pi)),\]
+    the condition that $\Phi(-\rmI)=e_G$ becomes
+    \[e_G=\Phi\circ \exp (\rmi\sigma_1)=\exp\circ\phi (\rmi\sigma_1)=\exp\circ\psi( \ad_{\rmi\sigma_1})=\exp\circ\psi (A_x(2\pi)),\]
     where at the end we used formula (\ref{eq ad: su2->so3}).
     
-    This picture generalizes to all Lie groups. For any group $H$ one can specify a finite set of $X_i\in\frakh$ such that any homomorphism of Lie algebras $\phi:\frakh\to\frakg$ generates a homomorphism of Lie groups $\Phi:H\to G$ iff $\exp\phi(X_i)=e_G$ for all $i$.
+    This picture generalizes to all Lie groups. For any group $H$ one can specify a finite set of $A_i\in\frakh$ such that any homomorphism of Lie algebras $\phi:\frakh\to\frakg$ generates a homomorphism of Lie groups $\Phi:H\to G$ iff $\exp\phi(A_i)=e_G$ for all $i$.
 \end{example}
 
 
 \begin{prop}
-    If $X,Y\in\frakg$ commute, i.e.~$[X,Y]=0$, then
-    \[\rme^X\rme^Y=\rme^Y\rme^X=\rme^{X+Y}.\]
+    If $A,B\in\frakg$ commute, i.e.~$[A,B]=0$, then
+    \[\rme^A\rme^B=\rme^B\rme^A=\rme^{A+B}.\]
     In particular, if $\frakg$ is abelian, $\exp$ is a Lie group homomorphism from the vector group underlying $\frakg$ to $G$.
 \end{prop}
 \begin{proof}
-    It suffices to show that the curve defined by $\gamma(t)=\rme^{tX}\rme^{tY}$ coincides with the integral curve generated by $X+Y$. Indeed, $\gamma(0)=e$ and we can use the commutation of the flows of the left-invariant fields $X_L$ and $Y_L$ to compute the generator. Here we will need the general product rule that holds for maps $f:M_1\times M_2\to N$:
-    \[\T_{(m_1,m_2)}f(X_1,X_2)=\T_{m_1}f_{m_2}(X_1)+\T_{m_2}f_{m_1}(X_2)\]
+    It suffices to show that the curve defined by $\gamma(t)=\rme^{tA}\rme^{tB}$ coincides with the integral curve generated by $A+B$. Indeed, $\gamma(0)=e$ and we can use the commutation of the flows of the left-invariant fields $A_L$ and $B_L$ to compute the generator. Here we will need the general product rule that holds for maps $f:M_1\times M_2\to N$:
+    \[\T_{(m_1,m_2)}f(A_1,A_2)=\T_{m_1}f_{m_2}(A_1)+\T_{m_2}f_{m_1}(A_2)\]
     where $f_{m_1}:M_2\to N$ and $f_{m_2}:M_1\to N$ are the partial mappings. In particular, if $M_1=M_2\cong \bbR$ then we have the ``product rule'' for derivatives along the diagonal:
     \[\restr{\frac{\dd}{\dd t}}{t}\varphi(t,t)=\restr{\frac{\dd}{\dd s}}{s=t}\varphi(s,t)+\restr{\frac{\dd}{\dd s}}{s=t}\varphi(t,s).\]
     Applying this to $\gamma$ we get 
     \begin{multline}
-        \gamma'(0)=\restr{\frac{\dd}{\dd t}}{t=0} F^{Y_L}_t\circ F^{X_L}_t (e)=\restr{\frac{\dd}{\dd s}}{s=0}F^{Y_L}_{s}(e)+\restr{\frac{\dd}{\dd s}}{s=0}F^{X_L}_{s}(e)=Y_e+X_e.
+        \gamma'(0)=\restr{\frac{\dd}{\dd t}}{t=0} F^{B_L}_t\circ F^{A_L}_t (e)=\restr{\frac{\dd}{\dd s}}{s=0}F^{B_L}_{s}(e)+\restr{\frac{\dd}{\dd s}}{s=0}F^{A_L}_{s}(e)=B+A.
     \end{multline}
 \end{proof}
 
 When the elements do not commute, the following two propositions provide an approximate formula.
 
 \begin{prop}[{{\cite[Prop.~20.10]{Lee}}}]\label{prop 20.10 Lee}
-    For any $X,Y\in\frakg=\Lief G$, there is a smooth function $Z:(-\epsilon,\epsilon)\to \frakg$ for some $\epsilon>0$ such that
-    \[\rme^{tX}\rme^{tY}=\exp\left(t(X+Y)+t^2Z(t)\right)\]
+    For any $A,B\in\frakg=\Lief G$, there is a smooth function $Z:(-\epsilon,\epsilon)\to \frakg$ for some $\epsilon>0$ such that
+    \[\rme^{tA}\rme^{tB}=\exp\left(t(A+B)+t^2Z(t)\right)\]
     for all $t\in(-\epsilon,\epsilon)$.
 \end{prop}
 \begin{proof}
     Since $\exp$ is a local diffeomorphism, there exists an $\epsilon>0$ such that on $(-\epsilon,\epsilon)$ we can consider the smooth map
-    \[\varphi(t)=\ln\left(\rme^{tX}\rme^{tY}\right).\]
-    Obviously $\varphi(0)=0$ and since the differential of the multiplication map is $\T_{(e,e)}m(X,Y)=X+Y$, we have
-    \[\varphi'(0)=\ln_{\ast e}(X+Y)=X+Y.\]
-    By Taylor's theorem $\varphi(t)=t(X+Y)+t^2Z_2(t)$ for some smooth $Z_3(t)$.
+    \[\varphi(t)=\ln\left(\rme^{tA}\rme^{tY}\right).\]
+    Obviously $\varphi(0)=0$ and since the differential of the multiplication map is $\T_{(e,e)}m(A,B)=A+B$, we have
+    \[\varphi'(0)=\ln_{\ast e}(A+B)=A+B.\]
+    By Taylor's theorem $\varphi(t)=t(A+B)+t^2Z_2(t)$ for some smooth $Z_3(t)$.
 \end{proof}
 \begin{cor}\label{cor 20.11 Lee}
     Under the hypotheses of the preceding Proposition,
-    \[\lim_{n\to\infty}\left(\exp \frac{tX}{n}\exp \frac{tY}{n}\right)^n=\exp t(X+Y).\]
+    \[\lim_{n\to\infty}\left(\exp \frac{tA}{n}\exp \frac{tB}{n}\right)^n=\exp t(A+B).\]
 \end{cor}
 \begin{proof}
     We have 
     \begin{multline}
-        \left(\exp \frac{tX}{n}\exp \frac{tY}{n}\right)^n=\left(\exp\left(\frac{t}{n}(X+Y)+\frac{t^2}{n^2}Z_2\left(\frac{t}{n}\right)\right)\right)^n=\\
-        =\exp\left(t(X+Y)+\frac{t^2}{n^2}Z_2\left(\frac tn\right)\right).
+        \left(\exp \frac{tA}{n}\exp \frac{tY}{n}\right)^n=\left(\exp\left(\frac{t}{n}(A+B)+\frac{t^2}{n^2}Z_2\left(\frac{t}{n}\right)\right)\right)^n=\\
+        =\exp\left(t(A+B)+\frac{t^2}{n^2}Z_2\left(\frac tn\right)\right).
     \end{multline}
     Taking the limit $n\to\infty$ at fixed $t$ gives the result.
 \end{proof}
 
 \begin{prop}
     Under the hypotheses of the preceding Proposition, 
-    \[\rme^{tX}\rme^{tY}=\exp\left(t(X+Y)+\frac{t^2}{2}[X,Y]+t^3Z_3(t)\right)\]
+    \[\rme^{tA}\rme^{tB}=\exp\left(t(A+B)+\frac{t^2}{2}[A,B]+t^3Z_3(t)\right)\]
     for another smooth map $Z_3:(-\epsilon,\epsilon)\to \frakg$.
 \end{prop}
 \begin{proof}
     For the function $\varphi$ from the proof of Proposition~\ref{prop 20.10 Lee} we have
-    \[\varphi(t)=t(X+Y)+t^2Z_2(0)+t^3Z_3(t).\]
+    \[\varphi(t)=t(A+B)+t^2Z_2(0)+t^3Z_3(t).\]
     To compute the flow of this vector field we can apply the general Taylor formula for manifolds (\ref{eq:Taylor formula for manifolds}). By an abuse of notation we drop the smooth function $f\in C^\infty(G)$ on which this formula is supposed to act:
-    \[\rme^{\varphi(t)}=\restr{F^{X+Y+\frac{s}{2}Z_2(0)+\calO(s^2)}_t}{s=t}=1+t(X+Y)+\frac{t^2}{2}\left((X+Y)^2+2Z_2(0)\right)+\calO(t^3).\]
+    \[\rme^{\varphi(t)}=\restr{F^{A+B+\frac{s}{2}Z_2(0)+\calO(s^2)}_t}{s=t}=1+t(A+B)+\frac{t^2}{2}\left((A+B)^2+2Z_2(0)\right)+\calO(t^3).\]
     On the other hand the Taylor formula for two fields (\ref{eq: Taylor formula for two fields}) gives
-    \[\rme^{tX}\rme^{tY}=1+t(X+Y)+\frac{t^2}{2}(X^2+2XY+Y^2)+\calO(t^3).\]
-    We read off $Z_2=[X,Y]/2$.
+    \[\rme^{tA}\rme^{tY}=1+t(A+B)+\frac{t^2}{2}(A^2+2AB+B^2)+\calO(t^3).\]
+    We read off $Z_2=[A,B]/2$.
 \end{proof}
 
 This gives us a new interpretation of the Lie bracket as the  commutator of infinitesimal flows of left-invariant vector fields (closely connected to formula (\ref{30071})).
 \begin{cor}
     By a repeated application of the Taylor series obtained above,
-    \[\rme^{tX}\rme^{tY}\rme^{-tX}=\rme^{tY+t^2[X,Y]+\calO(t^3)}\]
+    \[\rme^{tA}\rme^{tB}\rme^{-tA}=\rme^{tB+t^2[A,B]+\calO(t^3)}\]
     and
-    \[[\rme^{tX},\rme^{tY}]=\rme^{tX}\rme^{tY}\rme^{-tX}\rme^{-tY}=\rme^{t^2[X,Y]+\calO(t^3)}.\]
+    \[[\rme^{tA},\rme^{tB}]=\rme^{tA}\rme^{tB}\rme^{-tA}\rme^{-tB}=\rme^{t^2[A,B]+\calO(t^3)}.\]
 \end{cor}
 
 
 \begin{rem}
-    By continuing the Taylor expansion endlessly, we can obtain the full formal zeries for $\ln(\rme^X \rme^Y)$ known as the \gls{bch}\index{Equation!Baker-Campbell-Hausdorff}. Its special property is that it can be written using only Lie brackets (or adjoints). We will not derive the full series here.
+    By continuing the Taylor expansion endlessly, we can obtain the full formal series for $\ln(\rme^A \rme^B)$ known as the \gls{bch}\index{Equation!Baker-Campbell-Hausdorff} formula. Its special property is that it can be written using only Lie brackets (or adjoints). We will derive it in the next \sect.
 \end{rem}
 
 
@@ -6681,76 +6694,76 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
 \subsection{Differential of exp}
 
 \begin{thm}[{{\cite[Thm.~1.5.3]{DK}}}]\label{thm differential of exp}
-    For any $X\in\frakg$ the linear mapping $\exp_{\ast X}:\frakg\to \T_{\rme^X} G$ is given by
-    \[  \exp_{\ast X}=\left(R_{\rme^X}\right)_{\ast e}\circ \int_0^1 \rme^{s\ad_X}\dd s=\left(L_{\rme^X}\right)_{\ast e}\circ \int_0^1 \rme^{-s\ad_X}\dd s.   \]
+    For any $A\in\frakg$ the linear mapping $\exp_{\ast A}:\frakg\to \T_{\rme^A} G$ is given by
+    \[  \exp_{\ast A}=\left(R_{\rme^A}\right)_{\ast e}\circ \int_0^1 \rme^{s\ad_A}\dd s=\left(L_{\rme^A}\right)_{\ast e}\circ \int_0^1 \rme^{-s\ad_A}\dd s.   \label{eq 1.5.1 DK}\]
 \end{thm}
 \begin{proof}
     We will provide a simple derivation of this from the Maurer-Cartan equation (\ref{eq Maurer-Cartan}). Let us apply it to the map
-    \[g(t,s)=\rme^{t(X+sY)}.\]
+    \[g(t,s)=\rme^{t(A+sB)}.\]
     Then we find
-    \[\xi=\left(R_g^{-1}\right)_\ast \partial_t g=X+sY, \quad \eta=\left(R_g^{-1}\right)_\ast \partial_s g,\]
+    \[\xi=\left(R_g^{-1}\right)_\ast \partial_t g=A+sB, \quad \eta=\left(R_g^{-1}\right)_\ast \partial_s g,\]
     and the Maurer-Cartan equation $\partial_\eta-\partial_s\xi=[\xi,\eta]$ now reads
-    \[\partial_t \eta=Y+[X,\eta].\]
+    \[\partial_t \eta=B+[A,\eta].\]
     By denoting $\gamma(t)=\eta(t,0)$, we get the differential equation at $s=0$
-    \[\dot\gamma(t)=Y+[X,\gamma].\label{196}\]
-    First we notice that the solution of the homogenous equation $\dot\gamma=[X,\gamma]$ is given by the adjoint curves
-    \[\gamma_{\mathrm{hom}}=\Ad_{\rme^{tX}}\gamma_0=\rme^{t\ad_X}\gamma_0.\]
-    By Lagrange's method of variation of constants, we look for a solution to (\ref{196}) in the form $\gamma(t)=\rme^{t\ad_X}\zeta(t)$. Plugging this ansatz back into the equation gives
-    \[\rme^{t\ad_X}\dot\zeta(t)=Y.\]
+    \[\dot\gamma(t)=B+[A,\gamma].\label{196}\]
+    First we notice that the solution of the homogenous equation $\dot\gamma=[A,\gamma]$ is given by the adjoint curves
+    \[\gamma_{\mathrm{hom}}=\Ad_{\rme^{tA}}\gamma_0=\rme^{t\ad_A}\gamma_0.\]
+    By Lagrange's method of variation of constants, we look for a solution to (\ref{196}) in the form $\gamma(t)=\rme^{t\ad_A}\zeta(t)$. Plugging this ansatz back into the equation gives
+    \[\rme^{t\ad_A}\dot\zeta(t)=B.\]
     The solution of this with $\gamma(0)=0$ is obviously given by
-    \[\zeta(t)=\int_0^t \rme^{-s\ad_X}Y\dd s.\]
+    \[\zeta(t)=\int_0^t \rme^{-s\ad_A}B\dd s.\]
     On the other hand, from the definition of $\gamma$,
-    \[\gamma(t)=\left(R_{\rme^{tX}}^{-1}\right)_{\ast \rme^{tX}}\circ \exp_{\ast \rme^{tX}}(tY)\]
+    \[\gamma(t)=\left(R_{\rme^{tA}}^{-1}\right)_{\ast \rme^{tA}}\circ \exp_{\ast tA}(tB)\]
     and thus
-    \[\exp_{\ast \rme^{tX}}(tY)=\left(L_{\rme^{tX}}\right)_{\ast e}\int_0^t\rme^{-s\ad_X}\dd s\,(tY).\]
+    \[\exp_{\ast tA}(tB)=\left(L_{\rme^{tA}}\right)_{\ast e}\int_0^t\rme^{-s\ad_A}\dd s\,(tB).\]
     By setting $t=1$ we get the claimed formula. The second version is obtained via the substitution $s=1-s'$ in the integral.
 \end{proof}
 
 
 \begin{rem}[Singular points of $\exp$]
-    Since the integral derived above is elementary, the differential of $\exp$ at $X\in\frakg$ can be given by the formal series
+    Since the integral derived above is elementary, the differential of $\exp$ at $A\in\frakg$ can be given by the formal series
     \begin{align}
-        \delta_X\exp= \left(L_{\rme^{-X}}\right)_{\ast e}\circ \exp_{\ast X}&=\sum_{n=0}^\infty \frac{\left(-\ad_{X}\right)^n}{(n+1)!}=\frac{\rmI-\rme^{-\ad_X}}{\ad_X},\\
-        \left(R_{\rme^{-X}}\right)_{\ast e}\circ \exp_{\ast X}&=\sum_{n=0}^\infty \frac{\left(\ad_{X}\right)^n}{(n+1)!}=\frac{\rme^{\ad_X}-\rmI}{\ad_X},\label{dexp series}
+        \delta_A\exp= \left(L_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(-\ad_{A}\right)^n}{(n+1)!}=\frac{\rmI-\rme^{-\ad_A}}{\ad_A},\\
+        \left(R_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(\ad_{A}\right)^n}{(n+1)!}=\frac{\rme^{\ad_A}-\rmI}{\ad_A},\label{dexp series}
     \end{align}
-    where in case of non-invertible matrices $\ad_X$ the series should be taken as the \emph{definition} of this latter expression. Indeed $\ad_X$ is never invertible because it always has $X$ itself in its kernel, $\ad_X X=0$. By looking at the location of the zeros of the function $f(z)=(\rme^z-1)/z$, we conclude that the differential $\exp_{\ast X}$ is bijective iff no eigenvalue of $\ad_X$ lies in $2\pi \rmi\bbZ\setminus\{0\}$. Conversely, the singular points of the exponential map are precisely those $X\in \frakg$ such that $\ad_X\in \End(V)$ has an eigenvalue of the form $2\pi \rmi k,$ $k\in\bbZ\setminus\{0\}$.
+    where in case of non-invertible matrices $\ad_A$ the series should be taken as the \emph{definition} of this latter expression. Indeed $\ad_A$ is never invertible because it always has $A$ itself in its kernel, $\ad_A A=0$. By looking at the location of the zeros of the function $f(z)=(\rme^z-1)/z$, we conclude that the differential $\exp_{\ast A}$ is bijective iff no eigenvalue of $\ad_A$ lies in $2\pi \rmi\bbZ\setminus\{0\}$. Conversely, the singular points of the exponential map are precisely those $A\in \frakg$ such that $\ad_A\in \End(V)$ has an eigenvalue of the form $2\pi \rmi k,$ $k\in\bbZ\setminus\{0\}$.
 \end{rem}
 
 \begin{example}[Exponential map of $\SO_3(\bbR)$]
-    Recall that the rotation group $G=\SO_3(\bbR)$ can be parametrized by vectors $n\in\bbR^3$ as follows:
-    \[R_n=I+\frac{\sin |n|}{|n|}A_n+\frac{1-\cos |n|}{|n|}A_n^2,\]
-    where $|n|=\sqrt{n_1^2+n_2^2+n_3^2}$ is the rotation angle and 
+    Recall that the rotation group $G=\SO_3(\bbR)$ can be parametrized by vectors $\bf{n}\in\bbR^3$ as follows:
+    \[R_{\bf{n}}=I+\frac{\sin |\bf{n}|}{|\bf{n}|}A_{\bf{n}}+\frac{1-\cos |\bf{n}|}{|\bf{n}|}A_{\bf{n}}^2,\]
+    where $|\bf{n}|=\sqrt{n_1^2+n_2^2+n_3^2}$ is the rotation angle and 
     \[A_\omega=\begin{pmatrix}
         0&-\omega_3&\omega_2\\
         \omega_3&0&-\omega_1\\
         -\omega_2&\omega_1&0
     \end{pmatrix}.\]
-    The conjugacy classes of $\SO_3(\bbR)$ are exactly the spheres $C_{|n|}$ of equal rotation angle $0\leq |n|\leq \pi$ (except $C_0=\{\rmI\}$). Each conjugacy class in the range $0<|n|<\pi$ is diffeomorphic to a sphere, whereas $C_\pi$, the conjugacy class of the matrix $\mathrm{diag}(1,-1,-1)$, is diffeomorphic to $\RP^2$.
+    The conjugacy classes of $\SO_3(\bbR)$ are exactly the spheres $C_{|\bf{n}|}$ of equal rotation angle $0\leq |\bf{n}|\leq \pi$ (except $C_0=\{\rmI\}$). Each conjugacy class in the range $0<|\bf{n}|<\pi$ is diffeomorphic to a sphere, whereas $C_\pi$, the conjugacy class of the matrix $\mathrm{diag}(1,-1,-1)$, is diffeomorphic to $\RP^2$.
     
-    Then the singular points of the exponential map are the antisymmetric matrices $A_\omega\in \mathfrak{so}_3(\bbR)$ with $|\omega|=2\pi$. In this case $\rme^{A_\omega}=I\in \SO_3(\bbR)$. 
+    Then the singular points of the exponential map are the antisymmetric matrices $A_\omega\in \frakso_3(\bbR)$ with $|\omega|=2\pi$. In this case $\rme^{A_\omega}=I\in \SO_3(\bbR)$. 
 
-    The exponential map is a local diffeomorphism from the ball $|\omega|<2\pi$ onto $\SO_3(\bbR)$ which restricts to a two-fold covering from the punctured ball $0<|\omega|<2\pi$ onto $\SO_3(\bbR)\setminus \{\rmI\}$. The ball $|\omega|<\pi$ is the maximal open subset of $\mathfrak{so}_3(\bbR)$ on which the exponential mapping is injective; it is mapped diffeomorphically onto the complement in $\SO_3(\bbR)$ of the conjugacy class $C_\pi$.
+    The exponential map is a local diffeomorphism from the ball $|\omega|<2\pi$ onto $\SO_3(\bbR)$ which restricts to a two-fold covering from the punctured ball $0<|\omega|<2\pi$ onto $\SO_3(\bbR)\setminus \{\rmI\}$. The ball $|\omega|<\pi$ is the maximal open subset of $\frakso_3(\bbR)$ on which the exponential mapping is injective; it is mapped diffeomorphically onto the complement in $\SO_3(\bbR)$ of the conjugacy class $C_\pi$.
 \end{example}
 
 
 \begin{example}[Exponential map of $\SL_2(\bbC)$ and $\SU_2(\bbC)$]
 If $G=\SL_2(\bbC)$, then its Lie algebra $\frakg=\mathfrak{sl}_2(\bbC)$ consists of traceless matrices;
-\[X=\begin{pmatrix}
+\[A=\begin{pmatrix}
     a&b\\c&-a
 \end{pmatrix},\quad \quad a,b,c\in\bbC,\]
 and any such matrix satisfies the equation
-\[X^2=\lambda^2 \rmI,\quad \lambda=\pm \sqrt{a^2+bc},\]
-where $\lambda$ are the eigenvalues of $X$. Due to this the exponential series separates into two sums over odd and even powers, and we get
-\[\rme^X=\cosh \lambda \cdot \rmI+\frac{\sinh \lambda}{\lambda}X.\]
+\[A^2=\lambda^2 \rmI,\quad \lambda=\pm \sqrt{a^2+bc},\]
+where $\lambda$ are the eigenvalues of $A$. Due to this the exponential series separates into two sums over odd and even powers, and we get
+\[\rme^A=\cosh \lambda \cdot \rmI+\frac{\sinh \lambda}{\lambda}A.\]
 Observe that the coefficients here are entire analytic functions of $\lambda^2=a^2+bc$ and hence are entire analytic functions on $\mathfrak{sl}_2(\bbC)$. If $\lambda=0$, we recover the result
-\[\rme^X=1+X \; \Leftrightarrow \; X\text{ is nilpontent}\]
-(because for $2\times 2$ matrices nilpotency is equivalent to the vanishing of the square). If $\lambda=it$ with $t\in \bbR$, the exponential becomes
-\[\rme^X=\cos t\cdot \rmI+\frac{\sin t}{t}X.\]
-This occurs if $a,b,c\in\bbR$ (which is equivalent to $X\in\mathfrak{sl}_2(\bbR)$) and $a^2+bc<0$, i.e.\ ``$X$ is in the elliptic domain''. The case $\lambda=\i t$, $t\in\bbR$ also occurs for all matrices of the form
-\[X=\begin{pmatrix}
+\[\rme^A=\rmI+A \; \Leftrightarrow \; A\text{ is nilpontent}\]
+(because for $2\times 2$ matrices nilpotency is equivalent to the vanishing of the square). If $\lambda=\i t$ with $t\in \bbR$, the exponential becomes
+\[\rme^A=\cos t\cdot \rmI+\frac{\sin t}{t}A.\]
+This occurs if $a,b,c\in\bbR$ (which is equivalent to $A\in\mathfrak{sl}_2(\bbR)$) and $a^2+bc<0$, i.e.\ ``$A$ is in the elliptic domain''. The case $\lambda=\i t$, $t\in\bbR$, also occurs for all matrices of the form
+\[A=\begin{pmatrix}
     \i\alpha&\beta\\-\wb{\beta}&-\i\alpha
 \end{pmatrix}\in\mathfrak{su}_2.\]
-In this case $t=\sqrt{\alpha^2+|\beta|^2}$, which is the Euclidean length of $(\alpha,\beta)\in\bbR\times\bbC\cong \bbR^3$. For $X=\begin{pmatrix}
+In this case $t=\sqrt{\alpha^2+|\beta|^2}$, which is the Euclidean length of $(\alpha,\beta)\in\bbR\times\bbC\cong \bbR^3$. For $A=\begin{pmatrix}
     0&-1\\1&0
 \end{pmatrix}$ we recover the usual notation
 \[R(t)=\exp \begin{pmatrix}
@@ -6758,12 +6771,12 @@ In this case $t=\sqrt{\alpha^2+|\beta|^2}$, which is the Euclidean length of $(\
 \end{pmatrix}=\begin{pmatrix}
     \cos t&-\sin t\\\sin t&\cos t
 \end{pmatrix}\in\SO_2(\bbR).\]
-If $X\in\mathfrak{sl}_2(\bbR)$, then $\rme^X$ has eigenvalues equal to $-1$ iff there is a $k\in\bbZ$ such that $X$ has eigenvalues equal to $\pm(\rmi\pi+2\pi \rmi k)$ (with both signs occurring). This implies that $X$ is diagonalizable over $\bbC$, hence $\rme^X$ is as well, so $\rme^X=-\rmI$. It follows that elements $A\in\SL_2(\bbR)$ that have eigenvalues equal to $-1$ without themselves being equal to $-\rmI$, that is, those $A\in\SL_2(\bbR)$ which are conjugate to $\left(\begin{smallmatrix}
+If $A\in\mathfrak{sl}_2(\bbR)$, then $\rme^A$ has eigenvalues equal to $-1$ iff there is a $k\in\bbZ$ such that $A$ has eigenvalues equal to $\pm(\rmi\pi+2\pi \rmi k)$ (with both signs occurring). This implies that $A$ is diagonalizable over $\bbC$, hence $\rme^A$ is as well, so $\rme^A=-\rmI$. It follows that elements $A\in\SL_2(\bbR)$ that have eigenvalues equal to $-1$ without themselves being equal to $-\rmI$, that is, those $A\in\SL_2(\bbR)$ which are conjugate to $\left(\begin{smallmatrix}
     -1&\pm 1\\0&-1
 \end{smallmatrix}\right)$, \emph{are not in the image of $\exp:\mathfrak{sl}_2(\bbR)\to \SL_2(\bbR)$} (and only they aren't).
 
 Defining the algebraic variety in $\frakg$
-\[\Sigma_1=\left\{X\in\frakg\mid \det\left((\ad_X)_\bbC -2\pi\rmi  \rmI\right)=0\right\},\]
+\[\Sigma_1=\left\{A\in\frakg\mid \det\left((\ad_A)_\bbC -2\pi\rmi  \rmI\right)=0\right\},\]
 the set of all singular points of the exponential map is $\Sigma=\bigcup_{k\in\bbC\setminus\{0\}} k\Sigma_1$. In the case of $\SL_2(\bbC)$,
 \[\Sigma_1=\left\{\begin{pmatrix}
     a&b\\c&-a
@@ -6771,8 +6784,8 @@ the set of all singular points of the exponential map is $\Sigma=\bigcup_{k\in\b
 Thus for $G=\SU_2$,
 \[\Sigma_1=\left\{\begin{pmatrix}
     \i\alpha&\beta\\-\wb{\beta}&-\i\alpha
-\end{pmatrix}\in\mathfrak{su}_2\mid a^2+|\beta|^2=\pi^2\right\},\]
-which is a sphere $\bbS^2$ in $\mathfrak{su}_2$ of Euclidean radius $\pi$, and $\exp$ maps the ball $\alpha^2+|\beta|^2<\pi^2$ diffeomorphically onto $\SU_2\setminus\{-\rmI\}$. On the other hand, for $G=\SL_2(\bbR)$, the set $\Sigma_1$ is the two-sheeted hyperboloid
+\end{pmatrix}\in\mathfrak{su}_2\mid |\alpha|^2+|\beta|^2=\pi^2\right\},\]
+which is a sphere $\bbS^2$ in $\mathfrak{su}_2$ of Euclidean radius $\pi$, and $\exp$ maps the ball $|\alpha|^2+|\beta|^2<\pi^2$ diffeomorphically onto $\SU_2\setminus\{-\rmI\}$. On the other hand, for $G=\SL_2(\bbR)$, the set $\Sigma_1$ is the two-sheeted hyperboloid
 \[\Sigma_1=\left\{\begin{pmatrix}
     a&b\\c&-a
 \end{pmatrix}\in\mathfrak{sl}_2(\bbR)\mid a^2+bc=-\pi^2\right\},\]
@@ -6795,10 +6808,10 @@ Normal subgroups (those that are invariant under conjugation) play a central rol
 
 \begin{lem}[{{\cite[Lem.~20.23]{Lee}}}]\label{lem 20.23 Lee}
     Let $G$ be a connected Lie group and $H<G$ a connected Lie subgroup. Let $\frakg$ and $\frakh$ denote their respective Lie algebras. Then $H$ is normal in $G$ iff
-    \[\rme^X \rme^Y \rme^{-X} \text{ for all }X\in \frakg,Y\in\frakh.\]
+    \[\rme^A \rme^B \rme^{-A} \text{ for all }A\in \frakg,B\in\frakh.\]
 \end{lem}
 \begin{proof}
-    Since $(\rme^X)^{-1}=\rme^{-X}$, if $H$ is normal, the property in question holds automatically. Conversely, choose open neighborhoods $V\subset \frakg$ of the origin and $U\subset G$ of the identity such that $\exp:V\to U$ is a diffeomorphism. Since the exponential map of $H$ is the restriction of that of $G$, after shrinking $V$ if necessary, we may assume that the restriction of $\exp$ to $V\cap \frakh$ is a diffeomorphism from $V\cap \frakh$ to a neighborhood $U_0$ of the identity in $H$. Shrinking $V$ still further, we may assume that $X\in V$ iff $-X\in V$. Then the assumption implies that $ghg^{-1}\in H$ whenever $g\in U$ and $h\in U_0$.
+    Since $(\rme^A)^{-1}=\rme^{-A}$, if $H$ is normal, the property in question holds automatically. Conversely, choose open neighborhoods $V\subset \frakg$ of the origin and $U\subset G$ of the identity such that $\exp:V\to U$ is a diffeomorphism. Since the exponential map of $H$ is the restriction of that of $G$, after shrinking $V$ if necessary, we may assume that the restriction of $\exp$ to $V\cap \frakh$ is a diffeomorphism from $V\cap \frakh$ to a neighborhood $U_0$ of the identity in $H$. Shrinking $V$ still further, we may assume that $A\in V$ iff $-A\in V$. Then the assumption implies that $ghg^{-1}\in H$ whenever $g\in U$ and $h\in U_0$.
 
     Since very element of $H$ can be written as a finite product $h=h_1\cdots h_m$ with $h_1,\ldots, h_m\in U_0$ (Proposition~\ref{prop 7.14 Lee}), it follows that for any $g\in U$ and $h\in H$ we have
     \[ghg^{-1}=gh_1\cdots h_m g^{-1}=(gh_1g^{-1})\cdots (gh_m g^{-1})\in H.\]
@@ -6813,19 +6826,19 @@ We can now establish a relationship between normal subgroups and ideals of the L
 \end{thm}
 \begin{proof}
     Write $\frakg$ and $\frakh$ for the two Lie algebras, treating $\frakh$ as a subspace of $\frakg$. For any $g\in G$, we have the equality \[\Adg_g\circ \exp=\exp\circ \Ad_g.\label{3179}\]
-    Suppose that $\frakh$ is an ideal. Applying this equation to $Y\in\frakh$ with $g=\exp X$, we obtain
-    \[\exp\left(\Ad_{\rme^Y}Y\right)=\Adg_{\rme^X}(\rme^Y)=\rme^X \rme^Y \rme^{-Y}.\label{17943}\]
+    Suppose that $\frakh$ is an ideal. Applying this equation to $B\in\frakh$ with $g=\exp A$, we obtain
+    \[\exp\left(\Ad_{\rme^B}B\right)=\Adg_{\rme^A}(\rme^B)=\rme^A \rme^B \rme^{-B}.\label{17943}\]
     On the other hand, we also have the equation
-    \[\Ad_{\rme^X}=\rme^{\ad_X}=\sum_{k=0}^\infty \frac{1}{k!}(\ad_X)^k.\]
-    Whenever $X\in\frakg$ and $Y\in\frakh$, we have $\ad_X Y=[X,Y]\in\frakh$, and by induction $(\ad_X)^k Y\in \frakh$ for all $k$. Since finite-dimensional vector spaces are closed, the series converges to an element of $\frakh$ and thus $\Ad_{\rme^X}Y\in\frakh$, and (\ref{17943}) implies that $\rme^X \rme^Y \rme^{-X}\in \exp (\frakh)\subset H $. By Lemma~\ref{lem 20.23 Lee}, $H$ is normal.
+    \[\Ad_{\rme^A}=\rme^{\ad_A}=\sum_{k=0}^\infty \frac{1}{k!}(\ad_A)^k.\]
+    Whenever $A\in\frakg$ and $B\in\frakh$, we have $\ad_A B=[A,B]\in\frakh$, and by induction $(\ad_A)^k B\in \frakh$ for all $k$. Since finite-dimensional vector spaces are closed, the series converges to an element of $\frakh$ and thus $\Ad_{\rme^A}B\in\frakh$, and (\ref{17943}) implies that $\rme^A \rme^B \rme^{-A}\in \exp (\frakh)\subset H $. By Lemma~\ref{lem 20.23 Lee}, $H$ is normal.
 
-    Conversely, suppose $H$ is normal. Given $X\in\frakg$ and $Y\in\frakh$, note that (\ref{3179}) applied to $sY$ with $g=\rme^{tX}$ implies
-    \[\exp\left(\Ad_{\rme^{tX}} sY\right)=\rme^{tX}\rme^{sY}\rme^{-tX}\in H.\]
-    Since $\Ad_{\rme^{tX}}$ is linear, it follows that
-    \[\exp\left(s\Ad_{\rme^{tX}}Y\right)=\exp\left(\Ad_{\rme^{tX}}sY\right),\]
-    which we have just shown to be in $H$ for all $s$, so $\Ad_{\rme^{tX}}Y\in\frakh$ by Proposition~\ref{prop 20.9 Lee}. Since
-    \[\restr{\frac{\dd}{\dd t}}{t=0}\Ad_{\rme^{tX}}Y=\ad_X Y=[X,Y],\]
-    we conclude that $[X,Y]\in\frakh$ and $\frakh$ is an ideal.
+    Conversely, suppose $H$ is normal. Given $A\in\frakg$ and $B\in\frakh$, note that (\ref{3179}) applied to $sB$ with $g=\rme^{tA}$ implies
+    \[\exp\left(\Ad_{\rme^{tA}} sB\right)=\rme^{tA}\rme^{sB}\rme^{-tA}\in H.\]
+    Since $\Ad_{\rme^{tA}}$ is linear, it follows that
+    \[\exp\left(s\Ad_{\rme^{tA}}B\right)=\exp\left(\Ad_{\rme^{tA}}sB\right),\]
+    which we have just shown to be in $H$ for all $s$, so $\Ad_{\rme^{tA}}B\in\frakh$ by Proposition~\ref{prop 20.9 Lee}. Since
+    \[\restr{\frac{\dd}{\dd t}}{t=0}\Ad_{\rme^{tA}}B=\ad_A B=[A,B],\]
+    we conclude that $[A,B]\in\frakh$ and $\frakh$ is an ideal.
 \end{proof}
 
 
@@ -6980,19 +6993,19 @@ Here we provide a slightly longer proof of Theorem~\ref{thm differential of exp}
 \end{proof}
 
 \begin{proof}[Second proof of Theorem~\ref{thm differential of exp}]
-    Now we apply formula (\ref{2702}) to $s\mapsto R_{\rme^{s(X+\epsilon Y)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(X+\epsilon Y)_L$ on $G$. Hence:
+    Now we apply formula (\ref{2702}) to $s\mapsto R_{\rme^{s(A+\epsilon B)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(A+\epsilon B)_L$ on $G$. Hence:
     \begin{multline}
-        \exp_{\ast X}Y=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(X+\epsilon Y)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}R_{\exp(X+\epsilon Y)}(e)=\\
-        =\int_0^1\T_{\rme^{sX}}R_{\rme^{(1-s)X}}\cdot Y_L\left(\rme^{sX}\right)\dd s=
-        \int_0^1 \T_e R_{\rme^X}\circ \T_{\rme^{sX}}R_{\rme^{-sX}}\circ \T_e L_{\rme^{sX}}\cdot Y \dd s=\\
-        =\T_e R_{\rme^X}\circ\int_0^1 \T_e\left(R_{\rme^{-sX}}\circ L_{\rme^{sX}}\right)\dd s \cdot Y=
-        \T_e R_{\rme^X}\circ \int_0^1 \Ad_{\rme^{sX}}\dd s\cdot Y=\\
-        =\T_eR_{\rme^X}\circ \int_0^1 \rme^{s\ad_X}\dd s\cdot Y.
+        \exp_{\ast A}B=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(A+\epsilon B)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}R_{\exp(A+\epsilon B)}(e)=\\
+        =\int_0^1\T_{\rme^{sA}}R_{\rme^{(1-s)A}}\cdot B_L\left(\rme^{sA}\right)\dd s=
+        \int_0^1 \T_e R_{\rme^A}\circ \T_{\rme^{sA}}R_{\rme^{-sA}}\circ \T_e L_{\rme^{sA}}\cdot B \dd s=\\
+        =\T_e R_{\rme^A}\circ\int_0^1 \T_e\left(R_{\rme^{-sA}}\circ L_{\rme^{sA}}\right)\dd s \cdot B=
+        \T_e R_{\rme^A}\circ \int_0^1 \Ad_{\rme^{sA}}\dd s\cdot B=\\
+        =\T_eR_{\rme^A}\circ \int_0^1 \rme^{s\ad_A}\dd s\cdot B.
     \end{multline}
     In the last equality we used Theorem~\ref{thm 1.5.2 DK}. This proves the first identity. The second one follows from:
     \begin{multline}
-        \T_e R_{\rme^X}^{-1}\circ \T_eL_{\rme^X}\circ \int_0^1 \rme^{-s\ad_X}\dd s=\\
-        =\Ad_{\rme^X}\circ\int_0^1 \rme^{-s\ad_X}\dd s=\int_0^1 \rme^{(1-s)\ad_X}\dd s=\int_0^1 \rme^{u\ad_X}\dd u,
+        \T_e R_{\rme^A}^{-1}\circ \T_eL_{\rme^A}\circ \int_0^1 \rme^{-s\ad_A}\dd s=\\
+        =\Ad_{\rme^A}\circ\int_0^1 \rme^{-s\ad_A}\dd s=\int_0^1 \rme^{(1-s)\ad_A}\dd s=\int_0^1 \rme^{u\ad_A}\dd u,
     \end{multline}
     by means of the substitution $1-s=u$.
 \end{proof}
@@ -7092,6 +7105,10 @@ This \sect\ is devoted to the Dynkin/\gls{bch} formulas and their deep implicati
 \end{center}
 Another fundamental result in this \sect\ is Lie's Third Fundamental Theorem~\ref{thm 1.14.3 DK global Lie's third}, which states that every finite-dimensional Lie algebra corresponds to a unique simply-connected Lie group. We prove only a local version of this theorem.
 
+
+
+
+
 \subsection{Product in logarithmic coordinates}\label{sec: product in log coordinates}
 
 The exponential map introduces a canonical (logarithmic) coordinate system in a neighborhood of the identity of a Lie group. This implies that the group structure, namely the multiplication map (the inversion map is trivial since $\left(\rme^A\right)^{-1}=\rme^{-A}$), can be expressed in these local coordinates. Namely let us introduce the multiplication map in logarithmic coordinates:
@@ -7100,8 +7117,8 @@ As we will show, $\mu$ has the -- perhaps unsurprising but definitely not obviou
 
 We will later show that every finite-dimensional real Lie algebra is the Lie algebra of some Lie group. Therefore it will be worthwhile to give an independent definition of $\mu(A,B)$ on an abstract Lie algebra. This is a bit tricky because in the absence of a Lie group there is no exponential map. The only object we have access to in the Lie algebra is a Lie bracket, or the adjoint operator $\ad$. Therefore let us proceed in the following roundabout way.
 
-For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $A\in \frakg$ such that the operator $f(\ad_A)=(\rme^{\ad_A}-\rmI)(\ad_A)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule,
-\[A\to \phi(\ad_A)=(f(\ad_A))^{-1}=\frac{\ad_A}{\rme^{\ad_A}-\rmI}\]
+For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $A\in \frakg$ such that the operator $f(\ad_A)=(\rme^{\ad_A}-\rmI)(\ad_A)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule, the map
+\[A^R:A\mapsto \phi(\ad_A)\coloneqq (f(\ad_A))^{-1}=\frac{\ad_A}{\rme^{\ad_A}-\rmI}\label{eq 1.6.1 DK}\]
 is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylor series are the Bernoulli numbers $B_k$). Let $\frakg_e^2$ be the set of $(A,B)\in \frakg\times\frakg_e$ such that the equation
 \[\dot Z(t)=\phi(\ad_{Z(t)}),\quad Z(0)=B,\label{eq Z(t)}\]
 has a solution $Z(t)$ defined for all $t\in [0,1]$. We now define
@@ -7110,24 +7127,63 @@ and claim that this formula defines an analytic mapping which matches the one ob
 
 
 \begin{thm}[{{\cite[Thm.~1.6.1]{DK}}}]
-    The set $\frakg_e^2$ is an open neighborhood of $(0,0)$ in $\frakg^2$ and the map $\mu:\frakg_e^2\to \frakg$ defined above is real-analytic. If $\frakg$ is the Lie algebra of a Lie group $G$, with exponential mapping $\rme^{\_}=\exp:\frakg\to G$, then
-    \[\rme^A \rme^B=\rme^{\mu(A,B)}\quad ((A,B)\in\frakg_e^2).\]
-    If $\frakg$ is a complex vector space and $\ad:\frakg^2\to \frakg$ is complex bilinear, then $\mu$ is complex-analytic.
+    The set $\frakg_e^2$ is an open neighborhood of $(0,0)$ in $\frakg^2$ and the map $\mu:\frakg_e^2\to \frakg$ defined above is real-analytic. If $\frakg$ is the Lie algebra of a Lie group $G$, with exponential map $\exp:\frakg\to G$, then
+    \[\rme^A \rme^B=\rme^{\mu(A,B)}\quad ((A,B)\in\frakg_e^2).\label{eq 1.6.4 DK}\]
+    If $\frakg$ is a complex vector space and $\ad:\frakg^2\to \frakg$ is $\bbC$-bilinear, then $\mu$ is complex-analytic.
 \end{thm}
 \begin{proof}
-    The fact that $\frakg_e^2$ is open and $\mu$ is real- (or complex-)analytic on $\frakg_e^2$ follows from the fact that the map $(A,Z)\mapsto (f(\ad_Z))^{-1}(A)$ is real-, or complex-, analytic: $\frakg\times\frakg_e\to \frakg$, respectively, combined with the analytic dependence on initial values and parameters of solutions of analytic vector fields depending analytically on parameters. Now the formula for the differential of $\exp$ combined with the equation for $Z(t)$ gives
-    \[\partial_t \rme^{Z(t)}=(\T_{Z(t)}\exp )\dot Z(t)=\left(\T_e R_{\rme^{Z(t)}}\right)(A)=A_R\left(\rme^{Z(t)}\right).\]
+    The fact that $\frakg_e^2$ is open and $\mu$ is real- (or complex-)analytic on $\frakg_e^2$ follows from the fact that the map $(A,Z)\mapsto (f(\ad_Z))^{-1}(A)$ is real-, or complex-, analytic: $\frakg\times\frakg_e\to \frakg$, respectively, combined with the analytic dependence on initial values and parameters of the flows of analytic vector fields depending analytically on parameters. Now the formula for the differential of $\exp$ combined with the equation for $Z(t)$ gives
+    \[\partial_t \rme^{Z(t)}=(\T_{Z(t)}\exp )\dot Z(t)=\left(\T_e R_{\rme^{Z(t)}}\right)(A)=A_R\left(\rme^{Z(t)}\right).\label{eq 1.6.5 DK}\]
     In view of our previous result showing that the flow of a right-invariant vector field is performed by left translations, we have
     \[\rme^{Z(t)}=\rme^{tA}\rme^{Z(0)}=\rme^{tA}\rme^B,\label{8284}\]
     for all $t$ in the interval in the definition of $Z(t)$. Taking $t=1$ gives the result.
 \end{proof}
 
-\begin{rem}
-    This result can be used to show that the differentiable structure of every $C^2$ Lie group contains a real-analytic Lie group structure. Specifically such an atlas consists of the left translations $L_g U_0$ of a neighborhood $U_0$ on which $\exp$ is invertible and $\mu$ is defined, and the chart maps $h\mapsto \ln(g^{-1}h)$ (that is, $\ln\circ L_g^{-1}$). Moreover, this structure is unique in the sense that any other analytic structure that is $C^1$-diffeomorphic to the given one is actually analytically diffeomorphic to it. For a full proof see \cite[Thm.~1.6.3, Prop.~1.6.4]{DK}. Note that in the case of complex Lie groups analyticity is automatic since they're complex manifolds by definition. Nevertheless, the above theorem shows the nontrivial fact that the complex analytic structure can also be recovered from the complex Lie algebra.
-\end{rem}
+We can now use this result to show that every $C^2$-differentiable Lie group has a unique real-analytic structure compatible with its Lie group structure. To show this, take open $0$-neighborhoods $U$ and $U_0$ in $\frakg$, and an $e$-neighborhood $V\subset G$ such that $\exp:U\to V$ is a diffeomorphism, and for all $A,B,C\in U_0$:
+\[(A,-B)\in\frakg_e^2,\quad (\mu(A,-B),C)\in\frakg_e^2,\quad \mu(\mu(A,-B),C)\in U.\]
+The existence of such $U,U_0,V$ follows from the invertibility of $\exp_{\ast 0}=\id_\frakg$ and continuity of $\mu$ at $(0,0)$ by the \gls{inmt}. For each $g\in G$, we define a translated diffeomorphism
+\[V_0^g\coloneqq L_g(\exp U_0),\quad \kappa^g(h)\coloneqq \ln(g^{-1}h)\in U_0,\quad h\in V^g_0.\]
+
+\begin{thm}[{{\cite[Thm.~1.6.3]{DK}}}]\label{thm 1.6.3 DK}
+    The collection of \emph{logarithmic charts} $\{(V_0^g,\kappa^g)\}_{g\in G}$ forms a real-analytic atlas for $G$, making it into a real-analytic Lie group $G_{\mathrm{an}}$ such that $\id_G$ is a $C^2$-diffeomorphism between $G$ and $G_{\mathrm{an}}$. Furthermore, if $\frakg$ is a complex Lie algebra, then this atlas is complex-analytic. It makes $G$ into a complex-analytic Lie group if in addition $\Ad_g$ is complex-linear for all $g\in G$, i.e., an element of $\GL_\bbC(\frakg)$.
+\end{thm}
+\begin{proof}
+    Observe that (\ref{eq 1.5.1 DK}) shows that $A\to \exp_{\ast A}$ is $C^1$-differentiable, hence $\exp$ is a $C^2$. It follows that $\kappa^g$ is a $C^2$-diffeomorphism $V^g_0\to U_0$ for each $g\in G$. Now suppose that $V_0^g\cap V^h_0\neq \varnothing$, that is:
+    \[g \rme^{A_0}=h\rme^{B_0}\quad \text{ for some }A_0,B_0\in U_0.\]
+    Then $B=\kappa^h\circ (\kappa^g)^{-1}(A)$ means that $g\rme^A=h\rme^B$, or $\rme^Y=\rme^{B_0}\rme^{-A_0}\rme^A$, which is equivalent to:
+    \[B=\mu(\mu(B_0,-A_0),A).\]
+    This proves the desired real- or complex-analyticity, respectively, of the atlas. To show the analyticity of the group structure, write:
+    \[g \rme^A (h\rme^B)^{-1}=g\rme^A\rme^{-B}h^{-1}=(gh^{-1})h\exp(\mu(A,-B))h^{-1}=gh^{-1}\exp(\Ad_h\mu(A,-B)).\]
+    This shows that the map 
+    \[(A,B)\mapsto \kappa^{gh^{-1}}\left((\kappa^g)^{-1}(A)\left((\kappa^h)^{-1}(B)\right)^{-1}\right)=\Ad_h\mu(A,-B)\]
+    is real- or complex-analytic, respectively. The proof is complete because the real or complex-analyticity, respectively, of $(g,h)\mapsto gh^{-1}$ implies that of both the multiplication and the inversion maps separately.
+\end{proof}
 
 \begin{rem}
-    As we will see throughout the rest of this \sect, the fundamental meaning of this result is that the entire structure of the Lie group, only up to a part of its global topology (namely the fundamental group), is fully encoded in its Lie algebra. This culminates with the Cartan-Lie Theorem~\ref{thm 1.14.3 DK global Lie's third} showing that each Lie algebra corresponds to a unique connected and simply connected Lie group.
+    Note that in the case of complex Lie groups analyticity is automatic since they're complex manifolds by definition. Nevertheless, the above theorem shows the nontrivial fact that the complex analytic structure can also be recovered from the complex Lie algebra. If $G$ is a complex Lie group, then $\frakg=\T_e G$ is a complex vector space, $\Ad_g$ is $\bbC$-linear for all $g\in G$, and $\Ad:G\to \GL_\bbC(\frakg)$ is complex analytic, so finally $\ad=\Ad_{\ast e}$ is $\bbC$-bilinear. The second part of the theorem provides a converse to these observations.
+\end{rem}
+
+\begin{prop}[{{\cite[Prop.~1.9.4]{DK}}}]
+    If the Lie algebra $\frakg$ of the Lie group $G$ is a complex Lie algebra, then $G_0$, provided with the logarithmic charts, is a complex Lie group. (Conversely, it is obvious that if $G_0$ is a complex Lie group, then $\ad$ is $\bbC$-bilinear.)
+\end{prop}
+\begin{proof}
+    If $A\in\frakg$ and $\ad_A:\frakg\to \frakg$ is $\bbC$-linear, then $\Ad_{\rme^A}=\rme^{\ad_A}:\frakg\to\frakg$ is $\bbC$-linear. Therefore, if $\ad_A:\frakg\to\frakg$ is $\bbC$-linear for each $A\in\frakg$, then $\Ad_g:\frakg\to\frakg$ is $\bbC$-linear for each $g\in G$ in the subgroup generated by $\exp(\frakg)$, which is exactly $G_0$. Now we apply the last assertion of Theorem~\ref{thm 1.6.3 DK} to the group $G_0$.
+\end{proof}
+
+This proposition implies that if $\frakg=\T_e G$ is a complex Lie algebra, then $\Ad_g$ is automatically $\bbC$-linear for all $g\in G_0$. Thus, the last condition of Theorem~\ref{thm 1.6.3 DK} is really only a condition on the action of $G\slash G_0$, the discrete group of connected components of $G$, on the space of complex structures on $\frakg$.
+
+The final proposition expresses the \emph{uniqueness} of the analytic structures of Lie groups with a given Lie algebra.
+
+\begin{prop}[{{\cite[Prop.~1.6.4]{DK}}}]
+    If $G$ is a real- or complex-analytic Lie group, then the exponential map is real- or complex-analytic, respectively. If $G$ is provided with another structure of a real- or complex-analytic Lie group $\wt G$ such that the identity maps $\id:G\to \wt{G}$ and $\wt{\id}$ are differentiable (at $e$), then $\id:G\to \wt{G}$ is a real- or complex-analytic diffeomorphism, respectively.
+\end{prop}
+\begin{proof}
+    The right-invariant vector field $A_R$ is a real- or complex-analytic vector field on $G$, because in logarithmic coordinates it is given by $A^R$ from (\ref{eq Z(t)}), cf.\ (\ref{eq 1.6.5 DK}). It depends in a linear or $\bbC$-linear way on $A$. Further, $\rme^A$ is the solution after time $1$ of $A^R$ starting at $e\in G$. In view of the theorem about analytic dependence on parameters of the flows of analytic vector fields depending analytically on the parameters, the analyticity of the exponential map follows. For the second statement, we observe that the assumption ensures that $G$ and $\wt G$ have the same Lie algebra.
+\end{proof}
+
+
+\begin{rem}
+    As we will see throughout the rest of this \sect, the fundamental meaning of this result is that the entire structure of the Lie group, only up to a part of its global topology (namely the fundamental group), is fully encoded in its Lie algebra. This culminates in the Cartan-Lie Theorem~\ref{thm 1.14.3 DK global Lie's third} showing that each Lie algebra corresponds to a unique connected and simply connected Lie group.
 \end{rem}
 
 
@@ -7318,7 +7374,7 @@ We summarize all results about closed subgroups of Lie groups in the following C
     Further, if $\Phi$ is a continuous isomorphism of groups, then it is an isomorphism of Lie groups (i.e.~both $\Phi$ and $\Phi^{-1}$ are analytic).
 \end{cor}
 \begin{proof}
-    Write $F=\mathrm{graph}(\Phi)$. Since $\Phi$ is a homomorphism, $F$ is a subgroup of $G\times H$, and because it is closed, $F$ is a Lie subgroup in view of the Closed Subgroup Theorem. Let $\pi_1,\pi_2$ be the projections $F\to G$ and $F\to H$, respectively. Since the dimnsion of $\T_f\pi_1$ is constant (as a function of $f\in F$), the mapping $\pi_1$ is, locally in $F$, a fibration with fiber dimension equal to the dimension of $\ker \T_f\pi_1$. However, $\pi_1$ is invertible, so the fibers consist of single points and we conclude that $\pi_1$ is an immersion.
+    Write $F=\mathrm{graph}(\Phi)$. Since $\Phi$ is a homomorphism, $F$ is a subgroup of $G\times H$, and because it is closed, $F$ is a Lie subgroup in view of the Closed Subgroup Theorem. Let $\pi_1,\pi_2$ be the projections $F\to G$ and $F\to H$, respectively. Since the dimension of $\T_f\pi_1$ is constant (as a function of $f\in F$), the mapping $\pi_1$ is, locally in $F$, a fibration with fiber dimension equal to the dimension of $\ker \T_f\pi_1$. However, $\pi_1$ is invertible, so the fibers consist of single points and we conclude that $\pi_1$ is an immersion.
 
     Because $\Phi\circ L_g=L_{\Phi(g)}\circ\Phi$ for any $g\in G$, it is sufficient to prove analyticity for $\Phi$ is a neighborhood of $e$ in $G$, or in $G_0$, so we may assume that $G$ is connected. It follows that $G\times H$, and therefore $F$, is a countable union of compact subsets, because $F$ is closed in $G\times H$.
 
@@ -7696,12 +7752,12 @@ We can now prove a slightly relaxed version of the Closed Subgroup Theorem~\ref{
 The central result of this \subsect\ is Yamabe's theorem, characterizing analytic subgroups of a Lie group by the purely topological property of being path-connected. Groups which are not path-connected can then be dealt with using the concept of initial (weakly embedded) subgroups. As a result, all subgroups of Lie groups are either weakly embedded (if they're not closed) or embedded (if they're closed). This theorem is crucial in many applications, and we will use it for a key result in the theory of connections on fiber bundles.
 
 
-\begin{thm}[Yamabe {{\cite[Thm.~9.6.1]{HN}}}]\label{thm Yamabe}\index{Theorem!Yamabe}
+\begin{thm}[Yamabe (1950) {{\cite[Thm.~9.6.1]{HN}}}]\label{thm Yamabe}\index{Theorem!Yamabe}
     A subgroup $H$ of a connected Lie group $G$ is path-connected iff it is an analytic subgroup, i.e.~it is of the form $\<\exp_G\frakh\>$ for the Lie subalgebra $\frakh$ of $\Lief G$ determined by
     \[\frakh=\{X\in\Lief G: \exp_G(\bbR\cdot A)\subset H\}.\]
 \end{thm}
 \begin{proof}
-    We will not present the proof of the strong version of the theorem here. Instead we will prove it under the additional assumption (following \cite[Lem.~1.7.10]{RS2}) that $H$ is \emph{$C^\infty$-pathwise connected}, meaning that any two points in $H$ can be connected by a path inside $H$ that is smooth as a path in $G$. Consider the set
+    We will not present the proof of the strong version of the theorem here. Instead we will prove it under the additional assumption (following \cite[Lem.~1.7.10]{RS2}) that $H$ is \emph{$C^\infty$-pathwise connected}, meaning that any two points in $H$ can be connected by a path inside $H$ that is smooth as a path in $G$.\footnote{For real-analytic paths the theorem was first proved by Freudenthal (1941).} Consider the set
     \[\frakh=\{\dot h(0)\in \T_eG: h\in C^\infty(\bbR,G),h(\bbR)\subset H,h(0)=e\}.\]
     It is easy to check that this is a Lie subalgebra of $\frakg$. Let $\wt H$ be the corresponding connected Lie subgroup of $G$ provided by the Analytic Subgroup Theorem~\ref{thm analytic subgroup}. As shown in the proof of that theorem, $\wt H$ is the maximal integral submanifold through $e$ of the distribution $D^\frakh$ generated by $\frakh$. Now, let $h(t)$ be a smooth curve in $G$ such that $h(\bbR)\subset H$ and $h(0)=e$. Clearly,
     \[L_{h(t)\ast}^{-1}\dot h(t)=\restr{\frac{\dd}{\dd s}}{s=0}h(t)^{-1}h(t+s)\in\frakh.\]
