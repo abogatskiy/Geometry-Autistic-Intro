@@ -462,7 +462,7 @@ Since we already know that $\GL_n(\bbK)$ is a smooth manifold, we can use the Le
     \]
     It is isometric with respect to the quadratic forms $x_0^2-x_1^2-x_2^2-x_3^2$ on $\bbR^4$ and $A\mapsto \det A$ on $S_2(\bbC)$. For every $a\in\Mat_2(\bbC)$, the assignment $A\mapsto aAa^\dagger$ defines a linear mapping of $S_2(\bbC)$ and hence a linear mapping $\phi(a)$ of $\bbR^4$ given by
     \[\phi(a)x=\lambda^{-1}\left(a\lambda(x)a^\dagger\right).\]
-    The assignment $a\mapsto \phi(a)$, in turn, defines a map $\phi:\Mat_2(\bbC)\to \Mat_4(\bbR)$. This map is real homogenous of degree 2, hence smppth, and satisfies $\phi(ab)=\phi(a)\phi(b)$. Since for every $a\in\SL_2(\bbC)$ we have $\det aAa^\dagger =\det A$, $\phi$ restricts to a Lie group homomorphism $\phi:\SL_2(\bbC)\to \Or_{1,3}$. By similar arguments as in the last example, one finds $\ker\phi=\{\pm \rmI\}$ (which is the center of $\SL_2(\bbC)$), $\im\phi=\SO^+_{1,3}$ (the identity component of $\SO_{1,3}$, which is the \emph{proper orthochronous Lorentz group} that preserves both spatial and temporal orientations) and that $\phi$ is a covering homomorphism. It is a universal covering because $\SL_2(\bbC)$ is simply connected. To see this, one may use the polar decomposition which yields a diffeomorphism $\U_2\times S_2(\bbC)\to \GL_2(\bbC)$, given by $(a,A)\mapsto a\rme^A$. Restriction of this diffeomorphism to the submanifold $\SU_2$ of $\U_2$ times the subspace of traceless elements of $S_2(\bbC)$ induces a diffeomorphism $\bbS^3\times \bbR^3\to \SL_2(\bbC)$. Hence, $\phi$ is the universal covering homomorphism and $\SL_2(\bbC)$ is the universal covering group of $\SO^+_{1,3}$.
+    The assignment $a\mapsto \phi(a)$, in turn, defines a map $\phi:\Mat_2(\bbC)\to \Mat_4(\bbR)$. This map is real homogenous of degree 2, hence smooth, and satisfies $\phi(ab)=\phi(a)\phi(b)$. Since for every $a\in\SL_2(\bbC)$ we have $\det aAa^\dagger =\det A$, $\phi$ restricts to a Lie group homomorphism $\phi:\SL_2(\bbC)\to \Or_{1,3}$. By similar arguments as in the last example, one finds $\ker\phi=\{\pm \rmI\}$ (which is the center of $\SL_2(\bbC)$), $\im\phi=\SO^+_{1,3}$ (the identity component of $\SO_{1,3}$, which is the \emph{proper orthochronous Lorentz group} that preserves both spatial and temporal orientations) and that $\phi$ is a covering homomorphism. It is a universal covering because $\SL_2(\bbC)$ is simply connected. To see this, one may use the polar decomposition which yields a diffeomorphism $\U_2\times S_2(\bbC)\to \GL_2(\bbC)$, given by $(a,A)\mapsto a\rme^A$. Restriction of this diffeomorphism to the submanifold $\SU_2$ of $\U_2$ times the subspace of traceless elements of $S_2(\bbC)$ induces a diffeomorphism $\bbS^3\times \bbR^3\to \SL_2(\bbC)$. Hence, $\phi$ is the universal covering homomorphism and $\SL_2(\bbC)$ is the universal covering group of $\SO^+_{1,3}$.
 \end{example}
 
 As we have just discovered, the universal covering group of $\SO_3$ is $\SU_2\cong\Sp_1$. It is also called the spin group $\Spin_3$. However, not every universal covering group of a classical group is a classical group itself. The higher-dimensional spin groups, for instance, are not isomorphic to classical groups except for a few ``accidental isomorphisms''.
@@ -909,7 +909,7 @@ This indicates the existence of a natural antisymmetric bilinear form $\T_e G\ti
     \[b(\bf{x},b(\bf{y},\bf{z}))+b(\bf{y},b(\bf{z},\bf{x}))+b(\bf{z},b(\bf{x},\bf{y}))=0.\]
 \end{lem}
 \begin{proof}
-    We antisymmetrize the equation from Lemma~\ref{3975} with respect to permutations of all three arguments. First we notice that the antisymmetrization of $\gamma(\bf{x},\bf{y})$ will be the same as that of $\gamma(\bf{y},\bf{z})$ since they are related to each other by a cyclic (and thus even) permutation. Moreover, the antisymmetizations of both $\gamma(\bf{x}+\bf{y},\bf{z})$ and $\gamma(\bf{x},\bf{y}+\bf{z})$ vanish since both of these are symmetric under a transposition of two of the arguments, and the only function that is both symmetric and antisymmetric is zero.
+    We antisymmetrize the equation from Lemma~\ref{3975} with respect to permutations of all three arguments. First we notice that the antisymmetrization of $\gamma(\bf{x},\bf{y})$ will be the same as that of $\gamma(\bf{y},\bf{z})$ since they are related to each other by a cyclic (and thus even) permutation. Moreover, the antisymmetrizations of both $\gamma(\bf{x}+\bf{y},\bf{z})$ and $\gamma(\bf{x},\bf{y}+\bf{z})$ vanish since both of these are symmetric under a transposition of two of the arguments, and the only function that is both symmetric and antisymmetric is zero.
 
     What remains is 
     \[\Alt \beta(\beta(\bf{x},\bf{y}),\bf{z})=\Alt \beta(\bf{x},\beta(\bf{y},\bf{z})),\]
@@ -1123,7 +1123,7 @@ We are finally ready to show, once again, that $\ad_A B$ indeed satisfies the pr
 
 \begin{example}[Lie algebras of $\SO_3(\bbR)$ and $\SU_2$]\label{example Lie algebras of so3 and su2}
     Continuing Example \ref{example su2 and so3}, 
-    the Lie algebra of $\SO_3(\bbR)$ can clearly be identitifed with the Lie algebra of antisymmetric $3\times 3$ real matrices. Moreover, it can be identified with the Lie algebra $(\bbR^3,\times)$, where $\times$ is the vector product, via the isomorphism $\omega\mapsto A_{\omega}$ (see formula (\ref{eq R3->so(3) hom})). 
+    the Lie algebra of $\SO_3(\bbR)$ can clearly be identified with the Lie algebra of antisymmetric $3\times 3$ real matrices. Moreover, it can be identified with the Lie algebra $(\bbR^3,\times)$, where $\times$ is the vector product, via the isomorphism $\omega\mapsto A_{\omega}$ (see formula (\ref{eq R3->so(3) hom})). 
     
     The Lie algebra of $\SU_2$, denoted $\fraksu_2$, can be identified with the space
     \[\fraksu_2=\left\{
@@ -1386,7 +1386,7 @@ Recall that an ideal is a subspace that is stable under only inner derivations o
 Now we are ready to classify all 3-dimensional Lie algebras. Let $s=\dim[\frakg,\frakg]$.
 \begin{itemize}
     \item If $s=0$, then $\frakg$ is abelian.
-    \item If $s=1$, we can assume that $[\frakg,\frakg]$ is generated by $z$. We distinguish two cases. If $z$ is non-central, then $\frakg$ is the direct sum of the non-abelian 2-dimensional algebra $M$ constructed above, and of the 1-dimensional algebra. If $z$ is central, ther exist $x,y$ such that $[x,y]=z$. Clearly $x,y,z$ must be linearly independent, so the algebra is isomorphic to the algebra of strictly upper-triangular matrices $\frakn_3(\bbK)$, which is the Heisenberg algebra $\Heis_3(\bbK)$.
+    \item If $s=1$, we can assume that $[\frakg,\frakg]$ is generated by $z$. We distinguish two cases. If $z$ is non-central, then $\frakg$ is the direct sum of the non-abelian 2-dimensional algebra $M$ constructed above, and of the 1-dimensional algebra. If $z$ is central, there exist $x,y$ such that $[x,y]=z$. Clearly $x,y,z$ must be linearly independent, so the algebra is isomorphic to the algebra of strictly upper-triangular matrices $\frakn_3(\bbK)$, which is the Heisenberg algebra $\Heis_3(\bbK)$.
     \item If $s=2$, then $[\frakg,\frakg]$ must be abelian: if it isn't, by Lemma~\ref{lem 2} it must be a direct summand, and thus $s=1$, a contradiction. Thus we may assume that $[\frakg,\frakg]$ is generated by $y,z$ with $[y,z]=0$. Let $x\in \frakg\setminus[\frakg,\frakg]$. Then
     \[[x,y]=ay+bz,\quad [x,z]=cy+dz\]
     for some $a,b,c,d\in\bbK$ such that $ad-bc\neq 0$. Clearly one can replace the matrix $\begin{pmatrix}
@@ -1810,7 +1810,7 @@ So far we have only given a purely topological (or geometric in the smooth case)
     \item The collection $\{(U_\alpha,\chi_\alpha)\}$ is called a \emph{\gls{fb} atlas} for $E\overset{\pi}{\to}M$. Two bundle atlases are \emph{equivalent} if their union is still a bundle atlas. A \emph{bundle structure} on $E$ is an equivalence class of bundle atlases, or, alternatively, a \emph{maximal atlas} given by the union of all atlases belonging to an equivalence class.
     
     \item For any point $(m,f)\in U_{\alpha\beta}\times F$, the transition maps in this atlas have the form \[\chi_\beta\circ\chi_\alpha^{-1} (m,f)=(m, t_{\beta\alpha}(m,f)),\label{eq transition functions}\], 
-    where for every fixed $m\in M$, the map $t_{\beta\alpha}(m,\_):F\to F$ is a diffeomorphism. One can think of $t_{\beta\alpha}$ as a function on $U_{\alpha\beta}$ that takes values in the group $\Diff(F)$ of all diffeomorphisms of $F$, so $t_{\beta\alpha}$ becomes a map $t_{\beta\alpha}:U_{\alpha\beta}\to \Diff(F)$.\footnote{As we will see in \S\ref{sec: Diff groups}, the group $\Diff(F)$ can be given the structure of an infinite-dimensional Lie group, modeled on the space $\fX(F)$ of vector fields. Unfortunately $t_{\alpha\beta}$ are not always automatically smooth: they are smooth iff their values are contained in the left coset of the open and closed subgroup $\Diff_c(F)$ of diffeomorphisms with compact support. This is in principle true only for bundles which are ``trivial near fiber-wise infinity'' or have ``discrete structure group near diberwise infinity'' (see P.W.~Michor ``Gauge theory for diffeomorphism groups'', 1988). We shall always assume that this is true.}
+    where for every fixed $m\in M$, the map $t_{\beta\alpha}(m,\_):F\to F$ is a diffeomorphism. One can think of $t_{\beta\alpha}$ as a function on $U_{\alpha\beta}$ that takes values in the group $\Diff(F)$ of all diffeomorphisms of $F$, so $t_{\beta\alpha}$ becomes a map $t_{\beta\alpha}:U_{\alpha\beta}\to \Diff(F)$.\footnote{As we will see in \S\ref{sec: Diff groups}, the group $\Diff(F)$ can be given the structure of an infinite-dimensional Lie group, modeled on the space $\fX(F)$ of vector fields. Unfortunately $t_{\alpha\beta}$ are not always automatically smooth: they are smooth iff their values are contained in the left coset of the open and closed subgroup $\Diff_c(F)$ of diffeomorphisms with compact support. This is in principle true only for bundles which are ``trivial near fiber-wise infinity'' or have ``discrete structure group near fiberwise infinity'' (see P.W.~Michor ``Gauge theory for diffeomorphism groups'', 1988). We shall always assume that this is true.}
     These $\Diff(F)$-valued functions are called \emph{bundle transition functions}. They are also sometimes called \emph{clutching functions}, especially when $M$ is a sphere.\index{Clutching functions}\index{Transition functions} We will usually assume that $\Diff(F)$ acts on the typical fiber from the \emph{left} (one can pass to a right action by acting via $t_{\alpha\beta}^{-1}$ instead).
     
     \item If the bundle structure of $E$ contains a bundle atlas whose transition functions take values in a Lie subgroup $G<\Diff(F)$,\footnote{We will formalize the concept of Lie subgroups in \Sect~\ref{sec: Lie theory iii}. For now all we need to know is that Lie subgroups are weakly embedded, which means that restricting a smooth map into $\Diff(F)$ whose image lies in $G<\Diff(F)$ in its range produces a smooth map into $G$. In fact, all subgroups of a Lie group are Lie subgroups.} then such an atlas is called a \emph{$G$-atlas} for $E$. Two $G$-atlases are called \emph{$G$-equivalent} if their union is still a $G$-atlas. A $G$-equivalence class of $G$-atlases, or, alternatively, the maximal $G$-atlas equal to their union, is called a \emph{$G$-structure}, denoted $\calG$.\index{$G$-structure} If a $G$-structure is fixed on $E$, we say that $G$ is the \emph{structure group} of the bundle. \index{Structure group} The tuple $(E\overset{\pi}{\to}M,G\acts F,\calG)$ is called a \emph{$G$-bundle}.\index{$G$-bundle}
@@ -1934,7 +1934,7 @@ Note that the choice of the category $\calS$ for a given type of structure is no
         which can be identified with $A+\rmi B\in \Mat_n(\bbC)$.
         Note that each complex structure also induces an orientation because matrices $A\in \GL_n(\bbC)\subset \GL_{2n}(\bbR)$ have positive determinant over $\bbR$, namely $\det M=|\det(A+\rmi B)|^2>0$.
 
-        \item Consider standard spaces $\bbR^{2n}$ with standard symplectic forms, i.e.\ antisymmetric nondegenrate bilinear forms $\omega_{2n}:\bbR^{2n}\times \bbR^{2n}\to \bbR$ whose matrix in the standard basis is $\rmJ_{2n}$. Let morphisms be all linear maps and let $G=\Sp_{2n}(\bbR)$ be the group of symplectic matrices, i.e.\ matrices $A\in\GL_{2n}(\bbR)$ such that $A^T\rmJ_{2n}A=\rmJ_{2n}$. Then $\calS$-fibers are symplectic vector spaces $(V,\omega)$ with all linear maps between them. This can be reduced to just the category of \emph{symplectomorphisms}, i.e.\ isomorphisms that preserve the symplectic structure.
+        \item Consider standard spaces $\bbR^{2n}$ with standard symplectic forms, i.e.\ antisymmetric nondegenerate bilinear forms $\omega_{2n}:\bbR^{2n}\times \bbR^{2n}\to \bbR$ whose matrix in the standard basis is $\rmJ_{2n}$. Let morphisms be all linear maps and let $G=\Sp_{2n}(\bbR)$ be the group of symplectic matrices, i.e.\ matrices $A\in\GL_{2n}(\bbR)$ such that $A^T\rmJ_{2n}A=\rmJ_{2n}$. Then $\calS$-fibers are symplectic vector spaces $(V,\omega)$ with all linear maps between them. This can be reduced to just the category of \emph{symplectomorphisms}, i.e.\ isomorphisms that preserve the symplectic structure.
     \end{enumerate}
 \end{example}
 
@@ -2055,7 +2055,7 @@ The functors going in either direction take a bundle, choose a cocycle for it, a
 \begin{example}[Linear $G$-structures on manifolds]
     \begin{enumerate}
         \item Regardless of $\calS$, if $G=\{e\}$, then a $G=\{e\}$-structure is equivalent to a global trivialization of the bundle. In the case of vector bundles, this is called an \emph{absolute parallelism}.\index{Parallelism!absolute}
-        \item $\calS=\mathsf{FinVect}_\bbR$, and the structure group of each vector space $F$ is $\GL(V)$, then $\calS$-bundles are just vector bundles. Each fiber is naturally an $\calS$-fiber, i.e.\ a vector space, and vector bundle morphisms are exacly fiberwise linear bundle morphisms.
+        \item $\calS=\mathsf{FinVect}_\bbR$, and the structure group of each vector space $F$ is $\GL(V)$, then $\calS$-bundles are just vector bundles. Each fiber is naturally an $\calS$-fiber, i.e.\ a vector space, and vector bundle morphisms are exactly fiberwise linear bundle morphisms.
         \item A $\GL_k^+$-structure on a vector bundle of rank $k$ is called an orientation because it selects an orientation on every fiber in a continuous fashion. A vector bundle that admits such a structure is called \emph{orientable}.\index{Orientable vector bundle}
         \item An $\Or_k$-structure on a vector bundle $E$ of rank $k$ is equivalent to a smooth choice of metrics $\sfg_m$ on each fiber $E_m$. In \S\ref{sec: Riemannian mfds} we will see that every real manifold admits such a choice, called a \emph{Riemannian structure}, so every vector bundle admits a (non-unique) reduction of the structure group to an orthogonal group. $\Or_k$-bundles are known as \emph{Riemannian bundles}. This fact is equivalent to the statement that $\GL_k(\bbR)$ deformation retracts onto $\Or_n$. In addition, if the bundle is orientable, the structure group can be reduced to $\SO_n$.
         \item A $\GL_k(\bbC)$-structure on a real vector bundle $E$ of rank $2k$ is equivalent to a smooth choice of complex structures $\sfJ_m$ on each fiber $E_m$. Such bundles are called \emph{complex vector bundles} of rank $k$. Every complex vector bundle is oriented.
@@ -2079,7 +2079,7 @@ The following theorem is one of the most important theorems for the applications
 Two $G$-bundles $E$ and $E'$ over $M$ are isomorphic iff there exists a covering $\{U_\alpha \}$ of $M$, two corresponding cocycles $\{t_{\alpha\beta}\}$ and $\{t_{\alpha\beta}'\}$, and a set of $G$-valued functions $\lambda_\alpha:U_\alpha\to G$ such that $t_{\alpha\beta}'(p)\equiv \lambda_\alpha (p) t_{\alpha\beta}(p) \lambda_\beta^{-1}(p)$ for all $p\in U_{\alpha\beta}$. In particular, a bundle is trivial iff its transition functions can be factorized as $t_{\alpha\beta}=\lambda_\alpha \lambda_\beta^{-1}$.
 \end{thm}
 \begin{proof}
-Given two bundle atlases over $M$, we can always take all possible pairwise intersections of the sets of the two covers of $M$ to refine the atlases so that they are defined over the same covering of $M$. \gls{wlog}, any isomorphism of bundles over the same base can be assumed be identity on the base itself (e.g. because if the horizontal part of the isomorphism is some diffeo $f:M\to M$, we can replace one of the bundles by the isomorphic pullback bundle along $f$, see Definition~\ref{Pullback bundle}). Then from (\ref{eq transformation of hab}) we see that any bundle isomophism gives rise to the $\lambda_\alpha$'s, and vice versa, $\lambda_\alpha$'s completely describe the bundle isomorphism. 
+Given two bundle atlases over $M$, we can always take all possible pairwise intersections of the sets of the two covers of $M$ to refine the atlases so that they are defined over the same covering of $M$. \gls{wlog}, any isomorphism of bundles over the same base can be assumed be identity on the base itself (e.g. because if the horizontal part of the isomorphism is some diffeomorphism $f:M\to M$, we can replace one of the bundles by the isomorphic pullback bundle along $f$, see Definition~\ref{Pullback bundle}). Then from (\ref{eq transformation of hab}) we see that any bundle isomorphism gives rise to the $\lambda_\alpha$'s, and vice versa, $\lambda_\alpha$'s completely describe the bundle isomorphism. 
 \end{proof}
 \begin{defn}[Equivalent cocycles]
     Two $G$-valued cocycles on $M$ that are related (after being brought over to a common set of charts $\{U_\alpha\}$) by the above formulas for some collection of maps $\lambda_\alpha:U_\alpha\to G$ are called \emph{$G$-equivalent}. The equivalence class $[\{t_{\beta\alpha}\}]$ itself is also called a cocycle.
@@ -2090,7 +2090,7 @@ Given two bundle atlases over $M$, we can always take all possible pairwise inte
 This correspondence can actually be restated as an equivalence of the category $\FB^\sigma$ and a certain category of cocycles.
 
 \begin{rem}\label{rem: faithfulness of action on F}
-    Faithfulness of the action is crucial here. As we noted in Remark~\ref{rem: faithful action on F 0}, any structure group whose action is induced from the action of $\Diff(F)$ acts on $F$ faithfully. We can see the importance of this property when recostructing a bundle from a cocycle acting on a model fiber. If, for example, $F$ is a single point, then every group action on $F$ is trivial and there is only one fiber bundle over $M$ with fiber $F$ regardless of the structure group $G$, whereas there are still many non-equivalent $G$-valued cocycles on $M$. Therefore faithfulness is needed so that the cocycle is well-defined in this sense. In the future we will run into important situation where, for instance, $F$ is a finite-dimensional vector space with an action of a non-linear group $G$ (namely a spin group), so that this action cannot be faithful, and thus the correspondence with classes of cocycles will not be one-to-one.
+    Faithfulness of the action is crucial here. As we noted in Remark~\ref{rem: faithful action on F 0}, any structure group whose action is induced from the action of $\Diff(F)$ acts on $F$ faithfully. We can see the importance of this property when reconstructing a bundle from a cocycle acting on a model fiber. If, for example, $F$ is a single point, then every group action on $F$ is trivial and there is only one fiber bundle over $M$ with fiber $F$ regardless of the structure group $G$, whereas there are still many non-equivalent $G$-valued cocycles on $M$. Therefore faithfulness is needed so that the cocycle is well-defined in this sense. In the future we will run into important situation where, for instance, $F$ is a finite-dimensional vector space with an action of a non-linear group $G$ (namely a spin group), so that this action cannot be faithful, and thus the correspondence with classes of cocycles will not be one-to-one.
 \end{rem}
 
 
@@ -2550,7 +2550,7 @@ The cylinder and the M\"obius band are vector bundles of rank one over $\bbS^1$.
 
 
 \begin{example}
-    Let $M=\bbS^1$ and let $E\to M$ be the M\"obius strip as a line bundle over $\bbS^1$. Realize $\bbS^1$ as the unit circle in $\bbC$ and consider the $n$-fold covering $f_n:\bbS^1\to \bbS^1$ given by $f_n(z)=z^n$. Since every line bundle over $\bbS^1$ is isomorphic either to the cylinder $\bbS^1\times \bbR$ or the M\"obius band, we conlcude
+    Let $M=\bbS^1$ and let $E\to M$ be the M\"obius strip as a line bundle over $\bbS^1$. Realize $\bbS^1$ as the unit circle in $\bbC$ and consider the $n$-fold covering $f_n:\bbS^1\to \bbS^1$ given by $f_n(z)=z^n$. Since every line bundle over $\bbS^1$ is isomorphic either to the cylinder $\bbS^1\times \bbR$ or the M\"obius band, we conclude
     \[f_n^\ast E=\begin{cases}
         E,& n\text{ odd},\\
         \bbS^1\times\bbR,& n\text{ even}.
@@ -2566,7 +2566,7 @@ The cylinder and the M\"obius band are vector bundles of rank one over $\bbS^1$.
 
 \begin{rem}\label{rem zero section, extending section}
 \begin{enumerate}
-    \item Unlike general \glspl{fb}, \glspl{vb} always have at least one global section. Let $E_0\subset E$ be the set of all points that are neutral elements of their respective fibers as vector spaces (i.e.\ they are mapped to zero by the second component of any local trivialization). Furthermore, the restricted projection $\restr{\pi}{E_0}:E_0\to M$ is a diffeomorphism because locally it is just the first component of any local trivialization, therefore a local diffeo, and it is also clearly bijective. $E_0$, and the corresponding map $o:M\to E_0$, are called the \emph{zero section}\index{Zero section} of $E$.
+    \item Unlike general \glspl{fb}, \glspl{vb} always have at least one global section. Let $E_0\subset E$ be the set of all points that are neutral elements of their respective fibers as vector spaces (i.e.\ they are mapped to zero by the second component of any local trivialization). Furthermore, the restricted projection $\restr{\pi}{E_0}:E_0\to M$ is a diffeomorphism because locally it is just the first component of any local trivialization, therefore a local diffeomorphism, and it is also clearly bijective. $E_0$, and the corresponding map $o:M\to E_0$, are called the \emph{zero section}\index{Zero section} of $E$.
     \item Even on a smooth vector bundle, not every smooth local section can be extended to a global one. Consider for example the trivial bundle $\bbR\times\bbR\to \bbR$ and its local section over $(0,+\infty)$ given by $\sigma(x)=(x,\frac 1x)$. It cannot be extended to all of $\bbR$. 
     \item However, for a smooth local section $\sigma:U\to E$ and every point $p\in U$ there exists an open neighborhood $U_p\subset M$ of $p$ such that $\sigma$ can be extended to a section $\wt{\sigma}:U\cup U_p\to E$.
     \item If $S\sub M$ is an embedded submanifold, then any section $\sigma$ of the restricted \gls{vb} $\restr{E}{S}$ can be extended to an open neighborhood of $S$ (which may be $S$ itself if $S$ is open). This can be done by constructing local frames of $E$ adapted to $S$ at every point $p\in S$, using them to extend the section to some neighborhood $U_p$, and stitching these extensions together using a \gls{pou}.
@@ -2690,9 +2690,9 @@ The following is an exercise.
 \begin{proof}
     The map on sections induced by a bundle morphism is clearly $C^\infty(M)$-linear. Conversely, given $\calF$, first we show its locality: if a section vanishes locally on an open set $U\subset M$, then its image under $\calF$ does as well. This follows by constructing, for each $m\in U$, a local bump function $\chi_m$ supported in $U$ that equals $1$ at $m\in U$ and using  $\calF(\chi_m\sigma)=\chi_m\calF(\sigma)=0$, which, upon evaluation at $m$, gives $\calF(\sigma)(m)=0$.
 
-    Next we show that $\calF$ is pointwise (\emph{hyperlocal}): if $\sigma(m)=0$, then $\calF(\sigma)(m)=0$. This follows by constructing a local frame at $m$, extending it to a collection of global sections $s_i\in\Gamma^\infty(E)$, and replacing $\sigma$ by $\sum_i c^is_i$ with $c^i\in C^\infty(M)$ on a neighborhood of $m$. Then, by the locality property we just proved, $\calF(\sigma)(m)=\sum_i\calF(c^is_i)(m)=\sum_i c^i(m)\calF(s_i)(m)=0$.
+    Next we show that $\calF$ is pointwise (\emph{ultralocal}): if $\sigma(m)=0$, then $\calF(\sigma)(m)=0$. This follows by constructing a local frame at $m$, extending it to a collection of global sections $s_i\in\Gamma^\infty(E)$, and replacing $\sigma$ by $\sum_i c^is_i$ with $c^i\in C^\infty(M)$ on a neighborhood of $m$. Then, by the locality property we just proved, $\calF(\sigma)(m)=\sum_i\calF(c^is_i)(m)=\sum_i c^i(m)\calF(s_i)(m)=0$.
 
-    Now we can construct a bundle morphism $F$ corresponding to $\calF$. For any $m\in M$ and $e\in E_p$ let $F(e)=\calF(s)(m)\in E'_m$, where $s\in \Gamma^\infty(E)$ is a clobal section such that $s(m)=e$. Hyperlocality implies that the resulting element of $E_m'$ is independent of the choice of $s$. This map clearly satisfies $\pi'\circ F=\pi$, and is fiberwise linear because of linearity of $\calF$. It also satisfies $F\circ\sigma(m)=\calF(\sigma)(m)$ for all $\sigma\in\Gamma^\infty(E)$ by definition. 
+    Now we can construct a bundle morphism $F$ corresponding to $\calF$. For any $m\in M$ and $e\in E_p$ let $F(e)=\calF(s)(m)\in E'_m$, where $s\in \Gamma^\infty(E)$ is a global section such that $s(m)=e$. Ultralocality implies that the resulting element of $E_m'$ is independent of the choice of $s$. This map clearly satisfies $\pi'\circ F=\pi$, and is fiberwise linear because of linearity of $\calF$. It also satisfies $F\circ\sigma(m)=\calF(\sigma)(m)$ for all $\sigma\in\Gamma^\infty(E)$ by definition. 
 
     It remains to show the smoothness of $F$, which can be done locally. Given $m\in M$, let $s_i\in\Gamma^\infty(E)$ be a collection of sections that form a local frame on a neighborhood of $m$. We may also assume that a similar collection $s_i'\in\Gamma^\infty(E')$ exists on the same neighborhood. There exist local smooth functions $A_i^j\in C^\infty(U)$ such that $\restr{\calF(s_i)}{U}=\sum_j A_i^j s_j'$.
 
@@ -2708,12 +2708,12 @@ The following is an exercise.
 \begin{defn}[Quotient bundle]
     Let $L\subset E$ be a vertical subbundle of a \gls{vb} $E\overset{\pi}{\to}M$. Let
     \[E\slash L=\bigsqcup_{m\in M}E_m\slash L_m\]
-    and let $\pi':E\slash L\to M$ be the natural projection to the index set. By construction the fibers of $\pi'$ are vector spaces. There exists a family of local trivializations $\{(U_\alpha,\chi_\alpha)\}$ of $E$ and a subspace $K\subset F$ of the typical fiber $F$ of $E$ such that the resrictions of $\chi_\alpha$ to $L$ take values in $U_\alpha\times K$. For any such $\chi_\alpha$ define a mapping
+    and let $\pi':E\slash L\to M$ be the natural projection to the index set. By construction the fibers of $\pi'$ are vector spaces. There exists a family of local trivializations $\{(U_\alpha,\chi_\alpha)\}$ of $E$ and a subspace $K\subset F$ of the typical fiber $F$ of $E$ such that the restrictions of $\chi_\alpha$ to $L$ take values in $U_\alpha\times K$. For any such $\chi_\alpha$ define a mapping
     \[\chi_\alpha':(\pi')^{-1}(U_\alpha)\to U_\alpha\times F\slash K,\quad \chi_\alpha'([x])=(\pi(x),[\chi_{\alpha,m}(x)]).\]
     It is an exercise to check the differentiability of the corresponding transition maps. The resulting vector bundle $\pi':E\slash L\to M$ is called the quotient bundle of $E$ by $L$.
 \end{defn}
 \begin{rem}
-    There is a way to avoid having to construct the quotient bundle manually out of fibers. As we will discuss in \S\ref{sec: Riemannian mfds}, every vector bundle admits a bundle metric, i.e.~a smoothly varying choice of a dot product on each fiber. Then we can define the ortogonal complement $L^\perp$ in the obvious way, and this will automatically be a smooth \gls{vb} such that $L\oplus L^\perp\cong E$, and up to bundle isomorphism it will be independent of the choice of metric. Then we can define $E\slash L$ up to isomorphism as the bundle $L^\perp$.
+    There is a way to avoid having to construct the quotient bundle manually out of fibers. As we will discuss in \S\ref{sec: Riemannian mfds}, every vector bundle admits a bundle metric, i.e.~a smoothly varying choice of a dot product on each fiber. Then we can define the orthogonal complement $L^\perp$ in the obvious way, and this will automatically be a smooth \gls{vb} such that $L\oplus L^\perp\cong E$, and up to bundle isomorphism it will be independent of the choice of metric. Then we can define $E\slash L$ up to isomorphism as the bundle $L^\perp$.
 \end{rem}
 
 
@@ -3097,7 +3097,7 @@ Now we can use the procedure in Definition \ref{functors VB} to extend the tenso
     \[
     (f^\ast t)(X_1,\ldots,X_s)=t(f_\ast X_1,\ldots,f_\ast X_s).
     \]
-    Here, $f_\ast X_i$ are the poinwise push-forwards of tangent vectors. Push-forwards of contravariant tensors are always well-defined pointwise, but then only form a global smooth tensor on the target manifold if $f$ is a diffeomorphism.
+    Here, $f_\ast X_i$ are the pointwise push-forwards of tangent vectors. Push-forwards of contravariant tensors are always well-defined pointwise, but then only form a global smooth tensor on the target manifold if $f$ is a diffeomorphism.
 \end{defn}
 
 \begin{rem}
@@ -3444,7 +3444,7 @@ The above relation can be written as $H^2+1=2H$, and so $(H-1)^2=0$.
 
 The bulk of the proof of Bott periodicity for the K-functors then consists of showing that the maps 
 \[\mu:\rmK(M)\otimes \rmK(\bbS^2)\to \rmK(M\times \bbS^2),\quad \mu_{\Or}:\mathrm{KO}(M)\otimes \mathrm{KO}(\bbS^8)\to \mathrm{KO}(M\times\bbS^8),\]
-are isomorphisms. The following theorem is the main ingredient in complex Bott periodicity, which we state without proof. It can be proven via complex analityc methods, as in Hatcher, or via more general topological arguments, as we will do later.
+are isomorphisms. The following theorem is the main ingredient in complex Bott periodicity, which we state without proof. It can be proven via complex analytic methods, as in Hatcher, or via more general topological arguments, as we will do later.
 
 \begin{thm}[Fundamental Product Theorem]
     The homomorphism $\rmK(M)\otimes \bbZ[H]\slash(H-1)^2\to \rmK(M\times\bbS^2)$ is an isomorphism.
@@ -3537,7 +3537,7 @@ From this definition, we have the basic properties:
 \begin{enumerate}
     \item $F_{t_1+t_2}=F_{t_1}\circ F_{t_2}=F_{t_2}\circ F_{t_1},$ $F_0=\id$,
     \item On the common domain, $F_t^{-1}=F_{-t}$;
-    \item Any vector field $X$ has a flow box at every point $p\in \mathring{M}$. This follows from the results on the local solvability of systems of ODE's and smooth dependence of the solutions on the initial conditions. Since this dependence on the initial conditions has the identity Jacobi matrix at $t=0$, $F_t$ is a local diffeo and $F_{-t}$ is the inverse.
+    \item Any vector field $X$ has a flow box at every point $p\in \mathring{M}$. This follows from the results on the local solvability of systems of ODE's and smooth dependence of the solutions on the initial conditions. Since this dependence on the initial conditions has the identity Jacobi matrix at $t=0$, $F_t$ is a local diffeomorphism and $F_{-t}$ is the inverse.
     \item If $F_t$ is the flow of $X$, then \[F_{t\ast}X=X,\] i.e.\ $F_{t\ast}(X(p))=X(F_t(p))$. Moreover, $X$ is the only vector field that satisfies this property for all $(p,t)$ from an open neighborhood of $M\times\{0\}$ in $M\times\bbR $.
 \end{enumerate}
 
@@ -3574,7 +3574,7 @@ $X\in\fX(M)$ is called complete if its flow domain is $\mathcal{D}=M\times\bbR $
 \begin{thm}[Fundamental Theorem on Flows {{\cite[Thm.~9.12]{Lee}}}]\label{thm fundamental of flows}
     For any smooth vector field $X\in\fX(M)$, its maximal flow $F$ exists, is unique and:
     \begin{enumerate}
-        \item For each $p\in M$, the curve $F_p$ is the unique maximal intergral curve of $X$ starting at $p$;
+        \item For each $p\in M$, the curve $F_p$ is the unique maximal integral curve of $X$ starting at $p$;
         \item $\mathcal{D}_{F_t(p)}=\mathcal{D}_p-t$ (subtraction of $t$ means a shift of the set on the real line);
         \item If $t$ is such that $\mathcal{D}_t=M$, then $F_t:M\to M$ is a diffeomorphism.
     \end{enumerate}
@@ -3626,7 +3626,7 @@ Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector fie
     
     This allows one to define a \emph{time-dependent flow},\index{Flow!time-dependent} which is a smooth map $F:\calD\to M$, where $\calD$ is an open neighborhood of the diagonal set $\Delta_\bbR\times M$ inside $\bbR\times\bbR \times M$.  For $(t_2,t_1,m)\in\bbR\times\bbR\times M$, we denote 
     \[\calD_{t_1,m}\coloneqq \{t_2\in\bbR:(t_2,t_1,m)\in\calD\},\quad \calD_{t_2,t_1}\coloneqq \{m\in M:(t_2,t_1,m)\in\calD\}\]
-    and let $F_{t_2,t_1}:\calD_{t_2,t_1}\to M$ be the induced map $F_{t_2,t_1}(m)=F(t_2,t_1,m)$. It has to satisfy the followign for all $(t_1,t_2,t_3,m)\in\bbR\times\bbR\times\bbR\times M$:
+    and let $F_{t_2,t_1}:\calD_{t_2,t_1}\to M$ be the induced map $F_{t_2,t_1}(m)=F(t_2,t_1,m)$. It has to satisfy the following for all $(t_1,t_2,t_3,m)\in\bbR\times\bbR\times\bbR\times M$:
     \begin{enumerate}
         \item $F_{t_1,t_1}=\id_M$,
         \item if $(t_2,t_1,m),(t_3,t_2,F_{t_2,t_1}(m))\in\calD$, then $(t_3,t_1,m)\in\calD$ and 
@@ -3727,7 +3727,7 @@ With the notation of the above definition,
 \end{enumerate}
 \end{thm}
 \begin{proof}
-    Exercise. The last part follows because the dimension of $\Phi(\mathcal{O}_\delta)$ coincides with the dimension of $M$, so injectivity and local diffeo implies embedding.
+    Exercise. The last part follows because the dimension of $\Phi(\mathcal{O}_\delta)$ coincides with the dimension of $M$, so injectivity and local diffeomorphism implies embedding.
 \end{proof}
 
 Let $\partial M$ be non-empty and let $\{U_\alpha\}$ be a family of boundary charts that cover $\partial M$. On each of them, define the local coordinate field $X_\alpha=\partial_n$ that points inward from the boundary. Further, let $\chi_\alpha$ be a subordinate \gls{pou}. Then 
@@ -3736,7 +3736,7 @@ is a vector field defined on a neighborhood $U$ of $\partial M$. In the local bo
 
 Since $\codim \partial M=1$, we only need to find a $\delta$ to construct a flow-out of $\partial M$. With $\delta$, we have an embedding $\Phi:\mathcal{O}_\delta\to M$. Set 
 \[\psi:[0,1]\times\partial M\to\mathcal{O}_\delta,\;\; (p,t)\mapsto (p,t\delta(p)).\]
-Then $\psi$ is a diffeo and $\Phi\circ\psi:[0,1]\times\partial M\to \Phi(\mathcal{O}_p)$ is also a diffeo, so
+Then $\psi$ is a diffeomorphism and $\Phi\circ\psi:[0,1]\times\partial M\to \Phi(\mathcal{O}_p)$ is also a diffeomorphism, so
 \[\Phi(\mathcal{O}_p)\cong [0,1)\times\partial M.\]
 
 \begin{figure}[tp]
@@ -3756,7 +3756,7 @@ Then $\psi$ is a diffeo and $\Phi\circ\psi:[0,1]\times\partial M\to \Phi(\mathca
 
 Now, if we have two manifolds $M$ and $N$ with diffeomorphic boundaries, so that
 \[h:\partial M\to \partial N\text{ -- diffeo},\]
-then we can introduce two collar embeddings (which are also diffeo onto their images)
+then we can introduce two collar embeddings (which are also diffeomorphism onto their images)
 \[
 \alpha:[0,1)\times\partial M\to V\subset M,\quad
 \beta:[0,1)\times\partial N\to W\subset N,
@@ -3803,7 +3803,7 @@ If $X\in\fX(M)$ and $X(p)\neq 0$, then there exists a local chart $(U,\varphi)$ 
 \begin{proof}
 Since $S\sub M$, it has a slice neighborhood. We can parametrize $S$ by an embedding map $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{n-1}$. We can take $U$ such that $\restr{X}{U}\cap \T S=\varnothing$. 
 
-Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F(x(\Omega))\sub M$. This is a diffeo $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=F_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
+Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F(x(\Omega))\sub M$. This is a diffeomorphism $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=F_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
 \end{proof}
 
 \begin{defn}[Complete integral]\index{Complete integral}\label{def complete integral}
@@ -4117,7 +4117,7 @@ The analog of this Corollary for $k<\dim M$ is a famous theorem that deserves it
 
 \subsection{Frobenius theorem I}\label{sec: frobenius i}
 
-We have just established that in the presence of a local holonomic $r$-frame $\{e_i\}_{i=1}^r$ transversal to a submanifold $S$, each point $m\in S$ admits a $r$-dimensional embedded submanifold $N$ passing through $m$ (defined by holding the values of $s^{r+1},\ldots,s^n$ constant) transversally to $S$ such that $\{e_i\}_{i=1}^r$ is a frame for $\T N$. In this \subsect\ we will replace holonomic frames by the subspaces of tangent spaces that they span and derive the corresponding \emph{integrability condition}. Namely, while we can think of vector fields as fields of velocities, let us unstead think of them as fields of lines, or directions. Then it is easy to generalize the problem as follows: given a field of hyperplanes (subspaces of tangent spaces), what does it mean for a submanifold to be integral for this field, and what is the condition for this kind of integrability?
+We have just established that in the presence of a local holonomic $r$-frame $\{e_i\}_{i=1}^r$ transversal to a submanifold $S$, each point $m\in S$ admits a $r$-dimensional embedded submanifold $N$ passing through $m$ (defined by holding the values of $s^{r+1},\ldots,s^n$ constant) transversally to $S$ such that $\{e_i\}_{i=1}^r$ is a frame for $\T N$. In this \subsect\ we will replace holonomic frames by the subspaces of tangent spaces that they span and derive the corresponding \emph{integrability condition}. Namely, while we can think of vector fields as fields of velocities, let us instead think of them as fields of lines, or directions. Then it is easy to generalize the problem as follows: given a field of hyperplanes (subspaces of tangent spaces), what does it mean for a submanifold to be integral for this field, and what is the condition for this kind of integrability?
 
 \begin{hrem*}
     Note that while this theorem is universally named after Frobenius, his result (1887) was an application of an older result to the context of systems of differential equations. We will discuss that version of the theorem in \S\ref{sec: frobenius ii}. The results discussed in this \subsect\ were obtained by Deahna (sufficient condition, 1840) and Clebsch (necessary condition, 1866), among many others involved in this long process.
@@ -4170,7 +4170,7 @@ Note also that $U$ gets decomposed into a disjoint union of integral submanifold
     Let $D$ be an involutive distribution of rank $r$ on a smooth manifold $M$, and let $(U,\{x^i\})$ be a flat chart for $D$. If $N$ is an integral manifold of $D$, then $N\cap U$ is a union of countably many disjoint open subsets of parallel $r$-dimensional slices of $U$, each of which is open in $N$ and embedded in $M$.
 \end{prop}
 \begin{proof}
-    Since the inclusion $i:N\hookrightarrow M$ is continuous, $N\cap U=i^{-1}(U)$ is open in $H$ and this is a coutnable disjoint union of connected components, each open in $N$.
+    Since the inclusion $i:N\hookrightarrow M$ is continuous, $N\cap U=i^{-1}(U)$ is open in $H$ and this is a countable disjoint union of connected components, each open in $N$.
 
     Let $V$ be a component of $N\cap U$. Since the chart is flat, the functions $x^{r+1},\ldots,x^n$ are constant along $D$ and therefore constant on any connected slice like $V$, and $V$ lies in a single slice $U_{\bf{c}}$, see Figure~\ref{fig: frobenius2}.
 
@@ -4615,7 +4615,7 @@ Recall that for $f\in C^\infty(M)$, $\dd f=\pr_2\circ f_\ast$, where $\pr_2$ is 
     \[\dd (x^i)(\partial_j)=\Lie_{\partial_j}x^i=\frac{\partial x^i}{\partial x^j}=\delta^i_j.\]
 \end{proof}
 \begin{cor}
-    Locally, the differential $\dd f$ of a function $f\in C^\infty(M)$ is the standard ``total differential'' from multivariable calculus, \[\dd f=\dd f(\partial_i)\cdot\dd x^i=(\partial_i f)\cdot \dd x^i.\]
+    Locally, the differential $\dd f$ of a function $f\in C^\infty(M)$ is the standard ``total differential'' from multivariate calculus, \[\dd f=\dd f(\partial_i)\cdot\dd x^i=(\partial_i f)\cdot \dd x^i.\]
 \end{cor}
 
 We now extend $\dd$ to differential forms of all degrees.
@@ -4698,7 +4698,7 @@ We also put $\restr{i_X}{\Omega^0(M)}=0$.
     \item $i_X\dd f=\Lie_X f$ for $f\in \Omega^0(M)$;
     \item $\restr{\Lie_X}{\Omega^p(M)}=i_X\circ\dd+\dd\circ i_X$ (Cartan's magic formula);\index{Equation!Cartan's magic}
     \item $\Lie_{fX}\,\omega=f\Lie_X\omega +\dd f\wedge i_X\omega$;
-    \item For any diffeo $F$, $F^\ast i_X\omega =i_{F^\ast X}F^\ast\omega$.
+    \item For any diffeomorphism $F$, $F^\ast i_X\omega =i_{F^\ast X}F^\ast\omega$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -4754,7 +4754,7 @@ The following classical theorem shows that every closed differential form is loc
 
 
 \begin{thm}[Poincar\'e Lemma]\index{Lemma!Poincar\'e}\label{lem poincare classic}
-    Let $\omega\in\Omega^p(M)$ with $\dd\omega=0$. Then every point $m\in M$ has an open neigborhood $U\subset M$ and a differential form $\eta\in\Omega^{p-1}(U)$ such that $\dd\eta=\restr{\omega}{U}$.
+    Let $\omega\in\Omega^p(M)$ with $\dd\omega=0$. Then every point $m\in M$ has an open neighborhood $U\subset M$ and a differential form $\eta\in\Omega^{p-1}(U)$ such that $\dd\eta=\restr{\omega}{U}$.
 \end{thm}
 \begin{proof}
     Let $(U,\bf{x})$ be a chart on $M$ centered at $m$ such that $\bf{x}(U)=\bbR^n$. Thus we may just assume that $M=\bbR^n$. We consider a deformation retraction $\alpha:\bbR\times\bbR^n\to \bbR^n$ given by $\alpha(t,\bf{x})=\alpha_t(\bf{x})=t\bf{x}$. Let $I\in \fX(\bbR^n)$ be the linear vector field $I(\bf{x})=\bf{x}$. Then $\alpha(\rme^t,\bf{x})=F^I_t(\bf{x})$, where $F^I_t$ is the flow of $I$. For $t>0$ we have 
@@ -5012,7 +5012,7 @@ The final application requires some familiarity with complex analysis. Some basi
     which is why holomorphic functions are often described as ``functions of only $z$ and not $\wb{z}$''.
 
     Here we will focus only on $1$-dimensional complex manifolds $\Sigma$ (Riemann surfaces),\index{Riemann surface} which means that around every point there is a local complex coordinate $z\in \bbC$ with holomorphic transition maps, and so every complex-valued $1$-form $\omega\in\Omega^1(\Sigma;\bbC)$ can be locally uniquely written as $\omega=\omega_z \dd z+\omega_{\wb{z}} \dd \wb{z}$, where $\omega_z,\omega_{\wb{z}}$ are local smooth complex-valued functions.
-    The local formula (\ref{eq local formula for d}) for $\dd$ can be rewritten in complex cordinates and ends up working the same way as it would in real coordinates:
+    The local formula (\ref{eq local formula for d}) for $\dd$ can be rewritten in complex coordinates and ends up working the same way as it would in real coordinates:
     \[\dd\omega=(\partial_{z} \omega_{\wb z}-\partial_{\wb z} \omega_{z})\dd z\wedge \dd \wb{z}.\label{eq d of complex form}\]
     The space of complex $1$-forms that contain only a $\dd z$ term (this property is independent of the choice of the complex chart) is denoted $\Omega^{1,0}(\Sigma)$, and similarly $\Omega^{0,1}(\Sigma)$ is spanned by $\dd \wb{z}$ (over $C^\infty(\Sigma,\bbC)$). A $(1,0)$-form $\omega\in\Omega^{1,0}(\Sigma)$ is called \emph{holomorphic}\index{Holomorphic!$(1,0)$-form} if it is locally of the form $\omega=f\dd z$, where $f$ is a holomorphic function, so $\wb\partial f=0$ (again, this property is independent of the chart).
 \end{rem}
@@ -5079,7 +5079,7 @@ Here we define differential forms that take values in a vector space, and more g
 \end{defn}
 
 
-For example, if we twist $E$ by the line bundle of pseudo-scalar densities (i.e.\ scalars depending on local orientation), we obtain the bundle of pseudo-forms. Top degree pseudo-forms are called $1$-densities. Similarly, twisting by the determinant line bundle gives ``densitised forms''.
+For example, if we twist $E$ by the line bundle of pseudo-scalar densities (i.e.\ scalars depending on local orientation), we obtain the bundle of pseudo-forms. Top degree pseudo-forms are called $1$-densities. Similarly, twisting by the determinant line bundle gives ``densitized forms''.
 
 If $\{e_1,\ldots,e_k\}$ is a local frame of $E$, then any $\omega\in\Omega^p(M;E)$ can be expanded as 
 \[\omega=\sum_{a=1}^k\sum_{1\leq i_1<\ldots<i_p\leq n}\omega^a_{i_1\cdots i_p}\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}\otimes e_a=\sum_{a=1}^k\omega^a\otimes e_a,\quad \omega^a\in\Omega^p(U).\]
@@ -6102,16 +6102,16 @@ The local theorem immediately implies its own global version in the case when $M
     \[\delta_H (\Phi\circ f)=\phi\circ\delta_G f.\]
 \end{lem}
 \begin{proof}
-    Let $X_x\in T_x M$. Then
+    Let $X\in T_m M$. Then
     \begin{multline}
-        \delta(\Phi\circ f)(X)=L_{\Phi\circ f(x)}^{-1}(\Phi\circ f)_\ast(X)=L_{\Phi\circ f(x)}^{-1}(\Phi\circ  L_{f(x)})_\ast\circ  \delta_G f(X)=\\
-        =L_{\Phi\circ f(x)}^{-1}(L_{\Phi\circ f(x)}\circ \Phi)_\ast\circ  \delta_G f(X)=\Phi_\ast\delta_G f(X)=\phi\circ \delta_G f(X),
+        \delta(\Phi\circ f)(X)=L_{\Phi\circ f(m)}^{-1}(\Phi\circ f)_\ast(X)=L_{\Phi\circ f(m)}^{-1}(\Phi\circ  L_{f(m)})_\ast\circ  \delta_G f(X)=\\
+        =L_{\Phi\circ f(m)}^{-1}(L_{\Phi\circ f(m)}\circ \Phi)_\ast\circ  \delta_G f(X)=\Phi_\ast\delta_G f(X)=\phi\circ \delta_G f(X),
     \end{multline}
-    where $\Phi\circ L_{f(x)}=L_{\Phi\circ f(x)}\circ \Phi$ because $\Phi$ is a homomorphism.
+    where $\Phi\circ L_{f(m)}=L_{\Phi\circ f(m)}\circ \Phi$ because $\Phi$ is a homomorphism.
 \end{proof}
 
 \begin{cor}[{{\cite[Cor.~5.3]{Sharpe}}}]\label{cor 5.3 Sharpe}
-    Let $G$ be a Lie group with Lie algebra. Then $\Ad:G\to \GL(\frakg)$ is the unique map $f:G\to \GL(\frakg)$ satisfying  
+    Let $G$ be a Lie group with Lie algebra. Then $\Ad:G\to \GL(\frakg)$ is the unique map $f:G\to \GL(\frakg)$ satisfying
     \[\delta_{\GL} f=\ad_{\theta_G},\quad f(e)=\rmI,\]
     where $\ad:\frakg\to \frakgl(\frakg)$ is the adjoint map, $\ad_{\theta_G}=\ad\circ\theta_G$, and $\rmI=\id_\frakg$. 
     If $g:[0,1]\to G$ is a path starting at $e$, then $\Ad_g:[0,1]\to \GL(\frakg)$ is the development, starting at $e\in\GL(\frakg)$, of $\ad_{\delta_G g}=g^\ast \ad_{\theta_G}\in\Omega^1([0,1];\frakgl(\frakg))$ on $\GL(\frakg)$ along $g$.
@@ -6404,7 +6404,7 @@ Note that if $M$ is not simply connected, then $L$ is still a Lie group because 
 \end{lem}
 \begin{proof}
     It is sufficient to show this for the left-invariant case.
-    $\bigcup_g (L_g)_{\ast e}$ is an isomorphism therefore ${D_L}_g$ is of rank $\dim \frakh$ and the distribution is obviously left-invariant. Any basis of left-invariant vector fields on $G$ forms a smooth frame for $D$, so $D$ is smooth. Moreover, $D_L$ is involutive because such a frame is closed under the Lie bracket.
+    $\bigcup_g (L_g)_{\ast e}$ is an isomorphism therefore $(D_L)_g$ is of rank $\dim \frakh$ and the distribution is obviously left-invariant. Any basis of left-invariant vector fields on $G$ forms a smooth frame for $D$, so $D$ is smooth. Moreover, $D_L$ is involutive because such a frame is closed under the Lie bracket.
 \end{proof}
 
 The Frobenius theorem now gives us the first the first ``enhancement'' result about Lie subgroups. Even though by definition they are only required to be immersed (which means that their topology can differ drastically from the subspace topology), the following theorem shows that they are in fact weakly embedded (a.k.a.~initial).
