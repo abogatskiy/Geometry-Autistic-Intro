@@ -947,7 +947,7 @@ execute at end picture={\draw [<-] ([xshift=0mm,yshift=-6mm]m-2-2.north) arc[sta
    & \, & \\
    V\otimes W \arrow[rr,dashed,swap,"\exists!\,f_\ast\text{- linear}"]& & U
 \end{tikzcd}\]
-Our argument above shows that in that explicit construction, if we pick $t(v,w)=v\otimes w$ then the commutation of the triangle says $f_\ast (v\otimes w)=f(v,w)$, which is exactly what we had before. Thus our construction with this $t$ indeed has this universal porperty and defines a unique isomorphism class of objects that are collectively denoted by  $V\oplus W\overset{t}{\to}V\otimes W $. Note that the above diagram lives completely within the category of vector spaces: all arrows are just linear maps, i.e.\ morphisms of vector spaces.
+Our argument above shows that in that explicit construction, if we pick $t(v,w)=v\otimes w$ then the commutation of the triangle says $f_\ast (v\otimes w)=f(v,w)$, which is exactly what we had before. Thus our construction with this $t$ indeed has this universal property and defines a unique isomorphism class of objects that are collectively denoted by  $V\oplus W\overset{t}{\to}V\otimes W $. Note that the above diagram lives completely within the category of vector spaces: all arrows are just linear maps, i.e.\ morphisms of vector spaces.
 
 Now we can finally extend this construction to find the universal property of $\bbT\left(V\right)$. As a vector space, $\bbT(V)=\bigoplus_{k\geq 1}V^{\otimes k}$, and we know that linear functions on every $V^{\otimes k}$ need to correspond to multilinear maps on $V$. However, since $T(V)$ is supposed to be a tensor algebra and not just a vector space, we need to capture this extra structure in the requirements for our morphisms.
 
@@ -1138,8 +1138,8 @@ i.e.\ use nothing but logical operators in their definitions.
 On the other hand, Cartesian products $X\times Y$ are usually defined
 as sets of ``ordered pairs'' or ``tuples'' $(x,y)$. But what
 \emph{are} ordered pairs? There is no such construction in the axioms of
-set theory! Traditionally this was solved by constructions like Kuratowski's
-pair $\left(x,y\right)\equiv\left\{ \left\{ x\right\} ,\left\{ x,y\right\} \right\} $,
+set theory! Traditionally this was solved by constructions like \emph{Kuratowski's
+pair} $\left(x,y\right)\equiv\left\{ \left\{ x\right\} ,\left\{ x,y\right\} \right\} $,
 because this formula unambiguously distinguishes $x$ from $y$. However,
 we immediately run into syntactical problems when we consider $\left(x,x\right)$.
 A much bigger problem, however, is the fact that this construction
@@ -1336,7 +1336,7 @@ There are two ways to compose natural transformations, namely the
 to that they satisfy the ``\emph{2-associativity}'' law \[\left(\pi\varominus\rho\right)\varobar\left(\sigma\varominus\tau\right)=\left(\pi\varobar\rho\right)\varominus\left(\sigma\varobar\tau\right),\quad\quad\quad
 \begin{tikzcd}[column sep=huge]
 \bullet   \arrow[r,bend left=70,""{name=U,below}] \arrow[r,""{name=Mu,above},""{name=Md,below}]  \arrow[bend right=70]{r}[name=D]{} & \bullet   \arrow[Rightarrow,from=U,to=Mu]{} \arrow[Rightarrow,to path={(Md) -- node[] {} (D)}]{} \arrow[r,bend left=70,""{name=U2,below}] \arrow[r,""{name=Mu2,above},""{name=Md2,below}]  \arrow[bend right=70]{r}[name=D2]{}& \bullet \arrow[Rightarrow,from=U2,to=Mu2]{} \arrow[Rightarrow,from=Md2,to=D2]{}
-\end{tikzcd}\]which illustrates that the double composition of the above digram
+\end{tikzcd}\]which illustrates that the double composition of the above diagram
 should be independent of the order of compositions. 
 
 This allows us to define \emph{2-categories}: they consist of an
@@ -2049,7 +2049,7 @@ A map $f:X\to Y$ (not necessarily continuous) is called
 \end{defn}
 Note that the limit of a sequence is unique by the first axiom of the metric. One can also define the limit point of a subset of a general topological space as follows:
 \begin{defn}[Limit Point]
-    If $A$ is a subset of a topological space, a point $x\in X$ is said to be a limit point of $A$ if every open neighbourhood of $x$ intersects $A$ in some point other than $x$.
+    If $A$ is a subset of a topological space, a point $x\in X$ is said to be a limit point of $A$ if every open neighborhood of $x$ intersects $A$ in some point other than $x$.
 \end{defn}
 
 In metric spaces, limit points are equivalent to limits of sequences, i.e., for every limit point $x$ of a subset $A$, there exists a sequence of points in $A$ that converges to $x$. Conversely, for any convergent sequence of points in $A$, the limit of the sequence is a limit point of $A$.
@@ -2164,11 +2164,11 @@ We saw that every metric space has a canonical topology associated with it. A na
 \begin{defn}[Separation Axioms]\index{Separation axioms}
     For a topological space $X$ with arbitrary points $x$ and $y$ and arbitrary disjoint closed sets $F$ and $G$, we define the following axioms:
     \begin{enumerate}
-        \item $T_1$: There exists an open neighbourhood $U$ of $x$ that doesn't include $y$, and an open neighbourhood $V$ of $y$ that doesn't include $x$, i.e., $x$ and $y$ are \emph{separated}.
-        \item $T_2$ (\emph{Hausdorff}): There exist disjoint open neighbourhoods $U$ of $x$ and $V$ of $y$, i.e., $x$ and $y$ are \emph{separated by neighbourhoods}.
-        \item $T_3$: There exist disjoint open neighbourhoods $U$ of $x$ and $V$ of $F$.
+        \item $T_1$: There exists an open neighborhood $U$ of $x$ that doesn't include $y$, and an open neighborhood $V$ of $y$ that doesn't include $x$, i.e., $x$ and $y$ are \emph{separated}.
+        \item $T_2$ (\emph{Hausdorff}): There exist disjoint open neighborhoods $U$ of $x$ and $V$ of $y$, i.e., $x$ and $y$ are \emph{separated by neighborhoods}.
+        \item $T_3$: There exist disjoint open neighborhoods $U$ of $x$ and $V$ of $F$.
         \item \emph{Regular}: $X$ is both $T_1$ and $T_3$.
-        \item $T_4$: There exist disjoint open neighbourhoods $U$ of $F$ and $V$ of $G$.
+        \item $T_4$: There exist disjoint open neighborhoods $U$ of $F$ and $V$ of $G$.
         \item \emph{Normal}: $X$ is both $T_1$ and $T_4$.
     \end{enumerate}
 \end{defn}
@@ -2654,7 +2654,7 @@ The following proposition is the reason why second countability is often substit
 \end{enumerate}
 \end{thm}
 \begin{proof}
-    (1,2): Pick an open covering by charts $\{U_\alpha\}$. Each $U_\alpha $ can be covered by countably many coordinate balls $V_{\alpha_i}$ because $\wh{U}_\alpha$ can be covered by countably many balls in $\bbR^n$. By second countability, there is a countable subcovering and basis $\{V_\beta\}$. Fixing a chart $U$ and covering it by coordinate balls $V_\alpha$, we have that $\xoverline{V}_\beta$ is compact in $U$ (because it's homeo to a closed ball), therefore closed in $X$ by Hausdorffness. Therefore it's also compact in $X$, i.e.\ $V_\beta$'s are precompact. The covering can also be made locally finite: let $\{K_i\}_{i=1}^\infty$ be an exhaustion of $M$ by compact sets (i.e.\ $\bigcup_i K_i=M$; we will prove the existence in Prop. \ref{prop.exhaustion}). After picking out a finite subcovering of every compact ``stripe'' $K_{i+1}\setminus \Int K_{i}$ by charts that are small enough to fit within the wider open ``stripe'' $\Int K_{i+2}\setminus K_{i-1}$ (possible because all charts still form a basis), we end up with a locally finite covering (since every point of the manifold is contained only in 3 of the open stripes).
+    (1,2): Pick an open covering by charts $\{U_\alpha\}$. Each $U_\alpha $ can be covered by countably many coordinate balls $V_{\alpha_i}$ because $\wh{U}_\alpha$ can be covered by countably many balls in $\bbR^n$. By second countability, there is a countable subcovering and basis $\{V_\beta\}$. Fixing a chart $U$ and covering it by coordinate balls $V_\alpha$, we have that $\xoverline{V}_\beta$ is compact in $U$ (because it's homeomorphic to a closed ball), therefore closed in $X$ by Hausdorffness. Therefore it's also compact in $X$, i.e.\ $V_\beta$'s are precompact. The covering can also be made locally finite: let $\{K_i\}_{i=1}^\infty$ be an exhaustion of $M$ by compact sets (i.e.\ $\bigcup_i K_i=M$; we will prove the existence in Prop. \ref{prop.exhaustion}). After picking out a finite subcovering of every compact ``stripe'' $K_{i+1}\setminus \Int K_{i}$ by charts that are small enough to fit within the wider open ``stripe'' $\Int K_{i+2}\setminus K_{i-1}$ (possible because all charts still form a basis), we end up with a locally finite covering (since every point of the manifold is contained only in 3 of the open stripes).
 
     (3) is obvious because it holds for balls. (4) follows because second countability implies countable number of components. The rest is obvious. For (5) See \cite[Thm 1.16]{Lee}.
 \end{proof}
@@ -2690,7 +2690,7 @@ The following proposition is the reason why second countability is often substit
 Throughout these notes we also adopt the notation where for any atlas as above, $U_{\alpha\beta}=U_\alpha \cap U_\beta$, $U_{\alpha\beta\gamma}=U_\alpha \cap U_\beta \cap U_\gamma$, etc.
 
 \begin{defn}[Smooth atlas]\index{Atlas!smooth}
-    An atlas is called smooth (or of class $C^k$ or $C^\omega$) if all of the \emph{transition functions} $\varphi_{\beta\alpha}=\varphi_\beta\circ\varphi_\alpha^{-1}:\varphi_\alpha(U_{\alpha\beta})\to\varphi_\beta(U_{\alpha\beta})$ are smooth/$C^\infty$ (of class $C^k$, or real analytic, respectively) in the sense of multivariable calculus on $\bbR^n$.
+    An atlas is called smooth (or of class $C^k$ or $C^\omega$) if all of the \emph{transition functions} $\varphi_{\beta\alpha}=\varphi_\beta\circ\varphi_\alpha^{-1}:\varphi_\alpha(U_{\alpha\beta})\to\varphi_\beta(U_{\alpha\beta})$ are smooth/$C^\infty$ (of class $C^k$, or real analytic, respectively) in the sense of multivariate calculus on $\bbR^n$.
 \end{defn}
 \begin{defn}[Equivalent atlases]\index{Atlas!equivalence of}
     Two atlases $\mathcal{A}_1$ and $\mathcal{A}_2$ are called equivalent, or compatible, if $\mathcal{A}_1\cup\mathcal{A}_2$ is still an atlas of the same smoothness class.
@@ -2711,8 +2711,8 @@ Throughout these notes we also adopt the notation where for any atlas as above, 
     \item Let $\psi:\bbR \to\bbR $ be $\psi(x)=x^3$. Then $\{(\bbR ,\psi)\}$ is an atlas that defines a smooth structure on $\bbR $. It is not smoothly compatible with the standard smooth structure given by the chart map $\varphi(x)=x$, because the transition function $\varphi\circ \psi^{-1}(x)=x^{1/3}$ is not smooth. Therefore $\bbR $ has many (in fact, infinitely many) different smooth structures.
     \item Any real or complex vector space is automatically a smooth manifold.
     \item Spaces of matrices, classical groups, spheres... are all smooth manifolds with their standard structures.
-    \item Not every topological manifold admits a smooth structure, although examples are pretty difficult to construct. On the other hand, any $C^1$ manifold admits a compatible (in the $C^1$ sense) smooth structure, which is unique up to diffeomorphism (see below). This is why even mathematicians are mostly happy working with just either topological or immediately smooth/analytic manifolds. Interestingly, all topological manifolds in dimensions 1,2, and 3 admit unique (up to diffeo) smooth structures.
-    \item All Lie groups (defined as smooth manifolds with a group structure in which multiplication and inversion are smooth maps) in fact support a unique (up to diffeo) $C^\omega$ structure. This is an immediate consequence of the convergence of the Baker-Campbell-Hausdorff series.
+    \item Not every topological manifold admits a smooth structure, although examples are pretty difficult to construct. On the other hand, any $C^1$ manifold admits a compatible (in the $C^1$ sense) smooth structure, which is unique up to diffeomorphism (see below). This is why even mathematicians are mostly happy working with just either topological or immediately smooth/analytic manifolds. Interestingly, all topological manifolds in dimensions 1,2, and 3 admit unique (up to diffeomorphism) smooth structures.
+    \item All Lie groups (defined as smooth manifolds with a group structure in which multiplication and inversion are smooth maps) in fact support a unique (up to diffeomorphism) $C^\omega$ structure. This is an immediate consequence of the convergence of the Baker-Campbell-Hausdorff series.
 \end{enumerate}
 \end{example}
 
@@ -2741,8 +2741,8 @@ From now on we work only with smooth manifolds, and use the word ``manifold''  t
 \end{defn}
 \begin{prop}
 \begin{enumerate}
-    \item Diffeos are homeo and open.
-    \item If $M$ and $N$ have boundaries and $f:M\to N$ is a diffeo, then $f(\partial M)=\partial N$ and $\restr{f}{\mathring M}: \mathring M\to \mathring N$ is a diffeo.
+    \item Diffeomorphisms are homeomorphisms and open.
+    \item If $M$ and $N$ have boundaries and $f:M\to N$ is a diffeomorphism, then $f(\partial M)=\partial N$ and $\restr{f}{\mathring M}: \mathring M\to \mathring N$ is a diffeomorphism.
 \end{enumerate}
 \end{prop}
 \begin{example}
@@ -2875,7 +2875,7 @@ The main property of regular values of smooth maps is that they are generic, as 
 
 \subsection{Inverse \& Implicit Mapping Theorems}
 
-In this section we just recall the statements of two basic theorems in multivariable calculus.
+In this section we just recall the statements of two basic theorems in multivariate calculus.
 \begin{thm}[\gls{inmt}]\label{InMT}\index{Theorem!Inverse mapping}
     Let $U,V\subset\bbR^n$ be open and $f\in C^\infty(U,V)$. If the Jacobi matrix $\frac{\partial f^i}{\partial x^j} (\bf{a})$ is invertible for some $\bf{a}\in U$, then there are neighborhoods $\bf{a}\in U_{\bf{a}}\subset U$ and $f(\bf{a})\in V_{f(\bf{a})}\subset V$ such that $\restr{f}{U_{\bf{a}}}:U_{\bf{a}}\to V_{f(\bf{a})}$ is a diffeomorphism.
 \end{thm}
@@ -2945,7 +2945,7 @@ Meaning: the equation $\Phi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for $\b
     \item $f_{\ast m}:\T_m M\to \T_{f(m)} N$ is linear;
     \item $(g\circ f)_{\ast m}=g_{\ast f(m)}\circ f_{\ast m}$ (chain rule);
     \item $(\id_M)_{\ast m}=\id_{\T_m M}$;
-    \item if $f$ is a local diffeo at $x$ then $f_{\ast m}$ is invertible and $(f_{\ast m})^{-1}=(f^{-1})_{\ast m}$ (the converse is also true by \gls{inmt});
+    \item if $f$ is a local diffeomorphism at $x$ then $f_{\ast m}$ is invertible and $(f_{\ast m})^{-1}=(f^{-1})_{\ast m}$ (the converse is also true by \gls{inmt});
     \item In local coordinates, $f_{\ast m}$ is represented by the Jacobi matrix of the local representative $f_{\beta\alpha}$;
     \item $\dim T_m M=\dim M$, even for points on $\partial M$;
     \item \gls{inmt} doesn't hold at the boundary.
@@ -2953,9 +2953,9 @@ Meaning: the equation $\Phi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for $\b
 \end{thm}
 \begin{proof}
     The first few statements are trivial and are left as an exercise.
-    6) A local chart map $\varphi_\alpha$ can be viewed as a local diffeo to an open subset of $\bbR^n$. Since $T_{\varphi_\alpha(m)}(\bbR^n)=\bbR^n$ (because we know that equivalence classes of curves at a point of $\bbR^n$ are uniquely characterized by their tangent vectors), we have a linear map $(\varphi_\alpha)_{\ast m}:\T_m M\to \bbR^n$, which is an isomorphism by 4). Therefore the dimensions coincide. Nothing really changes at the boundary.
+    6) A local chart map $\varphi_\alpha$ can be viewed as a local diffeomorphism to an open subset of $\bbR^n$. Since $T_{\varphi_\alpha(m)}(\bbR^n)=\bbR^n$ (because we know that equivalence classes of curves at a point of $\bbR^n$ are uniquely characterized by their tangent vectors), we have a linear map $(\varphi_\alpha)_{\ast m}:\T_m M\to \bbR^n$, which is an isomorphism by 4). Therefore the dimensions coincide. Nothing really changes at the boundary.
 
-    7) Consider the inclusion map $i:\bbR^n_+\hookrightarrow \bbR^n$. Clearly $i_{\ast 0}=\id$ is invertible, but $i$ itself is not a local diffeo because $i(B^n\cap \bbR^n_+)$ is the image of an open set that is not open in $\bbR^n$.
+    7) Consider the inclusion map $i:\bbR^n_+\hookrightarrow \bbR^n$. Clearly $i_{\ast 0}=\id$ is invertible, but $i$ itself is not a local diffeomorphism because $i(B^n\cap \bbR^n_+)$ is the image of an open set that is not open in $\bbR^n$.
 \end{proof}
 
 All of this implies that the map $\T_m:(M,m)\mapsto \T_m M$ extends to a covariant functor $\T_m:\mathsf{Man}_\bullet^\infty\to \mathsf{Vect}_\bbR$. It respects morphisms (smooth maps) $f:M\to N$ between pointed\footnote{The requirement that these manifolds be pointed is a mere technicality for the sake of the definition of a functor. Given a map $f:M\to N$ and a point $f\in M$, we can always create the pairs $(M,m)$ and $(N,f(m))$ and treat $f$ as a pointed map.} manifolds because the following diagram commutes:
@@ -3023,7 +3023,7 @@ Let $f\in C^\infty(M,N)$ have constant rank $r$. Then
 \begin{enumerate}
     \item Suppose it is not an immersion. Then $r<\dim M$, which means that in some coordinates we have $\wh{f}(0,\ldots,0,\epsilon)=(0,\ldots,0)$ for all sufficiently small $\epsilon$. This contradicts injectivity.
     \item Suppose it is not a submersion. Then $r<\dim N$. There exists a (countable) open covering  $\{U_\alpha\}$ of $M$ such that $f(U_\alpha)$ are ball-slices $B^n\cap \{y^{r+1}=y^{r+2}=\cdots=y^n=0\}$. We have $f(M)=\cup_\alpha f(U_\alpha)$, but at the same time $f(U_\alpha)$'s are \emph{nowhere dense} (i.e.\ closure has empty interior). By \href{https://en.wikipedia.org/wiki/Baire_category_theorem}{Baire category theorem}, a countable union of nowhere dense sets has an empty interior, which implies $\Int  f(M)=\varnothing$. This contradicts surjectivity, because $\Int  N\neq\varnothing$.
-    \item Obvious (a bijective local diffeo is a diffeo).
+    \item Obvious (a bijective local diffeomorphism is a diffeomorphism).
 \end{enumerate}
 \end{proof}
 
@@ -3337,15 +3337,15 @@ In other words, the total space $E$ is locally isomorphic to parts of $M$, but t
 \begin{enumerate}
     \item The neighborhood $U$ whose existence is required in the definition has to be connected.
     \item Covering maps are local diffeomorphisms, submersions, open maps, and quotient maps.
-    \item If $\pi $ is injective then it is diffeo.
+    \item If $\pi $ is injective then it is diffeomorphism.
     \item For $m\in \pi^{-1}(q)$ and $U$ a neighborhood of $q$ as in the definition, there is a unique local section $\sigma:U\to E$ of $\pi$ such that $\sigma(q)=m$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
 \begin{enumerate}
     \item Obvious because every connected component of the pre-image can't be diffeomorphic to a disconnected $U$.
-    \item Obviously a local diffeo. Submersion because local diffeo. Open for the same reason (or because a submersion). Quotient because surjective and submersion.
-    \item If $\pi$ is injective, it's an immersion by the Global Rank Theorem \ref{Global rank}. A map that is an immersion and a submersion is a diffeo.
+    \item Obviously a local diffeomorphism. Submersion because local diffeomorphism. Open for the same reason (or because a submersion). Quotient because surjective and submersion.
+    \item If $\pi$ is injective, it's an immersion by the Global Rank Theorem \ref{Global rank}. A map that is an immersion and a submersion is a diffeomorphism.
     \item A section is guaranteed by definition. Just let $\wt{U}$ be the connected component of $\pi^{-1}(U)$ that contains $m$. Then $\restr{\pi}{\wt{U}}$ is a diffeomorphism whose inverse is obviously a section passing through $m$ defined on $U$. Now, suppose there is another section $\sigma':U\to E$ with the same properties. Then $\sigma'(U)\subset \wt{U}$ since $U$ is connected and $\sigma'(q)=m$. But then both $\sigma$ and $\sigma'$ are right inverses to the bijective map $\restr{\pi}{\wt{U}}$, so they have to coincide.
 \end{enumerate}
 \end{proof}
@@ -3844,7 +3844,7 @@ We now examine the relationship between principal and regular coverings.
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    (1) Let $p\in E$ and $g\in \Aut(\pi)$. Let $U$ be an evenly covered neighborhood of $\pi(p)$, and let $U_p$ be the sheet over $U$ containing $p$. For $q\in U_p\cap gU_p$ we have $\pi(q)=\pi(g^{-1}q)$, since $g^{-1}$ is an automorphism. Hence $q=g^{-1}q$, since both elements are contained in $U_p$. This shows $g^{-1}=e$, hence $U_p\cap gU_p=\varnothing$ for $g\neq e$, and we see that the action is properly discontinous.
+    (1) Let $p\in E$ and $g\in \Aut(\pi)$. Let $U$ be an evenly covered neighborhood of $\pi(p)$, and let $U_p$ be the sheet over $U$ containing $p$. For $q\in U_p\cap gU_p$ we have $\pi(q)=\pi(g^{-1}q)$, since $g^{-1}$ is an automorphism. Hence $q=g^{-1}q$, since both elements are contained in $U_p$. This shows $g^{-1}=e$, hence $U_p\cap gU_p=\varnothing$ for $g\neq e$, and we see that the action is properly discontinuous.
 
     (2) Let $U\subset B$ be open, path connected, and evenly covered. Let $\pi^{-1}(U)=\bigcup_j U_j$ be the decomposition into sheets over $U$. An element $h\in H$ permutes the sheets, since they are the path components of $\pi^{-1}(U)$. The equivalence classes with respect to $H$ are therefore open in the quotient topology of $E\slash H$ and are mapped bijectively and continuously under $\pi'$. Since $\pi$ is open, so is $\pi'$. Hence $\pi'$ is trivial over $U$. Since $B$ is locally path connected, it has an open covering by such sets $U$.
 \end{proof}
@@ -3902,7 +3902,7 @@ In this sense, universal coverings are ``classifying objects'' for all other cov
     Let $B$ be a space which admits a universal covering. If a right $G$-principal covering  $\pi:E\to B$ is universal, then $E$ is simply connected, i.e.\ $\pi$ is a universal covering of $B$.
 \end{prop}
 \begin{proof}
-    First consider the group $G$ acting on itself from the left as a $G$-set. It is clear from the definition that the associated bundle $A(\pi)(G)$ is isomorphic to $\pi$ itself. Now consider any other covering $\pi':E'\to B$. By assumption, $A(\pi):G\mathsf{-Set}\to \mathsf{Cov}_B$ is an equivalence of categories, thus there exists a left $G$-set $F$ such that the covering $A(\pi)(F)$ is isomorphic to $\pi'$. Now pick a point $p_0\in F$. The action $G\acts F$ induces a $G$-equivariant map $g\mapsto g\cdot p_0$. This is a morphism $f:G\to F$ in the category of $G$-sets. Sincce $A(\pi)$ is a functor, $A(\pi)(f)$ is a morphism from $A(\pi)(G)$ to $A(\pi)(F)$. Since $A(\pi)$ is an equivalence of categories, there is a natural transformation that turns this morphism into a morphism from $\pi$ to $\pi'$. Therefore $\pi$ is an initial object in the category $\mathsf{Cov}_B$, and hence isomorphic to the universal covering.
+    First consider the group $G$ acting on itself from the left as a $G$-set. It is clear from the definition that the associated bundle $A(\pi)(G)$ is isomorphic to $\pi$ itself. Now consider any other covering $\pi':E'\to B$. By assumption, $A(\pi):G\mathsf{-Set}\to \mathsf{Cov}_B$ is an equivalence of categories, thus there exists a left $G$-set $F$ such that the covering $A(\pi)(F)$ is isomorphic to $\pi'$. Now pick a point $p_0\in F$. The action $G\acts F$ induces a $G$-equivariant map $g\mapsto g\cdot p_0$. This is a morphism $f:G\to F$ in the category of $G$-sets. Since $A(\pi)$ is a functor, $A(\pi)(f)$ is a morphism from $A(\pi)(G)$ to $A(\pi)(F)$. Since $A(\pi)$ is an equivalence of categories, there is a natural transformation that turns this morphism into a morphism from $\pi$ to $\pi'$. Therefore $\pi$ is an initial object in the category $\mathsf{Cov}_B$, and hence isomorphic to the universal covering.
 \end{proof}
 
 We thus have the following abstract reformulation of the classification theorem, which will be a useful reference point for when we classify general fiber bundles.
@@ -4953,7 +4953,7 @@ The next Theorem shows that a map $E\to B$ that is a Serre fibration locally aro
 \begin{proof}
     Let $\pi:E\to B$ be a Serre fibration, let $K$ be a $CW$-complex and $L$ a subcomplex of $K$.
 
-    1. Consider the lifting problem defined by some $f:K\times I\to B$ and an initial conditon $\wt{f}_0:(K\times\{0\})\cup(L\times I)\to E$. We prove the assertion by induction on the dimension $k$ of the cells attached to $L$ to build $K$. The case $k=0$ is trivial. Thus, assume we have already constructed a lifting $\wt f$ over the subspace $(K^{(k)}\cup L)\times I\subset K\times I$ for some $k\geq 0$ and consider a $(k+1)$-cell $C$ not contained in $L$ with characteristic map $\chi:\bbD^{k+1}\to K$. Since $C$ is not contained in $L$, we have $C\cap (K^{(k)}\cup L)=C\cap L^{(k)}$. Hence, we wish to extend $\wt{f}$ from 
+    1. Consider the lifting problem defined by some $f:K\times I\to B$ and an initial condition $\wt{f}_0:(K\times\{0\})\cup(L\times I)\to E$. We prove the assertion by induction on the dimension $k$ of the cells attached to $L$ to build $K$. The case $k=0$ is trivial. Thus, assume we have already constructed a lifting $\wt f$ over the subspace $(K^{(k)}\cup L)\times I\subset K\times I$ for some $k\geq 0$ and consider a $(k+1)$-cell $C$ not contained in $L$ with characteristic map $\chi:\bbD^{k+1}\to K$. Since $C$ is not contained in $L$, we have $C\cap (K^{(k)}\cup L)=C\cap L^{(k)}$. Hence, we wish to extend $\wt{f}$ from 
     \[(C\times\{0\}) \cup((C\cap K^{(k)})\times I)\subset C\times I\]
     to a lifting of $f$ on $C\times I$. Assume that we can extend
     \[\wt{f}\circ \restr{(\chi\times\id_I)}{(\bbD^{k+1}\times\{0\})\cup (\partial \bbD^{k+1}\times I)}\]
@@ -5261,7 +5261,7 @@ with the quotient map $q:\bbD^{n+1}\to \bbS^{n+1}=\bbD^{n+1}\slash \bbS^n$. The 
     $\pi_n(\bbS^n)\cong \bbZ$ and $\Sigma_\ast:\pi_n(\bbS^n)\to \pi_{n+1}(\bbS^{n+1})$ is an isomorphism ($n\geq 1$). The group $\pi_n(\bbS^n)$ is generated by the identity map of $\bbS^n$.
 \end{thm}
 \begin{proof}
-    From the exact sequence of the Hopf fibration $\pi_2(\bbS^3)\to \pi_2(\bbS^2)\to \pi_1(\bbS^1)\to \pi_1(\bbS^3)$ and $\pi_j(\bbS^3)=0$ for $j=1,2$, we obtain an isomorphism $\partial:\pi_2(\bbS^2)\to \pi_1(\bbS^1)\cong \bbZ$. From Theorem~\ref{thm 6.4.6 tomDieck freudenthal} we obtain a surjection $\Sigma_\ast:\pi_1(\bbS^1)\to \pi_2(\bbS^2)$; this is an isomorphism, since both groups are isomorhic to $\bbZ$. For $n\geq 2$, Theorem~\ref{thm 6.4.6 tomDieck freudenthal} directly gives an isomorphism $\Sigma_\ast$. We know that $\pi_1(\bbS^1)$ is generated by the identity map, and $\Sigma_\ast$ respects the identity.
+    From the exact sequence of the Hopf fibration $\pi_2(\bbS^3)\to \pi_2(\bbS^2)\to \pi_1(\bbS^1)\to \pi_1(\bbS^3)$ and $\pi_j(\bbS^3)=0$ for $j=1,2$, we obtain an isomorphism $\partial:\pi_2(\bbS^2)\to \pi_1(\bbS^1)\cong \bbZ$. From Theorem~\ref{thm 6.4.6 tomDieck freudenthal} we obtain a surjection $\Sigma_\ast:\pi_1(\bbS^1)\to \pi_2(\bbS^2)$; this is an isomorphism, since both groups are isomorphic to $\bbZ$. For $n\geq 2$, Theorem~\ref{thm 6.4.6 tomDieck freudenthal} directly gives an isomorphism $\Sigma_\ast$. We know that $\pi_1(\bbS^1)$ is generated by the identity map, and $\Sigma_\ast$ respects the identity.
 \end{proof}
 
 This proof clearly extends to two cones over any space $X$, so by using the adjunction $[\Sigma X,Y]\cong[X,\Omega Y]$ we get the more general form of this Theorem.
