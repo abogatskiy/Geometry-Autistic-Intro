@@ -6384,11 +6384,16 @@ Theorem~\ref{thm 8.7 Sharpe} provides an easy proof of the existence and uniquen
 
 If one assumes Theorem~\ref{thm 7.7. Lee covering group} to be known (via our original proof), then a much shorter proof of Theorem~\ref{thm 8.7 Sharpe} can be given based on the Ehresmann Fibration Theorem. We have avoided this proof due to the value of the concepts developed over the course of the longer proof.
 
-\begin{proof}[Shorter proof of Theorem~\ref{thm 8.7 Sharpe}]
-    Consider again the Pfaffian system on $M\times G$ spanned by the (components of the) $1$-form $\pr_M^\ast\omega-\pr_G^\ast\theta_G$. By the proof of the local Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, it is integrable and the leaves of the integral foliation are locally graphs of maps $M\to G$. Moreover, since both $\omega$ and $\theta_G$ are fiberwise isomorphisms, these maps are local diffeomorphisms that pull $\theta_G$ back to $\omega$. Let $L$ be a leaf of the foliation. The constant vector fields of both $M$ and $G$ can be locally pulled back to form global complete vector fields on $L$ (the two pullbacks will match each other). Since these vector fields are complete, we can use the Ehresmann Fibration Theorem in the form of Corollary~\ref{thm Ehresmann vector fields} to conclude that $L$ is a fiber bundle over both $M$ and $G$. It has the same dimension, therefore it is actually a covering space. Now it suffices to consider simply connected $M$, as the general case will follow by the same argument as above. In this case, the covering map $\pr_M:L\to M$ has to be a diffeomorphism, thus $L$ is also a universal covering of $G$. By Theorem~\ref{thm 7.7. Lee covering group}, $L$ has a unique Lie group structure (for each choice of identity) that makes $\pr_G:L\to G$ a local isomorphism. This makes $M$ a Lie group as well.
+\begin{proof}[Shorter proof of Theorem~\ref{thm 8.7 Sharpe} {{\cite[Thm.~2.8]{McKayCartan}}}]
+    Consider again the Pfaffian system on $M\times G$ spanned by the (components of the) $1$-form $\pr_M^\ast\omega-\pr_G^\ast\theta_G$. By the proof of the local Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, it is integrable and the leaves of the integral foliation are locally graphs of maps $M\to G$. Moreover, since both $\omega$ and $\theta_G$ are fiberwise isomorphisms, these maps are local diffeomorphisms that pull $\theta_G$ back to $\omega$. 
+    
+    Let $S$ be a leaf of the foliation through some point $(m_0,e)$. Take a constant vecror field $\omega^{-1}(A)$ on $S$ for some $A\in\frakg$. The vector field $X\coloneqq (\omega^{-1}(M),A_L)$ on $S\times G$ is tangent to $S$ since $\restr{\pr_M^\ast\omega}{S}=\restr{\pr^\ast_G\theta_G}{S}$. We can simultaneously consider the integral curve $\gamma_M$ of $\omega^{-1}(A)$ through $m_0$ and the integral curve of $A_L$ through $e$. We see that the integral curve $\gamma$ of $X$ through $(m_0,e)\in M\times G$ lies in $S$ and projects onto $\gamma_M$ and $\gamma_G$, respectively. As long as both of the latter curves exist, $\gamma$ exists as well. This means that $\omega^{-1}(A)$ and $A_L$ can be lifted to a unique complete vector field on $S$. Since these vector fields span the tangent bundles, we can now use the Ehresmann Fibration Theorem in the form of Corollary~\ref{thm Ehresmann vector fields} to conclude that $S$ is a fiber bundle over both $M$ and $G$. All three have the same dimension, therefore $S$ is actually a covering space of both $G$ and $M$. 
+    
+    By an extension of the same lifting argument, we can now replace $S$ with the universal covering space $\wt M$ of $M$. The resulting covering map $D\coloneqq \wt M\to G$ is called a \emph{developing map}. \index{Developing map}
+    By Theorem~\ref{thm 7.7. Lee covering group}, $\wt M$ has a unique Lie group structure (for each choice of identity) that turns $D$ into a local Lie group isomorphism. The deck transformations of $\wt M$ preserve the pullback of $\omega$. But the developing map might not be invariant under the deck transformations. Each deck transformation $a\in \Aut(\wt{M})\cong \pi_1(M)$ takes $(m_0,e)$ to some $(m,g)$. By uniqueness of leaves of the foliation, the entire transformation must be simply the left translation $L_g$ acting on the $G$-component, as asserted.
 \end{proof}
 
-Note that if $M$ is not simply connected, then $L$ is still a Lie group because \emph{any} covering space of a Lie group is a Lie group, namely a quotient of the universal covering group of $G$ by some central discrete (and hence normal) subgroup. In this picture, developments of $\omega$ correspond to unique liftings of curves in $M$ to curves in $L$ and then projection to $G$.
+In this picture, developments of $\omega$ correspond to unique liftings of curves in $M$ to curves in $\wt{M}$ and then projection to $G$ via the developing map.
 
 
 
@@ -7549,6 +7554,7 @@ In fact, a global version of this theorem holds, first obtained by \'Elie Cartan
     If $M$ is a connected $C^2$ manifold and a collection of \emph{complete} $C^1$ vector fields forms a finite-dimensional Lie subalgebra $\frakg<\fX^1(M)$, then there exists a connected Lie group with a $C^2$ action on $M$ faithfully inducing the action of $\frakg$, unique up to a unique isomorphism of Lie group actions. In particular, the flows $\{F^X_1\}_{X\in \frakg}$ form a finite-dimensional Lie group with Lie algebra $\frakg$.
 \end{cor}
 
+
 \begin{rem}[Lie correspondence]
     The Cartan-Lie Theorem, combined with Theorem~\ref{thm second principle}, states that the Lie functor provides an equivalence of categories
     \[\Lief:\mathsf{SLieGr}\to \mathsf{LieAlg}_\bbR,\]
@@ -7612,6 +7618,9 @@ In the Closed Subgroup Theorem~\ref{thm closed subgroup} we characterized embedd
  \end{proof}
 
 
+\begin{example}
+    We can now easily prove the Cartan-Lie Theorem~\ref{thm 1.14.3 DK global Lie's third} in the special case when the Lie algebra has no center, $\rmZ(\frakg)=\{0\}$. The adjoint map $\ad:\frakg\to \frakgl(\frakg)$ in this case is injective and is a homomorphism of Lie algebras by the Jacobi identity, so $\frakg$ is a Lie subalgebra of $\frakgl(\frakg)$. By the Analytic Subgroup Theorem~\ref{thm analytic subgroup}, it corresponds to a unique Lie subgroup $G<\GL(\frakg)$ whose Lie algebra is $\frakg$.
+\end{example}
 
 
 \begin{example}[Adjoint group]\label{ex adjoint group}\index{Adjoint group}
