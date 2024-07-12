@@ -10,6 +10,7 @@
 ##    If you would like to support the continuing work on this book, consider buying me a coffee:  ☕ https://buymeacoffee.com/abogatskiy ☕
 
 Topics covered (the ones with ellipses are under construction)
+* Category theory
 * Homotopy theory
 * Smooth manifolds
 * Covering spaces
