@@ -5690,7 +5690,7 @@ We will hence use the notation $A_L$ arbitrary left-invariant fields, implying t
 
 The following is an elementary form of the celebrated Maurer-Cartan equation which we will discuss in depth in the next \subsect. On a fundamental level, as we will see, it expresses the existence of a canonical flat affine connection on Lie groups. It is usually formulated in terms of differential forms, but first we provide an elementary version adapted from \cite{Onishchik}.
 
-\begin{prop}[Maurer-Cartan equation]\index{Equation!Maurer-Cartan}
+\begin{prop}[Maurer-Cartan equation]\index{Equation!Maurer-Cartan}\label{prop MC eq xi eta}
     Let $g:[0,1]^2\to G$ be a twice differentiable map $(t,s)\mapsto g(t,s)$. Define the elements $\xi(t,s),\eta(t,s)\in\frakg$ by the equations
     \[(R_{g}^{-1})_{\ast g}\partial_t g=\xi, \quad (R_{g}^{-1})_{\ast g}\partial_s g=\eta.\]
     In simplified notation (which is literal e.g.~in matrix groups) these read $\partial_t g=\xi g$, $\partial_s g=\eta g$. Then 
@@ -5901,10 +5901,10 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
         On the other hand, since $\theta_G(A_L)=A=\const$, we can use Cartan's magic formula to write
         \[\Lie_{A_L}\theta_G=i_{A_L}\dd\theta_G.\label{eq 17913}\]
         Since the $A_L$ with $A$ ranging over $\frakg$ span the tangent spaces, the equality of (\ref{eq 17912}) and (\ref{eq 17913}) for all $A$ implies
-        \[\dd\theta_G(X,Y)=-[X,Y]=-[\theta_G(X),\theta_G(Y)],\quad X,Y\in\fX(G),\]
+        \[\dd\theta_G(X,Y)=-[\theta_G(X),\theta_G(Y)]\quad \text{ for all } X,Y\in\fX(G),\]
         which can also be written as
         \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
-        This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords}) in a basis-free form. It is also equivalent to the left-invariant analog of our original Maurer-Cartan equation (\ref{eq Maurer-Cartan left xi eta}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$ (the right-invariant equation only differs in the relative sign of the two terms, see Remark~\ref{rem right MC eq}).
+        This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords})\index{Equation!Maurer-Cartan} in a basis-free form. It is also equivalent to our original Maurer-Cartan equation (\ref{eq Maurer-Cartan left xi eta}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$.
         \item The Maurer-Cartan equation also follows immediately via formula (\ref{eq 5.5.3 RS1}) for the exterior derivative of a Lie algebra-valued form:
         \[\dd\theta_G(X,Y)=-\theta_G([X,Y])=-[\theta_G(X),\theta_G(Y)].\]
         \item Hence, the Maurer-Cartan equation describes how the left-invariant $\theta_G$ transforms under infinitesimal right translations. When thinking of Lie groups as transformation groups (acting from the left on some manifold), left translations can be interpreted as ``active transformations'', whereas right translations are ``passive transformations'' that simply changes coordinates on the manifold. If, by analogy with $\frakso_3$, we call elements of $\frakg$ ``angular velocities'', then the Maurer-Cartan equation expresses the change of these velocities under passive transformations in terms of the Lie bracket.
@@ -5941,13 +5941,13 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
     \[\dd\theta_G +\theta_G\wedge\theta_G=0,\]
     and in physics literature there may be a factor of $\frac12$ in front of the wedge product due to the implied commutator.
 
-    Also, since $\theta_G(X_L)=X$ and $(X_L)_g=L_{g\ast e}X$, we also have $\theta_G(X)=(L_{g}^{-1})_{\ast g}X_L(g)$ for any $g\in G$. Since left-invariant vector fields span all of $\T G$, this means that on matrix groups we can write 
+    We also have $\theta_G(X)(g)=(L_{g}^{-1})_{\ast g}X_g$ for any $g\in G$. Since left-invariant vector fields span all of $\T G$, this means that on matrix groups we can write 
     \[(\theta_G)_g=g^{-1}\dd g,\]
     where $\dd g\in \Omega^1(G;\T G)$ stands for the identity tensor on $\T G$ (i.e.~$\dd g(X_g)=X_g$ at any $g\in G$). This is the most common way of defining $\theta_G$ in physics.
 \end{rem}
 
 \begin{rem}\label{rem right MC eq}
-    Of course, everything above similarly applies to right-invariant forms, and one can define a right-invariant Maurer-Cartan form $\theta_G^R$, which in matrix groups is simply $\dd g g^{-1}$. The corresponding Maurer-Cartan equation reads $\dd\theta_G^R-\frac12[\theta_G^R,\theta_G^R]=0$.
+    Of course, everything above similarly applies to right-invariant forms, and one can define a right-invariant Maurer-Cartan form $\theta_G^R$, which in matrix groups is simply $\dd g g^{-1}$. Clearly, $(\theta_G^R)_g=\Ad_g\circ(\theta_G)_g$. The corresponding Maurer-Cartan equation reads $\dd\theta_G^R-\frac12[\theta_G^R,\theta_G^R]=0$, cf.\ Proposition~\ref{prop MC eq xi eta}.
 \end{rem}
 
 \begin{rem}
