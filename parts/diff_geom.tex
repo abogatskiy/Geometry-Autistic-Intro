@@ -971,7 +971,7 @@ Equivalently, using the definition of tangent vectors as equivalence classes of 
 \begin{multline}
     \ad_A B=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}g(t)h(s)g^{-1}(t)=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}g(t)h(s)g^{-1}(t)h^{-1}(s)=\\=\restr{\frac{\dd}{\dd t} \frac{\dd}{\dd s}}{t=s=0}{} [g(t),h(s)].\label{30071}
 \end{multline}
-for any two curves $g(t)$ and $h(s)$ such that $A=g'(0)$ and $B=h'(0)$. The fact that inserting the extra $h^{-1}(s)$ doesn't change the result is due to the fact that it can't contribute anything to the $\calO(ts)$ term in the Taylor series since the $\calO(t)$ term in $ghg^{-1}$ is already zero (to first order $ghg^{-1}$ in local coordinates reads $tA+sB-tA=sB$ as follows from our local functions $\mu$ and $\iota$). This identity can be treated as yet another construction of the Lie algebra, but we already know that it is equivalent to the others.
+for any two curves $g(t)$ and $h(s)$ such that $A=\dot g(0)$ and $B=\dot h(0)$. The fact that inserting the extra $h^{-1}(s)$ doesn't change the result is due to the fact that it can't contribute anything to the $\calO(ts)$ term in the Taylor series since the $\calO(t)$ term in $ghg^{-1}$ is already zero (to first order $ghg^{-1}$ in local coordinates reads $tA+sB-tA=sB$ as follows from our local functions $\mu$ and $\iota$). This identity can be treated as yet another construction of the Lie algebra, but we already know that it is equivalent to the others.
 
 Note that in local coordinates the anti-symmetric form that we derived in the first construction is exactly the Lie bracket written in a local chart $(U,\varphi)$:
 \[b(\varphi_{\ast e} A,\varphi_{\ast e} B)=\varphi_{\ast e}(\ad_A B).\]
@@ -1611,10 +1611,10 @@ The following properties immediately follows from these theorems.
 \begin{rem}[Pathologies of linear ODE's in Fr\'echet spaces]
     \begin{enumerate}[label=(\alph*)]
         \item Consider the Fr\'echet space $V=C^\infty([0,1],\bbR)$ and the continuous linear operator $Lf=f'$ on $V$. We are asking for solutions of the initial value problem
-        \[\gamma'(t)=L\gamma(t), \quad \gamma(0)=\gamma_0\in V.\label{194}\]
+        \[\dot\gamma(t)=L\gamma(t), \quad \gamma(0)=\gamma_0\in V.\label{194}\]
         As a consequence of Borel's Theorem that each power series is the Taylor series of some smooth function, each $\gamma_0$ has a smooth extension to a function on $\bbR$. Let $h$ be such a function and consider
         \[\gamma:\bbR\to V, \quad \gamma(t)(x)=h(t+x).\]
-        Then $\gamma(0)=\restr{h}{[0,1]}=\gamma_0$ and $\gamma'(t)(x)=h'(t+x)=(L\gamma(t))(x)$. It is clear that these solutions depend on the choice of the extension $h$. Therefore solutions to such initial problem values are not unique in Fr\'echet spaces, unlike in the finite-dimensional case.
+        Then $\gamma(0)=\restr{h}{[0,1]}=\gamma_0$ and $\dot\gamma(t)(x)=\dot h(t+x)=(L\gamma(t))(x)$. It is clear that these solutions depend on the choice of the extension $h$. Therefore solutions to such initial problem values are not unique in Fr\'echet spaces, unlike in the finite-dimensional case.
         
         \item Now we consider $V=C^\infty(\bbS^1,\bbC)$ identified with the space of $2\pi$-periodic smooth functions on the real line. We consider the linear operator $Lf=-f''$ and the same equation~(\ref{194}), which in this case is the heat equation with reversed time. It is easy to analyze this equation in terms of the Fourier expansion of $\gamma$. Let
         \[\gamma(t)(x)=\sum_{n\in \bbZ} a_n(t)\rme^{\rmi nx}\]
@@ -3519,7 +3519,7 @@ One final homotopy invariant coming from the algebra of vector bundles derives f
 \begin{defn}[Integral curves]\index{Integral curve}
 Let $M$ be a smooth manifold and $X\in\fX(M)$ a vector field on it. A curve $\gamma:I\to M$ with $I=(a,b)\subset\bbR $ is an integral curve of $X$ if the tangent vectors defined by $\gamma$ on its domain coincide with the values of $X$: 
 \[
-\gamma'(t)=X(\gamma(t)),\;\;t\in I.
+\dot\gamma(t)=X(\gamma(t)),\;\;t\in I.
 \]
 In local coordinates, if $\gamma$ is represented by $x^i(t)$, this is a system of (nonlinear) ODE's
 \[
@@ -5674,7 +5674,7 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
 \begin{proof}
     It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=L_{g\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$ and let $F$ be the flow of $X$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
     \begin{multline}
-        E\left(\Lie_X Y\right)=E\left(\restr{\frac{\dd}{\dd t}}{t=0} F^\ast_t Y\right)= \restr{\frac{\dd}{\dd t}}{t=0}R_{\gamma(t)}^{\ast}Y_{\gamma(t))}=\\=\restr{\frac{\dd}{\dd t}}{t=0}\left(R_{\gamma(t)}^{-1}\circ L_{\gamma(t)}\right)_{\ast e} Y_{e}=\restr{\frac{\dd}{\dd t}}{t=0}(\Ad_{\gamma(t)}Y_e)=\ad_{X_e} Y_e.
+        E\left(\Lie_X Y\right)=E\left(\restr{\frac{\dd}{\dd t}}{t=0} F^\ast_t Y\right)= \restr{\frac{\dd}{\dd t}}{t=0}R_{\gamma(t)}^{\ast}Y_{\gamma(t)}=\\=\restr{\frac{\dd}{\dd t}}{t=0}\left(R_{\gamma(t)}^{-1}\circ L_{\gamma(t)}\right)_{\ast e} Y_{e}=\restr{\frac{\dd}{\dd t}}{t=0}(\Ad_{\gamma(t)}Y_e)=\ad_{X_e} Y_e.
     \end{multline}
 
     Injectivity follows because each left-invariant vector field is uniquely determined by its value at $e$, and surjectivity follows similarly because each $X_e\in \T_eG$ can be extended to a left-invariant field.
@@ -5879,20 +5879,43 @@ There holds the following analogue of Proposition~\ref{prop 5.5.2 RS1}.
 According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1-forms can be identified with linear endomorphisms of $\frakg$. One canonical endomorphism, the identity, gives rise to a very important $1$-form.
 
 \begin{defn}[Maurer-Cartan form]
-    The left-invariant $\frakg$-valued 1-form on $G$ corresponding to $\id_\frakg$ is called the (left) Maurer-Cartan form of $G$, denoted by $\theta_G$. By definition,
-    \[\theta_G(A_L)(g)=A\text{ for all }A\in\frakg,\; g\in G.\]
-    As a consequence, $\theta_G$ assigns to a tangent vector $Y_g$ at $g$ the unique left-invariant vector field $X\in\fX(G)^G$ such that $X_g=Y_g$, and identifies it with an element of $\frakg$:
-    \[\theta_G(Y)(g)=L_{g\ast}^{-1}(Y_g)=\pr_2\circ \chi_L^{-1}(Y_g).\]
-    Given a basis $\{\bf{t}_i\}$ of $\frakg=\T_eG$ and its dual basis $\{\alpha^i\}$ on $\frakg^\ast$, identified with left-invariant $1$-forms $\alpha^i\in\fX^\ast(G)^G$, $\theta_G$ is given by
-    \[\theta_G=\sum_i \alpha^i\otimes \bf{t}_i.\]
-    It is also called a \emph{tautological form} because, if we replace $\bf{t}_i$ with their corresponding left-invariant vector fields $e_i=(\bf{t}_i)_L$, then $\sum_i \alpha^i\otimes e_i=\id_{\T G}$.
-
-    Using (\ref{eq 5.5.3 RS1}), the exterior derivative of $\theta_G$ is given by
-    \[\dd\theta_G(X,Y)=-\theta_G([X,Y])=-[X,Y]=-[\theta_G(X),\theta_G(Y)],\]
-    and hence
-    \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
-    This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords}) in a basis-free form. It is also equivalent to our original Maurer-Cartan equation (\ref{eq Maurer-Cartan left xi eta}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$. 
+    The unique left-invariant $\frakg$-valued 1-form on $G$ that restricts to $\id_\frakg$ on $\T_e G$ is called the (left) Maurer-Cartan form of $G$, denoted by $\theta_G$.
 \end{defn}
+
+The following remark summarizes the basic properties of the Maurer-Cartan form.
+
+\begin{rem}[Properties of $\theta_G$]
+    \begin{enumerate}
+        \item By definition,
+        \[\theta_G(A_L)(g)=A\text{ for all }A\in\frakg,\; g\in G.\]
+        As a consequence, $\theta_G$ assigns to a tangent vector $Y_g$ at $g$ the unique left-invariant vector field $X\in\fX(G)^G$ such that $X_g=Y_g$, and identifies it with an element of $\frakg$ using the canonical left global trivialization:
+        \[\theta_G(Y)(g)=L_{g\ast}^{-1}(Y_g)=\pr_2\circ \chi_L(Y_g).\]
+        In this way, the Maurer-Cartan form can be identified with the left global trivialization $\chi_L:\T G\to G\times\frakg$.
+        \item Given a basis $\{\bf{t}_i\}$ of $\frakg=\T_eG$ and its dual basis $\{\alpha^i\}$ on $\frakg^\ast$, identified with left-invariant $1$-forms $\alpha^i\in\fX^\ast(G)^G$, $\theta_G$ is given by
+        \[\theta_G=\sum_i \alpha^i\otimes \bf{t}_i.\]
+        It is also called a \emph{tautological form} because, if we replace $\bf{t}_i$ with their corresponding left-invariant vector fields $e_i=(\bf{t}_i)_L$, then $\sum_i \alpha^i\otimes e_i=\id_{\T G}$.
+        \item $\theta_G$ is left-invariant, so $L_g^\ast\theta_G=\theta_G$, but under right translations it transforms as follows:
+        \[R_g^\ast\theta_G=\Ad_g^{-1}\circ\theta_G.\label{eq 1914}\]
+        \item Since right translations are the flows of left-invariant vector fields, (\ref{eq 1914}) has the following infinitesimal version. Let $A\in\frakg$ and $A_L\in\fX(G)^G$ the corresponding left-invariant vector field. Then by differentiating (\ref{eq 1914}) with respect to $g$ along $A$ at $g=e$, we get 
+        \[\Lie_{A_L}\theta_G=-\ad_A\circ\theta_G=-[A,\theta_G].\label{eq 17912}\]
+        On the other hand, since $\theta_G(A_L)=A=\const$, we can use Cartan's magic formula to write
+        \[\Lie_{A_L}\theta_G=i_{A_L}\dd\theta_G.\label{eq 17913}\]
+        Since the $A_L$ with $A$ ranging over $\frakg$ span the tangent spaces, the equality of (\ref{eq 17912}) and (\ref{eq 17913}) for all $A$ implies
+        \[\dd\theta_G(X,Y)=-[X,Y]=-[\theta_G(X),\theta_G(Y)],\quad X,Y\in\fX(G),\]
+        which can also be written as
+        \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
+        This is the Maurer-Cartan equation (\ref{eq 5.5.4 RS1 MC in coords}) in a basis-free form. It is also equivalent to the left-invariant analog of our original Maurer-Cartan equation (\ref{eq Maurer-Cartan left xi eta}), which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$ (the right-invariant equation only differs in the relative sign of the two terms, see Remark~\ref{rem right MC eq}).
+        \item The Maurer-Cartan equation also follows immediately via formula (\ref{eq 5.5.3 RS1}) for the exterior derivative of a Lie algebra-valued form:
+        \[\dd\theta_G(X,Y)=-\theta_G([X,Y])=-[\theta_G(X),\theta_G(Y)].\]
+        \item Hence, the Maurer-Cartan equation describes how the left-invariant $\theta_G$ transforms under infinitesimal right translations. When thinking of Lie groups as transformation groups (acting from the left on some manifold), left translations can be interpreted as ``active transformations'', whereas right translations are ``passive transformations'' that simply changes coordinates on the manifold. If, by analogy with $\frakso_3$, we call elements of $\frakg$ ``angular velocities'', then the Maurer-Cartan equation expresses the change of these velocities under passive transformations in terms of the Lie bracket.
+        \item Hence, the Maurer-Cartan equation relates mixed second-order derivatives ($2$-forms) on a Lie group to first derivatives, and thus, as we will see, allows us to express \emph{all} higher-order derivatives on a Lie group only in terms of the first-order ones. This is the key property of \emph{involutivity} that we will relate to the \emph{integrability} of Lie groups in the next \subsect, and which is responsible for the fundamental Baker-Campbell-Hausdorff-Dynkin formula.
+    \end{enumerate}
+\end{rem}
+
+\begin{xca}
+    We have already seen that left translations are the flows of right-invariant vector fields. Thus, the left-invariant Maurer-Cartan form must have vanishing Lie derivatives w.r.t.\ any right-invariant vector field, $\Lie_{A_R}\theta_G=0$. Show that this also follows from the Maurer-Cartan equation via Cartan's magic formula.
+\end{xca}
+
 
 \begin{rem}
     Using the multiplication map $m:G\times G\to G$, define the map $\theta:\T G\times \T G\to \T G$ by the identity
@@ -5912,9 +5935,6 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
     \]
 \end{rem}
 
-% \begin{rem}
-%     You may notice that expressed in the global left-invariant frame and its dual, the Maurer-Cartan form looks identical to the identity tensor $\delta\in \Gamma_1^1G$. The difference is that $\theta_g$ takes values in $\T_eG$, not $\T_gG$, i.e.~it includes a composition with the global left trivialization. Alternatively, it can be seen as the left-invariant continuation of the identity matrix at $\frakg=\T_eG$.
-% \end{rem}
 
 \begin{rem}
     As mentioned in Remark~\ref{rem lie alg val forms}, in matrix groups it is common to see the Maurer-Cartan equation written as 
@@ -5926,7 +5946,7 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
     where $\dd g\in \Omega^1(G;\T G)$ stands for the identity tensor on $\T G$ (i.e.~$\dd g(X_g)=X_g$ at any $g\in G$). This is the most common way of defining $\theta_G$ in physics.
 \end{rem}
 
-\begin{rem}
+\begin{rem}\label{rem right MC eq}
     Of course, everything above similarly applies to right-invariant forms, and one can define a right-invariant Maurer-Cartan form $\theta_G^R$, which in matrix groups is simply $\dd g g^{-1}$. The corresponding Maurer-Cartan equation reads $\dd\theta_G^R-\frac12[\theta_G^R,\theta_G^R]=0$.
 \end{rem}
 
@@ -5937,7 +5957,7 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
 \end{rem}
 
 \begin{rem}[Finding a Haar measure from the Maurer-Cartan form]
-    The Maurer-Cartan form provides an easy way to write down a left-invariant volume form on a Lie group in coordinates. Whatever basis for $\frakg$ we choose, each component of $\theta_G$ in this basis is a nowhere-vanishing $1$-form. Thus, it suffices to compute $\theta_G$ and take the wedge product of all of its components. In the case of matrix groups, one computes the matrix of $1$-forms $g^{-1}\dd g$ and takes the wedge product of all independent components of this matrix (there are necessarily $n$ of them). While this procedure feels very basis-dependent, the result is guaranteed to be unique up to a multiplicative constant.
+    The Maurer-Cartan form provides an easy way to write down a left-invariant volume form on a Lie group in coordinates. Whatever basis for $\frakg$ we choose, each component of $\theta_G$ in this basis is a nowhere-vanishing $1$-form. Thus, it suffices to compute $\theta_G$ and take the wedge product of all of its components. In the case of matrix groups, one computes the matrix of $1$-forms $g^{-1}\dd g$ and takes the wedge product of all independent components of this matrix (there are necessarily $n$ of them). While this procedure feels very basis-dependent, the result is guaranteed to be unique up to a nonzero scaling factor.
 \end{rem}
 
 
@@ -6040,12 +6060,6 @@ According to Proposition~\ref{prop 5.5.10 RS1}, left-invariant $\frakg$-valued 1
     Write down the left-invariant volume form on $\SU_2$ in these coordinates and normalize it so that the volume of the group is $1$. It is easy to predict the result: it is the same expression as on $\SO_3$, except the normalizing factor will be $16\pi^2$ because the range of $\psi$ is twice as large; this agrees with the fact that $\SU_2$ is a double cover of $\SO_3$.
 \end{xca}
 
-\begin{xca}
-    We have already seen that left translations are the flows of right-invariant vector fields. Thus, the left-invariant Maurer-Cartan form must have vanishing Lie derivatives w.r.t.\ any right-invariant vector field, $\Lie_{A_R}\theta_G=0$. Show that this also follows from the Maurer-Cartan equation via Cartan's magic formula.
-\end{xca}
-
-
-
 
 
 
@@ -6110,16 +6124,18 @@ The local theorem immediately implies its own global version in the case when $M
     where $\Phi\circ L_{f(m)}=L_{\Phi\circ f(m)}\circ \Phi$ because $\Phi$ is a homomorphism.
 \end{proof}
 
+In particular, the adjoint representation $\Ad:G\to \GL(\frakg)$ has logarithmic derivative $\delta \Ad=(\Ad)_{\ast e}\circ \delta\id_G=\ad\circ\theta_G$, which we denote by $\ad_{\theta_G}$. The following corollary follows.
+
 \begin{cor}[{{\cite[Cor.~5.3]{Sharpe}}}]\label{cor 5.3 Sharpe}
     Let $G$ be a Lie group with Lie algebra. Then $\Ad:G\to \GL(\frakg)$ is the unique map $f:G\to \GL(\frakg)$ satisfying
     \[\delta_{\GL} f=\ad_{\theta_G},\quad f(e)=\rmI,\]
     where $\ad:\frakg\to \frakgl(\frakg)$ is the adjoint map, $\ad_{\theta_G}=\ad\circ\theta_G$, and $\rmI=\id_\frakg$. 
-    If $g:[0,1]\to G$ is a path starting at $e$, then $\Ad_g:[0,1]\to \GL(\frakg)$ is the development, starting at $e\in\GL(\frakg)$, of $\ad_{\delta_G g}=g^\ast \ad_{\theta_G}\in\Omega^1([0,1];\frakgl(\frakg))$ on $\GL(\frakg)$ along $g$.
+    If $\gamma:[0,1]\to G$ is a path starting at $e$, then $\Ad_\gamma:[0,1]\to \GL(\frakg)$ is the development, starting at $e\in\GL(\frakg)$, of $\ad_{\delta_G \gamma}=\gamma^\ast \ad_{\theta_G}\in\Omega^1([0,1];\frakgl(\frakg))$ on $\GL(\frakg)$ along $\gamma$.
 \end{cor}
 \begin{proof}
     The first statement follows because $\Ad$ satisfies both conditions and is unique by Theorem~\ref{thm 6.1 Sharpe fundamental local}. 
     The second statement follows from Lemma~\ref{lem log derivative of homomorphism} and $\Ad_{\ast e}=\ad$:
-    \[\delta_{\GL}\Ad_g=\delta_{\GL}(\Ad\circ g)=\ad\circ \delta_G g=\ad_{\delta_G g}=\ad_{g^\ast\theta_G}.\]
+    \[\delta_{\GL}\Ad_\gamma=\delta_{\GL}(\Ad\circ \gamma)=\ad\circ \delta_G \gamma=\ad_{\delta_G \gamma}=\ad_{\gamma^\ast\theta_G}.\]
 \end{proof}
 
 \begin{thm}[{{\cite[Thm.~7.7]{Sharpe}}}]\label{thm 7.7 Sharpe}
@@ -6458,8 +6474,8 @@ Note that a \gls{ops} is \emph{not} a Lie subgroup of $G$, but a specific homomo
 \begin{proof}
     Given a left-invariant vector field, its integral curve at $e$ will automatically be a \gls{ops} due to the general group property of flows and completeness (or alternatively from the uniqueness of maximal integral curves).
 
-    Conversely, every \gls{ops} $\gamma$ is the integral curve of the left-invariant field $A_L$ whose value at the identity is $A=\gamma'(0)\in\Lief G$ because 
-    \[\gamma'(t)=\restr{\frac{\dd}{\dd s}}{s=0}L_{\gamma(t)}\gamma(s)=L_{\gamma(t)\ast e}A=(A_L)_{\gamma(t)}.\]
+    Conversely, every \gls{ops} $\gamma$ is the integral curve of the left-invariant field $A_L$ whose value at the identity is $A=\dot\gamma(0)\in\Lief G$ because 
+    \[\dot\gamma(t)=\restr{\frac{\dd}{\dd s}}{s=0}L_{\gamma(t)}\gamma(s)=L_{\gamma(t)\ast e}A=(A_L)_{\gamma(t)}.\]
 \end{proof}
 
 This leads us to yet another common way of defining the Lie algebra of a Lie group.
@@ -6483,7 +6499,7 @@ The following is a well known fact of linear algebra.
     If $H\subset G$ is a Lie subgroup, then the \gls{ops}'s of $H$ are precisely those \gls{ops}'s of $G$ that are generated by elements of $\frakh=\T_e H$.
 \end{prop}
 \begin{proof}
-    Clearly any \gls{ops} $\gamma:\bbR\to H$ can also be viewed as a \gls{ops} of $G$ (by composing with the inclusion map) which satisfies $\gamma'(0)\in \T_e H$.
+    Clearly any \gls{ops} $\gamma:\bbR\to H$ can also be viewed as a \gls{ops} of $G$ (by composing with the inclusion map) which satisfies $\dot\gamma(0)\in \T_e H$.
 
     Conversely, a \gls{ops} of $G$ generated by an element of $\T_e H$ must coincide with the analogous \gls{ops} of $H$ by uniqueness of maximal integral curves.
 \end{proof}
@@ -6576,7 +6592,7 @@ Similarly, for the coadjoint representation we have
 \begin{proof}
     The fact that $\exp_H=\restr{\exp_G}{\frakh}$ follows immediately from Proposition~\ref{prop 20.3 Lee}.
 
-    Next assume that $\rme^{tA}\in H$ for all $t$. Since $H$ is weakly embedded in $G$ by Theorem~\ref{thm 19.25 Lee}, it follows that the curve $t\mapsto \rme^{tA}$ is smooth as a map into $H$, and thus $A=\gamma'(0)\in \T_eH$. Conversely, if $A\in \T_e H$ then Proposition~\ref{prop 20.3 Lee} implies that $\rme^{tA}\in H$ for all $t$.
+    Next assume that $\rme^{tA}\in H$ for all $t$. Since $H$ is weakly embedded in $G$ by Theorem~\ref{thm 19.25 Lee}, it follows that the curve $t\mapsto \rme^{tA}$ is smooth as a map into $H$, and thus $A=\dot\gamma(0)\in \T_eH$. Conversely, if $A\in \T_e H$ then Proposition~\ref{prop 20.3 Lee} implies that $\rme^{tA}\in H$ for all $t$.
 \end{proof}
 
 
@@ -6628,7 +6644,7 @@ Similarly, for the coadjoint representation we have
     \[\restr{\frac{\dd}{\dd t}}{t}\varphi(t,t)=\restr{\frac{\dd}{\dd s}}{s=t}\varphi(s,t)+\restr{\frac{\dd}{\dd s}}{s=t}\varphi(t,s).\]
     Applying this to $\gamma$ we get (using $F^A$ for the flow of $A_L$)
     \begin{multline}
-        \gamma'(0)=\restr{\frac{\dd}{\dd t}}{t=0} F^{B}_t\circ F^{A}_t (e)=\restr{\frac{\dd}{\dd s}}{s=0}F^{B}_{s}(e)+\restr{\frac{\dd}{\dd s}}{s=0}F^{A}_{s}(e)=B+A.
+        \dot\gamma(0)=\restr{\frac{\dd}{\dd t}}{t=0} F^{B}_t\circ F^{A}_t (e)=\restr{\frac{\dd}{\dd s}}{s=0}F^{B}_{s}(e)+\restr{\frac{\dd}{\dd s}}{s=0}F^{A}_{s}(e)=B+A.
     \end{multline}
 \end{proof}
 
@@ -7028,16 +7044,16 @@ The next technical lemma can be used for an alternative proof of Lie's Second Fu
 Recall that the quotient of the path space $\rmP(M,x_0)$ by the equivalence relation between paths homotopic with fixed ends, with the induced quotient topology, is exactly the universal covering space $\wt{M}$.
 
 % \begin{prop}[{{\cite[Prop.~1.13.2]{DK}}}]
-%     Let $G$ be a connected Lie group. Then $\rmP(G,e)$ provided with the pointwise multiplication, $(\gamma\cdot\gamma')(t)=\gamma(t)\gamma'(t)$ fro $t\in [0,1]$, is a group, called the \emph{path group} of $G$. Furthermore,
+%     Let $G$ be a connected Lie group. Then $\rmP(G,e)$ provided with the pointwise multiplication, $(\gamma\cdot\dot\gamma)(t)=\gamma(t)\dot\gamma(t)$ fro $t\in [0,1]$, is a group, called the \emph{path group} of $G$. Furthermore,
 %     \[\Lambda(G)=\{\gamma\in \rmP(G,e)\mid \gamma(1)=e\}\]
 %     is a normal subgroup of $\rmP(G,e)$ called the \emph{loop group} of $G$, while
 %     \[\Lambda(G)^\circ=\{\gamma\in \rmP(G,e)\mid \gamma\sim \underbar{e}\},\]
-%     which is the path component of the constant loop $\underbar{e}$, is closed and normal in $\rmP(G,e)$ as well. Now $\gamma\sim\gamma'$ in $\rmP(G,e)$ iff $\gamma'\in \gamma\Lambda(G)^\circ$, so that the universal covering space
+%     which is the path component of the constant loop $\underbar{e}$, is closed and normal in $\rmP(G,e)$ as well. Now $\gamma\sim\dot\gamma$ in $\rmP(G,e)$ iff $\dot\gamma\in \gamma\Lambda(G)^\circ$, so that the universal covering space
 %     \[\wt{G}=\rmP(G,e)\slash\Lambda(G)^\circ,\]
 %     becomes a group, which we earlier called the universal covering group.
 % \end{prop}
 
-By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}\right)_{\ast}\dot\gamma(t)=\xi(t)$. We already know that the solution exists by Cartan's Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global}, but we now show a stronger result that this correspondence establishes a homeomorphism between the two path spaces.
+By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}^{-1}\right)_{\ast}\dot\gamma(t)=\xi(t)$. We already know that the solution exists by Cartan's Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global}, but we now show a stronger result that this correspondence establishes a homeomorphism between the two path spaces.
 
 \begin{lem}[{{\cite[Prop.~1.13.4]{DK}}}]\label{lem invertibility of D}
     Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the (right) logarithmic derivative as a map of paths
@@ -7223,7 +7239,7 @@ where the sum is taken over all $l_1,\ldots,l_k,m_1,\ldots,m_k\geq 0$ such that 
 \end{multline}
 
 \begin{rem}
-    Although we obtained this series as a formal one, it actually always converges within some nonzero radius of the origin (assuming the Lie algebra is finite-dimensional). This follows from the analyticity of the exponential map, but also can be seen directly from the factorial-speed decay of the coefficients of the series. In fact, the \gls{bch} series is often derived purely algebraically and then used to \emph{define} the analytic structure on the Lie group.
+    Although we obtained this series as a formal one, it actually converges on the entire Lie algebra (assuming the Lie algebra is finite-dimensional). This follows from the analyticity of the exponential map, but also can be seen directly from the factorial-speed decay of the coefficients of the series. In fact, the \gls{bch} series is often derived purely algebraically and then used to \emph{define} the analytic structure on the Lie group.
 \end{rem}
 
 An element $a$ of a ring is called \emph{nilpotent}\index{Nilpotent element} if $a^n=0$ for some $n$ and \emph{unipotent} if $(a-1)$ is nilpotent.\index{Unipotent element}
@@ -7249,13 +7265,13 @@ An element $a$ of a ring is called \emph{nilpotent}\index{Nilpotent element} if 
 
 \subsection{Geometric \texorpdfstring{\gls{bch}}{BCH} formula}
 
-In this section, let $\psi(z)$ be the function defined in the complex plane by
-\[\psi(z)=\frac{z\ln z}{z-1},\]
+In this \subsect, let $\psi(z)$ be the analytic function defined in the complex plane by
+\[\psi(z)=\frac{z\ln z}{z-1},\quad z\in\bbC\setminus(-\infty,0],\]
 or by its Taylor series at $z=1$ (which converges in a disk of radius $1$)
 \[\psi(1+u)=(1+u)\frac{\ln (1+u)}{u}=1+\frac{u}{2}-\frac{u^2}{6}+\cdots .\]
 
 \begin{thm}
-The geometric Baker-Campbell-Hausdorff formula states that, with $\psi(z)$ defined by the above formal series, the group product in logarithmic coordinates can be expressed as
+The geometric \gls{bch} formula states that, with $\psi(z)$ defined by the above formal series, the group product in logarithmic coordinates can be expressed as
 \begin{multline}
     \mu(A,B) =\ln(\rme^A\rme^B)=
     B+\int_0^1\psi\left(\rme^{-\ad_B}\rme^{-t\ad_A}\right)A\dd t=\\
@@ -7283,33 +7299,33 @@ agreeing with our previous results, including Dynkin's formula.
     \[\frac{\dd}{\dd t} \rme^{\gamma(t)}=\left(R_{\rme^{\gamma(t)}}\right)_\ast A,\]
     so
     \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast\frac{\dd}{\dd t}\rme^{\gamma(t)}=A.\label{2379}\]
-    By applying $\Adg$ we also have
+    By applying $\ad$ we also have
     \[\ad_\gamma(t)=\ln\left(\rme^{t\ad_A}\rme^{\ad_{B}}\right).\label{3168}\]
     
     Let us apply the Maurer-Cartan equation (\ref{eq Maurer-Cartan}) to
     \[g(t,s)=\rme^{s\gamma(t)},\]
     and get 
-    \[\partial_s \xi-\gamma'(t)-[\gamma(t),\xi]=0,\]
+    \[\partial_s \xi-\dot\gamma(t)-[\gamma(t),\xi]=0,\]
     where 
     \[\xi(t,s)=\left(R_{\rme^{-s\gamma(t)}}\right)_\ast\partial_t \rme^{s\gamma(t)}.\]
     For fixed $t$ this is a differential equation in $s$:
-    \[\partial_s\xi=\ad_\gamma\xi+\gamma',\quad \xi(0)=0,\]
-    where $\gamma=\gamma(t)$ and $\gamma'=\gamma'(t)$. If we expand $\xi(t,s)$ as a formal power series in $s$,
+    \[\partial_s\xi=\ad_\gamma\xi+\dot\gamma,\quad \xi(0)=0,\]
+    where $\gamma=\gamma(t)$ and $\dot\gamma=\dot\gamma(t)$. If we expand $\xi(t,s)$ as a formal power series in $s$,
     \[\xi(t,s)=a_1s+a_2s^2+a_3s^3+\cdots,\]
-    and compare coefficients in the differential equation, we find $a_1=\gamma'$ and 
+    and compare coefficients in the differential equation, we find $a_1=\dot\gamma$ and 
     \[na_n=\ad_\gamma a_{n-1},\]
     or 
     \begin{multline}
-        \xi(t,s)=s\gamma'(t)+\frac{s}{2}\ad_{\gamma(t)}\gamma'(t)+\cdots+\frac{s^n}{n!}\ad_{\gamma(t)}^{n-1}\gamma'(t)+\cdots=\\=\sum_{n=1}^\infty \frac{s^n}{n!}(\ad_\gamma)^{n-1}\gamma'(t).
+        \xi(t,s)=s\dot\gamma(t)+\frac{s}{2}\ad_{\gamma(t)}\dot\gamma(t)+\cdots+\frac{s^n}{n!}\ad_{\gamma(t)}^{n-1}\dot\gamma(t)+\cdots=\\=\sum_{n=1}^\infty \frac{s^n}{n!}(\ad_\gamma)^{n-1}\dot\gamma(t).
     \end{multline}
     With the earlier notation $\phi(z)=(\rme^z-1)/z$, we have then at $s=1$
-    \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast \partial_t \rme^{\gamma(t)}=\xi(t,1)=\phi(\ad_{\gamma(t)})\gamma'(t).\label{1793}\]
-    Now to the proof of the \gls{bch} formula. Suppose that $A,B$ are chosen small enough to be within the domain of $\mu(A,B)$, so that $\gamma(t)=\mu(tA,B)$ is defined for all $|t|\leq 1$. Then, by (\ref{3168}) and (\ref{2379}), (\ref{1793}) becomes
-    \[\phi\left(\ln \rme^{t\ad_A}\rme^{\ad_B}\right)\gamma'(t)=A.\]
+    \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast \partial_t \rme^{\gamma(t)}=\xi(t,1)=\phi(\ad_{\gamma(t)})\dot\gamma(t).\label{1793}\]
+    Now to the proof of the \gls{bch} formula. Suppose that $A,B$ are chosen small enough to be within the domain of $\mu$, so that $\gamma(t)=\mu(tA,B)$ is defined for all $|t|\leq 1$. Then, by (\ref{3168}) and (\ref{2379}), (\ref{1793}) becomes
+    \[\phi\left(\ln \rme^{t\ad_A}\rme^{\ad_B}\right)\dot\gamma(t)=A.\]
     Now for $|z-1|<1$,
     \[\phi(-\ln z)=\frac{z-1}{z\ln z}=\psi(z)^{-1},\]
     thus
-    \[\gamma'(t)=\psi\left(\rme^{-\ad_B}\rme^{-t\ad_A}\right)A.\]
+    \[\dot\gamma(t)=\psi\left(\rme^{-\ad_B}\rme^{-t\ad_A}\right)A.\]
     This finishes the proof.
 \end{proof}
 

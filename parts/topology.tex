@@ -2656,7 +2656,7 @@ The following proposition is the reason why second countability is often substit
 \begin{proof}
     (1,2): Pick an open covering by charts $\{U_\alpha\}$. Each $U_\alpha $ can be covered by countably many coordinate balls $V_{\alpha_i}$ because $\wh{U}_\alpha$ can be covered by countably many balls in $\bbR^n$. By second countability, there is a countable subcovering and basis $\{V_\beta\}$. Fixing a chart $U$ and covering it by coordinate balls $V_\alpha$, we have that $\xoverline{V}_\beta$ is compact in $U$ (because it's homeomorphic to a closed ball), therefore closed in $X$ by Hausdorffness. Therefore it's also compact in $X$, i.e.\ $V_\beta$'s are precompact. The covering can also be made locally finite: let $\{K_i\}_{i=1}^\infty$ be an exhaustion of $M$ by compact sets (i.e.\ $\bigcup_i K_i=M$; we will prove the existence in Prop. \ref{prop.exhaustion}). After picking out a finite subcovering of every compact ``stripe'' $K_{i+1}\setminus \Int K_{i}$ by charts that are small enough to fit within the wider open ``stripe'' $\Int K_{i+2}\setminus K_{i-1}$ (possible because all charts still form a basis), we end up with a locally finite covering (since every point of the manifold is contained only in 3 of the open stripes).
 
-    (3) is obvious because it holds for balls. (4) follows because second countability implies countable number of components. The rest is obvious. For (5) See \cite[Thm 1.16]{Lee}.
+    (3) is obvious because it holds for balls. (4) follows because second countability implies countable number of components. The rest is obvious. For (5) see \cite[Thm.~1.16]{Lee}.
 \end{proof}
 
 \begin{lem}
@@ -2704,6 +2704,10 @@ Throughout these notes we also adopt the notation where for any atlas as above, 
 
 \begin{rem}
     Recall that the second countability of topological manifolds implies their paracompactness (but not vice versa). In the case of differentiable manifolds, these properties turn out to be equivalent, and also equivalent to metrizability, or to the existence of smooth partitions of unity (see next section). This is why the definitions sometimes differ.
+\end{rem}
+
+\begin{rem}
+    Given a manifold with one type of structure, e.g.\ a topological manifold, we might be able to find more special structures compatible with the given one. Compatibility here means that the atlas defining the latter structure is a subset of the former. For example, given a $C^1$-manifold, its atlas might (and, as it turns out, always does) contain a sub-atlas whose transition maps are of class $C^2$. In general there might be multiple non-equivalent sub-atlases of any required type, but a theorem of Whitney shows that every $C^1$-manifold has a unique compatible real analytic structure (a similar statement does not hold for topological manifolds). We will encounter this idea many times throughout this book: fiber bundles, Lie groups, and more general Cartan geometries can all be defined using special atlases compatible with the original structure.
 \end{rem}
 
 \begin{example}
@@ -2865,7 +2869,7 @@ The main property of regular values of smooth maps is that they are generic, as 
     But now, $k<n$, thus in the limit $N\to \infty$ we find that the volume of $f(C)$ has to be zero. This proof is due to Behnam Esmayli, a more conventional one can be found in \cite[Thm.~6.10]{Lee}.
 \end{proof}
 \begin{rem}
-    The ability to globalize the proof of this theorem depends crucially on second countability. Indeed, we could consider a non-second-countable $1$-dimensional ``manifold'' given by the uncountable disjoint union of lines $M=\bigsqcup_{a\in \bbR} R_a=\bigsqcup_{a\in \bbR} \bbR$ (so called \emph{long line}\index{Long line}), and define a function $f:M\to \bbR$ by $\restr{f}{R_a}=a$. In this case $f$ is smooth and every value $a\in\bbR$ is a critical value, contrary to Sard's theorem. What happened was that we found an uncountable family of local neighborhoods ($R_a$), for each of which the set of critical values has measure zero (one point $a$). But the union of an uncountable number of sets of measure zero can have nonzero measure. Thus, second countability is key to Sard's theorem working on general manifolds.
+    The ability to globalize the proof of this theorem depends crucially on second countability. Indeed, we could consider a non-second-countable $1$-dimensional ``manifold'' given by the uncountable disjoint union of lines $M=\bigsqcup_{a\in \bbR} R_a=\bigsqcup_{a\in \bbR} \bbR$ (so called \emph{long line}\index{Long line}), and define a function $f:M\to \bbR$ by $\restr{f}{R_a}=a$. In this case $f$ is smooth and every value $a\in\bbR$ is a critical value, contrary to Sard's theorem. This violates the setting of the theorem because we found an uncountable family of local neighborhoods ($R_a$), for each of which the set of critical values has measure zero (one point $a$). But the union of an uncountable number of sets of measure zero can have nonzero measure. Thus, second countability is key to Sard's theorem working on general manifolds.
 \end{rem}
 
 
@@ -2875,7 +2879,7 @@ The main property of regular values of smooth maps is that they are generic, as 
 
 \subsection{Inverse \& Implicit Mapping Theorems}
 
-In this section we just recall the statements of two basic theorems in multivariate calculus.
+In this \subsect\ we just recall the statements of two basic theorems of multivariate calculus.
 \begin{thm}[\gls{inmt}]\label{InMT}\index{Theorem!Inverse mapping}
     Let $U,V\subset\bbR^n$ be open and $f\in C^\infty(U,V)$. If the Jacobi matrix $\frac{\partial f^i}{\partial x^j} (\bf{a})$ is invertible for some $\bf{a}\in U$, then there are neighborhoods $\bf{a}\in U_{\bf{a}}\subset U$ and $f(\bf{a})\in V_{f(\bf{a})}\subset V$ such that $\restr{f}{U_{\bf{a}}}:U_{\bf{a}}\to V_{f(\bf{a})}$ is a diffeomorphism.
 \end{thm}
@@ -2928,7 +2932,7 @@ Meaning: the equation $\Phi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for $\b
     Check that the definition of a tangent vector and all of the following constructions are consistent, i.e.\ independent of the choices of charts $\varphi_\alpha$ or representatives $\gamma(t)$ of equivalence classes.
     \end{xca}
     \begin{defn}[Differential/push-forward]\index{Push-forward}
-    Let $F\in C^\infty(M,N)$ and $p\in M$. The push-forward of $F$ at $m$ is the linear map $D_m F=F_{\ast m}:T_m M\to T_{F(m)} N$ defined via \[F_{\ast m}([\gamma]_m)=[F\circ\gamma]_{F(m)},\] or equivalently \[F_{\ast m}(v)[f]=v[f\circ F]\] for any $f\in C^\infty (N)$.
+    Let $F\in C^\infty(M,N)$ and $p\in M$. The push-forward, or the \emph{derivative}, of $F$ at $m$ is the linear map $F_{\ast m}:T_m M\to T_{F(m)} N$ defined via \[F_{\ast m}([\gamma]_m)=[F\circ\gamma]_{F(m)},\] or equivalently \[F_{\ast m}(v)[f]=v[f\circ F]\] for any $f\in C^\infty (N)$.
 \end{defn}
 
 \begin{rem}[Coordinate expressions for derivatives]
@@ -2970,7 +2974,7 @@ All of this implies that the map $\T_m:(M,m)\mapsto \T_m M$ extends to a covaria
 As we will show later, the tangent space over $m\in M$ in a certain sense ``varies smoothly with $m$'' and together all of the tangent spaces comprise a single object called the \emph{tangent bundle}. A similar thing happens to the functors $\T_m$.
 
 \subsection{Rank}
-We have defined rank in Def.~\ref{def.rank}. However, that definition is not practical because it's an existence statement rather than a constructive ``measurement''.
+We have defined rank in Definition~\ref{def.rank}. However, that definition is not practical because it's an existence statement rather than a constructive ``measurement''.
 
 Recall that for a matrix $A\in \Mat(n\times m,\bbR )$ its rank $\rank A$ is defined as the maximal number of linearly independent columns (equivalently, rows) in it. More abstractly, the rank of a linear operator is the dimension of its image, $\rank A=\dim(\im (A))$. The following theorem establishes the equality between the rank of a smooth map and the rank of its differential.
 
@@ -2978,7 +2982,7 @@ Recall that for a matrix $A\in \Mat(n\times m,\bbR )$ its rank $\rank A$ is defi
     For $f\in C^\infty(M,N)$, $\rank_m f=\rank (f_{\ast m})$.
 \end{thm}
 \begin{proof}
-    This is the \gls{inmt} in disguise. Since this theorem is local, we can safely replace $M$ and $N$ by open $U\subset \bbR^k$ and $V\subset \bbR^n.$
+    This is the \gls{inmt} in disguise. Since this theorem is local, we can safely replace $M$ and $N$ by open domains $U\subset \bbR^k$ and $V\subset \bbR^n.$
 
     Assume $\rank(f_{\ast m})=r$. Introduce coordinates $(x^1,\ldots,x^r$, $y^1,\ldots,y^{k-r})$ on $U$ and $(v^1,\ldots,v^r$, $w^1,\ldots,w^{n-r})$ on $V$. In these coordinates, we can write \[f(x,y)=(F(x,y),G(x,y)).\] \Gls{wlog}, $m=0$, $f(m)=0$, and  $F_{\ast (0,0)}$ is a nonsingular square matrix.
 
@@ -3068,7 +3072,7 @@ A smooth embedding is a smooth immersion that is topological embedding.
 \end{enumerate}
 \end{example}
 
-\begin{prop}
+\begin{prop}[{{\cite[Prop.~4.22]{Lee}}}]
 An injective immersion $f\in C^\infty (M,N)$ is a smooth embedding if any of the following hold:
 \begin{enumerate}
     \item $f$ is open or closed;
@@ -3077,16 +3081,10 @@ An injective immersion $f\in C^\infty (M,N)$ is a smooth embedding if any of the
     \item $\partial M=\varnothing$ and $\dim M=\dim N$.
 \end{enumerate}
 \end{prop}
-\begin{proof}
-See \cite[Prop 4.22]{Lee}.
-\end{proof}
 
-\begin{thm}[Local embedding theorem]\label{thm.local embedding}
+\begin{thm}[Local embedding theorem {{\cite[Thm.~4.25]{Lee}}}]\label{thm.local embedding}
 $f\in C^\infty (M,N)$ is an immersion iff it is a local embedding (i.e.\ every point in $M$ has a neighborhood on which the restriction of $f$ becomes an embedding). 
 \end{thm}
-\begin{proof}
-See \cite[Thm 4.25]{Lee}.
-\end{proof}
 
 \begin{comment}
 \PRLsep
@@ -3133,11 +3131,11 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 \end{proof}
 
 
-\begin{prop}[Slice charts]\index{Slice chart}
+\begin{prop}[Slice charts {{\cite[Thm.~5.8]{Lee}}}]\index{Slice chart}
     A subset $S\subset M$ is an embedded submanifold iff every point $m\in S$ has a local \emph{slice chart}, that is, a local chart map $\varphi$ on a neighborhood $U_m\subset M$  such that its image is a slice ball: $\varphi(S\cap U_m)=\{(x^1,\ldots,x^k,0,\ldots,0)\}$, where $k$ is a fixed number called the \emph{dimension} of $S$. In particular, given the existence of slice charts, there is a unique smooth structure on $S$ (given by a codomain restriction of the slice atlas) compatible with the subset topology such that $S\sub M$.
 \end{prop}
 \begin{proof}
-    It suffices to check that slice charts, whose existence was proved above, form a smooth atlas on $S$. This also proves that, given a topologically embedded submanifold $S$ in a smooth manifold $M$, one can induce a smooth structure on $S$, essentially by defining the slice atlas. See all details in \cite[Thm 5.8]{Lee}. 
+    It suffices to check that slice charts, whose existence was proved above, form a smooth atlas on $S$. This also proves that, given a topologically embedded submanifold $S$ in a smooth manifold $M$, one can induce a smooth structure on $S$, essentially by defining the slice atlas. See the cited reference for full details.
 \end{proof}
 
 
@@ -3198,7 +3196,7 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 Show that the two parts of the last theorem are in fact sufficient, i.e.\ they are criteria for $S$ being embedded or properly embedded, respectively.
 \end{xca}
 
-\begin{thm}[Restrictions of functions {{\cite[Thms.~5.27-28]{Lee}}}]\label{thm 5.27 Lee}\label{thm restrictions to submfds}
+\begin{thm}[Restrictions to submanifolds {{\cite[Thms.~5.27-30]{Lee}}}]\label{thm 5.27 Lee}\label{thm restrictions to submfds}
 Let $S< M$ as a subset and $f\in C^\infty(M,N)$. Then:
 \begin{enumerate}
     \item the restriction $\restr{f}{S}:S\to N$ is smooth;
@@ -3207,9 +3205,7 @@ Let $S< M$ as a subset and $f\in C^\infty(M,N)$. Then:
 \end{enumerate}
 \end{thm}
 \begin{proof}
-The idea is to show that $\restr{f}{S}=f\circ i$, where $i:S\hookrightarrow M$ is the smooth inclusion map. This is smooth by virtue of being a composition of smooth maps.
-
-For the rest, see the proof in \cite[Thms.~5.27-30]{Lee}.
+The idea is to show that $\restr{f}{S}=f\circ i$, where $i:S\hookrightarrow M$ is the smooth inclusion map. This is smooth by virtue of being a composition of smooth maps. For the rest, see the cited reference.
 \end{proof}
 
 Note that to be able to restrict a smooth map in range to an immersed manifold $S$, we need it to be continuous as a map to $S$ with respect to the subspace topology on $S$. Immersed submanifolds which allow for restrictions of smooth maps in range without any such restrictions are exactly the weakly embedded ones.
@@ -3541,15 +3537,17 @@ This implies that all simply connected covering spaces of a given base space $M$
 
 One can show that the existence of a simply connected covering space is equivalent to $M$ being locally relatively simply connected (see~\cite[Theorem~8.4]{Bredon}). Since we are mostly interested in manifolds, we will only prove the existence. Let us only work with connected, locally simply connected spaces (in particular, connected manifolds).
 
+\begin{figure}[tp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/uni_open_set.pdf}
+    \caption{Topology of the universal cover.\label{fig univ cover}}
+\end{figure}
+
 \begin{thm}[Universal cover]\index{Universal cover}
 For a given base $M$ that is a connected and \emph{locally relatively simply connected} Hausdorff space, there is a unique (up to homeomorphism) topological covering space $E\overset{\pi}{\to}M$ whose total space $E$ is simply connected. This covering space is denoted by $\wt M$ and is called the \emph{universal cover} of $M$.\index{Universal cover}
 \end{thm}
 \begin{proof}
-See \cite[Thm 11.43]{LeeTop} or \cite[Thm 8.4]{Bredon}. The basic idea is to explicitly construct $\wt M$ as the space of endpoints of all possible paths in $M$ based at a fixed point $m\in M$. Two paths are equivalent if their endpoints coincide and they are homotopic with fixed endpoints. The topology on this set of paths is introduced by considering sets of homotopic paths with endpoints belonging to an open set in $M$ (and the homotopies fix the starting point but can move the endpoint within the open set, see figure). The projection $\pi$ maps a path to its endpoint. It is not difficult to check that this is indeed a topological covering map and the total space is simply connected. Uniqueness will follow from the universal property described below.
-
-\begin{center}
-\includegraphics[width=0.5\textwidth]{figures/uni_open_set.pdf}
-\end{center}
+See \cite[Thm.~11.43]{LeeTop} or \cite[Thm.~8.4]{Bredon}. The basic idea is to explicitly construct $\wt M$ as the space of endpoints of all possible paths in $M$ based at a fixed point $m\in M$. Two paths are equivalent if their endpoints coincide and they are homotopic with fixed endpoints. The topology on this set of paths is introduced by considering sets of homotopic paths with endpoints belonging to an open set in $M$ (and the homotopies fix the starting point but can move the endpoint within the open set, see Figure~\ref{fig univ cover}). The projection $\pi$ maps a path to its endpoint. It is not difficult to check that this is indeed a topological covering map and the total space is simply connected. Uniqueness will follow from the universal property described below.
 \end{proof}
 \begin{rem}
     By examining the details of the proof one can notice that local simply-connectedness is not actually required, and semilocal simply-connectedness is sufficient. The converse direction is clear: if a loop is in an evenly covered subspace of $M$ then it lifts to $E$, and if $E$ is simply connected, the loop must be trivial in $E$. But then the composition of its homotopy to a constant loop with the covering map $\pi$ shows that the original loop in $M$ must be trivial. Thus we have shown that a connected and locally path-connected $M$ has a universal covering space iff it is locally relatively simply connected.
@@ -3558,12 +3556,10 @@ See \cite[Thm 11.43]{LeeTop} or \cite[Thm 8.4]{Bredon}. The basic idea is to exp
     The Hawaiian earring (Example~\ref{hawaiian earring}), as well as the infinite-dimensional torus $\bbT^\infty=\prod_{i=1}^\infty \bbS^1$, are not locally relatively simply connected, and thus don't have universal coverings.
 \end{example}
 
-\begin{thm}
+\begin{thm}[{{\cite[Prop.~4.40]{Lee}}}]
 Let $E\overset{\pi}{\to}M$ be a topological covering map and fix a smooth structure on $M$. Then $E$ is a topological manifold that supports a unique smooth structure such that $\pi$ is a smooth covering map with $\pi^{-1}(\partial M)=\partial E$.
 \end{thm}
-\begin{proof}
-See \cite[Prop 4.40]{Lee}.
-\end{proof}
+
 This theorem essentially means that in order to classify smooth covering spaces above a smooth base manifold, it suffices to only classify the topological covering spaces, and they are in one-to-one correspondence with the smooth ones. In other words, the theory of covering spaces is an intrinsically topological theory that doesn't gain or lose anything from imposing smooth structures.
 
 \begin{cor}
