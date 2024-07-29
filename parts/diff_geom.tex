@@ -2069,7 +2069,7 @@ The functors going in either direction take a bundle, choose a cocycle for it, a
     \begin{enumerate}
         \item If $\calS=\mathsf{LieGr}$ with the structure group of each Lie group $G$ being its automorphism group $\Aut(G)$, then $\calS$-bundles are what is called \emph{group bundles}. Since automorphisms preserve the identity and the rest of the group structure, each fiber of a group bundle carries a natural Lie group structure. In particular, each group bundle has one canonical section $o:M\to E$ whose value in each fiber is the identity element of that fiber.\index{Group bundle}
         
-        \item If $\calS=\mathsf{LieGr}$ but with the structure group of a Lie group $G$ being $G$ itself acting by left translations, then we get what are called \emph{principal bundles} and they are so important that we shall put off a detailed discussion of them until \S\ref{sec: principal bundles}. For now we only note the crucial difference between group and principal bundles: the fibers of a principal $G$-bundle, despite being diffeomorphic to $G$, are not Lie groups since left translations don't preserve the identity element.\index{Principal fiber bundle} This is another important example where the group action on the typical fiber falls outside of the set of morphisms allowed by the category $\calS$.
+        \item If $\calS=\mathsf{LieGr}$ but with the structure group of a Lie group $G$ being $G$ itself acting by left translations, then we get what are called \emph{principal bundles} and they are so important that we shall put off a detailed discussion of them until \S\ref{sec: principal bundles}. For now we only note the crucial difference between group and principal bundles: the fibers of a principal $G$-bundle, despite being diffeomorphic to $G$, are not Lie groups since left translations don't preserve the identity element.\index{Principal fiber bundle} This is another important example where the group action on the typical fiber falls outside of the set of morphisms allowed by $\calS$.
     \end{enumerate}
 \end{example}
 
@@ -6747,7 +6747,7 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
         \delta_A\exp= \left(L_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(-\ad_{A}\right)^n}{(n+1)!}=\frac{\rmI-\rme^{-\ad_A}}{\ad_A},\\
         \left(R_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(\ad_{A}\right)^n}{(n+1)!}=\frac{\rme^{\ad_A}-\rmI}{\ad_A},\label{dexp series}
     \end{align}
-    where in case of non-invertible matrices $\ad_A$ the series should be taken as the \emph{definition} of this latter expression. Indeed $\ad_A$ is never invertible because it always has $A$ itself in its kernel, $\ad_A A=0$. By looking at the location of the zeros of the function $f(z)=(\rme^z-1)/z$, we conclude that the differential $\exp_{\ast A}$ is bijective iff no eigenvalue of $\ad_A$ lies in $2\pi \rmi\bbZ\setminus\{0\}$. Conversely, the singular points of the exponential map are precisely those $A\in \frakg$ such that $\ad_A\in \End(V)$ has an eigenvalue of the form $2\pi \rmi k,$ $k\in\bbZ\setminus\{0\}$.
+    where for non-invertible matrices $\ad_A\in\frakgl(\frakg)$ the series should be taken as the \emph{definition} of this latter expression. Indeed, $\ad_A$ is never invertible because it always contains $A$ itself in its kernel, $\ad_A A=0$. By looking at the location of the zeros of the function $f(z)=(\rme^z-1)/z$, we conclude that the differential $\exp_{\ast A}$ is bijective iff no eigenvalue of $\ad_A$ lies in $2\pi \rmi\bbZ\setminus\{0\}$. Conversely, the singular points of the exponential map are precisely those $A\in \frakg$ such that $\ad_A\in \End(V)$ has an eigenvalue of the form $2\pi \rmi k,$ $k\in\bbZ\setminus\{0\}$.
 \end{rem}
 
 \begin{example}[Exponential map of $\SO_3(\bbR)$]
@@ -7136,7 +7136,7 @@ We will later show that every finite-dimensional real Lie algebra is the Lie alg
 
 To define $\mu(A,B)$ without using the exponential map, we recall that the curve $t\mapsto \rme^{tA}\rme^B$ is the integral curve of the right-invariant vector field $A_R$ starting at $\rme^B$. Thus, if we define the analog of $A_R$ in logarithmic coordinates, which is a vector field on (part of) the Lie algebra, then the value of the corresponding integral curve through $B$ at $t=1$ will determine $\mu(A,B)$. Now, on to the details.
 
-For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $Z\in \frakg$ such that the operator $f(\ad_Z)=(\rme^{\ad_Z}-\rmI)(\ad_Z)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule, the map
+As one might suspect, the logarithmic analog of $A_R$ should be defined using the inverse of the logarithmic derivative of $\exp$, cf.\ \ref{dexp series}. For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $Z\in \frakg$ such that the operator $f(\ad_Z)=(\rme^{\ad_Z}-\rmI)(\ad_Z)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule, the map
 \[Z\mapsto \phi(\ad_Z)\coloneqq (f(\ad_Z))^{-1}=\frac{\ad_Z}{\rme^{\ad_Z}-\rmI}\label{eq 1.6.1 DK}\]
 is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylor series are the Bernoulli numbers $B_k$). For each $A\in \frakg$ this formula defines a vector field $A^R\in C^\infty(\frakg_e,\frakg)$ via
 \[A^R:\frakg_e\to \frakg,\quad Z\mapsto \frac{\ad_Z}{\rme^{\ad_Z}-\rmI}(A).\]
@@ -7166,12 +7166,12 @@ The existence of such $U,U_0,V$ follows from the invertibility of $\exp_{\ast 0}
 \[V_0^g\coloneqq L_g(\exp U_0),\quad \kappa^g(h)\coloneqq \ln(g^{-1}h)\in U_0,\quad h\in V^g_0.\]
 
 \begin{thm}[{{\cite[Thm.~1.6.3]{DK}}}]\label{thm 1.6.3 DK}
-    The collection of \emph{logarithmic charts} $\{(V_0^g,\kappa^g)\}_{g\in G}$ forms a real-analytic atlas for $G$, making it into a real-analytic Lie group $G_{\mathrm{an}}$ such that $\id_G$ is a $C^2$-diffeomorphism between $G$ and $G_{\mathrm{an}}$. Furthermore, if $\frakg$ is a complex Lie algebra, then this atlas is complex-analytic. It makes $G$ into a complex-analytic Lie group if in addition $\Ad_g$ is complex-linear for all $g\in G$, i.e., an element of $\GL_\bbC(\frakg)$ (cf.\ Example~\ref{ex linear G-structures}(8)).
+    The collection of \emph{logarithmic charts} $\{(V_0^g,\kappa^g)\}_{g\in G}$ forms a real-analytic atlas for $G$, making it into a real-analytic Lie group $G_{\mathrm{an}}$ such that $\id_G$ is a $C^2$-diffeomorphism between $G$ and $G_{\mathrm{an}}$. Furthermore, if $\frakg$ is a complex Lie algebra, then this atlas is complex-analytic. It makes $G$ into a complex-analytic Lie group if in addition $\Ad_g$ is complex-linear for all $g\in G$, i.e., an element of $\GL_\bbC(\frakg)$.\footnote{See Example~\ref{ex linear G-structures}(8) for the definition of the general linear group of a complex vector space.}
 \end{thm}
 \begin{proof}
     Observe that (\ref{eq 1.5.1 DK}) shows that $A\to \exp_{\ast A}$ is $C^1$-differentiable, hence $\exp$ is $C^2$. It follows that $\kappa^g$ is a $C^2$-diffeomorphism $V^g_0\to U_0$ for each $g\in G$. Now suppose that $V_0^g\cap V^h_0\neq \varnothing$, that is:
     \[g \rme^{A_0}=h\rme^{B_0}\quad \text{ for some }A_0,B_0\in U_0.\]
-    Then $B=\kappa^h\circ (\kappa^g)^{-1}(A)$ means that $g\rme^A=h\rme^B$, or $\rme^Y=\rme^{B_0}\rme^{-A_0}\rme^A$, which is equivalent to:
+    Then $B=\kappa^h\circ (\kappa^g)^{-1}(A)$ means that $g\rme^A=h\rme^B$, or $\rme^B=\rme^{B_0}\rme^{-A_0}\rme^A$, which is equivalent to:
     \[B=\mu(\mu(B_0,-A_0),A).\]
     This proves the desired real- or complex-analyticity, respectively, of the atlas. To show the analyticity of the group structure, write:
     \[g \rme^A (h\rme^B)^{-1}=g\rme^A\rme^{-B}h^{-1}=(gh^{-1})h\exp(\mu(A,-B))h^{-1}=gh^{-1}\exp(\Ad_h\mu(A,-B)).\]
@@ -7424,7 +7424,7 @@ From here, the next Corollary is trivial.
     Every continuous homomorphism between Lie groups is analytic.
 \end{cor}
 \begin{proof}
-    A continuous mapping maps the identity component into the identity component, so we may assume both groups to be connected. Also a continuous map has a closed graph.
+    A continuous mapping maps the identity component into the identity component, so we may assume both groups to be connected. Also a continuous map to a Hausdorff space has a closed graph.
 \end{proof}
 \begin{cor}
     A topological group has at most one Lie group structure.
@@ -7485,22 +7485,22 @@ It is almost obvious that the definition of the exponential map together with it
 
 \begin{lem}[{{\cite[Lem.~1.8.2]{DK}}}]
     For each $A\in\frakg$ define the vector field $A^R\in \fX(\frakg_e)$, where $\frakg_e$ was defined in \S\ref{sec: product in log coordinates}:
-    \[ A^R(C)=\frac{\ad_C}{\rme^{\ad_C}-\rmI}A,\quad \quad C\in\frakg_e. \label{def X^R}\]
+    \[ A^R(C)=\frac{\ad_C}{\rme^{\ad_C}-\rmI}(A),\quad \quad C\in\frakg_e. \label{def X^R}\]
     Then, for each $A,B\in\frakg$, the map $A\mapsto A^R$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[A^R,B^R]=-([A,B])^R$.
 \end{lem}
 \begin{proof}
-    Recall from (\ref{eq Lie derivative in components}) that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials at a point by $\rmD v(x)\in \End(\bbR^n)$, then the Lie bracket is
-    \[[v,w](x)=\rmD w(x)\cdot v(x)-\rmD v(x)\cdot w(x).\label{10707}\]
-    So in order to compute $[A^R,B^R](C)$, we start by differentiating~\ref{dexp series}:
-    \[\int_0^1 \rme^{t\ad_C}\dd t \left(A^R(C)\right)=A\quad (C\in\frakg_e),\]
-    with respect to $C$, in the direction of $B^R(C)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
+    Recall from (\ref{eq Lie derivative in components}) that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials at a point by $\rmD v(\bf x)\in \End(\bbR^n)$, then the Lie bracket is
+    \[[v,w](\bf x)=\rmD w(\bf x)\cdot v(\bf x)-\rmD v(\bf x)\cdot w(\bf x).\label{10707}\]
+    So in order to compute $[A^R,B^R](C)$, we start by differentiating~(\ref{dexp series}),
+    \[\int_0^1 \rme^{t\ad_C}\dd t \left(A^R(C)\right)=A,\quad C\in\frakg_e,\]
+   w.r.t.\ $C$ in the direction of $B^R(C)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
     \begin{multline}
         \int_0^1 \left(\int_0^1\rme^{st\ad_{\ad_C}} \dd s\circ t\ad_{B^R(C)}\right)\circ \rme^{t\ad_C}\dd t\left(A^R(C)\right)+\\
         +\int_0^1\rme^{t\ad_C}\dd t\circ \rmD A^R(C)\left(B^R(C)\right)=0.\label{09830}
     \end{multline} 
     Since $\ad$ is a Lie algebra homomorphism $\frakg\to\mathfrak{gl}(\frakg)$ (by the Jacobi identity), one has:
     \[\rme^{\ad_{\ad_A}}\circ \ad_B=\ad_{\rme^{\ad_A} B}\quad \quad (A,B\in\frakg).\]
-    Reading this with $A$, and $B$, replaced by $stC$, and $B^R(C)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand size of (\ref{09830}) as
+    Reading this with $A$, and $B$, replaced by $stC$, and $B^R(C)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand side of (\ref{09830}) as
     \[\iint_{0\leq u\leq t\leq 1}\left[\rme^{u\ad_C}\left(B^R(C)\right),\rme^{t\ad_C}\left(A^R(C)\right)\right]\dd u\dd t.\]
     Antisymmetrizing this formula over $A$ and $B$  we get, also using the antisymmetry of the Lie bracket, the quantity
     \begin{multline}
@@ -7513,9 +7513,9 @@ It is almost obvious that the definition of the exponential map together with it
     which shows that $[A^R,B^R]=-([A,B])^R$ in view of the definition (\ref{def X^R}) applied to $([A,B])^R$. The linearity of the map $A\mapsto A^R$ is obvious from the definition, and its injectivity follows from $A^R(0)=A$.
 \end{proof}
 \begin{rem}
-    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $A^R(C)=\left(R_{\rme^{-C}}\right)_{\ast \rme^C} \circ \exp_{\ast C}(C)$, which is nothing but the right-invariant vector field $A_R(g)=\left(R_g\right)_{\ast e} A$ written in logarithmic coordinates $g=\rme^C$.
+    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $A^R(C)=\left(R_{\rme^{-C}}\right)_{\ast \rme^C} \circ \exp_{\ast C}(C)$, which is nothing but the right-invariant vector field $A_R(g)=R_{g\ast e} A$ written in logarithmic coordinates $g=\rme^C$.
 
-    If all vector fields $A^R$ were complete on $\frakg_e$, their flows would form a Lie group consisting of diffeomorphisms of $\frakg_e$, and we would prove the global Lie's Third Fundamental Theorem, which states that every Lie algebra has a Lie group that it corresponds to. Unfortunately, these vector fields are not always complete, and the most we can claim at this point is that their flows generate a \emph{local} Lie group.
+    If all vector fields $A^R$ were complete on $\frakg_e$, their flows would form a Lie group consisting of diffeomorphisms of $\frakg_e$, and we would prove the Cartan-Lie Theorem~\ref{thm 1.14.3 DK global Lie's third}, which states that every Lie algebra has a Lie group that it corresponds to. Unfortunately, these vector fields are not always complete, and the most we can claim at this point is that their flows generate a \emph{local} Lie group.
 \end{rem}
 
 
@@ -7574,7 +7574,7 @@ It is almost obvious that the definition of the exponential map together with it
 In fact, a global version of this theorem holds, first obtained by \'Elie Cartan. We only provide the statement without proof. The proof relies on the theory of infinite-dimensional Lie groups, and the basic idea is to show that equation (\ref{1794}) defines a group structure on the path space $\rmP(\frakg)$ (of all continuous paths $[0,1]\to \frakg$) which makes it a Banach Lie group, and the identity component $\rmP(\frakg)_0$ into a closed normal subgroup. Then the quotient group $\rmP(\frakg)/\rmP(\frakg)_0$ turns out to be a simply connected Lie group with Lie algebra isomorphic to $\frakg$. Showing that $\rmP(\frakg)_0$ is closed requires either a deep exploration of the topology of Lie groups (one needs to show that $\pi_2(G)=0$ for any Lie group, or at least that the second cohomology group is trivial, as in \cite{DK}), or structure theory of Lie algebras (via Ado's theorem). See Remark~\ref{rem Lie III} below for more comments on the proof.
 
 \begin{thm}[Cartan-Lie (1936)/Global Lie III {{\cite[Thm.~1.14.3]{DK}}}]\label{thm 1.14.3 DK global Lie's third}\index{Theorem!Cartan-Lie (Global Lie III)}
-    For every finite-dimensional Lie algebra $\frakg$ there exists a simply connected Lie group $\wt{G}$ whose Lie algebra is equal to $\frakg$. The restriction of the exponential mapping $\exp:\frakg\to\wt{G}$ to the center $\mathfrak{z}=\rmZ(\frakg)$ induces an isomorphism from the vector group $(\mathfrak{z},+)$ onto the identity component of the center $\rmZ(\wt{G})$.
+    For every finite-dimensional Lie algebra $\frakg$ there exists a simply connected Lie group $\wt{G}$ whose Lie algebra is isomorphic to $\frakg$. The restriction of the exponential mapping $\exp:\frakg\to\wt{G}$ to the center $\mathfrak{z}=\rmZ(\frakg)$ induces an isomorphism from the vector group $(\mathfrak{z},+)$ onto the identity component of the center $\rmZ(\wt{G})$.
 \end{thm}
 \begin{cor}[Lie-Palais (1957)]\label{thm Lie-Palais}\index{Theorem!Lie-Palais}
     If $M$ is a connected $C^2$ manifold and a collection of \emph{complete} $C^1$ vector fields forms a finite-dimensional Lie subalgebra $\frakg<\fX^1(M)$, then there exists a connected Lie group with a $C^2$ action on $M$ faithfully inducing the action of $\frakg$, unique up to a unique isomorphism of Lie group actions. In particular, the flows $\{F^A_1\}_{A\in \frakg}$ form a finite-dimensional Lie group with Lie algebra $\frakg$.
