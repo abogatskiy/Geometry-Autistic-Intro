@@ -22,10 +22,10 @@ We will show that any twice differentiable Lie group has a unique compatible rea
 
 \begin{defn}[Group translation and adjoint operators]
     The left and right translation operators on a group $G$ are defined by
-    \[L_g(h)=gh,\quad R_g(h)=hg.\]
+    \[\rmL_g(h)=gh,\quad \rmR_g(h)=hg.\]
     
     The adjoint operator corresponding to an element $g\in G$ is
-    \[\Adg_g h=L_g\circ R_g^{-1}(h)=ghg^{-1}.\]
+    \[\Adg_g h=\rmL_g\circ \rmR_g^{-1}(h)=ghg^{-1}.\]
 \end{defn}
 
 
@@ -61,10 +61,10 @@ We will show that any twice differentiable Lie group has a unique compatible rea
 \end{thm}
 \begin{proof}
     Let $F:G\to H$ be a Lie group homomorphism. We will show that the differential $\T_g F$ of $F$ at any $g\in G$ has the same rank as the differential $\T_eF$ at the identity. We have
-    \[F\circ L_g (h)=F(gh)=F(g)F(h)=L_{F(g)}\circ F(h),\]
-    i.e.~$F\circ L_g=L_{F(g)}\circ F$. Computing the differential of both sides at the identity $e\in G$ using the chain rule, we find
-    \[\T_gF\circ \T_e L_g=\T_{F(g)}L_{F(g)}\circ \T_e F.\]
-    Left translation operators are diffeomorphisms and therefore both $\T_e L_g$ and $\T_{F(g)}L_{F(g)}$ are isomorphisms of tangent spaces. Compositions with isomorphisms don't change rank, therefore $\rank \T_gF=\rank \T_e F$ is constant on $G$.
+    \[F\circ \rmL_g (h)=F(gh)=F(g)F(h)=\rmL_{F(g)}\circ F(h),\]
+    i.e.~$F\circ \rmL_g=\rmL_{F(g)}\circ F$. Computing the differential of both sides at the identity $e\in G$ using the chain rule, we find
+    \[\T_gF\circ \T_e \rmL_g=\T_{F(g)}\rmL_{F(g)}\circ \T_e F.\]
+    Left translation operators are diffeomorphisms and therefore both $\T_e \rmL_g$ and $\T_{F(g)}\rmL_{F(g)}$ are isomorphisms of tangent spaces. Compositions with isomorphisms don't change rank, therefore $\rank \T_gF=\rank \T_e F$ is constant on $G$.
 \end{proof}
 \begin{cor}[{{\cite[Cor.~5.3.7]{RS1}}}]\label{cor 5.3.7 RS1}
     For a Lie group homomorphism $\varphi:G\to H$, the following are equivalent:
@@ -295,7 +295,7 @@ Note that Lie subgroups are not generally required to be embedded submanifolds. 
     Let $H\subset G$ be an open subgroup of the Lie group $G$. Then $H$ is an embedded Lie subgroup. In addition, $H$ is closed, so it is a union of connected components of $G$.
 \end{lem}
 \begin{proof}
-    Any open subset is an embedded submanifold. Every left coset $gH$ is open in $G$ since it is an image of an open subset under the diffeomorphism $L_g$. Since the complement $G\setminus H$ is the union of the cosets of $H$ other than $H$, it is open, and therefore $H$ is closed.
+    Any open subset is an embedded submanifold. Every left coset $gH$ is open in $G$ since it is an image of an open subset under the diffeomorphism $\rmL_g$. Since the complement $G\setminus H$ is the union of the cosets of $H$ other than $H$, it is open, and therefore $H$ is closed.
 \end{proof}
 
 The following is a simple exercise.
@@ -607,10 +607,10 @@ This result can be used to easily compute the homology groups of $\SO_n$, as is 
 The notions of orbits, stabilizers, transitive actions and free actions transfer with no changes to the context of Lie groups.
 
 \begin{example}[Actions of $G$ on itself]
-    The left and right translation operators $L_g,R_g$ on a Lie group $G$ are smooth diffeomorphisms since $(L_g)^{-1}=L_{g^{-1}}$ is a smooth inverse. In addition,
-    \[L_{gh}=L_g\circ L_h,\quad R_{gh}=R_h\circ R_g.\]
-    Therefore $L_g$ defines a left action of $G$ on itself, and $R_g$ defines a right action. Note that these two actions commute: 
-    \[L_g\circ R_h=R_h\circ L_g.\]
+    The left and right translation operators $\rmL_g,\rmR_g$ on a Lie group $G$ are smooth diffeomorphisms since $(\rmL_g)^{-1}=\rmL_{g^{-1}}$ is a smooth inverse. In addition,
+    \[\rmL_{gh}=\rmL_g\circ \rmL_h,\quad \rmR_{gh}=\rmR_h\circ \rmR_g.\]
+    Therefore $\rmL_g$ defines a left action of $G$ on itself, and $\rmR_g$ defines a right action. Note that these two actions commute: 
+    \[\rmL_g\circ \rmR_h=\rmR_h\circ \rmL_g.\]
     In general, there is no reason why a left and a right action on a manifold have to commute, and this property is inseparable from the very definition of a group.\footnote{An interesting question here is whether one can come up with algebraic structures that allow more than two commuting actions. Such sets with \emph{$n$-ary operations} do exist, but it turns out that as soon as one requires the existence of an identity element, the operation can be expressed in terms of a binary one.}
 
     In addition, the adjoint operator $\Adg_g$ defines the \emph{adjoint action} of $G$ on itself since 
@@ -672,7 +672,7 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
     The orbit map $\Phi^m:G\to M$ defined above has constant rank, so the stabilizer $G_m=(\Phi^m)^{-1}(m)$ is a properly embedded Lie subgroup of $G$. If $G_m=\{e\}$, then $\Phi^m$ is an injective smooth immersion, so the orbit $\Phi(G,m)$ is an immersed submanifold of $M$.
 \end{prop}
 \begin{proof}
-    First we note that $\Phi^m$ intertwines the left action of $L_g$ on $G$ and $\Phi$ on $M$. Since $G$ acts transitively on itself, $\Phi^m$ has constant rank by Theorem~\ref{thm equivariant rank}. Thus $G_m$ is properly embedded by Theorem~\ref{thm level set submanifold} and a Lie subgroup by Proposition~\ref{prop 7.11 Lee}.
+    First we note that $\Phi^m$ intertwines the left action of $\rmL_g$ on $G$ and $\Phi$ on $M$. Since $G$ acts transitively on itself, $\Phi^m$ has constant rank by Theorem~\ref{thm equivariant rank}. Thus $G_m$ is properly embedded by Theorem~\ref{thm level set submanifold} and a Lie subgroup by Proposition~\ref{prop 7.11 Lee}.
 
     If $G_m=\{e\}$, then $\Phi^m$ is injective, and therefore by the Equivariant Rank Theorem~\ref{thm equivariant rank} it is a smooth immersion (recall that an injective map of constant rank is an immersion by the Global Rank Theorem~\ref{Global rank}). This makes the orbit an immersed submanifold by Proposition~\ref{prop 5.18 Lee}.
 \end{proof}
@@ -841,9 +841,9 @@ Every Lie group has a canonical representation on its own tangent space at the i
 \subsection{Lie algebras: Construction I}
 
 Since Lie groups are manifolds, the next most natural thing to do is to study its tangent spaces and to see what kind of structure on them is induced by the group structure. 
-First we note that since $L_g:G\to G$ is a diffeomorphism for every $g\in G$, it induces the isomorphisms
-\[(L_g)_{\ast e}: \T_e G\to \T_g G\]
-between the tangent spaces at the identity and any other point. Moreover, since $L_{gh}=L_g\circ L_h$, the chain rule for derivatives implies that $(L_g)_\ast$ is natural in the sense that it truly depends only on $g$ itself and not how it might be decomposed into a product of other group elements.
+First we note that since $\rmL_g:G\to G$ is a diffeomorphism for every $g\in G$, it induces the isomorphisms
+\[(\rmL_g)_{\ast e}: \T_e G\to \T_g G\]
+between the tangent spaces at the identity and any other point. Moreover, since $\rmL_{gh}=\rmL_g\circ \rmL_h$, the chain rule for derivatives implies that $(\rmL_g)_\ast$ is natural in the sense that it truly depends only on $g$ itself and not how it might be decomposed into a product of other group elements.
 
 Since Lie group homomorphisms preserve the identity, their derivatives map $\T_e G$ to $\T_eH$. Therefore it will completely suffice to study the properties of the tangent space at the identity.
 
@@ -3661,7 +3661,7 @@ Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector fie
 
 \begin{defn}[Invariant vector fields on Lie groups]\index{Invariant vector field}
     Let $G$ be a Lie group. A vector field $X\in\fX(G)$ is called left-invariant (resp.~right-invariant) if for all $g\in G$, if the evaluation map $G\mapsto \T G$ given by $g\mapsto X_g$ is equivariant with respect to the left (resp.~right) actions of $G$ on itself and on $\T G$. In other words, one of the following formulas must hold for all $h,g\in G$:
-    \[(L_g)_{\ast}X_h=X_{gh},\quad \text{or}\; (R_g)_{\ast}X_h=X_{hg}.\]
+    \[(\rmL_g)_{\ast}X_h=X_{gh},\quad \text{or}\; (\rmR_g)_{\ast}X_h=X_{hg}.\]
     We will denote by $\fX(G)^G$ the linear space of all left-invariant vector fields on $G$, and by $\fX(G)^G_R$ the right-invariant analog.
 \end{defn}
 
@@ -3673,7 +3673,7 @@ Note that every invariant vector field is uniquely determined by its value at th
 \begin{proof}
     Recall that for a smooth map $f$, the image $f\circ\gamma$ of an integral curve of a vector field $X$ is an integral curve of the transformed field $f_\ast X$. 
     
-    Now let $F$ be the flow of a left-invariant field $X\in \fX(G)$, defined on its flow domain $\calD$. Thus for any $g\in G$, $t\mapsto L_g\circ F_t(e)$ is an integral curve of $X$ starting at $g$ and therefore equal to $F_t(g)$. This means that we can apply the uniform time lemma and conclude completeness.
+    Now let $F$ be the flow of a left-invariant field $X\in \fX(G)$, defined on its flow domain $\calD$. Thus for any $g\in G$, $t\mapsto \rmL_g\circ F_t(e)$ is an integral curve of $X$ starting at $g$ and therefore equal to $F_t(g)$. This means that we can apply the uniform time lemma and conclude completeness.
 \end{proof}
 
 \begin{lem}[Escape Lemma]\index{Lemma!Escape}\label{lem escape}
@@ -5632,15 +5632,15 @@ In this \subsect\ we show that the tangent bundle of any Lie group is trivial an
 
 \begin{prop}
     Any Lie group $G$ is parallelizable, with the natural global trivialization of $\T G$ given by
-    \[\chi_L:\T G\mapsto G\times \frakg,\quad (g,X_g)\mapsto \left(g, L_{g\ast }^{-1}X_g\right),\]
-    where $\frakg=\T_e G$ and $X_g\in \T_gG$. Similarly, replacing $L_g$ with $R_g$ gives another global trivialization, $\chi_R$.
+    \[\chi_\rmL:\T G\mapsto G\times \frakg,\quad (g,X_g)\mapsto \left(g, \rmL_{g\ast }^{-1}X_g\right),\]
+    where $\frakg=\T_e G$ and $X_g\in \T_gG$. Similarly, replacing $\rmL_g$ with $\rmR_g$ gives another global trivialization, $\chi_\rmR$.
 \end{prop}
 \begin{proof}
-    All we need to show is that $L_{g\ast}^{-1}$ is a smooth map that is a fiberwise isomorphism of vector spaces. This is true by virtue of $L_{g\ast}^{-1}$ being the derivative of a diffeomorphism.
+    All we need to show is that $\rmL_{g\ast}^{-1}$ is a smooth map that is a fiberwise isomorphism of vector spaces. This is true by virtue of $\rmL_{g\ast}^{-1}$ being the derivative of a diffeomorphism.
 \end{proof}
 
-Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is defined by the property $(L_g)_\ast X=X$ for all $g$. As we have shown before, all such vector fiends are automatically smooth and complete (Proposition~\ref{thm invariant fields are complete}). We will now show that, under the Lie bracket of vector fields, they comprise a Lie algebra that is naturally isomorphic to our earlier constructions of the Lie algebra of $G$. When $A\in\frakg=\T_eG$, we will often use the notation $A_R$ and $A_L$ to denote the corresponding right- and left-invariant vector fields, respectively:
-\[A_L(g)\coloneqq (L_g)_\ast A,\quad A_R(g)\coloneqq (R_g)_\ast A,\]
+Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is defined by the property $(\rmL_g)_\ast X=X$ for all $g$. As we have shown before, all such vector fiends are automatically smooth and complete (Proposition~\ref{thm invariant fields are complete}). We will now show that, under the Lie bracket of vector fields, they comprise a Lie algebra that is naturally isomorphic to our earlier constructions of the Lie algebra of $G$. When $A\in\frakg=\T_eG$, we will often use the notation $A_\rmR$ and $A_\rmL$ to denote the corresponding right- and left-invariant vector fields, respectively:
+\[A_\rmL(g)\coloneqq (\rmL_g)_\ast A,\quad A_\rmR(g)\coloneqq (\rmR_g)_\ast A,\]
 (and we will often use Latin capital letters to denote Lie algebra elements).
 
 \paragraph{Construction III} Recall that we denote by $\fX(G)^G$ the space of left-invariant vector fields on $G$. As we will now show, the Lie derivative endows this space with a structure of a Lie algebra that is isomorphic to our earlier constructions of $\Lief G$.
@@ -5649,50 +5649,50 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
     If $X\in\fX(G)^G$, then the flow $F^X:G\times \bbR \to G$ is left-invariant, i.e.
     \[gF^X_t(h)=F^X_t(gh).\]
     Moreover, if $\gamma(t)$ is an integral curve of $X$ starting at $e\in G$, then
-    \[F^X_t(g)=R_{\gamma(t)}(g)=g\gamma(t).\]
-    The analogous formula for right-invariant vector fields is $F^X_t(g)=L_{\gamma(t)}(g)=\gamma(t)g$.
+    \[F^X_t(g)=\rmR_{\gamma(t)}(g)=g\gamma(t).\]
+    The analogous formula for right-invariant vector fields is $F^X_t(g)=\rmL_{\gamma(t)}(g)=\gamma(t)g$.
 \end{lem}
 \begin{proof}
     Since these flows are complete, to show their equality it is sufficient to prove that the vector fields generating them coincide:
-    \[\restr{\frac{\dd}{\dd t}}{t=0}\left(gF^X_t(h)\right)=(L_g)_{\ast}X_{h}=X_{gh}=\restr{\frac{\dd}{\dd t}}{t=0} F^X_t(gh).\]
+    \[\restr{\frac{\dd}{\dd t}}{t=0}\left(gF^X_t(h)\right)=(\rmL_g)_{\ast}X_{h}=X_{gh}=\restr{\frac{\dd}{\dd t}}{t=0} F^X_t(gh).\]
     To prove the second equation, it suffices to show that $g\gamma(t)$ is the integral curve of $X$ starting at $g$, which follows trivially from the above:
     \[g\gamma(t)=g F^X_t(e)=F^X_t(ge)=F^X_t(g).\]
 \end{proof}
 
 
 \begin{lem}
-    Both spaces $\fX(G)^G$ and $\fX(G)^G_R$ of invariant vector fields are closed under the Lie bracket of vector fields (i.e.~Lie derivatives).
+    Both spaces $\fX(G)^G$ and $\fX(G)^G_\rmR$ of invariant vector fields are closed under the Lie bracket of vector fields (i.e.~Lie derivatives).
 \end{lem}
 \begin{proof}
     It suffices to consider the left-invariant case. We use the naturalness of Lie derivatives (Proposition~\ref{prop properties of Lie derivatives}):
-    \[L_{g\ast} \Lie_X Y=\Lie_{L_{g\ast}X}(L_{g\ast} Y)=\Lie_X Y.\]
+    \[\rmL_{g\ast} \Lie_X Y=\Lie_{\rmL_{g\ast}X}(\rmL_{g\ast} Y)=\Lie_X Y.\]
 \end{proof}
 
 \begin{thm}
     The evaluation map $E:(\fX(G)^G,\Lie)\to (\T_eG,\ad)$, $X\mapsto X_e$, is an isomorphism of Lie algebras.
 \end{thm}
 \begin{proof}
-    It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=L_{g\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$ and let $F$ be the flow of $X$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
+    It is obvious that $E$ is linear. Next we check that it intertwines the two Lie brackets. First note that for any $X\in \fX^G(G)$, we have $X_g=\rmL_{g\ast e}X_e$. Let $\gamma(t)$ be the integral curve of $X$ starting at $e$ and let $F$ be the flow of $X$. We compute, using the definitions of $\Ad_{\gamma(t)}$ and $\ad_X$:
     \begin{multline}
-        E\left(\Lie_X Y\right)=E\left(\restr{\frac{\dd}{\dd t}}{t=0} F^\ast_t Y\right)= \restr{\frac{\dd}{\dd t}}{t=0}R_{\gamma(t)}^{\ast}Y_{\gamma(t)}=\\=\restr{\frac{\dd}{\dd t}}{t=0}\left(R_{\gamma(t)}^{-1}\circ L_{\gamma(t)}\right)_{\ast e} Y_{e}=\restr{\frac{\dd}{\dd t}}{t=0}(\Ad_{\gamma(t)}Y_e)=\ad_{X_e} Y_e.
+        E\left(\Lie_X Y\right)=E\left(\restr{\frac{\dd}{\dd t}}{t=0} F^\ast_t Y\right)= \restr{\frac{\dd}{\dd t}}{t=0}\rmR_{\gamma(t)}^{\ast}Y_{\gamma(t)}=\\=\restr{\frac{\dd}{\dd t}}{t=0}\left(\rmR_{\gamma(t)}^{-1}\circ \rmL_{\gamma(t)}\right)_{\ast e} Y_{e}=\restr{\frac{\dd}{\dd t}}{t=0}(\Ad_{\gamma(t)}Y_e)=\ad_{X_e} Y_e.
     \end{multline}
 
     Injectivity follows because each left-invariant vector field is uniquely determined by its value at $e$, and surjectivity follows similarly because each $X_e\in \T_eG$ can be extended to a left-invariant field.
 \end{proof}
 \begin{cor}
-    The space $\fX(G)^G_R$ of right-invariant vector fields, together with the Lie derivative, forms a Lie algebra that is anti-isomorphic to $\Lief G$, with the \emph{anti-isomorphism} given by the same evaluation map $E$:
-    \[E\left(\Lie_{X}Y\right)=-\ad_{X_e} Y_e,\quad X,Y\in\fX(G)^G_R.\]
+    The space $\fX(G)^G_\rmR$ of right-invariant vector fields, together with the Lie derivative, forms a Lie algebra that is anti-isomorphic to $\Lief G$, with the \emph{anti-isomorphism} given by the same evaluation map $E$:
+    \[E\left(\Lie_{X}Y\right)=-\ad_{X_e} Y_e,\quad X,Y\in\fX(G)^G_\rmR.\]
 \end{cor}
 
-We will hence use the notation $A_L$ arbitrary left-invariant fields, implying that the value at $e$ is $A$.\footnote{Note that in literature, Lie algebras are often \emph{defined} as the spaces of left-invariant vector fields, so $A_L$ and $A$ can get confused.} In summary, if $A,B\in \T_eG$, then we have the following formulas relating the Lie bracket on the Lie algebra to the Lie bracket of vector fields:
-\[[A_L,B_L]=[A,B]_L,\quad [A_R,A_R]=-[A,B]_R.\]
+We will hence use the notation $A_\rmL$ arbitrary left-invariant fields, implying that the value at $e$ is $A$.\footnote{Note that in literature, Lie algebras are often \emph{defined} as the spaces of left-invariant vector fields, so $A_\rmL$ and $A$ can get confused.} In summary, if $A,B\in \T_eG$, then we have the following formulas relating the Lie bracket on the Lie algebra to the Lie bracket of vector fields:
+\[[A_\rmL,B_\rmL]=[A,B]_\rmL,\quad [A_\rmR,A_\rmR]=-[A,B]_\rmR.\]
 
 
 The following is an elementary form of the celebrated Maurer-Cartan equation which we will discuss in depth in the next \subsect. On a fundamental level, as we will see, it expresses the existence of a canonical flat affine connection on Lie groups. It is usually formulated in terms of differential forms, but first we provide an elementary version adapted from \cite{Onishchik}.
 
 \begin{prop}[Maurer-Cartan equation]\index{Equation!Maurer-Cartan}\label{prop MC eq xi eta}
     Let $g:[0,1]^2\to G$ be a twice differentiable map $(t,s)\mapsto g(t,s)$. Define the elements $\xi(t,s),\eta(t,s)\in\frakg$ by the equations
-    \[(R_{g}^{-1})_{\ast g}\partial_t g=\xi, \quad (R_{g}^{-1})_{\ast g}\partial_s g=\eta.\]
+    \[(\rmR_{g}^{-1})_{\ast g}\partial_t g=\xi, \quad (\rmR_{g}^{-1})_{\ast g}\partial_s g=\eta.\]
     In simplified notation (which is literal e.g.~in matrix groups) these read $\partial_t g=\xi g$, $\partial_s g=\eta g$. Then 
     \[\partial_t \eta-\partial_s \xi =[\xi,\eta].\label{eq Maurer-Cartan}\]
 \end{prop}
@@ -5700,18 +5700,18 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
     In the matrix case this is trivial because we can just differentiate the two equations with respect to $s$ and $t$, respectively, then notice that $\partial_t\partial_s g=\partial_s\partial_t g$ and get the result.
 
     In the general abstract case, first let us notice that these equations can be written as
-    \[\partial_t g=\xi_R(g),\quad \partial_s g=\eta_R(g).\]
-    where $\xi_R$ and $\eta_R$ are the corresponding right-invariant vector fields. Now let $f\in C^\infty(G)$ be a function and let us compute the mixed derivative of $f\circ g$ in two ways:
+    \[\partial_t g=\xi_\rmR(g),\quad \partial_s g=\eta_\rmR(g).\]
+    where $\xi_\rmR$ and $\eta_\rmR$ are the corresponding right-invariant vector fields. Now let $f\in C^\infty(G)$ be a function and let us compute the mixed derivative of $f\circ g$ in two ways:
     \begin{gather}
-        \partial_t\partial_s f(g(t,s))=\partial_t (\eta_R\cdot f)(g(t,s))=((\partial_t\eta_R)\cdot f)(g(t,s))+(\xi_R\cdot \eta_R\cdot f)(g(t,s)),\\
-        \partial_s\partial_t f(g(t,s))=\partial_s (\xi_R\cdot f)(g(t,s))=((\partial_s\xi_R)\cdot f)(g(t,s))+(\eta_R\cdot \xi_R\cdot f)(g(t,s)).
+        \partial_t\partial_s f(g(t,s))=\partial_t (\eta_\rmR\cdot f)(g(t,s))=((\partial_t\eta_\rmR)\cdot f)(g(t,s))+(\xi_\rmR\cdot \eta_\rmR\cdot f)(g(t,s)),\\
+        \partial_s\partial_t f(g(t,s))=\partial_s (\xi_\rmR\cdot f)(g(t,s))=((\partial_s\xi_\rmR)\cdot f)(g(t,s))+(\eta_\rmR\cdot \xi_\rmR\cdot f)(g(t,s)).
     \end{gather}
-    These two expressions must coincide because mixed derivatives of smooth functions on $\bbR^2$ don't depend on the order of partial derivatives. Since the equality holds for all $f$, we conclude the equality of differential operators $\partial_t\eta_R-\partial_s\xi_R=[\eta_R,\xi_R]$. The claim of the theorem follows by virtue of the homomorphism property of Lie derivatives, $\Lie_{[X,Y]}=[\Lie_X,\Lie_Y]$, the natural isomorphism between Lie derivatives and vector fields, and the natural \emph{anti-isomorphism} between right-invariant vector fields and the Lie algebra (which is why the sign of the commutator changes).
+    These two expressions must coincide because mixed derivatives of smooth functions on $\bbR^2$ don't depend on the order of partial derivatives. Since the equality holds for all $f$, we conclude the equality of differential operators $\partial_t\eta_\rmR-\partial_s\xi_\rmR=[\eta_\rmR,\xi_\rmR]$. The claim of the theorem follows by virtue of the homomorphism property of Lie derivatives, $\Lie_{[X,Y]}=[\Lie_X,\Lie_Y]$, the natural isomorphism between Lie derivatives and vector fields, and the natural \emph{anti-isomorphism} between right-invariant vector fields and the Lie algebra (which is why the sign of the commutator changes).
 \end{proof}
 
 \begin{rem}
     \begin{enumerate}
-        \item The left-invariant version of the Maurer-Cartan equation, where $\xi=L_{g\ast}^{-1}\partial_t g$ and $\eta =L_{g\ast}^{-1}\partial_s g$, differs only in the sign of the Lie bracket: 
+        \item The left-invariant version of the Maurer-Cartan equation, where $\xi=\rmL_{g\ast}^{-1}\partial_t g$ and $\eta =\rmL_{g\ast}^{-1}\partial_s g$, differs only in the sign of the Lie bracket: 
         \[\partial_t\eta-\partial_s\xi+[\xi,\eta]=0.\label{eq Maurer-Cartan left xi eta}\]
         \item The Maurer-Cartan equation in the above form for $G=\GL_n(\bbC)$ is obviously equivalent to the zero curvature condition from Example~\ref{ex UV pairs}. As we will see throughout this \partt{} of the book, this rapprochement between the integrability of PDE's (Frobenius Theorem) and group theory is the ultimate key to the unification of geometry of manifolds (e.g.\ Riemannian geometry), theory of differential equations, and classical geometry (in the form of homogeneous spaces). This culminates in the development of Cartan geometry.
     \end{enumerate}
@@ -5737,10 +5737,10 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
 
 
 \begin{defn}[Invariant differential form]
-    A differential form $\xi$ on a Lie group $G$ is called left-invariant if $L_g^\ast\xi =\xi $ for all $g\in G$, and right-invariant if $R_g^\ast\xi=\xi$.
+    A differential form $\xi$ on a Lie group $G$ is called left-invariant if $\rmL_g^\ast\xi =\xi $ for all $g\in G$, and right-invariant if $\rmR_g^\ast\xi=\xi$.
 
-    The set of left-invariant differential forms on $G$ is denoted by $\Omega^{\smbullet }(G)^G$. Written pointwise, for $1$-forms, the defining condition reads $\xi_{gh}\circ (L_g)_{\ast h}=\xi_g$ for all $g,h\in G$ or, equivalently,
-    \[\xi_g=\xi_e\circ (L_{g}^{-1})_{g\ast}\text{ for all }g\in G.\label{eq 5.5.1 RS1}\]
+    The set of left-invariant differential forms on $G$ is denoted by $\Omega^{\smbullet }(G)^G$. Written pointwise, for $1$-forms, the defining condition reads $\xi_{gh}\circ (\rmL_g)_{\ast h}=\xi_g$ for all $g,h\in G$ or, equivalently,
+    \[\xi_g=\xi_e\circ (\rmL_{g}^{-1})_{g\ast}\text{ for all }g\in G.\label{eq 5.5.1 RS1}\]
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~5.5.2]{RS1}}}]\label{prop 5.5.2 RS1}
@@ -5756,7 +5756,7 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
 \begin{proof}
     \begin{enumerate}
         \item $\Omega^{\smbullet }(G)^G$ is closed under wedge products because wedge products are natural. It is also closed under exterior derivatives because $\dd$ commutes with pullbacks.
-        \item It suffices to consider the map $\Omega^{\smbullet }(G)^G\to\bigwedge \T^\ast_e G$, defined by $\xi\mapsto\xi_e$. This mapping is a homomorphism of algebras, which is injective by (\ref{eq 5.5.1 RS1}). To show that it is surjective, it is enough to prove that its image contains $\T^\ast_e G$. Thus, let $\eta\in \T^\ast_e G$. By fixing the second argument of the inverse left trivialization of $\T^\ast G$ ($(\xi_L^T)^{-1}:G\times \T_e^\ast G\to \T^\ast G$) to be $\eta$, one obtains a left-invariant 1-form $\xi$ with $\xi_e=\eta$.
+        \item It suffices to consider the map $\Omega^{\smbullet }(G)^G\to\bigwedge \T^\ast_e G$, defined by $\xi\mapsto\xi_e$. This mapping is a homomorphism of algebras, which is injective by (\ref{eq 5.5.1 RS1}). To show that it is surjective, it is enough to prove that its image contains $\T^\ast_e G$. Thus, let $\eta\in \T^\ast_e G$. By fixing the second argument of the inverse left trivialization of $\T^\ast G$ ($(\xi_\rmL^T)^{-1}:G\times \T_e^\ast G\to \T^\ast G$) to be $\eta$, one obtains a left-invariant 1-form $\xi$ with $\xi_e=\eta$.
         \item  This is a consequence of the definition of pullback for differential forms.
     \end{enumerate}
 \end{proof}
@@ -5774,8 +5774,8 @@ We will thus identify left-invariant differential $r$-forms with elements of $\b
     Let $\{\bf{t}_1,\ldots,\bf{t}_n\}$ be a basis in $\frakg$, let $c^i_{jk}$  be the corresponding structure constants and let $\{\alpha^1,\ldots,\alpha^n\}$ be the dual basis in $\frakg^\ast$. Then (\ref{eq 5.5.3 RS1}) is equivalent to
     \[\dd \alpha^i=-\frac 12 c^i_{jk}\alpha^j\wedge \alpha^k,\quad i=1,\ldots,n.\label{eq 5.5.4 RS1 MC in coords}\]
     This can be seen by evaluating both sides on the basis elements $\bf{t}_i$. This equation is actually another form of the Maurer-Cartan equation \index{Equation!Maurer-Cartan} (\ref{eq Maurer-Cartan left xi eta}), which we will return to in a basis-free form later in this \subsect.
-    \item In terms of left-invariant 1-forms, the inverse left and right trivializations $(\chi_L^T)^{-1}$ and $(\chi_R^T)^{-1}$ of $\T^\ast G$ read
-    \[(\chi_L^T)^{-1}(g,\xi)=\xi_g,\quad (\chi_R^T)^{-1}(g,\xi)=(\Ad_{g}^\ast \xi)_g=\xi_g\circ (\Ad_g)_{\ast g}.\]
+    \item In terms of left-invariant 1-forms, the inverse left and right trivializations $(\chi_\rmL^T)^{-1}$ and $(\chi_\rmR^T)^{-1}$ of $\T^\ast G$ read
+    \[(\chi_\rmL^T)^{-1}(g,\xi)=\xi_g,\quad (\chi_\rmR^T)^{-1}(g,\xi)=(\Ad_{g}^\ast \xi)_g=\xi_g\circ (\Ad_g)_{\ast g}.\]
     Note that the 1-form $\Ad_g^\ast\xi$ need not be left-invariant.
 \end{enumerate}
 \end{rem}
@@ -5787,18 +5787,18 @@ Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-
 \end{cor}
 
 \begin{defn}[Haar measure]\index{Haar measure}
-    The Lebesgue measure $\dd\mu_L$ associated with a left-invariant volume form on $G$ is called a (left) Haar measure on $G$. Thus, Haar measures on $G$ are left-invariant and unique up to a multiplicative constant.
+    The Lebesgue measure $\dd\mu_\rmL$ associated with a left-invariant volume form on $G$ is called a (left) Haar measure on $G$. Thus, Haar measures on $G$ are left-invariant and unique up to a multiplicative constant.
 \end{defn}
 
 \begin{rem}\label{rem biinvariant measures}
     \begin{enumerate}
         \item If $G$ is compact, one way to single out a unique left-invariant volume form is to require that the volume of $G$ be equal to $1$.
-        \item Naturally, there is also a right-invariant volume form $\mathsf{w}_G$, unique up to multiplication by a scalar, and a measure $\dd\mu_R$ associated with it. The natural question thus is how the two Haar measures are related. Clearly,
+        \item Naturally, there is also a right-invariant volume form $\mathsf{w}_G$, unique up to multiplication by a scalar, and a measure $\dd\mu_\rmR$ associated with it. The natural question thus is how the two Haar measures are related. Clearly,
         \[\mathsf{v}_G(g)=\Ad_g^\ast \mathsf{w}_G(g)=\det(\Ad_g)\mathsf{w}_G(g).\]
         Since the adjoint representation is a homomorphism $\Ad:G\to\GL(\frakg)$, the determinant of $\Ad_g$ is always nonzero and is called the \emph{modular quasicharacter}:\index{Modular quasicharacter}
         \[\Delta: G\to \bbK,\quad \Delta(g)\coloneqq\det(\Ad_g).\]
         (Here, $\bbK$ is the underlying field of $G$, i.e.\ either $\bbR$ or $\bbC$.)
-        Therefore, a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character.\footnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field. In the case of complex Lie groups, the Haar measure $\dd \mu_L$ is the $1$-density $|\sfv_G|$, so bi-invariance relies only on the absolute value $|\Delta|$.}\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
+        Therefore, a \emph{bi-invariant} measure on $G$ exists if and only if $|\Delta|\equiv 1$, i.e.~when $\Delta$ is a group character.\footnote{A group character is a homomorphism $\chi:G\to U(1)$, or, more generally, into the group of units of the underlying field. In the case of complex Lie groups, the Haar measure $\dd \mu_\rmL$ is the $1$-density $|\sfv_G|$, so bi-invariance relies only on the absolute value $|\Delta|$.}\index{Group character} Such Lie groups are called \emph{unimodular}.\index{Unimodular group}
         
         If $G$ is a connected real Lie group, then $\Delta>0$ everywhere by continuity (since $\Delta(e)=1$). 
         \item Compact Lie groups are unimodular. Indeed, since $\Delta:G\to \bbK^\ast$ is a homomorphism, $\Delta(G)$ must be a compact subgroup of $\bbK^\ast$, which means its image lies inside $\bbS^1\subset\bbC$.
@@ -5820,7 +5820,7 @@ For compact Lie groups, where every smooth function is integrable with respect t
     Choose an arbitrary inner product $(\cdot,\cdot)$ on $V$, and a left-invariant volume form $\mathsf{v}_G$ on $G$, and define
     \[ \langle v,w\rangle \coloneqq\int_G f_{v,w}\mathsf{v}_G, \quad f_{v,w}(g)=\left(\rho(g^{-1})v,\rho(g^{-1})w\right).\]
     The integral exists because $G$ is compact. The defining properties of a inner product carry over from $(\cdot,\cdot)$ to $\langle\cdot,\cdot\rangle$. Let $g\in G$. A brief computation shows that 
-    \[\langle\rho(g)v,\rho(g)w\rangle=\int_G \left(L_{g^{-1}}^\ast f_{v,w}\right)\mathsf{v}_G =\int_G f_{v,w}\mathsf{v}_G=\langle v,w\rangle,\]
+    \[\langle\rho(g)v,\rho(g)w\rangle=\int_G \left(\rmL_{g^{-1}}^\ast f_{v,w}\right)\mathsf{v}_G =\int_G f_{v,w}\mathsf{v}_G=\langle v,w\rangle,\]
     as asserted. The formula for the Lie algebra follows by differentiation.
 \end{proof}
 
@@ -5863,7 +5863,7 @@ with ordinary differential $r$-forms $\xi^i\in\Omega^r(G)$. The form $\xi$ is le
 There holds the following analogue of Proposition~\ref{prop 5.5.2 RS1}.
 
 \begin{prop}[{{\cite[Prop.~5.5.10]{RS1}}}]\label{prop 5.5.10 RS1}
-    Let $G$ be a Lie group with Lie algebra $\frakg$ and let $\Omega^{\smbullet }_L(G,\frakg)^G$ denote the space of left-invariant $\frakg$-valued differential forms on $G$.
+    Let $G$ be a Lie group with Lie algebra $\frakg$ and let $\Omega^{\smbullet }_\rmL(G,\frakg)^G$ denote the space of left-invariant $\frakg$-valued differential forms on $G$.
     \begin{enumerate}
         \item $\Omega^{\smbullet }(G,\frakg)^G$ is a differential subalgebra of $\Omega^{\smbullet }(G,\frakg)$.
         \item There exist natural algebra isomorphisms
@@ -5887,20 +5887,20 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
 \begin{rem}[Properties of $\theta_G$]
     \begin{enumerate}
         \item By definition,
-        \[\theta_G(A_L)(g)=A\text{ for all }A\in\frakg,\; g\in G.\]
+        \[\theta_G(A_\rmL)(g)=A\text{ for all }A\in\frakg,\; g\in G.\]
         As a consequence, $\theta_G$ assigns to a tangent vector $Y_g$ at $g$ the unique left-invariant vector field $X\in\fX(G)^G$ such that $X_g=Y_g$, and identifies it with an element of $\frakg$ using the canonical left global trivialization:
-        \[\theta_G(Y)(g)=L_{g\ast}^{-1}(Y_g)=\pr_2\circ \chi_L(Y_g).\]
-        In this way, the Maurer-Cartan form can be identified with the left global trivialization $\chi_L:\T G\to G\times\frakg$.
+        \[\theta_G(Y)(g)=\rmL_{g\ast}^{-1}(Y_g)=\pr_2\circ \chi_\rmL(Y_g).\]
+        In this way, the Maurer-Cartan form can be identified with the left global trivialization $\chi_\rmL:\T G\to G\times\frakg$.
         \item Given a basis $\{\bf{t}_i\}$ of $\frakg=\T_eG$ and its dual basis $\{\alpha^i\}$ on $\frakg^\ast$, identified with left-invariant $1$-forms $\alpha^i\in\fX^\ast(G)^G$, $\theta_G$ is given by
         \[\theta_G=\sum_i \alpha^i\otimes \bf{t}_i.\]
-        It is also called a \emph{tautological form} because, if we replace $\bf{t}_i$ with their corresponding left-invariant vector fields $e_i=(\bf{t}_i)_L$, then $\sum_i \alpha^i\otimes e_i=\id_{\T G}$.
-        \item $\theta_G$ is left-invariant, so $L_g^\ast\theta_G=\theta_G$, but under right translations it transforms as follows:
-        \[R_g^\ast\theta_G=\Ad_g^{-1}\circ\theta_G.\label{eq 1914}\]
-        \item Since right translations are the flows of left-invariant vector fields, (\ref{eq 1914}) has the following infinitesimal version. Let $A\in\frakg$ and $A_L\in\fX(G)^G$ the corresponding left-invariant vector field. Then by differentiating (\ref{eq 1914}) with respect to $g$ along $A$ at $g=e$, we get 
-        \[\Lie_{A_L}\theta_G=-\ad_A\circ\theta_G=-[A,\theta_G].\label{eq 17912}\]
-        On the other hand, since $\theta_G(A_L)=A=\const$, we can use Cartan's magic formula to write
-        \[\Lie_{A_L}\theta_G=i_{A_L}\dd\theta_G.\label{eq 17913}\]
-        Since the $A_L$ with $A$ ranging over $\frakg$ span the tangent spaces, the equality of (\ref{eq 17912}) and (\ref{eq 17913}) for all $A$ implies
+        It is also called a \emph{tautological form} because, if we replace $\bf{t}_i$ with their corresponding left-invariant vector fields $e_i=(\bf{t}_i)_\rmL$, then $\sum_i \alpha^i\otimes e_i=\id_{\T G}$.
+        \item $\theta_G$ is left-invariant, so $\rmL_g^\ast\theta_G=\theta_G$, but under right translations it transforms as follows:
+        \[\rmR_g^\ast\theta_G=\Ad_g^{-1}\circ\theta_G.\label{eq 1914}\]
+        \item Since right translations are the flows of left-invariant vector fields, (\ref{eq 1914}) has the following infinitesimal version. Let $A\in\frakg$ and $A_\rmL\in\fX(G)^G$ the corresponding left-invariant vector field. Then by differentiating (\ref{eq 1914}) with respect to $g$ along $A$ at $g=e$, we get 
+        \[\Lie_{A_\rmL}\theta_G=-\ad_A\circ\theta_G=-[A,\theta_G].\label{eq 17912}\]
+        On the other hand, since $\theta_G(A_\rmL)=A=\const$, we can use Cartan's magic formula to write
+        \[\Lie_{A_\rmL}\theta_G=i_{A_\rmL}\dd\theta_G.\label{eq 17913}\]
+        Since the $A_\rmL$ with $A$ ranging over $\frakg$ span the tangent spaces, the equality of (\ref{eq 17912}) and (\ref{eq 17913}) for all $A$ implies
         \[\dd\theta_G(X,Y)=-[\theta_G(X),\theta_G(Y)]\quad \text{ for all } X,Y\in\fX(G),\]
         which can also be written as
         \[\dd\theta_G +\frac12 [\theta_G,\theta_G]=0.\label{eq 5.5.10 RS1 maurer-cartan}\]
@@ -5913,7 +5913,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
 \end{rem}
 
 \begin{xca}
-    We have already seen that left translations are the flows of right-invariant vector fields. Thus, the left-invariant Maurer-Cartan form must have vanishing Lie derivatives w.r.t.\ any right-invariant vector field, $\Lie_{A_R}\theta_G=0$. Show that this also follows from the Maurer-Cartan equation via Cartan's magic formula.
+    We have already seen that left translations are the flows of right-invariant vector fields. Thus, the left-invariant Maurer-Cartan form must have vanishing Lie derivatives w.r.t.\ any right-invariant vector field, $\Lie_{A_\rmR}\theta_G=0$. Show that this also follows from the Maurer-Cartan equation via Cartan's magic formula.
 \end{xca}
 
 
@@ -5921,7 +5921,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
     Using the multiplication map $m:G\times G\to G$, define the map $\theta:\T G\times \T G\to \T G$ by the identity
     \[\theta\circ (\pi_\ast\times \pi_\ast)=m_\ast,\]
     where $\pi_\ast\times \pi_\ast$ is the natural isomorphism $T(G\times G)\to \T G\times \T G$. It is easy to check that $\theta$ can be expressed as
-    \[\theta\left((g,\xi),(h,\eta)\right)=(gh,R_{h\ast}\xi+L_{g\ast}\eta).\label{eq m_ast}\]
+    \[\theta\left((g,\xi),(h,\eta)\right)=(gh,\rmR_{h\ast}\xi+\rmL_{g\ast}\eta).\label{eq m_ast}\]
     Then another way to see that $\theta_G$ is a smooth form is to represent it as the composition of smooth maps, using the zero section $o:G\to \T G$ and the inversion map $i:G\to G$:
     \[\underset{(g,\xi)}{\T G}
     \underset{\mapsto}{\overset{\pi\times\id}{\to}}
@@ -5931,7 +5931,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
     \underset{\mapsto}{\overset{o\times\id}{\to}}
     \underset{(g^{-1},0)\times (g,\xi)}{\T G\times \T G}
     \underset{\mapsto}{\overset{\theta}{\to}}
-    \underset{(e,L_{g\ast}^{-1}\xi)}{\T G}.\label{eq MC form as composition}
+    \underset{(e,\rmL_{g\ast}^{-1}\xi)}{\T G}.\label{eq MC form as composition}
     \]
 \end{rem}
 
@@ -5941,17 +5941,17 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
     \[\dd\theta_G +\theta_G\wedge\theta_G=0,\]
     and in physics literature there may be a factor of $\frac12$ in front of the wedge product due to the implied commutator.
 
-    We also have $\theta_G(X)(g)=(L_{g}^{-1})_{\ast g}X_g$ for any $g\in G$. Since left-invariant vector fields span all of $\T G$, this means that on matrix groups we can write 
+    We also have $\theta_G(X)(g)=(\rmL_{g}^{-1})_{\ast g}X_g$ for any $g\in G$. Since left-invariant vector fields span all of $\T G$, this means that on matrix groups we can write 
     \[(\theta_G)_g=g^{-1}\dd g,\]
     where $\dd g\in \Omega^1(G;\T G)$ stands for the identity tensor on $\T G$ (i.e.~$\dd g(X_g)=X_g$ at any $g\in G$). This is the most common way of defining $\theta_G$ in physics.
 \end{rem}
 
 \begin{rem}\label{rem right MC eq}
-    Of course, everything above similarly applies to right-invariant forms, and one can define a right-invariant Maurer-Cartan form $\theta_G^R$, which in matrix groups is simply $\dd g g^{-1}$. Clearly, $(\theta_G^R)_g=\Ad_g\circ(\theta_G)_g$. The corresponding Maurer-Cartan equation reads $\dd\theta_G^R-\frac12[\theta_G^R,\theta_G^R]=0$, cf.\ Proposition~\ref{prop MC eq xi eta}.
+    Of course, everything above similarly applies to right-invariant forms, and one can define a right-invariant Maurer-Cartan form $\theta_G^\rmR$, which in matrix groups is simply $\dd g g^{-1}$. Clearly, $(\theta_G^\rmR)_g=\Ad_g\circ(\theta_G)_g$. The corresponding Maurer-Cartan equation reads $\dd\theta_G^\rmR-\frac12[\theta_G^\rmR,\theta_G^\rmR]=0$, cf.\ Proposition~\ref{prop MC eq xi eta}.
 \end{rem}
 
 \begin{rem}
-    As we have seen  in Proposition~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by nowhere-vanishing one-forms $\theta^i$ (or equivalently the distribution $\bigcap_i\ker\theta^i$) is integrable iff $\dd \theta^i=\xi^i_j\wedge\theta^j$ at least locally for some matrix of $1$-forms $\xi^i_j$. Now let $\pi:\T G\to G$ be the bundle projection and consider the lifted differential form $\pi^\ast\theta_G$. If $\dim G=n$, then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}) or (\ref{eq 5.5.4 RS1 MC in coords}), is also satisfied by $\pi^\ast\theta_G$, and expresses the fact that the $n$ components (in an arbitrary basis of $\frakg$) of $\theta_G$ span a canonical integrable Pfaffian system of rank $n$ on $\T G$. Its maximal integral manifolds are $n$-dimensional and are nothing but the orbits $\chi_L^{-1}(G\times \{A\})$, $A\in\frakg$, each of which is diffeomorphic to $G$ itself. 
+    As we have seen  in Proposition~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by nowhere-vanishing one-forms $\theta^i$ (or equivalently the distribution $\bigcap_i\ker\theta^i$) is integrable iff $\dd \theta^i=\xi^i_j\wedge\theta^j$ at least locally for some matrix of $1$-forms $\xi^i_j$. Now let $\pi:\T G\to G$ be the bundle projection and consider the lifted differential form $\pi^\ast\theta_G$. If $\dim G=n$, then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}) or (\ref{eq 5.5.4 RS1 MC in coords}), is also satisfied by $\pi^\ast\theta_G$, and expresses the fact that the $n$ components (in an arbitrary basis of $\frakg$) of $\theta_G$ span a canonical integrable Pfaffian system of rank $n$ on $\T G$. Its maximal integral manifolds are $n$-dimensional and are nothing but the orbits $\chi_\rmL^{-1}(G\times \{A\})$, $A\in\frakg$, each of which is diffeomorphic to $G$ itself. 
     
     The full power of this method will be seen when we apply it to subgroups of $G$. Moreover, as we will see, the Maurer-Cartan equation can be used to derive the unique real-analytic structure on any Lie group. This is our first example of the deep connections between integrability and certain differential-geometric structures.
 \end{rem}
@@ -6010,7 +6010,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
         \frac{\dd b}{b} & \frac{\dd a}{b}\\ 0&0
     \end{pmatrix}. \]
     Therefore the form $\mathsf{v}_G=b^{-2}\dd a\wedge \dd b$ is left-invariant, however it is not right-invariant because $G$ is not unimodular. Indeed, the modular quasicharacter can be computed by acting on this form with a right translation:
-    \[R_{(x,y)}^\ast \frac{\dd a \wedge \dd b}{b^2}=\frac{\dd (a+bx) \wedge \dd (by)}{(by)^2}=\frac{\dd a\wedge \dd b}{b^2 y},\]
+    \[\rmR_{(x,y)}^\ast \frac{\dd a \wedge \dd b}{b^2}=\frac{\dd (a+bx) \wedge \dd (by)}{(by)^2}=\frac{\dd a\wedge \dd b}{b^2 y},\]
     hence $\Delta(x,y)=y^{-1}$. Thus the form $\mathsf{w}_G=\Delta^{-1}\mathsf{v}_G=b^{-1}\dd a\wedge\dd b$ is a right-invariant volume form on the affine group.
 \end{example}
 
@@ -6043,7 +6043,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
 \end{example}
 
 \begin{example}[Haar measure on $\GL_n(\bbR)$]
-    On $\GL_n(\bbR)$, since it is an open subset of $\bbR^{n^2}$, a (non-invariant) volume form is given by the standard volume $\omega_x=\dd^{n^2} x=\prod_{i,j=1}^n\dd x_{ij}$. An action by a left translation will produce a factor of the Jacobian $l(x)=\det(L_{x\ast})$, and a right translation will give $r(x)=\det(R_{x\ast }^{-1})$. The modular quasicharacter is then $\Delta(x)=\det\Ad_x=l(x)/r(x)$. For $\GL_n(\bbR)$, it is clear that the Jacobian is simply $l(x)=(\det x)^n$ (because it stretches the volume of each column by a factor of $\det x$). Therefore a left-invariant volume form on $\GL_n(\bbR)$ is given by
+    On $\GL_n(\bbR)$, since it is an open subset of $\bbR^{n^2}$, a (non-invariant) volume form is given by the standard volume $\omega_x=\dd^{n^2} x=\prod_{i,j=1}^n\dd x_{ij}$. An action by a left translation will produce a factor of the Jacobian $l(x)=\det(\rmL_{x\ast})$, and a right translation will give $r(x)=\det(\rmR_{x\ast }^{-1})$. The modular quasicharacter is then $\Delta(x)=\det\Ad_x=l(x)/r(x)$. For $\GL_n(\bbR)$, it is clear that the Jacobian is simply $l(x)=(\det x)^n$ (because it stretches the volume of each column by a factor of $\det x$). Therefore a left-invariant volume form on $\GL_n(\bbR)$ is given by
     \[\mathsf{v}_{\GL_n(\bbR)}(x)=\frac{\dd^{n^2} x}{(\det x)^n}.\]
 \end{example}
 
@@ -6072,8 +6072,8 @@ The Maurer-Cartan form provides the infinitesimal information about the group st
 
 \begin{defn}[Logarithmic derivative of group-valued functions]\index{Logarithmic derivative}
     Let $G$ be a Lie group and $M$ a smooth manifold. For a smooth map $f:M\to G$, its (left) logarithmic derivative $\delta f:\T M\to \frakg$, also called the \emph{Darboux derivative},\index{Darboux derivative|see {Logarithmic derivative}} is defined by
-    \[\delta f=f^\ast\theta_G=\theta_G\circ f_\ast=L_{f\ast}^{-1}\circ f_\ast,\]
-    where $\theta_G$ is the Maurer-Cartan form of $G$ and $L_{f\ast}^{-1}$ stands for the action of $L_{f(m)\ast}^{-1}$ on $\T_{f(m)}G$.
+    \[\delta f=f^\ast\theta_G=\theta_G\circ f_\ast=\rmL_{f\ast}^{-1}\circ f_\ast,\]
+    where $\theta_G$ is the Maurer-Cartan form of $G$ and $\rmL_{f\ast}^{-1}$ stands for the action of $\rmL_{f(m)\ast}^{-1}$ on $\T_{f(m)}G$.
     
     In particular, $\theta_G=\delta\id_G$.
 \end{defn}
@@ -6118,10 +6118,10 @@ The local theorem immediately implies its own global version in the case when $M
 \begin{proof}
     Let $X\in T_m M$. Then
     \begin{multline}
-        \delta(\Phi\circ f)(X)=L_{\Phi\circ f(m)}^{-1}(\Phi\circ f)_\ast(X)=L_{\Phi\circ f(m)}^{-1}(\Phi\circ  L_{f(m)})_\ast\circ  \delta_G f(X)=\\
-        =L_{\Phi\circ f(m)}^{-1}(L_{\Phi\circ f(m)}\circ \Phi)_\ast\circ  \delta_G f(X)=\Phi_\ast\delta_G f(X)=\phi\circ \delta_G f(X),
+        \delta(\Phi\circ f)(X)=\rmL_{\Phi\circ f(m)}^{-1}(\Phi\circ f)_\ast(X)=\rmL_{\Phi\circ f(m)}^{-1}(\Phi\circ  \rmL_{f(m)})_\ast\circ  \delta_G f(X)=\\
+        =\rmL_{\Phi\circ f(m)}^{-1}(\rmL_{\Phi\circ f(m)}\circ \Phi)_\ast\circ  \delta_G f(X)=\Phi_\ast\delta_G f(X)=\phi\circ \delta_G f(X),
     \end{multline}
-    where $\Phi\circ L_{f(m)}=L_{\Phi\circ f(m)}\circ \Phi$ because $\Phi$ is a homomorphism.
+    where $\Phi\circ \rmL_{f(m)}=\rmL_{\Phi\circ f(m)}\circ \Phi$ because $\Phi$ is a homomorphism.
 \end{proof}
 
 In particular, the adjoint representation $\Ad:G\to \GL(\frakg)$ has logarithmic derivative $\delta \Ad=(\Ad)_{\ast e}\circ \delta\id_G=\ad\circ\theta_G$, which we denote by $\ad_{\theta_G}$. The following corollary follows.
@@ -6221,11 +6221,11 @@ In this \subsect\ we apply Cartan's Fundamental Theorem to study to what extent 
 \begin{proof}
     We give a simple proof based on developments of $1$-forms. We will also provide another instructive proof in \S\ref{sec: analytic subgroup theorem} after we cover the exponential map. For yet another proof via group actions, see \cite[Thm.~20.19]{Lee}.
 
-    Consider $\omega=\phi\circ \theta_G\in \Omega^1(G,\frakh)$. This $1$-form satisfies the Structure Equation because $\phi$ is linear and a Lie algebra homomorphism. Thus there is a unique map $\Phi:(G,e)\to (H,e)$ satisfying $\Phi^\ast \theta_H=\omega$. We claim that $\Phi$ is a homomorphism. To see this, consider $f:(G,e)\to (H,e)$ defined by $f(g)=\Phi(g_0)^{-1}\Phi(g_0g)$ for some fixed $g_0$. Now $f=L_{\Phi(g_0)}^{-1}\circ\Phi\circ L_{g_0}$, and so
-    \[f^\ast\theta_H=L_{g_0}^\ast \Phi^\ast L_{\Phi(g_0)}^{\ast-1}\theta_H=L_{g_0}^\ast \Phi^\ast\theta_H=L_{g_0}^\ast \omega=\omega.\]
+    Consider $\omega=\phi\circ \theta_G\in \Omega^1(G,\frakh)$. This $1$-form satisfies the Structure Equation because $\phi$ is linear and a Lie algebra homomorphism. Thus there is a unique map $\Phi:(G,e)\to (H,e)$ satisfying $\Phi^\ast \theta_H=\omega$. We claim that $\Phi$ is a homomorphism. To see this, consider $f:(G,e)\to (H,e)$ defined by $f(g)=\Phi(g_0)^{-1}\Phi(g_0g)$ for some fixed $g_0$. Now $f=\rmL_{\Phi(g_0)}^{-1}\circ\Phi\circ \rmL_{g_0}$, and so
+    \[f^\ast\theta_H=\rmL_{g_0}^\ast \Phi^\ast \rmL_{\Phi(g_0)}^{\ast-1}\theta_H=\rmL_{g_0}^\ast \Phi^\ast\theta_H=\rmL_{g_0}^\ast \omega=\omega.\]
     Since $f$ and $\Phi$ agree at the identity and have the same logarithmic derivative, it follows that $f=\Phi$ and hence $\Phi(g)=\Phi(g_0)^{-1}\Phi(g_0g)$, that is, $\Phi(g_0)\Phi(g)=\Phi(g_0g)$ for all $g,g_0\in G$.
     % Let $g\in G$ and pick a path $\gamma(t):[0,1]\to G$ with $\gamma(0)=e$ and $\gamma(1)=g$. Denote its Lie algebra-valued velocity vector by
-    % \[\xi(t)=\left(L_{\gamma(t)}^{-1}\right)_{\ast}\dot\gamma(t).\]
+    % \[\xi(t)=\left(\rmL_{\gamma(t)}^{-1}\right)_{\ast}\dot\gamma(t).\]
     % Next, consider the following initial value problem for a path $h(t):[0,1]\to H$:
     % \[\dot h(t)=\phi\cdot \xi(t),\quad h(0)=e.\]
     % In the technical Lemma~\ref{lem invertibility of D} we showed that this equation always has a solution on the entire interval $[0,1]$, so we can define
@@ -6237,9 +6237,9 @@ In this \subsect\ we apply Cartan's Fundamental Theorem to study to what extent 
     % We will use the Maurer-Cartan equation (\ref{eq Maurer-Cartan}). Using the definition of $\xi$ and $\eta$ from there, we see
     % \[\eta(0,s)=\eta(1,s)=0.\]
     % Next we define a differentiable map $h(t,s)$ from the square into $H$ as the solution (we claim without proof that it exists) of the initial value problem in $t$:
-    % \[\partial_th=\left(R_{h}\right)_\ast \phi\cdot \xi,\quad h(0,s)=e.\]
+    % \[\partial_th=\left(\rmR_{h}\right)_\ast \phi\cdot \xi,\quad h(0,s)=e.\]
     % This is a deformation of the path $h_0(t)$ into $h_1(t)$. Let $\zeta(t,s)\in\frakh$ be the velocity of this deformation, i.e.
-    % \[\partial_s h=\left(R_{h}\right)_\ast \zeta.\]
+    % \[\partial_s h=\left(\rmR_{h}\right)_\ast \zeta.\]
     % The Maurer-Cartan equation then states
     % \[\partial_t \zeta-\partial_s \phi\cdot \xi=[\phi\cdot\xi,\zeta].\]
     % View the last equality as a differential equation on $\zeta(t,s)$ with respect to $t$. Applying $\phi$ to the Maurer-Cartan equation for $\gamma(t,s)$, we see that this equation is satisfied by $\phi\cdot \eta$. Since
@@ -6403,10 +6403,10 @@ If one assumes Theorem~\ref{thm 7.7. Lee covering group} to be known (via our or
 \begin{proof}[Shorter proof of Theorem~\ref{thm 8.7 Sharpe} {{\cite[Thm.~2.8]{McKayCartan}}}]
     Consider again the Pfaffian system on $M\times G$ spanned by the (components of the) $1$-form $\pr_M^\ast\eta-\pr_G^\ast\theta_G$. By the proof of the local Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, it is integrable and the leaves of the integral foliation are locally graphs of maps $M\to G$. Moreover, since both $\eta$ and $\theta_G$ are fiberwise isomorphisms, these maps are local diffeomorphisms that pull $\theta_G$ back to $\eta$. 
     
-    Let $S$ be a leaf of the foliation through some point $(m_0,e)$. Take a constant vector field $\eta^{-1}(A)$ on $G$ for some $A\in\frakg$. The vector field $X\coloneqq (\eta^{-1}(A),A_L)$ on $M\times G$ is tangent to $S$ since $\restr{\pr_M^\ast\eta}{S}=\restr{\pr^\ast_G\theta_G}{S}$. We can simultaneously consider the integral curve $\gamma_M$ of $\eta^{-1}(A)$ through $m_0$ and $\gamma_G$ the integral curve of $A_L$ through $e$. We see that the integral curve $\gamma$ of $X$ through $(m_0,e)\in M\times G$ lies in $S$ and projects onto $\gamma_M$ and $\gamma_G$, respectively. As long as both of the latter curves exist, $\gamma$ exists as well. This means that $\eta^{-1}(A)$ and $A_L$ can be lifted to a unique complete vector field on $S$. Since these vector fields span the tangent bundles, we can now use the Ehresmann Fibration Theorem in the form of Corollary~\ref{thm Ehresmann vector fields} to conclude that $S$ is a fiber bundle over both $M$ and $G$. All three have the same dimension, therefore $S$ is actually a covering space of both $G$ and $M$. 
+    Let $S$ be a leaf of the foliation through some point $(m_0,e)$. Take a constant vector field $\eta^{-1}(A)$ on $G$ for some $A\in\frakg$. The vector field $X\coloneqq (\eta^{-1}(A),A_\rmL)$ on $M\times G$ is tangent to $S$ since $\restr{\pr_M^\ast\eta}{S}=\restr{\pr^\ast_G\theta_G}{S}$. We can simultaneously consider the integral curve $\gamma_M$ of $\eta^{-1}(A)$ through $m_0$ and $\gamma_G$ the integral curve of $A_\rmL$ through $e$. We see that the integral curve $\gamma$ of $X$ through $(m_0,e)\in M\times G$ lies in $S$ and projects onto $\gamma_M$ and $\gamma_G$, respectively. As long as both of the latter curves exist, $\gamma$ exists as well. This means that $\eta^{-1}(A)$ and $A_\rmL$ can be lifted to a unique complete vector field on $S$. Since these vector fields span the tangent bundles, we can now use the Ehresmann Fibration Theorem in the form of Corollary~\ref{thm Ehresmann vector fields} to conclude that $S$ is a fiber bundle over both $M$ and $G$. All three have the same dimension, therefore $S$ is actually a covering space of both $G$ and $M$. 
     
     By an extension of the same lifting argument, we can now replace $S$ with the universal covering space $\wt M$ of $M$. The resulting covering map $D\coloneqq \wt M\to G$ is called a \emph{developing map}. \index{Developing map}
-    By Theorem~\ref{thm 7.7. Lee covering group}, $\wt M$ has a unique Lie group structure (for each choice of identity) that turns $D$ into a local Lie group isomorphism. The deck transformations of $\wt M$ preserve the pullback of $\eta$. But the developing map might not be invariant under the deck transformations. Each deck transformation $a\in \Aut(\wt{M})\cong \pi_1(M)$ takes $(m_0,e)$ to some $(m,g)$. By uniqueness of leaves of the foliation, the entire transformation must be simply the left translation $L_g$ acting on the $G$-component, as asserted.
+    By Theorem~\ref{thm 7.7. Lee covering group}, $\wt M$ has a unique Lie group structure (for each choice of identity) that turns $D$ into a local Lie group isomorphism. The deck transformations of $\wt M$ preserve the pullback of $\eta$. But the developing map might not be invariant under the deck transformations. Each deck transformation $a\in \Aut(\wt{M})\cong \pi_1(M)$ takes $(m_0,e)$ to some $(m,g)$. By uniqueness of leaves of the foliation, the entire transformation must be simply the left translation $\rmL_g$ acting on the $G$-component, as asserted.
 \end{proof}
 
 In this picture, developments of $\eta$ correspond to unique liftings of curves in $M$ to curves in $\wt{M}$ and then projection to $G$ via the developing map.
@@ -6420,10 +6420,10 @@ In this picture, developments of $\eta$ correspond to unique liftings of curves 
 
 
 \begin{lem}\label{3972}
-    If $G$ is a Lie group and $\frakh\subset \Lief G=\T_e G$ is a Lie subalgebra, then the subset $D_L=\bigcup_g (L_g)_{\ast e}\frakh\subset \T G=G\cdot \frakh$ is a left-invariant involutive distribution. Similarly, $D_R=\frakh\cdot G$ is a right-invariant involutive distribution. 
+    If $G$ is a Lie group and $\frakh\subset \Lief G=\T_e G$ is a Lie subalgebra, then the subset $D_\rmL=\bigcup_g (\rmL_g)_{\ast e}\frakh\subset \T G=G\cdot \frakh$ is a left-invariant involutive distribution. Similarly, $D_\rmR=\frakh\cdot G$ is a right-invariant involutive distribution. 
 \end{lem}
 \begin{proof}
-    It is sufficient to show this for the left-invariant case. Let $D=D_L$. For each $g\in G$, $(L_g)_{\ast e}$ is an isomorphism, therefore $D_g$ is of constant rank $\dim \frakh$ and the distribution is obviously left-invariant. Any basis of left-invariant vector fields on $G$ forms a smooth frame for $D$, so $D$ is smooth. Moreover, $D$ is involutive because such a frame is closed under the Lie bracket.
+    It is sufficient to show this for the left-invariant case. Let $D=D_\rmL$. For each $g\in G$, $(\rmL_g)_{\ast e}$ is an isomorphism, therefore $D_g$ is of constant rank $\dim \frakh$ and the distribution is obviously left-invariant. Any basis of left-invariant vector fields on $G$ forms a smooth frame for $D$, so $D$ is smooth. Moreover, $D$ is involutive because such a frame is closed under the Lie bracket.
 \end{proof}
 
 The Frobenius theorem now gives us the first the first ``enhancement'' result about Lie subgroups. Even though by definition they are only required to be immersed (which means that their topology can differ drastically from the subspace topology), the following theorem shows that they are in fact weakly embedded (a.k.a.~initial).
@@ -6444,9 +6444,9 @@ Recall from Theorems~\ref{thm 5.31 Lee} and \ref{thm 5.32 Lee} that while an imm
 \begin{thm}[{{\cite[Thm.~19.26]{Lee}}}] Let $G$ be a Lie group and $\frakg=\Lief G$ its Lie algebra. If $\frakh\subset \frakg$ is a Lie subalgebra, then there is a unique connected immersed Lie subgroup of $G$ whose Lie algebra is $\frakh$.
 \end{thm}
 \begin{proof}
-    Let $D\subset \T G$ be the involutive left-invariant distribution corresponding to $\frakh$. We now use the global Frobenius theorem to introduce the foliation $\calH$ determined by $D$, and for any $g\in G$, let $\calH_g$ be the leaf containing $g$. Since $D$ is left-invariant, it follows that left translations take leaves to leaves: $L_g(\calH_{g'})=\calH_{gg'}$.
+    Let $D\subset \T G$ be the involutive left-invariant distribution corresponding to $\frakh$. We now use the global Frobenius theorem to introduce the foliation $\calH$ determined by $D$, and for any $g\in G$, let $\calH_g$ be the leaf containing $g$. Since $D$ is left-invariant, it follows that left translations take leaves to leaves: $\rmL_g(\calH_{g'})=\calH_{gg'}$.
 
-    Define $H=\calH_e$. We will show that $H$ is the desired Lie subgroup. First, it is a subgroup because it is left-invariant: $hh'\in L_h(H)=\calH_h=H$ for all $h,h'\in H$, and similarly $h^{-1}\in H$.
+    Define $H=\calH_e$. We will show that $H$ is the desired Lie subgroup. First, it is a subgroup because it is left-invariant: $hh'\in \rmL_h(H)=\calH_h=H$ for all $h,h'\in H$, and similarly $h^{-1}\in H$.
 
     To show that $H$ is a Lie group we need to show that the map $\mu(h,h')=hh^{\prime -1}$ is smooth as a map $H\times H\to H$. Since $H\times H$ is a submanifold of $G\times G$, it is immediate that $\mu:H\times H\to G$ is smooth. Since $H$ is also weakly embedded by Theorem~\ref{thm 19.17 Lee}, $\mu$ is also smooth as a map into $H$.
 
@@ -6474,14 +6474,14 @@ Note that a \gls{ops} is \emph{not} a Lie subgroup of $G$, but a specific homomo
 \begin{proof}
     Given a left-invariant vector field, its integral curve at $e$ will automatically be a \gls{ops} due to the general group property of flows and completeness (or alternatively from the uniqueness of maximal integral curves).
 
-    Conversely, every \gls{ops} $\gamma$ is the integral curve of the left-invariant field $A_L$ whose value at the identity is $A=\dot\gamma(0)\in\Lief G$ because 
-    \[\dot\gamma(t)=\restr{\frac{\dd}{\dd s}}{s=0}L_{\gamma(t)}\gamma(s)=L_{\gamma(t)\ast e}A=(A_L)_{\gamma(t)}.\]
+    Conversely, every \gls{ops} $\gamma$ is the integral curve of the left-invariant field $A_\rmL$ whose value at the identity is $A=\dot\gamma(0)\in\Lief G$ because 
+    \[\dot\gamma(t)=\restr{\frac{\dd}{\dd s}}{s=0}\rmL_{\gamma(t)}\gamma(s)=\rmL_{\gamma(t)\ast e}A=(A_\rmL)_{\gamma(t)}.\]
 \end{proof}
 
 This leads us to yet another common way of defining the Lie algebra of a Lie group.
 
 \paragraph{Construction IV} In summary, there is a natural one-to-one correspondence between elements of the Lie algebra and \gls{ops}'s
-\[A\in \frakg\cong \fX(G)^G\mapsto \gamma_A(t)=F^A_t(e)\coloneqq F^{A_L}_t(e).\]
+\[A\in \frakg\cong \fX(G)^G\mapsto \gamma_A(t)=F^A_t(e)\coloneqq F^{A_\rmL}_t(e).\]
 We say that $\gamma_A$ is \emph{generated} by $A\in\frakg$. The Lie bracket is recovered as the double derivative of the group commutator
 \[[A,B]=\restr{\frac{\dd}{\dd t}\frac{\dd}{\dd s}}{t=s=0}\gamma_A(t)\gamma_B(s)\gamma_A(t)^{-1}\gamma_B(s)^{-1}.\]
 
@@ -6532,15 +6532,15 @@ When multiple groups are involved, we will sometimes specify the group to which 
     \item $\exp$ restricts to a diffeomorphism from some neighborhood of $0\in \frakg$ to a neighborhood of $e\in G$. Its inverse is often denoted by $\ln$.
     \item $\exp$ is natural: if $H$ is another Lie group with $\frakh=\Lief H$, and $\Phi:G\to H$ is a Lie group homomorphism, then 
     \[\exp_H\circ\Phi_{\ast e}=\Phi\circ \exp_G.\]
-    \item The flow $F^{A_L}$ of a left-invariant vector field $A_L\in \fX(G)^G$, $(A_L)_e=A$, is given by $F_t=R_{\rme^{tA}}$.
+    \item The flow $F^{A_\rmL}$ of a left-invariant vector field $A_\rmL\in \fX(G)^G$, $(A_\rmL)_e=A$, is given by $F_t=\rmR_{\rme^{tA}}$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
     (a) We need to show that the flow $F^A$ of a vector field varies smoothly with $A$. This is a situation not covered by the fundamental theorem of flows, but we can reduce it to that situation by a simple trick. Define a vector field $\Xi\in\fX(G\times\frakg)$ by
-    \[\Xi_{(g,A)}=((A_L)_g,0)\in \T_gG\oplus \T_A \frakg.\]
-    This is a smooth vector field because it acts on functions by differentiating them along $A_L$. It is easy to verify that the flow $F^\Xi$ is given by
-    \[F^\Xi_t(g,A)=\left(F^{A_L}(g,t),A\right).\]
-    By the fundamental Theorem~\ref{thm fundamental of flows} of flows, $F^\Xi$ is smooth. Since $\exp A=\pr_1\left((F^\Xi_1(e,A)\right)$, where $\pr_1:G\times\frakg\to G$ is the projection, it follows that $\exp$ is smooth.
+    \[\Xi_{(g,A)}=((A_\rmL)_g,0)\in \T_gG\oplus \T_A \frakg.\]
+    This is a smooth vector field because it acts on functions by differentiating them along $A_\rmL$. It is easy to verify that the flow $F^\Xi$ is given by
+    \[F^\Xi_t(g,A)=\left(F^{A_\rmL}(g,t),A\right).\]
+    By the fundamental Theorem~\ref{thm fundamental of flows} of flows, $F^\Xi$ is smooth. Since $\exp A=\pr_1\left(F^\Xi_1(e,A)\right)$, where $\pr_1:G\times\frakg\to G$ is the projection, it follows that $\exp$ is smooth.
 
     (b-d) follow trivially from the fact that $\exp(tA)$ is a \gls{ops}.
     
@@ -6638,11 +6638,11 @@ Similarly, for the coadjoint representation we have
     In particular, if $\frakg$ is abelian, $\exp$ is a Lie group homomorphism from the vector group underlying $\frakg$ to $G$.
 \end{prop}
 \begin{proof}
-    It suffices to show that the curve defined by $\gamma(t)=\rme^{tA}\rme^{tB}$ coincides with the integral curve generated by $A+B$. Indeed, $\gamma(0)=e$ and we can use the commutation of the flows of the left-invariant fields $A_L$ and $B_L$ to compute the generator. Here we will need the general product rule that holds for maps $f:M_1\times M_2\to N$:
+    It suffices to show that the curve defined by $\gamma(t)=\rme^{tA}\rme^{tB}$ coincides with the integral curve generated by $A+B$. Indeed, $\gamma(0)=e$ and we can use the commutation of the flows of the left-invariant fields $A_\rmL$ and $B_\rmL$ to compute the generator. Here we will need the general product rule that holds for maps $f:M_1\times M_2\to N$:
     \[\T_{(m_1,m_2)}f(A_1,A_2)=\T_{m_1}f_{m_2}(A_1)+\T_{m_2}f_{m_1}(A_2)\]
     where $f_{m_1}:M_2\to N$ and $f_{m_2}:M_1\to N$ are the partial mappings. In particular, if $M_1=M_2\cong \bbR$ then we have the ``product rule'' for derivatives along the diagonal:
     \[\restr{\frac{\dd}{\dd t}}{t}\varphi(t,t)=\restr{\frac{\dd}{\dd s}}{s=t}\varphi(s,t)+\restr{\frac{\dd}{\dd s}}{s=t}\varphi(t,s).\]
-    Applying this to $\gamma$ we get (using $F^A$ for the flow of $A_L$)
+    Applying this to $\gamma$ we get (using $F^A$ for the flow of $A_\rmL$)
     \begin{multline}
         \dot\gamma(0)=\restr{\frac{\dd}{\dd t}}{t=0} F^{B}_t\circ F^{A}_t (e)=\restr{\frac{\dd}{\dd s}}{s=0}F^{B}_{s}(e)+\restr{\frac{\dd}{\dd s}}{s=0}F^{A}_{s}(e)=B+A.
     \end{multline}
@@ -6716,13 +6716,13 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
 
 \begin{thm}[{{\cite[Thm.~1.5.3]{DK}}}]\label{thm differential of exp}
     For any $A\in\frakg$ the linear mapping $\exp_{\ast A}:\frakg\to \T_{\rme^A} G$ is given by
-    \[  \exp_{\ast A}=\left(R_{\rme^A}\right)_{\ast e}\circ \int_0^1 \rme^{s\ad_A}\dd s=\left(L_{\rme^A}\right)_{\ast e}\circ \int_0^1 \rme^{-s\ad_A}\dd s.   \label{eq 1.5.1 DK}\]
+    \[  \exp_{\ast A}=\left(\rmR_{\rme^A}\right)_{\ast e}\circ \int_0^1 \rme^{s\ad_A}\dd s=\left(\rmL_{\rme^A}\right)_{\ast e}\circ \int_0^1 \rme^{-s\ad_A}\dd s.   \label{eq 1.5.1 DK}\]
 \end{thm}
 \begin{proof}
     We will provide a simple derivation of this from the Maurer-Cartan equation (\ref{eq Maurer-Cartan}). Let us apply it to the map
     \[g(t,s)=\rme^{t(A+sB)}.\]
     Then we find
-    \[\xi=\left(R_g^{-1}\right)_\ast \partial_t g=A+sB, \quad \eta=\left(R_g^{-1}\right)_\ast \partial_s g,\]
+    \[\xi=\left(\rmR_g^{-1}\right)_\ast \partial_t g=A+sB, \quad \eta=\left(\rmR_g^{-1}\right)_\ast \partial_s g,\]
     and the Maurer-Cartan equation $\partial_\eta-\partial_s\xi=[\xi,\eta]$ now reads
     \[\partial_t \eta=B+[A,\eta].\]
     By denoting $\gamma(t)=\eta(t,0)$, we get the differential equation at $s=0$
@@ -6734,9 +6734,9 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
     The solution of this with $\gamma(0)=0$ is obviously given by
     \[\zeta(t)=\int_0^t \rme^{-s\ad_A}B\dd s.\]
     On the other hand, from the definition of $\gamma$,
-    \[\gamma(t)=\left(R_{\rme^{tA}}^{-1}\right)_{\ast \rme^{tA}}\circ \exp_{\ast tA}(tB)\]
+    \[\gamma(t)=\left(\rmR_{\rme^{tA}}^{-1}\right)_{\ast \rme^{tA}}\circ \exp_{\ast tA}(tB)\]
     and thus
-    \[\exp_{\ast tA}(tB)=\left(L_{\rme^{tA}}\right)_{\ast e}\int_0^t\rme^{-s\ad_A}\dd s\,(tB).\]
+    \[\exp_{\ast tA}(tB)=\left(\rmL_{\rme^{tA}}\right)_{\ast e}\int_0^t\rme^{-s\ad_A}\dd s\,(tB).\]
     By setting $t=1$ we get the claimed formula. The second version is obtained via the substitution $s=1-s'$ in the integral.
 \end{proof}
 
@@ -6744,8 +6744,8 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
 \begin{rem}[Singular points of $\exp$]
     Since the integral derived above is elementary, the differential of $\exp$ at $A\in\frakg$ can be given by the formal series
     \begin{align}
-        \delta_A\exp= \left(L_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(-\ad_{A}\right)^n}{(n+1)!}=\frac{\rmI-\rme^{-\ad_A}}{\ad_A},\\
-        \left(R_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(\ad_{A}\right)^n}{(n+1)!}=\frac{\rme^{\ad_A}-\rmI}{\ad_A},\label{dexp series}
+        \delta_A\exp= \left(\rmL_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(-\ad_{A}\right)^n}{(n+1)!}=\frac{\rmI-\rme^{-\ad_A}}{\ad_A},\\
+        \left(\rmR_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(\ad_{A}\right)^n}{(n+1)!}=\frac{\rme^{\ad_A}-\rmI}{\ad_A},\label{dexp series}
     \end{align}
     where for non-invertible matrices $\ad_A\in\frakgl(\frakg)$ the series should be taken as the \emph{definition} of this latter expression. Indeed, $\ad_A$ is never invertible because it always contains $A$ itself in its kernel, $\ad_A A=0$. By looking at the location of the zeros of the function $f(z)=(\rme^z-1)/z$, we conclude that the differential $\exp_{\ast A}$ is bijective iff no eigenvalue of $\ad_A$ lies in $2\pi \rmi\bbZ\setminus\{0\}$. Conversely, the singular points of the exponential map are precisely those $A\in \frakg$ such that $\ad_A\in \End(V)$ has an eigenvalue of the form $2\pi \rmi k,$ $k\in\bbZ\setminus\{0\}$.
 \end{rem}
@@ -6788,7 +6788,7 @@ In this case $t=\sqrt{\alpha^2+|\beta|^2}$, which is the Euclidean length of $(\
 \end{pmatrix}=\begin{pmatrix}
     \cos t&-\sin t\\\sin t&\cos t
 \end{pmatrix}\in\SO_2(\bbR).\]
-If $A\in\mathfrak{sl}_2(\bbR)$, then $\rme^A$ has eigenvalues equal to $-1$ iff there is a $k\in\bbZ$ such that $A$ has eigenvalues equal to $\pm(\rmi\pi+2\pi \rmi k)$ (with both signs occurring). This implies that $A$ is diagonalizable over $\bbC$, hence $\rme^A$ is as well, so $\rme^A=-\rmI$. It follows that elements $A\in\SL_2(\bbR)$ that have eigenvalues equal to $-1$ without themselves being equal to $-\rmI$, that is, those $A\in\SL_2(\bbR)$ which are conjugate to $\left(\begin{smallmatrix}
+If $A\in\mathfrak{sl}_2(\bbR)$, then $\rme^A$ has eigenvalues equal to $-1$ iff there is a $k\in\bbZ$ such that $A$ has eigenvalues equal to $\pm\rmi \pi(2k+1)$ (with both signs occurring). This implies that $A$ is diagonalizable over $\bbC$, hence $\rme^A$ is as well, so $\rme^A=-\rmI$. It follows that elements $A\in\SL_2(\bbR)$ that have eigenvalues equal to $-1$ without themselves being equal to $-\rmI$, that is, those $A\in\SL_2(\bbR)$ which are conjugate to $\left(\begin{smallmatrix}
     -1&\pm 1\\0&-1
 \end{smallmatrix}\right)$, \emph{are not in the image of $\exp:\mathfrak{sl}_2(\bbR)\to \SL_2(\bbR)$} (and only they aren't).
 
@@ -7010,18 +7010,18 @@ Here we provide a slightly longer proof of Theorem~\ref{thm differential of exp}
 \end{proof}
 
 \begin{proof}[Second proof of Theorem~\ref{thm differential of exp}]
-    Now we apply formula (\ref{2702}) to $s\mapsto R_{\rme^{s(A+\epsilon B)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(A+\epsilon B)_L$ on $G$. Hence:
+    Now we apply formula (\ref{2702}) to $s\mapsto \rmR_{\rme^{s(A+\epsilon B)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(A+\epsilon B)_\rmL$ on $G$. Hence:
     \begin{multline}
-        \exp_{\ast A}B=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(A+\epsilon B)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}R_{\exp(A+\epsilon B)}(e)=\\
-        =\int_0^1\T_{\rme^{sA}}R_{\rme^{(1-s)A}}\cdot B_L\left(\rme^{sA}\right)\dd s=
-        \int_0^1 \T_e R_{\rme^A}\circ \T_{\rme^{sA}}R_{\rme^{-sA}}\circ \T_e L_{\rme^{sA}}\cdot B \dd s=\\
-        =\T_e R_{\rme^A}\circ\int_0^1 \T_e\left(R_{\rme^{-sA}}\circ L_{\rme^{sA}}\right)\dd s \cdot B=
-        \T_e R_{\rme^A}\circ \int_0^1 \Ad_{\rme^{sA}}\dd s\cdot B=\\
-        =\T_eR_{\rme^A}\circ \int_0^1 \rme^{s\ad_A}\dd s\cdot B.
+        \exp_{\ast A}B=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(A+\epsilon B)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\rmR_{\exp(A+\epsilon B)}(e)=\\
+        =\int_0^1\T_{\rme^{sA}}\rmR_{\rme^{(1-s)A}}\cdot B_\rmL\left(\rme^{sA}\right)\dd s=
+        \int_0^1 \T_e \rmR_{\rme^A}\circ \T_{\rme^{sA}}\rmR_{\rme^{-sA}}\circ \T_e \rmL_{\rme^{sA}}\cdot B \dd s=\\
+        =\T_e \rmR_{\rme^A}\circ\int_0^1 \T_e\left(\rmR_{\rme^{-sA}}\circ \rmL_{\rme^{sA}}\right)\dd s \cdot B=
+        \T_e \rmR_{\rme^A}\circ \int_0^1 \Ad_{\rme^{sA}}\dd s\cdot B=\\
+        =\T_e\rmR_{\rme^A}\circ \int_0^1 \rme^{s\ad_A}\dd s\cdot B.
     \end{multline}
     In the last equality we used Theorem~\ref{thm 1.5.2 DK}. This proves the first identity. The second one follows from:
     \begin{multline}
-        \T_e R_{\rme^A}^{-1}\circ \T_eL_{\rme^A}\circ \int_0^1 \rme^{-s\ad_A}\dd s=\\
+        \T_e \rmR_{\rme^A}^{-1}\circ \T_e\rmL_{\rme^A}\circ \int_0^1 \rme^{-s\ad_A}\dd s=\\
         =\Ad_{\rme^A}\circ\int_0^1 \rme^{-s\ad_A}\dd s=\int_0^1 \rme^{(1-s)\ad_A}\dd s=\int_0^1 \rme^{u\ad_A}\dd u,
     \end{multline}
     by means of the substitution $1-s=u$.
@@ -7049,11 +7049,11 @@ Recall that the quotient of the path space $\rmP(M,x_0)$ by the equivalence rela
 %     becomes a group, which we earlier called the universal covering group.
 % \end{prop}
 
-By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(R_{\gamma(t)}^{-1}\right)_{\ast}\dot\gamma(t)=\xi(t)$. We already know that the solution exists by Cartan's Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global}, but we now show a stronger result that this correspondence establishes a homeomorphism between the two path spaces.
+By differentiating with respect to the time parameter $t$, we now transport the study of $\rmP(G,e)\cap C^1$ to the study of the path space $\rmP(\frakg)$ of the Lie algebra of $G$. The main question here is the following: given a path $\xi(t)$ in $\frakg$, is it always possible to find a path $\gamma(t)$ in $G$ starting at $e\in G$ whose velocity vector is $\xi(t)$, i.e.~$\left(\rmR_{\gamma(t)}^{-1}\right)_{\ast}\dot\gamma(t)=\xi(t)$. We already know that the solution exists by Cartan's Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global}, but we now show a stronger result that this correspondence establishes a homeomorphism between the two path spaces.
 
 \begin{lem}[{{\cite[Prop.~1.13.4]{DK}}}]\label{lem invertibility of D}
     Let $G$ be a connected Lie group with Lie algebra $\frakg$. Then the (right) logarithmic derivative as a map of paths
-    \[\delta=\delta^R:\quad \gamma\mapsto \left(t\mapsto \left(R_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
+    \[\delta=\delta^\rmR:\quad \gamma\mapsto \left(t\mapsto \left(\rmR_{\gamma(t)}^{-1}\right)_\ast\dot\gamma(t)\right)\]
     is a homeomorphism from $\rmP(G,e)\cap C^1$ onto $\rmP(\frakg)$. For $\tau\in \rmP(\frakg)$, let $A_\tau\in C^1([0,1],\Lin(\frakg))$
     be the solution $A$ of the initial value problem
     \[\dot A(t)=\ad_{\tau(t)}\circ A(t),\quad A(0)=\id_{\frakg}.\label{1792}\]
@@ -7070,31 +7070,31 @@ By differentiating with respect to the time parameter $t$, we now transport the 
 \end{lem}
 \begin{proof}
     The statement that $\delta$ is bijective means that for every continuous curve $\tau:[0,1]\to\frakg$ there is a unique $C^1$ solution curve $\gamma:[0,1]\to G$ of the equation
-    \[\dot\gamma(t)=(\xi(t))_R(\gamma(t),\]
-    where $(\xi(t))_R$ is the right-invariant vector field corresponding to $\xi(t)\in\frakg$. The mapping $t\mapsto (\xi(t))_R$ is continuous from $[0,1]$ to the space of analytic vector fields on $G$. Thus for each $s\in[0,1]$ and $g\in G$, there is a unique maximal solution $\gamma(t,s,g)$ defined on the flow domain $\calD_{(s,g)}\subset [0,1]$ such that $\gamma(s,s,x)=x$ and $s\in \calD_{(s,g)}$. Defining the flow
+    \[\dot\gamma(t)=(\xi(t))_\rmR(\gamma(t),\]
+    where $(\xi(t))_\rmR$ is the right-invariant vector field corresponding to $\xi(t)\in\frakg$. The mapping $t\mapsto (\xi(t))_\rmR$ is continuous from $[0,1]$ to the space of analytic vector fields on $G$. Thus for each $s\in[0,1]$ and $g\in G$, there is a unique maximal solution $\gamma(t,s,g)$ defined on the flow domain $\calD_{(s,g)}\subset [0,1]$ such that $\gamma(s,s,x)=x$ and $s\in \calD_{(s,g)}$. Defining the flow
     \[\Phi^{t,s}:x\mapsto \gamma(t,s,x)\text{ from time }s\text{ to time }t,\text{ on }G^{t,s}=\{x\in G\mid t\in \calD_{(s,g)}\},\]
     we also have the group property $\Phi^{t,s}\circ \Phi^{s,u}\subset \Phi^{t,u}$. Now, if $\gamma$ satisfies the ODE above, then for any $g\in G$:
-    \[\partial_t(\gamma(t)g)=\left(R_{g}\right)_{\ast \gamma(t)} \left(R_{\gamma(t)}\right)_{\ast e}\xi(t)=\left(R_{\gamma(t)g}\right)_{\ast}\xi(t).\]
+    \[\partial_t(\gamma(t)g)=\left(\rmR_{g}\right)_{\ast \gamma(t)} \left(\rmR_{\gamma(t)}\right)_{\ast e}\xi(t)=\left(\rmR_{\gamma(t)g}\right)_{\ast}\xi(t).\]
     Hence $t\mapsto \gamma(t)g$ tatisfies the same ODE. This shows that $G^{t,s}=G$ and $\Phi^{t,s}(g)=\Phi^{t,s}(e)g$ for all $g\in G$. The group property implies that the flow $\Phi^{t,s}$, constructed first only for small $|t-s|$, is globally defined on $G$ and all $t,s\in[0,1]$; in particular, the solution $\gamma$ exists for all $s,t\in [0,1]$. The continuous dependence of the solution on the vector fields implies that the inverse $\delta^{-1}$ is continuous, so the first statement of the Lemma is proved.
 
     The product rule for $\delta(\gamma\cdot\gamma')$ is easy to verify:
-    \[\partial_t(\gamma(t)\gamma'(t))=\left(R_{\gamma'}\right)_{\ast \gamma}\dot\gamma+ \left(L_{\gamma}\right)_{\ast \gamma'}\dot\gamma',\]
+    \[\partial_t(\gamma(t)\gamma'(t))=\left(\rmR_{\gamma'}\right)_{\ast \gamma}\dot\gamma+ \left(\rmL_{\gamma}\right)_{\ast \gamma'}\dot\gamma',\]
     which then recombines into the claimed equality (\ref{1794}).
 
     In addition we check 
     \[\partial_t \Ad_{\gamma(t)}=\restr{\frac{\dd}{\dd s}}{s=0}\Ad_{\gamma(t+s)\gamma(t)^{-1}}\Ad_{\gamma(t)}=\ad_{\delta \gamma(t)}\Ad_{\gamma(t)},\quad \Ad_{\gamma(0)}=\Ad_e=\id_\frakg,\]
     and this shows that $A:t\mapsto \Ad_{\gamma(t)}$ satisfies (\ref{1792}) with $\tau=\delta\gamma$.
 
-    If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\delta\gamma_u(t))_R$, we have the variational formula from Lemma~\ref{lem variation formula}:
-    \[\partial_u\gamma_u(e)=\int_0^1 \left(\T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\delta\gamma_u(s)\right)_R\right)\gamma_u(s)\dd s.\]
+    If $u\mapsto \gamma_u$ is smooth $[0,1]\to \rmP(G,e)\cap C^1$ then, writing $\Phi^{t,s}_u$ for the flow from times $s$ to time $t$, of the time-dependent vector field $(\delta\gamma_u(t))_\rmR$, we have the variational formula from Lemma~\ref{lem variation formula}:
+    \[\partial_u\gamma_u(e)=\int_0^1 \left(\T_{\gamma_u(s)}\Phi^{1,s}_u\right)\left(\partial_u \left(\delta\gamma_u(s)\right)_\rmR\right)\gamma_u(s)\dd s.\]
     Now 
     \begin{multline}
-        \T_{\gamma_u(s)}\Phi^{1,s}_u=\T_{\gamma_u(s)}\left(\Phi_u^{1,0}\circ (\Phi^{s,0}_u)^{-1}\right)=\\=\T_{\gamma_u(s)}\Phi_u^{1,0}\circ \left(\T_e\Phi^{s,0}_u\right)^{-1}= \T_{e}L_{\gamma_u(1)}\circ \T_e L_{\gamma_u(s)}^{-1},
+        \T_{\gamma_u(s)}\Phi^{1,s}_u=\T_{\gamma_u(s)}\left(\Phi_u^{1,0}\circ (\Phi^{s,0}_u)^{-1}\right)=\\=\T_{\gamma_u(s)}\Phi_u^{1,0}\circ \left(\T_e\Phi^{s,0}_u\right)^{-1}= \T_{e}\rmL_{\gamma_u(1)}\circ \T_e \rmL_{\gamma_u(s)}^{-1},
     \end{multline}
     using the fact that the flow of a right-invariant field is performed by left translations.  On the other hand,
-    \[((\delta \gamma_u)(s))_R(g)=\left(R_g\right)_\ast \delta\gamma_u(s),\]
+    \[((\delta \gamma_u)(s))_\rmR(g)=\left(\rmR_g\right)_\ast \delta\gamma_u(s),\]
     so the variational formula takes the form
-    \[\partial_u\gamma(1)=\left(L_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\delta\gamma_u)(s)\dd s.\]
+    \[\partial_u\gamma(1)=\left(\rmL_{\gamma_u(e)}\right)_\ast\circ\int_0^1 \Ad_{\gamma_u(s)}^{-1}\partial_u(\delta\gamma_u)(s)\dd s.\]
     Then $u\mapsto\gamma_u(1)$ is constant iff $\int_0^1\Ad_{\gamma_u(s)}^{-1}\partial_u\delta\gamma_u(s)\dd s=0$. Again using $\Ad_{\gamma_u(s)}=A_{\delta \gamma_u}(s)$, we now obtain the last statement of this Lemma.
 \end{proof}
 
@@ -7134,14 +7134,14 @@ As we will show, $\mu$ has the -- perhaps unsurprising but definitely not obviou
 
 We will later show that every finite-dimensional real Lie algebra is the Lie algebra of some Lie group. Therefore it will be worthwhile to give an independent definition of $\mu(A,B)$ on an abstract Lie algebra. This is a bit tricky because in the absence of a Lie group there is no exponential map. The only object we have access to in the Lie algebra is a Lie bracket, or the adjoint operator $\ad$. Therefore let us proceed in the following roundabout way. 
 
-To define $\mu(A,B)$ without using the exponential map, we recall that the curve $t\mapsto \rme^{tA}\rme^B$ is the integral curve of the right-invariant vector field $A_R$ starting at $\rme^B$. Thus, if we define the analog of $A_R$ in logarithmic coordinates, which is a vector field on (part of) the Lie algebra, then the value of the corresponding integral curve through $B$ at $t=1$ will determine $\mu(A,B)$. Now, on to the details.
+To define $\mu(A,B)$ without using the exponential map, we recall that the curve $t\mapsto \rme^{tA}\rme^B$ is the integral curve of the right-invariant vector field $A_\rmR$ starting at $\rme^B$. Thus, if we define the analog of $A_\rmR$ in logarithmic coordinates, which is a vector field on (part of) the Lie algebra, then the value of the corresponding integral curve through $B$ at $t=1$ will determine $\mu(A,B)$. Now, on to the details.
 
-As one might suspect, the logarithmic analog of $A_R$ should be defined using the inverse of the logarithmic derivative of $\exp$, cf.\ \ref{dexp series}. For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $Z\in \frakg$ such that the operator $f(\ad_Z)=(\rme^{\ad_Z}-\rmI)(\ad_Z)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule, the map
+As one might suspect, the logarithmic analog of $A_\rmR$ should be defined using the inverse of the logarithmic derivative of $\exp$, cf.\ \ref{dexp series}. For any finite-dimensional Lie algebra $\frakg$, let $\frakg_e$ be the set of $Z\in \frakg$ such that the operator $f(\ad_Z)=(\rme^{\ad_Z}-\rmI)(\ad_Z)^{-1}$ is invertible. The set $\frakg_e$ is an open neighborhood of $0$ in $\frakg$ and, in view of the chain rule, the map
 \[Z\mapsto \phi(\ad_Z)\coloneqq (f(\ad_Z))^{-1}=\frac{\ad_Z}{\rme^{\ad_Z}-\rmI}\label{eq 1.6.1 DK}\]
-is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylor series are the Bernoulli numbers $B_k$). For each $A\in \frakg$ this formula defines a vector field $A^R\in C^\infty(\frakg_e,\frakg)$ via
-\[A^R:\frakg_e\to \frakg,\quad Z\mapsto \frac{\ad_Z}{\rme^{\ad_Z}-\rmI}(A).\]
+is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylor series are the Bernoulli numbers $B_k$). For each $A\in \frakg$ this formula defines a vector field $A^\rmR\in C^\infty(\frakg_e,\frakg)$ via
+\[A^\rmR:\frakg_e\to \frakg,\quad Z\mapsto \frac{\ad_Z}{\rme^{\ad_Z}-\rmI}(A).\]
 Let $\frakg_e^2$ be the set of $(A,B)\in \frakg\times\frakg_e$ such that the integral curve equation
-\[\dot Z(t)=A^R(Z(t))=\phi(\ad_{Z(t)})(A),\quad Z(0)=B,\label{eq Z(t)}\]
+\[\dot Z(t)=A^\rmR(Z(t))=\phi(\ad_{Z(t)})(A),\quad Z(0)=B,\label{eq Z(t)}\]
 has a solution $Z(t)$ defined for all $t\in [0,1]$. We now define
 \[\mu(A,B)\quad Z(1),\quad (A,B)\in\frakg_e^2 \label{def local mu}\]
 and claim that this formula defines an analytic mapping which matches the one obtained from the Lie group.
@@ -7154,7 +7154,7 @@ and claim that this formula defines an analytic mapping which matches the one ob
 \end{thm}
 \begin{proof}
     The fact that $\frakg_e^2$ is open and $\mu$ is real- (or complex-)analytic on $\frakg_e^2$ follows from the fact that the map $(A,Z)\mapsto (f(\ad_Z))^{-1}(A)$ is real-, or complex-, analytic: $\frakg\times\frakg_e\to \frakg$, respectively, combined with the analytic dependence on initial values and parameters of the flows of analytic vector fields depending analytically on parameters. Now the formula for the differential of $\exp$ combined with the equation for $Z(t)$ gives
-    \[\partial_t \rme^{Z(t)}=(\T_{Z(t)}\exp )\dot Z(t)=\left(\T_e R_{\rme^{Z(t)}}\right)(A)=A_R\left(\rme^{Z(t)}\right).\label{eq 1.6.5 DK}\]
+    \[\partial_t \rme^{Z(t)}=(\T_{Z(t)}\exp )\dot Z(t)=\left(\T_e \rmR_{\rme^{Z(t)}}\right)(A)=A_\rmR\left(\rme^{Z(t)}\right).\label{eq 1.6.5 DK}\]
     In view of our previous result showing that the flow of a right-invariant vector field is performed by left translations, we have
     \[\rme^{Z(t)}=\rme^{tA}\rme^{Z(0)}=\rme^{tA}\rme^B,\label{8284}\]
     for all $t$ in the interval in the definition of $Z(t)$. Taking $t=1$ gives the result.
@@ -7163,7 +7163,7 @@ and claim that this formula defines an analytic mapping which matches the one ob
 We can now use this result to show that every $C^2$-differentiable Lie group has a unique real-analytic structure compatible with its Lie group structure. To show this, take open $0$-neighborhoods $U$ and $U_0$ in $\frakg$, and an $e$-neighborhood $V\subset G$ such that $\exp:U\to V$ is a diffeomorphism, and for all $A,B,C\in U_0$:
 \[(A,-B)\in\frakg_e^2,\quad (\mu(A,-B),C)\in\frakg_e^2,\quad \mu(\mu(A,-B),C)\in U.\]
 The existence of such $U,U_0,V$ follows from the invertibility of $\exp_{\ast 0}=\id_\frakg$ and continuity of $\mu$ at $(0,0)$ by the \gls{inmt}. For each $g\in G$, we define a translated diffeomorphism
-\[V_0^g\coloneqq L_g(\exp U_0),\quad \kappa^g(h)\coloneqq \ln(g^{-1}h)\in U_0,\quad h\in V^g_0.\]
+\[V_0^g\coloneqq \rmL_g(\exp U_0),\quad \kappa^g(h)\coloneqq \ln(g^{-1}h)\in U_0,\quad h\in V^g_0.\]
 
 \begin{thm}[{{\cite[Thm.~1.6.3]{DK}}}]\label{thm 1.6.3 DK}
     The collection of \emph{logarithmic charts} $\{(V_0^g,\kappa^g)\}_{g\in G}$ forms a real-analytic atlas for $G$, making it into a real-analytic Lie group $G_{\mathrm{an}}$ such that $\id_G$ is a $C^2$-diffeomorphism between $G$ and $G_{\mathrm{an}}$. Furthermore, if $\frakg$ is a complex Lie algebra, then this atlas is complex-analytic. It makes $G$ into a complex-analytic Lie group if in addition $\Ad_g$ is complex-linear for all $g\in G$, i.e., an element of $\GL_\bbC(\frakg)$.\footnote{See Example~\ref{ex linear G-structures}(8) for the definition of the general linear group of a complex vector space.}
@@ -7200,7 +7200,7 @@ The final proposition expresses the \emph{uniqueness} of the analytic structures
     If $G$ is a real- or complex-analytic Lie group, then the exponential map is real- or complex-analytic, respectively. If $G$ is provided with another structure of a real- or complex-analytic Lie group $\wt G$ such that the identity maps $\id:G\to \wt{G}$ and $\wt{\id}$ are differentiable (at $e$), then $\id:G\to \wt{G}$ is a real- or complex-analytic diffeomorphism, respectively.
 \end{prop}
 \begin{proof}
-    The right-invariant vector field $A_R$ is a real- or complex-analytic vector field on $G$, because in logarithmic coordinates it is given by $A^R$ from (\ref{eq Z(t)}), cf.\ (\ref{eq 1.6.5 DK}). It depends in a linear or $\bbC$-linear way on $A$. Further, $\rme^A$ is the solution after time $1$ of $A^R$ starting at $e\in G$. In view of the theorem about analytic dependence on parameters of the flows of analytic vector fields depending analytically on the parameters, the analyticity of the exponential map follows. For the second statement, we observe that the assumption ensures that $G$ and $\wt G$ have the same Lie algebra.
+    The right-invariant vector field $A_\rmR$ is a real- or complex-analytic vector field on $G$, because in logarithmic coordinates it is given by $A^\rmR$ from (\ref{eq Z(t)}), cf.\ (\ref{eq 1.6.5 DK}). It depends in a linear or $\bbC$-linear way on $A$. Further, $\rme^A$ is the solution after time $1$ of $A^\rmR$ starting at $e\in G$. In view of the theorem about analytic dependence on parameters of the flows of analytic vector fields depending analytically on the parameters, the analyticity of the exponential map follows. For the second statement, we observe that the assumption ensures that $G$ and $\wt G$ have the same Lie algebra.
 \end{proof}
 
 
@@ -7210,7 +7210,7 @@ The final proposition expresses the \emph{uniqueness} of the analytic structures
 
 
 \begin{hrem*}
-    The problem of establishing the existence of a universal Lie-polynomial formula (i.e.\  a series using only Lie brackets) for $\mu(A,B)$ was historically known as \emph{Campbell's problem}. Campbell himself (1897) was the first to introduce the Bernoulli series $A^R(Z)$ and notice its relation to $\mu(tA,B)$ at small $t$. Then Poincar\'e (1900) characterized the full solution of the above ODE (however, he failed to observe the universal Lie-polynomial series). The observation that $C^2$ differentiability is sufficient for determinining an analytic structure is originally due to Schur (1890).
+    The problem of establishing the existence of a universal Lie-polynomial formula (i.e.\  a series using only Lie brackets) for $\mu(A,B)$ was historically known as \emph{Campbell's problem}. Campbell himself (1897) was the first to introduce the Bernoulli series $A^\rmR(Z)$ and notice its relation to $\mu(tA,B)$ at small $t$. Then Poincar\'e (1900) characterized the full solution of the above ODE (however, he failed to observe the universal Lie-polynomial series). The observation that $C^2$ differentiability is sufficient for determinining an analytic structure is originally due to Schur (1890).
 \end{hrem*}
 
 
@@ -7306,9 +7306,9 @@ agreeing with our previous results, including Dynkin's formula.
     Since $\ln \rme^{tA} \rme^{B}=B$ when $t=0$, integrating the above formula from $0$ to $1$ will prove the geometric \gls{bch} formula. Let us define the curve $\gamma$ by
     \[\gamma(t)=\ln \rme^{tA} \rme^{B}.\]
     Then
-    \[\frac{\dd}{\dd t} \rme^{\gamma(t)}=\left(R_{\rme^{\gamma(t)}}\right)_\ast A,\]
+    \[\frac{\dd}{\dd t} \rme^{\gamma(t)}=\left(\rmR_{\rme^{\gamma(t)}}\right)_\ast A,\]
     so
-    \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast\frac{\dd}{\dd t}\rme^{\gamma(t)}=A.\label{2379}\]
+    \[\left(\rmR_{\rme^{-\gamma(t)}}\right)_\ast\frac{\dd}{\dd t}\rme^{\gamma(t)}=A.\label{2379}\]
     By applying $\ad$ we also have
     \[\ad_\gamma(t)=\ln\left(\rme^{t\ad_A}\rme^{\ad_{B}}\right).\label{3168}\]
     
@@ -7317,7 +7317,7 @@ agreeing with our previous results, including Dynkin's formula.
     and get 
     \[\partial_s \xi-\dot\gamma(t)-[\gamma(t),\xi]=0,\]
     where 
-    \[\xi(t,s)=\left(R_{\rme^{-s\gamma(t)}}\right)_\ast\partial_t \rme^{s\gamma(t)}.\]
+    \[\xi(t,s)=\left(\rmR_{\rme^{-s\gamma(t)}}\right)_\ast\partial_t \rme^{s\gamma(t)}.\]
     For fixed $t$ this is a differential equation in $s$:
     \[\partial_s\xi=\ad_\gamma\xi+\dot\gamma,\quad \xi(0)=0,\]
     where $\gamma=\gamma(t)$ and $\dot\gamma=\dot\gamma(t)$. If we expand $\xi(t,s)$ as a formal power series in $s$,
@@ -7329,7 +7329,7 @@ agreeing with our previous results, including Dynkin's formula.
         \xi(t,s)=s\dot\gamma(t)+\frac{s}{2}\ad_{\gamma(t)}\dot\gamma(t)+\cdots+\frac{s^n}{n!}\ad_{\gamma(t)}^{n-1}\dot\gamma(t)+\cdots=\\=\sum_{n=1}^\infty \frac{s^n}{n!}(\ad_\gamma)^{n-1}\dot\gamma(t).
     \end{multline}
     With the earlier notation $\phi(z)=(\rme^z-1)/z$, we have then at $s=1$
-    \[\left(R_{\rme^{-\gamma(t)}}\right)_\ast \partial_t \rme^{\gamma(t)}=\xi(t,1)=\phi(\ad_{\gamma(t)})\dot\gamma(t).\label{1793}\]
+    \[\left(\rmR_{\rme^{-\gamma(t)}}\right)_\ast \partial_t \rme^{\gamma(t)}=\xi(t,1)=\phi(\ad_{\gamma(t)})\dot\gamma(t).\label{1793}\]
     Now to the proof of the \gls{bch} formula. Suppose that $A,B$ are chosen small enough to be within the domain of $\mu$, so that $\gamma(t)=\mu(tA,B)$ is defined for all $|t|\leq 1$. Then, by (\ref{3168}) and (\ref{2379}), (\ref{1793}) becomes
     \[\phi\left(\ln \rme^{t\ad_A}\rme^{\ad_B}\right)\dot\gamma(t)=A.\]
     Now for $|z-1|<1$,
@@ -7370,7 +7370,7 @@ Recall that in Theorem~\ref{thm 7.21 Lee} we stated without proof that a Lie sub
 
     Next equip $H$ with the subspace topology from $G$. Choose a neighborhood $V$ of $e\in G$ such that $\ln=\exp^{-1}:V\to \frakg$ is defined and smooth and hence a local chart. We claim that $V$ can be adjusted so that 
     \[\ln(V\cap H)=\ln(V)\cap \frakh.\label{1983}\]
-    If so, then the family consisting of local slice charts $\{(L_h(V),\ln\circ L_{h}^{-1})\}_{h\in H}$ satisfies the definition of a smooth structure on $H$ and turns it into an embedded submanifold of $G$. Then $H$ is also a Lie group because restricting the multiplication and inversion maps in range to an embedded submanifold keeps them smooth. The corresponding Lie subalgebra of $\frakg$ contains $\frakh$ and by (\ref{1983}) has the same dimension as $\frakh$, hence coincides with $\frakh$.
+    If so, then the family consisting of local slice charts $\{(\rmL_h(V),\ln\circ \rmL_{h}^{-1})\}_{h\in H}$ satisfies the definition of a smooth structure on $H$ and turns it into an embedded submanifold of $G$. Then $H$ is also a Lie group because restricting the multiplication and inversion maps in range to an embedded submanifold keeps them smooth. The corresponding Lie subalgebra of $\frakg$ contains $\frakh$ and by (\ref{1983}) has the same dimension as $\frakh$, hence coincides with $\frakh$.
 
     To show (\ref{1983}) assume, on the contrary, that $V$ cannot be chosen so that (\ref{1983}) holds. Since $\exp(\frakh)\subset H$, this means that $V\cap \exp(\frakh)$ is properly contained in $V\cap H$, for arbitrarily small $V$. Thus there is a sequence $(h_n)\in H$ converging to $e$ sich that $h_n\notin \exp(\frakh)$ for all $n$. Choose a subspace $\frakm\subset\frakg$ complementary to $\frakh$. By Lemma~\ref{lem 5.6.7 RS1}, for large enough $n$, $h_n$ defines unique sequences $(A_n)\in \frakh$ and $(B_n)\in \frakm$ by $h_n=\rme^{A_n}\rme^{B_n}$ and both of these sequences converge to the origin. Since $H$ is a subgroup, we obtain $\rme^{B_n}\in H$. Since $h_n\notin\exp(\frakh)$, we conclude $B_n\neq 0$. Now, choose a norm $\lVert\cdot\rVert$ on $\frakm$. Since the corresponding unit sphere in $\frakm$ is compact, by possibly removing some members we may assume that the sequence $(B_n/\lVert B_n\rVert)$ converges to some $B\in\frakm$ with $\lVert B\rVert=1$. 
     
@@ -7407,7 +7407,7 @@ We summarize all results about closed subgroups of Lie groups in the following C
 \begin{proof}
     Write $F=\mathrm{graph}(\Phi)$. Since $\Phi$ is a homomorphism, $F$ is a subgroup of $G\times H$, and because it is closed, $F$ is a Lie subgroup in view of the Closed Subgroup Theorem. Let $\pi_1,\pi_2$ be the projections $F\to G$ and $F\to H$, respectively. Since the dimension of $\T_f\pi_1$ is constant (as a function of $f\in F$), the mapping $\pi_1$ is, locally in $F$, a fibration with fiber dimension equal to the dimension of $\ker \T_f\pi_1$. However, $\pi_1$ is invertible, so the fibers consist of single points and we conclude that $\pi_1$ is an immersion.
 
-    Because $\Phi\circ L_g=L_{\Phi(g)}\circ\Phi$ for any $g\in G$, it is sufficient to prove analyticity for $\Phi$ is a neighborhood of $e$ in $G$, or in $G_0$, so we may assume that $G$ is connected. It follows that $G\times H$, and therefore $F$, is a countable union of compact subsets, because $F$ is closed in $G\times H$.
+    Because $\Phi\circ \rmL_g=\rmL_{\Phi(g)}\circ\Phi$ for any $g\in G$, it is sufficient to prove analyticity for $\Phi$ is a neighborhood of $e$ in $G$, or in $G_0$, so we may assume that $G$ is connected. It follows that $G\times H$, and therefore $F$, is a countable union of compact subsets, because $F$ is closed in $G\times H$.
 
     We conclude that if $\dim F<\dim G$ then $\pi_1(F)$ has measure zero in $G$, in contradiction with $\pi_1(F)=G$. So $\dim F\geq \dim G$ and $\pi_1$ is actually a local diffeomorphism, and hence a diffeomorphism because $\pi_1$ is invertible. It finally follows that $\Phi=\pi_2\circ\pi_1^{-1}$ is analytic $G\to H$.
 
@@ -7484,38 +7484,38 @@ Due to this, we may think of Lie groups as a special class of topological groups
 It is almost obvious that the definition of the exponential map together with its properties have local versions that are valid for any local Lie group. The first big result of this \subsect\ will be the converse, known as Lie's Third Fundamental Theorem: every Lie algebra generates a local Lie group. The Lie group can be locally reconstructed as the set of flows of certain vector fields on the Lie algebra. Let us now show, in several steps, that these flows form a local Lie group.
 
 \begin{lem}[{{\cite[Lem.~1.8.2]{DK}}}]
-    For each $A\in\frakg$ define the vector field $A^R\in \fX(\frakg_e)$, where $\frakg_e$ was defined in \S\ref{sec: product in log coordinates}:
-    \[ A^R(C)=\frac{\ad_C}{\rme^{\ad_C}-\rmI}(A),\quad \quad C\in\frakg_e. \label{def X^R}\]
-    Then, for each $A,B\in\frakg$, the map $A\mapsto A^R$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[A^R,B^R]=-([A,B])^R$.
+    For each $A\in\frakg$ define the vector field $A^\rmR\in \fX(\frakg_e)$, where $\frakg_e$ was defined in \S\ref{sec: product in log coordinates}:
+    \[ A^\rmR(C)=\frac{\ad_C}{\rme^{\ad_C}-\rmI}(A),\quad \quad C\in\frakg_e. \label{def X^R}\]
+    Then, for each $A,B\in\frakg$, the map $A\mapsto A^\rmR$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[A^\rmR,B^\rmR]=-([A,B])^\rmR$.
 \end{lem}
 \begin{proof}
     Recall from (\ref{eq Lie derivative in components}) that for vector fields $v,w\in\fX(U\subset\bbR^n)$, if we denote their differentials at a point by $\rmD v(\bf x)\in \End(\bbR^n)$, then the Lie bracket is
     \[[v,w](\bf x)=\rmD w(\bf x)\cdot v(\bf x)-\rmD v(\bf x)\cdot w(\bf x).\label{10707}\]
-    So in order to compute $[A^R,B^R](C)$, we start by differentiating~(\ref{dexp series}),
-    \[\int_0^1 \rme^{t\ad_C}\dd t \left(A^R(C)\right)=A,\quad C\in\frakg_e,\]
-   w.r.t.\ $C$ in the direction of $B^R(C)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
+    So in order to compute $[A^\rmR,B^\rmR](C)$, we start by differentiating~(\ref{dexp series}),
+    \[\int_0^1 \rme^{t\ad_C}\dd t \left(A^\rmR(C)\right)=A,\quad C\in\frakg_e,\]
+   w.r.t.\ $C$ in the direction of $B^\rmR(C)$. We get, using the formula for the derivative of the exponential from Theorem~\ref{thm differential of exp}, 
     \begin{multline}
-        \int_0^1 \left(\int_0^1\rme^{st\ad_{\ad_C}} \dd s\circ t\ad_{B^R(C)}\right)\circ \rme^{t\ad_C}\dd t\left(A^R(C)\right)+\\
-        +\int_0^1\rme^{t\ad_C}\dd t\circ \rmD A^R(C)\left(B^R(C)\right)=0.\label{09830}
+        \int_0^1 \left(\int_0^1\rme^{st\ad_{\ad_C}} \dd s\circ t\ad_{B^\rmR(C)}\right)\circ \rme^{t\ad_C}\dd t\left(A^\rmR(C)\right)+\\
+        +\int_0^1\rme^{t\ad_C}\dd t\circ \rmD A^\rmR(C)\left(B^\rmR(C)\right)=0.\label{09830}
     \end{multline} 
     Since $\ad$ is a Lie algebra homomorphism $\frakg\to\mathfrak{gl}(\frakg)$ (by the Jacobi identity), one has:
     \[\rme^{\ad_{\ad_A}}\circ \ad_B=\ad_{\rme^{\ad_A} B}\quad \quad (A,B\in\frakg).\]
-    Reading this with $A$, and $B$, replaced by $stC$, and $B^R(C)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand side of (\ref{09830}) as
-    \[\iint_{0\leq u\leq t\leq 1}\left[\rme^{u\ad_C}\left(B^R(C)\right),\rme^{t\ad_C}\left(A^R(C)\right)\right]\dd u\dd t.\]
+    Reading this with $A$, and $B$, replaced by $stC$, and $B^\rmR(C)$, respectively, and substituting $st=u$, we can recognize the first term in the left hand side of (\ref{09830}) as
+    \[\iint_{0\leq u\leq t\leq 1}\left[\rme^{u\ad_C}\left(B^\rmR(C)\right),\rme^{t\ad_C}\left(A^\rmR(C)\right)\right]\dd u\dd t.\]
     Antisymmetrizing this formula over $A$ and $B$  we get, also using the antisymmetry of the Lie bracket, the quantity
     \begin{multline}
-        -\int_0^1\int_0^1\left[\rme^{u\ad_C}\left(A^R(C)\right),\rme^{t\ad_C}\left(B^R(C)\right)\right]\dd u\dd t=\\
-        =-\left[\int_0^1\rme^{u\ad_C}\dd u\, \left(A^R(C)\right),\int_0^1\rme^{t\ad_C}\dd t\, \left(B^R(C)\right)\right]=-[A,B].
+        -\int_0^1\int_0^1\left[\rme^{u\ad_C}\left(A^\rmR(C)\right),\rme^{t\ad_C}\left(B^\rmR(C)\right)\right]\dd u\dd t=\\
+        =-\left[\int_0^1\rme^{u\ad_C}\dd u\, \left(A^\rmR(C)\right),\int_0^1\rme^{t\ad_C}\dd t\, \left(B^\rmR(C)\right)\right]=-[A,B].
     \end{multline}
 
-    So, if we antisymmetrize (\ref{09830}) over $A$ and $B$, we arrive, using (\ref{10707}) with $v=A^R$, $w=B^R$ and $x=C$, at:
-    \[-[A,B]=\int_0^1 \rme^{t\ad_C}\dd t\left([A^R,B^R](C)\right),\]
-    which shows that $[A^R,B^R]=-([A,B])^R$ in view of the definition (\ref{def X^R}) applied to $([A,B])^R$. The linearity of the map $A\mapsto A^R$ is obvious from the definition, and its injectivity follows from $A^R(0)=A$.
+    So, if we antisymmetrize (\ref{09830}) over $A$ and $B$, we arrive, using (\ref{10707}) with $v=A^\rmR$, $w=B^\rmR$ and $x=C$, at:
+    \[-[A,B]=\int_0^1 \rme^{t\ad_C}\dd t\left([A^\rmR,B^\rmR](C)\right),\]
+    which shows that $[A^\rmR,B^\rmR]=-([A,B])^\rmR$ in view of the definition (\ref{def X^R}) applied to $([A,B])^\rmR$. The linearity of the map $A\mapsto A^\rmR$ is obvious from the definition, and its injectivity follows from $A^\rmR(0)=A$.
 \end{proof}
 \begin{rem}
-    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $A^R(C)=\left(R_{\rme^{-C}}\right)_{\ast \rme^C} \circ \exp_{\ast C}(C)$, which is nothing but the right-invariant vector field $A_R(g)=R_{g\ast e} A$ written in logarithmic coordinates $g=\rme^C$.
+    Note that if $\frakg$ were known to be the Lie algebra of a Lie group $G$, then we would have $A^\rmR(C)=\left(\rmR_{\rme^{-C}}\right)_{\ast \rme^C} \circ \exp_{\ast C}(C)$, which is nothing but the right-invariant vector field $A_\rmR(g)=\rmR_{g\ast e} A$ written in logarithmic coordinates $g=\rme^C$.
 
-    If all vector fields $A^R$ were complete on $\frakg_e$, their flows would form a Lie group consisting of diffeomorphisms of $\frakg_e$, and we would prove the Cartan-Lie Theorem~\ref{thm 1.14.3 DK global Lie's third}, which states that every Lie algebra has a Lie group that it corresponds to. Unfortunately, these vector fields are not always complete, and the most we can claim at this point is that their flows generate a \emph{local} Lie group.
+    If all vector fields $A^\rmR$ were complete on $\frakg_e$, their flows would form a Lie group consisting of diffeomorphisms of $\frakg_e$, and we would prove the Cartan-Lie Theorem~\ref{thm 1.14.3 DK global Lie's third}, which states that every Lie algebra has a Lie group that it corresponds to. Unfortunately, these vector fields are not always complete, and the most we can claim at this point is that their flows generate a \emph{local} Lie group.
 \end{rem}
 
 
@@ -7633,10 +7633,10 @@ In the Closed Subgroup Theorem~\ref{thm closed subgroup} we characterized embedd
     \[\frakh=\{A\in\frakg: \rme^{tA}\in H\text{ for all }t\in\bbR\}.\]
 \end{thm}
 \begin{proof}[First proof]
-    One proof of the first statement, taken from \cite[Prop.~5.6.5]{RS1}, is based on the Global Frobenius Theorem~\ref{prop 3.5.21 RS1}. The Lie subalgebra of $\fX(G)^G$ that consists of left-invariant vector fields corresponding to elements of $\frakh$ spans an involutive distribution on $G$. Then $H$ can be defined as the maximal integral submanifold through $e\in G$. Now since the distribution is left-invariant, $L_h^{-1}$ for $h\in H$ takes the integral manifold through $h\in H$ to the one through $e$, which is $H$. Therefore $L_h(H)=H$, and thus $H$ is a subgroup. The multiplication on $H$ is smooth by virtue of being the restriction of the smooth multiplication map $m:H\times H\to G$ in range to an weakly embedded submanifold of $G$ (which an integral manifold is by Proposition~\ref{prop 3.5.15 RS1}). The second assertion is proven in the second proof below.
+    One proof of the first statement, taken from \cite[Prop.~5.6.5]{RS1}, is based on the Global Frobenius Theorem~\ref{prop 3.5.21 RS1}. The Lie subalgebra of $\fX(G)^G$ that consists of left-invariant vector fields corresponding to elements of $\frakh$ spans an involutive distribution on $G$. Then $H$ can be defined as the maximal integral submanifold through $e\in G$. Now since the distribution is left-invariant, $\rmL_h^{-1}$ for $h\in H$ takes the integral manifold through $h\in H$ to the one through $e$, which is $H$. Therefore $\rmL_h(H)=H$, and thus $H$ is a subgroup. The multiplication on $H$ is smooth by virtue of being the restriction of the smooth multiplication map $m:H\times H\to G$ in range to an weakly embedded submanifold of $G$ (which an integral manifold is by Proposition~\ref{prop 3.5.15 RS1}). The second assertion is proven in the second proof below.
 \end{proof}
 \begin{proof}[Second proof]
-    Now we present the proof from \cite[Thm.~1.10.3]{DK}, which avoids the Frobenius Theorem and is instead based on the exponential map. For each $A\in\frakh$, the vector field $A^R$ on $\frakg_e$ defined in (\ref{def X^R}) is tangent to $\frakh$ in the sense that $A^R(Z)\in\frakh$ for all $Z\in\frakg_e\cap\frakh$. This follows because $\ad_Z\in\Lin(\frakh)$ if $Z\in\frakh$. Moreover $\frakh$ is a closed subspace of $\frakg$ as a finite-dimensional subspace, hence the power series in the right hand side of (\ref{def X^R}) converges to an element of $\frakh$. (In the case of Banach Lie groups we have to make the additional assumption that $\frakh$ is a closed linear subspace.) If we solve (\ref{eq Z(t)}) with $Z(0)=B\in\frakh$, regarded as an ODE in $\frakg_e\cap\frakh$, the solution will also be in $\frakg_e\cap\frakh$. However, it is also equal to the solution of the same ODE viewed in $\frakg_e$, which is equal to $\ln(\rme^{tA}\rme^B)$. So the conclusion is that $\ln(\rme^A\rme^B)\in\frakh$ if $A,B\in\frakg_e\cap\frakh$. Denote by $H$ the subgroup generated by $\exp(\frakh)$, then the chart maps $\restr{\kappa^h}{H}$, for $h\in H$, with $\kappa^g=\ln\circ L_g^{-1}$), form an atlas for $H$, mapping it into $\frakh$. This can be checked to be an analytic atlas for $H$ (see again \cite[Thm.~1.6.3]{DK}). The inclusion $H\hookrightarrow G$ is an immersion because, in the charts $\kappa^h$, it is equal to the inclusion of open subsets of $\frakh$ into $\frakg$. In view of Proposition~\ref{prop 7.14 Lee}, $H$ is connected, and it is the only connected Lie group of $G$ having $\frakh$ as its Lie algebra. The uniqueness of the structure of a real-analytic group on $H$ with prescribed Lie algebra $\frakh$ is also very easy to show by a standard argument, see \cite[Prop.~1.6.4]{DK}.
+    Now we present the proof from \cite[Thm.~1.10.3]{DK}, which avoids the Frobenius Theorem and is instead based on the exponential map. For each $A\in\frakh$, the vector field $A^\rmR$ on $\frakg_e$ defined in (\ref{def X^R}) is tangent to $\frakh$ in the sense that $A^\rmR(Z)\in\frakh$ for all $Z\in\frakg_e\cap\frakh$. This follows because $\ad_Z\in\Lin(\frakh)$ if $Z\in\frakh$. Moreover $\frakh$ is a closed subspace of $\frakg$ as a finite-dimensional subspace, hence the power series in the right hand side of (\ref{def X^R}) converges to an element of $\frakh$. (In the case of Banach Lie groups we have to make the additional assumption that $\frakh$ is a closed linear subspace.) If we solve (\ref{eq Z(t)}) with $Z(0)=B\in\frakh$, regarded as an ODE in $\frakg_e\cap\frakh$, the solution will also be in $\frakg_e\cap\frakh$. However, it is also equal to the solution of the same ODE viewed in $\frakg_e$, which is equal to $\ln(\rme^{tA}\rme^B)$. So the conclusion is that $\ln(\rme^A\rme^B)\in\frakh$ if $A,B\in\frakg_e\cap\frakh$. Denote by $H$ the subgroup generated by $\exp(\frakh)$, then the chart maps $\restr{\kappa^h}{H}$, for $h\in H$, with $\kappa^g=\ln\circ \rmL_g^{-1}$), form an atlas for $H$, mapping it into $\frakh$. This can be checked to be an analytic atlas for $H$ (see again \cite[Thm.~1.6.3]{DK}). The inclusion $H\hookrightarrow G$ is an immersion because, in the charts $\kappa^h$, it is equal to the inclusion of open subsets of $\frakh$ into $\frakg$. In view of Proposition~\ref{prop 7.14 Lee}, $H$ is connected, and it is the only connected Lie group of $G$ having $\frakh$ as its Lie algebra. The uniqueness of the structure of a real-analytic group on $H$ with prescribed Lie algebra $\frakh$ is also very easy to show by a standard argument, see \cite[Prop.~1.6.4]{DK}.
 
     Finally we need to show that if $\rme^{tA}\in H$ for all $t\in\bbR$, then $A\in\frakh$. Let $V\subset\frakg$ be an open convex symmetric neighborhood the origin such that $U_H^{-1}U_H\subset \exp(V\cap \frakh)$ and $\restr{\exp}{V}$ is a diffeomorphism. Given a neighborhood $U_H\subset H$ of the identity in $H$, there exists a sequence $(h_n)\in G$ such that $H=\bigcup_n h_nU_H$. Choose $\epsilon>0$ with $\exp([-2\epsilon,2\epsilon]A)\subseteq \exp(V)$. Since the interval $[0,\epsilon]$ is uncountable, there exists some $n$ for which $\{t\in [0,\epsilon]:\rme^{tA}\in h_nU_H\}$ is uncountable. In particular, there are two such elements $t_1<t_2$ and $u_1,u_2\in U_H$ such that $\rme^{t_1A}=h_nu_1\neq \rme^{t_2A}=h_nu_2$. Then
     \[\rme^{(-t_1+t_2)A}=\rme^{-t_1A}\rme^{t_2A}=u_1^{-1}h_n^{-1}h_nu_2\in U_H^{-1}U_H\subseteq \exp(V\cap\frakh).\]
@@ -7721,7 +7721,7 @@ We can now prove a slightly relaxed version of the Closed Subgroup Theorem~\ref{
     \end{enumerate}
 \end{cor}
 \begin{proof}
-    Suppose (i) is valid. Applying the homeomorphism $L_h^{-1}$, we see that we may assume $h=e$ in (i). Now let $g\in G$ be the limit of a sequence $g_n\in G$. Then
+    Suppose (i) is valid. Applying the homeomorphism $\rmL_h^{-1}$, we see that we may assume $h=e$ in (i). Now let $g\in G$ be the limit of a sequence $g_n\in G$. Then
     \[\lim_{n,m\to\infty} g_ng_m^{-1}=e\;\Rightarrow\; g_ng_m^{-1}\in V\text{ for sufficiently large }n,m.\]
     It follows that
     \[gg_m^{-1}=\lim_{n\to\infty} g_ng_m^{-1}\in H\cap V\text{ for sufficiently large }m.\]
@@ -7791,7 +7791,7 @@ The central result of this \subsect\ is Yamabe's Theorem, characterizing analyti
     We will not present the proof of the strong version of the theorem here. Instead we will prove it under the additional assumption (following \cite[Lem.~1.7.10]{RS2}) that $H$ is \emph{$C^\infty$-pathwise connected}, meaning that any two points in $H$ can be connected by a path inside $H$ that is smooth as a path in $G$.\footnote{For real-analytic paths the theorem was first proved by Freudenthal (1941).} Consider the set
     \[\frakh=\{\dot h(0)\in \T_eG\mid h\in C^\infty(\bbR,G),h(\bbR)\subset H,h(0)=e\}.\]
     It is easy to check that this is a Lie subalgebra of $\frakg$. Let $\wt H$ be the corresponding connected Lie subgroup of $G$ provided by the Analytic Subgroup Theorem~\ref{thm analytic subgroup}. As shown in the proof of that theorem, $\wt H$ is the maximal integral submanifold through $e$ of the distribution $D^\frakh$ generated by $\frakh$. Now, let $h(t)$ be a smooth curve in $G$ such that $h(\bbR)\subset H$ and $h(0)=e$. Clearly,
-    \[L_{h(t)\ast}^{-1}\dot h(t)=\restr{\frac{\dd}{\dd s}}{s=0}h(t)^{-1}h(t+s)\in\frakh.\]
+    \[\rmL_{h(t)\ast}^{-1}\dot h(t)=\restr{\frac{\dd}{\dd s}}{s=0}h(t)^{-1}h(t+s)\in\frakh.\]
     Thus, by left invariance of $D^\frakh$, $t\mapsto h(t)$ lies in $\wt H$. Since, by assumption, every point in $H$ is connected to $e$ by a smooth curve, we conclude $H\subset \wt H$.
 
     To prove $\wt H\subset H$, choose a basis $(v_i,\ldots,v_i)\in \frakh$ and a family of smooth curves $t\mapsto h_i(t)$ such that $h_i(\bbR)\subset H$, $h_i(0)=e$ and $\dot h_i(0)=v_i$. Consider the mapping
@@ -7840,25 +7840,25 @@ In all of these results we still have the overarching Lie group $G$ that needs t
 \subsection{Homogeneous spaces}\label{sec: homogeneous spaces}
 
 Recall that every subgroup  $H<G$ defines an equivalence relation on $G$ by $g\prescript{}{H}{\sim}h$ iff $g^{-1}h\in H$. The equivalence classes are the left cosets $gH\subset G$, $g\in G$. Alternatively, there is another equivalence relation $g\sim_H h\Leftrightarrow gh^{-1}\in H$ whose equivalence classes are the right cosets $Hg$, $g\in G$.  By definition of the quotient topology the natural projections
-\[\pi_L:G\to G\slash H,\;\pi(g)=gH;\quad \pi_R:G\to H\bslash G,\;\pi(g)=Hg,\]
+\[\pi_\rmL:G\to G\slash H,\;\pi(g)=gH;\quad \pi_\rmR:G\to H\bslash G,\;\pi(g)=Hg,\]
 are continuous. Left translations descend to left cosets and right translations descend to right cosets via
-\[\wh{L}_g:G\slash H\to G\slash H,\; \wh{L}_g(hH)=ghH;\quad \wh{R}_g: H\bslash G\to H\bslash G,\; \wh{R}_g(Hh)=Hgh\]
+\[\wh{\rmL}_g:G\slash H\to G\slash H,\; \wh{\rmL}_g(hH)=ghH;\quad \wh{\rmR}_g: H\bslash G\to H\bslash G,\; \wh{\rmR}_g(Hh)=Hgh\]
 and satisfy
-\[\wh{L}_g\circ \pi_L=\pi_L\circ L_g,\quad \wh{R}_g\circ \pi_R=\pi_R\circ \wh{R}_g.\]
+\[\wh{\rmL}_g\circ \pi_\rmL=\pi_\rmL\circ \rmL_g,\quad \wh{\rmR}_g\circ \pi_\rmR=\pi_\rmR\circ \wh{\rmR}_g.\]
 The two quotients coincide only in Abelian groups. The topological structure on the quotient can be quite unpleasant. For example if $G=\bbT^2$ and $H=\{(\rme^{\rmi t},\rme^{\rmi\alpha t}:t\in \bbR\}$ with $\alpha \in\bbR$ irrational, the quotient is not even a Hausdorff space. If, however, $H$ is closed, then the quotient turns out to be a smooth manifold. In this \subsect\ we will only consider left cosets, although all results will also hold for right cosets. 
 
 \begin{lem}[{{\cite[Lem.~5.7.1]{RS1}}}]\label{lem 5.7.1 RS1}
     Let $G$ be a Lie group and $H\subset G$ a (topological) subgroup.
     \begin{enumerate}
         \item The quotient map $\pi:G\to G\slash H$ is open.
-        \item The induced mappings $\wh{L}_g$ are homeomorphisms of $G\slash H$.
+        \item The induced mappings $\wh{\rmL}_g$ are homeomorphisms of $G\slash H$.
         \item If $H$ is closed, then $G\slash H$ is Hausdorff.
     \end{enumerate}
 \end{lem}
 \begin{proof}
     \begin{enumerate}
-        \item Let $U\subset G$ be open. Then, by definition of quotient topology, $\pi(U)$ is open iff $\pi^{-1}(\pi(U))$ is open in $G$. The latter holds because $\pi^{-1}(\pi(U))=\bigcup_{g\in H}R_g(U)$ and the $R_g$ are homeomorphisms of $G$.
-        \item Since $\wh{L}_g\circ \wh{L}_{g^{-1}}=\id_{G\slash H}$, it suffices to show that $\wh{L}_a$ is open for all $g\in G$. Let $\wh{U}\subset G\slash H$ be open. We have $\wh{L}_g(\wh{U})=\pi\circ L_g(\pi^{-1}(\wh{U}))$. Since $\pi$ is continuous and since $L_g$ and $\pi$ are open, the assertion follows.
+        \item Let $U\subset G$ be open. Then, by definition of quotient topology, $\pi(U)$ is open iff $\pi^{-1}(\pi(U))$ is open in $G$. The latter holds because $\pi^{-1}(\pi(U))=\bigcup_{g\in H}\rmR_g(U)$ and the $\rmR_g$ are homeomorphisms of $G$.
+        \item Since $\wh{\rmL}_g\circ \wh{\rmL}_{g^{-1}}=\id_{G\slash H}$, it suffices to show that $\wh{\rmL}_g$ is open for all $g\in G$. Let $\wh{U}\subset G\slash H$ be open. We have $\wh{\rmL}_g(\wh{U})=\pi\circ \rmL_g(\pi^{-1}(\wh{U}))$. Since $\pi$ is continuous and since $\rmL_g$ and $\pi$ are open, the assertion follows.
         \item Consider the mapping $\varphi:G\times G\to G$  defined by $\varphi(g,h)=g^{-1}h$. We have $\pi(g)=\pi(h)$ iff $(g,h)\in\pi^{-1}(H)$. Now let $\wh{g}_1\neq \wh{g}_2\in G\slash H$ and choose $g_i\in G$ such that $\pi(g_i)=\wh{g}_i$. Then $(g_1,g_2)\notin \varphi^{-1}(H)$. Since $\varphi^{-1}(H)$ is closed, there exist neighborhoods $V_i$ of $g_i$ in $G$ such that $(V_1\times V_2)\cap \varphi^{-1}(H)=\varnothing$. This implies $\pi(V_1)\cap\pi(V_2)=\varnothing$. Since $\pi$ is open, $\pi(V_i)$ is a neighborhood of $\wh{g}_i$, proving the Hausdorff property.
     \end{enumerate}
 \end{proof}
@@ -7877,9 +7877,9 @@ The two quotients coincide only in Abelian groups. The topological structure on 
         \item injective: if $A,B\in W_\frakm$ satisfy $\rme^{-A}\rme^B\in H$, then $\rme^{-A}\rme^B=\rme^Z$ for some $Z\in W_\frakh$, hence $\varphi(B,0)=\varphi(A,Z)$ and injectivity of $\varphi$ implies $A=B$ (and $Z=0$);
         \item open: if $U$ is open in $W_\frakm$, then $U\times W_\frakh$ is open in $W_\frakm\times W_\frakh$. Since $\varphi$ and $\pi$ are open, $\pi\circ\exp(U)=\pi\circ\varphi(U\times W_\frakh)$ is open in $G\slash H$.
     \end{enumerate}
-    Thus $\pi\circ\exp$ maps $W_\frakm$ homeomorphically onto the subset $\wh{U}=\pi\circ\exp(W_\frakm)\subset G\slash H$ and hence induces a local chart $\wh{\kappa}=(\pi\circ\exp)^{-1}L\wh{U}\to \frakm$ on $G\slash H$. Since the mappings $\wh{L}_g$ are homemomorphisms, the collection
-    \[\{\left(\wh{L}_g(\wh{U}),\wh{\kappa}\circ \wh{L}_{g^{-1}}\right)\mid g\in G\}\]
-    is an atlas on $G\slash H$. The transition maps can be expressed in terms of $\exp,\exp^{-1}$, left translations and the projection $\frakg\to\frakm$ defined by the vector space decomposition $\frakg=\frakh\oplus\frakm$. It follows that the atlas so constructed defines a smooth (in fact analytic) structure on $G\slash H$. To see that $\pi$ is a smooth submersion, due to $\pi(L_g(V))=\wh{L}_g(\wh{U})$, it suffices to check that th restriction $\pi:L_g(V)\to \wh{L}_g(\wh{U})$ is a smooth submersion for all $g\in G$. The latter follows from the fact that the mapping $\wh{\kappa}\circ\wh{L}_{g^{-1}}\circ\pi\circ L_g\circ\varphi:W_\frakm\times W_\frakh\to W_\frakm$ coincides with the natural projection of the direct product.
+    Thus $\pi\circ\exp$ maps $W_\frakm$ homeomorphically onto the subset $\wh{U}=\pi\circ\exp(W_\frakm)\subset G\slash H$ and hence induces a local chart $\wh{\kappa}=(\pi\circ\exp)^{-1}L\wh{U}\to \frakm$ on $G\slash H$. Since the mappings $\wh{\rmL}_g$ are homemomorphisms, the collection
+    \[\left\{\left(\wh{\rmL}_g(\wh{U}),\wh{\kappa}\circ \wh{\rmL}_{g^{-1}}\right)\mid g\in G\right\}\]
+    is an atlas on $G\slash H$. The transition maps can be expressed in terms of $\exp,\ln$, left translations, and the projection $\frakg\to\frakm$ defined by the vector space decomposition $\frakg=\frakh\oplus\frakm$. It follows that the atlas so constructed defines a smooth (in fact analytic) structure on $G\slash H$. To see that $\pi$ is a smooth submersion, due to $\pi(\rmL_g(V))=\wh{\rmL}_g(\wh{U})$, it suffices to check that th restriction $\pi:\rmL_g(V)\to \wh{\rmL}_g(\wh{U})$ is a smooth submersion for all $g\in G$. The latter follows from the fact that the mapping $\wh{\kappa}\circ\wh{\rmL}_{g^{-1}}\circ\pi\circ \rmL_g\circ\varphi:W_\frakm\times W_\frakh\to W_\frakm$ coincides with the natural projection of the direct product.
 \end{proof}
 
 
@@ -7889,16 +7889,16 @@ The two quotients coincide only in Abelian groups. The topological structure on 
 \end{rem}
 
 \begin{rem}
-    According to Theorem~\ref{thm: local section}, the submersion $\pi$ admits local sections. In the case of $G\slash H$ there is a distinguished class of local sections. For every subspace $\frakm$ complementary to $\frakh$ there exist an open neighborhood $W$ of the origin in $\frakm$ such that $\exp(W)\subset G$ is an embedded submanifold, $\restr{\pi}{\exp(W)}$ is injective and $\wh{U}=\pi\circ\exp(W)$ is open in $G\slash H$. Then $s=\pi^{-1}:\wh{U}\to \exp(W)$ is a local section of $\pi$, and so are $s_g=L_g\circ s\circ L_{g^{-1}}:\wh{L}_g(\wh{U})\to G$ for all $g\in G$. This argument also shows that the natural isomorphism $\frakg\cong \T_e G$ descends to an isomorphism 
+    According to Theorem~\ref{thm: local section}, the submersion $\pi$ admits local sections. In the case of $G\slash H$ there is a distinguished class of local sections. For every subspace $\frakm$ complementary to $\frakh$ there exist an open neighborhood $W$ of the origin in $\frakm$ such that $\exp(W)\subset G$ is an embedded submanifold, $\restr{\pi}{\exp(W)}$ is injective and $\wh{U}=\pi\circ\exp(W)$ is open in $G\slash H$. Then $s=\pi^{-1}:\wh{U}\to \exp(W)$ is a local section of $\pi$, and so are $s_g=\rmL_g\circ s\circ \rmL_{g^{-1}}:\wh{\rmL}_g(\wh{U})\to G$ for all $g\in G$. This argument also shows that the natural isomorphism $\frakg\cong \T_e G$ descends to an isomorphism 
     \[\frakg\slash \frakh\cong \T_{[e]}(G\slash H).\]
 \end{rem}
 
-The existence of local sections of $\pi$ implies that the equality $\wh{L}_g\circ\pi=\pi\circ L_g$ can be solved locally for $\wh{L}_g$. This entails
+The existence of local sections of $\pi$ implies that the equality $\wh{\rmL}_g\circ\pi=\pi\circ \rmL_g$ can be solved locally for $\wh{\rmL}_g$. This entails
 \begin{cor}
-    The mapping $\wh{L}_g$ is a diffeomorphism of $G\slash H$ for all $g\in G$.
+    The mapping $\wh{\rmL}_g$ is a diffeomorphism of $G\slash H$ for all $g\in G$.
 \end{cor}
 
-Therefore each quotient $G\slash H$ by a closed subgroup inherits a smooth action of $G$. It is clear that this action is transitive and the stabilizer group of each point is isomorphic to $H$. Conversely, the stabilizer of any point of a manifold $M$ under a transitive action of $G$ is a closed subgroup of $G$, and the stabilizers of different points are conjugates of each other. Therefore there is a one-to-one correspondence between manifolds with transitive actions of $G$ and conjugacy classes of closed subgroups of $G$. These pairs deserve a special name.
+Therefore, each quotient $G\slash H$ by a closed subgroup inherits a smooth action of $G$. It is clear that this action is transitive and the stabilizer group of each point is isomorphic to $H$. Conversely, the stabilizer of any point of a manifold $M$ under a transitive action of $G$ is a closed subgroup of $G$, and the stabilizers of different points are conjugates of each other. Therefore there is a one-to-one correspondence between manifolds with transitive actions of $G$ and conjugacy classes of closed subgroups of $G$. These pairs deserve a special name.
 
 \begin{defn}[Homogeneous space]\index{Homogeneous space}\index{Klein geometry}
     \begin{enumerate}
@@ -7911,7 +7911,7 @@ Note that the two definitions of a homogeneous space differ slightly in that the
 
 \begin{example}[Principal homogenous spaces, Affine spaces]\label{ex principal hom spaces}
     \begin{enumerate}
-        \item Putting $H=\{e\}$, we get that the so called \emph{principal homogeneous space}\index{Principal homogeneous space} $G\slash \{e\}$ is isomorphic to $G$ as a manifold, but doesn't have a group structure. This manifold can be defined as the manifold with a \emph{free and transitive} $G$-action. However, for any two points $x,y\in G\slash \{e\}$ there is a unique $g\in G$ such that $y=g\circ x$. Thus elements of $G\slash\{e\}$ can be ``divided'' but not multiplied, and there is no identity. Principal homogeneous spaces are also called \emph{$G$-torsors}.\index{$G$-torsor} 
+        \item Putting $H=\{e\}$, we get that the so called \emph{principal homogeneous space}\index{Principal homogeneous space} $G\slash \{e\}$ is isomorphic to $G$ as a manifold, but doesn't carry a group structure. This manifold can be defined as the manifold with a \emph{free and transitive} $G$-action. For any two points $x,y\in G\slash \{e\}$ there is a unique $g\in G$ such that $y=g\circ x$. Thus, elements of $G\slash\{e\}$ can be ``divided'' but not multiplied, and there is no identity. Principal homogeneous spaces are also called \emph{$G$-torsors}.\index{$G$-torsor} 
         
         Note that for any choice of basepoint in a $G$-torsor there is a unique Lie group structure on it such that the basepoint is the identity and the multiplication map is given by the $G$-action. Indeed, since every $G$-torsor inherits the Maurer-Cartan form of $G$, Theorem~\ref{thm 8.7 Sharpe} recovers the group structure once an identity is chosen. In this sense, a $G$-torsor is exactly ``a copy of $G$ without a distinguished element''.
         
@@ -8079,7 +8079,7 @@ This leads us to the Lie group analogue of the homomorphism theorem.
 \begin{example}
     \begin{enumerate}
         \item The exponential function $t\mapsto \rme^{2\pi\rmi t}$ has kernel $\bbZ$ and image $\U_1$. The induced mapping yields a Lie group isomorphism from $\bbR\slash \bbZ$ onto $\U_1$. This extends to an isomorphism from $\bbR^n\slash\bbZ^n$ onto $\bbT^n$ for any $n$.
-        \item The two-fold covering map $\SU_2\to \SO_3(\bbR)$ of Example~\ref{example su2 and so3} is surjective and has the center $\bbZ_2$ of $\SU_2$ as its kernel, hence the induced mapping yields a Lie group isomorphism $\SU_2\slash\bbZ_2\cong \SO_3(\bbR)$. Similarly, Example~\ref{example so13 and sl2c} yields $\SL_2(\bbC)\slash (\bbC^\ast I)\cong \SO_{1,3}(\bbR)$.
+        \item The two-fold covering map $\SU_2\to \SO_3(\bbR)$ of Example~\ref{example su2 and so3} is surjective and has the center $\bbZ_2$ of $\SU_2$ as its kernel, hence the induced mapping yields a Lie group isomorphism $\SU_2\slash\bbZ_2\cong \SO_3(\bbR)$. Similarly, Example~\ref{example so13 and sl2c} yields $\SL_2(\bbC)\slash (\bbC^\ast \rmI)\cong \SO_{1,3}(\bbR)$.
     \end{enumerate}
 \end{example}
 
@@ -8126,8 +8126,8 @@ We begin by recalling a few definitions related to actions of Lie groups on mani
 \end{defn}
 
 Assuming that $\Phi$ is a left action, the orbit map satisfies $\Phi^m(gh)=\Phi^m(g)$ iff $h\in G_m$, so it induces an injective map
-\[\hat{\Phi}^m:G\slash G_m\to M,\quad \wh{\Phi}^m(g G_m)=\Phi^m(g),\label{eq 6.1.8 RS1}\]
-where $G\slash G_m$ denotes the homogeneous space of left cosets. Since the natural projection $G\to G\slash G_m$ is a surjective submersion, $\wh{\Phi}^m$ is smooth. Moreover, it is equivariant with respect to the action of $G$ on $G\slash G_m$ by the induced left translations $\wh{L}_g$ and its image coincides with the orbit of $m$. Similarly, in the case of a right action, $\wh{\Phi}^m$ is defined on the homogeneous space of right cosets and is equivariant with respect to the induced right translations $\wh{R}_g$. Thus, for every $m$, $\wh{\Phi}^m$ yields an equivariant bijection between $G\slash G_m$ and the orbit through $m$. We will use this bijection to induce a smooth structure on $G\cdot m$.
+\[\wh{\Phi}^m:G\slash G_m\to M,\quad \wh{\Phi}^m(g G_m)=\Phi^m(g),\label{eq 6.1.8 RS1}\]
+where $G\slash G_m$ denotes the homogeneous space of left cosets. Since the natural projection $G\to G\slash G_m$ is a surjective submersion, $\wh{\Phi}^m$ is smooth. Moreover, it is equivariant with respect to the action of $G$ on $G\slash G_m$ by the induced left translations $\wh{\rmL}_g$ and its image coincides with the orbit of $m$. Similarly, in the case of a right action, $\wh{\Phi}^m$ is defined on the homogeneous space of right cosets and is equivariant with respect to the induced right translations $\wh{\rmR}_g$. Thus, for every $m$, $\wh{\Phi}^m$ yields an equivariant bijection between $G\slash G_m$ and the orbit through $m$. We will use this bijection to induce a smooth structure on $G\cdot m$.
 
 
 Some of the statements of the following proposition should already be familiar.
@@ -8192,7 +8192,7 @@ By the above Proposition, by passing to the induced action of $G\slash\ker\Phi$,
 \begin{example}
 \begin{enumerate}
     \item  The actions of $G$ on itself by left and right translations are effective, free and transitive. Their restrictions to a proper Lie subgroup $H< G$ are still effective and free but no longer transitive. The action of $G$ on itself by inner automorphisms (conjugations $\Adg$) is neither free nor transitive, because the identity is invariant and the kernel is given by the center $\rmZ(G)$. Hence, the adjoint action is effective iff the center is trivial. Its orbits are the conjugacy classes of elements of $G$. The stabilizer of $g\in G$ is the centralizer  $\rmC_G(g)$ of $g\in G$. Therefore, the orbit types are given by the conjugacy classes of those subgroups of $G$ which are centralizers of elements of $G$. The orbit space is usually referred to as the adjoint quotient of $G$.
-    \item The action of $G$ on the homogeneous space $G\slash H$, where $H\sube G$ is a nontrivial closed subgroup, by the induced left translations $\wh{L}_g$ is transitive but not free. The stabilizer of a coset $gH$, $g\in G$, is given by $G_{gH}=gHg^{-1}$. Consequently, the kernel of the action is given by $\bigcap_{g\in G}gHg^{-1}$. It lies between $\rmZ(G)\cap H$ and $H$ itself, the latter being the case when $H$ is normal.
+    \item The action of $G$ on the homogeneous space $G\slash H$, where $H\sube G$ is a nontrivial closed subgroup, by the induced left translations $\wh{\rmL}_g$ is transitive but not free. The stabilizer of a coset $gH$, $g\in G$, is given by $G_{gH}=gHg^{-1}$. Consequently, the kernel of the action is given by $\bigcap_{g\in G}gHg^{-1}$. It lies between $\rmZ(G)\cap H$ and $H$ itself, the latter being the case when $H$ is normal.
     \item For the action of $G=\bbR$ on $M$ defined by the flow $F^X$ of a complete vector field $X\in\fX(M)$, the orbit map of a point $m\in M$ is given by the maximal integral curve $F^X_m$. The stabilizer is $G_m=\bbR$ in the case $X_m=0$, $G_m=\bbZ T$ if the integral curve is periodic with period $T$, and $G_m=\{0\}$ otherwise. Since $G$ is abelian, the orbit types correspond bijectively to the subgroups which appear as stabilizers.
 \end{enumerate}
 \end{example}
@@ -8209,7 +8209,7 @@ hence the assignment $(m,t)\mapsto \Phi_{\rme^{tA}}(m)$ defines a \gls{ops} of d
 
 \begin{defn}[Killing vector field]\index{Killing vector field}
     The vector field on $M$ defined by the flow $\Phi_{\rme^{tA}}$ is called the Killing vector field generated by $A\in\frakg$. It will be denoted by $A_\ast$. Its value at $m\in M$ may be expressed in several equivalent ways:
-    \[(A_\ast)_m=\restr{\frac{\dd}{\dd t}}{t=0}\Phi_{\rme^{tA}}(m)=\restr{\frac{\dd}{\dd t}}{t=0}\Phi^m\left(\rme^{tA}\right)=\Phi^m{\ast e}\cdot A.\label{eq 6.2.1 RS1}\]
+    \[(A_\ast)_m=\restr{\frac{\dd}{\dd t}}{t=0}\Phi_{\rme^{tA}}(m)=\restr{\frac{\dd}{\dd t}}{t=0}\Phi^m\left(\rme^{tA}\right)=\Phi^m_{\ast e}\cdot A.\label{eq 6.2.1 RS1}\]
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~6.2.2]{RS1}}}]\label{prop 6.2.2 RS1}
@@ -8235,7 +8235,7 @@ hence the assignment $(m,t)\mapsto \Phi_{\rme^{tA}}(m)$ defines a \gls{ops} of d
     i.e.~by the linearized flow (the Hessian) of the Killing vector field. It is referred to as the isotropy representation of $\frakg_m$.
 \end{rem}
 
-\begin{prop}[Transformation properties]\label{prop 6.2.4 RS1}
+\begin{prop}[Transformation properties {{\cite[Prop.~6.2.4]{RS1}}}]\label{prop 6.2.4 RS1}
     \begin{enumerate}
         \item Let $(M_i,G_i,\Phi^i)$, $i=1,2$, be Lie group actions and let $\varphi:M_1\to M_2$, $\rho:G_1\to G_2$ define a morphism (i.e.~a commuting square $\Phi^2\circ(\rho\times\varphi)=\varphi\circ\Phi^1$). Then the respective Killing vector fields of $A$ on $M_1$ and of $\rho_{\ast e} A$ on $M_2$ are $\varphi$-related.
         \item Let $(M_i,\Phi^i)$, $i=1,2$, be $G$-manifolds and let $\varphi:M_1\to M_2$ be equivariant. For every $A\in\frakg$, the Killing vector fields $A_\ast^{M_i}$ on $M_i$ henerated by $A$ are $\varphi$-related.
@@ -8257,8 +8257,8 @@ hence the assignment $(m,t)\mapsto \Phi_{\rme^{tA}}(m)$ defines a \gls{ops} of d
     \begin{enumerate}
         \item For the left action of $G$ associated with a representation $\rho:G\to \GL(V)$ on a finite-dimensional vector space $V$, the Killing vector field $A_\ast$ is the linear vector field on $V$ corresponding to the endomorphism $\rho_{\ast e}A$. In particular, for the adjoint and coadjoint actions we obtain
         \[A_\ast^{\Ad}=\ad_A,\quad A_\ast^{\Ad^\ast}=\ad^\ast_A,\quad A\in\frakg.\]
-        \item For the action of $G$ on itself by right translations we get $A_\ast=A_L$ (the intuitive reason for this is that left and right translations commute). That is, the homomorphism $\frakg\to \fX(G)$ of Proposition~\ref{prop 6.2.2 RS1}(2) coincides with the natural isomorphism between the Lie algebra and the left-invariant vector fields. The statement for left translations is analogous. For the adjoint action $\Adg$, $A_\ast=A_R-A_L$, which agrees with the fact that $A\mapsto A_\ast$ should be an anti-homomorphism.
-        \item Let $H\subset G$ be a closed subgroup and let $\pi:G\to G\slash H$ denote the natural projection. For the action of $G$ on the homogeneous space $G\slash H$ by induced left translations, Proposition~\ref{prop 6.2.4 RS1}(2) and the previous result yield $(A_\ast)_{\pi(g)}=\pi_{\ast e}\circ (R_g)_{\ast e}A$ for all $g\in G$ and $A\in\frakg$.
+        \item For the action of $G$ on itself by right translations we get $A_\ast=A_\rmL$ (the intuitive reason for this is that left and right translations commute). That is, the homomorphism $\frakg\to \fX(G)$ of Proposition~\ref{prop 6.2.2 RS1}(2) coincides with the natural isomorphism between the Lie algebra and the left-invariant vector fields. The statement for left translations is analogous. For the adjoint action $\Adg$, $A_\ast=A_\rmR-A_\rmL$, which agrees with the fact that $A\mapsto A_\ast$ should be an anti-homomorphism.
+        \item Let $H\subset G$ be a closed subgroup and let $\pi:G\to G\slash H$ denote the natural projection. For the action of $G$ on the homogeneous space $G\slash H$ by induced left translations, Proposition~\ref{prop 6.2.4 RS1}(2) and the previous result yield $(A_\ast)_{\pi(g)}=\pi_{\ast e}\circ (\rmR_g)_{\ast e}A$ for all $g\in G$ and $A\in\frakg$.
         \item For the action of $G=\bbR$ on $M$ defined by the flow of a complete vector field $X$, under the identification of the Lie algebra of $\bbR$ with $\bbR$ itself, the homomorphism $\frakg=\bbR\to \fX(M)$ is given by $s\mapsto s_\ast=sX$.
     \end{enumerate}
 \end{example}
@@ -8274,7 +8274,7 @@ By analogy with Lie group actions and their morphisms one defines their infinite
 
 Note that the induced mapping $\frakg\times M\to \T M$, $(A,m)\mapsto (\phi(A))_m$ is automatically smooth. Using the notion of Lie algebra action, Propositions~\ref{prop 6.2.2 RS1} and \ref{prop 6.2.4 RS1} may be restated as follows.
 
-\begin{cor}
+\begin{cor}[{{\cite[Cor.~6.2.7]{RS1}}}]
     \begin{enumerate}
         \item The Killing vector fields of a left or right Lie group action $(M,G,\Phi)$ induce a left or right action, respectively, of the Lie algebra $\frakg$ of $G$ on $M$.
         \item if $(\varphi,\rho)$ is a morphism of Lie group actions, then $(\varphi,\rho_{\ast e})$ is a morphism of the corresponding Lie algebra actions. If $\varphi$ is a morphism of $G$-manifolds, then it is also a morphism of the corresponding $\frakg$-manifolds.
@@ -8287,21 +8287,21 @@ According to points 1 and 3 of Proposition~\ref{prop 6.2.2 RS1}, we have
 \[D^\frakg_{\Phi_g(m)}=(\Phi_g)_{\ast m}D^\frakg_m\label{eq 6.2.4 RS1}\]
 for all $g\in G$, and $\dim D_m^\frakg=\dim G-\dim G_m$, respectively. In particular, $D^\frakg$ need not be regular; this is so, however, if $\Phi$ is free or transitive. We will show that $D^\frakg$ is integrable and that the integral manifolds are given by the orbits. For that purpose, recall the mapping $\wh{\Phi}^m:G\slash G_m\to M$, defined by (\ref{eq 6.1.8 RS1}).
 
-\begin{thm}[Orbit Theorem]\label{thm 6.2.8 RS1 orbit}
+\begin{thm}[Orbit Theorem {{\cite[Thm.~6.2.8]{RS1}}}]\label{thm 6.2.8 RS1 orbit}
     Let $(M,G,\Phi)$ be a Lie group action. For every $m\in M$, $(G\slash G_m,\wh{\Phi}^m)$ is an initial submanifold of $M$ whose connected components are maximal integral manifolds of $D^\frakg$. In particular, $D^\frakg$ is integrable.
 \end{thm}
 \begin{proof}
     Assume a left action. Let $m\in M$ and let $\pi^G:G\to G\slash G_m$ be the natural projection. First we show that $\wh{\Phi}^m$ is an injective immersion. Injectivity was already noted before. Since $\wh{\Phi}^m\circ \pi^G=\Phi^m$, for $\left(\wh{\Phi}^m\right)_{\ast gG_m}$ to be injective for all $gG_m\in G\slash G_m$ it suffices to show that
     \[\ker \Phi^m_{\ast g}\subset \ker \pi^G_{\ast g}\]
     for all $g\in G$. To see this, let $A\in\frakg$ be such that $\Phi^m_{\ast}A_g=0$. Due to
-    \[\Phi^m_{\ast}A_g=\Phi^m_{\ast}\circ \left(L_g\right)_{\ast}A_e=\left(\Phi_g\right)_{\ast}\circ \Phi^m_{\ast}A_e=\left(\Phi_g\right)_{\ast}(A_\ast)_m,\label{eq 6.2.5 RS1}\]
+    \[\Phi^m_{\ast}A_g=\Phi^m_{\ast}\circ \left(\rmL_g\right)_{\ast}A_e=\left(\Phi_g\right)_{\ast}\circ \Phi^m_{\ast}A_e=\left(\Phi_g\right)_{\ast}(A_\ast)_m,\label{eq 6.2.5 RS1}\]
     and since $(\Phi_g)_\ast$ is bijective, we obtain $(A_\ast)_m=0$ and hence $A\in\frakg_m$ by Proposition~\ref{prop 6.2.2 RS1}(3). Then $\rme^{tA}\in G_m$ for all $t\in\bbR$ and hence
     \[\pi^G_{\ast g}(A_g)=\restr{\frac{\dd}{\dd t}}{t=0}\pi^G(g\rme^{tA})=0.\]
     This proves that $\wh{\Phi}^m$ is an injective immersion.
 
-    Secondly, we show that the connected components of $(G\slash G_m,\wh{Psi})$ are maximal integral manifolds for $D^\frakg$. For simplicity, we may assume that $G$ and hence $G\slash G_m$ are connected. Due to $\pi^G$ being a submersion, for $(G\slash G_m,\wh{\Phi})$ to be an integral manifold of $D^\frakg$ it suffices that $\im(\Phi^m_{\ast g})=D^\frakg_{\Phi_g(m)}$ for all $g\in G$. The latter is true because using  (\ref{eq 6.2.5 RS1}) and Proposition~\ref{prop 6.2.2 RS1}(1), for $A\in\frakg$ one finds
+    Secondly, we show that the connected components of $(G\slash G_m,\wh{\Phi}^m)$ are maximal integral manifolds for $D^\frakg$. For simplicity, we may assume that $G$ and hence $G\slash G_m$ are connected. Due to $\pi^G$ being a submersion, for $(G\slash G_m,\wh{\Phi}^m)$ to be an integral manifold of $D^\frakg$ it suffices that $\im(\Phi^m_{\ast g})=D^\frakg_{\Phi_g(m)}$ for all $g\in G$. The latter is true because using  (\ref{eq 6.2.5 RS1}) and Proposition~\ref{prop 6.2.2 RS1}(1), for $A\in\frakg$ one finds
     \[\left(\Phi^m\right)_{\ast}A_g=\left(\Phi^m\right)_{\ast}(A_\ast)_m=(\Phi_{g\ast }A_\ast)_{\Phi_g(m)}=\left(\{\Ad_g A\}_\ast\right)_{\Phi_g(m)}\]
-    and hence $(A_\ast)_{\Phi_g(m)}=\left(\Phi^m\right)_{\ast}\left(\Ad_g^{-1}A\right)_m$. Maximality follows from the fact that the images of the connected components of the submanifolds $(G\slash G_m,\wh{\Phi}^m)$, $m\in M$, establish a disjoint decomposition of $M$. Finally, since $m $ is arbitrary, we can conclude that $D^\frakg$ is integrable. Hence Proposition~\ref{prop 3.5.15 RS1} yields that $(G\slash G_m,\wh{\Phi}^m)$ is weakly embedded.
+    and hence $(A_\ast)_{\Phi_g(m)}=\left(\Phi^m\right)_{\ast}\left(\Ad_g^{-1}A\right)_m$. Maximality follows from the fact that the images of the connected components of the submanifolds $(G\slash G_m,\wh{\Phi}^m)$, $m\in M$, establish a disjoint decomposition of $M$. Finally, since $m $ is arbitrary, we can conclude that $D^\frakg$ is integrable. Proposition~\ref{prop 3.5.15 RS1} now yields that $(G\slash G_m,\wh{\Phi}^m)$ is weakly embedded.
 \end{proof}
 
 
@@ -8318,10 +8318,10 @@ As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth st
         On the other hand, the isotropy representation restricted to $\T_mO$ can be brought to the following normal form. By the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, the map $\Phi^m_{\ast e}:\frakg\to \T_mM$ has image $\T_mO$. By point 3 of Proposition~\ref{prop 6.2.2 RS1} it has kernel $\frakg_m$. Hence, this mapping induces a natural vector space isomorphism
         \[\T_mO\cong \frakg\slash\frakg_m.\]
         In view of (\ref{eq 6.2.1 RS1}), this implies that this isomorphism intertwines the representation of $G_m$ on $\frakg\slash\frakg_m$ induced by the adjoint representation with the isotropy representation on $\T_mO$.
-        \item Since $O$ is invariant under $\Phi$ and since it is a weakly embedded submanifold of $M$, $\Phi$ restricts to a transitive action of $G$ on $O$. Since the connected components of $O$ are integral manifolds of $D^\frakg$, (\ref{eq 6.2.4 RS1}) implies that the action of $G$ on $\T M$ induced by $\Phi$ leaves invariant the submanifold $TO$. The restriction of this action to the invariant submanifold $\restr{(\T M)}{O}$ induces an action $\Phi^N$ of $G$ on the normal bundle $NO=\restr{(\T M)}{O}\slash TO$ by the vector bundle automorphisms (smoothness follows from the existence of local sections of the submersion $\restr{(\T M)}{O}\to NO$)
-        \[\Phi_g^N\left([X]\right)=\left[(\Phi_g){\ast}X\right],\quad g\in G,X\in \T M.\]
-        The natural projections $\restr{(\T M)}{O}\slash TO\to NO\to O$ are equivariant. Equivariance of the second projection implies that $\Phi^N$ restricts to an action of $G_m$ on $N_mO$ for every $m\in O$. This action coincides with the slice representation at $m$.
-        \item A manifold carrying a transitive Lie group action is called homogeneous. The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} yields that every homogeneous manifold is diffeomorphic to $G\slash H$ for some Lie group $G$ and some closed subgroup $H$ of $G$. The diffeomorphism provided by this theorem is obviously equivariant with respect to the action of $G$ on $G\slash H$ by the induced translations $\wh{L}_g$ (in the case of a left action) or $\wh{R}_g$ (in the case of a right action). Hence, it is an isomorphism of Lie group actions. In this sense, all the homogeneous spaces discussed in \S\ref{sec: homogeneous spaces} constitute homogeneous manifolds, which explains their name. The notion of homogeneous manifold may be further specialized, e.g.~to that of homogeneous Riemannian manifold (a Riemannian manifold carrying a transitive Lie group action by isometries).
+        \item Since $O$ is invariant under $\Phi$ and since it is a weakly embedded submanifold of $M$, $\Phi$ restricts to a transitive action of $G$ on $O$. Since the connected components of $O$ are integral manifolds of $D^\frakg$, (\ref{eq 6.2.4 RS1}) implies that the action of $G$ on $\T M$ induced by $\Phi$ leaves invariant the submanifold $\T O$. The restriction of this action to the invariant submanifold $\restr{(\T M)}{O}$ induces an action $\Phi^N$ of $G$ on the normal bundle $NO=\restr{(\T M)}{O}\slash \T O$ by the vector bundle automorphisms (smoothness follows from the existence of local sections of the submersion $\restr{(\T M)}{O}\to NO$)
+        \[\Phi_g^N\left([X]\right)=\left[\Phi_{g\ast}(X)\right],\quad g\in G,X\in \T M.\]
+        The natural projections $\restr{(\T M)}{O}\slash \T O\to NO\to O$ are equivariant. Equivariance of the second projection implies that $\Phi^N$ restricts to an action of $G_m$ on $N_mO$ for every $m\in O$. This action coincides with the slice representation at $m$.
+        \item A manifold carrying a transitive Lie group action is called homogeneous. The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} yields that every homogeneous manifold is diffeomorphic to $G\slash H$ for some Lie group $G$ and some closed subgroup $H$ of $G$. The diffeomorphism provided by this theorem is obviously equivariant with respect to the action of $G$ on $G\slash H$ by the induced translations $\wh{\rmL}_g$ (in the case of a left action) or $\wh{\rmR}_g$ (in the case of a right action). Hence, it is an isomorphism of Lie group actions. In this sense, all the homogeneous spaces discussed in \S\ref{sec: homogeneous spaces} constitute homogeneous manifolds, which explains their name. The notion of homogeneous manifold may be further specialized, e.g.~to that of homogeneous Riemannian manifold (a Riemannian manifold carrying a transitive Lie group action by isometries).
     \end{enumerate}
 \end{rem}
 
@@ -8351,7 +8351,7 @@ We give two equivalent characterizations of proper mappings. Note that since man
 \begin{proof}
     $1\Rightarrow2$: Let $(m_n)$ be a sequence in $M$ as assumed. Since $N$ is locally compact, there exists a compact $K\subset N$ such that $f(m_n)\in K$ for sufficiently large $n$. Then $m_n\in f^{-1}(K)$ for large $n$. Since $f$ is proper, $f^{-1}(K)$ is compact, hence $(m_n)$ contains a convergent subsequence.
 
-    $2\Rightarrow3$ The map $f$ is closed: let $K\subset M$ be closed. Let $(p_n)$ be a sequence on $f(K)$ that converges to some $p\in N$. For every $n$ there is $m_n\in K$ such that $p_n=f(m_n)$. By assumption, $(m_n)$ contains a subsequence converging to some $m\in M$. Since $K$ is closed, $m\in K$. Then $p=f(m)\in f(K)$/ Thus, $f(K)$ is closed. Compactnss of $f^{-1}(p)$ for $p\in N$ is obvious.
+    $2\Rightarrow3$ The map $f$ is closed: let $K\subset M$ be closed. Let $(p_n)$ be a sequence on $f(K)$ that converges to some $p\in N$. For every $n$ there is $m_n\in K$ such that $p_n=f(m_n)$. By assumption, $(m_n)$ contains a subsequence converging to some $m\in M$. Since $K$ is closed, $m\in K$. Then $p=f(m)\in f(K)$/ Thus, $f(K)$ is closed. Compactness of $f^{-1}(p)$ for $p\in N$ is obvious.
 
     $3\Rightarrow1$: Let $K\subset N$ be compact and let $\{U_i\}_{i\in I}$ be an open covering of $f^{-1}(K)$. Let $p\in K$. Since $\{U_i\}$ is an open covering of $f^{-1}(p)$, which is compact, there is a finite subcovering $\{U_i\}_{i\in I_p}$. Let $V_p$ denote the complement in $N$ of the image under $f$ of the complement of $\bigcup_{i\in I_p}U_i$ in $M$. By construction, $p\in V_p$. Since $f$ is closed, $V_p$ is open. Hence $\{V_p\}_{p\in K}$ is an open covering of $K$. Since $K$ is compact, there is a finite subcovering labelled by $p_1,\ldots,p_r$. Then $\{U_i:i\in I_{p_1}\cup \cdots \cup I_{p_r}\}$ is a finite subcovering of $\{U_i\}_{i\in I}$.
 \end{proof}
@@ -8407,7 +8407,7 @@ The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} and Proposition~\ref{prop 6.3.4 RS1}
 \end{rem}
 
 \begin{rem}\label{rem 6.3.9 RS1}
-    Let $(M,\Phi)$ and $(M',\Phi')$ be $G$-manifolds and let $\varphi:M\to M'$ be equivariant. If $\Phi'$ is proper, then $\Phi$ is proper, too: let $(g_n)$ and $(m_n)$ be sequences in $G$ and $M$, respectively, such that $(m_n)$ and $(\Phi_{g_n}(m_n))$ converge. Then $(\varphi(m_n))$ and $\Phi'_{g_n}(\varphi(m_n))$ also converge and thus $(g_n)$ contains a convergence subsequence. This has the following consequences:
+    Let $(M,\Phi)$ and $(M',\Phi')$ be $G$-manifolds and let $\varphi:M\to M'$ be equivariant. If $\Phi'$ is proper, then $\Phi$ is proper, too: let $(g_n)$ and $(m_n)$ be sequences in $G$ and $M$, respectively, such that $(m_n)$ and $(\Phi_{g_n}(m_n))$ converge. Then $(\varphi(m_n))$ and $\left(\Phi'_{g_n}(\varphi(m_n))\right)$ also converge and thus $(g_n)$ contains a convergent subsequence. This has the following consequences:
     \begin{enumerate}
         \item the direct product of $G$-manifolds is proper if one of the factors is proper;
         \item if an action is proper, then so are the induced actions on the tensor bundles.
@@ -8936,7 +8936,7 @@ We now briefly review how other structural results extend to the infinite-dimens
 
 \begin{defn}[Regular Lie group]
     A Lie group $G$ is called regular if for each $\xi\in C^\infty([0,1],\frakg)$ the initial value problem
-    \[\dot\gamma(t)=L_{\gamma(t)\ast}\xi(t),\quad \gamma(0)=e\]
+    \[\dot\gamma(t)=\rmL_{\gamma(t)\ast}\xi(t),\quad \gamma(0)=e\]
     has a solution $\gamma_\xi\in C^\infty([0,1],G)$ and the evolution map 
     \[\mathrm{evol}_G:C^\infty([0,1],\frakg)\to G,\quad \xi\mapsto \gamma_\xi(1)\]
     is smooth. For a regular Lie group $G$ we define the exponential map
@@ -8946,7 +8946,7 @@ We now briefly review how other structural results extend to the infinite-dimens
 \begin{rem}
     \begin{enumerate}[label=(\alph*)]
         \item As a direct consequence of the existence of solutions to ODE's on open domains of Banach spaces and their smooth dependence on parameters, every Banach-Lie group is regular.
-        \item Let $A$ be a unital Banach algebra and $A^\times$ its unit group (group of invertible elements). Since $A$ is a CIA (\emph{continuous inverse algebra}: Hausdorff locally convex unital algebra such that $A^\times$ is open and the inversion map $A^\times\to A$ is continuous), $A^\times$ is a Lie group. For $x\in A$ the corresponding left-invariant vector field on $A^\times$ is given by $x_L(a)=ax$, and the unique solutions of the above initial value problem are given by $\gamma(t)=\exp tx$ given by the convergent exponential Taylor series. This implies that $\exp_A$ is a smooth exponential function of the Lie group $A$. This remains true for each Mackey complete CIA: the exponential series converges and $\exp_A$ defines a smooth exponential map on $A^\times$.
+        \item Let $A$ be a unital Banach algebra and $A^\times$ its unit group (group of invertible elements). Since $A$ is a CIA (\emph{continuous inverse algebra}: Hausdorff locally convex unital algebra such that $A^\times$ is open and the inversion map $A^\times\to A$ is continuous), $A^\times$ is a Lie group. For $x\in A$ the corresponding left-invariant vector field on $A^\times$ is given by $x_\rmL(a)=ax$, and the unique solutions of the above initial value problem are given by $\gamma(t)=\exp tx$ given by the convergent exponential Taylor series. This implies that $\exp_A$ is a smooth exponential function of the Lie group $A$. This remains true for each Mackey complete CIA: the exponential series converges and $\exp_A$ defines a smooth exponential map on $A^\times$.
         \item Although it might be hard to verify it in concrete situations, all ``known'' Lie groups modeled on Mackey complete spaces are regular. For example we do not know if all unit groups of Mackey complete CIAs are regular, but we have just seen in (b) that they always have a smooth exponential function. If the model space is not Mackey complete, one can easily obtain non-regular groups. E.g.\ the unit Lie group of the algebra of rational functions on $[0,1]$ is not regular because $e^f$ is not rational for a rational $f$.
         \item A locally convex space $V$ is a Lie group under the addition operation iff it is Mackey complete. Regularity is then inherited by all abelian Lie groups $V\slash \Gamma$ where $\Gamma$ is a discrete subgroup of $V$.
         \item If $H$ is a Lie group with a smooth exponential map $\exp_H:\frakh\to H$ and $M$is a compact manifold, then we obtain an exponential map of the group $G=C^\infty(M,H)$ by
@@ -8968,10 +8968,10 @@ have a unique solution given by $\eta(t)=\Ad_{\xi(t)}^{-1
     Then we define a smooth function $f:I^2\to G$ by
     \[f(t,0)=\gamma_{\xi(\cdot,0)}(t),\quad f(t,s)=f(t,0)\cdot \gamma_{\eta(t,\cdot)}(s).\]
     Since the map $I\to C^\infty(I,\frakg)$, $t\mapsto \eta(t,\_)$ is smooth, $f$ is a smooth function. We have
-    \[L_{f\ast}^{-1}f=\wh{\xi}\cdot \dd t+\eta\cdot \dd s,\quad \wh{\xi}(t,0)=\xi(t,0).\]
-    The Maurer-Cartan equation for $L_{f\ast}^{-1}f$ reads $\partial_s \wh{\xi}-\partial_t\eta=[\wh{\xi},\eta]$, so subtracting it from the original equation we get
+    \[\rmL_{f\ast}^{-1}f=\wh{\xi}\cdot \dd t+\eta\cdot \dd s,\quad \wh{\xi}(t,0)=\xi(t,0).\]
+    The Maurer-Cartan equation for $\rmL_{f\ast}^{-1}f$ reads $\partial_s \wh{\xi}-\partial_t\eta=[\wh{\xi},\eta]$, so subtracting it from the original equation we get
     \[\partial_s(\xi-\wh{\xi})=[\xi-\wh{\xi},\eta].\]
-    Since $(\xi-\wh{\xi})(t,0)=0$, the uniqueness of solutions applied to $\eta(t,\cdot)$ implies that $\xi=\wh{\xi}$ on all of $I^2$. Thus $L_{f\ast}^{-1}f=\xi\dd t+\eta\dd s$.
+    Since $(\xi-\wh{\xi})(t,0)=0$, the uniqueness of solutions applied to $\eta(t,\cdot)$ implies that $\xi=\wh{\xi}$ on all of $I^2$. Thus $\rmL_{f\ast}^{-1}f=\xi\dd t+\eta\dd s$.
 \end{rem}
 
 The following familiar theorem holds for solutions of the Maurer-Cartan equation on regular Lie groups. We call a one-form $\alpha\in\Omega^1(M;\frakg)$ integrable if there exists a smooth function $f:M\to G$ such that $L_f^\ast \dd f=\alpha$.
