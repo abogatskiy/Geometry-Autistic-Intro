@@ -2897,38 +2897,38 @@ Another important class of bundles, called jet bundles, are a generalization of 
         \[\calC^\infty_p(M,N)=C^\infty(M,N)\slash \sim_p.\]
         If $f_1\in C^\infty(M,N)$ and $f_2\in C^\infty(N,K)$, then we can compose germs as follows:
         \[[f_2]_{f_1(p)}\circ [f_1]_{p}=[f_2\circ f_1]_p.\]
-        \item For any $k\in\bbN$, another equivalence relation on $C^\infty(M,N)$ is defined as follows: $f\sim_{p;k}g$ iff in any, and therefore all, local coordinate chart, the local representatives $\wh{f}$ and $\wh{g}$ have Taylor series that coincide up to and including all terms of order $k$. The equivalence class of a given map $f$ under this relation is called the $k$-jet of $f$ at $p$, denoted $j_p^k f$. The set of all $k$-jets at $p$ is denoted
-        \[J_p^k(M,N)=C^\infty (M,N)\slash \sim_{p;k}.\]
+        \item For any $k\in\bbN$, another equivalence relation on $C^\infty(M,N)$ is defined as follows: $f\sim_{p;k}g$ iff in any, and therefore all, local coordinate chart, the local representatives $\wh{f}$ and $\wh{g}$ have Taylor series that coincide up to and including all terms of order $k$. The equivalence class of a given map $f$ under this relation is called the $k$-jet of $f$ at $p$, denoted $\rmj_p^k f$. The set of all $k$-jets at $p$ is denoted
+        \[\rmJ_p^k(M,N)=C^\infty (M,N)\slash \sim_{p;k}.\]
         The composition of germs induces compositions of $k$-jets:
-        \[(j_{f_1(p)}^kf_2)\circ (j_p^k f_1)=j_p^k(f_2\circ f_1).\]
-        A jet is called $j_p^kf\in J^k_p(M,M)$ is called invertible if there is a jet $j^k_{f(p)}g\in J^k_{f(p)}(M,M)$ such that $j^k_p(g\circ f)=j^k_p\id_M$ and $j^k_{f(p)}(f\circ g)=j^k_{f(p)}\id_M$. 
+        \[(\rmj_{f_1(p)}^kf_2)\circ (\rmj_p^k f_1)=\rmj_p^k(f_2\circ f_1).\]
+        A jet $\rmj_p^kf\in \rmJ^k_p(M,M)$ is called invertible if there is a jet $\rmj^k_{f(p)}g\in \rmJ^k_{f(p)}(M,M)$ such that $\rmj^k_p(g\circ f)=\rmj^k_p\id_M$ and $\rmj^k_{f(p)}(f\circ g)=\rmj^k_{f(p)}\id_M$. 
         
-        On the sets of all $k$-jets $J^k(M,N)=\bigsqcup_{p\in M}J^k_p(M,N)$ we can define natural projections
+        On the sets of all $k$-jets $\rmJ^k(M,N)=\bigsqcup_{p\in M}\rmJ^k_p(M,N)$ we can define natural projections
         \begin{align}
-            \pi^k_l:J^k(M,N)\to J^l(M,N),&\quad  j_p^l f\mapsto p, 0\leq l<k,\\
-            \pi^k_0:J^k(M,N)\to M\times N,&\quad j_p^k f\mapsto (p,f(p)).
+            \pi^k_l:\rmJ^k(M,N)\to \rmJ^l(M,N),&\quad  \rmj_p^l f\mapsto p, 0\leq l<k,\\
+            \pi^k_0:\rmJ^k(M,N)\to M\times N,&\quad \rmj_p^k f\mapsto (p,f(p)).
         \end{align}
-        The projections $\pi^k_0$ induce a unique smooth structure on $J^k(M,N)$ that turns both of the projections into smooth fiber bundles. The map $\pi^k_0$ is called the \emph{$k$-th jet bundle} of maps from $M$ to $N$.\index{Jet bundle}
+        The projections $\pi^k_0$ induce a unique smooth structure on $\rmJ^k(M,N)$ that turns both of the projections into smooth fiber bundles. The map $\pi^k_0$ is called the \emph{$k$-th jet bundle} of maps from $M$ to $N$.\index{Jet bundle}
         We set
-        \[J^k_{p}(M,N)_q=(\pi^k_0)^{-1}((p,q)).\]
-        If $\dim M=m$ and $\dim N=n$, then the typical fiber of the jet bundle is the manifold $J^k_{0}(\bbR^m,\bbR^n)_0$, which parametrizes the values of Taylor coefficients (above the $0$-th order) of maps in a local chart.
-        \item If $\pi:E\to M$ is a smooth \gls{fb}, then the set of $k$-jets of smooth local sections of $E$ is denoted $J^k(E)$ and is called the \emph{jet bundle of order $k$} of $E$. It turns out to be an embedded submanifold of $J^k(M,E)$ and a smooth \gls{fb} over $M$. Clearly $J^k$ is a functor acting on locally invertible bundle morphisms, called the \emph{jet prolongation functor}. Given a local section $\sigma\in \Gamma_U^\infty(E)$ for $U\subset M$, its \emph{$k$-th prolongation} is the induced section $j^k\sigma\in\Gamma_U^\infty(J^k(E))$ defined by
-        \[(j^k\sigma)(p)=j^k_p\sigma.\]
-        Note that $j^k$ is a differential operator. Local sections of $J^k(E)$ that have this form for some local section $\sigma\in\Gamma^\infty(E)$ are called \emph{holonomic}.
-        \item For every operator $D:\Gamma^\infty(E\to M)\to \Gamma^\infty(E'\to M)$ that is a $k$-th order differential operator in local coordinates, there exists a bundle morphism $\wt D:J^k(E)\to E'$ such that $D=\wt D\circ j^k$.
-        \item An order $k$ \emph{partial differential equation} on $E$ is a closed embedded submanifold $S$ of the jet bundle $J^k_M(E)$. A solution is a local section $\sigma\in\Gamma_U(J^k(E))$ that takes values in $S$. 
+        \[\rmJ^k_{p}(M,N)_q\coloneqq (\pi^k_0)^{-1}((p,q)).\]
+        If $\dim M=m$ and $\dim N=n$, then the typical fiber of the jet bundle is the manifold $\rmJ^k_{0}(\bbR^m,\bbR^n)_0$, which parametrizes the values of Taylor coefficients (above the $0$-th order) of maps in a local chart.
+        \item If $\pi:E\to M$ is a smooth \gls{fb}, then the set of $k$-jets of smooth local sections of $E$ is denoted $\rmJ^k(E)$ and is called the \emph{jet bundle of order $k$} of $E$. It turns out to be an embedded submanifold of $\rmJ^k(M,E)$ and a smooth \gls{fb} over $M$. Clearly $\rmJ^k$ is a functor acting on locally invertible bundle morphisms, called the \emph{jet prolongation functor}. Given a local section $\sigma\in \Gamma_U^\infty(E)$ for $U\subset M$, its \emph{$k$-th prolongation} is the induced section $\rmj^k\sigma\in\Gamma_U^\infty(\rmJ^k(E))$ defined by
+        \[(\rmj^k\sigma)(p)=\rmj^k_p\sigma.\]
+        Note that $\rmj^k$ is a differential operator. Local sections of $\rmJ^k(E)$ that have this form for some local section $\sigma\in\Gamma^\infty(E)$ are called \emph{holonomic}.
+        \item For every operator $D:\Gamma^\infty(E\to M)\to \Gamma^\infty(E'\to M)$ that is a $k$-th order differential operator in local coordinates, there exists a bundle morphism $\wt D:\rmJ^k(E)\to E'$ such that $D=\wt D\circ \rmj^k$.
+        \item An order $k$ \emph{partial differential equation} on $E$ is a closed embedded submanifold $S$ of the jet bundle $\rmJ^k_M(E)$. A solution is a local section $\sigma\in\Gamma_U(\rmJ^k(E))$ that takes values in $S$. 
         \item The structure group of an order $k$ jet bundle of maps on an $m$-dimensional manifold is called the \emph{$k$-th order jet group}\index{Jet group}
-        \[\GL^k_m\coloneqq J^k_{0,0}(\bbR^m,\bbR^m)^\times.\]
+        \[\GL^k_m\coloneqq \rmJ^k_{0,0}(\bbR^m,\bbR^m)^\times.\]
     \end{enumerate}
 \end{defn}
 
 \begin{example}
     \begin{enumerate}
-        \item Consider the trivial bundle $\pr_1:M\times\bbR\to M$. Then there is a bundle isomorphism between $J^1(\pr_1)\to M$ and the bundle $\T^\ast M\times \bbR\to M$ (whose fibers are $\T^\ast_pM\times\bbR$). Indeed, every section $\sigma:M\to M\times\bbR$ can be identified, by projecting onto the second component, with a smooth function $f:M\to \bbR$. Then $j^1_p\sigma$ can be identified with the element $(\dd f,f(p))\in \T^\ast M\times \bbR$.
+        \item Consider the trivial bundle $\pr_1:M\times\bbR\to M$. Then there is a bundle isomorphism between $\rmJ^1(\pr_1)\to M$ and the bundle $\T^\ast M\times \bbR\to M$ (whose fibers are $\T^\ast_pM\times\bbR$). Indeed, every section $\sigma:M\to M\times\bbR$ can be identified, by projecting onto the second component, with a smooth function $f:M\to \bbR$. Then $\rmj^1_p\sigma$ can be identified with the element $(\dd f,f(p))\in \T^\ast M\times \bbR$.
         
-        \item Similarly, considering the trivial bundle $\pr_2:M\times \bbR\to \bbR$, its first jet bundle $J^1(\pr_2)$ can be identified with $\T M\times \bbR\to \bbR$. Every section $\sigma:\bbR\to M\times\bbR$ can be identified with a smooth path $\gamma:\bbR\to M$, and a first jet of such paths is a tangent vector by definition, so $j^1_t\sigma$ can be identified with $\dot\gamma(t)\in \T_{\gamma(t)}M$.
+        \item Similarly, considering the trivial bundle $\pr_2:M\times \bbR\to \bbR$, its first jet bundle $\rmJ^1(\pr_2)$ can be identified with $\T M\times \bbR\to \bbR$. Every section $\sigma:\bbR\to M\times\bbR$ can be identified with a smooth path $\gamma:\bbR\to M$, and a first jet of such paths is a tangent vector by definition, so $\rmj^1_t\sigma$ can be identified with $\dot\gamma(t)\in \T_{\gamma(t)}M$.
 
-        \item In other words, $\T M\cong J^1_0(\bbR,M)$ and $\T^\ast M\cong J^1(M,\bbR)_0$. The $k$-th order analog of the tangent bundle is $J^k_0(\bbR,M)$, whose typical fiber is the set $J_0^k(\bbR,\bbR^m)$ of the first $k$ derivatives of paths in $\bbR^m$.
+        \item In other words, $\T M\cong \rmJ^1_0(\bbR,M)$ and $\T^\ast M\cong \rmJ^1(M,\bbR)_0$. The $k$-th order analog of the tangent bundle is $\rmJ^k_0(\bbR,M)$, whose typical fiber is the set $\rmJ_0^k(\bbR,\bbR^m)$ of the first $k$ derivatives of paths in $\bbR^m$.
     \end{enumerate}
 \end{example}
 
@@ -2944,7 +2944,9 @@ The tangent bundles and other tensor bundles which we will now construct from it
 
 Recall from Example \ref{Tensor algebra} that the space $\Hom^k(V_1,\ldots,V_k;W)$ of $k$-linear maps $V_1\times \cdots\times V_k\to W$, where $V_i$ and $F$ are vector spaces, can be naturally identified with the space $\Hom(V_1\otimes\cdots\otimes V_k,W)$ of linear maps $V_1\otimes \cdots\otimes V_k\to W$. This hom-functor, as we know from Example \ref{hom-functor example}, is contravariant with respect to the $V_i$'s and covariant with respect to $W$. 
 
-In particular, the dual of a real vector space $V$ is defined as $V^\ast=\Hom(V,\bbR )$, and is a contravariant functor of $V$. If the elements of $V$ are called vectors, then the elements of $V^\ast$ are called \emph{covectors}. Being a functor, dualization acts on linear maps $f\in\Hom(V,W)\mapsto f^\ast\in \Hom(W^\ast,V^\ast)$ as $f^\ast(\alpha)(v)=\alpha(f(v))$, $v\in V, \alpha\in W^\ast$. We will sometimes use the notation $\langle \alpha,v\rangle\coloneqq\alpha(v)$ for the natural pairing of covectors and vectors. Then  $\langle f^\ast \alpha,v\rangle=\langle \alpha,fv\rangle$. Note that for linear maps this is consistent with the concept of pullback: $f^\ast\alpha=\alpha\circ f$.
+In particular, the dual of a real vector space $V$ is defined as $V^\ast=\Hom(V,\bbR )$, and is a contravariant functor of $V$. If the elements of $V$ are called vectors, then the elements of $V^\ast$ are called \emph{covectors}. Being a functor, dualization acts on linear maps $f\in\Hom(V,W)\mapsto f^\ast\in \Hom(W^\ast,V^\ast)$ as 
+\[(f^\ast\alpha)(v)=\alpha(f(v)), \quad v\in V, \alpha\in W^\ast.\] 
+Note that for linear maps this is consistent with the concept of pullback: $f^\ast\alpha=\alpha\circ f$.
 
 Moreover, we know from Example \ref{hom-functor adjoint} that there is a natural isomorphism of vector spaces
 \[
@@ -2958,7 +2960,7 @@ The particular case of $W=\bbR $ leads to
 With this in mind, we first define the tensor vector spaces.
 
 \begin{defn}[Tensors]\index{Tensor!on a vector space}
-    For a real vector space $V$, the space of tensors of type $(r,s)$ ($r$ is called the contravariant rank and $s$ is called the covariant rank) on $V$ is the space of multilinear functionals of $s$ vectors and $r$ covectors, \[\bbT^r_s(V)=\Hom^{r+s}(\underbrace{V^\ast,\ldots,V^\ast}_{r},\underbrace{V,\ldots,V}_s;\bbR )\cong\Hom \left(\left(V^\ast\right)^{\otimes r}\otimes V^{\otimes s},\bbR \right)\cong V^{\otimes r}\otimes \left(V^\ast\right)^{\otimes s}.\]
+    For a real vector space $V$, the space of tensors of type $(r,s)$ ($r$ is called the \emph{contravariant rank} and $s$ the \emph{covariant rank}) on $V$ is the space of multilinear functionals of $s$ vectors and $r$ covectors, \[\bbT^r_s(V)=\Hom^{r+s}(\underbrace{V^\ast,\ldots,V^\ast}_{r},\underbrace{V,\ldots,V}_s;\bbR )\cong\Hom \left(\left(V^\ast\right)^{\otimes r}\otimes V^{\otimes s},\bbR \right)\cong V^{\otimes r}\otimes \left(V^\ast\right)^{\otimes s}.\]
 \end{defn}
 
 We also have the extra isomorphisms
@@ -3145,7 +3147,7 @@ In many cases it is helpful to think of abstract manifolds as submanifolds of so
     See the general proof in \cite[Thm. 6.15]{Lee}.
 \end{proof}
 
-Recall that a manifold is said to have a compatible analytic structure if its differentiable structure contains an atlas in which all transition functions are real analytic (i.e.\ have Taylor series converging in a non-zero radius at every point). Since the standard smooth structure of $\bbR^n$ is obviously analytic, we get the following.
+Recall that a manifold is said to have a compatible analytic structure if its differentiable structure contains an atlas in which all transition functions are real analytic (i.e.\ have Taylor series converging in a nonzero radius at every point). Since the standard smooth structure of $\bbR^n$ is obviously analytic, we get the following.
 
 \begin{cor}
     Every smooth manifold has a compatible structure of a real analytic manifold.
@@ -3527,7 +3529,7 @@ In local coordinates, if $\gamma$ is represented by $x^i(t)$, this is a system o
 \]
 \end{defn}
 \begin{defn}[Flow boxes]\index{Flow box}
-Let $X\in\fX(M)$. A flow box of $X$ at $p\in M$ is the triple $(U_0,a,F)$, where $U_0\subset M$ is an open neighborhood of $p$, $a\in \bbR_{>0}\cup\{\infty\}$, and $F:U_0\times I_a\to M$ with $I_a=(-a,a)$ is a smooth mapping, such that:
+Let $X\in\fX(M)$. A flow box of $X$ at $m\in M$ is the triple $(U_0,a,F)$, where $U_0\subset M$ is an open neighborhood of $m$, $a\in \bbR_{>0}\cup\{\infty\}$, and $F:U_0\times I_a\to M$ with $I_a=(-a,a)$ is a smooth mapping, such that:
 \begin{enumerate}
     \item For all $p\in U_0$, the map $\gamma_p:I_a\to M$ defined by $\gamma_p(t)=F(p,t)$ is an integral curve for $X$ at $p$;
     \item $F_t:U_0\to M$ defined by $F_t(p)=F(p,t)$ is a diffeomorphism onto its image.
@@ -3538,17 +3540,17 @@ From this definition, we have the basic properties:
     \item $F_{t_1+t_2}=F_{t_1}\circ F_{t_2}=F_{t_2}\circ F_{t_1},$ $F_0=\id$,
     \item On the common domain, $F_t^{-1}=F_{-t}$;
     \item Any vector field $X$ has a flow box at every point $p\in \mathring{M}$. This follows from the results on the local solvability of systems of ODE's and smooth dependence of the solutions on the initial conditions. Since this dependence on the initial conditions has the identity Jacobi matrix at $t=0$, $F_t$ is a local diffeomorphism and $F_{-t}$ is the inverse.
-    \item If $F_t$ is the flow of $X$, then \[F_{t\ast}X=X,\] i.e.\ $F_{t\ast}(X(p))=X(F_t(p))$. Moreover, $X$ is the only vector field that satisfies this property for all $(p,t)$ from an open neighborhood of $M\times\{0\}$ in $M\times\bbR $.
+    \item If $F_t$ is the flow of $X$, then \[F_{t\ast}X=X,\] i.e.\ $F_{t\ast}(X(m))=X(F_t(m))$. Moreover, $X$ is the only vector field that satisfies this property for all $(m,t)$ from an open neighborhood of $M\times\{0\}$ in $M\times\bbR $.
 \end{enumerate}
 
 \begin{defn}[Flow]\index{Flow of a vector field}
-The (maximal) flow of $X\in\fX(M)$ is a map $F:\mathcal{D}\to M$ defined on the (automatically open) set $\mathcal{D}\subset M\times \bbR $ that is maximal among all sets such that $(p,t)\in \mathcal{D}$ iff there is an integral curve $\gamma_p$ of $X$ such that $\gamma_p(0)=p$ and $F(p,t)=\gamma_p(t)$ for all $t\in\mathcal{D}\cap (\{p\}\times\bbR )$. $\mathcal{D}$ is called the \emph{flow domain}\index{Flow domain} of $X$. We also denote $\mathcal{D}_p=\mathcal{D}\cap (\{p\}\times\bbR )$, $\mathcal{D}_t=\mathcal{D}\cap (M\times\{t\})$, and $F_p:\calD_p\to M$ is given by $F_p(t)=F(p,t)=\gamma_p(t)$.
+The (maximal) flow of $X\in\fX(M)$ is a map $\Fl^X:\mathcal{D}\to M$ defined on the (automatically open) set $\mathcal{D}\subset M\times \bbR $ that is maximal among all sets such that $(m,t)\in \mathcal{D}$ iff there is an integral curve $\gamma_m$ of $X$ such that $\gamma_m(0)=m$ and $\Fl^X(m,t)=\gamma_m(t)$ for all $t\in\mathcal{D}\cap (\{m\}\times\bbR )$. $\mathcal{D}$ is called the \emph{flow domain}\index{Flow domain} of $X$. We also denote $\mathcal{D}_m=\mathcal{D}\cap (\{m\}\times\bbR )$, $\mathcal{D}_t=\mathcal{D}\cap (M\times\{t\})$, and $\Fl^X_m:\calD_p\to M$ is given by $\Fl^X_m(t)=\Fl^X(m,t)=\gamma_m(t)$.
 \end{defn}
 
 
 
 \begin{defn}[Complete vector field]
-$X\in\fX(M)$ is called complete if its flow domain is $\mathcal{D}=M\times\bbR $. 
+    $X\in\fX(M)$ is called complete if its flow domain is $\mathcal{D}=M\times\bbR $. 
 \end{defn}
 \begin{example}
 \begin{enumerate}
@@ -3572,44 +3574,44 @@ $X\in\fX(M)$ is called complete if its flow domain is $\mathcal{D}=M\times\bbR $
 \end{example}
 
 \begin{thm}[Fundamental Theorem on Flows {{\cite[Thm.~9.12]{Lee}}}]\label{thm fundamental of flows}
-    For any smooth vector field $X\in\fX(M)$, its maximal flow $F$ exists, is unique and:
+    For any smooth vector field $X\in\fX(M)$, its maximal flow $\Fl$ exists, is unique and:
     \begin{enumerate}
-        \item For each $p\in M$, the curve $F_p$ is the unique maximal integral curve of $X$ starting at $p$;
-        \item $\mathcal{D}_{F_t(p)}=\mathcal{D}_p-t$ (subtraction of $t$ means a shift of the set on the real line);
-        \item If $t$ is such that $\mathcal{D}_t=M$, then $F_t:M\to M$ is a diffeomorphism.
+        \item For each $m\in M$, the curve $t\mapsto \Fl_m(t)$ is the unique maximal integral curve of $X$ starting at $m$;
+        \item $\mathcal{D}_{\Fl_t(m)}=\mathcal{D}_m-t$ (subtraction of $t$ means a shift of the set on the real line);
+        \item If $t$ is such that $\mathcal{D}_t=M$, then $\Fl_t:M\to M$ is a diffeomorphism.
     \end{enumerate}
 \end{thm}
 \begin{proof}
-The (local) existence of an integral curve at $p$ follows from regular existence theorems for ODE's on $\bbR^n$. Given two integral curves starting at $p$, the set of points where they coincide must be closed by the Hausdorff property, and also open by the uniqueness of local solutions to ODE's in $\bbR^n$. This means that they must coincide on the entire domain on which they're both defined.
+    The (local) existence of an integral curve at $m$ follows from regular existence theorems for ODE's on $\bbR^n$. Given two integral curves starting at $m$, the set of points where they coincide must be closed by the Hausdorff property, and also open by the uniqueness of local solutions to ODE's in $\bbR^n$. This means that they must coincide on the entire domain on which they're both defined.
 
-For each $p\in M$, let $\calD_p$ be the union of all open intervals in $\bbR$ containing $0$ on which an integral curve starting at $p$ is defined. By the uniqueness that we just showed, this obviously defines a unique maximal integral curve at $p$.
+    For each $m\in M$, let $\calD_m$ be the union of all open intervals in $\bbR$ containing $0$ on which an integral curve starting at $m$ is defined. By the uniqueness that we just showed, this obviously defines a unique maximal integral curve at $m$.
 
-Part (a) is a simple exercise. Part (b) is a bit more involved but essentially follows from the regular ODE theorem stating that the unique solution depends smoothly on the initial condition in some neighborhood of $p$. This can be used to show that $\calD=\bigcup_p \{p\}\times \calD_p$ is open in $M\times\bbR$ (see \cite[Thm.~9.12]{Lee} for details). Then each set $\calD_t$ is open in $M$ and the flow $F_t$ maps $\calD_t$ to $\calD_{-t}$. By uniqueness we then see that $F_t\circ F_{-t}$ and $F_{-t}\circ F_t$ are identity maps on $\calD_t$ and $\calD_{-t}$, respectively, and thus diffeomorphisms.
+    Part (a) is a simple exercise. Part (b) is a bit more involved but essentially follows from the regular ODE theorem stating that the unique solution depends smoothly on the initial condition in some neighborhood of $m$. This can be used to show that $\calD=\bigcup_m \{m\}\times \calD_m$ is open in $M\times\bbR$ (see \cite[Thm.~9.12]{Lee} for details). Then each set $\calD_t$ is open in $M$ and the flow $\Fl_t$ maps $\calD_t$ to $\calD_{-t}$. By uniqueness we then see that $\Fl_t\circ \Fl_{-t}$ and $\Fl_{-t}\circ \Fl_t$ are identity maps on $\calD_t$ and $\calD_{-t}$, respectively, and thus diffeomorphisms.
 \end{proof}
 
 
 
 \begin{cor}[Naturality of Flows]\label{cor naturality of flows}
-Let $X\in\fX(M)$, let its flow be $F^X$ and $f\in C^\infty(M,N)$. Then if $Y=f_\ast X$ and $F^Y$ is the flow of $Y$, then 
-\[F^Y_t\circ f=f\circ F^X_t.\]
+    Let $X\in\fX(M)$, let its flow be $\Fl^X$ and $f\in C^\infty(M,N)$. Then if $Y=f_\ast X$ and $\Fl^Y$ is the flow of $Y$, then 
+    \[\Fl^Y_t\circ f=f\circ \Fl^X_t.\]
 \end{cor}
 \begin{proof}
-By definition of push-forwards of tangent vectors, if $\gamma_p(t)=F_t^X(p)$ is an integral curve of $X$, then $f\circ \gamma_p(t)$ is an integral curve of $Y$:
-\[f\circ \gamma_p(t)=F^{f_\ast X}_t(f(p)),\]
-which is equivalent to the claim.
+    By definition of push-forwards of tangent vectors, if $\gamma_p(t)=\Fl_t^X(p)$ is an integral curve of $X$, then $f\circ \gamma_p(t)$ is an integral curve of $Y$:
+    \[f\circ \gamma_p(t)=\Fl^{f_\ast X}_t(f(p)),\]
+    which is equivalent to the claim.
 \end{proof}
 
-\begin{thm}[Uniform Time Lemma]\index{Lemma!Uniform time}
-Let $X\in\fX(M)$ with flow domain $\mathcal{D}$. If $\exists\epsilon>0$ such that $M\times I_\epsilon\subset\mathcal{D}$, then $X$ is complete.
+\begin{thm}[Uniform Time Lemma]\index{Lemma!Uniform time}\label{lem uniform time}
+    Let $X\in\fX(M)$ with flow domain $\mathcal{D}$. If $\exists\epsilon>0$ such that $M\times I_\epsilon\subset\mathcal{D}$, then $X$ is complete.
 \end{thm}
 \begin{proof}
-Suppose $X$ is not complete. Then there exists $p\in M$ such that $\mathcal{D}_p\neq \bbR $. Then $\mathcal{D}_p$ is bounded by some $b\in\bbR $. If we choose $t_0\in(b-\epsilon/3,b)$, then by definition of the flow domain $F_{\epsilon/2}(F_{t_0}(p))$ exists, but at the same time equals $F_{t_0+\epsilon/2}(p)$, whose existence contradicts the definition of $b$.
+    Suppose $X$ is not complete. Then there exists $m\in M$ such that $\mathcal{D}_m\neq \bbR $. Then $\mathcal{D}_m$ is bounded by some $b\in\bbR $. If we choose $t_0\in(b-\epsilon/3,b)$, then by definition of the flow domain $\Fl_{\epsilon/2}(\Fl_{t_0}(m))$ exists, but at the same time equals $F_{t_0+\epsilon/2}(m)$, whose existence contradicts the definition of $b$.
 \end{proof}
 \begin{cor}
-If $\supp (X)$ is compact in $M$, then $X$ is complete. If $M$ is compact, then all vector fields on it are complete.
+    If $\supp (X)$ is compact in $M$, then $X$ is complete. If $M$ is compact, then all vector fields on it are complete.
 \end{cor}
 \begin{proof}
-Let $K=\supp(X)$. Every $p\in K$ we have the flow $F^X$ defined on some $U_p\times I_{\epsilon_p}$. Therefore we can cover $K$ by a finite collection of such $U_{p_i}$'s. Let $\epsilon=\min_k(\epsilon_{p_k})$. Then $F^X$ is well-defined on $K\times I_\epsilon$. Outside of $K$, the flow is $\restr{F_t}{M\setminus K}=\id$. So the flow is defined on all of $M$ for $t\in I_\epsilon$ and is complete by the Uniform Time Lemma.
+    Let $K=\supp(X)$. Every $m\in K$ we have the flow $\Fl^X$ defined on some $U_m\times I_{\epsilon_m}$. Therefore we can cover $K$ by a finite collection of such $U_{m_i}$'s. Let $\epsilon=\min_k(\epsilon_{m_k})$. Then $\Fl^X$ is well-defined on $K\times I_\epsilon$. Outside of $K$, the flow is $\restr{\Fl_t}{M\setminus K}=\id$. So the flow is defined on all of $M$ for $t\in I_\epsilon$ and is complete by the Uniform Time Lemma.
 \end{proof}
 
 Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector field is not complete, there are integral curves that escape any compact domain in finite time.
@@ -3639,8 +3641,8 @@ Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector fie
     Now, for a time-dependent vector field $X$, define 
     \[\calD\coloneqq \left\{(t,t_0,m)\in\bbR\times\bbR\times M:(t-t_0,(t_0,m))\in\wt\calD\right\}\]
     and 
-    \[F^X:\calD\to M,\quad F^X_{t,t_0}(m)\coloneqq \pr_M\circ \wt{F}_{t-t_0}((t_0,m)).\]
-    By the existence of maximal integral curves indicated above, it easily follows that the assignment $X\mapsto F^X$ defines a bijection between time-dependent vector fields on $M$ and maximal time-dependent flows on $M$. In particular, complete time-dependent vector fields correspond to complete time-dependent flows. For more details see \cite[Sec.~3.4]{RS1}.
+    \[\Fl^X:\calD\to M,\quad \Fl^X_{t,t_0}(m)\coloneqq \pr_M\circ \wt{F}_{t-t_0}((t_0,m)).\]
+    By the existence of maximal integral curves indicated above, it easily follows that the assignment $X\mapsto \Fl^X$ defines a bijection between time-dependent vector fields on $M$ and maximal time-dependent flows on $M$. In particular, complete time-dependent vector fields correspond to complete time-dependent flows. For more details see \cite[Sec.~3.4]{RS1}.
 \end{rem}
 
 
@@ -3673,22 +3675,22 @@ Note that every invariant vector field is uniquely determined by its value at th
 \begin{proof}
     Recall that for a smooth map $f$, the image $f\circ\gamma$ of an integral curve of a vector field $X$ is an integral curve of the transformed field $f_\ast X$. 
     
-    Now let $F$ be the flow of a left-invariant field $X\in \fX(G)$, defined on its flow domain $\calD$. Thus for any $g\in G$, $t\mapsto \rmL_g\circ F_t(e)$ is an integral curve of $X$ starting at $g$ and therefore equal to $F_t(g)$. This means that we can apply the uniform time lemma and conclude completeness.
+    Now let $F$ be the flow of a left-invariant field $X\in \fX(G)$, defined on its flow domain $\calD$. Thus for any $g\in G$, $t\mapsto \rmL_g\circ F_t(e)$ is an integral curve of $X$ starting at $g$ and therefore equal to $F_t(g)$. This means that we can apply the Uniform Time Lemma~\ref{lem uniform time} and conclude completeness.
 \end{proof}
 
 \begin{lem}[Escape Lemma]\index{Lemma!Escape}\label{lem escape}
-If an integral curve $\gamma$ of a vector field $X$ cannot be extended to $t>b$, then $\gamma([t_0,b))$ is not contained in any compact subset of $M$ for any $t_0$ in the domain of $\gamma$.
+    If an integral curve $\gamma$ of a vector field $X$ cannot be extended to $t>b$, then $\gamma([t_0,b))$ is not contained in any compact subset of $M$ for any $t_0$ in the domain of $\gamma$.
 \end{lem}
 \begin{proof}
-Assume $b<\infty$ and suppose $\gamma([t_0,b))$ \emph{is} contained in a compact set $K$. Then if $t_i\nearrow b$, by compactness there is a limit $\lim_i\gamma(t_i)=q\in K$. Then there is a neighborhood $U$ of $q$ and an $\epsilon>0$ such that the flow $F$ is defined on $U\times I_\epsilon$. Pick $i$ large enough so that $t_i>b-\epsilon$ and $\gamma(t_i)\in U$. Then 
-\[
-    \wt{\gamma}(t)=
-    \begin{cases} 
-        \gamma(t), & t\in[t_0,b),\\ 
-        F_{t-t_i}\circ \gamma(t_i), & t\in (t_i-\epsilon,t_i+\epsilon)   
-    \end{cases}
-\]
-is a well-defined integral curve because $t-t_i<t_i+\epsilon-t_i=\epsilon$, so $F_{t-t_i}$ exists by assumption. Since $t_i+\epsilon>b$, this contradicts the assumption that $\gamma $ cannot be extended beyond $b$.
+    Assume $b<\infty$ and suppose $\gamma([t_0,b))$ \emph{is} contained in a compact set $K$. Then if $t_i\nearrow b$, by compactness there is a limit $\lim_i\gamma(t_i)=q\in K$. Then there is a neighborhood $U$ of $q$ and an $\epsilon>0$ such that the flow $F$ is defined on $U\times I_\epsilon$. Pick $i$ large enough so that $t_i>b-\epsilon$ and $\gamma(t_i)\in U$. Then 
+    \[
+        \wt{\gamma}(t)=
+        \begin{cases} 
+            \gamma(t), & t\in[t_0,b),\\ 
+            \Fl^X_{t-t_i}\circ \gamma(t_i), & t\in (t_i-\epsilon,t_i+\epsilon)   
+        \end{cases}
+    \]
+    is a well-defined integral curve because $t-t_i<t_i+\epsilon-t_i=\epsilon$, so $\Fl^X_{t-t_i}$ exists by assumption. Since $t_i+\epsilon>b$, this contradicts the assumption that $\gamma $ cannot be extended beyond $b$.
 \end{proof}
 
 
@@ -3715,16 +3717,16 @@ From the above proof, it is clear that the following generalization holds. Note 
 
 
 \begin{defn}[Flow-outs]\index{Flow-out}
-Let $S\sub M$ as a subset and pick a vector field $X\in\fX(M)$ that is nowhere parallel to $S$, i.e.\ $X(p)\notin \T S$ for all $p\in S$. If $\mathcal{D}$ is the flow domain of $X$, then $\Phi=\restr{F}{\mathcal{O}}$ with $\mathcal{O}=(S\times\bbR )\cap \mathcal{D}$ is called a flow-out of $S$.
+    Let $S\sub M$ as a subset and pick a vector field $X\in\fX(M)$ that is nowhere parallel to $S$, i.e.\ $X(p)\notin \T S$ for all $p\in S$. If $\mathcal{D}$ is the flow domain of $X$, then $\Phi=\restr{F}{\mathcal{O}}$ with $\mathcal{O}=(S\times\bbR )\cap \mathcal{D}$ is called a flow-out of $S$.
 \end{defn}
 
 \begin{thm}[Flow-out lemma]\index{Lemma!Flow-out}
-With the notation of the above definition,
-\begin{enumerate}
-    \item If $\delta:S\to [0,+\infty)$ is chosen so that, when restricted to the set $\mathcal{O}_\delta=\{(p,t)\in\mathcal{O}\mid |t|<\delta(p)\}$, $\Phi$ is injective, then $\Phi:\mathcal{O}_\delta\to M$ is an immersion. Moreover, such a $\delta$ always exists;
-    \item $\Phi_\ast (\partial_t)=X$ on $\mathcal{O}$;
-    \item If $\codim S=1$, then $\Phi(\mathcal{O}_\delta)\sub M$.
-\end{enumerate}
+    With the notation of the above definition,
+    \begin{enumerate}
+        \item If $\delta:S\to [0,+\infty)$ is chosen so that, when restricted to the set $\mathcal{O}_\delta=\{(p,t)\in\mathcal{O}\mid |t|<\delta(p)\}$, $\Phi$ is injective, then $\Phi:\mathcal{O}_\delta\to M$ is an immersion. Moreover, such a $\delta$ always exists;
+        \item $\Phi_\ast (\partial_t)=X$ on $\mathcal{O}$;
+        \item If $\codim S=1$, then $\Phi(\mathcal{O}_\delta)\sub M$.
+    \end{enumerate}
 \end{thm}
 \begin{proof}
     Exercise. The last part follows because the dimension of $\Phi(\mathcal{O}_\delta)$ coincides with the dimension of $M$, so injectivity and local diffeomorphism implies embedding.
@@ -3785,7 +3787,7 @@ Now let $\pi:M\sqcup N\to X$ be the quotient map on whose fibers $\Phi$ is const
     $D(M)=M\cup_{\partial M}M$ is called the \emph{double} of a manifold with a boundary.
 \end{example}
 \begin{example}
-    f $X\parallel \partial D$, $D\subset M$, then $F^X$ leaves $D$ invariant.
+    If $X\parallel \partial D$, $D\subset M$, then $\Fl^X$ leaves $D$ invariant.
 \end{example}
 \begin{cor}
     If $X\parallel \partial M$, then the theorem about the existence of flows applies to $X$.
@@ -3793,17 +3795,14 @@ Now let $\pi:M\sqcup N\to X$ be the quotient map on whose fibers $\Phi$ is const
 \begin{proof}
     Extend $X$ to the double $D(M)$, apply the flow theorem there, then restrict to $M$.
 \end{proof}
-\begin{example}
-So far we've only considered time-independent vector fields. In general, we can have a time-dependent vector field $X:M\times J\to \T M$, $J\subset\bbR $. All of the results about flows still hold almost unchanged, only now the flow map (``evolution operator'') depends on two time parameters: $F^X(p,t_1,t_2)$.
-\end{example}
 
 \begin{thm}[Rectification/Straightening Theorem]\index{Theorem!Rectification/Straightening}\label{rectification}
 If $X\in\fX(M)$ and $X(p)\neq 0$, then there exists a local chart $(U,\varphi)$ at $p$ such that its slice $S=\{p\in U\mid \varphi^1(p)=0\}$ is diffeomorphic to $\bbD^{n-1}$, $X(p)\notin \T_p S$ and $X=\partial_1$ on $U$.
 \end{thm}
 \begin{proof}
-Since $S\sub M$, it has a slice neighborhood. We can parametrize $S$ by an embedding map $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{n-1}$. We can take $U$ such that $\restr{X}{U}\cap \T S=\varnothing$. 
+    Since $S\sub M$, it has a slice neighborhood. We can parametrize $S$ by an embedding map $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{n-1}$. We can take $U$ such that $\restr{X}{U}\cap \T S=\varnothing$. 
 
-Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F(x(\Omega))\sub M$. This is a diffeomorphism $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=F_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
+    Now we can use a flow-out along $X$ so that the flow $\Fl^X_t(x(s))$ parametrizes $\Fl(x(\Omega))\sub M$. This is a diffeomorphism $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=\Fl^X_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
 \end{proof}
 
 \begin{defn}[Complete integral]\index{Complete integral}\label{def complete integral}
@@ -3813,7 +3812,7 @@ Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F
     Local complete integrals exists for all vector fields.
 \end{prop}
 \begin{proof}
-    First rectify the vector field, then the coordinates $\bf{c}=(\varphi^1(s),\varphi^2(s),\ldots,\varphi^n(s))$ of the point $s$ of intersection of each integral curve with the slice $S$ will be the (constant) value of the diffeomorphism $\Psi:(s,t)\mapsto \varphi(F_t(s))$ on this whole curve.
+    First rectify the vector field, then the coordinates $\bf{c}=(\varphi^1(s),\varphi^2(s),\ldots,\varphi^n(s))$ of the point $s$ of intersection of each integral curve with the slice $S$ will be the (constant) value of the diffeomorphism $\Psi:(s,t)\mapsto \varphi(\Fl_t(s))$ on this whole curve.
 \end{proof}
 
 
@@ -3821,14 +3820,14 @@ Now we can use a flow-out along $X$ so that the flow $F_t(x(s))$ parametrizes $F
 
 \subsection{Vector fields as differential operators}
 
-Recall that Lie derivatives of functions satisfy $\Lie_{F_\ast X}F_\ast f=F_\ast(\Lie_X f)$ for diffeomorphisms $F$. Also, Lie derivatives are local: for any open set $U$
+Recall that Lie derivatives of functions satisfy $\Lie_{F_\ast X}F_\ast f=F_\ast\Lie_X f$ for diffeomorphisms $F$. Also, Lie derivatives are local: for any open set $U\subset M$,
 \[\Lie_{\restr{X}{U}}\left(\restr{f}{U}\right)=\restr{\left(\Lie_X f\right)}{U}.\]
 
 \begin{defn}[Derivations]\index{Derivation on an algebra}
-If $A$ is an algebra over a field $\bbK$, then a derivation on $A$ is a $K$-linear map $D:A\to A$ that satisfies the Leibniz rule
-\[D(a\cdot b)=D(a)\cdot b+a\cdot D(b),\;\; a,b\in A.\]
-Is is easy to check that the vector space of all derivations on $A$, denoted by $\mathrm{Der}(A)$, is a Lie algebra under the commutator $[D_1,D_2]=D_1\circ D_2-D_2\circ D_1$.
-An algebra with a distinguished derivation is called a \emph{differential algebra}.
+    If $A$ is an algebra over a field $\bbK$, then a derivation on $A$ is a $K$-linear map $D:A\to A$ that satisfies the Leibniz rule
+    \[D(a\cdot b)=D(a)\cdot b+a\cdot D(b),\;\; a,b\in A.\]
+    Is is easy to check that the vector space of all derivations on $A$, denoted by $\mathrm{Der}(A)$, is a Lie algebra under the commutator $[D_1,D_2]=D_1\circ D_2-D_2\circ D_1$.
+    An algebra with a distinguished derivation is called a \emph{differential algebra}.
 \end{defn}
 
 Clearly any Lie derivative $\Lie_X, X\in\fX(M)$, is a derivation on the algebra of functions $C^\infty(M)$, because it is a directional derivative in local coordinates.
@@ -3866,12 +3865,12 @@ The space of all $\bbR $-linear derivations on the algebra $C^\infty(M)$ is isom
     Uniqueness follows from the obvious statement that $\Lie_X=0$ iff $X=0$.
 \end{proof}
 \begin{cor}
-If $x^i$ is a local coordinate system, then the local vector fields $\partial_i=\partial_{x^i}$ form a basis of derivations at $p$, therefore 
-\[(\Lie_X f)(p)=\sum_i \partial_{x^i}(f\circ\varphi^{-1})(\varphi(p))\cdot \underbrace{\Lie_X (\varphi^i)(p)}_{X^i}=\sum_i X^i \partial_{x^i}(\varphi_\ast f)=\sum_i X^i \partial_{i} f.\]
+    If $x^i$ is a local coordinate system, then the local vector fields $\partial_i=\partial_{x^i}$ form a basis of derivations at $p$, therefore 
+    \[(\Lie_X f)(p)=\sum_i \partial_{x^i}(f\circ\varphi^{-1})(\varphi(p))\cdot \underbrace{\Lie_X (\varphi^i)(p)}_{X^i}=\sum_i X^i \partial_{x^i}(\varphi_\ast f)=\sum_i X^i \partial_{i} f.\]
 \end{cor}
 
 \begin{prop}
-If $X,Y\in\fX(M)$, then $[\Lie_X,\Lie_Y]=\Lie_X\Lie_Y-\Lie_Y\Lie_X$ is a derivation on $C^\infty(M)$.
+    If $X,Y\in\fX(M)$, then $[\Lie_X,\Lie_Y]=\Lie_X\Lie_Y-\Lie_Y\Lie_X$ is a derivation on $C^\infty(M)$.
 \end{prop}
 \begin{proof}
     This is a very general property that the commutator of two derivations is always a derivation:
@@ -3883,12 +3882,12 @@ If $X,Y\in\fX(M)$, then $[\Lie_X,\Lie_Y]=\Lie_X\Lie_Y-\Lie_Y\Lie_X$ is a derivat
 This proposition allows us to define the commutator of vector fields.
 
 \begin{defn}[Lie derivative/bracket of vector fields]\index{Lie derivative of vector fields}\index{Commutator of vector fields}
-If $X,Y\in\fX(M)$, then the Lie derivative of $Y$ along $X$ is denoted by 
-\[\Lie_X Y\equiv [X,Y]\] and is defined as the unique vector field such that
-\[\Lie_{[X,Y]}=[\Lie_X,\Lie_Y].\]
-With this bracket, $\fX(M)$ becomes a Lie algebra that is isomorphic to the Lie algebra of derivations on $C^\infty(M)$ (i.e.\ Lie derivatives).
-In local coordinates (using Einstein summation),
-\[[X,Y]^j=X^i \partial_i Y^j-Y^i \partial_i X^j.\label{eq Lie derivative in components}\]
+    If $X,Y\in\fX(M)$, then the Lie derivative of $Y$ along $X$ is denoted by 
+    \[\Lie_X Y\equiv [X,Y]\] and is defined as the unique vector field such that
+    \[\Lie_{[X,Y]}=[\Lie_X,\Lie_Y].\]
+    With this bracket, $\fX(M)$ becomes a Lie algebra that is isomorphic to the Lie algebra of derivations on $C^\infty(M)$ (i.e.\ Lie derivatives).
+    In local coordinates (using Einstein summation),
+    \[[X,Y]^j=X^i \partial_i Y^j-Y^i \partial_i X^j.\label{eq Lie derivative in components}\]
 \end{defn}
 
 \begin{prop}\label{prop properties of Lie derivatives}
@@ -3915,7 +3914,7 @@ In local coordinates (using Einstein summation),
 
 
 \begin{rem}[Lie derivatives are not covariant derivatives]\label{rem: Lie derivatives not covariant}
-    Property (\ref{Lie derivative not covariant}) shows that $L_X Y$ doesn't behave like a tensor with respect to $X$ (or $Y$), since it is not $C^\infty(M)$-linear in it. This is why Lie derivatives are not a special case of \emph{covariant} derivatives.
+    Property (\ref{Lie derivative not covariant}) shows that $\Lie_X Y$ doesn't behave like a tensor with respect to $X$ (or $Y$), since it is not $C^\infty(M)$-linear in it. This is why Lie derivatives are not a special case of \emph{covariant} derivatives.
     
     A covariant derivative (of vector fields) is a map $\nabla:\fX(M)\otimes\fX(M)\to \fX(M)$ denoted by $X,Y\mapsto \nabla_X Y$ such that it satisfies:
     \begin{itemize}
@@ -3929,7 +3928,7 @@ In local coordinates (using Einstein summation),
 All of this allows us to extend the Lie derivative to tensor fields of any rank by the following theorem.
 
 \begin{defn}[Tensor differential operators]\index{Differential operator on the tensor algebra}
-A differential operator on the tensor algebra $\Gamma^\infty(M)$ is a collection of maps $\mathbb{D}^r_s(U):\Gamma^r_s(U)\to \Gamma^r_s(U)$ for all $r,s\geq 0$ and each open $U\mathring{\subset}M$ (we denote them all by $\mathbb{D}$) such that:
+    A differential operator on the tensor algebra $\Gamma^\infty(M)$ is a collection of maps $\mathbb{D}^r_s(U):\Gamma^r_s(U)\to \Gamma^r_s(U)$ for all $r,s\geq 0$ and each open $U\mathring{\subset}M$ (we denote them all by $\mathbb{D}$) such that:
 \begin{enumerate}
     \item $\mathbb{D}$ is a tensor derivation (w.r.t.\ $\otimes$);
     \item $\mathbb{D}$ is local, i.e.\ for $U\subset V$ and $t\in\Gamma^r_s(V)$, $\restr{\mathbb{D}(t)}{U}=\mathbb{D}(\restr{t}{U})$;
@@ -3940,7 +3939,7 @@ A differential operator on the tensor algebra $\Gamma^\infty(M)$ is a collection
 Note that we don't require $\mathbb{D}\circ\varphi_\ast=\varphi_\ast\circ \mathbb{D}$ because this will not hold for covariant derivatives, which we would still like to consider differential operators.
 
 \begin{thm}[Willmore {{\cite[Thm.~2.2.17]{Marsden}}}]\index{Theorem!Willmore}\label{Willmore}
-A collection of local tensor derivations $E_U$ on $C^\infty(U)$ and $F_U$ on $\fX(U)$ (which agree with each other via the mixed rank Leibniz rule) for each $U\mathring{\subset}M$ determines a unique differential operator $\mathbb{D}$ on the tensor algebra $\Gamma^\infty(M)$ that coincides with $E_U$ on $C^\infty$ and with $F_U$ on $\fX$.
+    A collection of local tensor derivations $E_U$ on $C^\infty(U)$ and $F_U$ on $\fX(U)$ (which agree with each other via the mixed rank Leibniz rule) for each $U\mathring{\subset}M$ determines a unique differential operator $\mathbb{D}$ on the tensor algebra $\Gamma^\infty(M)$ that coincides with $E_U$ on $C^\infty$ and with $F_U$ on $\fX$.
 \end{thm}
 \begin{proof}
     Suppose we know that such a $\mathbb{D}$ exists. In a local frame $\{e_i\}$ and dual frame $\{\alpha^i\}$, we can write
@@ -3956,18 +3955,18 @@ A collection of local tensor derivations $E_U$ on $C^\infty(U)$ and $F_U$ on $\f
     The formulas we have derived prove the uniqueness of $\mathbb{D}$. Its existence follows from the fact that these same formulas define a valid differential operator that satisfies all the requirements of the theorem.
 \end{proof}
 \begin{cor}\label{cor willmore formula}
-A byproduct of the theorem above is the general formula for differential operators on the tensor algebra:
+    A byproduct of the theorem above is the general formula for differential operators on the tensor algebra:
 
-\begin{multline}
-    \mathbb{D}\left(t(\alpha^1,\ldots,\alpha^r,X_1,\ldots,X_s)\right)=(\mathbb{D}t)(\alpha^1,\ldots,\alpha^r,X_1,\ldots,X_s)+\\+\sum_{j=1}^r t\left(\alpha^1,\ldots,\mathbb{D}\alpha^j,\ldots,\alpha^r,X_1,\ldots,X_s\right)+\sum_{k=1}^s t\left(\alpha^1,\ldots,\alpha^r,X_1,\ldots,\mathbb{D}X_k,\ldots,X_s\right).
-\end{multline}
-This formula essentially states that $\mathbb{D}$ ``commutes with contractions''.
+    \begin{multline}
+        \mathbb{D}\left(t(\alpha^1,\ldots,\alpha^r,X_1,\ldots,X_s)\right)=(\mathbb{D}t)(\alpha^1,\ldots,\alpha^r,X_1,\ldots,X_s)+\\+\sum_{j=1}^r t\left(\alpha^1,\ldots,\mathbb{D}\alpha^j,\ldots,\alpha^r,X_1,\ldots,X_s\right)+\sum_{k=1}^s t\left(\alpha^1,\ldots,\alpha^r,X_1,\ldots,\mathbb{D}X_k,\ldots,X_s\right).
+    \end{multline}
+    This formula essentially states that $\mathbb{D}$ ``commutes with contractions''.
 \end{cor}
 
 This allows us to extend the definition of the Lie derivative to arbitrary tensor fields. This natural operator was first formalized by \'Elie Cartan around 1920, although he was primarily interested in derivatives of differential forms, which we will study in \Sect~\ref{sec: differential forms}. It was named after Sophus Lie by others in the 1930's.
 
 \begin{defn}[Lie derivatives of tensors]\index{Lie derivative of tensor fields}
-If $X\in\fX(M)$ then the Lie derivative operator $\Lie_X$ on the tensor algebra $\Gamma^\infty(M)$ is defined as the unique tensor differential operator (established by Willmore's theorem) that coincides with the previously constructed Lie derivative on $C^\infty(M)$ and $\fX(M)$.
+    If $X\in\fX(M)$ then the Lie derivative operator $\Lie_X$ on the tensor algebra $\Gamma^\infty(M)$ is defined as the unique tensor differential operator (established by Willmore's theorem) that coincides with the previously constructed Lie derivative on $C^\infty(M)$ and $\fX(M)$.
 \end{defn}
 
 \begin{prop}[Naturality of Lie derivatives]\label{pullbacks of Lie derivatives}
@@ -3975,7 +3974,7 @@ For a diffeomorphism $F$,
 \[\Lie_{F_\ast X}(F_\ast t)=F_\ast (\Lie_X t).\]
 \end{prop}
 \begin{proof}
-Define an operator $\mathbb{D}$ by $\mathbb{D}t=F^\ast \Lie_{F_\ast t}(F_\ast t)$. We know that $\mathbb{D}$ coincides with $\Lie_X$ on $C^\infty$ and $\fX(M)$. It is also easy to check that $\mathbb{D}$ is a tensor differential operator (Exercise). Then, by Willmore's Theorem, is must coincide with $\Lie_X$ on the entire tensor algebra.
+    Define an operator $\mathbb{D}$ by $\mathbb{D}t=F^\ast \Lie_{F_\ast t}(F_\ast t)$. We know that $\mathbb{D}$ coincides with $\Lie_X$ on $C^\infty$ and $\fX(M)$. It is also easy to check that $\mathbb{D}$ is a tensor differential operator (Exercise). Then, by Willmore's Theorem, is must coincide with $\Lie_X$ on the entire tensor algebra.
 \end{proof}
 
 
@@ -4075,13 +4074,13 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
     Successive application of the vector fields $X_1,\ldots,X_r$ to a function $f\in C^\infty(M)$ yields
     \[X_r\cdots X_1 \cdot f=\restr{\frac{\dd}{\dd t_1}}{t_1=0}\cdots \restr{\frac{\dd}{\dd t_r}}{t_r=0}f\circ F^{X_1}_{t_1}\circ \cdots \circ F^{X_r}_{t_r}.\]
     In particular, the Lie bracket can be expressed as
-    \[[X,Y]f=\restr{\frac{\dd}{\dd t}}{t=0}\restr{\frac{\dd}{\dd s}}{s=0}\left(f\circ F^Y_s\circ F^X_t-f\circ F^X_s\circ F^Y_t\right).\label{eq Lie bracket in terms of flows}\]
-    Furthermore, for any $m\in M$, the Taylor expansion of the smooth function $t\mapsto f\circ F^X_t(m)$ at $t=0$ yields the following \emph{Taylor formula for manifolds}:
-    \[f\circ F^X_t(m)=\sum_{k=1}^n\frac{t^k}{k!}\left(X^kf\right)(m)+\calO(t^{n+1}), \quad t\in \calD^X_m,\label{eq:Taylor formula for manifolds}\]
-    where $\calO(t^{n+1})$ is a smooth function on $\calD_m^X$ such that $\calO(t^{n+1})/t^{n+1}$ is bounded. By defining the exponential of a differential operator formally as $\rme^{tD}=\sum_{k=0}^\infty \frac{t^k}{k!}D^k$, the above Taylor formula is sometimes written formally as $f\circ F^X_t=\rme^{t X}\cdot f$.
+    \[[X,Y]f=\restr{\frac{\dd}{\dd t}}{t=0}\restr{\frac{\dd}{\dd s}}{s=0}\left(f\circ \Fl^Y_s\circ \Fl^X_t-f\circ \Fl^X_s\circ \Fl^Y_t\right).\label{eq Lie bracket in terms of flows}\]
+    Furthermore, for any $m\in M$, the Taylor expansion of the smooth function $t\mapsto f\circ \Fl^X_t(m)$ at $t=0$ yields the following \emph{Taylor formula for manifolds}:
+    \[f\circ \Fl^X_t(m)=\sum_{k=1}^n\frac{t^k}{k!}\left(X^kf\right)(m)+\calO(t^{n+1}), \quad t\in \calD^X_m,\label{eq:Taylor formula for manifolds}\]
+    where $\calO(t^{n+1})$ is a smooth function on $\calD_m^X$ such that $\calO(t^{n+1})/t^{n+1}$ is bounded. By defining the exponential of a differential operator formally as $\rme^{tD}=\sum_{k=0}^\infty \frac{t^k}{k!}D^k$, the above Taylor formula is sometimes written formally as $f\circ \Fl^X_t=\rme^{t X}\cdot f$.
 
     Repeated application of this formula yields the iterated Taylor formula for manifolds
-    \[f\circ F^X_t\circ F^Y_s(m)=\sum_{k,l=1}^n\frac{t^ks^l}{k!l!}\left(Y^lX^kf\right)(m)+\calO(t^{n+1},s^{n+1}),\label{eq: Taylor formula for two fields}\]
+    \[f\circ \Fl^X_t\circ \Fl^Y_s(m)=\sum_{k,l=1}^n\frac{t^ks^l}{k!l!}\left(Y^lX^kf\right)(m)+\calO(t^{n+1},s^{n+1}),\label{eq: Taylor formula for two fields}\]
     which easily generalizes to any number of vector fields.
 \end{rem}
 
@@ -4155,7 +4154,7 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_m
     Thus, $D$ is indeed spanned by a holonomic $r$-frame and therefore integrable.
 \end{proof}
 
-This theorem is of crucial importance in the theory of Lie groups, fiber bundles, and even dynamical systems. The entire concept of \emph{integrability} ultimately stems from it. The rest of this \subsect is devoted to characterizing integral submanifolds and proving a global version of the Frobenius theorem, which will be useful is some applications.
+This theorem is of crucial importance in the theory of Lie groups, fiber bundles, and even dynamical systems. The entire concept of \emph{integrability} ultimately stems from it. The rest of this \subsect\ is devoted to characterizing integral submanifolds and proving a global version of the Frobenius theorem, which will be useful is many applications down the line.
 
 \begin{cor}[{{\cite[Cor.~19.13]{Lee}}}]\label{cor 19.13 Lee}
     Let $D$ be a rank $r$ involutive distribution on $M$. If $S\sub M$ is a codimension $r$ embedded submanifold such that $\T_mS\cap D_m=\{0\}$ for all $m\in S$, then there is a \emph{flat chart}\index{Flat chart} $(U,\{s^i\})$ for $S$ centered at $m$ in which $S\cap U$ is the slice $s^1=\cdots=s^r=0$.
@@ -4219,7 +4218,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
 \begin{proof}
 \begin{enumerate}
     \item The assertion on $N_1\cup N_2$ follows from that on $N_1\cap N_2$, so it suffices to prove the latter. Let $\dim N_1=\dim N_2=\rank D=r$. Choose a local $r$-frame $\{X_i\}_{i=1}^r$ for $D$ at $m$. Since these vector fields are tangent to $N_i$, they are also local vector fields on $N_i$. Then the flows of these vector fields together generate a local coordinate system on $N_i$, mapping $(-\epsilon,\epsilon)^r$ into an open subset of $N_i$:
-    \[\Phi^{(i)}:(-\epsilon,\epsilon)^r\to U\cap N_i,\quad \Phi^{(i)}(\bf{t})\coloneqq F^{X^{(i)}_1}_{t_1}\circ \cdots\circ F^{X^{(i)}_r}_{t_r}(m),\quad i=1,2.\]
+    \[\Phi^{(i)}:(-\epsilon,\epsilon)^r\to U\cap N_i,\quad \Phi^{(i)}(\bf{t})\coloneqq \Fl^{X^{(i)}_1}_{t_1}\circ \cdots\circ \Fl^{X^{(i)}_r}_{t_r}(m),\quad i=1,2.\]
     By construction these coordinates will coincide, $\Phi^{(1)}(\bf{t})=\Phi^{(2)}(\bf{t})$ (cf.\ Remark~\ref{rem 3.2.9 RS1}), and therefore their values will cover the same subset $V\subset N_1\cap N_2$ open in both $N_i$'s. W.r.t.~the differentiable structure induced from either $N_i$, $V$ is diffeomorphic to $(-\epsilon,\epsilon)^r$. Since the construction works for any $m\in N_1\cap N_2$, the assertion follows. 
 
     \item Let $r=\dim N=\dim D_m$. If $N$ intersects a slice $U_{\bf{c}}$, then $U_{\bf{c}}$ contains a point where $\rank D=r$. Then $U_{\bf{c}}$ is an integral manifold of $D$ by dimension-counting. Now assertion 1 implies that $N\cap U_{\bf{c}}$ is open in $N$ and hence in $N\cap U$. Since this holds for all slices intersecting $N$ and since
@@ -4618,11 +4617,11 @@ Recall that for $f\in C^\infty(M)$, $\dd f=\pr_2\circ f_\ast$, where $\pr_2$ is 
     Locally, the differential $\dd f$ of a function $f\in C^\infty(M)$ is the standard ``total differential'' from multivariate calculus, \[\dd f=\dd f(\partial_i)\cdot\dd x^i=(\partial_i f)\cdot \dd x^i.\]
 \end{cor}
 
-We now extend $\dd$ to differential forms of all degrees.
-
 \begin{xca}
     On $\bbR^2$ with Cartesian coordinates $(x,y)$, compute $(\dd x\wedge \dd y)(\nabla f,\nabla g)$ for any $f,g\in C^\infty(\bbR^2)$. Compare to $(\dd f\wedge \dd g)(\partial_x,\partial_y)$ and $(\partial_x\wedge\partial_y)(\dd f,\dd g)$ (where we act with vectors on covectors via the canonical pairing between $\T M$ and $\T^\ast M$).
 \end{xca}
+
+We now extend $\dd$ to differential forms of all degrees.
 
 \begin{thm}\label{exterior d existence}
     There exists a unique family of differential operators $\wt{\dd}_p(U):\Omega^p(U)\to \Omega^{p+1}(U)$ for every $U\mathring\subset M$, denoted collectively by $\wt\dd$, such that:
@@ -4680,13 +4679,13 @@ The following proposition shows that $\dd$ is natural with respect to smooth map
 
 
 \begin{cor}
-    $\Omega:\mathsf{Man}^\infty \to\mathsf{Alg}$ is a functor, and in fact it is a functor into the category of graded-commutative differential algebras.\footnote{A graded-commutative algebra is an algebra that can be decomposed as a direct sum of vector spaces, $A=\bigoplus_{p\geq 0}A_p $, such that the product acts as $\wedge:A_p\times A_q\to A_{p+q}$ and $\omega\wedge\eta=(-1)^{\deg\omega\cdot\deg\eta}\eta\wedge\omega$. It is also called differential if there is a distinguished graded $\wedge$-derivation $\dd:A_p\to A_{p+1}$ such that $d\circ d=0$.}
+    $\Omega:\mathsf{Man}^\infty \to\mathsf{Alg}$ is a functor, and in fact it is a functor into the category of graded-commutative differential algebras.\footnote{A graded-commutative algebra is an algebra that can be decomposed as a direct sum of vector spaces, $A=\bigoplus_{p\geq 0}A_p $, such that the product acts as $\wedge:A_p\times A_q\to A_{p+q}$ and $\omega\wedge\eta=(-1)^{\deg\omega\cdot\deg\eta}\eta\wedge\omega$. It is also called differential if there is a distinguished graded $\wedge$-derivation $\dd:A_p\to A_{p+1}$ such that $\dd\circ \dd=0$.}
 \end{cor}
 
-\begin{defn}[Inner product]\index{Inner product}
-Let $\omega\in\Omega^{p+1}(M), p\geq 0,$ and $X\in\fX(M)$. The inner product with $X$ is the operator $i_X:\Omega^{p+1}(M)\to \Omega^p(M)$ defined by 
-\[(i_X \omega)(X_1,\ldots,X_p)=\omega(X,X_1,\ldots,X_p).\]
-We also put $\restr{i_X}{\Omega^0(M)}=0$.
+\begin{defn}[Inner product]\index{Inner product (differential forms)}
+    Let $\omega\in\Omega^{p+1}(M), p\geq 0,$ and $X\in\fX(M)$. The inner product with $X$ is the operator $i_X:\Omega^{p+1}(M)\to \Omega^p(M)$ defined by 
+    \[(i_X \omega)(X_1,\ldots,X_p)=\omega(X,X_1,\ldots,X_p).\]
+    We also put $\restr{i_X}{\Omega^0(M)}=0$.
 \end{defn}
 
 
@@ -4730,12 +4729,12 @@ Corollary~\ref{cor willmore formula} implies
 We use this property in the proof of the following useful formula.
 
 \begin{prop}[{{\cite[Prop.~4.1.6]{RS1}}}]\label{prop 4.1.6 RS1}
-The following explicit coordinate-independent formula for the exterior derivative holds:
-\begin{multline}
-    (\dd\omega)(X_0,\ldots,X_{p})=\sum_{i=0}^p \Lie_{X_i}(\omega(X_0,\ldots,\wh{X}_i,\ldots,X_p))+\\+\sum_{0\leq i<j\leq p}(-1)^{i+j}\omega([X_i,X_j],X_0,\ldots,\wh{X}_i,\ldots,\wh{X}_j,\ldots,X_p),
-\end{multline}
-where hats indicate that the corresponding vector fields are excluded from the list of arguments. In particular, for $\alpha\in\Omega^1(M)$,
-\[(\dd\alpha)(X_1,X_2)=X_1\cdot \alpha(X_2)-X_2\cdot\alpha(X_1)+\alpha ([X_1,X_2]).\]
+    The following explicit coordinate-independent formula for the exterior derivative holds:
+    \begin{multline}
+        (\dd\omega)(X_0,\ldots,X_{p})=\sum_{i=0}^p \Lie_{X_i}(\omega(X_0,\ldots,\wh{X}_i,\ldots,X_p))+\\+\sum_{0\leq i<j\leq p}(-1)^{i+j}\omega([X_i,X_j],X_0,\ldots,\wh{X}_i,\ldots,\wh{X}_j,\ldots,X_p),
+    \end{multline}
+    where hats indicate that the corresponding vector fields are excluded from the list of arguments. In particular, for $\alpha\in\Omega^1(M)$,
+    \[(\dd\alpha)(X_1,X_2)=X_1\cdot \alpha(X_2)-X_2\cdot\alpha(X_1)+\alpha ([X_1,X_2]).\]
 \end{prop}
 \begin{proof}
 Proof by induction in $p$. For $p=0$, we have already established this formula, $\dd \omega(X_0)=\Lie_{X_0}\omega$.
@@ -4776,7 +4775,7 @@ The following classical theorem shows that every closed differential form is loc
 The group $\GL^+_n(\bbR )$ is defined as the connected component of the identity in $\GL_n(\bbR )$, i.e.\ the group of matrices with a strictly positive determinant. In accordance with our examples of $G$-structures in \subsect~\ref{sec: fiber morphisms}, an orientation is equivalent to a $\GL_n^+(\bbR)$-structure. For a vector space, this means selecting one of the two orbits of the action $\GL_n^+(\bbR)$ on the set of all frames. Below we provide a slightly more traditional, detailed definition.
 
 \begin{defn}[Orientation on a vector space]\index{Orientation!on a vector space}
-Let $V$ be an $n$-dimensional real vector space. Two bases $\{e_i\}$ and $\{e_j'\}$ are said to \emph{fix the same orientation} on $V$ if there exists a matrix $A\in\GL^+_n(\bbR )$ such that $e_i=\sum_{j=1}^n A_i^j e_j'$, $1\leq i\leq n$. The two equivalence classes of like-oriented bases on $V$ form the quotient set $\mathcal{O}(V)$. An orientation on $V$ is a choice of an element $\mu\in\mathcal{O}(V)$. Any basis belonging to the chosen orientation, $\{e_i\}\in\mu$, is called \emph{positively oriented} w.r.t.\ that orientation. Since each basis can be identified with a frame $V\to \bbR^n$, an orientation is equivalent to a $\GL_n^+(\bbR)$-structure on $V$ following Definition~\ref{def S-fibers}.
+    Let $V$ be an $n$-dimensional real vector space. Two bases $\{e_i\}$ and $\{e_j'\}$ are said to \emph{fix the same orientation} on $V$ if there exists a matrix $A\in\GL^+_n(\bbR )$ such that $e_i=\sum_{j=1}^n A_i^j e_j'$, $1\leq i\leq n$. The two equivalence classes of like-oriented bases on $V$ form the quotient set $\mathcal{O}(V)$. An orientation on $V$ is a choice of an element $\mu\in\mathcal{O}(V)$. Any basis belonging to the chosen orientation, $\{e_i\}\in\mu$, is called \emph{positively oriented} w.r.t.\ that orientation. Since each basis can be identified with a frame $V\to \bbR^n$, an orientation is equivalent to a $\GL_n^+(\bbR)$-structure on $V$ following Definition~\ref{def S-fibers}.
 \end{defn}
 
 Note that even though the set $\calO(V)$ of possible orientations has two elements, there is no way to naturally identify it with the group $\bbZ_2$, because neither of the orientations is distinguished. However, at the level of groups, since $\GL_n(\bbR )\slash\GL^+_n(\bbR )=\bbZ_2$, we have a natural group homomorphism $\vartheta:\GL_n(\bbR )\to \bbZ_2=\{-1,+1\}$ given explicitly by $\vartheta(A)=\sign (\det A)$. The action of the group $\GL(V)$ on the set of bases on $V$ then induces a natural action of the group $\bbZ_2$ on the set $\mathcal{O}(V)$. Namely, if $A\in\GL(V)$ and $\{e_i\}$ is a basis, then $\{A\cdot e_i\}$ is oriented like $\{e_i\}$ if $\vartheta(A)=1$, and it has the opposite orientation if $\vartheta(A)=-1$. Therefore, the generator of the group $\bbZ_2$ simply swaps the two elements of $\mathcal{O}(V)$.
@@ -4784,7 +4783,7 @@ Note that even though the set $\calO(V)$ of possible orientations has two elemen
 Note that any \emph{linear isomorphism} $f:V\to V'$ induces a map $\mathcal{O}(f):\mathcal{O}(V)\to\mathcal{O}(V)$, namely $\mathcal{O}(f)(\mu)=\mu'$ if for any basis $\{e_i\}\in\mu$ the basis $\{f(e_i)\}$ belongs to $\mu'$. Therefore we have constructed a partial covariant functor $\mathcal{O}:\mathsf{FinVect}_\bbR \to\mathsf{2Set}$, where $\mathsf{2Set}$ is the category of two-element sets.
 
 \begin{defn}[Orientation-preserving linear maps]
-Let $(V,\mu)$ and $(V,\mu')$ be two oriented vector spaces of equal dimensions. A linear isomorphism $f:V\to V'$ is called orientation-preserving if it maps any positively oriented basis on $V$ to a positively oriented basis on $V'$, i.e.\ it is an isomorphism and $\mathcal{O}(f)(\mu)=\mu'$.
+    Let $(V,\mu)$ and $(V,\mu')$ be two oriented vector spaces of equal dimensions. A linear isomorphism $f:V\to V'$ is called orientation-preserving if it maps any positively oriented basis on $V$ to a positively oriented basis on $V'$, i.e.\ it is an isomorphism and $\mathcal{O}(f)(\mu)=\mu'$.
 \end{defn}
 
 
@@ -4803,14 +4802,14 @@ Let $(V,\mu)$ and $(V,\mu')$ be two oriented vector spaces of equal dimensions. 
 \end{defn}
 
 \begin{prop}\label{prop orientation}
-\gls{tfae}:
-\begin{enumerate}
-    \item A real \gls{vb} $E\overset\pi\to M$ is orientable;
-    \item There exists a global section of the orientation bundle $\mathcal{O}(E)$;
-    \item The determinant line bundle $\det E$ is trivial;
-    \item There exists a non-vanishing section of the determinant line bundle $\det E$;
-    \item There exists a bundle atlas on $E$ such that the corresponding cocycle $\{\tau_{\alpha\beta}\}$ has $\det\tau_{\alpha\beta}>0$, i.e.\ if the structure group of $E$ can be reduced to $\GL^+_k(\bbR )$.
-\end{enumerate}
+    \gls{tfae}:
+    \begin{enumerate}
+        \item A real \gls{vb} $E\overset\pi\to M$ is orientable;
+        \item There exists a global section of the orientation bundle $\mathcal{O}(E)$;
+        \item The determinant line bundle $\det E$ is trivial;
+        \item There exists a non-vanishing section of the determinant line bundle $\det E$;
+        \item There exists a bundle atlas on $E$ such that the corresponding cocycle $\{\tau_{\alpha\beta}\}$ has $\det\tau_{\alpha\beta}>0$, i.e.\ if the structure group of $E$ can be reduced to $\GL^+_k(\bbR )$.
+    \end{enumerate}
 \end{prop}
 \begin{proof}
     Exercise.
@@ -4852,41 +4851,41 @@ Exercise.
 
 
 \begin{defn}
-Let $M$ and $M'$ be oriented smooth manifolds with chosen volume forms $\sfv$, $\sfv'$, respectively. For a smooth map $f:M\to M'$, we define its determinant with respect to these volume forms by the equality
-\[f^\ast \sfv'=\left(\det_{\sfv,\sfv'}f\right)\cdot \sfv.\]
-We will usually suppress the dependence on the volume forms. Clearly $f$ is orientation-preserving iff $\det f>0$ everywhere, and $f$ is a local diffeomorphism iff $\det f\neq 0$.
+    Let $M$ and $M'$ be oriented smooth manifolds with chosen volume forms $\sfv$, $\sfv'$, respectively. For a smooth map $f:M\to M'$, we define its determinant with respect to these volume forms by the equality
+    \[f^\ast \sfv'=\left(\det_{\sfv,\sfv'}f\right)\cdot \sfv.\]
+    We will usually suppress the dependence on the volume forms. Clearly $f$ is orientation-preserving iff $\det f>0$ everywhere, and $f$ is a local diffeomorphism iff $\det f\neq 0$.
 
-This determinant is still multiplicative: $\det(f\circ g)(p)=(\det f)(g(p))\cdot \det g(p)$.
+    This determinant is still multiplicative: $\det(f\circ g)(p)=(\det f)(g(p))\cdot \det g(p)$.
 \end{defn}
 
 \begin{defn}[Tensor densities]\label{def tensor densities}
-One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $\bbT^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $\bbT^r_s M$) are called \emph{tensor densities}\index{Tensor density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $\T M$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions include $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}
+    One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $\bbT^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $\bbT^r_s M$) are called \emph{tensor densities}\index{Tensor density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $\T M$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions include $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}
 \end{defn}
 
 \begin{thm}\label{thm orientation via normal vector}
-Let $S<M$ be an immersed submanifold of $\codim S=1$, let $N\in\Gamma^\infty\left(\restr{\T M}{S}\right)$ be a section such that $N\not\parallel S$ everywhere, and let $M$ be oriented. Then there exists a unique orientation on $S$ such that a frame $(e_1,\ldots,e_{n-1})$ is positively oriented in $\T S$ iff $(N,e_1,\ldots,e_{n-1})$ is oriented in $\restr{\T M}{S}$.
+    Let $S<M$ be an immersed submanifold of $\codim S=1$, let $N\in\Gamma^\infty\left(\restr{\T M}{S}\right)$ be a section such that $N\not\parallel S$ everywhere, and let $M$ be oriented. Then there exists a unique orientation on $S$ such that a frame $(e_1,\ldots,e_{n-1})$ is positively oriented in $\T S$ iff $(N,e_1,\ldots,e_{n-1})$ is oriented in $\restr{\T M}{S}$.
 \end{thm}
 \begin{proof}
-Let $\sfv$ be a positive volume form on $M$. The it is easy to check that $\sfv_S\coloneqq i_N \sfv$ is a volume form on $S$ that defines an orientation as stated.
+    Let $\sfv$ be a positive volume form on $M$. The it is easy to check that $\sfv_S\coloneqq i_N \sfv$ is a volume form on $S$ that defines an orientation as stated.
 \end{proof}
 \begin{cor}
-Let $M$ be orientable and let a function $f\in C^\infty(M)$ have a regular value $c\in \bbR $. Then the submanifold $S=f^{-1}(c)\sub M$ is orientable.
+    Let $M$ be orientable and let a function $f\in C^\infty(M)$ have a regular value $c\in \bbR $. Then the submanifold $S=f^{-1}(c)\sub M$ is orientable.
 \end{cor}
 \begin{proof}
-Embed $M$ into $\bbR^n$ using the Whitney Embedding Theorem~\ref{thm whitney embedding} and define the vector field $N=\nabla f$. Then $N\perp S$ and $N\neq 0$ on $S$ because $\restr{f}{S}$ is regular. Therefore $N$ induces an orientation on $S$ by the theorem above.
+    Embed $M$ into $\bbR^n$ using the Whitney Embedding Theorem~\ref{thm whitney embedding} and define the vector field $N=\nabla f$. Then $N\perp S$ and $N\neq 0$ on $S$ because $\restr{f}{S}$ is regular. Therefore $N$ induces an orientation on $S$ by the theorem above.
 \end{proof}
 \begin{cor}
-The boundary $\partial M$ of any orientable manifold with boundary is orientable. The standard orientation is fixed by outward normals.
+    The boundary $\partial M$ of any orientable manifold with boundary is orientable. The standard orientation is fixed by outward normals.
 \end{cor}
 \begin{proof}
-Consider a collar neighborhood of $\partial M$ and the outward vector field $N$ on it. $N$ thus induces an orientation on $\partial M$. This orientation is independent of the choice of $N$ because its $n$-th component at the boundary is necessarily negative and is the only variable between different choices of $N$.
+    Consider a collar neighborhood of $\partial M$ and the outward vector field $N$ on it. $N$ thus induces an orientation on $\partial M$. This orientation is independent of the choice of $N$ because its $n$-th component at the boundary is necessarily negative and is the only variable between different choices of $N$.
 \end{proof}
 
 
 \begin{defn}[Divergence of a vector field]\index{Divergence}
-Let $\sfv$ be a volume form on $M$ and $X\in \fX(M)$. The divergence of $X$ with respect to $\sfv$ is defined by the equality
-\[\Lie_X\sfv =(\div_{\sfv} X)\cdot \sfv.\]
-$X$ is called \emph{incompressible}, or \emph{volume-preserving}, if $\div_\sfv X=0$ (or if $(F^X_\lambda)^\ast\sfv=\sfv$ where $F^X$ is the flow of $X$).
+    Let $\sfv$ be a volume form on $M$ and $X\in \fX(M)$. The divergence of $X$ with respect to $\sfv$ is defined by the equality
+    \[\Lie_X\sfv =(\div_{\sfv} X)\cdot \sfv.\]
+    $X$ is called \emph{incompressible}, or \emph{volume-preserving}, if $\div_\sfv X=0$ (or if $(\Fl^X_\lambda)^\ast\sfv=\sfv$ where $\Fl^X$ is the flow of $X$).
 \end{defn}
 
 
@@ -4907,9 +4906,9 @@ $X$ is called \emph{incompressible}, or \emph{volume-preserving}, if $\div_\sfv 
 
 First we define integrals of top forms (i.e.\ forms of the top degree) on $\bbR^n$.
 \begin{defn}
-Let $U\mathring\subset \bbR^n$ and $\omega\in \Omega^n(U)$. This differential form can be written as $\omega=f\cdot \dd x^1\wedge\cdots\wedge\dd x^n $ with $f\in C^\infty(U)$. We define its integral as
-\[\int_U\omega \coloneqq \int_U f \dd x^1\cdots\dd x^n,\]
-where the integral on the right-hand side is the standard Riemann integral of a smooth function. A similar definition is given to integrals of top forms on domains $U\mathring\subset \bbR^n_+$ in the half-space.
+    Let $U\mathring\subset \bbR^n$ and $\omega\in \Omega^n(U)$. This differential form can be written as $\omega=f\cdot \dd x^1\wedge\cdots\wedge\dd x^n $ with $f\in C^\infty(U)$. We define its integral as
+    \[\int_U\omega \coloneqq \int_U f \dd x^1\cdots\dd x^n,\]
+    where the integral on the right-hand side is the standard Riemann integral of a smooth function. A similar definition is given to integrals of top forms on domains $U\mathring\subset \bbR^n_+$ in the half-space.
 \end{defn}
 
 Now we can use local charts and the invariance of differentials to define integrals of top forms on oriented manifolds.
@@ -4996,7 +4995,7 @@ The next version of integration by parts is an exercise.
 \end{xca}
 
 The final application requires some familiarity with complex analysis. Some basic notation is introduced in the following remark.
-\begin{rem}[Holomorphic functions and forms on Riemann surfaces]
+\begin{rem}[Holomorphic functions and forms on Riemann surfaces]\label{rem holomorphic functions}
     Recall that a smooth complex-valued (or, equivalently, $\bbR^2$-valued) function 
     \[f(x,y)=u(x,y)+\i v(x,y),\text{ where } u=\Re f,v=\Im f,\]
     defined on an open domain $D\subset\bbR^2$ is called \emph{holomorphic}\index{Holomorphic!function} if it satisfies the Cauchy-Riemann equations 
@@ -5142,6 +5141,11 @@ Similarly, one can twist complex differential forms on a complex manifold by a  
 \end{comment}
 
 
+
+
+
+
+
 \subsection{Frobenius theorem II}\label{sec: frobenius ii}
 
 
@@ -5193,16 +5197,16 @@ solutions of (\ref{eq 4.7.2 RS1}) can be interpreted geometrically, by defining 
 \[\theta^j=\dd x^{p+j}-\sum_{i=1}^p f_i^j(x^1,\ldots,x^n)\dd x^i,\quad 1\leq j\leq n-p.\]
 The system of PDE's (\ref{eq 4.7.2 RS1}) is the \emph{Pfaffian system of equations} determined by the $1$-forms $\theta^j$.
 
-\begin{rem}[Arbitrary PDE's as Pfaffian systems]
-    This is not limited to first-order PDE's. In the presence of second derivatives, say $\partial_i\partial_j y^k$, we can  introduce new variables $p_j^k\coloneqq \partial_j y^k$, and then the system will be written in terms of only first derivatives of the extended set of coordinates $\{x^i,y^j,p^k_l\}$. Recalling Definition~\ref{def jet bundles}, we recognize such a PDE as a Pfaffian equation on the first jet bundle $J^1(\bbR^p,\bbR^{n-p})$. 
+\begin{rem}[Arbitrary PDE's as Pfaffian systems]\label{rem canonical contact system}
+    This is not limited to first-order PDE's. In the presence of second derivatives, say $\partial_i\partial_j y^k$, we can  introduce new variables $p_j^k\coloneqq \partial_j y^k$, and then the system will be written in terms of only first derivatives of the extended set of coordinates $\{x^i,y^j,p^k_l\}$. Recalling Definition~\ref{def jet bundles}, we recognize such a PDE as a Pfaffian equation on the first jet bundle $\rmJ^1(\bbR^p,\bbR^{n-p})$. 
     
-    Clearly, the same can be done with higher-order PDE's, writing them as Pfaffian systems on arbitrary jet bundles. Indeed, let $J^k(M,N)$ have coordinates $(x^i,u^a,p_i^a,p_{ij}^a,\ldots,p_{i_1,\ldots,i_k}^a)$, abbreviated as $(x^i,u^a,p_I^a)$, where $i$ runs over the dimensions of $M$, $a$ runs over the dimensions of $N$, and $I$ is a multi-index \index{Multi-index} of length up to $k$ whose entries range from $1$ to $\dim M$. Then a jet $j_{x_0}^k f\in J^k(M,N)$ has coordinates 
+    Clearly, the same can be done with higher-order PDE's, writing them as Pfaffian systems on arbitrary jet bundles. Indeed, let $\rmJ^k(M,N)$ have coordinates $(x^i,u^a,p_i^a,p_{ij}^a,\ldots,p_{i_1,\ldots,i_k}^a)$, abbreviated as $(x^i,u^a,p_I^a)$, where $i$ runs over the dimensions of $M$, $a$ runs over the dimensions of $N$, and $I$ is a multi-index \index{Multi-index} of length up to $k$ whose entries range from $1$ to $\dim M$. Then a jet $j_{x_0}^k f\in \rmJ^k(M,N)$ has coordinates 
     \[x^i_0,\; u^a=f^a(x_0),\; p_I^a=\frac{\partial^{\ell(I)}f^a}{\partial x^I}(x_0),\quad 1\leq \ell(I)\leq k,\]
     where $\ell(I)$ is the length of $I$, i.e.\ if $I=(i_1,\ldots,i_{\ell(I)})$, and 
     \[\partial_I = \]
     $\partial x^I=\partial x^{i_1}\cdots \partial x^{i_{\ell(I)}}$.
 
-    Now we can define a \emph{canonical contact system}, which is a collection of $1$-forms on $J^k(M,N)$ whose kernels correspond to the relationships between $p_I^a$ for different $I$ on holonomic sections, called \emph{contact forms}:\index{Contact forms}
+    Now we can define a \emph{canonical contact system}, which is a collection of $1$-forms on $\rmJ^k(M,N)$ whose kernels correspond to the relationships between $p_I^a$ for different $I$ on holonomic sections, called \emph{contact forms}:\index{Contact forms}
     \begin{align}
         \theta^a\coloneqq &\dd u^a-p_i^a\dd x^i,\notag\\
         \theta^a_i\coloneqq& \dd p^a_i-p_{ij}^a\dd x^j,\notag\\
@@ -5211,11 +5215,11 @@ The system of PDE's (\ref{eq 4.7.2 RS1}) is the \emph{Pfaffian system of equatio
     \end{align}
     (Note the summation on $i_k$.) In abbreviated form, these relations can be written as 
     \[\theta^a_I\coloneqq \dd p_I^a-p^a_{Ij}\dd x^j.\]
-    The integral manifolds of the canonical contact system are exactly the $k$-th prolongations $j^k f$ of maps $f:M\to N$ (\emph{$k$-graphs}). Indeed, if such an integral manifold is locally described by $u=u(x^1,\ldots,x^n)$, $p_i^a=p_i^a(x^1,\ldots,x^n)$,  etc., then the vanishing of the contact forms along it implies, for example, that $p_i^a=\partial_{x^i}u^a$, and so on. 
+    The integral manifolds of the canonical contact system are exactly the $k$-th prolongations $\rmj^k f$ of maps $f:M\to N$ (\emph{$k$-graphs}). Indeed, if such an integral manifold is locally described by $u=u(x^1,\ldots,x^n)$, $p_i^a=p_i^a(x^1,\ldots,x^n)$,  etc., then the vanishing of the contact forms along it implies, for example, that $p_i^a=\partial_{x^i}u^a$, and so on. 
 
     Given a $k$-th order system of PDE's for maps $f:\bbR^n\to \bbR^s$, 
     \[F^r(x^i,u^a,\partial_I u^a)=0,\quad 1\leq r\leq R,\; 1\leq \ell(I)\leq k,\]
-    we define a submanifold $S\subset J^k$ by the equations $F^r(x^i,u^a,p_I^a)=0$. The $k$-graphs of solutions of the PDE system are precisely such that the pullback of the contact system to them vanishes. Note that usually we only seek $n$-dimensional integral manifolds (graphs of functions of $n$ variables), and $n$ is typically lower than the dimension required by the Frobenius integrability (which would be $s\left(n+\binom{n}{k}\right)-R$). For this reason, one usually specifies a so called \emph{independence condition}\index{Independence condition} $\dd x^1\wedge\cdots\wedge\dd x^n$, which is required to induce a volume form on integral manifolds, thus specifying their dimensionality (see below). Since this setting is outside of the scope of the Frobenius Theorem, we delay its full exploration until \Sect~\ref{sec: PDE's}.
+    we define a submanifold $S\subset \rmJ^k$ by the equations $F^r(x^i,u^a,p_I^a)=0$. The $k$-graphs of solutions of the PDE system are precisely such that the pullback of the contact system to them vanishes. Note that usually we only seek $n$-dimensional integral manifolds (graphs of functions of $n$ variables), and $n$ is typically lower than the dimension required by the Frobenius integrability (which would be $s\left(n+\binom{n}{k}\right)-R$). For this reason, one usually specifies a so called \emph{independence condition}\index{Independence condition} $\dd x^1\wedge\cdots\wedge\dd x^n$, which is required to induce a volume form on integral manifolds, thus specifying their dimensionality (see below). Since this setting is outside of the scope of the Frobenius Theorem, we delay its full exploration until \Sect~\ref{sec: PDE's}.
 \end{rem}
 
 If the $\{\theta^j\}_{j=1}^r$, $r=n-p$, are linearly independent, $\Delta$ is regular of rank $r$. Then $\Delta$ is integrable iff so is the annihilator $\Delta^0=\ker\theta^1\cap\cdots\cap\ker\theta^{n-r}$. In the special case $r=1$, the Pfaffian system can be viewed as defining a \emph{field of hyperplanes} on $M$, and we obtain the following simple solvability criterion.
@@ -5646,17 +5650,17 @@ Recall that a left-invariant vector field $X\in\fX(G)^G$ on a Lie group $G$ is d
 \paragraph{Construction III} Recall that we denote by $\fX(G)^G$ the space of left-invariant vector fields on $G$. As we will now show, the Lie derivative endows this space with a structure of a Lie algebra that is isomorphic to our earlier constructions of $\Lief G$.
 
 \begin{lem}\label{lem 471841}
-    If $X\in\fX(G)^G$, then the flow $F^X:G\times \bbR \to G$ is left-invariant, i.e.
-    \[gF^X_t(h)=F^X_t(gh).\]
+    If $X\in\fX(G)^G$, then the flow $\Fl^X:G\times \bbR \to G$ is left-invariant, i.e.
+    \[g\Fl^X_t(h)=\Fl^X_t(gh).\]
     Moreover, if $\gamma(t)$ is an integral curve of $X$ starting at $e\in G$, then
-    \[F^X_t(g)=\rmR_{\gamma(t)}(g)=g\gamma(t).\]
-    The analogous formula for right-invariant vector fields is $F^X_t(g)=\rmL_{\gamma(t)}(g)=\gamma(t)g$.
+    \[\Fl^X_t(g)=\rmR_{\gamma(t)}(g)=g\gamma(t).\]
+    The analogous formula for right-invariant vector fields is $\Fl^X_t(g)=\rmL_{\gamma(t)}(g)=\gamma(t)g$.
 \end{lem}
 \begin{proof}
     Since these flows are complete, to show their equality it is sufficient to prove that the vector fields generating them coincide:
-    \[\restr{\frac{\dd}{\dd t}}{t=0}\left(gF^X_t(h)\right)=(\rmL_g)_{\ast}X_{h}=X_{gh}=\restr{\frac{\dd}{\dd t}}{t=0} F^X_t(gh).\]
+    \[\restr{\frac{\dd}{\dd t}}{t=0}\left(g\Fl^X_t(h)\right)=(\rmL_g)_{\ast}X_{h}=X_{gh}=\restr{\frac{\dd}{\dd t}}{t=0} \Fl^X_t(gh).\]
     To prove the second equation, it suffices to show that $g\gamma(t)$ is the integral curve of $X$ starting at $g$, which follows trivially from the above:
-    \[g\gamma(t)=g F^X_t(e)=F^X_t(ge)=F^X_t(g).\]
+    \[g\gamma(t)=g \Fl^X_t(e)=\Fl^X_t(ge)=\Fl^X_t(g).\]
 \end{proof}
 
 
@@ -6335,7 +6339,7 @@ Before we prove this, we will need the following generalization of the Fundament
     
     % \emph{Step 5:} show invariance of the endpoint. Different choices of the approximating path $\sigma$ are homotopic to each other. Let $h:I\times I\to G$ be such a homotopy. The pullback $h^\ast \omega\in \Omega^1(I^2;\frakg)$ still satisfies the Structure Equation, so by the same argument as in Theorem~\ref{thm 7.7 Sharpe}, the endpoint $\wt\sigma(1)$ is independent of the choice of $\sigma$. Since $\epsilon$ can be made arbitrarily small, by continuity the endpoint also remains stationary during homotopic deformations of $\gamma$ itself (with fixed endpoints).
 
-    \emph{Step 2:} construct ``piecewise-linear'' developments of $1$-forms. Any $1$-form $\xi(t)\dd t\in\Omega^1(I;\frakg)$ can be approximated (under some supremum norm on $\frakg$-valued functions) by a $1$-form $\xi_c(t)\dd t$ such that $\xi_c:I\to \frakg$ is piecewise-constant, $\xi_c(t)=A_i$, $t\in[a_i,a_{i+1}]$. Each constant segment of this $1$-form can be developed to a path in $G$ from any given starting point $g_i$, using the flow $F^{A_i}_t$:
+    \emph{Step 2:} construct ``piecewise-linear'' developments of $1$-forms. Any $1$-form $\xi(t)\dd t\in\Omega^1(I;\frakg)$ can be approximated (under some supremum norm on $\frakg$-valued functions) by a $1$-form $\xi_c(t)\dd t$ such that $\xi_c:I\to \frakg$ is piecewise-constant, $\xi_c(t)=A_i$, $t\in[a_i,a_{i+1}]$. Each constant segment of this $1$-form can be developed to a path in $G$ from any given starting point $g_i$, using the flow $\Fl^{A_i}_t$:
     \[\sigma_i(t)=\exp_{g_i}(A_i t).\]
     We do this inductively, starting with the given $g_0\in G$ and letting $g_{i+1}=\exp_{g_i}(A_i (a_{i+1}-a_i))$, see Figure~\ref{fig:develop}. By refining the approximation we can guarantee that the developed segments stay within exponential neighborhoods of their starting points, and that the images of those neighborhoods in $\frakg$ are balls of fixed radius $\epsilon>0$. This allows us to lift any homotopy that deforms $\xi_c$ into an approximation with even smaller $\epsilon$ to a homotopy $h$ of the developed path in $G$ (by lifting it inside each exponential neighborhood separately). The pullback $h^\ast \eta\in \Omega^1(I^2;\frakg)$ still satisfies the Structure Equation, so by the same argument as in Theorem~\ref{thm 7.7 Sharpe}, the endpoint $\sigma(1)$ is independent of the choice of approximation.
 
@@ -6481,7 +6485,7 @@ Note that a \gls{ops} is \emph{not} a Lie subgroup of $G$, but a specific homomo
 This leads us to yet another common way of defining the Lie algebra of a Lie group.
 
 \paragraph{Construction IV} In summary, there is a natural one-to-one correspondence between elements of the Lie algebra and \gls{ops}'s
-\[A\in \frakg\cong \fX(G)^G\mapsto \gamma_A(t)=F^A_t(e)\coloneqq F^{A_\rmL}_t(e).\]
+\[A\in \frakg\cong \fX(G)^G\mapsto \gamma_A(t)=F^A_t(e)\coloneqq \Fl^{A_\rmL}_t(e).\]
 We say that $\gamma_A$ is \emph{generated} by $A\in\frakg$. The Lie bracket is recovered as the double derivative of the group commutator
 \[[A,B]=\restr{\frac{\dd}{\dd t}\frac{\dd}{\dd s}}{t=s=0}\gamma_A(t)\gamma_B(s)\gamma_A(t)^{-1}\gamma_B(s)^{-1}.\]
 
@@ -6532,14 +6536,14 @@ When multiple groups are involved, we will sometimes specify the group to which 
     \item $\exp$ restricts to a diffeomorphism from some neighborhood of $0\in \frakg$ to a neighborhood of $e\in G$. Its inverse is often denoted by $\ln$.
     \item $\exp$ is natural: if $H$ is another Lie group with $\frakh=\Lief H$, and $\Phi:G\to H$ is a Lie group homomorphism, then 
     \[\exp_H\circ\Phi_{\ast e}=\Phi\circ \exp_G.\]
-    \item The flow $F^{A_\rmL}$ of a left-invariant vector field $A_\rmL\in \fX(G)^G$, $(A_\rmL)_e=A$, is given by $F_t=\rmR_{\rme^{tA}}$.
+    \item The flow $\Fl^{A_\rmL}$ of a left-invariant vector field $A_\rmL\in \fX(G)^G$, $(A_\rmL)_e=A$, is given by $F_t=\rmR_{\rme^{tA}}$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
     (a) We need to show that the flow $F^A$ of a vector field varies smoothly with $A$. This is a situation not covered by the fundamental theorem of flows, but we can reduce it to that situation by a simple trick. Define a vector field $\Xi\in\fX(G\times\frakg)$ by
     \[\Xi_{(g,A)}=((A_\rmL)_g,0)\in \T_gG\oplus \T_A \frakg.\]
     This is a smooth vector field because it acts on functions by differentiating them along $A_\rmL$. It is easy to verify that the flow $F^\Xi$ is given by
-    \[F^\Xi_t(g,A)=\left(F^{A_\rmL}(g,t),A\right).\]
+    \[F^\Xi_t(g,A)=\left(\Fl^{A_\rmL}(g,t),A\right).\]
     By the fundamental Theorem~\ref{thm fundamental of flows} of flows, $F^\Xi$ is smooth. Since $\exp A=\pr_1\left(F^\Xi_1(e,A)\right)$, where $\pr_1:G\times\frakg\to G$ is the projection, it follows that $\exp$ is smooth.
 
     (b-d) follow trivially from the fact that $\exp(tA)$ is a \gls{ops}.
@@ -6549,7 +6553,7 @@ When multiple groups are involved, we will sometimes specify the group to which 
     i.e.~$\exp_{\ast 0}$ coincides with the natural isomorphism $\fX(G)^G\cong \T_e G$. Then by the \gls{inmt}, $\exp$ is a local diffeomorphism and (f) follows.
 
     (g) follows from the naturality of flows of vector fields:
-    \[F^{\Phi_\ast A}_t\circ \Phi=\Phi\circ F^{A}_t,\]
+    \[\Fl^{\Phi_\ast A}_t\circ \Phi=\Phi\circ \Fl^{A}_t,\]
     and setting $t=1$ and evaluating at the identity yields (g).
 
     (h) was already proven in Lemma~\ref{lem 471841}.
@@ -6644,7 +6648,7 @@ Similarly, for the coadjoint representation we have
     \[\restr{\frac{\dd}{\dd t}}{t}\varphi(t,t)=\restr{\frac{\dd}{\dd s}}{s=t}\varphi(s,t)+\restr{\frac{\dd}{\dd s}}{s=t}\varphi(t,s).\]
     Applying this to $\gamma$ we get (using $F^A$ for the flow of $A_\rmL$)
     \begin{multline}
-        \dot\gamma(0)=\restr{\frac{\dd}{\dd t}}{t=0} F^{B}_t\circ F^{A}_t (e)=\restr{\frac{\dd}{\dd s}}{s=0}F^{B}_{s}(e)+\restr{\frac{\dd}{\dd s}}{s=0}F^{A}_{s}(e)=B+A.
+        \dot\gamma(0)=\restr{\frac{\dd}{\dd t}}{t=0} \Fl^{B}_t\circ \Fl^{A}_t (e)=\restr{\frac{\dd}{\dd s}}{s=0}\Fl^{B}_{s}(e)+\restr{\frac{\dd}{\dd s}}{s=0}\Fl^{A}_{s}(e)=B+A.
     \end{multline}
 \end{proof}
 
@@ -6684,7 +6688,7 @@ When the elements do not commute, the following two propositions provide an appr
     For the function $\varphi$ from the proof of Proposition~\ref{prop 20.10 Lee} we have
     \[\varphi(t)=t(A+B)+t^2Z_2(0)+t^3Z_3(t).\]
     To compute the flow of this vector field we can apply the general Taylor formula for manifolds (\ref{eq:Taylor formula for manifolds}). By an abuse of notation we drop the smooth function $f\in C^\infty(G)$ on which this formula is supposed to act:
-    \[\rme^{\varphi(t)}=\restr{F^{A+B+\frac{s}{2}Z_2(0)+\calO(s^2)}_t}{s=t}=1+t(A+B)+\frac{t^2}{2}\left((A+B)^2+2Z_2(0)\right)+\calO(t^3).\]
+    \[\rme^{\varphi(t)}=\restr{\Fl^{A+B+\frac{s}{2}Z_2(0)+\calO(s^2)}_t}{s=t}=1+t(A+B)+\frac{t^2}{2}\left((A+B)^2+2Z_2(0)\right)+\calO(t^3).\]
     On the other hand the Taylor formula for two fields (\ref{eq: Taylor formula for two fields}) gives
     \[\rme^{tA}\rme^{tB}=1+t(A+B)+\frac{t^2}{2}(A^2+2AB+B^2)+\calO(t^3).\]
     We read off $Z_2(0)=[A,B]/2$.
@@ -7006,11 +7010,11 @@ Here we provide a slightly longer proof of Theorem~\ref{thm differential of exp}
     \[ \partial_x\dot \gamma(t,x,\epsilon)=\partial_xf(\gamma(t,x,\epsilon),\epsilon)\partial_x\gamma(t,x,\epsilon),\]
     and therefore $t\mapsto \partial_x \gamma(t,x,\epsilon)$ is a solution of the homogenous equation associated with (\ref{19804}). The classical variation-of-constants formula of Lagrange yields the claimed formula as the solution of (\ref{19804}).
 
-    The formula on manifolds is just the same formula if $|t|$ is sufficiently small. It extends to the full flow domain of $X_\epsilon$ by ``continuous induction'' in $t$, namely applying the chain rule to the group law of flows, $F^\epsilon_{t+\tau}=F^\epsilon_\tau\circ F^\epsilon_t$. One assumes that the formula already holds for $|t|<\delta$ and then replaces $x$ with $F_t^\epsilon(x)$ and $t$ with $\tau,|\tau|<\delta$. Unpacking $\partial_\epsilon F_{t+\tau}^{\epsilon}$ via a double application of the formula then confirms that the formula extends to $t+\tau$.
+    The formula on manifolds is just the same formula if $|t|$ is sufficiently small. It extends to the full flow domain of $X_\epsilon$ by ``continuous induction'' in $t$, namely applying the chain rule to the group law of flows, $F^\epsilon_{t+\tau}=F^\epsilon_\tau\circ F^\epsilon_t$. One assumes that the formula already holds for $|t|<\delta$ and then replaces $x$ with $\Fl_t^{X_\epsilon}(x)$ and $t$ with $\tau,|\tau|<\delta$. Unpacking $\partial_\epsilon \Fl_{t+\tau}^{X_\epsilon}$ via a double application of the formula then confirms that the formula extends to $t+\tau$.
 \end{proof}
 
 \begin{proof}[Second proof of Theorem~\ref{thm differential of exp}]
-    Now we apply formula (\ref{2702}) to $s\mapsto \rmR_{\rme^{s(A+\epsilon B)}}$, which is the flow $F^\epsilon_s$ of the $\epsilon$-dependent vector field $(A+\epsilon B)_\rmL$ on $G$. Hence:
+    Now we apply formula (\ref{2702}) to $s\mapsto \rmR_{\rme^{s(A+\epsilon B)}}$, which is the flow $\Fl^{X_\epsilon}_s$ of the $\epsilon$-dependent vector field $(A+\epsilon B)_\rmL$ on $G$. Hence:
     \begin{multline}
         \exp_{\ast A}B=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\exp(A+\epsilon B)=\restr{\frac{\dd}{\dd \epsilon}}{\epsilon=0}\rmR_{\exp(A+\epsilon B)}(e)=\\
         =\int_0^1\T_{\rme^{sA}}\rmR_{\rme^{(1-s)A}}\cdot B_\rmL\left(\rme^{sA}\right)\dd s=
@@ -7523,7 +7527,7 @@ It is almost obvious that the definition of the exponential map together with it
     Let $M$ be a $C^2$ manifold and let $\frakg\subset \fX^1(M)$ be a finite-dimensional Lie subalgebra of the algebra of $C^1$ vector fields on $M$. Then, for every relatively compact open subset $V$ of $M$ (i.e.\ such that the closure $\wb{V}$ is compact), there is an open $0$-neighborhood $U\subset\frakg$ such that:
     \begin{enumerate}[label=(\alph*)]
         \item For every $A\in U$, the set $\calD^A_{1}$, the slice of the flow domain of $A$ at time $t=1$, contains $V$.
-        \item If $A,B\in U$, then $F^A_1(V)\subset \calD^A_1$ and $\restr{\left(F^A_1\circ F^B_1\right)}{V}=\restr{F_1^{\mu(A,B)}}{V}$.
+        \item If $A,B\in U$, then $F^A_1(V)\subset \calD^A_1$ and $\restr{\left(F^A_1\circ F^B_1\right)}{V}=\restr{F^{\mu(A,B)}_1}{V}$.
         \item $A\mapsto \restr{F^A_1}{V}$ is injective on $U$.
     \end{enumerate}
     In particular, the collection of flows $\{F^A_1\}_{A\in\frakg}$ defines a local Lie group with Lie algebra equal to $\frakg$.
@@ -8182,7 +8186,7 @@ We also reiterate definitions of the main algebraic properties of group actions.
     A Lie group action $\Phi$ is called
     \begin{enumerate}
         \item \emph{faithful}, or \emph{effective}, if $\ker\Phi=\{e\}$,
-        \item \emph{free} if all stabilizers are trivial:$\forall g\in G\; G_m=\{e\}$.
+        \item \emph{free} if all stabilizers are trivial: $G_m=\{e\}$ for all $g\in G$.
         \item \emph{transitive} if it has a single orbit.
     \end{enumerate}
 \end{defn}
@@ -8193,7 +8197,7 @@ By the above Proposition, by passing to the induced action of $G\slash\ker\Phi$,
 \begin{enumerate}
     \item  The actions of $G$ on itself by left and right translations are effective, free and transitive. Their restrictions to a proper Lie subgroup $H< G$ are still effective and free but no longer transitive. The action of $G$ on itself by inner automorphisms (conjugations $\Adg$) is neither free nor transitive, because the identity is invariant and the kernel is given by the center $\rmZ(G)$. Hence, the adjoint action is effective iff the center is trivial. Its orbits are the conjugacy classes of elements of $G$. The stabilizer of $g\in G$ is the centralizer  $\rmC_G(g)$ of $g\in G$. Therefore, the orbit types are given by the conjugacy classes of those subgroups of $G$ which are centralizers of elements of $G$. The orbit space is usually referred to as the adjoint quotient of $G$.
     \item The action of $G$ on the homogeneous space $G\slash H$, where $H\sube G$ is a nontrivial closed subgroup, by the induced left translations $\wh{\rmL}_g$ is transitive but not free. The stabilizer of a coset $gH$, $g\in G$, is given by $G_{gH}=gHg^{-1}$. Consequently, the kernel of the action is given by $\bigcap_{g\in G}gHg^{-1}$. It lies between $\rmZ(G)\cap H$ and $H$ itself, the latter being the case when $H$ is normal.
-    \item For the action of $G=\bbR$ on $M$ defined by the flow $F^X$ of a complete vector field $X\in\fX(M)$, the orbit map of a point $m\in M$ is given by the maximal integral curve $F^X_m$. The stabilizer is $G_m=\bbR$ in the case $X_m=0$, $G_m=\bbZ T$ if the integral curve is periodic with period $T$, and $G_m=\{0\}$ otherwise. Since $G$ is abelian, the orbit types correspond bijectively to the subgroups which appear as stabilizers.
+    \item For the action of $G=\bbR$ on $M$ defined by the flow $\Fl^X$ of a complete vector field $X\in\fX(M)$, the orbit map of a point $m\in M$ is given by the maximal integral curve $\Fl^X_m$. The stabilizer is $G_m=\bbR$ in the case $X_m=0$, $G_m=\bbZ T$ if the integral curve is periodic with period $T$, and $G_m=\{0\}$ otherwise. Since $G$ is abelian, the orbit types correspond bijectively to the subgroups which appear as stabilizers.
 \end{enumerate}
 \end{example}
 
@@ -8803,12 +8807,12 @@ Each Stiefel $\calO_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$ comes with a clos
 Finally, we define an even further generalization of Grassmann manifolds, although it will not be as useful to us.
 
 \begin{defn}[Flags, flag manifolds]
-    Let $V$ be a $\bbK$-vector space of dimension $n>1$ and let $0<k_1<\cdots<k_{r-1}<n$ be integers. A flag in $V$ of type $K=(k_1,\ldots,k_{r-1})$ is a nested sequence $V_1< V_2< \cdots < V_{r-1}$ of linear subspaces of $V$ with $\dim V_i=k_i$ for each $i$. The set of all flags of type $K$ in $V$ is denoted by $\mathrm{Fl}_K(V)$. $\GL(V)$ acts transitively on $\mathrm{Fl}_K(V)$. By picking an inner product on $V$, setting $W_1=V_1$ and defining $W_{i+1}$ to be the orthogonal complement of $V_i$ inside $V_{i+1}$, with every flag we can associate a decomposition $V=W_1\oplus \cdots\oplus W_r$ into mutually orthogonal subspaces, and this defines a bijection from $\mathrm{Fl}_K(V)$ onto the set of orthogonal direct sum decompositions of $V$ into subspaces of dimensions $(n_1,\ldots,n_r)$, where $n_1=k_1$, $n_r=n-k_{r-1}$, and $n_{i+1}=k_{i+1}-k_i$ in between. An argument similar to that for the Grassmann manifolds shows that
-    \[\mathrm{Fl}_K(V)\cong \calO_n\slash (\calO_{n_1}\times\cdots\times\calO_{n_r}),\]
-    where the subgroups consist of block-diagonal matrices. As before, these equalities define a smooth structure on $\mathrm{Fl}_K(V)$.
+    Let $V$ be a $\bbK$-vector space of dimension $n>1$ and let $0<k_1<\cdots<k_{r-1}<n$ be integers. A flag in $V$ of type $K=(k_1,\ldots,k_{r-1})$ is a nested sequence $V_1< V_2< \cdots < V_{r-1}$ of linear subspaces of $V$ with $\dim V_i=k_i$ for each $i$. The set of all flags of type $K$ in $V$ is denoted by $\mathrm{Flag}_K(V)$. $\GL(V)$ acts transitively on $\mathrm{Flag}_K(V)$. By picking an inner product on $V$, setting $W_1=V_1$ and defining $W_{i+1}$ to be the orthogonal complement of $V_i$ inside $V_{i+1}$, with every flag we can associate a decomposition $V=W_1\oplus \cdots\oplus W_r$ into mutually orthogonal subspaces, and this defines a bijection from $\mathrm{Flag}_K(V)$ onto the set of orthogonal direct sum decompositions of $V$ into subspaces of dimensions $(n_1,\ldots,n_r)$, where $n_1=k_1$, $n_r=n-k_{r-1}$, and $n_{i+1}=k_{i+1}-k_i$ in between. An argument similar to that for the Grassmann manifolds shows that
+    \[\mathrm{Flag}_K(V)\cong \calO_n\slash (\calO_{n_1}\times\cdots\times\calO_{n_r}),\]
+    where the subgroups consist of block-diagonal matrices. As before, these equalities define a smooth structure on $\mathrm{Flag}_K(V)$.
 \end{defn}
 
-The case $r=1$ and $n_1=k$ reproduces the Grassmann manifolds $\mathrm{Fl}_{(k,n-k)}(\bbK^n)\cong \Gr_k(\bbK^n)$.
+The case $r=1$ and $n_1=k$ reproduces the Grassmann manifolds, $\mathrm{Flag}_{(k,n-k)}(\bbK^n)\cong \Gr_k(\bbK^n)$.
 
 
 
@@ -8877,7 +8881,7 @@ For integration of differential forms one requires Mackey completeness. Then e.g
     \[\varphi(x)(v_1,\ldots,v_k)=\int_0^1 t^k\omega(tx)(x,v_1,\ldots,v_k)\dd t.\]
 \end{lem}
 
-To prove further results such as de Rham's Theorem, one usually needs partitions of unity, which don't always exist even on Banach manifolds. Thus a manifold $M$ is called smoothly paracompact if every open cover has a subordinated smooth \gls{pou}. De Rham's Theorem holds on such Frech\'et manifolds. Examples of Banach spaces with are not smoothly paracompact are $C([0,1],\bbR)$ and $\ell^1(\bbN,\bbR)$. On these spaces there exist no non-zero smooth functions supported on the unit ball.
+To prove further results such as de Rham's Theorem, one usually needs partitions of unity, which don't always exist even on Banach manifolds. Thus a manifold $M$ is called smoothly paracompact if every open cover has a subordinated smooth \gls{pou}. De Rham's Theorem holds on such Frech\'et manifolds. Examples of Banach spaces with are not smoothly paracompact are $C([0,1],\bbR)$ and $\ell^1(\bbN,\bbR)$. On these spaces there exist no nonzero smooth functions supported on the unit ball.
 
 
 Many familiar results about Lie groups now translate to the locally convex case. The Lie algebra of a locally convex Lie group is obviously locally convex, and the Lie functor $\Lief$ is well-defined. As we will see, every finite-dimensional Lie algebra arises as the Lie algebra of some Lie group. In the general locally convex case this turns out to be a very subtle issue.
@@ -8974,7 +8978,7 @@ have a unique solution given by $\eta(t)=\Ad_{\xi(t)}^{-1
     Since $(\xi-\wh{\xi})(t,0)=0$, the uniqueness of solutions applied to $\eta(t,\cdot)$ implies that $\xi=\wh{\xi}$ on all of $I^2$. Thus $\rmL_{f\ast}^{-1}f=\xi\dd t+\eta\dd s$.
 \end{rem}
 
-The following familiar theorem holds for solutions of the Maurer-Cartan equation on regular Lie groups. We call a one-form $\alpha\in\Omega^1(M;\frakg)$ integrable if there exists a smooth function $f:M\to G$ such that $L_f^\ast \dd f=\alpha$.
+The following familiar theorem holds for solutions of the Maurer-Cartan equation on regular Lie groups. We call a one-form $\alpha\in\Omega^1(M;\frakg)$ integrable if there exists a smooth function $f:M\to G$ such that $\rmL_f^\ast \dd f=\alpha$.
 
 \begin{thm}[Fundamental Theorem for Lie group valued functions]
     Let $M$ be a simply connected manifold and $G$ a regular Lie group. Then $\alpha\in\Omega^1(M;\frakg)$ is integrable iff it satisfies the Structure Equation
