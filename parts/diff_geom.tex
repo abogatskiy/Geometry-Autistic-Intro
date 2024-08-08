@@ -5081,7 +5081,7 @@ Here we define differential forms that take values in a vector space, and more g
 For example, if we twist $E$ by the line bundle of pseudo-scalar densities (i.e.\ scalars depending on local orientation), we obtain the bundle of pseudo-forms. Top degree pseudo-forms are called $1$-densities. Similarly, twisting by the determinant line bundle gives ``densitized forms''.
 
 If $\{e_1,\ldots,e_k\}$ is a local frame of $E$, then any $\omega\in\Omega^p(M;E)$ can be expanded as 
-\[\omega=\sum_{a=1}^k\sum_{1\leq i_1<\ldots<i_p\leq n}\omega^a_{i_1\cdots i_p}\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}\otimes e_a=\sum_{a=1}^k\omega^a\otimes e_a,\quad \omega^a\in\Omega^p(U).\]
+\[\omega=\sum_{a=1}^k\sum_{1\leq i_1<\cdots<i_p\leq n}\omega^a_{i_1\cdots i_p}\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}\otimes e_a=\sum_{a=1}^k\omega^a\otimes e_a,\quad \omega^a\in\Omega^p(U).\]
 
 The wedge product $\wedge:\Omega^p(M;E_1)\otimes \Omega^q(M;E_2)\to \Omega^{p+q}(M;E_1\otimes E_2)$ is defined as 
 \begin{multline}
@@ -6777,7 +6777,7 @@ and any such matrix satisfies the equation
 where $\lambda$ are the eigenvalues of $A$. Due to this the exponential series separates into two sums over odd and even powers, and we get
 \[\rme^A=\cosh \lambda \cdot \rmI+\frac{\sinh \lambda}{\lambda}A.\]
 Observe that the coefficients here are entire analytic functions of $\lambda^2=a^2+bc$ and hence are entire analytic functions on $\mathfrak{sl}_2(\bbC)$. If $\lambda=0$, we recover the result
-\[\rme^A=\rmI+A \; \Leftrightarrow \; A\text{ is nilpontent}\]
+\[\rme^A=\rmI+A \; \Leftrightarrow \; A\text{ is nilpotent}\]
 (because for $2\times 2$ matrices nilpotency is equivalent to the vanishing of the square). If $\lambda=\i t$ with $t\in \bbR$, the exponential becomes
 \[\rme^A=\cos t\cdot \rmI+\frac{\sin t}{t}A.\]
 This occurs if $a,b,c\in\bbR$ (which is equivalent to $A\in\mathfrak{sl}_2(\bbR)$) and $a^2+bc<0$, i.e.\ ``$A$ is in the elliptic domain''. The case $\lambda=\i t$, $t\in\bbR$, also occurs for all matrices of the form
@@ -6792,7 +6792,7 @@ In this case $t=\sqrt{\alpha^2+|\beta|^2}$, which is the Euclidean length of $(\
 \end{pmatrix}=\begin{pmatrix}
     \cos t&-\sin t\\\sin t&\cos t
 \end{pmatrix}\in\SO_2(\bbR).\]
-If $A\in\mathfrak{sl}_2(\bbR)$, then $\rme^A$ has eigenvalues equal to $-1$ iff there is a $k\in\bbZ$ such that $A$ has eigenvalues equal to $\pm\rmi \pi(2k+1)$ (with both signs occurring). This implies that $A$ is diagonalizable over $\bbC$, hence $\rme^A$ is as well, so $\rme^A=-\rmI$. It follows that elements $A\in\SL_2(\bbR)$ that have eigenvalues equal to $-1$ without themselves being equal to $-\rmI$, that is, those $A\in\SL_2(\bbR)$ which are conjugate to $\left(\begin{smallmatrix}
+If $A\in\mathfrak{sl}_2(\bbR)$, then $\rme^A$ has eigenvalues equal to $-1$ iff there is a $k\in\bbZ$ such that $A$ has eigenvalues equal to $\pm\rmi \pi(2k+1)$ (with both signs occurring). This implies that $A$ is diagonalizable over $\bbC$, hence $\rme^A$ is as well, so $\rme^A=-\rmI$. It follows that elements $g\in\SL_2(\bbR)$ that have eigenvalues equal to $-1$ without themselves being equal to $-\rmI$, that is, those $g\in\SL_2(\bbR)$ which are conjugate to $\left(\begin{smallmatrix}
     -1&\pm 1\\0&-1
 \end{smallmatrix}\right)$, \emph{are not in the image of $\exp:\mathfrak{sl}_2(\bbR)\to \SL_2(\bbR)$} (and only they aren't).
 
@@ -6856,7 +6856,7 @@ We can now establish a relationship between normal subgroups and ideals of the L
     Conversely, suppose $H$ is normal. Given $A\in\frakg$ and $B\in\frakh$, note that (\ref{3179}) applied to $sB$ with $g=\rme^{tA}$ implies
     \[\exp\left(\Ad_{\rme^{tA}} sB\right)=\rme^{tA}\rme^{sB}\rme^{-tA}\in H.\]
     Since $\Ad_{\rme^{tA}}$ is linear, it follows that
-    \[\exp\left(s\Ad_{\rme^{tA}}B\right)=\exp\left(\Ad_{\rme^{tA}}sB\right),\]
+    \[\exp\left(\Ad_{\rme^{tA}}sB\right)=\exp\left(s\Ad_{\rme^{tA}}B\right),\]
     which we have just shown to be in $H$ for all $s$, so $\Ad_{\rme^{tA}}B\in\frakh$ by Proposition~\ref{prop 20.9 Lee}. Since
     \[\restr{\frac{\dd}{\dd t}}{t=0}\Ad_{\rme^{tA}}B=\ad_A B=[A,B],\]
     we conclude that $[A,B]\in\frakh$ and $\frakh$ is an ideal.
@@ -6879,12 +6879,12 @@ Lie group isomorphisms induce isomorphisms of Lie algebras. Now we ask to which 
     Two connected Lie groups have isomorphic Lie algebras iff their universal covering groups are isomorphic.
 \end{thm}
 \begin{proof}
-    The forward implication is obvious because the universal covering group has the same Lie algebra as the original group. Conversely, let $\phi:\frakh\to \frakh$ be an isomorphism. Using the Integrability Theorem we obtain a unique homomorphism $\Phi:\wt{G}\to \wt{H}$ with $\Phi_{\ast e}=\phi$ and also a unique morphism $\Psi:\wt{H}\to \wt{G}$ with $\Psi_{\ast e}=\phi^{-1}$. Then $(\Phi\circ\Psi)=\id_{\frakg}$ implies  $\Phi\circ\Psi=\id_{\wt H}$ and likewise $\Psi\circ\Phi=\id_{\wt G}$. Therefore $\wt{G}\cong \wt{H}$.
+    The backward implication is obvious because the universal covering group has the same Lie algebra as the original group. Conversely, let $G$ and $H$ be the two groups and let $\phi:\frakg\to \frakh$ be an isomorphism of their Lie algebras. Using Theorem~\ref{thm second principle}, we obtain a unique homomorphism $\Phi:\wt{G}\to \wt{H}$ with $\Phi_{\ast e}=\phi$ and also a unique morphism $\Psi:\wt{H}\to \wt{G}$ with $\Psi_{\ast e}=\phi^{-1}$. Then $(\Phi\circ\Psi)_{\ast e}=\id_{\frakg}$ implies  $\Phi\circ\Psi=\id_{\wt H}$ and likewise $\Psi\circ\Phi=\id_{\wt G}$. Therefore $\wt{G}\cong \wt{H}$.
 \end{proof}
 Combining this with the fact that every Lie group is the quotient of its universal covering group by a discrete normal (and central) subgroup $\Gamma\subset \wt{G}$ (Corollary~\ref{cor G=wt G/Gamma}), we obtain:
 
 \begin{cor}
-    Let $G$ be a connected Lie group with universal covering homomorphism $\pi:\wt{G}\to G$. Then for each discrete central subgroup $\Gamma\subset \wt G$, the group $\wt{G}\slash\Gamma$ is a connected Lie group with $\Lief (\wt{G}\slash \Gamma)\cong \frakg$  and, conversely, each Lie group with the same Lie algebra as $G$ is isomorphic to some quotient $\wt{G}\slash \Gamma$, so that $\Gamma\cong \pi_1(G)$.
+    Let $G$ be a connected Lie group with universal covering homomorphism $\pi:\wt{G}\to G$. Then for each discrete central subgroup $\Gamma\subset \wt G$, the group $\wt{G}\slash\Gamma$ is a connected Lie group with $\Lief (\wt{G}\slash \Gamma)\cong \frakg$  and, conversely, each Lie group $G'$ with the same Lie algebra as $G$ is isomorphic to some quotient $\wt{G}\slash \Gamma$, so that $\Gamma\cong \pi_1(G')$.
 \end{cor}
 
 \begin{example}
@@ -6971,13 +6971,13 @@ For the second example we need a minor lemma. Recall that a \emph{Banach algebra
     
     Let $G=\Heis_3$. Note that $\exp_G$ is a diffeomorphism whose inverse is given by 
     \[\ln(g)=(g-\rmI)-\frac12(g-\rmI)^2,\]
-    see Corollary~\ref{cor 5.16 Sepanski} below. Recall the commutation relations $[X,Y]=Z$, $[Y,Z]=[X,Z]=0$ (Example~\ref{example Heisenberg group}). Therefore, by the \gls{bch} formula,
+    see Corollary~\ref{cor 5.16 Sepanski} below. Recall the commutation relations $[X,Y]=Z$, $[Y,Z]=[X,Z]=0$ (Example~\ref{example Heisenberg group}). Therefore, by the above formula,
     \[\exp(\bbR Z)=\rmI+\bbR Z\subset \rmZ(G),\]
     and $D=\exp(\hbar\bbZ Z)$ is a discrete central subgroup of $G$. We claim that $G\slash D$ is nonlinear.
 
     Consider a homomorphism $\Phi:G\to\GL_n(\bbC)$ with $D\subset \ker\Phi$ (so it induces a finite-dimensional representation of $G\slash D$). Let $\phi=\Phi_{\ast e}:\frakg\to \frakgl_n(\bbC)$, so we obtain matrices
     \[P\coloneqq \phi(X), \quad Q\coloneqq \phi(Y),\quad C\coloneqq \phi(\hbar Z)\]
-    with $[P,Q]=C/\hbar$. Now $\rme^{\hbar Z}\in D\subset\ker\Phi$ implies that $\rme^{C}=\Phi(\rme^{\hbar Z})=\rmI$, and hence that $C$ is diagonalizable with all eigenvalues contained in $2\pi\rmi\bbZ$. Let $V_\lambda=\ker (C-\lambda \rmI)$. Since $Z$ is central in $\frakg$, the space $V_\lambda$ is invariant under $G$, hence also under $\frakg$. Therefore the restrictions $P_\lambda=\restr{P}{V_\lambda}$ and $Q_\lambda=\restr{Q}{V_\lambda}$ satisfy $[P_\lambda,Q_\lambda]=\lambda \id$ in the Banach algebra $\End(V_\lambda)$. In view of the preceding lemma, we have $\lambda=0$. Therefore, the diagonalizability of $C$ entails that $C=0$ and hence that $\bbR Z\subset \ker\phi$. It follows in particular that the group $G\slash D$ has no faithful finite-dimensional linear representations.
+    with $[P,Q]=C/\hbar$. Now $\rme^{\hbar Z}\in D\subset\ker\Phi$ implies that $\rme^{C}=\Phi(\rme^{\hbar Z})=\rmI$, and hence that $C$ is diagonalizable with all eigenvalues contained in $2\pi\rmi\bbZ$. Let $V_\lambda=\ker (C-\lambda \rmI)$. Since $Z$ is central in $\frakg$, the space $V_\lambda$ is invariant under $G$, hence also under $\frakg$. Therefore the restrictions $P_\lambda=\restr{P}{V_\lambda}$ and $Q_\lambda=\restr{Q}{V_\lambda}$ satisfy $[P_\lambda,Q_\lambda]=\frac{\lambda}{\hbar} \rmI$ in the Banach algebra $\End(V_\lambda)$. In view of the preceding lemma, we have $\lambda=0$. Therefore, the diagonalizability of $C$ entails that $C=0$ and hence that $\bbR Z\subset \ker\phi$. It follows in particular that the group $G\slash D$ has no faithful finite-dimensional linear representations.
 \end{example}
 
 
@@ -7254,7 +7254,7 @@ where the sum is taken over all $l_1,\ldots,l_k,m_1,\ldots,m_k\geq 0$ such that 
     Although we obtained this series as a formal one, it actually converges on the entire Lie algebra (assuming the Lie algebra is finite-dimensional). This follows from the analyticity of the exponential map, but also can be derived intrinsically from the factorial-speed decay of the coefficients of the series. In fact, the \gls{bch} series is often derived purely algebraically and then used to \emph{define} the analytic structure on the Lie group.
 \end{rem}
 
-Dynkin's formula shows why certain classes of Lie algebras are particularly special. For example, \emph{nilpotent Lie algebras} are the algebras whose exponential maps are polynomial, i.e.\ whose Dynkin's formula terminates after a finite number of terms. The prototypes for all nilpotent Lie algebras are Lie algebras consisting of strictly (upper-)triangular matrices, see Remark~\ref{rem nilpontent Lie alg} below. Recall that an element $a$ of a ring is called \emph{nilpotent}\index{Nilpotent element} if $a^n=0$ for some positive integer $n$ and \emph{unipotent} if $(a-1)$ is nilpotent.\index{Unipotent element}
+Dynkin's formula shows why certain classes of Lie algebras are particularly special. For example, \emph{nilpotent Lie algebras} are the algebras whose exponential maps are polynomial, i.e.\ whose Dynkin's formula terminates after a finite number of terms. The prototypes for all nilpotent Lie algebras are Lie algebras consisting of strictly (upper-)triangular matrices, see Remark~\ref{rem nilpotent Lie alg} below. Recall that an element $a$ of a ring is called \emph{nilpotent}\index{Nilpotent element} if $a^n=0$ for some positive integer $n$ and \emph{unipotent} if $(a-1)$ is nilpotent.\index{Unipotent element}
 
 \begin{cor}[{{\cite[Cor.~5.16]{Sepanski}}}]\label{cor 5.16 Sepanski}
     Let $N$ be a connected Lie subgroup of $\GL_n(\bbC)$ whose Lie algebra $\mathfrak{n}$ lies in the set of \emph{strictly upper triangular matrices}. Then the map $\exp:\mathfrak{n}\to N$ is bijective. 
@@ -7267,7 +7267,7 @@ Dynkin's formula shows why certain classes of Lie algebras are particularly spec
     The image of $\exp$, i.e.~$N$, clearly consists of unipotent matrices: $\rme^A-1$ is a polynomial in $A$ with no constant term, therefore it is nilpotent just as $A$ is. Bijectivity of $\exp$ then follows from the fact that the inverse is given by $a\mapsto \ln (\rmI+(a-\rmI))\in\frakn$, which is also a terminating series due to the fact that $(a-\rmI)$ is nilpotent.
 \end{proof}
 
-\begin{rem}[Nilpontent Lie algebras]\label{rem nilpontent Lie alg}
+\begin{rem}[Nilpotent Lie algebras]\label{rem nilpotent Lie alg}
     A Lie algebra is called \emph{nilpotent}\index{Nilpotent!Lie algebra}\index{Nilpotent!Lie group} if there exists an $n\in\bbN$ such that $\ad_{A_1}\ad_{A_2}\cdots \ad_{A_n}=0$ for any sequence $A_1,\ldots,A_n\in\frakg$. A fundamental theorem of Engel\index{Theorem!Engel} states that a finite-dimensional Lie algebra is nilpotent iff each adjoint operator is nilpotent, i.e.~$\ad_A^n=0$ for all $A$. A Lie group $G$ is called nilpotent if $\Adg_{g_1}\cdots \Adg_{g_n}g=e$ for all $g_1\ldots,g_n,g\in G$. Assuming $G$  is connected, this is equivalent to its Lie algebra being nilpotent. The above Corollary is then a special case of a general statement that the exponential map is bijective for any \emph{nilpotent} Lie algebra, and thus any nilpotent Lie group is diffeomorphic to a vector space.
 
     Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''.
