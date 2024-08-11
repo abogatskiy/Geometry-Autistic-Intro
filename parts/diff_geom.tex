@@ -5201,10 +5201,10 @@ The system of PDE's (\ref{eq 4.7.2 RS1}) is the \emph{Pfaffian system of equatio
     This is not limited to first-order PDE's. In the presence of second derivatives, say $\partial_i\partial_j y^k$, we can  introduce new variables $p_j^k\coloneqq \partial_j y^k$, and then the system will be written in terms of only first derivatives of the extended set of coordinates $\{x^i,y^j,p^k_l\}$. Recalling Definition~\ref{def jet bundles}, we recognize such a PDE as a Pfaffian equation on the first jet bundle $\rmJ^1(\bbR^p,\bbR^{n-p})$. 
     
     Clearly, the same can be done with higher-order PDE's, writing them as Pfaffian systems on arbitrary jet bundles. Indeed, let $\rmJ^k(M,N)$ have coordinates $(x^i,u^a,p_i^a,p_{ij}^a,\ldots,p_{i_1,\ldots,i_k}^a)$, abbreviated as $(x^i,u^a,p_I^a)$, where $i$ runs over the dimensions of $M$, $a$ runs over the dimensions of $N$, and $I$ is a multi-index \index{Multi-index} of length up to $k$ whose entries range from $1$ to $\dim M$. Then a jet $j_{x_0}^k f\in \rmJ^k(M,N)$ has coordinates 
-    \[x^i_0,\; u^a=f^a(x_0),\; p_I^a=\frac{\partial^{\ell(I)}f^a}{\partial x^I}(x_0),\quad 1\leq \ell(I)\leq k,\]
-    where $\ell(I)$ is the length of $I$, i.e.\ if $I=(i_1,\ldots,i_{\ell(I)})$, and 
+    \[x^i_0,\; u^a=f^a(x_0),\; p_I^a=\frac{\partial^{\deg(I)}f^a}{\partial x^I}(x_0),\quad 1\leq \deg(I)\leq k,\]
+    where $\deg(I)$ is the degree/length of $I$, i.e.\ if $I=(i_1,\ldots,i_{\deg(I)})$, and 
     \[\partial_I = \]
-    $\partial x^I=\partial x^{i_1}\cdots \partial x^{i_{\ell(I)}}$.
+    $\partial x^I=\partial x^{i_1}\cdots \partial x^{i_{\deg(I)}}$.
 
     Now we can define a \emph{canonical contact system}, which is a collection of $1$-forms on $\rmJ^k(M,N)$ whose kernels correspond to the relationships between $p_I^a$ for different $I$ on holonomic sections, called \emph{contact forms}:\index{Contact forms}
     \begin{align}
@@ -5218,7 +5218,7 @@ The system of PDE's (\ref{eq 4.7.2 RS1}) is the \emph{Pfaffian system of equatio
     The integral manifolds of the canonical contact system are exactly the $k$-th prolongations $\rmj^k f$ of maps $f:M\to N$ (\emph{$k$-graphs}). Indeed, if such an integral manifold is locally described by $u=u(x^1,\ldots,x^n)$, $p_i^a=p_i^a(x^1,\ldots,x^n)$,  etc., then the vanishing of the contact forms along it implies, for example, that $p_i^a=\partial_{x^i}u^a$, and so on. 
 
     Given a $k$-th order system of PDE's for maps $f:\bbR^n\to \bbR^s$, 
-    \[F^r(x^i,u^a,\partial_I u^a)=0,\quad 1\leq r\leq R,\; 1\leq \ell(I)\leq k,\]
+    \[F^r(x^i,u^a,\partial_I u^a)=0,\quad 1\leq r\leq R,\; 1\leq \deg(I)\leq k,\]
     we define a submanifold $S\subset \rmJ^k$ by the equations $F^r(x^i,u^a,p_I^a)=0$. The $k$-graphs of solutions of the PDE system are precisely such that the pullback of the contact system to them vanishes. Note that usually we only seek $n$-dimensional integral manifolds (graphs of functions of $n$ variables), and $n$ is typically lower than the dimension required by the Frobenius integrability (which would be $s\left(n+\binom{n}{k}\right)-R$). For this reason, one usually specifies a so called \emph{independence condition}\index{Independence condition} $\dd x^1\wedge\cdots\wedge\dd x^n$, which is required to induce a volume form on integral manifolds, thus specifying their dimensionality (see below). Since this setting is outside of the scope of the Frobenius Theorem, we delay its full exploration until \Sect~\ref{sec: PDE's}.
 \end{rem}
 
