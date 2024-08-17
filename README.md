@@ -1,8 +1,10 @@
 # Differential Geometry: an autistic introduction
 
-**TL;DR**: this is an attempt at a bottom-up approach to modern differential geometry, covering very deep topics in maximum detail with minimal prerequisites. Too often in math education, fundamental concepts are treated as a mere "means to an end" (such as proving an important theorem), so the original motivation behind the introduction of these concepts gets lost, making them very unintuitive and dry. Therefore, the "autistic" in the subtitle refers to the principle: *no sophisticated construction is introduced until it is motivated enough to feel necessary*.
+**Download the PDF under [Releases](https://github.com/abogatskiy/Geometry-Autistic-Intro/releases)**
 
-**Prerequisites**: although a short reference section on point set topology is included, it is not comprehensive. Thus, apart from general calculus, some familiarity with basic topology definitely helps. In certain applications and examples, other topics such as PDE's or complex analysis will come in handy.
+This is an attempt at a bottom-up approach to modern differential geometry, covering deep topics in maximum detail with minimal prerequisites. Too often in math education, fundamental concepts are treated as a mere "means to an end" (such as proving an important theorem), so the original motivation behind the introduction of these concepts gets lost, making them very unintuitive and dry. Therefore, "autistic" in the subtitle refers to the principle: *no sophisticated construction is introduced until it is motivated enough to feel necessary*.
+
+**Prerequisites**: although a short reference section on point set topology is included, it is not comprehensive. Thus, apart from general calculus, some familiarity with basic topology definitely helps. In certain applications and examples, other subjects such as PDE's, complex analysis, or physics will come in handy.
 
 **Reading guidance**: top-level ``parts'' of the book (Roman numerals) are well separated in themes so that cross-references between them are pretty minimal. Thus, for example, if you are broadly familiar with the topics in parts 1-3, you are probably safe reading from part 4.
 
