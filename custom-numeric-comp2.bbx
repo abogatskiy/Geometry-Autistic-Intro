@@ -1,0 +1,936 @@
+\ProvidesFile{custom-numeric-comp2.bbx}%[2006/03/15 v1.0 biblatex bibliography style]
+
+% This file is based on biblatex bibliography drivers and macroses
+% Modified by S. Khirevich
+% Further modified by A. Bogatskiy, J. T. Offermann.
+% This includes additions from Robert Di Cosmo's software-biblatex package.
+
+% =========================== Redefined drivers ==============================
+% for article, book, booklet, inbook, incollection, 
+% inproceedings, manual, phdthesis entry types
+% ============================================================================
+
+\RequireBibliographyStyle{numeric-comp}
+
+% Make author names in small caps
+\renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
+
+% Force titles to not be in italic. They are not in italic for journal,
+% but appear in italics for other things like tech reports.
+% Note that for non-article entries, we use our custom "titlequote"
+% to make sure that they *do* get quotation marks.
+% Biblatex seems to be a bit messy... - Jan
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat{citetitle}{#1}
+
+% DECLARE NEW FIELDS
+% \begin{filecontents}{techdesignreport.dbx}
+% \DeclareDatamodelEntrytypes{techdesignreport}
+
+% \DeclareDatamodelFields[type=field,datatype=literal]{
+%   collaboration,
+%   reportNumber,
+% }
+
+% \DeclareDatamodelEntryfields[techdesignreport]{
+%     collaboration,
+%     reportNumber
+% }
+% \end{filecontents}
+
+% DECLARE NEW MACROS
+\newbibmacro*{collaboration}{
+    {\printfield{collaboration}}
+}
+
+\newbibmacro*{titlequote}{
+    {\mkbibquote{\printfield{title}}}
+}
+
+\newbibmacro*{reportnumber}{
+  \iffieldundef{reportNumber}
+  {{\color{red}NONUM}}
+  {Rep. \printfield{reportNumber}.} %\printfield
+}
+
+% why does the code below lead to weird indentation of author field?
+% \newbibmacro*{author+collaboration}{
+%     \ifnameundef{author}{\usebibmacro{collaboration}}
+%     {{\usebibmacro{author}} on behalf of{\usebibmacro{collaboration}}}
+%     % {\usebibmacro{author}}
+% }
+
+\newbibmacro*{author+collaboration}{%
+  \ifboolexpr{
+    test \ifuseauthor
+    and
+    not test {\ifnameundef{author}}
+  }
+    {\usebibmacro{author}\iffieldundef{collaboration}{}{  on behalf of\usebibmacro{collaboration}}}
+    {\textsc{\thefield{collaboration}}. }} % Jan: should find more elegant solution to the period and space
+
+% like regular doi+eprint+url, but doesn't give url if others are provided
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {
+        \iffieldundef{doi}
+        {
+            \iffieldundef{eprint}
+            {
+                \usebibmacro{url+urldate}
+            }
+            {}
+        }
+        {}
+        % \usebibmacro{url+urldate}
+    }
+    {}
+}
+
+
+
+%-------------------
+% changed author/translator+others -> author
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author+collaboration}% change to author+collaboration, but needs fixing for case of no collab (currently running into indentation/space-buffer issues)
+  \setunit{\labelnamepunct}\newblock% % Jan: Adds period at end of name
+  %\addperiod% % Jan: Commenting this out, seems unnecessary?
+  \usebibmacro{title}%
+  \addperiod%
+  \newunit\newblock%
+  \usebibmacro{journal+issuetitle}%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{issn}}%
+    {}%
+  \newunit\newblock%
+  \addperiod%
+  \usebibmacro{doi+eprint+url}%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+
+\DeclareBibliographyDriver{techdesignreport}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author+collaboration}%
+  % \setunit{\labelnamepunct}\newblock% % Jan: Adds period at end of name
+  \addperiod% % Jan: Commenting this out, seems unnecessary?
+  \usebibmacro{titlequote}%
+  \addperiod%
+  \newunit\newblock%
+  \usebibmacro{reportnumber}%
+  \newunit\newblock%
+  \usebibmacro{journal+issuetitle}%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{issn}}%
+    {}%
+  \newunit\newblock%
+  \addperiod%
+  \usebibmacro{doi+eprint+url}%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+
+\DeclareBibliographyDriver{misc}{% % Jan: Currently a copy of article
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}%
+  \setunit{\labelnamepunct}\newblock%
+  \addperiod%
+  \usebibmacro{title}%
+  \addperiod%
+  \newunit\newblock%
+  \usebibmacro{journal+issuetitle}%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{issn}}%
+    {}%
+  \newunit\newblock%
+  \addperiod%
+  \usebibmacro{doi+eprint+url}%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+  
+
+\DeclareBibliographyDriver{book}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \addperiod%
+  \setunit{\labelnamepunct}\newblock%
+  \usebibmacro{maintitle+title}%
+  \addperiod%
+  \newunit%
+  \printlist{language}%
+  \newunit\newblock%
+  \usebibmacro{byauthor}%
+  \newunit\newblock%
+  \usebibmacro{byeditor+others}%
+  \newunit\newblock%
+  \printfield{edition}%
+  \newunit%
+  \iffieldundef{maintitle}%
+    {\printfield{volume}%
+     \printfield{part}}%
+    {}%
+  \newunit%
+  \printfield{volumes}%
+  \newunit\newblock%
+  \usebibmacro{series+number}%
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \usebibmacro{publisher+location+date}%
+  \addperiod%
+  \newunit\newblock%
+  %\usebibmacro{chapter+pages}%
+  \newunit%
+  \printfield{pagetotal}%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{isbn}}%
+    {}%
+  \newunit\newblock%
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock%
+  \usebibmacro{addendum+pubstate}%
+  \newunit\newblock%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+  
+\DeclareBibliographyDriver{booklet}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \addperiod%
+  \setunit{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \addperiod%
+  \newunit%
+  \printlist{language}%
+  \newunit\newblock%
+  \usebibmacro{byauthor}%
+  \newunit\newblock%
+  \usebibmacro{byeditor+others}%
+  \newunit\newblock%
+  \printfield{howpublished}%
+  \newunit\newblock
+  \printfield{type}%
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \usebibmacro{location+date}%
+  \newunit\newblock%
+  \usebibmacro{chapter+pages}%
+  \newunit%
+  \printfield{pagetotal}%
+  \newunit\newblock%
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock%
+  \usebibmacro{addendum+pubstate}%
+  \newunit\newblock%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+  
+\DeclareBibliographyDriver{inbook}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \ifnameundef{author}%
+    {\usebibmacro{editor}\addspace}%
+{\usebibmacro{author/translator+others}\addperiod\addspace\usebibmacro{in:}}%
+  \usebibmacro{title}%
+  \addperiod%
+  \newunit%
+  \ifnameundef{author}%
+    {}%
+    {\usebibmacro{editor}}%
+  \addperiod%
+  \addspace%
+  \iffieldundef{maintitle}%
+    {\printfield{volume}%
+     \printfield{part}}
+    {}%
+  \usebibmacro{chapter+pages}%
+  \addperiod%
+  \newunit%
+  \usebibmacro{publisher+location+date}%
+  \addperiod%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{isbn}}%
+    {}%
+  \newunit\newblock%
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock%
+  \usebibmacro{addendum+pubstate}%
+  \newunit\newblock%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+  
+\DeclareBibliographyDriver{incollection}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/translator+others}%
+  \addperiod%
+  \setunit{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \newunit%
+  \printlist{language}%
+  \newunit\newblock%
+  \usebibmacro{byauthor}%
+  \newunit\newblock%
+  \usebibmacro{in:}%
+  \usebibmacro{maintitle+booktitle}%
+  %\newunit\newblock%
+  %\usebibmacro{byeditor+others}%
+  \addcomma%
+  \newunit\newblock%
+  \printfield{edition}%
+  \newunit%
+  \iffieldundef{maintitle}%
+    {\printfield{volume}%
+     \printfield{part}}%
+    {}%
+  \newunit%
+  \printfield{volumes}%
+  \newunit\newblock%
+  \usebibmacro{series+number}%
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \usebibmacro{chapter+pages}%
+  \newunit\newblock%
+  \usebibmacro{publisher+location+date}%
+  \addperiod%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{isbn}}%
+    {}%
+  \newunit\newblock%
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock%
+  \usebibmacro{addendum+pubstate}%
+  \newunit\newblock%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+  
+\DeclareBibliographyDriver{inproceedings}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor+others/translator+others}%
+  \addperiod%
+  \setunit{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \newunit%
+  \printlist{language}%
+  \newunit\newblock%
+  \usebibmacro{byauthor}%
+  \newunit\newblock%
+  \usebibmacro{in:}%
+  \usebibmacro{maintitle+booktitle}%
+  \newunit\newblock%
+  \usebibmacro{event+venue+date}%
+  \addperiod%
+  %\newunit\newblock%
+  %\usebibmacro{byeditor+others}%
+  \newunit\newblock%
+  \iffieldundef{maintitle}%
+    {\printfield{volume}%
+     \printfield{part}}%
+    {}%
+  \newunit%
+  \printfield{volumes}%
+  \newunit\newblock%
+  \usebibmacro{series+number}%
+  \newunit\newblock%
+  \usebibmacro{chapter+pages}%
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \printlist{organization}%
+  \newunit%
+  \usebibmacro{publisher+location+date}%
+  \addperiod%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{isbn}}%
+    {}%
+  \newunit\newblock%
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock%
+  \usebibmacro{addendum+pubstate}%
+  \newunit\newblock%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+  
+\DeclareBibliographyDriver{manual}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author/editor}%
+  \ifnameundef{author}%
+    {}%
+    {\addperiod\setunit{\labelnamepunct}\newblock}%
+  \usebibmacro{title}%
+  \addperiod
+  \newunit
+  \printlist{language}%
+  \newunit\newblock
+  \usebibmacro{byauthor}%
+  \newunit\newblock
+  \usebibmacro{byeditor}%
+  \newunit\newblock
+  \printfield{edition}%
+  \newunit\newblock
+  \usebibmacro{series+number}%
+  \newunit\newblock
+  \printfield{type}%
+  \newunit
+  \printfield{version}%
+  \newunit
+  \printfield{note}%
+  \newunit\newblock
+  \printlist{organization}%
+  \addcomma
+  \newunit
+  \usebibmacro{publisher+location+date}%
+  \addperiod  
+  \newunit\newblock
+  \usebibmacro{chapter+pages}%
+  \newunit
+  \printfield{pagetotal}%
+  \newunit\newblock
+  \iftoggle{bbx:isbn}
+    {\printfield{isbn}}
+    {}%
+  \newunit\newblock
+  \usebibmacro{doi+eprint+url}%
+  \newunit\newblock
+  \usebibmacro{addendum+pubstate}%
+  \newunit\newblock
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+  
+\DeclareBibliographyDriver{thesis}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{author}%
+  \addperiod  %
+  \setunit{\labelnamepunct}\newblock%
+  \usebibmacro{title}%
+  \addperiod%
+  \newunit%
+  \printlist{language}%
+  \newunit\newblock%
+  \usebibmacro{byauthor}%
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock
+  \printfield{type}%
+  \addperiod%
+  \newunit%
+  \usebibmacro{institution+location+date}%
+  \addperiod%
+  \newunit%
+  \usebibmacro{pageref}%
+  \usebibmacro{finentry}}
+
+
+% === from Robert Di Cosma's software-biblatex
+\ProvidesFile{software.bbx}[2022/08/01 bibliography driver extension for software entries, Roberto Di Cosmo]
+%
+% Reference implementation of a BibLaTeX style for the software family of bibliographic entries
+%
+% 2020 - 2022 Roberto Di Cosmo <roberto@dicosmo.org>
+%
+\RequireBiber[3]
+\RequirePackage{xurl}
+%
+% Toggles for typesetting additional ids and printing labels
+%
+\newtoggle{bbx:halid}
+\newtoggle{bbx:swhid}
+\newtoggle{bbx:shortswhid}
+\newtoggle{bbx:vcs}
+\newtoggle{bbx:swlabels}
+\newtoggle{bbx:license}
+
+\DeclareBibliographyOption[boolean]{halid}[true]{%
+  \settoggle{bbx:halid}{#1}}
+\DeclareBibliographyOption[boolean]{swhid}[true]{%
+  \settoggle{bbx:swhid}{#1}}
+\DeclareBibliographyOption[boolean]{shortswhid}[false]{%
+  \settoggle{bbx:shortswhid}{#1}}
+\DeclareBibliographyOption[boolean]{swlabels}[true]{%
+  \settoggle{bbx:swlabels}{#1}}
+\DeclareBibliographyOption[boolean]{vcs}[true]{%
+  \settoggle{bbx:vcs}{#1}}
+\DeclareBibliographyOption[boolean]{license}[true]{%
+  \settoggle{bbx:license}{#1}}
+
+\ExecuteBibliographyOptions{halid,swhid,shortswhid,swlabels,vcs,license}
+
+%
+% Declare inheritance rules (valid only in LaTeX preamble!)
+%
+\DeclareDataInheritance{software}{softwareversion,softwaremodule,codefragment}{\inherit{*}{*}}
+\DeclareDataInheritance{softwareversion}{softwaremodule,codefragment}{\inherit{*}{*}}
+\DeclareDataInheritance{softwaremodule}{codefragment}{\inherit{*}{*}}
+
+%
+% Localization
+%
+% \DeclareLanguageMapping{english}{custom-english}
+% \DeclareLanguageMapping{french}{custom-french}
+
+%
+% Macros
+%
+
+%
+% Notice the use of \edef to force expansion of the macro parameters before calling \nolinkurl
+%
+\newbibmacro*{swurl+urldate}{%
+  \mkbibacro{URL}\addcolon\addspace%
+     \ifhyperref%
+        {\href{\strfield{url}}{\nolinkurl{\strfield{url}}}}%
+        {\edef\temp{\noexpand\nolinkurl{\strfield{url}}}\temp}%
+  \iffieldundef{urlyear}%
+    {}%
+    {\setunit*{\addspace}%
+     \usebibmacro{urldate}}}
+
+%
+% Support multiline SWHIDs and create swhidcore field from swhid if missing
+%
+\DeclareStyleSourcemap{
+  \maps[datatype=bibtex,overwrite=true]{
+    \map{
+      \step[fieldsource=swhid, match=\regexp{\s}, replace={}]
+    }
+    \map{
+      \step[fieldsource=swhid]
+      \step[fieldset=swhidcore, origfieldval]
+      \step[fieldsource=swhidcore, match=\regexp{;.*}, replace={}]
+    }
+  }
+}
+
+%
+% Formatting fields for the software entries
+%
+
+\DeclareFieldFormat[softwaremodule,codefragment]{subtitle}{\mkbibquote{#1\isdot}}
+\DeclareFieldFormat[software,softwareversion,softwaremodule,codefragment]{url}{
+  \iftoggle{bbx:url}%
+	   {\usebibmacro{swurl+urldate}}
+           {}%
+}
+\DeclareFieldFormat[software,softwareversion,softwaremodule,codefragment]{hal_id}{
+  \iftoggle{bbx:halid}%
+           {\mkbibacro{HAL}\addcolon\addspace%
+             \ifhyperref%
+                 {\href{https://hal.archives-ouvertes.fr/#1\thefield{hal_version}}{\(\langle\)\nolinkurl{#1\thefield{hal_version}}\(\rangle\)}}%
+                 {\(\langle\)\nolinkurl{#1}\thefield{hal_version}\(\rangle\)}%
+           }%
+           {}%
+}
+
+%
+% Notice the use of \edef to force expansion of the macro parameters before calling \nolinkurl
+%
+\DeclareFieldFormat[software,softwareversion,softwaremodule,codefragment]{swhid}{%
+  \iftoggle{bbx:swhid}%
+           {\mkbibacro{SWHID}\addcolon\addspace%
+             \ifhyperref%
+                 {\href{http://archive.softwareheritage.org/#1}{\(\langle\)\nolinkurl{%
+  		    \iftoggle{bbx:shortswhid}{\thefield{swhidcore}}{#1}%
+		    }\(\rangle\)}}%
+                 {\(\langle\){\edef\temp{\noexpand\nolinkurl{%
+  		    \iftoggle{bbx:shortswhid}{\thefield{swhidcore}}{#1}%
+		    }}\temp}\(\rangle\)}%
+           }%
+           {}%
+}
+\DeclareFieldFormat[software,softwareversion,softwaremodule,codefragment]{repository}{%
+  \iftoggle{bbx:vcs}%
+           {\mkbibacro{VCS}\addcolon\addspace%
+               \ifhyperref%
+                   {\href{#1}{\nolinkurl{#1}}}%
+                   {\nolinkurl{#1}}%
+           }%
+           {}%
+}
+\DeclareListFormat[software,softwareversion,softwaremodule,codefragment]{license}{%
+  \usebibmacro{list:delim}{#1}%
+  #1\isdot
+  \usebibmacro{list:andothers}}
+
+%
+% Add here special eprint formats
+%
+
+%
+% ASCL
+%
+\DeclareFieldFormat{eprint:ascl}{%
+ \mkbibacro{ASCL}\addcolon\addspace%
+  \ifhyperref
+    {\href{https://ascl.net/#1}{%
+         \(\langle\)ascl\addcolon\nolinkurl{#1}\(\rangle\)%
+       \iffieldundef{eprintclass}
+         {}
+         {\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}}}}
+    {\(\langle\)ascl\addcolon\nolinkurl{#1}\(\rangle\)%
+     \iffieldundef{eprintclass}
+       {}
+       {\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}}}
+}
+
+%
+% swMATH
+%
+\DeclareFieldFormat{eprint:swmath}{%
+ \mkbibacro{SWMATH}\addcolon\addspace%
+  \ifhyperref
+    {\href{https://www.swmath.org/software/#1}{%
+         \(\langle\)swmath\addcolon\nolinkurl{#1}\(\rangle\)%
+       \iffieldundef{eprintclass}
+         {}
+         {\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}}}}
+    {\(\langle\)swmath\addcolon\nolinkurl{#1}\(\rangle\)%
+     \iffieldundef{eprintclass}
+       {}
+       {\addspace\texttt{\mkbibbrackets{\thefield{eprintclass}}}}}
+}
+
+%
+% Macros to format output
+%
+\newbibmacro*{swtitleauthoreditoryear}{%
+  \printnames{author}\addcomma%
+  \setunit{\addspace}%
+  \printfield{title}\addspace%
+  \printfield{version}\addspace%
+  \ifnameundef{editor}%
+    {}%
+    {\printtext[parens]{%
+        \bibstring{edited}\addspace%
+        \printnames{editor}}}%
+    \setunit*{\addcomma\addspace}%
+    \printdate%
+}
+
+%
+\newbibmacro*{swsubtitleauthoreditoryear}{%
+  \printnames{author}\addcomma%
+  \setunit{\addspace}%
+  \iffieldundef{subtitle}%
+               {}
+               {\printfield{subtitle}\addcomma\addspace%
+                 \bibstring{swpartof}\addspace
+               }%
+  \printfield{title}\addspace%
+  \printfield{version}\addspace%
+  \ifnameundef{editor}%
+    {}
+    {\printtext[parens]{%
+        \bibstring{edited}\addspace%
+        \printnames{editor}}}%
+    \setunit*{\addcomma\addspace}%
+    \printdate%
+}
+
+\newbibmacro*{codefragmenttitleauthoreditoryear}{%
+  \printnames{author}\addcomma%
+  \setunit{\addspace}%
+  \iffieldundef{subtitle}%
+               {}
+               {\printfield{subtitle}\addcomma\addspace%
+                 \bibstring{swexc}\addspace
+               }%
+  \printfield{title}\addspace%
+  \printfield{version}\addspace%
+  \ifnameundef{editor}%
+    {}
+    {\printtext[parens]{%
+        \bibstring{edited}\addspace%
+        \printnames{editor}}}%
+    \setunit*{\addcomma\addspace}%
+    \printdate%
+}
+
+% Same as above macros, but without year. I think the year should go
+% at the end of the citation, to match other styles. Making a few changes
+% but leaving Robert Di Cosmo's original macros above, some might prefer those. -Jan
+\newbibmacro*{swtitleauthoreditor}{%
+  \printnames{author}\addperiod%
+  \setunit{\addspace}%
+  \printfield{title}\addspace%
+  \printfield{version}\addspace%
+  \ifnameundef{editor}%
+    {}%
+    {\printtext[parens]{%
+        \bibstring{edited}\addspace%
+        \printnames{editor}}}%
+    \setunit*{\addcomma\addspace}%
+    % \printdate%
+}
+
+\newbibmacro*{swsubtitleauthoreditor}[1]{%
+  \printnames{author}\addperiod%
+  \setunit{\addspace}%
+  \iffieldundef{subtitle}%
+               {}
+               {
+                \printfield{subtitle} % space after this looks too large
+                \usebibmacro{sw-generic-label}{#1}
+                \addcomma\addspace%
+                \bibstring{swpartof}\addspace
+               }%
+  \bibstring{swpackage1}\addspace
+  \printfield{title}\addspace%
+  \bibstring{swpackage2}
+  \iffieldundef{version}{
+    \addperiod
+    \addspace
+  }{
+  \addcomma\addspace
+  \printfield{version}
+  \addspace
+  }
+  \ifnameundef{editor}%
+    {}
+    {\printtext[parens]{%
+        \bibstring{edited}\addspace%
+        \printnames{editor}}}%
+    \setunit*{\addcomma\addspace}%
+    % \printdate%
+}
+
+\newbibmacro*{codefragmenttitleauthoreditor}{%
+  \printnames{author}\addperiod%
+  \setunit{\addspace}%
+  \iffieldundef{subtitle}%
+               {}
+               {\printfield{subtitle}\addcomma\addspace%
+                 \bibstring{swexc}\addspace
+               }%
+  \printfield{title}\addspace%
+  \printfield{version}\addspace%
+  \ifnameundef{editor}%
+    {}
+    {\printtext[parens]{%
+        \bibstring{edited}\addspace%
+        \printnames{editor}}}%
+    \setunit*{\addcomma\addspace}%
+    % \printdate%
+}
+
+\newbibmacro{licenses}{%
+  \iflistundef{license}
+               {}
+               {\iftoggle{bbx:license}%
+                 {\newunitpunct
+                   \mkbibacro{Lic}\addcolon
+                   \printlist{license}
+                 }%
+                 {}%
+               }
+}
+  
+\newbibmacro*{swids}{%
+  \printfield{doi}%
+  \setunit*{\addcomma\addspace}%
+  \printfield{hal_id}%
+  \setunit*{\addcomma\addspace}%
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%  
+  \setunit*{\addcomma\addspace}%
+  \printfield{url}%
+  \setunit*{\addcomma\addspace}%
+  \printfield{repository}%
+  \setunit*{\addcomma\addspace}%
+  \printfield{swhid}%
+  %
+  % If only the url is present, output it regardless of bbx:url directive
+  %
+  \ifboolexpr{%
+    not test {\iftoggle{bbx:url}}%
+    and
+    not test {\iffieldundef{url}}%
+    and 
+    test {\iffieldundef{doi}}%
+    and 
+    test {\iffieldundef{eprint}}%
+    and 
+    test {\iffieldundef{hal_id}}%
+    and
+    test {\iffieldundef{swhid}}%
+    and
+    test {\iffieldundef{repository}}%
+  }%
+   {\usebibmacro{swurl+urldate}}%
+   {}%
+}               
+
+\newbibmacro*{swrelated}{%
+  \iffieldundef{related}%
+               {}%
+               {\iftoggle{bbx:related}
+	         {\usebibmacro{related:init}%
+	         \usebibmacro{related}
+		 }
+	         {}%
+	       }%
+}               
+
+\newbibmacro*{swlabel}{
+  \iftoggle{bbx:swlabels}{\bibstring{software}{\addspace}}{}%
+}
+
+\newbibmacro*{swversionlabel}{
+  \iftoggle{bbx:swlabels}{\bibstring{swversion}{\addspace}}{}%
+}
+
+\newbibmacro*{swmodulelabel}{
+  \iftoggle{bbx:swlabels}{\bibstring{swmodule}{\addspace}}{}%
+}
+
+\newbibmacro*{swexcerptlabel}{
+  \iftoggle{bbx:swlabels}{\bibstring{swexcerpt}{\addspace}}{}%
+}
+
+\newbibmacro*{sw-generic-label}[1]{
+  \iftoggle{bbx:swlabels}{\bibstring{#1}{\addspace}}{}%
+}
+
+
+%
+% Formatting the entries
+%
+
+\DeclareBibliographyDriver{software}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{sw-generic-label}{software}
+  \usebibmacro{swtitleauthoreditor}%
+  \newunit\newblock%
+  \printlist{institution}
+  \newunit\newblock%
+  \printlist{organization}
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \usebibmacro{licenses}%
+  \newunit\newblock%
+  \usebibmacro{swids}%
+  \newunit\newblock%
+  \usebibmacro{swrelated}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \setunit{\addcomma\space}%
+  \printfield{year}%
+  \newunit
+  \usebibmacro{finentry}}
+
+\DeclareBibliographyDriver{softwareversion}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{swsubtitleauthoreditor}{swversion}%
+  \newunit\newblock%
+  \printlist{institution}
+  \newunit\newblock%
+  \printlist{organization}
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \usebibmacro{licenses}%
+  \newunit\newblock%
+  \usebibmacro{swids}%
+  \newunit\newblock%
+  \usebibmacro{swrelated}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \setunit{\addcomma\space}%
+  \printfield{year}%
+  \newunit
+  \usebibmacro{finentry}}
+
+\DeclareBibliographyDriver{softwaremodule}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{swsubtitleauthoreditor}{swmodule}%
+  \newblock\newblock%
+  \printlist{institution}
+  \newunit\newblock%
+  \printlist{organization}
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \usebibmacro{licenses}%
+  \newunit\newblock%
+  \usebibmacro{swids}%
+  \newunit\newblock%
+  \usebibmacro{swrelated}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \setunit{\addcomma\space}%
+  \printfield{year}%
+  \newunit
+  \usebibmacro{finentry}}
+
+\DeclareBibliographyDriver{codefragment}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \usebibmacro{sw-generic-label}{swexcerpt}
+  \usebibmacro{codefragmenttitleauthoreditor}%
+  \newunit\newblock%
+  \printlist{institution}
+  \newunit\newblock%
+  \printlist{organization}
+  \newunit\newblock%
+  \printfield{note}%
+  \newunit\newblock%
+  \usebibmacro{licenses}%
+  \newunit\newblock%
+  \usebibmacro{swids}%
+  \newunit\newblock%
+  \usebibmacro{swrelated}%
+  \setunit{\bibpagerefpunct}\newblock
+  \usebibmacro{pageref}%
+  \setunit{\addcomma\space}%
+  \printfield{year}%
+  \newunit
+  \usebibmacro{finentry}}
+
+% === END software-biblatex
+  
+% =========================== Redefined macros ==============================
+
+\renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%
+  \printfield{volume}%
+  \setunit*{\addcolon}%
+  \printfield{number}%
+  \setunit*{\addspace}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}%
+  \setunit{\addspace}%
+  \usebibmacro{note+pages}%
+  \setunit{\addcomma\space}%
+  \printfield{year}%
+  \newunit}
+
+\endinput

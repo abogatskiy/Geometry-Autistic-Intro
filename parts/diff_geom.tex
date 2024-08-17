@@ -4526,14 +4526,14 @@ Wedge products have the following basic properties (proofs of which are left as 
 
 The degree of an exterior form can be lowered by substituting a given vector as one of its arguments, which we use to define an operator.
 
-\begin{defn}[Inner product]\index{Inner product}
-    Let $\alpha\in\bigwedge^{p+1}V^\ast, p\geq 0,$ and $v\in V$. The inner product with $v$ is the operator $i_v:\bigwedge^{p+1}V^\ast\to \bigwedge^p(v)$ defined by 
+\begin{defn}[Interior product]\index{Interior product}
+    Let $\alpha\in\bigwedge^{p+1}V^\ast, p\geq 0,$ and $v\in V$. The interior product with $v$ is the operator $i_v:\bigwedge^{p+1}V^\ast\to \bigwedge^p(v)$ defined by 
     \[(i_v \alpha)(v_1,\ldots,v_p)=\alpha(v,v_1,\ldots,v_p),\]
     for $v_1,\ldots,v_p\in V$. We also put $\restr{i_v}{\bigwedge^0V^\ast}=0$.
 \end{defn}
 
 Note that $i_v$ is a ``\emph{$\wedge$-derivation}'' on the exterior algebra (exercise):
-\[i_v(\alpha\wedge\beta)=i_v\alpha\wedge\beta+(-1)^{\deg \alpha}\alpha\wedge i_v\beta.\label{eq inner product derivation}\]
+\[i_v(\alpha\wedge\beta)=i_v\alpha\wedge\beta+(-1)^{\deg \alpha}\alpha\wedge i_v\beta.\label{eq interior product derivation}\]
 
 
 
@@ -4682,8 +4682,8 @@ The following proposition shows that $\dd$ is natural with respect to smooth map
     $\Omega:\mathsf{Man}^\infty \to\mathsf{Alg}$ is a functor, and in fact it is a functor into the category of graded-commutative differential algebras.\footnote{A graded-commutative algebra is an algebra that can be decomposed as a direct sum of vector spaces, $A=\bigoplus_{p\geq 0}A_p $, such that the product acts as $\wedge:A_p\times A_q\to A_{p+q}$ and $\omega\wedge\eta=(-1)^{\deg\omega\cdot\deg\eta}\eta\wedge\omega$. It is also called differential if there is a distinguished graded $\wedge$-derivation $\dd:A_p\to A_{p+1}$ such that $\dd\circ \dd=0$.}
 \end{cor}
 
-\begin{defn}[Inner product]\index{Inner product (differential forms)}
-    Let $\omega\in\Omega^{p+1}(M), p\geq 0,$ and $X\in\fX(M)$. The inner product with $X$ is the operator $i_X:\Omega^{p+1}(M)\to \Omega^p(M)$ defined by 
+\begin{defn}[Interior product]\index{Interior product (differential forms)}
+    Let $\omega\in\Omega^{p+1}(M), p\geq 0,$ and $X\in\fX(M)$. The interior product with $X$ is the operator $i_X:\Omega^{p+1}(M)\to \Omega^p(M)$ defined by 
     \[(i_X \omega)(X_1,\ldots,X_p)=\omega(X,X_1,\ldots,X_p).\]
     We also put $\restr{i_X}{\Omega^0(M)}=0$.
 \end{defn}
@@ -4706,7 +4706,7 @@ The following proposition shows that $\dd$ is natural with respect to smooth map
     \[\Lie_X (\alpha^1\wedge\cdots\wedge\alpha^p)=\sum_{i=1}^p \alpha^1\wedge\cdots\wedge\alpha^{i-1}\wedge(\Lie_X\alpha^i)\wedge\alpha^{i+1}\wedge\cdots\wedge\alpha^p.\label{17932121}\]
     Since $\Omega^1(M)=\fX^\ast(M)$, we know that $\Lie_X \alpha^i$ are also one-forms, and thus (\ref{17932121}) is a differential form.
     Furthermore, if $F$ denotes the flow of $X$, then $\Lie_X\alpha (p)=\restr{\frac{\dd}{\dd\lambda}}{\lambda=0}F^\ast_\lambda \alpha$. But we already know that $\dd$ commutes with pullbacks $F^\ast_\lambda$, so the result follows;
-    \item Follows from (\ref{eq inner product derivation});
+    \item Follows from (\ref{eq interior product derivation});
     \item Follows from the linearity of $i_X$;
     \item This is just the definition of $\Lie_X$;
     \item We prove by induction in $p=\deg\omega$. The case $p=0$ reduces to part (4). Any $(p+1)$-form can be locally represented as $\sum_i \dd f_i\wedge \omega_i$ with $f_i\in\Omega^0(U), \omega_i\in \Omega^p(U)$. Thus, we need to check the property only for $\dd f\wedge \omega$. Since $\Lie_X$ is a derivation of the tensor algebra, we have
@@ -5428,7 +5428,7 @@ Just like with derivations on regular algebras, $\Der\Omega$ is also a Lie algeb
 \end{proof}
 
 \begin{example}
-    For any vector field $X\in\fX(M)$, the Lie derivative $\Lie_X$ is a derivation of degree $0$, $\Lie_X\in\Der_0\Omega$, and the inner product $i_X:\Omega\to \Omega$ is a derivation of degree $-1$, so $i_X\in\Der_{-1}\Omega$. Similarly, $\dd\in\Der_1\Omega$. Cartan's magic formula can be written as 
+    For any vector field $X\in\fX(M)$, the Lie derivative $\Lie_X$ is a derivation of degree $0$, $\Lie_X\in\Der_0\Omega$, and the interior product $i_X:\Omega\to \Omega$ is a derivation of degree $-1$, so $i_X\in\Der_{-1}\Omega$. Similarly, $\dd\in\Der_1\Omega$. Cartan's magic formula can be written as 
     \[\Lie_X=\dd i_X+i_X \dd=[i_X,\dd].\]
 \end{example}
 
@@ -5529,7 +5529,7 @@ The following generalizes the commutator of inner products and Lie derivatives f
 
 Note that the space $\Der \Omega$ is a graded $\Omega$-module with the action $(\omega\wedge D)\varphi=\omega\wedge D(\varphi)$, because $\Omega$ is a graded commutative algebra. The following theorem lists the algebraic properties of the brackets we've constructed in relation to this module structure.
 
-\begin{thm}
+\begin{thm}[{{\cite[Thm.~8.7]{Kolar}}}]
     Let $\omega\in\Omega^q$, $\varphi\in\Omega^k$, and $\psi\in\Omega^l$. Let the other degrees be as indicated. Then 
     \begin{enumerate}[label=(\arabic*)]
         \item $[\omega\wedge D_1,D_2]=\omega\wedge [D_1,D_2]-(-1)^{(q+k_1)k_2}D_2(\omega)\wedge D_1$,
@@ -5553,7 +5553,7 @@ Using these identities, it is easy to obtain explicit formulas for the action of
 \[\Lie_X K=[X,K]\]
 The most important for us special case applies to the bracket of bundle endomorphisms $K,L\in\Omega^1(M;\T M)$.
 
-\begin{lem}
+\begin{lem}[{{\cite[Cor.~8.9]{Kolar}}}]
     For $K,L\in\Omega^1(M;\T M)$, the Fr\"olicher-Nijenhuis bracket is 
     \begin{multline}
         [K,L](X,Y)=[KX,LY]-[KY,LX]-\\-L([KX,Y]-[KY,X])-K([LX,Y]-[LY,X])+(LK+KL)[X,Y].
@@ -5576,7 +5576,7 @@ The most important for us special case applies to the bracket of bundle endomorp
 
 The following final general relation is an immediate consequence of Lemma~\ref{lem 8.6 Kolar}.
 
-\begin{thm}
+\begin{thm}[{{\cite[Lem.~8.11]{Kolar}}}]
     For $K_i\in\Omega^{k_i}(M;\T M)$ and $L_i\in\Omega^{k_i+1}(M;\T M)$ we have 
     \begin{multline}
         [\Lie_{K_1}+i_{L_1},\Lie_{K_2}+i_{L_2}]=\\
@@ -7573,6 +7573,8 @@ It is almost obvious that the definition of the exponential map together with it
 \end{thm}
 \begin{proof}
     The properties of $\mu$ are easily verified except for the associativity. Associativity follows from the associativity of compositions of flows as well as (b) and (c) of Theorem~\ref{thm 1.8.3 DK}.
+
+    Another proof, based on Cartan's Fundamental Theorem and Cartan-K\"ahler theory, will be given in Example~\ref{example Lie III EDS}. 
 \end{proof}
 
 In fact, a global version of this theorem holds, first obtained by \'Elie Cartan. We only provide the statement without proof. The proof relies on the theory of infinite-dimensional Lie groups, and the basic idea is to show that equation (\ref{1794}) defines a group structure on the path space $\rmP(\frakg)$ (of all continuous paths $[0,1]\to \frakg$) which makes it a Banach Lie group, and the identity component $\rmP(\frakg)_0$ into a closed normal subgroup. Then the quotient group $\rmP(\frakg)/\rmP(\frakg)_0$ turns out to be a simply connected Lie group with Lie algebra isomorphic to $\frakg$. Showing that $\rmP(\frakg)_0$ is closed requires either a deep exploration of the topology of Lie groups (one needs to show that $\pi_2(G)=0$ for any Lie group, or at least that the second cohomology group is trivial, as in \cite{DK}), or structure theory of Lie algebras (via Ado's theorem). See Remark~\ref{rem Lie III} below for more comments on the proof.
@@ -8791,7 +8793,7 @@ For real orthogonal groups $d=1$ and thus the isomorphism $\pi_q(\Or_n)=\pi_q(\O
 
 Each Stiefel $\calO_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$ comes with a closely related (we will see how later) vector bundle.
 
-\begin{defn}[Tautological vector bundles]\index{Tautological bundles}
+\begin{defn}[Tautological vector bundles]\index{Tautological bundles}\label{def tautological bundles}
     Let $\Gr_k(V)$ be the Grassmann manifold of the vector space $V=\bbK^n$. The tautological vector bundle $\gamma_k(V)\to \Gr_k(V)$ is defined as the following subbundle of the trivial bundle $\Gr_k(V)\times V$:
     \[\gamma_k(V)=\{(W,v)\in \Gr_k(V)\times V: v\in W\},\]
     i.e.~the fiber over $W\in \Gr_k(V)$ is $W$ itself.

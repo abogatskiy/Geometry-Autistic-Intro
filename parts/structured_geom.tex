@@ -1399,7 +1399,7 @@ Much like in the Frobenius Theorem, which is the basic special case, the goal is
 
 Why, one might ask, would we be interested in existence results for solutions of PDE's when doing geometry? The main question that Cartan's theory answers for a given PDE is \emph{which initial value problems for it are well-posed}. In geometric context, we will think of a PDE with a well-posed initial condition as a \emph{compressed form} of its unique solution. The ``initial values'' will be the \emph{differential invariants} describing certain geometric structures, and the PDE itself will be some form of a \emph{structure equation} (related to the Maurer-Cartan equation). The unique solution then will be a geometric structure on the underlying manifold. Thus, Cartan's analysis of PDE's will allow us to ``distill'' very general geometric structures down to a minimal set of quantities that suffice to describe them (for example, isometric embeddings of Riemannian surfaces are described by two scalar curvatures subject to a certain compatibility condition).
 
-Since this theory will be concerned specifically with \emph{analytic} solutions to differential equations (i.e.\ those expressed by convergent Taylor series), we start with the most classical setting -- finding the flow of an analytic vector field. The next natural step will be to look for integral manifolds of a system of many analytic vector fields, which is the setting for the Frobenius Theorem. Its analytic version will be subsumed by the Cartan-K\"ahler theory presented below.
+Since this theory will be concerned specifically with \emph{analytic} solutions to differential equations (i.e.\ those expressed by convergent Taylor series), we start with the most classical setting -- finding the flow of an analytic vector field. The next natural step will be to look for integral manifolds of a system of many analytic vector fields, which is the setting for the Frobenius Theorem. Its analytic version will be subsumed by the Cartan-K\"ahler theory presented below. Unfortunately, there are few quality sources on this topic, so the material in this \sect\ is mainly synthesized from the excellent books \cite{Bryant,Ivey,McKayEDS}. In particular, the book by Bryant, who is an ``academic grandchild'' of \'Elie Cartan, is the most detailed reference on \glspl{eds}.
 
 
 
@@ -1878,7 +1878,15 @@ Since the symbol is determined by its action on symmetric elements of the form $
 \subsection{Characteristics of PDE's}
 
 
-For any $\bbK$-vector space $V$, we denote by $\bbP V$ is projectivization, i.e.\ the quotient $V\slash ~$ by the equivalence relation $v\sim w$ iff $v=\lambda w$ for some $\lambda\in\bbK^\times$. If $\bbK=\bbR$ or $\bbC$ and $\dim_\bbK V=n+1$, then $\bbP V$ is a (real or complex, respectively) $n$-manifold. In algebraic geometry, it is common to denote such a manifold simply by $\bbP^n$ (diffeomorphic either to $\RP^n$ or $\CP^n$).
+The goal of this \subsect\ is to give a geometric (coordinate-free) formulation of the Cauchy-Kovalevskaya Theorem. For this we will need the fundamental concept of \emph{characteristics}. If the initial submanifold is not chosen in a way that is required by the theorem, solutions may either not exist, or the system may be undetermined with infinitely many solutions. Consider the following elementary example.
+
+\begin{example}\label{ex 5.6.1 Ivey}
+    Consider the system 
+    \[u_x=v_y,\quad u_y=u_x.\label{eq 5.20 Ivey}\]
+    If we pick initial data for $u,v$ along a line through the origin other than $x=\pm y$, then it extends to a unique solution to the system. But if we specify initial data along the line $y=x$, then unless $u-v=\const$, this cannot be extended to a solution. If $u-v=\const$ along $y=x$, then there are an infinite number of local extensions to a solution.
+\end{example}
+
+For any $\bbK$-vector space $V$, we denote by $\bbP V$ is projectivization, i.e.\ the quotient $V\slash \sim$ by the equivalence relation $v\sim w$ iff $v=\lambda w$ for some $\lambda\in\bbK^\times$. If $\bbK=\bbR$ or $\bbC$ and $\dim_\bbK V=n+1$, then $\bbP V$ is a (real or complex, respectively) $n$-manifold. In algebraic geometry, it is common to denote such a manifold simply by $\bbP^n$ (diffeomorphic either to $\RP^n$ or $\CP^n$).
 
 Any nonzero linear function (covector) $\xi\in\Hom(V,\bbK)$ vanishes on a hyperplane in $V$, and this hyperplane determines $\xi$ up to rescaling, and vice versa. Thus, each point $[\xi]\in \bbP V^\ast$ is naturally identified with a hyperplane of $V$.
 
@@ -2005,7 +2013,7 @@ Hence, initial data for elliptic equations can be specified along arbitrary hype
 
 
 \begin{xca}\index{Undertermined system}
-    Suppose that $\bf(F)(\bf{x},\bf{u},\bf{u}_{\bf x})=0$ is an analytic PDE such that the symbol of its linearization about any point $(\bf{x},\bf{u},\bf{u}_{\bf{x}})$ has a covector $\xi$ for which $\sigma(\xi)$ is a surjective linear map, with kernel of dimension $l>0$ (such systems are called \emph{underdetermined}). Prove that we can locally add $l$ additional equations to make the system determined, and conclude that there are local solutions. What is the correct notion of noncharacteristic data?
+    Suppose that $\bf{F}(\bf{x},\bf{u},\bf{u}_{\bf x})=0$ is an analytic PDE such that the symbol of its linearization about any point $(\bf{x},\bf{u},\bf{u}_{\bf{x}})$ has a covector $\xi$ for which $\sigma(\xi)$ is a surjective linear map, with kernel of dimension $l>0$ (such systems are called \emph{underdetermined}). Prove that we can locally add $l$ additional equations to make the system determined, and conclude that there are local solutions. What is the correct notion of noncharacteristic data?
 \end{xca}
 
 
@@ -2018,10 +2026,200 @@ The rest of this \sect\ will be devoted to developing the geometric methods nece
 
 
 
+
+
+\subsection{Cauchy characteristics}
+
+
+We now switch from PDE's to the more general context of \glspl{eds}, which are defined as differential ideals in the algebra of exterior forms $\Omega^{\smbullet}(M)$. Integral manifolds were defined as submanifolds of $M$ on which the pullbacks of all of the forms of the ideal vanish. The Frobenius Theorem, as discussed in \Subsect s~\ref{sec: frobenius i} and \ref{sec: frobenius ii}, shows that a completely integrable system takes a very simple form upon a proper choice of local coordinates (in which the leaves of the foliation are slices). Given any \gls{eds}, one can ask the question whether there is a coordinate system in which the system is generated by forms in a smaller number of these coordinates. This is answered by the Cauchy characteristics. Its algebraic basis is the \emph{retraction theorem}, which we do not cover here.
+
+First we introduce the more general concept of infinitesimal symmetries of an \gls{eds}.
+
+\begin{defn}[Killing vector fields]
+    Let $\calI$ be an \gls{eds} on $M$. A vector field $X\in\fX(M)$ is an infinitesimal symmetry, or a Killing vector field, of $\calI$ if 
+    \[\Lie_X (\calI)\subset \calI.\]
+    Since $\Lie_X$ is natural w.r.t.\ wedge products and exterior derivatives, it suffices to show that $\Lie_X \theta^a\in \calI$ for a set $\{\theta^a\}$ of \emph{differential} generators of $\calI$. The set of all Killing vector fields automatically forms a Lie subalgebra of $\fX(M)$.
+\end{defn}
+
+Given an integral manifold $N_0$ of an \gls{eds} $\calI$ on $M$, a Killing vector field $X$ can be used to obtain a one-parameter family of integral manifolds: with $\Fl^X_t$ denoting the flow of $X$, put
+\[N_t\coloneqq \Fl^X_t(N_0).\label{eq 7.3 Ivey}\]
+It is easy to see that, as long as the flow is well-defined, $N_t$ is a smooth integral manifold of $\calI$. 
+
+\begin{rem}
+    Cartan initiated the classification of \glspl{eds} whose symmetries depend on arbitrary functions (thus forming infinite-dimensional Lie algebras). Determining the symmetries usually amounts to solving an overdetermined system of differential equations, so most of the time the Lie algebra of symmetries is empty. An interesting exception is the Pfaffian system $\<\dd y-p\dd x,\dd p-q\dd x,\dd z-q^2\dd x\>_{\mathrm{diff}}$ on $\bbR^5$ with coordinates $x,y,z,p,q$. In this case the symmetries form a $14$-dimensional Lie algebra isomorphic to the split form of the exceptional Lie algebra $\frakg_2$. In his famous ``five variables paper'' Cartan proved that this is the largest possible Lie algebra of symmetries for a rank three Pfaffian system with generic derived flag on a 5-dimensional manifold.
+\end{rem}
+
+Unfortunately, enumerating the Killing vector fields (also called \emph{Lie point symmetries}, or simply \emph{symmetries}) for a given system of PDE's is usually harder than solving the system itself. We direct the reader to \cite{Olver} for an comprehensive exploration of this subject.
+
+\begin{defn}[Cauchy characteristics]
+    Let $\calI$ be an \gls{eds} on $M$. A vector field $X\in\fX(M)$ is a Cauchy characteristic vector field of $\calI$ if 
+    \[i_X (\calI)\subset \calI.\]
+    Since $i_X$ is a $\wedge$-derivation, it suffices to show that $i_X\theta\in\calI$ for a set $\{\theta^a\}$ of \emph{algebraic} generators of $\calI$. Since Cauchy vector fields are preserved by multiplications by arbitrary scalar function, we can talk of \emph{Cauchy characteristic line fields}. Since $\calI$ is a differential ideal, each Cauchy characteristic vector field is automatically a Killing vector field. Moreover, Cauchy characteristic vector fields also form a Lie subalgebra of $\fX(M)$ (see the exercise below).
+\end{defn}
+
+\begin{xca}
+    Prove that the set of Cauchy characteristics of an \gls{eds} on $M$ is a Lie subalgebra of $\fX(M)$. \emph{Hint:} use Cartan's magic formula. See \cite[Prop.~2.1]{Bryant}.
+\end{xca}
+
+The condition for finding Cauchy characteristics is thus algebraic, which makes them much easier to find than other Killing vector fields. And while Killing vector fields preserve the set of integral manifolds, for Cauchy characteristics a stronger statement holds.
+
+\begin{prop}[{{\cite[Prop.~7.1.8]{Ivey}}}]\label{prop 7.1.8 Ivey}
+    Let $N_0$ be an integral $n$-manifold for an \gls{eds} $\calI$ and let $X$ be a Cauchy characteristic vector field transverse to $N_0$. Let $N_t$ be as in (\ref{eq 7.3 Ivey}), and let $S$ be the $(n+1)$-dimensional union of $N_t$'s. Then $S$, when smooth, is an integral manifold of $\calI$.
+\end{prop}
+\begin{proof}
+    Assume $\dim N_0=1$, so $N_0$ is an integral curve with $X$ transverse to it. In order for $S$ to be smooth, we must restrict $t$ to an open interval of values for which $X$ is transverse to $N_t$. Let $\omega\in\calI^2$ and let $Y$ be tangent to one of the $N_t$. Then $\omega(X,Y)=(i_X\omega)(Y)=0$ because $i_X\omega\in\calI$.  This easily generalizes to higher dimensionality of $N_0$ by replacing $Y$ with a local frame for $N_t$.
+\end{proof}
+
+
+\begin{example}[A first-order PDE]
+    Let $(x^1,x^2,u,p_1,p_2)$ be the usual coordinates on $\rmJ^1(\bbR^2,\bbR)$. The equation 
+    \[u_t=u_x\] 
+    is equivalent to the \gls{eds} obtained by restricting the canonical contact system to the smooth hypersurface $M$ defined by $p_2=p_1$. We will use $x=x^1,t=x^2,p=p_1$, and $u$ as coordinates on $M$, where the system is generated algebraically by 
+    \[\theta\coloneqq \dd u-p(\dd x+\dd t),\quad \dd\theta=-\dd p\wedge(\dd x+\dd t).\]
+    Suppose 
+    \[X=a\partial_x+b\partial_t+c\partial_p+e\partial_u\]
+    is a Cauchy characteristic vector field on $M$. Then $i_X\theta=0$ implies $e=(a+b)p$. Then $i_X\dd \theta\equiv 0$ modulo $\theta$ implies that $c=a+b=0$. Hence,
+    \[X=\partial_x-\partial_t\]
+    up to a multiple. Integral surfaces of $\calI$ are constructed by translating integral curves along curves where $u,p$, and $x+t$ are constant.
+\end{example}
+
+All Cauchy characteristics (vector fields) together span a well-defined distribution $\calA(\calI)< \T M$ given by 
+\[\calA(\calI)_m\coloneqq \{X\in \T_mM\mid i_X(\calI)\subset \calI\},\quad m\in M.\]
+The rank of $\calA(\calI)$ is upper semicontinuous on $M$ (in an open neighborhood of $m$ it can only decrease), so we can restrict to an open set on which it is constant. The dual of $\calA(\calI)$ is a Pfaffian system that we define next.
+
+\begin{defn}[Retracting system of $\calI$]
+    Let $\calI$ be an \gls{eds} on $M$ with characteristic distribution $\calA(\calI)$. The retracting space, or Cartan system, of $\calI$ is the Pfaffian system $\calC(\calI)<\T^\ast M$ defined by 
+    \[\calC(\calI)_m\coloneqq \{\theta\in \T^\ast_m M\mid i_X\theta=0 \text{ for all }X\in \calA(\calI)_m\}.\]
+\end{defn}
+
+Assume $\calC(\calI)$ is regular, i.e., it has constant rank. Since the space of sections $\Gamma^\infty(\calA(\calI))$ (taken locally) is closed under Lie brackets of vector fields, $\calC(\calI)$ is closed under $\dd$, so it is Frobenius.\footnote{Because $\dd\theta(X,Y)=-\theta([X,Y])$ for $\theta\in\Gamma^\infty(\calC(\calI))$ and $X,Y\in\Gamma^\infty(\calA(\calI))$.} 
+
+\begin{defn}[Cauchy characteristics]
+    The leaves of the foliation defined by the distribution $\calA(\calI)$ (assuming it is regular) are called the Cauchy characteristics of $\calI$.
+\end{defn}
+
+Now, by the Frobenius Theorem, there exist local coordinates $(x^1,\ldots,x^n,y^1,\ldots,y^s)$ on a neighborhood $U\subset M$ such that $\restr{\calC(\calI)}{U}=\<\dd y^1,\ldots,\dd y^s\>_{C^\infty(U)}$. The following theorem, which we provide without proof, shows that the same holds for $\calI$ itself.
+
+\begin{thm}[{{\cite[Thm.~2.2]{Bryant}, \cite[Prop.~7.1.20]{Ivey}}}]\label{thm 2.2 Bryant}
+    If $(M,\calI)$ is a finitely generated \gls{eds} whose retracting space $\calC(\calI)$ is regular of rank $s$, and $\dim M=n+s$, then there exists a local chart $(x^1,\ldots,x^n,y^1,\ldots,y^s)$ such that $\calI$ can be locally generated by forms that depend only on $\bf{y}$ and $\dd \bf{y}$.
+\end{thm}
+
+Note that for a generic \gls{eds}, $r=0$, because generally there are no nontrivial Cauchy characteristics (i.e., they are points). The above theorem allows us to locally reduce an \gls{eds} to another \gls{eds} (defined on the leaf space, called the \emph{quotient by the Cauchy characteristics}) in which there are no extraneous variables in the sense that all coordinates are needed to express $\calI$ in any coordinate system. The following is a useful application of this result to the study of submersions.
+
+\begin{cor}[{{\cite[Cor.~2.3]{Bryant}}}]
+    Let $\pi:E\to M$ be a submersion with connected fibers and \emph{vertical distribution} $\calV E\coloneqq \ker\pi_{\ast}<\T E$. Then a differential form $\alpha\in\Omega^{\smbullet}(M)$ is the pullback $\pi^\ast \alpha_M$ iff 
+    \[i_X\alpha=i_X\dd\alpha=0\text{ for all }X\in \calV E.\]
+\end{cor}
+\begin{proof}
+    Let $\dim E=N$. By the Rank Theorem, there are local coordinates such that 
+    \[\pi(x^1,\ldots,x^p,x^{p+1},\ldots,x^N)=(x^1,\ldots,x^p).\]
+    Then $\calV E$ is locally spanned by $\{\partial_{x^{p+1}},\ldots,\partial_{x^N}\}$. Now considering the \gls{eds} $\calI\coloneqq \<\alpha\>_{\mathrm{diff}}$, we see that $\calV\subset\calA(\calI)$. Therefore, by Theorem~\ref{thm 2.2 Bryant}, there is a generator for $\calI$ independent of $(x^{p+1},\ldots,x^N)$, and hence of the form $\pi^\ast \alpha_M'$ with $\alpha_M'\in \Omega^{\smbullet}(M)$. Thus, there is a function $\mu$ such that 
+    \[\mu\alpha=\pi^\ast \alpha_M'.\]
+    Since 
+    \[0=i_X(\dd \mu\wedge\alpha_M'+\mu\dd\alpha_M')=(\Lie_X \mu)\alpha_M'\text{ for all }X\in\calV E,\]
+    we see that $\mu$ is independent of $(x^{p+1},\ldots,x^N)$ as well, and hence $\mu=\pi^\ast\lambda=\lambda\circ \pi$ for some function $\lambda$ on $M$. Now $\alpha_M=\alpha_M'/\lambda$ is the required form.
+\end{proof}
+
+In what follows we work on a local neighborhood $U\subset M$ where everything above holds and we let $\Omega^{\smbullet}_\Delta$ denote the subalgebra of $\Omega^{\smbullet}(U)$ spanned by wedge products of (local) sections of $\Delta<\T^\ast U$ with each other. The following proposition characterizes the retracting space in a way that explains its name.
+
+\begin{prop}
+    The retracting space $\calC(\calI)<\T^\ast M$ is the smallest Frobenius system such that $\Omega^{\smbullet}_{\calC(\calI)}$ contains a set of algebraic generators of $\calI$.
+\end{prop}
+\begin{proof}
+    Let $D<\T^\ast M$ be a Frobenius system such that there exist a finite collection of forms $\psi_1,\ldots,\psi_k\in \Omega^{\smbullet}_D$ which generate $\calI$ algebraically. Then any $\xi\in \calI$ can be written as
+    \[\xi=\sum_{i=1}^k \beta_i\wedge \psi_i.\]
+    Let $X$ be a vector field annihilated by $D$. Then $i_X \xi=\sum_i (i_X \beta_i)\wedge\psi_i$, which belongs to $\calI$. Hence $X\in\Gamma^\infty(\calA(\calI))$. Since $X$ and $\xi$ are arbitrary, we conclude that $\calC(\calI)\subset D$.
+
+    Furthermore, the smallest such $D$ cannot be larger than $\calC(\calI)$. For, suppose $\calC(\calI)$ has co-rank $l>0$ within $D$, and let $\pi_1,\ldots,\pi_l$ be linearly independent $D$-valued forms with $\pi_i\notin \calC(\calI)$. Partition the generators for $\calI$ into $\varphi_1,\ldots,\varphi_k\in \Omega^{\smbullet}_{\calC(\calI)}$, plus generators $\psi_1,\ldots,\psi_n$ involving the $\pi_i$'s. If $X$ is any vector in $\calA(\calI)$, and $\psi_1$ has the lowest degree among the $\psi$'s, then $i_X\psi_1$ must be expressible in terms of the $\varphi_i$'s. In particular, any term in $\psi_1$ involving one of the $\pi_i$'s may be omitted since that term already is generated by the $\varphi_j$'s. It follows that we may take all generators to be in $\Omega^{\smbullet}_{\calC(\calI)}$.
+\end{proof}
+
+This means that we can calculate the retracting space by finding a minimal set of algebraic generators for the ideal.
+
+\begin{xca}
+    Consider an \gls{eds} generated by a single $\theta\in\Omega^1(M)$. Show that the rank of $\calC(\calI)$ is $2k+1$, where $k$ is the Pfaff rank, i.e.\ the highest integer such that $\theta\wedge (\dd\theta)^k$ is not identically zero.
+\end{xca}
+
+
+\begin{example}[First-order PDE's]
+    Let $x^1,\ldots,x^n,u,p_1,\ldots,p_n$ be the usual coordinates on $\rmJ^1(\bbR^n,\bbR)$, and consider the PDE 
+    \[F(\bf{x},u,\bf{p})=0.\label{eq 7.4 Ivey}\]
+    Let $M\subset  \rmJ^1$ be the subset defined by this equation. To ensure that $M$ is a smooth manifold, and the equation is genuinely of first order, assume that $\partial_{p_i}F\neq 0$ for some $i$ at each point of $M$.
+
+    Let $\theta$ be the pullback to $M$ of the contact form $\dd u-p_1\dd x^1-\cdots-p_n\dd x^n$. The solutions of the PDE are in 1-to-1 correspondence with integral $n$-manifolds $N\subset M$ of the Pfaffian system generated by $\theta$ with the independence condition $\dd x^1\wedge \cdots\wedge\dd x^n\neq 0$.
+
+    Because $\dim M=2n$, $\theta\wedge (\dd\theta)^n=0$. Differentiating (\ref{eq 7.4 Ivey}) gives 
+    \[0=\dd F=F_{x^i}\dd x^i+F_{p_j}\dd p_j+F_u\dd u\equiv (F_{x^i}+F_up_i)\dd x^i+F_{p_j}\dd p_j\mod\theta.\]
+    It follows that $\theta\wedge (\dd\theta)^{n-1}\neq 0$ at each point. By the Pfaff normal form, cf.\ Theorem~\ref{thm pfaff normal form}, there are local coordinates on $M$ such that $\theta$ is a nonzero multiple of 
+    \[\dd y^1+y^2\dd y^3+\cdots +y^{2n-2}\dd y^{2n-1}.\label{eq 7.5 Ivey}\]
+    Thus, $X=\partial_{y^{2n}}$ gives a Cauchy characteristic. In coordinate-free language, it can be described as the unique vector field, up to multiple, such that $i_X(\theta\wedge(\dd\theta)^{n-1})=0$. It is an exercise to check that the integral curves of $X$ are the integral curves of the differential system 
+    \[\frac{\dd x^i}{F_{p_i}}=-\frac{\dd p_i}{F_{x^i}+F_u p_i}=\frac{\dd u}{\sum_i p_i F_{p_i}},\label{eq 14 Bryant}\]
+    where the subscripts on $F$ indicate partial derivatives.
+
+    This fundamental fact, that first-order PDE's have one-dimensional Cauchy characteristics, $\rank \calA(\calI)=1$, allows us to reduce the PDE to an ODE. We do this by choosing an integral $(n-1)$-manifold $L$ of $\calI$ (corresponding to some initial data), and then using the flow of $X$ to get an integral $n$-manifold. If $F$ may be solved for $p_n$, then $X$ is transverse to the hyperplanes $x^n=\const$. Thus, we obtain a starting manifold $L$ by letting $x^n=C$, $u=f(x^1,\ldots,x^{n-1})$ for an arbitrary function, and $p_i=\partial_{x^i}f$. To obtain a solution to the original PDE we only need to integrate the ODE system defining the flow of $X$.
+\end{example}
+
+\begin{xca}
+    Relation~\ref{eq 7.5 Ivey} lets us locally solve for one of the $\dd p_i$'s in terms of the others, $\dd x^j$, and $\theta$. Using this, compute $\dd\theta\mod \theta$ on $M$ of dimension $2n$ and conclude that $\theta\wedge(\dd\theta)^{n-1}\neq 0$.
+\end{xca}
+
+
+As a final example, we apply the Cauchy characteristics to prove the following important theorem.
+
+\begin{thm}[{{\cite[Thm.~2.4]{Bryant}}}]
+    On the Euclidean space $\bbE^n=\SE_n\slash \Or_n$ with the standard Euclidean norm $\lVert\cdot\rVert$, consider the eikonal equation \index{Equation!Eikonal}
+    \[\sum_i \left(\frac{\partial u}{\partial x^i}\right)^2=1.\]
+    If $u(x^1,\ldots,x^n)$ is a solution valid for all $\bf{x}\in \bbE^n$, then $u$ is a linear function, i.e.,
+    \[u=\sum_i a_i x^i+b,\]
+    where $\bf{a}$ and $b$ are constants satisfying $\lVert a\rVert=1$.
+\end{thm}
+\begin{proof}
+    We will denote by $M$ the space of $(\bf{x},u)$ and identify $\bbE^n$ with the hyperplane $u=0$. The solution can be interpreted as the graph $\Gamma < M$ of a section $\bbE^n\to M$. For the eikonal equation the denominators in the middle of (\ref{eq 14 Bryant}) are zero, so the Cauchy characteristics satisfy 
+    \[p_i=\const.\]
+    The equations (\ref{eq 14 Bryant}) can be integrated and the Cauchy characteristic curves, when projected to $M$, are the straight lines 
+    \[x^i=x^i_0+p_i t,\quad u=u_0+t,\label{eq 16 Bryant}\]
+    where $x_0^i,p_i,u_0$ are constants. The graph $\Gamma$ must have the property that it is generated by these ``Cauchy lines'', whose projections to $\bbE^n$ form a foliation of $\bbE^n$.
+
+    Changing the notation, we write the characteristic lines (\ref{eq 16 Bryant}) as 
+    \[x^{\ast i}=x^i+\frac{\partial u}{\partial x^i}t,\]
+    where $u(\bf{x})$ is a solution of the eikonal equation. For a given $t\in\bbR$  this can be interpreted as a diffeomorphism $f_t:\bbE^n\to \bbE^n$ defined by 
+    \[f_t(\bf{x})=\bf{x}^\ast=(x^{\ast 1},\ldots,x^{\ast n}),\quad \bf{x},\bf{x}^\ast\in\bbE^n.\]
+    Geometrically it maps $\bf{x}\in\bbE^n$ to the point $\bf{x}^\ast$ at a distance $t$ along the Cauchy line through $\bf{x}$; this makes sense because the Cauchy lines are oriented. Its Jacobian determinant is 
+    \[\calJ(t)=\det\left(\delta^i_j+\frac{\partial^2 u}{\partial x^i\partial x^j}t\right)\]
+    and is never zero. But this implies $\partial_{x^i}\partial_{x^j}u=0$, and hence that $u$ is linear. Indeed, if this were not true, the matrix $\partial_{x^i}\partial_{x^j}u$ would have a real nonzero eigenvalue $\lambda$, and then $\calJ(-1/\lambda)=0$, a contradiction.
+\end{proof}
+
+\begin{rem}
+    Note that the above theorem is a global result. For example, the function $u(\bf{x})=\lVert\bf{x}\rVert$ (Euclidean norm) satisfies the eikonal equation except at $\bf{x}=0$. Thus, the hypothesis that the equation holds on all of $\bbE^n$ is crucial.
+\end{rem}
+
+
+
+
+\begin{example}[Surfaces in $\bbE^3$]\label{ex 7.1.10 Ivey}
+    Recall that the integral manifolds of $\calI=\<\theta^3\>_{\mathrm{diff}}$ on the orthonormal frame bundle $\SE_3\to \bbE^3$   are the first-order adapted lifts of surfaces $\Sigma\subset\bbE^3$. This system admits a Cauchy characteristic vector field as follows.
+
+    Let $\{E_j,E^i_j\}$ be a global frame for $\T P$ dual to the one given by the entries of the Maurer-Cartan form $\{\theta^j,\omega^i_j\}$. Expand $X=X^jE_j+X^j_i E^i_j$. Then $i_X\theta^3=0$ implies that $X_3=0$ and 
+    \[i_X \dd\theta^3=i_X(-\omega^3_1\wedge\theta^1-\omega^3_2\wedge\theta^2)=X_1\omega^3_1-X^1_3\theta^1+X_2\omega^3_2-X^2_3\theta^2\]
+    implies that $X=X^1_2 E^2_1$. We can pick $X=E^2_1$, which generates rotations of the frame in the $\{e_1,e_2\}$-plane. Now, Proposition~\ref{prop 7.1.8 Ivey} implies that any integral surface for $\calI$ may be ``thickened'' to an integral $3$-manifold using the Cauchy characteristic.
+
+    Now, $\calC(\calI)$ is the Frobenius system on $\SE_3$ spanned by $\theta^1,\theta^2,\theta^3,\omega^3_1,\omega^3_2$. Integral curves of $\calC(\calI)$ form a foliation of $\SE_3$. The leaf space for this foliation is a 5-dimensional homogeneous space which we identify with $\bbS(\T\bbE^3)$, the unit sphere bundle of the tangent bundle of $\bbE^3$, by letting $m$ be the basepoint and $e_3$ the unit vector in $\T_m\bbE^3$.
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Integral elements}
 
 
-We have seen that differentiating the forms that generate an \gls{eds} often reveals additional \emph{compatibility conditions} that integral manifolds must satisfy. These conditions are consequences of the fact that mixed partials must commute. What we did not see was a way of telling when one has differentiated enough to find all hidden conditions. In the case of Pfaffian systems, the Frobenius Theorem stated that if the system passes a first-order test, then there are no extra conditions. The general method emerging from this theory is called \emph{Cartan's test}.
+In \Subsect~\ref{sec: frobenius ii} we saw that differentiating the forms that generate an \gls{eds} often reveals additional \emph{compatibility conditions} that integral manifolds must satisfy. These conditions are consequences of the fact that mixed partials must commute. What we did not see was a way of telling when one has differentiated enough to find all hidden conditions. In the case of Pfaffian systems, the Frobenius Theorem stated that if the system passes a first-order test, then there are no extra conditions. The general method emerging from this theory is called \emph{Cartan's test}.
 
 Recall from \Subsect~\ref{sec: frobenius ii} that an integral manifold (or simply \emph{a solution}) of an EDS $\calI\subset\Omega^{\smbullet }(M)$ with independence condition $\omega\in\Omega^n(M)$ is an immersed $n$-manifold  $i:N\to M$ such that $i^\ast\alpha=0$ for all $\alpha\in \calI$ and $i^\ast \omega\neq 0$ everywhere. The ideal $\calI$ splits into a direct sum 
 \[\calI=\calI^1\oplus\cdots\oplus \calI^{\dim M},\quad \calI^p\coloneqq \calI\cap \Omega^p(M),\]
@@ -2310,7 +2508,7 @@ Note that $r(E)\geq -1$ with equality holding iff $E$ lies in no $p$-dimensional
         (\vartheta^3\wedge\dd x^4)_\omega&=-p_5^3+x^4,\\
         (\vartheta^3\wedge\dd x^5)_\omega&=p_4^3+x^5.
     \end{align}
-    These $6$ functions are clearly independent on $\Gr_2(\T \bbR^5,\omega)$ and their common zeros are exactly $\calV^2(\calI)$. Thus, every point of $\calV^2(\calI)$ is K\"ahler-ordinary. Since none of these elements has any extension to an integral $3$-plane, it follows that $r(E)=-1$ for all $E\in\calV^2(\calI)$. Thus, every element of $\calV^2(\calI)$ is also K\"ahler-regular.
+    These $6$ functions are clearly independent on $\Gr_2(\T \bbR^5,\omega)$ and their common zeros are exactly $\calV^2(\calI)$. Thus, every point of $\calV^2(\calI)$ is K\"ahler-ordinary. Since none of these elements have any extension to an integral $3$-plane, it follows that $r(E)=-1$ for all $E\in\calV^2(\calI)$. Thus, every element of $\calV^2(\calI)$ is also K\"ahler-regular.
 
     Similarly, it is easy to see that every $E\in\calV^1(\calI)$ is K\"ahler-ordinary. However, not every element is K\"ahler-regular. To see this, note that any $E\in\calV^1(\calI)$ on which $\vartheta^3$ does not vanish cannot lie in any integral plane of $\calI$. Thus, $r(E)=-1$ for all $E\in\calV^1(\calI,\vartheta^3)$. On the other hand, each $E\in\calV^1(\calI)$ on which $\vartheta^3$ does vanish lies in a unique $E^+\in\calV^2(\calI)$ and hence has $r(E)=0$. Since $\calV^1(\calI,\vartheta^3)$ is clearly dense in $\calV^1(\calI)$, it follows that $\calVr^1(\calI)=\calV^1(\calI,\vartheta^3)$.
 \end{example}
@@ -2478,7 +2676,7 @@ We also define $c(E^{-1})\coloneqq 0$ for convenience.
 
 The following shows that characters are ``invariant'' in that they are constant on connected components of the space of ordinary integral elements and independent of the choice of an ordinary flag.
 
-\begin{prop}[{{\cite[Props.~1.13, 2.4]{Ivey}}}]
+\begin{prop}[{{\cite[Props.~III.1.13, III.2.4]{Bryant}}}]\label{prop iii.1.13, 2.4 Bryant}
     Let $\calI\subset \Omega^{\smbullet}(M)$ be an \gls{eds} containing no non-zero $0$-forms. Let $Z\subset\calV^n(\calI)$ be a connected component of the space of ordinary integral elements. Then there exists a unique sequence of codimensions $(c_0,\ldots,c_{n-1})$, and hence one of Cartan characters $(s_0,\ldots,s_{n-1})$, common for all ordinary flags of all integral elements $E^n\in Z$.
 \end{prop}
 \begin{proof}
@@ -2547,15 +2745,15 @@ Since it is not obvious whether a given \gls{eds} is a Pfaffian system or not (i
 
 \begin{thm}[Frobenius III]\index{Theorem!Frobenius}\label{thm frobenius iii}
     Suppose $\calI$ is an \gls{eds} on a manifold $M$. \gls{tfae}, and when they hold we call $\calI$ \emph{Frobenius}:
-    \begin{enumerate}
+    \begin{enumerate}[label=(\arabic*)]
         \item Every integral element of $\calI$ lies in a unique $p$-dimensional integral element.
-        \item There is an integer such that $\calI$ has a $p$-dimensional integral element at each point of $M$ with character $s_0$ equal to that integer, and all other characters $s_1,\ldots,s_p$ vanishing.
-        \item $\calI$ has an involutive $p$-dimensional integral element at each point of $M$ and is locally generated by $\dim M-p$ linearly independent $1$-forms.
-        \item $\calI$ is locally generated as an algebraic ideal by $\dim M-p$ linearly independent $1$-forms.
+        \item There is an integer $s$ such that $\calI$ has an $n$-dimensional integral element at each point of $M$ with characters $(s_0,s_1,\ldots,s_n)=(s,0,\ldots,0)$.
+        \item $\calI$ has an involutive $n$-dimensional integral element at each point of $M$ and is locally generated by $\dim M-n$ linearly independent $1$-forms.
+        \item $\calI$ is locally generated as an algebraic ideal by $\dim M-n$ linearly independent $1$-forms.
         \item $\calI$ is locally generated by linearly independent $1$-forms $\theta^1,\ldots,\theta^s$ with $\dd\theta^i=\sum_j \gamma_j^i\wedge\theta^j$ for some local $1$-forms $\gamma^i_j$.
-        \item $\calI$ is locally generated by linear independent $1$-forms. The vector fields on which all $1$-forms in $\calI$ vanish are closed under Lie bracket and span a $p$-dimensional linear subspace in each tangent space of $M$.
-        \item Each point of $M$ has coordinates $x^1,\ldots,x^p,y^1,\ldots,y^s$ so that $\calI$ is locally generated by $\dd y^1,\ldots,\dd y^s$.
-        \item The $p$-dimensional $\calI$-integral manifolds form the leaves of a foliation of $M$, and $\calI$ is locally generated by the $1$-forms vanishing on the leaves.
+        \item $\calI$ is locally generated by linear independent $1$-forms. The vector fields on which all $1$-forms in $\calI$ vanish are closed under Lie bracket and span a $n$-dimensional linear subspace in each tangent space of $M$.
+        \item Each point of $M$ has coordinates $x^1,\ldots,x^n,u^1,\ldots,u^s$ so that $\calI$ is locally generated by $\dd u^1,\ldots,\dd u^s$.
+        \item The $n$-dimensional $\calI$-integral manifolds form the leaves of a foliation of $M$, and $\calI$ is locally generated by the $1$-forms vanishing along the leaves.
     \end{enumerate}
 \end{thm}
 
@@ -2563,11 +2761,11 @@ Since it is not obvious whether a given \gls{eds} is a Pfaffian system or not (i
 We conclude this discussion with a technical proposition which provides an effective method of computing the codimensions $c_p$ and also generalizes the Frobenius Theorem in the form of item (5) above. We use multi-index notation $J=(j_1,\ldots,j_p)$, where $1\leq j_k\leq n$, and define $\sup J$ as the largest of the indices in $J$. For $J=\varnothing$, we put $\sup J\coloneqq 0$.
 
 
-\begin{prop}[{{\cite[Prop.~1.15]{Bryant}}}]\label{prop 1.15 Bryant}
+\begin{prop}[{{\cite[Prop.~III.1.15]{Bryant}}}]\label{prop III.1.15 Bryant}
     Let $\calI\subset\Omega^{\smbullet}(M)$ be an \gls{eds} containing no non-zero $0$-forms. Let $E\in\calV^n(\calI)$ be based at $m\in M$ and $\dim M=n+s$. Let $\omega^1,\ldots,\omega^n,\pi^1,\ldots,\pi^s$ be a coframe on some $m$-neighborhood such that $E=\ker\pi^1\cap\cdots\cap\ker\pi^s$. For each $p\leq n$, define $E^p\coloneqq \ker\omega^{p+1}\cap\cdots\cap \ker\omega^n$. Let $\{\vartheta^\lambda\}_{\lambda=1}^r$ be a set of forms that generate $\calI$ algebraically, and $\deg \vartheta^\lambda=1+d_\lambda$.
 
-    Then, for each $\lambda=1,\ldots,r$, there exists an expansion 
-    \[\vartheta^\lambda=\sum_{|J|=d_\lambda}\pi_J^\lambda\wedge\omega^J+\wt\vartheta^\lambda,\label{eq prop 1.15 Bryant}\]
+    Then, for each $\lambda=1,\ldots,r$, there exists a \emph{Structure Equation}\index{Equation!Structure}
+    \[\vartheta^\lambda=\sum_{|J|=d_\lambda}\pi_J^\lambda\wedge\omega^J+\wt\vartheta^\lambda,\label{eq prop III.1.15 Bryant}\]
     where the $1$-forms $\pi_J^\lambda$ are (pointwise) linear combinations of the $\pi$'s and the terms in $\wt\vartheta^\lambda$ are of degree $\geq 2$ in the $\pi$'s, or else vanish at $m$.
 
     Moreover, we have 
@@ -2595,18 +2793,19 @@ This result is very handy because it means that we can completely forego thinkin
 
 
 
-Note that any $1$-forms among the generators of $\calI$  automatically satisfy an expansion of the form (\ref{eq prop 1.15 Bryant}) with \emph{no remainder term}, because $\omega^{\varnothing}$ are $0$-forms and indeed, each generator of $\calI^1$ must be a combination of the $\pi$'s. To further simplify, one usually chooses a set of generators $\{\theta^1,\ldots,\theta^{s-q}\}$ for $\calI^1$, so that they can be completed to a coframe $\{\theta^1,\ldots,\theta^{s-1},\omega^1,\ldots,\omega^n,\pi^1,\ldots,\pi^q\}$ in $\T^\ast_m M$. Next, if we apply Cartan' Test via $s(F)$, then we don't need to know $c_0=s_0$, which is simply the number of generators of $\calI^1$. Thus, we can ignore grade $0$ in most of the analysis. 
+Note that any $1$-forms among the generators of $\calI$  automatically satisfy an expansion of the form (\ref{eq prop III.1.15 Bryant}) with \emph{no remainder term}, because $\omega^{\varnothing}$ are $0$-forms and indeed, each generator of $\calI^1$ must be a combination of the $\pi$'s. To further simplify, one usually chooses a set of generators $\{\theta^1,\ldots,\theta^{s-q}\}$ for $\calI^1$, so that they can be completed to a coframe $\{\theta^1,\ldots,\theta^{s-1},\omega^1,\ldots,\omega^n,\pi^1,\ldots,\pi^q\}$ in $\T^\ast_m M$. Next, if we apply Cartan' Test via $s(F)$, then we don't need to know $c_0=s_0$, which is simply the number of generators of $\calI^1$. Thus, we can ignore grade $0$ in most of the analysis. 
 
-Moreover, Proposition~\ref{prop 1.15 Bryant} presumes that the intersection of $\ker\pi^\lambda$ defines an integral element. In practice it takes some work to choose the $\pi$'s in this way. Thus, usually we proceed by choosing an \emph{arbitrary} coframe, defining a flag via (\ref{eq flag}), and then manually adjusting the coframe until the flag becomes integral, assuming this is possible (otherwise there are no integral $n$-planes). This implies that the expansion (\ref{eq prop 1.15 Bryant}) may now contain additional terms that don't vanish when the $\pi$'s vanish, i.e., terms that involve only products of $\omega$'s. These terms will be named in item (5) below. The procedure becomes as follows:
+Moreover, Proposition~\ref{prop III.1.15 Bryant} presumes that the intersection of $\ker\pi^\lambda$ defines an integral element. In practice it takes some work to choose the $\pi$'s in this way. Thus, usually we proceed by choosing an \emph{arbitrary} coframe, defining a flag via (\ref{eq flag}), and then manually adjusting the coframe until the flag becomes integral, assuming this is possible (otherwise there are no integral $n$-planes). This implies that the expansion (\ref{eq prop III.1.15 Bryant}) may now contain additional terms that don't vanish when the $\pi$'s vanish, i.e., terms that involve only products of $\omega$'s. These terms will be named in item (5) below. The procedure becomes as follows:
 \begin{enumerate}
     \item Looking for $n$-dimensional integral elements, let $\calI_m=\{\vartheta_m\mid\vartheta\in\calI\}\subset \bigwedge\T^\ast_m M$ and work modulo the ideal $\<\calI^1_m\>_{\mathrm{alg}}\subset \calI_m$.
     \item Pick a basis $\omega^i,\pi^\lambda$ for $\T^\ast_m M\slash\calI^1_m$.
     \item Write a set of algebraic generators of $\calI_m\slash\calI^1_m$ as a column:
-    \[\vartheta=\begin{pmatrix}
+    \[\vartheta^{\smbullet}=\begin{pmatrix}
         \vartheta^1\\\vdots \\ \vartheta^r
     \end{pmatrix}.\]
     \item Use multi-index notation $\omega^{ij}=\omega^i\wedge\omega^j$, and so on. Compose all of these into a standard column vector arranged by ``grades'' (the maximum index in the multi-index):
-    \[\omega=\left(\begin{array}{c}
+    \[
+        \omega^{\smbullet}=\left(\begin{array}{c}
         \omega^1\\ \hline 
         \omega^2 \\
         \omega^{12}\\ \hline 
@@ -2618,18 +2817,20 @@ Moreover, Proposition~\ref{prop 1.15 Bryant} presumes that the intersection of $
         \omega^n \\
         \vdots \\
         \omega^{1\ldots n}
-    \end{array}\right).\]
+    \end{array}\right).
+    \]
     Any entry that doesn't appear in the expansions of the generating set $\vartheta$ in this basis can be dropped.
-    \item Write out an expansion 
-    \[\vartheta=\varpi\wedge\omega+\cdots\] 
-    for some matrix $\varpi$, called the \emph{tableau}, so that each entry of $\varpi$ is a linear combination of the $\pi^\lambda$'s, and the $\cdots$ consists of 
+    \item Write out an expansion (Structure Equation) 
+    \[\vartheta^{\smbullet}=\varpi\wedge\omega^{\smbullet}+\cdots\] 
+    for some matrix $\varpi$, called the \emph{tableau}, so that each entry of $\varpi$ is a linear combination of the $\pi^\lambda$, and the $\cdots$ consists of 
     \begin{enumerate}
-        \item terms containing no $\pi^\lambda$'s (only $\omega^i$'s, e.g., $T_{ij}\omega^{ij}$), called the \emph{(apparent) torsion}. To be able to construct an integral flag we will need to choose the $\pi$'s in such a way that there is no torsion.
-        \item terms with at least $2$ of the $\pi^\lambda$'s wedged into them, called the \emph{nonlinearity}. This is what we called $\wt\vartheta$ in Proposition~\ref{prop 1.15 Bryant}.
+        \item terms containing no $\pi^\lambda$ (only the $\omega^i$, e.g., $T_{ij}\omega^{ij}$), called the \emph{(apparent) torsion}. To be able to construct an integral flag we will need to choose the $\pi^\lambda$ in such a way that there is no torsion.
+        \item terms with at least $2$ of the $\pi^\lambda$ wedged into them, called the \emph{nonlinearity}. This is what we called $\wt\vartheta$ in Proposition~\ref{prop III.1.15 Bryant}.
     \end{enumerate}
     The matrix $\varpi$ is also separated by vertical lines into grades. We assign grade $n$ to the nonlinearity.
-    \item A \emph{polar} (equation) is an entry of $\varpi$ that is linearly independent of all entries found in the grades and columns to the left of it. Highlight all polars. In practice, one usually arranges the $\pi$'s in such a way that the each polar is precisely a $\pi^\lambda$.
-    \item Choose any basis of $\calI^1_m$ and declare the basis elements to be the polars of grade $0$. The \emph{Cartan character} $s_p$ of the tableau $\varpi$ is the number of polars in grade $p$. Finally, one needs to take care that the flag constructed this way is generic, which we discuss towards the end of this \subsect.
+    \item A \emph{polar} (equation) is an entry of $\varpi$ that is linearly independent of all entries found in the grades and columns to the left of it (including its own column). Highlight all polars. In practice, we will often arrange the $\pi^\lambda$ in such a way that the each polar is precisely a $\pi^\lambda$.
+    \item Choose any basis of $\calI^1_m$ and declare the basis elements to be the polars of grade $0$. A \emph{character} $s_p'$ of the tableau $\varpi$ is the number of polars in grade $p$. 
+    \item A \emph{generic} tableau is such that, for each $p=1,\ldots,n$, $s_p'$ is the greatest among all tableaux with the same $s_1',\ldots,s_{p-1}'$. The \emph{Cartan characters} $\{s_p\}$ of the system are the characters of the generic tableau. The method for constructing a generic tableau will be described below.
  \end{enumerate}
 
 At the end of this procedure, assuming apparent torsion vanishes, one can perform Cartan's Test. We will discuss what to do with torsion below.
@@ -2654,7 +2855,7 @@ At the end of this procedure, assuming apparent torsion vanishes, one can perfor
             \omega^1\wedge\pi^1+\omega^2\wedge\pi^2+\omega^3\wedge\pi^3\\
             -\omega^{12}\wedge\pi^3+\omega^{13}\wedge\pi^2-\omega^{23}\wedge\pi^1+\pi^{123}
         \end{pmatrix}= \\
-        \equiv -\left(
+        = -\left(
             \begin{array}{c|cc|ccc}
                 \boxed{\pi^1}& \boxed{\pi^2} & 0 & \pi^3 & 0 & 0\\
                 0 & 0 & \boxed{\pi^3} & 0 & -\pi^2 & \pi^1
@@ -2675,12 +2876,62 @@ At the end of this procedure, assuming apparent torsion vanishes, one can perfor
             0 \\ \pi^{123}
         \end{pmatrix}.
     \end{multline}
-    Here we draw lines to separate the ``grades'' $\sup J$.  The $\pi$'s in grade $p$ encode the polar equations for $E^p$. The highlighted ones are the new linearly independent polars in each new grade starting from the left.  By counting the highlighted forms in each grade we read off $s_1=1$, $s_2=2$, and $s_3=0$.
+    Here we draw lines to separate the ``grades'' $\sup J$.  The $\pi$'s in grade $p$ encode the polar equations for $E^p$. The highlighted ones are the new linearly independent polars in each new grade starting from the left.  By counting the highlighted forms in each grade we read off $(s_1,s_2,s_3)=(1,2,0)$.
 \end{example}
 
 
 
+\begin{example}[Cauchy-Riemann equations]\index{Equation!Cauchy-Riemann}
+    Recall from Remark~\ref{rem holomorphic functions} that a holomorphic function $f:\bbC^n\supset U\to\bbC$ is a real-differentiable function satisfying the Cauchy-Riemann equations
+    \[f_{x^i}=-\i f_{y^i},\quad i=1,\ldots,n,\]
+    where $x^i,y^i$ are the real and imaginary parts of the standard complex coordinate $z^i$ on $\bbC^n$. If $f=u+\i v$ with real $u,v$, then this becomes 
+    \[u_{x^i}=v_{y^i},\quad v_{x^i}=-u_{y^i}.\]
+    Let $M\coloneqq \bbR^{2n+2+2n}$ be the space parametrized by $(\bf{x},\bf{y},u,v,\bf{p},\bf{q})$ and take the canonical contact system restricted to the manifold defined by these equations:
+    \[\theta^1\coloneqq \dd u-p_i\dd x^i-q_k\dd y^j,\quad \theta^2\coloneqq \dd v+q_i\dd x^i-p_j \dd y^j.\]
+    The only algebraic generators of degree above $1$ are $\dd\theta^k$, so the Structure Equation is
+    \[
+    \begin{pmatrix}
+        \dd\theta^1\\\dd \theta^2
+    \end{pmatrix}=
+    -\begin{pmatrix}
+        \boxed{\dd p_1} & \cdots & \boxed{\dd p_n} & \dd q_1 & \cdots & \dd q_n\\
+        \boxed{-\dd q_1} & \cdots & \boxed{-\dd q_n} & \dd p_1 & \cdots & \dd p_n
+    \end{pmatrix}\wedge 
+    \begin{pmatrix}
+        \dd x^1\\
+        \vdots \\
+        \dd x^n\\
+        \dd y^1\\
+        \vdots \\
+        \dd y^n
+    \end{pmatrix}.
+    \]
+    The characters are $(s_1,\ldots,s_n,s_{n+1},\ldots,s_{2n})=(2,\ldots,2,0,\ldots,0)$, and the predicted dimension is 
+    \[\dim M+s_1+2 s_2+\cdots +2n s_{2n}=4n+2+n(n+1).\]
+    Integral elements at each point $(\bf{x},\bf{y},u,v,\bf{p},\bf{q})$ have 
+    \[\begin{pmatrix}
+        \dd p_i\\
+        \dd q_i
+    \end{pmatrix}=\begin{pmatrix}
+        r_{ij} & -s_{ij}\\
+        s_{ij} & r_{ij}
+    \end{pmatrix}
+    \begin{pmatrix}
+        \dd x^j \\
+        \dd y^j
+    \end{pmatrix},
+    \]
+    with $(r_{ij}),(s_{ij})$ symmetric matrices. So the space of integral elements has dimension $4n+2+n(n+1)$ and we conclude involution. The general holomorphic function depends on $2$ functions of $n$ variables. For example, it suffices to provide arbitrary (real analytic) values of the function on an $n$-dimensional analytic submanifold, and then they will have a unique complex analytic continuation to an open neighborhood of that manifold.
 
+    This is even easier in complex notation. Let $\omega^i\coloneqq \dd x^i+\i \dd y^i$, $\theta\coloneqq \theta^1+\i \theta^2$, $\pi_i\coloneqq \dd p_i+\i \dd q_i$ and $\wb\omega^i\coloneqq \dd x^i-\i \dd y^i$. In general, a tableau in complex forms will have terms expressed in wedge products with $\omega^i$ and $\wb\omega^i$. But the Cauchy-Riemann equations give 
+    \[\dd\theta=-\begin{pmatrix}
+        \boxed{\pi^1} & \cdots &\boxed{\pi^n}
+    \end{pmatrix}\wedge 
+    \begin{pmatrix}
+        \omega^1\\\vdots \\ \omega^n
+    \end{pmatrix}\]
+    with no $\wb\omega^i$ terms. The characters count complex polars, so we double them to count real and imaginary parts, giving the same characters. Integral elements are described by $\pi_i=p_{ij}\omega^j$ with some complex matrix $p_{ij}=p_{ji}$, which is $n(n+1)/2$ complex numbers or $n(n+1)$ real ones, as before.
+\end{example}
 
 
 
@@ -2715,8 +2966,7 @@ At the end of this procedure, assuming apparent torsion vanishes, one can perfor
         \dd x^{14}\\
         \dd x^{24}\\
         \dd x^{34}
-    \end{array}\right)
-    .
+    \end{array}\right).
     \]
     So we have $c_0=c_1=0$, $c_2=1$, and $c_3=c_4=3$, so $c(F)=1+3=4$, which is indeed the codimension of $\calV^4(\calI)$ in $\Gr_4(\T \bbR^7)$. Cartan's Test is passed and the flag is ordinary, so we conclude involutivity and the solutions depend on $2$ functions of $3$ variables and $1$ function of $2$ variables, as we have already seen in Example~\ref{ex self-dual equations}.
 \end{example}
@@ -2797,7 +3047,16 @@ This allows us to find $s_n$ from the other characters. For even greater simplic
          \hline
         \end{tabular}
     \end{center}
-    The final character is $s_2=\dim M-2-1=1$. We have the predicted dimension $\dim M+s_1+2s_2=7$. Meanwhile, the space of integral planes at a single point is parametrized by $3$ parameters (expressing $\dd u,\dd v$ in terms of $\dd x,\dd y$ with a rank $1$ linear constraint $\restr{\Psi}{E^2}=0$), so $\dim\calV^2=\dim M+3=7$. We conclude involutivity again and the top character matches what we found before.
+    The final character is $s_2=\dim M-2-1=1$. We have the predicted dimension $\dim M+s_1+2s_2=7$. The same characters can be easily obtained from the tableau:
+    \[\Psi=
+    \begin{pmatrix}
+        -\dd v & \dd u
+    \end{pmatrix}\wedge 
+    \begin{pmatrix}
+        \dd x\\ \dd y
+    \end{pmatrix}.
+    \]
+    Meanwhile, the space of integral planes at a single point is parametrized by $3$ parameters (expressing $\dd u,\dd v$ in terms of $\dd x,\dd y$ with a rank $1$ linear constraint $\restr{\Psi}{E^2}=0$), so $\dim\calV^2=\dim M+3=7$. We conclude involutivity again and the top character matches what we found before.
 \end{example}
 
 
@@ -2851,12 +3110,12 @@ This allows us to find $s_n$ from the other characters. For even greater simplic
 \end{example}
 
 
-Let us briefly discuss what to do when torsion appears. We may call a tableau \emph{adapted} to the flag defined as in Proposition~\ref{prop 1.15 Bryant}:
+Let us briefly discuss what to do when torsion appears. We may call a tableau \emph{adapted} to the flag defined as in Proposition~\ref{prop III.1.15 Bryant}:
 \[E^p=(\ker \theta^1\cap \cdots\cap \ker\theta^{s-q} \cap \ker \pi^{q+1}\cap\cdots\cap\ker \pi^{s}) \cap \ker \omega^{p+1}\cap\cdots\cap \omega^n.\]
 Any flag has many tableau adapted to it.
 
 
-\begin{example}
+\begin{example}[Absorbing torsion]\label{example absorbing torsion}
     Consider an \gls{eds} generated (differentially) by two $1$-forms $\theta^1,\theta^2$ with 
     \[\dd \begin{pmatrix}
         \theta^1\\\theta^2
@@ -2871,21 +3130,430 @@ Any flag has many tableau adapted to it.
         \omega^{12}\\0
     \end{pmatrix}\pmod{\<\theta^1,\theta^2\>}.
     \]
-    Note that $\dd\theta^1,\dd\theta^2$ generate $\calI\slash\calI^1$ algebraically. The term $\omega^{12}$ is the torsion. Let $\wt\pi^1\coloneqq \pi^1+\omega^2$ and rewrite the system 
+    Note that $\dd\theta^1,\dd\theta^2$ generate $\calI\slash\calI^1$ algebraically. The term $\omega^{12}$ is the torsion. Let $\pi^{\prime 1}\coloneqq \pi^1+\omega^2$ and rewrite the system 
     \[\dd \begin{pmatrix}
         \theta^1\\\theta^2
     \end{pmatrix}=-\begin{pmatrix}
-        \boxed{\wt\pi^1} & 0\\
+        \boxed{\pi^{\prime 1}} & 0\\
         \boxed{\pi^2} & \boxed{\pi^3}
     \end{pmatrix}\wedge 
     \begin{pmatrix}
         \omega^1\\\omega^2
     \end{pmatrix}\pmod{\<\theta^1,\theta^2\>}.
     \]
-    Therefore we have \emph{absorbed} the torsion by adding a combination of $\omega$'s to one of the $\pi$'s. 
+    Therefore we have \emph{absorbed} the torsion by adding a combination of the $\omega^i$ to one of the $\pi^\lambda$. 
 \end{example}
 
-A given tableau can only examine integral elements coframed by the $\omega$'s. It is possible to absorb the torsion just when there exists such an integral element.
+A given tableau can only examine integral elements coframed by the $\omega^i$. It is possible to absorb the torsion just when there exists such an integral element. Later, in systems with no integral elements we will identify the parts of torsion that can't be absorbed with \emph{intrinsic torsion}.
+
+Now we discuss the method for constructing a generic tableau, which is necessary to find the true Cartan characters of the system. This is called \emph{borrowing} because it is essentially a strictly triangular change of coframe that pushes (linearly independent) polars as far to the left of the tableau as possible by adding them to the elements already there:
+\begin{enumerate}
+    \item To construct a generic tableau, take a row which represents a $p$-form. Permuting the $\omega^i$, we can get any polar in that row to appear in grade $p-1$: $\pi^\lambda\wedge \omega^{1\ldots p-1}$. 
+    \item If there is another polar in that row, say in grade $q$, add a multiple of $\omega^p$ to $\omega^q$ to \emph{borrow} it to grade $p$. 
+    \item Continue this way: for each row representing a $p$-form in $\calI$, arrange polars in successive grades, starting at grade $p-1$, followed by any nonpolar entries in that row.
+    \item Write wedge products $\omega^{i_1\ldots i_q}$ with $i_1<\cdots <i_q$. Order any two of them by the last entry (the grade) $i_q$, then by next to last, and so on. Borrow to have polars arising in sorted order before any other entries.
+    \item Since this occurs for some linear transformation of the $\omega^i$, it also occurs for all linear transformations of the $\omega^i$ except for those with certain vanishing minors. We can thus borrow simultaneously in all rows by a generic linear transformation.
+\end{enumerate}
+
+In the end, polars are ``concentrated'' in the low grades of the tableau as much as it is possible, which guarantees that the flag determined by this tableau is generic, and so the tableau's characters are the Cartan characters, and Cartan's Test can be applied.
+
+
+\begin{example}[Borrowing to produce a generic flag]
+    The tableau 
+    \[\left(\begin{array}{|c|c}
+        \boxed{\pi^1} & 0 \\
+        0 & \pi^1
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c}
+        \hline \omega^{12}\\
+        \hline \omega^3
+    \end{array}\right)
+    \]
+    has a polar appearing in grade $2$. Permuting indices $1$ and $3$:
+    \[\left(\begin{array}{c|c}
+        0 & \pi^1 \\
+        \boxed{\pi^1} & 0
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c}
+        \omega^{1}\\
+        \hline \omega^{23}
+    \end{array}\right)
+    \]
+    puts it in grade $1$. Now the flag is generic.
+\end{example}
+
+
+
+\begin{example}[Borrowing]\label{example tableau of orthogonal 3-webs}
+    Consider an \gls{eds} generated by $1$-forms $\theta^1,\theta^2,\theta^3$ and $3$-forms 
+    \[\omega^{12}\wedge\pi^1,\quad \omega^{31}\wedge\pi^2,\quad \omega^{23}\wedge\pi^3,\]
+    with coframe $\theta^a,\omega^i,\pi^\lambda$ (this system actually describes triply orthogonal webs on $3$-dimensional Riemannian manifolds, see Example~\ref{example orthogonal 3-webs}). The tableau is 
+    \[
+    \left(\begin{array}{|c|cc}
+        0 & 0 & \boxed{\pi^1}\\
+        0 & \boxed{\pi^2} & 0\\
+        \boxed{\pi^3} & 0 & 0
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c} \hline 
+        \omega^{12}\\ \hline
+        \omega^{13}\\
+        \omega^{23}
+    \end{array}\right),
+    \]
+    which gives $(s_1',s_2',s_3')=(0,1,2)$. It is not obvious whether this flag is generic. Let us try applying Cartan's Test right away. $3$-dimensional integral elements are described by 
+    \[\begin{pmatrix}
+        \pi^1\\\pi^2\\\pi^3
+    \end{pmatrix}
+    =\begin{pmatrix}
+        0 & p^1_2 & p^1_3\\
+        p^2_1 & 0 & p^2_3\\
+        p^3_1 & p^3_2 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+        \omega^1\\\omega^2\\\omega^3
+    \end{pmatrix},
+    \]
+    so it's a $6$-dimensional space at each point. Meanwhile, $s_1+2s_2+3s_3=8>6$, so this is not involutive. 
+
+    It turns out that it is possible to borrow:
+    \[\begin{pmatrix}
+        \omega^1\\\omega^2\\\omega^3
+    \end{pmatrix}=
+    \begin{pmatrix}
+        \omega^{\prime 1}\\
+        \omega^{\prime 2}\\
+        \omega^{\prime 1}+\omega^{\prime 2}+ \omega^{\prime 3}
+    \end{pmatrix},
+    \]
+    yielding the new tableau 
+    \[
+        \left(\begin{array}{|c|cc}
+            \boxed{-\pi^1} & 0 & \pi^3\\
+            \boxed{-\pi^2} & \pi^2 & 0\\
+            \boxed{\pi^3} & 0 & 0
+        \end{array}\right)\wedge 
+        \left(\begin{array}{c}
+            \hline \omega^{\prime 12}\\
+            \hline \omega^{\prime 13}\\
+            \omega^{\prime 23}
+        \end{array}\right).
+    \]    
+    Now $(s_1',s_2',s_3')=(0,3,0)$ and $s_1+2s_2+3s_3=6$, making the system involutive: there are $3$-dimensional integral manifolds.
+\end{example}
+
+
+Borrowing can generate new torsion. The torsion is absorbable iff there exists an integral element $E$, on which there holds $\pi=P\omega$ with some (rectangular) matrix $P$. We can absorb the torsion by subtracting $P\omega$ from $\pi$. Thus, there is a torsion-free tableau iff there is a generic torsion-free tableau.
+
+
+\begin{example}[Nonlinearity and borrowing]
+    Consider the tableau 
+    \[\left(\begin{array}{cc}
+        \boxed{\pi^1} & 0 \\
+        \boxed{\pi^2} & \boxed{\pi^3}
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c}
+        \omega^1\\
+        \omega^2
+    \end{array}\right)+
+    \left(\begin{array}{c}
+        \boxed{\pi^4}\wedge\pi^2\\
+        0
+    \end{array}\right)
+    \]
+    with a polar in the nonlinearity (which always belongs to the highest grade, in this case $4$). We can borrow it into the tableau by adding $\omega^2$ to $\pi^2$: $\pi^{\prime 2}\coloneqq \pi^2+\omega^2$ and
+    \[\left(\begin{array}{cc}
+        \boxed{\pi^1} & \boxed{\pi^4} \\
+        \boxed{\pi^{\prime 2}} & \boxed{\pi^3}
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c}
+        \omega^1\\
+        \omega^2
+    \end{array}\right)-
+    \left(\begin{array}{c}
+        0\\
+        \omega^{12}
+    \end{array}\right)+
+    \left(\begin{array}{c}
+        \pi^4\wedge\pi^{\prime 2}\\
+        0
+    \end{array}\right).
+    \]
+    This produces torsion, but we can absorb it by redefining $\pi^1$ as in Example~\ref{example absorbing torsion}.
+\end{example}
+
+\begin{example}[Nonlinearity and absorption]
+    \[\left(\begin{array}{cc}
+        \boxed{\pi^1} & \boxed{\pi^2}     
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c}
+        \omega^1\\
+        \omega^2
+    \end{array}\right)+\boxed{\pi^3}\wedge\pi^2
+    \]
+    has a polar in the nonlinearity, but we can absorb it by redefining $\omega^{\prime 2}\coloneqq \omega^2-\pi^3$.
+
+    Some tableaux have non-absorbable polars in the nonlinearity:
+    \[\left(\begin{array}{cc}
+        \boxed{\pi^1} & \boxed{\pi^2}     
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c}
+        \omega^1\\
+        \omega^2
+    \end{array}\right)+\boxed{\pi^3}\wedge\boxed{\pi^4}.
+    \]
+    Any polar in the nonlinearity can be demoted to a new $\omega^i$ $1$-form, but we won't need to do so.
+\end{example}
+
+
+\begin{example}[Integral elements]
+    Consider the tableau 
+    \[\left(\begin{array}{ccc}
+        \boxed{\pi^1} & \boxed{\pi^4} & \boxed{\pi^6} \\
+        \boxed{\pi^2} & \boxed{\pi^5} & \pi^1-\pi^5\\
+        \boxed{\pi^3} & \pi^2 & \pi^1+\pi^2\\
+        \pi^1-\pi^2 & 0 & \pi^3
+    \end{array}\right)\wedge 
+    \left(\begin{array}{c}
+        \omega^1\\
+        \omega^2\\
+        \omega^3
+    \end{array}\right).
+    \]
+    Take any $3$-dimensional linear tangent subspace $E$ coframed by $\omega^1,\omega^2,\omega^3$ and on which $\theta^a=0$. Then $E$ has some coefficients $\pi^\lambda=p^\lambda_j\omega^j$. Plug in to the tableau to find equations for integral elements. Since $\omega^{ij}=-\omega^{ji}$, each tableau entry in column $i$ has coefficient of $\omega^j$ exactly equal to the tableau entry in column $j$ coefficient of $\omega^i$:
+    \begin{align}
+        p^1_2 &= p^4_1, & p^1_3&=p^6_1, & p^4_3&=p^6_2,\\
+        p^2_2 &= p^5_1, & p^2_3&=p^1_1-p^5_1, & p^5_3&=p^1_2-p^5_2,\\
+        p^3_2&=p^2_1, & p^3_3&=p^1_1+p^2_1, & p^2_3&=p^1_2+p^2_2,\\
+        p^1_2-p^2_2&=0, & p^1_3-p^2_3&=p^3_1, & 0&=p^3_2.
+    \end{align}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+\subsection{Characteristics of \texorpdfstring{\glspl{eds}}{EDSs}}
+
+
+In the Cartan-K\"ahler Theorem~\ref{thm 8.3.3 Ivey} we do not necessarily obtain all solutions to an involutive system by a choice of analytic functions as specified in the theorem. We only obtain those that can be obtained by specifying \emph{noncharacteristic} initial data, that is, initial data based on a choice of a \emph{generic} flag. If we choose a nongeneric flag, the corresponding Cauchy problem may not have any solutions or be undetermined, with an infinite number of solutions. In this \subsect\ we formalize this connection between generic flags and characteristic varieties.
+
+Let $M$ be a manifold and denote its tautological $n$-plane bundle by $U\coloneqq \gamma_n(\T M)\to \Gr_n M$ (cf.\ Definition~\ref{def tautological bundles}). We shall consider the projectivization $\bbP U^\ast$ of the dual bundle $U^\ast$. A point in the fiber $\bbP U^\ast_E$ over some $n$-plane $E\in \Gr_n(\T_m M)$ will be written as $[\xi]$, where $\xi\in E^\ast\setminus\{0\}$ is a nonzero covector and $[\xi]=\<\xi\><E^\ast$ is the corresponding line. By projective duality, $[\xi]$ determines a hyperplane $[\xi]^\perp\coloneqq \Ann(\xi)<E$, and geometrically we may think of $\bbP U^\ast_E$ as being the set of hyperplanes in $E<\T_m M$.
+
+Let $\calI$ be an \gls{eds} on $M$ and assume it has no Cauchy characteristics. This assumption is made merely for convenience and will be eliminated below. Associated to each hyperplane $[\xi]^\perp<E$ is the polar space 
+\[H(\xi)\coloneqq H([\xi]^\ast)=\{X\in\T_m M\mid \<\{X\}\cup [\xi]^\perp\>\in\calV(\calI)\},\]
+which describes all the ways of extending $[\xi]^\perp$ to an integral $n$-plane.
+
+\begin{defn}[Characteristic variety]\index{Characteristic variety}
+    The (real) characteristic variety of an \gls{eds} $(M,\calI)$ is the subset $\Xi\subset \bbP U^\ast$ defined fiberwise by 
+    \[\Xi_E=\{[\xi]\in \bbP E^\ast:E\subsetneqq H(\xi)\},\quad E\in\Gr_n M.\label{eq char variety}\]
+    Note that this is non-empty only over integral elements $E$. Thus, $\Xi$ consists of all hyperplanes in integral $n$-planes whose extension to an integral $n$-plane fails to be unique.
+\end{defn}
+
+To the extent that we think of integral elements as infinitesimal solutions to an \gls{eds}, the characteristic variety corresponds to non-uniqueness of an initial value problem, in close analogy to the classical notion. However, unlike in the classical context of differential operators, this definition doesn't require linearization. There is a commuting square 
+\[\begin{tikzcd}
+    \Xi\arrow[r,hookrightarrow]\arrow[d] & \bbP U^\ast\arrow[d] \\
+    \calV^n(\calI)\arrow[r,hookrightarrow] & \Gr_n M.
+\end{tikzcd}\]
+It is easy to see that the fiber $\Xi_E$ is an algebraic subvariety of $\bbP E^\ast$, i.e., it is defined by polynomial equations. This is because the polar equations are linear in $X\in \T_m M$, and $\Xi_E$ consists of hyperplanes $[\xi]^\perp$ for which the ranks of these equations jump suitably; this condition is expressed by homogeneous polynomial equations in $\xi$. This allows us to also define the \emph{complex characteristic variety} $\Xi^\bbC$ as the set of complex solutions to the same equations. Equivalently, one only needs to replace $E$ in (\ref{eq char variety}) with a complex integral element and $[\xi]^\perp$ with a complex hyperplane in $E$, and $\calV(\calI)$ in the definition of $H(\xi)$ with the space of complex integral elements. Of course, it may happen that $\Xi$ is empty but $\Xi^\bbC$ is not.
+
+The reason we assumed no Cauchy characteristics is that $X\in H(\xi)$ for any Cauchy characteristic vector $X$. Thus, the characteristic variety should only be defined for integral elements that contain all Cauchy characteristic vectors. Equivalently, we may consider the \gls{eds} that is the quotient by the Cauchy characteristics and define the characteristic variety of this reduced system. For linear Pfaffian systems this annoyance will be circumvented.
+
+\begin{example}
+    \begin{enumerate}
+        \item A \emph{Frobenius system} when $\calI$ is generated by $\dd u^1,\ldots,\dd u^s$ in $\bbR^{n+s}$ with coordinates $(x^1,\ldots,x^n,u^1,\ldots,u^s)$. Then $\Xi^\bbC=\varnothing$. A converse of this for involutive systems will be discussed below.
+        \item A \emph{Darboux system} when $\calI$ is generated by $\Theta=\sum_i\dd x^i\wedge\dd y^i$ in $\bbR^{2n}$ with coordinates $(x^1,\ldots,x^n,y^1,\ldots,y^n)$. In this case $\Xi_E=\bbP E^\ast$i  is everything.
+    \end{enumerate}
+\end{example}
+
+\begin{rem}
+    Given a differential ideal on a $(2n+1)$-dimensional manifold generated by a single $1$-form $\theta$ satisfying $\theta\wedge(\dd\theta)^{\wedge n}\neq 0$, the Pfaff-Darboux local normal form shows that the maximal integral manifolds $N$, called \emph{Legendre manifolds}, are of dimension $n$ and are given by one arbitrary function of $n$ variables. Here we may think of $\theta=\dd u-\sum_i y_i\dd x^i$ and $N$ given by $(\bf{x},\partial_{\bf{x}}u(\bf{x}))$, where $u(\bf{x})$ is an arbitrary function.
+\end{rem}
+
+
+
+
+
+
+
+
+\subsection{Linear \texorpdfstring{\glspl{eds}}{EDSs}}
+
+
+We now bring back the extra element that imposes a transversality condition on integral manifolds. 
+
+\begin{defn}[Independence condition]
+    Recall that an \gls{eds} with an independence condition is a tuple $(M,\calI,\omega)$, where $(M,\calI)$ is an \gls{eds} and $\omega$ is a decomposable $n$-form 
+    \[\omega=\omega^1\wedge\cdots\wedge\omega^n,\]
+    where $\omega^i$ are $1$-forms (and are typically chosen to be part of the coframe for determining the tableau). We assume that $\omega_m\notin \calI_m$ for any $m\in M$ and two independence conditions $\omega,\omega'$ are considered equivalent if $\omega\equiv \lambda\omega'\pmod{\calI}$ for some nonzero function $\lambda$.
+
+    In intrinsic terms, under suitable constant rank assumptions, the degree one piece, $\calI^1$, is given by the sections of a subbundle $I<\T^\ast M$. There should be an additional subbundle $J<\T^\ast M$ with 
+    \[\left\{\begin{array}{l}
+        I<J<\T^\ast M\\\rank J\slash I=n,
+    \end{array}\right.\]
+    The $\omega^i$ above give local sections of $J$ that induce a framing of $J\slash I$ and $\omega$ represents a non-vanishing section of $\bigwedge^n(J\slash I)$. We shall usually work locally and write $\omega=\omega^1\wedge\cdots\wedge\omega^n$. An integral element for $(\calI,\omega)$ is an $n$-dimensional integral element for $\calI$ on which $\omega$ is non-vanishing, and integral manifolds are defined correspondingly. The space of integral $n$-planes is denoted $\calV^n(\calI,\omega)\subset\Gr_n M$. 
+\end{defn}
+
+The goal of Cartan's theory is to characterize criteria for involutivity of differential systems, i.e., the existence of ordinary integral elements. 
+
+
+\begin{example}[A non-involutive system]
+    On a $6$-dimensional manifold with coframe $\{\theta^1,\theta^2,\omega^1,\omega^2,\pi^1,\pi^2\}$, we consider a Pfaffian system $\theta^1=\theta^2=0$ with independence condition $\omega^1\wedge\omega^2\neq 0$ and structure equations 
+    \begin{align}
+        \dd\theta^1\equiv \pi^1\wedge\omega^1 \pmod{\calI},\\
+        \dd\theta^2\equiv \pi^1\wedge\omega^2\pmod{\calI}.
+    \end{align}
+    We will denote the dual frame of vector fields by $\partial_{\theta^i}$ etc. A $1$-dimensional integral element of $\calI$ is a vector of the form 
+    \[X=X^0\partial_{\pi^1}+X^1\partial_{\pi^2}+X^2\partial_{\omega^1}+X^3\partial_{\omega^2}.\]
+    Using self-evident notation, the polar equations 
+    \[\dd\theta^1(X\wedge\wt X)=0=\dd\theta^2(X\wedge\wt X)\]
+    of the vector $X$ are 
+    \[\left\{\begin{array}{l}
+                X^0\wt X^2-X^2 \wt X^0=0,\\
+                X^0\wt X^3-X^3 \wt X^0=0.        
+    \end{array}\right.\]
+    This linear system has rank $2$ if $X^0\neq 0$. The latter is therefore the condition for $E^1=\<X\>$ to be regular.
+
+    On the other hand, any $2$-plane $E^2$ on which $\theta^1=\theta^2=0$ and $\omega^1\wedge\omega^2\neq 0$ is given by linear equations in the tangent space 
+    \[\left\{\begin{array}{l}
+        \pi^1=p_1^1\omega^1+p^1_2\omega^2,\\
+        \pi^2=p^2_1\omega^1+p^2_2\omega^2.        
+    \end{array}\right.\]
+    The condition that this $2$-plane be integral is $p^1_1=p^1_2=0$. Thus, any $E^1<E^2$ will have a basis vector 
+    \[\eta=X^1\partial_{\pi^2}+X^2\partial_{\omega^1}+X^3\partial_{\omega^2}.\]
+    Since we found above that $X^0\neq 0$ is required for regularity, we see that $E^2$ contains no regular integral lines, and is therefore not ordinary. 
+
+    This can also be seen more intuitively from the fact that the structure equations imply that on any integral manifold $\pi^1\wedge\omega^1=\pi^1\wedge\omega^2=0$, which, combined with the independence condition, implies $\pi^1=0$. Thus, $\pi^1$ and $\dd\pi^1$ must be added to the list of generators of the system, and integral manifolds must satisfy additional equations which result through differentiations and not just through algebraic operations. This is one of the simplest causes for failure of involution. We can also note that under the independence condition $\pi^1\wedge\pi^2\neq 0$ this system becomes involutive.
+\end{example}
+
+\begin{lem}
+    On a vector space $V$ with a filtration $I<J<V^\ast$ with $\dim J\slash I=n$, the space of $n$-planes $E\in\Gr_n(V)$ which satisfy $E<\Ann(I)$ and $J\slash I\cong E^\ast$ carries a natural affine structure.
+\end{lem}
+\begin{proof}
+    First let $I=\{0\}$. For this we use coordinates $(\bf{x},\bf{u})$ on $\bbR^{n+s}$ as usual. The $n$-planes on which $\dd x^1\wedge\cdots\wedge\dd x^n\neq 0$, i.e., $n$-planes that project isomorphically onto the $\bbR^n$ factor, are given by equations 
+    \[u^\lambda=p^\lambda_i x^i.\]
+    Under an invertible linear change 
+    \begin{align}
+        \wt x^i&=A^i_jx^j,\\
+        \wt u^\lambda&=B^\lambda_\mu u^\mu +C^\lambda_ix^i,
+    \end{align}
+    we have 
+    \[\wt p^\lambda_i A^i_j=B^\lambda_\mu p^\mu_j+C^\lambda_j\label{eq 11 Bryant}\]
+    or, in matrix notation, $\wt{\bf{p}}=B\bf{p}A^{-1}+CA^{-1}$. It follows that $\bf{p}$ transforms affinely.
+
+    To treat the general case when $I\neq \{0\}$, we consider $\bbR^{n+h+s}$ with coordinates $(\bf{x},\bf{y},\bf{u})$. Then the $n$-planes on which $\dd \bf{y}=0$ holds with the same independence condition are given by linear equations 
+    \begin{align}
+        y^a&=p^a_ix^i,\\
+        u^\lambda&=p^\lambda_ix^i,\\
+        p^a_i&=0.
+    \end{align}
+    Under an invertible linear change 
+    \begin{align}
+        \wt{\bf{y}}=D\bf{y},\quad \wt{\bf{x}}=A\bf{x}+E\bf{y},\quad \wt{\bf{u}}=B\bf{u}+C\bf{x}+F\bf{y},
+    \end{align}
+    it is easy to check that the $p^a_i$ and $p^\lambda_i$ transform \emph{quadratically}. However, when we impose the third equation ($p^a_i=0$), the remaining nonzero $p^\lambda_i$'s transform by (\ref{eq 11 Bryant}) again. Taking $I$ to be spanned by $y^a$'s and $J\slash I$ by the $x^i$'s, by virtue of $\bf{y}=0$ on $E$ the restriction map $J\slash I\to E^\ast$ is well-defined and the condition that this be an isomorphism is $\dd x^1\wedge\cdots\wedge\dd x^n\neq 0$ on $E$.
+\end{proof}
+
+This implies that the fibers of the space $\Gr_n(\Ann(I),\omega)$ of tangent $n$-planes satisfying $\restr{\calI^1}{E}=\{0\}$ and $\restr{\omega}{E}\neq 0$ (non-vanishing) carry natural affine structures. Systems for which this property holds not just for $\Gr_n(\Ann(I),\omega)$ but for the space $\calV^n(\calI,\omega)$ of true integral elements are named by the following definition.
+
+\begin{defn}[Linear \gls{eds}]
+    An \gls{eds} with independence condition $(\calI,\omega)$ on a manifold $M$ is called linear if the fibers of $\calV^n(\calI,\omega)\to M$ are affine linear subspaces of the fibers of $\Gr_n(\Ann(I),\omega)\to M$.
+\end{defn}
+
+Crucially, the definition of linearity in this discussion requires an independence condition. For an \gls{eds} on a manifold the concept of linearity only makes sense infinitesimally. The integral elements of $(\calI,\omega)$ are the infinitesimal solutions and the above definition is the corresponding concept of linear. We will see that many but not all \gls{eds} are linear. Moreover, given any \gls{eds} $\calI$ and an integral element $E$, we will define its linearization $(\calI_E,\omega_E)$ at $E$, which will correspond to linearizing an arbitrary PDE at a solution. Before doing this we need to develop simpler criteria for linearity. In fact, both these criteria and the linearization are implicit in the above proofs of the results of Cartan-K\"ahler theory, e.g., Proposition~\ref{prop III.1.15 Bryant}.
+
+
+Let us locally choose a coframe $\theta^1,\ldots,\theta^h;\omega^1,\ldots,\omega^n;\pi^1,\ldots,\pi^s$ adapted to the filtration $I<J<\T^\ast M$. Differential forms on $M$ can then be locally written, using multi-index notation, as 
+\[\psi=\psi_{\Lambda KA}\pi^\Lambda\wedge\omega^K\wedge\theta^A.\label{eq iii.14 Bryant}\]
+
+\begin{defn}[Linearly generated \gls{eds}]
+    $(M,\calI,\omega)$ is linearly generated if locally it is algebraically generated by forms $\psi$ which are of combined total degree one in the $\theta^a$'s and $\pi^\lambda$'s. It follows that it is algebraically generated by $\{\theta^a,\psi_{\lambda K}\pi^\lambda\wedge\omega^K\}_{a,\lambda,K}$, and it is clear that this condition is intrinsic.
+\end{defn}
+
+Integral elements of this system are then defined by the equations 
+\[\left\{
+    \begin{array}{l}
+        \theta^a=0,\\
+        \pi^\lambda=p^\lambda_i\omega^i,\quad \text{where}\\
+        \sum_{\lambda,K}\psi_{\lambda K}p^\lambda_i \omega^i\wedge\omega^K=0.
+    \end{array}
+\right.\]
+Since these equations are linear in the $p_i^\lambda$'s, we conclude that \emph{linearly generated systems are linear}.
+
+The following examples are generated by forms in degrees $p\geq 2$. The very important case of linear Pfaffian systems $(p=1)$ will be treated separately below. In these examples we denote by $\Omega^{\smbullet,1}(M)$ the forms (\ref{eq iii.14 Bryant}) that are  at most linear in the $\pi^\lambda$'s, i.e., that have $|\Lambda|\leq 1$. The system $(\calI,\omega)$ is then linearly generated if it is algebraically generated by $\Omega^{\smbullet,1}(M)\cap \calI$.
+
+
+\begin{example}[Lie III]\label{example Lie III EDS}
+    We will now use the Cartan-K\"ahler Theorem to provide another proof of Lie's Third Fundamental Theorem~\ref{thm local Lie's third}. Let $\bbR^n$ be endowed with a Lie algebra structure $[~,~]$. It suffices to show that there exists a $0$-neighborhood  $U\subset\bbR^n$ and an $\bbR^n$-valued $1$-form $\theta$ on $U$ such that $\eta_0:\T_0\bbR^n\to\bbR^n$ is an isomorphism and $\dd \theta+\frac12[\theta,\theta]=0$. Then, Cartan's Fundamental Theorem can be employed to derive a local Lie group structure (by repeating parts of the proof of Theorem~\ref{thm 8.7 Sharpe}).
+
+    Choose a basis $e_1,\ldots,e_n$ in $\bbR^n$ and let $c_{ij}^k$ be the structure constants in this basis. We need to find a $1$-form with components $\theta^i=\theta^i_j(\bf{x})\dd x^j$, with $\theta^i_j(\bf{x})$ an invertible matrix at each $\bf{x}(U)$. We want $\theta$ to satisfy $0=\dd\theta^i+\frac12 c^i_{jk}\theta^j\wedge\theta^k$. Let $M\coloneqq \bbR^n\times\GL_n(\bbR)$ with coordinates $x^i,\theta^i_j$. Take the \gls{eds} $(M,\calI)$ generated by the components $\vartheta^i$ of the form 
+    \[\vartheta=\dd(\theta_j\dd x^j)+\frac12[\theta_j\dd x^j,\theta_i\dd x^i].\]
+    It is easy to check, using the Jacobi identity, that $\dd\vartheta\equiv 0\pmod{\vartheta}$ is satisfied. This confirms that $\calI$ is a differential ideal. As independence condition, we take $J=\<\dd x^1,\ldots,\dd x^n\>$. Note that $\calI$ is linearly generated: we have $\vartheta^i=\dd p^i_j\wedge\dd x^j+(\text{terms quadratic in }\dd x^i)\in\Omega^{\smbullet,1}(M)$. More explicitly, we may write 
+    \[\vartheta^i=\dd p^i_j\wedge\dd x^j+\frac12 T^i_{jk}\dd x^k\wedge\dd x^j=\pi^i_j\wedge\dd x^j,\]
+    where $\pi^i_j=\dd\theta^i_j+\frac12 T^i_{jk}\dd x^k$ and $T^i_{jk}$ is some quadratic polynomial expression in the structure constants $c^k_{ij}$. Note that $\{\dd x^i,\pi^i_j\}$ form a coframe on $M$. We have 
+    \[
+        \begin{pmatrix}
+            \vartheta^1\\
+            \vdots\\
+            \vartheta^n
+        \end{pmatrix}=
+        \begin{pmatrix}
+            \pi^1_1 & \pi^1_2 & \cdots & \pi^1_n\\
+            \vdots & & & \vdots \\
+            \pi^n_1 & \pi^n_2 & \cdots & \pi^n_n
+        \end{pmatrix} \wedge 
+        \begin{pmatrix}
+            \dd x^1\\ \vdots \\ \dd x^n
+        \end{pmatrix}.
+    \]
+    All of the components of the tableau here are linearly independent, therefore we read off Cartan characters $s_1=\cdots=s_n=n$. The predicted dimension of the space of ordinary integral $n$-planes is thus $\dim M+\sum_p ps_p=\dim M+\frac{n(n+1)}{2}$. To apply Cartan's Test, we need to compute the actual dimension of the space of integral $n$-planes. They are described by the only equation $\pi^i_j=p^i_{jk}\dd x^k$ with $p^i_{jk}=p^i_{kj}$, so they are parametrized by $\dim_M + \frac{n(n+1)}{2}$. We conclude involution and the existence of a local Maurer-Cartan form.
+\end{example}
+
+\begin{example}[Closed self-dual forms]
+    Let $(X,\sfg)$ be an oriented Riemannian analytic $4$-manifold. Let $M=\bigwedge^2_+ X$ denote the bundle of self-dual $2$-forms on $X$. Let $\varphi\in\Omega^2(M)$ denote the tautological $2$-form on $M$ which satisfies $\varphi(X_1,X_2)=\alpha(\pi_\ast X_1,\pi_\ast X_2)$, where $X_i\in \T_\alpha M$ and $\pi:M\to X$ is the projection. Thus $\restr{\varphi}{\T_\alpha M}=\pi^\ast(\alpha)$. This form $\varphi$ has the ``reproducing'' property: if $\beta=\star\beta$ is a $2$-form on $X$, then when we regard it as a section of $M\to X$, we have $\beta^\ast\varphi=\beta$. Moreover, $\beta^\ast(\dd\varphi)=\dd\beta$. Let $\calI$ be the system algebraically generated by $\dd\varphi\in\Omega^3(M)$. Clearly $\calI$ is differentially closed. Let $\omega=\pi^\ast\sfv_\sfg$, where $\sfv_\sfg$ is the canonical volume form on $X$. The integrals of $(\calI,\omega)$ are locally sections of $M\to X$ which are the graphs of local closed self-dual $2$-forms on $X$. 
+    
+    We claim that $(\calI,\omega)$ is linearly generated and involutive. To see this, it suffices to work locally, so let $\omega^1,\ldots,\omega^4$ be an oriented orthonormal coframe on $U\subset X$. Of course, $\restr{M}{U}\cong U\times\bbR^3$ and there exist unique linear coordinates $p_2,p_3,p_4$ on the $\bbR^3$ factor so that, on $\restr{M}{U}$, we have 
+    \[\varphi=p_2(\omega^{12}+\omega^{34})+p_3(\omega^{13}+\omega^{42})+p_4(\omega^{14}+\omega^{23}).\]
+    Now $\omega=\omega^1\wedge\cdots\wedge\omega^4$, and 
+    \[\dd\varphi=\dd p_2\wedge(\omega^{12}+\omega^{34})+\dd p_3\wedge(\omega^{13}+\omega^{42})+\dd p_4\wedge(\omega^{14}+\omega^{23})+T,\]
+    where $T$ is a $3$-form which is cubic in the $\omega^i$'s. Clearly $\dd\varphi\in\Omega^{\smbullet,1}(M)$, so $(\calI,\omega)$ is linearly generated. It is not difficult to show that there exist forms $\pi_2,\pi_3,\pi_4$ on $\restr{M}{U}$ so that 
+    \[\dd\varphi=\pi_2\wedge(\omega^{12}+\omega^{34})+\pi_3\wedge(\omega^{13}+\omega^{42})+\pi_4\wedge(\omega^{14}+\omega^{23}),\]
+    where $\pi_i\equiv \dd p_i\pmod{\omega^1,\ldots,\omega^4}$. Given this, it is easy to see that the dimension of the space of integral elements at a single point of $M$ is $8$. On the other hand, we easily compute that for any integral flag, the Cartan characters are $s_0=s_1=0$, $s_2=1$, $s_3=2$, $s_4=0$, and so the character sum is $\sum_p ps_p=8$. Thus, Cartan's Test is satisfied and the system is involutive. We conclude that \emph{analytic closed self-dual $2$-forms always exist locally on $(X,\sfg)$ and they are unique if initial data are specified in the form of a closed analytic $2$-form on a hypersurface ($3$-dimensional) $H<X$}.
+\end{example}
+
+
+In order to motivate the notion of linearity, we shall define the \emph{linearization} $\calI_E$ of an arbitrary \gls{eds} $\calI$ at an $n$-dimensional integral element $E<\T_m M$. The linearization will have the following properties:
+\begin{enumerate}[label=(\roman*)]
+    \item $(\calI_E,\omega_E)$, where $\omega_E=\restr{\omega}{E}$, is an \gls{eds} with independence condition defined on the vector space $M_E\coloneqq E\oplus Q$ with $Q\coloneqq \T_m M\slash E$. 
+    \item $(\calI_E,\omega_E)$ is a \emph{constant coefficient}, linearly generated (and hence linear) \gls{eds}. That is, it is defined on a vector space and generated by translation-invariant forms. In theory we would need to take the resulting differential ideal in the set of all smooth forms, however it turns out that restricting to the translation-invariant ones, i.e., simply exterior forms, is sufficient. In particular, all exterior derivatives vanish.
+    \item if $E$ is an ordinary integral element of $\calI$, then $(\calI_E,\omega_E)$ is involutive and has the same Cartan characters as $E$. (In particular, this means that \emph{all} integral elements of $(\calI_E,\omega_E)$ have the same Cartan characters.)
+\end{enumerate}
+An explicit coordinate construction of the linearization will be given below. For now, to define $\calI_E$, we let $\Ann(E)<\T^\ast_m M$ be the space of covectors annihilating $E$ and we denote by $\<\Ann(E)\>_{\mathrm{alg}}\subset \bigwedge\T^\ast_m M$ the exterior ideal generated by them. Then, because $E$ is an integral element, we have $\calI_m\subset \<\Ann(E)\>_{\mathrm{alg}}$. Note the natural isomorphisms $\T^\ast_m M\cong \Ann(E)\oplus E^\ast$ and $\Ann(E)\cong Q^\ast$. There is a canonical short exact sequence 
+\[0\to \<\bigwedge^2 \Ann(E)\>_{\mathrm{alg}}\hookrightarrow \<\Ann(E)\>_{\mathrm{alg}}\to \Ann(E)\wedge \bigwedge E^\ast\cong Q^\ast\wedge\bigwedge E^\ast\to 0.\]
+This describes the splitting of the space of all forms that contain at least one element of $\Ann(E)$ as a factor into the first space, consisting of forms that are of degree $2$ or more in $\Ann(E)$, and the third one, of forms that are strictly linear in $\Ann(E)$. The latter is exactly the space of ``linearized forms''.
+
+\begin{defn}[Linearized \gls{eds}]
+    We let $P_E\subset Q^\ast\otimes \bigwedge E^\ast\subset \bigwedge(Q^\ast\oplus E^\ast)$ denote the image of $\calI_m$ and define $\calI_E$ to be the ideal in $\bigwedge(Q^\ast\oplus E^\ast)$ generated by $P_E$. Then $\calI_E$ is an ideal of exterior forms on $M_E=E\oplus Q$. We let $\omega_E$ be a volume form on $E$.
+    $(M_E,\calI_E,\omega_E)$ is the linearization of $\calI$ at $E$.
+\end{defn}
+
+When expressed in a set of linear coordinates on $E\oplus Q$, the elements of $\calI_E$ have constant coefficients and hence are closed forms. In order to see that $(\calI_E,\omega_E)$ is linearly generated, it is instructive to see what this construction means in coordinates. For this we choose a local coframe $\omega^1,\ldots,\omega^n,\pi^1,\ldots,\pi^s$ on $M$ so that $\Ann(E)=\<\pi^1_m,\ldots,\pi^s_m\>$. We then choose linear coordinates $x^1,\ldots,x^n$ on $E$ and $u^1,\ldots,u^s$ on $Q$ such that $\restr{\omega^i_m}{E}=\dd x^i$ and $\restr{\pi^\lambda_m}{Q}=\dd u^\lambda$. Let $\psi\in\calI$ and write locally
+\[\psi=f_I\omega^I+f_{\lambda J}\pi^\lambda\wedge\omega^J+f_{\lambda\mu K}\pi^\lambda\wedge\pi^\mu\wedge\omega^K+\cdots.\]
+We note that, because $\restr{\psi}{E}=0$, $f_I(m)=0$, and we define 
+\[\wb\psi_m\coloneqq f_{\lambda J}(m)\dd y^\lambda\wedge\dd x^J\in Q^\ast \otimes \bigwedge E^\ast < \bigwedge(Q^\ast\oplus E^\ast).\]
+Intuitively, $\wb\psi$ is obtained by substituting $m$, i.e., by freezing coefficients, and ignoring higher order terms in the $\pi^\lambda$'s, that is, terms that vanish to second order on $E$. It is clear that 
+\[P_E=\{\wb\psi_m\mid \psi\in\calI\}\]
+is the above set of algebraic generators of $\calI_E$. Thus, $(\calI_E,\omega_E)$ is linearly generated. Morevoer, the following is an immediate consequence of Proposition~\ref{prop iii.1.13, 2.4 Bryant}.
+
+
+\begin{prop}[{{\cite[Prop.~IV.2.6]{Bryant}}}]
+    Let $E$ be an integral element of $\calI$. Let $E^p<E$ be any $p$-plane and let $H(E^p)<\T_m M$ be the polar space of $E^p$ as an integral element of $\calI$. Then, as an integral element of $\calI_E$, the polar space of $E^p$ is $E\oplus (H(E^p)\slash E)<E\oplus Q$.
+\end{prop}
+In other words, the dimensions of the polar spaces are unchanged by linearization. It remains to establish property (iii) of the linearization, and we will do so in the following \subsect.
 
 
 
@@ -2902,7 +3570,7 @@ In this \subsect\ we study \emph{linear Pfaffian systems}, which are generated b
 
 Throughout this \sect, $V$ is an $n$-dimensional vector space, and $W$ is an $s$-dimensional space. We use the index ranges $1\leq i,j,k\leq n$, $1\leq a,b,c\leq s$. $V$ has basis $\{v_i\}_{i=1}^n$ and $V^\ast$ the corresponding dual basis $\{v^i\}_{i=1}^k$; $W$ has basis $\{w_a\}_{a=1}^s$ and $W^\ast$ the dual basis $\{w^a\}_{a=1}^s$.
 
-Let $x=x^iv_i$, $u=u^aw_a$ denote elements of $V$ and $W$, respectively. We will consider $(x^1,\ldots,x^n)$, respectively $(u^1,\ldots,u^n)$, as coordinate functions on $V$ and $W$ respectively, so that $v^i=\dd x^i$, $v_i=\partial_{x^i}$, and $w^a=\dd u^a$, $w_a=\partial_{u^a}$. Any first-order, constant-coefficient, homogeneous system of PDE's for maps $f:V\to W$ is given in coordinates by equations
+Let $x=x^iv_i$, $u=u^aw_a$ denote elements of $V$ and $W$, respectively. We will consider $\bf{x}=(x^1,\ldots,x^n)$, respectively $\bf{u}=(u^1,\ldots,u^s)$, as coordinate functions on $V$ and $W$ respectively, so that $v^i=\dd x^i$, $v_i=\partial_{x^i}$, and $w^a=\dd u^a$, $w_a=\partial_{u^a}$. Any first-order, constant-coefficient, homogeneous system of PDE's for maps $f:V\to W$ is given in coordinates by equations
 \[B_a^{ri}\frac{\partial u^a}{\partial x^i}=0,\quad 1\leq r\leq R,\label{eq 5.1 Ivey}\]
 where the $B_a^{ri}$ are constants. 
 % For example, the Cauchy-Riemann system $u^1_{x^1}-u^2_{x^2}=0$, $u^1_{x^1}+u^2_{x^1}=0$ has $B_1^{11}=B_2^{21}=B_1^{22}=1$, $B_2^{12}=-1$, $B_1^{12}=B_2^{11}=B_1^{21}=B_2^{22}=0$.
@@ -2956,20 +3624,6 @@ We will be interested in what higher-order terms can appear in the Taylor series
     The first column of the tableau contains $s_1=2$ independent entries, and the second contains $s_2=1$ more independent entry. These characters match our finding in Example~\ref{ex ux=vy 1}.
 \end{example}
 
-\begin{example}[\ref{ex ux=vy 2} continued]
-    The second \gls{eds} for $u_x=v_y$ has only one $2$-form $\Psi$, and the tableau is immediately obtained by writing $\Psi$ in terms of $\dd x,\dd y$:
-    \[\Psi=
-    \begin{pmatrix}
-        -\dd v & \dd u
-    \end{pmatrix}\wedge 
-    \begin{pmatrix}
-        \dd x\\ \dd y
-    \end{pmatrix}.
-    \]
-    The characters $s_1=s_2=1$ match those found in Example~\ref{ex ux=vy 2}.
-\end{example}
-
-
 
 \begin{example}\label{ex tableau}
     \begin{enumerate}
@@ -2999,10 +3653,10 @@ We will be interested in what higher-order terms can appear in the Taylor series
 \end{example}
 
 
-\begin{example}[Orthogonal 3-webs]\index{Web}
+\begin{example}[Triply orthogonal webs]\index{Web}\label{example orthogonal 3-webs}
     A \emph{triply orthogonal web} is a triple of foliations of the Euclidean space $\bbE^3$ by surfaces whose leaves are pairwise orthogonal. 
 
-    Each leaf is perpendicular to (annihilated by) a unique unit-norm $1$-form $\eta_i$, up to a sign, which satisfies $\eta_i\wedge\dd\eta_i=0$ by the Frobenius Theorem. Let $P$ be the bundle of all orthonormal bases of the tangent spaces of $\bbE^3$, with the obvious bundle projection $\pi:P\to \bbE^3$, so that each point of $P$ has the form $p=(m,e_1,e_2,e_3)$ for some $m\in \bbE^3$ and orthonormal basis $\frake=(e_1,e_2,e_3)$ of $\T_{m}\bbE^3$. The \emph{soldering $1$-form} $\theta\in \Omega^1(P;\bbR^3)$ on $P$ is defined by 
+    Each leaf is perpendicular to (annihilated by) a unique unit-norm $1$-form $\eta_i$, up to a sign, which satisfies $\eta_i\wedge\dd\eta_i=0$ by the Frobenius Theorem. Let $P=\SE_3$ be the bundle of all orthonormal frames of the tangent spaces of $\bbE^3$, with the obvious bundle projection $\pi:P\to \bbE^3$, so that each point of $P$ has the form $p=(m,e_1,e_2,e_3)$ for some $m\in \bbE^3$ and orthonormal basis $\frake=(e_1,e_2,e_3)$ of $\T_{m}\bbE^3$. The \emph{soldering $1$-form} $\theta\in \Omega^1(P;\bbR^3)$ on $P$ is defined by 
     \[\frake\cdot \theta(X)=\pi_\ast(X),\quad X\in \T P,\]
     i.e.\ it outputs the components of $\pi_\ast(X)$ in the frame $\frake$. In the last \subsect\ we encountered its components $\theta^i$, and we also constructed the $1$-forms 
     $\omega^i{}_j=\<\dd e_j,e_i\>,$
@@ -3012,7 +3666,7 @@ We will be interested in what higher-order terms can appear in the Taylor series
     \[\theta^i\wedge\dd\theta^i,\quad i=1,2,3.\]
     Using the equations above, $\calI$ is also generated by three $3$-forms
     \[\omega^i{}_j\wedge\theta^i\wedge\theta^j,\quad (ij)=(12),(23),(31).\]
-    The integral manifolds coframed by $\{\theta^i\}_{i=1}^3$ are locally precisely the triply orthogonal webs. The reader can find the characters: $(s_1,s_2,s_3)=(0,3,0)$, and the integral elements coframed by $\{\theta^i\}$ form a manifold of dimension $12$ (parametrized by a choice of a point of $P$ and $3\times 2=6$ coefficients determining the values of $\omega^i{}_j$). Again we conclude involution. As a result, triply orthogonal webs exist locally and depend on $3$ functions of $2$ variables.
+    The integral manifolds coframed by $\{\theta^i\}_{i=1}^3$ are locally precisely the triply orthogonal webs. In Example~\ref{example tableau of orthogonal 3-webs} we computed the characters: $(s_1,s_2,s_3)=(0,3,0)$, and the integral elements coframed by $\{\theta^i\}$ form a manifold of dimension $12$ (parametrized by a choice of a point of $P$ and $3\times 2=6$ coefficients determining the values of $\omega^i{}_j$). Again we conclude involution. As a result, triply orthogonal webs exist locally and depend on $3$ functions of $2$ variables (e.g.\ a system of orthogonal coordinates).
 \end{example}
 
 \begin{hrem*}
@@ -3020,25 +3674,19 @@ We will be interested in what higher-order terms can appear in the Taylor series
     \[y_x=f(x,y),\quad \text{ and }\quad Y_X=F(X,Y),\]
     with respect to coordinate transformations that don't mix the coordinates:
     \[\wh{x}=X(x),\quad \wh{y}=Y(y).\label{6914}\]
-    This transformation leaves invariant the coordinate lines $x=a$, $y=b$ in the $xy$-plane as well as the integral lines of the equations. These three families of lines form a $3$-web \emph{in the plane}. Thus, the problem considered by Cartan is equivalent to classifying curvilinear $3$-webs in the plane. He distinguished $3$ classes of ODE's of the above type: those admitting a $3$-parameter group of transformations (\ref{6914}), those admitting a $1$-parameter such group, and those not admitting any such symmetries. This corresponds to $3$ classes of $3$-webs in the plane.
+    This transformation leaves invariant the coordinate lines $x=a$, $y=b$ in the $xy$-plane as well as the integral lines of the equations. These three families of lines form a $3$-web \emph{in the plane}. Intuitively, the ODE, viewed only up to diffeomorphism, fixes the curvature of the integral curves at all points, which suffices for recovering the curves in two dimensions. Thus, the problem considered by Cartan is equivalent to classifying curvilinear $3$-webs in the plane. He distinguished $3$ classes of ODE's of the above type: those admitting a $3$-parameter group of transformations (\ref{6914}), those admitting a $1$-parameter such group, and those not admitting any such symmetries. This corresponds to $3$ classes of $3$-webs in the plane.
 \end{hrem*}
 
 
-
-
-
-\subsection{Prolongation}
-
-
 In the rest of this \subsect, we will develop a test for a tableau such that if it passes, we will know exactly what initial data one should specify to determine an analytic solution. Given a tableau $A$, we can try to look for an analytic solution in the form of a power series ansatz
-\[u^a(x)=p^a+p^a_i x^i p^a_{ij}x^ix^j+p^a_{ijk}x^ix^jx^k+\cdots.\]
+\[u^a(x)=p^a+p^a_i x^i+ p^a_{ij}x^ix^j+p^a_{ijk}x^ix^jx^k+\cdots.\]
 Since the system is homogeneous with constant coefficients, $u$ is a solution iff each term satisfies the system and the series converges. As we have seen, there is no restriction on the constant terms, and the coefficients of the linear term must satisfy $p^a_i\partial_{u^a}\otimes \dd x^i\in A$. Moving on to the coefficients of the quadratic term in the series, the quadratic term must be such that $\gamma_{p^a_{ij}x^ix^j}(x)\in A$ for all $x\in V$. Thus,
 \[p^a_{ij}x^i\partial_{u^a}\otimes \dd x^j \; \in A,\text{ for all }x\in V, \]
 so that 
 \[p^a_{ij}\partial_{u^a}\otimes \dd x^j\otimes \dd x^i \;\in A\otimes V^\ast.\]
 Since mixed partials commute, $p^a_{ij}\partial_{u^a}\otimes \dd x^i\otimes \dd x^j$ is also an element of $W\otimes \rmS^2 V^\ast$; in indices this means $p^a_{ij}=p^a_{ji}$. Combining these two conditions gives 
 \[p^a_{ij}\partial_{u^a}\otimes \dd x^i\otimes \dd x^j \; \in (A\otimes V^\ast)\cap (W\otimes \rmS^2 V^\ast)\eqqcolon A^{(1)},\]
-where the first factor is due to the equations and the second to the commuting derivatives. The space $A^{(1)}$ is called the \emph{(first) prolongation} of $A$.
+where the first factor is due to the equations and the second to the commuting derivatives. The space $A^{(1)}$ is called the \emph{(first) prolongation} of $A$. In geometric terms, \emph{$A^{(1)}$ is the space of integral elements at any point of the associated \gls{eds}}. We will later generalize this to all linear Pfaffian systems. Hence, we expect to be able to examine the involutivity of a system by studying its first prolongation. 
 
 Similarly, the condition on the cubic term is 
 \[p^a_{ijk}\partial_{u^a}\otimes \dd x^i\otimes\dd x^j\otimes\dd x^k\; \in(A\otimes V^\ast\otimes V^\ast)\cap (W\otimes \rmS^3 V^\ast)\eqqcolon A^{(2)},\]
@@ -3047,34 +3695,8 @@ and so on for all $l$. In general, we define
 \begin{defn}[Prolongation]\index{Prolongation}
     Let $V,W$ be vector spaces and $A<W\otimes V^\ast$ a subspace (a tableau). The $l$-th prolongation of $A$ is the subspace $A^{(l)}<W\otimes \rmS^{l+1}V^\ast$ defined as
     \[A^{(l)}\coloneqq (A\otimes V^{\ast\otimes l})\cap (W\otimes \rmS^{l+1} V^\ast)=(A^{(l-1)}\otimes V^\ast)\cap (W\otimes \rmS^{l+1} V^\ast).\]
+    In terms of constant-coefficient first-order systems of PDE's, $A^{(l)}$ is the set of homogeneous polynomial solutions of degree $l+1$.
 \end{defn}
-
-\begin{example}[Cauchy-Riemann system]
-    Continuing Example~\ref{ex tableau}(1), we see that the space $A\otimes \bbR^2$ has the basis (omitting tensor products)
-    \begin{multline}
-        \{\partial_{u^1}\dd x^1\dd x^1+\partial_{u^2}\dd x^2\dd x^1,-\partial_{u^2}\dd x^1\dd x^1+\partial_{u^1}\dd x^2\dd x^1,\\
-        \partial_{u^1}\dd x^1\dd x^2+\partial_{u^2}\dd x^2\dd x^2, -\partial_{u^2}\dd x^1\dd x^2+\partial_{u^1}\dd x^2\dd x^2\}.
-    \end{multline}
-    By collecting terms containing $\partial_{u^1}$ or $\partial_{u^2}$, we can write 
-    \begin{multline}
-        A\otimes\bbR^2=\{\partial_{u^1}(a\dd x^1\dd x^1+b \dd x^2\dd x^1+c\dd x^1\dd x^2+d\dd x^2\dd x^2)+\\
-        +\partial_{u^2}(a\dd x^2\dd x^1-b \dd x^1\dd x^1+c\dd x^2\dd x^2-d\dd x^1\dd x^2)\mid a,b,c,d\in\bbR\}.
-    \end{multline}
-    To find the prolongation, we need the terms inside the parentheses to be symmetric tensors, i.e.\ $b=c$ and $a=-d$. Thus,
-    \[A^{(1)}\cong \left\{
-        \begin{pmatrix}
-            a&b\\b&-a
-        \end{pmatrix}\middle| a,b\in\bbR
-    \right\}.\]
-    Since we had $s_1=2$ and $s_2=0$, we conclude involutivity because $\dim A^{(1)}=s_1+2s_2$ holds. Thus, solutions of the Cauchy-Riemann system depend on two functions of one variable. Indeed, in complex analysis an analytic function is determined uniquely by its real and imaginary parts along a smooth curve. Continuing, it is similarly easy to check that the second prolongation is one-dimensional:
-    \begin{align}
-        A^{(2)}&=\<t\>,\\
-        t&=(\partial_{u^1}+\partial_{u^2})(111)+(-\partial_{u^1}+\partial_{u^2})(112)+\\
-        &\quad +(-\partial_{u^1}-\partial_{u^2})(122)+(\partial_{u^1}-\partial_{u^2})(222),
-    \end{align}
-    where $(ijk)$ stands for the sum of $\dd x^i\dd x^j\dd x^k$ over all distinct permutations if $i,j,k$. One more iteration confirms that $A^{(3)}=\{0\}$, so all higher prolongations vanish.
-\end{example}
-
 
 \begin{xca}
     \begin{enumerate}
@@ -3112,7 +3734,7 @@ where the $C_\rho$ are fixed $s\times s$ matrices. The symbol relations correspo
 \[B=\{\dd u^a\otimes \partial_{x^\rho}-C^a_{\rho b}\dd u^b\otimes\partial_{x^1}\mid 2\leq \rho\leq n,1\leq a\leq s\},\]
 and the corresponding differential equations are 
 \[u^a_{x^\rho}-C^a_{\rho b}u^b_{x^1}=0,\quad \rho=2,\ldots,n.\label{eq 5.6 Ivey}\]
-We saw that when $C_\rho= 0$ for all $\rho$, any convergent series with coefficients $p_1^a,p_{11}^a,p^a_{111},\ldots $ determines a solution $u$. The hope is that under some conditions the solutions to (\ref{eq 5.6 Ivey}) can be given in terms of $s$ arbitrary functions of one variable, and will see that this is the largest space of solutions one could hope for.
+We saw that when $C_\rho= 0$ for all $\rho$, any convergent series with coefficients $p_1^a,p_{11}^a,p^a_{111},\ldots $ determines a solution $u$. The hope is that under some conditions the solutions to (\ref{eq 5.6 Ivey}) can be given in terms of $s$ arbitrary functions of one variable, and we will see that this is the largest space of solutions one could hope for.
 
 Assume we are given constants $p_1^a,p_{11}^a,p^a_{111},\ldots $. Then we may determine the remaining $p^a_I$ for any multi-index $I=(i_1,\ldots,i_k)$ as follows: to have $(p^a_i \partial_{u^a}\otimes \dd x^i)\in A$, the terms $p^a_\rho$ must be given by $p^a_\rho=C^a_{\rho b}p^b_1$. To have $(p^a_{ij}\partial_{u^a}\otimes \dd x^i\dd x^j)\in A^{(1)}$, the other terms are determined by the $p^a_{11}$:
 \begin{align}
@@ -3190,7 +3812,7 @@ One can visualize $A_k(F)$ as the subspace of matrices in $A$ for which the firs
 \begin{defn}
     Let $A<W\otimes V^\ast$ be a tableau. Define 
     \[s_k(A)\coloneqq \max\{s_k(F)\mid F\text{ flags with }s_j(F)=s_j(A),j=1,\ldots,k-1\}.\]
-    The $s_k$ are called the \emph{(reduced) characters} of $A$. They are invariants of $A$ with respect to the action of $\GL(V)\times\GL(W)$. We will call a flag $F$ an $A$-generic flag when $s_k(F)=s_k(A)$ for all $k$ (it exists by definition). We will write $s_k$ instead of $s_k(A)$ when there is no risk of confusion. Note that 
+    (The maximization of $s_k$ ensures that $F$ is \emph{generic}.) The $s_k$ are called the \emph{(reduced) characters} of $A$. They are invariants of $A$ with respect to the action of $\GL(V)\times\GL(W)$. We will call a flag $F$ an $A$-generic flag when $s_k(F)=s_k(A)$ for all $k$ (it exists by definition). We will write $s_k$ instead of $s_k(A)$ when there is no risk of confusion. Note that 
     \[\dim W=s\geq s_1\geq \cdots \geq s_n\geq 0.\]
 \end{defn}
 
@@ -3246,49 +3868,31 @@ According to Theorem~\ref{thm 5.5.7 Ivey}, a solution is determined by specifyin
 The freedom of the functions of $l$ variables is more significant than all the other choices in the sense that it provides the overwhelming majority of the Taylor coefficients at high orders. Thus we usually say that for an involutive \gls{eds} with character $s_l$ the integral manifolds \emph{depend on $s_l$ functions of $l$ variables}, and ignore the rest.
 
 
-
-
-\subsection{Characteristics of an \texorpdfstring{\gls{eds}}{EDS}}
-
-
-In Theorem~\ref{thm 5.5.7 Ivey} we do not necessarily obtain all solutions to an involutive system by a choice of analytic functions as specified in the theorem. We only obtain those that can be obtained by specifying \emph{noncharacteristic} initial data, that is, initial data based on a choice of an $A$-generic flag for $V^\ast$. If we choose a nongeneric flag, the corresponding Cauchy problem may not have any solutions or be undetermined, with an infinite number of solutions.
-
-\begin{example}\label{ex 5.6.1 Ivey}
-    Consider the system 
-    \[u_x=v_y,\quad u_y=u_x.\label{eq 5.20 Ivey}\]
-    If we pick initial data for $u,v$ along a line through the origin other than $x=\pm y$, then it extends to a unique solution to the system. But if we specify initial data along the line $y=x$, then unless $u-v=\const$, this cannot be extended to a solution. If $u-v=\const$ along $y=x$, then there are an infinite number of local extensions to a solution.
+\begin{example}[Cauchy-Riemann system]
+    Continuing Example~\ref{ex tableau}(1), we see that the space $A\otimes \bbR^2$ has the basis (omitting tensor products)
+    \begin{multline}
+        \{\partial_{u^1}\dd x^1\dd x^1+\partial_{u^2}\dd x^2\dd x^1,-\partial_{u^2}\dd x^1\dd x^1+\partial_{u^1}\dd x^2\dd x^1,\\
+        \partial_{u^1}\dd x^1\dd x^2+\partial_{u^2}\dd x^2\dd x^2, -\partial_{u^2}\dd x^1\dd x^2+\partial_{u^1}\dd x^2\dd x^2\}.
+    \end{multline}
+    By collecting terms containing $\partial_{u^1}$ or $\partial_{u^2}$, we can write 
+    \begin{multline}
+        A\otimes\bbR^2=\{\partial_{u^1}(a\dd x^1\dd x^1+b \dd x^2\dd x^1+c\dd x^1\dd x^2+d\dd x^2\dd x^2)+\\
+        +\partial_{u^2}(a\dd x^2\dd x^1-b \dd x^1\dd x^1+c\dd x^2\dd x^2-d\dd x^1\dd x^2)\mid a,b,c,d\in\bbR\}.
+    \end{multline}
+    To find the prolongation, we need the terms inside the parentheses to be symmetric tensors, i.e.\ $b=c$ and $a=-d$. Thus,
+    \[A^{(1)}\cong \left\{
+        \begin{pmatrix}
+            a&b\\b&-a
+        \end{pmatrix}\middle| a,b\in\bbR
+    \right\}.\]
+    Since we had $s_1=2$ and $s_2=0$, we conclude involutivity because $\dim A^{(1)}=s_1+2s_2$ holds. Thus, solutions of the Cauchy-Riemann system depend on two functions of one variable. Indeed, in complex analysis an analytic function is determined uniquely by its real and imaginary parts along a smooth curve. Continuing, it is similarly easy to check that the second prolongation is one-dimensional:
+    \begin{align}
+        A^{(2)}&=\<t\>,\text{ where }
+        t&=(\partial_{u^1}+\partial_{u^2})(111)+(-\partial_{u^1}+\partial_{u^2})(112)+\\
+        &\quad +(-\partial_{u^1}-\partial_{u^2})(122)+(\partial_{u^1}-\partial_{u^2})(222),
+    \end{align}
+    where $(ijk)$ stands for the sum of $\dd x^i\dd x^j\dd x^k$ over all distinct permutations if $i,j,k$. One more iteration confirms that $A^{(3)}=\{0\}$, so all higher prolongations vanish.
 \end{example}
-
-\begin{defn}[Symbol mapping, Characteristic variety]\label{def symbol map}
-    Let $A<W\otimes V^\ast$ be a tableau. For $\alpha\in V^\ast$, define the \emph{symbol mapping} at $\alpha$ by 
-    \[\sigma_\alpha:W\to (W\otimes V^\ast)\slash A,\quad w\mapsto w\otimes\alpha + A.\]
-    Define the \emph{characteristic variety} of $A$, $\Xi_A\subset \bbP V^\ast$ (where $\bbP$ stands for the projectivization functor $V\mapsto V\slash \bbK^\times$ for $\bbK$-vector spaces), to be the set of all \emph{characteristic hyperplanes} (codimension $1$ subspaces) in $V$:
-    \[\Xi_A\coloneqq \{[\alpha]\in \bbP V^\ast\mid \ker \sigma_\alpha\neq 0\}.\]
-    We interpret $\Xi_A$ is the set of hyperplanes in $\bbP V$ for which the extension of an $(n-1)$-dimensional integral element to an $n$-dimensional one is not unique, see Theorem~\ref{thm 6.7.7 Ivey}.
-\end{defn}
-
-\begin{example}[\ref{ex 5.6.1 Ivey} continued]
-    The tableau of \ref{eq 5.20 Ivey} consists of matrices of the form $\left(\begin{smallmatrix}
-        a&b\\b&a
-    \end{smallmatrix}\right)$. This has characters $s_1=2=\dim A$ and $s_2=0$. A lin in $V$ spanned by $\left(\begin{smallmatrix}
-        x\\ y
-    \end{smallmatrix}\right)$ is characteristic iff the system $ax+by=0$, $bx+ay=0$ on $a,b$ has rank below $2$. Of course, this happens only for the two lines $y=\pm x$. Thus $\Xi_A=\{[1:1],[1:-1]\}$. 
-\end{example}
-
-
-Even when we are only interested in real solutions of the underlying PDE, it is useful to consider the \emph{complex characteristic variety}
-\[\Xi^\bbC_A\coloneqq \{[\alpha]\in \bbP (V^\ast)^\bbC\mid \ker \sigma_\alpha^\bbC\neq 0\},\]
-where $\sigma^\bbC_\alpha:W^\bbC\to (W^\bbC\otimes (V^\ast)^\bbC)\slash A^\bbC$ is the complexification of $\sigma_\alpha$ (see Definition~\ref{def complexification}).
-
-\begin{defn}[Determined tableau]
-    A tableau $A<W\otimes V^\ast$ is called determined if $\dim \Ann(A)=\dim W=s$, i.e.\ the number of equations is the same as the number of unknowns.
-\end{defn}
-
-Let us now \emph{work over $\bbC$ and drop $\bbC$ from the notation}. We estimate the dimension of $\Xi_A$ and a modification of the degree of $\Xi_A$ in terms of the characters of $A$. We use the convention that the empty set has dimension $-1$, and denote the modified degree defined below by $\widetilde{\deg}$.
-
-\begin{thm}[{{\cite[Thm.~5.6.12]{Ivey}}}]\label{thm 5.6.12 Ivey}
-    Let $A<W\otimes V^\ast$ be a tableau. Noncharacteristic integral manifolds of the \gls{eds} induced by $A$ depend on $\widetilde{\deg}(\Xi_A^\bbC)$ functions of $\dim\Xi_A^\bbC+1$ variables.
-\end{thm}
 
 
 
@@ -3446,8 +4050,42 @@ Since prolongations can be defined iteratively, this easily implies that
 \[H^{0,2}(A^{(p)})=H^{p,2}(A).\]
 
 \begin{rem}
-    The \emph{Kuranishi Prolongation Theorem} implies that after a finite number of prolongations a tableau will become involutive (perhaps by becoming empty). This implies that, for a linear Pfaffian system on an analytic manifold $M$, if $H^{p,2}(A_m)=0$ for all $p$, then there exist integral manifolds through $m$. This statement is the \emph{Goldschmidt version of Cartan-K\"ahler Theorem}. It is useful because sometimes one can show the vanishing of all groups $H^{p,2}$ without having to compute the prolongations.
+    The \emph{Cartan-Kuranishi Prolongation Theorem (1957)}, originally conjectured by Cartan based on numerous examples, implies that after a finite number of prolongations a tableau will become involutive (perhaps by becoming empty, in which case there are no integral manifolds). This implies that, for a linear Pfaffian system on an analytic manifold $M$, if $H^{p,2}(A_m)=0$ for all $p$, then there exist integral manifolds through $m$. This statement is the \emph{Goldschmidt version of Cartan-K\"ahler Theorem}. It is useful because sometimes one can show the vanishing of all groups $H^{p,2}$ without having to compute the prolongations.
 \end{rem}
+
+
+
+\begin{defn}[Symbol mapping, Characteristic variety]\label{def symbol map}
+    Let $A<W\otimes V^\ast$ be a tableau. For $\alpha\in V^\ast$, define the \emph{symbol mapping} at $\alpha$ by 
+    \[\sigma_\alpha:W\to (W\otimes V^\ast)\slash A,\quad w\mapsto w\otimes\alpha + A.\]
+    Define the \emph{characteristic variety} of $A$, $\Xi_A\subset \bbP V^\ast$ (where $\bbP$ stands for the projectivization functor $V\mapsto V\slash \bbK^\times$ for $\bbK$-vector spaces), to be the set of all \emph{characteristic hyperplanes} (codimension $1$ subspaces) in $V$:
+    \[\Xi_A\coloneqq \{[\alpha]\in \bbP V^\ast\mid \ker \sigma_\alpha\neq 0\}.\]
+    We interpret $\Xi_A$ is the set of hyperplanes in $\bbP V$ for which the extension of an $(n-1)$-dimensional integral element to an $n$-dimensional one is not unique, see Theorem~\ref{thm 6.7.7 Ivey}.
+\end{defn}
+
+\begin{example}[\ref{ex 5.6.1 Ivey} continued]
+    The tableau of \ref{eq 5.20 Ivey} consists of matrices of the form $\left(\begin{smallmatrix}
+        a&b\\b&a
+    \end{smallmatrix}\right)$. This has characters $s_1=2=\dim A$ and $s_2=0$. A lin in $V$ spanned by $\left(\begin{smallmatrix}
+        x\\ y
+    \end{smallmatrix}\right)$ is characteristic iff the system $ax+by=0$, $bx+ay=0$ on $a,b$ has rank below $2$. Of course, this happens only for the two lines $y=\pm x$. Thus $\Xi_A=\{[1:1],[1:-1]\}$. 
+\end{example}
+
+Even when we are only interested in real solutions of the underlying PDE, it is useful to consider the \emph{complex characteristic variety}
+\[\Xi^\bbC_A\coloneqq \{[\alpha]\in \bbP (V^\ast)^\bbC\mid \ker \sigma_\alpha^\bbC\neq 0\},\]
+where $\sigma^\bbC_\alpha:W^\bbC\to (W^\bbC\otimes (V^\ast)^\bbC)\slash A^\bbC$ is the complexification of $\sigma_\alpha$ (see Definition~\ref{def complexification}).
+
+\begin{defn}[Determined tableau]
+    A tableau $A<W\otimes V^\ast$ is called determined if $\dim \Ann(A)=\dim W=s$, i.e.\ the number of equations is the same as the number of unknowns.
+\end{defn}
+
+Let us now \emph{work over $\bbC$ and drop $\bbC$ from the notation}. We estimate the dimension of $\Xi_A$ and a modification of the degree of $\Xi_A$ in terms of the characters of $A$. We use the convention that the empty set has dimension $-1$, and denote the modified degree defined below by $\widetilde{\deg}$.
+
+\begin{thm}[{{\cite[Thm.~5.6.12]{Ivey}}}]\label{thm 5.6.12 Ivey}
+    Let $A<W\otimes V^\ast$ be a tableau. Noncharacteristic integral manifolds of the \gls{eds} induced by $A$ depend on $\widetilde{\deg}(\Xi_A^\bbC)$ functions of $\dim\Xi_A^\bbC+1$ variables.
+\end{thm}
+
+
 
 Now suppose $(I,J)$ has no intrinsic torsion and let $E\in\calV^n(I,J)_m$. Let $H<E$ be a hyperplane, i.e.\ $\dim H=n-1$. We address the following question: under what circumstances is $E$ the only integral $n$-plane that contains $H$?
 
@@ -3469,131 +4107,6 @@ for some nonzero $w\in W$. In other words, $\alpha_H\in\Xi_A$ iff the tableau co
 \begin{thm}
     A hyperplane $H<E<\T_mM$ is characteristic iff the corresponding element $\alpha_H\in\bbP E^\ast$ is in $\Xi_A$.
 \end{thm}
-
-
-
-
-
-
-
-
-\subsection{Cauchy characteristics}
-
-
-\begin{defn}[Killing vector fields]
-    Let $\calI$ be an \gls{eds} on $M$. A vector field $X\in\fX(M)$ is an infinitesimal symmetry, or a Killing vector field, of $\calI$ if 
-    \[\Lie_X (\calI)\subset \calI.\]
-    Since $\Lie_X$ is natural with respect to wedge products and exterior derivatives, it suffices to show that $\Lie_X \theta^a\in \calI$ for a set $\{\theta^a\}$ of \emph{differential} generators of $\calI$. The set of all Killing vector fields automatically forms a Lie subalgebra of $\fX(M)$.
-\end{defn}
-
-Given an integral manifold $N_0$ of an \gls{eds} $\calI$ on $M$, a Killing vector field $X$ can be used to obtain a one-parameter family of integral manifolds: let $F_t$ denote the flow of $X$ and 
-\[N_t\coloneqq F_t(N_0).\label{eq 7.3 Ivey}\]
-It is easy to see that, as long as the flow is well-defined, $N_t$ is a smooth integral manifold of $\calI$. 
-
-\begin{rem}
-    Cartan initiated the classification of \glspl{eds} whose symmetries depend on arbitrary functions (thus forming infinite-dimensional Lie algebras). Determining the symmetries usually amounts to solving an overdetermined system of differential equations, so most of the time the Lie algebra of symmetries is empty. An interesting exception is the Pfaffian system $\<\dd y-p\dd x,\dd p-q\dd x,\dd z-q^2\dd x\>_{\mathrm{diff}}$ on $\bbR^5$ with coordinates $x,y,z,p,q$. In this case the symmetries form a $14$-dimensional Lie algebra isomorphic to the split form of the exceptional Lie algebra $\frakg_2$. In his famous ``five variables paper'' Cartan proved that this is the largest possible Lie algebra of symmetries for a rank three Pfaffian system with generic derived flag on a 5-dimensional manifold.
-\end{rem}
-
-Unfortunately, enumerating the Killing vector fields for a given system of PDE's is usually harder than solving the system itself. We direct the reader to \cite{Olver} for a detailed exploration of this subject.
-
-\begin{defn}[Cauchy characteristics]
-    Let $\calI$ be an \gls{eds} on $M$. A vector field $X\in\fX(M)$ is a Cauchy characteristic vector field of $\calI$ if 
-    \[i_X (\calI)\subset \calI.\]
-    Since $i_X$ is a $\wedge$-derivation, it suffices to show that $i_X\theta\in\calI$ for a set $\{\theta^a\}$ of \emph{algebraic} generators of $\calI$. Since Cauchy vector fields are preserved by multiplications by arbitrary scalar function, we can talk of \emph{Cauchy characteristic line fields}. Since $\calI$ is a differential ideal, each Cauchy characteristic vector field is automatically a Killing vector field. Moreover, Cauchy characteristic vector fields also form a Lie subalgebra of $\fX(M)$ (exercise).
-\end{defn}
-
-The condition for finding Cauchy characteristics is thus algebraic, which makes them much easier to find than other Killing vector fields. And while Killing vector fields preserve the set of integral manifolds, for Cauchy characteristics a stronger statement holds.
-
-\begin{prop}[{[\cite[Prop.~7.1.8]{Ivey}]}]\label{prop 7.1.8 Ivey}
-    Let $N_0$ be an integral $n$-manifold for an \gls{eds} $\calI$ and let $X$ be a Cauchy characteristic vector field transverse to $N_0$. Let $N_t$ be as in (\ref{eq 7.3 Ivey}), and let $S$ be the $(n+1)$-dimensional union of $N_t$'s. Then $S$, when smooth, is an integral manifold of $\calI$.
-\end{prop}
-\begin{proof}
-    Assume $\dim N_0=1$, so $N_0$ is an integral curve with $X$ transverse to it. In order for $S$ to be smooth, we must restrict $t$ to an open interval of values for which $X$ is transverse to $N_t$. Let $\omega\in\calI^2$ and let $Y$ be tangent to one of the $N_t$. Then $\omega(X,Y)=(i_X\omega)(Y)=0$ because $i_X\omega\in\calI$.  This easily generalizes to higher dimensionality of $N_0$ by replacing $Y$ with a local frame for $N_t$.
-\end{proof}
-
-\begin{example}[Surfaces in $\bbE^3$]\label{ex 7.1.10 Ivey}
-    Recall that the integral manifolds of $\calI=\<\theta^3\>_{\mathrm{diff}}$ on the orthonormal frame bundle $\SE_3\to \bbE^3$   are the first-order adapted lifts of surfaces $\Sigma\subset\bbE^3$. This system admits a Cauchy characteristic vector field as follows.
-
-    Let $\{E_j,E^i_j\}$ be a global frame for $\T P$ dual to the one given by the entries of the Maurer-Cartan form $\{\theta^j,\omega^i_j\}$. Expand $X=X^jE_j+X^j_i E^i_j$. Then $i_X\theta^3=0$ implies that $X_3=0$ and 
-    \[i_X \dd\theta^3=i_X(-\omega^3_1\wedge\theta^1-\omega^3_2\wedge\theta^2)=X_1\omega^3_1-X^1_3\theta^1+X_2\omega^3_2-X^2_3\theta^2\]
-    implies that $X=X^1_2 E^2_1$. We can pick $X=E^2_1$, which generates rotations of the frame in the $\{e_1,e_2\}$-plane. Now, Proposition~\ref{prop 7.1.8 Ivey} implies that any integral surface for $\calI$ may be ``thickened'' to an integral $3$-manifold using the Cauchy characteristic.
-\end{example}
-
-
-\begin{example}[A first-order PDE]
-    Let $(x^1,x^2,u,p_1,p_2)$ be the usual coordinates on $\rmJ^1(\bbR^2,\bbR)$. The equation 
-    \[u_t=u_x\] 
-    is equivalent to the \gls{eds} obtained by restricting the canonical contact system to the smooth hypersurface $M$ defined by $p_2=p_1$. We will use $x=x^1,t=x^2,p=p_1$, and $u$ as coordinates on $M$, where the system is generated algebraically by 
-    \[\theta\coloneqq \dd u-p(\dd x+\dd t),\quad \dd\theta=-\dd p\wedge(\dd x+\dd t).\]
-    Suppose 
-    \[X=a\partial_x+b\partial_t+c\partial_p+e\partial_u\]
-    is a Cauchy characteristic vector field on $M$. Then $i_X\theta=0$ implies $e=(a+b)p$. Then $i_X\dd \theta\equiv 0$ modulo $\theta$ implies that $c=a+b=0$. Hence,
-    \[X=\partial_x-\partial_t\]
-    up to a multiple. Integral surfaces of $\calI$ are constructed by translating integral curves along curves where $u,p$, and $x+t$ are constant.
-\end{example}
-
-\begin{example}[First-order PDE]
-    Let $x^1,\ldots,x^n,u,p_1,\ldots,p_n$ be the usual coordinates on $\rmJ^1(\bbR^n,\bbR)$, and consider the PDE 
-    \[F(u,x^1,\ldots,x^n,p_1,\ldots,p_n)=0.\label{eq 7.4 Ivey}\]
-    Let $M\subset  \rmJ^1$ be the subset defined by this equation. To ensure that $M$ is a smooth manifold, and the equation is genuinely of first order, assume that $\partial_{p_i}F\neq 0$ for some $i$ at each point of $M$.
-
-    Let $\theta$ be the pullback to $M$ of the contact form $\dd u-p_1\dd x^1-\cdots-p_n\dd x^n$. The solutions of the PDE are in 1-to-1 correspondence with integral $n$-manifolds $N\subset M$ of the Pfaffian system generated by $\theta$ with the independence condition $\dd x^1\wedge \cdots\wedge\dd x^n\neq 0$.
-
-    Because $\dim M=2n$, $\theta\wedge (\dd\theta)^n=0$. Differentiating (\ref{eq 7.4 Ivey}) gives 
-    \[0=\dd F=F_{x^i}\dd x^i+F_{p_j}\dd p_j+F_u\dd u\equiv (F_{x^i}+F_up_i)\dd x^i+F_{p_j}\dd p_j\mod\theta.\]I
-    It follows that $\theta\wedge (\dd\theta)^{n-1}\neq 0$ at each point. By the Pfaff normal form, there are local coordinates on $M$ such that $\theta$ is a nonzero multiple of 
-    \[\dd y^1+y^2\dd y^3+\cdots +y^{2n-2}\dd y^{2n-1}.\label{eq 7.5 Ivey}\]
-    Thus, $X=\partial_{y^{2n}}$ gives a Cauchy characteristic. In coordinate-free language, it can be described as the unique vector field, up to multiple, such that $i_X(\theta\wedge(\dd\theta)^{n-1})=0$.
-
-    $X$ allows us to reduce the PDE to an ODE. We do this by choosing an integral $(n-1)$-manifold $L$ of $\calI$ (corresponding to some initial data), and then using the flow of $X$ to get an integral $n$-manifold. If $F$ may be solved for $p_n$, then $X$ is transverse to the hyperplanes $x^n=\const$. Thus, we obtain a starting manifold $L$ by letting $x^n=C$, $u=f(x^1,\ldots,x^{n-1})$ for an arbitrary function, and $p_i=\partial_{x^i}f$. To obtain a solution to the original PDE we only need to integrate the ODE system corresponding to the flow of $X$.
-\end{example}
-
-\begin{xca}
-    Relation~\ref{eq 7.5 Ivey} lets us locally solve for one of the $\dd p_i$'s in terms of the others, $\dd x^j$, and $\theta$. Using this, compute $\dd\theta\mod \theta$ on $M$ of dimension $2n$ and conclude that $\theta\wedge(\dd\theta)^{n-1}\neq 0$.
-\end{xca}
-
-All Cauchy characteristics (vector fields) together span a well-defined distribution $\calA(\calI)< \T M$ given by 
-\[\calA(\calI)_m\coloneqq \{X\in \T_mM\mid i_X(\calI)\subset \calI\},\quad m\in M.\]
-The rank of $\calA(\calI)$ is upper semicontinuous on $M$ (in an open neighborhood of $m$ it can only decrease), so we can restrict to an open set on which it is constant. The dual of $\calA(\calI)$ is a Pfaffian system that we define next.
-
-\begin{defn}[Retracting system of $\calI$]
-    Let $\calI$ be an \gls{eds} on $M$ with characteristic distribution $\calA(\calI)$. The retracting space, or Cartan system, of $\calI$ is the Pfaffian system $\calC(\calI)<\T^\ast M$ defined by 
-    \[\calC(\calI)_m\coloneqq \{\theta\in \T^\ast_m M\mid i_X\theta=0 \text{ for all }X\in \calA(\calI)_m\}.\]
-    Since the space of sections $\Gamma^\infty(\calA(\calI))$ (taken locally) is closed under Lie brackets of vector fields, $\calC(\calI)$ is closed under $\dd$, so it is Frobenius.\footnote{Because $\dd\theta(X,Y)=-\theta([X,Y])$ for $\theta\in\Gamma^\infty(\calC(\calI))$ and $X,Y\in\Gamma^\infty(\calA(\calI))$.} By the Frobenius Theorem, there exist local coordinates $x^1,\ldots,x^n$ on a neighborhood $U$ such that $\restr{\calC(\calI)}{U}=\<\dd x^1,\ldots,\dd x^n\>_{C^\infty(U)}$.
-\end{defn}
-
-In what follows we work on a local neighborhood $U\subset M$ where everything above holds and we let $\Omega^{\smbullet}_\Delta$ denote the subalgebra of $\Omega^{\smbullet}(U)$ spanned by wedge products of (local) sections of $\Delta<\T^\ast U$ with each other. The following proposition characterizes the retracting space in a way that explains its name.
-
-\begin{prop}
-    The retracting space $\calC(\calI)<\T^\ast M$ is the smallest Frobenius system such that $\Omega^{\smbullet}_{\calC(\calI)}$ contains a set of algebraic generators of $\calI$.
-\end{prop}
-\begin{proof}
-    Let $D<\T^\ast M$ be a Frobenius system such that there exist a finite collection of forms $\psi_1,\ldots,\psi_k\in \Omega^{\smbullet}_D$ which generate $\calI$ algebraically. Then any $\xi\in \calI$ can be written as
-    \[\xi=\sum_{i=1}^k \beta_i\wedge \psi_i.\]
-    Let $X$ be a vector field annihilated by $D$. Then $i_X \xi=\sum_i (i_X \beta_i)\wedge\psi_i$, which belongs to $\calI$. Hence $X\in\Gamma^\infty(\calA(\calI))$. Since $X$ and $\xi$ are arbitrary, we conclude that $\calC(\calI)\subset D$.
-
-    Furthermore, the smallest such $D$ cannot be larger than $\calC(\calI)$. For, suppose $\calC(\calI)$ has co-rank $l>0$ within $D$, and let $\pi_1,\ldots,\pi_l$ be linearly independent $D$-valued forms with $\pi_i\notin \calC(\calI)$. Partition the generators for $\calI$ into $\varphi_1,\ldots,\varphi_k\in \Omega^{\smbullet}_{\calC(\calI)}$, plus generators $\psi_1,\ldots,\psi_n$ involving the $\pi_i$'s. If $X$ is any vector in $\calA(\calI)$, and $\psi_1$ has the lowest degree among the $\psi$'s, then $i_X\psi_1$ must be expressible in terms of the $\varphi_i$'s. In particular, any term in $\psi_1$ involving one of the $\pi_i$'s may be omitted since that term already is generated by the $\varphi_j$'s. It follows that we may take all generators to be in $\Omega^{\smbullet}_{\calC(\calI)}$.
-\end{proof}
-
-This means that we can calculate the retracting space by finding a minimal set of algebraic generators for the ideal.
-
-\begin{xca}
-    Consider an \gls{eds} generated by a single $\theta\in\Omega^1(M)$. Show that the rank of $\calC(\calI)$ is $2k+1$, where $k$ is the Pfaff rank, i.e.\ the highest integer such that $\theta\wedge (\dd\theta)^k$ is not identically zero.
-\end{xca}
-
-If $\calC(\calI)$ has constant rank $k$,  then the maximal integral manifolds of $\calC(\calI)$ form a foliation of $M$ by smooth manifolds of codimension $k$. In some cases, the leaf space of this foliation is a manifold, called the \emph{quotient by the Cauchy characteristics}.
-
-\begin{example}[Example~\ref{ex 7.1.10 Ivey} continued]\label{ex 7.1.10 Ivey contd}
-    For our tautological \gls{eds} for lifts of surfaces, $\calC(\calI)$ is the Frobenius system on $\SE_3$ spanned by $\theta^1,\theta^2,\theta^3,\omega^3_1,\omega^3_2$. Integral curves of $\calC(\calI)$ form a foliation of $\SE_3$. The leaf space for this foliation is a 5-dimensional homogeneous space which we identify with $\bbS(\T\bbE^3)$, the unit sphere bundle of the tangent bundle of $\bbE^3$, by letting $m$ be the basepoint and $e_3$ the unit vector in $\T_m\bbE^3$.
-\end{example}
-
-In the above example, the leaf space is a manifold. Generally, whenever the leaf space is a smooth manifold, the original \gls{eds} $\calI$ can be factored to give a well-defined equivalent \gls{eds} $\wt\calI$ on the quotient manifold such that $\calI=\<\pi^\ast\wt\calI\>_{\mathrm{alg}}$, where $\pi$ is the leaf quotient map. For the proof of this fact we direct the reader to \cite[Prop.~7.1.20]{Ivey}.
-
-
-
-
-
-
 
 
 
@@ -3796,7 +4309,7 @@ for some suitable function $f(y^1,\ldots,y^k)$, where $\partial_l f$ denotes the
 
 It is also possible that the matrix of $\dd\theta$ has odd rank, in which case the normal form is slightly different.
 
-\begin{thm}[Pfaff normal form, even class, Darboux 1882]
+\begin{thm}[Pfaff normal form, even class, Darboux 1882]\label{thm pfaff normal form}
     Let $\dim M=n$ and let $\theta\in\Omega^1(M)$ be such that the class of the Pfaffian equation $\theta=0$ is even and equal to $p=2k>0$. Then at any point $m\in M$ there exist local coordinates $\{x^1,\ldots,x^n\}$ and a non-vanishing smooth local function $f$ such that 
     \[\theta=f\cdot (\underbrace{x^{n-p+2}\dd x^{n-p+3}+x^{n-p+4}\dd x^{n-p+5}+\cdots +x^{n-1}\dd x^n}_{k\text{ terms}}).\]
 \end{thm}
@@ -4555,6 +5068,10 @@ The Maurer-Cartan equation lets us calculate the derivatives of the left-invaria
     0 & 0& 0& 0
 \end{pmatrix}.\label{eq structure for surfaces}\]
 
+\begin{rem}
+    Since the $\theta^i$'s encode the derivative of the immersion, they can be viewed as defining an \gls{eds} whose integral manifolds are immersions differing only by rigid motions, as we will see. Thus, the last column of the above structure equation describes the tableau of this \gls{eds}, i.e., just the $\omega^i_j$ part of the $4\times 4$ matrix. We thus read off Cartan characters $s_1=2$, $s_2=1$, $s_3=0$ and the predicted dimension of $3$-dimensional integral elements at one point is $s_1+2s_2=4$. Meanwhile, on each such integral element the $\omega^i_j$'s are linear combinations of the $\theta^k$'s such that $\dd\theta^k=0$, which can easily be seen to be a $3$-dimensional space. Since $4>3$, we conclude that this system is \emph{not} involutive and we can't apply the Cartan-K\"ahler Theorem at this point to recover the immersion just from the $\omega^i_j$. To find an involutive system we will have to perform prolongation.
+\end{rem}
+
 \begin{lem}[Cartan]\label{lem cartan}
     Let $v_1,\ldots,v_k\in V$ be linearly independent elements of a $\bbK$-vector space $V$ and let $w_1,\ldots,w_k\in V$. Then the equation
     \[v_1\wedge w_1+\cdots v_k\wedge w_k=0\]
@@ -5038,9 +5555,9 @@ Note that the immersion $\bf{x}$ needs to be specified to claim uniqueness up to
 
 
 
-\subsection{EDS for surfaces}
+\subsection{\texorpdfstring{\gls{eds}}{EDS} for surfaces}
 
-We now formulate a general \gls{eds} that will serve as the prototype for more special types of structures on surfaces. We call it the \emph{tautological system on $\SE_3\times\bbR^3_{h_{ij}}$ for surfaces in $\bbE^3$}. The integral manifolds of this system are the first-order adapted lifts of surfaces in $\bbR^3$, together with the components of the second fundamental form $\{h_{ij}\}$, which we view as coordinates of another space $\bbR^3$.
+We now formulate a general \gls{eds} that will serve as the prototype for more special types of structures on surfaces. We call it the \emph{tautological system on $\SE_3\times\bbR^3_{h_{ij}}$ for surfaces in $\bbE^3$}. The integral manifolds of this system are the first-order adapted lifts of arbitrary surfaces in $\bbR^3$, together with the components of the second fundamental form $\{h_{ij}\}$, which we view as coordinates of another space $\bbR^3$.
 Let $I=\<\omega^3,\theta^3_j\coloneqq \omega^3_j-h_{jk}\theta^k\>$. Then 
 \begin{align}
     \dd \begin{pmatrix}
@@ -5373,7 +5890,7 @@ Thus, the Weingarten equation is equivalent to the \gls{eds} $\calI=\<\theta^3,\
 \[\Theta\coloneqq -\dd\theta^3=\omega_1^3\wedge\theta^1+\omega_2^3\wedge\theta^2.\]
 The \gls{eds} described in Example~\ref{ex Weingarten surfaces}, which encodes the same Weingarten equation, is the prolongation of $\calI$. Note that this system is hyperbolic, elliptic, or parabolic according to the sign of $B^2-AC$.
 
-As in Example~\ref{ex 7.1.10 Ivey contd}, the retracting space for $\calI$ is spanned by $\{\theta^1,\theta^2,\theta^3,\omega_3^1,\omega_3^2\}$, and the Cauchy characteristic curves are the fibers of the submersion from $\SE_3$ onto the $5$-dimensional unit sphere bundle $E\coloneqq \bbS(\T\bbE^3)$: the projection takes a frame $(e_1,e_2,e_3)$ and returns $e_3$, and the Cauchy vector field generates rotations of the frames about $e_3$.
+As in Example~\ref{ex 7.1.10 Ivey}, the retracting space for $\calI$ is spanned by $\{\theta^1,\theta^2,\theta^3,\omega_3^1,\omega_3^2\}$, and the Cauchy characteristic curves are the fibers of the submersion from $\SE_3$ onto the $5$-dimensional unit sphere bundle $E\coloneqq \bbS(\T\bbE^3)$: the projection takes a frame $(e_1,e_2,e_3)$ and returns $e_3$, and the Cauchy vector field generates rotations of the frames about $e_3$.
 
 Thus, $E$ is the leaf space of the Cauchy characteristics of $\calI$, and so there is a reduced \gls{eds} $\wt\calI$ on $E$ that pulls back to $\calI$ and is of \gls{ma} type. In fact, the Maurer-Cartan equation on $\SE_3$ implies that $\theta^3$, $\dd\theta^3$, and all three terms of $\Psi$ are pullbacks of well-defined forms on $E$.
 
