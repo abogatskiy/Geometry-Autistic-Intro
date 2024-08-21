@@ -3,9 +3,15 @@
 \usepackage{anyfontsize}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2.5cm,lmargin=1cm,rmargin=1cm,heightrounded}
-\setlength{\parskip}{3pt plus 1pt minus 1pt}
+
+% \setlength{\parskip}{3pt plus 1pt minus 1pt}
+% \setlength{\parindent}{0pt}
+\usepackage[skip=.3\baselineskip plus 2pt\relax, parfill]{parskip}
 \raggedbottom
-\setlength{\parindent}{0pt}
+% \renewenvironment{quote}[1]%
+%   {\list{}{\leftmargin=#1\rightmargin=#1}\item[]}%
+%   {\endlist}
+
 \usepackage{color}
 \usepackage{babel}
 \usepackage{amsmath}
@@ -13,6 +19,7 @@
 %\usepackage[amsthm]{ntheorem}
 \usepackage{amssymb}
 \usepackage{mathtools}
+% \usepackage{mathabx}
 \usepackage{ytableau}
 \usepackage{wasysym}
 \usepackage{cancel}
@@ -43,6 +50,11 @@
 \usepackage{comment}
 % \includecomment{comment}
 \excludecomment{comment}
+
+
+% center env with no vertical space before
+\newenvironment{nscenter}{\parskip=0pt\par\nopagebreak\centering}{\par\noindent\ignorespacesafterend} 
+
 
 %%%%%% FONTS
 %\usepackage[onlytext,lf]{MinionPro}      % enable all this to get custom fonts
@@ -167,35 +179,35 @@
 
 
 \usepackage{tablefootnote}
-\usepackage[many,breakable]{tcolorbox}
+\usepackage[many,breakable]{tcolorbox}[parbox=false]
 \ExplSyntaxOn
 \NewDocumentCommand{\tcbwrap}{mm}
  {
   \clist_map_inline:nn { #1 } { \tcolorboxenvironment{##1}{#2} }
  }
 \ExplSyntaxOff
-\tcbwrap{thm,lem,cor,prop}{
+\tcbwrap{thm,lem,cor,prop}{parbox=false,
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=2pt,bottom=2pt, colback=gray!20, sharp corners,enhanced,
     leftrule=3pt, rightrule=0pt, toprule=0pt, bottomrule=0pt,
     breakable=true}
-\tcbwrap{defn}{
+\tcbwrap{defn}{parbox=false,
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1.5pt}{0pt}{black!80},
     breakable=true}
-\tcbwrap{rem}{
+\tcbwrap{rem}{parbox=false,
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1pt}{0pt}{black!80},
     breakable=true}
-\tcbwrap{hrem}{
+\tcbwrap{hrem}{parbox=false,
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt, colback=white,boxrule=1pt,frame hidden, enhanced,
     breakable=true,fontlower=\small}
-\tcbwrap{xca}{
+\tcbwrap{xca}{parbox=false,
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
@@ -204,7 +216,7 @@
 \usetikzlibrary{decorations}
 \usetikzlibrary{decorations.pathmorphing}
 \tcbuselibrary{skins}
-\tcbwrap{example}{
+\tcbwrap{example}{parbox=false,
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
