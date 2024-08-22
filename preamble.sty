@@ -1,5 +1,5 @@
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{anyfontsize}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2.5cm,lmargin=1cm,rmargin=1cm,heightrounded}
@@ -129,10 +129,6 @@
 
 
 %%%%%%%
-\usepackage[unicode=true,pdfusetitle,
- bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
- breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
- {hyperref}
 
  
 \usepackage[nottoc]{tocbibind} % list bibiliography and other secondary sections in TOC
@@ -145,7 +141,6 @@
 \setlist[enumerate]{leftmargin=2em,topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 
 
-\makeatletter
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,35 +174,35 @@
 
 
 \usepackage{tablefootnote}
-\usepackage[many,breakable]{tcolorbox}[parbox=false]
+\usepackage[many,breakable]{tcolorbox}
 \ExplSyntaxOn
 \NewDocumentCommand{\tcbwrap}{mm}
  {
-  \clist_map_inline:nn { #1 } { \tcolorboxenvironment{##1}{#2} }
+  \clist_map_inline:nn{#1}{\tcolorboxenvironment{##1}{#2}}
  }
 \ExplSyntaxOff
-\tcbwrap{thm,lem,cor,prop}{parbox=false,
+\tcbwrap{thm,lem,cor,prop}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=2pt,bottom=2pt, colback=gray!20, sharp corners,enhanced,
     leftrule=3pt, rightrule=0pt, toprule=0pt, bottomrule=0pt,
     breakable=true}
-\tcbwrap{defn}{parbox=false,
+\tcbwrap{defn}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1.5pt}{0pt}{black!80},
     breakable=true}
-\tcbwrap{rem}{parbox=false,
+\tcbwrap{rem}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1pt}{0pt}{black!80},
     breakable=true}
-\tcbwrap{hrem}{parbox=false,
+\tcbwrap{hrem}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt, colback=white,boxrule=1pt,frame hidden, enhanced,
     breakable=true,fontlower=\small}
-\tcbwrap{xca}{parbox=false,
+\tcbwrap{xca}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
@@ -216,7 +211,7 @@
 \usetikzlibrary{decorations}
 \usetikzlibrary{decorations.pathmorphing}
 \tcbuselibrary{skins}
-\tcbwrap{example}{parbox=false,
+\tcbwrap{example}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
@@ -291,6 +286,14 @@
 \def\magenta{\color{magenta}}
 \def\yellow{\color{yellow}}
 
+
+%%%%%%%%%%%%%%%%  HYPERREF (load as late as possible)
+
+
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
+ {hyperref}
 
 
 %%%%%%%%%%%%%%%%%%%   MACROS   %%%%%%%%%%%%%%%%%%
@@ -651,7 +654,7 @@
           \setunit{\subtitlepunct}%
           \printfield[titlecase]{journalsubtitle}}}}}
 
-\renewbibmacro*{journal+sub}{%
+\newbibmacro*{journal+sub}{%
   \ifboolexpr{ test {\ifcitation} and not test {\iffieldundef{shortjournal}} }
     {\printfield[journaltitle]{shortjournal}}
     {\iffieldundef{journaltitle}

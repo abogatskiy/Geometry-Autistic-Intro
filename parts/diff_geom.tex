@@ -6727,7 +6727,7 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
     \[g(t,s)=\rme^{t(A+sB)}.\]
     Then we find
     \[\xi=\left(\rmR_g^{-1}\right)_\ast \partial_t g=A+sB, \quad \eta=\left(\rmR_g^{-1}\right)_\ast \partial_s g,\]
-    and the Maurer-Cartan equation $\partial_\eta-\partial_s\xi=[\xi,\eta]$ now reads
+    and the Maurer-Cartan equation $\partial_t\eta-\partial_s\xi=[\xi,\eta]$ now reads
     \[\partial_t \eta=B+[A,\eta].\]
     By denoting $\gamma(t)=\eta(t,0)$, we get the differential equation at $s=0$
     \[\dot\gamma(t)=B+[A,\gamma].\label{196}\]
@@ -7147,7 +7147,7 @@ is an analytic mapping $\frakg_e\to \Lin(\frakg)$ (the coefficients of its Taylo
 Let $\frakg_e^2$ be the set of $(A,B)\in \frakg\times\frakg_e$ such that the integral curve equation
 \[\dot Z(t)=A^\rmR(Z(t))=\phi(\ad_{Z(t)})(A),\quad Z(0)=B,\label{eq Z(t)}\]
 has a solution $Z(t)$ defined for all $t\in [0,1]$. We now define
-\[\mu(A,B)\quad Z(1),\quad (A,B)\in\frakg_e^2 \label{def local mu}\]
+\[\mu(A,B)\coloneqq Z(1),\quad (A,B)\in\frakg_e^2 \label{def local mu}\]
 and claim that this formula defines an analytic mapping which matches the one obtained from the Lie group.
 
 
@@ -7204,7 +7204,7 @@ The final proposition expresses the \emph{uniqueness} of the analytic structures
     If $G$ is a real- or complex-analytic Lie group, then the exponential map is real- or complex-analytic, respectively. If $G$ is provided with another structure of a real- or complex-analytic Lie group $\wt G$ such that the identity maps $\id:G\to \wt{G}$ and $\wt{\id}$ are differentiable (at $e$), then $\id:G\to \wt{G}$ is a real- or complex-analytic diffeomorphism, respectively.
 \end{prop}
 \begin{proof}
-    The right-invariant vector field $A_\rmR$ is a real- or complex-analytic vector field on $G$, because in logarithmic coordinates it is given by $A^\rmR$ from (\ref{eq Z(t)}), cf.\ (\ref{eq 1.6.5 DK}). It depends in a linear or $\bbC$-linear way on $A$. Further, $\rme^A$ is the solution after time $1$ of $A^\rmR$ starting at $e\in G$. In view of the theorem about analytic dependence on parameters of the flows of analytic vector fields depending analytically on the parameters, the analyticity of the exponential map follows. For the second statement, we observe that the assumption ensures that $G$ and $\wt G$ have the same Lie algebra.
+    The right-invariant vector field $A_\rmR$ is a real- or complex-analytic vector field on $G$, because in logarithmic coordinates it is given by $A^\rmR$ from (\ref{eq Z(t)}), cf.\ (\ref{eq 1.6.5 DK}). It depends in a linear or $\bbC$-linear way on $A$. Further, $\rme^A$ is the solution after time $1$ of $A_\rmR$ starting at $e\in G$. In view of the theorem about analytic dependence on parameters of the flows of analytic vector fields depending analytically on the parameters, the analyticity of the exponential map follows. For the second statement, we observe that the assumption ensures that $G$ and $\wt G$ have the same Lie algebra.
 \end{proof}
 
 
@@ -7399,7 +7399,7 @@ We summarize all results about closed subgroups of Lie groups in the following C
 \end{example}
 
 \begin{example}
-    In view of the closed subgroup theorem, to show that classical groups defined as subsets of $\GL_n(\bbR)$ (which we already know to be a Lie group) it suffices to show that they are closed. This smooth structure will coincide with the one provided by the Level Set Theorem~\ref{thm level set submanifold}.
+    In view of the closed subgroup theorem, to show that classical groups defined as subsets of $\GL_n(\bbR)$ (which we already know to be a Lie group) are Lie groups it suffices to show that they are closed. This smooth structure will coincide with the one provided by the Level Set Theorem~\ref{thm level set submanifold}.
 \end{example}
 
 
@@ -7445,11 +7445,11 @@ Due to this, we may think of Lie groups as a special class of topological groups
 \begin{proof}
     If $H$ is closed, then the Closed Subgroup Theorem~\ref{thm closed subgroup} implies that $H$ is an embedded Lie subgroup and hence agrees with the induced topology.
 
-    Conversely, suppose that $H$ is a Lie group with respect to the induced topology and smooth structure. Since the inclusion $i:H\hookrightarrow G$ is continuous, Corollary~\ref{cor automatic smoothness} implies that $i$ is actually smooth, and since it's injective, so is $i_\ast:\frakh\to\frakg$.
+    Conversely, suppose that $H$ is a Lie group with respect to the induced topology and smooth structure. Since the inclusion $i:H\hookrightarrow G$ is continuous, Corollary~\ref{cor automatic smoothness} implies that $i$ is actually smooth, and since it's injective, so is $i_{\ast e}:\frakh\to\frakg$.
 
-    Let $V\subset \frakg$ be an open convex neighborhood of the origin for which $\restr{\exp_G}{V}$ is a diffeomorphism onto an open subset of $G$. Since $i_\ast$ is continuous, there exists a neighborhood of the origin $U\subset \frakh$ such that $\restr{\exp_H}{U}$ is a diffeomorphism onto an open subset of $H$ and $i_\ast (U)\subset V$. Since $H$ is a topological subgroup of $G$, there exists an open subset $U_\frakg\subset V$ with
-    \[\exp_G(U_\frakg)\cap H=i(\exp_H(U))=\exp_G(i_\ast U).\]
-    Since $i_\ast(U)$ is locally closed in $i(G)$, it now follows that $H$ is locally closed in $G$, hence closed (by translation).
+    Let $V\subset \frakg$ be an open convex neighborhood of the origin for which $\restr{\exp_G}{V}$ is a diffeomorphism onto an open subset of $G$. Since $i_{\ast e}$ is continuous, there exists a neighborhood of the origin $U\subset \frakh$ such that $\restr{\exp_H}{U}$ is a diffeomorphism onto an open subset of $H$ and $i_{\ast e} U\subset V$. Since $H$ is a topological subgroup of $G$, there exists an open subset $U_\frakg\subset V$ with
+    \[\exp_G(U_\frakg)\cap H=i(\exp_H(U))=\exp_G(i_{\ast e} U).\]
+    Since $i_\ast(U)$ is locally closed in $\frakg$ (i.e.\ each point of $i_\ast(U)$ has an open neighborhood in $\frakg$ inside of which $i_\ast(U)$ is closed), it now follows that $H$ is locally closed in $G$, hence closed (by translation).
 \end{proof}
 
 
@@ -7466,7 +7466,7 @@ Due to this, we may think of Lie groups as a special class of topological groups
         \item $h(t+s)=h(t)h(s)$ for all $t,s\in\bbR$;
         \item if $t_n\to 0\in\bbR$ and $h(t_n)\to A\in\GL(V)$, then $A=\rmI$.
     \end{enumerate}
-    Then the conclusion is that there is some $B\in \End(V)$ such that $h(t)=\rme^{tB}$ for all $t\in \bbR$. The assumption (ii) can even be further weakened because one can show that discontinuous homomorphisms $(\bbR,+)\to \GL(V)$ must behave rather wildly. One of the strongest theorems of this type exists in the realm of unitary operators Hilbert spaces -- \href{https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups}{Stone's theorem on strongly continuous one-parameter unitary groups}.
+    Together these conditions imply that the image $h(G)$ is a closed subgroup of $H$. The conclusion is that there is some $B\in \End(V)$ such that $h(t)=\rme^{tB}$ for all $t\in \bbR$. The assumption (ii) can even be further weakened because one can show that discontinuous homomorphisms $(\bbR,+)\to \GL(V)$ must behave rather wildly. One of the strongest theorems of this type exists in the realm of unitary operators on Hilbert spaces -- \href{https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups}{Stone's theorem on strongly continuous one-parameter unitary groups}.
 \end{example}
 
 
@@ -7487,7 +7487,7 @@ Due to this, we may think of Lie groups as a special class of topological groups
 
 It is almost obvious that the definition of the exponential map together with its properties have local versions that are valid for any local Lie group. The first big result of this \subsect\ will be the converse, known as Lie's Third Fundamental Theorem: every Lie algebra generates a local Lie group. The Lie group can be locally reconstructed as the set of flows of certain vector fields on the Lie algebra. Let us now show, in several steps, that these flows form a local Lie group.
 
-\begin{lem}[{{\cite[Lem.~1.8.2]{DK}}}]
+\begin{lem}[{{\cite[Lem.~1.8.2]{DK}}}]\label{lem 1.8.2 DK}
     For each $A\in\frakg$ define the vector field $A^\rmR\in \fX(\frakg_e)$, where $\frakg_e$ was defined in \S\ref{sec: product in log coordinates}:
     \[ A^\rmR(C)=\frac{\ad_C}{\rme^{\ad_C}-\rmI}(A),\quad \quad C\in\frakg_e. \label{def X^R}\]
     Then, for each $A,B\in\frakg$, the map $A\mapsto A^\rmR$ is an injective Lie algebra anti-homomorphism $\frakg\to \fX(\frakg_e)$, i.e.\ $[A^\rmR,B^\rmR]=-([A,B])^\rmR$.
@@ -7527,44 +7527,44 @@ It is almost obvious that the definition of the exponential map together with it
     Let $M$ be a $C^2$ manifold and let $\frakg\subset \fX^1(M)$ be a finite-dimensional Lie subalgebra of the algebra of $C^1$ vector fields on $M$. Then, for every relatively compact open subset $V$ of $M$ (i.e.\ such that the closure $\wb{V}$ is compact), there is an open $0$-neighborhood $U\subset\frakg$ such that:
     \begin{enumerate}[label=(\alph*)]
         \item For every $A\in U$, the set $\calD^A_{1}$, the slice of the flow domain of $A$ at time $t=1$, contains $V$.
-        \item If $A,B\in U$, then $F^A_1(V)\subset \calD^A_1$ and $\restr{\left(F^A_1\circ F^B_1\right)}{V}=\restr{F^{\mu(A,B)}_1}{V}$.
-        \item $A\mapsto \restr{F^A_1}{V}$ is injective on $U$.
+        \item If $A,B\in U$, then $\Fl^B_1(V)\subset \calD^A_1$ and $\restr{\left(\Fl^A_1\circ \Fl^B_1\right)}{V}=\restr{\Fl^{\mu(A,B)}_1}{V}$.
+        \item $A\mapsto \restr{\Fl^A_1}{V}$ is injective on $U$.
     \end{enumerate}
-    In particular, the collection of flows $\{F^A_1\}_{A\in\frakg}$ defines a local Lie group with Lie algebra equal to $\frakg$.
+    In particular, the collection of flows $\{\Fl^A_1\}_{A\in\frakg}$ defines a local Lie group with Lie algebra equal to $\frakg$.
 \end{thm}
 \begin{proof}
-    Since we are only interested in time $t=1$, let us drop the subscript $1$ and just write $F^A,F^B$ and $\calD^A$. Assertion (a) follows from the local existence theorem for solutions of ODE's, combined with the locally uniform estimates for the domains of existence with respect to the parameters on which the vector fields depend continuously. Similarly we obtain $F^B(V)\subset \calD^A$ for all $A,B\in U$, by sufficiently shrinking $U$.
+    Since we are only interested in time $t=1$, let us drop the subscript $1$ and just write $\Fl^A,\Fl^B$ and $\calD^A$. Assertion (a) follows from the local existence theorem for solutions of ODE's, combined with the locally uniform estimates for the domains of existence with respect to the parameters on which the vector fields depend continuously. Similarly we obtain $\Fl^B(V)\subset \calD^A$ for all $A,B\in U$, by sufficiently shrinking $U$.
 
     In order to prove (b), consider, for $A,B\in\frakg$, the vector field on $M$:
-    \[B(t)=(F^{tA})_\ast^{-1}\left(\rme^{t\ad_A}B\right);\label{13794}\]
-    here $\rme^{t\ad_A}(B)\in\frakg$ is computed in terms of the finite-dimensional Lie algebra structure of $\frakg$ and $F^{tA}$ is the flow of the vector field $A$ after time $t$. For any local diffeomorphism $F$ and vector field $v$, the vector field $F_\ast v$ is defined by:
+    \[B(t)=(\Fl^{tA})_\ast^{-1}\left(\rme^{t\ad_A}B\right);\label{13794}\]
+    here $\rme^{t\ad_A}(B)\in\frakg$ is computed in terms of the finite-dimensional Lie algebra structure of $\frakg$ and $\Fl^{tA}$ is the flow of the vector field $A$ after time $t$. For any local diffeomorphism $F$ and vector field $v$, the vector field $F_\ast v$ is defined by:
     \[(F_\ast v)(F(x))=\T_xF(v(x))\text{ for }x\text{ in domain of }F.\label{78735}\]
-    $F_\ast v$ can be interpreted as $\Ad_F v$ if the space of vector fields on $M$ is viewed as the Lie algebra of the group of transformations, and then $F^A$ can be interpreted as $\rme^A$. In order to avoid confusion we don't yet make these identifications here, but the following arguments will provide support for this point of view.
+    $F_\ast v$ can be interpreted as $\Ad_F v$ if the space of vector fields on $M$ is viewed as the Lie algebra of the group of transformations, and then $\Fl^A$ can be interpreted as $\rme^A$. In order to avoid confusion we don't yet make these identifications here, but the following arguments will provide support for this point of view.
 
     Differentiating (\ref{13794}) with respect to $t$, we get
-    \[\frac{\dd B}{\dd t}(t)=-[A,B(t)]+\left(F^{tA}\right)_\ast^{-1}[A,\rme^{t\ad_A}B]=-[A,B(t)]+[A,B(t)]=0,\]
-    where we used the naturality of Lie brackets and $(F^{tA})_\ast^{-1}A=A$. Because $B(0)=B$, the conclusion is that $B(t)=B$, or:
-    \[\left(F^{tA}\right)_\ast B=\rme^{t\ad_A}B\text{ on }V_{tA}.\label{47973}\]
-    (This confirms the interpretation above, see Theorem~\ref{thm 1.5.2 DK}(a).) Now consider $Z(t)=\mu(tA,B)$. Then, using (\ref{2702}) for the computation of $\partial_t F^{Z(t)}(x)$, replacing $\epsilon$ and $t$ by $t$ and $1$, respectively, we obtain:
+    \[\frac{\dd B}{\dd t}(t)=-[A,B(t)]+\left(\Fl^{tA}\right)_\ast^{-1}[A,\rme^{t\ad_A}B]=-[A,B(t)]+[A,B(t)]=0,\]
+    where we used the naturality of Lie brackets and $(\Fl^{tA})_\ast^{-1}A=A$. Because $B(0)=B$, the conclusion is that $B(t)=B$, or:
+    \[\left(\Fl^{tA}\right)_\ast B=\rme^{t\ad_A}B\text{ on }V_{tA}.\label{47973}\]
+    (This confirms the interpretation above, see Theorem~\ref{thm 1.5.2 DK}(a).) Now consider $Z(t)=\mu(tA,B)$. Then, using (\ref{2702}) for the computation of $\partial_t \Fl^{Z(t)}(x)$, replacing $\epsilon$ and $t$ by $t$ and $1$, respectively, we obtain:
     \begin{multline}
-        \frac{\dd}{\dd t}\left(F^{-tA}\circ F^{Z(t)}(x)\right)=-A\left(F^{-tA}\circ F^{Z(t)}(x)\right)+\\
-        +\T_{F^{Z(t)}(x)}F^{-tA}\circ \T_xF^{Z(t)}\circ\int_0^1 \left(F^{sZ(t)}\right)_\ast^{-1}\frac{\dd Z}{\dd t}(t)\dd s\,(x).\label{7979}
+        \frac{\dd}{\dd t}\left(\Fl^{-tA}\circ \Fl^{Z(t)}(x)\right)=-A\left(\Fl^{-tA}\circ \Fl^{Z(t)}(x)\right)+\\
+        +\T_{\Fl^{Z(t)}(x)}\Fl^{-tA}\circ \T_x\Fl^{Z(t)}\circ\int_0^1 \left(\Fl^{sZ(t)}\right)_\ast^{-1}\frac{\dd Z}{\dd t}(t)\dd s\,(x).\label{7979}
     \end{multline}
     Now, combining (\ref{47973}) with (\ref{dexp series}) and (\ref{eq Z(t)}), we get:
     \begin{multline}
-        \int_0^1\left(F^{sZ(t)}\right)_\ast^{-1}\frac{\dd Z}{\dd t}(t)\dd s
+        \int_0^1\left(\Fl^{sZ(t)}\right)_\ast^{-1}\frac{\dd Z}{\dd t}(t)\dd s
         =\int_0^1 \rme^{-s\ad_{Z(t)}}\dd s \cdot \frac{\dd Z}{\dd t}(t)=\\
-        =\rme^{-\ad_{Z(t)}}A=\left(F^{Z(t)}\right)_\ast^{-1} A.
+        =\rme^{-\ad_{Z(t)}}A=\left(\Fl^{Z(t)}\right)_\ast^{-1} A.
     \end{multline}
-    If we apply (\ref{78735}) with $F$ and $v$ replaced by $F^{Z(t)}$ and $A$, respectively, we see that the right hand side in (\ref{7979}) is equal to $0$. Hence $F^{-tA}\circ F^{Z(t)}=F^{Z(0)}=F^B$, or:
-    \[F^{Z(t)}=F^{tA}\circ F^B,\]
+    If we apply (\ref{78735}) with $F$ and $v$ replaced by $\Fl^{Z(t)}$ and $A$, respectively, we see that the right hand side in (\ref{7979}) is equal to $0$. Hence $\Fl^{-tA}\circ \Fl^{Z(t)}=\Fl^{Z(0)}=\Fl^B$, or:
+    \[\Fl^{Z(t)}=\Fl^{tA}\circ \Fl^B,\]
     which for $t=1$ becomes the required identity in (b).
 
-    The last statement follows by an argument similar to that in the Closed Subgroup Theorem~\ref{thm closed subgroup}, because otherwise we would get sequences $A_j,B_j\in\frakg$ converging to $0$ and sets $V_j\subset M$ such that $A_j\neq B_j$, for all $j$, but $\restr{F^{A_j}}{V_j}=\restr{F^{B_j}}{B_j}$, and such that, for each relatively compact subset $V\subset M$, there is a $j_0$ with $V\subset V_j,j\geq j_0$. Passing to $Z_j=\mu(A_j,-B_j)$, we get a sequence in $\frakg$, converging to $0$, such that $Z_j\neq 0$ and $\restr{F^{Z_j}}{V_j}$ is the identity on $V_j$, for a sequence $V_j$ of subsets of $M$ as above. Passing to a suitable subsequence, we may assume that $Z_j/|Z_j|$ converges in $\frakg$ to, say $Z$. Here $A\mapsto |A|$ denotes a norm in $\frakg$; clearly $|Z|=1$, so in particular $Z\neq 0$. Let $t\geq 0$ and $m_j=\left\lfloor\frac{t}{|Z_j|}\right\rfloor$, the integer part of $t/|M_j|$. Because $|Z_j|\to 0$ we have that $m_j|Z_j|\to t$ as $j\to \infty$, so $m_j Z_j=(m_j|Z_j|)(Z_j/|Z_j|)\to tZ$.
+    The last statement follows by an argument similar to that in the Closed Subgroup Theorem~\ref{thm closed subgroup}, because otherwise we would get sequences $A_j,B_j\in\frakg$ converging to $0$ and sets $V_j\subset M$ such that $A_j\neq B_j$, for all $j$, but $\restr{\Fl^{A_j}}{V_j}=\restr{\Fl^{B_j}}{B_j}$, and such that, for each relatively compact subset $V\subset M$, there is a $j_0$ with $V\subset V_j,j\geq j_0$. Passing to $Z_j=\mu(A_j,-B_j)$, we get a sequence in $\frakg$, converging to $0$, such that $Z_j\neq 0$ and $\restr{\Fl^{Z_j}}{V_j}$ is the identity on $V_j$, for a sequence $V_j$ of subsets of $M$ as above. Passing to a suitable subsequence, we may assume that $Z_j/|Z_j|$ converges in $\frakg$ to, say $Z$. Here $A\mapsto |A|$ denotes a norm in $\frakg$; clearly $|Z|=1$, so in particular $Z\neq 0$. Let $t\geq 0$ and $m_j=\left\lfloor\frac{t}{|Z_j|}\right\rfloor$, the integer part of $t/|M_j|$. Because $|Z_j|\to 0$ we have that $m_j|Z_j|\to t$ as $j\to \infty$, so $m_j Z_j=(m_j|Z_j|)(Z_j/|Z_j|)\to tZ$.
 
     On the other hand,
-    \[F^{m_jZ_j}=\left(F^{Z_j}\right)^{m_j}=\id_{V_j},\]
-    and therefore we conclude that $F^{tZ}=\id_{M}$ for all $t\geq 0$. Differentiation with respect to $t$ at $t=0$ no yields $Z=0$, a contradiciton.
+    \[\Fl^{m_jZ_j}=\left(\Fl^{Z_j}\right)^{m_j}=\id_{V_j},\]
+    and therefore we conclude that $\Fl^{tZ}=\id_{M}$ for all $t\geq 0$. Differentiation with respect to $t$ at $t=0$ no yields $Z=0$, a contradiciton.
 \end{proof}
 
 
@@ -7572,7 +7572,7 @@ It is almost obvious that the definition of the exponential map together with it
     For every finite-dimensional Lie algebra $\frakg$ there exists a local Lie group whose Lie algebra is $\frakg$. Namely, an open neighborhood of $0$ in $\frakg$ becomes a local Lie group, provided with $\mu$ defined in (\ref{def local mu}) as the local multiplication and $A\mapsto -A$ as the local inversion.
 \end{thm}
 \begin{proof}
-    The properties of $\mu$ are easily verified except for the associativity. Associativity follows from the associativity of compositions of flows as well as (b) and (c) of Theorem~\ref{thm 1.8.3 DK}.
+    We apply Theorem~\ref{thm 1.8.3 DK} to the vector fields $\{A^R\mid A\in\frakg\}$, which comprise a Lie subalgebra of $\fX(\frakg_e)$ by Lemma~\ref{lem 1.8.2 DK}. The properties of $\mu$ are easily verified except for the associativity. Associativity follows from the associativity of compositions of flows as well as (b) and (c) of Theorem~\ref{thm 1.8.3 DK}.
 
     Another proof, based on Cartan's Fundamental Theorem and Cartan-K\"ahler theory, will be given in Example~\ref{example Lie III EDS}. 
 \end{proof}
@@ -7582,9 +7582,10 @@ In fact, a global version of this theorem holds, first obtained by \'Elie Cartan
 \begin{thm}[Cartan-Lie (1936)/Global Lie III {{\cite[Thm.~1.14.3]{DK}}}]\label{thm 1.14.3 DK global Lie's third}\index{Theorem!Cartan-Lie (Global Lie III)}
     For every finite-dimensional Lie algebra $\frakg$ there exists a simply connected Lie group $\wt{G}$ whose Lie algebra is isomorphic to $\frakg$. The restriction of the exponential mapping $\exp:\frakg\to\wt{G}$ to the center $\mathfrak{z}=\rmZ(\frakg)$ induces an isomorphism from the vector group $(\mathfrak{z},+)$ onto the identity component of the center $\rmZ(\wt{G})$.
 \end{thm}
-\begin{cor}[Lie-Palais (1957)]\label{thm Lie-Palais}\index{Theorem!Lie-Palais}
-    If $M$ is a connected $C^2$ manifold and a collection of \emph{complete} $C^1$ vector fields forms a finite-dimensional Lie subalgebra $\frakg<\fX^1(M)$, then there exists a connected Lie group with a $C^2$ action on $M$ faithfully inducing the action of $\frakg$, unique up to a unique isomorphism of Lie group actions. In particular, the flows $\{F^A_1\}_{A\in \frakg}$ form a finite-dimensional Lie group with Lie algebra $\frakg$.
-\end{cor}
+Another global version of Lie III, more true to Lie's approach, presumes an action of the Lie algebra by \emph{complete} vector fields, which is a hard to verify condition. This can be proven by elementary means.
+\begin{thm}[Lie-Palais (1957) {{\cite[Thm.~10.5.1]{HN}}}]\label{thm Lie-Palais}\index{Theorem!Lie-Palais}
+    If $M$ is a connected $C^2$ manifold and a collection of \emph{complete} $C^1$ vector fields forms a finite-dimensional Lie subalgebra $\frakg<\fX^1(M)$, then there exists a connected Lie group with a $C^2$ action on $M$ faithfully inducing the action of $\frakg$, unique up to a unique isomorphism of Lie group actions. In particular, the flows $\{\Fl^{A}_1\}_{A\in \frakg}$ form a finite-dimensional Lie group with Lie algebra $\frakg$.
+\end{thm}
 
 
 \begin{rem}[Lie correspondence]
@@ -7607,7 +7608,7 @@ In fact, a global version of this theorem holds, first obtained by \'Elie Cartan
 \begin{rem}\label{rem Lie III}
     The Cartan-Lie Theorem gives a one-to-one correspondence between local data (Lie algebra) and global nonlinear data (group multiplication). There are several explicit ways of constructing the global Lie group:
     \begin{enumerate}
-        \item As a quotient of something simpler -- e.g.\ the path space considered above. More concretely, given a simply connected lie group $G$, one can consider the space of all smooth paths from $e$ to $g\in G$ and declare two paths to be equivalent iff there is a pair of functions $\xi(t,s),\eta(t,s)\in\frakg$ such that the Maurer-Cartan equation (\ref{eq Maurer-Cartan}) holds for it, $\partial_t\eta-\partial_s\xi=[\xi,\eta]$, with proper boundary conditions. This equation describes the vanishing of curvature along the surface swept out by the homotopy. Therefore $G$ can be reconstructed as the space of paths in $\frakg$ starting at the origin modulo solutions of this nonlinear equation. Fortunately, the analysis reduces to first-order deformations.
+        \item As a quotient of something simpler -- e.g.\ the path space considered above. More concretely, given a simply connected Lie group $G$, one can consider the space of all smooth paths from $e$ to $g\in G$ and declare two paths to be equivalent iff there is a pair of functions $\xi(t,s),\eta(t,s)\in\frakg$ such that the Maurer-Cartan equation (\ref{eq Maurer-Cartan}) holds for it, $\partial_t\eta-\partial_s\xi=[\xi,\eta]$, with proper boundary conditions. This equation describes the vanishing of curvature along the surface swept out by the homotopy. Therefore $G$ can be reconstructed as the space of paths in $\frakg$ starting at the origin modulo solutions of this nonlinear equation. Fortunately, the analysis reduces to first-order deformations.
 
         \item As a subgroup of something simpler. According to Ado's Theorem (1935), each finite-dimensional Lie algebra $\frakg$ can be embedded into a matrix Lie algebra $\mathfrak{gl}_n(\bbK)$. Thus, by the Analytic Subgroup Theorem\ \ref{thm analytic subgroup} from the next \subsect, there exists a connected Lie subgroup of $\GL_n(\bbK)$ whose Lie algebra is $\frakg$. This is another very common strategy for proving the Cartan-Lie Theorem.
     \end{enumerate}
