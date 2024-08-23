@@ -216,11 +216,21 @@
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,
     borderline west={0.75pt}{0pt}{decoration={zigzag,amplitude=1pt,pre=moveto,pre length=12pt},decorate},
-    breakable=true}
+    breakable=true
+    }
 
+% Workaround for a hyperref-related bug in tcolorbox's parbox=false option: pass the definition of parskip directly
+\AddToHook{env/rem/begin}{\parindent=0pt \parskip=0.3\baselineskip plus 2pt\relax}
+\AddToHook{env/hrem/begin}{\parindent=0pt \parskip=\baselineskip}
+\AddToHook{env/thm/begin}{\parindent=0pt \parskip=\baselineskip}
+\AddToHook{env/lem/begin}{\parindent=0pt \parskip=\baselineskip}
+\AddToHook{env/cor/begin}{\parindent=0pt \parskip=\baselineskip}
+\AddToHook{env/prop/begin}{\parindent=0pt \parskip=\baselineskip}
+\AddToHook{env/defn/begin}{\parindent=0pt \parskip=\baselineskip}
+\AddToHook{env/example/begin}{\parindent=0pt \parskip=\baselineskip}
+\AddToHook{env/xca/begin}{\parindent=0pt \parskip=\baselineskip}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Configure tcolorbox so that footnotes are printed outside of it
+    %Configure tcolorbox so that footnotes are printed outside of it
 %From https://tex.stackexchange.com/a/558922/44577
 
 \makeatletter
