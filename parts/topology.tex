@@ -40,10 +40,10 @@ being the objects of the category and the arrows being the morphisms.
 \begin{example}
     The most basic example of a large category is the category $\mathsf{Set}$\index{Category!of sets},
     whose objects are all sets and the morphisms are all maps between
-    sets, i.e.\ $\mor\left(A,B\right)=\mathrm{Map}\left(A,B\right)$. 
+    sets, i.e., $\mor\left(A,B\right)=\mathrm{Map}\left(A,B\right)$. 
 
     One \emph{subcategory} of $\mathsf{Set}$ is $\mathsf{FinSet}$,
-    i.e.\ the category of finite sets. $\mathsf{FinSet}$ is a \emph{full
+    i.e., the category of finite sets. $\mathsf{FinSet}$ is a \emph{full
     subcategory} of $\mathsf{Set}$, meaning that $\mor_{\mathsf{FinSet}}(A,B)=\mor_{\mathsf{Set}}(A,B)$.
     In other words, a full subcategory is a subcategory in which only
     the class of objects is truncated and not the sets of morphisms.
@@ -133,17 +133,17 @@ The definition of a (covariant) functor is set up in such a way that any sequenc
     & F(A_2)  \arrow[ru, "F(f_2)"'] & 
     \end{tikzcd}
 \end{equation}
-The circular arrow here indicates that the composition of morphism along any path in this triangle must give the same morphism, i.e.\ precisely that $F(f_1f_2)=F(f_1)F(f_2)$. When this holds, we say that ``the diagram commutes''. Now suppose $A_3=A_1$ and $f_1=f_2^{-1}$ is an isomorphism between $A_1$ and $A_2$. Then for any functor $F$, not only is it true that $F(\mathrm{id}_{A_1})$ is still an identity morphism, but also that $F(f_1)$ is still an isomorphism, since $F(f_1)F(f_2)=\mathrm{id}_{F(A_1)}$ and $F(f_2)F(f_1)=\mathrm{id}_{F(A_2)}$. Intuitively, this means that \emph{the definition of $F$ itself cannot use any information contained in the objects of $\mathcal{C}$ that is not preserved by isomorphisms}. 
+The circular arrow here indicates that the composition of morphism along any path in this triangle must give the same morphism, i.e., precisely that $F(f_1f_2)=F(f_1)F(f_2)$. When this holds, we say that ``the diagram commutes''. Now suppose $A_3=A_1$ and $f_1=f_2^{-1}$ is an isomorphism between $A_1$ and $A_2$. Then for any functor $F$, not only is it true that $F(\mathrm{id}_{A_1})$ is still an identity morphism, but also that $F(f_1)$ is still an isomorphism, since $F(f_1)F(f_2)=\mathrm{id}_{F(A_1)}$ and $F(f_2)F(f_1)=\mathrm{id}_{F(A_2)}$. Intuitively, this means that \emph{the definition of $F$ itself cannot use any information contained in the objects of $\mathcal{C}$ that is not preserved by isomorphisms}. 
 
 \begin{example}[Non-examples of functors]
     Some common constructions are not functors. For example, for a set $X$ one can define the group $\mathrm{Aut}(X)$ of bijections (permutations) $X\to X$. This is not a functor because there is no nontrivial way to define its action on maps (the trivial way would be to send everything to the identity map).
 
-    Similarly, the monoid (same as a group but without inversion) $\mathrm{End}(X)$ of endomorphisms (i.e.\ all maps $X\to X$) is also not functorial in $X$.
+    Similarly, the monoid (same as a group but without inversion) $\mathrm{End}(X)$ of endomorphisms (i.e., all maps $X\to X$) is also not functorial in $X$.
 \end{example}
 
 
 % \begin{example}
-%     Consider once again the category $\mathsf{Set}$. While sets consist of individual elements (numbers, animals, particles...), we all know intuitively that set theory doesn't care about what these elements are, and no element in a given set is more ``special'' than any other one, i.e.\ two sets ``really'' differ only if there are no bijections between them. Category theory helps us formalize this intuition very easily. Consider the map $F:\mathrm{Ob}(\mathsf{Set})\to \mathrm{Ob}(\mathsf{Set})$ which takes a set and returns some arbitrarily pre-chosen element of that set as a singleton, i.e.\ $X\mapsto \{x_0\}$ where $x_0\in X$. We would like to establish whether it's possible to extend this $F$ to a functor by defining its action on morphisms, i.e.\ maps between sets. It is obvious that there is only one potential way to define this action: if $f\in \mathrm{Map}(X,Y)$ then $F(f)$ has to be the unique map from $\{x_0\}$ to $\{y_0\}$. 
+%     Consider once again the category $\mathsf{Set}$. While sets consist of individual elements (numbers, animals, particles...), we all know intuitively that set theory doesn't care about what these elements are, and no element in a given set is more ``special'' than any other one, i.e., two sets ``really'' differ only if there are no bijections between them. Category theory helps us formalize this intuition very easily. Consider the map $F:\mathrm{Ob}(\mathsf{Set})\to \mathrm{Ob}(\mathsf{Set})$ which takes a set and returns some arbitrarily pre-chosen element of that set as a singleton, i.e., $X\mapsto \{x_0\}$ where $x_0\in X$. We would like to establish whether it's possible to extend this $F$ to a functor by defining its action on morphisms, i.e., maps between sets. It is obvious that there is only one potential way to define this action: if $f\in \mathrm{Map}(X,Y)$ then $F(f)$ has to be the unique map from $\{x_0\}$ to $\{y_0\}$. 
     
 %     Does this respect the composition property of functors? At first it might seem that the answer is yes: there is always only one map between two singletons, so any equality of the form $F(f_1f_2)=F(f_1)F(f_2)$ is inevitably true.
 % \end{example}
@@ -155,7 +155,7 @@ roughly, this ``principle of naturality'' can be stated as:
     \boxed{\begin{array}{c}
     \text{Isomorphic inputs must produce isomorphic outputs.}\\
     \text{In particular, all constructions should not give preference to any}\\ \text{specific representatives of isomorphism classes,}\\
-    \text{i.e.\ they must be \emph{natural}.}
+    \text{i.e., they must be \emph{natural}.}
     \end{array}}
 \end{gather*}
 Looking ahead, an even deeper generalization of this principle will arise when we go up to the level of \emph{morphisms between functors} (called natural transformations).
@@ -225,7 +225,7 @@ execute at end picture={\draw [<-] ([xshift=-2.2em,yshift=.3em]m-2-2.north) arc[
    A_1\arrow[r,"f_1" ]\arrow[d,swap,"\alpha" ]& B_1 \arrow[d,"\beta" ] \\
    A_2\arrow[r,swap,"f_2" ]& B_2
 \end{tikzcd}\]
-i.e.\ $f_{1}\beta=\alpha f_{2}$. The circular arrow is used to indicate
+i.e., $f_{1}\beta=\alpha f_{2}$. The circular arrow is used to indicate
 that the square commutes. % We didn't have to require commutativity to make this a category, however it makes the construction much more useful. What commutativity provides is the guarantee that replacing any of the objects in the square with an isomorphic one will yield another commuting square (in which two of the arrows are ``twisted'' by the isomorphism).
 \end{enumerate}
 \end{defn}
@@ -344,7 +344,7 @@ multiplication and an identity element.} with the morphisms being group homomorp
     r.h.s.). We can construct the \emph{quotient functor} $F:\mathsf{GrPair}\to\mathsf{Gr}$
     such that $F\left(\left(G,H\right)\right)=G/H$ and $F\left(f\right):G_{1}/H_{1}\to G_{2}/H_{2}$
     is the induced homomorphism of the quotients. The existence and uniqueness
-    (i.e.\ naturality) of this homomorphism (and that it preserves compositions)
+    (i.e., naturality) of this homomorphism (and that it preserves compositions)
     is ensured by the \href{https://en.wikipedia.org/wiki/Fundamental_theorem_on_homomorphisms}{fundamental homomorphism theorem}.
     Therefore the fundamental homomorphism theorem is nothing but the
     statement that $F$\emph{ is naturally a functor}. Note that by
@@ -382,7 +382,7 @@ multiplication and an identity element.} with the morphisms being group homomorp
     $+$ and $\cdot$ such that 
     \begin{enumerate}
         \item $(R,+)$ is an abelian group.
-        \item $\cdot$ is distributive over $+$, i.e.\ $a\cdot(b+c)=a\cdot b+a\cdot c$.
+        \item $\cdot$ is distributive over $+$, i.e., $a\cdot(b+c)=a\cdot b+a\cdot c$.
         \item (If the ring is associative) $\cdot$ is associative.
         \item (If the ring is associative and has a unity) there is a multiplicative
         neutral element denoted by $1$, and $1\neq0$, so that $R\neq\left\{ 0\right\} $.
@@ -451,7 +451,7 @@ We can define two categories:
     \item Antisymmetry: $[a,b]=-[b,a]$; 
     \item Jacobi identity: $[a,[b,c]]+\mathrm{cyclic~permutations}=0$.\footnote{Alternatively, introducing the \emph{adjoint} operator $\ad_{a}b\equiv\left[a,b\right]$,
     this can be written as $\ad_{a}\left[b,c\right]=\left[\ad_{a}b,c\right]+\left[b,\ad_{a}c\right]$,
-    i.e.\ $\ad_{a}$ is a \emph{derivation}, meaning
+    i.e., $\ad_{a}$ is a \emph{derivation}, meaning
     it follows the Leibniz (product) rule just like derivatives do when
     acting on products (and in Lie algebras ``product'' means Lie bracket).
     Therefore the Jacobi identity is nothing but the statement that the
@@ -475,7 +475,7 @@ $F:\mathsf{AssRing}\rightarrow\mathsf{LieRing}$.
     \begin{enumerate}
     \item $(\bbK,+,\cdot)$ is a \emph{commutative} ring;
     \item Every element in the \emph{group of units}\index{Group of units} $\bbK^{\times}=\bbK\setminus\{0\}$ has a multiplicative
-    inverse ($0$ being the additive identity), i.e.\ $\bbK^{\times}$ is an abelian group.
+    inverse ($0$ being the additive identity), i.e., $\bbK^{\times}$ is an abelian group.
     \end{enumerate}
     A morphism between fields is a map that preserves addition, multiplication,
     zero and unity. The category of fields is rarely referred to because
@@ -507,7 +507,7 @@ $F:\mathsf{AssRing}\rightarrow\mathsf{LieRing}$.
     here).
 
     A \emph{morphism} of (left) $R$-modules is a group homomorphism
-    $f:M\to L$ that respects the action of the ring, i.e.\ $f\left(r\bullet_{M}x\right)=r\bullet_{L}f\left(x\right)$.
+    $f:M\to L$ that respects the action of the ring, i.e., $f\left(r\bullet_{M}x\right)=r\bullet_{L}f\left(x\right)$.
 
     The categories of left and right $R$-modules are denotes by $R\text{-}\mathsf{Mod}$
     and $\mathsf{Mod}\text{-}R$, respectively.
@@ -603,12 +603,12 @@ The generalization of these definitions to categories is now straightforward
 notation is opposite of the set theoretical one, $gf=f\circ g$).
 \begin{defn}[Epimorphism]\index{Morphism!epi}
     A morphism $f$ is an \emph{epimorphism} if $fg=fh$ for any $g,h$
-    implies $g=h$ (i.e.\ left cancellative). We use the arrow $\twoheadrightarrow$ to denote epimorphisms.
+    implies $g=h$ (i.e., left cancellative). We use the arrow $\twoheadrightarrow$ to denote epimorphisms.
 \end{defn}
 %
 \begin{defn}[Monomorphism]\index{Morphism!mono}
     A morphism $f$ is a \emph{monomorphism} if $gf=hf$ for any $g,h$
-    implies $g=h$ (i.e.\ right cancellative). We use the arrow $\rightarrowtail$ to denote monomorphisms.
+    implies $g=h$ (i.e., right cancellative). We use the arrow $\rightarrowtail$ to denote monomorphisms.
 \end{defn}
 %
 \begin{defn}[Bimorphism]\index{Morphism!bi}
@@ -618,7 +618,7 @@ notation is opposite of the set theoretical one, $gf=f\circ g$).
 %
 \begin{defn}[Retraction/Split epi]\index{Morphism!split epi}\index{Retraction}
     A morphism $f:A\rightarrow B$ is a \emph{retraction}, or a\emph{
-    split epi}, if $\exists\,g$ such that $gf=\id_{B}$ (i.e.\ $f$ is
+    split epi}, if $\exists\,g$ such that $gf=\id_{B}$ (i.e., $f$ is
     left invertible in categorical notation). In this case $g$ is a split
     mono.
 \end{defn}
@@ -626,12 +626,12 @@ notation is opposite of the set theoretical one, $gf=f\circ g$).
 \begin{defn}[Coretraction/Section/Split mono]\index{Morphism!split mono}\index{Coretraction}\index{Section}
     A morphism $f:A\rightarrow B$ is a \emph{coretraction}, or a \emph{section},
     or a \emph{split mono}, if $\exists\,g$ such that $fg=\id_{A}$
-    (i.e.\ $f$ is right invertible). In this case $g$ is a split epi, $f$ is a section of $g$, and $g$ is a retraction of $f$.
+    (i.e., $f$ is right invertible). In this case $g$ is a split epi, $f$ is a section of $g$, and $g$ is a retraction of $f$.
 \end{defn}
 %
 \begin{defn}[Isomorphism]\index{Morphism!iso}
     A morphism $f$ is an \emph{isomorphism} if it's a retraction and
-    a coretraction (i.e.\ invertible). Sometimes we use the arrow $\leftrightarrow$ to denote isomorphisms. If two objects $A$ and $B$ are related by an isomorphism $f$, we might write $A\overset f\cong B$ or just $A\cong B$.
+    a coretraction (i.e., invertible). Sometimes we use the arrow $\leftrightarrow$ to denote isomorphisms. If two objects $A$ and $B$ are related by an isomorphism $f$, we might write $A\overset f\cong B$ or just $A\cong B$.
 \end{defn}
 Note in particular that, unlike for sets, left(right) invertibility
 is not equivalent to left(right) cancellability. An important characteristic
@@ -704,12 +704,12 @@ while the converse don't. Here are some counterexamples.
     we seek to answer is whether the group $G$ can always be written as
     a direct product of its normal subgroup $H$ and the quotient group $G/H$.
     This statement is equivalent to the statement that there exists a morphism
-    $g:G/H\rightarrow G$ such that $gf=\id_{G/H}$, i.e.\ $g$ is a section
+    $g:G/H\rightarrow G$ such that $gf=\id_{G/H}$, i.e., $g$ is a section
     of the split epimorphism $f$. 
 
     We already know from the last example that not every epimorphism has a section, but for another example let us go back to the kindergarten and
     re-learn how to add integer numbers in their decimal representation. For simplicity we will restrict ourselves
-    to two digit numbers, i.e.\ elements of the cyclic group $\bbZ/100\bbZ$.
+    to two digit numbers, i.e., elements of the cyclic group $\bbZ/100\bbZ$.
     The units and tens digits of these numbers both form their own cyclic
     groups $\bbZ/10\bbZ=\{0,1,\ldots,9\}$ and we have the following
     sequence of maps 
@@ -774,7 +774,7 @@ In particular categories, the existence of universal objects often has to be sho
 \end{example}
 
 \begin{example}
-    Following Example~\ref{poset example}, in a category that is a \emph{totally ordered} set (i.e.\ any two elements can be compared), a terminal object is a maximal element and an initial object is a minimal element (if they exist).
+    Following Example~\ref{poset example}, in a category that is a \emph{totally ordered} set (i.e., any two elements can be compared), a terminal object is a maximal element and an initial object is a minimal element (if they exist).
 \end{example}
 %
 \begin{example}
@@ -862,7 +862,7 @@ in their categories, and in many cases the easiest way to show it
 is to construct one explicitly (not up to iso), like we did for the
 free groups at first.
 
-Finally, we note that the correspondence $X\mapsto \rmF_X$ is \emph{natural}, i.e.\ functorial. Namely, any map between sets $f:X\to Y$ generates a unique homomorphism between the corresponding free groups $\rmF_f:\rmF_X\to \rmF_Y$ defined on the generators by $\rmF_f (i_X(x))=i_Y(f(x))$. Sometimes mathematicians describe equations of this form as ``$f$ intertwines the action of $i_X$ and $i_Y$''. Of course, this is a bit of an abuse of terminology, since $f$ and $\rmF_f$ are not quite the same, although $f$ can be thought of as a restriction of $\rmF_f$. In any case, in the end we have a functor $\rmF:\mathsf{Set}\to\mathsf{Gr}$.
+Finally, we note that the correspondence $X\mapsto \rmF_X$ is \emph{natural}, i.e., functorial. Namely, any map between sets $f:X\to Y$ generates a unique homomorphism between the corresponding free groups $\rmF_f:\rmF_X\to \rmF_Y$ defined on the generators by $\rmF_f (i_X(x))=i_Y(f(x))$. Sometimes mathematicians describe equations of this form as ``$f$ intertwines the action of $i_X$ and $i_Y$''. Of course, this is a bit of an abuse of terminology, since $f$ and $\rmF_f$ are not quite the same, although $f$ can be thought of as a restriction of $\rmF_f$. In any case, in the end we have a functor $\rmF:\mathsf{Set}\to\mathsf{Gr}$.
 
 This kind of universal construction is the most typical way ``universal properties'' or ``characteristic properties'' come up in mathematics -- as universal objects in categories of morphisms with one fixed end. Indeed, as we have seen, concepts such as surjections and injections can be defined this way. This will also apply to geometric concepts such as submersions, lifting of paths, etc. For more examples and a general description see \cite[Exercise~7.8:24 and Def.~7.8:12]{Bergman}.
 \end{example}
@@ -918,7 +918,7 @@ is a map satisfying for all $\alpha,\alpha'\in K$
 \begin{multline}
     f\left(v_{1},\ldots,v_{i-1},\alpha v_{i}+\alpha'v_{i}',v_{i+1},\ldots,v_{k}\right)=\\=\alpha f\left(v_{1},\ldots,v_{i-1},v_{i},v_{i+1},\ldots,v_{k}\right)+\alpha'f\left(v_{1},\ldots,v_{i-1},v_{i}',v_{i+1},\ldots,v_{k}\right)
 \end{multline}
-for every $i$, i.e.\ it is $K$-linear in every argument separately.
+for every $i$, i.e., it is $K$-linear in every argument separately.
 Note that such a map is not linear on $V^{k}$. E.g. $f\left(v,w\right)=v^1w^2-v^2w^1$ is bilinear but obviously not linear as a function of $(v,w)\in \bbR^{2}\oplus \bbR^2$. Multilinear functions are also known as \emph{forms} (in particular, $k$-forms).
 
 We claim that every \emph{$k$-linear} map can be uniquely identified
@@ -947,7 +947,7 @@ execute at end picture={\draw [<-] ([xshift=0mm,yshift=-6mm]m-2-2.north) arc[sta
    & \, & \\
    V\otimes W \arrow[rr,dashed,swap,"\exists!\,f_\ast\text{- linear}"]& & U
 \end{tikzcd}\]
-Our argument above shows that in that explicit construction, if we pick $t(v,w)=v\otimes w$ then the commutation of the triangle says $f_\ast (v\otimes w)=f(v,w)$, which is exactly what we had before. Thus our construction with this $t$ indeed has this universal property and defines a unique isomorphism class of objects that are collectively denoted by  $V\oplus W\overset{t}{\to}V\otimes W $. Note that the above diagram lives completely within the category of vector spaces: all arrows are just linear maps, i.e.\ morphisms of vector spaces.
+Our argument above shows that in that explicit construction, if we pick $t(v,w)=v\otimes w$ then the commutation of the triangle says $f_\ast (v\otimes w)=f(v,w)$, which is exactly what we had before. Thus our construction with this $t$ indeed has this universal property and defines a unique isomorphism class of objects that are collectively denoted by  $V\oplus W\overset{t}{\to}V\otimes W $. Note that the above diagram lives completely within the category of vector spaces: all arrows are just linear maps, i.e., morphisms of vector spaces.
 
 Now we can finally extend this construction to find the universal property of $\bbT\left(V\right)$. As a vector space, $\bbT(V)=\bigoplus_{k\geq 1}V^{\otimes k}$, and we know that linear functions on every $V^{\otimes k}$ need to correspond to multilinear maps on $V$. However, since $T(V)$ is supposed to be a tensor algebra and not just a vector space, we need to capture this extra structure in the requirements for our morphisms.
 
@@ -1133,7 +1133,7 @@ $\left[x,y\right]=x\otimes y-y\otimes x$ for all $x$ and $y$, i.e.
 
 In set theory, we have two set operations defined in the axioms themselves:
 $X\cup Y$ and $X\cap Y$. These operations are completely Boolean,
-i.e.\ use nothing but logical operators in their definitions. 
+i.e., use nothing but logical operators in their definitions. 
 
 On the other hand, Cartesian products $X\times Y$ are usually defined
 as sets of ``ordered pairs'' or ``tuples'' $(x,y)$. But what
@@ -1211,7 +1211,7 @@ This universal property is described by the commuting diagram:\[\begin{tikzcd}
     & X \times_Z Y \arrow[r,swap, "\pi_2"] \arrow[d, "\pi_1"]       & Y \arrow[d, "g"] \\ & X \arrow[r,swap, "f"] &Z 
 \end{tikzcd}\]meaning that for every top (unlabeled solid) part of the diagram,
 there exists a unique dashed morphism that makes this diagram commute
-(i.e.\ the top two triangles). Note that the pullback strongly depends
+(i.e., the top two triangles). Note that the pullback strongly depends
 on the morphisms $f$ and $g$!
 \end{defn}
 %
@@ -1243,7 +1243,7 @@ Pushouts are more sophisticated: in set theory, it is the \emph{coequalizer}\ind
 \[
 X\sqcup_{Z}Y=\bigslant{\left(X\sqcup Y\right)}{\sim},
 \]
-where $\sim$ is the finest (i.e.\ has smallest truth domain) equivalence
+where $\sim$ is the finest (i.e., has smallest truth domain) equivalence
 relation under which $f(z)\sim g(z)$.
 \end{example}
 %
@@ -1268,7 +1268,7 @@ In other words, it is the ``most free'' group containing $G$ and
 $H$ as subgroups. 
 
 Fibered coproducts $\sqcup_{Z}$ in group theory also exist and are
-called \emph{amalgamated free products}. Namely $G\ast_K H$ is the factor of the free product by all relations of the form $f(k)g(k)^{-1}=e$. E.g.\ $\bbZ_{4}\ast_{\bbZ_{2}}\bbZ_{6}=\mathrm{SL}\left(2,\bbZ\right)$.
+called \emph{amalgamated free products}. Namely $G\ast_K H$ is the factor of the free product by all relations of the form $f(k)g(k)^{-1}=e$. E.g., $\bbZ_{4}\ast_{\bbZ_{2}}\bbZ_{6}=\mathrm{SL}\left(2,\bbZ\right)$.
 \end{example}
 %
 \begin{example}
@@ -1374,7 +1374,7 @@ The identity transformation $1_{F}:F\Longrightarrow F$, $\tau_{X}=\id_{F(X)}$.
 \end{example}
 %
 \begin{example}
-    Consider again the covariant power set functor, which we will denote this time simply by $P:\mathsf{Set}\to \mathsf{Set}$. Any set $X$ can be embedded inside $P(X)$ simply as singletons $x\mapsto \{x\}$. Denote this embedding by $\sigma_X$. This map is natural in the following sense. Given a map between sets $f:X\to Y$, we have $\sigma P(f)=f \sigma$, i.e.\ the following diagram commutes:
+    Consider again the covariant power set functor, which we will denote this time simply by $P:\mathsf{Set}\to \mathsf{Set}$. Any set $X$ can be embedded inside $P(X)$ simply as singletons $x\mapsto \{x\}$. Denote this embedding by $\sigma_X$. This map is natural in the following sense. Given a map between sets $f:X\to Y$, we have $\sigma P(f)=f \sigma$, i.e., the following diagram commutes:
     \[\begin{tikzcd}[every matrix/.append style={name=m},execute at end picture={\draw [<-] ([xshift=-2.7em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
    X \arrow[r,"f"]\arrow[d,swap,"\sigma_X"]& Y\arrow[d,"\sigma_Y"] \\
    P(X)\arrow[r,swap,"P(f)"]& P(Y)
@@ -1388,7 +1388,7 @@ functor $1_{\mathcal{C}}$ and the double dual functor $F:V\to V^{\ast\ast}$.
 A \href{https://en.wikipedia.org/wiki/Dual_space\#Double_dual}{classical theorem in linear algebra}
 states that $V^{\ast\ast}$ is naturally isomorphic to $V$, i.e.
 there is a natural transformation $1_{\mathcal{C}}\Longrightarrow F$
-that is invertible (i.e.\ every $\tau_{V}$ is an isomorphism and $\left(\tau^{-1}\right)_{V}=\left(\tau_{V}\right)^{-1}$).
+that is invertible (i.e., every $\tau_{V}$ is an isomorphism and $\left(\tau^{-1}\right)_{V}=\left(\tau_{V}\right)^{-1}$).
 
 Explicitly, the isomorphism is given by $v\mapsto v^{\ast\ast}$,
 where $v^{\ast\ast}\in V^{\ast\ast}$ is defined as a functional on
@@ -1403,10 +1403,10 @@ a basis $\left\{ e_{i}\right\} _{i=1}^{n}$ on $V$ and define its
 dual basis $\left\{ \alpha^{i}\right\} _{i=1}^{n}$ by $\alpha^{i}\left(e_{j}\right)=\delta_{j}^{i}$ (or any other basis of $V^\ast$).
 Then we have an isomorphism $V\to V^{\ast}$ that maps $e_{i}\mapsto\alpha^{i}$.
 However, this isomorphism is \emph{not natural} because it
-depends on the choice of basis, i.e.\ it is not invariant under isomorphisms
+depends on the choice of basis, i.e., it is not invariant under isomorphisms
 of $V$. In categorical language, there simply are no natural transformations between a covariant functor (the identity functor) and a contravariant one (the dualization functor). Even if we were to define what's called \emph{dinatural transformations} (where the analogous square with only the arrow $G(Y)\to G(X)$ reversed must commute), one can show that the only such transformation from the identity to the dualization functor is the zero transformation.
 
-Note that the situation is much more complicated in the infinite-dimensional case. For example, the space dual to the space of compactly supported scalar functions on a locally compact Hausdorff space is the space of \emph{measures}. Any infinite-dimensional space can always be embedded in its double dual, and sometimes shown to be strictly ``smaller'' (e.g.\ when this embedding is a proper map). However, there is no obvious embedding of the original space into its single dual in these examples at all.
+Note that the situation is much more complicated in the infinite-dimensional case. For example, the space dual to the space of compactly supported scalar functions on a locally compact Hausdorff space is the space of \emph{measures}. Any infinite-dimensional space can always be embedded in its double dual, and sometimes shown to be strictly ``smaller'' (e.g., when this embedding is a proper map). However, there is no obvious embedding of the original space into its single dual in these examples at all.
 \end{example}
 %
 \begin{xca}
@@ -1414,14 +1414,14 @@ Note that the situation is much more complicated in the infinite-dimensional cas
 \end{xca}
 %
 \begin{xca}[From \cite{Leinster}]
-    Let $\mathsf{FinBij}$ be the category of finite sets and bijections. Given $X\in\mathsf{FinBij}$, let $\mathrm{Sym}(X)$ be the set of permutations on $X$ (the set of all bijections $\pi:X\to X$) and let $\mathrm{Ord}(X)$ be the set of all total orders on $X$ (which are essentially just strings $x_0\le x_1\le\cdots\le x_n$). Extend $\mathrm{Sym}$ and $\mathrm{Ord}$ to functors $\mathsf{FinBij}\to\mathsf{Set}$ (i.e.\ provide an arrow map, an object map has already been given) \emph{in a natural way} (it is important that $\mathsf{FinBij}$ is equipped with bijections only whereas $\mathsf{Set}$ is not). Exhibit isomorphisms $\mathrm{Sym}(X)\simeq\mathrm{Ord}(X)$ for every finite set $X$, but show that it is \emph{impossible} for there to exist a natural isomorphism (or indeed, any natural transformation at all!) $\alpha:\mathrm{Sym}\to\mathrm{Ord}$. \emph{Hint}: consider identity permutations.
+    Let $\mathsf{FinBij}$ be the category of finite sets and bijections. Given $X\in\mathsf{FinBij}$, let $\mathrm{Sym}(X)$ be the set of permutations on $X$ (the set of all bijections $\pi:X\to X$) and let $\mathrm{Ord}(X)$ be the set of all total orders on $X$ (which are essentially just strings $x_0\le x_1\le\cdots\le x_n$). Extend $\mathrm{Sym}$ and $\mathrm{Ord}$ to functors $\mathsf{FinBij}\to\mathsf{Set}$ (i.e., provide an arrow map, an object map has already been given) \emph{in a natural way} (it is important that $\mathsf{FinBij}$ is equipped with bijections only whereas $\mathsf{Set}$ is not). Exhibit isomorphisms $\mathrm{Sym}(X)\simeq\mathrm{Ord}(X)$ for every finite set $X$, but show that it is \emph{impossible} for there to exist a natural isomorphism (or indeed, any natural transformation at all!) $\alpha:\mathrm{Sym}\to\mathrm{Ord}$. \emph{Hint}: consider identity permutations.
 \end{xca}
 %
 \begin{defn}[Skeleton]\index{Skeleton}
 A category is called \emph{skeletal} if it does not have any nontrivial
-isomorphisms, i.e.\ two objects are isomorphic iff they are equal.
+isomorphisms, i.e., two objects are isomorphic iff they are equal.
 For any category $\mathcal{C}$, its \emph{skeleton} $\mathsf{Sk}\left(\mathcal{C}\right)$
-is a \emph{full} (i.e.\ all morphisms between surviving objects are left intact) skeletal subcategory
+is a \emph{full} (i.e., all morphisms between surviving objects are left intact) skeletal subcategory
 of $\mathcal{C}$ such that every object in $\mathcal{C}$ is isomorphic
 to some object in $\mathsf{Sk}\left(\mathcal{C}\right)$. (Essentially
 the skeleton is a ``minimal'' subcategory that is equivalent to
@@ -1463,7 +1463,7 @@ isomorphic objects without considering the resulting category different.
 \begin{defn}[Equivalence of categories]\index{Equivalence of categories}
  Two categories are equivalent, $\mathcal{C}\simeq\mathcal{D}$,
 if there are two functors $F:\mathcal{C}\to\mathcal{D}$ and $G:\mathcal{D}\to\mathcal{C}$
-such that the following are isomorphic as functors, i.e.\ have natural
+such that the following are isomorphic as functors, i.e., have natural
 isomorphisms: $FG\cong1_{\mathcal{C}}$ and $GF\cong1_{\mathcal{D}}$.
 Two categories are anti-equivalent if $\mathcal{C}\simeq\mathcal{D}^{\ast}$.
 \end{defn}
@@ -1541,7 +1541,7 @@ locally compact groups:
 where the mapping is $G\mapsto\wh{G}$, $\wh{G}$ being the dual
 group. For instance, $\wh{\bbS^{1}}=\bbZ$, which means that the
 Fourier transform maps functions on the circle to functions on $\bbZ$
-(i.e.\ sequences of numbers). Similarly, $\wh{\bbR }=\bbR $,
+(i.e., sequences of numbers). Similarly, $\wh{\bbR }=\bbR $,
 so Fourier transforms here are continuous. Pontryagin's theory shows
 how to define Fourier transforms for functions on an arbitrary topological
 abelian group.
@@ -1598,7 +1598,7 @@ This \sect\ contains an \emph{extremely brief} introduction into general point-s
 
 \subsubsection{Open and closed sets}
 
-This \subsect\ will be a quick review of the basic definitions and results of point-set topology. To keep it brief, we shall skip the proofs for most results and refer the reader to any standard textbook on general topology (e.g.\ \cite{Munk}).
+This \subsect\ will be a quick review of the basic definitions and results of point-set topology. To keep it brief, we shall skip the proofs for most results and refer the reader to any standard textbook on general topology (e.g., \cite{Munk}).
 
 \begin{defn}[Topology]\index{Topological space}
 A topology $\mathcal{{T}}$ on a set $X$ is a collection of subsets
@@ -1626,7 +1626,7 @@ The intuitive meaning of a topology is that we ``distinguish'' two points in $X$
 \end{enumerate}
 \end{example}
 \begin{prop}[Open iff contains open neighborhoods]\label{open iff contains neighborhoods}
-Let $(X,\mathcal{T})$ be a topological space. A set $M\subset X$ is open iff for every $x\in M$ there exists an open set $U_x$ such that $x\in U_x$ (i.e.\ an open neighborhood of $x$) and $U_x\subset M$.
+Let $(X,\mathcal{T})$ be a topological space. A set $M\subset X$ is open iff for every $x\in M$ there exists an open set $U_x$ such that $x\in U_x$ (i.e., an open neighborhood of $x$) and $U_x\subset M$.
 \end{prop}
 \begin{proof}
 Exercise.
@@ -1743,7 +1743,7 @@ where $[x]$ is the equivalence class of the element $x$ defined as
 \begin{equation}
     [x] = \{u\in X ~|~ u \sim x\}.
 \end{equation}
-We also have the canonical map $\pi:X\rightarrow X/\sim$ that takes an element $x$ to its equivalence class $[x]$. If $X$ is equipped with a topology, the quotient can always be equipped with an induced topology as follows.\footnote{Existence of quotients is a pretty strong property for a category. In group theory, as we know, quotients exist only with respect to normal subgroups (i.e.\ $x\sim y$ iff $xy^{-1}$ is contained in a given normal subgroup), whereas in topological groups quotients don't even exist for all normal subgroups. In particular, the first isomorphism theorem doesn't hold for topological groups.}
+We also have the canonical map $\pi:X\rightarrow X/\sim$ that takes an element $x$ to its equivalence class $[x]$. If $X$ is equipped with a topology, the quotient can always be equipped with an induced topology as follows.\footnote{Existence of quotients is a pretty strong property for a category. In group theory, as we know, quotients exist only with respect to normal subgroups (i.e., $x\sim y$ iff $xy^{-1}$ is contained in a given normal subgroup), whereas in topological groups quotients don't even exist for all normal subgroups. In particular, the first isomorphism theorem doesn't hold for topological groups.}
 
 
 \begin{defn}[Quotient/Factor Topology]\index{Topology!quotient}
@@ -1757,7 +1757,7 @@ In other words, it is the finest topology on $X/\sim$ that makes $\pi$ continuou
 The quotient space together with the canonical projection can be instead defined by its \emph{universal property}\index{Universal property!of quotient maps}: any continuous function $f:X\to Z$ (valued in any topological space $Z$) that is constant on the equivalence classes in $X$ uniquely factors through  $\pi$, so $f=f_\ast\circ\pi$, where $f_\ast$ is the unique continuous map satisfying this condition (we say that ``$f$ descends to $X/\sim$'' as $f_\ast$). This universal property also implies that the quotient topology on $X\slash\sim$ is unique.
 
 \begin{xca}
-Check that the topology constructed above for $X/\sim$ indeed satisfies the universal property (i.e.\ $f_\ast$ is continuous).
+Check that the topology constructed above for $X/\sim$ indeed satisfies the universal property (i.e., $f_\ast$ is continuous).
 \end{xca}
 
 The quotient topology can also be defined in an equivalent way by first defining quotient maps.
@@ -1980,7 +1980,7 @@ Exercise.
 
 \begin{xca}
 \begin{enumerate}
-    \item Show that the product of two connected spaces is connected. \emph{Hint:} first show that the union of any number of pairwise overlapping connected subspaces (i.e.\ subsets endowed with the subspace topology) of a space is also connected; then, write $X\times Y$ as the union of ``crosses'' $(\{x\}\times Y)\cup (X\times \{y\})$ that pairwise overlap and are connected only if $X$ and $Y$ are.
+    \item Show that the product of two connected spaces is connected. \emph{Hint:} first show that the union of any number of pairwise overlapping connected subspaces (i.e., subsets endowed with the subspace topology) of a space is also connected; then, write $X\times Y$ as the union of ``crosses'' $(\{x\}\times Y)\cup (X\times \{y\})$ that pairwise overlap and are connected only if $X$ and $Y$ are.
     \item Show that the product of two path-connected spaces is path-connected.
     \item Show that the product of two compact spaces is compact. \emph{Hint:} \cite{compact.proof}.
 \end{enumerate}
@@ -2225,7 +2225,7 @@ f\in C(X,[0,1]) ~\text{such that}~ \restr{f}{A} = 0, \restr{f}{B} = 1.
 
 The following theorem is one of the most fundamental theorems in functional analysis, and it essentially characterizes compact subsets of the set of continuous functions defined on a compact subset of $\bbR^n$. We state it simply as an example of usage of the above topological terminology.
 \begin{thm}[Arzel\`a-Ascoli]\index{Theorem!Arzel\`a-Ascoli}
-    Let $X$ be a compact Hausdorff space. A subset $F$ of the space $C(X,\bbR )$ of continuous real-valued functions on $X$ is relatively compact (i.e.\ its closure is compact) in the topology given by the sup-norm $\lVert f\rVert=\sup_X \vert f\rvert$ iff it is equicontinuous (i.e.\ all elements $f\in F$ are uniformly continuous functions and the $\delta$ in the definition of uniform continuity is universal for all $f\in F$) and pointwise bounded (i.e.\ for every $x\in X$ the set $\{f(x)\}_{f\in F}$ is bounded).
+    Let $X$ be a compact Hausdorff space. A subset $F$ of the space $C(X,\bbR )$ of continuous real-valued functions on $X$ is relatively compact (i.e., its closure is compact) in the topology given by the sup-norm $\lVert f\rVert=\sup_X \vert f\rvert$ iff it is equicontinuous (i.e., all elements $f\in F$ are uniformly continuous functions and the $\delta$ in the definition of uniform continuity is universal for all $f\in F$) and pointwise bounded (i.e., for every $x\in X$ the set $\{f(x)\}_{f\in F}$ is bounded).
 \end{thm}
 
 
@@ -2250,7 +2250,7 @@ The first argument of $F(t,x)$ is essentially ``time'', and $F(t,\cdot)$ continu
 
 
 \begin{defn}[Contractible space]\index{Contractible space}
-    A space $X$ is called contractible if it is homotopy equivalent to the one-point space, i.e.\ there exists a point $x_0\in X$ such that the constant map $f(x)=x_0$ is homotopic to the identity, $f\sim \id_X$. This property is in fact independent of $x_0$.
+    A space $X$ is called contractible if it is homotopy equivalent to the one-point space, i.e., there exists a point $x_0\in X$ such that the constant map $f(x)=x_0$ is homotopic to the identity, $f\sim \id_X$. This property is in fact independent of $x_0$.
 \end{defn}
 \begin{prop}
     Any contractible space is path-connected.
@@ -2315,7 +2315,7 @@ The first argument of $F(t,x)$ is essentially ``time'', and $F(t,\cdot)$ continu
 \subsection{Fundamental group}
 
 \begin{defn}[Loops, Pointed homotopy]\index{Loop}
-    Let $X$ be a path-connected topological space, pick a ``base point'' $x_0\in X$, and consider the set of all \emph{loops} in $X$ based at $x_0$, i.e.\ paths $\gamma\in C([0,1], X)$ such that $\gamma(0)=\gamma(1)=x_0$. A pointed homotopy between two such loops is a homotopy $F\in C([0,1]\times[0,1],X)$ such that $F(\cdot,0)=F(\cdot,1)=x_0$. Pointed homotopy is an equivalence relation on the set of based loops.
+    Let $X$ be a path-connected topological space, pick a ``base point'' $x_0\in X$, and consider the set of all \emph{loops} in $X$ based at $x_0$, i.e., paths $\gamma\in C([0,1], X)$ such that $\gamma(0)=\gamma(1)=x_0$. A pointed homotopy between two such loops is a homotopy $F\in C([0,1]\times[0,1],X)$ such that $F(\cdot,0)=F(\cdot,1)=x_0$. Pointed homotopy is an equivalence relation on the set of based loops.
 \end{defn}
 
 \begin{defn}[Fundamental/Poincar\'e group]\index{Fundamental group}
@@ -2327,7 +2327,7 @@ The first argument of $F(t,x)$ is essentially ``time'', and $F(t,\cdot)$ continu
 \end{defn}
 
 \begin{xca}
-    Check that this definition is consistent, i.e.\ the homotopy classes on the right-hand sides don't depend on the choices of representatives of the classes on the left.
+    Check that this definition is consistent, i.e., the homotopy classes on the right-hand sides don't depend on the choices of representatives of the classes on the left.
 \end{xca}
 \begin{defn}[Simple-connectedness]\index{Simply connected space}
     A path-connected space $X$ is called simply connected if its fundamental group is trivial, $\pi_1(X,x_0)=\{e\}$.
@@ -2349,7 +2349,7 @@ Show that contractible spaces are simply connected.
 \end{defn}
 
 \begin{defn}[Suspension]\index{Suspension}
-    The suspension of a topological space $X$, is defined as the quotient space $SX=(X\times [0,1])/(X\times \{0\},X\times\{1\})$ (i.e.\ a cylinder over $X$ where each of the two faces is then collapsed into a point -- best visualized as a double cone over $X$). If $X$ is a pointed space with basepoint $x_0$, then the \emph{reduced suspension} is defined as $\Sigma X=(X\times [0,1])/(X\times \{0\},X\times\{1\} ,\{x_0\}\times [0,1]))$, and the new basepoint is the image of $(x_0,0)$ in the quotient. Equivalently, $\Sigma X=X\wedge \bbS^1=X\times \bbS^1/(X\vee \bbS^1)$.
+    The suspension of a topological space $X$, is defined as the quotient space $SX=(X\times [0,1])/(X\times \{0\},X\times\{1\})$ (i.e., a cylinder over $X$ where each of the two faces is then collapsed into a point -- best visualized as a double cone over $X$). If $X$ is a pointed space with basepoint $x_0$, then the \emph{reduced suspension} is defined as $\Sigma X=(X\times [0,1])/(X\times \{0\},X\times\{1\} ,\{x_0\}\times [0,1]))$, and the new basepoint is the image of $(x_0,0)$ in the quotient. Equivalently, $\Sigma X=X\wedge \bbS^1=X\times \bbS^1/(X\vee \bbS^1)$.
 \end{defn}
 
 \begin{xca}
@@ -2475,7 +2475,7 @@ We are now prepared to prove one of the most important theorems about the fundam
     \pi_1(U)\arrow[r,,leftarrow,swap,"i_\ast"]& \pi_1(U\cap V)\\
     \end{tikzcd}
 \]
-$X$ itself is in fact the pushout, $X=U\sqcup_{U\cap V}V$. \emph{The Siefert-van~Kampen theorem will show that the functor $\pi_1$ preserves pushouts,} i.e.\ the fundamental group of the union is isomorphic to the amalgamated free product, $\pi_1(X)\cong \pi_1(U) \ast_{\pi_1(U\cap V)} \pi_1(V)$. By the universal property of the free product, there is a unique homomorphism $\Phi$ in the diagram below that makes the external triangles commute.
+$X$ itself is in fact the pushout, $X=U\sqcup_{U\cap V}V$. \emph{The Siefert-van~Kampen theorem will show that the functor $\pi_1$ preserves pushouts,} i.e., the fundamental group of the union is isomorphic to the amalgamated free product, $\pi_1(X)\cong \pi_1(U) \ast_{\pi_1(U\cap V)} \pi_1(V)$. By the universal property of the free product, there is a unique homomorphism $\Phi$ in the diagram below that makes the external triangles commute.
 \[
     \begin{tikzcd}
     \pi_1(U)\ast \pi_1(V)   \arrow[drr,leftarrow, bend left]   \arrow[ddr,leftarrow, bend right]   \arrow[dr,"\exists! \Phi" description] & & \\
@@ -2514,11 +2514,11 @@ Note, however, that the ``background square'' involving $\pi_1(U\cap V),\pi_1(U)
 The conditions on path-connectedness of intersections and on the basepoint seem artificial, and indeed the are. Any open covering of $X$ can be turned into a cover of this kind by taking unions of sets lying along paths connecting them to the original basepoint. The full version of the Seifert-van~Kampen theorem can be stated purely in categorical terms with no extra conditions, however first we will need the notion of the \emph{fundamental groupoid}.
 
 \begin{defn}[Groupoid]\index{Groupoid}
-    A groupoid is a set with a unary ``inversion'' map $x\mapsto x^{-1}$ and a partial (i.e.\ not necessarily defined for any pair of elements) associative binary ``multiplication'' operation $(x,y)\mapsto x\bullet y$. It is associative in the sense that if both $x\bullet y$ and $y\bullet z$ exist, then both $(x\bullet y)\bullet z$ and $x\bullet (y\bullet z)$ exist and coincide. It is also required that $x\bullet x^{-1}$ and $x^{-1}\bullet x$ exist, and that, if $x\bullet y$ exists, then $x\bullet y\bullet y^{-1}=x$ and $x^{-1}\bullet x\bullet y=y$.
+    A groupoid is a set with a unary ``inversion'' map $x\mapsto x^{-1}$ and a partial (i.e., not necessarily defined for any pair of elements) associative binary ``multiplication'' operation $(x,y)\mapsto x\bullet y$. It is associative in the sense that if both $x\bullet y$ and $y\bullet z$ exist, then both $(x\bullet y)\bullet z$ and $x\bullet (y\bullet z)$ exist and coincide. It is also required that $x\bullet x^{-1}$ and $x^{-1}\bullet x$ exist, and that, if $x\bullet y$ exists, then $x\bullet y\bullet y^{-1}=x$ and $x^{-1}\bullet x\bullet y=y$.
 
    As a consequence of these axioms, $(x^{-1})^{-1}=x$ and $(x\bullet y)^{-1}=y^{-1}\bullet x^{-1}$. Intuitively, groupoids can be thought of as groups with many identities, where only elements belonging to the same identity (which is the case if $x\bullet x^{-1}=x\bullet x^{-1}$) can be multiplied. 
     
-    An equivalent definition is that a groupoid is a category where all morphisms are invertible (i.e.\ isomorphisms). The objects of this category are the ``identities'' of the groupoid. A group is then simply a groupoid with a single object. The category of groupoids is denoted $\mathsf{Grpd}$.
+    An equivalent definition is that a groupoid is a category where all morphisms are invertible (i.e., isomorphisms). The objects of this category are the ``identities'' of the groupoid. A group is then simply a groupoid with a single object. The category of groupoids is denoted $\mathsf{Grpd}$.
 \end{defn}
 
 Free products of groupoids can be constructed in the same way as for groups -- as strings of ``words'' $g_1^{\epsilon_1} \cdots g_n^{\epsilon_n}$ where each product $g_i^{\epsilon_i}\bullet g_{i+1}^{\epsilon_{i+1}}$ must exist and insertions of substrings of the form $gg^{-1}$ produce an equivalent string. These free products have the same universal property and are therefore the pushouts in $\mathsf{Grpd}$.
@@ -2542,11 +2542,11 @@ Notice that the set of endomorphisms of any $x\in X$ viewed as an object in $\Pi
 \begin{proof}
     We can verify the universal property. For a groupoid $G$ and a set of groupoid homomorphisms $\eta_\alpha:\Pi(U_\alpha)\to G$ (forming a cone over $\restr{\Pi}{\mathscr{U}}$), we must construct a groupoid homomorphism $\wt{\eta}:\Pi(X)\to G$ (which is nothing but a functor between categories) that restricts to $\eta_\alpha$ on $\Pi(U_\alpha)$ for all $\alpha$. On objects, that is on points of $X$, we have no choice but to define $\wt{\eta}(x)=\eta_\alpha(x)$ for $x\in U_\alpha$. This is independent of the choice of $\alpha$ since the cover is closed under finite intersections.
 
-    Now we must define $\wt{\eta}$ on morphisms in $\Pi(X)$, i.e.\ paths. If a path $\gamma$ connecting $x$ to $y$ lies entirely in a particular $U_\alpha$, we again have only one choice: $\wt{\eta}([\gamma])=\eta_\alpha([\gamma])$. This is consistent (independent of $\alpha$) since $\mathscr{U}$ is closed under finite intersections.
+    Now we must define $\wt{\eta}$ on morphisms in $\Pi(X)$, i.e., paths. If a path $\gamma$ connecting $x$ to $y$ lies entirely in a particular $U_\alpha$, we again have only one choice: $\wt{\eta}([\gamma])=\eta_\alpha([\gamma])$. This is consistent (independent of $\alpha$) since $\mathscr{U}$ is closed under finite intersections.
 
     Now, any path $\gamma$ is the composite of finitely many paths $\gamma_i$, each of which lies in a single $U_{\alpha_i}$. Therefore we must define $\wt{\eta}([\gamma])=\wt{\eta}([\gamma_1])\bullet \cdots \bullet \wt{\eta}([\gamma_n])$. 
     
-    Clearly this definition will give the required unique morphism $\wt{\eta}$, provided that it is indeed well defined, i.e.\ respects the equivalence relation between paths. Thus suppose we have two equivalent paths $\gamma_0\sim \gamma_1$. The equivalence is given by a homotopy $\gamma_t$ through paths with the same fixed endpoints. This homotopy is a map defined on the square $[0,1]\times[0,1]$. We may subdivide the square into subsquares, each of which is mapped entirely into one of the $U_\alpha$'s. We may further choose this subdivision so that the resulting subdivision of $[0,1]\times\{0\}$ refines the subdivision used to decompose $\gamma_0$ into segments as above, and similarly for $\gamma_1$ and the resulting decomposition of $[0,1]\times \{1\}$. We see that the relation $[\gamma_0]=[\gamma_1]$ in $\Pi(X)$ is a consequence of a finite number of relations, each of which holds in one of the $\Pi(U_\alpha)$'s. Therefore $\wt{\eta}([\gamma_0])=\wt{\eta}([\gamma_1])$. This confirms that $\wt{\eta}$ is well defined and satisfies the universal property for pushouts.    
+    Clearly this definition will give the required unique morphism $\wt{\eta}$, provided that it is indeed well defined, i.e., respects the equivalence relation between paths. Thus suppose we have two equivalent paths $\gamma_0\sim \gamma_1$. The equivalence is given by a homotopy $\gamma_t$ through paths with the same fixed endpoints. This homotopy is a map defined on the square $[0,1]\times[0,1]$. We may subdivide the square into subsquares, each of which is mapped entirely into one of the $U_\alpha$'s. We may further choose this subdivision so that the resulting subdivision of $[0,1]\times\{0\}$ refines the subdivision used to decompose $\gamma_0$ into segments as above, and similarly for $\gamma_1$ and the resulting decomposition of $[0,1]\times \{1\}$. We see that the relation $[\gamma_0]=[\gamma_1]$ in $\Pi(X)$ is a consequence of a finite number of relations, each of which holds in one of the $\Pi(U_\alpha)$'s. Therefore $\wt{\eta}([\gamma_0])=\wt{\eta}([\gamma_1])$. This confirms that $\wt{\eta}$ is well defined and satisfies the universal property for pushouts.    
 \end{proof}
 From this, one can use an ``abstract nonsense'' argument to re-derive the original version of the theorem for the functor $\pi_1(-,x_0)$, see~\cite[\S 2.7]{May}.
 
@@ -2560,7 +2560,7 @@ The following is a straightforward consequence of the Seifert-van~Kampen Theorem
 \begin{example}
 \begin{enumerate}
     \item The shape $\ominus$ is a deformation retract of the figure 8, which itself is just the wedge sum $\bbS^1\vee \bbS^1$, so their fundamental groups are all $\bbZ\ast\bbZ$.
-    \item The last example can be generalized to compute $\pi_1$ of an arbitrary connected graph. The result is just the free group generated by the set of ``elementary'' cycles in the graph. More precisely, the number of generators equals the number of all edges of the graph minus the number of edges in a maximal spanning tree of the graph (i.e.\ a maximal subgraph without cycles).
+    \item The last example can be generalized to compute $\pi_1$ of an arbitrary connected graph. The result is just the free group generated by the set of ``elementary'' cycles in the graph. More precisely, the number of generators equals the number of all edges of the graph minus the number of edges in a maximal spanning tree of the graph (i.e., a maximal subgraph without cycles).
 \end{enumerate}
 \end{example}
 
@@ -2619,7 +2619,7 @@ The following is a straightforward consequence of the Seifert-van~Kampen Theorem
 \begin{defn}[Paracompactness]\index{Paracompact space}
 \begin{enumerate}
     \item A collection of subsets $A_\alpha, \alpha \in I,$ of $X$ is called locally finite if every $x\in X$ has an open neighborhood $U_x$ such that $U_x\cap A_\alpha \neq \varnothing$ only for a finite number of $\alpha$'s. If all $A_\alpha$'s are open, this is the same as $x$ being an element of only finitely many of them.
-    \item Given an open covering $\{U_\alpha\}$ (i.e.\ a collection of open sets such that $\bigcup_\alpha U_\alpha=X$), a refinement of it is an open covering $\{V_\beta \}$ such that $\forall \beta \;\exists \alpha: V_\beta \subset U_\alpha $.
+    \item Given an open covering $\{U_\alpha\}$ (i.e., a collection of open sets such that $\bigcup_\alpha U_\alpha=X$), a refinement of it is an open covering $\{V_\beta \}$ such that $\forall \beta \;\exists \alpha: V_\beta \subset U_\alpha $.
     \item $X$ is called paracompact if every open covering of $X$ admits an open, locally finite refinement.
 \end{enumerate}
 \end{defn}
@@ -2634,7 +2634,7 @@ The following proposition is the reason why second countability is often substit
     See \cite[Thm. 1.15]{Lee}
 \end{proof}
 \begin{defn}[Charts]\index{Chart}
-    Let $X$ be an $n$-dimensional topological manifold. A \emph{chart} on it is a pair $(U,\varphi)$, where $U\subset X$ is an open set and $\varphi:U\to \bbR^n$ is a continuous map (called the chart map) that is also a homeomorphism onto its image $\wh{U}=\varphi (U)$, i.e.\ $U\cong \varphi(U)=\wh{U}$. The chart is called a \emph{coordinate ball} if $\wh U$ is a ball in $\bbR^n$. The values $\bf{x}=\varphi(x)\in\bbR^n$ of $\varphi$ are called \emph{coordinates} of the corresponding points on $X$. Hence, sometimes we will write $(U,\bf{x})$ to denote the chart.
+    Let $X$ be an $n$-dimensional topological manifold. A \emph{chart} on it is a pair $(U,\varphi)$, where $U\subset X$ is an open set and $\varphi:U\to \bbR^n$ is a continuous map (called the chart map) that is also a homeomorphism onto its image $\wh{U}=\varphi (U)$, i.e., $U\cong \varphi(U)=\wh{U}$. The chart is called a \emph{coordinate ball} if $\wh U$ is a ball in $\bbR^n$. The values $\bf{x}=\varphi(x)\in\bbR^n$ of $\varphi$ are called \emph{coordinates} of the corresponding points on $X$. Hence, sometimes we will write $(U,\bf{x})$ to denote the chart.
 \end{defn}
 \begin{rem}
     Since $X$ is locally Euclidean, every point $x$ automatically has a chart $(U_x,\varphi)$ around it. In particular, every manifold has an open covering by charts $(U_\alpha,\varphi_\alpha)$.
@@ -2644,13 +2644,13 @@ The following proposition is the reason why second countability is often substit
 \begin{enumerate}[label=(\alph*)]
     \item There is a countable basis consisting of coordinate balls (it can also be made locally finite and every ball can be made precompact)
     \item Local compactness.
-    \item Local path-connectedness (i.e.\ every point has a path-connected neighborhood).
+    \item Local path-connectedness (i.e., every point has a path-connected neighborhood).
     \item At most countably many connected components, each open and a topological manifold of its own.
     \item The fundamental group $\pi_1(X)$ is at most countable.
 \end{enumerate}
 \end{thm}
 \begin{proof}
-    (1,2): Pick an open covering by charts $\{U_\alpha\}$. Each $U_\alpha $ can be covered by countably many coordinate balls $V_{\alpha_i}$ because $\wh{U}_\alpha$ can be covered by countably many balls in $\bbR^n$. By second countability, there is a countable subcovering and basis $\{V_\beta\}$. Fixing a chart $U$ and covering it by coordinate balls $V_\alpha$, we have that $\xoverline{V}_\beta$ is compact in $U$ (because it's homeomorphic to a closed ball), therefore closed in $X$ by Hausdorffness. Therefore it's also compact in $X$, i.e.\ $V_\beta$'s are precompact. The covering can also be made locally finite: let $\{K_i\}_{i=1}^\infty$ be an exhaustion of $M$ by compact sets (i.e.\ $\bigcup_i K_i=M$; we will prove the existence in Prop. \ref{prop.exhaustion}). After picking out a finite subcovering of every compact ``stripe'' $K_{i+1}\setminus \Int K_{i}$ by charts that are small enough to fit within the wider open ``stripe'' $\Int K_{i+2}\setminus K_{i-1}$ (possible because all charts still form a basis), we end up with a locally finite covering (since every point of the manifold is contained only in 3 of the open stripes).
+    (1,2): Pick an open covering by charts $\{U_\alpha\}$. Each $U_\alpha $ can be covered by countably many coordinate balls $V_{\alpha_i}$ because $\wh{U}_\alpha$ can be covered by countably many balls in $\bbR^n$. By second countability, there is a countable subcovering and basis $\{V_\beta\}$. Fixing a chart $U$ and covering it by coordinate balls $V_\alpha$, we have that $\xoverline{V}_\beta$ is compact in $U$ (because it's homeomorphic to a closed ball), therefore closed in $X$ by Hausdorffness. Therefore it's also compact in $X$, i.e., $V_\beta$'s are precompact. The covering can also be made locally finite: let $\{K_i\}_{i=1}^\infty$ be an exhaustion of $M$ by compact sets (i.e., $\bigcup_i K_i=M$; we will prove the existence in Prop. \ref{prop.exhaustion}). After picking out a finite subcovering of every compact ``stripe'' $K_{i+1}\setminus \Int K_{i}$ by charts that are small enough to fit within the wider open ``stripe'' $\Int K_{i+2}\setminus K_{i-1}$ (possible because all charts still form a basis), we end up with a locally finite covering (since every point of the manifold is contained only in 3 of the open stripes).
 
     (3) is obvious because it holds for balls. (4) follows because second countability implies countable number of components. The rest is obvious. For (5) see \cite[Thm.~1.16]{Lee}.
 \end{proof}
@@ -2703,7 +2703,7 @@ Throughout these notes we also adopt the notation where for any atlas as above, 
 \end{rem}
 
 \begin{rem}
-    Given a manifold with one type of structure, e.g.\ a topological manifold, we might be able to find more special structures compatible with the given one. Compatibility here means that the atlas defining the latter structure is a subset of the former. For example, given a $C^1$-manifold, its atlas might (and, as it turns out, always does) contain a sub-atlas whose transition maps are of class $C^2$. In general there might be multiple non-equivalent sub-atlases of any required type, but a theorem of Whitney shows that every $C^1$-manifold has a unique compatible real analytic structure (a similar statement does not hold for topological manifolds). We will encounter this idea many times throughout this book: fiber bundles, Lie groups, and more general Cartan geometries can all be defined using special atlases compatible with the original structure.
+    Given a manifold with one type of structure, e.g., a topological manifold, we might be able to find more special structures compatible with the given one. Compatibility here means that the atlas defining the latter structure is a subset of the former. For example, given a $C^1$-manifold, its atlas might (and, as it turns out, always does) contain a sub-atlas whose transition maps are of class $C^2$. In general there might be multiple non-equivalent sub-atlases of any required type, but a theorem of Whitney shows that every $C^1$-manifold has a unique compatible real analytic structure (a similar statement does not hold for topological manifolds). We will encounter this idea many times throughout this book: fiber bundles, Lie groups, and more general Cartan geometries can all be defined using special atlases compatible with the original structure.
 \end{rem}
 
 \begin{example}
@@ -2727,7 +2727,7 @@ From now on we work only with smooth manifolds, and use the word ``manifold''  t
     The above exercise illustrates the general alternative approach to manifolds: instead of defining a smooth structure in terms of charts, we could describe it by specifying \emph{what smooth functions should be} by describing the subsets of the sets of local continuous functions $C(U_\alpha)$ that we want to be smooth (more precisely, one has to pick a subsheaf of the sheaf of continuous functions that is locally isomorphic to the sheaf of smooth functions on $\bbR^n$).
 \end{rem}
 \begin{defn}[Manifolds with boundaries]\index{Manifold!with boundaries/corners}
-    Let $\bbR_+^n$ be the closed upper half-space in $\bbR^n$ (i.e.\ $x^n\geq 0$). An $n$-dimensional manifold with boundaries is defined just like a smooth manifold, only now some of the chart maps can map to $\bbR_+^n$. The smoothness of boundary transitions is characterized as follows: any function $\bbR_+^n\to \bbR_+^n$ is called smooth if it can be extended as a smooth function into an open neighborhood of $\bbR_+^n$. The set of points of $M$ that map to the boundary of $\bbR_+^n\subset \bbR^n$, i.e.\ the hyperplane $x^n=0$, is called the boundary $\partial M$. We also denote the interior by $\mathring M=M\setminus \partial M$.
+    Let $\bbR_+^n$ be the closed upper half-space in $\bbR^n$ (i.e., $x^n\geq 0$). An $n$-dimensional manifold with boundaries is defined just like a smooth manifold, only now some of the chart maps can map to $\bbR_+^n$. The smoothness of boundary transitions is characterized as follows: any function $\bbR_+^n\to \bbR_+^n$ is called smooth if it can be extended as a smooth function into an open neighborhood of $\bbR_+^n$. The set of points of $M$ that map to the boundary of $\bbR_+^n\subset \bbR^n$, i.e., the hyperplane $x^n=0$, is called the boundary $\partial M$. We also denote the interior by $\mathring M=M\setminus \partial M$.
 \end{defn}
 \begin{example}
     $\sqrt{y}:\bbR_+\to\bbR $ is not smooth on $\bbR_+$ with the standard smooth structure. However, it can be taken to be the chart map defining a new smooth structure on $\bbR_+$, and in that new structure it'll become smooth, because its local representative will be the identity map.
@@ -2765,7 +2765,7 @@ From now on we work only with smooth manifolds, and use the word ``manifold''  t
 
 \subsection{Partitions of unity}
 
-First we note that on $\bbR^n$ there exist bump functions, i.e.\ for any point $x_0$ and any two radii $0<r_1<r_2$ there is a function $\eta\in C^\infty(\bbR^n)$ such that $\restr{\eta}{B_{r_1}(x_0)}=1$ and $\restr{\eta}{\bbR^n\setminus \overline{B_{r_2}}(x_0)}=0$.
+First we note that on $\bbR^n$ there exist bump functions, i.e., for any point $x_0$ and any two radii $0<r_1<r_2$ there is a function $\eta\in C^\infty(\bbR^n)$ such that $\restr{\eta}{B_{r_1}(x_0)}=1$ and $\restr{\eta}{\bbR^n\setminus \overline{B_{r_2}}(x_0)}=0$.
 \begin{xca}
     Using the function $\int_a^x \rme^{\frac{1}{(x'-a)(b-x')}} \dd x'$ defined on $(a,b)$, construct a general bump function for $\bbR^n$.
 \end{xca}
@@ -2779,7 +2779,7 @@ This expression is well-defined because the sum in the denominator is finite for
     \item $\chi_\alpha\in C^\infty(M)$,
     \item $0\leq \chi_\alpha\leq 1$,
     \item $\supp \chi_\alpha\subset U_\alpha$,
-    \item $\{\chi_\alpha\}$ is locally finite, i.e.\ only finitely many of them are nonzero at any given point $x\in M$,
+    \item $\{\chi_\alpha\}$ is locally finite, i.e., only finitely many of them are nonzero at any given point $x\in M$,
     \item $\sum_\alpha \chi_\alpha (x)\equiv 1$.
 \end{enumerate}
 
@@ -2806,7 +2806,7 @@ This expression is well-defined because the sum in the denominator is finite for
     Then $\{U_p\}_{p\in A}\cup \{M\setminus A\}$ is an open covering of $M$. Let $\{\chi_p\}\cup\{\chi_0\}$ be a \gls{pou} subordinate to this covering (and $\chi_p=0$ inevitably for almost all $p$ so that the resulting collection is locally finite). Therefore $\chi_p\cdot \wt{f}_p:U_p\to\bbR^k$ are smooth and vanishing at the boundary of $U_p$, which allows us to extend them by zeros to smooth functions on all $M$. Finally, $\wt{f}=\sum_{p\in A} \chi_p \wt{f}_p$ is the extension we seek with support inside $U$.
 \end{proof}
 \begin{defn}[Exhaustion function]\index{Exhaustion}
-    A function $f\in C^\infty(M)$ is called an exhaustion function for $M$ if for every $c\in\bbR $ the pre-image $f^{-1}((-\infty,c])$ is relatively compact (i.e.\ has compact closure in $M$).
+    A function $f\in C^\infty(M)$ is called an exhaustion function for $M$ if for every $c\in\bbR $ the pre-image $f^{-1}((-\infty,c])$ is relatively compact (i.e., has compact closure in $M$).
 \end{defn}
 \begin{prop}\label{prop.exhaustion}
     Every smooth manifold has an exhaustion function.
@@ -2845,7 +2845,7 @@ The main property of regular values of smooth maps is that they are generic, as 
     For any $f\in C^\infty(N,M)$ the set of critical values (also known in some contexts as the \emph{caustic}) of $f$ has measure zero in $M$.
 \end{thm}
 \begin{proof}
-    This theorem is essentially entirely local, i.e.\ it suffices to prove it for $N=\bbR^n$ and $M=\bbR^m$. Every manifold can be broken up into a countable number of neighborhoods, and a countable union of sets of measure zero is still measure zero.
+    This theorem is essentially entirely local, i.e., it suffices to prove it for $N=\bbR^n$ and $M=\bbR^m$. Every manifold can be broken up into a countable number of neighborhoods, and a countable union of sets of measure zero is still measure zero.
 
     Let $C\subset \bbR^m$ be the set of critical points of $f:\bbR^n\to \bbR^m$ and pick $x_0\in C$. Then, after some rotation of the space, we can assume that its derivative maps $f'_{x_0}(\bbR^n)=\bbR^k\times \{0\}\subset \bbR^m$, where $k\leq n-1$ is the rank of the Jacobi matrix at $x_0$.  If we choose a ball $B_r(x_0)$ of radius $r$ around $x_0$, then
     \[f'_{x_0}(B_r(x_0))\subset (\bbR^k\times \{0\})\cap B_\epsilon(f(x_0)),\quad \epsilon=r\cdot \mathrm{Lip}f,\]
@@ -2911,7 +2911,7 @@ Meaning: the equation $\Phi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for $\b
 
 
 \begin{defn}[Tangent vector II]
-    $\T_m  M$ can be alternatively defined as the set of all \emph{derivations}\index{Derivation} at $m$, i.e.\ linear functionals $v:C^\infty(M)\to \bbR $ such that $v[f\cdot g]=f(m)v[g]+g(m)v[f]$. This is obviously a vector space. Notably, this definition doesn't need to be modified if $m\in\partial M$.
+    $\T_m  M$ can be alternatively defined as the set of all \emph{derivations}\index{Derivation} at $m$, i.e., linear functionals $v:C^\infty(M)\to \bbR $ such that $v[f\cdot g]=f(m)v[g]+g(m)v[f]$. This is obviously a vector space. Notably, this definition doesn't need to be modified if $m\in\partial M$.
 \end{defn}
 
 \begin{prop}
@@ -2925,7 +2925,7 @@ Meaning: the equation $\Phi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for $\b
 
 
 \begin{xca}
-    Check that the definition of a tangent vector and all of the following constructions are consistent, i.e.\ independent of the choices of charts $\varphi_\alpha$ or representatives $\gamma(t)$ of equivalence classes.
+    Check that the definition of a tangent vector and all of the following constructions are consistent, i.e., independent of the choices of charts $\varphi_\alpha$ or representatives $\gamma(t)$ of equivalence classes.
     \end{xca}
     \begin{defn}[Differential/push-forward]\index{Push-forward}
     Let $F\in C^\infty(M,N)$ and $p\in M$. The push-forward, or the \emph{derivative}, of $F$ at $m$ is the linear map $F_{\ast m}:T_m M\to T_{F(m)} N$ defined via \[F_{\ast m}([\gamma]_m)=[F\circ\gamma]_{F(m)},\] or equivalently \[F_{\ast m}(v)[f]=v[f\circ F]\] for any $f\in C^\infty (N)$.
@@ -2990,7 +2990,7 @@ Recall that for a matrix $A\in \Mat(n\times m,\bbR )$ its rank $\rank A$ is defi
 \end{proof}
 
 \begin{prop}\label{domain of maximal rank}
-    For any smooth map $f\in C^\infty (M,N)$ the set of points $m\in M$ where the rank is maximal, i.e.\ $\rank_m f=\min(\dim M,\dim N)$, is open in $M$.
+    For any smooth map $f\in C^\infty (M,N)$ the set of points $m\in M$ where the rank is maximal, i.e., $\rank_m f=\min(\dim M,\dim N)$, is open in $M$.
 \end{prop}
 \begin{proof}
     Let $\dim M=k$ and $\dim N=n$. The mapping $D:m\mapsto \wh{f}_{\ast m}$ is a continuous (in fact, smooth) map $U_\alpha\subset M\to \Mat(n\times k,\bbR )$. The subset of all matrices of maximal rank is open in $\Mat(n\times k,\bbR )$ (essentially because small perturbations can't make linearly independent vectors dependent\footnote{The converse is not true, which is why the set of matrices of any fixed non-maximal rank is not open.}). By continuity of $D$, the set of $m$ at which the rank is maximal is also open (in every $U_\alpha$ and thus in all of $M$).
@@ -3022,7 +3022,7 @@ Let $f\in C^\infty(M,N)$ have constant rank $r$. Then
 \begin{proof}
 \begin{enumerate}
     \item Suppose it is not an immersion. Then $r<\dim M$, which means that in some coordinates we have $\wh{f}(0,\ldots,0,\epsilon)=(0,\ldots,0)$ for all sufficiently small $\epsilon$. This contradicts injectivity.
-    \item Suppose it is not a submersion. Then $r<\dim N$. There exists a (countable) open covering  $\{U_\alpha\}$ of $M$ such that $f(U_\alpha)$ are ball-slices $B^n\cap \{y^{r+1}=y^{r+2}=\cdots=y^n=0\}$. We have $f(M)=\cup_\alpha f(U_\alpha)$, but at the same time $f(U_\alpha)$'s are \emph{nowhere dense} (i.e.\ closure has empty interior). By \href{https://en.wikipedia.org/wiki/Baire_category_theorem}{Baire category theorem}, a countable union of nowhere dense sets has an empty interior, which implies $\Int  f(M)=\varnothing$. This contradicts surjectivity, because $\Int  N\neq\varnothing$.
+    \item Suppose it is not a submersion. Then $r<\dim N$. There exists a (countable) open covering  $\{U_\alpha\}$ of $M$ such that $f(U_\alpha)$ are ball-slices $B^n\cap \{y^{r+1}=y^{r+2}=\cdots=y^n=0\}$. We have $f(M)=\cup_\alpha f(U_\alpha)$, but at the same time $f(U_\alpha)$'s are \emph{nowhere dense} (i.e., closure has empty interior). By \href{https://en.wikipedia.org/wiki/Baire_category_theorem}{Baire category theorem}, a countable union of nowhere dense sets has an empty interior, which implies $\Int  f(M)=\varnothing$. This contradicts surjectivity, because $\Int  N\neq\varnothing$.
     \item Obvious (a bijective local diffeomorphism is a diffeomorphism).
 \end{enumerate}
 \end{proof}
@@ -3079,7 +3079,7 @@ An injective immersion $f\in C^\infty (M,N)$ is a smooth embedding if any of the
 \end{prop}
 
 \begin{thm}[Local embedding theorem {{\cite[Thm.~4.25]{Lee}}}]\label{thm.local embedding}
-$f\in C^\infty (M,N)$ is an immersion iff it is a local embedding (i.e.\ every point in $M$ has a neighborhood on which the restriction of $f$ becomes an embedding). 
+$f\in C^\infty (M,N)$ is an immersion iff it is a local embedding (i.e., every point in $M$ has a neighborhood on which the restriction of $f$ becomes an embedding). 
 \end{thm}
 
 \begin{comment}
@@ -3110,7 +3110,7 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 \begin{example}\label{example submanifolds}
 \begin{enumerate}
     \item Any open subset is a codimension zero embedded submanifold.
-    \item If $F:M\to N$ is an embedding, then $F(M)\sub N$ in the subset sense. i.e.\ embedded submanifolds inside $N$ are exactly the images of embedding maps.
+    \item If $F:M\to N$ is an embedding, then $F(M)\sub N$ in the subset sense. i.e., embedded submanifolds inside $N$ are exactly the images of embedding maps.
     \item If $S\sub M$ as a subset, then $S$ is closed iff $S\sube M$.
     \item If $S\sub M$ and $S$ is compact, then $S\sube M$.
     \item  The figure eight immersion $t\mapsto (\sin 2t,\sin t)$ is a weak embedding but not an embedding.
@@ -3156,7 +3156,7 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
     Each level set of a smooth submersion $f:M\to N$ is properly embedded and of dimension $\dim N$.
 \end{cor}
 \begin{cor}[Regular level set theorem]
-    Every regular level set (i.e.\ level set of a regular value) of a smooth map $f:M\to N$ is a properly embedded submanifold of codimension $\dim N$.
+    Every regular level set (i.e., level set of a regular value) of a smooth map $f:M\to N$ is a properly embedded submanifold of codimension $\dim N$.
 \end{cor}
 \begin{proof}
     Since the set of all regular points, being the set of points where $f_{\ast}$ has maximal rank, is open (Proposition~\ref{domain of maximal rank}), the level set is contained in it together with an open neighborhood $U$ of itself: $f^{-1}(q)\subset U\subset M$. Then $\restr{f}{U}$ is a smooth submersion and we can use the last Corollary.
@@ -3164,8 +3164,8 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 
 \begin{prop}
 \begin{enumerate}
-    \item All embedded submanifolds $S\subset M$ have local defining functions, i.e.\ $\varphi:C^\infty((U\subset M, \bbR )$ such that $\varphi^{-1}(0)=S\cap U$.
-    \item An immersion is a local embedding (i.e.\ its restriction to a sufficiently small neighborhood $U\subset S$ of a point $m\in S$ is an embedding\footnote{Not true for sufficiently small neighborhoods $V\subset M$ of $m\in S\subset M$ that the restriction of the immersion to $S\cap V$ becomes an embedding!}).
+    \item All embedded submanifolds $S\subset M$ have local defining functions, i.e., $\varphi:C^\infty((U\subset M, \bbR )$ such that $\varphi^{-1}(0)=S\cap U$.
+    \item An immersion is a local embedding (i.e., its restriction to a sufficiently small neighborhood $U\subset S$ of a point $m\in S$ is an embedding\footnote{Not true for sufficiently small neighborhoods $V\subset M$ of $m\in S\subset M$ that the restriction of the immersion to $S\cap V$ becomes an embedding!}).
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -3189,7 +3189,7 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 \end{proof}
 
 \begin{xca}
-Show that the two parts of the last theorem are in fact sufficient, i.e.\ they are criteria for $S$ being embedded or properly embedded, respectively.
+Show that the two parts of the last theorem are in fact sufficient, i.e., they are criteria for $S$ being embedded or properly embedded, respectively.
 \end{xca}
 
 \begin{thm}[Restrictions to submanifolds {{\cite[Thms.~5.27-30]{Lee}}}]\label{thm 5.27 Lee}\label{thm restrictions to submfds}
@@ -3264,7 +3264,7 @@ We will now show that smooth submersions are the exact analog of topological sub
     For the backward direction, let $m\in M$ and find a local section $\sigma$ such that $m\in \sigma(U)$. Then $m=\sigma(q)$ for some $q\in N$ and $\pi\circ\sigma=\id_U$. Therefore, by taking the differential, $\pi_{\ast m} \sigma_{\ast q}=\id_{T_q N}$, which implies that $\pi_\ast$ is surjective.
     \end{proof}
     
-    Next we would like to find the smooth analog for the concept of a quotient map. Recall that a \emph{topological quotient map} is a surjective, strongly continuous map (i.e.\ $V$ is open iff $f^{-1}(V)$ is open). Openness implies strong continuity, thus open surjective maps are necessarily quotient maps, but not every topological quotient map is open (e.g.\ the gluing $\bbD^n\slash \partial \bbD^n$ of the boundary of a ball that gives a sphere is not open). In fact, a surjective continuous map $q$ is a quotient map iff it takes open sets that are unions of fibers of $q$ to open sets. However, these subtleties turns out to be irrelevant in the smooth case as the natural smooth analogs of surjective continuous maps, \emph{submersions}, turn out to be open by the following proposition.
+    Next we would like to find the smooth analog for the concept of a quotient map. Recall that a \emph{topological quotient map} is a surjective, strongly continuous map (i.e., $V$ is open iff $f^{-1}(V)$ is open). Openness implies strong continuity, thus open surjective maps are necessarily quotient maps, but not every topological quotient map is open (e.g., the gluing $\bbD^n\slash \partial \bbD^n$ of the boundary of a ball that gives a sphere is not open). In fact, a surjective continuous map $q$ is a quotient map iff it takes open sets that are unions of fibers of $q$ to open sets. However, these subtleties turns out to be irrelevant in the smooth case as the natural smooth analogs of surjective continuous maps, \emph{submersions}, turn out to be open by the following proposition.
     
     \begin{prop}\label{thm submersions are open quotient maps}
     Any smooth surjective submersion is an open topological quotient map.
@@ -3275,7 +3275,7 @@ Call the map in question $\pi$. Let $W\mathring{\subset} M$ be an open set and $
 We have thus proved that a smooth submersion is open. A surjective submersion is then a topological quotient map.
 \end{proof}
 
-This result motivates the definition of quotient maps in the smooth category $\mathsf{Man}^\infty$. Namely, we only need to require the submersion property (i.e.\ ``infinitesimal surjectivity'') on top of simple surjectivity. By the above result, there is no need to require them to be topological quotient maps.
+This result motivates the definition of quotient maps in the smooth category $\mathsf{Man}^\infty$. Namely, we only need to require the submersion property (i.e., ``infinitesimal surjectivity'') on top of simple surjectivity. By the above result, there is no need to require them to be topological quotient maps.
 
 \begin{defn}[Smooth quotient map]\index{Quotient map!in smooth category}
 A \emph{smooth} quotient map is a surjective submersion.
@@ -3385,7 +3385,7 @@ The uniqueness part of this property is special to covering spaces. In topology,
     If $\gamma_0\sim \gamma_1$ are two paths homotopic in $M$ and $\wt{\gamma}_0$, $\wt{\gamma}_1$ are their respective lifts in the covering space $\pi:E\to M$, then their endpoints coincide, $\wt{\gamma}_0(1)=\wt{\gamma}_1(1)$, and $\wt{\gamma}_0$ and $\wt{\gamma}_1$ are homotopic with fixed endpoints.
 \end{cor}
 \begin{cor}
-    Let $\pi:E\to M$ be a covering map. If $\gamma$ is a trivial loop (i.e.\ homotopic to a constant loop) in $M$ then any lifting of $\gamma$ to a path in $E$ is also a trivial loop.
+    Let $\pi:E\to M$ be a covering map. If $\gamma$ is a trivial loop (i.e., homotopic to a constant loop) in $M$ then any lifting of $\gamma$ to a path in $E$ is also a trivial loop.
 \end{cor}
 
 All of these properties of covering maps with respect to homotopies allow us to pass instead to equivalence classes of homotopic paths, which will transform the study of covering spaces as topological objects into the study of their algebraic functors, namely the fundamental group. 
@@ -3396,7 +3396,7 @@ All of these properties of covering maps with respect to homotopies allow us to 
     If $\gamma$ is a loop in $M$ based at $x_0$ which lifts to a loop in $E$ based at $p_0$ then any loop homotopic to $\gamma$ with fixed endpoints also lifts to a loop in $E$ based at $p_0$.  That is, lifting to a loop is a property of the class $[\gamma]\in\pi_1(M,x_0)$.
 \end{cor}
 \begin{cor}[{{\cite[Cor.~3.9]{Bredon}}}]\label{cor 3.9 Bredon}
-    If a Hausdorff, path-connected, and locally path-connected space $M$ has a nontrivial covering space (i.e.\ one which is not just a direct product of $M$ with a discrete space) then $\pi_1(M,x_0)\neq 1$.
+    If a Hausdorff, path-connected, and locally path-connected space $M$ has a nontrivial covering space (i.e., one which is not just a direct product of $M$ with a discrete space) then $\pi_1(M,x_0)\neq 1$.
 \end{cor}
 \begin{proof}
     Let $p_0,p_1$ be two points in the fiber above $x_0$ and let $\gamma $ be a path between them. The  $\pi\circ \gamma$ is a loop in $M$ which does not lift to a loop in $E$. Then  by Corollary~\ref{cor 3.7 Bredon} it follows that $[\pi\circ \gamma]\in\pi_1(M,x_0)$ is not in the image of $\pi_1(E,p_0)$ and hence it is a nontrivial element.
@@ -3493,7 +3493,7 @@ Aside from homotopies, one can try to lift arbitrary mappings into the base spac
 
 
 \begin{defn}[Category of covering spaces]
-The category $\mathsf{Cov}_M$ of covering spaces of a given base $M$ (say, topological covering spaces) consists of all covering spaces of $M$. The morphisms between two covering spaces $\pi$ and $\pi'$ are morphisms $f:E\to E'$ that ``map fibers to fibers'', i.e.\ $\pi'\circ f=\pi$, or equivalently if the following triangle commutes:
+The category $\mathsf{Cov}_M$ of covering spaces of a given base $M$ (say, topological covering spaces) consists of all covering spaces of $M$. The morphisms between two covering spaces $\pi$ and $\pi'$ are morphisms $f:E\to E'$ that ``map fibers to fibers'', i.e., $\pi'\circ f=\pi$, or equivalently if the following triangle commutes:
 \[
 \begin{tikzcd}[every matrix/.append style={name=m},   
 execute at end picture={\draw [<-] ([xshift=0mm,yshift=-2mm]m-2-2.north) arc[start angle=-90,delta angle=-270,radius=0.25cm];}]
@@ -3527,7 +3527,7 @@ execute at end picture={\draw [<-] ([xshift=0mm,yshift=-2mm]m-2-2.north) arc[sta
 This implies that all simply connected covering spaces of a given base space $M$ are isomorphic in the category $\mathsf{Cov}_{\bullet M}$. Such covering spaces are called \emph{universal}, and are guaranteed to exist under the following mild restriction.
 
 \begin{defn}[Locally relatively simply connected space]
-    A space $X$ is locally relatively simply connected (or semilocally simply connected) if each point has a neighborhood $U$ such that all loops inside of $U$ are homotopically trivial in $X$ (i.e.\ for any $u\in U$ the homomorphism $\pi_1(U,u)\to \pi_1(X,u)$ is trivial).
+    A space $X$ is locally relatively simply connected (or semilocally simply connected) if each point has a neighborhood $U$ such that all loops inside of $U$ are homotopically trivial in $X$ (i.e., for any $u\in U$ the homomorphism $\pi_1(U,u)\to \pi_1(X,u)$ is trivial).
 \end{defn}
 
 One can show that the existence of a simply connected covering space is equivalent to $M$ being locally relatively simply connected (see~\cite[Theorem~8.4]{Bredon}). Since we are mostly interested in manifolds, we will only prove the existence. Let us only work with connected, locally simply connected spaces (in particular, connected manifolds).
@@ -3567,7 +3567,7 @@ Corollaries~\ref{cor 4.5 Bredon} and \ref{cor 4.6 Bredon} can now be restated in
     \;
     \begin{enumerate}
        \item Any morphism of covering spaces is itself a covering map;
-        \item If $M$ is a topological manifold (or any space that has a universal covering space), then $\wt{M}$ is the initial object in the category $\mathsf{Cov}_{\bullet M}$ of pointed covering spaces of $M$ (i.e.\ objects are $E\overset\pi\to M$ with a basepoint $p_0\in E$ and morphisms must respect the basepoints).
+        \item If $M$ is a topological manifold (or any space that has a universal covering space), then $\wt{M}$ is the initial object in the category $\mathsf{Cov}_{\bullet M}$ of pointed covering spaces of $M$ (i.e., objects are $E\overset\pi\to M$ with a basepoint $p_0\in E$ and morphisms must respect the basepoints).
     \end{enumerate}
 \end{cor}
 
@@ -3583,7 +3583,7 @@ In the category of non-pointed covering spaces, the universal cover is not an in
     \]
     In other words, right actions are the same thing as left actions on the opposite group $G^{\mathrm{op}}$. For this reason right actions are usually written as $x\cdot g=\Phi_g(x)$ and left actions as $g\cdot x=\Phi_g(x)$. The sets $G(x)=\Phi_x(G)$ are called \emph{orbits}.
 \end{defn}
-In the topological and smooth categories one usually considers continuous or smooth group actions, provided $G$ is a Lie group, but we will delay that discussion until \S\ref{sec: Lie group actions}. For now $G$ will always be a discrete group (i.e.\ a group with discrete topology), so any condition of continuity or smoothness on the action is simply a condition on each $\Phi_g$ individually.
+In the topological and smooth categories one usually considers continuous or smooth group actions, provided $G$ is a Lie group, but we will delay that discussion until \S\ref{sec: Lie group actions}. For now $G$ will always be a discrete group (i.e., a group with discrete topology), so any condition of continuity or smoothness on the action is simply a condition on each $\Phi_g$ individually.
 
 \begin{defn}[$G$-equivariant maps]\index{Equivariant maps}\index{$G$-Set}
     The category of sets (spaces, manifolds) carrying a (left) action of $G$ is called $G\mathsf{-Set}$. Morphisms in this category are maps $f:X\to Y$ such that for all $g\in G$, $f(g\cdot x)=g\cdot f(x)$. These maps are called $G$-equivariant. Similarly, $G\mathsf{-Set}_\bullet$ consists of pointed sets with equivariant maps that respect basepoints. 
@@ -3592,7 +3592,7 @@ In the topological and smooth categories one usually considers continuous or smo
     Given a group $G$ acting on a set $X$, and a point $x\in X$, the stabilizer of $x$ is defined as the subgroup $G_x=\{g\in G\mid \Phi(g,x)=x\}$.
 \end{defn}
 \begin{defn}[Transitive action]
-    An action $\Phi$ is called transitive if it has only one orbit, i.e.\ for each pair $x,y\in X$ there is an $g\in G$ such that $\Phi(g,x)=y$.
+    An action $\Phi$ is called transitive if it has only one orbit, i.e., for each pair $x,y\in X$ there is an $g\in G$ such that $\Phi(g,x)=y$.
 \end{defn}
 \begin{defn}[Simply transitive action]
     An action $\Phi$ is called simply transitive if for each pair $x,y\in X$ there is a \emph{unique} element $g\in G$ such that $\Phi(g,x)=y$.
@@ -3621,13 +3621,13 @@ Let $p\in F$ and let $g\in G$ be an element represented by a loop $\gamma :I\to 
 By Corollary~\ref{cor 3.5 Bredon} this does not depend on the choice of $\gamma$ and thus is a well-defined map $\Phi:F\times G\to F$. Now we can check some properties of this function:
 \begin{enumerate}
     \item $x\cdot e=x$.
-    \item $(x\cdot g)\cdot h=x\cdot (gh)$, i.e.\ it is a right action (because the product of two loops $gh$ corresponds to the application of $\Phi_g$ and then $\Phi_h$).
-    \item $E$ is connected iff this action is transitive (i.e.\ there is only one orbit, $p\cdot G=F$). To see this, pick a path in $E$ from $p_0$ to another $p\in F$. This projects onto a loop $\gamma$ in $M$ and $g=[\gamma]$ provides the required element: $p_0\cdot p=p$. Conversely, if $E$ is not connected, the action is obviously not transitive.
+    \item $(x\cdot g)\cdot h=x\cdot (gh)$, i.e., it is a right action (because the product of two loops $gh$ corresponds to the application of $\Phi_g$ and then $\Phi_h$).
+    \item $E$ is connected iff this action is transitive (i.e., there is only one orbit, $p\cdot G=F$). To see this, pick a path in $E$ from $p_0$ to another $p\in F$. This projects onto a loop $\gamma$ in $M$ and $g=[\gamma]$ provides the required element: $p_0\cdot p=p$. Conversely, if $E$ is not connected, the action is obviously not transitive.
     \item The stabilizer of a point is $G_{p_0}=\{g\in G\mid p_0\cdot g=p_0\}$. Then 
     \[
         \boxed{G_{p_0}=\im \pi_\ast=\pi_\ast(\pi_1(E,p_0))}\label{stabilizer}
     \]
-    where $\pi_\ast:\pi_1(E,p_0)\to \pi_1(M,x_0)=G$ is the homomorphism induced by $\pi$. This is true because $g\in G_{x_0}$ iff $g=[\gamma]$ and $\gamma$ lifts to a loop at $p_0$, i.e.\ iff $g\in \im p_\ast$.
+    where $\pi_\ast:\pi_1(E,p_0)\to \pi_1(M,x_0)=G$ is the homomorphism induced by $\pi$. This is true because $g\in G_{x_0}$ iff $g=[\gamma]$ and $\gamma$ lifts to a loop at $p_0$, i.e., iff $g\in \im p_\ast$.
     \item Assuming $E$ is connected, the map $\phi: \ _{G_{p_0}}\bslash^{G}\to F$ taking the right coset $G_{x_0}g$ to $p_0\cdot (G_{p_0}g)=p_0\cdot g$ is a bijection.
 \end{enumerate}
 Obviously any covering space decomposes into a disjoint union of connected components, and the action of $\pi_1(M)$ is transitive on the fiber of each component separately. In what follows, we generally assume that $E$ is connected. In summary, we have the following theorem.
@@ -3638,7 +3638,7 @@ Obviously any covering space decomposes into a disjoint union of connected compo
     The number of sheets of a connected covering space equals the index (number of left or right cosets) of $G_{p_0}=\pi_\ast(\pi_1(E,p_0))$ in $G=\pi_1(M,x_0)$.
 \end{cor}
 \begin{cor}
-    If $\wt\pi:\wt M\to M$ is a universal covering map (i.e.\ $\wt M$ is simply connected), then the number of sheets equals the order (cardinality) of the group $\pi_1(M,p_0)$.
+    If $\wt\pi:\wt M\to M$ is a universal covering map (i.e., $\wt M$ is simply connected), then the number of sheets equals the order (cardinality) of the group $\pi_1(M,p_0)$.
 \end{cor}
 
 \begin{example}[Fundamental groups of real projective spaces]
@@ -3713,7 +3713,7 @@ From $(2)\Leftrightarrow(1)$ and the last part of the proof we have the followin
 \end{proof}
 
 \begin{rem}
-    It is worth providing some intuition for normalizers. If two points in a $G$-set belong to the same orbit, i.e.\ they can be mapped into each other by some elements of $G$, then their stabilizers are obviously conjugate subgroups of $G$.
+    It is worth providing some intuition for normalizers. If two points in a $G$-set belong to the same orbit, i.e., they can be mapped into each other by some elements of $G$, then their stabilizers are obviously conjugate subgroups of $G$.
 
     By definition, conjugation doesn't change a normal subgroup (as a set, not pointwise). Therefore if a stabilizer of a point is normal, then all other points in that orbit have the same exact stabilizer. In particular, this means that the only elements of the group which actually move the points in the orbit are the cosets of the normal stabilizer. Moreover, if you have two group elements from the same coset of this normal stabilizer, then they act on the orbit \emph{in the exact same manner}.
 \end{rem}
@@ -3884,13 +3884,13 @@ Thus for every right $G$-principal covering $\pi$ (over some base $B$) we have c
 
 The classification theorem~\ref{covering spaces category equivalence thm} can now be restated as follows.
 \begin{thm}[Classification of coverings III]
-     If a covering map $\pi:E\to B$ is universal (i.e.\ $E$ is simply connected), then it is also universal $\pi_1(B)$-principal (i.e.\ the functor $A(\pi)$ is an equivalence of categories).
+     If a covering map $\pi:E\to B$ is universal (i.e., $E$ is simply connected), then it is also universal $\pi_1(B)$-principal (i.e., the functor $A(\pi)$ is an equivalence of categories).
 \end{thm}
 
-In this sense, universal coverings are ``classifying objects'' for all other coverings. Now it is natural to ask whether the converse holds, i.e.\ whether every universal $G$-principal covering is the universal covering of some space $B$ such that $\pi_1(B)\cong G$. For this it suffices to show that any universal $G$-principal covering must be simply connected.
+In this sense, universal coverings are ``classifying objects'' for all other coverings. Now it is natural to ask whether the converse holds, i.e., whether every universal $G$-principal covering is the universal covering of some space $B$ such that $\pi_1(B)\cong G$. For this it suffices to show that any universal $G$-principal covering must be simply connected.
 
 \begin{prop}
-    Let $B$ be a space which admits a universal covering. If a right $G$-principal covering  $\pi:E\to B$ is universal, then $E$ is simply connected, i.e.\ $\pi$ is a universal covering of $B$.
+    Let $B$ be a space which admits a universal covering. If a right $G$-principal covering  $\pi:E\to B$ is universal, then $E$ is simply connected, i.e., $\pi$ is a universal covering of $B$.
 \end{prop}
 \begin{proof}
     First consider the group $G$ acting on itself from the left as a $G$-set. It is clear from the definition that the associated bundle $A(\pi)(G)$ is isomorphic to $\pi$ itself. Now consider any other covering $\pi':E'\to B$. By assumption, $A(\pi):G\mathsf{-Set}\to \mathsf{Cov}_B$ is an equivalence of categories, thus there exists a left $G$-set $F$ such that the covering $A(\pi)(F)$ is isomorphic to $\pi'$. Now pick a point $p_0\in F$. The action $G\acts F$ induces a $G$-equivariant map $g\mapsto g\cdot p_0$. This is a morphism $f:G\to F$ in the category of $G$-sets. Since $A(\pi)$ is a functor, $A(\pi)(f)$ is a morphism from $A(\pi)(G)$ to $A(\pi)(F)$. Since $A(\pi)$ is an equivalence of categories, there is a natural transformation that turns this morphism into a morphism from $\pi$ to $\pi'$. Therefore $\pi$ is an initial object in the category $\mathsf{Cov}_B$, and hence isomorphic to the universal covering.
@@ -3934,12 +3934,12 @@ Let $\pi:E\to B$ be a connected covering. The subgroup $\pi_\ast(\pi_1(E,p_0))\s
 \end{example}
 
 \begin{example}[Universal covers of graphs]
-    Let $M=\Gamma$ be a connected graph with $V$ vertices and $E$ edges, i.e.\ a topological space consisting of $E$ copies of the interval $[0,1]$ some of which are glued to each other at their ends. Such a graph always has a maximal tree, i.e.\ a subgraph of $\Gamma$ that is a tree and is not contained in any other sub-tree of $\Gamma$. One can show that a maximal tree must contain all vertices of $\Gamma$. Since every tree is a contractible topological space, by retracting a maximal tree of $\Gamma$ into one point we identify all vertices of $\Gamma$ into one point. This shows that $\Gamma$ is homotopy equivalent to the wedge sum of some number of circles, each corresponding to a cycle in the graph. Namely, the number $l$ of cycles in $\Gamma$ equals the number of edges in $\Gamma$ minus the number of edges in a maximal tree of $\Gamma$. This is also equal to $1-\chi(\Gamma)$, where $\chi(\Gamma)=V-E$ is the Euler characteristic. Then by Proposition~\ref{prop computing pi1}, $\pi_1(\Gamma)$  is a free group with $l$ generators. Finally, from the above results it is easy to see that $\wt{\Gamma}$ is the \href{https://en.wikipedia.org/wiki/Cayley_graph}{Cayley graph} of this free group, i.e.\ the graph whose vertices are all the elements of the group, and the edges incident to a vertex correspond to the generators of the group and their inverses. The vertex on the other end of an edge is the result of the multiplication of the current vertex by the edge's generator (say, from the right). In the case of a free group with $l$ generators, this is a regular tree whose root represents the identity element and each vertex has valency/degree (number of incident edges) equal to $l$. See Fig.~\ref{Fig. Cayley} for an example of a Cayley graph.
+    Let $M=\Gamma$ be a connected graph with $V$ vertices and $E$ edges, i.e., a topological space consisting of $E$ copies of the interval $[0,1]$ some of which are glued to each other at their ends. Such a graph always has a maximal tree, i.e., a subgraph of $\Gamma$ that is a tree and is not contained in any other sub-tree of $\Gamma$. One can show that a maximal tree must contain all vertices of $\Gamma$. Since every tree is a contractible topological space, by retracting a maximal tree of $\Gamma$ into one point we identify all vertices of $\Gamma$ into one point. This shows that $\Gamma$ is homotopy equivalent to the wedge sum of some number of circles, each corresponding to a cycle in the graph. Namely, the number $l$ of cycles in $\Gamma$ equals the number of edges in $\Gamma$ minus the number of edges in a maximal tree of $\Gamma$. This is also equal to $1-\chi(\Gamma)$, where $\chi(\Gamma)=V-E$ is the Euler characteristic. Then by Proposition~\ref{prop computing pi1}, $\pi_1(\Gamma)$  is a free group with $l$ generators. Finally, from the above results it is easy to see that $\wt{\Gamma}$ is the \href{https://en.wikipedia.org/wiki/Cayley_graph}{Cayley graph} of this free group, i.e., the graph whose vertices are all the elements of the group, and the edges incident to a vertex correspond to the generators of the group and their inverses. The vertex on the other end of an edge is the result of the multiplication of the current vertex by the edge's generator (say, from the right). In the case of a free group with $l$ generators, this is a regular tree whose root represents the identity element and each vertex has valency/degree (number of incident edges) equal to $l$. See Fig.~\ref{Fig. Cayley} for an example of a Cayley graph.
 \end{example}
 \begin{figure}
     \centering
         \includegraphics[scale=0.15]{figures/Cayley.pdf}
-    \caption{This graph is the universal cover of the figure eight, which is $\Gamma=\bbS^1 \vee \bbS^1$. It is also the Cayley graph of the fundamental group of $\Gamma$, i.e.\ the free group with two generators $a$ and $b$, $\pi_1(\Gamma)=F(\{a,b\})\cong\bbZ\ast\bbZ$. \label{Fig. Cayley}}
+    \caption{This graph is the universal cover of the figure eight, which is $\Gamma=\bbS^1 \vee \bbS^1$. It is also the Cayley graph of the fundamental group of $\Gamma$, i.e., the free group with two generators $a$ and $b$, $\pi_1(\Gamma)=F(\{a,b\})\cong\bbZ\ast\bbZ$. \label{Fig. Cayley}}
 \end{figure}
 
 We can now use the theory of covering spaces to prove a very important basic theorem about free groups. 
@@ -3974,7 +3974,7 @@ We can now use the theory of covering spaces to prove a very important basic the
 \end{proof}
 
 \begin{example}[Covering spaces of $\bbS^1\vee \bbS^1$]
-    Consider the ``figure eight'' space $M=\bbS^1\vee \bbS^1$. Its covering spaces are in one-to-one correspondence with conjugacy classes of subgroups of the free group $F(a,b)$ of two generators (one for each circle in $M$). By Theorem~\ref{thm Nielsen-Schreier}, any subgroup of a free group is free, so each covering space of $M$ is uniquely determined by a subset of $F(a,b)$ that contains no relations (e.g.\ the set $\{a^2,b^2,a^2b^2\}$ is redundant and should be replaced with $\{a^2,b^2\}$). The elements of this subset generate the image of $\pi_1(E,p_0)$ under the monomorphism $\pi_\ast$.
+    Consider the ``figure eight'' space $M=\bbS^1\vee \bbS^1$. Its covering spaces are in one-to-one correspondence with conjugacy classes of subgroups of the free group $F(a,b)$ of two generators (one for each circle in $M$). By Theorem~\ref{thm Nielsen-Schreier}, any subgroup of a free group is free, so each covering space of $M$ is uniquely determined by a subset of $F(a,b)$ that contains no relations (e.g., the set $\{a^2,b^2,a^2b^2\}$ is redundant and should be replaced with $\{a^2,b^2\}$). The elements of this subset generate the image of $\pi_1(E,p_0)$ under the monomorphism $\pi_\ast$.
 
     Some examples of these covering spaces are given in Figures~\ref{fig:sixfold covering} and \ref{fig:coverings of 8}. The covering in Figure~\ref{fig:threefold-cover} is another one. It is instructive to observe which of the coverings in Figure~\ref{fig:coverings of 8} are regular, and how the subgroups corresponding to them are normal. It is similarly instructive to verify the Lifting Theorem~\ref{Lifting Theorem}: two different covering spaces of $M$ are covering spaces of each other (say with basepoints) only if the generators of the stabilizer of one of them can be expressed in terms of the generators of the other. For example, (11) is a covering space of (1) because  $b^nab^{-n}=(b^2)^{n/2}a(b^{-2})^{n/2}$ if $n$ is even and $b^nab^{-n}=(b^2)^{(n-1)/2}bab^{-1}(b^{-2})^{(n-1)/2}$ otherwise.
 
@@ -4051,7 +4051,7 @@ For $n=0$, $\pi_0(X)$ is defined as the set of path-connected components of $X$ 
 \end{prop}
 
 \begin{thm}
-Homotopy groups $\pi_n$, $n\geq 1$, are homotopy invariants, i.e.\ if $X\simeq Y$ are two homotopy equivalent path connected spaces, then $\pi_n(X,x_0)\cong\pi_n(Y,y_0)$.
+Homotopy groups $\pi_n$, $n\geq 1$, are homotopy invariants, i.e., if $X\simeq Y$ are two homotopy equivalent path connected spaces, then $\pi_n(X,x_0)\cong\pi_n(Y,y_0)$.
 \end{thm}
 \begin{proof}
 Exercise. Also see \cite{Hatcher}.
@@ -4101,7 +4101,7 @@ Any map $f:(X,A,x_0)\to (Y,B,y_0)$ induces maps $f_\ast :\pi_n(X,A,x_0)\to \pi_n
 In particular, the inclusions $i:(A,x_0)\hookrightarrow(X,x_0)$ and $j:(X,x_0,x_0)\hookrightarrow (X,A,x_0)$ induce such homomorphisms. Moreover, there is a third special homomorphisms that connects homotopy groups in adjacent degrees.
 
 \begin{defn}[Boundary operator for homotopy]
-    The inclusion of the boundary $\bbS^{n-1}\hookrightarrow \bbD^n$ induces restrictions of maps $f:(\bbD^n,\bbS^{n-1},s_0)\to (X,A,x_0)$ to the boundary, i.e.\ $\partial f=\restr{f}{\partial \bbD^n}$. For $n\geq 2$ this operator defines a homomorphism of relative homotopy groups.
+    The inclusion of the boundary $\bbS^{n-1}\hookrightarrow \bbD^n$ induces restrictions of maps $f:(\bbD^n,\bbS^{n-1},s_0)\to (X,A,x_0)$ to the boundary, i.e., $\partial f=\restr{f}{\partial \bbD^n}$. For $n\geq 2$ this operator defines a homomorphism of relative homotopy groups.
 \end{defn}
 
 \begin{defn}[Exact sequence]
@@ -4201,7 +4201,7 @@ Every $CW$-complex therefore can be thought of as a \emph{decomposition} of a Ha
         \[\{(x_1,\ldots,x_{k+1},0,\ldots,0)\in \bbS^n:\pm x_{k+1}\geq 0\}.\]
         \item The closed $n$-disk $\bbD^n$ has a tautological $CW$-structure with one $n$-cell. It is however sometimes convenient to have the boundary $\bbS^{n-1}$ as a subcomplex. This can be achieved by just adding either one of the two $CW$-structures of $\bbS^{n-1}$ above.
         \item The wedge sum of two $CW$-complexes $(X_1,\calF _1)\vee (X_2,\calF _2)$ carries a natural $CW$-structure $\calF _1\cup \calF _2$.
-        \item The direct product $(X_1,\calF _1)\times (X_2,\calF _2)$ has a $CW$-structure with elements $(f_{1i}^n\times f_{2j}^m)\circ p_{n+m}$ where $p_{n+m}:\bbD^{n+m}\to \bbD^n\times \bbD^m$ is some chosen homeomorphism. This makes sense, because, as a homeomorphism, $p_{n+m}$ maps the boundary $\bbS^{n+m-1}$ of $\bbD^{n+m}$ onto the boundary $(\bbS^{n-1}\times \bbD^m)\cup (\bbD^n\times \bbS^{m-1})$ of $\bbD^n\times \bbD^m$. For example, the direct product of two copies of $\bbS^1$ with one cell in dimensions $0$ and $1$ yields a $CW$-structure on the torus $\bbT^2$ with one $0$-cell, one $2$-cell, and two $1$-cells. Note that in general the topology on the product complex need not coincide with the product topology, but it does when the complexes are locally finite (i.e.\ every point has a neighborhood that overlaps only with finitely many open cells -- such spaces are also paracompact).
+        \item The direct product $(X_1,\calF _1)\times (X_2,\calF _2)$ has a $CW$-structure with elements $(f_{1i}^n\times f_{2j}^m)\circ p_{n+m}$ where $p_{n+m}:\bbD^{n+m}\to \bbD^n\times \bbD^m$ is some chosen homeomorphism. This makes sense, because, as a homeomorphism, $p_{n+m}$ maps the boundary $\bbS^{n+m-1}$ of $\bbD^{n+m}$ onto the boundary $(\bbS^{n-1}\times \bbD^m)\cup (\bbD^n\times \bbS^{m-1})$ of $\bbD^n\times \bbD^m$. For example, the direct product of two copies of $\bbS^1$ with one cell in dimensions $0$ and $1$ yields a $CW$-structure on the torus $\bbT^2$ with one $0$-cell, one $2$-cell, and two $1$-cells. Note that in general the topology on the product complex need not coincide with the product topology, but it does when the complexes are locally finite (i.e., every point has a neighborhood that overlaps only with finitely many open cells -- such spaces are also paracompact).
     \end{enumerate}
 \end{example}
 
@@ -4224,7 +4224,7 @@ Every $CW$-complex therefore can be thought of as a \emph{decomposition} of a Ha
     \begin{enumerate}
         \item if $A\subset X$ has no two points in the same open cell, then $A$ is closed and discrete;
         \item if $K\subset X$ is compact then $K$ is contained in a finite union of open cells;
-        \item each cell of $X$ is contained in a finite subcomplex of $X$ (i.e.\ the cell complex is \emph{``closure finite''}).
+        \item each cell of $X$ is contained in a finite subcomplex of $X$ (i.e., the cell complex is \emph{``closure finite''}).
     \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -4285,7 +4285,7 @@ Direct limits are nothing but a generalization of pushouts to infinite families 
 \end{prop}
 
 \begin{prop}[{{\cite[Prop.~3.1.15]{RS2}}}]\label{prop 3.1.15 RS2}
-    Let $\{X_\alpha,f_{\beta\alpha}\}$ be a directed system of topological spaces and let $X$ be the direct limit. If for some $i$ one has $\pi_i(X_\alpha)=0$ for almost all (i.e.\ all but finitely many) $\alpha$, then $\pi_i(X)=0$.
+    Let $\{X_\alpha,f_{\beta\alpha}\}$ be a directed system of topological spaces and let $X$ be the direct limit. If for some $i$ one has $\pi_i(X_\alpha)=0$ for almost all (i.e., all but finitely many) $\alpha$, then $\pi_i(X)=0$.
 \end{prop}
 
 
@@ -4295,7 +4295,7 @@ Direct limits are nothing but a generalization of pushouts to infinite families 
         \item $X_0$ is a nonempty discrete space.
         \item For each $n\geq 1$, $X_n$ is obtained from $X_{n-1}$ by attaching a (possibly empty) collection of $n$-cells.
     \end{enumerate}
-    Then $X=\bigcup_n X_n$ has a unique topology coherent with the family $\{X_n\}_n$ (i.e.\ it is the final topology for the inclusions $X_n\hookrightarrow X$), and a unique cell decomposition making it into a $CW$-complex whose $n$-skeleton is $X_n$ for each $n$.
+    Then $X=\bigcup_n X_n$ has a unique topology coherent with the family $\{X_n\}_n$ (i.e., it is the final topology for the inclusions $X_n\hookrightarrow X$), and a unique cell decomposition making it into a $CW$-complex whose $n$-skeleton is $X_n$ for each $n$.
 \end{thm}
 \begin{proof}
     The uniqueness of the topology coherent with $\{X_n\}_n$ and of the cell decomposition is practically obvious. Finally, in the case of infinitely many cells one needs to check that $X$ is closure-finite and has the weak topology. See {{\cite[Thm.~5.20]{LeeTop}}} for full details.
@@ -4421,7 +4421,7 @@ The case of Hausdorff $X$ will suffice for our needs, so the above proof is comp
     We also have the projection $q:Z_f\to Y$, $(x,t)\mapsto f(x)$, $y\mapsto y$.
 \end{defn}
 
-The images $q(X\times\{1\})$ and $q(Y)$ are homeomorphic to $X$ and $Y$ respectively. When $X$ and $Y$ are homotopy equivalent, both of these subspaces of $Z_f$ can be shown to be deformation retracts of $Z_f$. Therefore two spaces $X,Y$ are homotopy equivalent iff they are homeomorphic to deformation retracts of some third space $Z$. See e.g.\ \cite[Prop.~7.46]{LeeTop} for a proof. We will also provide a proof in Corollary~\ref{cor 0.21 Hatcher}.
+The images $q(X\times\{1\})$ and $q(Y)$ are homeomorphic to $X$ and $Y$ respectively. When $X$ and $Y$ are homotopy equivalent, both of these subspaces of $Z_f$ can be shown to be deformation retracts of $Z_f$. Therefore two spaces $X,Y$ are homotopy equivalent iff they are homeomorphic to deformation retracts of some third space $Z$. See e.g., \cite[Prop.~7.46]{LeeTop} for a proof. We will also provide a proof in Corollary~\ref{cor 0.21 Hatcher}.
 
 
 \begin{figure}
@@ -4680,7 +4680,7 @@ Now we prove one of the statements announced in Remark~\ref{rem: classifying spa
 \begin{proof}
     Consider a presentation of the group as the quotient of a free group $\<J\>$ by some normal subgroup $\<R\>$ generated by a set of relations $R$. Construct the 1-skeleton $X^{(1)}$ of $X_G$ as a wedge sum of circles $\bigvee_{j\in J}\bbS^1$. Every relation describes a loop in $X^{(1)}$: for example if $ab^{-1}c^2$ is a relation, then the loop is given by going around $a$ once, around $b$ once in the opposite direction, and then twice around $c$. For each relation $r\in R$ take a 2-cell $\bbD^2$ with boundary $\bbS^{1}$ and define an attaching map $\varphi_r:\bbS^1\to X^{(1)}$ so that it represents the loop specified by $r$. The resulting $CW$-complex $X_G=X^{(2)}_G$ is then a 2-dimensional complex whose fundamental group is, by construction, isomorphic to $G$.
 \end{proof}
-We will eventually incorporate this space $X_G$ as into the so called classifying space $\rmB G$, so $\pi_1(\rmB G)\cong \pi_1(X_G)\cong G$, i.e.\ the inclusion is a weak 1-equivalence. The classifying space $\rmB G$ must have $\pi_{n+1}(\rmB G)\cong \pi_{n}(G)$, so in the case of discrete $G$ this is $\pi_{\geq 2}(\rmB G)\cong 0$. In other words, $\rmB G$ for discrete groups is the first Postnikov truncation of the space $X_G$ we just constructed.
+We will eventually incorporate this space $X_G$ as into the so called classifying space $\rmB G$, so $\pi_1(\rmB G)\cong \pi_1(X_G)\cong G$, i.e., the inclusion is a weak 1-equivalence. The classifying space $\rmB G$ must have $\pi_{n+1}(\rmB G)\cong \pi_{n}(G)$, so in the case of discrete $G$ this is $\pi_{\geq 2}(\rmB G)\cong 0$. In other words, $\rmB G$ for discrete groups is the first Postnikov truncation of the space $X_G$ we just constructed.
 
 
 \begin{example}\index{Lens spaces}
@@ -4887,7 +4887,7 @@ It is also useful to introduce the notion of the \emph{relative} \gls{hlp} with 
 The following proposition shows that instead of having to prepare spaces in the form $\bbD^n\times I$, we can always lift maps relatively from the pair $(\bbD^{n+1},\bbS^n)$ directly into a Serre fibration.
 
 \begin{prop}[{{\cite[Prop.~3.2.4]{tomDieck}}}]\label{prop 3.2.4 tomDieck}
-    A map $p:E\to B$ has the \gls{hlp} for the disk $\bbD^n$ iff it has the relative \gls{hlp} w.r.t.~the pair $(\bbD^{n+1},\bbS^{n})$, i.e.\ for each commutative diagram
+    A map $p:E\to B$ has the \gls{hlp} for the disk $\bbD^n$ iff it has the relative \gls{hlp} w.r.t.~the pair $(\bbD^{n+1},\bbS^{n})$, i.e., for each commutative diagram
     \[
     \begin{tikzcd}[every matrix/.append style={name=m}]
        \bbD^n\times\{0\} \cup \bbS^n\times I \arrow[d,"i",swap]\arrow[r,"h_0"]& E\arrow[d,"p"]\\
@@ -4991,7 +4991,7 @@ With the help of this isomorphism, we immediately get a special case of the long
 The boundary map $\partial$ has the following description. Let $f:(I^n,\partial I^n)\to (B,b)$ be given. View $f$ as a map $I^{n-1}\times I\to B$ and lift it to $\wt{f}:I^n\to E$, constant and equal to $e$ on $J^{n-1}=I^{n-1}\times \{0\}\cup \partial I^{n-1}\times I$. Then $\partial[f]$ is represented by $\restr{\wt{f}}{I^{n-1}\times \{1\}}$. In plain language, a ``loop'' representing an element of $\pi_n(B)$ in the base can be lifted to a ``path'' in the total space whose ``endpoints'' lie in the same fiber $F$, and by restricting to $F$ we get a lower-dimensional ``loop'' that represents an element of $\pi_{n-1}(F)$. The very end of the sequence requires a little extra work.
 
 \begin{defn}[Trivialization]
-    Let $\pi :E\to B$ be continuous and $U\subset B$ open and contained in the image of $\pi$. A \emph{trivialization} of $\pi$ over $U$ is a homeomorphism $\varphi:\pi^{-1}(U)\to U\times F$ over $U$, i.e.\ a homeomorphism which satisfies $\mathrm{pr}_1\circ \varphi=\pi$ (where $\mathrm{pr}_1$ is the natural projection onto the first component of the direct product). This condition determines $F$ up to a homeomorphism since $\varphi$ induces a homeomorphism of $\pi^{-1}(u)$ with $\{u\}\times F$.
+    Let $\pi :E\to B$ be continuous and $U\subset B$ open and contained in the image of $\pi$. A \emph{trivialization} of $\pi$ over $U$ is a homeomorphism $\varphi:\pi^{-1}(U)\to U\times F$ over $U$, i.e., a homeomorphism which satisfies $\mathrm{pr}_1\circ \varphi=\pi$ (where $\mathrm{pr}_1$ is the natural projection onto the first component of the direct product). This condition determines $F$ up to a homeomorphism since $\varphi$ induces a homeomorphism of $\pi^{-1}(u)$ with $\{u\}\times F$.
 \end{defn}
 
 \begin{defn}[Locally trivial map]
@@ -5020,7 +5020,7 @@ Note that a locally trivial map is open and hence a topological quotient map.
 \end{example}
 
 \begin{prop}[{{\cite[Prop.~6.3.8]{tomDieck}}}]\label{prop 6.3.8 tomDieck}
-    Let $p:(E_1,E_0)\to B$ be a relative Serre fibration, i.e.\ $p:E_1\to B$ is a Serre fibration and the restriction $\restr{p}{E_0}$ is also a Serre fibration. Let $(F^1_b,F^0_b)$ be the pair of fibers over $p_1(e)=b\in B$. Then:
+    Let $p:(E_1,E_0)\to B$ be a relative Serre fibration, i.e., $p:E_1\to B$ is a Serre fibration and the restriction $\restr{p}{E_0}$ is also a Serre fibration. Let $(F^1_b,F^0_b)$ be the pair of fibers over $p_1(e)=b\in B$. Then:
     \begin{enumerate}
         \item The inclusion induces bijections $\pi_n(F_b^1,F_b^0,e)\cong\pi_n(E_1,E_0,e)$.
         \item $\pi_0(E_0)\to \pi_0(E_1)$ is surjective iff $\pi_0(F_b^0)\to \pi_0(F_b^1)$ is surjective for each $b\in B$.
@@ -5260,7 +5260,7 @@ with the quotient map $q:\bbD^{n+1}\to \bbS^{n+1}=\bbD^{n+1}\slash \bbS^n$. The 
 This proof clearly extends to two cones over any space $X$, so by using the adjunction $[\Sigma X,Y]\cong[X,\Omega Y]$ we get the more general form of this Theorem.
 
 \begin{thm}[Freudenthal's suspension theorem {{\cite[Thm.~6.4.6]{tomDieck}}}]\index{Theorem!Freudenthal's suspension}
-Let $X$ be an $n$-connected space, i.e.\ $\pi_i(X)=0$ for $0\leq i\leq n$. Then the homomorphism $\pi_k(X)\to \pi_k(\Omega \Sigma X)$ induced by the inclusion $X\hookrightarrow \Omega\Sigma X$ is an isomorphism for $k\leq 2n-2$ and an epimorphism for $k=2n-1$.
+Let $X$ be an $n$-connected space, i.e., $\pi_i(X)=0$ for $0\leq i\leq n$. Then the homomorphism $\pi_k(X)\to \pi_k(\Omega \Sigma X)$ induced by the inclusion $X\hookrightarrow \Omega\Sigma X$ is an isomorphism for $k\leq 2n-2$ and an epimorphism for $k=2n-1$.
 
 Furthermore, since $\pi_{k+1}(\Sigma X)\cong[\bbS^{k+1};\Sigma X]\cong[\bbS^k;\Omega \Sigma X]\cong\pi_k(\Omega \Sigma X)$, for $k\leq 2n-2$ there is an isomorphism $\pi_k(X)\cong \pi_{k+1}(\Sigma X)$.
 \end{thm}

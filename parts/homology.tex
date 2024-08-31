@@ -17,7 +17,7 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
     
     Similarly, the colimit
     \[\colimit (F)\]
-    is an initial co-cone (i.e.\ with morphisms pointing towards $L$) over $F(\mathcal{J})$. Like all universal objects, limits and colimits are defined uniquely up to a unique isomorphism (if they exist at all).
+    is an initial co-cone (i.e., with morphisms pointing towards $L$) over $F(\mathcal{J})$. Like all universal objects, limits and colimits are defined uniquely up to a unique isomorphism (if they exist at all).
 \end{defn}
 
 \begin{figure}[tp]
@@ -52,13 +52,13 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
     Covariant hom-functors $h^A:B\mapsto \mathrm{Hom}_{\mathcal{C}}(A,B)$ preserve all limits. Similarly, contravariant hom-functors take colimits to limits.
 \end{thm}
 \begin{rem}
-     Note that the same is not generally true for colimits -- e.g.\ $h^A(B\sqcup C)\neq h^A(B)\sqcup h^A(C)$ in $\mathsf{Set}$.
+     Note that the same is not generally true for colimits -- e.g., $h^A(B\sqcup C)\neq h^A(B)\sqcup h^A(C)$ in $\mathsf{Set}$.
 \end{rem}
 \begin{cor}
     Combining the above theorem with Yoneda's Lemma~\ref{Yoneda}, we conclude that all representable covariant functors preserve all limits. Similarly, representable contravariant functors map all colimits to limits.
 \end{cor}
 \begin{thm}\label{thm diagonal functor adjoint to limit}
-    Recall that $\mathcal{C}^\mathcal{J}$ is the category of $J$-shaped diagrams in $\mathcal{C}$, i.e.\ covariant functors from $\mathcal{J}$ to $\mathcal{C}$ (see Example~\ref{categories of diagrams}). Suppose that for each functor $F:\mathcal{J}\to\mathcal{C}$ the limit $\limit F$ exists in $\mathcal{C}$. Then the \emph{diagonal functor} which assigns to each object $A$ the \emph{constant diagram} $\underline A\in \mathcal{C}^\mathcal{J}$ (i.e.\ all objects of $\mathcal{J}$ are mapped to $A$ and all morphisms to $\mathrm{id}_A$),
+    Recall that $\mathcal{C}^\mathcal{J}$ is the category of $J$-shaped diagrams in $\mathcal{C}$, i.e., covariant functors from $\mathcal{J}$ to $\mathcal{C}$ (see Example~\ref{categories of diagrams}). Suppose that for each functor $F:\mathcal{J}\to\mathcal{C}$ the limit $\limit F$ exists in $\mathcal{C}$. Then the \emph{diagonal functor} which assigns to each object $A$ the \emph{constant diagram} $\underline A\in \mathcal{C}^\mathcal{J}$ (i.e., all objects of $\mathcal{J}$ are mapped to $A$ and all morphisms to $\mathrm{id}_A$),
     \[\Delta: \mathcal{C}\to \mathcal{C}^{\mathcal{J}};\; A\mapsto \underline{A},\]
     is left adjoint to the limit functor
     \[\limit: \mathcal{C}^\mathcal{J}\to \mathcal{C};\; F\mapsto \limit F\]
@@ -94,7 +94,7 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
         \cong \Hom_{\mathcal{C}}(L(A),\limit F)\cong \Hom_{\mathcal{D}}(A,R(\limit F))
     \end{multline}
     coming respectively from (\ref{adjunction bijeciton}), (\ref{limit functor bijection}), and the adjunction. By Corollary~\ref{corollary on limits} combined with the uniqueness of adjoints (Proposition~\ref{uniqueness of adjoints prop}), we have $\limit(R\circ F)= R(\limit F)$ as required.
-    % Let $G:\mathcal{D}\to\mathcal{C}$ be a left adjoint, i.e.\ $G^\ast$ exists. Then for a colimit $\colimit(F)$ of $F:\mathcal{J}\to \mathcal{D}$, by continuity of hom-functors, we have
+    % Let $G:\mathcal{D}\to\mathcal{C}$ be a left adjoint, i.e., $G^\ast$ exists. Then for a colimit $\colimit(F)$ of $F:\mathcal{J}\to \mathcal{D}$, by continuity of hom-functors, we have
     % \begin{multline}
     %     \Hom_{\mathcal{C}}(G\colimit F,B)\cong \Hom_{\mathcal{D}}(\colimit F,G^\ast(B))\cong \limit \Hom_{\mathcal{D}}(F,G^\ast(B)) \cong \\\cong \limit \Hom_{\mathcal{C}}(G\circ F,B)\cong \mathrm{Cocones}(G\circ F,B),
     % \end{multline}
@@ -112,7 +112,7 @@ Note that limits and colimits typically do not commute.
 \begin{example}[Siefert-van Kampen theorem redux]\index{Theorem!Siefert-van~Kampen}
     We've learned by now that contravariant representable (or hom-) functors map colimits to limits, so they're not the functors that preserve colimits. It is the left adjoints that do. Siefert-van~Kampen theorem essentially states that the fundamental functors $\pi_1$ or $\Pi$ preserve \emph{some} colimits (namely pushouts). 
     
-    While not a proof, one categorical source of intuition for this is that both of these functors are left adjoints. The reason $\pi_1$ preserves only pushouts, and not all colimits, is that the functor that maps the category $\mathsf{Top}$ into the homotopy category $\mathsf{hTop}$ doesn't preserve colimits, so $\pi_1$ doesn't either. However, the descended version of this functor, $\pi_1:\mathsf{hTop}\to \mathsf{Gr}$ happens to be the left adjoint of a certain functor that constructs a topological space given a group. Looking far ahead, this is the functor $B:G\mapsto BG$ that constructs the classifying space of $G$. It is so called because $BG$ is the base space of a universal principal $G$-bundle such that any other $G$-bundle is a pullback along some continuous map into $BG$. For example, universal covering spaces are exactly the classifying spaces for the fundamental groups of their base -- e.g.\ $B\bbZ=\bbS^1$ and $B(\bbZ\ast \bbZ)=\bbS^1\vee \bbS^1$ etc. $BG$ is in fact the unique (up to ``weak'' homotopy equivalence) space whose fundamental group is $G$ and all other homotopy groups are trivial (which also identifies it with the first  Eilenberg-MacLane space $\rmK(G,1)$).
+    While not a proof, one categorical source of intuition for this is that both of these functors are left adjoints. The reason $\pi_1$ preserves only pushouts, and not all colimits, is that the functor that maps the category $\mathsf{Top}$ into the homotopy category $\mathsf{hTop}$ doesn't preserve colimits, so $\pi_1$ doesn't either. However, the descended version of this functor, $\pi_1:\mathsf{hTop}\to \mathsf{Gr}$ happens to be the left adjoint of a certain functor that constructs a topological space given a group. Looking far ahead, this is the functor $B:G\mapsto BG$ that constructs the classifying space of $G$. It is so called because $BG$ is the base space of a universal principal $G$-bundle such that any other $G$-bundle is a pullback along some continuous map into $BG$. For example, universal covering spaces are exactly the classifying spaces for the fundamental groups of their base -- e.g., $B\bbZ=\bbS^1$ and $B(\bbZ\ast \bbZ)=\bbS^1\vee \bbS^1$ etc. $BG$ is in fact the unique (up to ``weak'' homotopy equivalence) space whose fundamental group is $G$ and all other homotopy groups are trivial (which also identifies it with the first  Eilenberg-MacLane space $\rmK(G,1)$).
 
     So, by a happy coincidence, pushouts in the homotopy category lined up with pushouts in the original topological category.
 \end{example}
@@ -260,7 +260,7 @@ This allows us to define images and coimages.
 
 Note that
 \[\ker(\coim\varphi)=\ker(\coker(\ker\varphi)))=\im(\ker\varphi).\]
-Thus in general pre-abelian categories (i.e.\ without the last axiom) by the universal properties of images and coimages we have a factorization of any morphism $\varphi:X\to Y$ into the sequence
+Thus in general pre-abelian categories (i.e., without the last axiom) by the universal properties of images and coimages we have a factorization of any morphism $\varphi:X\to Y$ into the sequence
 \[\ker\varphi\rightarrowtail X\underbrace{\overset{\text{epi}}\twoheadrightarrow\coim\varphi\overset{\text{bi}}\to\im\varphi\overset{\text{mono}}\rightarrowtail}_\varphi Y\twoheadrightarrow\coker\varphi \]
 The last axiom of abelian categories states that $\coim\varphi = \im\varphi$, which is equivalent to the statement:
 \[\boxed{\text{5. All bimorphisms are isomorphisms.}}\]
@@ -444,7 +444,7 @@ There are in fact very few exact functors. Here are a few relevant examples.
 
 
 \begin{defn}[Projective and injective objects]\index{Projective object}\index{Injective object}
-    If the functor $\Hom(X,\_)$ is exact, $X$ is called a projective object (i.e.\ all morphisms $X\to C$ factor through $B$ in any exact sequence $B\to C\to 0$). If $\Hom(\_,Y)$ is exact, $Y$ is called an injective object (all morphisms $A\to Y$ factor through $B$ in any exact sequence $0\to A\to B$).
+    If the functor $\Hom(X,\_)$ is exact, $X$ is called a projective object (i.e., all morphisms $X\to C$ factor through $B$ in any exact sequence $B\to C\to 0$). If $\Hom(\_,Y)$ is exact, $Y$ is called an injective object (all morphisms $A\to Y$ factor through $B$ in any exact sequence $0\to A\to B$).
 \end{defn}
 
 \begin{defn}[Flat module]\index{Flat module}
@@ -555,7 +555,7 @@ Therefore neither limits nor colimits preserve exactness on both sides, in gener
 
 \subsection{Diagram chasing lemmas}
 
-All of the following lemmas hold in arbitrary abelian categories. Moreover, for every general diagrammatic statement in an abelian category, its dual holds as well (i.e.\ the diagram with all arrows reversed), since we can always pass to the dual category, which is also abelian.
+All of the following lemmas hold in arbitrary abelian categories. Moreover, for every general diagrammatic statement in an abelian category, its dual holds as well (i.e., the diagram with all arrows reversed), since we can always pass to the dual category, which is also abelian.
 
 \begin{lem}\label{lem first chasing lemma}
     If the square 
@@ -746,7 +746,7 @@ All of the following lemmas hold in arbitrary abelian categories. Moreover, for 
     be exact. Then:
     \begin{enumerate}
         \item if the central and one of the side columns are exact, then the remaining column is exact too;
-        \item if the two side columns are exact and the middle one is a \emph{complex}\index{Complex}, i.e.\ $g\circ f=0$, then the middle column is exact.
+        \item if the two side columns are exact and the middle one is a \emph{complex}\index{Complex}, i.e., $g\circ f=0$, then the middle column is exact.
     \end{enumerate}
 \end{lem}
 \begin{proof}
@@ -770,7 +770,7 @@ All of the following lemmas hold in arbitrary abelian categories. Moreover, for 
     \[0\to\Omega^0(M)\overset\dd\to\Omega^1(M)\overset\dd\to\Omega^2(M)\to\cdots\]
     and define the spaces of closed forms, exact forms, and de Rham cohomology groups (in fact they are real vector spaces) respectively as
     \[Z^p=\ker\left(\restr{\dd}{\Omega^p(M)}\right),\quad B^p=\im\left(\restr{\dd}{\Omega^{p-1}(M)}\right),\quad \rmH_{\rm dR}^p(M)=Z^p/B^p.\]
-    This is possible because $\dd^2=0$, i.e.\ $B^p\subset Z^p$.
+    This is possible because $\dd^2=0$, i.e., $B^p\subset Z^p$.
     Thus the sequence above is exact iff all de Rham cohomologies vanish.
 \end{defn}
 Thus de Rham cohomology counts non-exact closed differential forms.
@@ -822,7 +822,7 @@ Thus de Rham cohomology counts non-exact closed differential forms.
     so that $(\dd K-K \dd)\alpha=(-1)^{p-1}\alpha$.
     In all cases we find
     \[1-\pi^\ast\circ s^\ast=(-1)^{p-1}(\dd K\pm K \dd) \text{ on }\Omega^p(M\times\bbR).\]
-    It turns out that having a homotopy operator immediately allows us to relate cohomologies of different degrees to each other. Indeed, $\dd K\pm K\dd$ maps closed forms to exact forms and therefore induces zero in cohomology (i.e.\ maps all cohomology equivalence classes to the trivial ones).
+    It turns out that having a homotopy operator immediately allows us to relate cohomologies of different degrees to each other. Indeed, $\dd K\pm K\dd$ maps closed forms to exact forms and therefore induces zero in cohomology (i.e., maps all cohomology equivalence classes to the trivial ones).
     In other words, the existence of such $K$ implies that 
     $\pi^\ast\circ s^\ast=1 \text{ in }\rmH^p_{\rm dR}(M)$.
     Therefore $\pi^\ast$ and $s^\ast$ are inverses of each other on cohomology:
@@ -852,7 +852,7 @@ By taking the difference of the last two maps, we obtain the \emph{\gls{mv} sequ
 \[0\to\Omega^{\smbullet } (M)\to\Omega^{\smbullet }(U)\oplus\Omega^{\smbullet }(V)\overset{\text{difference}}\longrightarrow\Omega^{\smbullet } (U\cap V)\to 0\]
 
 \begin{prop}
-    The \gls{mv} sequence is commutative (i.e.\ the horizontal maps introduced above commute with applications of $\dd$) and exact.
+    The \gls{mv} sequence is commutative (i.e., the horizontal maps introduced above commute with applications of $\dd$) and exact.
 \end{prop}
 \begin{proof}
     Commutativity is clear because $\dd$ is local and thus commutes with restrictions. The only nontrivial part is the surjectivity of the difference map. Consider a \gls{pou} $\{\chi_U,\chi_V\}$ subordinate to the open covering $\{U,V\}$ of $M$. Then any differential form $\omega\in\Omega^{\smbullet }(U\cap V)$ can be decomposed as 
@@ -1029,7 +1029,7 @@ Obviously, for compact manifolds $\rmH^{\smbullet }_c=\rmH^{\smbullet }_{\rm dR}
 We have already seen that the \gls{mv} sequence combined with the Poincar\'e lemma is a powerful tool that is sufficient to compute cohomologies of nontrivial manifolds like spheres. Now we will show that these two tools are in fact sufficient for arbitrary manifolds, as a long as we choose the right open covering.
 
 \begin{defn}[Good covers]\index{Good cover}
-    An open covering $\calU=\{U_\alpha\}_\alpha$ of an $n$-dimensional smooth manifold $M$ is called a good cover if all nonempty finite intersections $U_{\alpha_1\cdots\alpha_k}=U_{\alpha_1}\cap \cdots\cap U_{\alpha_k}$ are diffeomorphic to $\bbR^n$ (i.e.\ are contractible).
+    An open covering $\calU=\{U_\alpha\}_\alpha$ of an $n$-dimensional smooth manifold $M$ is called a good cover if all nonempty finite intersections $U_{\alpha_1\cdots\alpha_k}=U_{\alpha_1}\cap \cdots\cap U_{\alpha_k}$ are diffeomorphic to $\bbR^n$ (i.e., are contractible).
 \end{defn}
 
 \begin{prop}
@@ -1119,7 +1119,7 @@ There is also an analog of the Poincar\'e lemma for $\bar\partial$, but at first
     In other words, $\rmH^{p,q}(D)=0$ for $q>0$.
 \end{thm}
 \begin{proof}
-    For bounded polydiscs this can be reduced to an inductive application of the one-dimensional lemma. In the unbounded case the proof requires some more careful analysis, see e.g.\ \cite[Prop.\ 1.3.8 and Cor.\ 1.3.9]{Huybrechts}.
+    For bounded polydiscs this can be reduced to an inductive application of the one-dimensional lemma. In the unbounded case the proof requires some more careful analysis, see e.g., \cite[Prop.\ 1.3.8 and Cor.\ 1.3.9]{Huybrechts}.
 \end{proof}
 
 The following proposition is obvious based on its de Rham analogue.
@@ -1137,7 +1137,7 @@ Computing Dolbeault cohomology in general requires more sophisticated tools than
     Here we compute the Dolbeault cohomology of the Riemann sphere $\CP^1=\bbS^2$.
     \begin{enumerate}
         \item $\rmH^{0,0}(\CP^1)=\bbC$ (the only holomorphic functions on the entire sphere are the constant functions, by the Liouville theorem);
-        \item $\rmH^{0,1}(\CP^1)$ consists of 1-forms $f\dd\bar z$ (all of which are $\bar\partial$-closed for any $f\in C^\infty(\CP^1,\bbC)$) that are not exact, i.e.\ $f\neq \partial_{\bar z} g$ for any $g\in C^\infty(\CP^1,\bbC)$. Every such $f$ can be identified with a function on $\bbC$ such that the limit of $f \bar z^2$ as $z\to\infty$ exists. By Poincar\'e lemma there exists a $g$ such that $f=\partial_{\bar z} g$ and clearly it follows that $\lim_{z\to\infty}(\bar zg)$ exists, which makes $g$ a well-defined function on the sphere. Therefore $\rmH^{0,1}(\CP^1)=0$;
+        \item $\rmH^{0,1}(\CP^1)$ consists of 1-forms $f\dd\bar z$ (all of which are $\bar\partial$-closed for any $f\in C^\infty(\CP^1,\bbC)$) that are not exact, i.e., $f\neq \partial_{\bar z} g$ for any $g\in C^\infty(\CP^1,\bbC)$. Every such $f$ can be identified with a function on $\bbC$ such that the limit of $f \bar z^2$ as $z\to\infty$ exists. By Poincar\'e lemma there exists a $g$ such that $f=\partial_{\bar z} g$ and clearly it follows that $\lim_{z\to\infty}(\bar zg)$ exists, which makes $g$ a well-defined function on the sphere. Therefore $\rmH^{0,1}(\CP^1)=0$;
         \item $\rmH^{1,0}(\CP^1)$ consists of \emph{holomorphic} 1-forms $f\dd z$, which means that $f$ has to be holomorphic such that $\lim_{z\to\infty}z^2f$ exists. However, the only holomorphic function with such a limit is zero. Therefore $\rmH^{1,0}(\CP^1)=0$;
         \item $\rmH^{1,1}(\CP^1)$ consists of 2-forms $f\dd z\wedge\dd\bar z$. Such a form is exact iff $\int_{\CP^1}f\dd z\wedge\dd \bar z=0$. This is exactly one linear constraint, which means that $\rmH^{1,1}(\CP^1)=\bbC$.
     \end{enumerate}
@@ -1209,7 +1209,7 @@ Simplicial homology is the simplest homology theory in that it can be formulated
 In the future we write $|K|=|K|_c$ and call this space the \emph{geometric realization} of $K$. For a simplex $s$ we define the \emph{closed simplex} $|s|\subset |K|$ as $|s|=\{\alpha\in|K|\mid \alpha(e)\neq 0\Rightarrow e\in s\}$ and the \emph{open simplex} as $\langle s\rangle=\{\alpha\in |K|\mid \alpha(e)\neq 0\Leftrightarrow e\in s\}$. The \emph{combinatorial boundary} of $|s|$ is $\partial|s|=|s|\setminus\langle s\rangle$.
 
 \begin{defn}[Standard simplices in $\bbR^k$]
-    Let $x_0,\ldots,x_n$ be affinely independent (i.e.\ $\sum_i\alpha_i x_i=0$ and $\sum_i\alpha_i=0$ imply $\alpha_j=0$). Then the simplex spanned by them is \[\langle x_0,\ldots,x_n\rangle=\left\{\sum_i \alpha_i x_i\mid \alpha_i\geq 0,\sum_i \alpha_i=1\right\}.\]
+    Let $x_0,\ldots,x_n$ be affinely independent (i.e., $\sum_i\alpha_i x_i=0$ and $\sum_i\alpha_i=0$ imply $\alpha_j=0$). Then the simplex spanned by them is \[\langle x_0,\ldots,x_n\rangle=\left\{\sum_i \alpha_i x_i\mid \alpha_i\geq 0,\sum_i \alpha_i=1\right\}.\]
 \end{defn}
 \begin{defn}
     If $K=(E,S)$ is a simplicial complex and $\{x_e\mid e\in E\}$ a set of points in $\bbR^k$, and if a map
@@ -1237,11 +1237,11 @@ Intuitively, $H^\Delta_p$ detects the ``$p$-dimensional holes'' in the complex, 
 
 \begin{defn}[Orientations on simplices and complexes]\index{Orientation!on simplicial complexes}
     An orientation on an $n$-simplex $s$ is an ordering of its elements into an $(n+1)$-tuple written as \[s=\langle e_0,\ldots,e_n\rangle.\]
-    Orientations are considered to be equivalent if they differ by an even permutation of the vertices, i.e.\ we identify positively reordered tuples with each other. 
+    Orientations are considered to be equivalent if they differ by an even permutation of the vertices, i.e., we identify positively reordered tuples with each other. 
     
     In simplicial $p$-chains, sometimes the chain $-s$ is identified with $s$ oriented the opposite way.
     
-    An orientation on a complex $K=(E,S)$ is a partial order on $E$ that induces an orientation on each simplex of $K$ (i.e.\ orientations of faces of a simplex can be induced from the orientation of the simplex). Orientations are considered to be equivalent if they induce equivalent orientations on all simplices.
+    An orientation on a complex $K=(E,S)$ is a partial order on $E$ that induces an orientation on each simplex of $K$ (i.e., orientations of faces of a simplex can be induced from the orientation of the simplex). Orientations are considered to be equivalent if they induce equivalent orientations on all simplices.
 \end{defn}
 
 \begin{comment}
@@ -1267,7 +1267,7 @@ Intuitively, $H^\Delta_p$ detects the ``$p$-dimensional holes'' in the complex, 
 
 
 \begin{xca}
-    If $K$ is the tetrahedron (with 2-dimensional faces included), i.e.\ a triangulation of $\bbS^2$, compute its homology groups:
+    If $K$ is the tetrahedron (with 2-dimensional faces included), i.e., a triangulation of $\bbS^2$, compute its homology groups:
     \[H^\Delta_0=\bbZ,\quad H^\Delta_1=0,\quad H^\Delta_2=\bbZ.\]
 \end{xca}
 \begin{xca}
@@ -1310,7 +1310,7 @@ Intuitively, $H^\Delta_p$ detects the ``$p$-dimensional holes'' in the complex, 
 %     The two definitions of the Euler characteristic for finite simplicial complexes are equivalent. In particular, since the Betti numbers are homotopy invariants (because so is homology itself, which we will show later), so is the Euler characteristic.
 % \end{thm}
 % \begin{proof}
-%     Consider chain groups with rational coefficients (i.e.\ the free parts of the usual groups),
+%     Consider chain groups with rational coefficients (i.e., the free parts of the usual groups),
 %     \[C_p(K,\bbQ)\coloneqq C_p(K)\otimes\bbQ.\]
 %     Now the boundary operator $\partial_p:C_p(K,\bbQ)\to C_{p-1}(K,\bbQ)$ is a linear operator on $\bbQ$-vector spaces and by the rank-nullity theorem
 %     \[n_p(K)=\dim C_p(K,\bbQ)=\dim\ker\partial_p+\dim\im\partial_p.\]
@@ -1345,7 +1345,7 @@ Note that there is no actual difference between chain and cochain complexes, sin
 \end{defn}
 
 \begin{defn}[Chain map]
-    If $(\bm{B},\delta )$ and $(\bm{C},d)$ are two chain complexes, then a chain map $f:\bm{B}\to \bm{C}$ is a sequence of maps $f_n:B_n\to C_n$ such that $d_n\circ f_n=f_{n-1}\circ \delta_n$, i.e.\ such that the full diagram commutes:
+    If $(\bm{B},\delta )$ and $(\bm{C},d)$ are two chain complexes, then a chain map $f:\bm{B}\to \bm{C}$ is a sequence of maps $f_n:B_n\to C_n$ such that $d_n\circ f_n=f_{n-1}\circ \delta_n$, i.e., such that the full diagram commutes:
     \[\begin{tikzcd}[every matrix/.append style={name=m},
         execute at end picture={\draw [<-] ([xshift=-8mm,yshift=-10mm]m-1-3.north) arc[start angle=-90,delta angle=-270,radius=0.2cm];
         \draw [<-] ([xshift=-8mm,yshift=-10mm]m-1-4.north) arc[start angle=-90,delta angle=-270,radius=0.2cm];}]
@@ -1385,7 +1385,7 @@ Note that there is no actual difference between chain and cochain complexes, sin
     
     First we need to check that $f_n(z)\in Z_n(\bm{B})$. We will use the same symbol $d_n$ for morphisms in both complexes. By the definition of a chain map, $d_n(f_n(z))=f_{n-1}(d_n(z))=0$ since $z\in B_n(\bm{A})$.
     
-    Next we need to check correctness, i.e.\ independence of $\rmH_n(f)([z])$ of the choice of representative. Let $z,z'\in Z_n(\bm{A}):[z]=[z']\Leftrightarrow z-z'\in B_n(\bm{A})$, then
+    Next we need to check correctness, i.e., independence of $\rmH_n(f)([z])$ of the choice of representative. Let $z,z'\in Z_n(\bm{A}):[z]=[z']\Leftrightarrow z-z'\in B_n(\bm{A})$, then
     \[\exists y\in A_{n+1}: d_{n+1}(y)=z-z'\implies d_{n+1}(f_{n+1}(y))=f_n(z)-f_n(z'),\]
     which means that $f_n(z)-f_n(z')$ is a boundary, proving what we wanted.
     
@@ -1522,7 +1522,7 @@ for the descendants of maps in (co)homology.
         ~\arrow[r]& \rmH_n(\bm{A})\arrow[r,"i_\ast"]\arrow[d,"f_\ast"] & \rmH_n(\bm{B}) \arrow[r,"p_\ast"]\arrow[d,"g_\ast"] & \rmH_n(\bm{C})\arrow[d,"h_\ast"]\arrow[r,"\delta"] & \rmH_{n-1}(\bm{A})\arrow[d,"f_\ast"]\arrow[r]&~ \\
        ~\arrow[r] & \rmH_n(\bm{A}')\arrow[r,"j_\ast"] & \rmH_n(\bm{B}')\arrow[r,"q_\ast"] &\rmH_n(\bm{C}') \arrow[r,"\delta'"] &\rmH_{n-1}(\bm{A}')\arrow[r]&~ 
     \end{tikzcd}\]
-    In other words, morphisms between exact sequences of complexes naturally induce morphisms between the exact sequences in homology, i.e.\ the connecting homomorphism $\delta$ is natural w.r.t.\ such morphisms.
+    In other words, morphisms between exact sequences of complexes naturally induce morphisms between the exact sequences in homology, i.e., the connecting homomorphism $\delta$ is natural w.r.t.\ such morphisms.
 \end{prop}
 \begin{proof}
      The exactness of the rows is the content of the theorem about the long exact sequence. The commutativity of the first two squares follows from the functoriality of $\rmH_n$. Checking the commutativity of the square $\delta'\circ h_\ast=f_\ast\circ \delta$ requires expanding the first commutative diagram in $\mathsf{Comp}(\calC)$ into a 3-dimensional diagram in $\calC$.
@@ -1636,7 +1636,7 @@ Now that we know that $\rmH_n$ is a functor, it is natural to ask how much $\rmH
 \begin{proof}
      Let $s:\bm{B}\to\bm{C}$ be the homotopy. If $z$ is an $n$-cycle, dropping subscripts, $d z=0$, then
      \[f(z)-g(z)=d(s(z))+s(d(z))=d(s(z)),\]
-     i.e.\ $f(z)-g(z)\in B_n(\bm{C})$ and $f_\ast=g_\ast$.
+     i.e., $f(z)-g(z)\in B_n(\bm{C})$ and $f_\ast=g_\ast$.
 \end{proof}
 
 \begin{defn}[Acyclic, contractible complexes]\index{Acyclic complex}\index{Contractible complex}
@@ -1687,7 +1687,7 @@ Unlike with simplicial homology, here it is immediately obvious that homeomorphi
     If $X$ consists of $l$ path-connected components, then $\rmH_0(X)\cong \bbZ^l$.
 \end{prop}
 \begin{proof}
-     It suffices to prove this for $l=1$, i.e.\ a path-connected $X$. We have $\rmH_0(X)=C_0(X)/\im\partial_1$. A singular 0-chain in $X$ is just a finite sum $\sum_i n_i p_i$ where $p_i$ are points in $X$ and $n_i\in\bbZ$. Define the homomorphism $\epsilon:C_0(X)\to \bbZ$, called the \emph{augmentation map}\index{Augmentation map}, by
+     It suffices to prove this for $l=1$, i.e., a path-connected $X$. We have $\rmH_0(X)=C_0(X)/\im\partial_1$. A singular 0-chain in $X$ is just a finite sum $\sum_i n_i p_i$ where $p_i$ are points in $X$ and $n_i\in\bbZ$. Define the homomorphism $\epsilon:C_0(X)\to \bbZ$, called the \emph{augmentation map}\index{Augmentation map}, by
      \[\epsilon\left(\sum_i n_i p_i\right)=\sum_i n_i.\]
      It is surjective as long as $X\neq\varnothing$. The claim is that $\ker\epsilon\cong\im\partial_1$ if $X$ is path-connected, so $\epsilon $ induces an isomorphism $\rmH_0(X)\cong \bbZ$.
      
@@ -1761,7 +1761,7 @@ Continuous maps induce homomorphisms in reduced homology as well since the augme
 Relative homology generalizes the idea behind the \gls{mv} sequence in de Rham cohomology. Given a subset $A\subset X$ in a topological space, we ask how similar the groups $\rmH_n(X/A)$ and $\rmH_n(X)/\rmH_n(A)$ are. The difference, in a sense, is measured by the relative homology.
 
 \begin{defn}
-    Let $X$ be a topological space and $A\subset X$ a topological subspace (i.e.\ a subset with the induced subset topology). The group of singular chains $C_n(A)$ can be treated as a subgroup of $C_n(X)$. Define the relative singular chain groups as $C_n(X,A)=C_n(X)/C_n(A)$. The boundary operator $\partial$ descends to these groups because $\partial(C_n(A))\subset C_{n-1}(A)$. The homology of the resulting chain complex is called the relative homology of the pair $(X,A)$.
+    Let $X$ be a topological space and $A\subset X$ a topological subspace (i.e., a subset with the induced subset topology). The group of singular chains $C_n(A)$ can be treated as a subgroup of $C_n(X)$. Define the relative singular chain groups as $C_n(X,A)=C_n(X)/C_n(A)$. The boundary operator $\partial$ descends to these groups because $\partial(C_n(A))\subset C_{n-1}(A)$. The homology of the resulting chain complex is called the relative homology of the pair $(X,A)$.
 \end{defn}
 
 Relative homology is a covariant functor on the category of topological pairs, $\rmH_n:\mathsf{TopPair}\to \mathsf{Ab}$.
@@ -1942,7 +1942,7 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 \end{proof}
 
 \begin{cor}[Brouwer's fixed point theorem]\index{Theorem!Brouwer's fixed point}
-    $\partial \bbD^n$ is not a retract of $\bbD^n$ (i.e.\ no continuous map $\bbD^n\to \partial \bbD^n$ that restricts to identity on the boundary). Hence every map $f:\bbD^n\to \bbD^n$ has a fixed point.
+    $\partial \bbD^n$ is not a retract of $\bbD^n$ (i.e., no continuous map $\bbD^n\to \partial \bbD^n$ that restricts to identity on the boundary). Hence every map $f:\bbD^n\to \bbD^n$ has a fixed point.
 \end{cor}
 \begin{proof}
      If $r:\bbD^n\to \partial \bbD^n$ is a retraction, then $r\circ i=\id$ for $i:\partial \bbD^n\hookrightarrow \bbD^n$ the inclusion map. The composition $\wt{H}_{n-1}(\partial \bbD^n)\overset{i_\ast}\to \wt{H}_{n-1}(\bbD^n)\overset{r_\ast}\to \wt{H}_{n-1}(\partial \bbD^n)$ is then the identity on $\wt{H}_{n-1}(\partial \bbD^n)\cong \bbZ$. But $i_\ast$ and $r_\ast$ are both zero since $\wt{H}_{n-1}(\bbD^n)=0$, which leads to a contradiction.
@@ -2052,7 +2052,7 @@ Thus in homology $[\gamma_1+\gamma_2]=[\gamma_1\cdot\gamma_2]$. Already we notic
 \end{proof}
 
 \begin{lem}
-    If $\gamma_1$ and $\gamma_2$ are paths homotopic $\rel \partial I$ (i.e.\ with fixed ends), then they are homologous.
+    If $\gamma_1$ and $\gamma_2$ are paths homotopic $\rel \partial I$ (i.e., with fixed ends), then they are homologous.
 \end{lem}
 \begin{proof}
      If $F:I\times I\to X$ is the homotopy, then since the edge $\{0\}\times I$ maps to a single point, $F$ factors through the map $I\times I\to \Delta^2$ which collapses that edge to the vertex $e_0$. This provides a 2-simplex $\sigma$ which is $\gamma_1$ on $\{e_0,e_1\}$ and $\gamma_2$ on $\{e_0,e_2\}$ and constant on $\{e_1,e_2\}$. Then $\partial\sigma=\gamma_1-\gamma_2+\text{const}$. Since a constant is a boundary, so is $\gamma_1-\gamma_2$.
@@ -2092,7 +2092,7 @@ One can check that this is indeed a homomorphism, and we have the following gene
 
 \subsection{Singular vs.~simplicial homology}
 
-We show now that simplicial and singular homology groups of triangulable spaces are always isomorphic, including the relative case. Let $X$ be a triangulated space with $A\subset X$ a subcomplex, i.e.\ a union of simplices in $X$. Relative groups $\rmH^{\Delta}_n(X,A)$ are defined in the same way as for singular homology, via relative chains $C^\Delta_n(X)=C^\Delta_n(X)/C^\Delta_n(A)$, and we also have the same long exact sequence of the pair $(X,A)$. Now we shall show that there is a canonical isomorphism $H^\Delta_n(X,A)\to \rmH_n(X,A)$, induced by the chain map $C_n^\Delta(X,A)\to C_n(X,A)$ given by the triangulation embedding map of every simplex. 
+We show now that simplicial and singular homology groups of triangulable spaces are always isomorphic, including the relative case. Let $X$ be a triangulated space with $A\subset X$ a subcomplex, i.e., a union of simplices in $X$. Relative groups $\rmH^{\Delta}_n(X,A)$ are defined in the same way as for singular homology, via relative chains $C^\Delta_n(X)=C^\Delta_n(X)/C^\Delta_n(A)$, and we also have the same long exact sequence of the pair $(X,A)$. Now we shall show that there is a canonical isomorphism $H^\Delta_n(X,A)\to \rmH_n(X,A)$, induced by the chain map $C_n^\Delta(X,A)\to C_n(X,A)$ given by the triangulation embedding map of every simplex. 
 
 \begin{thm}
     The homomorphisms $H^\Delta_n(X,A)\to \rmH_n(X,A)$ are isomorphisms for all $n$ and all pairs of simplicial complexes $(X,A)$.
@@ -2109,7 +2109,7 @@ We show now that simplicial and singular homology groups of triangulable spaces 
     
     Thus the map $ \rmH_{n+1}^\Delta(X^k,X^{k-1})\to  \rmH_{n+1}(X^k,X^{k-1})$ is an isomorphism. By induction of this entire proof in $k$, we can also assume that the second and the fifth vertical maps are isomorphisms. Then by the 5-lemma \ref{5-lemma} the middle map is an isomorphism, proving the induction step and the whole theorem for finite-dimensional $X$ and $A=\varnothing$.
     
-    This proof is easily extended to the infinite-dimensional case due to the fact that a compact subset of $X$ can intersect only finitely many of its simplices. This is used to show that the map $H^\Delta_n(X)\to \rmH_n(X)$ is surjective. Namely one argues that every singular $n$-cycle is by definition a linear combination of finitely many singular simplices with compact images, which meet finitely many open simplices of $X$, and is thus contained in $X^k$ for some finite $k$, where the isomorphism $H^\Delta_n(X^k)\to \rmH_n(X^k)$ is already established. Thus the singular cycle is homologous (in $X^k$ and thus in $X$) to a simplicial cycle. Injectivity is similar: if a simplicial $n$-cycle $z$ is the boundary of a singular chain (i.e.\ its image under the map in question vanishes), then this singular chain has compact image and thus lies in some $X^k$, in which case by injectivity of the map $H^\Delta_n(X^k)\to \rmH_n(X^k)$, $z$ must be a simplicial boundary in $X^k$ and this in $X$, so $[z]=0$. 
+    This proof is easily extended to the infinite-dimensional case due to the fact that a compact subset of $X$ can intersect only finitely many of its simplices. This is used to show that the map $H^\Delta_n(X)\to \rmH_n(X)$ is surjective. Namely one argues that every singular $n$-cycle is by definition a linear combination of finitely many singular simplices with compact images, which meet finitely many open simplices of $X$, and is thus contained in $X^k$ for some finite $k$, where the isomorphism $H^\Delta_n(X^k)\to \rmH_n(X^k)$ is already established. Thus the singular cycle is homologous (in $X^k$ and thus in $X$) to a simplicial cycle. Injectivity is similar: if a simplicial $n$-cycle $z$ is the boundary of a singular chain (i.e., its image under the map in question vanishes), then this singular chain has compact image and thus lies in some $X^k$, in which case by injectivity of the map $H^\Delta_n(X^k)\to \rmH_n(X^k)$, $z$ must be a simplicial boundary in $X^k$ and this in $X$, so $[z]=0$. 
     
     The case $A\neq\varnothing$ follows by combining the result for the absolute homology of $X$ with an application of the 5-lemma to the analogous segment of two long exact sequences of pairs $(X,A)$.
 \end{proof}
@@ -2153,13 +2153,13 @@ The first three axioms are always required:
 There are further optional axioms that may or may not be satisfied by specific homology theories:
 \begin{enumerate}
     \setcounter{enumi}{3}
-    \item (Dimension axiom.) $h_n(\text{point})=0$ for $n\neq 0$. Such a theory is called \emph{ordinary} or classical, and otherwise the theory is called \emph{extraordinary} (e.g.\ K-theory and cobordisms). The theory is also called \emph{reduced} if $h_n(\text{point})=0$ for all $n$.
+    \item (Dimension axiom.) $h_n(\text{point})=0$ for $n\neq 0$. Such a theory is called \emph{ordinary} or classical, and otherwise the theory is called \emph{extraordinary} (e.g., K-theory and cobordisms). The theory is also called \emph{reduced} if $h_n(\text{point})=0$ for all $n$.
     \item (Additivity.) $h_n$ of a topological sum (disjoint union) of pairs is isomorphic to the direct sum of $h_n$'s of the pairs.
 \end{enumerate}
 Singular homology has two further properties that one may require:
 \begin{enumerate}
     \setcounter{enumi}{5}
-     \item (Weak equivalence.) A weak equivalence $f:X\to Y$ (i.e.\ a map that induces isomorphisms on homotopy groups $\pi_n(X)\cong \pi_n(Y)$) induces isomorphisms $f_\ast:h_\bullet(X)\cong h_\bullet(Y)$.
+     \item (Weak equivalence.) A weak equivalence $f:X\to Y$ (i.e., a map that induces isomorphisms on homotopy groups $\pi_n(X)\cong \pi_n(Y)$) induces isomorphisms $f_\ast:h_\bullet(X)\cong h_\bullet(Y)$.
     \item (Compact support.)  For each $c\in h_n(X,A)$ there exists a map $f:(K,L)\to (X,A)$ from a pair $(K,L)$ of compact Hausdorff spaces and $z\in h_n(K,L)$ with $f_\ast(z)=c$.
 \end{enumerate}   
 
@@ -2299,7 +2299,7 @@ The following result provides a way of computing the coefficients.
          \item $q_\beta:X^{(n-1)}\slash X^{(n-2)}\to \bbS^{(n-1)}$ collapses the complement of the cell $e^{n-1}_\beta$ to a point, the resulting quotient sphere being identified with $\bbS^{n-1}$ via the characteristic map $f^{n-1}_\beta$;
          \item $\Delta_{\alpha\beta}:\bbS^{n-1}\to \bbS^{n-1}$ is the composition $q_\beta\circ q\circ \varphi^n_\alpha$, i.e.~the attaching map of $e^n_\alpha$ followed by the quotient map $X^{(n-1)}\to \bbS^{n-1}$ collapsing the complement of $e^{n-1}_\beta$ in $X^{n-1}$ to a point.
     \end{enumerate}
-    Note that $(\Delta_{\alpha\beta})_\ast$ is defined so that the top right square commutes. The upper left square is natural and therefore commutes (it is induced by the characteristic map of a cell), while the lower left triangle is part of the exact diagram defining the chain complex $C_\bullet^{\mathrm{CW}}$ and is defined to commute as well. The map $(f_\alpha^n)_\ast$ takes the generator $[\bbD^n]\in \rmH_n(\bbD^n,\bbS^{n-1})$ to a generator of the $\bbZ$-summand of $\rmH_n(X^{(n)},X^{(n-1)})$ corresponding to $e^n_\alpha$, i.e.\ 
+    Note that $(\Delta_{\alpha\beta})_\ast$ is defined so that the top right square commutes. The upper left square is natural and therefore commutes (it is induced by the characteristic map of a cell), while the lower left triangle is part of the exact diagram defining the chain complex $C_\bullet^{\mathrm{CW}}$ and is defined to commute as well. The map $(f_\alpha^n)_\ast$ takes the generator $[\bbD^n]\in \rmH_n(\bbD^n,\bbS^{n-1})$ to a generator of the $\bbZ$-summand of $\rmH_n(X^{(n)},X^{(n-1)})$ corresponding to $e^n_\alpha$, i.e., 
     \[(f^n_\alpha)_\ast([\bbD^n])=[e^n_\alpha].\]
     Since the top left square and the bottom left triangle commute, his gives that 
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=\partial_n^{\mathrm{CW}}\circ (f^n_\alpha)_\ast([\bbD^n])=j_{n-1}\circ (\varphi_\alpha^n)_\ast\circ \partial_n([\bbD^n]).\]
@@ -2476,10 +2476,10 @@ In this section we develop more advanced tools of homological algebra necessary 
 \subsection{Injective and projective resolutions}
 
 
-Recall that an  $R$-module $P$ is called projective if the functor $\hom_R(P,_)$ is right-exact (it is always left-exact), i.e.\ if for every surjective map $A\to B$, any map $P\to B$ can be (not uniquely) factored through (lifted to) a map $P\to A$. This is a generalization of the concept of a free $R$-module (for free modules the lifting is unique by definition).
+Recall that an  $R$-module $P$ is called projective if the functor $\hom_R(P,_)$ is right-exact (it is always left-exact), i.e., if for every surjective map $A\to B$, any map $P\to B$ can be (not uniquely) factored through (lifted to) a map $P\to A$. This is a generalization of the concept of a free $R$-module (for free modules the lifting is unique by definition).
 
 \begin{prop}
-    A left $R$-module $P$ is projective iff every short exact sequence $0\to A\to B\to P\to 0$ splits, i.e.\ $P\cong B/A$ implies $B\cong A\oplus P$.
+    A left $R$-module $P$ is projective iff every short exact sequence $0\to A\to B\to P\to 0$ splits, i.e., $P\cong B/A$ implies $B\cong A\oplus P$.
 \end{prop}
 
 \begin{thm}
@@ -2493,10 +2493,10 @@ Recall that an  $R$-module $P$ is called projective if the functor $\hom_R(P,_)$
 For $R$ a field or a principal ideal domain (say, $\bbZ$), every projective module is free (in the former case all modules are free, and in the latter all submodules of free modules are free).
 
 
-Similarly, an $R$-module $E$ is called injective if the functor $\hom_R(_,E)$ is right exact (it is always left exact), i.e.\ if every morphism from a submodule $A<B$ into $E$ can always be extended (not uniquely) to a morphism $B\to E$. This is a generalization of the properties of $\bbQ$ as a $\bbZ$-module (abelian group).
+Similarly, an $R$-module $E$ is called injective if the functor $\hom_R(_,E)$ is right exact (it is always left exact), i.e., if every morphism from a submodule $A<B$ into $E$ can always be extended (not uniquely) to a morphism $B\to E$. This is a generalization of the properties of $\bbQ$ as a $\bbZ$-module (abelian group).
 
 \begin{prop}
-    If a left $R$-module $E$ is injective, then every short exact sequence $0\to E\to B\to C\to 0$ splits, i.e.\ if $E$ is a submodule of a module, then it is also a direct summand in it.
+    If a left $R$-module $E$ is injective, then every short exact sequence $0\to E\to B\to C\to 0$ splits, i.e., if $E$ is a submodule of a module, then it is also a direct summand in it.
 \end{prop}
 
 \begin{prop}
@@ -2521,7 +2521,7 @@ Similarly, an $R$-module $E$ is called injective if the functor $\hom_R(_,E)$ is
 \begin{proof}
      Indeed, every module $M$ is a factor of the free module generated by all elements of $M$. This proves that there are enough projectives. 
      
-     It requires more work to show that there are enough injectives, e.g.\ every module has an ``injective hull'' (see \cite[Thm. 3.38]{Rotman}).
+     It requires more work to show that there are enough injectives, e.g., every module has an ``injective hull'' (see \cite[Thm. 3.38]{Rotman}).
 \end{proof}
 
 \begin{defn}[Projective resolution]
@@ -2623,7 +2623,7 @@ Similarly, an $R$-module $E$ is called injective if the functor $\hom_R(_,E)$ is
 
 \subsection{Left derived covariant functors}
 
-As we already know, short exact sequences under the action of a particular functor do not, in general, remain exact. Many relevant functors (say, covariant for now) preserve exactness only on the left (``left-exact functor'') or the right (``left-exact functor'') sides of the sequences. We are now ready to define the objects that measure the non-exactness of a given functor (e.g.\ a hom-functor or a tensor product functor).
+As we already know, short exact sequences under the action of a particular functor do not, in general, remain exact. Many relevant functors (say, covariant for now) preserve exactness only on the left (``left-exact functor'') or the right (``left-exact functor'') sides of the sequences. We are now ready to define the objects that measure the non-exactness of a given functor (e.g., a hom-functor or a tensor product functor).
 
 \begin{defn}[Left derived functors]
     Let $F:\calC\to \calD$ be an additive covariant functor between abelian categories and let $\calC$ have enough projectives. For an object $A\in \ob(\calC)$ choose an arbitrary deleted projective resolution $\bm{P}_A$:
@@ -2696,7 +2696,7 @@ We already know that an exact sequence of complexes gives rise to an exact seque
     Defining $\delta_{n+1}:Q_{n+1}\to Q_n$ as the composition $Q_{n+1}\to V_n\to Q_n$, we splice this diagram into the existing one to produce the next row.
 \end{proof}
 \begin{rem}
-    Note that while every row of the resulting diagram splits by projectivity of $P_n''$, the splitting maps $P_n''\to P_n$ don't form a chain map, i.e.\ the final sequence of complexes itself does not necessarily split.
+    Note that while every row of the resulting diagram splits by projectivity of $P_n''$, the splitting maps $P_n''\to P_n$ don't form a chain map, i.e., the final sequence of complexes itself does not necessarily split.
 \end{rem}
 
 The next theorem finally explains in what sense derived functors of $F$ measure the non-exactness of $F$. Namely, their values is what needs to be put on the left of the image of a short exact sequence under $F$ to make it exact again.
@@ -3924,7 +3924,7 @@ In an extension by an abelian kernel, any two preimages of a point $g\in G$ diff
     It remains to check that this is an isomorphism of groups, which we omit (it is an easy exercise given that we have explicit equations for the bijection).
 \end{proof}
 
-In summary, $\rmH^1$ describes the conjugacy classes of embeddings of $G$ into a semidirect product, whereas $\rmH^2$ describes extensions with a given action that differ from a semidirect product (i.e.~the semidirect product corresponds to the zero element of $\rmH^2$ because its factors are everywhere equal to $1$, i.e.\ the cocycle is trivial).
+In summary, $\rmH^1$ describes the conjugacy classes of embeddings of $G$ into a semidirect product, whereas $\rmH^2$ describes extensions with a given action that differ from a semidirect product (i.e.~the semidirect product corresponds to the zero element of $\rmH^2$ because its factors are everywhere equal to $1$, i.e., the cocycle is trivial).
 
 \subsection{Relation to topology}
 
