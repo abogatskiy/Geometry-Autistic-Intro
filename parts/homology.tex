@@ -1,6 +1,6 @@
 % !TEX root = ../geom_autistic_intro.tex
-\section{Category Theory II}
-\subsection{Limits and colimits}\label{Limits and colimits}
+\chapter{Category Theory II}
+\section{Limits and colimits}\label{Limits and colimits}
 
 Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now generalize their construction to define limits and colimits of $\calJ$-shaped diagrams.
 
@@ -153,7 +153,7 @@ The most common examples of infinite limits and colimits are ones where $\mathca
 
 
 
-\subsection{Sub-objects and quotient objects}
+\section{Sub-objects and quotient objects}
 
 \begin{defn}
     Let $X,U,V\in\ob(\calC)$ and consider a diagram
@@ -206,7 +206,7 @@ Here are the properties of this relation:
 
 
 
-\subsection{Abelian categories}
+\section{Abelian categories}
 
 Abelian categories are, roughly speaking, categories where objects and morphisms form abelian groups themselves, and where the First Isomorphism theorem holds. Examples include $\mathsf{Ab}$, $\mathsf{Vect}_K$, $R-\mathsf{Mod}$ or $\mathsf{Mod}-R$, $\mathsf{SheafAb}$. Notably, $\mathsf{TopAb}$ is not abelian because the First Isomorphism theorem generally doesn't hold for topological groups (we call such a category pre-abelian).
 
@@ -267,7 +267,7 @@ The last axiom of abelian categories states that $\coim\varphi = \im\varphi$, wh
 \begin{xca}
     Prove that the last axiom of abelian categories is indeed equivalent to the boxed statement.
 \end{xca}
-Therefore only in abelian categories we have the decomposition
+Therefore in abelian categories we have the shortened decomposition
 \[\ker\varphi\to X \overset{j\text{, epi}}\longrightarrow\im\varphi\overset{i\text{, mono}}\longrightarrow Y\to \coker\varphi,\]
 where
 \[\text{factorization property}:\quad \varphi=i\circ j,\quad i\text{ -- mono}, j\text{ -- epi}.\]
@@ -281,7 +281,7 @@ The following theorem is the main general result about abelian categories and ef
 \begin{thm}[Freyd-Mitchell]
     For any abelian category $\calC$ there exists a ring $R$ and a functor $F:\calC\to R\text{-}\mathsf{Mod}$ that is: additive, full and faithful (surjective and injective on sets of morphisms for each pair of objects), preserves kernels, cokernels, products and coproducts, is exact (preserves exact sequences, see below)...
 \end{thm}
-This theorem justifies all diagrammatic methods that we will develop in the next two sections: since $R\text{-}\mathsf{Mod}$ is a concrete category, its objects are sets. Therefore by the Freyd-Mitchell theorem, it suffices to prove any general statement about abelian categories only for categories of ring modules, which allows us to refer to elements of objects as sets, and apply morphisms as functions to those elements! It is a way to completely side-step so called ``abstract nonsense'' proofs that deliberately avoid talking about elements of objects as if they are sets.
+The ellipsis indicates that one can keep requiring various extra properties of the functor without violating the theorem. This theorem justifies all diagrammatic methods that we will develop in the next two sections: since $R\text{-}\mathsf{Mod}$ is a concrete category, its objects are sets. Therefore, by the Freyd-Mitchell theorem, it suffices to prove any general statement about abelian categories only for categories of ring modules, which allows us to refer to \emph{elements} of objects as sets, and apply morphisms as \emph{functions} to those elements! It is a way to completely side-step so called ``abstract nonsense'' proofs that deliberately avoid talking about elements of objects as if they are sets.
 
 
 
@@ -289,9 +289,9 @@ This theorem justifies all diagrammatic methods that we will develop in the next
 
 
 \clearpage
-\section{Homological Algebra I: Exactness}
+\chapter{Homological Algebra I: Exactness}
 
-\subsection{Exact sequences and functors}
+\section{Exact sequences and functors}
 
 From now on in this Part we work only with abelian categories. In fact, homological algebra can be viewed as the extension of linear algebra to all abelian categories.
 
@@ -488,7 +488,7 @@ All of them are examples of (co)homology theories. We will return to a proper di
 
 
 
-\subsection{Direct limits and exactness}
+\section{Direct limits and exactness}
 
 \begin{defn}
     A category $\calC$ is called complete if all limits in $\calC$ with a small index category (i.e.~$\ob(\calJ)$ is a proper set and not a class) exist. $\calC$ is called cocomplete if all small colimits in $\calC$ exist.
@@ -553,7 +553,7 @@ Therefore neither limits nor colimits preserve exactness on both sides, in gener
 
 
 
-\subsection{Diagram chasing lemmas}
+\section{Diagram chasing lemmas}
 
 All of the following lemmas hold in arbitrary abelian categories. Moreover, for every general diagrammatic statement in an abelian category, its dual holds as well (i.e., the diagram with all arrows reversed), since we can always pass to the dual category, which is also abelian.
 
@@ -724,9 +724,7 @@ All of the following lemmas hold in arbitrary abelian categories. Moreover, for 
     
     Next we need to check correctness: given another $y': f_1(y')=x$, we have a unique $z':g_0(z')=\pi_1(y')$. One then shows that $z-z'\in \im\pi_0$.
     
-    Moreover, we need to check that $\delta$ is a homomorphism (this is not completely obvious since the construction was not just a composition of homomorphisms).
-    
-    Finally, one checks the exactness of the resulting long sequence (in two terms, $\ker\pi_2$ and $\coker\pi_0$). We leave all these checks to the reader as an exercise.
+    Moreover, we need to check that $\delta$ is a homomorphism (this is not completely obvious since the construction was not just a composition of homomorphisms). Finally, one checks the exactness of the resulting long sequence (in two terms, $\ker\pi_2$ and $\coker\pi_0$). We leave all of these checks to the reader as an exercise.
 \end{proof}
 
 
@@ -760,9 +758,9 @@ All of the following lemmas hold in arbitrary abelian categories. Moreover, for 
 
 
 \clearpage
-\section{Cohomologies of Differential Forms \texorpdfstring{\ucmark}{}}
+\chapter{Cohomologies of Differential Forms \texorpdfstring{\ucmark}{}}
 
-\subsection{De Rham cohomology}
+\section{De Rham cohomology}
 
 
 \begin{defn}[de Rham cohomology]\index{Cohomology!de Rham}
@@ -773,7 +771,7 @@ All of the following lemmas hold in arbitrary abelian categories. Moreover, for 
     This is possible because $\dd^2=0$, i.e., $B^p\subset Z^p$.
     Thus the sequence above is exact iff all de Rham cohomologies vanish.
 \end{defn}
-Thus de Rham cohomology counts non-exact closed differential forms.
+Thus de Rham cohomology counts non-exact closed differential forms. The following proposition computes the trivial de Rham cohomologies.
 
 \begin{prop}\label{prop zeroth cohomology}
     \begin{enumerate}
@@ -785,13 +783,14 @@ Thus de Rham cohomology counts non-exact closed differential forms.
     Exercise.
 \end{proof}
 
-\begin{thm}[Poincar\'e lemma]\label{Poincare lem}
-    $\rmH^p_{\rm dR}(\bbR^{n})=\rmH^{p}_{\rm dR}(\bbR^{n-1})$. More generally, for any manifold $M$,
+The non-trivial de Rham cohomologies are computed with the help of Poincar\'e's Lemma~\ref{lem poincare classic}, which we prove again in a different form.
+
+\begin{thm}[Poincar\'e Lemma {{\cite[Prop.~4.1.1]{BottTu}}}]\label{Poincare lem}
+    $\rmH^p_{\rm dR}(\bbR^{n})=\rmH^{p}_{\rm dR}(\bbR^{n-1})$. By induction, $\rmH^p_{\rm dR}(\bbR^{n})=0$ for $p>0$. More generally, for any manifold $M$,
     \[\rmH^{\smbullet }_{\rm dR}(M\times\bbR)=\rmH^{\bullet}_{\rm dR}(M).\]
-    By induction, $\rmH^p_{\rm dR}(\bbR^{n})=0$ for $p>0$.
 \end{thm}
 \begin{proof}
-    We present a proof from \cite{BottTu} that uses the general ideas of homotopy operators that will be useful to us later. Let $\pi:M\times\bbR \to M$ be the projection on the first factor and $s:M\to M\times\bbR^1$ the zero section (or in fact any section). Then we have the corresponding pullback maps on differential forms:
+    We present a proof that uses the general ideas of homotopy operators that will be useful to us later. Let $\pi:M\times\bbR \to M$ be the projection on the first factor and $s:M\to M\times\bbR^1$ the zero section (or in fact any section). Then we have the corresponding pullback maps on differential forms:
     \[\pi^\ast:\Omega^{\smbullet }(M)\to \Omega^{\smbullet }(M\times\bbR^1),\quad s^\ast: \Omega^{\smbullet }(M\times\bbR^1)\to \Omega^{\smbullet }(M).\]
     Note that $\pi\circ s=1$ and thus $s^\ast\circ\pi^\ast=1$. Also, both $s$ and $\pi$ send closed forms to closed forms, which means that they induce well-defined maps on corresponding cohomology groups, which we will denote by the same symbols.
     
@@ -841,15 +840,15 @@ Thus de Rham cohomology counts non-exact closed differential forms.
 \end{proof}
 
 
-\subsection{Mayer-Vietoris sequence}
+\section{Mayer-Vietoris sequence}
 \index{Sequence!Mayer-Vietoris}
 
-Suppose $M=U\cup V$ with $U,V$ open. We have the inclusions
-\[U\cap V\toto[i_1]{i_0}U\sqcup V\to M \]
+In this \sect\ we introduce the commutative analog of the Seifert-van~Kampen Theorem~\ref{thm seifert-van kampen}. As we will see later, it applies not just to de Rham cohomology, but to all homology theories of topological spaces. Suppose a manifold $M$ is decomposed as a union $M=U\cup V$ with $U,V$ open. We have the natural inclusion maps
+\[U\cap V\toto[i_V]{i_U}U\sqcup V\to M. \]
 Applying the contravariant functor $\Omega^{\smbullet }$, we get the sequence of restrictions of forms
-\[\Omega^{\smbullet }(M)\to \Omega^{\smbullet }(U)\oplus\Omega^{\smbullet }(V)\toto[i_1^\ast]{i_0^\ast}\Omega^{\smbullet }(U\cap V).\]
+\[\Omega^{\smbullet }(M)\to \Omega^{\smbullet }(U)\oplus\Omega^{\smbullet }(V)\toto[i_V^\ast]{i_U^\ast}\Omega^{\smbullet }(U\cap V).\]
 By taking the difference of the last two maps, we obtain the \emph{\gls{mv} sequence}\index{Mayer-Vietoris sequence}
-\[0\to\Omega^{\smbullet } (M)\to\Omega^{\smbullet }(U)\oplus\Omega^{\smbullet }(V)\overset{\text{difference}}\longrightarrow\Omega^{\smbullet } (U\cap V)\to 0\]
+\[0\to\Omega^{\smbullet } (M)\to\Omega^{\smbullet }(U)\oplus\Omega^{\smbullet }(V)\overset{\text{difference}}\longrightarrow\Omega^{\smbullet } (U\cap V)\to 0.\]
 
 \begin{prop}
     The \gls{mv} sequence is commutative (i.e., the horizontal maps introduced above commute with applications of $\dd$) and exact.
@@ -864,10 +863,10 @@ Consider a general exact sequence of differential complexes \[0\to A^{\smbullet 
 \[\begin{tikzcd}
         \; & \; & \; &\; &\; \\
         0 \arrow[r]& A^{p+1}\arrow[r,"f"]\arrow[u] &B^{p+1}\arrow[u]\arrow[r,"g"]& C^{p+1}\arrow[r]\arrow[u]& 0\\
-       0\arrow[r] & A^p\arrow[r,"f"]\arrow[u,"d"] &B^p\arrow[u,"d"]\arrow[r,"g"]&C^p\arrow[u,"d"]\arrow[r]&0 \\
+       0\arrow[r] & A^p\arrow[r,"f"]\arrow[u,"\dd"] &B^p\arrow[u,"\dd"]\arrow[r,"g"]&C^p\arrow[u,"\dd"]\arrow[r]&0 \\
         &\arrow[u] & \arrow[u]& \arrow[u] &
 \end{tikzcd}\]
-in which every row is exact and $d^2=0$ in every column. The cohomology groups of each complex are again defined as $\ker d_{p}/\im d_{p-1}$. 
+in which every row is exact and $\dd^2=0$ in every column. The cohomology groups of each complex are again defined as $\ker \dd_{p}/\im \dd_{p-1}$. 
 
 Essentially by the snake lemma \ref{snake lemma}, this induces a long exact sequence of cohomology groups:
 \[
@@ -892,7 +891,7 @@ Retracing the construction of the connecting homomorphism, we find that
 \begin{example}[de Rham cohomology of $\bbS^1$]\label{de Rham of circle}
     Let $M=\bbS^1$ and let $U,V$ be a covering of the circle by two overlapping open arcs. Then we have the exact sequence
     \[0\to H^0(\bbS^1)\overset\psi\to H^0(U\sqcup V)\overset\partial\to H^0(U\cap V)\overset\delta\to \rmH^1(\bbS^1)\to \rmH^1(U\sqcup V)\to \cdots \]
-    in which by Proposition~\ref{prop zeroth cohomology} and Poincar\'e lemma \ref{Poincare lem}
+    in which by Proposition~\ref{prop zeroth cohomology} and Poincar\'e Lemma \ref{Poincare lem}
     \[H^0(\bbS^1)=\bbR,\quad H^0(U\sqcup V)=\bbR^2,\quad H^0(U\cap V)=\bbR^2,\quad \rmH^1(U\sqcup V)=0,\]
     thus we get the exact sequence
     \[0\to \bbR\overset\psi\to \bbR^2\overset{\partial}\to \bbR^2\overset\delta\to \rmH^1(\bbS^1)\to 0,\]
@@ -931,7 +930,7 @@ Retracing the construction of the connecting homomorphism, we find that
 \end{comment}
 
 
-\subsection{De Rham cohomology with compact support}
+\section{De Rham cohomology with compact support}
 
 \begin{defn}[de Rham cohomology with compact support]\index{Cohomology!with compact support}
     Define $\Omega_c^{\smbullet }(M)$ as the complex of differential forms with compact support on $M$. Then the cohomology groups $H_c^{\smbullet }(M)$ of differential forms with compact support are defined just like before.
@@ -944,13 +943,11 @@ Retracing the construction of the connecting homomorphism, we find that
         \item $\Omega_c^{\smbullet }$ is a covariant functor under inclusions of open sets. Namely, if $i:U\hookrightarrow M$ is an inclusion of an open set, then $i_\ast:\Omega_c^{\smbullet }(U)\hookrightarrow\Omega_c^{\smbullet }(M)$ is the map that extends forms with compact support in $U$ by zero to all of $M$.
     \end{enumerate}
 \end{prop}
-Usually we will interpret $\Omega_c^{\smbullet }$ as its \emph{covariant} version.
-
-A covering by two sets $U,V$ with maps 
-\[U\cap V\toto[i_1]{i_0}U\sqcup V\to M \]
+Usually we will interpret $\Omega_c^{\smbullet }$ as its \emph{covariant} version. Then a covering by two sets $U,V$ with maps 
+\[U\cap V\toto[i_V]{i_U}U\sqcup V\to M \]
 as before gives rise to a sequence of forms with compact support:
-\[\Omega_c^{\smbullet }(U\cap V)\overset{j}{\to} \Omega_c^{\smbullet }(U)\oplus\Omega_c^{\smbullet }(V)\overset{\text{sum}}\to M ,\]
-where $j$ is the ``signed inclusion'' $\omega\mapsto (-i_\ast \omega,i_\ast\omega)$.
+\[\Omega_c^{\smbullet }(U\cap V)\overset{j}{\to} \Omega_c^{\smbullet }(U)\oplus\Omega_c^{\smbullet }(V)\overset{\text{sum}}\to \Omega_c^{\smbullet} (M) ,\]
+where $j$ is the ``signed inclusion'' $\omega\mapsto \left(-(i_U)_\ast \omega,(i_V)_\ast\omega\right)$.
 
 \begin{prop}
     The \gls{mv} sequence of forms with compact support
@@ -975,8 +972,8 @@ Obviously, for compact manifolds $\rmH^{\smbullet }_c=\rmH^{\smbullet }_{\rm dR}
 
 \begin{thm}[Poincar\'e lemma for compact supports]\index{Poincar\'e lemma with compact support}
     For any manifold $M$, 
-    \[H_c^{\smbullet }(M\times \bbR)=H_c^{\bullet-1}(M).\] 
-    In particular $H_c^p(\bbR^n)=0$ for $p\neq n$ and $H_c^n(\bbR^n)=\bbR$.
+    \[H_c^{\smbullet }(M\times \bbR)\cong H_c^{\bullet-1}(M).\] 
+    In particular $H_c^p(\bbR^n)=0$ for $p\neq n$ and $H_c^n(\bbR^n)\cong\bbR$.
 \end{thm}
 \begin{proof}
     We will use the same ideas and notation as in the first Poincar\'e lemma \ref{Poincare lem}. Consider again the projection $\pi:M\times \bbR\to M$. The pullback $\pi^\ast$ does not map nonzero forms into forms with compact support on $M\times\bbR$, however there is a push-forward map $\pi_\ast:\Omega_c^{\smbullet }(M\times\bbR)\to \Omega_c^{\bullet-1}(M)$ called \emph{integration along the fiber}. We define it separately on the two kinds of forms:
@@ -991,7 +988,7 @@ Obviously, for compact manifolds $\rmH^{\smbullet }_c=\rmH^{\smbullet }_{\rm dR}
     \[\pi_\ast\circ e_\ast=1 \text{ on }\Omega_c^{\smbullet }(M).\]
     To prove that $e_\ast\circ \pi_\ast=1$ in cohomology as well, we introduce the new homotopy operator $K:\Omega_c^{\smbullet }(M\times\bbR)\to \Omega_c^{\bullet-1}(M\times \bbR)$ by
     \begin{equation}
-        K: \quad\quad f\cdot\omega\mapsto 0,    \quad\quad f\cdot \omega\wedge\dd t\mapsto  \omega\cdot\int_\bbR f-\omega\cdot E(t)\int_\bbR f,\quad \text{where } E(t)=\int_{-\infty}^t e
+        K: \quad f\cdot\omega\mapsto 0,    \quad f\cdot \omega\wedge\dd t\mapsto  \omega\cdot\int_\bbR f-\omega\cdot E(t)\int_\bbR f,\quad \text{where } E(t)=\int_{-\infty}^t e.
     \end{equation}
     Now it remains to show that 
     \[1-e_\ast\pi_\ast=(-1)^{p-1}(\dd K-K\dd)\text{ on }\Omega_c^p(M\times\bbR).\]
@@ -1012,11 +1009,8 @@ Obviously, for compact manifolds $\rmH^{\smbullet }_c=\rmH^{\smbullet }_{\rm dR}
     \end{multline}
     Therefore
     \[(\dd K-K \dd )f\omega\wedge\dd t=(-1)^{p-1}\left[f\omega\wedge\dd t -\omega\wedge e\cdot\int_\bbR f\right],\]
-    which proves the needed identity.
-    
-    The existence of a homotopy operator proves that the maps $\pi_\ast$ and $e_\ast$ provide an isomorphism
-    $H_c^{\smbullet }(M\times\bbR)\cong H_c^{\bullet -1}(M)$.
-    
+    which proves the needed identity. The existence of a homotopy operator proves that the maps $\pi_\ast$ and $e_\ast$ provide an isomorphism
+    $H_c^{\smbullet }(M\times\bbR)\cong H_c^{\bullet -1}(M)$. Finally, 
     $H_c^n(\bbR^n)\cong \bbR$ by iteration since $H_c^0(\text{point})=\rmH_{\rm dR}^0(\text{point})=\bbR$.
 \end{proof}
 \begin{rem}
@@ -1024,7 +1018,10 @@ Obviously, for compact manifolds $\rmH^{\smbullet }_c=\rmH^{\smbullet }_{\rm dR}
 \end{rem}
 
 
-\subsection{Finite dimensionality of de Rham cohomology}\label{finite dim de rham}
+
+
+
+\section{Finite dimensionality of de Rham cohomology}\label{finite dim de rham}
 
 We have already seen that the \gls{mv} sequence combined with the Poincar\'e lemma is a powerful tool that is sufficient to compute cohomologies of nontrivial manifolds like spheres. Now we will show that these two tools are in fact sufficient for arbitrary manifolds, as a long as we choose the right open covering.
 
@@ -1039,7 +1036,7 @@ We have already seen that the \gls{mv} sequence combined with the Poincar\'e lem
      We have shown earlier that every manifold admits a Riemannian metric, and every Riemannian manifold can be covered by geodesically convex neighborhoods whose intersections are also geodesically convex (Theorem~\ref{geodesically convex nbhds thm}). Therefore such a cover is a good cover.
 \end{proof}
 
-Recall that an open covering $\calV$ is a \emph{refinement} of $\calU$ if every $V_\beta$ is contained in some $U_\alpha$, and we write $\calU\leq \calV$.
+Recall that an open covering $\calV=\{V_\beta\}_\beta$ is a \emph{refinement} of $\calU$ if every $V_\beta$ is contained in some $U_\alpha$, and we write $\calU\leq \calV$.
 
 \begin{cor}
     Every open covering of a manifold has a good refinement.
@@ -1068,21 +1065,21 @@ The set of all open coverings of $M$ is a directed set with the refinement relat
 \end{prop}
 \begin{proof}
      From the \gls{mv} sequence 
-     \[\cdots\to \rmH^{q-1}_{\rm dR}(U\cap V)\overset{\delta}\to H^q(U\cap V)\overset{r}\to H^q(U)\oplus H^q(V)\to\cdots\]
+     \[\cdots\to \rmH^{q-1}_{\rm dR}(U\cap V)\overset{\delta}\to \rmH^q(U\cap V)\overset{r}\to \rmH^q(U)\oplus \rmH^q(V)\to\cdots\]
      we have by the rank-nullity theorem
-     \[H^q_{\rm dR}(U\cup V)\cong \ker r\oplus\im r\cong \im \delta\oplus\im r.\]
-     Thus if $H^q(U), H^q(V)$ and $\rmH^{q-1}(U\cap V)$ are finite-dimensional, then so is $H^q(U\cup V)$.
-     We proceed by induction in the size of the good cover. The base of induction holds by the Poincar\'e lemma. Suppose that the cohomology of any manifold having a good cover with at most $p$ elements is finite-dimensional. Consider a manifold with a good cover $\{U_0,\ldots,U_{p}\}$. Now $(U_0\cup \cdots \cup U_{p-1})\cap U_{p}$ has a good cover with $p$ elements, namely $\{U_{0p},U_{1p},\ldots,U_{p-1,p}\}$. Thus by hypothesis, the $q$th cohomology of $(U_0\cup \cdots \cup U_{p-1})$, $U_p$ and $(U_0\cup \cdots \cup U_{p-1})\cap U_{p}$ are finite-dimensional. Using the above result for a union of two open sets, we conclude that so is the cohomology of $U_0\cup \cdots\cup U_p$.
+     \[\rmH^q_{\rm dR}(U\cup V)\cong \ker r\oplus\im r\cong \im \delta\oplus\im r.\]
+     Thus if $\rmH^q(U), \rmH^q(V)$ and $\rmH^{q-1}(U\cap V)$ are finite-dimensional, then so is $\rmH^q(U\cup V)$.
+     We proceed by induction in the size of the good cover. The base of induction holds by the Poincar\'e lemma. Suppose that the cohomology of any manifold having a good cover with at most $p$ elements is finite-dimensional. Consider a manifold with a good cover $\{U_0,\ldots,U_{p}\}$. Now $(U_0\cup \cdots \cup U_{p-1})\cap U_{p}$ has a good cover with $p$ elements, namely $\{U_{0p},U_{1p},\ldots,U_{p-1,p}\}$. Thus by hypothesis, the $q$'th cohomology of $(U_0\cup \cdots \cup U_{p-1})$, $U_p$ and $(U_0\cup \cdots \cup U_{p-1})\cap U_{p}$ are finite-dimensional. Using the above result for a union of two open sets, we conclude that so is the cohomology of $U_0\cup \cdots\cup U_p$.
 \end{proof}
 
 
-\subsection{Hodge theory}
+\section{Hodge theory}
 
 
-\subsection{Cohomology of Lie groups}
+\section{Cohomology of Lie groups}
 
 
-\subsection{Dolbeault cohomology}
+\section{Dolbeault cohomology}
 
 Similar to de Rham cohomology, we can define cohomology of complex differential forms.
 
@@ -1148,10 +1145,10 @@ Computing Dolbeault cohomology in general requires more sophisticated tools than
 
 
 \clearpage
-\section{Homology of Topological Spaces}
+\chapter{Homology of Topological Spaces}
 
 
-\subsection{Simplicial homology}
+\section{Simplicial homology}
 
 Simplicial homology is the simplest homology theory in that it can be formulated entirely within basic set theory, despite the fact that in the applications interesting to us the elements these sets will usually have a topological or geometric interpretation. More details on simplicial complexes can be found in \cite{tomDieck}.
 
@@ -1322,7 +1319,7 @@ Intuitively, $H^\Delta_p$ detects the ``$p$-dimensional holes'' in the complex, 
 
 
 
-\subsection{Homological algebra II: complexes}
+\section{Homological algebra II: complexes}
 
 \begin{defn}[(Co)chain complexes]\index{Complex!of chains}\index{Complex!of cochains}
     A chain complex $(\bm{C},d)$ in an abelian category $\calC$ is a sequence  of morphisms 
@@ -1593,7 +1590,7 @@ for the descendants of maps in (co)homology.
      \]
      Taking $[c]\in \rmH_n(\bm{C})$, we must show that $f_\ast\delta [c]=\delta ' h_\ast [c]$. Let $b\in B_n$ be such that $p(b)=c$. Then $\delta [c]=[a]$, where $i(a)=d(b)$. Hence $f_\ast \delta [c]=[f(a)]$. 
      
-     On the other hand, since $h$ is a chain map, $q(g(b))=h(p(b))=h(c)$. Hence we can use $g(b)$ as the pre-image of $h(c)$ in $B_n'$, so by construction of the connecting homomorphism, $\delta '[h(c)]=[a']$ where $j(a')=d(g(b))$. But $j(f(a))=g(i(a))=g(d(b))=d(g(b))=j(a')$ and so $f(a)=a'$ because $j$ is injective. Therefore $\delta'h_\ast [c]=[a']=[f(a)]$, which coincides with the l.h.s.\ computed above.
+     On the other hand, since $h$ is a chain map, $q(g(b))=h(p(b))=h(c)$. Hence we can use $g(b)$ as the preimage of $h(c)$ in $B_n'$, so by construction of the connecting homomorphism, $\delta '[h(c)]=[a']$ where $j(a')=d(g(b))$. But $j(f(a))=g(i(a))=g(d(b))=d(g(b))=j(a')$ and so $f(a)=a'$ because $j$ is injective. Therefore $\delta'h_\ast [c]=[a']=[f(a)]$, which coincides with the l.h.s.\ computed above.
 \end{proof}
 
 Naturality is instrumental in many arguments involving long exact sequences because it means that we can apply sequences of chain maps to long exact sequences and preserve the commutativity of diagrams.
@@ -1665,7 +1662,7 @@ Now that we know that $\rmH_n$ is a functor, it is natural to ask how much $\rmH
 
 
 
-\subsection{Singular homology}
+\section{Singular homology}
 
 de Rham cohomology is defined only for smooth manifolds, and simplicial homology is defined only for triangulable spaces. The type of homology we define now works for all topological spaces, but proving its properties for nicer spaces (like manifolds) requires extra work. The idea is, instead of trying to break up our topological space into simplices, to study the set of all continuous maps from simplices to our space.
 
@@ -1720,7 +1717,7 @@ The reduced homology of a point is trivial in all degrees. Also $\rmH_n(X)\cong 
 
 
 
-\subsection{Homotopy invariance}
+\section{Homotopy invariance}
 
 Here we show that singular homology is homotopy invariant.
 
@@ -1756,7 +1753,7 @@ Continuous maps induce homomorphisms in reduced homology as well since the augme
 
 
 
-\subsection{Relative homology and excision}
+\section{Relative homology and excision}
 
 Relative homology generalizes the idea behind the \gls{mv} sequence in de Rham cohomology. Given a subset $A\subset X$ in a topological space, we ask how similar the groups $\rmH_n(X/A)$ and $\rmH_n(X)/\rmH_n(A)$ are. The difference, in a sense, is measured by the relative homology.
 
@@ -1972,7 +1969,7 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 
 
 
-\subsection{Local homology, orientation}
+\section{Local homology, orientation}
 
 \begin{defn}[Local homology]\index{Homology!Local}
     For a topological space $X$ and a point $x\in X$, the local homology groups of $X$ at $x$ are defined to be $\rmH_n(X,X\setminus\{x\})$, also equal by excision to $\rmH_n(U_x,U_x\setminus\{x\})$ for any open neighborhood $U_x$ of $x$.
@@ -1990,7 +1987,7 @@ TODO: Use Hatcher Prop 3.26-29 and  to fill this out.
 
 
 
-\subsection{Degree}
+\section{Degree}
 
 \begin{defn}[Degree on spheres]\label{Degree}\index{Degree}
     For a map $f:\bbS^n\to \bbS^n$, the induced map $f_\ast:\wt{H}_n(\bbS^n)\to \wt{H}_n(\bbS^n)$ is a homomorphism that must be of the form $f_\ast(\alpha)=d\cdot \alpha$ for some integer $d\in\bbZ$. This number, denoted $\deg f=d$, is called the degree of $f$.
@@ -2012,7 +2009,7 @@ Here are some properties of the degree:
 \end{defn}
 
 \begin{prop}[Local degree formula]\label{prop local degree formula}
-    Suppose that for a map $f:\bbS^n\to \bbS^n$, there is a point $y$ such that the pre-image $f^{-1}(y)$ is finite, say $\{x_1,\ldots,x_m\}$. Then \[\deg f=\sum_{i=1}^m \deg_{x_i} f.\]
+    Suppose that for a map $f:\bbS^n\to \bbS^n$, there is a point $y$ such that the preimage $f^{-1}(y)$ is finite, say $\{x_1,\ldots,x_m\}$. Then \[\deg f=\sum_{i=1}^m \deg_{x_i} f.\]
 \end{prop}
 \begin{proof}
      Exercise.
@@ -2027,7 +2024,7 @@ Here are some properties of the degree:
 
 
 
-\subsection{Hurewicz theorem}
+\section{Hurewicz theorem}
 
 We have seen previously that $\rmH_0(X)$ is free and generated by the path-connected components of $X$, just like $\pi_0(X)$. Computing $\rmH_1(X)$ is a more formidable task and is the subject of the Hurewicz theorem.\footnote{Pronounced ``Hoo-rhe-vich''}
 
@@ -2090,7 +2087,7 @@ One can check that this is indeed a homomorphism, and we have the following gene
 
 
 
-\subsection{Singular vs.~simplicial homology}
+\section{Singular vs.~simplicial homology}
 
 We show now that simplicial and singular homology groups of triangulable spaces are always isomorphic, including the relative case. Let $X$ be a triangulated space with $A\subset X$ a subcomplex, i.e., a union of simplices in $X$. Relative groups $\rmH^{\Delta}_n(X,A)$ are defined in the same way as for singular homology, via relative chains $C^\Delta_n(X)=C^\Delta_n(X)/C^\Delta_n(A)$, and we also have the same long exact sequence of the pair $(X,A)$. Now we shall show that there is a canonical isomorphism $H^\Delta_n(X,A)\to \rmH_n(X,A)$, induced by the chain map $C_n^\Delta(X,A)\to C_n(X,A)$ given by the triangulation embedding map of every simplex. 
 
@@ -2134,7 +2131,7 @@ This corollary is analogous to the theorem about the finite-dimensionality of de
 
 
 
-\subsection{Axioms for homology}
+\section{Axioms for homology}
 
 Based on the properties of singular homology, one can formulate a reasonable list of ``axioms'' for a more general homology theory of topological spaces. These axioms are known as Eilenberg-Steenrod axioms.
 
@@ -2173,7 +2170,7 @@ The last axiom holds trivially for singular homology because singular simplices 
  This theorem implies, for example, that the singular and simplicial homologies of a simplicial complex coincide. It should be note that some important ``homology theories'' do not satisfy even the first three axioms. ``\v Cech homology'' doesn't satisfy exactness, and ``bordism theories'' don't satisfy the dimension axiom.
 
 
-\subsection{Cellular homology}
+\section{Cellular homology}
 
 Let us now study singular homology of $CW$-complexes.
 
@@ -2374,7 +2371,7 @@ From now on we will drop the superscript in the name of the cellular boundary op
 
 
 
-\subsection{Euler characteristic}
+\section{Euler characteristic}
 
 In this section we will study $CW$-complexes of \emph{finite type}, i.e.~those which contain only a finite number of cells in each dimension (but they can still be infinite-dimensional). In this case each homology group is finitely generated, and from Theorem~\ref{thm classification of finitely generated abelian gr} we know that each finitely generated abelian group $A$ has the form
 \[A\cong \bbZ^r\oplus T(A),\quad r=\rank(A),\]
@@ -2469,11 +2466,11 @@ The maximally efficient construction of a $CW$-complex for a space that is homot
 
 
 \clearpage
-\section{Homological Algebra III: Derived Functors}
+\chapter{Homological Algebra III: Derived Functors}
 
 In this section we develop more advanced tools of homological algebra necessary for dealing with cohomology with coefficients.
 
-\subsection{Injective and projective resolutions}
+\section{Injective and projective resolutions}
 
 
 Recall that an  $R$-module $P$ is called projective if the functor $\hom_R(P,_)$ is right-exact (it is always left-exact), i.e., if for every surjective map $A\to B$, any map $P\to B$ can be (not uniquely) factored through (lifted to) a map $P\to A$. This is a generalization of the concept of a free $R$-module (for free modules the lifting is unique by definition).
@@ -2552,6 +2549,10 @@ Similarly, an $R$-module $E$ is called injective if the functor $\hom_R(_,E)$ is
     In a category with enough projectives, every object has a projective resolution (by repeating the same proof).
 \end{cor}
 
+\begin{rem}
+    While this result is useful for general theory, the size of the objects in a free resolution is so huge as to make free resolutions completely impractical. Thus, a significant part of the actual practice of homological algebra is about the art of choosing a ``nice'' resolution. We will see examples of such resolutions in group homology.
+\end{rem}
+
 \begin{defn}[Injective resolution]
     An injective resolution of an object $A$ is an exact sequence
     \[\bm{E}=0\to A\overset\eta\to E^0\to E^1\to E^2\to \cdots\]
@@ -2621,7 +2622,7 @@ Similarly, an $R$-module $E$ is called injective if the functor $\hom_R(_,E)$ is
 \end{defn}
 
 
-\subsection{Left derived covariant functors}
+\section{Left derived covariant functors}
 
 As we already know, short exact sequences under the action of a particular functor do not, in general, remain exact. Many relevant functors (say, covariant for now) preserve exactness only on the left (``left-exact functor'') or the right (``left-exact functor'') sides of the sequences. We are now ready to define the objects that measure the non-exactness of a given functor (e.g., a hom-functor or a tensor product functor).
 
@@ -2733,7 +2734,7 @@ The next theorem finally explains in what sense derived functors of $F$ measure 
 
 
 
-\subsection{Left derived contravariant functors}
+\section{Left derived contravariant functors}
 
 
 This case will not come up in practice, so we quickly go over it for completeness.
@@ -2765,7 +2766,7 @@ By repeating the derivations from the covariant case we get the following proper
 
 
 
-\subsection{Right derived functors}
+\section{Right derived functors}
 
 \begin{defn}[Right derived covariant functors]
     Let $F:\calC\to \calD$ be an additive covariant functor between abelian categories and let $\calC$ have enough injectives. For an object $A\in\ob(\calC)$, choose an arbitrary deleted injective resolution $\bm{E}^A$:
@@ -2809,7 +2810,7 @@ By repeating the derivations from the covariant case we get the following proper
 
 
 
-\subsection{Tor functors}
+\section{Tor functors}
 
 By far the most common application of derived functors is to the functors $\Hom_R$ and $\otimes_R$. These are, generally speaking, functors of two arguments, and it is possible to define their derived functors with respect to both arguments at once. However, it is easier to apply the existing construction to the functors obtained by fixing one of the arguments. The natural isomorphism of these two approaches is proven e.g.~in \cite{Rotman}.
 
@@ -2955,7 +2956,7 @@ Recall that a module is called flat if the functor of the tensor product with it
 \end{example}
 
 
-\subsection{Ext functors}
+\section{Ext functors}
 
 Unlike the Tor functor, which is entirely symmetric with respect to its two arguments, the two versions of the Ext functor will behave in very different (dual) ways. Here one can work equivalently with the category of left or right modules.
 
@@ -3023,10 +3024,10 @@ which means that from now on we can simplify the notation by always writing $\Ex
 \end{example}
 
 
-\section{Homological Algebra IV: Applications \texorpdfstring{\ucmark}{}}
+\chapter{Homological Algebra IV: Applications \texorpdfstring{\ucmark}{}}
 
 
-\subsection{Extensions}
+\section{Extensions}
 
 Unlike with Tor functors, it is much easier to give an explicit interpretation of the Ext functors. In fact, what we describe below is the original definition of the first Ext functor.
 
@@ -3150,7 +3151,7 @@ Thus $\Ext(A,B)$ is indeed an abelian group, and we can finally establish its is
 
 
 
-\subsection{(*) Higher extensions}
+\section{(*) Higher extensions}
 
 \begin{defn}[Extension of length $n$]
     An extension of $A$ by $B$ of length $n$ is an exact sequence of the form
@@ -3204,7 +3205,7 @@ This is clearly well defined as an extension because we don't need to worry abou
 One can check that this product is in fact well defined on equivalence classes of extensions, and it is obviously associative.
 
 
-\subsection{Elementary examples}
+\section{Elementary examples}
 
 Let $R=\bbZ$, i.e.~we are working with abelian groups. We will thus omit $\bbZ$ in the notation for the functors. Let $A$ be an abelian group. We can simultaneously compute $\Tor_1(\bbZ_n,A)$ and $\Hom(\bbZ_n,A)$. First we note that in the exact sequence
 \[0\to \bbZ\overset{\cdot n}{\to}\bbZ\to \bbZ\slash n\bbZ \to 0,\]
@@ -3286,7 +3287,7 @@ This fact was unsurprisingly discovered long before the functors $\Tor_n^R$ were
 
 
 
-\subsection{Torsion submodules}
+\section{Torsion submodules}
 
 Recall that an element $a\in A$ of an $R$-module is called a torsion element if $n\cdot a=0$ for some $n$. If $R$ is abelian, then the set of all torsion elements forms a submodule of $A$, denoted $T(A)$ and called the torsion submodule\index{Torsion submodule}. Now let $R$ be an integral domain (a commutative ring where the product of nonzero elements is always nonzero) and let $K=Q(R)$ be its field of fractions. In this case $A\slash T(A)$ is a torsion-free submodule. Any torsion-free $R$-module can be embedded in a $K$-vector space:
 \[0\to A\to A\otimes_R K\to B\to 0,\quad B=T(B),\]
@@ -3359,7 +3360,7 @@ Higher Tor functors don't have such a simple interpretation, but we can at least
 
 
 
-\subsection{(*) Application in class field theory}
+\section{(*) Application in class field theory}
 
 Obviously $\Ext^1_\bbZ(\bbZ,\bbQ)=0$ (either because $\bbZ$ is projective or because $\bbQ$ is injective) but after reversing the arguments the result becomes highly nontrivial, and in fact the cardinality of continuum.
 
@@ -3437,7 +3438,7 @@ However we quickly start to run into issues because, unlike direct sums (which a
 
 
 
-\subsection{Homology with coefficients}
+\section{Homology with coefficients}
 
 Suppose that we are given integer homology (e.g.~singular homology) $H_\ast(X)$. Clearly instead of having the coefficients of simplices in chains be integers, they could be elements of any ring $R$. This way we can define $H_\ast(X;R)$. It satisfies all Eilenberg-Steenrod axioms with the only change that the zeroth homology of a singleton space is $\rmH_0(\{\ast\};R)=R$. Consider, for example, $H_\ast(\RP^n;\bbZ_2)$. The cellular chain complex has $C_k(\RP^n;\bbZ_2)=\bbZ_2$ for $0\leq k\neq n$, and the boundary operator alternates between multiplication by $2$ and by $0$ (see formula~\ref{eq degree of cells in RPn}). But in $\bbZ_2$, $2=0$, therefore $\partial=0$ and the homology mimics the chain complex itself:
 \[\rmH_k(\RP^n;\bbZ_2)=\begin{cases}
@@ -3471,7 +3472,7 @@ The universal coefficients theorem states that the homology with coefficients in
 
 \begin{prop}[Universal coefficients in homology {{\cite[Prop.~11.9.1]{tomDieck}}}]\label{prop 11.9.1 tomDieck}
     Let $(\bm{C},d)$ be a chain complex of free modules. Then there exists an exact sequence
-    \[0\to \rmH_n(\bbC)\otimes G\overset{\alpha}{\to}\rmH_n(\bm{C}, G)\overset{\partial}{\to}\Tor(\rmH_{n-1}(\bm{C}),G)\to 0.\]
+    \[0\to \rmH_n(\bm{C})\otimes G\overset{\alpha}{\to}\rmH_n(\bm{C}, G)\overset{\partial}{\to}\Tor(\rmH_{n-1}(\bm{C}),G)\to 0.\]
     The sequence is natural in $\bm{C}$ and $G$ and splits, thereby identifying $\rmH_n(\bm{C},G)$ with a direct sum. The homomorphism $\alpha$ sends $[z]\otimes g$ for a cycle $z$ to the homology class $[z\otimes g]$.
 \end{prop}
 \begin{proof}
@@ -3531,49 +3532,49 @@ A dual result exists for cohomology. This definition shows that this is the poin
 
 
 
-\subsection{K\"unneth formula}
+\section{K\"unneth formula}
 
 
 
 \clearpage
-\section{Homological Algebra V: Spectral Sequences \texorpdfstring{\ucmark}{}}
+\chapter{Homological Algebra V: Spectral Sequences \texorpdfstring{\ucmark}{}}
 
 % Use Meinrenken as guide, also Bott-Tu, etc. They will be used to prove the De Rham theorem.
 
 
 
 \clearpage
-\section{Cohomology of Topological Spaces \texorpdfstring{\ucmark}{}}
+\chapter{Cohomology of Topological Spaces \texorpdfstring{\ucmark}{}}
 
 
-\subsection{Eilenberg-Zilber maps}
+\section{Eilenberg-Zilber maps}
 
-\subsection{Singular cohomology}
+\section{Singular cohomology}
 
-\subsection{de Rham theorem}
+\section{de Rham theorem}
 
 
-\subsection{de Rham currents}
+\section{de Rham currents}
 
-\subsection{Borsuk-Ulam theorem}
+\section{Borsuk-Ulam theorem}
 
 % Follow Bredon.
 
-\subsection{Fiber sequences}
+\section{Fiber sequences}
 
-\subsection{Simplicial sets, classifying spaces}
+\section{Simplicial sets, classifying spaces}
 
 % Yin's notes. Also May's book and Miller's notes.
 
-\subsection{Eilenberg-MacLane spaces}
+\section{Eilenberg-MacLane spaces}
 
 % Use May's book and Miller's notes, Fushida-Hardy notes.
 
 
-\subsection{Postnikov, Whitehead towers}
+\section{Postnikov, Whitehead towers}
 
 
-\subsection{Representability of cohomology}
+\section{Representability of cohomology}
 
 
 
@@ -3581,9 +3582,9 @@ A dual result exists for cohomology. This definition shows that this is the poin
 
 
 \clearpage
-\section{Group (Co)Homology}
+\chapter{Group (Co)Homology}
 
-\subsection{Definition}
+\section{Definition}
 
 
 \begin{defn}[Group ring]
@@ -3683,7 +3684,7 @@ This leads to the free resolution of free groups being very short.
 
 
 
-\subsection{Cyclic groups}
+\section{Cyclic groups}
 
 
 Let $G=C_m$ be a cyclic group of order $m<\infty$ generated by an element $x$. Then there exists a ``periodic resolution''. Let $D=x-1$ and $N=1+x+\cdots +x^{m-1}\in\bbZ[G]$. We have $DN=ND=0$.
@@ -3718,9 +3719,9 @@ Let $G=C_m$ be a cyclic group of order $m<\infty$ generated by an element $x$. T
 \end{rem}
 
 
-\subsection{Two resolutions}
+\section{Two resolutions}
 
-Now we will construct two resolutions for an arbitrary group $G$. 
+Now we will construct two especially convenient resolutions for an arbitrary group $G$. 
 
 \begin{defn}[Homogeneous/Standard resolution]
     The following complex is called the homogeneous (or \emph{standard}) resolution of a group $G$. For $n\geq 0$, let $F_n$ be the $\bbZ$-module generated by the basis of $n$-tuples $(g_0,g_1,\ldots g_n)\in G^{n+1}$. We give $F_n$ the structure of a $G$-module by
@@ -3781,7 +3782,7 @@ The result of this exercise will also follow from the following theorem, which i
 
 
 
-\subsection{\texorpdfstring{$\rmH_1$}{H1} and \texorpdfstring{$\rmH^1$}{H1}}
+\section{\texorpdfstring{$\rmH_1$}{H1} and \texorpdfstring{$\rmH^1$}{H1}}
 
 \begin{thm}
     $\rmH_1(G,\bbZ)\cong G^{\mathrm{ab}}=G\slash [G,G]$. Consequently, if the action $G\acts A$ is trivial, then $\rmH_1(G,A)\cong G^{\mathrm{ab}}\otimes_\bbZ A$.
@@ -3862,7 +3863,7 @@ $\rmH^1(G,A)\cong \Der(G,A)\slash \{\text{principal crossed homs}\}$.
     It is an exercise to check that these are mutually inverse. We have already used this computation for proving the short free resolution of $\bbZ$ in the case of a free group $G=F_X$, and hence all homologies of free groups in degrees at least $2$ vanish.
 \end{proof}
 
-\subsection{\texorpdfstring{$\rmH_2$}{H2} and \texorpdfstring{$\rmH^2$}{H2}}
+\section{\texorpdfstring{$\rmH_2$}{H2} and \texorpdfstring{$\rmH^2$}{H2}}
 
 
 \begin{defn}[Schur multiplier]
@@ -3926,7 +3927,7 @@ In an extension by an abelian kernel, any two preimages of a point $g\in G$ diff
 
 In summary, $\rmH^1$ describes the conjugacy classes of embeddings of $G$ into a semidirect product, whereas $\rmH^2$ describes extensions with a given action that differ from a semidirect product (i.e.~the semidirect product corresponds to the zero element of $\rmH^2$ because its factors are everywhere equal to $1$, i.e., the cocycle is trivial).
 
-\subsection{Relation to topology}
+\section{Relation to topology}
 
 Now we will consider an action of a (discrete) group $G$
  on a topological space $X$ by homeomorphisms.
@@ -3978,7 +3979,7 @@ the cohomology of an abstract group $G$ coincides with the cohomology of its fir
 
 
 
-\section{Lie Algebra (Co)Homology \texorpdfstring{\ucmark}{}}
+\chapter{Lie Algebra (Co)Homology \texorpdfstring{\ucmark}{}}
 
 
 %  Use Wiebel
@@ -3986,44 +3987,44 @@ the cohomology of an abstract group $G$ coincides with the cohomology of its fir
 
 
 
-\section{Sheaf Cohomology \texorpdfstring{\ucmark}{}}
-\subsection{Presheaves}
+\chapter{Sheaf Cohomology \texorpdfstring{\ucmark}{}}
+\section{Presheaves}
 
-\subsection{Sheaves}
+\section{Sheaves}
 
-\subsection{Resolutions of sheaves}
+\section{Resolutions of sheaves}
 
-\subsection{Sheaf cohomology}
-
-
-
-
-\section{\v Cech Cohomology \texorpdfstring{\ucmark}{}}
-
-\subsection{Orientability and cohomology}
-
-\subsection{\v Cech cohomology and its applications}
-
-\subsection{\v Cech  vs.\ sheaf vs.\ de Rham cohomology}
-
-\subsection{\v Cech vs.\ singular cohomology}
+\section{Sheaf cohomology}
 
 
 
 
-\section{Applications \texorpdfstring{\ucmark}{}}
+\chapter{\v Cech Cohomology \texorpdfstring{\ucmark}{}}
 
-\subsection{Poincar\'e duality}
+\section{Orientability and cohomology}
 
-\subsection{Thom isomorphism}
+\section{\v Cech cohomology and its applications}
 
-\subsection{Intersection theory}
+\section{\v Cech  vs.\ sheaf vs.\ de Rham cohomology}
+
+\section{\v Cech vs.\ singular cohomology}
+
+
+
+
+\chapter{Applications \texorpdfstring{\ucmark}{}}
+
+\section{Poincar\'e duality}
+
+\section{Thom isomorphism}
+
+\section{Intersection theory}
 
 % Use Bott \& Tu.
 
 
-\subsection{Thom class and degrees}
+\section{Thom class and degrees}
 
-\subsection{Euler class and Lefschetz numbers}
+\section{Euler class and Lefschetz numbers}
 
 

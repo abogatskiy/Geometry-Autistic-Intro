@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{anyfontsize}
 \usepackage{geometry}
-\geometry{verbose,tmargin=2cm,bmargin=2.5cm,lmargin=1cm,rmargin=1cm,heightrounded}
+\geometry{verbose,tmargin=2cm,bmargin=1.5cm,lmargin=1cm,rmargin=1cm,heightrounded}
 
 % \setlength{\parskip}{3pt plus 1pt minus 1pt}
 % \setlength{\parindent}{0pt}
@@ -44,7 +44,7 @@
 \makeindex
 \usepackage[footnotesize]{caption}
 \captionsetup{width=0.8\textwidth}
-\DeclareCaptionLabelFormat{bf-parens}{\textbf{Fig. #2}}
+\DeclareCaptionLabelFormat{bf-parens}{\textbf{Fig.~#2}}
 \captionsetup{labelformat=bf-parens}
 
 \usepackage{comment}
@@ -118,23 +118,32 @@
 {0pt}{0.7\baselineskip}{0.3\baselineskip}
 \titlespacing*{\subsection}
 {0pt}{0.7\baselineskip}{0.3\baselineskip}
-\newcommand{\Sect}{Section}
-\newcommand{\Chap}{Chapter}
-\newcommand{\Subsect}{Subsection}
 \newcommand{\Part}{Part}
-\newcommand{\sect}{section}
-\newcommand{\chap}{chapter}
-\newcommand{\subsect}{subsection}
 \newcommand{\partt}{part}
+\newcommand{\Chap}{Chapter}
+\newcommand{\chap}{chapter}
+\newcommand{\Sect}{Section}
+\newcommand{\sect}{section}
+\newcommand{\Subsect}{Subsection}
+\newcommand{\subsect}{subsection}
 
 
 %%%%%%%
 
  
 \usepackage[nottoc]{tocbibind} % list bibiliography and other secondary sections in TOC
-\usepackage{tocloft} % needed for the next line
-\setlength\cftsubsecnumwidth{4em} % increase the space given to numbers in TOC
+% \usepackage{tocloft} % needed for the next line
+% \addtolength{\cftsubsecnumwidth}{1em} % increase the space given to numbers in TOC
 
+% increase the space given to numbers in TOC
+\makeatletter
+  \renewcommand*{\numberline}[1]{\hb@xt@3em{#1\hfil}} 
+\makeatother
+
+% \makeatletter
+%   \let\toc@pre\relax
+%   \let\toc@post\relax
+% \makeatother
 
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=2em}
@@ -155,12 +164,13 @@
 \providecommand{\remarkname}{Remark}
 \providecommand{\theoremname}{Theorem}
 
-\numberwithin{equation}{subsection}
+% number equations within sections
+\numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 
 \theoremstyle{plain}
-\newtheorem{prop}{\protect\propositionname}[subsection]
+\newtheorem{prop}{\protect\propositionname}[section]
 \newtheorem{thm}[prop]{\protect\theoremname}%thm 
 \newtheorem{lem}[prop]{Lemma}%lem with counter inherited from prop
 \newtheorem{cor}[prop]{Corollary}%cor with counter inherited from prop
@@ -279,12 +289,18 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewenvironment{align*}{\align}{\endalign}
-\renewenvironment{alignat*}{\alignat}{\endalignat}
-\renewenvironment{multline*}{\multline}{\endmultline}
-\renewenvironment{gather*}{\gather}{\endgather}
-\renewenvironment{equation*}{\equation}{\endequation}
+% Force numbering of all equations
+% \renewenvironment{equation*}{\equation}{\endequation}
+% \renewenvironment{align*}{\align}{\endalign}
+% \renewenvironment{alignat*}{\alignat}{\endalignat}
+% \renewenvironment{multline*}{\multline}{\endmultline}
+% \renewenvironment{gather*}{\gather}{\endgather}
 
+% Redefine \[...\] to be \begin{equation}...\end{equation}
+\newcommand{\myequation}{\begin{equation}}
+\newcommand{\myendequation}{\end{equation}}
+\let\[\myequation
+\let\]\myendequation
 
 \usepackage{color}
 \def\white{\color{white}}
