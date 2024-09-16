@@ -76,7 +76,7 @@ We will show that any twice differentiable Lie group has a unique compatible rea
     In addition, $\varphi$ is an isomorphism of Lie groups iff it is bijective.
 \end{cor}
 \begin{proof}
-    Exercise $1\Rightarrow 2\Rightarrow 3 \Rightarrow 1$.
+    Exercise $1\implies 2\implies 3 \implies 1$.
 \end{proof}
 
 The simplest nonabelian examples of compact Lie groups are the 3-dimensional rotation group and its ``complex form'', $\SU_2$. We now establish that $\SU_2$ is the universal covering space of $\SO_3(\bbR)$, and hence $\pi_1(\SO_3(\bbR))=\bbZ_2$. As we will see in the next \sect, every Lie group has a unique universal covering Lie group.
@@ -914,7 +914,7 @@ This indicates the existence of a natural antisymmetric bilinear form $\T_e G\ti
     What remains is 
     \[\Alt \beta(\beta(\bf{x},\bf{y}),\bf{z})=\Alt \beta(\bf{x},\beta(\bf{y},\bf{z})),\]
     where $\Alt$ is the antisymmetrization operator 
-    \[\Alt f(\bf{x}_1,\bf{x}_2,\bf{x}_3)=\sum_{\sigma\in S_3}\sign(\sigma)f(\bf{x}_{\sigma(1)},\bf{x}_{\sigma(2)},\bf{x}_{\sigma(3)}).\]
+    \[\Alt f(\bf{x}_1,\bf{x}_2,\bf{x}_3)=\sum_{\sigma\in \rmS_3}\sign(\sigma)f(\bf{x}_{\sigma(1)},\bf{x}_{\sigma(2)},\bf{x}_{\sigma(3)}).\]
 
     This equation has six terms on each side, and we are going to group them into three groups of four by gathering terms that have the same variable standing alone. We start with those having $\bf{z}$ as a lone variable. On the left hand side we combine two terms coming from the transposition $(1\Leftrightarrow2)$
     \[\beta(\beta(\bf{x},\bf{y}),\bf{z})-\beta(\beta(\bf{y},\bf{x}),\bf{z})=\beta(b(\bf{x},\bf{y}),\bf{z}),\]
@@ -1443,7 +1443,7 @@ Throughout this \sect\  we assume that $\bbK$ is either $\bbR$ or $\bbC$.
     Given a seminorm $p$ on a $\bbK$-vector space $V$, let $N_p=\ker p=p^{-1}(0)$. Then the quotient $V_p=V\slash V_p$ is a normed space with $\lVert v+N_p\rVert=p(v)$. Denote by $\alpha_p:V\to V_p$ the corresponding quotient map.
 
     A family $\calP$ of seminorms on $V$ is called separating if 
-    \[\forall p\in \calP \; p(v)=0 \Rightarrow v=0.\]
+    \[\forall p\in \calP \; p(v)=0 \implies v=0.\]
     This is equivalent to the map
     \[\alpha:V\to \prod_{p\in\calP}V_p,\quad v\mapsto (\alpha_p(v))_{p\in \calP},\]
     being injective.
@@ -2128,7 +2128,7 @@ Now let us try to use this transformation rule for transition functions to ``sim
 \end{xca}
 
 \begin{example}
-    Staying in the category of topological fiber bundles, let us classify two-fold covering spaces of the ``figure eight space'' in the language of fiber bundles. The fiber $F$ in this case consists of two points. The base space $M=\bbS^1\vee \bbS^1$ can be covered by three contractible sets: one $\mathsf{x}$ and two intervals. All of their overlaps are contractible, and therefore by adjusting the transition functions we will always be able to make them constant. This we have four overlaps with four corresponding elements of the structure group $G=S_2$. The bundle will be constructed out of the disjoint union of two copies of each of our three pieces: we need to glue the following six pieces $\begin{matrix}
+    Staying in the category of topological fiber bundles, let us classify two-fold covering spaces of the ``figure eight space'' in the language of fiber bundles. The fiber $F$ in this case consists of two points. The base space $M=\bbS^1\vee \bbS^1$ can be covered by three contractible sets: one $\mathsf{x}$ and two intervals. All of their overlaps are contractible, and therefore by adjusting the transition functions we will always be able to make them constant. This we have four overlaps with four corresponding elements of the structure group $G=\rmS_2$. The bundle will be constructed out of the disjoint union of two copies of each of our three pieces: we need to glue the following six pieces $\begin{matrix}
         |\; \times \;|\\
         |\; \times \;|
     \end{matrix}$. Now note that two of the transition functions, namely one on the left side of the base manifold $\infty$ and one on the right, can be turned into the identity by permuting the two pairs of straight segments to match those two permutations. Thus we end up with two copies of $\infty$, where each loop has been cut at one point, giving us two pairs of cuts to glue back using the two permutations. Since each permutation can only take two values, we get a total of four covering spaces. Two of them happen to be isomorphic if we allow for nontrivial diffeomorphisms of the base (the left-right symmetry of $\infty$), but usually the classification is done without considering such symmetries. One of the fiber bundles obtained this way is trivial, and the other three are represented in Figure \ref{fig:coverings of 8}(1,2).
@@ -2283,11 +2283,11 @@ We've seen that bundles are, in categorical terms, pushouts (i.e., quotients of 
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    $1\Rightarrow 2$ The fiber maps $H_m$ are obviously injective. Since Since all bundles have local sections, let $\sigma':U'\to E'$ be such a local section for $E'$. Then $H\circ\sigma'$ is a smooth local section over the set $h(U')$ (which may not be open) for $E$. Every local section over an open set is an embedding, in particular $\sigma'$, and thus its composition with another submanifold map, $H\circ \sigma'$, defines a submanifold of $E$ of the same type as $H$. This submanifold is the image of a section of $\pi$, and $\pi$ restricted to any section is a diffeomorphism onto the domain of that section. Thus the composition $\pi\circ H\circ \sigma':U'\to h(U')$ is also a submanifold of the same type. Finally, since $\pi$ is locally trivial, this means that every point $m\in M$ has a neighborhood $U$ such that $h(M')\cap U$ coincides with a submanifold of the form we described above. This implies that the entire image $h(M)$ is a submanifold.
+    $1\implies 2$ The fiber maps $H_m$ are obviously injective. Since Since all bundles have local sections, let $\sigma':U'\to E'$ be such a local section for $E'$. Then $H\circ\sigma'$ is a smooth local section over the set $h(U')$ (which may not be open) for $E$. Every local section over an open set is an embedding, in particular $\sigma'$, and thus its composition with another submanifold map, $H\circ \sigma'$, defines a submanifold of $E$ of the same type as $H$. This submanifold is the image of a section of $\pi$, and $\pi$ restricted to any section is a diffeomorphism onto the domain of that section. Thus the composition $\pi\circ H\circ \sigma':U'\to h(U')$ is also a submanifold of the same type. Finally, since $\pi$ is locally trivial, this means that every point $m\in M$ has a neighborhood $U$ such that $h(M')\cap U$ coincides with a submanifold of the form we described above. This implies that the entire image $h(M)$ is a submanifold.
     
-    $2\Rightarrow 3$ Since the $H_m$ are injective, $H_{\mathrm{ver}}$ is injective, hence the assertion on $(E',H_{\mathrm{ver}})$ holds since every vertical subbundle is embedded. The assertion on $(h^\ast E,H_{\mathrm{hor}})$ was proven in Exercise~\ref{example 2.7.3 RS1}.
+    $2\implies 3$ Since the $H_m$ are injective, $H_{\mathrm{ver}}$ is injective, hence the assertion on $(E',H_{\mathrm{ver}})$ holds since every vertical subbundle is embedded. The assertion on $(h^\ast E,H_{\mathrm{hor}})$ was proven in Exercise~\ref{example 2.7.3 RS1}.
 
-    $3\Rightarrow 1$ Since vertical subbundles are embedded, this follows from transitivity of submanifold properties as earlier in this proof.
+    $3\implies 1$ Since vertical subbundles are embedded, this follows from transitivity of submanifold properties as earlier in this proof.
 \end{proof}
 
 
@@ -4058,18 +4058,18 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
     In particular, the flow of $X+Y$ for commuting $X$ and $Y$ is $F_t\circ G_t$.
 \end{prop}
 \begin{proof}
-    $1\Rightarrow 2$. $\frac{\dd}{\dd t}F^\ast_t Y=F^\ast_t \Lie_X Y=0$, therefore $F^\ast_t Y$ is constant and we know that $F^\ast_0 Y=Y$, so $F^\ast_t Y=Y$.
+    $1\implies 2$. $\frac{\dd}{\dd t}F^\ast_t Y=F^\ast_t \Lie_X Y=0$, therefore $F^\ast_t Y$ is constant and we know that $F^\ast_0 Y=Y$, so $F^\ast_t Y=Y$.
 
-    $2\Rightarrow 3$. Consider the curve $\gamma(t)=G_s\circ F_t(p)$. It starts at $\gamma(0)=G_s(p)$ and its velocity is
+    $2\implies 3$. Consider the curve $\gamma(t)=G_s\circ F_t(p)$. It starts at $\gamma(0)=G_s(p)$ and its velocity is
     \[\dot\gamma(t)=\frac{\dd}{\dd t} G_s\circ F_t(p)=G_{s\ast}\circ X\circ F_t\overset{(2)}{=}X\circ\gamma(t).\]
     So $\gamma(t)$ is an integral curve of $X$ going through $p$. Therefore, by uniqueness (and definition of the flow of $X$), 
     \[\gamma(t)=F_t\circ G_s(p).\]
     This shows that the flows commute. Finally, we check 
     \[\frac{\dd}{\dd t} F_t\circ G_t(p)=X(F_t(G_t(p)))+\underbrace{F_{t\ast }Y}_{Y\circ F_t}(G_t(p))=(X+Y)(F_t\circ G_t(p)).\]
 
-    $2\Rightarrow 1$. $\Lie_X Y=F^\ast_{-t}\frac{\dd}{\dd t}F^\ast_t Y=F^\ast_{-t} \frac{\dd}{\dd t}Y=0$.
+    $2\implies 1$. $\Lie_X Y=F^\ast_{-t}\frac{\dd}{\dd t}F^\ast_t Y=F^\ast_{-t} \frac{\dd}{\dd t}Y=0$.
 
-    $3\Rightarrow 2$. $F_{t\ast}Y=F_{t\ast}\frac{\dd}{\dd s}G_s=F_{t\ast} G_{s\ast} Y=(F_t\circ G_s)_\ast Y=(G_s\circ F_t)_\ast Y=G_{s\ast}F_{t\ast}Y$. But the only vector field invariant under $G_{s\ast}$ is $Y$, therefore $F_{t\ast}Y=Y$.
+    $3\implies 2$. $F_{t\ast}Y=F_{t\ast}\frac{\dd}{\dd s}G_s=F_{t\ast} G_{s\ast} Y=(F_t\circ G_s)_\ast Y=(G_s\circ F_t)_\ast Y=G_{s\ast}F_{t\ast}Y$. But the only vector field invariant under $G_{s\ast}$ is $Y$, therefore $F_{t\ast}Y=Y$.
 \end{proof}
 
 \begin{rem}[Taylor formula on manifolds]\index{Taylor's formula}\label{rem 3.2.9 RS1}
@@ -4412,9 +4412,9 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     In many famous examples of Lax pairs, $n=1$ and $L$ is the second-order \emph{Sturm-Liouville operator} (in physics a Schr\"odinger operator)
     \[L=-\partial_x^2+u.\]
     The simplest choice of $A$ is $A=-c\partial_x$ with a constant $c$, which leads to the \emph{1D advection equation}
-    \[A=-c\partial_x\quad \Rightarrow \quad u_t+c u_x=0.\]
+    \[A=-c\partial_x\quad \implies \quad u_t+c u_x=0.\]
     The following choice of $A$ leads to the celebrated solitonic \gls{kdv} equation:\index{Equation!Korteweg-de~Vries}
-    \[A=-4\partial_x^3+6u\partial_x+3u_x\quad \Rightarrow\quad u_t-6uu_x+u_{xxx}=0.\label{eq kdv}\]
+    \[A=-4\partial_x^3+6u\partial_x+3u_x\quad \implies\quad u_t-6uu_x+u_{xxx}=0.\label{eq kdv}\]
 \end{example}
 
 
@@ -4443,10 +4443,10 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
 \begin{defn}[Exterior forms]\index{Exterior form}
     Let $V$ be a $\bbK$-vector space. The alternation and symmetrization maps are defined on the tensor space $\bbT^k V=(V)^{\otimes k}$ respectively as
     \begin{align}
-        \Alt t&=\frac{1}{k!}\sum_{\sigma\in S_k} (\sign\sigma)\cdot t^\sigma,\\
+        \Alt t&=\frac{1}{k!}\sum_{\sigma\in \rmS_k} (\sign\sigma)\cdot t^\sigma,\\
         \Sym t&=\frac{1}{k!}\sum_{\sigma\in S_k} t^\sigma,\label{def sym operator}
     \end{align}
-    where $S_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $\bbT^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(\bbT^k V)$ and $\rmS^k V=\Sym(\bbT^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
+    where $\rmS_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $\bbT^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(\bbT^k V)$ and $\rmS^k V=\Sym(\bbT^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
     
     If $\dim V=n$, then $\dim \bigwedge^k V=\binom{n}{k}$. In particular, 
     \[\bigwedge^1 V=V,\quad \dim \bigwedge^0 V=\dim \bigwedge^n V=1,\quad \dim \bigwedge^{>n} V=0.\]
@@ -4477,7 +4477,7 @@ Being an element of $\Hom(\bigwedge^n V,\bigwedge^n V)$, which is naturally isom
     \item If $\dim V=n$, then for any $t\in\bigwedge^n V^\ast$ and any $f\in\End(V)$, 
     \[f^\ast t=\det f\cdot t.\]
     \item If $f\in\End(V)$ is represented by a matrix $f(e_i)=A_i^j e_j$ in some basis $\{e_i\}$ of $V$, then
-    \[\det f=\det A=\sum_{\sigma\in S_n}(\sign\sigma)A^1_{\sigma(1)}\cdots A^n_{\sigma(n)}.\]
+    \[\det f=\det A=\sum_{\sigma\in \rmS_n}(\sign\sigma)A^1_{\sigma(1)}\cdots A^n_{\sigma(n)}.\]
 \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -4490,11 +4490,11 @@ Being an element of $\Hom(\bigwedge^n V,\bigwedge^n V)$, which is naturally isom
         &=k!\Alt(f(e_1)\otimes\cdots\otimes f(e_n))=\notag
         \\
         &=k! \Alt (A^{j_1}_1 \cdots A^{j_n}_n \cdot e_{j_1}\otimes\cdots \otimes e_{j_n})=\\
-        &=\sum_{\pi\in S_n}(\sign\pi)\cdot A_{\pi(1)}^{j_1}\cdots A_{\pi(n)}^{j_n}\cdot  e_{j_1}\otimes\cdots\otimes e_{j_n}=\notag
+        &=\sum_{\pi\in \rmS_n}(\sign\pi)\cdot A_{\pi(1)}^{j_1}\cdots A_{\pi(n)}^{j_n}\cdot  e_{j_1}\otimes\cdots\otimes e_{j_n}=\notag
         \\
-        =\sum_{\sigma,\pi\in S_n}(\sign\sigma\cdot\sign\pi) \cdot &A_{\pi(1)}^1\cdots A_{\pi(n)}^n\cdot e_{\sigma(1)}\otimes\cdots\otimes e_{\sigma(n)}=\notag
+        =\sum_{\sigma,\pi\in \rmS_n}(\sign\sigma\cdot\sign\pi) \cdot &A_{\pi(1)}^1\cdots A_{\pi(n)}^n\cdot e_{\sigma(1)}\otimes\cdots\otimes e_{\sigma(n)}=\notag
         \\
-        &=\left(\sum_{\pi\in S_n}(\sign\pi)A^1_{\pi(1)}\cdots A^n_{\pi(n)}\right)\cdot e_1\wedge \cdots \wedge e_n.
+        &=\left(\sum_{\pi\in \rmS_n}(\sign\pi)A^1_{\pi(1)}\cdots A^n_{\pi(n)}\right)\cdot e_1\wedge \cdots \wedge e_n.
     \end{align}
     By item 1, the expression in the brackets is the determinant.
 \end{enumerate}
@@ -4515,7 +4515,7 @@ Wedge products have the following basic properties (proofs of which are left as 
     \[(\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p})\wedge (\dd x^{i_{p+1}}\wedge\cdots\wedge \dd x^{i_{p+q}})=\dd x^{i_1}\wedge\cdots\wedge \dd x^{i_{p+q}}.\]
     \item For $\alpha_i\in V^\ast$, $i=1,\ldots,k$, 
     \begin{multline}
-        (\alpha_1\wedge\cdots\wedge\alpha_k)(v_1,\ldots,v_k)=\sum_{\sigma\in S_k}(\sign\sigma)\cdot \alpha_1(v_{\sigma(1)})\cdots\alpha_k(v_{\sigma(k)})=\\=\det \begin{bmatrix}
+        (\alpha_1\wedge\cdots\wedge\alpha_k)(v_1,\ldots,v_k)=\sum_{\sigma\in \rmS_k}(\sign\sigma)\cdot \alpha_1(v_{\sigma(1)})\cdots\alpha_k(v_{\sigma(k)})=\\=\det \begin{bmatrix}
          \alpha_1(v_1) & \cdots & \alpha_1(v_k)  \\
          \vdots & \ddots & \vdots \\
          \alpha_k(v_1) & \cdots & \alpha_k(v_k) 
@@ -5094,7 +5094,7 @@ If $\{e_1,\ldots,e_k\}$ is a local frame of $E$, then any $\omega\in\Omega^p(M;E
 
 The wedge product $\wedge:\Omega^p(M;E_1)\otimes \Omega^q(M;E_2)\to \Omega^{p+q}(M;E_1\otimes E_2)$ is defined as 
 \begin{multline}
-    (\omega\wedge\eta)(X_1,\ldots,X_{p+q})=\\=\frac{1}{p!q!}\sum_{\pi\in S_{p+q}}(\sign\pi)\omega(X_{\pi(1)},\ldots,X_{\pi(p)})\otimes\eta(X_{\pi(p+1)},\ldots,X_{\pi(p+q)}),
+    (\omega\wedge\eta)(X_1,\ldots,X_{p+q})=\\=\frac{1}{p!q!}\sum_{\pi\in \rmS_{p+q}}(\sign\pi)\omega(X_{\pi(1)},\ldots,X_{\pi(p)})\otimes\eta(X_{\pi(p+1)},\ldots,X_{\pi(p+q)}),
 \end{multline}
 or locally 
 \[\left(\sum_a\omega^a\otimes e_a\right)\wedge \left(\sum_b\eta^b\otimes e_b'\right)=\sum_{a,b}\omega^a\wedge\eta^b\otimes e_a\otimes e_b'.\]
@@ -5119,7 +5119,7 @@ Similarly, one can twist complex differential forms on a complex manifold by a  
     A natural exterior product exists on $\Omega^{\smbullet }(M;V)$ only if $V$ carries an additional structure of an algebra (such as matrix multiplication or a Lie bracket), in which case we can write, denoting the multiplication on $V$ by $\bullet$,
     \begin{multline}
         (\eta_1\wedge\eta_2)(X_1,\ldots,X_{r_1+r_2})\coloneqq \\
-        =\frac{1}{r_1!r_2!}\sum_{\pi\in S_{r_1+r_2}}\sign(\pi)\eta_1(X_{\pi(1)},\ldots,X_{\pi(r_1)})\bullet \eta_2(X_{\pi(r_1+1)},\ldots,X_{\pi(r_1+r_2)}).\label{eq 2.4.17 RS1}
+        =\frac{1}{r_1!r_2!}\sum_{\pi\in \rmS_{r_1+r_2}}\sign(\pi)\eta_1(X_{\pi(1)},\ldots,X_{\pi(r_1)})\bullet \eta_2(X_{\pi(r_1+1)},\ldots,X_{\pi(r_1+r_2)}).\label{eq 2.4.17 RS1}
     \end{multline}
     This also obviously extends to non-trivial \emph{algebra bundles}.
 \end{example}
@@ -5307,13 +5307,13 @@ The following local version is a more classical formulation of the Frobenius The
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    $1\Rightarrow2$: Choose a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ over a neighborhood $U$ of $m$. Since $\Delta$ is integrable, so is the Pfaffian system $\Delta_U=\Delta\cap \T^\ast U$ on $U$. Hence, by Theorem~\ref{thm 4.7.8 RS1}, $\dd\theta^i\in\Omega^{\smbullet }_{\Delta_U}(M)$. Application of Lemma~\ref{lem 4.7.9 RS1} to the manifold $U$ and the Pfaffian system $\Delta_U$ yields the assertion.
+    $1\implies2$: Choose a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ over a neighborhood $U$ of $m$. Since $\Delta$ is integrable, so is the Pfaffian system $\Delta_U=\Delta\cap \T^\ast U$ on $U$. Hence, by Theorem~\ref{thm 4.7.8 RS1}, $\dd\theta^i\in\Omega^{\smbullet }_{\Delta_U}(M)$. Application of Lemma~\ref{lem 4.7.9 RS1} to the manifold $U$ and the Pfaffian system $\Delta_U$ yields the assertion.
 
-    $w\Rightarrow1$: According to Theorem~\ref{thm 4.7.8 RS1}, it suffices to show that $\Omega^{\smbullet }_\Delta(M)$ is a differential ideal. Let $\alpha\in\Omega^{\smbullet }_\Delta(M)$ be of degree $k$ and let $m\in M$. Let $\{\theta^i\}_{i=1}^r$ be the local frame in $\Delta$ over a neighborhood $U$ of $m$ and let $\gamma^i_j$, $i,j=1,\ldots,r$, be the local $1$-forms over $U$ existing by assumptions. By Lemma~\ref{lem 4.7.9 RS1}, $\restr{\alpha}{U}=\sum_{i=1}^r\theta^i\wedge\beta_i$ for appropriate local $(k-1)$-forms $\beta_i$ on $U$. Then
+    $w\implies1$: According to Theorem~\ref{thm 4.7.8 RS1}, it suffices to show that $\Omega^{\smbullet }_\Delta(M)$ is a differential ideal. Let $\alpha\in\Omega^{\smbullet }_\Delta(M)$ be of degree $k$ and let $m\in M$. Let $\{\theta^i\}_{i=1}^r$ be the local frame in $\Delta$ over a neighborhood $U$ of $m$ and let $\gamma^i_j$, $i,j=1,\ldots,r$, be the local $1$-forms over $U$ existing by assumptions. By Lemma~\ref{lem 4.7.9 RS1}, $\restr{\alpha}{U}=\sum_{i=1}^r\theta^i\wedge\beta_i$ for appropriate local $(k-1)$-forms $\beta_i$ on $U$. Then
     \[\dd\left(\restr{\alpha}{U}\right)=\sum_{i,j=1}^r\theta^j\wedge\gamma_j^i\wedge \beta_i-\sum_{i=1}^r \theta^i\wedge\dd \beta_i\]
     and hence $(\dd\alpha)_m(X_1,\ldots,X_k)=0$ for all $X_i\in\Delta_m^0$. Since $m$ was arbitrary, we get $\dd\alpha\in\Omega^{\smbullet }_\Delta(M)$.
 
-    $2\Rightarrow3$ is obvious. $3\Rightarrow2$: We may complement the local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ by local $1$-forms $\theta^{r+1},\ldots,\theta^n$ to a local frame in $\T^\ast M$ at $m$. Expanding $\dd\theta^i=\sum_{j<k}\alpha^i_{jk}\theta^j\wedge\theta^k$, we obtain
+    $2\implies3$ is obvious. $3\implies2$: We may complement the local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ by local $1$-forms $\theta^{r+1},\ldots,\theta^n$ to a local frame in $\T^\ast M$ at $m$. Expanding $\dd\theta^i=\sum_{j<k}\alpha^i_{jk}\theta^j\wedge\theta^k$, we obtain
     \[0=\sum_{j<k}\alpha^i_{jk}\theta^j\wedge\theta^k\wedge\theta^1\wedge\cdots\wedge\theta^r.\]
     It follows that $\alpha^i_{jk}=0$ for all $r<j$. Hence, $\dd\theta^i=\sum_{j=1}^r\theta^j\wedge\gamma_j^i$ with $\gamma^i_j=\sum_{j<k}\alpha^i_{jk}\theta^k$.
 \end{proof}
@@ -5457,7 +5457,7 @@ The action of $i_K$ on forms of arbitrary degree is computed in the following pr
     \begin{enumerate}[label=(\alph*)]
         \item For $K\in \Omega^{k+1}(M;\T M)$, the formula 
         \begin{multline}
-            (i_K\omega)(X_1,\ldots,X_{p+k})=\frac{1}{(k+1)!(p-1)!}\\\sum_{\sigma\in S_{p+k}}\sign(\sigma) \omega(K(X_{\sigma(1)},\ldots,X_{\sigma(k+1)}),X_{\sigma(k+2)},\ldots,X_{\sigma(p+k)})
+            (i_K\omega)(X_1,\ldots,X_{p+k})=\frac{1}{(k+1)!(p-1)!}\\\sum_{\sigma\in \rmS_{p+k}}\sign(\sigma) \omega(K(X_{\sigma(1)},\ldots,X_{\sigma(k+1)}),X_{\sigma(k+2)},\ldots,X_{\sigma(p+k)})
         \end{multline}
         for $\omega\in\Omega^p$, $X_i\in\fX(M)$, defines an algeraic graded derivation $i_K\in \Der_k\Omega$ and any algebraic derivation is of this form.
         \item The \emph{Nijenhuis-Richardson algebraic bracket} $[\,,\,]^{\wedge}$ on the space $\Omega^{\smbullet +1}(M;\T M)$ of algebraic derivations defined by 
@@ -5862,7 +5862,7 @@ To conclude this section, we discuss left-invariant $\frakg$-valued forms on $G$
 with ordinary differential $r$-forms $\xi^i\in\Omega^r(G)$. The form $\xi$ is left-invariant iff so are $\xi^i$. Since $\frakg$ is an algebra, $\Omega^{\smbullet }(G;\frakg)$ carries an exterior product $\Omega^{r_1}(G;\frakg)\times \Omega^{r_2}(G;\frakg)\to \Omega^{r_1+r_2}(G;\frakg)$, given by formula (\ref{eq 2.4.17 RS1}) with $\bullet$ replaced by the Lie bracket:
 \begin{multline}
     [\xi_1, \xi_2](Y_1,\ldots,Y_{r_1+r_2})=\\
-    =\frac{1}{r_1!r_2!}\sum_{\pi\in S_{r_1+r_2}} \sign(\pi)\left[\xi_1(Y_{\pi(1)},\ldots,Y_{\pi(r_1)}), 
+    =\frac{1}{r_1!r_2!}\sum_{\pi\in \rmS_{r_1+r_2}} \sign(\pi)\left[\xi_1(Y_{\pi(1)},\ldots,Y_{\pi(r_1)}), 
     \xi_2(Y_{\pi(r_1+1)},\ldots,Y_{\pi(r_1+r_2)})\right]\label{eq exterior product of g-valued forms}
 \end{multline}
 
@@ -7743,7 +7743,7 @@ We can now prove a slightly relaxed version of the Closed Subgroup Theorem~\ref{
 \end{cor}
 \begin{proof}
     Suppose (i) is valid. Applying the homeomorphism $\rmL_h^{-1}$, we see that we may assume $h=e$ in (i). Now let $g\in G$ be the limit of a sequence $g_n\in G$. Then
-    \[\lim_{n,m\to\infty} g_ng_m^{-1}=e\;\Rightarrow\; g_ng_m^{-1}\in V\text{ for sufficiently large }n,m.\]
+    \[\lim_{n,m\to\infty} g_ng_m^{-1}=e\;\implies\; g_ng_m^{-1}\in V\text{ for sufficiently large }n,m.\]
     It follows that
     \[gg_m^{-1}=\lim_{n\to\infty} g_ng_m^{-1}\in H\cap V\text{ for sufficiently large }m.\]
     This implies that $g\in H$ because $g_m\in H$ and $H$ is a group. This shows that $H$ is closed in $G$. From Theorem~\ref{thm 1.10.6 DK} we see that $H$ is a Lie subgroup of $G$; actually the proof of Theorem~\ref{thm 1.10.6 DK} becomes slightly simpler if we assume that $H$ is a closed subgroup of $G$ instead of only a closed local group. Note that in Theorem~\ref{thm 1.10.6 DK} the exponential map is a homeomorphism from $U$ to a neighborhood of $e$ in $H$ with respect to the relative topology making the Lie group topology of $H$ equal to the relative topology.
@@ -7942,6 +7942,10 @@ Therefore, each quotient $G\slash H$ by a closed subgroup inherits a smooth acti
 \end{defn}
 
 Note that the two definitions of a homogeneous space differ slightly in that the latter one includes a basepoint. If $M$ is a homogeneous $G$-space without a basepoint, then only the conjugacy class $[H]$ of the stabilizer subgroup $H$ is determined. If we pick a basepoint $m_0\in M$, then $M$ becomes a homogeneous space of type $(G,G_{m_0})$. For clarity, we will write $G\slash H$ for a homogeneous space without a basepoint, and $(G,H)$ when we want to preserve the basepoint.
+
+\begin{rem}
+    Since homogeneous spaces carry a transitive action of a group, the notion of \emph{translation invariance} makes sense on them. Hence, homogeneous spaces constitute a fairly broad class of manifolds on which convolutions and Fourier transforms of functions can be defined.
+\end{rem}
 
 \begin{example}[Principal homogenous spaces, Affine spaces]\label{ex principal hom spaces}
     \begin{enumerate}
@@ -8347,14 +8351,14 @@ As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth st
 
 \begin{rem}[{{\cite[Rem.~6.2.10]{RS1}}}]\label{rem 6.2.10 RS1}
     \begin{enumerate}
-        \item The subspace $\T_mO$ of $\T_mM$ is invariant under the isotropy representation and hence the isotropy representation descends to a representation on $N_mO=\T_mM\slash \T_mO$, which is called the slice representation at $m$. By construction, the natural projection $\T_mM\to N_mO$ intertwines the isotropy representation with the slice representation.
+        \item The subspace $\T_mO$ of $\T_mM$ is invariant under the isotropy representation and hence the isotropy representation descends to a representation on $\rmN_mO=\T_mM\slash \T_mO$, which is called the slice representation at $m$. By construction, the natural projection $\T_mM\to \rmN_mO$ intertwines the isotropy representation with the slice representation.
 
         On the other hand, the isotropy representation restricted to $\T_mO$ can be brought to the following normal form. By the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, the map $\Phi^m_{\ast e}:\frakg\to \T_mM$ has image $\T_mO$. By point 3 of Proposition~\ref{prop 6.2.2 RS1} it has kernel $\frakg_m$. Hence, this mapping induces a natural vector space isomorphism
         \[\T_mO\cong \frakg\slash\frakg_m.\]
         In view of (\ref{eq 6.2.1 RS1}), this implies that this isomorphism intertwines the representation of $G_m$ on $\frakg\slash\frakg_m$ induced by the adjoint representation with the isotropy representation on $\T_mO$.
-        \item Since $O$ is invariant under $\Phi$ and since it is a weakly embedded submanifold of $M$, $\Phi$ restricts to a transitive action of $G$ on $O$. Since the connected components of $O$ are integral manifolds of $D^\frakg$, (\ref{eq 6.2.4 RS1}) implies that the action of $G$ on $\T M$ induced by $\Phi$ leaves invariant the submanifold $\T O$. The restriction of this action to the invariant submanifold $\restr{(\T M)}{O}$ induces an action $\Phi^N$ of $G$ on the normal bundle $NO=\restr{(\T M)}{O}\slash \T O$ by the vector bundle automorphisms (smoothness follows from the existence of local sections of the submersion $\restr{(\T M)}{O}\to NO$)
-        \[\Phi_g^N\left([X]\right)=\left[\Phi_{g\ast}(X)\right],\quad g\in G,X\in \T M.\]
-        The natural projections $\restr{(\T M)}{O}\slash \T O\to NO\to O$ are equivariant. Equivariance of the second projection implies that $\Phi^N$ restricts to an action of $G_m$ on $N_mO$ for every $m\in O$. This action coincides with the slice representation at $m$.
+        \item Since $O$ is invariant under $\Phi$ and since it is a weakly embedded submanifold of $M$, $\Phi$ restricts to a transitive action of $G$ on $O$. Since the connected components of $O$ are integral manifolds of $D^\frakg$, (\ref{eq 6.2.4 RS1}) implies that the action of $G$ on $\T M$ induced by $\Phi$ leaves invariant the submanifold $\T O$. The restriction of this action to the invariant submanifold $\restr{(\T M)}{O}$ induces an action $\Phi^N$ of $G$ on the normal bundle $\rmN O=\restr{(\T M)}{O}\slash \T O$ by the vector bundle automorphisms (smoothness follows from the existence of local sections of the submersion $\restr{(\T M)}{O}\to \rmN O$)
+        \[\Phi_g^\rmN\left([X]\right)=\left[\Phi_{g\ast}(X)\right],\quad g\in G,X\in \T M.\]
+        The natural projections $\restr{(\T M)}{O}\slash \T O\to \rmN O\to O$ are equivariant. Equivariance of the second projection implies that $\Phi^\rmN$ restricts to an action of $G_m$ on $\rmN_mO$ for every $m\in O$. This action coincides with the slice representation at $m$.
         \item A manifold carrying a transitive Lie group action is called homogeneous. The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} yields that every homogeneous manifold is diffeomorphic to $G\slash H$ for some Lie group $G$ and some closed subgroup $H$ of $G$. The diffeomorphism provided by this theorem is obviously equivariant with respect to the action of $G$ on $G\slash H$ by the induced translations $\wh{\rmL}_g$ (in the case of a left action) or $\wh{\rmR}_g$ (in the case of a right action). Hence, it is an isomorphism of Lie group actions. In this sense, all the homogeneous spaces discussed in \S\ref{sec: homogeneous spaces} constitute homogeneous manifolds, which explains their name. The notion of homogeneous manifold may be further specialized, e.g.~to that of homogeneous Riemannian manifold (a Riemannian manifold carrying a transitive Lie group action by isometries).
     \end{enumerate}
 \end{rem}
@@ -8365,14 +8369,14 @@ As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth st
 \section{Proper actions}
 
 
-Proper group actions, which we discuss here, behave especially well. For example, they allow for local models in terms of vector bundles not unlike in Lemma~\ref{lem 5.6.7 RS1}, which carries important implications for the structure of both the manifold carrying the action and the orbit space. Recall that a proper map in the category of smooth manifolds is a smooth map under which the preimages of compact subsets are compact.
+Proper group actions, which we discuss here, behave especially well. For example, they allow for local models in terms of vector bundles akin to Lemma~\ref{lem 5.6.7 RS1}, which carries important implications for the structure of both the manifold carrying the action and the orbit space. Recall that a proper map in the category of smooth manifolds is a smooth map under which the preimages of compact subsets are compact.
 
 \begin{defn}[Proper action]
-    A Lie group action $(M,G,\Phi)$ is called proper if the mapping 
+    A Lie group action $(M,G,\Phi)$ is called proper if the following map is proper:
     \[\Phi_{\mathrm{ext}}:G\times M\to M\times M,\quad \Phi_{\mathrm{ext}}(g,m)=\left(\Phi_g(m),m\right).\]
 \end{defn}
 
-We give two equivalent characterizations of proper mappings. Note that since manifolds are metrizable, one may use the criterion that a subset is compact iff every sequence contains a subsequence converging in that subset.
+Before proceeding we give two equivalent characterizations of proper maps. Note that since manifolds are metrizable, one may use the criterion that a subset is compact iff every sequence contains a subsequence converging in that subset.
 
 \begin{lem}[{{\cite[Lem.~6.3.2]{RS1}}}]\label{lem 6.3.2 RS1}
     For a continuous mapping $f:M\to N$ between smooth manifolds, \gls{tfae}:
@@ -8383,11 +8387,11 @@ We give two equivalent characterizations of proper mappings. Note that since man
     \end{enumerate}
 \end{lem}
 \begin{proof}
-    $1\Rightarrow2$: Let $(m_n)$ be a sequence in $M$ as assumed. Since $N$ is locally compact, there exists a compact $K\subset N$ such that $f(m_n)\in K$ for sufficiently large $n$. Then $m_n\in f^{-1}(K)$ for large $n$. Since $f$ is proper, $f^{-1}(K)$ is compact, hence $(m_n)$ contains a convergent subsequence.
+    $1\implies2$: Let $(m_n)$ be a sequence in $M$ as assumed. Since $N$ is locally compact, there exists a compact $K\subset N$ such that $f(m_n)\in K$ for sufficiently large $n$. Then $m_n\in f^{-1}(K)$ for large $n$. Since $f$ is proper, $f^{-1}(K)$ is compact, hence $(m_n)$ contains a convergent subsequence.
 
-    $2\Rightarrow3$ The map $f$ is closed: let $K\subset M$ be closed. Let $(p_n)$ be a sequence on $f(K)$ that converges to some $p\in N$. For every $n$ there is $m_n\in K$ such that $p_n=f(m_n)$. By assumption, $(m_n)$ contains a subsequence converging to some $m\in M$. Since $K$ is closed, $m\in K$. Then $p=f(m)\in f(K)$/ Thus, $f(K)$ is closed. Compactness of $f^{-1}(p)$ for $p\in N$ is obvious.
+    $2\implies3$ The map $f$ is closed: let $K\subset M$ be closed. Let $(p_n)$ be a sequence on $f(K)$ that converges to some $p\in N$. For every $n$ there is $m_n\in K$ such that $p_n=f(m_n)$. By assumption, $(m_n)$ contains a subsequence converging to some $m\in M$. Since $K$ is closed, $m\in K$. Then $p=f(m)\in f(K)$/ Thus, $f(K)$ is closed. Compactness of $f^{-1}(p)$ for $p\in N$ is obvious.
 
-    $3\Rightarrow1$: Let $K\subset N$ be compact and let $\{U_i\}_{i\in I}$ be an open covering of $f^{-1}(K)$. Let $p\in K$. Since $\{U_i\}$ is an open covering of $f^{-1}(p)$, which is compact, there is a finite subcovering $\{U_i\}_{i\in I_p}$. Let $V_p$ denote the complement in $N$ of the image under $f$ of the complement of $\bigcup_{i\in I_p}U_i$ in $M$. By construction, $p\in V_p$. Since $f$ is closed, $V_p$ is open. Hence $\{V_p\}_{p\in K}$ is an open covering of $K$. Since $K$ is compact, there is a finite subcovering labelled by $p_1,\ldots,p_r$. Then $\{U_i:i\in I_{p_1}\cup \cdots \cup I_{p_r}\}$ is a finite subcovering of $\{U_i\}_{i\in I}$.
+    $3\implies1$: Let $K\subset N$ be compact and let $\{U_i\}_{i\in I}$ be an open covering of $f^{-1}(K)$. Let $p\in K$. Since $\{U_i\}$ is an open covering of $f^{-1}(p)$, which is compact, there is a finite subcovering $\{U_i\}_{i\in I_p}$. Let $V_p$ denote the complement in $N$ of the image under $f$ of the complement of $\bigcup_{i\in I_p}U_i$ in $M$. By construction, $p\in V_p$. Since $f$ is closed, $V_p$ is open. Hence $\{V_p\}_{p\in K}$ is an open covering of $K$. Since $K$ is compact, there is a finite subcovering labelled by $p_1,\ldots,p_r$. Then $\{U_i:i\in I_{p_1}\cup \cdots \cup I_{p_r}\}$ is a finite subcovering of $\{U_i\}_{i\in I}$.
 \end{proof}
 
 This immediately implies the following characterizations of proper actions.
@@ -8397,7 +8401,7 @@ This immediately implies the following characterizations of proper actions.
     \begin{enumerate}
         \item The action is proper.
         \item If $(g_n)\in G$ and $(m_n)\in M$ are sequences such that $(m_n)$ and $(\Phi_{g_n}(m_n))$ converge, then $(g_n)$ contains a convergent subsequence.
-        \item The mapping $\Phi_{\mathrm{ext}}$ is closed and all stabilizers of $\Phi$ are compact.
+        \item The map $\Phi_{\mathrm{ext}}$ is closed and all stabilizers of $\Phi$ are compact.
     \end{enumerate}
 \end{cor}
 
@@ -8428,6 +8432,8 @@ The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} and Proposition~\ref{prop 6.3.4 RS1}
 \begin{proof}
     Let $m\in M$. By Proposition~\ref{prop 6.3.4 RS1}(2) and Lemma~\ref{lem 6.3.2 RS1}(3), $\Phi^m$ is closed. Hence the image $\Phi^m(G)$ is closed and the induced map  $\wh{\Phi}^m:G\slash G_m\to M$ is closed. Since the latter is bijective onto the orbit $\Phi^m(G)$, it is open onto $\Phi^m(G)$ in the subspace topology induced from $M$.
 \end{proof}
+
+Thus, orbits of proper actions are analogous to closed subgroups, and as we will see in the next \sect, this leads to smooth orbit spaces, generalizing our earlier result about the smoothness of homogeneous spaces.
 
 \begin{rem}\label{rem 6.3.6 RS1}
     Let $(M,G,\Phi)$ be a proper Lie group action, let $O$ be an orbit and let $m\in O$. The fact that $G_m$ is compact has the following immediate consequences for the isotropy representation.
@@ -8471,7 +8477,7 @@ Now we will discuss the equivariant analog of the Tubular Neighborhood Theorem~\
         \item A (equivariant) tubular neighborhood of $O$ is an equivariant diffeomorphism $\xi:U\to E$  from an open invariant neighborhood $U$ of $O$ in $M$ onto an open neighborhood $V$ of the zero section $o$ in a $G$-vector bundle $E$ over $O$ such that $\restr{\chi}{O}=o$.
         \item For $m\in O$, the $G_m$-invariant neighborhood $V_m=V\cap E_m$ of the origin in $E_m$ is called the linear slice of $\chi$ at $m$ and the $G_m$-invariant embedded submanifold $U_m=\chi^{-1}(V_m)$ of $M$ is called the slice of $\chi$ at $m$.
     \end{enumerate}
-    One says that the $G$-vector bundle $E$ provides a local normal form for $\Phi$ near $O$.
+    One says that the $G$-vector bundle $E$ provides a \emph{local normal form} for $\Phi$ near $O$.
 \end{defn}
 
 \begin{rem}
@@ -8890,7 +8896,7 @@ The final example is the Hermitian analog of the conformal sphere, which is also
     \[\bbS^{2n+1}\cong \SU_{n+1,1}\slash P.\]
 \end{example}
 
-The $\SU_{n+1,1}$-invariant structure on the odd-dimensional sphere induced by this construction is the so called \emph{almost CR-structure}, which consists of a Hermitian metric identified only up to a factor $\lambda\in\bbC^\times$ and a complex structure $\sfJ$. It also determines a unique contact structure.
+The $\SU_{n+1,1}$-invariant structure on the odd-dimensional sphere induced by this construction is the so called \emph{almost CR-structure}, which consists of a Hermitian metric identified only up to a factor $\lambda\in\bbC^\times$ and a complex structure $\sfJ$. It also determines a unique contact structure. CR geometry is the conformal analog of K\"ahler geometry (which consists of compatible Riemannian, symplectic, and complex structures) and naturally occurs at the boundary of a complex manifold.
 
 
 
@@ -8911,13 +8917,13 @@ For integration of differential forms one requires Mackey completeness. Then e.g
     \[\varphi(x)(v_1,\ldots,v_k)=\int_0^1 t^k\omega(tx)(x,v_1,\ldots,v_k)\dd t.\]
 \end{lem}
 
-To prove further results such as de Rham's Theorem, one usually needs partitions of unity, which don't always exist even on Banach manifolds. Thus a manifold $M$ is called smoothly paracompact if every open covering has a subordinated smooth \gls{pou}. De Rham's Theorem holds on such Frech\'et manifolds. Examples of Banach spaces with are not smoothly paracompact are $C([0,1],\bbR)$ and $\ell^1(\bbN,\bbR)$. On these spaces there exist no nonzero smooth functions supported on the unit ball.
+To prove further results such as de Rham's Theorem, one usually needs partitions of unity, which don't always exist even on Banach manifolds. Thus a manifold $M$ is called smoothly paracompact if every open covering has a subordinated smooth \gls{pou}. De Rham's Theorem holds on such Frech\'et manifolds. Examples of Banach spaces which are not smoothly paracompact are $C([0,1],\bbR)$ and $\ell^1(\bbN,\bbR)$. On these spaces there exist no nonzero smooth functions supported on the unit ball.
 
 
 Many familiar results about Lie groups now translate to the locally convex case. The Lie algebra of a locally convex Lie group is obviously locally convex, and the Lie functor $\Lief$ is well-defined. As we will see, every finite-dimensional Lie algebra arises as the Lie algebra of some Lie group. In the general locally convex case this turns out to be a very subtle issue.
 
 \begin{example}[Groups of maps, Loop groups]
-    Let $M$ be a smooth manifold and $H$ a Lie group (both potentially infinite-dimensional) with Lie algebra $\frakh$. Then we obtain a natural topology on the group $G=C^\infty(M,H)$ as follows. The tangent bundle $\T H$ is a Lie group because the derivative of the smooth  multiplication map on $H$ defines a smooth multiplication map on $\T H$. By iterating we get Lie group structures on all higher bundles $\T^n H$. For each $n$ we thus obtain a topological group $C(\T^nM,\T^nH)$ by using the topology of uniform convergence on compact subsets of $\T^nM$, which coincides with the compact-open topology. We also observe that for two smooth maps $f_1,f_2:M\to H$ the functoriality of $T$ yields $T(f_1\cdot f_2)=Tf_1\cdot Tf_2.$ Therefore the canonical map
+    Let $M$ be a smooth manifold and $H$ a Lie group (both potentially infinite-dimensional) with Lie algebra $\frakh$. Then we obtain a natural topology on the group $G=C^\infty(M,H)$ as follows. The tangent bundle $\T H$ is a Lie group because the derivative of the smooth  multiplication map on $H$ defines a smooth multiplication map on $\T H$. By iterating we get Lie group structures on all higher bundles $\T^n H$. For each $n$ we thus obtain a topological group $C(\T^nM,\T^nH)$ by using the topology of uniform convergence on compact subsets of $\T^nM$, which coincides with the compact-open topology. We also observe that for two smooth maps $f_1,f_2:M\to H$ the functoriality of $\T$ yields $\T(f_1\cdot f_2)=\T f_1\cdot \T f_2.$ Therefore the canonical map
     \[C^\infty(M,H)\hookrightarrow \prod_{n}C(\T^nM,\T^nH),\quad f\mapsto (\T^nf)_n\]
     is a group homomorphism, so that the inverse image of the product topology on the right hand side is a group topology on $C^\infty(M,H)$. Therefore $C^\infty(M,H)$ always carries a natural structure of a topological group, even if $M$ and $H$ are infinite-dimensional.
 

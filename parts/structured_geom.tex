@@ -1174,7 +1174,7 @@ As a special case, in effective Klein geometries there are no proper subgroups o
 
 \begin{cor}[Fundamental property of effective Klein geometries{{\cite[Cor.~4.4.2]{Sharpe}}}]\label{Cor 4.2 Sharpe}
     If $(G,H)$ is an effective Klein geometry, $N$ is a subgroup of $H$, and $\frakn=\Lief N$, then
-    \[N=\{h\in H\mid \Ad_h X-X\in\frakn \text{ for all }X\in\frakg\}\Rightarrow N=\{e\}.\]
+    \[N=\{h\in H\mid \Ad_h X-X\in\frakn \text{ for all }X\in\frakg\}\implies N=\{e\}.\]
 \end{cor}
 
 \begin{example}[Real projective space]\label{ex real projective Klein model}
@@ -2647,7 +2647,7 @@ Since the Cartan-K\"ahler Theorem requires the initial (non-extended) integral e
     Let $\calI$ be an \gls{eds} on a manifold $M$. An integral element $E\in\calV^n(\calI)$ is called \emph{ordinary} if its basepoint $m\in M$ is an ordinary zero of $\calI^0$ and moreover there exists an integral flag $0=E^0<E^1<\cdots <E^n=E$, where $E^n$ is K\"ahler-regular for $p\leq n-1$. This flag is then called an \emph{ordinary flag}. If $E$ is both ordinary and K\"ahler-regular, then we say that $E$ is \emph{regular} and the flag is a \emph{regular flag}.
 \end{defn}
 
-Note that each $E^p$, $p\leq n-1$, in an ordinary $n$-flag is itself regular. As we will see later, an ordinary $E$ is also K\"ahler-ordinary. For integral elements, we have the implications: regular $\Rightarrow$ K\"ahler-regular, ordinary $\Rightarrow$ K\"ahler-ordinary, and regular $\Rightarrow$ ordinary. 
+Note that each $E^p$, $p\leq n-1$, in an ordinary $n$-flag is itself regular. As we will see later, an ordinary $E$ is also K\"ahler-ordinary. For integral elements, we have the implications: regular $\implies$ K\"ahler-regular, ordinary $\implies$ K\"ahler-ordinary, and regular $\implies$ ordinary. 
 
 
 \begin{thm}[Cartan-K\"ahler III {{\cite[Thm.~8.3.3]{Ivey}}}]\label{thm 8.3.3 Ivey}
@@ -2767,7 +2767,7 @@ In order to check whether an integral flag is involutive, it seems that we would
 
 This is a powerful result because it allows one to test for the ordinarity of a flag by simple linear algebra, computing the polar spaces $H(E^p)$ for a generic flag in $E^n$ and checking that $\calV^n(\calI)$ is smooth near $E^n$ and of the highest possible dimension, namely the \emph{predicted dimension} $\dim M+s(F)$. Then the Cartan-K\"ahler Theorem~\ref{thm 8.3.3 Ivey} guarantees the existence of an integral $n$-manifold tangent to $E^n$. Moreover, Remark~\ref{rem 8.3.4 Ivey} shows that all integral $n$-manifolds tangent to $E^n$ are parametrized by $s_0$ constants, $s_1$ functions of one variable, $s_2$ functions of two variables, etc. Unlike the Frobenius Theorem, which established a direct link between integrability and involutivity, Cartan's method involves the intermediate concept of ordinarity:
 \begin{center}
-    Involutive $\overset{\mathrm{C.~Test}}{\Leftrightarrow}$ Ordinary $\overset{\mathrm{C-K\ Thm.}}{\Rightarrow}$ Integrable.
+    Involutive $\overset{\mathrm{C.~Test}}{\Leftrightarrow}$ Ordinary $\overset{\mathrm{C-K\ Thm.}}{\implies}$ Integrable.
 \end{center}
 
 % \begin{defn}[Generic flag]
@@ -4041,9 +4041,9 @@ where $p=p^a_{ij}\partial_{u^a}\otimes \dd x^i\otimes \dd x^j\in A^{(1)}_E$. Thu
     We retain the notations of the preceding two \sect s. We are given that $E$ is an ordinary integral element of $\calI$, and we want to show that equality holds in the inequality for $\dim A_E^{(1)}$ in Proposition~\ref{prop 5.5.3 Ivey}.
 
     Now, by Theorem~\ref{thm iv.4.3 Bryant}, the condition that $E$ be ordinary for $\calI$ implies that it is ordinary for the linearization $(\calI_E,\sfv_E)$, and we shall prove that 
-    \[E\text{ ordinary for }(\calI_E,\sfv_E)\Rightarrow \dim A^{(1)}_E=s_1'+2s_2'+\cdots+ns_n'.\]
+    \[E\text{ ordinary for }(\calI_E,\sfv_E)\implies \dim A^{(1)}_E=s_1'+2s_2'+\cdots+ns_n'.\]
     This is a purely algebraic statement, and although it is possible to give a purely algebraic argument, here we will use the Cartan-K\"ahler Theorem, which is an analytic result. Recalling that $A^{(1)}_E$ may be identified with the homogeneous $2$-jets of integral manifolds of $(\calI_E,\sfv_E)$, in outline the analytic proof goes as follows:
-    \[(\calI_E,\sfv_E)\text{ involutive}\Rightarrow \text{``enough'' integral mfds.\ of }(\calI_E,\sfv_E)\Rightarrow \text{lower bound on }\dim A^{(1)}_E.\]
+    \[(\calI_E,\sfv_E)\text{ involutive}\implies \text{``enough'' integral mfds.\ of }(\calI_E,\sfv_E)\implies \text{lower bound on }\dim A^{(1)}_E.\]
 
     Here is the formal argument. As note above, we may assume that $E\in \calV(\calI_E,\sfv_E)$ is an ordinary integral element of $\calI_E$. For the rest of the proof, we shall work with the \gls{eds} $\calI_E$ on $E\oplus Q$. We may assume that our linear coordinate systems $x^1,\ldots,x^n$ on $E$ and $u^1,\ldots,u^s$ on $Q$ have been chosen so that the subspaces $E^p=\{v\in E\mid \dd x^j(v=0),j>p\}$ form an ordinary flag, and so that $H(E^p)=E\oplus \{w\in Q\mid \dd u^a(w)=0,a>s-c_p\}$ for $p<n$. Here we are using the notations from the proof of Cartan's Test and recall our convention that $c_n=s$ and $c_{-1}=0$.
 
@@ -4308,7 +4308,7 @@ It remains only to check that the involutivity of the tableau is equivalent to t
     On the other hand, the Cartan characters $c_p$ and $s_k$ associated to $E$ in terms of $\codim H(E^p)=\dim M-\dim H(E^p)$ are given for $p\geq 0$ by
     \[\codim H(E^p)=c_p,\quad s_p=c_p-c_{p-1}.\]
     By comparing this with (\ref{eq iv.84-1 Bryant}), we find
-    \[c_p=s_0+s'_1+\cdots+s'_p,\Rightarrow \boxed{s_p=s'_p,\quad p=1,\ldots,n-1.}\]
+    \[c_p=s_0+s'_1+\cdots+s'_p,\implies \boxed{s_p=s'_p,\quad p=1,\ldots,n-1.}\]
     Thus, \emph{for any integral element $E$, the characters $s_p=s_p(E)$ are equal to the reduced characters $s'_p$ of the linear Pfaffian system}. In particular, the $s_p$ are the same for all integral elements $E$ over a given point $m\in M$. The inequality in Cartan's Test~\ref{thm cartan's test} is then 
     \[\dim A_m^{(1)}\leq s'_1+2s'_2+\cdots +ns'_n,\]
     and by Definition~\ref{def involutive tableau}, equality holds iff $A_m$ is involutive.
@@ -6085,7 +6085,7 @@ The first one is clearly just $\pi^\ast\rmI$. Meanwhile the second one gives ris
 
 Another way to obtain the Gauss curvature is by differentiating $\omega_1^2$. Using the Maurer-Cartan equation, we obtain the \emph{Gauss equation}\index{Equation!Gauss}\index{Formula|see {Equation}}
 \[\dd\omega_1^2=-K\theta^1\wedge\theta^2.\label{eq 2.14 Ivey}\]
-In addition, the definition of $h$ (\ref{def h}) immediately implies, by multiplying its two rows by $\theta^2$ and $\theta^1$, respectively, that
+We will later be able to interpret this equation as an integrability condition (the vanishing of the torsion) for a certain canonical \gls{eds}. In addition, the definition of $h$ (\ref{def h}) immediately implies, by multiplying its two rows by $\theta^2$ and $\theta^1$, respectively, that
 \[\omega_1^3\wedge\theta^2+\omega_2^3\wedge\theta^1=2H\theta^1\wedge\theta^2.\]
 
 \begin{rem}[Special coordinate systems on surfaces]
@@ -6192,7 +6192,7 @@ This \sect\ connects the above moving frame formalism to the more conventional f
 
 \section{Darboux framings}\label{sec: principal framings}
 
-We are now ready to prove that $K$ is an intrisic quantity, i.e., it depends only on the metric $\sfg=\rmI$ on $\Sigma$, and not on the particular isometric immersion $\Sigma\to \bbE^3$.
+We are now ready to prove that $K$ is an intrisic quantity, i.e., it depends only on the metric $\sfg=i^\ast\rmI$ on $\Sigma$, and not on the particular isometric immersion $i:\Sigma\hookrightarrow \bbE^3$.
 
 \begin{proof}[Proof of Theorema Egregium~\ref{thm egregium}]
     Let $\bf{x}:U\to \bbE^3$ be a local parametrization and let $\frake:U\to P$ be a first-order adapted lift. Let $\eta^j=\frake^\ast\theta^j$. Since $\eta^1\wedge\eta^2$ is nonvanishing, it spans $\bigwedge^2 \T_p^\ast\Sigma$ at each $p\in\Sigma$. Thus, there exist functions $a,b$ such that 
@@ -6227,10 +6227,10 @@ Having constructed $h$, we can finally define a natural orthonormal frame. Note 
     Let $\Sigma$ be an immersed surface in $\bbE^3$. Then there exist local coordinates $(x,y)$ for $\Sigma$ centered at any non-umbilic point $m\in\Sigma$ in which both fundamental forms $\rmI$ and $\rmII$ are diagonalized, i.e., $F=L=0$. \index{Line of curvature coordinates}
 \end{lem}
 \begin{proof}
-    Away from umbilic points, local Darboux frames $(e_1,e_2)$ exist. The flows of these two vector fields generate local coordinates via $m=F^{e_1}_x\circ F^{e_2}_y(m_0)$, and by construction the coordinate lines are lines of curvature (i.e., their tangent directions are principal), so $\rmII$ is diagonalized. Since principal directions are orthogonal (because $\rmII$ is symmetric), the coordinate vector fields $\partial_u$ and $\partial_v$ are orthogonal, hence $\rmI$ is also diagonalized.
+    Away from umbilic points, local Darboux frames $(e_1,e_2)$ exist. The flows of these two vector fields generate local coordinates via $m=\Fl^{e_1}_x\circ \Fl^{e_2}_y(m_0)$, and by construction the coordinate lines are lines of curvature (i.e., their tangent directions are principal), so $\rmII$ is diagonalized. Since principal directions are orthogonal (because $\rmII$ is symmetric), the coordinate vector fields $\partial_u$ and $\partial_v$ are orthogonal, hence $\rmI$ is also diagonalized.
 \end{proof}
 
-Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$, and $H,K$ become well-defined differential invariants. The main question now is now: to what extent do the functions $H$ and $K$ determine the surface. That is, given an open subset $U\subset\bbR^2$, does there exist (locally) a map $\bf{x}:U\to \bbE^3$ such that $H$ and $K$ are the mean and Gauss curvatures of $\Sigma=\bf{x}(U)$. There are certain inequalities on admissible pairs of functions because $H,K$ are symmetric functions of the principal curvatures (so, e.g., $H=0$ implies $K\leq 0$). However, stronger restrictions are uncovered when one differentiates and checks that mixed partials commute (in the spirit of the Frobenius Theorem). But first, consider the following two examples of surfaces which demonstrate that $H$ and $K$ don't uniquely determine an immersed surface even in the absence of umbilic points.
+Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$, and $H,K$ become well-defined differential invariants. The main question now is: to what extent do the functions $H$ and $K$ determine the surface? That is, given an open subset $U\subset\bbR^2$ and functions $H,K\in C^\infty(U)$, does there exist (locally) a map $\bf{x}:U\to \bbE^3$ such that $H$ and $K$ are (the pullbacks of) the mean and Gauss curvatures of $\Sigma=\bf{x}(U)$? There are certain inequalities on admissible pairs of functions because $H,K$ are symmetric functions of the principal curvatures (so, e.g., $H=0$ implies $K\leq 0$). However, stronger compatibility conditions are uncovered when one differentiates and checks that mixed partials commute (in the spirit of the Frobenius Theorem). But first, consider the following two examples of surfaces which demonstrate that $H$ and $K$ don't uniquely determine an immersed surface even in the absence of umbilic points.
 
 \begin{figure}[tp]
     \centering
@@ -6322,16 +6322,16 @@ Nevertheless, $H$ and $K$ are usually sufficient to determine $\Sigma$ up to con
 
 \section{Codazzi equation}
 
-Let us now derive the compatibility condition on $h$ by setting up a Pfaffian system. Treat $\{h_{11},h_{12},h_{22}\}$ as coordinates in $\rmS^2 \bbR^2\cong\bbR^3$ and define an \gls{eds} $\calI\subset \Omega^{\smbullet }(\SE_3\times \bbR^3)$ by
+Let us now derive the compatibility condition on $\sfh$ by setting up a Pfaffian system. Treat $\{h_{11},h_{12},h_{22}\}$ as coordinates in $\rmS^2 \bbR^2\cong\bbR^3$ and define an \gls{eds} $\calI\subset \Omega^{\smbullet }(\SE_3\times \bbR^3)$ by
 \[\calI\coloneqq \<\theta^3,\omega_1^3-h_{11}\theta^1-h_{12}\theta^2,\omega_2^3-h_{12}\theta^1-h_{22}\theta^2\>_{\mathrm{diff}}\]
 with independence condition $\theta^1\wedge\theta^2\neq 0$.
-We know that along the hypothetical surface $\Sigma$, these three forms must vanish. The independence condition means that $\theta^1\wedge\theta^2$ must produce a volume form after pullback to $\Sigma$. The integral manifolds of this system are graphs of immersions $\restr{P}{U}\to \SE_3$ that are adapted frame bundles of isometric immersions $\bf{x}:U\to \bbE^3$ satisfying $\bf{x}^\ast \rmI=\sfg$ and $\bf{x}^\ast \wt{Q}=h$. By the Frobenius Theorem~\ref{thm 4.7.8 RS1}, the derivatives of the generators of $\calI$ must vanish modulo $\calI$ on $\Sigma$. First, it is easy to check that $\dd\theta^3\equiv 0 \pmod{\calI}$. The differentials of the other two forms can be combined into a column-vector, giving the following integrability condition:
+From our above computations, we know that along the lift of any hypothetical surface $\Sigma$, this entire \gls{eds} must vanish. The independence condition means that $\theta^1\wedge\theta^2$ must produce a volume form after pullback to $\Sigma$. The integral manifolds of this system are graphs of immersions $\restr{P}{U}\to \SE_3$ that are adapted frame bundles of isometric immersions $\bf{x}:U\to \bbE^3$ satisfying $\bf{x}^\ast \rmI=\sfg$ and $\bf{x}^\ast \wt{Q}=\sfh$. By the Frobenius Theorem~\ref{thm 4.7.8 RS1}, the derivatives of the generators of $\calI$ must vanish modulo $\calI$ on $\Sigma$. First, it is easy to check that $\dd\theta^3\equiv 0 \pmod{\calI}$. The differentials of the other two forms can be combined into a column-vector and rewritten modulo $\calI$ using the definition of $\sfh$:
 \begin{multline}
     \dd \left\{
         \begin{pmatrix}
             \omega_1^3\\\omega_2^3
         \end{pmatrix}
-        -h 
+        -\sfh 
         \begin{pmatrix}
             \theta^1\\\theta^2
         \end{pmatrix}
@@ -6343,11 +6343,11 @@ We know that along the hypothetical surface $\Sigma$, these three forms must van
     \begin{pmatrix}
         \omega_1^3\\\omega_2^3
     \end{pmatrix}
-    -\dd h\wedge 
+    -\dd \sfh\wedge 
     \begin{pmatrix}
         \theta^1\\\theta^2
     \end{pmatrix}
-    +h \begin{pmatrix}
+    +\sfh \begin{pmatrix}
         0&-\omega_1^2\\
         \omega_1^2& 0
     \end{pmatrix}\wedge 
@@ -6363,19 +6363,19 @@ We know that along the hypothetical surface $\Sigma$, these three forms must van
     \begin{pmatrix}
         \theta^1 \\ \theta^2
     \end{pmatrix}
-    -\dd h\wedge 
+    -\dd \sfh\wedge 
     \begin{pmatrix}
         \theta^1\\\theta^2
     \end{pmatrix}
-    +h \begin{pmatrix}
+    +\sfh \begin{pmatrix}
         0&-\omega_1^2\\
         \omega_1^2& 0
     \end{pmatrix}\wedge 
     \begin{pmatrix}
         \theta^1\\\theta^2
-    \end{pmatrix}\pmod{\calI}.
+    \end{pmatrix}\pmod{\calI}.\label{eq I^1_taut structure}
 \end{multline}
-Thus, $h$ must satisfy the \emph{Codazzi equation}\index{Equation!Codazzi} 
+These derivatives must vanish along the integral manifolds. Thus, $\sfh$ must satisfy the \emph{Codazzi equation}\index{Equation!Codazzi} 
 \[\left\{\dd h+\left[
 \begin{pmatrix}
     0 & -\omega_1^2\\
@@ -6386,14 +6386,14 @@ Thus, $h$ must satisfy the \emph{Codazzi equation}\index{Equation!Codazzi}
     \theta^1\\\theta^2
 \end{pmatrix}=0,\label{eq Gauss-Codazzi}
 \]
-where $[\,,\,]$ is the commutator of matrices. 
+where $[\,,\,]$ is the commutator of matrices. (Note that in this equation a pullback to the adapted frame bundle of a surface is implied, otherwise it holds only modulo $\calI$.)
 
 The proof of Gauss' Theorema Egregium~\ref{thm egregium} showed that, given a metric $\sfg$ on $\Sigma$ and an orthonormal frame $\frake$, $\frake^\ast \omega_1^2$ is uniquely determined. Thus, (\ref{eq Gauss-Codazzi}) is a system of equations for the possible fundamental forms $\rmII=h_{ij}\theta^i\otimes \theta^j\otimes e_3$ for embdeddings of $\Sigma$ into $\bbE^3$ that induce the metric $\sfg$. These equations are well-defined, since (\ref{eq Gauss-Codazzi}) is invariant under changes of the frame $\frake$. Thus, the Frobenius theorem guarantees existence, while uniqueness up to a rigid motion is guaranteed only for a fixed parametrization.
 
 \begin{thm}[Bonnet's Fundamental Theorem of Surfaces]\index{Theorem!Bonnet's Fundamental Theorem}
     Let $U$ be an open domain in $\bbR^2$. Two parametric surfaces $\bf{x},\wt{\bf{x}}:U\to \bbE^3$ are congruent (via an element of $\SE_3$) iff they have the same first and second fundamental forms at corresponding points:
     \[\bf{x}^\ast\rmI=\wt{\bf{x}}^\ast \wt{\rmI},\quad \bf{x}^\ast\rmII=\wt{\bf{x}}^\ast \wt{\rmII}.\] 
-    Moreover, if $\sfg$ and $h$ are given quadratic forms on $U$ satisfying the Gauss-Codazzi equations with $\sfg$ positive definite, then there exists an immersion $\bf{x}:U\to \bbE^3$ such that $\bf{x}^\ast  \rmI=\sfg$ and $\bf{x}^\ast  \wt{Q}=h$.
+    Moreover, if $\sfg$ and $\sfh$ are given quadratic forms on $U$ satisfying the Gauss-Codazzi equations with $\sfg$ positive definite, then there exists an immersion $\bf{x}:U\to \bbE^3$ such that $\bf{x}^\ast  \rmI=\sfg$ and $\bf{x}^\ast  \wt{Q}=\sfh$.
 \end{thm}
 Note that the immersion $\bf{x}$ needs to be specified to claim uniqueness up to congruence. If only $K$ and $H$ are given, the surface cannot be reconstructed uniquely, as we saw above.
 \begin{proof}
@@ -6464,7 +6464,7 @@ Note that the immersion $\bf{x}$ needs to be specified to claim uniqueness up to
 \section{\texorpdfstring{\gls{eds}}{EDS} for surfaces}
 
 
-In this \sect\ we put the above discussion in terms of the Cartan-K\"ahler theory and consider some related examples of geometric \glspl{eds}. First let us define the simple \emph{tautological} \gls{eds} for immersed surfaces in $\bbE^3$. This is the Pfaffian system on the orthonormal bundle $\SE_3$ generated by the single form $\theta^3$:
+In this \sect\ we put the above discussion in terms of the theory of \glspl{eds} developed in the preceding \chap, and consider some related examples of geometric \glspl{eds}. First let us define the simple \emph{tautological} \gls{eds} for immersed surfaces in $\bbE^3$. This is the Pfaffian system on the orthonormal bundle $\SE_3$ generated by the single form $\theta^3$:
 \[\calI_{\mathrm{taut}}=\<\theta^3\>_{\mathrm{diff}}.\]
 Any $2$-dimensional integral manifold is locally described by some function $(\bf{x},\frake)$, where $\frake$ is an orthonormal frame at $\bf{x}$. The vanishing of $\theta^3$ along the integral manifolds implies that $\dd \bf{x}=e_1\theta^1+e_2\theta^2$, which is exactly the statement that the image of $(\bf{x},\frake)$ is consists of first-order adapted frames of the surface parametrized by $\bf{x}$. Thus, $3$-dimensional integral manifolds of this system are exactly the bundles of adapted frames of immersed surfaces. The following example establishes that this system is not involutive.
 
@@ -6526,7 +6526,7 @@ where $\wt\theta^i$ are the standard forms on $\SE_3$ and $\theta^i$ are the fix
         \vartheta_1\\\vartheta_2\\\vartheta_3
     \end{pmatrix} \pmod{\vartheta^1,\vartheta^2,\vartheta^3}.
     \]
-    We have $(s_1,s_2,s_3)=(2,1,0)$. Each $3$-dimensional integral element has $\wt\theta^i=\theta^i$, so is determined by the linear equations giving the $\wt\omega^i_j$ in terms of $\theta^1,\theta^2,\omega^2_1$ on which $\dd\vartheta^i=0$:
+    We have $(s_1,s_2,s_3)=(2,1,0)$. Each $3$-dimensional integral element has $\wt\theta^i=\theta^i$, so is determined by the linear equations relating $\wt\omega^i_j$ to $\theta^1,\theta^2,\omega^2_1$ such that $\dd\vartheta^i=0$:
     \[\begin{pmatrix}
         \wt\omega^3_1\\
         \wt\omega^3_2\\
@@ -6558,7 +6558,7 @@ The procedure in the last \sect\ where we adjoined the Second Fundamental Form t
 The next example directly verifies the by now familiar fact that the prolongation of an involutive system is involutive. 
 
 \begin{example}[Involutivity of $\calI^{(1)}_{\mathrm{taut}}$]
-    Then 
+    Then (\ref{eq I^1_taut structure}) reads
     \begin{align}
         \dd \begin{pmatrix}
             \vartheta^1\\
@@ -6574,7 +6574,7 @@ The next example directly verifies the by now familiar fact that the prolongatio
             \theta^1\\
             \theta^2
         \end{pmatrix}\pmod{I} \notag \\
-        \equiv& 
+        \eqqcolon& 
         \begin{pmatrix}
             \pi^1_1 & \pi^1_2\\
             \pi^2_1 & \pi^2_2\\
@@ -6592,9 +6592,11 @@ The next example directly verifies the by now familiar fact that the prolongatio
         \pi^1_1&=a\theta^1+b\theta^2,\notag\\
         \pi^1_2&=\pi^2_1=b\theta^1+c\theta^2,\notag\\
         \pi^2_2&=c\theta^1+e\theta^2,\notag\\
-        \pi^3_1&=\pi^3_2=0,\\
+        \pi^3_1&=\pi^3_2=0,
     \end{align}
-    where $a,b,c,e$ are arbitrary. Thus, $\dim A^{(1)}=4=s_1+2s_2$, and the system is involutive. The Cartan-K\"ahler Theorem implies that integral manifolds depend on one function of two variables. This is expected since locally any surface is a graph of a function $z=f(x,y)$.
+    where $a,b,c,e$ are arbitrary. Thus, $\dim A^{(1)}=4=s_1+2s_2$, and the system is involutive. The Cartan-K\"ahler Theorem implies that integral manifolds depend on one function of two variables. This is expected since locally any surface is a graph of a function $z=f(x,y)$. 
+    
+    Finally, we observe that the Codazzi equation is exactly the structure equation for this system pulled back to an integral surface, and the Gauss equation is similarly the pullback of $\dd\omega^2_1\equiv- K\theta^1\wedge\theta^2\pmod{\calI_{\mathrm{taut}}^{(1)}}$.
 \end{example}
 
 Finally, to compute the differential invariants of $\Sigma$, we should prolong $\calI_\Sigma$ and check involutivity. This means that we need to treat $\wt{h}_{ij}$ as new independent variables and turn (\ref{eq 12942}) into the condition for the vanishing of three new generating $1$-forms:
@@ -6653,7 +6655,7 @@ with $a_1,a_2,b_1,b_2,c_1,c_2$ arbitrary as long as
 \[a_2=b_1,\ldots b_2=c_1,\]
 and the torsion is 
 \[t\coloneqq \det \wt{h}-\det h=\det\wt h-K.\]
-This torsion clearly has to vanish on any $3$-dimensional integral element of $\calI^{(1)}_\Sigma$, i.e., every such element lives over the subset of $M=P\times\SE_3$ on which $K=\det\wt h$. To ensure that this subset is a submanifold, we let $M'\subset M$ be the set of points where this equation is satisfied and at least one of $\wt{h}_{ij}$ is not zero. Clearly $M'\subset M$ is a submanifold, on which we find $D\wt{}h_{ij}$ linearly independent. On $M'$ we have
+This torsion clearly has to vanish on any $3$-dimensional integral element of $\calI^{(1)}_\Sigma$, i.e., every such element lives over the subset of $M=P\times\SE_3$ on which $K=\det\wt h$. To ensure that this subset is a submanifold, we let $M'\subset M$ be the set of points where this equation is satisfied and at least one of $\wt{h}_{ij}$ is not zero. Clearly $M'\subset M$ is a submanifold, on which we find $D\wt h_{ij}$ linearly independent. On $M'$ we have
 \[
     \dd \begin{pmatrix}
         \vartheta_4\\
@@ -6681,11 +6683,11 @@ The next two examples are adapted from Cartan's 1945 treatise \cite{cartan45}.
     \[\dd h_{12}=\alpha d h_{11}+\beta dh_{22}\]
     for some functions $\alpha,\beta$, and thus 
     \[\pi^1_2=\alpha\pi^1_1+\beta\pi^2_2.\]
-    We still have no intrinsic torsion and have characters $(s_1,s_2)=(2,0)$.  This is automatically involutive because any tableau with characters $(s,\ldots,s,0)$, where $s=\dim W$, is involutive. Solutions depend on two functions of one variable. This suggests that an appropriate Cauchy problem for determining such surfaces would be to start out with a space curve (the two functions being its curvature and torsion) and then solve for a unique surface containing the curve. Cartan carries out this construction explicitly in his treatise \emph{Les Syst\`emes Ext\'erieurs et leurs Applications G\'eom\'etriques}.
+    We still have no intrinsic torsion and have characters $(s_1,s_2)=(2,0)$.  This is automatically involutive because any tableau with characters $(s_1,\ldots,s_{n-1},s_n)=(s,\ldots,s,0)$, where $s=\dim W$, is involutive. Solutions depend on two functions of one variable. This suggests that an appropriate Cauchy problem for determining such surfaces would be to start out with a space curve (the two functions being its curvature and torsion) and then solve for a unique surface containing the curve. Cartan carries out this construction explicitly in his treatise \emph{Les Syst\`emes Ext\'erieurs et leurs Applications G\'eom\'etriques}.
 \end{example} 
 
 \begin{example}[Conformally equivalent surfaces]
-    Let $(\Sigma,\sfg)$ and $(\wb\Sigma,\wb \sfg)$ be surfaces with analytic Riemannian metrics. We set up and solve the \gls{eds} for maps $\phi:\Sigma\to \wb \Sigma$ that preserve the metric up to (point-dependent) scale, i.e., for \emph{conformal} maps.
+    Let $(\Sigma,\sfg)$ and $(\wb\Sigma,\wb \sfg)$ be analytic Riemannian surfaces. We set up and solve the \gls{eds} for maps $\phi:\Sigma\to \wb \Sigma$ that preserve the metric up to (point-dependent) scale, i.e., for \emph{conformal} maps.
 
     Let $P=\Fr_{\SO_2}(\T^\ast \Sigma)$ denote the orthonormal coframe bundle of $\Sigma$, with coframe $\{\theta^1,\theta^2,\omega^2_1=-\omega^1_2\}$ satisfying $\dd\theta^i=-\omega^i_j\wedge \theta^j$ as usual. Similarly, let $\wb P$ denote the orthonormal coframe bundle of $\wb\Sigma$ with coframe $\{\wb\theta^1,\wb\theta^2,\wb\omega^2_1\}$. The metric on $\Sigma$ is given by the pullback of $(\theta^1)^2+(\theta^2)^2$ (tensor squares) along any section $s:\Sigma\to P$, and that on $\wb P$ by the pullback of $(\wb\theta^1)^2+(\wb\theta^2)^2$. Thus, a conformal map $\phi:\Sigma\to \wb\Sigma$ induces  a map $\Phi:P\to \wb P$ such that $\Phi^\ast \left((\wb\theta^1)^2+(\wb\theta^2)^2\right)=\lambda^2 \left((\theta^1)^2+(\theta^2)^2\right)$ for some positive function $\lambda>0$.
 
@@ -6706,27 +6708,19 @@ The next two examples are adapted from Cartan's 1945 treatise \cite{cartan45}.
     \end{pmatrix}
     \equiv 
     \begin{pmatrix}
-        -\lambda^{-1}\dd\lambda & -(\wb\omega^2-\omega^2_1) & 0\\
-        \wb\omega^2_1 -\omega^2_1 & -\lambda^{-1}\dd\lambda & 0
+        \boxed{-\lambda^{-1}\dd\lambda} & -(\wb\omega^2-\omega^2_1) & 0\\
+        \boxed{\wb\omega^2_1 -\omega^2_1} & -\lambda^{-1}\dd\lambda & 0
     \end{pmatrix}
     \wedge 
     \begin{pmatrix}
         \theta^1\\\theta^2\\\omega^2_1
     \end{pmatrix}.
     \]
-    Since $-\lambda^{-1}\dd\lambda$ and $\wb\omega^2_1-\omega^2_1$ are independent modulo $J$, there is no intrinsic torsion, and we may write 
-    \[A=\left\{
-        \begin{pmatrix}
-            a & -b & 0\\
-            b & a & 0
-        \end{pmatrix}
-        \middle| a,b\in\bbR
-    \right\}.\]
-    So $(s_1,s_2)=(2,0)$ and the tableau is involutive. Solutions depend on two functions of one variable. We may make this dependence explicit as follows.
+    Since $-\lambda^{-1}\dd\lambda$ and $\wb\omega^2_1-\omega^2_1$ are independent modulo $J$, there is no intrinsic torsion, and $(s_1,s_2)=(2,0)$, so the tableau is involutive. Solutions depend on two functions of one variable. We may make this dependence explicit as follows.
 
     Specify parametrized curves $\gamma:\bbR\to \Sigma$ and $\wb\gamma:\bbR\to \wb\Sigma$ and look for conformal maps $\phi$ such that $\phi\circ \gamma=\wb\gamma$. The claim is that up to constants there is a unique such map. In fact, choose an orthonormal frame $e_1,e_2$ on $\Sigma$ such that $e_1$ is tangent to $\gamma(\bbR)$, and adapt similarly on $\wb\Sigma$. Set $\lambda=\dot{\bar\gamma}/\dot\gamma$, then the map is uniquely determined up to constants.
 
-    Conformal maps are exactly the injective holomorphic and anti-holomorphic maps between surfaces (using the complex structures induced by the metric). These are determined by their restriction to an arc, so picking parametrized arcs determines a holomorphic or anti-holomorphic map. Even without knowing the coincidence of Lie groups $\GL_1(\bbC)\cong\CO_2$, one might have guessed this by observing that the tableau $A$ is the same as the tableau for the Cauchy-Riemann equations augmented with zeros.
+    Conformal maps are exactly the injective holomorphic and anti-holomorphic maps between surfaces (using the complex structures induced by the metric). These are determined by their restriction to an arc, so picking parametrized arcs determines a holomorphic or anti-holomorphic map. Even without knowing the coincidence of Lie groups $\GL_1(\bbC)\cong\CO_2$, one might have guessed this by observing that the tableau above is the same as that of the Cauchy-Riemann equations, augmented with zeros.
 \end{example}
 
 By taking $\wb\Sigma=\bbR^2$ with the standard flat metric in the last example, we get the following statement.
@@ -6736,10 +6730,10 @@ By taking $\wb\Sigma=\bbR^2$ with the standard flat metric in the last example, 
 \end{cor}
 
 Isothermal coordinates do not usually exist on Riemannian manifolds of dimension $3$ and higher.
-Note that isothermal coordinates allow us to construct canonical parametrizations of $\Sigma$ that are \emph{conformally orthonormal}, i.e., the corresponding coordinate vector fields $\partial_x,\partial_y$ are orthonormal only up to an overall scale. This explains why the Fundamental Theorem of surfaces required a fixed parametrization to guarantee uniqueness of the immersion: there is no natural orthonormal coordinate system on a curved surface. In contrast, immersed curves always have the unique arclength parameter that produces an orthonormal tangent vector, which removes the freedom of reparametrization.
+Note that isothermal coordinates allow us to construct canonical parametrizations of $\Sigma$ that are \emph{conformally orthonormal}, i.e., the corresponding coordinate vector fields $\partial_x,\partial_y$ are orthonormal only up to an overall scale. This limitation explains why the Fundamental Theorem of Surfaces required a fixed parametrization to guarantee uniqueness of the immersion: there is no natural orthonormal coordinate system on a curved surface. In contrast, immersed curves always have the unique arclength parameter that produces an orthonormal tangent vector, which removes the freedom of reparametrization.
 
-\begin{defn}[Conformal structure]
-    Two metric tensors $\sfg,\wt\sfg$ on a manifold $M$ are called \emph{conformally equivalent} if there exists a smooth function $\lambda\neq 0$ such that $\wt\sfg=\lambda^2 \sfg$. A conformal structure on a manifold $M$ is a conformal equivalence class of metrics $[\sfg]$.
+\begin{defn}[Conformal structure]\index{Conformal structure}
+    Two (pseudo-)Riemannian metrics $\sfg,\wt\sfg$ on a manifold $M$ are called \emph{conformally equivalent} if there exists a smooth function $\lambda\neq 0$ such that $\wt\sfg=\lambda^2 \sfg$. A conformal structure on a manifold $M$ is a conformal equivalence class of metrics $[\sfg]$.
 \end{defn}
 
 Crucially, the metric $\sfg$ on a surface cannot be recovered just from its conformal factor $\lambda^2$ in isothermal coordinates. In other words, not any two metrics on a surface are locally conformally equivalent. In the next example we characterize the intrisic information contained in $\lambda^2$.
@@ -6812,8 +6806,8 @@ We can also obtain the following useful formula for the mean curvature in isothe
     \]
     the symbol relations become 
     \begin{align}
-        \pi^0_1\equiv \pi^0_2\equiv& 0 \notag\\
-        \pi^2_1-\pi^1_2\equiv& -k_1\theta^1+k_2\theta^2\notag\\
+        \pi^0_1\equiv \pi^0_2&\equiv 0 \notag\\
+        \pi^2_1-\pi^1_2&\equiv -k_1\theta^1+k_2\theta^2\notag\\
         \pi^1_1\equiv \pi^2_2&\equiv 0.
     \end{align}
     This still has apparent torsion, but if we instead write 
@@ -6839,7 +6833,7 @@ We can also obtain the following useful formula for the mean curvature in isothe
         &\equiv \left(-k_{1,1}-k_{2,2}+\frac{k_1^2+k_2^2}{2k}+2kK\right)\theta^1\wedge\theta^2 \pmod{I^+},
     \end{align}
     where we have written $\dd k_j=k_{j,1}\theta^1+k_{j,2}\theta^2$. The integrability condition we have obtained can be put more simply using the Laplace-Beltrami operator defined in a Darboux frame with principal curvatures $k_1,k_2$ by
-    \[\Delta_{\sfg} f = f_{11}+f_{22}+\frac{f_1k_{2,1}-f_2k_{1,2}}{k_1-k_2}.\]
+    \[\Delta_{\sfg} f \coloneqq f_{11}+f_{22}+\frac{f_1k_{2,1}-f_2k_{1,2}}{k_1-k_2}.\]
     In particular, this implies that
     \[\Delta_{\sfg} \ln(-K)-4K=\frac{2}{k}\left(k_{1,1}+k_{2,2}-\frac{k_1^2+k_2^2}{2k}-2kK\right).\]
     The intergability condition $\dd\pi\equiv 0\pmod{I^+}$ becomes
@@ -6848,15 +6842,15 @@ We can also obtain the following useful formula for the mean curvature in isothe
 
 In summary:
 \begin{thm}[Ricci {{\cite[Thm.~6.8.13]{Ivey}}}]
-    Let $(\Sigma,\sfg)$ be a surface with a Riemannian metric. Let $K$ be its curvature function. Away from umbilic points, $\Sigma$ is minimal and isometrically immersed in $\bbR^3$ iff $K<0$ and $\Delta_{\sfg}\ln (-K)=4K$. If $K$ is not constant, then there is a one-parameter family of such immersions, up to congruence.
+    Let $(\Sigma,\sfg)$ be a surface with a Riemannian metric. Let $K$ be its curvature function. Away from umbilic points, $\Sigma$ admits a minimal isometric immersion into $\bbE^3$ iff $K<0$ and $\Delta_{\sfg}\ln (-K)=4K$. If $K$ is not constant, then there is a one-parameter family of such immersions, up to congruence.
 \end{thm}
 
 Another geometric structure closely related to the \gls{eds} for immersed surfaces if the following.
 
 \begin{example}[Triply orthogonal webs]\index{Web}\label{example orthogonal 3-webs}
-    A \emph{triply orthogonal web} is a triple of foliations of the Euclidean space $\bbE^3$ by surfaces whose leaves are pairwise orthogonal. Each leaf is perpendicular to (annihilated by) a unique unit-norm $1$-form $\eta_i$, up to a sign, which satisfies $\eta_i\wedge\dd\eta_i=0$ by the Frobenius Theorem. Let $P=\SE_3$ be the bundle of all orthonormal frames of the tangent spaces of $\bbE^3$, with the obvious bundle projection $\pi:P\to \bbE^3$, so that each point of $P$ has the form $p=(m,e_1,e_2,e_3)$ for some $m\in \bbE^3$ and orthonormal basis $\frake=(e_1,e_2,e_3)\in \SO_3$ of $\T_{m}\bbE^3$. The \emph{soldering $1$-form} $\theta\in \Omega^1(P;\bbR^3)$ on $P$ is defined by 
+    A \emph{triply orthogonal web} is a triple of foliations of the Euclidean space $\bbE^3$ by surfaces whose leaves are pairwise orthogonal. Each leaf is perpendicular to (annihilated by) a unique unit-norm $1$-form $\eta_i$, up to a sign, which satisfies $\eta_i\wedge\dd\eta_i=0$ by the Frobenius Theorem in the form of Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1}. Let $P=\SE_3$ be the bundle of all orthonormal frames of $\T\bbE^3$, with the usual bundle projection $\pi:P\to \bbE^3$, so that each point of $P$ has the form $p=(m,e_1,e_2,e_3)$ for some $m\in \bbE^3$ and orthonormal basis $\frake=(e_1,e_2,e_3)\in \SO_3$ of $\T_{m}\bbE^3$ (in this case the set of frames is actually $\SO_3$ itself and not just an $\SO_3$-torsor because $\bbE^3$ has a canonical frame). The \emph{soldering $1$-form} $\theta\in \Omega^1(P;\bbR^3)$ on $P$ is defined by 
     \[\frake\cdot \theta(X)=\pi_\ast(X),\quad X\in \T P,\]
-    i.e., it outputs the components of $\pi_\ast(X)$ in the frame $\frake$. In the last \sect\ we encountered its components $\theta^i$, and we also constructed the $1$-forms 
+    i.e., it outputs the components of $\pi_\ast(X)$ in the frame $\frake$. In the above \sect s we encountered its components $\theta^i$, and we also constructed the $1$-forms 
     $\omega^i{}_j=\<\dd e_j,e_i\>,$
     which together comprise a unique $\frakso_3$-valued $1$-form on $P$ that satisfies (part of) the structure equation (\ref{eq structure for surfaces}):
     \[\dd \theta=-\omega\wedge\theta,\]
@@ -7642,7 +7636,7 @@ For a much more detailed review of the concept of integrable systems, we direct 
 
 \section{Gauss-Bonnet theorem}
 
-
+We finish this \chap\ with a classical theorem that is not related to the method of moving frames, but is a major early milestone in \emph{global} results of differential geometry. 
 
 
 
@@ -9811,11 +9805,11 @@ We say that an affine connection $\calH M$ on $M$ is complete if every geodesic 
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    $(a)\Rightarrow(b)$: let $X_m\in \T_mM$ be nonzero and let $\gamma_{X_m}$ be the corresponding geodesic. Let $X$ be a vector field in a neighborhood of $m$ that extends $\dot\gamma$ along a part of $\gamma$. Then 
+    $(a)\implies(b)$: let $X_m\in \T_mM$ be nonzero and let $\gamma_{X_m}$ be the corresponding geodesic. Let $X$ be a vector field in a neighborhood of $m$ that extends $\dot\gamma$ along a part of $\gamma$. Then 
     \[\wt\nabla_{X} X(m)=\wt\nabla_{X_m} X=\wt\nabla_{\dot\gamma(0)}X=\nabla_{\dot\gamma(0)}X=\nabla_X X(m).\]
 
 
-    $(b)\Rightarrow(a)$: Let $\gamma:I_\epsilon\to M$ be a geodesic for $\nabla$ and let $X\in\fX(M)$ be an extension of $\dot\gamma$. Then 
+    $(b)\implies(a)$: Let $\gamma:I_\epsilon\to M$ be a geodesic for $\nabla$ and let $X\in\fX(M)$ be an extension of $\dot\gamma$. Then 
     \[\wt\nabla_{\dot\gamma} X=\nabla_{\dot\gamma}X,\]
     thus $\gamma$ is a geodesic for $\wt\nabla$.
 
@@ -9895,13 +9889,13 @@ To finish off this \sect, we consider sets of connections that have the same geo
     \end{enumerate}    
 \end{prop}
 \begin{proof}
-    $(a)\Rightarrow(b)$: Given $X_m\in \T M$, let $\gamma$  be the geodesic for $\nabla$ with $\dot\gamma(0)=X_m$, and let $\wt\gamma$ be the reparametrized version of $\gamma$ which makes it a geodesic of $\wt\nabla$. Let $X$ be a vector field that matches $\dot\gamma$ along $\gamma$ and $\wt X$ one that matches $\dot{\tilde\gamma}$. Then along $\gamma$ we have $X=f\wt{X}$ for some $f\in C^\infty(M)$. Thus, along $\gamma$,
+    $(a)\implies(b)$: Given $X_m\in \T M$, let $\gamma$  be the geodesic for $\nabla$ with $\dot\gamma(0)=X_m$, and let $\wt\gamma$ be the reparametrized version of $\gamma$ which makes it a geodesic of $\wt\nabla$. Let $X$ be a vector field that matches $\dot\gamma$ along $\gamma$ and $\wt X$ one that matches $\dot{\tilde\gamma}$. Then along $\gamma$ we have $X=f\wt{X}$ for some $f\in C^\infty(M)$. Thus, along $\gamma$,
     \begin{align}
         \wt\nabla_X X-\nabla_X X&= \wt\nabla_{f\wt{X}}f\wt{X}-0\\
         &= f\left(\wt{X}(f)\cdot \wt{X}+f\wt{\nabla}_{\wt{X}}\wt{X}\right)\\
         &= f\wt{X}(f)\cdot \wt{X}=\wt{X}(f)\cdot X.
     \end{align}
-    $(b)\Rightarrow(c)$: Let $\gamma$ be a geodesic for $\nabla$ and let $X$ be a vector field extending $\dot\gamma$. Then, for $m=\gamma(t)$,
+    $(b)\implies(c)$: Let $\gamma$ be a geodesic for $\nabla$ and let $X$ be a vector field extending $\dot\gamma$. Then, for $m=\gamma(t)$,
     \[\wt{\nabla}_{X_m}X=(\wt\nabla_{X_m} X-\nabla_{X_m} X)_m+\nabla_{X_m}X=\lambda_{X_m}X_m\eqqcolon g(t)X_m.\label{1 spivak}\]
     Let $f(t)=\rme^{G(t)}\neq 0$, where $G'(t)=g(t)$ so that 
     \[\dot f(t)=g(t)f(t),\label{2 spivak}\] 
@@ -9920,7 +9914,7 @@ To finish off this \sect, we consider sets of connections that have the same geo
     \[\frac{\dd p^{-1}(t)}{\dd t}\dot\gamma(p^{-1}(t))=\frac{1}{f(p^{-1}(t))}\dot\gamma(p^{-1}(t)).\]
     For this we need $p'(p^{-1}(t))=f(p^{-1}(t))$, or simply $p'(s)=f(s)>0$.
 
-    $(c)\Rightarrow (b)$ is clear. $(b)\Rightarrow(c)$: we use Lemma~\ref{lem 252 Spivak}. It shows that 
+    $(c)\implies (b)$ is clear. $(b)\implies(c)$: we use Lemma~\ref{lem 252 Spivak}. It shows that 
     \[\omega(X)=\frac{1}{n+1}\tr (S(X,\_))\]
     is the desired smooth $1$-form.
 \end{proof}
@@ -11281,644 +11275,5 @@ Hence, $X\cdot\wt{t}$ is $H$-equivariant, so it corresponds to a unique smooth s
 \end{defn}
 
 
-
-
-
-
-
-
-
-
-
-\clearpage
-\chapter{Riemannian Geometry \texorpdfstring{\ucmark}{}}
-
-\section{Riemannian manifolds}\label{sec: Riemannian mfds}
-
-
-\begin{defn}[Riemannian metric on a \gls{vb}]\index{Metric!on a bundle}
-Let $E\overset\pi\to M$ be a real \gls{vb}. A (Riemannian) bundle metric on $E$ is a covariant tensor field $h\in\Gamma^\infty(\T^0_2 E)$ such that
-\begin{enumerate}
-    \item $h$ is symmetric, i.e., $h\in\Gamma^\infty(\Sigma^2 E^\ast)$;
-    \item $h$ is non-degenerate, i.e., when viewed as a morphism $h\in\Hom(E,E^\ast)$, it is an isomorphism;
-    \item $h$ is positive: $h(e,e)\geq 0$ and $h(e,e)=0$ iff $e=0$. This in fact implies Property 2.
-\end{enumerate}
-For $e,e'\in E_p$, we denote $\langle e,e'\rangle_g=g_p(e,e')$.
-\end{defn}
-
-Given a bundle metric on $E$, all tensor bundles $E^r_s$ inherit natural bundle metrics as well.
-
-\begin{prop}
-The space of all bundle metrics on $E$ is convex, i.e., if $h_1$ and $h_2$ are two metrics on $E$, then all tensors $h_t=t \cdot h_1+(1-t)\cdot h_2$, $t\in[0,1]$, are metrics.
-\end{prop}
-\begin{proof}
-Only non-degeneracy is not obvious. If $h_t$ is degenerate, then there exists an $e\in E\setminus E_0$ such that $h_t(e,e)=0$. Then by positivity, $h_1(e,e)=h_2(e,e)=0$, which leads to a contradiction.
-\end{proof}
-
-\begin{thm}[Existence of bundle metrics]
-Every \gls{vb} $E\overset\pi\to M$ admits a bundle metric. 
-\end{thm}
-\begin{proof}
-Choose a bundle atlas consisting of local trivializations $\chi_\alpha:\restr{E}{U_\alpha}\to U_\alpha\times\bbR^k$, and on the trivial bundles $U_\alpha\times\bbR^k$ define a metric $h_{\text{stand}}$ using the standard metric on $\bbR^k$. Then $\restr{h_\alpha}{U_\alpha}\coloneqq \chi_\alpha^\ast h_{\text{stand}}$ and 
-\[h\coloneqq \sum_\alpha \xi_\alpha \cdot h_\alpha,\]
-where $\xi_\alpha$ is a \gls{pou} on $M$ subordinate to the atlas. This is obviously a metric on $E$.
-\end{proof}
-\begin{cor}
-With the help of a metric, any \gls{vb} has local \emph{orthonormal frames}. The local trivializations induced by such frames have transition functions that preserve distances, i.e., the cocycle takes values in the orthogonal group, $\tau_{\alpha\beta}:U_{\alpha\beta}\to \mathrm{O}(k)$. In other words, the structure group of any real \gls{vb} can be reduced from $\GL_k(\bbR )$ to $\mathrm{O}(k)$. Furthermore, if the bundle is orientable iff the structure group can be further reduced to $\mathrm{SO}(k)$.
-\end{cor}
-
-\begin{prop}
-Let $h$ a bundle metric on $E\overset\pi\to M$ and let $D< E$ be a subbundle. Define
-\[D^\perp \coloneqq \{v\in E\mid h(v,e)=0 \text{ for all }e\in D\}=\ker (\pr_D),\]
-where $\pr_D$ is the fiberwise orthogonal projection onto $D$. Then $D^\perp$ is a subbundle of $E$.
-\end{prop}
-\begin{proof}
-Let $\{E_1,\ldots,E_k\}$ be a local orthonormal frame such that $D=\<E_1,\ldots,E_m\>$ for some $m\leq k$ (such local frames exist by the standard Gram-Schmidt orthogonalization procedure). Then the orthogonal projection is locally written as
-\[\pr_D \left(\sum_{j=1}^k s^j E_j\right)=\sum_{j=1}^m s^j E_j.\]
-This definition is in fact basis independent, i.e., defines a global bundle morphism $\pr_D:E\to E$. Therefore $D^\perp =\ker (\pr_D)$ and is a subbundle by Theorem \ref{subbundles thm}.
-\end{proof}
-
-
-\begin{defn}[Riemannian manifold]\index{Riemannian manifold}
-A Riemannian manifold is a pair $(M,g)$, where $M$ is a smooth manifold and $g\in\Gamma^0_2(M)$ is a metric on the tangent bundle $\T M$.
-\end{defn}
-
-
-\begin{defn}[Isometry]\index{Isometry}
-A smooth map between two Riemannian manifolds $f:(M,g)\to(M',g')$ is called an isometry if $f^\ast g'=g$.
-\end{defn}
-
-\begin{cor}[Normal bundle]
-Let $(M^m,g)$ be a Riemannian manifold and $S\sub M$ with $\dim S=k$. Define $D=\T S$ and consider the normal bundle $\rmN S\coloneqq D^\perp<\restr{\T M}{S}$. Since this is a subbundle of $\T M$, we can find local orthonormal $(m-k)$-frames for $\rmN S$. If $\codim S=1$, then $\rmN S=\<N\>$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{\T M}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
-\end{cor}
-
-
-\begin{defn}[Flat Riemannian manifold]
-A Riemannian manifold $(M,g)$ is called flat if it is locally isometric to $(\bbR^m,g_{\text{stand}})$.
-\end{defn}
-
-
-\begin{thm}
-Let $f\in C^\infty(M,N)$ and let $g$ be a metric on $N$. Then $f^\ast g$ is a metric on $M$ iff $f$ is an immersion. In particular, one can always induce metrics on submanifolds.
-\end{thm}
-\begin{proof}
-Exercise.
-\end{proof}
-
-\begin{thm}
-For a Riemannian manifold $(M,g)$,  \gls{tfae}:
-\begin{enumerate}
-    \item $(M,g)$ is flat;
-    \item Everywhere on $M$ there exist local coordinates such that $g=\delta_{ij} \dd x^i\otimes \dd x^j$;
-    \item Everywhere on $M$ there exist local holonomic orthonormal frames.
-\end{enumerate}
-\end{thm}
-\begin{proof}
-Exercise.
-\end{proof}
-\begin{cor}
-All one-dimensional Riemannian manifolds are flat.
-\end{cor}
-
-
-\begin{defn}[Distances induced by a Riemannian metric]
-    For any (piecewise smooth) path $\gamma:[0,1]\to M$ define the length of $\gamma$ with respect to a metric $g$ as
-    \[\rmL_g[\gamma]\coloneqq \int_0^1 \sqrt{g(\dot\gamma(t),\dot\gamma(t))}\dd t \equiv \int_0^1 \lVert\dot\gamma(t)\rVert \dd t.\]
-    Moreover, we define the distance between two points $p,q\in M$ as 
-    \[d_g(p,q)\coloneqq \inf \{\rmL_g[\gamma]\mid \gamma:p\leadsto q\}.\]
-\end{defn}
-
-The length functional has an important property called \emph{reparametrization invariance}: if $\varkappa:[a,b]\to[0,1]$ is any diffeomorphism, then 
-\[\rmL_g[\gamma\circ\varkappa]=\int_a^b  \lVert\dot\gamma(\varkappa(t))\rVert \varkappa' (t)\dd t=\int_0^1 \lVert\dot\gamma(\varkappa)\rVert \dd \varkappa = \rmL_g[\gamma].\]
-
-
-\begin{thm}
-    The distance function $d_g$ on $M$ defined above turns $M$ into a metric space, and its metric topology coincides with the original one.
-\end{thm}
-\begin{proof}
-    See \cite[Thm. 13.29]{Lee}, \cite[Lem. 6.2]{LieRiem} or \cite[Lem. 1.4.1]{Jost}.
-\end{proof}
-
-
-\begin{defn}[Conformal metrics]\index{Conformal metric}
-    Let $g$ and $\wt{g}$ be two metric on a manifold $M$. They are called conformal iff there exists a positive function $\Omega\in C^\infty(M)$, $\Omega>0$, such that $\wt{g}=\Omega\cdot g$.
-\end{defn}
-
-\begin{thm}[Nomizu-Ozeki conformal completion theorem]
-    Any Riemannian metric $g$ on a manifold $M$ is conformal to a complete metric $\wt{g}$ (i.e., a metric that makes $M$ into a complete metric space). In particular, every manifold supports a complete metric.
-\end{thm}
-\begin{proof}
-    We claim that there exists a conformal factor $\Omega>0$ such that all $\wt{g}$-bounded sets are precompact.
-
-    First let us show that this claim implies the theorem. Let $(x_n)$ be a Cauchy sequence w.r.t.\ $d_{\wt{g}}$. Then $(x_n)$ is $\wt{g}$-bounded and precompact, i.e., contains a convergent subsequence. But then $(x_n)$ itself must converge to the same limit, proving completeness.
-
-    Now we prove the claim. Let $f$ be an exhaustion function and $V_j=f^{-1}((-\infty,j))$ be the family of precompact sets that exhaust $M$. Let $K_j=\overline{V_j}$ be the corresponding compact sets and define the distances $\delta_j=\mathrm{dist}_g(\partial K_j,\partial K_{j+1})$ between their boundaries. Choosing a \gls{pou} $\{\chi_j\}$ subordinate to the covering $\{V_{j}\setminus K_{j-1}\}$, define $\Omega=\sum_j \frac{1}{j\cdot \delta_j} \chi_j$. Now it is easy to check that if a set $A$ has finite diameter in the metric $\wt{g}=\Omega\cdot g$, i.e., $\mathrm{diam}_{\wt{g}} A<\infty$, then $\restr{f}{A}$ is bounded. Namely, if $(x_n)$ is a sequence that is not contained in any compact set, i.e., such that $\forall\,j \;\exists\, N:\;\forall n>N \;x_n\notin K_j$, then $x_n\in K_{k(n)}\setminus K_{k(n)-1}$ with $k(n)\to\infty$ and  $d_{\wt{g}}(x_1,x_n)\geq\sum_{j=1}^{k(n)} \frac{1}{j}\to\infty$. The contrapositive of this statement is that every $\wt{g}$-bounded sequence is contained in a compact set. This implies that all $\wt{g}$-bounded sets are precompact, which makes $d_{\wt{g}}$ a complete metric.
-\end{proof}
-\begin{rem}
-    In physics, particularly AdS/CFT, the space $(M,\wt{g})$ is often referred to as ``conformal compactification'' (this terminology was introduced by Roger Penrose). However, the choice of a metric doesn't modify the topology of $M$ in any sense, so it can't make a non-compact manifold compact. Therefore a proper name for this procedure is conformal completion.
-\end{rem}
-
-\begin{prop}
-    If $(M,g)$ is complete and $S\sub M$, then $(S,\restr{g}{S})$ is also complete.
-\end{prop}
-\begin{proof}
-    Exercise. The idea is to show first that $d_M(p,q)\leq d_S(p,q)$ for any $p,q\in S$, where $d_M$ and $d_S$ are the distance functions induced by $g$ on $M$ and $S$, respectively. Then any Cauchy sequence in $S$ is also a Cauchy sequence in $M$ and therefore converges. The limit of the sequence must belong to $S$ because $S$ is embedded (i.e., closed as a subset of $M$).
-\end{proof}
-
-\begin{defn}[Musical isomorphisms]
-    Recall that a Riemannian metric $g\in\Gamma^0_2(M)$ can be viewed as an isomorphism $\flat\coloneqq g\in\Hom(\T M,\T^\ast M)$. Similarly, $\sharp\coloneqq g^{-1}\in\Gamma_0^2(M)$ is an isomorphism $g^{-1}\in\Hom(\T^\ast M,\T M)$. We write 
-    \[\alpha^\sharp=g^{-1}(\alpha),\quad v^\flat=g(v),\quad \alpha\in \T^\ast M,\;v\in \T M.\]
-    In local coordinates,
-    \[(\alpha^\sharp)^i=g^{ij}\alpha_j,\quad (v^\flat)_i=g_{ij}v^j,\]
-    where $g^{ij}$ is a conventional notation for the components of $g^{-1}$ (as a matrix it is literally the inverse of $g_{ij}$ in any local coordinates). The mnemonic behind the names is that $\sharp$ ``raises indices'', i.e., converts $1$-forms into vectors, and $\flat$ ``lowers indices''.
-    
-    As a result, on a Riemannian manifold $(M,g)$ there is a \emph{natural isomorphism} $\T M\cong \T^\ast M$, which is absent without an additional structure like a metric.
-\end{defn}
-
-
-A Riemannian metric on an orientable manifold naturally induces a volume form as follows.
-
-
-\begin{thm}
-    Let $(M^m,g)$ be an orientable Riemannian manifold. Then there exists a unique volume form $\mu_g\in\Omega^m(M)$ such that for any positively oriented local orthonormal frame $\{e_i\}_{i=1}^m$ on $M$, one has $\mu_g(e_1,\ldots,e_m)=1$.
-\end{thm}
-\begin{proof}
-    Fix a positively oriented \emph{orthonormal} frame $\{e_i\}$ and define the dual local orthonormal frame by $\alpha^i=(e_i)^\flat$ (indeed, $\alpha^i(e_j)=g(e_i,e_j)=\delta_{ij}$). Consider the local volume form
-    \[\mu_g=\alpha^1\wedge \cdots\wedge \alpha^m.\]
-    We check that this differential form is in fact independent of the choice of the orthonormal frame. Indeed, any other positively oriented orthonormal frame is obtained from $\{e_i\}$ by the application of a transition function $\varphi_{\alpha\beta}$ with $\varphi_{\alpha\beta\ast}:U_{\alpha\beta}\to \mathrm{SO}(m)$ (and the entire atlas can be chosen this way due to orientability), and then the local volume form defined w.r.t.\ the new frame is
-    \[\varphi_{\alpha\beta}^\ast\alpha^1\wedge\cdots\wedge\varphi_{\alpha\beta}^\ast\alpha^m=\varphi_{\alpha\beta}^\ast \mu_g=\underbrace{\det(\varphi_{\alpha\beta})}_{+1}\cdot\mu_g=\mu_g.\]
-    Therefore, the above local definition of $\mu_g$ stitches together to a global volume form.
-\end{proof}
-
-Note that the above ``Riemannian'' volume form is natural in the category of oriented Riemannian manifolds, i.e., it is invariant under orientation-preserving isometries.
-
-In local (positively ordered) coordinates, \[\mu_g=\sqrt{\det(g_{ij})}\dd x^1\wedge\cdots\wedge \dd x^m.\]
-
-\begin{defn}[Levi-Civita tensor]\index{Levi-Civita tensor}
-    The volume form $\mu_g$ viewed as a totally antisymmetric tensor $\epsilon=\mu_g\in\Gamma^0_m(M)$ is called the Levi-Civita tensor. In local (positively ordered) coordinates,
-    \[\epsilon_{i_1\cdots i_m}=\sqrt g\varepsilon_{i_1\cdots i_m},\quad \sqrt g\coloneqq\sqrt{\det(g_{ij})},\]
-    where $\varepsilon_{i_1\cdots i_m}=\pm 1$ is the ordinary Levi-Civita symbol.\footnote{Note how the Levi-Civita symbol, unlike its tensor counterpart, is a pseudo-tensor. Its components don't change sign under changes of orientation, e.g. $\varepsilon_{12}$ is $+1$ independently of the orientation.}
-\end{defn}
-
-\begin{xca}
-    Show that the locally defined quantity $\dd x^1\wedge\cdots \wedge\dd x^m$ is in fact a globally well-defined scalar density of weight $+1$, and similarly  $\sqrt{g}$ is a scalar tensor density of weight $-1$.
-\end{xca}
-
-\begin{prop}
-    Let $(M,g)$ be a Riemannian manifold and $S\sub M$ an orientable submanifold embedded via $i:S\hookrightarrow M$ with a chosen unit normal vector field $N$. Then:
-    \begin{enumerate}
-        \item $\mu_{\wt{g}}=i^\ast (i_N \mu_g)$, where $\wt{g}=i^\ast g$ is the induced metric on $S$;
-        \item given another vector field $X\in\Gamma^\infty(\restr{\T M}{S})$, we have 
-        \[i^\ast(i_X\mu_g)=\langle X,N\rangle_g \cdot \mu_{\wt{g}}.\]
-    \end{enumerate}
-\end{prop}
-\begin{proof}
-        1. Assuming that the result is true, we have $\mu_{\wt{g}}(E_1,\ldots,E_{m-1})=\mu_g(N,E_1,\ldots,E_{m-1})$, and this equals $\pm 1$, but since the direction of $N$ is induced from the orientation on $M$, this in fact equals $+1$. Therefore this is indeed rhe right volume form on $S$.
-        
-        2. Decompose $X=\underbrace{\langle X,N\rangle N}_{X^\perp}+\underbrace{(X-X^\perp)}_{X^\top}$,
-        then 
-        \[i^\ast(i_{X^\top}\mu_g)(\underbrace{X_1,\ldots,X_{m-1}}_{\in \T S})=\mu_g(\underbrace{X^\top,X_1,\ldots,X_{m-1}}_{\text{lin. dependent}})=0.\]
-        Thus 
-        \[i^\ast(i_X\mu_g)=i^\ast(i_{X^\top}\mu_g)=\langle X,N \rangle i^\ast (i_N \mu_g)=\langle X,N\rangle \mu_{\wt{g}}.\]
-\end{proof}
-
-\begin{cor}
-    \begin{enumerate}
-        \item Define the divergence of a vector field with respect to a metric $g$ as 
-        \[(\div_g X)\mu_g=\Lie_X \mu_g.\]
-        Then by Cartan's magic formula
-        \[(\div_g X)\mu_g=\dd i_X \mu_g,\quad \div_g X=\frac{1}{\sqrt g}\partial_i(\sqrt g X^i).\label{divergence in components}\]
-        \item The Gauss theorem holds in the form 
-        \[\int_M (\div_g X)\mu_g=\int_M \dd i_x \mu_g=\int_{\partial M}i_X \mu_g=\int_{\partial M}\langle X,N\rangle_g \mu_{\restr{g}{\partial M}}.\]
-    \end{enumerate}
-\end{cor}
-
-\begin{defn}
-    Given a Riemannian manifold $(M,g)$, define the gradient \index{Gradient operator} of a function $f\in C^\infty(M)$ as 
-    \[\grad_g f=(\dd f)^\sharp.\]
-    Define the Laplace-Beltrami operator \index{Laplace-Beltrami operator} on $C^\infty(M)$ as
-    \[\nabla^2_g f \coloneqq \div_g \grad_g f.\]
-\end{defn}
-\begin{defn}[Killing vector field]\index{Killing vector field}
-    A vector field $X\in\fX(M)$ on a Riemannian manifold $(M,g)$ is called a Killing vector field if its flow consists of isometries, i.e., $\Lie_X g=0$, which is equivalent to the Killing equation\index{Killing equation} in components:
-    \[X^k\partial_k g_{ij}+\partial_i X^k g_{jk}+\partial_j X^k g_{ik}=0.\]
-\end{defn}
-
-\begin{cor}
-    \begin{enumerate}
-        \item In components, the Laplace-Beltrami operator reads 
-        \[\nabla^2_g f=\frac{1}{\sqrt g}\partial_k (g^{ik}\sqrt g \partial_i f);\label{laplacian in components}\]
-        \item Killing vector fields form a Lie subalgebra of $\fX(M)$, i.e., the Lie bracket of two Killing vector fields is a Killing vector field.
-    \end{enumerate}
-\end{cor}
-\begin{proof}
-    Exercise.
-\end{proof}
-
-\begin{rem}
-    Notice that traditionally in multivariable calculus the components of vector fields are defined w.r.t.\ to an orthonormal frame as $X=\sum_i \wh{X}^i \wh{e}_i$, where $\wh{e}_i=\frac{\partial_i}{\lVert \partial_i\lVert}=\frac{\partial_i}{\sqrt{g_{ii}}}$, but in differential geometry we use the components defined regardless of the metric, $X=\sum_i X^i \partial_i$. Thus there is a discrepancy between the formulas you find on, say, Wikipedia, with the ones in differential geometry textbooks (like (\ref{divergence in components}) and (\ref{laplacian in components})), given by $\wh{X}^i=X^i\cdot \sqrt{g_{ii}}$ (of course, this only makes sense as long as we use orthogonal coordinates, in which the metric is diagonal). In a general framework where coordinates can't always be assumed to be orthogonal, the basis of the $\partial_i$ is preferred.
-\end{rem}
-
-\begin{xca}
-    Using (\ref{divergence in components}) and (\ref{laplacian in components}), derive the standard expressions for the divergence and the Laplace-Beltrami operator in polar, cylindrical, and spherical  coordinates. 
-\end{xca}
-
-
-
-
-\section{Properties of geodesics}
-
-
-The general references for this \sect\ are \cite{Jost,Milnor}.
-
-As we have already pointed out, the length functional $\rmL_g[\gamma]$ is reparametrization invariant. One of the ``disadvantages'' of this is that it has ``too many'' exterma. For instance, in Euclidean space, the length functional would be minimized (with fixed boundary conditions $\gamma(0)=p,\gamma(1)=q$) by any path whose image is the segment of the straight line going through $p$ and $q$, and there are infinitely many such paths corresponding to all possible parametrizations.
-
-Because of this inconvenience, we prefer to work with a functional that is not reparametrization invariant.
-
-\begin{defn}[Energy functional]
-    For a path $\gamma:[a,b]\to M$ on a Riemannian manifold $(M,g)$, we define its ``kinetic energy functional'' as
-    \[E_g[\gamma]\coloneqq \frac12 \int_a^b \lVert \dot\gamma(t)\rVert^2\dd t=\frac12 \int_a^b g(\dot\gamma(t),\dot\gamma(t))\dd t.\]
-\end{defn}
-
-\begin{lem}\label{length<energy lemma}
-For any path $\gamma:[a,b]\to M$, 
-\[\rmL_g[\gamma]^2\leq 2(b-a)E_g[\gamma].\] The equality holds iff $\lVert \dot\gamma \rVert =\const$.
-\end{lem}
-\begin{proof}
-    By the H\"older inequality, $\int_a^b \lVert \dot\gamma(t)\rVert \dd t\leq \sqrt{b-a} \left(\int_a^b \lVert \dot\gamma(t)\rVert^2\dd t\right)^{1/2}$.
-\end{proof}
-
-\begin{lem}[Geodesic equation]
-    The Euler-Lagrange equations for the energy functional $E_g$ on $(M^m,g)$ read in local coordinates 
-    \[\ddot x^i(t)+\Gamma^i_{jk}(x(t))\dot x^j(t)\dot x^k(t)=0,\; i=1,\ldots,m,\]
-    where $\Gamma^i_{jk}=\frac 12 g^{il}(\partial_k g_{jl}+\partial_jg_{kl}-\partial_l g_{jk})$ are the so-called Christoffel symbols. This differential equation is called the geodesic equation.
-\end{lem}
-\begin{proof}
-    The Lagrangian is $\Lie=\frac12 g_{ij}(x(t))\dot x^i(t)\dot x^j(t)$, so $\frac{\dd}{\dd t}\frac{\partial\Lie}{\partial \dot x^i}-\frac{\partial \Lie}{\partial x^i}=0$ becomes 
-    \[g_{ik}\ddot x^k+g_{ji}\ddot x^j+\partial_l g_{ik}\dot x^l\dot x^k+\partial_l g_{ji}\dot x^l\dot x^j-\partial_i g_{jk}\dot x^j\dot x^k=0.\]
-    Using the symmetry of $g$ and acting by $g^{-1}$ on the whole equation, we can bring it to the necessary form.
-\end{proof}
-
-\begin{defn}[Geodesic]\index{Geodesic}
-    A path $\gamma:[a,b]\to M$ on a Riemannian manifold $(M,g)$ is called a geodesic if in (any) local coordinates it solves the geodesic equation (above), i.e., if it is a critical point of the energy functional $E_g$.
-\end{defn}
-
-It is easy to check that if $\gamma(t)$ is a geodesic, then 
-\[\frac{\dd}{\dd t}\lVert \dot\gamma(t)\rVert^2=0,\]
-which means the parametrization of a geodesic is proportional to its length. In other words, motion along a geodesic happens with a constant speed. This is the natural generalization of the notion of ``inertial motion'' on a curved space (at least in the Newtonian context).
-
-
-\begin{lem}
-    Let $(M,g)$ be a Riemannian manifold, $p\in M$, and $v\in \T_p M$. Then there exist an $\varepsilon>0$ and a unique geodesic $\gamma_v:[0,\varepsilon]\to M$ with initial conditions $\gamma(0)=p$, $\dot\gamma(0)=v$. Moreover, $\gamma $ depends smoothly on $p$ and $v$.
-\end{lem}
-\begin{proof}
-    This is just a direct application of the general local solvability theorem for ODE's.
-\end{proof}
-\begin{cor}
-    If $\gamma[0,\varepsilon]\to M$ is a geodesic, then $\gamma^\lambda(t)\coloneqq \gamma(\lambda t):[0,\varepsilon/\lambda]\to M$ is also a geodesic with $\dot\gamma^\lambda(0)=\lambda\dot\gamma(0)$. Since $\gamma_v$ depends smoothly on $v$ and the unit sphere $S=\{v\in \T_pM\mid \lVert v\rVert=1\}$ is compact, $\exists\,\varepsilon_0>0$ such that the domain of $\gamma_v$ for all $v\in S$ contains $[0,\varepsilon_0]$. Then for all $\lVert v\rVert\leq \varepsilon_0$, the geodesics $\gamma_v$ are defined on $[0,1]$.
-\end{cor}
-\begin{defn}[Exponential mapping]\index{Exponential mapping}
-    Consider the set $V_p=\{v\in \T_p M\mid \gamma_v \text{ exists on }[0,1]\}$. This set is non-empty and is an open neighborhood of the origin in $\T_p M$ by the local solvability of the geodesic equation. We define the exponential mapping of the Riemannian manifold $(M,g)$ as
-    \[\exp_p :V_p\to M,\quad v\mapsto \gamma_v(1).\]
-\end{defn}
-
-\begin{thm}
-    $\exp_p$ maps a neighborhood of $0\in \T_pM$ diffeomorphically onto a neighborhood of $p\in M$.
-\end{thm}
-\begin{proof}
-    Compute the differential of $\exp_p$ at zero:
-    \[\exp_{p\ast0}(v)=\restr{\frac{\dd}{\dd t}\gamma_{t\cdot v}(1)}{t=0}=\restr{\frac{\dd}{\dd t}\gamma_{v}(t)}{t=0}=v,\]
-    therefore $\exp_{p\ast}=\id_{\T_p M}$ and by the \gls{inmt} \ref{InMT}, $\exp_p$ is a local diffeomorphism.
-\end{proof}
-
-\begin{defn}[Riemann normal coordinates]\index{Riemann normal coordinates}
-    If $\T_p M$ is identified with $\bbR^n$ by a choice of an orthonormal frame at $p$, then $\exp_p^{-1}:U_p\to \T_p M\cong\bbR^n$ defines a local chart around $p$ whose components are called Riemann normal coordinates.
-\end{defn}
-
-\begin{prop}
-    In Riemann normal coordinates at $p\in M$, $g_{ij}(p)=\delta_{ij}$ and $\Gamma^i_{jk}(p)=0$ (moreover, $\partial_k g_{ij}(p)=0$).
-\end{prop}
-\begin{proof}
-    $g_{ij}(p)=\delta_{ij}$ by construction (because we specified an orthonormal frame to introduce the normal coordinates).
-    
-    Straight lines in normal coordinates are geodesic because the line $tv$, $t\in\bbR $, $v\in\bbR^n$ becomes under the exponential mapping $\gamma_{tv}(1)=\gamma_v(t)$. Thus, in these coordinates for $x(t)=tv$, one has $\Gamma^i_{jk}(tv)v^jv^k=0$ since $\ddot x=0$. Since this holds for all $v$ in a neighborhood of the origin, we have $\Gamma^i_{jk}(p)=0$. 
-    
-    Finally, this implies that $\partial_m g_{kj}+\partial_k g_{mj}-\partial_j g_{km}(p)=0$ and thus $\partial_k g_{jm}(p)=0$.
-\end{proof}
-
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 17 on 5 Apr 2019 ended here}
-        \end{center}
-    \end{samepage}
-\end{comment}
-
-
-\begin{defn}[Riemann polar coordinates]
-    Introducing polar coordinates $(r,\varphi^1,\ldots,\varphi^{n-1})$ on $\bbR^n$ identified locally with a neighborhood of $p\in M$ via the exponential mapping, we have $g_{rr}=1$, $\partial_r g_{r\varphi}=0$, and thus $g_{r\varphi}\equiv 0$ on the entire chart (here $\varphi$ denotes all polar angles collectively). Then the metric takes the canonical form $g=(\dd r)^2+g_{\varphi\varphi}$ on the entire neighborhood, where $g_{\varphi\varphi}$ denotes the angular part of the metric, which itself has to be positive-definite. These are the Riemann polar coordinates.
-\end{defn}
-
-\begin{cor}
-    For $p\in M$ there exists $r_0>0$ such that the Riemann normal coordinates exist on the open ball $B_{r_0}(p)$ (in the metric $d_g$). Moreover, for any $q\in \partial B_{r_0}(p)$ there exists a unique geodesic of shortest length (equal to $r_0$) from $p$ to $q$, and in the Riemann polar coordinates it is the straight line.
-\end{cor}
-\begin{proof}
-    The existence of the ball is clear. Now we need to choose $r_0$ sufficiently small to satisfy the remaining conditions.
-    
-    For any curve $c(t)$ from $p$ to $q$, let $t_0$ be the earliest time when $c(t_0)\in \partial B_{r_0}(p)$. Then
-    \[\rmL_g\left[\restr{c}{[0,t_0]}\right]=\int_0^{t_0} \left(g_{ij}\dot c^i\dot c^j\right)^{1/2}\dd t\geq \int (g_{rr}(c(t))\dot r\dot r)^{1/2}\dd t,\]
-    where the inequality follows from $g_{r\varphi}=0$ and the fact that the angular part of the metric $g_{\varphi\varphi}$ is positive-definite. Furthermore, $g_{rr}\equiv1$, so
-    \[\rmL_g\left[\restr{c}{[0,t_0]}\right]=\int_0^{t_0}\lvert \dot r\rvert\dd t\geq \int_0^{t_0}\dot r\dd t=r(t_0)=r_0.\]
-    Moreover, the equality in this relation holds if and only if $g_{\varphi\varphi}(\dot\varphi,\dot\varphi)=0$, i.e., exactly when $c(t)$ is a straight line. This proves the existence and uniqueness of the minimizing geodesic and that it's a straight line in these coordinates.
-\end{proof}
-
-\begin{defn}[Geodesically convex sets]
-    An open subset of a Riemannian manifold is called geodesically convex if any two points $p,q$ in it can be connected by a geodesic of the minimum length $d_g(p,q)$ that is entirely contained in this set.
-\end{defn}
-
-\begin{cor}
-    If $(M,g)$ is compact, there exists $r_0>0$ such that any two points $p,q\in M$ with $d_g(p,q)\leq r_0$ can be connected by exactly one geodesic of length $d_g(p,q)$. This geodesic depends smoothly on $p$ and $q$. In particular, $M$ can be covered by geodesically convex balls of radius $r_0$.
-\end{cor}
-
-\begin{thm}\label{geodesically convex nbhds thm}
-    On a Riemannian manifold, geodesically convex neighborhoods:
-    \begin{enumerate}
-        \item Always exist (locally at every point);
-        \item Can be chosen contractible;
-        \item Are intersection-invariant, i.e., the intersection of any two geodesically convex sets is geodesically convex.
-    \end{enumerate}
-\end{thm}
-\begin{proof}
-    \begin{enumerate}
-        \item We claim that the neighborhood $U_p=\exp_p(B_\varepsilon(0))$ of $p$ constructed above is a convex neighborhood. Indeed, with a bit of work one can check that any two points (not just when one of them is $p$, which is the case considered before) in it are connected by a unique minimizing geodesic that is contained in $U_p$.
-        \item Obvious because we chose them diffeomorphic to a ball;
-        \item Obvious.
-    \end{enumerate}
-\end{proof}
-
-
-\begin{defn}
-    A Riemannian manifold $(M,g)$ is called geodesically complete if $\exp_p$ is defined on all of $\T_pM$ for every $p\in M$, i.e., if all geodesics extend to arbitrarily long times.
-\end{defn}
-
-\begin{thm}[Hopf-Rinow]\index{Theorem!Hopf-Rinow}
-    \gls{tfae}:
-    \begin{enumerate}
-        \item $(M,g)$ is geodesically complete;
-        \item $(M,d_g)$ is a complete metric space;
-        \item $d_g$-bounded closed sets in $M$ are compact;
-        \item There exists at least one $p\in M$ such that $\exp_p$ is defined on all of $\T_p M$.
-    \end{enumerate}
-    Moreover, if $(M,g)$ is geodesically complete, then any two points $p,q\in M$ are connected by at least one geodesic of length $d_g(p,q)$.
-\end{thm}
-\begin{proof}
-    See \cite[Thm. 1.7.1]{Jost} or \cite[Thm. 10.9]{Milnor}.
-\end{proof}
-
-
-
-\section{Riemannian connections}
-
-
-
-\section{Geometry of submanifolds}
-
-
-
-\section{Morse theory}
-
-Use RS1, Shen (review). 
-
-
-
-
-
-
-
-\clearpage
-\chapter{Complex Geometry \texorpdfstring{\ucmark}{}}
-
-
-\section{Complex and Hermitian structures}
-
-\begin{defn}[Complex structure on a vector space]
-    If $V$ is a real vector space, then a complex structure on $V$ is an endomorphism $\sfJ\in \GL(V)$ such that 
-    \[\sfJ^2=-\id_V.\]
-    With a chosen complex structure, $(V,\sfJ)$ gains a natural structure of a complex vector space where the multiplication by the imaginary unit is defined as
-    \[\rmi\cdot v\coloneqq \sfJ(v).\]
-    Conversely, every complex vector space has a unique $\sfJ$. Clearly for a complex structure to exist, $V$ has to be even-dimensional. If $\dim V=2n$, then we can choose a basis on it of the form $\{e_1,\ldots,e_n,\rmi e_1,\ldots,\rmi e_n\}$.
-    
-    The category $\mathsf{Vect}_{\mathbb{C}}$ consists of complex vector spaces and the morphisms are $\mathbb{C}$-linear maps $f:V\to V'$, i.e., $f(\sfJ v)=J' f(v)$ or $f(v+\rmi w)=f(v)+\rmi f(w)$.
-\end{defn}
-
-Note that the only eigenvalue of $\sfJ$ on $V$ is $\rmi$.
-
-\begin{defn}[Complexification]\index{Complexification}\label{def complexification}
-    Let $V$ be a real vector space. The complexification of $V$ is defined as $V^\mathbb{C}\coloneqq V\otimes_\bbR \mathbb{C}$, i.e., $\dim_\bbR V^\mathbb{C}=2\dim_\bbR V$. If $V$ already has a chosen complex structure $\sfJ$, then it induces a complex structure on $V^\mathbb{C}$ given by $\sfJ(v\otimes z)=\sfJ(v)\otimes z$. If not, we define $\sfJ(v\otimes z)\coloneqq v\otimes \rmi z$. In any case, $J$ has only two eigenvalues $\pm \rmi$.
-    
-    Thus $V\mapsto V^{\mathbb{C}}$ is a covariant functor $\mathsf{Vect}_\bbR \to \mathsf{Vect}_\mathbb{C}$.
-    
-    We also define two subspaces $V^\pm=\ker(\sfJ\mp \rmi\cdot\id_V)=\frac12(\id\mp \rmi \sfJ)(V^\mathbb{C})$, i.e., the eigenspaces of $\sfJ$ corresponding to its two eigenvalues $\pm \rmi$ on $V^\mathbb{C}$.
-\end{defn}
-
-The complexification is naturally isomorphic to $V\oplus V$ as a real vector space. The two components of the sum are the real and the imaginary part: $\sfJ(v,w)=(-w,v)$ (assuming $V$ didn't already have a complex structure, otherwise $\sfJ(v,w)=(\sfJ(w),\sfJ(w))$).
-
-
-\begin{defn}[Realification]\index{Realification}
-    The realification of a complex vector space is the forgetful functor $\mathsf{Vect}_\mathbb{C}\to\mathsf{Vect}_\bbR $ given by $(V,\sfJ)\to V$. In particular, it preserves the real dimension $\dim_\bbR V^\bbR =\dim_\bbR V$.
-\end{defn}
-
-Therefore if we first complexify and then realify a vector space, we end up with twice the dimensions, $\dim_\bbR \left(\left(V^\mathbb{C}\right)^\bbR \right)=2\dim_\bbR V$.
-
-
-Continue following Huybrechts, Complex Geometry 1.2.
-
-
-
-
-
-
-
-\section{Complex manifolds}
-
-\begin{defn}[Complex structure on a \gls{vb}]\index{Complex vector bundle}
-    Let $E\overset\pi\to M$ be a real \gls{vb}. A \emph{complex structure} on $E$ is a smooth tensor field $\sfJ\in\Gamma^1_1(E)$ such that $\sfJ^2=-\id_E$.
-    
-    Alternatively, $E\overset\pi\to M$ is a complex bundle if its local trivializations are $\chi_\alpha:\restr{E}{U_\alpha}\to U_\alpha\times \mathbb{C}^k$ such that the transition functions are $\mathbb{C}$-linear, i.e., $\tau_{\alpha\beta}:U_{\alpha\beta}\in \GL_k(\bbR )$. In other words, it is a real vector bundle of rank $2k$ whose structure group was reduced from $\GL_{2k}(\bbR )$ to a subgroup $\GL_k(\mathbb{C})<\GL_{2k}(\bbR )$ (how exactly this subgroup is embedded depends on the choice of the complex structure).
-\end{defn}
-
-\begin{defn}[Complex manifold]\index{Complex manifold}
-    A complex $n$-dimensional manifold is a $2n$-dimensional smooth manifold $M$ with local charts $\varphi_\alpha:U_\alpha\to\wh{U}_\alpha\mathring\subset\mathbb{C}^n$ and transition maps $\varphi_{\alpha\beta}:\varphi_\beta(U_{\alpha\beta})\to\varphi_\alpha(U_{\alpha\beta})$ that are \emph{holomorphic}. Morphisms between complex manifolds are holomorphic maps (i.e., smooth maps whose local representatives in the holomorphic charts are holomorphic).
-\end{defn}
-
-
-\begin{defn}[Holomorphic \gls{vb}]\index{Holomorphic vector bundle}
-    A complex bundle $E\overset\pi\to M$ over a complex manifold $M$ is called holomorphic if its transition functions are holomorphic as maps $\tau_{\alpha\beta}:U_{\alpha\beta}\to \GL_k(\mathbb{C})$, where $\GL_k(\mathbb{C})$ is viewed as a complex manifold with the standard complex structure (as an open subset of $\mathbb{C}^{k^2}$). Morphisms between complex bundles are smooth vector bundle maps that are holomorphic in the base and $\mathbb{C}$-linear in the fibers.
-\end{defn}
-
-If $M$ is a complex manifold, then $\T M$ (the tangent bundle of $M$ as a real manifold) is naturally a complex bundle, because the multiplication by the imaginary unit can be induced from the local trivializations mapping to $\mathbb{C}^n$.
-
-However, when can a real manifold be turned into a complex one?
-
-\begin{defn}[Almost complex structure]\index{Almost complex manifold}
-    Let $M$ be a real manifold. An almost complex structure on $M$ is a complex structure on $\T M$.
-\end{defn}
-
-\begin{defn}[Integrable almost complex structure]
-    An almost complex structure $\sfJ$ on a real manifold $M$ is called integrable if there is a structure of a complex manifold on $M$ that induces the complex structure $\sfJ$ on $\T M$ as described above.
-\end{defn}
-
-Let $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ be the standard coordinates on $\mathbb{C}^n$ (i.e., $z^j=x^j+iy^j$) representing a local chart on a complex manifold $M$. We have $\T M=\<\partial_{x^j},\partial_{y^j}\>_{j=1}^n$. Then the induced complex structure on $\T M$ reads 
-\[J(\partial_{x^k})=\partial_{y^k},\quad J(\partial_{y^k})=-\partial_{x^k}.\]
-
-\begin{defn}[Holomorphic tangent bundle]\index{Holomorphic tangent bundle}
-    Let $M$ be a real manifold. Define the complexification of its tangent bundle as $\T^\mathbb{C} M\coloneqq \T M\otimes_\bbR \mathbb{C}$ (tensor product with the trivial bundle $M\times \mathbb{C}$). If $M$ was already a complex manifold, we extend $J$ to $\T^\mathbb{C} M$ by $\mathbb{C}$-linearity. Otherwise we define $J(v\otimes z)=v\otimes iz$.
-    
-    Furthermore, define the two eigen-subbundles of $\T^\mathbb{C}$
-    \[\T^{1,0}M\coloneqq \ker(J-i\cdot \id),\quad \T^{0,1}M\coloneqq\ker(J+i\cdot\id).\]
-    If $M$ was a complex manifold and $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ are coordinates on it as described above, then 
-    \[\T^{1,0}M=\<\partial_{z^j}\equiv \frac12(\partial_{x^j}-i\partial_{y^j})\>_\bbC,\quad T^{0,1}M=\overline{\T^{1,0}M}=\<\partial_{\bar z^j}\equiv \frac12(\partial_{x^j}+i\partial_{y^j})\>_\bbC.\]
-    The subbundles are called the holomorphic and anti-holomorphic tangent bundles, respectively.
-\end{defn}
-
-\begin{prop}
-    $\T^\mathbb{C}M=\T^{1,0}M\oplus \T^{0,1}M$ and 
-    \[\T^{1,0}M=\{v-i\sfJ\cdot v\mid v\in \T M \}, \quad \T^{0,1}M=\{v+i\sfJ\cdot v\mid v\in \T M \}.\]
-\end{prop}
-\begin{proof}
-    Check that $\sfJ(v-\rmi\sfJ v)=\sfJ v-\rmi\sfJ^2v=\sfJ v+\rmi v=\rmi(v-\rmi\sfJ v)$, therefore the space of vectors $v-\rmi\sfJ V$ is the eigenspace of $\sfJ$ corresponding to the eigenvalue $\rmi$, i.e., exactly $\T^{1,0}$.
-\end{proof}
-
-Specifying the subbundle $\T^{1,0}M<\T^\mathbb{C}M$ is equivalent to specifying an almost complex structure $\sfJ$.
-
-There is a natural isomorphism $\T^{1,0}M\cong \T M$ given by $v\in \T^{1,0}M\mapsto v^\bbR =v+\bar v\in \T M\subset \T^\mathbb{C} M$. Its inverse is $v\in \T M\mapsto v^\mathbb{C}=\frac12(v-\rmi\sfJ v)$. In particular,
-\[(\partial_{z^j})^\bbR =(\partial_{\bar z^j})^\bbR =\partial_{x^k},\quad (i\partial_{z^j})^\bbR =\partial_{y^k}.\]
-
-If $M$ is a complex manifold, then $\T^{1,0}M$ has a naturally induced structure of a holomorphic bundle because its transition functions are $(\tau_{\alpha\beta})^j_k=\frac{\partial z_\beta^j}{\partial z_\alpha^k}$, which are holomorphic as complex derivatives of homolorphic maps (namely of the transition maps on $M$).
-
-But when is the converse true, i.e., what conditions on the almost complex structure $\sfJ$ are sufficient for it to come from a structure of a complex manifold (i.e., to be integrable)? The following famous theorem answers this question in a manner very similar to the Frobenius theorem.
-
-\begin{thm}[Newlander-Nirenberg]\index{Theorem!Newlander-Nirenberg}
-    Let $M$ be a smooth real manifold and $\sfJ$ and almost complex structure on it. $\sfJ$ is integrable iff the corresponding complex bundle $\T^{0,1}M$ is integrable, i.e., $[\T^{0,1}M,\T^{0,1}M]\subset \T^{0,1}M$.
-    
-    This is also equivalent to $N_\sfJ=0$, where $N_\sfJ$ is the \emph{Nijenhuis tensor}, which is a tensor of type $(1,2)$ defined as a section of $\Hom(\T^2M,\T M)$ by the formula
-    \[N_\sfJ(X,Y)=\underbrace{-\sfJ^2}_{+1}[X,Y]+\sfJ([\sfJ X,Y]+[X,\sfJ Y])-[\sfJ X,\sfJ Y].\]
-\end{thm}
-\begin{proof}
-    See also proof via Cartan's first structure equation  in \url{https://math.berkeley.edu/~bmcmilla/Talks/Newlander-Nirenberg%20Theorem.pdf}.
-    
-    This is a difficult theorem in analysis. The integrability of $\T^{0,1}M$ implies the existence of a convergent Taylor series at every point for all charts of an atlas on $M$. The theorem is easy to prove if it is already known that $M$ is a real analytic manifold: by Frobenius theorem, $\T^{0,1}M$ integrates to local submanifolds of $M$ which by dimension counting are open subsets, therefore the vector fields $\partial_{\bar z^j}\coloneqq\frac12(\partial_{x^j}+i\partial_{y^j})$ actually come from holomorphic local coordinates.
-\end{proof}
-
-\begin{rem}
-    In the case $n=1$ (one-dimensional complex manifolds, a.k.a.\ Riemann surfaces), one identically has $N_\sfJ=0$ because of extra symmetries, so all almost complex structures on surfaces are integrable.
-\end{rem}
-
-
-
-
-
-\section{Complex differential forms}
-
-Since $\T^\mathbb{C}M=\T^{1,0}\oplus \T^{0,1}M$, we have
-\begin{gather}
-    (\T^\mathbb{C}M)^\ast=(\T^{1,0}M)^\ast \oplus (\T^{0,1}M)^\ast=\T^\ast_{0,1}M\oplus \T^\ast_{1,0}M,\\ \T^\ast_{0,1}M=\<\dd z^j\>_\bbC,\;\; \T^\ast_{1,0}M=\<\dd\bar z^j\>_\bbC.
-\end{gather}
-Indeed, $\dd z^j(\partial_{z^k})=\delta^j_k$ and $\dd \bar z^j (\partial_{\bar z^k})=\delta^j_k$.
-Finally, 
-\begin{align}
-    \T^\ast_{1,0}M=\{\alpha\in \T^{0,1}_{\mathbb{C}}M\mid \forall v\in \T^{0,1}M,\; \alpha(v)=0\}=\{\alpha-\rmi\sfJ^\ast\alpha\mid \alpha\in \T^\ast M\},\\
-    \T^\ast_{0,1}M=\{\alpha\in \T^{1,0}_{\mathbb{C}}M\mid \forall v\in \T^{0,1}M,\; \alpha(v)=0\}=\{\alpha+\rmi\sfJ^\ast\alpha\mid \alpha\in \T^\ast M\}.
-\end{align}
-
-We define the corresponding exterior bundles.
-
-\begin{defn}
-    The complex exterior bundles $\bigwedge^{p,q}M$ are defined by the equalities \[\bigwedge^k(\T^\ast_\mathbb{C}M)=\bigwedge^k(\T^\ast_{1,0}M\oplus \T^\ast_{0,1}M)=\bigoplus_{p+q=k}\bigwedge^p(\T^\ast_{1,0}M)\otimes \bigwedge^q(\T^\ast_{0,1}M)\equiv \bigoplus_{p+q=k}\bigwedge^{p,q}M.\]
-    Furthermore, we define the spaces of complex differential forms of degree $(p,q)$, denoted by $\Omega^{p,q}(M)$, as the sections of these bundles:
-    \[\Omega^{p,q}(M)=\Gamma^\infty(\bigwedge^{p,q}M).\]
-    If $\omega\in\Omega^{p,q}(M)$, then in local coordinates it has the form
-    \[\omega=\sum_{I,J}\underbrace{\omega_{i_1\cdots i_pj_1\cdots j_q}}_{\omega_{I,J}}\underbrace{\dd z^i\wedge\cdots\wedge \dd z^{i_p}\wedge\dd \bar z^{j_1}\wedge\cdots\wedge \dd\bar z^{j_q}}_{\dd z^I\wedge \dd\bar z^J},\]
-    where the sum is over all multi-indices, e.g. $I=(i_1,\ldots,i_p)$, $1\leq i_1<i_2\cdots<i_p\leq n$. Here, the coefficients are $\omega_{I,J}\in C^\infty (U,\mathbb{C})$.
-\end{defn}
-
- The exterior derivative is extended by $\mathbb{C}$-linearity:
-    \[\dd \omega=\sum_{I,J}\dd\omega_{I,J}\wedge\dd z^I\wedge\dd \bar z^J\in\Omega^{p+q+1}_\mathbb{C}(M).\]
-Clearly $\dd\omega$ is uniquely represented as a sum of an element of $\Omega^{p+1,q}(M)$ and an element of $\Omega^{p,q+1}(M)$, i.e.
-\[\dd(\Omega^{p,q}(M))\subset \Omega^{p+1,q}(M)\oplus\Omega^{p,q+1}(M).\]
-
-\begin{defn}[Dolbeault operators]\index{Dolbeault operators}
-    The Dolbeault operators $\partial:\Omega^{p,q}(M)\to\Omega^{p+1,q}(M)$ and $\bar\partial:\Omega^{p,q}(M)\to\Omega^{p,q+1}(M)$ uniquely defined by the formula
-    \[\dd\omega=\partial\omega+\bar\partial\omega.\]
-    Locally, we have 
-    \begin{align}
-        \partial\omega=\sum_{k,I,J}\partial_{z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\bar z^J,\\
-        \bar\partial\omega=\sum_{k,I,J}\partial_{\bar z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\bar z^J.
-    \end{align}
-\end{defn}
-
-These derivatives have the following basic properties:
-\begin{enumerate}
-    \item $\partial(\alpha\wedge\beta)=\partial\alpha\wedge\beta+(-1)^{\deg\alpha}\alpha\wedge\partial\beta$, and the same for $\bar\partial$;
-    \item $\overline{\bar\partial\bar\alpha}=\partial\alpha$;
-    \item $\partial^2=\bar\partial^2=\partial\bar\partial+\bar\partial\partial=0.$
-\end{enumerate}
-The last property follows from the decomposition \[0=\dd^2=(\partial+\bar\partial)^2=\underbrace{\partial^2}_{p\to p+2}+\underbrace{\bar\partial^2}_{q\to q+2}+\underbrace{\partial\bar\partial+\bar\partial\partial}_{(p,q)\to(p+1,q+1)}.\]
-
-
-\begin{defn}[Holomorphic differential forms]\index{Holomorphic differential form}
-    A form $\omega\in\Omega^{p,0}(M)$ is called holomorphic if $\bar\partial\omega=0$, i.e., if all of its components $\omega_I$ are holomorphic functions. (For elements of $\Omega^{p,q}(M)$ this property is called ``$\bar\partial$-closed''.)
-\end{defn}
-
-\begin{defn}[Canonical line bundle]\index{Canonical bundle}
-    The canonical bundle of a complex manifold $M$ (where $\dim_\mathbb{C} M=n$) is defined as $K_M\coloneqq \bigwedge^{n,0}M$, i.e., the determinant bundle of the holomorphic cotangent bundle. Its fiber is $\mathbb{C}$, so it is a complex line bundle. The dual bundle $K^\ast_M$ is called the anti-canonical bundle (note that $K^\ast_M\cong \bigwedge^n(\T^{1,0}M)$, not $\bigwedge^{0,n}M$).
-\end{defn}
-
-
-
-\section{Maurer-Cartan equation}
-
-Huybrechts 6.1 or Voisin. There's a factor of 1/2 in the MC equation missing in huybrechts because of the way he defines wedge products.
-
-
-
-
-\chapter{Symplectic geometry \texorpdfstring{\ucmark}{}}
-
-Lagrangian submanifolds, Hamiltonian and Lagrangian systems, caustics, Maslov classes, symmetries and conservation laws, momentum maps.
-
-Use Bryant's ``Exterior Differential Systems and Euler-Lagrange Partial Differential Equations''.
-
-
-
-
-
-
-
-
-
-\chapter{Applications in Lie Groups \texorpdfstring{\ucmark}{}}
-
-
-\section{Geometry of Lie groups}
-Haar integral, geodesics, curvature, symmetric spaces, Morse theory, approximation of the loop space $\Omega G$ by broken geodesics, proof that $\pi_2(G)=0$.
-
-
-\section{Symmetric spaces}
-
-Theorem (Cartan). A compact group of isometries of a nonpositively curved complete simply-connected Riemannian manifold has a fixed point (Helgason p.~75).
-
-Theorem (Cartan-Hadamard). Criterion for being non-positively curved. The exponential map is then a diffeomorphism.
-
-
-\section{Maximal compact subgroups}
-
-Using the above theorem of Cartan, prove uniqueness of the maximal compact subgroup up to conjugation (this proof will apply only to semisimple $G$). See \url{https://mathoverflow.net/a/68184/22773}.
---
-Theorem (Cartan). A connected real Lie group $G$ is diffeomorphic (as a manifold) to $K\times\mathbb{R}^n$ where $K$ is a maximal compact subgroup of $G$.
-
-
-\section{Bott periodicity}
 
 

@@ -130,9 +130,9 @@ The most common examples of infinite limits and colimits are ones where $\mathca
 
 \begin{example}
 \begin{enumerate}
-    \item In $\colimit$, most commonly all arrows are monomorphisms. For example, consider the category $\mathsf{Gr}$ of groups and the sequence $S_n$ of symmetric groups with the embeddings $S_n\hookrightarrow S_m$ for every $n<m$ defined as permutations of the first $n$ symbols. Then $\colimit(S_n)=S_\infty$, which is the group of all permutations of $\mathbb{N}$ of finite support.
+    \item In $\colimit$, most commonly all arrows are monomorphisms. For example, consider the category $\mathsf{Gr}$ of groups and the sequence $\rmS_n$ of symmetric groups with the embeddings $\rmS_n\hookrightarrow \rmS_m$ for every $n<m$ defined as permutations of the first $n$ symbols. Then $\colimit(\rmS_n)=\rmS_\infty$, which is the group of all permutations of $\mathbb{N}$ of finite support.
     
-    Alternatively, we can define another partial order on the set of symmetric groups $S_n$. Namely, define $n\preccurlyeq m\Leftrightarrow n\mid m$ and the inclusion $S_n\hookrightarrow S_m$ by $m/n$ copies of the permutation. Then $\colimit (S_n)$ is a different group.
+    Alternatively, we can define another partial order on the set of symmetric groups $\rmS_n$. Namely, define $n\preccurlyeq m\Leftrightarrow n\mid m$ and the inclusion $\rmS_n\hookrightarrow \rmS_m$ by $m/n$ copies of the permutation. Then $\colimit (\rmS_n)$ is a different group.
     \item For any unital ring $R$, the direct limit of the general linear matrix groups over $R$ (where matrices of size $n$ are embedded into groups of larger matrices by filling in the diagonal with ones) is $\colimit(\GL(n,R))=\GL(R)$, the \emph{quite general linear group} of $R$.
     \item In $\mathsf{Set}$, direct limits are simply infinite unions factored by identifying elements with coincident ``descendants'', i.e. $\colimit A_i=\bigsqcup_i A_i/\sim$, where $x\in A_i$ is equivalent to $y\in A_j$ iff $\exists f_{jk},f_{jk}$ such that $f_{ik}(x)=f_{jk}(y)$. The inverse limit is the set of infinite sequences of descendants $\limit (A_i)=\{(a_i)\mid a_i\in A_i,\forall i\leq j, f_{ij}(a_i)=a_j\}$.
     \item Consider the polynomial ring $K[t]$ over a field $K$ and its factor rings $K[t]/t^n$ of truncated polynomials. Then we have the sequence of epimorphisms 
@@ -169,14 +169,14 @@ The most common examples of infinite limits and colimits are ones where $\mathca
 Here are the properties of this relation:
 \begin{enumerate}
     \item $u\leq u$;
-    \item $u\leq v,v\leq w\Rightarrow u\leq w$;
-    \item $u\leq v,v\leq u\Rightarrow U\overset{f}{\cong} V$, where $u=v\circ f$ and $v=u\circ f^{-1}$.
+    \item $u\leq v,v\leq w\implies u\leq w$;
+    \item $u\leq v,v\leq u\implies U\overset{f}{\cong} V$, where $u=v\circ f$ and $v=u\circ f^{-1}$.
     \begin{proof}
         We have $V\overset{h}{\to}U$ and $U\overset{g}{\to}V$.
         
-        On the one hand, $v=u\circ h=v\circ g\circ h\Rightarrow g\circ h=1_V$ since $v$ is mono.
+        On the one hand, $v=u\circ h=v\circ g\circ h\implies g\circ h=1_V$ since $v$ is mono.
         
-        On the other hand, $u=u\circ(h\circ g)\Rightarrow h\circ g=1_U$ since $u$ is mono.
+        On the other hand, $u=u\circ(h\circ g)\implies h\circ g=1_U$ since $u$ is mono.
     \end{proof}
 \end{enumerate}
 
@@ -898,7 +898,7 @@ Retracing the construction of the connecting homomorphism, we find that
     where
     \[\partial(a,b)=(a-b,a-b).\]
     Therefore by the rank-nullity theorem \ref{gen rank-nullity},
-    \[1-2+2-\dim \rmH^1(\bbS^1)=0\Rightarrow \rmH^1(\bbS^1)=\bbR.\]
+    \[1-2+2-\dim \rmH^1(\bbS^1)=0\implies \rmH^1(\bbS^1)=\bbR.\]
     Alternatively, we can compute it as follows
     \begin{multline}
         \dim \rmH^1(\bbS^1)=\dim \im \delta=\dim \bbR^2-\dim\ker\delta=\\=2-\dim\im \partial=2-(2-\dim\ker\partial))=\dim\ker\partial=\dim\im\psi =1
@@ -1203,7 +1203,7 @@ Simplicial homology is the simplest homology theory in that it can be formulated
 \end{figure}
 
 
-In the future we write $|K|=|K|_c$ and call this space the \emph{geometric realization} of $K$. For a simplex $s$ we define the \emph{closed simplex} $|s|\subset |K|$ as $|s|=\{\alpha\in|K|\mid \alpha(e)\neq 0\Rightarrow e\in s\}$ and the \emph{open simplex} as $\langle s\rangle=\{\alpha\in |K|\mid \alpha(e)\neq 0\Leftrightarrow e\in s\}$. The \emph{combinatorial boundary} of $|s|$ is $\partial|s|=|s|\setminus\langle s\rangle$.
+In the future we write $|K|=|K|_c$ and call this space the \emph{geometric realization} of $K$. For a simplex $s$ we define the \emph{closed simplex} $|s|\subset |K|$ as $|s|=\{\alpha\in|K|\mid \alpha(e)\neq 0\implies e\in s\}$ and the \emph{open simplex} as $\langle s\rangle=\{\alpha\in |K|\mid \alpha(e)\neq 0\Leftrightarrow e\in s\}$. The \emph{combinatorial boundary} of $|s|$ is $\partial|s|=|s|\setminus\langle s\rangle$.
 
 \begin{defn}[Standard simplices in $\bbR^k$]
     Let $x_0,\ldots,x_n$ be affinely independent (i.e., $\sum_i\alpha_i x_i=0$ and $\sum_i\alpha_i=0$ imply $\alpha_j=0$). Then the simplex spanned by them is \[\langle x_0,\ldots,x_n\rangle=\left\{\sum_i \alpha_i x_i\mid \alpha_i\geq 0,\sum_i \alpha_i=1\right\}.\]
@@ -3416,7 +3416,7 @@ However we quickly start to run into issues because, unlike direct sums (which a
 
     Thus we need to determine $\Hom(\bbZ[p^{-1}],\bbZ[p^{-1}]/\slash \bbZ)$. Keeping the notation $G=\bbZ[p^{-1}]/\slash \bbZ$, let $f_0$ be such a homomorphism and consider $\alpha=f_0(1)\in G$. We have $\alpha=\frac{a}{p^n}$ for some $n\geq 0$ with $p\nmid a$, so $p^n\cdot \alpha=a=0$ and $p^ma\neq 0$ for $m<n$. Define $f=p^nf_0$, so $f(1)=0$. Then define a sequence $m_n=f\left(\frac{1}{p^n}\right)$ for $n\geq 1$. We have $p\cdot m_n=m_{n-1}$, and $p^n m_n=f(1)=0$ for all $n$. On the other hand, given any sequence $(m_n)$ with $m_n\in G$ with these two properties, we can define a homomorphism $f:\bbZ[p^{-1}]\to G$ such that $m_n=f\left(\frac{1}{p^n}\right)$  and $f(1)=0$. To do this, define $f\left(\frac{a}{p^n}\right)=am_n$ with $a\in\bbZ$. If we rewrite $\frac{a}{p^n}$ as $\frac{ap}{p^{n+1}}$, then since $apm_{n+1}=am_n$, these definitions agree. This allows us to check that $f$ is additive:
     \[f\left(\frac{a}{p^n}+\frac{b}{p^k}\right)=f\left(\frac{ap^k+bp^n}{p^{n+k}}\right)=ap^km_{k+n}+bp^nm_{k+n}=am_n+bm_k=f\left(\frac{a}{p^n}\right)+f\left(\frac{b}{p^k}\right).\]
-    Therefore, to describe the set $\Hom(\bbZ[p^{-1}],G)$, it suffices describe the set of sequences $(m_n)\in G$ with the two properties $p\cdot m_n=m_{n-1}$ and $p^nm_n=0$. The second property says that $m_n=\frac{a}{p^n}$ for some $a$ (perhaps not coprime with $p$). Since $a$ is only defined $\mod p^n$, we can think of $m_n$ as an element of $\bbZ\slash p^n\bbZ$ instead. Then $pm_n=\frac{pa}{p^{n+1}}=\frac{a}{p^{n-1}}$, so the first property can be rephrased as saying that $m_n=m_{n-1}\mod p^{n-1}$ in $\bbZ\slash p^n\bbZ$. Thus the subgroup of $\Hom(\bbZ[p^{-1}],G)$ consisting of maps $f$ with $f(1)=0$ is isomorphic to the group of sequences $(m_n)$ with $m_n\in\bbZ\slash p^n\bbZ$ such that $\pi_{n,n-1}(m_n)=m_{n-1}$, where $\pi_{n,n-1}(x)=x\mod p^{n-1}$. This group is exactly the group of $p$-adic integers $\bbZ_p$.\footnote{For an abelian group $M$, note that $d\mid n$ implies $nM<dM$, so there is a quotient map $\pi_n^d:M\slash mM\to M\slash dM$ (it descends to identity on $M$, so in symbols it's just $\wb{m}\mapsto \wb{m}$). Now define the submodule $\mathrm{consist}(M)$ of $\prod_{n\in\bbN}M\slash nM$ by $\mathrm{consist}(M)=\{(m_n\in M\slash nM)_{n\in\bbN}\mid d|n\Rightarrow \pi_n^d(m_n)=m_d\}$. Then $\bbZ_p=\mathrm{consist}\left(\bbZ[p^{-1}]\right)$, where  since $p^km\cdot\bbZ[p^{-1}]=p^k\bbZ[p^{-1}]$ for $p\nmid m$.}
+    Therefore, to describe the set $\Hom(\bbZ[p^{-1}],G)$, it suffices describe the set of sequences $(m_n)\in G$ with the two properties $p\cdot m_n=m_{n-1}$ and $p^nm_n=0$. The second property says that $m_n=\frac{a}{p^n}$ for some $a$ (perhaps not coprime with $p$). Since $a$ is only defined $\mod p^n$, we can think of $m_n$ as an element of $\bbZ\slash p^n\bbZ$ instead. Then $pm_n=\frac{pa}{p^{n+1}}=\frac{a}{p^{n-1}}$, so the first property can be rephrased as saying that $m_n=m_{n-1}\mod p^{n-1}$ in $\bbZ\slash p^n\bbZ$. Thus the subgroup of $\Hom(\bbZ[p^{-1}],G)$ consisting of maps $f$ with $f(1)=0$ is isomorphic to the group of sequences $(m_n)$ with $m_n\in\bbZ\slash p^n\bbZ$ such that $\pi_{n,n-1}(m_n)=m_{n-1}$, where $\pi_{n,n-1}(x)=x\mod p^{n-1}$. This group is exactly the group of $p$-adic integers $\bbZ_p$.\footnote{For an abelian group $M$, note that $d\mid n$ implies $nM<dM$, so there is a quotient map $\pi_n^d:M\slash mM\to M\slash dM$ (it descends to identity on $M$, so in symbols it's just $\wb{m}\mapsto \wb{m}$). Now define the submodule $\mathrm{consist}(M)$ of $\prod_{n\in\bbN}M\slash nM$ by $\mathrm{consist}(M)=\{(m_n\in M\slash nM)_{n\in\bbN}\mid d|n\implies \pi_n^d(m_n)=m_d\}$. Then $\bbZ_p=\mathrm{consist}\left(\bbZ[p^{-1}]\right)$, where  since $p^km\cdot\bbZ[p^{-1}]=p^k\bbZ[p^{-1}]$ for $p\nmid m$.}
 
     Now, for any $f\in\Hom(\bbZ[p^{-1}],G)$ an any $n$, there is a unique $f_0\in\Hom(\bbZ[p^{-1}],G)$ with $p^nf_0=f$: we can take $f_0(x)=f\left(\frac{x}{p^n}\right)$, and this is unique since multiplication by $p^n$ is injective on $\bbZ[p^{-1}]$. Thus, $\Hom(\bbZ[p^{-1}],G)$ has a unique structure of a $\bbZ[p^{-1}]$-module. Since for any $f\in \Hom(\bbZ[p^{-1}],G)$, there is some $n$ such that $p^nf(1)=0$, we can write $f$ as $f1/p^n$  with $f_1(1)=0$. This shows that $\Hom(\bbZ[p^{-1}],G)\cong \bbZ_p[p^{-1}]=\bbQ_p$, the \emph{$p$-adic numbers} as an abelian group.
     

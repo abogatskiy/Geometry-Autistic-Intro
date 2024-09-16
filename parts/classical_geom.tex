@@ -1,0 +1,633 @@
+
+\clearpage
+\chapter{Riemannian Geometry \texorpdfstring{\ucmark}{}}
+
+\section{Riemannian manifolds}\label{sec: Riemannian mfds}
+
+
+\begin{defn}[Riemannian metric on a \gls{vb}]\index{Metric!on a bundle}
+Let $E\overset\pi\to M$ be a real \gls{vb}. A (Riemannian) bundle metric on $E$ is a covariant tensor field $h\in\Gamma^\infty(\T^0_2 E)$ such that
+\begin{enumerate}
+    \item $h$ is symmetric, i.e., $h\in\Gamma^\infty(\Sigma^2 E^\ast)$;
+    \item $h$ is non-degenerate, i.e., when viewed as a morphism $h\in\Hom(E,E^\ast)$, it is an isomorphism;
+    \item $h$ is positive: $h(e,e)\geq 0$ and $h(e,e)=0$ iff $e=0$. This in fact implies Property 2.
+\end{enumerate}
+For $e,e'\in E_p$, we denote $\langle e,e'\rangle_g=g_p(e,e')$.
+\end{defn}
+
+Given a bundle metric on $E$, all tensor bundles $E^r_s$ inherit natural bundle metrics as well.
+
+\begin{prop}
+The space of all bundle metrics on $E$ is convex, i.e., if $h_1$ and $h_2$ are two metrics on $E$, then all tensors $h_t=t \cdot h_1+(1-t)\cdot h_2$, $t\in[0,1]$, are metrics.
+\end{prop}
+\begin{proof}
+Only non-degeneracy is not obvious. If $h_t$ is degenerate, then there exists an $e\in E\setminus E_0$ such that $h_t(e,e)=0$. Then by positivity, $h_1(e,e)=h_2(e,e)=0$, which leads to a contradiction.
+\end{proof}
+
+\begin{thm}[Existence of bundle metrics]
+Every \gls{vb} $E\overset\pi\to M$ admits a bundle metric. 
+\end{thm}
+\begin{proof}
+Choose a bundle atlas consisting of local trivializations $\chi_\alpha:\restr{E}{U_\alpha}\to U_\alpha\times\bbR^k$, and on the trivial bundles $U_\alpha\times\bbR^k$ define a metric $h_{\text{stand}}$ using the standard metric on $\bbR^k$. Then $\restr{h_\alpha}{U_\alpha}\coloneqq \chi_\alpha^\ast h_{\text{stand}}$ and 
+\[h\coloneqq \sum_\alpha \xi_\alpha \cdot h_\alpha,\]
+where $\xi_\alpha$ is a \gls{pou} on $M$ subordinate to the atlas. This is obviously a metric on $E$.
+\end{proof}
+\begin{cor}
+With the help of a metric, any \gls{vb} has local \emph{orthonormal frames}. The local trivializations induced by such frames have transition functions that preserve distances, i.e., the cocycle takes values in the orthogonal group, $\tau_{\alpha\beta}:U_{\alpha\beta}\to \mathrm{O}(k)$. In other words, the structure group of any real \gls{vb} can be reduced from $\GL_k(\bbR )$ to $\mathrm{O}(k)$. Furthermore, if the bundle is orientable iff the structure group can be further reduced to $\mathrm{SO}(k)$.
+\end{cor}
+
+\begin{prop}
+Let $h$ a bundle metric on $E\overset\pi\to M$ and let $D< E$ be a subbundle. Define
+\[D^\perp \coloneqq \{v\in E\mid h(v,e)=0 \text{ for all }e\in D\}=\ker (\pr_D),\]
+where $\pr_D$ is the fiberwise orthogonal projection onto $D$. Then $D^\perp$ is a subbundle of $E$.
+\end{prop}
+\begin{proof}
+Let $\{E_1,\ldots,E_k\}$ be a local orthonormal frame such that $D=\<E_1,\ldots,E_m\>$ for some $m\leq k$ (such local frames exist by the standard Gram-Schmidt orthogonalization procedure). Then the orthogonal projection is locally written as
+\[\pr_D \left(\sum_{j=1}^k s^j E_j\right)=\sum_{j=1}^m s^j E_j.\]
+This definition is in fact basis independent, i.e., defines a global bundle morphism $\pr_D:E\to E$. Therefore $D^\perp =\ker (\pr_D)$ and is a subbundle by Theorem \ref{subbundles thm}.
+\end{proof}
+
+
+\begin{defn}[Riemannian manifold]\index{Riemannian manifold}
+A Riemannian manifold is a pair $(M,g)$, where $M$ is a smooth manifold and $g\in\Gamma^0_2(M)$ is a metric on the tangent bundle $\T M$.
+\end{defn}
+
+
+\begin{defn}[Isometry]\index{Isometry}
+A smooth map between two Riemannian manifolds $f:(M,g)\to(M',g')$ is called an isometry if $f^\ast g'=g$.
+\end{defn}
+
+\begin{cor}[Normal bundle]
+Let $(M^m,g)$ be a Riemannian manifold and $S\sub M$ with $\dim S=k$. Define $D=\T S$ and consider the normal bundle $\rmN S\coloneqq D^\perp<\restr{\T M}{S}$. Since this is a subbundle of $\T M$, we can find local orthonormal $(m-k)$-frames for $\rmN S$. If $\codim S=1$, then $\rmN S=\<N\>$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{\T M}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
+\end{cor}
+
+
+\begin{defn}[Flat Riemannian manifold]
+A Riemannian manifold $(M,g)$ is called flat if it is locally isometric to $(\bbR^m,g_{\text{stand}})$.
+\end{defn}
+
+
+\begin{thm}
+Let $f\in C^\infty(M,N)$ and let $g$ be a metric on $N$. Then $f^\ast g$ is a metric on $M$ iff $f$ is an immersion. In particular, one can always induce metrics on submanifolds.
+\end{thm}
+\begin{proof}
+Exercise.
+\end{proof}
+
+\begin{thm}
+For a Riemannian manifold $(M,g)$,  \gls{tfae}:
+\begin{enumerate}
+    \item $(M,g)$ is flat;
+    \item Everywhere on $M$ there exist local coordinates such that $g=\delta_{ij} \dd x^i\otimes \dd x^j$;
+    \item Everywhere on $M$ there exist local holonomic orthonormal frames.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+Exercise.
+\end{proof}
+\begin{cor}
+All one-dimensional Riemannian manifolds are flat.
+\end{cor}
+
+
+\begin{defn}[Distances induced by a Riemannian metric]
+    For any (piecewise smooth) path $\gamma:[0,1]\to M$ define the length of $\gamma$ with respect to a metric $g$ as
+    \[\rmL_g[\gamma]\coloneqq \int_0^1 \sqrt{g(\dot\gamma(t),\dot\gamma(t))}\dd t \equiv \int_0^1 \lVert\dot\gamma(t)\rVert \dd t.\]
+    Moreover, we define the distance between two points $p,q\in M$ as 
+    \[d_g(p,q)\coloneqq \inf \{\rmL_g[\gamma]\mid \gamma:p\leadsto q\}.\]
+\end{defn}
+
+The length functional has an important property called \emph{reparametrization invariance}: if $\varkappa:[a,b]\to[0,1]$ is any diffeomorphism, then 
+\[\rmL_g[\gamma\circ\varkappa]=\int_a^b  \lVert\dot\gamma(\varkappa(t))\rVert \varkappa' (t)\dd t=\int_0^1 \lVert\dot\gamma(\varkappa)\rVert \dd \varkappa = \rmL_g[\gamma].\]
+
+
+\begin{thm}
+    The distance function $d_g$ on $M$ defined above turns $M$ into a metric space, and its metric topology coincides with the original one.
+\end{thm}
+\begin{proof}
+    See \cite[Thm. 13.29]{Lee}, \cite[Lem. 6.2]{LieRiem} or \cite[Lem. 1.4.1]{Jost}.
+\end{proof}
+
+
+\begin{defn}[Conformal metrics]\index{Conformal metric}
+    Let $g$ and $\wt{g}$ be two metric on a manifold $M$. They are called conformal iff there exists a positive function $\Omega\in C^\infty(M)$, $\Omega>0$, such that $\wt{g}=\Omega\cdot g$.
+\end{defn}
+
+\begin{thm}[Nomizu-Ozeki conformal completion theorem]
+    Any Riemannian metric $g$ on a manifold $M$ is conformal to a complete metric $\wt{g}$ (i.e., a metric that makes $M$ into a complete metric space). In particular, every manifold supports a complete metric.
+\end{thm}
+\begin{proof}
+    We claim that there exists a conformal factor $\Omega>0$ such that all $\wt{g}$-bounded sets are precompact.
+
+    First let us show that this claim implies the theorem. Let $(x_n)$ be a Cauchy sequence w.r.t.\ $d_{\wt{g}}$. Then $(x_n)$ is $\wt{g}$-bounded and precompact, i.e., contains a convergent subsequence. But then $(x_n)$ itself must converge to the same limit, proving completeness.
+
+    Now we prove the claim. Let $f$ be an exhaustion function and $V_j=f^{-1}((-\infty,j))$ be the family of precompact sets that exhaust $M$. Let $K_j=\overline{V_j}$ be the corresponding compact sets and define the distances $\delta_j=\mathrm{dist}_g(\partial K_j,\partial K_{j+1})$ between their boundaries. Choosing a \gls{pou} $\{\chi_j\}$ subordinate to the covering $\{V_{j}\setminus K_{j-1}\}$, define $\Omega=\sum_j \frac{1}{j\cdot \delta_j} \chi_j$. Now it is easy to check that if a set $A$ has finite diameter in the metric $\wt{g}=\Omega\cdot g$, i.e., $\mathrm{diam}_{\wt{g}} A<\infty$, then $\restr{f}{A}$ is bounded. Namely, if $(x_n)$ is a sequence that is not contained in any compact set, i.e., such that $\forall\,j \;\exists\, N:\;\forall n>N \;x_n\notin K_j$, then $x_n\in K_{k(n)}\setminus K_{k(n)-1}$ with $k(n)\to\infty$ and  $d_{\wt{g}}(x_1,x_n)\geq\sum_{j=1}^{k(n)} \frac{1}{j}\to\infty$. The contrapositive of this statement is that every $\wt{g}$-bounded sequence is contained in a compact set. This implies that all $\wt{g}$-bounded sets are precompact, which makes $d_{\wt{g}}$ a complete metric.
+\end{proof}
+\begin{rem}
+    In physics, particularly AdS/CFT, the space $(M,\wt{g})$ is often referred to as ``conformal compactification'' (this terminology was introduced by Roger Penrose). However, the choice of a metric doesn't modify the topology of $M$ in any sense, so it can't make a non-compact manifold compact. Therefore a proper name for this procedure is conformal completion.
+\end{rem}
+
+\begin{prop}
+    If $(M,g)$ is complete and $S\sub M$, then $(S,\restr{g}{S})$ is also complete.
+\end{prop}
+\begin{proof}
+    Exercise. The idea is to show first that $d_M(p,q)\leq d_S(p,q)$ for any $p,q\in S$, where $d_M$ and $d_S$ are the distance functions induced by $g$ on $M$ and $S$, respectively. Then any Cauchy sequence in $S$ is also a Cauchy sequence in $M$ and therefore converges. The limit of the sequence must belong to $S$ because $S$ is embedded (i.e., closed as a subset of $M$).
+\end{proof}
+
+\begin{defn}[Musical isomorphisms]
+    Recall that a Riemannian metric $g\in\Gamma^0_2(M)$ can be viewed as an isomorphism $\flat\coloneqq g\in\Hom(\T M,\T^\ast M)$. Similarly, $\sharp\coloneqq g^{-1}\in\Gamma_0^2(M)$ is an isomorphism $g^{-1}\in\Hom(\T^\ast M,\T M)$. We write 
+    \[\alpha^\sharp=g^{-1}(\alpha),\quad v^\flat=g(v),\quad \alpha\in \T^\ast M,\;v\in \T M.\]
+    In local coordinates,
+    \[(\alpha^\sharp)^i=g^{ij}\alpha_j,\quad (v^\flat)_i=g_{ij}v^j,\]
+    where $g^{ij}$ is a conventional notation for the components of $g^{-1}$ (as a matrix it is literally the inverse of $g_{ij}$ in any local coordinates). The mnemonic behind the names is that $\sharp$ ``raises indices'', i.e., converts $1$-forms into vectors, and $\flat$ ``lowers indices''.
+    
+    As a result, on a Riemannian manifold $(M,g)$ there is a \emph{natural isomorphism} $\T M\cong \T^\ast M$, which is absent without an additional structure like a metric.
+\end{defn}
+
+
+A Riemannian metric on an orientable manifold naturally induces a volume form as follows.
+
+
+\begin{thm}
+    Let $(M^m,g)$ be an orientable Riemannian manifold. Then there exists a unique volume form $\mu_g\in\Omega^m(M)$ such that for any positively oriented local orthonormal frame $\{e_i\}_{i=1}^m$ on $M$, one has $\mu_g(e_1,\ldots,e_m)=1$.
+\end{thm}
+\begin{proof}
+    Fix a positively oriented \emph{orthonormal} frame $\{e_i\}$ and define the dual local orthonormal frame by $\alpha^i=(e_i)^\flat$ (indeed, $\alpha^i(e_j)=g(e_i,e_j)=\delta_{ij}$). Consider the local volume form
+    \[\mu_g=\alpha^1\wedge \cdots\wedge \alpha^m.\]
+    We check that this differential form is in fact independent of the choice of the orthonormal frame. Indeed, any other positively oriented orthonormal frame is obtained from $\{e_i\}$ by the application of a transition function $\varphi_{\alpha\beta}$ with $\varphi_{\alpha\beta\ast}:U_{\alpha\beta}\to \mathrm{SO}(m)$ (and the entire atlas can be chosen this way due to orientability), and then the local volume form defined w.r.t.\ the new frame is
+    \[\varphi_{\alpha\beta}^\ast\alpha^1\wedge\cdots\wedge\varphi_{\alpha\beta}^\ast\alpha^m=\varphi_{\alpha\beta}^\ast \mu_g=\underbrace{\det(\varphi_{\alpha\beta})}_{+1}\cdot\mu_g=\mu_g.\]
+    Therefore, the above local definition of $\mu_g$ stitches together to a global volume form.
+\end{proof}
+
+Note that the above ``Riemannian'' volume form is natural in the category of oriented Riemannian manifolds, i.e., it is invariant under orientation-preserving isometries.
+
+In local (positively ordered) coordinates, \[\mu_g=\sqrt{\det(g_{ij})}\dd x^1\wedge\cdots\wedge \dd x^m.\]
+
+\begin{defn}[Levi-Civita tensor]\index{Levi-Civita tensor}
+    The volume form $\mu_g$ viewed as a totally antisymmetric tensor $\epsilon=\mu_g\in\Gamma^0_m(M)$ is called the Levi-Civita tensor. In local (positively ordered) coordinates,
+    \[\epsilon_{i_1\cdots i_m}=\sqrt g\varepsilon_{i_1\cdots i_m},\quad \sqrt g\coloneqq\sqrt{\det(g_{ij})},\]
+    where $\varepsilon_{i_1\cdots i_m}=\pm 1$ is the ordinary Levi-Civita symbol.\footnote{Note how the Levi-Civita symbol, unlike its tensor counterpart, is a pseudo-tensor. Its components don't change sign under changes of orientation, e.g. $\varepsilon_{12}$ is $+1$ independently of the orientation.}
+\end{defn}
+
+\begin{xca}
+    Show that the locally defined quantity $\dd x^1\wedge\cdots \wedge\dd x^m$ is in fact a globally well-defined scalar density of weight $+1$, and similarly  $\sqrt{g}$ is a scalar tensor density of weight $-1$.
+\end{xca}
+
+\begin{prop}
+    Let $(M,g)$ be a Riemannian manifold and $S\sub M$ an orientable submanifold embedded via $i:S\hookrightarrow M$ with a chosen unit normal vector field $N$. Then:
+    \begin{enumerate}
+        \item $\mu_{\wt{g}}=i^\ast (i_N \mu_g)$, where $\wt{g}=i^\ast g$ is the induced metric on $S$;
+        \item given another vector field $X\in\Gamma^\infty(\restr{\T M}{S})$, we have 
+        \[i^\ast(i_X\mu_g)=\langle X,N\rangle_g \cdot \mu_{\wt{g}}.\]
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+        1. Assuming that the result is true, we have $\mu_{\wt{g}}(E_1,\ldots,E_{m-1})=\mu_g(N,E_1,\ldots,E_{m-1})$, and this equals $\pm 1$, but since the direction of $N$ is induced from the orientation on $M$, this in fact equals $+1$. Therefore this is indeed rhe right volume form on $S$.
+        
+        2. Decompose $X=\underbrace{\langle X,N\rangle N}_{X^\perp}+\underbrace{(X-X^\perp)}_{X^\top}$,
+        then 
+        \[i^\ast(i_{X^\top}\mu_g)(\underbrace{X_1,\ldots,X_{m-1}}_{\in \T S})=\mu_g(\underbrace{X^\top,X_1,\ldots,X_{m-1}}_{\text{lin. dependent}})=0.\]
+        Thus 
+        \[i^\ast(i_X\mu_g)=i^\ast(i_{X^\top}\mu_g)=\langle X,N \rangle i^\ast (i_N \mu_g)=\langle X,N\rangle \mu_{\wt{g}}.\]
+\end{proof}
+
+\begin{cor}
+    \begin{enumerate}
+        \item Define the divergence of a vector field with respect to a metric $g$ as 
+        \[(\div_g X)\mu_g=\Lie_X \mu_g.\]
+        Then by Cartan's magic formula
+        \[(\div_g X)\mu_g=\dd i_X \mu_g,\quad \div_g X=\frac{1}{\sqrt g}\partial_i(\sqrt g X^i).\label{divergence in components}\]
+        \item The Gauss theorem holds in the form 
+        \[\int_M (\div_g X)\mu_g=\int_M \dd i_x \mu_g=\int_{\partial M}i_X \mu_g=\int_{\partial M}\langle X,N\rangle_g \mu_{\restr{g}{\partial M}}.\]
+    \end{enumerate}
+\end{cor}
+
+\begin{defn}
+    Given a Riemannian manifold $(M,g)$, define the gradient \index{Gradient operator} of a function $f\in C^\infty(M)$ as 
+    \[\grad_g f=(\dd f)^\sharp.\]
+    Define the Laplace-Beltrami operator \index{Laplace-Beltrami operator} on $C^\infty(M)$ as
+    \[\nabla^2_g f \coloneqq \div_g \grad_g f.\]
+\end{defn}
+\begin{defn}[Killing vector field]\index{Killing vector field}
+    A vector field $X\in\fX(M)$ on a Riemannian manifold $(M,g)$ is called a Killing vector field if its flow consists of isometries, i.e., $\Lie_X g=0$, which is equivalent to the Killing equation\index{Killing equation} in components:
+    \[X^k\partial_k g_{ij}+\partial_i X^k g_{jk}+\partial_j X^k g_{ik}=0.\]
+\end{defn}
+
+\begin{cor}
+    \begin{enumerate}
+        \item In components, the Laplace-Beltrami operator reads 
+        \[\nabla^2_g f=\frac{1}{\sqrt g}\partial_k (g^{ik}\sqrt g \partial_i f);\label{laplacian in components}\]
+        \item Killing vector fields form a Lie subalgebra of $\fX(M)$, i.e., the Lie bracket of two Killing vector fields is a Killing vector field.
+    \end{enumerate}
+\end{cor}
+\begin{proof}
+    Exercise.
+\end{proof}
+
+\begin{rem}
+    Notice that traditionally in multivariable calculus the components of vector fields are defined w.r.t.\ to an orthonormal frame as $X=\sum_i \wh{X}^i \wh{e}_i$, where $\wh{e}_i=\frac{\partial_i}{\lVert \partial_i\lVert}=\frac{\partial_i}{\sqrt{g_{ii}}}$, but in differential geometry we use the components defined regardless of the metric, $X=\sum_i X^i \partial_i$. Thus there is a discrepancy between the formulas you find on, say, Wikipedia, with the ones in differential geometry textbooks (like (\ref{divergence in components}) and (\ref{laplacian in components})), given by $\wh{X}^i=X^i\cdot \sqrt{g_{ii}}$ (of course, this only makes sense as long as we use orthogonal coordinates, in which the metric is diagonal). In a general framework where coordinates can't always be assumed to be orthogonal, the basis of the $\partial_i$ is preferred.
+\end{rem}
+
+\begin{xca}
+    Using (\ref{divergence in components}) and (\ref{laplacian in components}), derive the standard expressions for the divergence and the Laplace-Beltrami operator in polar, cylindrical, and spherical  coordinates. 
+\end{xca}
+
+
+
+
+\section{Properties of geodesics}
+
+
+The general references for this \sect\ are \cite{Jost,Milnor}.
+
+As we have already pointed out, the length functional $\rmL_g[\gamma]$ is reparametrization invariant. One of the ``disadvantages'' of this is that it has ``too many'' exterma. For instance, in Euclidean space, the length functional would be minimized (with fixed boundary conditions $\gamma(0)=p,\gamma(1)=q$) by any path whose image is the segment of the straight line going through $p$ and $q$, and there are infinitely many such paths corresponding to all possible parametrizations.
+
+Because of this inconvenience, we prefer to work with a functional that is not reparametrization invariant.
+
+\begin{defn}[Energy functional]
+    For a path $\gamma:[a,b]\to M$ on a Riemannian manifold $(M,g)$, we define its ``kinetic energy functional'' as
+    \[E_g[\gamma]\coloneqq \frac12 \int_a^b \lVert \dot\gamma(t)\rVert^2\dd t=\frac12 \int_a^b g(\dot\gamma(t),\dot\gamma(t))\dd t.\]
+\end{defn}
+
+\begin{lem}\label{length<energy lemma}
+For any path $\gamma:[a,b]\to M$, 
+\[\rmL_g[\gamma]^2\leq 2(b-a)E_g[\gamma].\] The equality holds iff $\lVert \dot\gamma \rVert =\const$.
+\end{lem}
+\begin{proof}
+    By the H\"older inequality, $\int_a^b \lVert \dot\gamma(t)\rVert \dd t\leq \sqrt{b-a} \left(\int_a^b \lVert \dot\gamma(t)\rVert^2\dd t\right)^{1/2}$.
+\end{proof}
+
+\begin{lem}[Geodesic equation]
+    The Euler-Lagrange equations for the energy functional $E_g$ on $(M^m,g)$ read in local coordinates 
+    \[\ddot x^i(t)+\Gamma^i_{jk}(x(t))\dot x^j(t)\dot x^k(t)=0,\; i=1,\ldots,m,\]
+    where $\Gamma^i_{jk}=\frac 12 g^{il}(\partial_k g_{jl}+\partial_jg_{kl}-\partial_l g_{jk})$ are the so-called Christoffel symbols. This differential equation is called the geodesic equation.
+\end{lem}
+\begin{proof}
+    The Lagrangian is $\Lie=\frac12 g_{ij}(x(t))\dot x^i(t)\dot x^j(t)$, so $\frac{\dd}{\dd t}\frac{\partial\Lie}{\partial \dot x^i}-\frac{\partial \Lie}{\partial x^i}=0$ becomes 
+    \[g_{ik}\ddot x^k+g_{ji}\ddot x^j+\partial_l g_{ik}\dot x^l\dot x^k+\partial_l g_{ji}\dot x^l\dot x^j-\partial_i g_{jk}\dot x^j\dot x^k=0.\]
+    Using the symmetry of $g$ and acting by $g^{-1}$ on the whole equation, we can bring it to the necessary form.
+\end{proof}
+
+\begin{defn}[Geodesic]\index{Geodesic}
+    A path $\gamma:[a,b]\to M$ on a Riemannian manifold $(M,g)$ is called a geodesic if in (any) local coordinates it solves the geodesic equation (above), i.e., if it is a critical point of the energy functional $E_g$.
+\end{defn}
+
+It is easy to check that if $\gamma(t)$ is a geodesic, then 
+\[\frac{\dd}{\dd t}\lVert \dot\gamma(t)\rVert^2=0,\]
+which means the parametrization of a geodesic is proportional to its length. In other words, motion along a geodesic happens with a constant speed. This is the natural generalization of the notion of ``inertial motion'' on a curved space (at least in the Newtonian context).
+
+
+\begin{lem}
+    Let $(M,g)$ be a Riemannian manifold, $p\in M$, and $v\in \T_p M$. Then there exist an $\varepsilon>0$ and a unique geodesic $\gamma_v:[0,\varepsilon]\to M$ with initial conditions $\gamma(0)=p$, $\dot\gamma(0)=v$. Moreover, $\gamma $ depends smoothly on $p$ and $v$.
+\end{lem}
+\begin{proof}
+    This is just a direct application of the general local solvability theorem for ODE's.
+\end{proof}
+\begin{cor}
+    If $\gamma[0,\varepsilon]\to M$ is a geodesic, then $\gamma^\lambda(t)\coloneqq \gamma(\lambda t):[0,\varepsilon/\lambda]\to M$ is also a geodesic with $\dot\gamma^\lambda(0)=\lambda\dot\gamma(0)$. Since $\gamma_v$ depends smoothly on $v$ and the unit sphere $S=\{v\in \T_pM\mid \lVert v\rVert=1\}$ is compact, $\exists\,\varepsilon_0>0$ such that the domain of $\gamma_v$ for all $v\in S$ contains $[0,\varepsilon_0]$. Then for all $\lVert v\rVert\leq \varepsilon_0$, the geodesics $\gamma_v$ are defined on $[0,1]$.
+\end{cor}
+\begin{defn}[Exponential mapping]\index{Exponential mapping}
+    Consider the set $V_p=\{v\in \T_p M\mid \gamma_v \text{ exists on }[0,1]\}$. This set is non-empty and is an open neighborhood of the origin in $\T_p M$ by the local solvability of the geodesic equation. We define the exponential mapping of the Riemannian manifold $(M,g)$ as
+    \[\exp_p :V_p\to M,\quad v\mapsto \gamma_v(1).\]
+\end{defn}
+
+\begin{thm}
+    $\exp_p$ maps a neighborhood of $0\in \T_pM$ diffeomorphically onto a neighborhood of $p\in M$.
+\end{thm}
+\begin{proof}
+    Compute the differential of $\exp_p$ at zero:
+    \[\exp_{p\ast0}(v)=\restr{\frac{\dd}{\dd t}\gamma_{t\cdot v}(1)}{t=0}=\restr{\frac{\dd}{\dd t}\gamma_{v}(t)}{t=0}=v,\]
+    therefore $\exp_{p\ast}=\id_{\T_p M}$ and by the \gls{inmt} \ref{InMT}, $\exp_p$ is a local diffeomorphism.
+\end{proof}
+
+\begin{defn}[Riemann normal coordinates]\index{Riemann normal coordinates}
+    If $\T_p M$ is identified with $\bbR^n$ by a choice of an orthonormal frame at $p$, then $\exp_p^{-1}:U_p\to \T_p M\cong\bbR^n$ defines a local chart around $p$ whose components are called Riemann normal coordinates.
+\end{defn}
+
+\begin{prop}
+    In Riemann normal coordinates at $p\in M$, $g_{ij}(p)=\delta_{ij}$ and $\Gamma^i_{jk}(p)=0$ (moreover, $\partial_k g_{ij}(p)=0$).
+\end{prop}
+\begin{proof}
+    $g_{ij}(p)=\delta_{ij}$ by construction (because we specified an orthonormal frame to introduce the normal coordinates).
+    
+    Straight lines in normal coordinates are geodesic because the line $tv$, $t\in\bbR $, $v\in\bbR^n$ becomes under the exponential mapping $\gamma_{tv}(1)=\gamma_v(t)$. Thus, in these coordinates for $x(t)=tv$, one has $\Gamma^i_{jk}(tv)v^jv^k=0$ since $\ddot x=0$. Since this holds for all $v$ in a neighborhood of the origin, we have $\Gamma^i_{jk}(p)=0$. 
+    
+    Finally, this implies that $\partial_m g_{kj}+\partial_k g_{mj}-\partial_j g_{km}(p)=0$ and thus $\partial_k g_{jm}(p)=0$.
+\end{proof}
+
+\begin{comment}
+    \begin{samepage}
+        \PRLsep
+        \begin{center}
+            {\red Lecture 17 on 5 Apr 2019 ended here}
+        \end{center}
+    \end{samepage}
+\end{comment}
+
+
+\begin{defn}[Riemann polar coordinates]
+    Introducing polar coordinates $(r,\varphi^1,\ldots,\varphi^{n-1})$ on $\bbR^n$ identified locally with a neighborhood of $p\in M$ via the exponential mapping, we have $g_{rr}=1$, $\partial_r g_{r\varphi}=0$, and thus $g_{r\varphi}\equiv 0$ on the entire chart (here $\varphi$ denotes all polar angles collectively). Then the metric takes the canonical form $g=(\dd r)^2+g_{\varphi\varphi}$ on the entire neighborhood, where $g_{\varphi\varphi}$ denotes the angular part of the metric, which itself has to be positive-definite. These are the Riemann polar coordinates.
+\end{defn}
+
+\begin{cor}
+    For $p\in M$ there exists $r_0>0$ such that the Riemann normal coordinates exist on the open ball $B_{r_0}(p)$ (in the metric $d_g$). Moreover, for any $q\in \partial B_{r_0}(p)$ there exists a unique geodesic of shortest length (equal to $r_0$) from $p$ to $q$, and in the Riemann polar coordinates it is the straight line.
+\end{cor}
+\begin{proof}
+    The existence of the ball is clear. Now we need to choose $r_0$ sufficiently small to satisfy the remaining conditions.
+    
+    For any curve $c(t)$ from $p$ to $q$, let $t_0$ be the earliest time when $c(t_0)\in \partial B_{r_0}(p)$. Then
+    \[\rmL_g\left[\restr{c}{[0,t_0]}\right]=\int_0^{t_0} \left(g_{ij}\dot c^i\dot c^j\right)^{1/2}\dd t\geq \int (g_{rr}(c(t))\dot r\dot r)^{1/2}\dd t,\]
+    where the inequality follows from $g_{r\varphi}=0$ and the fact that the angular part of the metric $g_{\varphi\varphi}$ is positive-definite. Furthermore, $g_{rr}\equiv1$, so
+    \[\rmL_g\left[\restr{c}{[0,t_0]}\right]=\int_0^{t_0}\lvert \dot r\rvert\dd t\geq \int_0^{t_0}\dot r\dd t=r(t_0)=r_0.\]
+    Moreover, the equality in this relation holds if and only if $g_{\varphi\varphi}(\dot\varphi,\dot\varphi)=0$, i.e., exactly when $c(t)$ is a straight line. This proves the existence and uniqueness of the minimizing geodesic and that it's a straight line in these coordinates.
+\end{proof}
+
+\begin{defn}[Geodesically convex sets]
+    An open subset of a Riemannian manifold is called geodesically convex if any two points $p,q$ in it can be connected by a geodesic of the minimum length $d_g(p,q)$ that is entirely contained in this set.
+\end{defn}
+
+\begin{cor}
+    If $(M,g)$ is compact, there exists $r_0>0$ such that any two points $p,q\in M$ with $d_g(p,q)\leq r_0$ can be connected by exactly one geodesic of length $d_g(p,q)$. This geodesic depends smoothly on $p$ and $q$. In particular, $M$ can be covered by geodesically convex balls of radius $r_0$.
+\end{cor}
+
+\begin{thm}\label{geodesically convex nbhds thm}
+    On a Riemannian manifold, geodesically convex neighborhoods:
+    \begin{enumerate}
+        \item Always exist (locally at every point);
+        \item Can be chosen contractible;
+        \item Are intersection-invariant, i.e., the intersection of any two geodesically convex sets is geodesically convex.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    \begin{enumerate}
+        \item We claim that the neighborhood $U_p=\exp_p(B_\varepsilon(0))$ of $p$ constructed above is a convex neighborhood. Indeed, with a bit of work one can check that any two points (not just when one of them is $p$, which is the case considered before) in it are connected by a unique minimizing geodesic that is contained in $U_p$.
+        \item Obvious because we chose them diffeomorphic to a ball;
+        \item Obvious.
+    \end{enumerate}
+\end{proof}
+
+
+\begin{defn}
+    A Riemannian manifold $(M,g)$ is called geodesically complete if $\exp_p$ is defined on all of $\T_pM$ for every $p\in M$, i.e., if all geodesics extend to arbitrarily long times.
+\end{defn}
+
+\begin{thm}[Hopf-Rinow]\index{Theorem!Hopf-Rinow}
+    \gls{tfae}:
+    \begin{enumerate}
+        \item $(M,g)$ is geodesically complete;
+        \item $(M,d_g)$ is a complete metric space;
+        \item $d_g$-bounded closed sets in $M$ are compact;
+        \item There exists at least one $p\in M$ such that $\exp_p$ is defined on all of $\T_p M$.
+    \end{enumerate}
+    Moreover, if $(M,g)$ is geodesically complete, then any two points $p,q\in M$ are connected by at least one geodesic of length $d_g(p,q)$.
+\end{thm}
+\begin{proof}
+    See \cite[Thm. 1.7.1]{Jost} or \cite[Thm. 10.9]{Milnor}.
+\end{proof}
+
+
+
+\section{Riemannian connections}
+
+
+
+\section{Geometry of submanifolds}
+
+
+
+\section{Morse theory}
+
+Use RS1, Shen (review). 
+
+
+
+
+
+
+
+\clearpage
+\chapter{Complex Geometry \texorpdfstring{\ucmark}{}}
+
+
+\section{Complex and Hermitian structures}
+
+\begin{defn}[Complex structure on a vector space]
+    If $V$ is a real vector space, then a complex structure on $V$ is an endomorphism $\sfJ\in \GL(V)$ such that 
+    \[\sfJ^2=-\id_V.\]
+    With a chosen complex structure, $(V,\sfJ)$ gains a natural structure of a complex vector space where the multiplication by the imaginary unit is defined as
+    \[\rmi\cdot v\coloneqq \sfJ(v).\]
+    Conversely, every complex vector space has a unique $\sfJ$. Clearly for a complex structure to exist, $V$ has to be even-dimensional. If $\dim V=2n$, then we can choose a basis on it of the form $\{e_1,\ldots,e_n,\rmi e_1,\ldots,\rmi e_n\}$.
+    
+    The category $\mathsf{Vect}_{\mathbb{C}}$ consists of complex vector spaces and the morphisms are $\mathbb{C}$-linear maps $f:V\to V'$, i.e., $f(\sfJ v)=J' f(v)$ or $f(v+\rmi w)=f(v)+\rmi f(w)$.
+\end{defn}
+
+Note that the only eigenvalue of $\sfJ$ on $V$ is $\rmi$.
+
+\begin{defn}[Complexification]\index{Complexification}\label{def complexification}
+    Let $V$ be a real vector space. The complexification of $V$ is defined as $V^\mathbb{C}\coloneqq V\otimes_\bbR \mathbb{C}$, i.e., $\dim_\bbR V^\mathbb{C}=2\dim_\bbR V$. If $V$ already has a chosen complex structure $\sfJ$, then it induces a complex structure on $V^\mathbb{C}$ given by $\sfJ(v\otimes z)=\sfJ(v)\otimes z$. If not, we define $\sfJ(v\otimes z)\coloneqq v\otimes \rmi z$. In any case, $J$ has only two eigenvalues $\pm \rmi$.
+    
+    Thus $V\mapsto V^{\mathbb{C}}$ is a covariant functor $\mathsf{Vect}_\bbR \to \mathsf{Vect}_\mathbb{C}$.
+    
+    We also define two subspaces $V^\pm=\ker(\sfJ\mp \rmi\cdot\id_V)=\frac12(\id\mp \rmi \sfJ)(V^\mathbb{C})$, i.e., the eigenspaces of $\sfJ$ corresponding to its two eigenvalues $\pm \rmi$ on $V^\mathbb{C}$.
+\end{defn}
+
+The complexification is naturally isomorphic to $V\oplus V$ as a real vector space. The two components of the sum are the real and the imaginary part: $\sfJ(v,w)=(-w,v)$ (assuming $V$ didn't already have a complex structure, otherwise $\sfJ(v,w)=(\sfJ(w),\sfJ(w))$).
+
+
+\begin{defn}[Realification]\index{Realification}
+    The realification of a complex vector space is the forgetful functor $\mathsf{Vect}_\mathbb{C}\to\mathsf{Vect}_\bbR $ given by $(V,\sfJ)\to V$. In particular, it preserves the real dimension $\dim_\bbR V^\bbR =\dim_\bbR V$.
+\end{defn}
+
+Therefore if we first complexify and then realify a vector space, we end up with twice the dimensions, $\dim_\bbR \left(\left(V^\mathbb{C}\right)^\bbR \right)=2\dim_\bbR V$.
+
+
+Continue following Huybrechts, Complex Geometry 1.2.
+
+
+
+
+
+
+
+\section{Complex manifolds}
+
+\begin{defn}[Complex structure on a \gls{vb}]\index{Complex vector bundle}
+    Let $E\overset\pi\to M$ be a real \gls{vb}. A \emph{complex structure} on $E$ is a smooth tensor field $\sfJ\in\Gamma^1_1(E)$ such that $\sfJ^2=-\id_E$.
+    
+    Alternatively, $E\overset\pi\to M$ is a complex bundle if its local trivializations are $\chi_\alpha:\restr{E}{U_\alpha}\to U_\alpha\times \mathbb{C}^k$ such that the transition functions are $\mathbb{C}$-linear, i.e., $\tau_{\alpha\beta}:U_{\alpha\beta}\in \GL_k(\bbR )$. In other words, it is a real vector bundle of rank $2k$ whose structure group was reduced from $\GL_{2k}(\bbR )$ to a subgroup $\GL_k(\mathbb{C})<\GL_{2k}(\bbR )$ (how exactly this subgroup is embedded depends on the choice of the complex structure).
+\end{defn}
+
+\begin{defn}[Complex manifold]\index{Complex manifold}
+    A complex $n$-dimensional manifold is a $2n$-dimensional smooth manifold $M$ with local charts $\varphi_\alpha:U_\alpha\to\wh{U}_\alpha\mathring\subset\mathbb{C}^n$ and transition maps $\varphi_{\alpha\beta}:\varphi_\beta(U_{\alpha\beta})\to\varphi_\alpha(U_{\alpha\beta})$ that are \emph{holomorphic}. Morphisms between complex manifolds are holomorphic maps (i.e., smooth maps whose local representatives in the holomorphic charts are holomorphic).
+\end{defn}
+
+
+\begin{defn}[Holomorphic \gls{vb}]\index{Holomorphic vector bundle}
+    A complex bundle $E\overset\pi\to M$ over a complex manifold $M$ is called holomorphic if its transition functions are holomorphic as maps $\tau_{\alpha\beta}:U_{\alpha\beta}\to \GL_k(\mathbb{C})$, where $\GL_k(\mathbb{C})$ is viewed as a complex manifold with the standard complex structure (as an open subset of $\mathbb{C}^{k^2}$). Morphisms between complex bundles are smooth vector bundle maps that are holomorphic in the base and $\mathbb{C}$-linear in the fibers.
+\end{defn}
+
+If $M$ is a complex manifold, then $\T M$ (the tangent bundle of $M$ as a real manifold) is naturally a complex bundle, because the multiplication by the imaginary unit can be induced from the local trivializations mapping to $\mathbb{C}^n$.
+
+However, when can a real manifold be turned into a complex one?
+
+\begin{defn}[Almost complex structure]\index{Almost complex manifold}
+    Let $M$ be a real manifold. An almost complex structure on $M$ is a complex structure on $\T M$.
+\end{defn}
+
+\begin{defn}[Integrable almost complex structure]
+    An almost complex structure $\sfJ$ on a real manifold $M$ is called integrable if there is a structure of a complex manifold on $M$ that induces the complex structure $\sfJ$ on $\T M$ as described above.
+\end{defn}
+
+Let $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ be the standard coordinates on $\mathbb{C}^n$ (i.e., $z^j=x^j+iy^j$) representing a local chart on a complex manifold $M$. We have $\T M=\<\partial_{x^j},\partial_{y^j}\>_{j=1}^n$. Then the induced complex structure on $\T M$ reads 
+\[J(\partial_{x^k})=\partial_{y^k},\quad J(\partial_{y^k})=-\partial_{x^k}.\]
+
+\begin{defn}[Holomorphic tangent bundle]\index{Holomorphic tangent bundle}
+    Let $M$ be a real manifold. Define the complexification of its tangent bundle as $\T^\mathbb{C} M\coloneqq \T M\otimes_\bbR \mathbb{C}$ (tensor product with the trivial bundle $M\times \mathbb{C}$). If $M$ was already a complex manifold, we extend $J$ to $\T^\mathbb{C} M$ by $\mathbb{C}$-linearity. Otherwise we define $J(v\otimes z)=v\otimes iz$.
+    
+    Furthermore, define the two eigen-subbundles of $\T^\mathbb{C}$
+    \[\T^{1,0}M\coloneqq \ker(J-i\cdot \id),\quad \T^{0,1}M\coloneqq\ker(J+i\cdot\id).\]
+    If $M$ was a complex manifold and $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ are coordinates on it as described above, then 
+    \[\T^{1,0}M=\<\partial_{z^j}\equiv \frac12(\partial_{x^j}-i\partial_{y^j})\>_\bbC,\quad T^{0,1}M=\overline{\T^{1,0}M}=\<\partial_{\bar z^j}\equiv \frac12(\partial_{x^j}+i\partial_{y^j})\>_\bbC.\]
+    The subbundles are called the holomorphic and anti-holomorphic tangent bundles, respectively.
+\end{defn}
+
+\begin{prop}
+    $\T^\mathbb{C}M=\T^{1,0}M\oplus \T^{0,1}M$ and 
+    \[\T^{1,0}M=\{v-i\sfJ\cdot v\mid v\in \T M \}, \quad \T^{0,1}M=\{v+i\sfJ\cdot v\mid v\in \T M \}.\]
+\end{prop}
+\begin{proof}
+    Check that $\sfJ(v-\rmi\sfJ v)=\sfJ v-\rmi\sfJ^2v=\sfJ v+\rmi v=\rmi(v-\rmi\sfJ v)$, therefore the space of vectors $v-\rmi\sfJ V$ is the eigenspace of $\sfJ$ corresponding to the eigenvalue $\rmi$, i.e., exactly $\T^{1,0}$.
+\end{proof}
+
+Specifying the subbundle $\T^{1,0}M<\T^\mathbb{C}M$ is equivalent to specifying an almost complex structure $\sfJ$.
+
+There is a natural isomorphism $\T^{1,0}M\cong \T M$ given by $v\in \T^{1,0}M\mapsto v^\bbR =v+\bar v\in \T M\subset \T^\mathbb{C} M$. Its inverse is $v\in \T M\mapsto v^\mathbb{C}=\frac12(v-\rmi\sfJ v)$. In particular,
+\[(\partial_{z^j})^\bbR =(\partial_{\bar z^j})^\bbR =\partial_{x^k},\quad (i\partial_{z^j})^\bbR =\partial_{y^k}.\]
+
+If $M$ is a complex manifold, then $\T^{1,0}M$ has a naturally induced structure of a holomorphic bundle because its transition functions are $(\tau_{\alpha\beta})^j_k=\frac{\partial z_\beta^j}{\partial z_\alpha^k}$, which are holomorphic as complex derivatives of homolorphic maps (namely of the transition maps on $M$).
+
+But when is the converse true, i.e., what conditions on the almost complex structure $\sfJ$ are sufficient for it to come from a structure of a complex manifold (i.e., to be integrable)? The following famous theorem answers this question in a manner very similar to the Frobenius theorem.
+
+\begin{thm}[Newlander-Nirenberg]\index{Theorem!Newlander-Nirenberg}
+    Let $M$ be a smooth real manifold and $\sfJ$ and almost complex structure on it. $\sfJ$ is integrable iff the corresponding complex bundle $\T^{0,1}M$ is integrable, i.e., $[\T^{0,1}M,\T^{0,1}M]\subset \T^{0,1}M$.
+    
+    This is also equivalent to $N_\sfJ=0$, where $N_\sfJ$ is the \emph{Nijenhuis tensor}, which is a tensor of type $(1,2)$ defined as a section of $\Hom(\T^2M,\T M)$ by the formula
+    \[N_\sfJ(X,Y)=\underbrace{-\sfJ^2}_{+1}[X,Y]+\sfJ([\sfJ X,Y]+[X,\sfJ Y])-[\sfJ X,\sfJ Y].\]
+\end{thm}
+\begin{proof}
+    See also proof via Cartan's first structure equation  in \url{https://math.berkeley.edu/~bmcmilla/Talks/Newlander-Nirenberg%20Theorem.pdf}.
+    
+    This is a difficult theorem in analysis. The integrability of $\T^{0,1}M$ implies the existence of a convergent Taylor series at every point for all charts of an atlas on $M$. The theorem is easy to prove if it is already known that $M$ is a real analytic manifold: by Frobenius theorem, $\T^{0,1}M$ integrates to local submanifolds of $M$ which by dimension counting are open subsets, therefore the vector fields $\partial_{\bar z^j}\coloneqq\frac12(\partial_{x^j}+i\partial_{y^j})$ actually come from holomorphic local coordinates.
+\end{proof}
+
+\begin{rem}
+    In the case $n=1$ (one-dimensional complex manifolds, a.k.a.\ Riemann surfaces), one identically has $N_\sfJ=0$ because of extra symmetries, so all almost complex structures on surfaces are integrable.
+\end{rem}
+
+
+
+
+
+\section{Complex differential forms}
+
+Since $\T^\mathbb{C}M=\T^{1,0}\oplus \T^{0,1}M$, we have
+\begin{gather}
+    (\T^\mathbb{C}M)^\ast=(\T^{1,0}M)^\ast \oplus (\T^{0,1}M)^\ast=\T^\ast_{0,1}M\oplus \T^\ast_{1,0}M,\\ \T^\ast_{0,1}M=\<\dd z^j\>_\bbC,\;\; \T^\ast_{1,0}M=\<\dd\bar z^j\>_\bbC.
+\end{gather}
+Indeed, $\dd z^j(\partial_{z^k})=\delta^j_k$ and $\dd \bar z^j (\partial_{\bar z^k})=\delta^j_k$.
+Finally, 
+\begin{align}
+    \T^\ast_{1,0}M=\{\alpha\in \T^{0,1}_{\mathbb{C}}M\mid \forall v\in \T^{0,1}M,\; \alpha(v)=0\}=\{\alpha-\rmi\sfJ^\ast\alpha\mid \alpha\in \T^\ast M\},\\
+    \T^\ast_{0,1}M=\{\alpha\in \T^{1,0}_{\mathbb{C}}M\mid \forall v\in \T^{0,1}M,\; \alpha(v)=0\}=\{\alpha+\rmi\sfJ^\ast\alpha\mid \alpha\in \T^\ast M\}.
+\end{align}
+
+We define the corresponding exterior bundles.
+
+\begin{defn}
+    The complex exterior bundles $\bigwedge^{p,q}M$ are defined by the equalities \[\bigwedge^k(\T^\ast_\mathbb{C}M)=\bigwedge^k(\T^\ast_{1,0}M\oplus \T^\ast_{0,1}M)=\bigoplus_{p+q=k}\bigwedge^p(\T^\ast_{1,0}M)\otimes \bigwedge^q(\T^\ast_{0,1}M)\equiv \bigoplus_{p+q=k}\bigwedge^{p,q}M.\]
+    Furthermore, we define the spaces of complex differential forms of degree $(p,q)$, denoted by $\Omega^{p,q}(M)$, as the sections of these bundles:
+    \[\Omega^{p,q}(M)=\Gamma^\infty(\bigwedge^{p,q}M).\]
+    If $\omega\in\Omega^{p,q}(M)$, then in local coordinates it has the form
+    \[\omega=\sum_{I,J}\underbrace{\omega_{i_1\cdots i_pj_1\cdots j_q}}_{\omega_{I,J}}\underbrace{\dd z^i\wedge\cdots\wedge \dd z^{i_p}\wedge\dd \bar z^{j_1}\wedge\cdots\wedge \dd\bar z^{j_q}}_{\dd z^I\wedge \dd\bar z^J},\]
+    where the sum is over all multi-indices, e.g. $I=(i_1,\ldots,i_p)$, $1\leq i_1<i_2\cdots<i_p\leq n$. Here, the coefficients are $\omega_{I,J}\in C^\infty (U,\mathbb{C})$.
+\end{defn}
+
+ The exterior derivative is extended by $\mathbb{C}$-linearity:
+    \[\dd \omega=\sum_{I,J}\dd\omega_{I,J}\wedge\dd z^I\wedge\dd \bar z^J\in\Omega^{p+q+1}_\mathbb{C}(M).\]
+Clearly $\dd\omega$ is uniquely represented as a sum of an element of $\Omega^{p+1,q}(M)$ and an element of $\Omega^{p,q+1}(M)$, i.e.
+\[\dd(\Omega^{p,q}(M))\subset \Omega^{p+1,q}(M)\oplus\Omega^{p,q+1}(M).\]
+
+\begin{defn}[Dolbeault operators]\index{Dolbeault operators}
+    The Dolbeault operators $\partial:\Omega^{p,q}(M)\to\Omega^{p+1,q}(M)$ and $\bar\partial:\Omega^{p,q}(M)\to\Omega^{p,q+1}(M)$ uniquely defined by the formula
+    \[\dd\omega=\partial\omega+\bar\partial\omega.\]
+    Locally, we have 
+    \begin{align}
+        \partial\omega=\sum_{k,I,J}\partial_{z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\bar z^J,\\
+        \bar\partial\omega=\sum_{k,I,J}\partial_{\bar z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\bar z^J.
+    \end{align}
+\end{defn}
+
+These derivatives have the following basic properties:
+\begin{enumerate}
+    \item $\partial(\alpha\wedge\beta)=\partial\alpha\wedge\beta+(-1)^{\deg\alpha}\alpha\wedge\partial\beta$, and the same for $\bar\partial$;
+    \item $\overline{\bar\partial\bar\alpha}=\partial\alpha$;
+    \item $\partial^2=\bar\partial^2=\partial\bar\partial+\bar\partial\partial=0.$
+\end{enumerate}
+The last property follows from the decomposition \[0=\dd^2=(\partial+\bar\partial)^2=\underbrace{\partial^2}_{p\to p+2}+\underbrace{\bar\partial^2}_{q\to q+2}+\underbrace{\partial\bar\partial+\bar\partial\partial}_{(p,q)\to(p+1,q+1)}.\]
+
+
+\begin{defn}[Holomorphic differential forms]\index{Holomorphic differential form}
+    A form $\omega\in\Omega^{p,0}(M)$ is called holomorphic if $\bar\partial\omega=0$, i.e., if all of its components $\omega_I$ are holomorphic functions. (For elements of $\Omega^{p,q}(M)$ this property is called ``$\bar\partial$-closed''.)
+\end{defn}
+
+\begin{defn}[Canonical line bundle]\index{Canonical bundle}
+    The canonical bundle of a complex manifold $M$ (where $\dim_\mathbb{C} M=n$) is defined as $K_M\coloneqq \bigwedge^{n,0}M$, i.e., the determinant bundle of the holomorphic cotangent bundle. Its fiber is $\mathbb{C}$, so it is a complex line bundle. The dual bundle $K^\ast_M$ is called the anti-canonical bundle (note that $K^\ast_M\cong \bigwedge^n(\T^{1,0}M)$, not $\bigwedge^{0,n}M$).
+\end{defn}
+
+
+
+\section{Maurer-Cartan equation}
+
+Huybrechts 6.1 or Voisin. There's a factor of 1/2 in the MC equation missing in huybrechts because of the way he defines wedge products.
+
+
+
+
+\chapter{Symplectic geometry \texorpdfstring{\ucmark}{}}
+
+Lagrangian submanifolds, Hamiltonian and Lagrangian systems, caustics, Maslov classes, symmetries and conservation laws, momentum maps.
+
+Use Bryant's ``Exterior Differential Systems and Euler-Lagrange Partial Differential Equations''.
+
+
+
+
+
+
+
+
+
+\chapter{Applications in Lie Groups \texorpdfstring{\ucmark}{}}
+
+
+\section{Geometry of Lie groups}
+Haar integral, geodesics, curvature, symmetric spaces, Morse theory, approximation of the loop space $\Omega G$ by broken geodesics, proof that $\pi_2(G)=0$.
+
+
+\section{Symmetric spaces}
+
+Theorem (Cartan). A compact group of isometries of a nonpositively curved complete simply-connected Riemannian manifold has a fixed point (Helgason p.~75).
+
+Theorem (Cartan-Hadamard). Criterion for being non-positively curved. The exponential map is then a diffeomorphism.
+
+
+\section{Maximal compact subgroups}
+
+Using the above theorem of Cartan, prove uniqueness of the maximal compact subgroup up to conjugation (this proof will apply only to semisimple $G$). See \url{https://mathoverflow.net/a/68184/22773}.
+--
+Theorem (Cartan). A connected real Lie group $G$ is diffeomorphic (as a manifold) to $K\times\mathbb{R}^n$ where $K$ is a maximal compact subgroup of $G$.
+
+
+\section{Bott periodicity}
+
+
