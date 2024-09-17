@@ -4974,11 +4974,11 @@ where the $F^\lambda$ are either smooth or analytic depending on the category in
 
 \begin{defn}[Eikonal equation II]
     The eikonal differential equation is a PDE for functions $\varphi\in C^\infty(N)$ of the form
-    \[F^\lambda\left(y^i,\varphi_{y^i}(x)\right)=0,\quad \lambda=1,\ldots,R.\]
+    \[F^\lambda\left(\bf{y},\partial_{\bf{y}}\varphi(\bf{y})\right)=0,\quad \lambda=1,\ldots,R.\]
 \end{defn}
 
 \begin{rem}
-    The functions $F^\lambda$ need only be defined \emph{microlocally}, i.e., in open sets $U\subset \T^\ast N$ invariant under scaling. In the cases of interest to us the fibers $\Sigma_x$ of $\Sigma\to N$ will be algebraic varieties, so that tje $F^\lambda(x^i,\xi_i)$ may be chosen to be homogeneous polynomials in the $\xi_i$, whose coefficients are functions of the $x^i$. In this case, the complexifications 
+    The functions $F^\lambda$ need only be defined \emph{microlocally}, i.e., in open sets $U\subset \T^\ast N$ invariant under scaling. In the cases of interest to us the fibers $\Sigma_x$ of $\Sigma\to N$ will be algebraic varieties, so that the $F^\lambda(x^i,\xi_i)$ may be chosen to be homogeneous polynomials in the $\xi_i$, whose coefficients are functions of the $x^i$. In this case, the complexifications 
     \[\Sigma^\bbC\subset \bbP \T^{\ast,\bbC}N,\quad \wt{\Sigma}^\bbC\subset \T^{\ast,\bbC}N\]
     are naturally defined, and so the complex eikonal equation makes sense by allowing the function $\varphi$ to have complex values and requiring that $\dd\varphi\in\wt{\Sigma}^\bbC$. We remark that we may have $\Sigma=\varnothing$ but $\Sigma^\bbC\neq\varnothing$. \emph{From now on we assume that the $F^\lambda$ may be chosen to be homogeneous polynomials in the $\xi_i$}.
 \end{rem}
@@ -5005,7 +5005,7 @@ By definition, $\Xi^\bbC_N$ is the image of $\Xi^\bbC\cap \wt{\pi}^{-1}(\wt{i}_\
     The characteristic variety $\Xi^\bbC$ is called \emph{involutive} if the eikonal equation $E_{\Xi^\bbC_N}$ is involutive for any integral manifold $N$ of $\calI$.
 \end{defn}
 
-The following fundamental result essentially states that \emph{if $\calI$ is involutive, the its characteristic variety is involutive}. 
+The following fundamental result essentially states that \emph{if $\calI$ is involutive, then its characteristic variety is involutive}. 
 
 \begin{thm}[Cartan, Guillemin, Quillen, Sternberg, Gabber (1953-1981) {{\cite[Thm.~V.3.20]{Bryant}}}]
     Let $E\in \calV_n(\calI)$ be an ordinary integral element. Then $\Xi^\bbC$ is involutive in an open neighborhood $V$ of $E$.
@@ -5447,7 +5447,7 @@ This generic case is very interesting. A complete system of invariants was found
 
 
 
-\chapter{Curves and Surfaces \texorpdfstring{\ucmark}{}}
+\chapter{Curves and Surfaces}
 
 
 This \chap\ is a short introduction into Cartan's \emph{method of moving frames} and will work as motivation for the development of the theory of connections. It can be broadly seen as the application of Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} to submanifolds of a homogeneous space that carries some group of motions (e.g.,  the Euclidean group on the real affine space). Such submanifolds can be described by a finite collection of \emph{differential invariants} that can be found by pulling back the Maurer-Cartan form along a certain canonically chosen \emph{moving frame}. Conversely, the Fundamental Theorem shows that these differential invariants describe the submanifold (locally) uniquely, up to a global motion of the space. 
@@ -5969,7 +5969,7 @@ It's obvious that $\theta^i$ are horizontal for the principal bundle $\pi:\SE_3\
 
 The fact that the frame $\frake:\Sigma\to \SE_3$ is adapted means that, at every point of $\Sigma$,
 \[\frake^\ast(\theta^3)=0,\quad \frake^\ast(\theta^1\wedge\theta^2)\neq 0.\label{eq 2.2 Ivey}\]
-Let $\pi:P\to \Sigma$ be the bundle whose fiber over $p\in\Sigma$ is the set of oriented orthonormal bases $(e_1,e_2,e_3)$ of $\T_p \bbE^3$ such that $e_3\perp \T_p\Sigma$. The first-order adapted lifts are exactly the sections of $P$. After fixing a frame at an arbitrarily chosen origin in $\bbE^3$, $\SE_3$ is the total space of the bundle of all oriented orthonormal frames of $\bbE^3$, and $P$ is a subbundle of $\restr{\SE_3}{\Sigma}$.
+Let $\pi:P\to \Sigma$ be the bundle whose fiber over $p\in\Sigma$ is the set of oriented orthonormal bases $(e_1,e_2,e_3)\in\SO_3$ of $\T_p \bbE^3$ such that $e_3\perp \T_p\Sigma$. The first-order adapted lifts are exactly the sections of $P$. After fixing a frame at an arbitrarily chosen origin in $\bbE^3$, $\SE_3$ is the total space of the bundle of all oriented orthonormal frames of $\bbE^3$, and $P$ is a subbundle of $\restr{\SE_3}{\Sigma}$.
 
 The Maurer-Cartan equation lets us calculate the derivatives of the left-invariant forms on $\SE_3$ algebraically:
 \[\dd \begin{pmatrix}
@@ -6009,7 +6009,7 @@ i_P^\ast
     \theta^1 \\ \theta^2
 \end{pmatrix},\label{def h}
 \]
-where $h_{ij}=h_{ji}$ are some uniquely determined functions defined on $P$ (they are related to the Hessian of the parametrizing immersion $\bf{x}:U\to \bbE^3$). Given an adapted (local) lift $\frake:\Sigma\to P$, we have 
+where $h_{ij}=h_{ji}$ are some uniquely determined functions defined on $P$ (they are related to the Hessian of the parametrizing immersion $\bf{x}:U\to \bbE^3$). We view them as components of a symmetric matrix $h$. Given an adapted (local) lift $\frake:\Sigma\to P$, we have 
 \[\frake^\ast \begin{pmatrix}
     \omega_1^3 \\ \omega_2^3
 \end{pmatrix}=
@@ -6060,7 +6060,7 @@ In particular,
 \]
 Since $R^{-1}=R^T$, we conclude that 
 \[h_{\wt\frake}=R^{-1}h_\frake R.\]
-Thus, the properties of $\frake$ that are invariant under conjugation by a rotation matrix are invariants of the parametrizing map $\bf{x}$. By the spectral theorem for symmetric matrices, the functions $H=\frac12 \tr(h_\frake)$ and $K=\det h_\frake$ generate the ideal of invariant functions of $h_\frake$. They are exactly the mean curvature and the Gauss curvature. We see immediately that any two congruent surfaces must have the same $K$ and $H$ at corresponding points.
+This is exactly the transformation law for a section of $\T^1_1 \Sigma$, therefore $h_{\frake}$ actually represents a globally defined quadratic form $\sfh$ on $\Sigma$. In particular, the properties of $\sfh$ that are invariant under conjugation by a rotation matrix are invariants of the parametrizing map $\bf{x}$. By the spectral theorem for symmetric matrices, the functions $H=\frac12 \tr(h_\frake)$ and $K=\det h_\frake$ generate the ideal of invariant functions of $h_\frake$. They are exactly the mean curvature and the Gauss curvature. We see immediately that any two congruent surfaces must have the same $K$ and $H$ at corresponding points.
 
 
 We have the following naturally defined horizontal forms on $P$ (here the Kronecker tensor $\delta_{ij}$ is used in place of the standard metric on $\bbR^3$):
@@ -6079,13 +6079,13 @@ The first one is clearly just $\pi^\ast\rmI$. Meanwhile the second one gives ris
 
 \begin{rem}
     Treat the sphere $\bbS^2$ as the homogeneous space $\SE_3\slash\SE_2$ via the projection $(\bf{x},e_1,e_2,e_3)\mapsto e_3$. As such, the form $\omega_1^3\wedge\omega_2^3$ is the pullback of the area form on $\bbS^2$ because $\dd e_3=-(\omega_1^3 e_1+\omega_2^3 e_2)$. Since $\omega_1^3\wedge\omega_2^3=K\theta^1\wedge\theta^2$, we may interpret $K$ as a measure of how much the area of $\Sigma$ is (infinitesimally) distorted under the Gauss map $e_3:\Sigma\to \bbS^2$:
-    \[e_3^\ast \sfv_{\bbS^2}=K\sfv_{\Sigma},\]
-    were $\sfv_\Sigma=\theta^1\wedge\theta^2$ is the volume form on $\Sigma$. This can be viewed as the local version of the Gauss-Bonnet Theorem relating curvature to a smooth mapping to the sphere.\index{Theorem!Gauss-Bonnet}
+    \[e_3^\ast \sfv_{\bbS^2}=K\sfv_{\sfg},\label{eq gauss map pullback}\]
+    were $\sfv_\sfg=\theta^1\wedge\theta^2$ is the volume form on $\Sigma$. This can be viewed as the local version of the Gauss-Bonnet Theorem relating curvature to a smooth mapping to the sphere.\index{Theorem!Gauss-Bonnet}
 \end{rem}
 
 Another way to obtain the Gauss curvature is by differentiating $\omega_1^2$. Using the Maurer-Cartan equation, we obtain the \emph{Gauss equation}\index{Equation!Gauss}\index{Formula|see {Equation}}
 \[\dd\omega_1^2=-K\theta^1\wedge\theta^2.\label{eq 2.14 Ivey}\]
-We will later be able to interpret this equation as an integrability condition (the vanishing of the torsion) for a certain canonical \gls{eds}. In addition, the definition of $h$ (\ref{def h}) immediately implies, by multiplying its two rows by $\theta^2$ and $\theta^1$, respectively, that
+We will later be able to interpret this equation as an integrability condition (the vanishing of the torsion) for a certain canonical \gls{eds}. In addition, the definition of $\sfh$ (\ref{def h}) immediately implies, by multiplying its two rows by $\theta^2$ and $\theta^1$, respectively, that
 \[\omega_1^3\wedge\theta^2+\omega_2^3\wedge\theta^1=2H\theta^1\wedge\theta^2.\]
 
 \begin{rem}[Special coordinate systems on surfaces]
@@ -6331,7 +6331,7 @@ From our above computations, we know that along the lift of any hypothetical sur
         \begin{pmatrix}
             \omega_1^3\\\omega_2^3
         \end{pmatrix}
-        -\sfh 
+        -\sfh\cdot 
         \begin{pmatrix}
             \theta^1\\\theta^2
         \end{pmatrix}
@@ -6347,7 +6347,7 @@ From our above computations, we know that along the lift of any hypothetical sur
     \begin{pmatrix}
         \theta^1\\\theta^2
     \end{pmatrix}
-    +\sfh \begin{pmatrix}
+    +\sfh \cdot\begin{pmatrix}
         0&-\omega_1^2\\
         \omega_1^2& 0
     \end{pmatrix}\wedge 
@@ -6359,7 +6359,7 @@ From our above computations, we know that along the lift of any hypothetical sur
     -\begin{pmatrix}
         0&-\omega_1^2\\
         \omega_1^2& 0
-    \end{pmatrix}\wedge h
+    \end{pmatrix}\wedge \sfh\cdot
     \begin{pmatrix}
         \theta^1 \\ \theta^2
     \end{pmatrix}
@@ -6367,7 +6367,7 @@ From our above computations, we know that along the lift of any hypothetical sur
     \begin{pmatrix}
         \theta^1\\\theta^2
     \end{pmatrix}
-    +\sfh \begin{pmatrix}
+    +\sfh\cdot \begin{pmatrix}
         0&-\omega_1^2\\
         \omega_1^2& 0
     \end{pmatrix}\wedge 
@@ -6375,12 +6375,12 @@ From our above computations, we know that along the lift of any hypothetical sur
         \theta^1\\\theta^2
     \end{pmatrix}\pmod{\calI}.\label{eq I^1_taut structure}
 \end{multline}
-These derivatives must vanish along the integral manifolds. Thus, $\sfh$ must satisfy the \emph{Codazzi equation}\index{Equation!Codazzi} 
-\[\left\{\dd h+\left[
+These derivatives must vanish along the integral manifolds. Thus, $\sfh$ must satisfy the \emph{Codazzi-Mainardi equation},\index{Equation!Codazzi-Mainardi} which we will call the Codazzi equation:
+\[\left\{\dd \sfh+\left[
 \begin{pmatrix}
     0 & -\omega_1^2\\
     \omega_1^2 & 0
-\end{pmatrix},h
+\end{pmatrix},\sfh
 \right]\right\} \wedge 
 \begin{pmatrix}
     \theta^1\\\theta^2
@@ -6402,8 +6402,8 @@ Note that the immersion $\bf{x}$ needs to be specified to claim uniqueness up to
     and
     \[\dd\theta^1=\omega_1^2\wedge \theta^2,\quad \dd\theta^2=-\omega_1^2\wedge\theta^1.\]
     Then 
-    \[\pi^\ast\rmI=\sum_{i=1}^2\theta^i\otimes\theta^i,\quad \pi^\ast \wt{Q}=\sum_{i,j=1}^2 h_{ij}\theta^i\otimes\theta^j\]
-    with some uniquely determined functions $h_{ij}$. Now we define $\omega_1^3\coloneqq h_{11}\theta^1+h_{12}\theta^2$ and $\omega_2^3\coloneqq h_{12}\theta^1+h_{22}\theta^2$. Then, as we saw above, $\frake\coloneqq(\bf{x}_u,\bf{x}_v,\bf{x}_u\times \bf{x}_v)$ must satisfy 
+    \[\pi^\ast\rmI=\sum_{\mu=1}^2\theta^\mu\otimes\theta^\mu,\quad \pi^\ast \wt{Q}=\sum_{\mu,\nu=1}^2 h_{\mu\nu}\theta^\mu\otimes\theta^\nu\]
+    with some uniquely determined functions $h_{\mu\nu}$ such that $h_{12}=h_{21}$. Now we define $\omega_1^3\coloneqq h_{11}\theta^1+h_{12}\theta^2$ and $\omega_2^3\coloneqq h_{12}\theta^1+h_{22}\theta^2$. Then, as we saw above, $\frake\coloneqq(\bf{x}_u,\bf{x}_v,\bf{x}_u\times \bf{x}_v)$ must satisfy 
     \[\dd \begin{pmatrix}
         \frake & \bf{x}\\
         0& 1
@@ -6418,7 +6418,7 @@ Note that the immersion $\bf{x}$ needs to be specified to claim uniqueness up to
         0 & 0& 0& 0
     \end{pmatrix}.
     \]
-    Then the $4\times 4$ matrix on the right takes values in the Lie algebra $\frakse_3$, and Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} guarantees uniqueness of the map $\left(\begin{smallmatrix}
+    Then the $4\times 4$ matrix on the right takes values in the Lie algebra $\frakse_3$, and Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} guarantees the uniqueness of the map $\left(\begin{smallmatrix}
         \frake & \bf{x}\\
         0& 1
     \end{smallmatrix}\right): U\to \SE_3$ up to a left multiplication by an element of $\SE_3$, which is what a congruence is.
@@ -6555,7 +6555,7 @@ The procedure in the last \sect\ where we adjoined the Second Fundamental Form t
     \omega^3_2-h_{2\mu}\theta^\mu\\
     \theta^3
 \end{pmatrix}.\]
-The next example directly verifies the by now familiar fact that the prolongation of an involutive system is involutive. 
+The next example directly verifies, for this particular system, the by now familiar fact that the prolongation of an involutive system is involutive. 
 
 \begin{example}[Involutivity of $\calI^{(1)}_{\mathrm{taut}}$]
     Then (\ref{eq I^1_taut structure}) reads
@@ -6646,14 +6646,12 @@ where
 \end{pmatrix}
 \coloneqq 
 \begin{pmatrix}
-    \dd\wt{h}_{11} +2\wt{h}_{12}\omega^2_1+a_1 \theta^1+a_2\theta^2\\
-    \dd\wt{h}_{12}+(\wt{h}_{11}-\wt{h}_{22})\omega^2_1+b_1\theta^1+b_2\theta^2\\
-    \dd\wt{h}_{22}+2\wt{h}_{12}\omega^2_1+c_1\theta^1+c_2\theta^2
+    \dd\wt{h}_{11} +2\wt{h}_{12}\omega^2_1+a \theta^1+b\theta^2\\
+    \dd\wt{h}_{12}+(\wt{h}_{11}-\wt{h}_{22})\omega^2_1+b\theta^1+c\theta^2\\
+    \dd\wt{h}_{22}+2\wt{h}_{12}\omega^2_1+c\theta^1+d\theta^2
 \end{pmatrix},
 \]
-with $a_1,a_2,b_1,b_2,c_1,c_2$ arbitrary as long as 
-\[a_2=b_1,\ldots b_2=c_1,\]
-and the torsion is 
+with $a,b,c,d$ arbitrary, and the torsion is 
 \[t\coloneqq \det \wt{h}-\det h=\det\wt h-K.\]
 This torsion clearly has to vanish on any $3$-dimensional integral element of $\calI^{(1)}_\Sigma$, i.e., every such element lives over the subset of $M=P\times\SE_3$ on which $K=\det\wt h$. To ensure that this subset is a submanifold, we let $M'\subset M$ be the set of points where this equation is satisfied and at least one of $\wt{h}_{ij}$ is not zero. Clearly $M'\subset M$ is a submanifold, on which we find $D\wt h_{ij}$ linearly independent. On $M'$ we have
 \[
@@ -6848,7 +6846,7 @@ In summary:
 Another geometric structure closely related to the \gls{eds} for immersed surfaces if the following.
 
 \begin{example}[Triply orthogonal webs]\index{Web}\label{example orthogonal 3-webs}
-    A \emph{triply orthogonal web} is a triple of foliations of the Euclidean space $\bbE^3$ by surfaces whose leaves are pairwise orthogonal. Each leaf is perpendicular to (annihilated by) a unique unit-norm $1$-form $\eta_i$, up to a sign, which satisfies $\eta_i\wedge\dd\eta_i=0$ by the Frobenius Theorem in the form of Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1}. Let $P=\SE_3$ be the bundle of all orthonormal frames of $\T\bbE^3$, with the usual bundle projection $\pi:P\to \bbE^3$, so that each point of $P$ has the form $p=(m,e_1,e_2,e_3)$ for some $m\in \bbE^3$ and orthonormal basis $\frake=(e_1,e_2,e_3)\in \SO_3$ of $\T_{m}\bbE^3$ (in this case the set of frames is actually $\SO_3$ itself and not just an $\SO_3$-torsor because $\bbE^3$ has a canonical frame). The \emph{soldering $1$-form} $\theta\in \Omega^1(P;\bbR^3)$ on $P$ is defined by 
+    A \emph{triply orthogonal web} is a triple of foliations of the Euclidean space $\bbE^3$ by surfaces whose leaves are pairwise orthogonal. Each leaf is perpendicular to (annihilated by) a unique unit-norm $1$-form $\eta_i$, up to a sign, which satisfies $\eta_i\wedge\dd\eta_i=0$ by the Frobenius Theorem in the form of Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1}. Let $P=\SE_3$ be the bundle of all orthonormal frames of $\T\bbE^3$, with the usual bundle projection $\pi:P\to \bbE^3$, so that each point of $P$ has the form $p=(m,e_1,e_2,e_3)$ for some $m\in \bbE^3$ and orthonormal basis $\frake=(e_1,e_2,e_3)\in \SO_3$ of $\T_{m}\bbE^3$. The \emph{soldering $1$-form} $\theta\in \Omega^1(P;\bbR^3)$ on $P$ is defined by 
     \[\frake\cdot \theta(X)=\pi_\ast(X),\quad X\in \T P,\]
     i.e., it outputs the components of $\pi_\ast(X)$ in the frame $\frake$. In the above \sect s we encountered its components $\theta^i$, and we also constructed the $1$-forms 
     $\omega^i{}_j=\<\dd e_j,e_i\>,$
@@ -6979,7 +6977,7 @@ We now examine a geometrically natural class of surfaces, called \emph{linear We
 Suppose $\Sigma <\bbE^3$ is a smooth surface satisfying a linear Weingarten equation, and $\frake:\Sigma\to \SE_3$ is a first-order adapted framing along $\Sigma$. Then the framing gives an integral surface for the $1$-form $\theta^3$ on $\SE_3$ and for the $2$-form 
 \[\Psi\coloneqq A\omega_1^3 \wedge\omega_2^3+B(\omega_1^3\wedge\theta^2-\omega_2^3\wedge\theta^1)+C\theta^1\wedge\theta^2.\]
 This can be seen by verifying that $\frake^\ast \Psi=0$ via (\ref{def h}):
-\[\frake^\ast\Psi=(A\det h+B\tr h+C)\theta^1\wedge\theta^2=(AK+2BH+C)\theta^1\wedge\theta^2=0.\]
+\[\frake^\ast\Psi=(A\det \sfh+B\tr \sfh+C)\theta^1\wedge\theta^2=(AK+2BH+C)\theta^1\wedge\theta^2=0.\]
 Thus, the Weingarten equation is equivalent to the \gls{eds} $\calI=\<\theta^3,\Psi,\Theta\>$ on $\SE_3$, where 
 \[\Theta\coloneqq -\dd\theta^3=\omega_1^3\wedge\theta^1+\omega_2^3\wedge\theta^2.\]
 The \gls{eds} described in Example~\ref{ex Weingarten surfaces}, which encodes the same Weingarten equation, is the prolongation of $\calI$. Note that this system is hyperbolic, elliptic, or parabolic according to the sign of $B^2-AC$.
@@ -7045,14 +7043,14 @@ Then the $\{e_3,\bf{\epsilon}\}$-plane is orthogonal to $\bf{T}$. The angle betw
 Since $(\bf{T},\bf{\epsilon},e_3)$ gives an orthonormal frame of $\bbE^3$, when we restrict this frame to $\gamma$ we have 
 \[\dd (\gamma,\bf{T},\bf{\epsilon},e_3)=(\gamma,\bf{T},\bf{\epsilon},e_3)\begin{pmatrix}
     0&0&0&0\\
-    1&0&-\kappa_g &-\kappa_n\\
-    0&\kappa_g&0&-\tau_g\\
-    0&\kappa_n&\tau_g&0
+    1&0&-\kappa_{\mathrm{g}} &-\kappa_{\mathrm{n}}\\
+    0&\kappa_{\mathrm{g}}&0&-\tau_{\mathrm{g}}\\
+    0&\kappa_{\mathrm{n}}&\tau_{\mathrm{g}}&0
 \end{pmatrix}\dd s\]
-for some functions $\kappa_g(s),\kappa_n(s),\tau_g(s)$. To interpret these functions, notice that 
+for some functions $\kappa_{\mathrm{g}}(s),\kappa_{\mathrm{n}}(s),\tau_{\mathrm{g}}(s)$. To interpret these functions, notice that 
 \begin{align}
-    \kappa_g&=\kappa\sin\varpi=\<\kappa \bf{N},\bf{\epsilon}\>;\\
-    \kappa_n&=\kappa\cos\varpi=\<\kappa \bf{N},e_3\>.\\
+    \kappa_{\mathrm{g}}&=\kappa\sin\varpi=\<\kappa \bf{N},\bf{\epsilon}\>;\\
+    \kappa_{\mathrm{n}}&=\kappa\cos\varpi=\<\kappa \bf{N},e_3\>.\\
 \end{align}
 
 \begin{rem}[Covariant derivative and geodesic curvature]\label{rem covariant derivative on surfaces}
@@ -7064,24 +7062,24 @@ for some functions $\kappa_g(s),\kappa_n(s),\tau_g(s)$. To interpret these funct
 
     For now, the most important property of $\nabla$ for us is that $Y$ doesn't necessarily have to be defined on an open set of $\Sigma$. Given a smooth curve $\gamma$ on $\Sigma$, we can extend its velocity $\dot \gamma$ to a vector field $Y\in\fX(\Sigma)$ such that $Y\circ\gamma=\dot\gamma$. Then we can consider the object $(\nabla_{\dot\gamma}\dot\gamma)(s)\coloneqq (\nabla_{\dot\gamma}Y)\circ\gamma(s)$ and verify that this is actually independent of the specific choice of the extension $Y$ (indeed, only the components of $\dd Y^i$ along $\dot\gamma$ contribute to the result, and these are simply derivatives of $Y$ along $\gamma$, which don't depend on the extension). 
     
-    Curves such that $\nabla_{\dot\gamma}\dot\gamma=0$ are called \emph{geodesics}.\index{Geodesic} The quantity $\kappa_g$, in fact, satisfies 
-    \[\kappa_g=\lVert\nabla_{\dot\gamma}\dot\gamma\rVert,\]
+    Curves such that $\nabla_{\dot\gamma}\dot\gamma=0$ are called \emph{geodesics}.\index{Geodesic} The quantity $\kappa_{\mathrm{g}}$, in fact, satisfies 
+    \[\kappa_{\mathrm{g}}=\lVert\nabla_{\dot\gamma}\dot\gamma\rVert,\]
     which is why this quantity is called the \emph{geodesic curvature}. \index{Geodesic curvature}
 \end{rem}
 
-Note that if $\kappa_g\equiv 0$, then all of the curvature of the curve lies in the normal direction to the surface, and $\bf{\epsilon}\parallel \bf{B}$. Next, the Frenet-Serret equations show that $\kappa_n$ measures the curving of the surface in the direction of $\bf{T}$ (by measuring how the surface normal $e_3$ is turning); it is called the \emph{normal curvature}\index{Normal curvature} of $\Sigma$ along $\gamma$. Since it depends on the pointwise value of $\bf{T}$, it is really an invariant of the surface, independent of the parametrization of $\gamma$. We say $\gamma$ is an \emph{asymptotic line}\index{Asymptotic line} on $\Sigma$ if $\kappa_n\equiv 0$.
+Note that if $\kappa_{\mathrm{g}}\equiv 0$, then all of the curvature of the curve lies in the normal direction to the surface, and $\bf{\epsilon}\parallel \bf{B}$. Next, the Frenet-Serret equations show that $\kappa_{\mathrm{n}}$ measures the curving of the surface in the direction of $\bf{T}$ (by measuring how the surface normal $e_3$ is turning); it is called the \emph{normal curvature}\index{Normal curvature} of $\Sigma$ along $\gamma$. Since it depends on the pointwise value of $\bf{T}$, it is really an invariant of the surface, independent of the parametrization of $\gamma$. We say $\gamma$ is an \emph{asymptotic line}\index{Asymptotic line} on $\Sigma$ if $\kappa_{\mathrm{n}}\equiv 0$.
 
-Finally, $\tau_g$ measures what the torsion (as a curve in $\bbE^3$) of a geodesic having tangent vector $\bf{T}$ would be; it is called the \emph{geodesic torsion}\index{Geodesic torsion} of $\gamma$. Using the definition of the Second Fundamental Form $\rmII$, it is not hard to see that 
-\[\kappa_n=-\<\rmII(\bf{T},\bf{T}),e_3\>,\quad \tau_g=\<\rmII(\bf{\epsilon},\bf{T}),e_3\>,\quad \kappa_g=-(\dd \varphi+\omega^2_1)(\bf{T}).\]
+Finally, $\tau_{\mathrm{g}}$ measures what the torsion (as a curve in $\bbE^3$) of a geodesic having tangent vector $\bf{T}$ would be; it is called the \emph{geodesic torsion}\index{Geodesic torsion} of $\gamma$. Using the definition of the Second Fundamental Form $\rmII$, it is not hard to see that 
+\[\kappa_{\mathrm{n}}=-\<\rmII(\bf{T},\bf{T}),e_3\>,\quad \tau_{\mathrm{g}}=\<\rmII(\bf{\epsilon},\bf{T}),e_3\>,\quad \kappa_{\mathrm{g}}=-(\dd \varphi+\omega^2_1)(\bf{T}).\]
 
 \begin{xca}
     \begin{enumerate}
-        \item Show that $\kappa_g\equiv 0$ iff the \emph{osculating plane}\index{Osculating plane} to $\gamma$ spanned by $(\bf{T},\bf{N})$ is perpendicular to $\Sigma$ at each point.
-        \item Show that $\kappa_n=0$ (i.e., $\dot\gamma$ is an asymptotic direction) iff the tangent plane $\T_{\gamma}\Sigma$ is an osculating plane of the curve.
-        \item Show that $\nabla_{\dot\gamma}\dot\gamma=\kappa_g\bf{\epsilon}$.
-        \item Find formulas for $\kappa_n,\tau_g$ in terms of the principal curvatures $k_1,k_2$ when our surface is given a principal (Darboux) framing.
-        \item Find formulas for $\kappa_n,\tau_g$ when our surface is given a framing such that $e_1=\bf{T}$.
-        \item Calculate $\tau_g$ of a curve $\gamma$ such that $\dot\gamma$ is a principal direction (i.e., a direction where $\kappa_n$ is a principal curvature) at each point along $\gamma$. Such curves are called \emph{lines of curvature}.\index{Lines of curvature}
+        \item Show that $\kappa_{\mathrm{g}}\equiv 0$ iff the \emph{osculating plane}\index{Osculating plane} to $\gamma$ spanned by $(\bf{T},\bf{N})$ is perpendicular to $\Sigma$ at each point.
+        \item Show that $\kappa_{\mathrm{n}}=0$ (i.e., $\dot\gamma$ is an asymptotic direction) iff the tangent plane $\T_{\gamma}\Sigma$ is an osculating plane of the curve.
+        \item Show that $\nabla_{\dot\gamma}\dot\gamma=\kappa_{\mathrm{g}}\bf{\epsilon}$.
+        \item Find formulas for $\kappa_{\mathrm{n}},\tau_{\mathrm{g}}$ in terms of the principal curvatures $k_1,k_2$ when our surface is given a principal (Darboux) framing.
+        \item Find formulas for $\kappa_{\mathrm{n}},\tau_{\mathrm{g}}$ when our surface is given a framing such that $e_1=\bf{T}$.
+        \item Calculate $\tau_{\mathrm{g}}$ of a curve $\gamma$ such that $\dot\gamma$ is a principal direction (i.e., a direction where $\kappa_{\mathrm{n}}$ is a principal curvature) at each point along $\gamma$. Such curves are called \emph{lines of curvature}.\index{Lines of curvature}
     \end{enumerate}
 \end{xca}
 
@@ -7634,9 +7632,156 @@ For a much more detailed review of the concept of integrable systems, we direct 
 
 
 
-\section{Gauss-Bonnet theorem}
 
-We finish this \chap\ with a classical theorem that is not related to the method of moving frames, but is a major early milestone in \emph{global} results of differential geometry. 
+
+\section{Gauss-Bonnet and Poincar\'e theorems}
+
+We finish this \chap\ with a classical theorem that is a major early milestone in the history of differential geometry due to being the first \emph{global} result of the theory of surfaces. Moreover, it turns out to relate local geometric data (Gauss curvature) to global topological data, which is indepedent of the choice of metric, thus becoming a harbinger of the more modern results about topological invariants constructed out of geometric data.
+
+
+Suppose $\frake=(e_1,e_2)$ and $\wt\frake=(\wt e_1,\wt e_2)$ are two local orthonormal frames on a Riemannian surface $(\Sigma,\sfg)$. They are related by $\wt\frake=\frake\cdot R$ for some function $R:\Sigma\to \SO_2$. We have seen that the \emph{connection form} $\omega\coloneqq\omega^2_1$ is intrinsic, and can be expressed using an isometric immersion of $\Sigma$ into $\bbE^3$ via 
+\[e_2\omega=\dd e_1-\<\dd e_1,e_3\>e_3,\] 
+where $e_1,e_2,e_3$ are treated as $\bbR^3$-valued functions on $\Sigma$. (One can also obtain an intrinsic formula for $\omega$ in terms of $\sfg$ but we won't need it in this \chap.) From here, the rotation matrix $R$ induces the following tranformation of the connection form:
+\[\wt\omega =\omega+R^{-1}\dd R.\]
+The rotation matrix $R$ is of course uniquely identified with a counter-clockwise notation through some angle $\theta(m)$ dependent on the point $m\in \Sigma$. In terms of this angle, 
+\[\wt\omega =\omega+\dd\theta.\label{eq 169}\]
+
+Now consider a curve $\gamma:[0,1]\to \Sigma$ which lies in a region covered by an orthonormal frame $\frake$. Suppose that $X\in\fX(\Sigma)$ is a vector field whose values $X(t)$ along $\gamma$ have unit length. We define a map $\alpha:[0,1]\to \bbS^1\subset \bbR^2$ by letting $\alpha(t)$ be the image of $X(t)$ under the unique linear map $\im(\gamma)\to \bbR^2$ which takes $e_1(\gamma(t))$ to $\bf{e}_1=(1,0)$. We then have a continuous map $\phi:[0,1]\to \bbR$ with $\alpha(t)=(\cos\phi(t),\sin\phi(t))$, and any two such maps differ by a multiple of $2\pi$. We will refer to any such $\phi$ as a continuous choice of the angle between $e_1$ and $X$. It is easy to see that $\phi$ is actually smooth if $X$ and $\gamma$ are. 
+
+By choosing another local frame $\wt\frake$ such that $\wt e_1=X$ along $\gamma$ and using (\ref{eq 169}), it is now easy to see that 
+\[\nabla_{\dot\gamma}X=0 \Leftrightarrow \omega(\dot\gamma(t))+\dot\phi(t)=\wt\omega(\dot\gamma(t))=\<\nabla_{\dot\gamma}X,\wt e_2\> =0.\]
+We say that $X$ is \emph{parallel} along $\gamma$ when this holds. It follows that the connection form $\omega$ describes the rate at which a vector rotates while being parallel transported along $\gamma$. If $X$ is not parallel along $\gamma$, we get a nonzero quantity. In \S\ref{sec: pseudospherical surfaces} we defined the geodesic curvature and noted that it is intrinsic since $\kappa_{\mathrm{g}}=\lVert\nabla_{\dot\gamma}\dot\gamma\rVert$, or 
+\[\kappa_{\mathrm{g}}=\<\nabla_{\dot\gamma}\dot\gamma,\bf{N}\>.\]
+In terms of the angle $\phi$ between $e_1$ and $\dot\gamma(t)$, we have 
+\[\kappa_{\mathrm{g}}(t)=\omega(\dot\gamma(t))+\dot\phi(t).\]
+
+
+\begin{prop}
+    Let $(\Sigma,\sfg)$ be a compact oriented Riemannian surface, with connected boundary $\partial \Sigma$, diffeomorphic to a subset of $\bbR^2$. Let its Gaussian curvature be $K$ and its canonical area form $\sfv_\sfg$. Let $s$ be the arclength parameter along $\partial \Sigma$ and let $\kappa_{\mathrm{g}}$ be the signed geodesic curvature of $\partial \Sigma$ (on which the direction is induced by orientation). Then 
+    \[\int_\Sigma K\sfv_\sfg=-\oint_{\partial \Sigma}\kappa_{\mathrm{g}}\dd s+2\pi.\]
+\end{prop}
+\begin{proof}
+    Because of our assumptions, we may as well assume that $\Sigma\subset \bbR^2$. On it we define a positively oriented orthonormal frame $(e_1,e_2)$ be requiring $e_1$ to be a positive multiple of $\partial_{x^1}$. Let $\gamma:[0,1]\to \partial \Sigma$ be a closed curve, parametrized by arclength $\sigma$, such that $\dot\gamma(\sigma)$ is positively oriented, and let $\phi$ be a continuous choice of the angle between $e_1$ and $\dot\gamma$. Let $\omega$ be the connection form, which in this case can be defined globally. Then, using the Stokes Theorem and the above formula for $\kappa_{\mathrm{g}}$,
+    \begin{align}
+        \int_\Sigma K\sfv_\sfg&=\int_\Sigma K\theta^1\wedge\theta^2=-\int_\Sigma \dd \omega=-\int_{\partial \Sigma}\omega=\\
+        &=-\int_0^1 \omega(\dot\gamma(\sigma))\dd \sigma=\\
+        &=-\int_0^1\kappa_{\mathrm{g}}(\sigma)\dd\sigma+\int_0^1\dot\phi(\sigma)\dd\sigma=\\
+        &=-\int_{\partial \Sigma}\kappa_{\mathrm{g}}\dd s+\phi(1)-\phi(0).
+    \end{align}
+    To complete the proof, we have to show that $\phi(1)-\phi(0)=2\pi$. This is done essentially by reducing it to the flat case via a continuous deformation of the metric.
+
+    \begin{enumerate}[label=(\arabic*)]
+        \item The number $\phi(1)-\phi(0)$ is a multiple of $2\pi$ since $\phi(0),\phi(1)$ are both choices of the abgle for $\dot\gamma(0)=\dot\gamma(1)$.
+        \item Let $\delta$ be the standard metric on $\bbR^2$ (the Kronecker tensor). It is easy to check that for each $\lambda\in [0,1]$, the tensor 
+        \[\sfg^\lambda\coloneqq \lambda\sfg+(1-\lambda)\delta\]
+        is also a Riemannian metric. Let $(e_1^\lambda, e_2^\lambda)$ be a positively oriented local frame which is orthonormal w.r.t.\ $\sfg^\lambda$ and for which $e_1^\lambda$ is a positive multiple of $\partial_{x^1}$; then let $\phi^\lambda$ be a continuous choice of the angle between $e_1^\lambda$ and $\dot\gamma/\lVert\dot\gamma\rVert^\lambda$. The choice $\phi^\lambda$ clearly depends continuously on $\lambda$ (if we make $\phi^\lambda(0)$ vary continuously). Consequently, $\phi^\lambda(1)-\phi^\lambda(0)$ varies continuously with $\lambda$. Since it is always a multiple of $2\pi$, it must be constant.
+        \item When $\lambda=0$, we have $e_1^\lambda=\partial_{x^1}$ and $e_2^\lambda=\partial_{x^2}$, and consequently $\phi^0$ is just a choice of the angle between the $x$-axis and $\dot\gamma$. 
+    \end{enumerate}
+    So $\phi^0(1)-\phi^0(0)$ is the \emph{total curvature} of $\gamma$, which is  $2\pi$ by the \emph{Hopf Umlaufsatz}: indeed, curvature is the rate of rotation of the tangent to the curve in $\bbR^2$, and so the total curvature is the total change of that angle. But it is easy to see that replacing the tangent line with the line passing through two different points $\gamma(s_1),\gamma(s_2)$, $s_1\leq s_2$, on the curve gives a homotopy, where the original angle is the value along the diagonal $s_1=s_2$, and the total change from $(s_1,s_2)=(0,0)$ to $(1,1)$ is independent of the path taken within the triangle $0\leq s_1\leq s_2\leq 1$. On the other hand, if $s_1=0$ if fixed and $s_2$ increases to $1$, the change is obviously $\pi$ assuming $\gamma$ is a simple closed curve, and similarly for the segment from $(0,1)$ to $(1,1)$.
+\end{proof}
+
+
+In the next theorem we consider a generalization of this result for \emph{piecewise smooth} curves. Namely, a \emph{polygon} in $\Sigma$ is a simple closed curve which is a smooth embedding on each interval $[t_i,t_{i+1}]$ of some partition $0=t_0<\cdots<t_{n+1}=1$. Thus, the one-sided derivatives $\dot\gamma(t_i\pm 0)$ exist but may not coincide. It is clear how to define the vertices and the edges of the polygon. At each vertex $\gamma(t_i)$ we also define the \emph{interior angle} $\iota_i$ as the oriented angle from $\dot\gamma(t_i+0)$ to $-\dot\gamma(t_i-0)$ (if they point in the same direction, then one defines the angle to be either $0$ or $2\pi$ based on the orientation of the nearby pairs $(\dot\gamma(t_i+\epsilon),-\dot\gamma(t_i-\epsilon))$ for small $\epsilon>0$).
+
+Having defined the interior angle $\iota_i$, we define the \emph{discontinuity} $\delta_i$ of $\dot\gamma$ at $t_i$ by 
+\[\delta_i\coloneqq \pi-\iota_i\in [-\pi,\pi].\]
+This describes the oriented angle from $\dot\gamma(t_i-0)$ to $\dot\gamma(t_i+0)$.
+
+\begin{thm}[Gauss-Bonnet formula (1827-1848) {{\cite[Thm.~6.6]{Spivak3}}}]\index{Equation!Gauss-Bonnet}
+    In the setting of the preceding theorem, let $\partial M$ be a polygon with vertices $t_1,\ldots,t_n$ and discontinuities $\delta_1,\ldots,\delta_n$. Then 
+    \[\int_\Sigma K\sfv_\sfg=-\oint_{\partial \Sigma}\kappa_{\mathrm{g}}\dd s-\sum_{i=1}^n\delta_i+2\pi=-\oint_{\partial \Sigma}\kappa_{\mathrm{g}}\dd s+\sum_{i=1}^n\iota_i+(2-n)\pi.\]
+\end{thm}
+\begin{proof}
+    The proof proceeds much like in the previous theorem, except on each interval $[t_i,t_{i+1}]$ separately, leading to the sum $\sum_{i=1}^{n+1}(\phi_i(t_i)-\phi_i(t_{i-1}))$ instead of the single $\phi(1)-\phi(0)$. This equals $-\sum_{i=1}^n\delta_i+[\phi_{n+1}(1)-\phi_1(0)]$, so it remains only to show that the last term is $2\pi$. This is done in an obvious way by generalizing the Hopf Umlaufsatz by approximating the polygon with a smooth curve.
+\end{proof}
+
+
+\begin{cor}[{{\cite[Cor.~6.7]{Spivak3}}}]\label{cor 6.7 Spivak3}
+    If the sides of the polygon in the last theorem are geodesics, then 
+    \[\int_\Sigma K\sfv_\sfg=-\sum_{i=1}^n\delta_i+2\pi=\sum_{i=1}^n\iota_i+(2-n)\pi.\]
+    In particular, for a geodesic triangle, the total Gauss curvature equals $\iota_1+\iota_2+\iota_3-\pi$.
+\end{cor}
+
+We are now ready to compute the total curvature of a \emph{closed surface}, i.e., a compact one with no boundary. We do this under the assumption that the surface has a \emph{triangulation}, i.e., a (finite in this case) collection  $\{\sigma_i\}$ of diffeomorphic images of the standard triangle (\emph{2-simplex}) $\Delta_2\coloneqq \{\bf{x}\in\bbR^3:0\leq x^i\leq 1,\; \sum_{i=1}^3 x^i=1\}$ such that if two of them intersect, then the intersection must be an edge or a vertex. It is a difficult theorem that every smooth surface has a triangulation (and an analogous statement holds for all smooth manifolds of any dimensionality). For a given triangulation of $\Sigma$, which we treat as a ``curved'' polyhedron, we let 
+\[(V,E,F)\coloneqq \text{number of (vertices, edges, faces)}.\]
+One can prove directly that the quantity $V-E+F$ is independent of the triangulation, but we will do so indirectly in the following main theorem.
+
+\begin{thm}[Gauss-Bonnet-von Dyck (1888)]\index{Theorem!Gauss-Bonnet}\label{thm gauss-bonnet}
+    If $(\Sigma,\sfg)$ is a closed (compact with no boundary) oriented Riemannian surface with Gaussian curvature $K$, canonical area form $\sfv_\sfg$, and some triangulation with numbers $(V,E,F)$ defined as above, then 
+    \[\int_\Sigma K\sfv_\sfg=2\pi (V-E+F).\]
+    In particular, the integer $(V-E+F)$ is not dependent neither on the triangulation nor on the metric, and is thus a topological invariant called the \emph{Euler characteristic} $\chi(\Sigma)$. \index{Euler characteristic!of a closed surface}
+\end{thm}
+\begin{proof}
+    Let the triangulation consist of faces $\sigma_1,\ldots,\sigma_F$. Let $A_j,B_j,C_j$ be the three interior angles of $\sigma_j$. Then by Corollary~\ref{cor 6.7 Spivak3}
+    \[\int_\Sigma K\sfv_\sfg=\sum_{j=1}^F \oint_{\partial \sigma_i}\kappa_{\mathrm{g}}\dd s+\sum_{j=1}^F(A_j+B_j+C_j)-\sum_{j=1}^F 3\pi +\sum_{j=1}^F 2\pi.\]
+    Now we note the following equalities that lead to the asserted result.
+    \begin{enumerate}[label=(\arabic*)]
+        \item $\sum_j \oint \kappa_{\mathrm{g}}\dd s=0$, because each edge of the triangulation appears twice with opposite orientations.
+        \item $\sum_j (A_j+B_j+C_j)=2\pi V$ since the sum of all interior angles occurring at each vertex is $2\pi$.
+        \item $-\sum_j 3\pi=-3F\pi$. On the other hand, any triangulation has $3F=2E$ since $3F$ is the total number of edges of all faces, each edge being counted twice as it belongs to two faces. So, $-\sum_j 3\pi =2\pi (-E)$.
+        \item $\sum_j 2\pi=2\pi F$.
+    \end{enumerate}
+\end{proof}
+
+\begin{xca}
+    It turns out that $\chi(\Sigma)$ completely classifies closed oriented surface up to homeomorphism. Show that a surface of genus $g$ has $\chi=2-2g$.
+\end{xca}
+
+The most immediate implications of this theorem are the connections between the bounds on the values of $K$ and the topology of $\Sigma$. For example, if $\Sigma$ admits a flat metric, then it must be (homeomorphic to) a torus, and if it admits a metric of everywhere positive curvature, then it must be a sphere. If $K$ is everywhere negative, then an upper bound on its values puts a lower bound on the genus $g>0$.
+
+The following corollary has to do with the degree of the Gauss map. If $M$  and $N$ are both compact $n$-manifolds, then the \emph{degree} of a map $f:M\to N$ is defined by the formula 
+\[\int_M f^\ast \omega=\deg f\cdot \int_N\omega\]
+for any $\omega\in\Omega^n(N)$. For non-compact manifolds, the degree can also be defined for proper maps by requiring that $\omega$ have compact support. For now, we will not prove the surprising fact that $\deg f$ is an integer independent of $\omega$. In the case of $M=N=\bbS^n$, the degree is exactly the corresponding element of the homotopy group $\pi_n(\bbS^n)\cong\bbZ$ (where the generator of the group is given by the identity map).
+
+\begin{cor}[{{\cite[Thm.~6.10]{Spivak3}}}]
+    Let $\Sigma\subset\bbE^3$ be an embedded oriented closed surface and let $e_3:\Sigma\to \bbS^2$ be its Gauss map (normal vector). Then 
+    \[\deg e_3=\frac12 \chi(\Sigma).\]
+\end{cor}
+\begin{proof}
+    By definition of the degree, $\int_\Sigma e_3^\ast \omega=\deg e_3\cdot\int_{\bbS^2}\omega$ for all $\omega\in\Omega^2(\bbS^2)$. Choosing $\omega=\sfv$ to be the standard are form on $\bbS^2$, this means that by (\ref{eq gauss map pullback})
+    \[4\pi \deg e_3=\int_\Sigma e_3^\ast \sfv=\int_\Sigma K \sfv_\sfg.\]
+    Together with the Gauss-Bonnet Theorem, this yields the assertion.
+\end{proof}
+
+This relation between the degree and the Euler characteristic can also be proven directly, and in fact holds for hypersurfaces in $\bbE^n$ for any $n$. This was an important intermediate result on the way to the higher-dimensional generalization of the Gauss-Bonnet Theorem.
+
+The final classical theorem involves the notion of the index of a vector field. For a vector field $X\in\fX(\Sigma)$ on a surface $\Sigma$, let $m_0\in \Sigma$ be an \emph{isolated zero}, i.e., $X\neq 0$ in a punctured open neighborhood $U\setminus\{m_0\}$ of $m_0$. Choose $U$ so that it is diffeomorphic to a disk. Then the index $\ind_{m_0}X$ of $X$ at $m_0$ is defined as the winding number of the map $\bbS^1\to \bbS^1$ given by 
+\[\bbS^1\ni p\mapsto X(i(p))/\lVert X(i(p))\rVert\in\bbS^1,\]
+where $i:\bbS^1\to \partial U$ is a diffeomorphism and $\lVert\cdot\rVert$ is an arbitrary metric. It is easy to see that all possible choices of $U, i$, or the metric lead to homotopic maps, so the index is a well-defined invariant of $X$ itself. 
+
+On a closed surface $\Sigma$, we will consider vector fields $X$ that have only isolated zeros. In this case there can only be finitely many zeros $m_1,\ldots,m_r$, and we define the (total) \emph{index} of $X$ as 
+\[\ind X\coloneqq \sum_{i=1}^r \ind_{m_i}X.\]
+One can prove directly that $\ind X=\chi(\Sigma)$ for any admissible $X$, as was first done by Poincar\'e in 1881. The idea is to first show that the index is independent of the particular vector field $X$, and then to associate to every triangulation a standard vector field as in Figure~\ref{fig poincare-hopf} whose index is manifestly $V-E+F$. Instead of detailing this argument, we will obtain the same result indirectly via the following theorem.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{figures/poincare-hopf.pdf}
+    \caption{A standard vector field associated to a triangulation in the direct proof of Poincar\'e's Theorem. From \cite{Ivey}. \label{fig poincare-hopf}}
+\end{figure}
+
+\begin{thm}[Poincar\'e (1881) {{\cite[Thm.~6.9]{Spivak3}}}]\label{thm poincare-hopf}
+    On a closed Riemannian surface $(\Sigma,\sfg)$ with Gaussian curvature $K$ and canonical area form $\sfv_\sfg$, let $X$ be a smooth vector fields with only isolated zeros. Then 
+    \[\int_\Sigma K\sfv_\sfg=2\pi \ind X.\]
+    In particular, $\ind X$ is independent of $X$ and hence is a topological invariant of $\Sigma$ equal to the Euler characteristic $\chi(\Sigma)$.
+\end{thm}
+\begin{proof}
+    Let $m_1,\ldots,m_r$ be the zeros of $X$, and choose disjoint disks $D_i\subset \Sigma$ containing $m_i$. Each $D_i$ is diffeomorphic to the standard disk $\bbD^2=\{\bf{x}\in\bbR^2\mid \lVert\bf{x}\rVert\leq 1\}$, and we let $D_i(\epsilon)$ denote the set corresponding to $\lVert \bf{x}\rVert\leq \epsilon$. Let 
+    \[\Sigma(\epsilon)\coloneqq \Sigma\setminus \left(\bigcup_i \mathring{D}_i(\epsilon)\right).\]
+    On $\Sigma(\epsilon)$ there is a positively oriented local frame $(e_1,e_2)$ with $e_1=X/\lVert X\rVert$. Then 
+    \[\int_{\Sigma(\epsilon)}K\sfv_\sfg=-\int_{\Sigma(\epsilon)}\dd \omega=-\sum_i \oint_{\partial D_i(\epsilon)} \omega.\]
+    Consider one particular $i$. Let $(\wt e_1,\wt e_2)$ be a positively oriented orthonormal frame on $D_i$. On $D_i$ minus a line segment we have a differentiable choice of the angle $\theta$ between $e_1$ and $\wt e_1$, and by (\ref{eq 169}),
+    \[-\oint_{\partial D_i(\epsilon)}\omega=\oint_{\partial D_i(\epsilon)} \dd\theta-\oint_{\partial D_i(\epsilon)}\wt\omega=\ind_{m_i}X-\oint_{\partial D_i(\epsilon)}\wt\omega,\]
+    where $\wt\omega$ also depends on $i$. Therefore, 
+    \[-\lim_{\epsilon\to 0}\oint_{\partial D_i(\epsilon)}\omega=\ind_{m_i}X,\]
+    which concludes the proof.
+\end{proof}
+
+\begin{rem}
+    We have thus proven the equivalence of three different ways of defining the Euler characteristic of a closed oriented surface: via a triangulation, via the index of a generic vector field, and via the total Gaussian curvature:
+    \[\ind X=\chi(\Sigma)=\int_\Sigma K\sfv_\sfg.\]
+    The generalization of the equality $\ind X=\chi(M)$ to closed manifolds $M$ of arbitrary dimensionality was obtained by Hopf in 1921 and is known as the Poincar\'e-Hopf Theorem. \index{Theorem!Poincar\'e-Hopf} Meanwhile, the generalization of the Gauss-Bonnet Theorem to closed oriented manifolds of arbitrary even dimensionality was completed by Chern in 1944 and is known as the Chern-Gauss-Bonnet Theorem. We will prove both of these generalizations as part of our discussion of characteristic classes.
+\end{rem}
+
 
 
 
