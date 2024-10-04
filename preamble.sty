@@ -27,6 +27,7 @@
 \usepackage{booktabs}
 \usepackage{wrapfig}
 \usepackage{adjustbox}
+\usepackage{enumerate}
 
 \usepackage{import}
 % \graphicspath{{figures/}}
@@ -431,17 +432,17 @@
 \newcommand{\rmS}{\mathrm{S}}
 \newcommand{\rmT}{\mathrm{T}}
 \newcommand{\T}{\mathrm{T}}
+\newcommand{\D}{\mathrm{D}}
 \newcommand{\rmV}{\mathrm{V}}
 \newcommand{\rmZ}{\mathrm{Z}}
 \newcommand{\rmi}{\i}
 \newcommand{\rme}{\mathrm{e}}
 
-\newcommand{\KP}{\mathbb{K}\mathrm{P}}
-\newcommand{\RP}{\mathbb{R}\mathrm{P}}
-\newcommand{\CP}{\mathbb{C}\mathrm{P}}
+\newcommand{\KP}{\mathbb{K}\mathbb{P}}
+\newcommand{\RP}{\mathbb{R}\mathbb{P}}
+\newcommand{\CP}{\mathbb{C}\mathbb{P}}
 
 \newcommand{\const}{\mathrm{const}}
-\newcommand{\tra}{\mathrm{tra}}
 % \newcommand{\Lin}{\bm\mathrm{L}}
 
 \newcommand{\sfg}{\mathsf{g}}
@@ -495,16 +496,15 @@
 \DeclareMathOperator{\Pin}{Pin}
 \DeclareMathOperator{\Spin}{Spin}
 \DeclareMathOperator{\Hol}{Hol}
-\DeclareMathOperator{\hol}{\mathfrak{hol}}
 \DeclareMathOperator{\Ric}{\mathsf{Ric}}
 \DeclareMathOperator{\Mon}{Mon}
 \DeclareMathOperator{\Aff}{Aff}
 \DeclareMathOperator{\SAff}{ASL}
 \DeclareMathOperator{\Heis}{Heis}
 \DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PGL}{\mathbb{P}GL}
 \DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PSL}{\mathbb{P}SL}
 \DeclareMathOperator{\Or}{O}
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\CO}{CO}
@@ -536,6 +536,13 @@
 \DeclareMathOperator{\Lief}{\bf{Lie}}
 \DeclareMathOperator{\PDO}{PDO}
 \DeclareMathOperator{\OP}{OP}
+\DeclareMathOperator{\tra}{\mathsf{tra}}
+\DeclareMathOperator{\dev}{\mathsf{dev}}
+\DeclareMathOperator{\hol}{\mathsf{hol}}
+\DeclareMathOperator{\vol}{\mathsf{vol}}
+\DeclareMathOperator{\frakhol}{\mathfrak{hol}}
+
+
 
 \newcommand{\Lie}{\mathcal{L}}
 \newcommand{\colimit}{\varinjlim}
@@ -607,7 +614,31 @@
 \usepackage{scalerel}
 \newcommand\wh[1]{\hstretch{1.42}{\hat{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu} %requires \usepackage{graphicx,scalerel}
 \newcommand\wt[1]{\hstretch{1.42}{\tilde{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
-\newcommand\wb[1]{\hstretch{1.42}{\bar{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
+% \newcommand\wb[1]{\hstretch{1.42}{\bar{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
+
+
+
+%%%% DEFINE A BETTER WIDEBAR \wb
+\makeatletter
+\renewcommand*\rel@kern[1]{\kern#1\dimexpr\macc@kerna}
+\newcommand*\wb[1]{%
+  \begingroup
+  \def\mathaccent##1##2{%
+    \rel@kern{0.8}%
+    \overline{\rel@kern{-0.8}\macc@nucleus\rel@kern{0.2}}%
+    \rel@kern{-0.2}%
+  }%
+  \macc@depth\@ne
+  \let\math@bgroup\@empty \let\math@egroup\macc@set@skewchar
+  \mathsurround\z@ \frozen@everymath{\mathgroup\macc@group\relax}%
+  \macc@set@skewchar\relax
+  \let\mathaccentV\macc@nested@a
+  \macc@nested@a\relax111{#1}%
+  \endgroup
+}
+\makeatother
+
+
 
 
 

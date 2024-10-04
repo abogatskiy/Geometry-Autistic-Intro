@@ -19,7 +19,7 @@ Topics covered (the ones with ellipses are under construction)
 * Lie groups and algebras
 * Fiber bundles
 * Lie group actions
-* Cartan's approach to PDEs (Exterior Differential Systems)...
+* Cartan's approach to PDEs (Exterior Differential Systems)
 * Curves and Surfaces
 * Principal connections
 * Cartan connections...

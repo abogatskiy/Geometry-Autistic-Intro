@@ -476,14 +476,14 @@ We note that this is not the ``proper'' definition of spin groups, which is actu
 \begin{prop}
     The following deformation retracts exist:
     \begin{gather}
-        \GL_n(\bbR)\to \Or_n(\bbR),\quad \GL_n(\bbC)\to \U_n, \quad \GL_n(\bbH)\to \Sp_n,\\
-        \SL_n(\bbR)\to \SO_n(\bbR),\quad \SL_n(\bbC)\to \SU_n.
+        \GL_n(\bbR)\to \Or_n,\quad \GL_n(\bbC)\to \U_n, \quad \GL_n(\bbH)\to \Sp_n,\\
+        \SL_n(\bbR)\to \SO_n,\quad \SL_n(\bbC)\to \SU_n.
     \end{gather}
 \end{prop}
 \begin{proof}
      This is done by Gram-Schmidt orthonormalization and its complex and quaternionic analogs. To any ordered basis $(v_1,v_2,\ldots,v_n)$ of the space $V=\bbK^n$ associate the ``flag'' of subspaces $V_0=\{0\}$, $V_1=\langle v_1\rangle$, $V_2=\langle v_1,v_2\rangle$, and so on until $V_n=V$. The Gram-Schmidt algorithm turns any such basis into an orthonormal basis $(b_1,\ldots,b_n)$ that gives rise to the same flag of subspaces. It is moreover the unique such basis (orthonormal and with this same flag) for which in addition each $b_i$, inside $V_i$, is on the same side of the hyperplane $V_{i-1}$ as the original basis vector $v_i$.
 
-     Now taking $V=\bbR^n$ we can identify $\GL_n^+(\bbR)$ (the identity component of $\GL_n(\bbR)$) with the set of ordered bases $\bf{v}=(v_1,\ldots,v_n)$  with $\det \bf{v}>0$, and $\SO_n(\bbR)$ with the set of orthonormal bases $\bf{b}$ with $\det \bf{b}=1$. Now for such a basis $\bf{v}$ let $\bf{b}$ be the corresponding Gram-Schmidt orthonormal basis, and simultaneously (or successively) deform every $v_i$ linearly to $b_i$, as $t\mapsto (1-t)v_i+t b_i$. The intermediate vectors stay inside $V_i$, and since $b_i$ is on the same side as $v_i$, they never enter $V_{i-1}$. This means the deformed vectors stay linearly independent at all times, so the deformation takes place inside $\GL_n(\bbR)$. Since we started in $\GL^+_n(\bbR)$, this means that we end in it as well, an in particular in $\SO_n(\bbR)$. This is in fact a strong deformation retract: elements of $\SO_n(\bbR)$ stay fixed the whole time. The second component of $\GL_n(\bbR)$ is diffeomorphic to the identity component and thus retracts in the same way onto the second component of $\Or_n(\bbR)$.
+     Now taking $V=\bbR^n$ we can identify $\GL_n^+(\bbR)$ (the identity component of $\GL_n(\bbR)$) with the set of ordered bases $\bf{v}=(v_1,\ldots,v_n)$  with $\det \bf{v}>0$, and $\SO_n$ with the set of orthonormal bases $\bf{b}$ with $\det \bf{b}=1$. Now for such a basis $\bf{v}$ let $\bf{b}$ be the corresponding Gram-Schmidt orthonormal basis, and simultaneously (or successively) deform every $v_i$ linearly to $b_i$, as $t\mapsto (1-t)v_i+t b_i$. The intermediate vectors stay inside $V_i$, and since $b_i$ is on the same side as $v_i$, they never enter $V_{i-1}$. This means the deformed vectors stay linearly independent at all times, so the deformation takes place inside $\GL_n(\bbR)$. Since we started in $\GL^+_n(\bbR)$, this means that we end in it as well, an in particular in $\SO_n(\bbR)$. This is in fact a strong deformation retract: elements of $\SO_n$ stay fixed the whole time. The second component of $\GL_n(\bbR)$ is diffeomorphic to the identity component and thus retracts in the same way onto the second component of $\Or_n$.
 
      The same approach works for $\bbC$ and $\bbH$, though it might be easier to rewrite the Gram-Schmidt process in terms of matrix factorization. For the unimodular groups, notice that $\GL_n(\bbK)\cong \bbK^\ast \times \SL_n(\bbK)$ and the restrictions of the above deformation retractions to $\{1\}\times \SL_n(\bbK)$ give exactly the stated groups.
 \end{proof}
@@ -682,8 +682,8 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
 
 % \begin{example}[Classical groups]\index{Group!classical}
 %     \begin{enumerate}[label=(\alph*)]
-%         \item $\Or_n(\bbR)$ is the level set $F^{-1}(\rmI_n)$ of the map $F:\GL_n(\bbR)\to \Mat_n(\bbR)$, $A\mapsto A^TA$. $F$ intertwines the right action of $\GL_n(\bbR)$ on itself with its right action $B\mapsto B^TAB$ on $\Mat_n(\bbR)$ (both actions are clearly smooth). Thus $\Or_n(\bbR)$ is a properly embedded Lie subgroup of $\GL_n(\bbR)$. It is compact because it is closed and bounded in $\Mat_n(\bbR)$: closed because it is a level set of $F$, and bounded because the matix norm of each orthogonal matrix is $\sqrt{n}$.
-%         \item $\SO_n(\bbR)$ is the identity component of $\Or_n(\bbR)$, which is also the set of orthogonal determinant that have determinant $+1$ and thus preserve spatial orientations. Therefore it is an open Lie subgroup of $\Or_n(\bbR)$.
+%         \item $\Or_n$ is the level set $F^{-1}(\rmI_n)$ of the map $F:\GL_n(\bbR)\to \Mat_n(\bbR)$, $A\mapsto A^TA$. $F$ intertwines the right action of $\GL_n(\bbR)$ on itself with its right action $B\mapsto B^TAB$ on $\Mat_n(\bbR)$ (both actions are clearly smooth). Thus $\Or_n$ is a properly embedded Lie subgroup of $\GL_n(\bbR)$. It is compact because it is closed and bounded in $\Mat_n(\bbR)$: closed because it is a level set of $F$, and bounded because the matix norm of each orthogonal matrix is $\sqrt{n}$.
+%         \item $\SO_n$ is the identity component of $\Or_n$, which is also the set of orthogonal determinant that have determinant $+1$ and thus preserve spatial orientations. Therefore it is an open Lie subgroup of $\Or_n$.
 %         \item $U_n\subset \GL_n(\bbC)$ is defined similarly as the level set of $A\mapsto A^\ast A$ and is therefore a properly embedded Lie subgroup of $\GL_n(\bbC)$ of real dimension $n^2$. $\SU_n=\U_n\cap \SL_n(\bbC)$ and it is easy to check that $\SU_n$ is a properly embedded Lie subgroup of $U_n$ of real dimension $n^2-1$.
 %     \end{enumerate}
 % \end{example}
@@ -705,7 +705,7 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
 It is easy to check that the product defined above is a valid group product, and it's clearly smooth along with its inverse $(n,h)^{-1}=(\Phi_h^{-1}(n^{-1}),h^{-1})$.
 
 \begin{example}[The Euclidean group]\index{Group!Euclidean}
-    $\Or_n(\bbR)$ acts by automorphisms on the translation group $\bbR^n$. Their semidirect product is the Euclidean group $\rmE_n=\bbR^n\rtimes \Or_n(\bbR)$:
+    $\Or_n$ acts by automorphisms on the translation group $\bbR^n$. Their semidirect product is the Euclidean group $\rmE_n=\bbR^n\rtimes \Or_n$:
     \[(b,A)(b',A')=(n+An',AA').\]
     It also acts on $\bbR^n$ via 
     \[(b,A)\cdot x=b+Ax.\]
@@ -730,7 +730,7 @@ This kind of a semiproduct is called \emph{internal}, but this theorem essential
 \begin{xca}
     Show the following isomorphisms (recall that in a semidirect product $N\rtimes H$, $N$ is a normal subgroup):
     \begin{enumerate}[label=(\alph*)]
-        \item $\Or_n(\bbR)\cong \SO_n(\bbR)\rtimes \Or_1$.
+        \item $\Or_n\cong \SO_n\rtimes \Or_1$.
         \item $\U_n(\bbR)\cong \SU_n(\bbR)\rtimes \U_1$.
         \item $\GL_n(\bbR)\cong \SL_n(\bbR)\rtimes \bbR^\times$.
         \item $\GL_n(\bbC)\cong \SL_n(\bbC)\rtimes \bbC^\ast$.
@@ -5048,7 +5048,7 @@ The final application requires some familiarity with complex analysis. Some basi
 \begin{rem}[$\wb\partial$-problem]
     Similarly, one can derive the Cauchy residue theorem by using the \emph{Sokhotski-Plemelj formula}\index{Equation!Sokhotski-Plemelj} 
     \[\wb\partial \frac{1}{z}=\pi \delta(z),\label{eq Sokhotski-Plemelj}\] where $\delta(z)=\delta(x)\delta(y)$ is the regular Dirac delta-function in the plane. Its more general form, which follows directly from (\ref{eq Sokhotski-Plemelj}) and the Stokes Theorem, is the so called $\wb\partial$-formula:\index{Equation!$\wb\partial$-formula}
-    \[f(z_0,\wb{z}_0)=\frac{1}{2\pi \i}\oint_{\partial D}\frac{f(z,\wb{z})\dd z}{z-z_0}+\frac{1}{2\pi\i}\iint_D \frac{\wb\partial f}{z-z_0}\dd z\wedge\dd\wb{z},\]
+    \[f(z_0,\wb{z}_0)=\frac{1}{2\pi \i}\oint_{\partial D}\frac{f(z,\wb{z})\dd z}{z-z_0}+\frac{1}{2\pi\i}\iint_D \frac{\wb\partial f}{z-z_0}\dd z\wedge\dd\wb{z},\label{eq dbar formula}\]
     which holds as long as $f$ is smooth (in fact it only needs to be differentiable) up to the boundary of the domain $D\subset\bbC$, and $z_0\in D$.
     This formula provides the solution to the classical \emph{$\wb\partial$-problem}, which is a boundary value problem for PDEs of the form $\wb\partial f=g$, where $g$ is given and $f$ is unknown.
 \end{rem}
@@ -5298,14 +5298,14 @@ Next, we derive local criteria for a regular Pfaffian system to be integrable. W
 
 The following local version is a more classical formulation of the Frobenius Theorem.
 
-\begin{prop}[Frobenius Theorem {{\cite[Prop.~4.7.10]{RS1}}}]\label{prop 4.7.10 RS1}
+\begin{thm}[Frobenius Theorem {{\cite[Prop.~4.7.10]{RS1}}}]\label{prop 4.7.10 RS1}
     Let $\Delta$ be a regular Pfaffian system of rank $r$ on $M$. \gls{tfae}:
     \begin{enumerate}
         \item $\Delta$ is integrable.
         \item For every $m\in M$, there exist a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ at $m$ and local $1$-forms $\gamma_j^i$, $i,j=1,\ldots,r$, such that for all $i=1,\ldots,r$ one has $\dd\theta^i=\sum_{j=1}^r \theta^j\wedge \gamma_j^i$.
         \item For every $m\in M$, there exist a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ at $m$ such that for all $i=1,\ldots,r$ one has $\dd\theta^i\wedge \theta^1\cdots\wedge\theta^r=0$.
     \end{enumerate}
-\end{prop}
+\end{thm}
 \begin{proof}
     $1\implies2$: Choose a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ over a neighborhood $U$ of $m$. Since $\Delta$ is integrable, so is the Pfaffian system $\Delta_U=\Delta\cap \T^\ast U$ on $U$. Hence, by Theorem~\ref{thm 4.7.8 RS1}, $\dd\theta^i\in\Omega^{\smbullet }_{\Delta_U}(M)$. Application of Lemma~\ref{lem 4.7.9 RS1} to the manifold $U$ and the Pfaffian system $\Delta_U$ yields the assertion.
 
@@ -5326,7 +5326,7 @@ The following local version is a more classical formulation of the Frobenius The
 For a deep application of the Frobenius Theorem, see \S\ref{sec: theory of surfaces}.
 
 \begin{example}
-    Let $M=\bbR^3$ and let $\Delta$ be the Pfaffian system spanned by a nowhere-vanishing $1$-form $\theta$ on $M$. According to Proposition~\ref{prop 4.7.10 RS1}(3), $\Delta$ is integrable iff $\dd\theta\wedge\theta=0$. Writing $\theta=\theta_i\dd x^i$, we have
+    Let $M=\bbR^3$ and let $\Delta$ be the Pfaffian system spanned by a nowhere-vanishing $1$-form $\theta$ on $M$. According to Theorem~\ref{prop 4.7.10 RS1}(3), $\Delta$ is integrable iff $\dd\theta\wedge\theta=0$. Writing $\theta=\theta_i\dd x^i$, we have
     \[\dd\theta=(\partial_1\theta_2-\partial_2\theta_1)\dd x^1\wedge\dd x^2+\mathrm{c.p.},\]
     where ``c.p.'' stands for two more terms obtained by cyclic permutations of $(1,2,3)$. Thus $\dd\theta\wedge\theta=0$ is equivalent to
     \[(\partial_2\theta_3-\partial_3\theta_2)\theta_1+(\partial_3\theta_1-\partial_1\theta_3)\theta_2+(\partial_1\theta_2-\partial_2\theta_1)\theta_3=0.\]
@@ -5380,7 +5380,7 @@ We can now go back to Pfaff's condition from Proposition~\ref{prop 4.7.6 RS1 pfa
 \begin{proof}
     First assume that a local integrating factor $f$ exists on $U$. Then 
     \[0=\dd(f\restr{\theta}{U})=\dd f\wedge\restr{\theta}{U}+f\dd\restr{\theta}{U},\]
-    hence $\dd\restr{\theta}{U}=\restr{\theta}{U}\wedge \dd f/f$, and Proposition~\ref{prop 4.7.10 RS1}(2) yields that $\Delta$ is integrable. Conversely, if $\Delta$ is integrable, so is the regular distribution $\Delta^0$ of rank $n-1$ on $M$. Hence, according, for example, to \ref{cor 19.13 Lee}, for every $m\in M$ there exists a local chart $(U,\bf{x})$ at $m$ such that $\{\partial^{x_i}\}_{i=1}^{n-1}$ is a local frame in $\Delta^0$ at $m$. Then $\theta=h\dd x^n$ for some $h\in C^\infty(U)$. Since $\theta$ is nowhere-vanishing, so is $h$. Thus $f=h^{-1}$ is an integrating factor for $\restr{\theta}{U}$.
+    hence $\dd\restr{\theta}{U}=\restr{\theta}{U}\wedge \dd f/f$, and Theorem~\ref{prop 4.7.10 RS1}(2) yields that $\Delta$ is integrable. Conversely, if $\Delta$ is integrable, so is the regular distribution $\Delta^0$ of rank $n-1$ on $M$. Hence, according, for example, to \ref{cor 19.13 Lee}, for every $m\in M$ there exists a local chart $(U,\bf{x})$ at $m$ such that $\{\partial^{x_i}\}_{i=1}^{n-1}$ is a local frame in $\Delta^0$ at $m$. Then $\theta=h\dd x^n$ for some $h\in C^\infty(U)$. Since $\theta$ is nowhere-vanishing, so is $h$. Thus $f=h^{-1}$ is an integrating factor for $\restr{\theta}{U}$.
 
     Next, let $g\in C^\infty(U)$ be such that $f\restr{\theta}{U}=\dd g$ and let $\Sigma$ be a level set component of $g$. Since $\dd g=f\restr{\theta}{U}$ is nowhere-vanishing, every point of $U$ is regular for $g$. Thus $\Sigma$ is an embedded submanifold of dimension $n-1$ of $U$ (and hence of $M$). Let $i:\Sigma\hookrightarrow M$ denote the natural inclusion. Due to
     \[i^\ast\restr{\theta}{U}=\frac{1}{\restr{f}{\Sigma}}i^\ast(f\restr{\theta}{U})=\frac{1}{\restr{f}{\Sigma}}i^\ast(\dd g)=\frac{1}{\restr{f}{\Sigma}}\dd(\restr{g}{\Sigma})=0, \]
@@ -5967,7 +5967,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
 \end{rem}
 
 \begin{rem}
-    As we have seen  in Proposition~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by nowhere-vanishing $1$-forms $\theta^i$ (or equivalently the distribution $\bigcap_i\ker\theta^i$) is integrable iff $\dd \theta^i=\xi^i_j\wedge\theta^j$ at least locally for some matrix of $1$-forms $\xi^i_j$. Now let $\pi:\T G\to G$ be the bundle projection and consider the lifted differential form $\pi^\ast\theta_G$. If $\dim G=n$, then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}) or (\ref{eq 5.5.4 RS1 MC in coords}), is also satisfied by $\pi^\ast\theta_G$, and expresses the fact that the $n$ components (in an arbitrary basis of $\frakg$) of $\theta_G$ span a canonical integrable Pfaffian system of rank $n$ on $\T G$. Its maximal integral manifolds are $n$-dimensional and are nothing but the orbits $\chi_\rmL^{-1}(G\times \{A\})$, $A\in\frakg$, each of which is diffeomorphic to $G$ itself. 
+    As we have seen  in Theorem~\ref{prop 4.7.10 RS1}, a Pfaffian system spanned by nowhere-vanishing $1$-forms $\theta^i$ (or equivalently the distribution $\bigcap_i\ker\theta^i$) is integrable iff $\dd \theta^i=\xi^i_j\wedge\theta^j$ at least locally for some matrix of $1$-forms $\xi^i_j$. Now let $\pi:\T G\to G$ be the bundle projection and consider the lifted differential form $\pi^\ast\theta_G$. If $\dim G=n$, then the Maurer-Cartan equation, written in the form (\ref{eq 5.5.4 RS1 MC in coords}) or (\ref{eq 5.5.4 RS1 MC in coords}), is also satisfied by $\pi^\ast\theta_G$, and expresses the fact that the $n$ components (in an arbitrary basis of $\frakg$) of $\theta_G$ span a canonical integrable Pfaffian system of rank $n$ on $\T G$. Its maximal integral manifolds are $n$-dimensional and are nothing but the orbits $\chi_\rmL^{-1}(G\times \{A\})$, $A\in\frakg$, each of which is diffeomorphic to $G$ itself. 
     
     The full power of this method will be seen when we apply it to subgroups of $G$. Moreover, as we will see, the Maurer-Cartan equation can be used to derive the unique real-analytic structure on any Lie group. This is our first example of the deep connections between integrability and certain differential-geometric structures.
 \end{rem}
@@ -7595,11 +7595,37 @@ In fact, a global version of this theorem holds, first obtained by \'Elie Cartan
 \begin{thm}[Cartan-Lie (1936)/Global Lie III {{\cite[Thm.~1.14.3]{DK}}}]\label{thm 1.14.3 DK global Lie's third}\index{Theorem!Cartan-Lie (Global Lie III)}
     For every finite-dimensional Lie algebra $\frakg$ there exists a simply connected Lie group $\wt{G}$ whose Lie algebra is isomorphic to $\frakg$. The restriction of the exponential mapping $\exp:\frakg\to\wt{G}$ to the center $\mathfrak{z}=\rmZ(\frakg)$ induces an isomorphism from the vector group $(\mathfrak{z},+)$ onto the identity component of the center $\rmZ(\wt{G})$.
 \end{thm}
-Another global version of Lie III, more true to Lie's approach, presumes an action of the Lie algebra by \emph{complete} vector fields, which is a hard to verify condition. This can be proven by elementary means.
+
+Another global analog of Lie III, more true to Lie's approach, presumes an action of the Lie algebra by \emph{complete} vector fields, which is a hard to verify condition. This can be proven by elementary means or as a corollary of the Cartan-Lie Theorem.
+
+\begin{cor}[Palais (1957) {{\cite[Prop.~1.5.11]{Cap}}}]\label{prop 1.5.11 Cap}\index{Theorem!Palais}
+    Let $G$ be a (set-theoretical) group of diffeomorphisms of a smooth manifold $M$ and let $S\subset \fX(M)$ be the subset of all complete vector fields $X\in\fX(M)$ such that $\Fl^X_t\in G$ for all $t\in \bbR$. If the Lie subalgebra of $\fX(M)$ generated by $S$ is finite-dimensional, then $G$ is a Lie group of transformations of $M$ and $S$ is the Lie algebra of $G$.
+\end{cor}
+\begin{proof}
+    Let us write $\frakg<\fX(M)$ for the Lie algebra generated by $S$ and consider the connected and simply connected Lie group $\wt G$ with the Lie algebra $\frakg$ (which exists by the Cartan-Lie Theorem~\ref{thm 1.14.3 DK global Lie's third}). By Lie's Second Fundamental Theorem~\ref{thm second principle} (its local form suffices), the inclusion $\frakg\hookrightarrow\fX(M)$ integrates to a local group action, i.e., there is an open neighborhood $U$ of $M\times\{e\}$ in $M\times\wt{G}$ and a local action $\Phi:U\to M$ such that $X_m=\restr{\frac{\dd}{\dd t}}{t=0}\Phi(m,\rme^{tX})$ for all $X\in\frakg$. Of course, this implies that $\Phi(m,\rme^{tX})=\Fl_t^X(m)$ whenever $(m,\rme^{tX})\in U$.
+
+    First we claim that $S$ generates $\frakg$ as a vector space. Denoting the span by $V=\<S\>$, it suffices to prove that $[V,V]\subset V$. Consider $X,Y\in S$ and put $Z=\Ad_{\rme^{X}}Y\in\frakg$. Then $\rme^{tX}=\rme^X\rme^{tY}\rme^{-X}$. Now for $m\in M$ and $s$ small enough the action property implies that locally around $m$ one has $\phi(m',\rme^{sX}g\rme^{-sX})=\Fl_s^X(\Phi(\Fl_{-s}^X(m'),g))$ and using $\rme^X=(\rme^{X/N})^N$  for large $N$, we conclude that $\Phi(m,\rme^{tZ})=(\Fl_t^X\circ\Fl_t^Y\circ \Fl_{-1}^X)(m)$ for $|t|$ small enough. But for small enough $|t|$ we have $\Fl_t^Z=\Phi(m,\rme^{tZ})$ and hence 
+    \[\Fl_t^Z=\Fl_t^X\circ \Fl_t^Y\circ \Fl_{-1}^X.\]
+    The right hand side is defined for all $t$ and is a \gls{ops} of diffeomorphisms, so we conclude that $\Fl_t^Z$ is defined for all $t$ and thus $Z\in S$. For $X\in S$ and $t\in\bbR$ we have $tX\in S$, so our argument shows that $\Ad_{\rme^{tX}}Y\in S\subset V$ for all $X,Y\in S$. But differentiating this smooth curve at $t=0$, the resulting element must also lie in $V$, so we obtain $[S,S]\subset V$, and since the bracket is bilinear this implies $[V,V]\subset V$.
+
+    Now we claim that $S=\frakg$. Choose a basis $\{\bf{t}_1,\ldots,\bf{t}_k\}$ of $\frakg$ consisting of elements of $S$, and consider the map $\frakg\to \wt{G}$ defined by 
+    \[\sum_i c^i \bf{t}_i\mapsto \rme^{c^1\bf{t}_1}\cdots\rme^{c^k\bf{t}_k}.\]
+    This restricts to a diffeomorphism from an open neigborhood of zero in $\frakg$ into an open neihgborhood of the unit $e\in \wt{G}$. For $Y\in\frakg$ we thus get smooth functions $c^1,\ldots,c^k$, defined for sufficiently small $t$, such that 
+    \[\rme^{tY}=\rme^{c^1(t)\bf{t}_1}\cdots\rme^{c^k(t)\bf{t}_k}.\]
+    Similarly, as above, we next conclude that for each $m\in M$ we find a neighborhood in $M$ and a bound on $|t|$ up to which we have 
+    \[\Phi(m',\rme^{tY})=\left(\Fl_{c^1(t)}^{\bf{t}_1}\circ\cdots\circ \Fl_{c^k(t)}^{\bf{t}_k}\right)(m')\]
+    for all $m'$ in the neighborhood. Again, the left hand side coincides with $\Fl_t^Y(m')$, while the right hand side is a \gls{ops} defined for all $t$ for which the $c^i$ are defined. Hence, we conclude that the formula for $\Fl^Y_t$ is valid for all such $t$, so for those $t$ the flow $\Fl^Y_t$ is defined globally on $M$. By the Uniform Time Lemma~\ref{lem uniform time}, this implies that $\Fl_t^Y$ is defined for all $t\in \bbR$, and hence $Y\in S$.
+
+    Now, we know that $S=\frakg$, so, in particular, $S$ is a Lie algebra and thus $G_0\coloneqq \{\Fl_t^X:X\in S,t\in\bbR\}$ is a subgroup of $G$. Moreover, $X\mapsto \Fl_1^X$ can be used to define a local chart from an open $0$-neighborhood in $\frakg$ onto a neighborhood of $\id$ in $G_0$. Transporting this chart around using left translations, we obtain an atlas making $G_0$ into a Lie group. By construction, $G_0$ is connected and since conjugating a \gls{ops} of diffeomorphisms by a fixed diffeomorphism gives rise to another \gls{ops}, we conclude that $G_0$ is a normal subgroup of $G$. Further, it is easy to see that for any $\phi\in G$, conjugation by $\phi$ defines a continuous automorphism of $G_0$. Thus, we may transport the topology from $G_0$ to $G$ using either left or right translations. This makes $G$ into a topological group which contains $G_0$ as an open normal subgroup, so $G_0$ must also be closed and thus the connected component of the identity. Now we can carry over the smooth structure from $G_0$ to the other connected components in the same fashion, thus making $G$ into a Lie group acting smoothly on $M$.
+\end{proof}
+
+The following version of this theorem is more common.
+
 \begin{thm}[Lie-Palais (1957) {{\cite[Thm.~10.5.1]{HN}}}]\label{thm Lie-Palais}\index{Theorem!Lie-Palais}
-    If $M$ is a connected $C^2$ manifold and a collection of \emph{complete} $C^1$ vector fields forms a finite-dimensional Lie subalgebra $\frakg<\fX^1(M)$, then there exists a connected Lie group with a $C^2$ action on $M$ faithfully inducing the action of $\frakg$, unique up to a unique isomorphism of Lie group actions. In particular, the flows $\{\Fl^{A}_1\}_{A\in \frakg}$ form a finite-dimensional Lie group with Lie algebra $\frakg$.
+    If $M$ is a connected $C^2$ manifold and a collection of \emph{complete} $C^1$ vector fields forms a finite-dimensional Lie subalgebra $\frakg<\fX^1(M)$, then there exists a connected Lie group with a $C^2$ action on $M$ faithfully inducing the action of $\frakg$, unique up to a unique isomorphism of Lie group actions. In particular, the flows $\{\Fl^{X}_1\}_{X\in \frakg}$ form a finite-dimensional Lie group with Lie algebra $\frakg$.
 \end{thm}
 
+This version is weaker because it assumes that $\frakg$ fully consists of complete vector fields as opposed to just being generated by a set of complete vector fields. It follows immediately from the first version by setting $G=\{\Fl_1^X\}_{X\in\frakg}$.
 
 \begin{rem}[Lie correspondence]
     The Cartan-Lie Theorem, combined with Theorem~\ref{thm second principle}, states that the Lie functor provides an equivalence of categories
@@ -8896,7 +8922,7 @@ The final example is the Hermitian analog of the conformal sphere, which is also
     \[\bbS^{2n+1}\cong \SU_{n+1,1}\slash P.\]
 \end{example}
 
-The $\SU_{n+1,1}$-invariant structure on the odd-dimensional sphere induced by this construction is the so called \emph{almost CR-structure}, which consists of a Hermitian metric identified only up to a factor $\lambda\in\bbC^\times$ and a complex structure $\sfJ$. It also determines a unique contact structure. CR geometry is the conformal analog of K\"ahler geometry (which consists of compatible Riemannian, symplectic, and complex structures) and naturally occurs at the boundary of a complex manifold.
+The $\SU_{n+1,1}$-invariant structure on the odd-dimensional sphere induced by this construction is the so called \emph{almost CR-structure}, which consists of a Hermitian metric identified only up to a factor $\lambda\in\bbC^\times$ and a complex structure $\sfJ$. It also determines a unique contact structure. CR geometry is the conformal analog of K\"ahler geometry (the latter consists of compatible Riemannian, symplectic, and complex structures) and naturally occurs at the boundary of a complex manifold.
 
 
 
@@ -8910,7 +8936,7 @@ The $\SU_{n+1,1}$-invariant structure on the odd-dimensional sphere induced by t
 
 Much of basic differential geometry on manifolds that we've covered translates to the locally convex case: if $M$ is modeled on a locally convex space $V$, then its tangent bundle $\T M$ (with tangent vectors defined as equivalence classes of curves at a point) has smooth local trivializations over $U_\alpha\subset M$ mapping to $U_\alpha\times V$, and the transition maps are smooth as functions of $(m,v)\in U_{\alpha\beta}\times V$. We can construct the tangent functor $\T$ by defining derivatives of smooth maps between locally convex manifolds. Since the pairing between $V$ and $V^\ast$ is usually not very nice, one often finds another vector space $W$ (which can be thought of as a subspace of $V^\ast$) with a nondegenerate pairing $V\times W\to \bbK$. This allows one to define natural adjoints of linear maps and hence a cotangent bundle $\T^\ast M$ with typical fiber $W$. Smooth vector fields can be defined as usual, and $\fX(M)$ is still a Lie algebra with the Lie bracket. The Lie bracket is again natural with respect to smooth maps. The calculus of differential forms then also extends once we've defined $\T^\ast M$.
 
-For integration of differential forms one requires Mackey completeness. Then e.g., the Stokes theorem for differential forms on manifolds with boundaries holds. The Poincar\'e Lemma holds in the following form.
+For integration of differential forms one requires Mackey completeness. Then, e.g., the Stokes theorem for differential forms on manifolds with boundaries holds. The Poincar\'e Lemma holds in the following form.
 
 \begin{lem}[Poincar\'e Lemma {{\cite[Lem.~II.4.11]{Neeb}}}]
     Let $V$ be locally convex, $W$ Mackey complete locally convex, and $U\subset V$ an open star-shaped (w.r.t\ $0$) subset. Let $\omega\in \Omega^{k+1}(U,W)$ be a $W$-valued closed $(k+1)$-form. Then $\omega=\dd \varphi$ for some $\varphi\in \Omega^k(U,W)$ satisfying $\varphi(0)=0$ given by
