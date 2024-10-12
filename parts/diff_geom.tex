@@ -1328,7 +1328,7 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 
 
-\section{Low-dimensional Lie algebras}
+\section{Low-dimensional Lie algebras}\label{sec: low-dim lie algebras}
 
 Recall that an ideal is a subspace that is stable under only inner derivations on $\frakg$. Moreover, $A\sube B\sube C$ doesn't imply $A\sube C$. These defects are corrected in the next concept.
 
@@ -4124,7 +4124,7 @@ We have just established that in the presence of a local holonomic $r$-frame $\{
     Note that while this theorem is universally named after Frobenius, his result (1887) was an application of an older result to the context of systems of differential equations. We will discuss that version of the theorem in \S\ref{sec: frobenius ii}. The results discussed in this \sect\ were obtained by Deahna (sufficient condition, 1840) and Clebsch (necessary condition, 1866), among many others involved in this long process.
 \end{hrem*}
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[scale=0.8]{figures/frobenius_1.pdf}
     \caption{Frobenius Theorem. From \cite{Lee}.}
@@ -4180,7 +4180,7 @@ Note also that $U$ gets decomposed into a disjoint union of integral submanifold
 
 Recall now that a weakly embedded submanifold $N<M$ is such that any smooth map into $M$ whose values lie in $N$ restricts to a smooth map into $N$.
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[scale=0.8]{figures/frobenius_2.pdf}
     \caption{Local structure of a leaf in a flat chart. From \cite{Lee}.}
@@ -4267,7 +4267,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
 
 
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[scale=0.8]{figures/foliations.pdf}
     \caption{Examples of foliations of $\bbR^2$ (a) and $\bbR^3$ (b). From \cite{Lee}.}
@@ -6009,7 +6009,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
     \[\mathsf{v}_{\SO_3}=\frac{1}{8\pi^2}\sin\theta\dd\varphi\wedge \dd\theta\wedge \dd\psi.\]
 \end{example}
 
-\begin{rem}
+\begin{rem}\label{rem killing form}
     Mathematicians often speak of ``the volume of $G$'', which is of course not a well-defined notion until one fixes a volume form. On compact Lie groups whose Lie algebra is \emph{simple} (contains no nontrivial Lie subalgebras) or \emph{semisimple} (is a direct sum of simple subalgebras) one can choose a canonical volume form by taking the natural volume form associated with the invariant Riemannian metric induced by the invariant inner product given by the \emph{Cartan-Killing form}\index{Cartan-Killing form}\index{Killing form|see {Cartan-Killing form}} on $\frakg$: \[\sfK(A,B)\coloneqq \tr(\ad_A\circ \ad_B).\] 
     It is a nontrivial result of the structure theory of Lie algebras that $\sfK$ is nondegenerate iff $\frakg$ is semisimple, and moreover $\sfK$ is \emph{negative definite} whenever $\frakg$ belongs to a compact Lie group. Thus, by translating $-\sfK$ to all points of a compact semisimple Lie group, we get an invariant Riemannian metric $\sfg_G$ and hence a natural invariant volume form.
 \end{rem}
@@ -7482,8 +7482,11 @@ Due to this, we may think of Lie groups as a special class of topological groups
     Together these conditions imply that the image $h(G)$ is a closed subgroup of $H$. The conclusion is that there is some $B\in \End(V)$ such that $h(t)=\rme^{tB}$ for all $t\in \bbR$. The assumption (ii) can even be further weakened because one can show that discontinuous homomorphisms $(\bbR,+)\to \GL(V)$ must behave rather wildly. One of the strongest theorems of this type exists in the realm of unitary operators on Hilbert spaces -- \href{https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups}{Stone's theorem on strongly continuous one-parameter unitary groups}.
 \end{example}
 
+The following exercise is an example of the power of purely topological data in the theory of Lie groups.
 
-
+\begin{xca}\label{xca normalizer is closed}
+    Prove that the centralizers of sets and the normalizers of closed subgroups are themselves closed subgroups. \emph{Hint:} represent both as intersections of continuous preimages of closed sets (which are thus closed). 
+\end{xca}
 
 
 
@@ -8063,6 +8066,11 @@ When $k<n$, we can use the description of $\St_k(\bbR^n)$ as a coset space to in
     In the context of relativistic physics, $\SL_2(\bbR)$ is isomorphic to the Lorentz group $\SO^+_{2,1}$ and the half-plane is identified with the ``unit sphere'', i.e., one sheet of the two-sheeted hyperboloid $t^2-x^2-y^2=1$. The real line corresponds to the ``circle at infinity'' of this hyperboloid. The stabilizer of a point of this hyperboloid is isomorphic to $\SO_2$.
 \end{example}
 
+\begin{example}[dS and AdS]\index{de Sitter}\index{anti-de Sitter}\label{ex dS and AdS}
+    The $n$-dimensional de Sitter and anti-de Sitter spaces are defined as the homogeneous spaces 
+    \[\mathrm{dS}^n=\Or_{1,n}\slash \Or_{1,n-1},\quad \mathrm{AdS}^n=\Or_{2,n}\slash \Or_{1,n}.\]
+    There are homeomorphisms $\mathrm{dS}^n\cong \bbR\times\bbS^{n-1}$ and $\mathrm{AdS}^n\cong \bbS^1\times\bbS^{n-1}$. As we will see, these homogeneous spaces carry natural homogeneous geometries, which in this case are pseudo-Riemannian.
+\end{example}
 
 \begin{xca}
     Let $V$ be a $2n$-dimensional real vector space and let $\scrJ(V)=\{\sfJ\in\End(V)\mid \sfJ^2=-\id_V\}$ be the space of all complex structures on $V$. The group $\GL(V)$ naturally acts on $\scrJ(V)$ via the formula $g\cdot \sfJ=g\sfJ g^{-1}$. Show that $\scrJ(V)$ is a manifold and that this action is transitive and almost effective (i.e., the kernel is discrete). The stabilizer of a point $\sfJ$ is $\GL_\bbC(V,\sfJ)\cong \GL_n(\bbC)$. For example, if $V=\bbR^{2n}$, then the stabilizer of the standard complex structure $\rmJ_n$ is $\GL_n(\bbC)\subset\GL_{2n}(\bbR)$. Conclude that

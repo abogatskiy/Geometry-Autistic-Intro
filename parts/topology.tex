@@ -2583,7 +2583,7 @@ The following is a straightforward consequence of the Seifert-van~Kampen Theorem
 \begin{xca}[Crosscap]\index{Crosscap}\label{crosscap exercise}
     Show that the projective plane with a hole (also known as a \emph{crosscap}), constructed out of an annulus by identifying the antipodal points of the outer boundary, is homeomorphic to the M\"obius band, and therefore has fundamental group $\bbZ$.
 \end{xca}
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[scale=0.6]{figures/crosscap.pdf}
     \caption{Construction of the projective plane out of a disk. Adding a hole to this surface creates a crosscap, which is homeomorphic to a M\"bius band, see Exercises~\ref{RP2 exercise} and \ref{crosscap exercise}.}
@@ -3036,7 +3036,7 @@ Let $f\in C^\infty(M,N)$ have constant rank $r$. Then
 
 \section{Immersions and embeddings}
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics{figures/immersion.pdf}
     \caption{The figure-eight curve $\beta:(-\pi,\pi)\to \bbR^2$ given by $\beta(t)=(\sin 2t,\sin t)$ is an immersion but not an embedding. Its domain is open but its image is closed.}
@@ -3455,7 +3455,7 @@ execute at end picture={\draw [<-] ([xshift=-5mm,yshift=0mm]m-2-2.north) arc[sta
 \]
 Aside from homotopies, one can try to lift arbitrary mappings into the base space of a fibration. In general the existence of these liftings is difficult to establish. In the case of covering spaces, however, the answer is quite simple: a map from a space $W$ into $M$ can be lifted into the total space of $\pi:E\to M$ iff the images of all nontrivial loops in $W$ are among those loops in $M$ that can be lifted to $E$, and the lifting is unique. This is formalized in the following theorem.
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/discont_lift.pdf}
     \caption{The map $f$ here collapses the entire ``$\sin 1/x$'' part of the space on the left into the basepoint $1$ on the circle. If a lifting map $g$ into the real line existed, then the vertical part of the ``$\sin 1/x$'' curve would have to be mapped to $0$, whereas the wiggly part would map to $1$ under $g$, making it discontinuous. From \cite[Fig.~III-6]{Bredon}.}
@@ -3735,7 +3735,7 @@ From $(2)\Leftrightarrow(1)$ and the last part of the proof we have the followin
 
 In other words, normal subgroups of $\pi_1(M,x_0)$ correspond to regular connected covering spaces of $M$. A regular covering space is one whose fundamental group ``looks the same'' in terms of the generators of $\pi_1(M,x_0)$ regardless of the choice of the basepoint $p_0$ in the fiber. Such covering spaces have an inherent ``symmetry'' given by the quotient group $G/G_{p_0}$ (which exists because $G_{p_0}$ is normal). Obviously, any regular covering space that is not connected is a disjoint union of isomorphic connected regular covering spaces. Hence, it suffices to study only the connected ones. For an example of a connected non-regular covering space, see Figure~\ref{fig:threefold-cover}.
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/threefold_cover.pdf}
     \caption{This threefold cover of the figure eight space is not regular. Indeed, its group of automorphisms is trivial.}
@@ -3881,10 +3881,10 @@ Now let $\pi$ be a $G$-principal covering, so that $\pi$ induces a homeomorphism
 We now explain how, given a regular (or principal) covering, one can produce other coverings.
 
 \begin{defn}[Associated covering]
-    A right $G$-principal covering $\pi:E\to B$ gives rise to associated coverings. Let $F$ be a set with left $G$-action (a \emph{$G$-set}). Denote by $E\times_G F$ the quotient space $E\times F\slash \sim $ under the equivalence relation $(p,f)\sim(p\cdot g^{-1},g\cdot f)$ for $(p,f,g)\in E\times F\times G$. The continuous map $\pi_F:E\times_G F\to B$, $(p,f)\mapsto \pi(p)$ is a covering with fiber $F$.
+    A right $G$-principal covering $\pi:E\to B$ gives rise to associated coverings. Let $F$ be a set with left $G$-action (a \emph{$G$-set}). Denote by $E\times^G F$ the quotient space $E\times F\slash \sim $ under the equivalence relation $(p,f)\sim(p\cdot g^{-1},g\cdot f)$ for $(p,f,g)\in E\times F\times G$. The continuous map $\pi_F:E\times^G F\to B$, $(p,f)\mapsto \pi(p)$ is a covering with fiber $F$.
 
     A $G$-equivariant map $\psi:F_1\to F_2$ induces a morphism of coverings
-    \[\mathrm{id}_E\times_G\psi: \; E\times_G F_1\to E \times_G F_2,\; (p,f)\mapsto (p,\psi(f)).\]
+    \[\mathrm{id}_E\times^G\psi: \; E\times^G F_1\to E \times^G F_2,\; (p,f)\mapsto (p,\psi(f)).\]
 \end{defn}
 
 Thus for every right $G$-principal covering $\pi$ (over some base $B$) we have constructed the ``associated covering functor'' $A(\pi):G\mathsf{-Set}\to \mathsf{Cov}_B$ from the category of left $G$-sets (and equivariant maps) to the category of covering spaces of $B$. 
@@ -3918,7 +3918,7 @@ Note that for a fixed $G$ there are many non-isomorphic universal $G$-principal 
     We will later learn to construct, for any discrete group $G$, a space $X_G$ whose fundamental group is isomorphic to $G$ and which admits a universal covering. Therefore for every group $G$ there exists a universal $G$-principal covering, although it is not unique. Once we learn about $CW$-complexes we will be able to define a special universal $G$-principal covering that is unique up to homotopy (namely the universal covering of the first Eilenberg-MacLane space $\rmK(G,1)$, see \S\ref{sec: CW approx}). This fact will eventually have a natural extension to all groups and fiber bundles: for any group $G$ we will construct a so called classifying space $\rmB G$ and a principal $G$-bundle $\rmE G\to \rmB G$ such that $\rmE G$ is contractible. There will hold isomorphisms $\pi_{n+1}(\rmB G)\cong \pi{n}(G)$ for all $n\geq 0$. In the case of discrete $G$ the bundle $\rmE G\to \rmB G$ is obviously a covering space, and the aforementioned space $X_G$ provides a universal covering that is an ``approximation'' of this space, and for which only the first isomorphism $\pi_1(B)\cong \pi_0(G)\cong G$ holds.
 \end{rem}
 
-Since every covering space is a disjoint union of its connected components, let us separately address the classification of \emph{connected} covering spaces in terms of equivalence of certain categories. Let $\pi:E\to B$ be a universal right $G$-principal covering. A left $G$-set $A$ is a disjoint sum of its orbits. We thus have a corresponding decomposition of the total space $E\times_G F$ into the sum of $E\times_G C$, where $C$ runs over the orbits of $F$. An orbit is a transitive $G$-set and is isomorphic to a homogeneous set (set of cosets) $G\slash H$ of some subgroup $H<G$. The homeomorphism $E\times_G G\slash H\cong E\slash H$ shows that the summands $E\times_G C$ are path-connected. The action of $H$ on $E$ is properly discontinuous and therefore $E\to E\slash H$ is an $H$-principal covering. Also the induced map $\pi_H:E\slash H\to B$ is a covering.
+Since every covering space is a disjoint union of its connected components, let us separately address the classification of \emph{connected} covering spaces in terms of equivalence of certain categories. Let $\pi:E\to B$ be a universal right $G$-principal covering. A left $G$-set $A$ is a disjoint sum of its orbits. We thus have a corresponding decomposition of the total space $E\times^G F$ into the sum of $E\times^G C$, where $C$ runs over the orbits of $F$. An orbit is a transitive $G$-set and is isomorphic to a homogeneous set (set of cosets) $G\slash H$ of some subgroup $H<G$. The homeomorphism $E\times^G G\slash H\cong E\slash H$ shows that the summands $E\times^G C$ are path-connected. The action of $H$ on $E$ is properly discontinuous and therefore $E\to E\slash H$ is an $H$-principal covering. Also the induced map $\pi_H:E\slash H\to B$ is a covering.
 
 The category of homogeneous $G$-sets and $G$-equivariant maps is called the \emph{orbit category} $\mathsf{Orb}(G)$. The sets $G\slash K$ and $G\slash L$ are isomorphic iff the subgroups $K$ and $L$ are conjugate in $G$. The stabilizers of points of $G\slash H$ are conjugate to $H$. The inclusion of the subcategory $\mathsf{Orb}(G)$ into the category of transitive $G$-sets is an equivalence.
 
@@ -3947,7 +3947,7 @@ Let $\pi:E\to B$ be a connected covering. The subgroup $\pi_\ast(\pi_1(E,p_0))\s
 \begin{example}[Universal covers of graphs]
     Let $M=\Gamma$ be a connected graph with $V$ vertices and $E$ edges, i.e., a topological space consisting of $E$ copies of the interval $[0,1]$ some of which are glued to each other at their ends. Such a graph always has a maximal tree, i.e., a subgraph of $\Gamma$ that is a tree and is not contained in any other sub-tree of $\Gamma$. One can show that a maximal tree must contain all vertices of $\Gamma$. Since every tree is a contractible topological space, by retracting a maximal tree of $\Gamma$ into one point we identify all vertices of $\Gamma$ into one point. This shows that $\Gamma$ is homotopy equivalent to the wedge sum of some number of circles, each corresponding to a cycle in the graph. Namely, the number $l$ of cycles in $\Gamma$ equals the number of edges in $\Gamma$ minus the number of edges in a maximal tree of $\Gamma$. This is also equal to $1-\chi(\Gamma)$, where $\chi(\Gamma)=V-E$ is the Euler characteristic. Then by Proposition~\ref{prop computing pi1}, $\pi_1(\Gamma)$  is a free group with $l$ generators. Finally, from the above results it is easy to see that $\wt{\Gamma}$ is the \href{https://en.wikipedia.org/wiki/Cayley_graph}{Cayley graph} of this free group, i.e., the graph whose vertices are all the elements of the group, and the edges incident to a vertex correspond to the generators of the group and their inverses. The vertex on the other end of an edge is the result of the multiplication of the current vertex by the edge's generator (say, from the right). In the case of a free group with $l$ generators, this is a regular tree whose root represents the identity element and each vertex has valency/degree (number of incident edges) equal to $l$. See Fig.~\ref{Fig. Cayley} for an example of a Cayley graph.
 \end{example}
-\begin{figure}
+\begin{figure}[tp]
     \centering
         \includegraphics[scale=0.15]{figures/Cayley.pdf}
     \caption{This graph is the universal cover of the figure eight, which is $\Gamma=\bbS^1 \vee \bbS^1$. It is also the Cayley graph of the fundamental group of $\Gamma$, i.e., the free group with two generators $a$ and $b$, $\pi_1(\Gamma)=F(\{a,b\})\cong\bbZ\ast\bbZ$. \label{Fig. Cayley}}
@@ -3992,14 +3992,14 @@ We can now use the theory of covering spaces to prove a very important basic the
     (1) and (2), up to swapping $a$ and $b$, are all of the existing connected double covers (so there are three in total). (3) and (4) are the same covering space but with different basepoints, and one can see how the corresponding subgroups are conjugates of each other by an element that connects those two points, for example $b$.
 \end{example}
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/sixfold.pdf}
     \caption{A sixfold regular covering space of the figure eight. The fundamental group $\pi_1(E,p_0)$ is clearly generated by six loops. This makes it easy to guess that the stabilizer of any vertex is the normal subgroup of the free group $F(\alpha,\beta)$ generated by the six elements $\alpha^3,\beta^2,\left(\alpha\beta^{-1}\right)^2, \left(\alpha^{-1}\beta\right)^2, \alpha\beta^2\alpha^{-1}, \alpha^{-1}\beta^2\alpha$. To find the group of deck transformations, we factor the free group by this normal subgroup, which is equivalent to adding these six generators as relations. It is easy to check that these relations define the permutation group $\rmS_3=\langle a,b\mid a^2,b^2,ababab\rangle$. If we reversed the arrows on the inner triangle of $\alpha$'s, we'd get $\bbZ_2\times \bbZ_3$ instead. From \cite[Fig.~III-7]{Bredon}.}
     \label{fig:sixfold covering}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.67\textwidth]{figures/coverings_8.pdf}
     \caption{Examples of covering spaces of the figure eight space. Each one is a graph with a marked basepoint $p_0$ such that the neighborhood of each vertex locally looks the same as in the base space: two incoming edges (labeled $a,b$) and two outgoing (also labeled $a,b$). The label of an edge indicates which generator of $\pi_1(M)$ it is projected onto by $\pi$. Next to the space is the list of the generators of the local fundamental group $\pi_1(E,p_0)$ expressed in terms of $a,b$, which means that, viewed as part of $\pi_1(M)$, they generate the stabilizer $G_{p_0}=\pi_\ast(\pi_1(E,p_0))$. The number of sheets matches the index of this subgroup. Two vertices are related by a deck transformation iff their stabilizers coincide, otherwise the stabilizers are merely conjugate. For regular coverings (1,2,5,6,7,8,9,11), all stabilizers coincide and therefore are normal. From \cite[p.~58]{Hatcher}.}
@@ -4410,7 +4410,7 @@ The case of Hausdorff $X$ will suffice for our needs, so the above proof is comp
     A simple example of a pair $(X,A)$ with $A$ closed for which the \gls{hep} fails is the pair $(I,A)$ where $A=\{0,1,\frac12,\frac13,\frac14,\ldots\}$. There is no continuous retraction $I\times I\to (I\times\{0\})\cup (A\times I)$. The breakdown of homotopy extension here can be attributed to the bad structure of the pair near $0$.
 \end{example}
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/cylinder.pdf}
     \caption{Mapping cylinder of $f$.}
@@ -4435,7 +4435,7 @@ The case of Hausdorff $X$ will suffice for our needs, so the above proof is comp
 The images $q(X\times\{1\})$ and $q(Y)$ are homeomorphic to $X$ and $Y$ respectively. When $X$ and $Y$ are homotopy equivalent, both of these subspaces of $Z_f$ can be shown to be deformation retracts of $Z_f$. Therefore two spaces $X,Y$ are homotopy equivalent iff they are homeomorphic to deformation retracts of some third space $Z$. See, e.g., \cite[Prop.~7.46]{LeeTop} for a proof. We will also provide a proof in Corollary~\ref{cor 0.21 Hatcher}.
 
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.3\textwidth]{figures/hep_example.pdf}
     \caption{Mapping cylinder neighborhood from Example~\ref{example Z_f hep}.}
@@ -4588,7 +4588,7 @@ For homotopy theory of $CW$ complexes it turns out to be sufficient to work with
     \end{enumerate}
 \end{proof}
 
-\begin{figure}
+\begin{figure}[tp]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/cell_approx.pdf}
     \caption{Subdivision from the proof of Lemma~\ref{lem 4.10 hatcher}.}
