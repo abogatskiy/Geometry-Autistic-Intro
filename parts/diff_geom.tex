@@ -440,7 +440,8 @@ Since we already know that $\GL_n(\bbK)$ is a smooth manifold, we can use the Le
 
     Since $\Sp_1$ coincides with the unit sphere in $\bbH$ and since $\ker\phi=\{\pm\bf{1}\}$ implies that the preimage of a point in $\SO_3$ under $\phi$ consists of antipodal points, $\phi$ induces a bijection $\RP^3\cong \SO_3$. Since both $\phi$ and the projection $\bbS^3\to\RP^3$ are submersions, this bijection is in fact a diffeomorphism.
 
-    Next, consider $\phi(\bf{a},\bf{b})$ for $\bf{a},\bf{b}\in\Sp_1$. Due to $\lVert \bf{a}\rVert^2=\lVert \bf{b}\rVert^2=1$, $\phi(\bf{a},\bf{b})$ is orthogonal. Hence, by restriction in domain and range, $\phi$ induces a Lie group homomorphism $\phi:\Sp_1\times\Sp_1\to \Or_4$ with the defining equation (\ref{10423}). Arguing as before one finds $\ker\phi=\{\pm(\bf{1},\bf{1})\}$ and $\im\phi=\SO_4$. In particular, we conclude that there is a homeomorphism $\SO_4\cong \bbS^3\times \SO_3$.
+    Next, consider $\phi(\bf{a},\bf{b})$ for $\bf{a},\bf{b}\in\Sp_1$. Due to $\lVert \bf{a}\rVert^2=\lVert \bf{b}\rVert^2=1$, $\phi(\bf{a},\bf{b})$ is orthogonal. Hence, by restriction in domain and range, $\phi$ induces a Lie group homomorphism $\phi:\Sp_1\times\Sp_1\to \Or_4$ with the defining equation (\ref{10423}). Arguing as before one finds $\ker\phi=\{\pm(\bf{1},\bf{1})\}$ and $\im\phi=\SO_4$. In particular, we conclude that there is a homeomorphism $\SO_4\cong \bbS^3\times \SO_3$. Since $\Sp_1\cong \SU_2$, and the spin group is defined as the connected double cover of the special orthogonal group, we have proven the isomorphism 
+    \[\Spin_4\cong \SU_2\times\SU_2.\]
 
     Let us add that via the algebra homomorphism (\ref{46939}), all of the above has an equivalent formulation in terms of complex $2\times 2$ matrices. This formulation is obtained by replacing $\Sp_1$ by $\SU_2$, $\bbH$ by the real vector space spanned by $\rmI_2$ and the traceless skew-Hermitian matrices, equipped with the inner product $(A,B)=\tr(A^\dagger B)$, and the subspace of $\bbH$ spanned by $\bf{i},\bf{j},\bf{k})$ by the subspace of traceless skew-Hermitian matrices. This exactly recovers our previous construction of $\SU_2$ as a double cover of $\SO_3(\bbR)$.
 \end{example}
@@ -744,20 +745,20 @@ An important class of matrix Lie groups closely related to classical groups are 
 
 \begin{defn}[Affine extension]\index{Affine extension}
     Let $G\sub \GL_n(\bbK)$, where $\bbK=\bbR$ or $\bbC$, be a matrix Lie group. The \emph{affine extension} of $G$ is the semidirect product 
-    \[\rmA G\coloneqq G\ltimes \bbK^n,\]
-    where the canonical action of $G$ on $\bbK^n$ is implied. The resulting normal subgroup $\bbK^n$ is called the \emph{group of translations}. $\rmA G$ is isomorphic to the subgroup of $\GL_{n+1}(\bbK)$ consisting of matrices of the block form
+    \[\bbA G\coloneqq G\ltimes \bbK^n,\]
+    where the canonical action of $G$ on $\bbK^n$ is implied. The resulting normal subgroup $\bbK^n$ is called the \emph{group of translations}. $\bbA G$ is isomorphic to the subgroup of $\GL_{n+1}(\bbK)$ consisting of matrices of the block form
     \[\begin{bmatrix}
         g & \bf{x}\\
         \bf{0}_n^T & 1
     \end{bmatrix},\quad g\in G,\; \bf{x}\in\bbK^n,\]
-    where $\bf{0}_n^T$ is a row of $n$ zeros. From here, it is easy to see that the correspondence $G\mapsto \rmA G$ is a functor.
+    where $\bf{0}_n^T$ is a row of $n$ zeros. From here, it is easy to see that the correspondence $G\mapsto \bbA G$ is a functor.
 \end{defn}
 
 \begin{example}
     \begin{enumerate}
-        \item $\Aff_n(\bbK)\coloneqq \rmA \GL_n(\bbK)=\GL_n(\bbK)\ltimes\bbK^n$ is the \emph{affine group}.\index{Group!Affine}
-        \item $\rmA \SL_n(\bbR)=\SL_n(\bbR)\ltimes \bbR^n$ is the \emph{equi-affine group}.\index{Group!Equi-affine}
-        \item $\SE_n\coloneqq \rmA \SO_n{}= \SO_n\ltimes\bbR^n$ is the \emph{special Euclidean group}.\index{Group!Special Euclidean}
+        \item $\Aff_n(\bbK)\coloneqq \bbA \GL_n(\bbK)=\GL_n(\bbK)\ltimes\bbK^n$ is the \emph{affine group}.\index{Group!Affine}
+        \item $\bbA \SL_n(\bbR)=\SL_n(\bbR)\ltimes \bbR^n$ is the \emph{equi-affine group}.\index{Group!Equi-affine}
+        \item $\SE_n\coloneqq \bbA \SO_n{}= \SO_n\ltimes\bbR^n$ is the \emph{special Euclidean group}.\index{Group!Special Euclidean}
     \end{enumerate}
 \end{example}
 
@@ -1279,7 +1280,7 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 \begin{defn}[Centralizer]\index{Centralizer}
     The centralizer of a subset $S\subset\frakg$ is the set
-    \[C_\frakg(S)=\{A\in\frakg\mid [A,S]=\{0\}\}.\]
+    \[\rmC_\frakg(S)=\{A\in\frakg\mid [A,S]=\{0\}\}.\]
     It is automatically a Lie subalgebra.
 \end{defn}
 
@@ -1669,7 +1670,7 @@ All of differential geometry that we will cover for finite-dimensional smooth ma
 
 
 \clearpage
-\chapter{Fiber Bundles}\label{sec: Fiber bundles}
+\chapter{Fiber Bundles}\label{chap: Fiber bundles}
 
 \section{Bundles}
 
@@ -2866,7 +2867,7 @@ A local chart $\varphi_\alpha$ gives rise to a local frame (the pullback of the 
 \end{proof}
 
 
-\begin{defn}[Lie derivatives]\index{Lie derivatives!of functions}
+\begin{defn}[Lie derivatives]\index{Lie derivative!of a function}
     The Lie derivative of a function $f\in C^\infty(M)$ along a vector field $X\in\fX(M)$ is defined as the function \[\Lie_X f\equiv X\cdot f\coloneqq \dd f (X)\in C^\infty(M),\] where $\dd f=\pr_2\circ f_\ast$ with $f_\ast:\T M\to \T\bbR $ and $\pr_2$ being the projection onto the second factor (the fiber) in $\T\bbR \cong \bbR \times\bbR $. \label{def of Lie derivative}
 \end{defn}
 
@@ -3666,7 +3667,7 @@ Conversely, as we will see in the Escape Lemma~\ref{lem escape}, if a vector fie
 \begin{defn}[Invariant vector fields on Lie groups]\index{Invariant vector field}
     Let $G$ be a Lie group. A vector field $X\in\fX(G)$ is called left-invariant (resp.~right-invariant) if for all $g\in G$, if the evaluation map $G\mapsto \T G$ given by $g\mapsto X_g$ is equivariant with respect to the left (resp.~right) actions of $G$ on itself and on $\T G$. In other words, one of the following formulas must hold for all $h,g\in G$:
     \[(\rmL_g)_{\ast}X_h=X_{gh},\quad \text{or}\; (\rmR_g)_{\ast}X_h=X_{hg}.\]
-    We will denote by $\fX(G)^G$ the linear space of all left-invariant vector fields on $G$, and by $\fX(G)^G_R$ the right-invariant analog.
+    We will denote by $\fX(G)^G$ the linear space of all left-invariant vector fields on $G$, and by $\fX(G)^G_\rmR$ the right-invariant analog.
 \end{defn}
 
 Note that every invariant vector field is uniquely determined by its value at the identity and is automatically smooth because the left/right action of $G$ on itself is smooth.
@@ -3883,7 +3884,7 @@ The space of all $\bbR $-linear derivations on the algebra $C^\infty(M)$ is isom
 
 This proposition allows us to define the commutator of vector fields.
 
-\begin{defn}[Lie derivative/bracket of vector fields]\index{Lie derivative of vector fields}\index{Commutator of vector fields}
+\begin{defn}[Lie derivative/bracket of vector fields]\index{Lie derivative!of a vector field}\index{Commutator of vector fields!see {Lie derivative}}
     If $X,Y\in\fX(M)$, then the Lie derivative of $Y$ along $X$ is denoted by 
     \[\Lie_X Y\equiv [X,Y]\] and is defined as the unique vector field such that
     \[\Lie_{[X,Y]}=[\Lie_X,\Lie_Y].\]
@@ -3967,7 +3968,7 @@ Note that we don't require $\mathbb{D}\circ\varphi_\ast=\varphi_\ast\circ \mathb
 
 This allows us to extend the definition of the Lie derivative to arbitrary tensor fields. This natural operator was first formalized by \'Elie Cartan around 1920, although he was primarily interested in derivatives of differential forms, which we will study in \Sect~\ref{sec: differential forms}. It was named after Sophus Lie by others in the 1930's.
 
-\begin{defn}[Lie derivatives of tensors]\index{Lie derivative of tensor fields}
+\begin{defn}[Lie derivatives of tensors]\index{Lie derivative!of a tensor field}
     If $X\in\fX(M)$ then the Lie derivative operator $\Lie_X$ on the tensor algebra $\Gamma^\infty(M)$ is defined as the unique tensor differential operator (established by Willmore's theorem) that coincides with the previously constructed Lie derivative on $C^\infty(M)$ and $\fX(M)$.
 \end{defn}
 
@@ -4437,6 +4438,10 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
 \clearpage
 \chapter{Differential Forms and Integration}\label{sec: differential forms}
 
+
+While symmetric algebras (or even commutative rings), and in particular symmetric tensors, can be identified with polynomials, the dual objects are antisymmetric tensors, which turn out to form an algebra of their own. Following the original invention of this algebra by Grassmann, it became important in the theory of differential equations, and eventually, with \'Elie Cartan, in geometry more broadly.
+
+
 \section{Exterior algebra}
 
 
@@ -4446,12 +4451,12 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
         \Alt t&=\frac{1}{k!}\sum_{\sigma\in \rmS_k} (\sign\sigma)\cdot t^\sigma,\\
         \Sym t&=\frac{1}{k!}\sum_{\sigma\in S_k} t^\sigma,\label{def sym operator}
     \end{align}
-    where $\rmS_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $\bbT^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(\bbT^k V)$ and $\rmS^k V=\Sym(\bbT^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
+    where $\rmS_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $\bbT^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(\bbT^k V)$ and $\bigodot^k V\coloneqq \Sym(\bbT^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
     
     If $\dim V=n$, then $\dim \bigwedge^k V=\binom{n}{k}$. In particular, 
     \[\bigwedge^1 V=V,\quad \dim \bigwedge^0 V=\dim \bigwedge^n V=1,\quad \dim \bigwedge^{>n} V=0.\]
     Elements of $\bigwedge^n V$ are called \emph{top forms}.\index{Top form}
-    Both $\bigwedge^k$ and $\rmS^k$ are covariant functors $\mathsf{FinVect}_\bbK\to\mathsf{FinVect}_\bbK$ that act on morphisms by restriction: \[\bigwedge^k f=\restr{f^{\otimes k}}{\bigwedge^k V},\quad \rmS^k f=\restr{f^{\otimes k}}{\rmS^k V}.\]
+    Both $\bigwedge^k$ and $\bigodot^k$ are covariant functors $\mathsf{FinVect}_\bbK\to\mathsf{FinVect}_\bbK$ that act on morphisms by restriction: \[\bigwedge^k f=\restr{f^{\otimes k}}{\bigwedge^k V},\quad \bigodot^k f=\restr{f^{\otimes k}}{\bigodot^k V}.\]
 \end{defn}
 
 If $V$ has Cartesian coordinates $x^1,\ldots,x^n$, then a basis of $V$ is formed by $\{\partial_{x^i}\}$. The dual basis of $V^\ast$ is conventionally denoted by $\{\dd x^i\}$, so that
@@ -4552,7 +4557,7 @@ Note that $i_v$ is a ``\emph{$\wedge$-derivation}'' on the exterior algebra (exe
 
 
 \begin{defn}[Exterior powers of \glspl{vb}]
-Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge^p$ and $\rmS^p$ to all smooth \glspl{vb}. We focus only on $\bigwedge^p$. For a \gls{vb} $E\overset{\pi}{\to} M$, we obtain the exterior powers
+Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge^p$ and $\bigodot^p$ to all smooth \glspl{vb}. We focus only on $\bigwedge^p$. For a \gls{vb} $E\overset{\pi}{\to} M$, we obtain the exterior powers
 \[\bigwedge^p E=(E)^{\otimes p}_{\text{asym}}.\]
 $p$ is called the \emph{degree} of the elements or sections of $\bigwedge^p E$: \[\deg \alpha=p\;\text{ for }\;\alpha\in\Gamma^\infty\left(\bigwedge^p E\right).\]
 The wedge product $\wedge$ gets extended to sections of these bundles fiberwise.
@@ -4697,7 +4702,7 @@ The following proposition shows that $\dd$ is natural with respect to smooth map
     \item $i_X$ is a $\wedge$-derivation on the exterior algebra;
     \item $i_{f\cdot X}=f\cdot i_X$;
     \item $i_X\dd f=\Lie_X f$ for $f\in \Omega^0(M)$;
-    \item $\restr{\Lie_X}{\Omega^p(M)}=i_X\circ\dd+\dd\circ i_X$ (Cartan's magic formula);\index{Equation!Cartan's magic}
+    \item $\restr{\Lie_X}{\Omega^p(M)}=i_X\circ\dd+\dd\circ i_X$ (Cartan's magic formula);\index{Equation!Cartan's magic formula}
     \item $\Lie_{fX}\,\omega=f\Lie_X\omega +\dd f\wedge i_X\omega$;
     \item For any diffeomorphism $F$, $F^\ast i_X\omega =i_{F^\ast X}F^\ast\omega$.
 \end{enumerate}
@@ -4736,7 +4741,7 @@ We use this property in the proof of the following useful formula.
         (\dd\omega)(X_0,\ldots,X_{p})=\sum_{i=0}^p \Lie_{X_i}(\omega(X_0,\ldots,\wh{X}_i,\ldots,X_p))+\\+\sum_{0\leq i<j\leq p}(-1)^{i+j}\omega([X_i,X_j],X_0,\ldots,\wh{X}_i,\ldots,\wh{X}_j,\ldots,X_p),
     \end{multline}
     where hats indicate that the corresponding vector fields are excluded from the list of arguments. In particular, for $\alpha\in\Omega^1(M)$,
-    \[(\dd\alpha)(X_1,X_2)=X_1\cdot \alpha(X_2)-X_2\cdot\alpha(X_1)+\alpha ([X_1,X_2]).\]
+    \[(\dd\alpha)(X_1,X_2)=X_1\cdot \alpha(X_2)-X_2\cdot\alpha(X_1)+\alpha ([X_1,X_2]).\label{eq prop 4.1.6}\]
 \end{prop}
 \begin{proof}
 Proof by induction in $p$. For $p=0$, we have already established this formula, $\dd \omega(X_0)=\Lie_{X_0}\omega$.
@@ -5065,7 +5070,7 @@ The final application requires some familiarity with complex analysis. Some basi
 
 
 \begin{rem}[Integration of $1$-densities]
-    Integration can also be defined for $1$-densities (a.k.a.~\emph{pseudo-forms}), i.e., sections of the bundle $|\det|(\T M)$, whose transition functions are $|\det\tau_{\alpha\beta}|$ if $\tau_{\alpha\beta}$ are those on $\T M$ (cf.\ Definition~\ref{def tensor densities}). This bundle can also be identified with $(\det \T M)\otimes \calO(\T M)$, where $\det (\T M)=\bigwedge^n M$ and $\calO(\T M)$ is the orientation bundle thought of as a space that can ``absorb'' factors of $- 1$: $(-\omega)\otimes \mu=\omega\otimes (-\mu)$. This bundle is always a trivial line bundle, so we can always pick a nowhere-vanishing $1$-density as an analog of a volume form. Thus, $M$ doesn't need to be orientable and $1$-densities can be identified with smooth absolutely continuous measures. On orientable manifolds, each top form $\omega\in\Omega^n(M)$ defines a $1$-density $|\omega|$ by 
+    Integration can also be defined for $1$-densities (a.k.a.~\emph{pseudo-forms}), i.e., sections of the bundle $|\det|(\T M)$, whose transition functions are $|\det\tau_{\alpha\beta}|$ if $\tau_{\alpha\beta}$ are those on $\T M$ (cf.\ Definition~\ref{def tensor densities}). This bundle can also be identified with $(\det \T M)\otimes \calO(\T M)$, where $\det (\T M)=\bigwedge^n \T M$ and $\calO(\T M)$ is the orientation bundle thought of as a space that can ``absorb'' factors of $- 1$: $(-\omega)\otimes \mu=\omega\otimes (-\mu)$. This bundle is always a trivial line bundle, so we can always pick a nowhere-vanishing $1$-density as an analog of a volume form. Thus, $M$ doesn't need to be orientable and $1$-densities can be identified with smooth absolutely continuous measures. On orientable manifolds, each top form $\omega\in\Omega^n(M)$ defines a $1$-density $|\omega|$ by 
     \[|\omega|(X_1,\ldots,X_n)=|\omega(X_1,\ldots,X_n)|.\]
     It is an exercise to check that integration of $1$-densities by analogy with forms is well-defined, and that all of the properties carry over with only a potential sign change. Even the Stokes' Theorem holds for pseudo-forms when properly understood, see T.~Frankel's \emph{Geometry of Physics}.
 \end{rem}
@@ -5081,8 +5086,8 @@ The final application requires some familiarity with complex analysis. Some basi
 Here we define differential forms that take values in a vector space, and more generally in a vector bundle. These objects will be fundamental in the study of Lie groups, and later, connections.
 
 \begin{defn}[Vector-valued and twisted differential forms]\index{Twisted differential forms}
-    let $E\overset\pi\to M$ be a \gls{vb} (in particular it can be a trivial bundle $M\times V$ with a vector space $V$). $E$-valued differential forms of degree $p$ are defined as sections of $\bigwedge^pM\otimes E$:
-    \[\Omega^p(M;E)\coloneqq \Gamma^\infty\left(\bigwedge^pM\otimes E\right).\]
+    let $E\overset\pi\to M$ be a \gls{vb} (in particular it can be a trivial bundle $M\times V$ with a vector space $V$). $E$-valued differential forms of degree $p$ are defined as sections of $\bigwedge^p\T M\otimes E$:
+    \[\Omega^p(M;E)\coloneqq \Gamma^\infty\left(\bigwedge^p \T M\otimes E\right).\]
      If $E$ is a line bundle, then we also say that the exterior bundle has been \emph{twisted} by $E$, and its sections are called \emph{twisted differential forms}.
 \end{defn}
 
@@ -7254,7 +7259,7 @@ This can also be verified without reference to the Lie group by applying $\ad$ t
     \frac{(\ad_B)^{m_k}}{m_k!}
     \right)(A),
 \end{multline}
-where the sum is taken over all $l_1,\ldots,l_k,m_1,\ldots,m_k\geq 0$ such that $l_j+m_j>0$, for all $j$. Integrating this over $t$ from $0$ to $1$ and using $Z(0)=B$, we find \emph{Dynkin's formula}\index{Equation!Dynkin} (1947):
+where the sum is taken over all $l_1,\ldots,l_k,m_1,\ldots,m_k\geq 0$ such that $l_j+m_j>0$, for all $j$. Integrating this over $t$ from $0$ to $1$ and using $Z(0)=B$, we find \emph{Dynkin's formula}\index{Equation!Dynkin's formula} (1947):
 \begin{multline}
     \mu(A,B)=A+B+\\+\sum_{k=1}^\infty \frac{(-1)^k}{k+1}\sum \frac{1}{l_1+\cdots+l_k+1}\left(    
     \frac{(\ad_A)^{l_1}}{l_1!}\circ
@@ -8030,7 +8035,7 @@ When $k<n$, we can use the description of $\St_k(\bbR^n)$ as a coset space to in
 
 
 
-\begin{example}[Siegel upper half-space]\index{Siegel upper half-space}\index{Upper half-plane|see {Siegel upper half-space}}\label{ex siegel upper half-space}
+\begin{example}[Siegel upper half-space]\index{Siegel upper half-space}\index{Hyperbolic half-plane}\label{ex siegel upper half-space}
     For any integer $g\geq 1$, consider the set of symmetric complex $g\times g$ matrices with positive definite imaginary part:
     \[\calH_g \coloneqq \{Z=X+\i Y\mid X,Y\in \Mat_g(\bbR), X=X^T, Y=Y^T, Y>0\}.\]
     The symplectic group $\Sp_{2g}(\bbR)$ consists of real $2g\times 2g$ matrices of the block form 
@@ -8405,7 +8410,7 @@ As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth st
 
 Proper group actions, which we discuss here, behave especially well. For example, they allow for local models in terms of vector bundles akin to Lemma~\ref{lem 5.6.7 RS1}, which carries important implications for the structure of both the manifold carrying the action and the orbit space. Recall that a proper map in the category of smooth manifolds is a smooth map under which the preimages of compact subsets are compact.
 
-\begin{defn}[Proper action]
+\begin{defn}[Proper action]\index{Lie group action!proper}
     A Lie group action $(M,G,\Phi)$ is called proper if the following map is proper:
     \[\Phi_{\mathrm{ext}}:G\times M\to M\times M,\quad \Phi_{\mathrm{ext}}(g,m)=\left(\Phi_g(m),m\right).\]
 \end{defn}
@@ -8530,7 +8535,7 @@ Now we will discuss the equivariant analog of the Tubular Neighborhood Theorem~\
 
 The rest of this \sect\ will be devoted to proving the Equivariant Tubular Neighborhood Theorem.
 
-\begin{thm}[Equivariant Tubular Neighborhood {{\cite[Thm.~6.4.3]{RS1}}}]\label{thm 6.4.3 RS1 equiv tubular neighb}
+\begin{thm}[Equivariant Tubular Neighborhood {{\cite[Thm.~6.4.3]{RS1}}}]\label{thm 6.4.3 RS1 equiv tubular neighb}\index{Theorem!Equivariant Tubular Neigborhood}
     Every orbit of a proper Lie group action admits a (equivariant) tubular neighborhood.
 \end{thm}
 
@@ -8770,7 +8775,7 @@ Thus we can compute the homotopy groups of Grassmann manifolds provided we compu
     The long exact sequence of this fibration combined with the triviality of the homotopy groups of spheres up to $d(n+1)-2$ gives the asserted result.
 \end{proof}
 \begin{cor}
-    The pairs $(\SO_{n+1},\SO_n)$ are $(n-1)$-connected (by using the fibration $\SO_n\to \Or_n\overset{\det}{\to}\{\pm 1\}$).
+    The pairs $(\SO_{n+1},\SO_n)$ are $(n-1)$-connected (by using the fibration $\SO_n\hookrightarrow \Or_n\overset{\det}{\to}\{\pm 1\}$).
 \end{cor}
 \begin{rem}
     Thus fixing an integer $q>0$, we choose $n\geq \lceil (q+2)/d\rceil$. It follows that the homomorphism $\pi_q(\calO_n)\to \pi_q(\calO_\infty)$ is an isomorphism for all such $n$. We say that the homotopy group $\pi_q(\calO_n)$ \emph{stabilizes} after $n=\lceil (q+2)/d\rceil$. This is called the stable range. For example, the stable range for $\pi_q$ of real orthogonal groups is $[q+2,\infty)$.
@@ -8921,7 +8926,7 @@ Our next example is certainly the best studied example of a parabolic geometry, 
     where $P$ is the stabilizer subgroup of some point of $\bbS^n$. The subgroup $P$ is usually called the Poincar\'e conformal group. For now we just note that $P$ is parabolic and is the semidirect product of the conformal group $\CO_n=\Or_n\times\bbR_+$ with an $n$-dimensional vector group.
 \end{defn}
 
-Clearly the Riemannian metric induced on this sphere $\bbS^n$ is only determined up to overall scale, and $\Or_{n+1,1}$ acts on $\bbS^n$ by diffeomorphisms that preserve the standard conformal structure on $\bbS^n$. One may also replace $\Or_{n+1,1}$ with $\SO_{n+1,1}$ or $\Spin_{n+1,1}(\bbR)$. However, there is no analog to the flat Euclidean space, i.e., conformal geometry does not allow a homogeneous model isomorphic to $\bbR^n$. On $\bbR^n$ there are certain local conformal transformations which do not globalize.
+Clearly the Riemannian metric induced on this sphere $\bbS^n$ is only determined up to overall scale, and $\Or_{n+1,1}$ acts on $\bbS^n$ by diffeomorphisms that preserve the standard conformal structure on $\bbS^n$. One may also replace $\Or_{n+1,1}$ with $\SO_{n+1,1}$ or $\Spin_{n+1,1}(\bbR)$. However, there is no analog to the flat Euclidean space, i.e., conformal geometry does not allow a homogeneous model isomorphic to $\bbR^n$. On $\bbR^n$ there are certain local conformal transformations which do not globalize. The geometry of the conformal sphere will be treated in full detail in \S\ref{sec: dS and AdS}.
 
 The final example is the Hermitian analog of the conformal sphere, which is also a parabolic contact structure.
 

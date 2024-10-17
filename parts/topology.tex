@@ -420,8 +420,8 @@ We can define two categories:
 \begin{example}
     Just as we can define square matrices of real numbers, we can also
     define square matrices with coefficients taken from a commutative
-    ring $R$, the set of matrices being denoted by $\Mat(n,R)$,
-    $n$ being the size of the matrix. $\Mat(n,R)$ forms an associative
+    ring $R$, the set of matrices being denoted by $\Mat_n(R)$,
+    $n$ being the size of the matrix. $\Mat_n(n,R)$ forms an associative
     ring. Hence, we have a covariant functor $F:\mathsf{CommRing}\rightarrow\mathsf{AssRing}$
     that takes a commutative ring to matrices of the ring. 
 \end{example}
@@ -429,7 +429,7 @@ We can define two categories:
     How does this functor act on morphisms? Check its functoriality.
 \end{xca}
 \begin{example}
-    If we restrict to invertible matrices the associative ring $\Mat(n,R)$
+    If we restrict to invertible matrices the associative ring $\Mat_n(n,R)$
     reduces to the group $\GL(n,R)$ of invertible matrices with
     coefficients in $R$ and we have a functor $F:\mathsf{CommRing}\rightarrow\mathsf{Gr}$.
 \end{example}
@@ -522,7 +522,7 @@ $\bullet$.
 \end{example}
 %
 \begin{example}
-    $R^{n}$ is an example of a left $\Mat\left(n,R\right)$-module,
+    $R^{n}$ is an example of a left $\Mat_n(R)$-module,
     where the action is defined by the usual matrix multiplication.
 \end{example}
 Vector spaces are nothing but a special case of ring modules, where
@@ -1196,7 +1196,7 @@ object in the category of the following diagrams:\[\begin{tikzcd}
 denoted $f\sqcup g$ (in set theory, ``piecewise function'').
 \end{defn}
 %
-\begin{defn}[Pullbacks]\index{Pullback (in a category)}\index{Fibered product|see {Pullback (in category theory)}}\index{Universal property!of pullbacks}\label{pullbacks}
+\begin{defn}[Pullback]\index{Pullback (in a category)}\index{Fibered product|see {Pullback (in a category)}}\index{Universal property!of pullbacks}\label{pullbacks}
 We can further generalize the above definitions and consider the
 category of commuting diagrams of the shape: \[\begin{tikzcd}[every matrix/.append style={name=m},   
 execute at end picture={\draw [<-] ([xshift=-7mm,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
@@ -2680,7 +2680,7 @@ The following proposition is the reason why second countability is often substit
     \item $\bbS^n$ is a manifold because it can be covered by finitely many charts $(U_i,\varphi_i)$, where $U_i$ is an open hemisphere whose ``equator'' lies on one of the coordinate hyperplanes, and $\varphi_i$ is simply the orthogonal projection to that hyperplane.
     \item An $n$-dimensional torus $\bbT^n=(\bbS^1)^{\times n}$ is a manifold.
     \item The figure eight, 8, as a subset of $\bbR^2$, is not a manifold, because its center doesn't have a neighborhood homeomorphic to an interval.
-    \item Matrices $\Mat(n,\bbR )$ form an $n^2$-dimensional manifold (isomorphic to $\bbR^{n^2}$). So do invertible matrices $\GL(n,\bbR )$ (being an open subset in $\bbR^{n^2}$) and all other classical matrix groups.
+    \item Matrices $\Mat_n(\bbR)$ form an $n^2$-dimensional manifold (isomorphic to $\bbR^{n^2}$). So do invertible matrices $\GL(n,\bbR )$ (being an open subset in $\bbR^{n^2}$) and all other classical matrix groups.
 \end{enumerate}
 \end{example}
 
@@ -2977,7 +2977,7 @@ As we will show later, the tangent space over $m\in M$ in a certain sense ``vari
 \section{Rank}
 We have defined rank in Definition~\ref{def.rank}. However, that definition is not practical because it's an existence statement rather than a constructive ``measurement''.
 
-Recall that for a matrix $A\in \Mat(n\times m,\bbR )$ its rank $\rank A$ is defined as the maximal number of linearly independent columns (equivalently, rows) in it. More abstractly, the rank of a linear operator is the dimension of its image, $\rank A=\dim(\im (A))$. The following theorem establishes the equality between the rank of a smooth map and the rank of its differential.
+Recall that for a matrix $A\in \bbR^{n\times m}$ its rank $\rank A$ is defined as the maximal number of linearly independent columns (equivalently, rows) in it. More abstractly, the rank of a linear operator is the dimension of its image, $\rank A=\dim(\im (A))$. The following theorem establishes the equality between the rank of a smooth map and the rank of its differential.
 
 \begin{thm}[Rank theorem]\index{Rank theorem}\label{Rank thm}
     For $f\in C^\infty(M,N)$, $\rank_m f=\rank (f_{\ast m})$.
@@ -2998,7 +2998,7 @@ Recall that for a matrix $A\in \Mat(n\times m,\bbR )$ its rank $\rank A$ is defi
     For any smooth map $f\in C^\infty (M,N)$ the set of points $m\in M$ where the rank is maximal, i.e., $\rank_m f=\min(\dim M,\dim N)$, is open in $M$.
 \end{prop}
 \begin{proof}
-    Let $\dim M=k$ and $\dim N=n$. The mapping $D:m\mapsto \wh{f}_{\ast m}$ is a continuous (in fact, smooth) map $U_\alpha\subset M\to \Mat(n\times k,\bbR )$. The subset of all matrices of maximal rank is open in $\Mat(n\times k,\bbR )$ (essentially because small perturbations can't make linearly independent vectors dependent\footnote{The converse is not true, which is why the set of matrices of any fixed non-maximal rank is not open.}). By continuity of $D$, the set of $m$ at which the rank is maximal is also open (in every $U_\alpha$ and thus in all of $M$).
+    Let $\dim M=k$ and $\dim N=n$. The mapping $D:m\mapsto \wh{f}_{\ast m}$ is a continuous (in fact, smooth) map $U_\alpha\subset M\to \bbR^{n\times k}$. The subset of all matrices of maximal rank is open in $\bbR^{n\times k}$ (essentially because small perturbations can't make linearly independent vectors dependent\footnote{The converse is not true, which is why the set of matrices of any fixed non-maximal rank is not open.}). By continuity of $D$, the set of $m$ at which the rank is maximal is also open (in every $U_\alpha$ and thus in all of $M$).
 \end{proof}
 
 Therefore we see that maps of maximal rank are of special significance. Moreover, they fall into two categories: if $\dim M\leq \dim N$, then the maximal rank equals $\dim M$; if $\dim M\geq \dim N$, the maximal rank is $\dim N$. In the first case, matrices of maximal rank are exactly the injective ones, whereas in the second case they are the surjective ones.
