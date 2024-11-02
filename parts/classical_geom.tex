@@ -24,7 +24,7 @@ The space of all bundle metrics on $E$ is convex, i.e., if $h_1$ and $h_2$ are t
 Only non-degeneracy is not obvious. If $h_t$ is degenerate, then there exists an $e\in E\setminus E_0$ such that $h_t(e,e)=0$. Then by positivity, $h_1(e,e)=h_2(e,e)=0$, which leads to a contradiction.
 \end{proof}
 
-\begin{thm}[Existence of bundle metrics]
+\begin{thm}[Existence of bundle metrics]\label{prop 4.4.2 RS1}
 Every \gls{vb} $E\overset\pi\to M$ admits a bundle metric. 
 \end{thm}
 \begin{proof}
@@ -58,7 +58,7 @@ A smooth map between two Riemannian manifolds $f:(M,g)\to(M',g')$ is called an i
 \end{defn}
 
 \begin{cor}[Normal bundle]
-Let $(M^m,g)$ be a Riemannian manifold and $S\sub M$ with $\dim S=k$. Define $D=\T S$ and consider the normal bundle $\rmN S\coloneqq D^\perp<\restr{\T M}{S}$. Since this is a subbundle of $\T M$, we can find local orthonormal $(m-k)$-frames for $\rmN S$. If $\codim S=1$, then $\rmN S=\<N\>$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{\T M}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
+Let $(M^m,g)$ be a Riemannian manifold and $S\emb M$ with $\dim S=k$. Define $D=\T S$ and consider the normal bundle $\rmN S\coloneqq D^\perp<\restr{\T M}{S}$. Since this is a subbundle of $\T M$, we can find local orthonormal $(m-k)$-frames for $\rmN S$. If $\codim S=1$, then $\rmN S=\<N\>$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{\T M}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
 \end{cor}
 
 
@@ -128,7 +128,7 @@ The length functional has an important property called \emph{reparametrization i
 \end{rem}
 
 \begin{prop}
-    If $(M,g)$ is complete and $S\sub M$, then $(S,\restr{g}{S})$ is also complete.
+    If $(M,g)$ is complete and $S\emb M$, then $(S,\restr{g}{S})$ is also complete.
 \end{prop}
 \begin{proof}
     Exercise. The idea is to show first that $d_M(p,q)\leq d_S(p,q)$ for any $p,q\in S$, where $d_M$ and $d_S$ are the distance functions induced by $g$ on $M$ and $S$, respectively. Then any Cauchy sequence in $S$ is also a Cauchy sequence in $M$ and therefore converges. The limit of the sequence must belong to $S$ because $S$ is embedded (i.e., closed as a subset of $M$).
@@ -174,7 +174,7 @@ In local (positively ordered) coordinates, \[\mu_g=\sqrt{\det(g_{ij})}\dd x^1\we
 \end{xca}
 
 \begin{prop}
-    Let $(M,g)$ be a Riemannian manifold and $S\sub M$ an orientable submanifold embedded via $i:S\hookrightarrow M$ with a chosen unit normal vector field $N$. Then:
+    Let $(M,g)$ be a Riemannian manifold and $S\emb M$ an orientable submanifold embedded via $i:S\hookrightarrow M$ with a chosen unit normal vector field $N$. Then:
     \begin{enumerate}
         \item $\mu_{\wt{g}}=i^\ast (i_N \mu_g)$, where $\wt{g}=i^\ast g$ is the induced metric on $S$;
         \item given another vector field $X\in\Gamma^\infty(\restr{\T M}{S})$, we have 

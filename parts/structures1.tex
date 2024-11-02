@@ -1,11 +1,11 @@
 % !TEX root = ../geom_autistic_intro.tex
-\chapter{Klein Geometry}
+\chapter{Klein Geometry}\label{chap: Klein geom}
 
 \section{Klein geometry}
 
 Felix Klein saw geometry as the study of invariants under actions of Lie groups. This led him to start the famous Erlangen program for the classification of all ``symmetric'' geometries corresponding to simple Lie groups. He noticed that each interesting symmetric geometry is based on a connected manifold with a \emph{transitive} action of a Lie group $G$ of ``motions'', and moreover, all properties of figures studied in the geometry remain invariant under these motions. For example, in the case of Euclidean geometry, the properties studied are angle and length, and the group is the group of rigid motions. Thus Klein unified a wide range of classical geometries by \emph{defining} a geometry as consisting of a Lie group $G$, a smooth manifold $M$ with a smooth, faithful, and transitive action of $G$. This means that Klein geometries are a special kind of principal bundles. We shall not require faithfulness in our treatment here.
 
-Let $H\sub G$ be a closed Lie subgroup and consider the action $H\acts G$ by right translation. Let $K$ be the maximal normal subgroup of $G$ lying inside $H$. By the Initial Subgroup Theorem~\ref{thm initial subgroup}, $K$ is a weakly embedded Lie subgroup of $G$. Since $H$ is closed, the closure $\wb{K}$ is also a normal subgroup of $G$ lying inside $H$. By maximality, we conclude that $K$ is closed, and hence embedded, so $K\sub H\sub G$. By Corollary~\ref{cor 6.5.3 RS1}(1), the canonical map $\pi:G\slash K\to G\slash H$ is a \gls{pfb} with fiber $H\slash K$, inducing a diffeomorphism
+Let $H\emb G$ be a closed Lie subgroup and consider the action $H\acts G$ by right translation. Let $K\sub G$ be the maximal normal subgroup of $G$ lying inside $H$. By the Initial Subgroup Theorem~\ref{thm initial subgroup}, $K$ is a weakly embedded Lie subgroup of $G$. Since $H$ is closed, the closure $\wb{K}$ is also a normal subgroup of $G$ lying inside $H$. By maximality, we conclude that $K$ is closed, and hence embedded, so $K\emb H\emb G$. By Corollary~\ref{cor 6.5.3 RS1}(1), the canonical map $\pi:G\slash K\to G\slash H$ is a \gls{pfb} with fiber $H\slash K$, inducing a diffeomorphism
 \[(G\slash K)\slash (H\slash K)\to G\slash H\]
 commuting with the canonical left $G\slash K$-actions.
 
@@ -14,7 +14,7 @@ commuting with the canonical left $G\slash K$-actions.
 \end{xca}
 
 \begin{defn}[Klein geometry]\index{Klein geometry}
-    A Klein geometry is a pair $(G,H)$, where $G$ is a Lie group and $H\sub G$ is a closed subgroup such that the homogeneous space $G\slash H$ is connected. $G$ is called the \emph{principal group} of the geometry. The \emph{kernel} of the Klein geometry is the maximal normal subgroup $K$ of $G$ lying inside $H$, i.e., the set of all elements of $G$ that act trivially on $G\slash H$. The Klein geometry is called \emph{effective} (or faithful) if $K=\{e\}$ and \emph{locally effective} if $K$ is discrete. \index{Klein geometry!Locally effective}\index{Klein geometry!Effective}\index{Kernel of a Klein geometry}
+    A Klein geometry is a pair $(G,H)$, where $G$ is a Lie group and $H\emb G$ is a closed subgroup such that the homogeneous space $G\slash H$ is connected. $G$ is called the \emph{principal group} of the geometry. The \emph{kernel} of the Klein geometry is the maximal normal subgroup $K$ of $G$ lying inside $H$, i.e., the set of all elements of $G$ that act trivially on $G\slash H$. The Klein geometry is called \emph{effective} (or faithful) if $K=\{e\}$ and \emph{locally effective} if $K$ is discrete. \index{Klein geometry!Locally effective}\index{Klein geometry!Effective}\index{Kernel of a Klein geometry}
     % A Klein geometry is \emph{geometrically oriented} if $G$ is connected. The homogeneous space $M=G\slash H$ is called the \emph{space of the Klein geometry}. It is called \emph{reductive} if the adjoint representation of $G$, viewed as a $\Ad(H)$-module, decomposes into a direct sum $\frakg=\frakh\oplus \frakm$, where $\frakg$ and $\frakh$ are the Lie algebras of $G$ and $H$, respectively. 
 \end{defn}
 
@@ -112,7 +112,7 @@ In particular, $(G,H)\cong (G,gHg^{-1})$ is an isomorphism that effectively chan
 
         \item Recall that under the standard Minkowski metric of signature $(1,n+1)$ on $\bbR^{n+2}$, the light cone $C=\{x\mid \lVert x\rVert=0\}$ is homogeneous in the sense that if $x\in C$, then $\lambda x\in C$ for all $\lambda\in\bbR$. As we will show in \S\ref{sec: dS and AdS}, the space $C\slash \sim\cong\bbS^n$ of null lines through the origin then inherits a transitive $\Or_{1,n+1}$-action with stabilizers isomorphic to the \emph{Poincar\'e conformal group} $P\cong \CO_n\ltimes \bbR^n$. This is the \emph{conformal geometry} on $\bbS^n$. In the case $n=2$ this is the \emph{M\"obius sphere geometry}.
 
-        \item If $H<G=\Or_{2,2}^+$ (where the metric is $\mathrm{diag}(-1,1,1,-1)$) is the stabilizer of the line spanned by $(1,1,0,0)$, then $Q=G\slash H$ can be identified with the \emph{projective completion} of a one-sheeted hyperboloid in $\bbR^3$ given by $x_1^2+x_2^2-x_3^3=1$, and so is diffeomorphic to the torus $\bbT^2$. This is called the \emph{Lie sphere geometry} on the \emph{Lie quadric} $Q$. In this geometry lines, circles and points are treated on equal footing: lines and points are circles of infinite and zero radius, respectively. The symmetry group can transform points into circles etc. This generalizes to $\Or_{n+2,2}$.
+        \item If $H<G=\Or_{2,2}^+$ (where the metric is $\diag(-1,1,1,-1)$) is the stabilizer of the line spanned by $(1,1,0,0)$, then $Q=G\slash H$ can be identified with the \emph{projective completion} of a one-sheeted hyperboloid in $\bbR^3$ given by $x_1^2+x_2^2-x_3^3=1$, and so is diffeomorphic to the torus $\bbT^2$. This is called the \emph{Lie sphere geometry} on the \emph{Lie quadric} $Q$. In this geometry lines, circles and points are treated on equal footing: lines and points are circles of infinite and zero radius, respectively. The symmetry group can transform points into circles etc. This generalizes to $\Or_{n+2,2}$.
 
         \item $(\SL_2(\bbC),H)$, where $H$ is the stabilizer of a point of $\CP^1$, then this is the geometry of a complex projective line on $\bbS^2$ and $\SL_2(\bbC)$ is the group of \glspl{flt}.
     \end{enumerate}
@@ -130,7 +130,7 @@ In particular, $(G,H)\cong (G,gHg^{-1})$ is an isomorphism that effectively chan
 
 
 \begin{defn}[Klein manifold]
-    A Klein manifold is a triple $(\Gamma,G,H, M)$, where $H\sub G$ is a closed subgroup, $\Gamma\sub G$ is a discrete subgroup, and $M\subset G\slash H$ is an open $\Gamma$-invariant subset such that the action of $\Gamma$ on $M$ obtained by restriction of the action of $G$ on $G\slash H$ is properly discontinuous, and such that the double coset space $\Gamma\bslash G\slash H$ is connected. The pair $(G,H)$ is called the \emph{model geometry} of the Klein manifold. If $M=G\slash H$, the Klein manifold is called \emph{complete}.
+    A Klein manifold is a triple $(\Gamma,G,H, M)$, where $H\emb G$ is a closed subgroup, $\Gamma\emb G$ is a discrete subgroup, and $M\subset G\slash H$ is an open $\Gamma$-invariant subset such that the action of $\Gamma$ on $M$ obtained by restriction of the action of $G$ on $G\slash H$ is properly discontinuous, and such that the double coset space $\Gamma\bslash G\slash H$ is connected. The pair $(G,H)$ is called the \emph{model geometry} of the Klein manifold. If $M=G\slash H$, the Klein manifold is called \emph{complete}.
 \end{defn}
 
 We will usually be interested only in complete Klein manifolds, and so will describe them simply as triples $(\Gamma,G,H)$. Note that we do not require $G\slash H$ to be connected. However, the following exercise shows that we can always replace $(\Gamma,G,H)$ by $(\Gamma',G',H)$ with the same space, for which $(G',H)$ is a Klein geometry.
@@ -249,7 +249,7 @@ Note that the group $G$ doesn't directly enter this definition, so we can actual
 
 The following lemma shows that the universal cover of a homogeneous space is itself a homogeneous space with the ``big'' group $G$ replaced by its own universal covering group. This space is unsurprisingly called the \emph{universal covering homogeneous space}.\index{Universal covering homogeneous space}
 
-\begin{lem}[Universal covering homogeneous space]\label{lem univ cov hom space}
+\begin{lem}[Universal covering homogeneous space {{\cite[\S11.1.3]{HN}}}]\label{lem univ cov hom space}
     Let $G\slash H$ be a connected homogeneous space (Klein geometry) of a connected Lie group $G$. Then the universal cover of $G\slash H$ is also a homogeneous space:
     \[\widetilde{G\slash H}\cong \wt{G}\slash H'_0,\]
     where $\wt G$ is the universal covering group of $G$ and $H'_0$ is the identity component of the preimage $H'$ of $H$ in $\wt{G}$.
@@ -474,7 +474,7 @@ We return to the problem of how a Klein geometry (i.e., its principal bundle and
 \begin{proof}
     The map $\psi$ is clearly invariant and equivariant in the three stated ways, therefore it descends as stated to a map $G\times^{H''} H'\to G'$. Its image is clearly the pullback $\restr{G'}{M''}$ of $G'\to M'$ to $M''\subset M'$. By $G$-equivariance, $M''$ is a $G$-orbit in $M'$, so a smooth manifold. Two elements $(g,h)$, $(\wt g,\wt h)\in G\times H'$ map to the same point $g'\in G'$ iff $\lambda(g)h=\lambda(\wt g)\wt h$, i.e., $\lambda(g^{-1}\wt g)=h\wt{h}^{-1}$, so $\wt{g}=gk\in \lambda^{-1}(H')=H''$ and $\lambda(k)=h\wt{h}^{-1}$ so $\wt{h}=\lambda(k)^{-1}h$. So the map $\psi$ descends to an injection $G\times^{H''}H'\hookrightarrow G'$. 
 
-    The subgroup $H''=\lambda^{-1}(H')$ is a closed Lie subgroup since $H'\sub G'$ is closed. Hence, it acts on $G$ freely and properly, hence acts on $G\times H'$ freely and properly, so the quotient is a smooth manifold and $G\times H\to G\times^{H''}H'$ is a smooth principal $H''$-bundle, and the map to $G'$ is smooth. The left $G$-action and right $H'$-action on $G\times H'$ are smooth, and invariant under the right $H''$-action, so descend to smooth $\psi$-equivariant actions on the quotient.
+    The subgroup $H''=\lambda^{-1}(H')$ is a closed Lie subgroup since $H'\emb G'$ is closed. Hence, it acts on $G$ freely and properly, hence acts on $G\times H'$ freely and properly, so the quotient is a smooth manifold and $G\times H\to G\times^{H''}H'$ is a smooth principal $H''$-bundle, and the map to $G'$ is smooth. The left $G$-action and right $H'$-action on $G\times H'$ are smooth, and invariant under the right $H''$-action, so descend to smooth $\psi$-equivariant actions on the quotient.
 
     Thus, $G\times^{H''}H'\to \restr{G'}{M''}$ is an equivariant bijection of homogeneous spaces of $G\times H'$, hence a diffeomorphism, and a bundle isomorphism over $M'$ by equivariance. The formula relating the Maurer-Cartan forms is just the differential-geometric version of the matrix identity 
     \[(gh')^{-1}\dd (gh')=(h')^{-1}g^{-1}(g\dd h'+\dd g \cdot h')=(h')^{-1}\dd h'+(h')^{-1}(g^{-1}\dd g)h'.\]
@@ -554,7 +554,7 @@ The tangent bundle of a Klein geometry is an example of an important class of bu
 
 
 \begin{defn}[Homogeneous bundle]
-    Let $G$ be a Lie group and $H\sub G$ a closed subgroup. A (left) homogeneous, or \emph{equivariant}, \gls{fb} of type $(G,H)$ is a \gls{fb} $E\overset{\pi}{\to}G\slash H$ over the homogeneous space of (left) cosets $G\slash H$ together with a (left) action $G\overset{\wt L}{\acts} E$ that lifts the natural (left) action $\wh L$ on $G\slash H$, i.e., which satisfies \[\pi\circ \wt{L}_g=\wh{\rmL}_g\circ \pi,\text{ for all } g\in G.\] 
+    Let $G$ be a Lie group and $H\emb G$ a closed subgroup. A (left) homogeneous, or \emph{equivariant}, \gls{fb} of type $(G,H)$ is a \gls{fb} $E\overset{\pi}{\to}G\slash H$ over the homogeneous space of (left) cosets $G\slash H$ together with a (left) action $G\overset{\wt L}{\acts} E$ that lifts the natural (left) action $\wh L$ on $G\slash H$, i.e., which satisfies \[\pi\circ \wt{L}_g=\wh{\rmL}_g\circ \pi,\text{ for all } g\in G.\] 
 
     In particular, a homogeneous \gls{vb} is a \gls{vb} which is also a homogeneous \gls{fb} such that the $G$-action is by \gls{vb} morphisms. Similarly, a homogeneous \gls{pfb} is a \gls{pfb} which is also a homogeneous \gls{fb} such that the $G$-action is by \gls{pfb} morphisms, i.e., by maps equivariant w.r.t.\ the (right) action of the structure group.
 
@@ -619,12 +619,12 @@ Finally, we provide a similar classification of principal homogeneous bundles.
 
 Since we will in the future describe the group $G$ of a Klein geometry $(G,H)$ as defining a certain geometric structure on the manifold $G\slash H$, it is important to better understand the induced $G$-action on $G\slash H$, which is not necessarily faithful. In particular, the kernel $K$ acts trivially on $G\slash H$ and hence on the model tangent space $\frakg\slash\frakh$. However, the kernel of the isotropy representation $\underline{\Ad}:\frakh\to \GL(\frakg\slash\frakh)$ does not necessarily coincide with $K$ (it might be larger). In this section we examine how one could nevertheless compute $K$ using only infinitesimal information.
 
-Let $G$ be a Lie group with Lie algebra $\frakg$. To each linear subspace $\frakl<\frakg$ and closed subgroup $H\sub G$, associate the closed subgroup $K_\frakl\sub H\sub G$ defined as follows:
+Let $G$ be a Lie group with Lie algebra $\frakg$. To each linear subspace $\frakl<\frakg$ and closed subgroup $H\emb G$, associate the closed subgroup $K_\frakl\emb H\emb G$ defined as follows:
 \[K_\frakl\coloneqq \left\{h\in H\mid \forall A\in\frakg\;\; \Ad_h A-A\in \frakl\right\},\]
 i.e., $\frakl$ is $K_\frakl$-invariant and the induced action of $\Ad(K_\frakl)$ on $\frakg\slash\frakl$ is also trivial.
 
 \begin{lem}
-    If $\frakl<\frakh$ is an $\Ad(H)$-invariant linear subspace then $K_\frakl\sub H$ is a closed normal subgroup.
+    If $\frakl<\frakh$ is an $\Ad(H)$-invariant linear subspace then $K_\frakl\emb H$ is a closed normal subgroup.
 \end{lem}
 \begin{proof}
     For any $h\in H$ and $a\in H_\frakl$, the operator
@@ -634,10 +634,10 @@ i.e., $\frakl$ is $K_\frakl$-invariant and the induced action of $\Ad(K_\frakl)$
 
 Now let 
 \[K_1\coloneqq K_{\frakh},\quad K_{i+1}\coloneqq K_{\frakk_i},\quad i\geq 1.\]
-By induction, since $K_i\sub H$ is normal, $\frakk_i<\frakh$ is an ideal, and $K_{i+1}\sub H$ is also a closed normal subgroup (of $H$).
+By induction, since $K_i\embsub H$ is normal, $\frakk_i\sub \frakh$ is an ideal, and $K_{i+1}\embsub H$ is also a closed normal subgroup (of $H$).
 
 \begin{lem}
-    If $(G,H)$ is a Klein geometry with kernel $K$ and $K_i\sub H$ is the sequence of normal subgroups of $H$ defined above, then 
+    If $(G,H)$ is a Klein geometry with kernel $K$ and $K_i\embsub H$ is the sequence of normal subgroups of $H$ defined above, then 
     \[K=\bigcap_{i=1}^\infty K_i.\]
 \end{lem}
 \begin{proof}
@@ -738,7 +738,7 @@ As a special case, in effective Klein geometries there are no proper subgroups o
 Next, recall that the $r$-jet of a smooth map can be identified, given a particular coordinate chart, with the Taylor series of that map up to and including $r$-th order derivatives. We now show that $K_r$ consists of exactly those elements of $G$ which induce diffeomorphisms of $G\slash H$ with trivial derivatives up to order $r$ (by trivial we mean they coincide with the derivatives of the identity map).
 
 \begin{lem}
-    The subgroup $K_r\sub G$ is precisely the set of elements $g\in G$
+    The subgroup $K_r\emb G$ is precisely the set of elements $g\in G$
     such that the $r$-th jet at $[e]$ of the induced action $\wh{\rmL}_g$ on $M=G\slash H$ is the same as that of the identity map:
     \[K_r=\left\{g\in G: \rmj^k_{[e]}\wh{\rmL}_g=\rmj^k_{[e]}\id_{M}\right\}.\]
 \end{lem}
@@ -822,7 +822,7 @@ The next fundamental result shows that in certain situations one can reduce ques
 \end{proof}
 
 \begin{example}[Spherical harmonics]
-    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\sub G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma^\infty(L_n))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma^\infty(L_n)$ into irreps. Therefore the Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
+    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\emb G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma^\infty(L_n))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma^\infty(L_n)$ into irreps. Therefore the Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
 
     Consider $G=\SU_2$ and $T=\U_1$ the subgroup fixing a vector. Then $G\slash T\cong \bbS^2$. Since $T$ is abelian, all of its representations decompose into sums of one-dimensional (hence irreducible) ones, and the one-dimensional representations are labeled by an integer $n\in\bbZ$ (namely the representation is given by multiplication by $z^n$, where $z\in\U_1\subset \bbC$). Meanwhile the irreducible representations $V_k$ of $\SU_2$ are known to be labeled by non-negative integers $k$, where $k$ is the largest integer that occurs when you restrict $V_k$ to be a $\U_1$ representation. Frobenius reciprocity implies
     \[\dim\Hom_{\SU_2}(V_k,\Gamma^\infty(L_n))=\dim \Hom_{\U_1}(V_k,n)\]
@@ -862,7 +862,558 @@ on $G\slash H$ equals the multiplicity of the trivial representation in $\bbT^k_
 
 
 
-\chapter{Differential Equations and Symmetry}
+
+
+
+\chapter{Differential Equations and Symmetry \texorpdfstring{\ucmark}{}}
+
+
+\textbf{Warning on notation:} to avoid clashes, in the context of differential equations, we will denote derivatives of a function $u(x)$ by $u_x$, $u_{xx}$, and so on, and the $k$-order derivative will be $u^{(k)}$. Primes like $u'$ will be reserved for designating alternative sets of variables.
+
+
+
+
+\section{Reduction of order in ODEs}
+
+
+As an introduction, we will present a symmetry-based method for the reduction of ODEs of an arbitrary order $k$ to order $k-1$. This method is traditionally known as the \emph{method of characteristics} (although it is more commonly applied to first-order PDEs).
+
+Consider first a $k$-order ODE in one independent variable $x$ and one dependent variable $u$:
+\[F\left(x,u,u_x,\ldots,u^{(k)}\right)=0.\]
+It can be interpreted as defining a hypersurface in the $(k+2)$-dimensional space $\bbR^{k+2}$ with coordinates $x,u,p_1,\ldots,p_k$:
+\[F(x,u,p_1,\ldots,p_k)=0.\]
+Now we will consider the distribution $\calC<\T^\ast \bbR^{k+2}$ spanned by the contact forms 
+\[\theta^0=\dd u-p_1\dd x,\quad \theta^i=\dd p_i-p_{i+1}\dd x,\quad i=1,\ldots,k-1.\]
+These forms are everywhere independent, so the rank of $\calC$ is $k$. This distribution is called the \emph{Cartan distribution}.\index{Cartan distribution}
+
+Note that a curve in $\bbR^{k+2}$ is the graph of a function $u=f(x)$ and of its derivatives, $x\mapsto (f(x),f_x(x),\ldots,f^{(k)}(x))$, iff it projects to the $x$-axis without degeneration and is an integral curve of the distribution $\calC$.  
+
+Using $\calC$, one can give a geometric interpretation to the well-known method for integrating of ODEs not containing the independent variable in explicit form. 
+
+\begin{example}
+    Consider a second-order equation of the form $F(u,u_x,u_{xx})=0$, or, in other words, a hypersurface $\calE\subset\bbR^4$ defined by $F(u,p_1,p_2)=0$. Restrict the Cartan distribution $\calC=\<\theta^0,\theta^1\>$ to this hypersurface. The resulting distribution is invariant under translations along the $x$-axis. This makes it possible to construct the quotient equation by the variable $x$ of which the equation is independent. More precisely, we will quotient out by the action of the one-parameter group $T\cong \bbR$ of translations $(x,u,p_1,p_2)\mapsto (x+c,u,p_1,p_2)$, $c\in \bbR$. In other words, consider the quotient map 
+    \[\pi:\bbR^4\to \bbR^4\slash T,\quad (x,u,p_1,p_2)\mapsto (u,p_1,p_2).\]
+    The image of the hypersurface $\calE$ under this map is the hypersurface $\calE\slash T$ in the space $\bbR^4\slash T$ given by the same equation $F(u,p_1,p_2)=0$. The distribution $\calC$ projects without degeneration to the space $\bbR^4\slash T$ and, thus, gives rise to the $2$-dimensional quotient distribution $\calC\slash T$. This distribution can be defined by a single $1$-form on $\bbR^4\slash T$: for example, one can take the following linear combination of $\theta^0,\theta^1$:
+    \[\wt\theta=\theta^1-\frac{p_2}{p_1}\theta^0=\dd p_1-\frac{p_2}{p_1}\dd u.\]
+    Thus, as a result of the factorization, we obtain the $3$-dimensional space $\bbR^4\slash T$, endowed with the $2$-dimensional distribution given by $\wt\theta=0$, and the $2$-dimensional surface $\calE\slash T\subset \bbR^4\slash T$, i.e., a first-order ODE. Introduce the coordinates 
+    \[x'\coloneqq u,\quad u'\coloneqq p_1,\quad p'\coloneqq \frac{p_2}{p_1}\label{eq 2.2 Kras}\]
+    on $\bbR^4\slash T$. Then we have $\wt\theta=\dd u'-p'\dd x'$ and the equation $\calE\slash T$ takes the form 
+    \[F'(x',u',p')=0,\]
+    where $F'(x',u',p')=F(x',u',p'u')$. Thus, the quotient map $\pi$ reduces the initial equation of order $2$ to the first-order equation 
+    \[F'(x',u',u'_{x'})=0,\]
+    called the \emph{quotient equation}. Therein lies the geometric meaning of the change of coordinates to $(x',u',p')$.
+    
+    If we were instead to define 
+    \[x'\coloneqq \frac{p_1^2}{2},\quad u'\coloneqq u,\quad p'\coloneqq \frac{1}{p_2},\]
+    we would have found another equivalent first-order equation with $u'$ serving as the independent variable and $x'$ as the dependent one:
+    \[F(u',\pm\sqrt{2x'},x'_{u'})=0.\]
+\end{example}
+
+
+In a similar manner, one can reduce by $1$ the order of any equation not explicitly depending on $x$. Quotienting by the group $T\cong\bbR$ of $x$-translations the space $\bbR^{k+2}$ with coordinates $x,u,p_1,\ldots,p_k$, we obtain the space $\bbR^{k+2}\slash T$ with coordinates $u,p_1,\ldots,p_k$. The image of the Cartan distribution $\calC$ on $\bbR^{k+2}$ under this quotient map is the two-dimensional distribution $\calC\slash T$ on $\bbR^{k+2}\slash T$ given by 
+\[
+    \wt\theta^{i-2}=\theta^{i-1}-\frac{p_i}{p_1}\theta^0=\dd p_{i-1}-\frac{p_i}{p_1}\dd u,\quad i=2,\ldots,k.
+\]
+We claim that the coordinates $u,p_1,\ldots,p_k$ in the space $\bbR^{k+2}\slash T$ can be changed for new coordinates $x',u',p_1',\ldots,p_{k-1}'$, such that the quotient distribution $\calC\slash T$ is given by 
+\[\wt\theta_0'\coloneqq \dd u'-p_1'\dd x',\ldots,\wt\theta_{k-2}'\coloneqq \dd p_{k-2}'-p_{k-1}'\dd x'.\]
+Indeed, define $x'$, $u'$, and $p'=p_1'$ by (\ref{eq 2.2 Kras}). Since 
+\[\dd p_1'=\dd \frac{p_2}{p_1}=\frac{1}{p_1}\dd p_2-\frac{p_2}{p_1^2}\dd p_1,\]
+we can put 
+\[\wt\theta_1'=\frac{1}{p_1}\wt\theta^1-\frac{p_2}{p_1^2}\wt\theta^0=\dd p_1'-\left(\frac{p_3}{p_1^2}-\frac{p_2^2}{p_1^3}\right)\dd u.\]
+Therefore, $p_2'=\frac{p_3}{p_1^2}-\frac{p_2^2}{p_1^3}$. Continuing this line of reasoning, we obtain the desired change of variables. If we replace the variables $u,\ldots,p_k$ in the initial $k$-order equation by $x',u',\ldots,p'_{k-1}$
+\[F(u,p_1,\ldots,p_k)=0,\]
+we get the quotient equation of order $k-1$.
+
+As it was noted above, the restriction $\calC(\calE)$ of the rank-$2$ Cartan distribution on $\bbR^{k+2}$ to the hypersurface $\calE$ is of rank $1$ at all points except for a nowhere dense set of singular points where the tangent plane to $\calE$ contains the fiber of $\calC$. Therefore, the distribution $\calC(\calE)$ can be defined by a single vector field. Let us describe explicitly such a field and establish the conditions distinguishing between singular and nonsingular points.
+
+Let 
+\[Y\coloneqq \alpha\partial_x+\beta_0\partial_u+\beta_1\partial_{p_1}+\cdots+\beta_k\partial_{p_k}\]
+be a vector field lying in the distribution $\calC$ tangent to the surface $\calE$. Since it belongs to $\calC$, it satisfies 
+\[\theta^i(Y)=0,\quad i=0,1,\ldots,k-1,\]
+i.e., for all $i$ except for $i=k$ we have $\beta_i=p_{i+1}\alpha$. The requirement that $Y$ be tangent to $\calE$ is equivalent to the condition $\restr{Y\cdot F}{\calE}=0$, i.e., to the existence of a function $\lambda$ such that 
+\[\alpha\left(F_x+p_1F_u+p_2F_{p_1}+\cdots+p_k F_{p_{k-1}}\right)+\beta_kF_{p_k}=\lambda F.\label{eq 2.3 Kras}\]
+Thus, the desired vector field can be written as 
+\[
+    Y_F=-F_{p_k}\left(\partial_x+p_1\partial_u+\cdots+p_k\partial_{p_{k-1}}\right)
+    +\left(F_x+p_1F_u+\cdots p_kF_{p_{k-1}}\right)\partial_{p_k}.
+\]
+In particular, for a first-order equation $F(x,u,p)=0$, the field $Y_F$ takes the form 
+\[Y_F=-F_p\left(\partial_x+p\partial_u\right)+\left(F_x+pF_u\right)\partial_p.\label{eq 2.4 Kras}\]
+If the equation is solved w.r.t.\ the derivative, i.e., $F=-p+f(x,u)$, then $\calE=\{p=f(x,u)\}$ and  
+\[Y_F=\partial_x+p\partial_u+\left(f_x+pf_u\right)\partial_p.\]
+The projection of this field to the $(x,u)$-plane has the form 
+\[\partial_x+f(x,u)\partial_u.\]
+The integral curves of $Y_F$ are, as is well known, integral curves of the equation at hand. 
+
+A point $m\in \calE$ is singular if the relation (\ref{eq 2.3 Kras}) at this point holds for all $\alpha$ and $\beta_k$. Since the right-hand side of this relation vanish on $\calE$, the equalities 
+\[F=F_x+p_1F_u+\cdots+p_kF_{p_{k-1}}=F_{p_k}=0\]
+are necessary and sufficient condition for the point under consideration to be singular. Thus, the singular points of the hypersurface $\calE$ are those where the field $Y_F $ vanishes. 
+
+The vector field $Y_F$ is called a \emph{characteristic vector field} of the equation $\calE$. The projections of its integral curves to the $(x,u)$-plane are the graphs of solutions of this ODE.
+
+
+\begin{example}\label{ex 2.2 Kras}
+    Consider the equation $(3x-2u)u_x=u$. Then $F=(3x-2u)p-u$, and by formula (\ref{eq 2.4 Kras}) we have 
+    \begin{multline}
+        Y_F=(2u-3x)\partial_x+p(2u-3x)\partial_u+(2p-2p^2)\partial_p=\\
+        =(2u-3x)\partial_x-u\partial_u+(2p-2p^2)\partial_p,
+    \end{multline}
+    where the last equality follows from the ODE itself ($F=0$). Let us take $x$ and $u$ as coordinates on $\calE$ and find the integral curves of $Y_F$ from the system of equations 
+    \[\dot x=2u-3x,\quad \dot u=-u.\]
+    Solving the system we get $x=C_1\rme^{-t}+C_2\rme^{-3t}$, $u=C_1\rme^{-t}$. Hence, $x=u+au^3$ with $a=\const$. Note that at the point $(x,u,p)=(0,0,0)$, which is a singular point, the uniqueness theorem for solutions of ODEs is not valid.
+\end{example}
+
+
+
+
+
+
+
+\section{Symmetries of distributions}
+
+
+Since solutions of ODEs are integral curves for the corresponding Cartan distributions, we begin the study of symmetries of differential equations with discussing symmetries in a more general context of distributions.
+
+\begin{defn}[Symmetry of a distribution]
+    Let $D<\T M$ be a smooth distribution on a manifold $M$. A diffeomorphism $\varphi:M\to M$ is called a (finite) symmetry of the distribution $D$ if it preserves this distribution, i.e., $\varphi_\ast D=D$. The group of all such diffeomorphism is denoted by $\Aut(D)$.
+\end{defn}
+
+\begin{example}
+    The Cartan distribution $\calC$ on the space $\bbR^3$ with coordinates $x,u,p$ is given by the $1$-form $\theta=\dd u-p\dd x$. It is obviously invariant under translations along $x$ or $u$, i.e., $(x,u,p)\mapsto (x+a,u+b,p)$ is a symmetry of $\calC$ for any $(a,b)\in\bbR^2$. These are not all symmetries. For example, it is easy to check that the so called \emph{Legendre transform} $(x,u,p)\mapsto (p,u-xp,-x)$ \index{Legendre transform} is a symmetry since it preserves $\theta$. The analogous transformation $(x,u,p)\mapsto (p,xp-u,x)$ flips the sign of $\theta$, so is also a symmetry of $\calC$.
+\end{example}
+
+Suppose that the distribution $D$ is locally generated by some vector fields $X_1,\ldots,X_l\in\Gamma^\infty(D)$. The definition of a symmetry $\varphi\in\Aut(D)$ is then equivalent to 
+\[\varphi_\ast X_i=\sum_{j}\mu_{ij}X_j,\quad i=1,\ldots,l,\]
+for some functions $\mu_{ij}$. Assume that the $1$-forms $\theta^1,\ldots,\theta^k$, where $\theta^i\coloneqq \sum_j\theta^{i}_j\dd x^j$ with $\theta^i_{j}\in C^\infty(M)$ in local coordinates $\bf{x}(m)$, generate the distribution $D$ in the sense that they locally span its annihilator, then the definition of a symmetry is equivalent to 
+\[\varphi^\ast \theta^i=\sum_j\lambda_{ij}\theta^j,\quad i=1,\ldots,k,\]
+for some functions $\lambda_{ij}$ on $M$, or, equivalently, 
+\[\sum_{j,s}\theta^{i}_j(\varphi(m))\frac{\partial\varphi_j}{\partial x^s}\dd x^s=\sum_{j,s}\lambda_{ij}(m)\theta^{j}_s(m)\dd x^s,\quad i=1,\ldots,k,\]
+where $s=1,\ldots,n=\dim M$. 
+
+Hence, the symmetries $\varphi$ of the distribution at hand can be found from the following system of equations:
+\[\sum_j \theta^{i}_j(\varphi(m))\frac{\partial\varphi_j}{\partial x^s}=\sum_j\lambda_{ij}(m)\theta^{j}_s(m),\]
+where $\lambda_{ij}$ are arbitrary smooth functions, $i=1,\ldots,k$, $j=1,\ldots,n$. The problem of solving these equations is not easier than the problem of finding the integral manifolds of the distribution. Moreover, the direct attempt to describe the set $\Aut(D)$ of all symmetries is doomed to failure. However, passing to the infinitesimal point of view considerably simplifies the situation.
+
+\begin{defn}[Infinitesimal symmetry of a distribution]
+    A vector field $X\in\fX(M)$ is said to be an infinitesimal symmetry of the distribution $D$ if $\Lie_X \Gamma^\infty(D)\subset\Gamma^\infty(D)$. The set of all infinitesimal symmetries is denoted by $\aut(D)$.
+\end{defn}
+
+\begin{thm}\label{thm 3.1 Kras}
+    Let $D$ be a distribution on $M$. The following conditions are equivalent:
+    \begin{enumerate}
+        \item $X\in\aut(D)$;
+        \item The flow boxes of $X$ take (restrictions of) $D$ to $D$;
+        \item If $X_1,\ldots,X_l$ locally span $D$, then there exist smooth functions $\mu_{ij}$ such that $[X,X_i]=\sum_j\mu_{ij}X_j$ for $i=1,\ldots,l$;
+        \item If $\theta^1,\ldots,\theta^k$ are $1$-forms locally defining $D$, then there exist smooth functions $\nu_{ij}$ such that $\Lie_X \theta^i=\sum_j\nu_{ij}\theta^j$ for all $i=1,\ldots,k$.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    The equivalence of 1, 2, and 3 is trivial. Now assume 3 and suppose that $\theta(X_i)=0$ for a $1$-form $\theta$. We then have $(\Lie_X\theta)(X_i)=-\theta([X,X_i])=0$,
+    so $\Lie_X\theta$ is also a section of the annihilator.
+
+    Finally, 4 implies 1: since $\theta^j(X_i)=0$ and $(\Lie_X\theta^j)(X_i)=0$, we have 
+    \[0=\Lie_X(\theta^j(X_i))=(\Lie_X\theta^j)(X_i)-\theta^j([X,X_i])=-\theta^j([X,X_j]),\]
+    which implies that $[X,X_j]$ is a section of $D$.
+\end{proof}
+
+Note that infinitesimal symmetries may have incomplete flows, in which case they don't generate finite symmetries of $D$. Thus, even if $\Aut(D)$ is a Lie group, $\aut(D)$ may be larger than its Lie algebra.
+
+\begin{cor}\label{cor 3.2 Kras}
+    $\aut(D)$ is a vector space and a Lie subalgebra of $\fX(M)$.
+\end{cor}
+
+Theorem~\ref{thm 3.1 Kras} lets us write down coordinate conditions for a vector field $X=X^i\partial_{x^i}$ to be a symmetry of the distribution defined by $1$-forms $\theta^j=\sum_s\theta^{js}\dd x^s$.  We have 
+\[\Lie_X\theta^j=\sum_{i,s}\left(X^i\partial_{x^i}\theta^{js}+\partial_{x^s}X^i \theta^{i}_j\right)\dd x^s.\]
+This $1$-form is represented as $\sum_i\nu_{ji}\theta^i$, i.e., 
+\[\sum_{i}\left(X^i\partial_{x^i}\theta^{j}_s+\partial_{x^s}X^i \theta^{j}_i\right)=\sum_i\nu_{ji}\theta^{i}_s,\quad j=1,\ldots,k,\; s=1,\ldots,n.\]
+Notably, this system is linear in the components $X^1,\ldots,X^k$ of $X$. It is called the \emph{system of linear Lie equations} corresponding to the nonlinear system of Lie equations $\varphi^\ast\theta^i=\sum_j\lambda_{ij}\theta^j$.
+
+\begin{example}
+    Symmetries of a rank $1$ distribution spanned by a vector field $Y$ are vector fields $X$ such that $[X,Y]=\lambda Y$ for some function $\lambda$.
+\end{example}
+
+\begin{example}
+    For an \emph{integrable} distribution $D$ at a generic point there exists a coordinate system $(x^1,\ldots,x^l,\ldots,x^n)$ on $M$ such that $D$ is given by $\partial_{x^1},\ldots,\partial_{x^l}$. Then $[X_j,X]=\sum_i \partial_{x^j}X^i\partial_{x^i}$, so that the condition $[X,X_j]\in \Gamma^\infty(D)$, $j=1,\ldots,l$, is equivalent to the equalities $\partial_{x^j}X^i=0$, $j\leq l<i$. The field $X$ splits into the longitudinal component $\sum_{i\leq l}X^i\partial_{x^i}$ and the transversal component $\sum_{i>l}X^i\partial_{x^i}$. Using this decomposition, we can say that $X$ is a symmetry of $D$ iff the coefficients of its transversal component are constant on the leaves of the foliation determined by $D$. The flows of $X$ then permute the leaves.
+\end{example}
+
+\begin{example}\label{ex 3.4 Kras}
+    Let us find all infinitesimal symmetries of the Cartan distribution $\calC=\<\theta=\dd u-p\dd x\>$ on $\bbR^3$. Let 
+    \[X=\alpha\partial_x+\beta\partial_u+\gamma\partial_p\]
+    be a symmetry. We have 
+    \[\Lie_X\theta=(\beta_x-p\alpha_x-\gamma)\dd x+(\beta_u-p\alpha_u)\dd u+(\beta_p-p\alpha_p)\dd p.\]
+    The condition that $\Lie_X\theta$ is proportional to $\theta$ reads 
+    \begin{align}
+        \beta_p-p\alpha_p&=0,\\
+        \beta_x-p\alpha_x-\gamma&=-p(\beta_u-p\alpha_u).
+    \end{align}
+    This system implies that the symmetries of $\calC$ are parametrized by functions $\alpha,\beta$ related by $\beta_p=p\alpha_p$, and $\gamma$ is expressed by $\gamma=\beta_x+p\beta_u-p\alpha_x-p^2\alpha_u$. Consider the function $f=\beta-p\alpha$. It is clear that $\alpha=-f_p$, $\beta=f-pf_p$, $\gamma=f_x+pf_u$, i.e., 
+    \[X=-f_p\partial_x+(f-pf_p)\partial_u+(f_x+pf_u)\partial_p.\label{eq ex 3.4 Kras}\]
+    Thus, a symmetry $X$ is uniquely determined by the function $f=f(x,u,p)$ which can be chosen arbitrarily. In other words, the symmetry is completely determined by its projection to the underlying manifold, in this case the $x$-axis.
+\end{example}
+
+\begin{defn}[Characteristics]\index{Characteristic vector field}
+    For a distribution $D$, elements of the set $\cha(D)\coloneqq \aut(D)\cap \Gamma^\infty(D)$ are called \emph{characteristic vector fields}. Symmetries generated by them are called \emph{trivial}. The integral curves of characteristic vector fields are called \emph{characteristics}.
+\end{defn}
+
+\begin{prop}\label{prop 3.3 Kras}
+    The set of all characteristic vector fields is an ideal in the Lie algebra $\aut(D)$: 
+    \[[\cha(D),\aut(D)]\subset \cha(D).\]
+\end{prop}
+\begin{proof}
+    Suppose $X,Y\in \aut(D)$ with $Y$ characteristic. Let $X_1,\ldots,X_l$ be a local frame for $D$. Suppose that $Y=\sum_i f_i X_i$. By Theorem~\ref{thm 3.1 Kras}, $[X,X_i]=\sum_j\mu_{ij}X_j$. Therefore, 
+    \[[X,Y]=\left[X,\sum_i f_i X_i\right]=\sum_i X(f_i)X_i+\sum_{i,j}f_i\mu_{ij}X_j.\]
+    Thus, the vector field $[X,Y]$ lies in $D$. By Corollary~\ref{cor 3.2 Kras}, it is a symmetry of $D$.
+\end{proof}
+
+Since characteristics form an ideal, they can be quotiented out:
+
+\begin{defn}[Nontrivial symmetries]
+    The quotient Lie algebra $\sym(D)\coloneqq \aut(D)\slash\cha(D)$ is called the Lie algebra of nontrivial symmetries of $D$.
+\end{defn}
+
+Let us now consider the symmetries of an \emph{integrable} distribution $D$. First of all, in this case $\cha(D)=\Gamma^\infty(D)$. By the Frobenius Theorem, transformations corresponding to a characteristic move every leaf of $D$ along itself. In contrast, nontrivial symmetries permute the leaves. 
+
+These observations can be generalized to nonintegrable distributions. Here by ``integral manifold'' we mean any immersed submanifold $L\subset M$ such that $\T L\subset D$, so not necessarily of the same dimension as the fibers of $D$.
+
+\begin{prop}\label{prop 3.4 Kras}
+    A characteristic vector field of a distribution $D$ is tangent to every maximal integral manifold of $D$.
+\end{prop}
+\begin{proof}
+    Assume there is a $X\in\cha(D)$ which is not tangent to an integral manifold $L$. Consider the flow $\Fl^X_t$ of $X$ and the manifold $\wb L=\bigcup_t \Fl^X_t(L)$. Clearly, $L$ is strictly embedded into $\wb L$.
+
+    We claim that the manifold $\wb L$ is an integral manifold for $D$. Indeed, the tangent space to $\wb L$ at a point $m$ spans the vector $X_m$ and the tangent space to $\Fl^X_t(L)$ passing through $m$. Since both lie in $D_m$, the same is true for $\T_m \wb{L}$. Hence, $L$ can't be maximal.
+\end{proof}
+
+Thus, every maximal integral manifold of a distribution is composed of its characteristics.
+
+Similar to the case of integrable distributions, transformations corresponding to nontrivial symmetries of a distribution preserve the set of maximal integral manifolds, but, unlike the characteristic symmetries, permute them. Note that the action of elements of $\sym(D)$ on the set of maximal integral manifolds is well-defined, since by Proposition~\ref{prop 3.4 Kras} such a manifold is invariant under the action of a trivial symmetry.
+
+\begin{prop}\label{prop 3.5 Kras}
+    For a distribution $D$ on $M$, the Lie algebra $\cha(D)$ is a $C^\infty(M)$-module, hence spans a distribution on $M$.
+\end{prop}
+\begin{proof}
+    Suppose $X\in\cha(D)$ and $f\in C^\infty(M)$. For $Y\in \Gamma^\infty(D)$, we have 
+    \[[fX,Y]=f[X,Y]-Y(f)X\in \Gamma^\infty(D).\]
+    Hence, $fX\in \aut(D)$. In addition, $fX\in\Gamma^\infty(D)$, so $fX\in\cha(D)$.
+\end{proof}
+
+The distribution $\<\cha(D)\><D$ is unsurprisingly called the \emph{characteristic distribution} of $D$.\index{Characteristic ditribution}
+
+\begin{cor}
+    The characteristic distribution is integrable.
+\end{cor}
+\begin{proof}
+    By Proposition~\ref{prop 3.3 Kras}, $\<\cha(D)\>$ is involutive. By the Frobenius Theorem, it is integrable.
+\end{proof}
+
+Obviously, for any integrable distribution $D$, we have $\<\cha(D)\>=D$.
+
+\begin{example}
+    Let $X$ be the characteristic vector field of the Cartan distribution $\calC$ from Example~\ref{ex 3.4 Kras}. Since $X\in\aut(D)$, we have (\ref{eq ex 3.4 Kras}). The fact that $X\in\cha(D)$ implies $\theta(X)=0$. But $\theta(X)=i_X(\dd u-p\dd x)=f$. Therefore, $f=0$, and hence, $X=0$. Thus, in this case the characteristic distribution is trivial.
+\end{example}
+
+% \begin{example}
+%     Now consider the restriction of $\calC$ from Example~\ref{ex 3.4 Kras} to a first-order equation $\calE$: $u_x=v(x,u)$. It is defined by the $1$-form $\theta_\calE=\dd u-v\dd x$. 
+% \end{example}
+
+
+
+
+
+\section{Integration by quadratures}
+
+
+By applying flows of characteristic vector fields, we can generate larger integral manifolds starting with an initial one. For example, in the context of ODEs, the integral curves of a characteristic vector field provide solutions for any initial condition. If there are several independent characteristic vector fields, we obtain parametric families of solutions.
+
+\begin{example}
+    In Example~\ref{ex 2.2 Kras}, we discussed the equation $(3x-2u)u_x=u$. For the distribution $\calC(\calE)$ given by the form $\theta=\dd u-p\dd x$, the characteristic vector field $Y_F$ was constructed. Its integral curve $(x,u)=((x_0-u_0)\rme^{-3t}+u_0\rme^{-t},u_0\rme^{-t})$ is the solution of the equation with initial condition $(x_0,u_0,p_0)$.
+\end{example}
+
+A \emph{quadrature} is simply an integral over one variable. Suppose $Y$ is a symmetry of a single vector field $X$, so $[Y,X]=0$. If we use the Rectification Theorem~\ref{rectification} to find so called \emph{canonical coordinates} \index{Canonical coordinates} $y^1,\ldots,y^n$ in which the symmetry reads $Y=\partial_{y^n}$, then the components of $X$ must be independent of $y^n$. Thus, finding integral curves of $X$ reduces to an $(n-1)$-dimensional dynamical system in $(y^1,\ldots,y^{n-1})$ plus one quadrature to find $y^n(t)$.
+
+
+\begin{example}
+    Consider the $3$-dimensional dynamical system $\dot{\bf{x}}=X(\bf{x})$ given by
+    \begin{align}
+        \dot x&=t\left(\frac{y^2}{z}+\frac{x^2z}{y^2}\right)+\frac{x^2}{y},\\
+        \dot y&=t\frac{xz}{y}+x,\\
+        \dot z&=\frac{xz}{y}.
+    \end{align}
+    The \emph{Euler vector field} $Y=x\partial_x+y\partial_y+z\partial_z$\index{Euler vector field} is a symmetry of this system because the right hand sides of the equations are homogeneous of degree $1$ in $(x,y,z)$. Now choose the new coordinates 
+    \[x'\coloneqq \frac{x}{y},\quad y'\coloneqq \frac{y}{z},\quad z'\coloneqq \ln z.\]
+    In these coordinates, $Y=\partial_{z'}$, while the dynamical system takes the form 
+    \[\dot x'=ty',\quad \dot y'=tx',\quad \dot z'=x'.\]
+    It follows that finding the trajectories of the dynamical system reduces to the integration of the two-dimensional system 
+    \[\dot x'=t y',\quad \dot y'=tx',\]
+    and one quadrature $z'=\int x'(t)\dd t$.
+\end{example}
+
+We now turn to the applications of nontrivial symmetries for the integration of distributions. Let $X$ be a symmetry of a distribution $D$ and $\Fl^X_t$ the corresponding flow. As the first application, given an integral manifold $L$ of the distribution $D$, we can construct a whole family $\Fl_t^X(L)$ of such manifolds.
+
+\begin{example}\label{ex 4.4 Kras}
+    Consider the equation $(3x-2u)u_x=u$ from Example~\ref{ex 2.2 Kras}. The vector field $X=u^3\partial_x$ obviously commutes with the field $Y_F$ restricted to $\calE$, so $X$ is a symmetry of the rank-$1$ distribution $\calC(\calE)$. Take a solution $L=\{u=x\}$ of the equation under study. Shifts of this solution along the integral curves of $X$ yield all solutions of our equation (except for $u=0$, which is invariant under the flow of $X$). In fact, the shift along the integral curves of $X$ at time $t$ has the form 
+    \[x=u_0^3t+x_0,\quad u=u_0.\]
+    From these formulas it easily follows that the image of the straight line $L=\{u=x\}$ is the curve $\Fl^X_t(L)=\{tu^3+u=x\}$.
+\end{example}
+
+\begin{xca}
+    Find a symmetry of the equation from the above example that generates (almost) every solution from the zero solution.
+\end{xca}
+
+The second application is integration of equations by quadratures. The point is that if for a completely integrable distribution one knows a \emph{solvable} (defined below) Lie algebra of nontrivial symmetries and the dimension of this algebra equals the corank $\dim M-\rank D$ of the distribution, then the integral manifolds can be found by quadratures.
+
+\begin{defn}[First integral]
+    A function $f\in C^\infty(M)$ is called a \emph{first integral (of motion)} of a smooth distribution $D<\T M$ if $X(f)=0$ for any $X\in\Gamma^\infty(D)$.
+\end{defn}
+
+It is obvious that if $f$ is a first integral of $D$, then it is constant on every integral manifold, or, in other words, every integral manifold lies inside a level set $f=\const$ of the first integral.
+
+\begin{example}
+    \begin{enumerate}
+        \item If a completely integrable distribution $D$ is locally spanned by the vector fields $\partial_{x^1},\ldots,\partial{x^l}$, then first integrals must be of the form $f(x_{l+1},\ldots,x_n)$. 
+        \item Let $f$ be a first integral of the Cartan distribution $\calC=\<\theta=\dd u-p\dd x\>$. Since the vector fields $\partial_p$ and $\partial_x+p\partial_u$ lie in $\calC$, we have $f_p=f_x+pf_u=0$, and all such functions are constant, $f=\const$. Thus, this distribution has no nontrivial first integrals.
+    \end{enumerate}
+\end{example}
+
+Assume that we know a nontrivial first integral of a distribution $D$ on $M$. Then the problem of finding all maximal integral manifolds reduces to integration of a distribution on a hypersurface. Namely, the problem amounts to integrating the restriction of $D$ to a level set of the first integral. By induction, if we have $k$ functionally independent first integrals $f_1,\ldots,f_k$, where $k=\dim M-\rank D$, then the annihilator $\Ann(D)$ can be given by the set of exact $1$-forms $\dd f_i$. Therefore, this distribution is completely integrable and its leaves are the mutual level surfaces $\{m\in M\mid f_i(m)=c_i\}$ of the functions $f_1,\ldots,f_k$, where $c_1,\ldots,c_k$ are constant.
+
+The problem of finding a first integral can be locally stated as the problem of finding an exact $1$-form $\theta=\dd f$ vanishing on $D$, since in this case $\theta(X)=X(f)=0$ for all $X\in\Gamma^\infty(D)$. Thus, integrability of $D$ is equivalent to existence of $k=\dim M-\rank D$ such forms $\theta^i$, provided that they are independent (i.e., $\theta^1\wedge\cdots\wedge\theta^k\neq 0$).
+
+\begin{defn}
+    A linear subspace $\calY<\sym(D)$ of nontrivial symmetries of a distribution $D$ is called \emph{nondegenerate} if, for any point $m\in M$, 
+    \[\calY_m\cap D_m=\{0\},\]
+    where $\calY_m=\{Y_m\mid Y\in\calY\}$.
+\end{defn}
+
+It follows that 
+\[\dim \calY=\dim \calY_m\leq \dim M-\rank D.\]
+Let $\theta^1,\ldots,\theta^k$ be a set of forms defining the distribution $D$ and $X_1,\ldots,X_l$ be a basis of a nondegerate subspace $\calY<\sym(D)$. Clearly, $l\leq k$ and the matrix $\{\theta^i(X_j)\}$ has rank $l$ at any point of $M$. If $l=k$, then this matrix is invertible and one can choose another set of forms defining $D$, say $\theta_1',\ldots,\theta_k'$, such that $\theta_i'(X_j)=\delta_{ij}$. To do this, it suffices to multiply the column $(\theta^1,\ldots,\theta^k)^T$ by the matrix inverse of $\{\theta^i(X_j)\}$. Now assume that the space $\calY$ is closed under the Lie bracket, i.e., a Lie subalgebra.
+
+\begin{thm}\label{thm 4.1 Kras}
+    Let $D$ be an integrable distribution locally defined by the set of $1$-forms $\theta^1,\ldots,\theta^k$. Let $X_1,\ldots,X_k$ be a basis of a nondegenerate Lie algebra $\calY<\sym(D)$. Suppose that $\theta^i(X_j)=\delta^i_{j}$ and $[X_i,X_j]=\sum_s c^s_{ij}X_s$, where $c^s_{ij}$ are the structure constants of $\calY$. Then there holds the \emph{structure equation}\index{Equation!Structure}
+    \[\dd\theta^s=-\frac12\sum_{i,j}c^s_{ij}\theta^i\wedge\theta^j.\]
+\end{thm}
+\begin{proof}
+    By the Frobenius Theorem~\ref{prop 4.7.10 RS1}, there exist $1$-forms $\omega^i_j$ such that 
+    \[\dd\theta^s=\sum_i\omega^s_{j}\wedge\theta^j.\]
+    Since $X_i\in\sym(D)$, the $1$-forms 
+    \[\Lie_{X_i}\theta^s=i_{X_i}\dd\theta^s+\dd(\theta^s(X_i))=i_{X_i}\dd \theta^s,\]
+    vanish on vectors from the distribution $D$. The equality
+    \[i_{X_i}\dd\theta^s=\sum_j\omega^s_j(X_i)\theta^j-\omega^s_i\]
+    implies that the forms $\omega^s_j$ are also zero on vectors from $D$, and thus, $\gamma^s_i=\sum_s a^s_{ij}\theta^j$ for some appropriate functions $a^s_{ij}\in C^\infty(M)$. Hence, 
+    \[\dd\theta^s=\sum_{i<j}a^s_{ij}\theta^i\wedge\theta^j.\]
+    It follows that 
+    \[\dd\theta^s(X_i,X_j)=a^s_{ij},\quad i<j.\]
+    On the other hand, 
+    \[\dd\theta^s(X_i,X_j)=X_i(\theta^s(X_j))-X_j(\theta^s(X_i))-\theta^s([X_i,X_j])=-\theta^s\left(\sum_t c^t_{ij}X_t\right)=-c^s_{ij},\]
+    Therefore, $a^s_{ij}=-c^s_{ij}$ and 
+    \[\dd\theta^s=-\sum_{i<j}c^s_{ij}\theta^i\wedge\theta^j=-\frac12\sum_{ij}c^s_{ij}\theta^i\wedge\theta^j.\]
+\end{proof}
+
+\begin{cor}\label{cor 4.2 Kras}
+    Under the conditions of the preceding theorem, assume that the Lie algebra $\calY$ is abelian. Then all the forms $\theta^i$ are closed, and thus, by the Poincar\'e Lemma~\ref{lem poincare classic}, locally exact: $\theta^i=\dd h^i$ for some smooth functions locally given by $h^i(m)=\int^m\theta^i$.
+\end{cor}
+
+In particular, since $k$-order ODEs are identified with rank-$1$ distributions on $(k+1)$-dimensional manifolds, we have the following.
+
+\begin{cor}\label{cor 4.3 Kras}
+    If the distribution corresponding to a $k$-order ODE possesses a $k$-dimensional abelian nondegenerate Lie algebra of symmetries, then the ODE is solvable in quadratures.
+\end{cor}
+
+\begin{example}
+    Consider a first-order equation resolved w.r.t.\ the derivative. Assume that the right hand side does not depend on $x$:
+    \[\frac{\dd u}{\dd x}=f(u).\]
+    The corresponding distribution is defined on the surface $p=f(u)$ by the $1$-form $\theta=\dd u-p\dd x$. The vector field $X=\partial_x$ is tangent to this surface and is a nontrivial symmetry of the distribution $\calC(\calE)$. By Theorem~\ref{thm 4.1 Kras} and Corollary~\ref{cor 4.2 Kras}, the form $\theta_\calE\slash f$ is exact. Indeed, 
+    \[\frac{\theta_\calE}{f}=\frac{1}{f}(\dd u-f\dd x)=\dd\left(\int \frac{\dd u}{f(u)}-x\right).\]
+    In multiplication by $1\slash f$, one easily recognizes the well-known method of separation of variables for solving equations of the considered type. Thus, this method essentially amounts to transforming the $1$-forms defining the equation to an exact one.
+\end{example}
+
+\begin{xca}
+    Show that on the equation in the previous example, the vector field $X$ coincides with the vector field $f\partial_u+f'p\partial_p$.
+\end{xca}
+
+The previous example serves to illustrate the following general fact: with a knowledge of one nontrivial symmetry of a completely integrable distribution of corank $1$ (in particular, of a first-order ODE), it is possible to describe leaves of this distribution (in particular, solutions to the ODE) by means of quadratures. If $X$ is a nontrivial symmetry of $D=\Ann(\theta)$ , then the form $f\theta$ with $f=1/\theta(X)$, which also defines the distribution $D$, is closed. In this case, the leaves of $D$ coincide with the level surfaces of the integral of this form. In other words, the symmetry $X$ in this case provides a way of finding the \emph{integrating factor} described in Proposition~\ref{prop 4.7.13 RS1}. \index{Integrating factor}
+
+\begin{example}
+    Any homogeneous first-order ODE $\calE$ of the form
+    \[u_x=\varphi\left(\frac{u}{x}\right)\]
+    has as a symmetry the Euler vector field $X=x\partial_x+u\partial_u$, whose flows are homotheties.\index{Euler vector field}\index{Homothety} Indeed, the Cartan distribution on $\calE$ is given by the form 
+    \[\theta_\calE=\dd u-\varphi\left(\frac{u}{x}\right)\dd x.\]
+    It can easily be checked that $X(\varphi)=0$ and $\Lie_X\theta_\calE=\theta_\calE$, hence $X$ is a symmetry. For an integrating factor we can thus pick 
+    \[f=\frac{1}{\theta_\calE(X)}=\frac{1}{u-x\varphi\left(\frac{u}{x}\right)}.\]
+    In particular, for the equation $(3x-2u)u_x=u$ (Example~\ref{ex 2.2 Kras}), which is equivalent to the equation 
+    \[u_x=\frac{u}{3x-2u},\]
+    everywhere except for the line $3x-2u=0$, we have 
+    \[\varphi(\xi)=\frac{\xi}{3-2\xi},\quad f=\frac{3x-2u}{2u(x-u)},\]
+    and thus,
+    \[\theta_\calE'=\frac{3x-2u}{2u(x-u)}\theta_\calE=\dd\left(\frac12\ln\frac{u^3}{x-u}\right).\]
+    As above, this yields the solutions of equation under study: $u^3/(x-u)=c$, $c=\const$.
+\end{example}
+
+
+\begin{example}
+    Consider a linear inhomogeneous ODE 
+    \[a_ku^{(k)}+\cdots a_1u_x+a_0u=f,\]
+    where $a_0,\ldots,a_k$ and $f$ are given functions of $x$. It is easy to prove that the field 
+    \[X_\varphi=\varphi\partial_u+\varphi_x\partial_{p_1}+\cdots+\varphi^{(k)}\partial_{p_k},\]
+    where $\varphi(x)$ is an arbitrary solution of the corresponding homogeneous equation 
+    \[a_ku^{(k)}+\cdots+a_1u_x+a_0u=0,\]
+    is a symmetry of the initial equation. Such symmetries comprise a $k$-dimensional abelian Lie algebra, and if one knows its vasis, i.e., a fundamental system of solutions $\varphi_1,\ldots,\varphi_k$ of the homogeneous system, then by Corollary~\ref{cor 4.3 Kras}, the inhomogeneous ODE can be integrated by quadratures. Note that $\theta^i(X_\varphi)=\varphi^{(i)}$, where, as before, $\theta^i=\dd p_i-p_{i+1}\dd x$. Therefore, the matrix $\{\theta^i(X_{\varphi_j})\}$, which in the course of solution must be inverted to find an integrating factor, is nothing but the usual \emph{Wronskian matrix}\index{Wronskian matrix} of the fundamental system $\varphi_1,\ldots,\varphi_k$.
+\end{example}
+
+Now, suppose that we know a nondegenerate nonabelian Lie algebra $\calY$ of symmetries of an integrable distribution $D$. Consider its \emph{commutator subalgebra}, also called the \emph{derived Lie algebra}: 
+\[[\calY,\calY]=\left\{[X,Y]\mid X,Y\in\calY\right\},\]
+and assume that $[\calY,\calY]\neq\calY$. Then one can choose a basis $X_1,\ldots,X_k$ of $\calY$ such that $X_1,\ldots,X_r\notin [\calY,\calY]$ while $X_{r+1},\ldots,X_k\in [\calY,\calY]$. In this case, for any pair $X_i,X_j$, we have $[X_i,X_j]\in[\calY,\calY]$, so that $c^s_{ij}=0$ for all $i,j$ if $s\leq r$. Hence, the forms $\theta^1,\ldots,\theta^r$ are closed, and thus, $\theta^i=\dd h^i$, $i=1,\ldots,r$, in some open domain. The level surfaces 
+\[H_{\bf{c}}=\{h_1=c_1,\ldots,h_r=c_r\},\quad \bf{c}\in\bbR^r,\]
+are invariant under the derived algebra $[\calY,\calY]$, since $X_j(h^i)=\theta^i(X_j)=0$ if $i\leq r$, $j\geq r+1$.
+
+Let $D_{\bf{c}}\coloneqq D\cap \T H_{\bf{c}}$ be the restriction of the distribution $D$ to the surface $H_{\bf{c}}$. The distribution $D_{\bf{c}}$ is integrable: indeed, the foliation of $M$ whose leaves are maximal integral manifolds of $D$ cuts a foliation of the surface $H_{\bf{c}}$. The same effect can be proven analytically. By Theorem~\ref{thm 4.1 Kras}, 
+\[\dd\theta^s=-\frac12\sum_{i,j>r}c^s_{ij}\theta^i\wedge\theta^j,\quad s\geq r+1,\]
+The forms $\theta^i$ vanish on $H_{\bf{c}}$ for $i\leq r$. Hence, by the Frobenius Theorem, the distribution $D_{\bf{c}}$ is integrable.
+
+Observe now that $[\calY,\calY]$ is a nondegenerate Lie algebra of symmetries of the distribution $D_{\bf{c}}$. Actually, the flows of any element $X\in [\calY,\calY]$ permute the leaves of $D_{\bf{c}}$. Nondegeneracy follows from the fact that $\{\theta^i(X_j)\}$, $r<i,j\leq k$, is the identity matrix. Because of this, we can subject $[\calY,\calY]$ to the same procedure that was formerly applied to $\calY$. If $[[\calY,\calY],[\calY,\calY]]\neq [\calY,\calY]$, then some of the $1$-forms $\restr{\theta^{r+1}}{\dd H_{\bf{c}}},\ldots,\restr{\theta^k}{\dd H_{\bf{c}}}$ are closed and give rise to local first integrals of $D_{\bf{c}}$. The distribution $D_{\bf{c}}$ can be restricted to the mutual level set of these integrals, etc.
+
+We continue in this fashion obtaining a so called \emph{derived series} of subalgebras 
+\[\calY>[\calY,\calY]>[[\calY,\calY],[\calY,\calY]]>[[[\calY,\calY],[\calY,\calY]],[[\calY,\calY],[\calY,\calY]]]>\cdots.\]
+
+\begin{defn}[Solvable Lie algebra]
+    A Lie algebra $\calY$ is called solvable if its derived series terminates, i.e., after a finite number of steps the derived algebras become abelian and then zero.
+\end{defn}
+
+If $\calY$ is solvable, then we can apply Corollary~\ref{cor 4.3 Kras} to the last nonzero subalgebra in its derived series, and complete the resulting quadratures to integral manifolds of $D$ by specifying the constant $\bf{c}$. In summary, we get the following theorem, which also explains the term ``solvable''.
+
+\begin{thm}\label{thm 4.4 Kras}
+    If an integrable distribution $D$ of corank $k$ possesses a $k$-dimensional nondegenerate solvable Lie algebra of symmetries $\calY<\sym(D)$, then $D$ is integrable by quadratures, i.e., one can find a complete set of first integrals for $D$ by integrating closed $1$-forms and solving functional equations.
+
+    If $\dim \calY=r<k$, then the general integral manifold of $D$ can be computed by quadratures from the general $(k-r)$-dimensional integral manifold of the reduced distribution $D\slash \calY$.
+\end{thm}
+
+\begin{thm}[Bianchi-Lie]
+    If a $k$-order ODE possesses a $k$-dimensional nondegenerate solvable Lie algebra of symmetries, then it is integrable by quadratures. If the algebra is only of dimension $r<k$, then the general solution can be obtained from quadratures from the general solution of an $(k-r)$-order ODE.
+\end{thm}
+
+It is these results which caused the concept of solvability, originating from the Galois theory of algebraic equations, to be extended to the theory of Lie groups and algebras. Note also that the Lie groups of symmetries can be used instead of the Lie algebras of infinitesimal symmetries, since one can always pass to the corresponding algebra by considering infinitesimal generators.
+
+\begin{example}
+    \begin{enumerate}
+        \item Note that any $2$-dimensional Lie algebra is solvable. Indeed, if $X_1,X_2$ is a basis of $\calY$, then the derived algebra is generated by $[X_1,X_2]$, so it is abelian. Thus, any integrable distribution of corank $2$, in particular, any second-order ODE, can be integrated by quadratures, if a $2$-dimensional Lie algebra of symmetries is known.
+        \item The simplest non-solvable Lie algebras are $\fraksl_2(\bbR)$ and $\frakso_3$. In fact, the famous \emph{Levi decomposition}\index{Levi decomposition} states that every finite-dimensional real or complex Lie algebra $\frakg$ is the semidirect product of a solvable ideal $\frakr$ and a semisimple subalgebra $\frakh$, so $\frakg=\frakh\ltimes\frakr$. Since the solvable part is an ideal, we can always reduce the symmetry algebra, via a finite sequence of quadratures, to a semisimple one.
+        \item The algebra $\fraksl_2(\bbR)$ admits a faithful representation by vector fields on $\bbR^2$ via the basis 
+        \[X_1=\partial_x,\quad X_2=x\partial_x,\quad X_3=x^2\partial_x,\]
+        with commutation relations $[X_1,X_2]=X_1$, $[X_1,X_2]=2X_2$, $[X_1,X_3]=X_3$.
+        \item Similarly, $\frakso_3$ has a faithful representation by vector fields on $\bbR^3$ via the basis 
+        \[X_1=(1+x^2)\partial_x+xy\partial_y,\quad X_2=xy\partial_x+(1+y^2)\partial_y,\quad X_3=y\partial_x-x\partial_y,\]
+        with commutation relations $[X_i,X_j]=X_k$ for $(i,j,k)$ a cyclic permutation of $(1,2,3)$. In fact, this action can be derived from the stereographic projection of the standard action of $\SO_3$ on $\bbS^2$.
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    Consider the equation 
+    \[au^2u_{xxx}+buu_xu_{xx}+cu_x^3=0.\]
+    It possesses a solvable $3$-dimensional nondegenerate algebra of symmetries consisting of $x$-translations $\partial_x$ and two independent scaling transformations, $x\partial_x$ and $u\partial_u$. It is convenient to take 
+    \begin{align}
+        X_1&=\partial_x,\\
+        X_2&=-x\partial_x+u\partial_u+2p_1\partial_{p_1}+3p_2\partial_{p_2}+4p_3\partial_{p_3},\\
+        X_3&=u\partial_u+p_1\partial_{p_1}+p_2\partial_{p_2}+p_3\partial_{p_3}
+    \end{align} 
+    for a basis of the symmetry algebra and follow the above-described scheme to accomplish the integration.
+\end{example}
+
+\begin{xca}
+    Prove that any Lie algebra consisting of infinitesimal translations and infinitesimal scale transformations is solvable. To this end, check that if $\calY$ is such a Lie algebra, then its derived algebra $[\calY,\calY]$ consists of translations only, and hence, is abelian.
+\end{xca}
+
+
+\begin{example}
+    Consider the second-order equation 
+    \[u_{xx}=u_x+u^n-\frac{2n+2}{(n+3)^2}u,\]
+    where $n\in\bbR\setminus\{-3\}$. The independent variable $x$ does not enter into the equation explicitly, hence $X_1=\partial_x$  is a symmetry. It is not hard to prove that 
+    \[X_2=\rme^{kx}\left[\partial_x+\frac{k+1}{2}u\partial_u+\left(\frac{k(k+1)}{2}u+\frac{1-k}{2}p\right)\partial_p\right],\]
+    where $k=(1-n)/(n+3)$, is also a symmetry of the equation.
+
+    The geometric image associated with this equation is the hypersurface $\calE\subset\bbR^4$ of the space with coordinates $x,u,p,q$, where $p$ corresponds to $u_x$ and $q$ to $u_{xx}$, defined by 
+    \[q=p+u^n-\frac{2n+2}{(n+3)^2}u,\]
+    together with the rank-$1$ distribution on $\calE$ given by the forms $\theta^1=\dd u-p\dd x$ and $\theta^2=\dd p-q\dd x$. By computing the matrix $\{\theta^i(X_j)\}$, one can construct the integrating factor for this system and restrict the system to a surface $H_c$ parametrized by a constant $c$ and get a single $1$-form that needs to be integrated on it, giving a solution in quadratures.
+\end{example}
+
+
+\begin{xca}
+    Integrate the equation $u_{xx}=u_x+a\rme^{bu}-2/b$ by means of the symmetry algebra with the generators $X_1=\partial_x$, $X_2=\rme^{-x}\left(\partial_x+\frac{2}{b}\partial_u+\left(p-\frac{2}{b}\right)\partial_p\right)$.
+\end{xca}
+
+
+
+
+
+
+
+\section{Jet bundles and Cartan distributions}
+
+
+We will now put the study of differential equations in the language of jet bundles, following \cite[\S3.2]{Kras}. Unfortunately, as we will see, there are many slightly different jet bundles, so the nomenclature can get confusing. Recall that an $r$-jet $\rmj^r_m f$ of a smooth map $f:M\to M'$ at point $m\in M$ is simply the equivalence class of all maps $M\to M'$ whose order $\leq r$ terms of the Taylor series  at $m$ coincide with those of $f$ in any local coordinates around $m$ and $f(m)$. The jet space $\rmJ^r(M,M')$ is the set of all such jets at all points of $m$. For example, $\rmJ^0(M,M')=M\times M'$. If we have a set of local coordinates $\bf{x}=(x^1,\ldots,x^n)$ on $M$ and $\bf{y}=(y^1,\ldots,y^{n'})$ on $M'$, then, much like in the definition of tensor bundles, we can obtain \emph{canonical coordinates} $p^j_I$ on the jet space by 
+\[p^j_I\left(\rmj^r_mf\right)\coloneqq \partial^I_{\bf{x}}f^j(\bf{x})=\frac{\partial^{|I|}f^j}{\partial x_1^{i_1}\cdots\partial x_n^{i_n}}(\bf{x}),\quad j=1,\ldots,n',\quad |I|\leq r,\] 
+where $I=(i_1,\ldots,i_n)$, $|I|=i_1+\cdots+i_n$, and $f^j(\bf{x})=y^j(f(\bf{x}^{-1}(\bf{x})))$ is a component of a local representative of $f$. These coordinates have smooth transition functions and thus turn $\rmJ^r(M,M')$ into a smooth manifold. There is a set of natural projections $\pi^r_{s}:\rmJ^r(M,N)\to \rmJ^s(M,N)$ for $r>s$ which simply keep only the first $s$ monomials, $|I|\leq s$. From the construction of the canonical coordinates it is clear that these projections are locally trivial submersions, and thus \glspl{vb}.
+
+Recall that the \emph{differential group of order $r$}, or just the \emph{$r$-jet group},  $\GL_n^r(\bbR)$ is defined as the set of $r$-jets at the origin of diffeomorphisms $\bbR^n\to \bbR^n$ that fix the origin. Clearly, under a change of coordinates on $M$, the canonical coordinates transform under an action of the differential group. This makes $\rmJ^r(M,M')$ into a vector bundle over $M\times M'$ with structure group $\GL_n^r(\bbR)$. 
+
+We can describe the Lie algebra of $\GL^r_n(\bbR)$. Consider the set of all vector fields $X\in\fX(\bbR^n)$ on $\bbR^n$ such that $X_0=0$. Denote by $\frakgl^r_n(\bbR)$ the set of all $r$-jets at $0$ of these vector fields. This is a vector space, and there is a natural Lie algebra structure on it, inherited from the Lie bracket of vector fields:
+\[[\rmj_0^r X,\rmj_0^r Y]=\rmj^r_0[X,Y].\]
+By looking at the flows of these vector fields, it is easy to confirm that this is the Lie algebra of $\GL^r_n(\bbR)$.
+
+For us it will be important to consider jets not of arbitrary maps, but of sections of a vector bundle. Let $\pi:E\to M$ be a \gls{vb} and denote by $\rmJ^rE$ the space of $r$-jets of sections $s:M\to E$. It is easy to see that the space of such jets is still a \gls{vb} over $\rmJ^0(E)=E$ with the same structure group. There are projection maps $\pi^r_s:\rmJ^rE\to \rmJ^s(E)$ for $r>s$, in particular $\pi^r_0:\rmJ^rE\to E$. Moreover, there are projections $\pi^r\coloneqq \pi\circ \pi^r_0:\rmJ^rE\to M$.
+
+For a section $s\in \Gamma^\infty(E)$, its \emph{$r$-prolongation} is the section $\rmj^r s\in \Gamma^\infty(\rmJ^rE\to M)$ defined pointwise as $(\rmj^r s)(m)=\rmj_m^r s$. We will denote the graph of the prolonged section by $\graph^r(s)\subset \rmJ^rE$ and call it the \emph{$r$-graph} of $s$.
+
+\begin{defn}[R-plane]
+    Let $E\overset{\pi}{\to}M$ be a \gls{vb} over an $n$-dimensional manifold $M$. Let us call an $n$-dimensional plane in the tangent space $\T_p \rmJ^rE$ an R-plane if it is the tangent space of the graph of the prolongation of some section of $E$.
+\end{defn}
+
+Obviously, every R-plane is transversal to the fibers of $\pi^r$. Note that a point $p'\in \rmJ^{r+1}E$ in the fiber over $m\in M$ can be considered as the pair consisting of the point $p=\pi^{r+1}_r(p')\in \rmJ^rE$ and an R-plane $L_{p'}<\T_p \rmJ^rE$ defined as the plane tangent to $\graph^r(s)$ for some section $s\in\Gamma^\infty(E)$ such that $\rmj^{r+1}_m s=p'$. (It is easily seen that this plane is uniquely determined by the jet $\rmj^{r+1}_m s$). In other words, $p'$ is the set of values of derivatives up to order $r+1$ while the plane $L_{p'}<\T_p \rmJ^rE$ is determined by the values of first derivatives of $r$-th derivatives.
+
+Fix a point $p\in \rmJ^rE$ and consider various points $p'\in \rmJ^{r+1}E$ projecting to $p$ under $\pi^{r+1}_r$, i.e., in the fiber $(\rmJ^{r+1}E)_p\coloneqq (\pi^{r+1}_r)^{-1}(p)$. As $p'$ moves in this fiber, the corresponding $n$-plane $L_{p'}<\T_p\rmJ^rE$ rotates somehow around the point $p$, but always remains horizontal with respect to the projection $\pi^r:\rmJ^rE\to M$.
+
+We are ready to define the general Cartan distribution, also called the \emph{contact system}.
+
+\begin{defn}
+    Let $E\overset{\pi}{\to} M$ be a \gls{vb} and fix an integer $r>0$. The Cartan distribution $\calC<\T \rmJ^rE$ is defined as follows: for a point $p\in \rmJ^rE$, the fiber $\calC_p$ is defined as the span of all R-planes $L_{p'}$ for $p'\in (\rmJ^{r+1}E)_p$. In other words, $\calC$ is the union of all tangent spaces of $r$-graphs of all sections $s$ such that $\rmj^r_m s=p$.
+\end{defn}
+
+Let us give a coordinate description of the distribution. Namely, we will write down a basis of the plane $L_{p'}$ corresponding to the point $p'\in \rmJ^{r+1}E$ in an bundle coordinate system $x^1,\ldots,x^n,u^1,\ldots,u^k$ on $E$, where $u^1,\ldots,u^k$ are the coordinates along the fiber of $E$. The canonical coordinates of the point $p'$ will be denoted by $x^i(p')$, $u^j(p')$ and $p^j_I(p')$.
+
+Let $s$ be a section such that $\rmj^{r+1}_m s=p'$, and let the R-plane $L_{p'}$ be tangent to $\graph^r(s)$. Let us choose a basis in $L_{p'}$ consisting of the vectors $X_1^p,\ldots,X_n^p$ whose projections to $M$ coincide with $\partial_{x^1}(m),\ldots,\partial_{x^n}(m)$. From the definition of the canonical coordinates, it is easy to deduce the formulas for the basis vectors $X^p_i$:
+\[X^p_i=\frac{\partial}{\partial x^i}+\sum_{|I|\leq k}\sum_{j=1}^m p^j_{I+1_i}(p')\frac{\partial}{\partial p^j_I}\quad \in L_{p'}<\T_p \rmJ^rE,\]
+where $I+1_i$ is the multi-index obtained from $I$ by increasing its $i$-th component by $1$.
+
+It is easily seen that the above sum over $I$ is determined only by the point $p$ and is independent of the choice of $p'$ in the fiber above $p$. Thus, any plane $L_{\wt p'}$ corresponding to another jet $\wt p'\in (\rmJ^{r+1}E)_p$ can be obtained from the given plane $L_{p'}$ by rotating in the ``vertical direction''. More exactly, the position of $L_{\wt p'}$ w.r.t.\ $L_{p'}$ can be determined by the set of $n$ \emph{shift vectors} $\delta_i\coloneqq X^{\wt p'}_i-X^{p'}_i$ which are vertical w.r.t.\ the projection $\pi^r_{r-1}$.
+
+Denote the space of vertical vectors at the point $p$ by 
+\[\calV_p\rmJ^rE\coloneqq \T_p\left(\rmJ^rE_{\pi^r_{r-1}(p)}\right)<\T_p \rmJ^rE.\]
+The vectors $\partial/\partial p_I^j$, $|I|=r$, form a basis in this space. Note that any vertical tangent vector $X\in \calV_p\rmJ^rE$ can be considered as a shift vector: for a basis vector $\partial/\partial p_I^j$, $|I|=r$, it suffices to take a point $\wt p'\in \rmJ^rE_p$ such that all its coordinates except one coincide with the corresponding coordinates of $p'$, while $p^j_{I+1_i}(\wt p')=p^j_{I+1_i}(p')+1$. Then $\delta_i=X_i^{\wt p'}-X_i^{p'}=\partial/\partial p^j_I$.
+
+We have thus shown that the space of $(r+1)$-jets that project to a given $r$-jet is not a vector space, but rather an affine space. This makes sense because there is no canonical choice of a section with a given $r$-jet at a point, unless this jet is zero (then we can use the zero section). This stands in contrast with the fibers of the jet bundles $\pi^r:\rmJ^rE\to M$ themselves, where the jets of the zero section always provide a natural choice of origin in each fiber. We have the following theorem.
+
+\begin{thm}[{{\cite[Thm.~3.2.1]{Kras}}}]\label{thm 3.2.1 Kras}
+    Let $\calC$ be the Cartan distribution on $\rmJ^rE$. Then:
+    \begin{enumerate}
+        \item The fiber $(\pi^{r+1}_{r})^{-1}(p)$ of $\rmJ^{r+1}E$ over a given $r$-jet $p\in \rmJ^rE$ is naturally an affine space modeled on the vector space $\bigodot^{r+1}\T^\ast_m M\otimes \calV_{\pi^r_0(p)}E$, where $m=\pi^r(p)$. 
+        
+        Consequently, the bundle $\pi^{r+1}_r:\rmJ^{r+1}E\to \rmJ^rE$ is an \emph{affine bundle} modeled on the \gls{vb} 
+        \[\left((\pi^r)^\ast \bigodot^{r+1}(\T^\ast M)\right)\otimes (\pi^r_0)^\ast (\calV E);\]        
+        \item The Cartan plane $\calC_p<\T_p \rmJ^rE$ can be written as the direct sum
+        \[\calC_p=\calV_p\rmJ^rE\oplus L_{p'},\label{eq 3.2.2 Kras}\]
+        where $\calV_p\rmJ^rE$ is the tangent space to the fiber of the projection $\pi^r_{r-1}$ and $L_{p'}$ is the R-plane corresponding to an arbitrary $(r+1)$-jet $p'\in(\pi^{r+1}_r)^{-1}(p)$;
+        \item The Cartan plane $\calC_p$ consists of tangent vectors at $p$ that project to $L_p$ under the projection $\pi^r_{r-1}$, i.e.,
+        \[\calC_p=\left(\pi^r_{r-1}\right)_\ast^{-1}(L_p).\]
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    The first two statements follow from the above considerations. We only note that in the decomposition (\ref{eq 3.2.2 Kras}), the first summand, unlike the second one, is determined by the point $p$ uniquely.
+
+    To prove the last statement, note that the projection $(\pi^r_{r-1})_\ast$ takes the vertical space $\calV_p\rmJ^rE$ to zero while the plane $L_{p'}$ is taken to $L_p$ bijectively. Therefore, $\calC_p\subset (\pi^r_{r-1})^{-1}_\ast(L_p)$. The inverse embedding follows from the fact that the inverse image of a point $(\pi^r_{r-1})^{-1}_\ast(\wt p')$ coincides with $\calV_p\rmJ^rE\subset\calC_p$.
+\end{proof}
+
+
+
 
 
 
@@ -1259,7 +1810,7 @@ Therefore, the set of bundle morphisms (\ref{eq 1803}) is completely determined 
 
 \begin{lem}
     Let $D\in\PDO^k(E,E')$, fix a point $m\in M$ and denote the (maximal) ideal 
-    \[I_m\coloneqq \{f\in C^\infty(M)\mid f(m)=0\}\sube C^\infty(M).\]
+    \[I_m\coloneqq \{f\in C^\infty(M)\mid f(m)=0\}\sub C^\infty(M).\]
     Then, $(\ad_{f_1}\cdots \ad_{f_k}D)_m=0$ whenever one of the $f_i$ belongs to $I^2_m$.
 \end{lem}
 \begin{proof}
@@ -1461,7 +2012,7 @@ We can finally give a coordinate-free formulation of the Cauchy-Kovalevskaya The
 \end{example}
 
 \begin{example}
-    The linear operator $Du=u_{xx}$ has symbol $\sigma_D(\xi)=-\xi^2$. Now consider a first order-operator $Q$ with the same kernel (i.e., it has the same solutions $u$):
+    The linear operator $Du=u_{xx}$ has symbol $\sigma_D(\xi)=-\xi^2$. Now consider a first-order operator $Q$ with the same kernel (i.e., it has the same solutions $u$):
     \[Q\begin{pmatrix}
         u\\v
     \end{pmatrix}=
@@ -1964,7 +2515,7 @@ The codimension $c(E)\coloneqq \codim H(E)=\dim M-\dim H(E)$ is \emph{lower semi
 \end{defn}
 
  Since $r$ is an \emph{upper semicontinuous} function on $\calVo^n(\calI)$, $\calVr^n(\calI)$ is an open, dense subset of $\calVo^n(\calI)$:
-\[\calVr^n(\calI)\mathring{\subset}\calVo^n(\calI)\sub \Gr_n(\T M).\]
+\[\calVr^n(\calI)\mathring{\subset}\calVo^n(\calI)\emb \Gr_n(\T M).\]
 
 
 \begin{example}
@@ -3981,7 +4532,7 @@ The following important result is, as we will see, a generalization of both the 
     \end{cases}\label{eq viii.13 Bryant}\]
     Let 
     \[e\coloneqq \sum_i x^i \partial_{x^i}\]
-    be the Euler vector field (its flow simply scales vectors by $\bf{x}\mapsto t\bf{x}$). For $\varphi\in C^{p,q}$, Euler's theorem on homogeneous forms implies that 
+    be the Euler vector field (its flows are homotheties $\bf{x}\mapsto t\bf{x}$).\index{Euler vector field}\index{Homothety} For $\varphi\in C^{p,q}$, Euler's theorem on homogeneous forms implies that 
     \[\Lie_e \varphi=(p+q)\varphi,\]
     where $\Lie_e$ is the Lie derivative along $e$. Combining this with Cartan's magic formula gives the \emph{homotopy formula}
     \[(p+q)\varphi=i_e\dd\varphi+\dd i_e \varphi,\]

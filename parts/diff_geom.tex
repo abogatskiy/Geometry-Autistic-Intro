@@ -900,8 +900,8 @@ The cylinder and the M\"obius band are vector bundles of rank one over $\bbS^1$.
     \item Unlike general \glspl{fb}, \glspl{vb} always have at least one global section. Let $E_0\subset E$ be the set of all points that are neutral elements of their respective fibers as vector spaces (i.e., they are mapped to zero by the second component of any local trivialization). Furthermore, the restricted projection $\restr{\pi}{E_0}:E_0\to M$ is a diffeomorphism because locally it is just the first component of any local trivialization, therefore a local diffeomorphism, and it is also clearly bijective. $E_0$, and the corresponding map $o:M\to E_0$, are called the \emph{zero section}\index{Zero section} of $E$.
     \item Even on a smooth vector bundle, not every smooth local section can be extended to a global one. Consider for example the trivial bundle $\bbR\times\bbR\to \bbR$ and its local section over $(0,+\infty)$ given by $\sigma(x)=(x,\frac 1x)$. It cannot be extended to all of $\bbR$. 
     \item However, for a smooth local section $\sigma:U\to E$ and every point $p\in U$ there exists an open neighborhood $U_p\subset M$ of $p$ such that $\sigma$ can be extended to a section $\wt{\sigma}:U\cup U_p\to E$.
-    \item If $S\sub M$ is an embedded submanifold, then any section $\sigma$ of the restricted \gls{vb} $\restr{E}{S}$ can be extended to an open neighborhood of $S$ (which may be $S$ itself if $S$ is open). This can be done by constructing local frames of $E$ adapted to $S$ at every point $p\in S$, using them to extend the section to some neighborhood $U_p$, and stitching these extensions together using a \gls{pou}.
-    \item If $S\sub M$ is a \emph{closed} embedded submanifold, then every section of $\restr{E}{S}$ can be extended to a global section of $E$. This can be done by first extending to some open neighborhood $U$ of $S$, so that $U\setminus S$ is open, and then we can use \gls{pou} to extend $\sigma\in\Gamma^\infty(\restr{E}{S})$ in such a way that it coincides with the zero section outside of some smaller open neighborhood $S\subset V\subset M$ and can thus be extended to all of $M$ by letting it be equal to the zero section on $M\setminus U$.
+    \item If $S\emb M$ is an embedded submanifold, then any section $\sigma$ of the restricted \gls{vb} $\restr{E}{S}$ can be extended to an open neighborhood of $S$ (which may be $S$ itself if $S$ is open). This can be done by constructing local frames of $E$ adapted to $S$ at every point $p\in S$, using them to extend the section to some neighborhood $U_p$, and stitching these extensions together using a \gls{pou}.
+    \item If $S\emb M$ is a \emph{closed} embedded submanifold, then every section of $\restr{E}{S}$ can be extended to a global section of $E$. This can be done by first extending to some open neighborhood $U$ of $S$, so that $U\setminus S$ is open, and then we can use \gls{pou} to extend $\sigma\in\Gamma^\infty(\restr{E}{S})$ in such a way that it coincides with the zero section outside of some smaller open neighborhood $S\subset V\subset M$ and can thus be extended to all of $M$ by letting it be equal to the zero section on $M\setminus U$.
 \end{enumerate}
 \end{rem}
 
@@ -1224,42 +1224,42 @@ Another important class of bundles, called jet bundles, are a generalization of 
 
 \begin{defn}[Germs, jet bundles, prolongations]\label{def jet bundles}
     \begin{enumerate}
-        \item Given two smooth manifolds $M,N$ and a point $m\in M$ define the equivalence relation $\sim_p$ on $C^\infty(M,N)$ by saying that $f\sim_p g$ iff there exists an open neighborhood $U_p\subset M$ of $p$ such that $\restr{f}{U_p}=\restr{g}{U_p}$. The equivalence class of a given map $f$ under this relation is called the germ of $f$ at $p$, denoted $[f]_p$. The space of germs is denoted\index{Germ of maps}
-        \[\calC^\infty_p(M,N)=C^\infty(M,N)\slash \sim_p.\]
+        \item Given two smooth manifolds $M,N$ and a point $m\in M$ define the equivalence relation $\sim_m$ on $C^\infty(M,N)$ by saying that $f\sim_m g$ iff there exists an open neighborhood $U_m\subset M$ of $m$ such that $\restr{f}{U_m}=\restr{g}{U_m}$. The equivalence class of a given map $f$ under this relation is called the germ of $f$ at $m$, denoted $[f]_m$. The space of germs is denoted\index{Germ of maps}
+        \[\calC^\infty_m(M,N)=C^\infty(M,N)\slash \sim_m.\]
         If $f_1\in C^\infty(M,N)$ and $f_2\in C^\infty(N,K)$, then we can compose germs as follows:
-        \[[f_2]_{f_1(p)}\circ [f_1]_{p}=[f_2\circ f_1]_p.\]
-        \item For any $k\in\bbN$, another equivalence relation on $C^\infty(M,N)$ is defined as follows: $f\sim_{p;k}g$ iff in any, and therefore all, local coordinate chart, the local representatives $\wh{f}$ and $\wh{g}$ have Taylor series that coincide up to and including all terms of order $k$. The equivalence class of a given map $f$ under this relation is called the $k$-jet of $f$ at $p$, denoted $\rmj_p^k f$. The set of all $k$-jets at $p$ is denoted
-        \[\rmJ_p^k(M,N)=C^\infty (M,N)\slash \sim_{p;k}.\]
+        \[[f_2]_{f_1(m)}\circ [f_1]_{m}=[f_2\circ f_1]_m.\]
+        \item For any $k\in\bbN$, another equivalence relation on $C^\infty(M,N)$ is defined as follows: $f\sim_{m;k}g$ iff in any, and therefore all, local coordinate chart, the local representatives $\wh{f}$ and $\wh{g}$ have Taylor series that coincide up to and including all terms of order $k$. The equivalence class of a given map $f$ under this relation is called the $k$-jet of $f$ at $m$, denoted $\rmj_m^k f$. The set of all $k$-jets at $m$ is denoted
+        \[\rmJ_m^k(M,N)=C^\infty (M,N)\slash \sim_{m;k}.\]
         The composition of germs induces compositions of $k$-jets:
-        \[(\rmj_{f_1(p)}^kf_2)\circ (\rmj_p^k f_1)=\rmj_p^k(f_2\circ f_1).\]
-        A jet $\rmj_p^kf\in \rmJ^k_p(M,M)$ is called invertible if there is a jet $\rmj^k_{f(p)}g\in \rmJ^k_{f(p)}(M,M)$ such that $\rmj^k_p(g\circ f)=\rmj^k_p\id_M$ and $\rmj^k_{f(p)}(f\circ g)=\rmj^k_{f(p)}\id_M$. 
+        \[(\rmj_{f_1(m)}^kf_2)\circ (\rmj_m^k f_1)=\rmj_m^k(f_2\circ f_1).\]
+        A jet $\rmj_m^kf\in \rmJ^k_m(M,M)$ is called invertible if there is a jet $\rmj^k_{f(m)}g\in \rmJ^k_{f(m)}(M,M)$ such that $\rmj^k_m(g\circ f)=\rmj^k_m\id_M$ and $\rmj^k_{f(m)}(f\circ g)=\rmj^k_{f(m)}\id_M$. 
         
-        On the sets of all $k$-jets $\rmJ^k(M,N)=\bigsqcup_{p\in M}\rmJ^k_p(M,N)$ we can define natural projections
+        On the sets of all $k$-jets $\rmJ^k(M,M')=\bigsqcup_{m\in M}\rmJ^k_m(M,M')$ we can define natural projections
         \begin{align}
-            \pi^k_l:\rmJ^k(M,N)\to \rmJ^l(M,N),&\quad  \rmj_p^l f\mapsto p, 0\leq l<k,\\
-            \pi^k_0:\rmJ^k(M,N)\to M\times N,&\quad \rmj_p^k f\mapsto (p,f(p)).
+            \pi^k_l:\rmJ^k(M,M')\to \rmJ^l(M,M'),&\quad  \rmj_m^l f\mapsto m, 0\leq l<k,\\
+            \pi^k_0:\rmJ^k(M,M')\to M\times M',&\quad \rmj_m^k f\mapsto (m,f(m)).
         \end{align}
-        The projections $\pi^k_0$ induce a unique smooth structure on $\rmJ^k(M,N)$ that turns both of the projections into smooth fiber bundles. The map $\pi^k_0$ is called the \emph{$k$-th jet bundle} of maps from $M$ to $N$.\index{Jet bundle}
+        The projections $\pi^k_0$ induce a unique smooth structure on $\rmJ^k(M,M')$ that turns both of the projections into smooth fiber bundles. The map $\pi^k_0$ is called the \emph{$k$-th jet bundle} of maps from $M$ to $M'$.\index{Jet bundle}
         We set
-        \[\rmJ^k_{p}(M,N)_q\coloneqq (\pi^k_0)^{-1}((p,q)).\]
-        If $\dim M=m$ and $\dim N=n$, then the typical fiber of the jet bundle is the manifold $\rmJ^k_{0}(\bbR^m,\bbR^n)_0$, which parametrizes the values of Taylor coefficients (above the $0$-th order) of maps in a local chart.
+        \[\rmJ^k_{m}(M,M')_{m'}\coloneqq (\pi^k_0)^{-1}((m,m')).\]
+        If $\dim M=n$ and $\dim N=n'$, then the typical fiber of the jet bundle is the manifold $\rmJ^k_{0}(\bbR^n,\bbR^{n'})_0$, which parametrizes the values of Taylor coefficients (above the $0$-th order) of maps in a local chart.
         \item If $\pi:E\to M$ is a smooth \gls{fb}, then the set of $k$-jets of smooth local sections of $E$ is denoted $\rmJ^k(E)$ and is called the \emph{jet bundle of order $k$} of $E$. It turns out to be an embedded submanifold of $\rmJ^k(M,E)$ and a smooth \gls{fb} over $M$. Clearly $\rmJ^k$ is a functor acting on locally invertible bundle morphisms, called the \emph{jet prolongation functor}. Given a local section $\sigma\in \Gamma_U^\infty(E)$ for $U\subset M$, its \emph{$k$-th prolongation} is the induced section $\rmj^k\sigma\in\Gamma_U^\infty(\rmJ^k(E))$ defined by
-        \[(\rmj^k\sigma)(p)=\rmj^k_p\sigma.\]
+        \[(\rmj^k\sigma)(m)=\rmj^k_m\sigma,\quad m\in M.\]
         Note that $\rmj^k$ is a differential operator. Local sections of $\rmJ^k(E)$ that have this form for some local section $\sigma\in\Gamma^\infty(E)$ are called \emph{holonomic}.
         \item For every operator $D:\Gamma^\infty(E\to M)\to \Gamma^\infty(E'\to M)$ that is a $k$-th order differential operator in local coordinates, there exists a bundle morphism $\wt D:\rmJ^k(E)\to E'$ such that $D=\wt D\circ \rmj^k$.
         \item An order $k$ \emph{partial differential equation} on $E$ is a closed embedded submanifold $S$ of the jet bundle $\rmJ^k_M(E)$. A solution is a local section $\sigma\in\Gamma_U(\rmJ^k(E))$ that takes values in $S$. 
-        \item The structure group of an order $k$ jet bundle of maps on an $m$-dimensional manifold is called the \emph{$k$-th order jet group}\index{Jet group}
-        \[\GL^k_m\coloneqq \rmJ^k_{0,0}(\bbR^m,\bbR^m)^\times.\]
+        \item The structure group of an order $k$-jet bundle of maps on an $n$-dimensional manifold is called the \emph{$k$-th order differential group} or \emph{jet group}: \index{Jet group}
+        \[\GL^k_n(\bbR)\coloneqq \rmJ^k_{0,0}(\bbR^n,\bbR^n)^\times.\]
     \end{enumerate}
 \end{defn}
 
 \begin{example}
     \begin{enumerate}
-        \item Consider the trivial bundle $\pr_1:M\times\bbR\to M$. Then there is a bundle isomorphism between $\rmJ^1(\pr_1)\to M$ and the bundle $\T^\ast M\times \bbR\to M$ (whose fibers are $\T^\ast_pM\times\bbR$). Indeed, every section $\sigma:M\to M\times\bbR$ can be identified, by projecting onto the second component, with a smooth function $f:M\to \bbR$. Then $\rmj^1_p\sigma$ can be identified with the element $(\dd f,f(p))\in \T^\ast M\times \bbR$.
+        \item Consider the trivial bundle $\pr_1:M\times\bbR\to M$. Then there is a bundle isomorphism between $\rmJ^1(\pr_1)\to M$ and the bundle $\T^\ast M\times \bbR\to M$ (whose fibers are $\T^\ast_pM\times\bbR$). Indeed, every section $\sigma:M\to M\times\bbR$ can be identified, by projecting onto the second component, with a smooth function $f:M\to \bbR$. Then $\rmj^1_m\sigma$ can be identified with the element $(\dd f,f(m))\in \T^\ast M\times \bbR$.
         
         \item Similarly, considering the trivial bundle $\pr_2:M\times \bbR\to \bbR$, its first jet bundle $\rmJ^1(\pr_2)$ can be identified with $\T M\times \bbR\to \bbR$. Every section $\sigma:\bbR\to M\times\bbR$ can be identified with a smooth path $\gamma:\bbR\to M$, and a first jet of such paths is a tangent vector by definition, so $\rmj^1_t\sigma$ can be identified with $\dot\gamma(t)\in \T_{\gamma(t)}M$.
 
-        \item In other words, $\T M\cong \rmJ^1_0(\bbR,M)$ and $\T^\ast M\cong \rmJ^1(M,\bbR)_0$. The $k$-th order analog of the tangent bundle is $\rmJ^k_0(\bbR,M)$, whose typical fiber is the set $\rmJ_0^k(\bbR,\bbR^m)$ of the first $k$ derivatives of paths in $\bbR^m$.
+        \item In other words, $\T M\cong \rmJ^1_0(\bbR,M)$ and $\T^\ast M\cong \rmJ^1(M,\bbR)_0$. The $k$-th order analog of the tangent bundle is $\rmJ^k_0(\bbR,M)$, whose typical fiber is the set $\rmJ_0^k(\bbR,\bbR^n)$ of the first $k$ derivatives of paths in $\bbR^n$.
     \end{enumerate}
 \end{example}
 
@@ -1504,23 +1504,23 @@ In most applications we will need only the first (the weakest) version of the em
 \end{proof}
 
 \begin{defn}[Normal bundle]\index{Normal bundle}
-    If an $n$-dimensional manifold $M$ is embedded into some $\bbR^k$, we define its normal bundle fiberwise as $N_p M=(\T_p M)^\perp$, where $\perp$ is the orthogonal complement of a subspace taken w.r.t.\ the standard dot product on $\bbR^k$. Then $NM$ is an $k$-dimensional embedded submanifold of $\T\bbR^k$.
+    If an $n$-dimensional manifold $M$ is embedded into some $\bbR^k$, we define its normal bundle fiberwise as $\rmN_p M=(\T_p M)^\perp$, where $\perp$ is the orthogonal complement of a subspace taken w.r.t.\ the standard dot product on $\bbR^k$. Then $\rmN M$ is an $k$-dimensional embedded submanifold of $\T\bbR^k$.
 \end{defn}
 
 \begin{defn}[Tubular neighborhood]\index{Tubular neighborhood}
-    A tubular neighborhood of a manifold $M\sub \bbR^k$ is its open neighborhood $M\subset U$ such that $U$ is diffeomorphic to the normal bundle $NM$.
+    A tubular neighborhood of a manifold $M\emb \bbR^k$ is its open neighborhood $M\subset U$ such that $U$ is diffeomorphic to the normal bundle $\rmN M$.
 \end{defn}
 
 \begin{thm}[Tubular neighborhood theorem {{\cite[Thm.~6.24]{Lee}}}]\index{Theorem!Tubular Neighborhood}\label{thm tubular neighb}
-    Every embedded $M\sub \bbR^k$ has a tubular neighborhood.
+    Every embedded $M\emb \bbR^k$ has a tubular neighborhood.
 \end{thm}
 \begin{proof}
-    Thinking of $NM$ as an embedded submanifold of $\T\bbR^k=\bbR^k\times\bbR^k$, we can consider the function $g\in C^\infty(NM,\bbR^k)$ defined as
+    Thinking of $\rmN M$ as an embedded submanifold of $\T\bbR^k=\bbR^k\times\bbR^k$, we can consider the function $g\in C^\infty(\rmN M,\bbR^k)$ defined as
     \[
-        g(m,v)=m+v,\quad (m,v)\in NM.
+        g(m,v)=m+v,\quad (m,v)\in \rmN M.
     \]
-    It maps the fiber $N_m M$ to the subspace through $x$ that is orthogonal to $\T_m M$ (the image of $g$ is literally the union of all hyperplanes of dimension $k-\dim M$ orthogonal to $M$).
-    The zero section $NM$ is diffeomorphic to $M$, and $g$ can be shown to be a local diffeomorphism on a neighborhood of the zero section. This then implies that there is a neighborhood of the zero section within $NM$ on which $g$ is a diffeomorphism between a neighborhood of $M$ and a neighborhood of a zero section in $NM$. But any neighborhood of a zero section of a vector bundle is diffeomorphic to the entire bundle. See the details of the proof in \cite[Thm.~6.24]{Lee}.
+    It maps the fiber $\rmN_m M$ to the subspace through $x$ that is orthogonal to $\T_m M$ (the image of $g$ is literally the union of all hyperplanes of dimension $k-\dim M$ orthogonal to $M$).
+    The zero section $\rmN M$ is diffeomorphic to $M$, and $g$ can be shown to be a local diffeomorphism on a neighborhood of the zero section. This then implies that there is a neighborhood of the zero section within $\rmN M$ on which $g$ is a diffeomorphism between a neighborhood of $M$ and a neighborhood of a zero section in $\rmN M$. But any neighborhood of a zero section of a vector bundle is diffeomorphic to the entire bundle. See the details of the proof in \cite[Thm.~6.24]{Lee}.
 \end{proof}
 
 \begin{rem}
@@ -1534,14 +1534,14 @@ In most applications we will need only the first (the weakest) version of the em
     Any tubular neighborhood $U$ of $M\sub\bbR^k$ can be retracted onto $M$ by a smooth submersion, i.e., $\exists\, \pi:U\to M$ such that $\restr{\pi}{M}=\id_M$ and $\pi$ is a smooth submersion.
 \end{thm}
 \begin{proof}
-    Just define $\pi= \pi_{NM}\circ g^{-1}$ with $\pi_{NM}$ the bundle projection of the normal bundle and $g$ from the last proof.
+    Just define $\pi= \pi_{\rmN M}\circ g^{-1}$ with $\pi_{NM}$ the bundle projection of the normal bundle and $g$ from the last proof.
 \end{proof}
 
 \begin{thm}[Whitney Approximation Theorem]\index{Theorem!Whitney approximation}\label{thm whitney approx}
 Any continuous map $f\in C(M',M)$ between two smooth manifolds is homotopic to a smooth map.
 \end{thm}
 \begin{proof}
-Embed $M\sub \bbR^k$, let $U$ be a tubular neighborhood, $\pi:U\to M$ the corresponding retraction and $\delta(m)=\sup \{\epsilon\leq 1\mid B_\epsilon (m)\subset U\}\in C(M,(0,+\infty))$. 
+Embed $M\emb \bbR^k$, let $U$ be a tubular neighborhood, $\pi:U\to M$ the corresponding retraction and $\delta(m)=\sup \{\epsilon\leq 1\mid B_\epsilon (m)\subset U\}\in C(M,(0,+\infty))$. 
 
 Then $\wt{\delta}=\delta\circ f\in C(M',(0,+\infty))$ and there exists a smooth approximation $\wt{f}\in C^\infty(M',\bbR^k)$ that is $\wt{\delta}$-close to $f$. But now the image of $\wt{f}$ is not in $M$, but in $U$!
 
@@ -1556,12 +1556,12 @@ We can fix this by defining the homotopy
 \section{Transversality}
 
 \begin{defn}[Transversality]
-Let $S,S'\sub M$ be two embedded smooth manifolds. They are said to \emph{intersect transversally} at $p\in M$ if $\T_p M=\T_p S+ \T_p S'$. More generally, a map $f:N\to M$ is said to be \emph{transverse} to $S\sub M$ if $\T_{f(n)}S+f_{\ast n}(\T_n N)=\T_{f(n)}M$. Finally, two maps $f:N\to M$ and $g:N'\to M$ are said to be transverse if $f_{\ast n}(\T_nN)+g_{\ast n'}(\T_{n'}N)=\T_p M$ for every $p\in\im(f)\cap\im(g)$ and $n,n'$ such that $f(n)=g(n')=p$. The notation is $S\pitchfork S'$, $f\pitchfork S$, and $f\pitchfork g$.
+Let $S,S'\emb M$ be two embedded smooth manifolds. They are said to \emph{intersect transversally} at $p\in M$ if $\T_p M=\T_p S+ \T_p S'$. More generally, a map $f:N\to M$ is said to be \emph{transverse} to $S\emb M$ if $\T_{f(n)}S+f_{\ast n}(\T_n N)=\T_{f(n)}M$. Finally, two maps $f:N\to M$ and $g:N'\to M$ are said to be transverse if $f_{\ast n}(\T_nN)+g_{\ast n'}(\T_{n'}N)=\T_p M$ for every $p\in\im(f)\cap\im(g)$ and $n,n'$ such that $f(n)=g(n')=p$. The notation is $S\pitchfork S'$, $f\pitchfork S$, and $f\pitchfork g$.
 \end{defn}
 \begin{thm}[{{\cite[Thm. 6.30]{Lee}}}]\label{thm 6.30 Lee}
 \begin{enumerate}
-    \item If $F\in C^\infty(N,M)$ is a smooth map transverse to an embedded submanifold $S\sub M$, then $F^{-1}(S)$ is an embedded submanifold of $N$ of the same codimension as $S$ in $M$.
-    \item If $S,S'\sub M$ intersect only transversally, then $S\cap S'\sub M$ is an embedded submanifold of codimension  $\codim(S\cap S')=\codim S+\codim S'$.
+    \item If $F\in C^\infty(N,M)$ is a smooth map transverse to an embedded submanifold $S\emb M$, then $F^{-1}(S)$ is an embedded submanifold of $N$ of the same codimension as $S$ in $M$.
+    \item If $S,S'\emb M$ intersect only transversally, then $S\cap S'\emb M$ is an embedded submanifold of codimension  $\codim(S\cap S')=\codim S+\codim S'$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -1575,7 +1575,7 @@ To show that $0$ is a regular value we need to show that the differential of $\v
 For example, in $\bbR^3$, this theorem shows that a smooth curve and a smooth surface intersecting transversely have only isolated points in their intersection, while two smooth surfaces intersect transversely in a smooth curve. Two smooth curves in $\bbR^3$ intersect transversally iff their intersection is empty.
 
 \begin{cor}
-    If $F:N\to M$ is a submersion and $S\sub M$ an embedded submanifold, then $F^{-1}(S)$ is an embedded submanifold of the same codimension.
+    If $F:N\to M$ is a submersion and $S\emb M$ an embedded submanifold, then $F^{-1}(S)$ is an embedded submanifold of the same codimension.
 \end{cor}
 \begin{proof}
     Every submersion is transverse to every embedded submanifold.
@@ -1586,7 +1586,7 @@ following application of Sard's theorem, which gives a simple sufficient conditi
 a family of smooth maps to contain at least one map that is transverse to a given submanifold.
 
 \begin{thm}[Parametric Transversality Theorem {{\cite[Thm. 6.35]{Lee}}}]\label{thm 6.35 Lee}
-    Let $F:N\times D\to M$ be a smooth family of maps $F_s:N\to M$, $s\in D$ ($D$ is connected), and $S\sub M$ an embedded submanifold. If $F \pitchfork S$, then $F_s\pitchfork S$ for almost every $s\in D$.
+    Let $F:N\times D\to M$ be a smooth family of maps $F_s:N\to M$, $s\in D$ ($D$ is connected), and $S\emb M$ an embedded submanifold. If $F \pitchfork S$, then $F_s\pitchfork S$ for almost every $s\in D$.
 \end{thm}
 \begin{proof}
     The hypothesis implies that $W=F^{-1}(S)$ is an embedded submanifold of $N\times D$ by Theorem~\ref{thm 6.30 Lee}. Let $\pi:N\times D\to D$ be the projection onto the second factor. What we will show is that if $s\in D$ is a regular value of $\restr{\pi}{W}$, then $F_s\pitchfork S$. Since almost every $s$ is a regular value by Sard's Theorem~\ref{thm sard}, this finishes the proof.
@@ -1601,7 +1601,7 @@ a family of smooth maps to contain at least one map that is transverse to a give
 
 
 \begin{thm}[Transversality homotopy theorem {{\cite[Thm. 6.36]{Lee}}}]\label{transverse homotopy thm}
-Any map $f\in C^\infty(N,M)$ is homotopic to a $g\in C^\infty(N,M)$ that is transverse to a given embedded submanifold $S\sub M$.
+Any map $f\in C^\infty(N,M)$ is homotopic to a $g\in C^\infty(N,M)$ that is transverse to a given embedded submanifold $S\emb M$.
 \end{thm}
 \begin{proof}
 The crux of the proof is constructing a smooth map $F:N\times D\to M$ that is transverse to $S$, where $D$ is the ball $\bbD^k$ for some $k$ and $F_0=f$. It then follows from Theorem~\ref{thm 6.35 Lee} that there is some $s\in D$ such that $F_s:N\to M$ is transverse to $S$, and that $F_s$ is homotopic to $f$ (since $D$ is path-connected).
@@ -2050,7 +2050,7 @@ From the above proof, it is clear that the following generalization holds. Note 
 
 
 \begin{defn}[Flow-outs]\index{Flow-out}
-    Let $S\sub M$ as a subset and pick a vector field $X\in\fX(M)$ that is nowhere parallel to $S$, i.e., $X(p)\notin \T S$ for all $p\in S$. If $\mathcal{D}$ is the flow domain of $X$, then $\Phi=\restr{F}{\mathcal{O}}$ with $\mathcal{O}=(S\times\bbR )\cap \mathcal{D}$ is called a flow-out of $S$.
+    Let $S\emb M$ as a subset and pick a vector field $X\in\fX(M)$ that is nowhere parallel to $S$, i.e., $X(p)\notin \T S$ for all $p\in S$. If $\mathcal{D}$ is the flow domain of $X$, then $\Phi=\restr{F}{\mathcal{O}}$ with $\mathcal{O}=(S\times\bbR )\cap \mathcal{D}$ is called a flow-out of $S$.
 \end{defn}
 
 \begin{thm}[Flow-out lemma]\index{Lemma!Flow-out}
@@ -2058,7 +2058,7 @@ From the above proof, it is clear that the following generalization holds. Note 
     \begin{enumerate}
         \item If $\delta:S\to [0,+\infty)$ is chosen so that, when restricted to the set $\mathcal{O}_\delta=\{(p,t)\in\mathcal{O}\mid |t|<\delta(p)\}$, $\Phi$ is injective, then $\Phi:\mathcal{O}_\delta\to M$ is an immersion. Moreover, such a $\delta$ always exists;
         \item $\Phi_\ast (\partial_t)=X$ on $\mathcal{O}$;
-        \item If $\codim S=1$, then $\Phi(\mathcal{O}_\delta)\sub M$.
+        \item If $\codim S=1$, then $\Phi(\mathcal{O}_\delta)\emb M$.
     \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -2129,13 +2129,13 @@ Now let $\pi:M\sqcup N\to X$ be the quotient map on whose fibers $\Phi$ is const
     Extend $X$ to the double $D(M)$, apply the flow theorem there, then restrict to $M$.
 \end{proof}
 
-\begin{thm}[Rectification/Straightening Theorem]\index{Theorem!Rectification/Straightening}\label{rectification}
+\begin{thm}[Rectification of vector fields]\index{Theorem!Rectification of vector fields}\label{rectification}
 If $X\in\fX(M)$ and $X(p)\neq 0$, then there exists a local chart $(U,\varphi)$ at $p$ such that its slice $S=\{p\in U\mid \varphi^1(p)=0\}$ is diffeomorphic to $\bbD^{n-1}$, $X(p)\notin \T_p S$ and $X=\partial_1$ on $U$.
 \end{thm}
 \begin{proof}
-    Since $S\sub M$, it has a slice neighborhood. We can parametrize $S$ by an embedding map $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{n-1}$. We can take $U$ such that $\restr{X}{U}\cap \T S=\varnothing$. 
+    Since $S\emb M$, it has a slice neighborhood. We can parametrize $S$ by an embedding map $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{n-1}$. We can take $U$ such that $\restr{X}{U}\cap \T S=\varnothing$. 
 
-    Now we can use a flow-out along $X$ so that the flow $\Fl^X_t(x(s))$ parametrizes $\Fl(x(\Omega))\sub M$. This is a diffeomorphism $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=\Fl^X_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
+    Now we can use a flow-out along $X$ so that the flow $\Fl^X_t(x(s))$ parametrizes $\Fl(x(\Omega))\emb M$. This is a diffeomorphism $\mathcal{O}_\delta\to F(x(\Omega))=x(\Omega)_\delta$ and hence has a smooth inverse. The inverse then gives a local chart $\varphi=\psi^{-1}$, where $\psi(s,t)=\Fl^X_t(x(s))$. Finally, $X=\partial_t=\partial_1$ in this local chart.
 \end{proof}
 
 \begin{defn}[Complete integral]\index{Complete integral}\label{def complete integral}
@@ -2424,8 +2424,8 @@ where $F_\lambda :U\to U_\lambda$ is the flow diffeomorphism. Then with fixed $p
 
 The following shows that this definition of holonomic frames agrees with the one indicated in Definition~\ref{def jet bundles}. That is, each holonomic frame arises from some local coordinates.
 
-\begin{thm}[Rectification of frames]\index{Theorem!Rectification}\label{thm rectification}
-    Let $\{e_j\}_{j=1}^k$ with $k\leq n=\dim M$ be a holonomic local $k$-frame on $W\mathring{\subset}M$. Assume that $e_j(p)\notin \T_p S$ for all $p\in S$, where $S\sub M$ is a submanifold with $\codim S=k$. Then there exists a local chart of coordinates $(s^1,\ldots,s^n)$ in which $S=\{s^1=\cdots=s^k=0\}$ and for $j\leq k$ we have $\partial_j=e_j$.
+\begin{thm}[Rectification of frames]\index{Theorem!Rectification of frames}\label{thm rectification}
+    Let $\{e_j\}_{j=1}^k$ with $k\leq n=\dim M$ be a holonomic local $k$-frame on $W\mathring{\subset}M$. Assume that $e_j(p)\notin \T_p S$ for all $p\in S$, where $S\emb M$ is a submanifold with $\codim S=k$. Then there exists a local chart of coordinates $(s^1,\ldots,s^n)$ in which $S=\{s^1=\cdots=s^k=0\}$ and for $j\leq k$ we have $\partial_j=e_j$.
 \end{thm}
 \begin{proof}
     Parametrize $S$ as usual by $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{n-k}$, define a chart $\varphi=\psi^{-1}$, where
@@ -2490,7 +2490,7 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_m
 This theorem is of crucial importance in the theory of Lie groups, fiber bundles, and even dynamical systems. The entire concept of \emph{integrability} ultimately stems from it. The rest of this \sect\ is devoted to characterizing integral submanifolds and proving a global version of the Frobenius theorem, which will be useful is many applications down the line.
 
 \begin{cor}[{{\cite[Cor.~19.13]{Lee}}}]\label{cor 19.13 Lee}
-    Let $D$ be a rank $r$ involutive distribution on $M$. If $S\sub M$ is a codimension $r$ embedded submanifold such that $\T_mS\cap D_m=\{0\}$ for all $m\in S$, then there is a \emph{flat chart}\index{Flat chart} $(U,\{s^i\})$ for $S$ centered at $m$ in which $S\cap U$ is the slice $s^1=\cdots=s^r=0$.
+    Let $D$ be a rank $r$ involutive distribution on $M$. If $S\emb M$ is a codimension $r$ embedded submanifold such that $\T_mS\cap D_m=\{0\}$ for all $m\in S$, then there is a \emph{flat chart}\index{Flat chart} $(U,\{s^i\})$ for $S$ centered at $m$ in which $S\cap U$ is the slice $s^1=\cdots=s^r=0$.
 \end{cor}
 \begin{proof}
     The proof of Frobenius theorem showed that locally $D$ is spanned by $r$ commuting vector fields, so this corollary follows by the Rectification Theorem~\ref{thm rectification}.
@@ -3209,7 +3209,7 @@ Exercise.
     Let $\sfv$ be a positive volume form on $M$. The it is easy to check that $\sfv_S\coloneqq i_N \sfv$ is a volume form on $S$ that defines an orientation as stated.
 \end{proof}
 \begin{cor}
-    Let $M$ be orientable and let a function $f\in C^\infty(M)$ have a regular value $c\in \bbR $. Then the submanifold $S=f^{-1}(c)\sub M$ is orientable.
+    Let $M$ be orientable and let a function $f\in C^\infty(M)$ have a regular value $c\in \bbR $. Then the submanifold $S=f^{-1}(c)\emb M$ is orientable.
 \end{cor}
 \begin{proof}
     Embed $M$ into $\bbR^n$ using the Whitney Embedding Theorem~\ref{thm whitney embedding} and define the vector field $N=\nabla f$. Then $N\perp S$ and $N\neq 0$ on $S$ because $\restr{f}{S}$ is regular. Therefore $N$ induces an orientation on $S$ by the theorem above.
@@ -3638,25 +3638,25 @@ The following local version is a more classical formulation of the Frobenius The
     Let $\Delta$ be a regular Pfaffian system of rank $r$ on $M$. \gls{tfae}:
     \begin{enumerate}
         \item $\Delta$ is integrable.
-        \item For every $m\in M$, there exist a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ at $m$ and local $1$-forms $\gamma_j^i$, $i,j=1,\ldots,r$, such that for all $i=1,\ldots,r$ one has $\dd\theta^i=\sum_{j=1}^r \theta^j\wedge \gamma_j^i$.
+        \item For every $m\in M$, there exist a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ at $m$ and local $1$-forms $\omega_j^i$, $i,j=1,\ldots,r$, such that for all $i=1,\ldots,r$ one has $\dd\theta^i=\sum_{j=1}^r \theta^j\wedge \omega_j^i$.
         \item For every $m\in M$, there exist a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ at $m$ such that for all $i=1,\ldots,r$ one has $\dd\theta^i\wedge \theta^1\cdots\wedge\theta^r=0$.
     \end{enumerate}
 \end{thm}
 \begin{proof}
     $1\implies2$: Choose a local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ over a neighborhood $U$ of $m$. Since $\Delta$ is integrable, so is the Pfaffian system $\Delta_U=\Delta\cap \T^\ast U$ on $U$. Hence, by Theorem~\ref{thm 4.7.8 RS1}, $\dd\theta^i\in\Omega^{\smbullet }_{\Delta_U}(M)$. Application of Lemma~\ref{lem 4.7.9 RS1} to the manifold $U$ and the Pfaffian system $\Delta_U$ yields the assertion.
 
-    $w\implies1$: According to Theorem~\ref{thm 4.7.8 RS1}, it suffices to show that $\Omega^{\smbullet }_\Delta(M)$ is a differential ideal. Let $\alpha\in\Omega^{\smbullet }_\Delta(M)$ be of degree $k$ and let $m\in M$. Let $\{\theta^i\}_{i=1}^r$ be the local frame in $\Delta$ over a neighborhood $U$ of $m$ and let $\gamma^i_j$, $i,j=1,\ldots,r$, be the local $1$-forms over $U$ existing by assumptions. By Lemma~\ref{lem 4.7.9 RS1}, $\restr{\alpha}{U}=\sum_{i=1}^r\theta^i\wedge\beta_i$ for appropriate local $(k-1)$-forms $\beta_i$ on $U$. Then
-    \[\dd\left(\restr{\alpha}{U}\right)=\sum_{i,j=1}^r\theta^j\wedge\gamma_j^i\wedge \beta_i-\sum_{i=1}^r \theta^i\wedge\dd \beta_i\]
+    $w\implies1$: According to Theorem~\ref{thm 4.7.8 RS1}, it suffices to show that $\Omega^{\smbullet }_\Delta(M)$ is a differential ideal. Let $\alpha\in\Omega^{\smbullet }_\Delta(M)$ be of degree $k$ and let $m\in M$. Let $\{\theta^i\}_{i=1}^r$ be the local frame in $\Delta$ over a neighborhood $U$ of $m$ and let $\omega^i_j$, $i,j=1,\ldots,r$, be the local $1$-forms over $U$ existing by assumptions. By Lemma~\ref{lem 4.7.9 RS1}, $\restr{\alpha}{U}=\sum_{i=1}^r\theta^i\wedge\beta_i$ for appropriate local $(k-1)$-forms $\beta_i$ on $U$. Then
+    \[\dd\left(\restr{\alpha}{U}\right)=\sum_{i,j=1}^r\theta^j\wedge\omega_j^i\wedge \beta_i-\sum_{i=1}^r \theta^i\wedge\dd \beta_i\]
     and hence $(\dd\alpha)_m(X_1,\ldots,X_k)=0$ for all $X_i\in\Delta_m^0$. Since $m$ was arbitrary, we get $\dd\alpha\in\Omega^{\smbullet }_\Delta(M)$.
 
     $2\implies3$ is obvious. $3\implies2$: We may complement the local frame $\{\theta^i\}_{i=1}^r$ in $\Delta$ by local $1$-forms $\theta^{r+1},\ldots,\theta^n$ to a local frame in $\T^\ast M$ at $m$. Expanding $\dd\theta^i=\sum_{j<k}\alpha^i_{jk}\theta^j\wedge\theta^k$, we obtain
     \[0=\sum_{j<k}\alpha^i_{jk}\theta^j\wedge\theta^k\wedge\theta^1\wedge\cdots\wedge\theta^r.\]
-    It follows that $\alpha^i_{jk}=0$ for all $r<j$. Hence, $\dd\theta^i=\sum_{j=1}^r\theta^j\wedge\gamma_j^i$ with $\gamma^i_j=\sum_{j<k}\alpha^i_{jk}\theta^k$.
+    It follows that $\alpha^i_{jk}=0$ for all $r<j$. Hence, $\dd\theta^i=\sum_{j=1}^r\theta^j\wedge\omega_j^i$ with $\omega^i_j=\sum_{j<k}\alpha^i_{jk}\theta^k$.
 \end{proof}
 
 
 \begin{rem}
-    It is common to view the collection of $1$-forms $\gamma^i_j$ as a square matrix of $1$-forms, or a matrix-valued $1$-form, acting on the column-vector of $1$-forms $\theta^j$. This point of view is also a foreshadowing of the kinds of formulas we will see in the theory of connections, where $\theta^j$ is most comparable to a soldering form, and $\gamma^i_j$ is a connection form.
+    It is common to view the collection of $1$-forms $\omega^i_j$ as a square matrix of $1$-forms, or a matrix-valued $1$-form, acting on the column-vector of $1$-forms $\theta^j$. This point of view is also a foreshadowing of the kinds of formulas we will see in the theory of connections, where $\theta^j$ is most comparable to a soldering form, and $\omega^i_j$ is a connection form.
 \end{rem}
 
 For a deep application of the Frobenius Theorem, see \S\ref{sec: theory of surfaces}.
@@ -3671,7 +3671,7 @@ For a deep application of the Frobenius Theorem, see \S\ref{sec: theory of surfa
 
 
 \begin{example}[Wave equation]
-    Consider the wave equation $u_{xy}\coloneqq \partial_x\partial_yu=0$ for a function $u(x,y)$. It is known that the general solution of this equation is $u=\xi(x)+\eta(y)$, where $\xi,\eta$ are arbitrary functions of one variable. For this reason alone, we expect this system to not be completely integrable in the Frobenius sense. To represent it as a Pfaffian system we use coordinates $(x,y,z,p,q,r,s,t)$ on the $8$-dimensional jet space $J^2(\bbR^2,\bbR)$, where $z(x,y)$ will be the unknown function, $(p,q)$ correspond to $(z_x,z_y)$, and $(r,s,t)$ correspond to $(z_{xx},z_{xy},z_{yy})$. Then the wave equation $z_{xy}=0$ is equivalent to the canonical contact system restricted to the $7$-dimensional hyperplane $M\sub J^2(\bbR^2,\bbR)$ given by $s=0$:
+    Consider the wave equation $u_{xy}\coloneqq \partial_x\partial_yu=0$ for a function $u(x,y)$. It is known that the general solution of this equation is $u=\xi(x)+\eta(y)$, where $\xi,\eta$ are arbitrary functions of one variable. For this reason alone, we expect this system to not be completely integrable in the Frobenius sense. To represent it as a Pfaffian system we use coordinates $(x,y,z,p,q,r,s,t)$ on the $8$-dimensional jet space $J^2(\bbR^2,\bbR)$, where $z(x,y)$ will be the unknown function, $(p,q)$ correspond to $(z_x,z_y)$, and $(r,s,t)$ correspond to $(z_{xx},z_{xy},z_{yy})$. Then the wave equation $z_{xy}=0$ is equivalent to the canonical contact system restricted to the $7$-dimensional hyperplane $M\emb J^2(\bbR^2,\bbR)$ given by $s=0$:
     \begin{align}
         \theta^1&= \dd z-p\dd x-q\dd y,\\
         \theta^2&= \dd p- r\dd x,\\

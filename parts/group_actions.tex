@@ -1,4 +1,4 @@
-\chapter{Lie Theory II: Geometric Structure}\label{sec: Lie theory ii}
+\chapter{Lie Theory II: Geometric Structure}\label{chap: Lie theory ii}
 
 \begin{hrem*}
     \small
@@ -836,10 +836,10 @@ In this picture, developments of $\eta$ correspond to unique liftings of curves 
     It is sufficient to show this for the left-invariant case. Let $D=D_\rmL$. For each $g\in G$, $(\rmL_g)_{\ast e}$ is an isomorphism, therefore $D_g$ is of constant rank $\dim \frakh$ and the distribution is obviously left-invariant. Any basis of left-invariant vector fields on $G$ forms a smooth frame for $D$, so $D$ is smooth. Moreover, $D$ is involutive because such a frame is closed under the Lie bracket.
 \end{proof}
 
-The Frobenius theorem now gives us the first the first ``enhancement'' result about Lie subgroups. Even though by definition they are only required to be immersed (which means that their topology can differ drastically from the subspace topology), the following theorem shows that they are in fact weakly embedded (a.k.a.~initial).
+The Frobenius theorem now gives us the first the first ``enhancement'' result about Lie subgroups. Even though by definition they are only required to be immersed (which means that their topology can differ drastically from the subspace topology), the following theorem shows that they are in fact weakly embedded (initial).
 
 \begin{thm}[Lie subgroups are weakly embedded {{\cite[Thm.~19.25]{Lee}}}]\label{thm 19.25 Lee}
-    Every Lie subgroup is an integral manifold of an involutive distrubution, and therefore is a weakly embedded submanifold.
+    Every Lie subgroup is an integral manifold of an involutive distribution, and therefore is a weakly embedded submanifold.
 \end{thm}
 \begin{proof}
     Let $H\subset G$ be a Lie subgroup. Then $\Lief H$ is canonically isomorphic to the Lie subalgebra $i_\ast(\Lief H)\subset \Lief G$, where $i:H\hookrightarrow G$ is the inclusion. Let $D\subset \T G$ be the left-invariant involutive distribution corresponding to $\frakh$ as in Lemma~\ref{3972}. It follows that $\T_hH=D_h$, so $H$ is an integral manifold of $D$ and is weakly embedded by Theorem~\ref{thm 19.17 Lee}.
@@ -1166,7 +1166,7 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
     \[R_{\bf{n}}=\rmI+\frac{\sin |\bf{n}|}{|\bf{n}|}A_{\bf{n}}+\frac{1-\cos |\bf{n}|}{|\bf{n}|}A_{\bf{n}}^2,\]
     where $|\bf{n}|=\sqrt{n_1^2+n_2^2+n_3^2}$ is the rotation angle and $A_{\bf n}$ is $|\bf n|$ times the generator of rotations about $\bf n$.
 
-    The conjugacy classes of $\SO_3(\bbR)$ are exactly the spheres $C_{|\bf{n}|}$ of equal rotation angle $0\leq |\bf{n}|\leq \pi$ (except $C_0=\{\rmI\}$). Each conjugacy class in the range $0<|\bf{n}|<\pi$ is diffeomorphic to a sphere, whereas $C_\pi$, the conjugacy class of the matrix $\mathrm{diag}(1,-1,-1)$, is diffeomorphic to $\RP^2$.
+    The conjugacy classes of $\SO_3(\bbR)$ are exactly the spheres $C_{|\bf{n}|}$ of equal rotation angle $0\leq |\bf{n}|\leq \pi$ (except $C_0=\{\rmI\}$). Each conjugacy class in the range $0<|\bf{n}|<\pi$ is diffeomorphic to a sphere, whereas $C_\pi$, the conjugacy class of the matrix $\diag(1,-1,-1)$, is diffeomorphic to $\RP^2$.
     
     Then the singular points of the exponential map are the antisymmetric matrices $A_\omega\in \frakso_3(\bbR)$ with $|\omega|=2\pi$. In this case $\rme^{A_\omega}=\rmI\in \SO_3(\bbR)$. 
 
@@ -1354,7 +1354,7 @@ For the second example we need a minor lemma. Recall that a \emph{Banach algebra
 \end{proof}
 
 
-\begin{example}[Nonlinear quotients of the Heisenberg group]\index{Heisenberg group}\label{example quantum heisenberg}
+\begin{example}[Nonlinear quotients of the Heisenberg group {{\cite[Ex.~9.5.20]{HN}}}]\index{Heisenberg group}\label{example quantum heisenberg}
     The Heisenberg group from Example~\ref{example Heisenberg group} contains a normal subgroup consisting of matrices of the form
     \[
     \begin{pmatrix}
@@ -1664,20 +1664,24 @@ where the sum is taken over all $l_1,\ldots,l_k,m_1,\ldots,m_k\geq 0$ such that 
 Dynkin's formula shows why certain classes of Lie algebras are particularly special. For example, \emph{nilpotent Lie algebras} are the algebras whose exponential maps are polynomial, i.e., whose Dynkin's formula terminates after a finite number of terms. The prototypes for all nilpotent Lie algebras are Lie algebras consisting of strictly (upper-)triangular matrices, see Remark~\ref{rem nilpotent Lie alg} below. Recall that an element $a$ of a ring is called \emph{nilpotent}\index{Nilpotent element} if $a^n=0$ for some positive integer $n$ and \emph{unipotent} if $(a-1)$ is nilpotent.\index{Unipotent element}
 
 \begin{cor}[{{\cite[Cor.~5.16]{Sepanski}}}]\label{cor 5.16 Sepanski}
-    Let $N$ be a connected Lie subgroup of $\GL_n(\bbC)$ whose Lie algebra $\mathfrak{n}$ lies in the set of \emph{strictly upper triangular matrices}. Then the map $\exp:\mathfrak{n}\to N$ is bijective. 
+    Let $N$ be a connected Lie subgroup of $\GL_n(\bbC)$ whose Lie algebra $\mathfrak{n}$ lies in the set of \emph{strictly upper triangular matrices}. Then $\exp:\mathfrak{n}\to N$ is bijective. 
 \end{cor}
 \begin{proof}
     It is a simple exercise to see that 
     \[[A_n,\ldots,A_3,A_2,A_1]\coloneqq [A_n,[\ldots,[A_3,[A_2,A_1]]\cdots ]=0\] 
     for any strictly upper triangular matrices $A,A_i\in \mathfrak{gl}_n(\bbC)$ and that $\rme^A$ is polynomial in $A$ (because all strictly triangular matrices are nilpotent). In particular, for $A,B\in\mathfrak{n}$ near the origin, Dynkin's Formula gives a polynomial expression for $Z\in\mathfrak{n}$ solving $\rme^A\rme^B=\rme^Z$. Since both sides of this expression are polynomials in $A$ and $B$ that agree on a neighborhood, they agree everywhere. Since the formula for $Z$ involves only the Lie algebra structure of $\mathfrak{n}$, $Z$ remains in $\mathfrak{n}$ for any $A,B\in\mathfrak{n}$. In other words, $(\exp\mathfrak{n})^2\subset \exp\mathfrak{n}$. Since $\exp\mathfrak{n}$ generates all of $N$ by Proposition~\ref{prop 7.14 Lee}, this shows that $\exp\mathfrak{n}=N$. This proves surjectivity.
 
-    The image of $\exp$, i.e.~$N$, clearly consists of unipotent matrices: $\rme^A-1$ is a polynomial in $A$ with no constant term, therefore it is nilpotent just as $A$ is. Bijectivity of $\exp$ then follows from the fact that the inverse is given by $a\mapsto \ln (\rmI+(a-\rmI))\in\frakn$, which is also a terminating series due to the fact that $(a-\rmI)$ is nilpotent.
+    The image of $\exp$, i.e.~$N$, clearly consists of unipotent matrices: $\rme^A-1$ is a polynomial in $A$ with no constant term, therefore it is nilpotent just when $A$ is. Bijectivity of $\exp$ then follows from the fact that the inverse is given by $a\mapsto \ln (\rmI+(a-\rmI))=(a-\rmI)-\frac{(a-\rmI)^2}{2}+\cdots\in\frakn$, which is also a terminating series due to the fact that $(a-\rmI)$ is nilpotent.
 \end{proof}
 
 \begin{rem}[Nilpotent Lie algebras]\label{rem nilpotent Lie alg}
-    A Lie algebra is called \emph{nilpotent}\index{Nilpotent!Lie algebra}\index{Nilpotent!Lie group} if there exists an $n\in\bbN$ such that $\ad_{A_1}\ad_{A_2}\cdots \ad_{A_n}=0$ for any sequence $A_1,\ldots,A_n\in\frakg$. A fundamental theorem of Engel\index{Theorem!Engel} states that a finite-dimensional Lie algebra is nilpotent iff each adjoint operator is nilpotent, i.e.~$\ad_A^n=0$ for all $A$. A Lie group $G$ is called nilpotent if $\Adg_{g_1}\cdots \Adg_{g_n}g=e$ for all $g_1\ldots,g_n,g\in G$. Assuming $G$  is connected, this is equivalent to its Lie algebra being nilpotent. The above corollary is then a special case of a general statement that the exponential map is bijective for any \emph{nilpotent} Lie algebra, and thus any nilpotent Lie group is diffeomorphic to a vector space.
+    A Lie algebra is called \emph{nilpotent}\index{Nilpotent!Lie algebra}\index{Nilpotent!Lie group} if there exists an $n\in\bbN$ such that $\ad_{A_1}\ad_{A_2}\cdots \ad_{A_n}=0$ for any sequence $A_1,\ldots,A_n\in\frakg$. In other words, the so called \emph{lower central series} of subalgebras 
+    \[\frakg>[\frakg,\frakg]>[\frakg,[\frakg,\frakg]]>[\frakg,[\frakg,[\frakg]]]>\cdots\]
+    terminates in zero at some point. A fundamental theorem of Engel\index{Theorem!Engel} states that a finite-dimensional Lie algebra is nilpotent iff each adjoint operator is nilpotent, i.e.~$\ad_A^n=0$ for all $A$. A Lie group $G$ is called nilpotent if $\Adg_{g_1}\cdots \Adg_{g_n}g=e$ for all $g_1\ldots,g_n,g\in G$. Assuming $G$  is connected, this is equivalent to its Lie algebra being nilpotent. 
+    
+    Crucially, the proof of the invertibility of $\exp$ above relied on the fact that the exponential map in matrix groups coincides with the matrix exponential, allowing us to explicitly write down its inverse. For general nilpotent Lie algebras, $\exp$ is not invertible. The above corollary is then a special case of a general statement that the exponential map is a universal covering map for any \emph{nilpotent} Lie algebra, and thus any connected nilpotent Lie group is diffeomorphic to a quotient of a vector space by a lattice.  \emph{Unipotent linear groups}\index{Unipotent group} are a special class of nilpotent groups defined as matrix groups consisting of unipotent matrices, and we have just proven that all unipotent groups $G$ are diffeomorphic to a vector space, and the exponential map identifies the Lie group structure with $(\frakg,\mu)$, where $\mu$ is the product defined via the \gls{bch} formula.
 
-    Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''.
+    Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''. The next simplest class of Lie groups are solvable Lie groups, which we will study later in the book.
 \end{rem}
 
 
@@ -1816,7 +1820,7 @@ We summarize all results about closed subgroups of Lie groups in the following C
     Further, if $\Phi$ is a continuous isomorphism of groups, then it is an isomorphism of Lie groups (i.e.~both $\Phi$ and $\Phi^{-1}$ are analytic).
 \end{cor}
 \begin{proof}
-    Write $F=\mathrm{graph}(\Phi)$. Since $\Phi$ is a homomorphism, $F$ is a subgroup of $G\times H$, and because it is closed, $F$ is a Lie subgroup in view of the Closed Subgroup Theorem. Let $\pi_1,\pi_2$ be the projections $F\to G$ and $F\to H$, respectively. Since the dimension of $\T_f\pi_1$ is constant (as a function of $f\in F$), the mapping $\pi_1$ is, locally in $F$, a fibration with fiber dimension equal to the dimension of $\ker \T_f\pi_1$. However, $\pi_1$ is invertible, so the fibers consist of single points and we conclude that $\pi_1$ is an immersion.
+    Write $F=\graph(\Phi)$. Since $\Phi$ is a homomorphism, $F$ is a subgroup of $G\times H$, and because it is closed, $F$ is a Lie subgroup in view of the Closed Subgroup Theorem. Let $\pi_1,\pi_2$ be the projections $F\to G$ and $F\to H$, respectively. Since the dimension of $\T_f\pi_1$ is constant (as a function of $f\in F$), the mapping $\pi_1$ is, locally in $F$, a fibration with fiber dimension equal to the dimension of $\ker \T_f\pi_1$. However, $\pi_1$ is invertible, so the fibers consist of single points and we conclude that $\pi_1$ is an immersion.
 
     Because $\Phi\circ \rmL_g=\rmL_{\Phi(g)}\circ\Phi$ for any $g\in G$, it is sufficient to prove analyticity for $\Phi$ is a neighborhood of $e$ in $G$, or in $G_0$, so we may assume that $G$ is connected. It follows that $G\times H$, and therefore $F$, is a countable union of compact subsets, because $F$ is closed in $G\times H$.
 
@@ -2095,12 +2099,12 @@ We also provide a more analytic proof along the lines of the original argument b
 
 \begin{example}[Adjoint group]\label{ex adjoint group}\index{Adjoint group}
     Let $\frakg$ be a finite-dimensional Lie algebra. Since $\ad:\frakg\to \Lin(\frakg)$ is a homomorphism of Lie algebras, $\ad(\frakg)$ is a Lie subalgebra of $\Lin(\frakg)=\frakgl(\frakg)$. According to the Analytic Subgroup Theorem, the subgroup of $\GL(\frakg)$ generated by the $\rme^{\ad_A}, A\in\frakg$, is the unique connected Lie subgroup of $\GL(\frakg)$ with Lie algebra $\ad(\frakg)$. It is called the \emph{adjoint group of $\frakg$}:
-    \[\Ad(\frakg)\coloneqq \{\rme^{\ad_A}\mid A\in\frakg\}\sub \GL(\frakg).\]
-    Note that it is, in general, different from the \emph{adjoint group of $G$}, which is the image of the adjoint representation $\Ad (G)\sub \GL(\frakg)$.
+    \[\Ad(\frakg)\coloneqq \{\rme^{\ad_A}\mid A\in\frakg\}\emb \GL(\frakg).\]
+    Note that it is, in general, different from the \emph{adjoint group of $G$}, which is the image of the adjoint representation $\Ad (G)\emb \GL(\frakg)$.
     
     By differentiating w.r.t.\ $t$ and using the Jacobi identity, it is easy to check that the map $t\mapsto \rme^{-t\ad_A}\left[\rme^{t\ad_A}B,\rme^{t\ad_A}C\right]$ is constant and equal to its value $[B,C]$ at $t=0$, i.e.
     \[\left[\rme^{\ad_A}B,\rme^{\ad_A}C\right]=\rme^{\ad_A}[B,C] \text{ for all }A,B,C\in\frakg;\]
-    and this shows that $\rme^{\ad_A}$ is an automorphism of $\frakg$ for any $A\in\frakg$. It follows that $\Ad(\frakg)$ is a subgroup of the group $\Aut(\frakg)$ of all automorphisms of $\frakg$. The elements of $\Ad(\frakg)$ are therefore also called the \emph{inner automorpisms} of $\frakg$.\footnote{Sometimes elements of $\Ad(G)$ are also called inner automorphisms of $\frakg$, but that terminology is problematic since not all such transformations can be obtained from $\frakg$ itself.} It is easy to see from the definition that $\Aut(\frakg)$ is an analytic submanifold, hence a closed Lie subgroup, of $\GL(\frakg)$. Furthermore, the Lie algebra of $\Aut(\frakg)$ is exactly the algebra of derivations
+    and this shows that $\rme^{\ad_A}$ is an automorphism of $\frakg$ for any $A\in\frakg$. It follows that $\Ad(\frakg)$ is a subgroup of the group $\Aut(\frakg)$ of all automorphisms of $\frakg$. The elements of $\Ad(\frakg)$ are therefore also called the \emph{inner automorphisms} of $\frakg$.\footnote{Sometimes elements of $\Ad(G)$ are also called inner automorphisms of $\frakg$, but that terminology is problematic since not all such transformations can be obtained from $\frakg$ itself.} It is easy to see from the definition that $\Aut(\frakg)$ is an analytic submanifold, hence a closed Lie subgroup, of $\GL(\frakg)$. Furthermore, the Lie algebra of $\Aut(\frakg)$ is exactly the algebra of derivations
     \[\Der(\frakg)=\{\phi\in \Lin(\frakg)\mid \phi ([A,B])=[\phi(A),B]+[A,\phi(B)]\text{ for all }A,B\in\frakg\}.\]
     Notice that $\ad(\frakg)\subset \Der(\frakg)$. In general $\Ad(\frakg)$ need not be closed in $\Aut(\frakg)$, hence in $\GL(\frakg)$, whereas on the other hand $\Aut(\frakg)$ need not be connected.
 
@@ -2119,9 +2123,9 @@ Now we can provide an alternative proof of Theorem~\ref{thm second principle} wh
 \begin{proof}[Second proof of Theorem~\ref{thm second principle} {{\cite[Cor.~1.10.5]{DK}}}]
     The condition that $\phi$ is a homomorphism of Lie algebras just means that its graph is a Lie subalgebra of $\frakg\times\frakh$, which is regarded as the Lie algebra of $G\times H$. According to the Analytic Subgroup Theorem there is a connected Lie subgroup $F\subset G\times H$ having the graph of $\phi$ as its Lie algebra.
 
-    Let $\pi_1:F\to G$ be the homomorphism defined as the composition of the inclusion and the projection $F\hookrightarrow G\times H\overset{\pr_1}{\to} G$. Its differential $\T_e \pi_1$ is equal to the projection of $\mathrm{graph}(\phi)\subset \frakg\times\frakh$ onto the first variable, which is invertible. Since the differentials at all points of a Lie group are related to each other by an isomorphism, we get that $\T_f\pi_1$ is invertible for all $f\in F$. So $\pi_1(F)$ is an open subgroup of $G$, and $G$ is connected, thus $\pi_1(F)=G$ by Proposition~\ref{prop 7.14 Lee}. Since $F$ is also connected, $\pi_1$ is a covering homomorphism of Lie groups $F\to G$, and thus by assumption $\pi_1$ is an isomorphism. By the \gls{inmt}, $\pi_1^{-1}$ is analytic, hence a homomorphism of Lie groups $G\to F$. Writing $\pi_2$ for the composition $F\hookrightarrow G\times H\overset{\pr_2}{\to} H$, we get that $\Phi=\pi_2\circ \pi_1^{-1}$ is a homomorphism of Lie groups $G\to H$, having $F$ as its graph, and $\T_e \Phi=\phi$ because $\T_{(e,e)}F=\mathrm{graph}(\phi)$.
+    Let $\pi_1:F\to G$ be the homomorphism defined as the composition of the inclusion and the projection $F\hookrightarrow G\times H\overset{\pr_1}{\to} G$. Its differential $\T_e \pi_1$ is equal to the projection of $\graph(\phi)\subset \frakg\times\frakh$ onto the first variable, which is invertible. Since the differentials at all points of a Lie group are related to each other by an isomorphism, we get that $\T_f\pi_1$ is invertible for all $f\in F$. So $\pi_1(F)$ is an open subgroup of $G$, and $G$ is connected, thus $\pi_1(F)=G$ by Proposition~\ref{prop 7.14 Lee}. Since $F$ is also connected, $\pi_1$ is a covering homomorphism of Lie groups $F\to G$, and thus by assumption $\pi_1$ is an isomorphism. By the \gls{inmt}, $\pi_1^{-1}$ is analytic, hence a homomorphism of Lie groups $G\to F$. Writing $\pi_2$ for the composition $F\hookrightarrow G\times H\overset{\pr_2}{\to} H$, we get that $\Phi=\pi_2\circ \pi_1^{-1}$ is a homomorphism of Lie groups $G\to H$, having $F$ as its graph, and $\T_e \Phi=\phi$ because $\T_{(e,e)}F=\graph(\phi)$.
 
-    Finally the uniqueness of $\Phi$ follows from the observation that if $\Phi$ is a homomorphism as desired, then its graph is a connected Lie subgroup of $G\times H$ having $\mathrm{graph}(\phi)$ as its tangent space at $(e,e)$, so it follows from the uniqueness in the Analytic Subgroup Theorem that $\mathrm{graph}(\Phi)=F$.
+    Finally the uniqueness of $\Phi$ follows from the observation that if $\Phi$ is a homomorphism as desired, then its graph is a connected Lie subgroup of $G\times H$ having $\graph(\phi)$ as its tangent space at $(e,e)$, so it follows from the uniqueness in the Analytic Subgroup Theorem that $\graph(\Phi)=F$.
 \end{proof}
 
 
@@ -2322,7 +2326,7 @@ The two quotients coincide only in Abelian groups. The topological structure on 
 
 
 \begin{thm}[Homogeneous space]
-    Let $G$ be a Lie group and let $H\sub G$ be a closed subgroup. There exists a unique smooth structure on the quotient $G\slash H$ such that the natural projection $\pi:G\to G\slash H$ is a smooth submersion.
+    Let $G$ be a Lie group and let $H\emb G$ be a closed subgroup. There exists a unique smooth structure on the quotient $G\slash H$ such that the natural projection $\pi:G\to G\slash H$ is a smooth submersion.
 \end{thm}
 \begin{proof}
     It suffices to prove existence, because uniqueness holds for any submersion. Choose a subspace $\frakm\subset \frakg$ complementary to $\frakh$. The manifold structure of $G\slash H$ will be modelled on this subspace.
@@ -2484,7 +2488,7 @@ When $k<n$, we can use the description of $\St_k(\bbR^n)$ as a coset space to in
 Next we investigate the special case where $H$ is a normal subgroup. This means that $aH=Ha$, and thus $G\slash H$ inherits a group structure. 
 
 \begin{prop}[Quotient Lie group {{\cite[Prop.~5.7.8]{RS1}}}]\label{prop quotient group}
-    Let $G$ be a Lie group with Lie algebra $\frakg$ and let $H\sub G$ be a closed normal subgroup with associated Lie subalgebra $\frakh< \frakg$. Then:
+    Let $G$ be a Lie group with Lie algebra $\frakg$ and let $H\embsub G$ be a closed normal subgroup with associated ideal $\frakh\sub \frakg$. Then:
     \begin{enumerate}
         \item $G\slash H$ with the induced group structure is a Lie group.
         \item The natural projection $\pi: G\to G\slash H$ is a Lie group homomorphism.
@@ -2520,7 +2524,7 @@ Next we investigate the special case where $H$ is a normal subgroup. This means 
 
 
 \begin{prop}[Quotient homomorphism {{\cite[Prop.~5.7.10]{RS1}}}]\label{prop quotient hom}
-    Let $G_i$ be Lie groups with Lie algebras $\frakg_i$ and let $H_i\sube G_i$ be closed normal subgroups with associated Lie algebras $\frakh_i\sube \frakg_i$, $i=1,2$. Let $\varphi:G_1\to G_2$ be a Lie group homomorphism such that $\varphi(H_1)\subset H_2$. Then:
+    Let $G_i$ be Lie groups with Lie algebras $\frakg_i$ and let $H_i\embsub G_i$ be closed normal subgroups with associated ideals $\frakh_i\sub \frakg_i$, $i=1,2$. Let $\varphi:G_1\to G_2$ be a Lie group homomorphism such that $\varphi(H_1)\subset H_2$. Then:
     \begin{enumerate}
         \item There exists a unique mapping $\wh{\varphi}:G_1\slash H_1\to G_2\slash H_2$ such that for the natural projections $\pi_i:G_i\to G_i\slash H_i$, $i=1,2$, there holds $\wh{\varphi}\circ\pi_1=\pi_2\circ \varphi$. This mapping is a Lie group homomorphism.
         \item There holds $\varphi_{\ast e}(\frakh_1)<\frakh_2$ and $\wh{\varphi}_{\ast e}$ is given by the homomorphism $\frakg_1\slash\frakh_1\to \frakg_2\slash\frakh_2$ induced by $\varphi_{\ast e}$ on passing to the quotients.
@@ -2552,7 +2556,7 @@ This leads us to the Lie group analogue of the homomorphism theorem.
 
 
 \begin{xca}
-    Show that any normal connected subgroup $H$ of a simply connected Lie group $G$ is necessarily closed in $G$. \emph{Hint:} let $\frakg$ be the Lie algebra of $G$ and $\frakh\sube\frakg$ the ideal corresponding to $G$; if $B$ is a connected Lie group whose Lie algebra is isomorphic to $\frakg\slash\frakh$, prove that there is a continuous homomorphism $G\to B$ having $H$ for the identity component of its kernel.
+    Show that any normal connected subgroup $H$ of a simply connected Lie group $G$ is necessarily closed in $G$. \emph{Hint:} let $\frakg$ be the Lie algebra of $G$ and $\frakh\sub\frakg$ the ideal corresponding to $G$; if $B$ is a connected Lie group whose Lie algebra is isomorphic to $\frakg\slash\frakh$, prove that there is a continuous homomorphism $G\to B$ having $H$ for the identity component of its kernel.
 \end{xca}
 
 \begin{xca}
@@ -2625,7 +2629,7 @@ We now begin studying the topology of the orbit space. Some of the statements of
     \cosh t & \sinh t\\
     \sinh t & \cosh t
     \end{pmatrix}\right\}.\]
-    For simplicity, let $M$ be the set of points $(x,y)\in\bbR^2$ such that $y\geq |x|$. There are several kinds of orbits. The orbit of any point with $y>|x|$ is a hyperbola passing through it. The orbit of a point with $y=x$  is the open ray $\{(x,x)\mid x>0\}$ and the orbit of a point with $y=-x$ is the open ray $\{(x,-x)\mid x<0\}$. Finally, the origin $\{0\}$ is its own orbit. The hyperbolas clearly comprise a subset of the orbit space whose topology is that of an open ray $(0,+\infty)$ (parametrized, for example, by the $y$-intercept of the hyperbola). The remaining $3$ orbits are what makes the topology non-Hausdorff: indeed, there is no open subset of the orbit space that contains the origin but does not contain both of the ray orbits, so these last three points can't be separated from each other by disjoint open neighborhoods in the topology of the orbit space.
+    For simplicity, let $M$ be the set of points $(x,y)\in\bbR^2$ such that $y\geq |x|$. There are several kinds of orbits. The orbit of any point with $y>|x|$ is a hyperbola passing through it. The orbit of a point with $y=x$  is the open ray $\{(x,x)\mid x>0\}$ and the orbit of a point with $y=-x$ is the open ray $\{(x,-x)\mid x<0\}$. Finally, the origin $\{0\}$ is its own orbit. The hyperbolas clearly comprise a subset of the orbit space whose topology is that of an open ray $(0,+\infty)$ (parametrized, for example, by the $y$-intercept of the hyperbola). The remaining $3$ orbits are what makes the topology of $M\slash G$ non-Hausdorff: indeed, there is no open subset of the orbit space that contains the origin but does not contain both of the ray orbits, so these last three points can't be separated from each other by disjoint open neighborhoods in the topology of the orbit space.
 \end{example}
 
 As the above example shows, the orbit space at this point may not even be Hausdorff. The main goal of this chapter will be to find some sufficient conditions on the group action under which the orbit space is not just locally compact and second countable, but actually a smooth manifold. As we saw in the previous \chap, the analogous condition for the action of a subgroup of Lie group on the Lie group is that the subgroup be closed. In general, the condition will be much more intricate. For example, we will show that for the orbit space to be Hausdorff, it suffices for the action to be \emph{proper} (to be defined in the next \sect). Meanwhile, smoothness will have to do with the following characterization of orbits.
@@ -2669,7 +2673,7 @@ By the above proposition, by passing to the induced action of $G\slash\ker\Phi$,
 \begin{example}
 \begin{enumerate}
     \item  The actions of $G$ on itself by left and right translations are effective, free and transitive. Their restrictions to a proper Lie subgroup $H< G$ are still effective and free but no longer transitive. The ``adjoint action'' of $G$ on itself by inner automorphisms (conjugations $\Adg$) is neither free nor transitive, because the identity is invariant and the kernel is given by the center $\rmZ(G)$. Hence, the adjoint action is effective iff the center is trivial. Its orbits are the conjugacy classes of elements of $G$. The stabilizer of $g\in G$ is the centralizer  $\rmC_G(g)$ of $g\in G$. Therefore, the orbit types are given by the conjugacy classes of those subgroups of $G$ which are centralizers of elements of $G$. The orbit space is usually referred to as the adjoint quotient of $G$.
-    \item The action of $G$ on the homogeneous space $G\slash H$, where $H\sub G$ is a nontrivial closed subgroup, by the induced left translations $\wh{\rmL}_g$ is transitive but not free. The stabilizer of a coset $gH$, $g\in G$, is given by $G_{gH}=gHg^{-1}$. Consequently, the kernel of the action is given by $\bigcap_{g\in G}gHg^{-1}$. It lies between $\rmZ(G)\cap H$ and $H$ itself, the latter being the case when $H$ is normal.
+    \item The action of $G$ on the homogeneous space $G\slash H$, where $H\emb G$ is a nontrivial closed subgroup, by the induced left translations $\wh{\rmL}_g$ is transitive but not free. The stabilizer of a coset $gH$, $g\in G$, is given by $G_{gH}=gHg^{-1}$. Consequently, the kernel of the action is given by $\bigcap_{g\in G}gHg^{-1}$. It lies between $\rmZ(G)\cap H$ and $H$ itself, the latter being the case when $H$ is normal.
     \item For the action of $G=\bbR$ on $M$ defined by the flow $\Fl^X$ of a complete vector field $X\in\fX(M)$, the orbit map of a point $m\in M$ is given by the maximal integral curve $\Fl^X_m$. The stabilizer is $G_m=\bbR$ in the case $X_m=0$, $G_m=\bbZ T$ if the integral curve is periodic with period $T$, and $G_m=\{0\}$ otherwise. Since $G$ is abelian, the orbit types correspond bijectively to the subgroups which appear as stabilizers.
 \end{enumerate}
 \end{example}
@@ -2741,7 +2745,7 @@ hence the assignment $(m,t)\mapsto \Phi_{\rme^{tA}}(m)$ defines a \gls{ops} of d
         \item For the left action of $G$ associated with a representation $\rho:G\to \GL(V)$ on a finite-dimensional vector space $V$, the Killing vector field $A_\ast$ is the linear vector field on $V$ corresponding to the endomorphism $\rho_{\ast e}A$. In particular, for the adjoint and coadjoint actions we obtain
         \[A_\ast^{\Ad}=\ad_A,\quad A_\ast^{\Ad^\ast}=\ad^\ast_A,\quad A\in\frakg.\]
         \item For the action of $G$ on itself by right translations we get $A_\ast=A_\rmL$ (the intuitive reason for this is that left and right translations commute). That is, the homomorphism $\frakg\to \fX(G)$ of Proposition~\ref{prop 6.2.2 RS1}(2) coincides with the natural isomorphism between the Lie algebra and the left-invariant vector fields. The statement for left translations is analogous. For the adjoint action $\Adg$, $A_\ast=A_\rmR-A_\rmL$, which agrees with the fact that $A\mapsto A_\ast$ should be an anti-homomorphism.
-        \item Let $H\sub G$ be a closed subgroup and let $\pi:G\to G\slash H$ denote the natural projection. For the action of $G$ on the homogeneous space $G\slash H$ by induced left translations, Proposition~\ref{prop 6.2.4 RS1}(2) and the previous result yield $(A_\ast)_{\pi(g)}=\pi_{\ast e}\circ (\rmR_g)_{\ast e}A$ for all $g\in G$ and $A\in\frakg$.
+        \item Let $H\emb G$ be a closed subgroup and let $\pi:G\to G\slash H$ denote the natural projection. For the action of $G$ on the homogeneous space $G\slash H$ by induced left translations, Proposition~\ref{prop 6.2.4 RS1}(2) and the previous result yield $(A_\ast)_{\pi(g)}=\pi_{\ast e}\circ (\rmR_g)_{\ast e}A$ for all $g\in G$ and $A\in\frakg$.
         \item For the action of $G=\bbR$ on $M$ defined by the flow of a complete vector field $X$, under the identification of the Lie algebra of $\bbR$ with $\bbR$ itself, the homomorphism $\frakg=\bbR\to \fX(M)$ is given by $s\mapsto s_\ast=sX$.
     \end{enumerate}
 \end{example}
@@ -2771,7 +2775,7 @@ According to points 1 and 3 of Proposition~\ref{prop 6.2.2 RS1}, we have
 for all $g\in G$, and $\dim D_m^\frakg=\dim G-\dim G_m$, respectively. In particular, $D^\frakg$ need not be regular; this is so, however, if $\Phi$ is free or transitive. We will show that $D^\frakg$ is integrable and that the integral manifolds are given by the orbits. For that purpose, recall the mapping $\wh{\Phi}^m:G\slash G_m\to M$, defined by (\ref{eq 6.1.8 RS1}).
 
 \begin{thm}[Orbit Theorem {{\cite[Thm.~6.2.8]{RS1}}}]\label{thm 6.2.8 RS1 orbit}\index{Theorem!Orbit}
-    Let $(M,G,\Phi)$ be a Lie group action. For every $m\in M$, $(G\slash G_m,\wh{\Phi}^m)$ is a weakly embedded (initial) submanifold of $M$ whose connected components are maximal integral manifolds of $D^\frakg$. In particular, $D^\frakg$ is integrable.
+    Let $(M,G,\Phi)$ be a Lie group action. For every $m\in M$, $(G\slash G_m,\wh{\Phi}^m)$ is an injectively weakly embedded (initial) submanifold of $M$ whose connected components are maximal integral manifolds of $D^\frakg$. In particular, $D^\frakg$ is integrable.
 \end{thm}
 \begin{proof}
     Assume a left action. Let $m\in M$ and let $\pi^G:G\to G\slash G_m$ be the natural projection. First we show that $\wh{\Phi}^m$ is an injective immersion. Injectivity was already noted before. Since $\wh{\Phi}^m\circ \pi^G=\Phi^m$, for $\left(\wh{\Phi}^m\right)_{\ast gG_m}$ to be injective for all $gG_m\in G\slash G_m$ it suffices to show that
@@ -2787,7 +2791,7 @@ for all $g\in G$, and $\dim D_m^\frakg=\dim G-\dim G_m$, respectively. In partic
     and hence $(A_\ast)_{\Phi_g(m)}=\Phi^m_{\ast}\circ\left(\Ad_g^{-1}A\right)_\rmL(g)$. This proves that every element of $D^\frakg_{\Phi_g(m)}$ is in the image of $\Phi^m_{\ast g}$, so our orbits are integral manifolds of $D^\frakg$. Maximality follows from the fact that the images of the connected components of the submanifolds $(G\slash G_m,\wh{\Phi}^m)$, $m\in M$, establish a disjoint decomposition of $M$. Finally, since $m $ is arbitrary, we can conclude that $D^\frakg$ is integrable. Proposition~\ref{prop 3.5.15 RS1} now yields that $(G\slash G_m,\wh{\Phi}^m)$ is weakly embedded.
 \end{proof}
 
-As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth structures of weakly embedded submanifolds are unique, the smooth structures induced on an orbit $\scrO$ by the submanifolds $(G\slash G_m,\wh{\Phi}^m)$, $m\in \scrO$, coincide for all $m$, so that we can view $\scrO$ itself as a submanifold.  
+As a consequence of the Orbit Theorem and since, by Theorem~\ref{thm 5.33 Lee}, smooth structures of weakly embedded submanifolds are unique, the smooth structures induced on an orbit $\scrO$ by the submanifolds $(G\slash G_m,\wh{\Phi}^m)$, $m\in \scrO$, coincide for all $m$, so that we can view $\scrO$ itself as a submanifold.  
 
 \begin{cor}[{{\cite[Cor.~6.2.9]{RS1}}}]
     The orbits of $\Phi$ are weakly embedded (initial) submanifolds of $M$ whose connected components are maximal integral manifolds of $D^\frakg$.
@@ -2795,17 +2799,46 @@ As a consequence of the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, since smooth st
 
 \begin{rem}[{{\cite[Rem.~6.2.10]{RS1}}}]\label{rem 6.2.10 RS1}
     \begin{enumerate}
+        \item The Orbit Theorem states that any orbit $\scrO$ of orbit type $[H]$ is homeomorphic to the homogeneous space $G\slash H$. In particular, $\dim \scrO=\dim G-\dim H$. As a consequence, \emph{assuming that the orbit space $M\slash G$ is smooth}, its dimension will be 
+        \[\dim (M\slash G)=\dim M-\dim G+\dim G_m,\] 
+        where $m\in M$ is arbitrary. 
+        
+        \item Functions on $M$ that are invariant under the action are called \emph{$G$-invariants}. Any choice of local coordinates on $M\slash G$ is called a \emph{locally complete set of $G$-invariants on $M$}. If $M\slash G$ is not connected, then the label of the connected component is a nonlocal $G$-invariant that can be viewed as a function $M\to \pi_0(M\slash G)$ with discrete values (under the assumption of smoothness, it has to be locally constant). Any $G$-invariant can then be locally expressed as a function of a locally complete set of $G$-invariants and the nonlocal one. In general, the problem of finding even an overcomplete set of invariants (not to mention a minimal one) for a given group action is a very difficult problem that is the subject of \emph{invariant theory}.
+        
         \item The subspace $\T_m\scrO$ of $\T_mM$ is invariant under the isotropy representation and hence the isotropy representation descends to a representation on $\rmN_m\scrO=\T_mM\slash \T_m\scrO$, which is called the slice representation at $m$. By construction, the natural projection $\T_mM\to \rmN_m\scrO$ intertwines the isotropy representation with the slice representation.
 
         On the other hand, the isotropy representation restricted to $\T_m\scrO$ can be brought to the following normal form. By the Orbit Theorem~\ref{thm 6.2.8 RS1 orbit}, the map $\Phi^m_{\ast e}:\frakg\to \T_mM$ has image $\T_m\scrO$. By point 3 of Proposition~\ref{prop 6.2.2 RS1} it has kernel $\frakg_m$. Hence, this mapping induces a natural vector space isomorphism
         \[\T_m\scrO\cong \frakg\slash\frakg_m.\]
         In view of (\ref{eq 6.2.1 RS1}), this implies that this isomorphism intertwines the representation of $G_m$ on $\frakg\slash\frakg_m$ induced by the adjoint representation with the isotropy representation on $\T_m\scrO$.
-        \item Since $\scrO$ is invariant under $\Phi$ and since it is a weakly embedded submanifold of $M$, $\Phi$ restricts to a transitive action of $G$ on $\scrO$. Since the connected components of $\scrO$ are integral manifolds of $D^\frakg$, (\ref{eq 6.2.4 RS1}) implies that the action of $G$ on $\T M$ induced by $\Phi$ leaves invariant the submanifold $\T \scrO$. The restriction of this action to the invariant submanifold $\restr{(\T M)}{\scrO}$ induces an action $\Phi^N$ of $G$ on the normal bundle $\rmN \scrO=\restr{(\T M)}{\scrO}\slash \T O$ by the vector bundle automorphisms (smoothness follows from the existence of local sections of the submersion $\restr{(\T M)}{\scrO}\to \rmN \scrO$)
+        \item Since $\scrO$ is invariant under $\Phi$ and since it is a weakly embedded submanifold of $M$, $\Phi$ restricts to a transitive action of $G$ on $\scrO$. Since the connected components of $\scrO$ are integral manifolds of $D^\frakg$, (\ref{eq 6.2.4 RS1}) implies that the action of $G$ on $\T M$ induced by $\Phi$ leaves invariant the submanifold $\T \scrO$. The restriction of this action to the invariant submanifold $\restr{(\T M)}{\scrO}$ induces an action $\Phi^\rmN$ of $G$ on the normal bundle $\rmN \scrO=\restr{(\T M)}{\scrO}\slash \T O$ by the vector bundle automorphisms (smoothness follows from the existence of local sections of the submersion $\restr{(\T M)}{\scrO}\to \rmN \scrO$)
         \[\Phi_g^\rmN\left([X]\right)=\left[\Phi_{g\ast}(X)\right],\quad g\in G,X\in \T M.\]
         The natural projections $\restr{(\T M)}{\scrO}\slash \T \scrO\to \rmN \scrO\to \scrO$ are equivariant. Equivariance of the second projection implies that $\Phi^\rmN$ restricts to an action of $G_m$ on $\rmN_m\scrO$ for every $m\in \scrO$. This action coincides with the slice representation at $m$.
         \item A manifold carrying a transitive Lie group action is called homogeneous. The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} yields that every homogeneous manifold is diffeomorphic to $G\slash H$ for some Lie group $G$ and some closed subgroup $H$ of $G$. The diffeomorphism provided by this theorem is obviously equivariant w.r.t.\ the action of $G$ on $G\slash H$ by the induced translations $\wh{\rmL}_g$ (in the case of a left action) or $\wh{\rmR}_g$ (in the case of a right action). Hence, it is an isomorphism of Lie group actions. In this sense, all the homogeneous spaces discussed in \S\ref{sec: homogeneous spaces} constitute homogeneous manifolds, which explains their name. The notion of homogeneous manifold may be further specialized, e.g.~to that of homogeneous Riemannian manifold (a Riemannian manifold carrying a transitive Lie group action by isometries).
     \end{enumerate}
 \end{rem}
+
+
+\begin{example}
+    Consider the standard action of $\Or_n$ on $M_1=\bbR^n\setminus\{0\}$, so the only orbit type is $[\Or_{n-1}]$. It is clear that the length map $\bf{x}\mapsto \lVert \bf{x}\rVert$ is a submersion onto $\bbR_+=(0,+\infty)$, so the orbit space $M_1\slash \Or_n$ is diffeomorphic to $\bbR_+$. Thus, the length of a vector is a complete $\Or_n$-invariant on $M_1$ or, for that matter, on $\bbR^n$: every $\Or_n$-invariant function of $\bf{x}$ is a function of $\lVert \bf{x}\rVert$.
+
+    Now consider the same action extended to \emph{pairs} of vectors, i.e., $\Or_n\acts \bbR^n\times\bbR^n$. Let $M_2\subset \bbR^n\times\bbR^n$ be the open subset consisting of pairs $(\bf{x}_1,\bf{x}_2)$ of vectors which are nonzero and non-collinear. Then the any element of the stabilizer of a point of $M_2$ acts trivially on the plane $\<\bf{x}_1,\bf{x}_2\>$, while on its orthogonal complement it can be identified with an element of $\Or_{n-2}$. Thus,
+    \[\dim M_2\slash \Or_n=2n-\dim \Or_n+\dim \Or_{n-2}=2n-\frac{n(n-1)}{2}+\frac{(n-2)(n-3)}{2}=3.\]
+    For example, a complete set of $\Or_n$-invariants on $M_2$ is given by $\lVert \bf{x}_1\rVert$, $\lVert \bf{x}_2\rVert$, and $ \bf{x}_1\cdot\bf{x}_2$. 
+
+    Similarly, one can consider the action of $\Or_n$ on $(\bbR^n)^N$. Let $M_N\subset (\bbR^n)^N$ be the open subset of ``generic'' tuples, i.e., linearly independent $N$-tuples for $N\leq n$ and $N$-tuples that span all of $\bbR^n$ for $N\geq n$. It is clear that the stabilizer of a generic $N$-tuple of vectors will keep getting smaller as we increase $N$ up to $n$, and for $N\geq n$ it is trivial, so 
+    \[\dim M_N\slash \Or_n=Nn-\dim \Or_n=\frac12\left[(2N+1)n-n^2\right],\quad N\geq n.\]
+    As shown by Hermann Weyl in \cite{Weyl}, an overcomplete set of invariants is given by the components of the Gram matrix $\{\bf{x}_i\cdot\bf{x}_j\}_{i,j}$. Due to this, the orbit space $M_N\slash \Or_n$ is connected. Note that actually finding a minimal set of invariants is quite difficult: the Gram matrix is highly constrained by the fact that all of its $(n+1)\times (n+1)$ minors must have zero determinant (because any $n+1$ vectors in $\bbR^n$ are linearly dependent). 
+
+    When the orbit space consists of many connected components, there is an additional nonlocal invariant given by the label of the component. For instance, the orbit space $M_N\slash \SO_n$, in addition to the Gram matrix and its functions, allows extra $\SO_n$-invariants that depend on (the signs of) the $n\times n$ determinants composed of $n$-tuples of vectors $(\bf{x}_{i_1},\ldots,\bf{x}_{i_n})$, $i_1,\ldots,i_n\in \{1,\ldots,N\}$. These signs are not all independent: the true number of connected components of $M_N\slash \SO_n$ grows only factorially with $N$. This nonlocal invariant distinguishes orbits by \emph{parity}, i.e., orbits that are mapped to each other under any fixed reflection of $\bbR^n$, say $P=\diag(1,1,\ldots,1,-1)\in\Or_n$, which is not an element of $\SO_n$. 
+    
+    Similar overcomplete sets of invariants for many classical groups acting in the standard way on $(\bbR^n)^N$ or $(\bbC^n)^N$ were originally computed in \cite{Weyl}. Minimal sets of invariants are, in most cases, unknown to this day.
+
+    The full space $(\bbR^n)^N$ also includes orbits of linearly dependent tuples of vectors, whose stabilizers are larger than on $M_N$, so the orbits are of lower dimensions. The orbits of the highest dimension, which we considered above, are called \emph{generic orbits}. All other orbits map to ``lower-dimensional'' pieces of the orbit space. Thus, the full orbit space can be visualized as a collection of open (and, as we will see, smooth) \emph{strata} which are the connected components of the space of generic orbits, separated from each other by the set of non-generic orbits. The set of non-generic orbits itself can be further broken up into smooth strata of the highest-dimensional non-generic orbits, and so on. Smooth structures usually exist only on each stratum separately. This will be formalized in Proposition~\ref{prop strata}.
+\end{example}
+
+As this example shows, even quite simple Lie group actions can be very difficult to study, primarily due to the complicated topology and the non-smoothness of the orbit space. Since invariant theory is not part of the main scope of this book, the next few \sect s are devoted to describing some sufficient conditions under which these complications are avoided and the orbit space is smooth.
+
+
 
 
 
@@ -2854,7 +2887,7 @@ Proper actions have the following elementary topological properties.
 \begin{prop}[{{\cite[Prop.~6.3.4]{RS1}}}]\label{prop 6.3.4 RS1}
     If $(M,G,\Phi)$ is a proper Lie group action, then:
     \begin{enumerate}
-        \item The restriction of $\Phi$ to the product of a closed subgroup $H\sube G$ with an $H$-invariant weakly embedded (initial) submanifold  of $M$ is proper.
+        \item The restriction of $\Phi$ to the product of a closed subgroup $H\emb G$ with an $H$-invariant weakly embedded (initial) submanifold  of $M$ is proper.
         \item The orbit map $\Phi^m$ is proper for all $m\in M$.
         \item The orbit space $M\slash G$ is Hausdorff.
     \end{enumerate}
@@ -2880,13 +2913,13 @@ The Orbit Theorem~\ref{thm 6.2.8 RS1 orbit} and Proposition~\ref{prop 6.3.4 RS1}
 Thus, orbits of proper actions are analogous to closed subgroups, and as we will see in the next \sect, this leads to smooth orbit spaces, generalizing our earlier result about the smoothness of homogeneous spaces.
 
 \begin{rem}\label{rem 6.3.6 RS1}
-    Let $(M,G,\Phi)$ be a proper Lie group action, let $O$ be an orbit and let $m\in O$. The fact that $G_m$ is compact has the following immediate consequences for the isotropy representation.
+    Let $(M,G,\Phi)$ be a proper Lie group action, let $\scrO$ be an orbit and let $m\in \scrO$. The fact that $G_m$ is compact has the following immediate consequences for the isotropy representation.
     \begin{enumerate}
         \item By Proposition~\ref{prop 5.5.6 RS1}, $\T_mM$ admits a $G_m$-invariant inner product.
-        \item The orthogonal complement $(\T_mO)^\perp$ of $\T_mO$  in $\T_mM$ w.r.t.\ this inner product is invariant under the isotropy representation. Hence the isotropy representation decomposes into the direct sum
-        \[\T_mM\cong \T_mO\oplus (\T_mO)^\perp.\]
-        \item The natural projection $\T_mM\to N_mO$ restricts to an isomorphism $(\T_mO)^\perp\to N_mO$ which intertwines the isotropy representation induced on $(\T_mO)^\perp$ with the slice representation.
-        \item Points 2 and 3 imply that there exists a vector space isomorphism $\T_mM\cong \T_mO\oplus N_mO$ intertwining that isotropy representation with the direct sum of the isotropy representation on $\T_mO$ and the slice representation.
+        \item The orthogonal complement $(\T_m\scrO)^\perp$ of $\T_m\scrO$  in $\T_mM$ w.r.t.\ this inner product is invariant under the isotropy representation. Hence the isotropy representation decomposes into the direct sum
+        \[\T_mM\cong \T_m\scrO\oplus (\T_m\scrO)^\perp.\]
+        \item The natural projection $\T_mM\to \rmN_m\scrO$ restricts to an isomorphism $(\T_m\scrO)^\perp\to \rmN_m\scrO$ which intertwines the isotropy representation induced on $(\T_mO)^\perp$ with the slice representation.
+        \item Points 2 and 3 imply that there exists a vector space isomorphism $\T_mM\cong \T_m\scrO\oplus \rmN_m\scrO$ intertwining that isotropy representation with the direct sum of the isotropy representation on $\T_m\scrO$ and the slice representation.
     \end{enumerate}
 \end{rem}
 
@@ -2915,20 +2948,20 @@ Now we will discuss the equivariant analog of the Tubular Neighborhood Theorem~\
     For a Lie group $G$, a $G$-vector bundle is a \gls{vb} with an action of $G$ by \gls{vb}-automorphisms. That is, a \gls{vb} $E\overset{\pi}{\to}M$ with a Lie group action $\Phi:G\times E\to E$ such that $\Phi_g$ is a \gls{vb}-morphism for all $g\in G$.
 \end{defn}
 
-\begin{defn}[Tubular Neighborhood and Slice]\index{Tubular neighborhood}
-    Let $(M,G,\Phi)$ be a Lie group action and let $O\subset M$ be an orbit.
+\begin{defn}[Tubular neighborhood, Slice]\index{Tubular neighborhood}\index{Slice}
+    Let $(M,G,\Phi)$ be a Lie group action and let $\scrO\subset M$ be an orbit.
     \begin{enumerate}
-        \item A (equivariant) tubular neighborhood of $O$ is an equivariant diffeomorphism $\xi:U\to E$  from an open invariant neighborhood $U$ of $O$ in $M$ onto an open neighborhood $V$ of the zero section $o$ in a $G$-vector bundle $E$ over $O$ such that $\restr{\chi}{O}=o$.
-        \item For $m\in O$, the $G_m$-invariant neighborhood $V_m=V\cap E_m$ of the origin in $E_m$ is called the linear slice of $\chi$ at $m$ and the $G_m$-invariant embedded submanifold $U_m=\chi^{-1}(V_m)$ of $M$ is called the slice of $\chi$ at $m$.
+        \item A \emph{(equivariant) tubular neighborhood} of $\scrO$ is an equivariant diffeomorphism $\chi:U\to V\subset E$  from an open invariant neighborhood $U$ of $\scrO$ in $M$ onto an open neighborhood $V$ of the zero section $o$ in a $G$-vector bundle $E$ over $\scrO$ such that $\restr{\chi}{\scrO}=o$.
+        \item For $m\in \scrO$, the $G_m$-invariant neighborhood $V_m=V\cap E_m$ of the origin in $E_m$ is called the \emph{linear slice} of $\chi$ at $m$ and the $G_m$-invariant embedded submanifold $U_m=\chi^{-1}(V_m)$ of $M$ is called the \emph{slice} of $\chi$ at $m$.
     \end{enumerate}
-    One says that the $G$-vector bundle $E$ provides a \emph{local normal form} for $\Phi$ near $O$.
+    One says that the $G$-vector bundle $E$ provides a \emph{local normal form} for $\Phi$ near $\scrO$.
 \end{defn}
 
-\begin{rem}
+\begin{rem}\label{rem 6.4.2 RS1}
     \begin{enumerate}
-        \item Recall from Remark~\ref{rem 6.2.10 RS1}(2) that $\Phi$ induces an action $\Phi^N$ of $G$ on the bundle manifold of the normal bundle $NO$, turning $NO$ into a $G$-vector bundle. We will show below that one may always choose $E=NO$.
-        \item Let $m\in O$. Since the orbit map $G\slash G_m\to O$ is an equivariant diffeomorphism, one might as well assume $E$ to be a $G$-vector bundle over $G\slash G_m$. In this case the requirement $\restr{\chi}{O}=o$ reduces to $\chi(m)=\sigma(0)([e])$.
-        \item  The slices $U_m$, $m\in M$, of a tubular neighborhood $\chi:U\to E$ of $O$ jave the following properties.
+        \item Recall from Remark~\ref{rem 6.2.10 RS1}(2) that $\Phi$ induces an action $\Phi^\rmN$ of $G$ on the total space of the normal bundle $\rmN\scrO$, turning $\rmN\scrO$ into a $G$-vector bundle. We will show below that one may always choose $E=\rmN\scrO$.
+        \item Let $m\in \scrO$. Since the orbit map $G\slash G_m\to \scrO$ is an equivariant diffeomorphism, one might as well assume $E$ to be a $G$-vector bundle over $G\slash G_m$. In this case the requirement $\restr{\chi}{\scrO}=o$ reduces to $\chi(m)=\sigma(0)([e])$.
+        \item  The slices $U_m$, $m\in M$, of a tubular neighborhood $\chi:U\to E$ of $\scrO$ have the following properties.
         \begin{enumerate}[label=(\alph*)]
             \item $G\cdot U_m=U$ and $U_m$ is closed in $U$.
             \item If $g\in G$ satisfies $\Phi_g(U_m)\cap U_m\neq \varnothing$, then $g\in G_m$.
@@ -2938,18 +2971,18 @@ Now we will discuss the equivariant analog of the Tubular Neighborhood Theorem~\
     \end{enumerate}
 \end{rem}
 
-The rest of this \sect\ will be devoted to proving the Equivariant Tubular Neighborhood Theorem.
+The rest of this \sect\ is devoted to proving the Equivariant Tubular Neighborhood Theorem.
 
 \begin{thm}[Equivariant Tubular Neighborhood {{\cite[Thm.~6.4.3]{RS1}}}]\label{thm 6.4.3 RS1 equiv tubular neighb}\index{Theorem!Equivariant Tubular Neigborhood}
     Every orbit of a proper Lie group action admits a (equivariant) tubular neighborhood.
 \end{thm}
 
-For the proof we will need a few lemmas. To be definite, we will assume that $\Phi$ is a left action. We start by constructing a mapping $\varphi:U_m\to \rmN_mO$. According to Remark~\ref{rem 6.3.6 RS1}(1), we may choose a $G_m$-invariant inner product on $\T_mM$. Let $(\T_mO)^\perp$ denote the corresponding orthogonal complement of $\T_mO$ (although any $G_m$-invariant complement will do).
+For the proof we will need a few lemmas. To be definite, we will assume that $\Phi$ is a left action. We start by constructing a mapping $\varphi:U_m\to \rmN_m\scrO$. According to Remark~\ref{rem 6.3.6 RS1}(1), we may choose a $G_m$-invariant inner product on $\T_mM$. Let $(\T_m\scrO)^\perp$ denote the corresponding orthogonal complement of $\T_m\scrO$ (although any $G_m$-invariant complement will do).
 
 \begin{lem}[{{\cite[Lem.~6.4.4]{RS1}}}]\label{lem 6.4.4 RS1}
     There exists a $G_m$-invariant embedded submanifold $U_m$ of $M$ containing $m$ such that 
-    \[\T_mU_m=(\T_mO)^\perp\]
-    and a $G_m$-equivariant diffeomorphism $\varphi$ from $U_m$ onto a $G_m$-invariant open neighborhood of the origin in $N_mO$ such that $\varphi(m)=0$.
+    \[\T_mU_m=(\T_m\scrO)^\perp\]
+    and a $G_m$-equivariant diffeomorphism $\varphi$ from $U_m$ onto a $G_m$-invariant open neighborhood of the origin in $\rmN_m\scrO$ such that $\varphi(m)=0$.
 \end{lem}
 \begin{proof}
     Clearly, there exists a diffeomorphism $\varphi_1$ from an open $m$-neighborhood $W_1\subset M$ onto an open $0$-neighborhood in $\T_m M$ satisfying $\varphi_1(m)=0$ and 
@@ -2957,11 +2990,11 @@ For the proof we will need a few lemmas. To be definite, we will assume that $\P
     \[\varphi_1^{G_m}:W_1\to \T_m M,\quad \varphi_1^{G_m}(p)\coloneqq \int_{G_m}\left(\Phi_{g\ast m}\circ \varphi_1\circ \Phi_{g}^{-1}(p)\right)\sfv_{G_m}.\]
     Using (\ref{eq 6.4.2 RS1}), for $X\in\T_m M$, we obtain 
     \[\left(\varphi_1^{G_m}\right)_{\ast m}(X)=\int_{G_m}\left(\Phi_{g\ast m}\circ (\varphi_1)_{\ast m}\circ \Phi_{g\ast m}^{-1}(X)\right)\sfv_{G_m}=X.\label{eq 6.4.3 RS1}\]
-    Hence, by the \gls{inmt}, $\varphi_1^{G_m}$ restricts to a diffeomorphism from an open $m$-neighborhood $W_2\subset M$ into an open $0$-neighborhood $V_2\subset \rmN_m O$. According to Exercise~\ref{xca 6.3.2 RS1} again, $W_2$ and hence $V_2$ can be chosen to be $G_m$-invariant. We define 
-    \[U_m\coloneqq \left(\varphi_1^{G_m}\right)^{-1}(V_2\cap (\T_m O)^{\perp}),\quad \varphi(\wt m)\coloneqq \left[\varphi_1^{G_m}(\wt m)\right],\quad \wt m\in U_m.\]
+    Hence, by the \gls{inmt}, $\varphi_1^{G_m}$ restricts to a diffeomorphism from an open $m$-neighborhood $W_2\subset M$ into an open $0$-neighborhood $V_2\subset \rmN_m \scrO$. According to Exercise~\ref{xca 6.3.2 RS1} again, $W_2$ and hence $V_2$ can be chosen to be $G_m$-invariant. We define 
+    \[U_m\coloneqq \left(\varphi_1^{G_m}\right)^{-1}(V_2\cap (\T_m \scrO)^{\perp}),\quad \varphi(\wt m)\coloneqq \left[\varphi_1^{G_m}(\wt m)\right],\quad \wt m\in U_m.\]
     Obviously, $U_m$ is $G_m$-invariant and $\varphi(m)=0$. Moreover, using (\ref{eq 6.4.3 RS1}), we calculate 
-    \[\T_m U_m=\left(\varphi_1^{G_m}\right)_{\ast m}(\T_m U_m)=\T_0\left(\varphi_1^{G_m}(U_m)\right)=\T_0(\T_m M)^\perp=(\T_m O)^\perp.\]
-    Finally, according to Remark~\ref{rem 6.3.6 RS1}(3), the natural projection $\T_m M\to \rmN_m O$ restricts to a $G_m$-equivariant vector space isomorphism $(\T_m O)^\perp\to \rmN_m O$. Hence, $\varphi$ is a $G_m$-equivariant diffeomorphism.
+    \[\T_m U_m=\left(\varphi_1^{G_m}\right)_{\ast m}(\T_m U_m)=\T_0\left(\varphi_1^{G_m}(U_m)\right)=\T_0(\T_m M)^\perp=(\T_m \scrO)^\perp.\]
+    Finally, according to Remark~\ref{rem 6.3.6 RS1}(3), the natural projection $\T_m M\to \rmN_m \scrO$ restricts to a $G_m$-equivariant vector space isomorphism $(\T_m \scrO)^\perp\to \rmN_m \scrO$. Hence, $\varphi$ is a $G_m$-equivariant diffeomorphism.
 \end{proof}
 
 Next, by restriction, the action $\Phi$ induces the mapping
@@ -2976,48 +3009,66 @@ Next, by restriction, the action $\Phi$ induces the mapping
 \end{lem}
 \begin{proof}
     Since $\psi(g,\wt m)=\Psi_g(\psi(e,\wt m))$ for all $g\in G$ and $\wt m\in U_m$, to prove point 1 it suffices to show that $\psi$ is a submersion at $(e,m)$. Since 
-    \[\im \psi_{\ast(e,m)}=\T_m O+\T_m U_m,\]
-    this follows from $\T_m U_m=(\T_m O)^\perp$. For point 2, we first observe that $\psi(g_2,m_1)=\psi(g_2,m_2)$ implies $m_2=\Phi_{g_2^{-1}g_1}(m)$. Hence, the point to prove is that the latter implies $g_2^{-1}g_1\in G_m$ if only $m_1$ and $m_2$ are close enough to $m$. Assume, on the contrary, that this is false. Then, there exists a sequence $(m_n)$ in $U_m$ converging to $m$ and a sequence $(a_n)$ in $G\setminus G_m$ such that $\Phi_{g_n}(m_n)\in U_m$ and converges to $m$. We will show that this implies $g_n\in G_m$ for sufficiently large $n$, which is a contradiction.
+    \[\im \psi_{\ast(e,m)}=\T_m \scrO+\T_m U_m,\]
+    this follows from $\T_m U_m=(\T_m \scrO)^\perp$. For point 2, we first observe that $\psi(g_2,m_1)=\psi(g_2,m_2)$ implies $m_2=\Phi_{g_2^{-1}g_1}(m)$. Hence, the point to prove is that the latter implies $g_2^{-1}g_1\in G_m$ if only $m_1$ and $m_2$ are close enough to $m$. Assume, on the contrary, that this is false. Then, there exists a sequence $(m_n)$ in $U_m$ converging to $m$ and a sequence $(a_n)$ in $G\setminus G_m$ such that $\Phi_{g_n}(m_n)\in U_m$ and converges to $m$. We will show that this implies $g_n\in G_m$ for sufficiently large $n$, which is a contradiction.
 
-    By Corrolary~\ref{cor 6.3.3 RS1}(2), $(g_n)$ contains a subsequence converging to some $g\in G$. By passing to this subsequence, we can assume that $g_n\to g$. Then $\Phi_{g_n}(m_n)$ converges to $\Phi_g(m)$, so that $\Phi(g)(m)=m$ and hence $g\in G_m$. Using a vector space complement of $\frakg_m$ in $\frakg$ and the exponential map of $G$, we construct a submanifold $N$ of $G$ of dimension $\dim G-\dim G_m$ which intersects $G_m$ transversally at $e$. The \gls{inmt} implies that the map $N\times G_m\to G$ induced by group multiplication of $G$ restricts to a diffeomorphism between open neighborhoods of $(e,e)$ in $N\times G_m$ and of $e$ in $G$, respectively. Thus, for sufficiently large $n$, we can decompose $g_n g^{-1}=h_nk_n$ with $h_n\in N$ and $k_n\in G_m$, where both sequences $(h_n)$ and $(k_n)$ converge to $e$. On the other hand, $\Phi$ restricts to a diffeomorphism from an oepn neighborhood of $(e,m)$ in $N\times U_m$ onto an open neighborhood of $m$ in $M$. Indeed, since $U_m$ is $G_m$-invariant, we have 
+    By Corollary~\ref{cor 6.3.3 RS1}(2), $(g_n)$ contains a subsequence converging to some $g\in G$. By passing to this subsequence, we can assume that $g_n\to g$. Then $\Phi_{g_n}(m_n)$ converges to $\Phi_g(m)$, so that $\Phi(g)(m)=m$ and hence $g\in G_m$. Using a vector space complement of $\frakg_m$ in $\frakg$ and the exponential map of $G$, we construct a submanifold $N$ of $G$ of dimension $\dim G-\dim G_m$ which intersects $G_m$ transversally at $e$. The \gls{inmt} implies that the map $N\times G_m\to G$ induced by group multiplication of $G$ restricts to a diffeomorphism between open neighborhoods of $(e,e)$ in $N\times G_m$ and of $e$ in $G$, respectively. Thus, for sufficiently large $n$, we can decompose $g_n g^{-1}=h_nk_n$ with $h_n\in N$ and $k_n\in G_m$, where both sequences $(h_n)$ and $(k_n)$ converge to $e$. On the other hand, $\Phi$ restricts to a diffeomorphism from an open neighborhood of $(e,m)$ in $N\times U_m$ onto an open neighborhood of $m$ in $M$. Indeed, since $U_m$ is $G_m$-invariant, we have 
     \[\Phi_{\ast (e,m)}(\T_e N\oplus\T_m U_m)=\Phi_{\ast (e,m)}(\T_e G\oplus \T_m U_m)=\T_m M.\]
     Hence, the restriction of $\Phi_{\ast (e,m)}$ to the subspace $\T_e N\oplus \T_m U_m$ of $\T_e G\oplus \T_m U_m$ is surjective. By counting dimensions one finds that it is also injective. Hence, the assertion follows from the \gls{inmt}. Now, since the sequences $(h_n)$ and $(k_n)$ both converge to $e$, for sufficiently large $n$, $\Phi_{g_ng^{-1}}(m_n)$ is the image of $(h_n,\Phi_{k_n}(m_n))$ under the diffeomorphism just discussed. Since $\Phi_{g_ng^{-1}}(m_n)\in U_m$, we conclude $h_n=e$. It follows that $g_ng^{-1}\in G_m$ and hence $g_n\in G_m$, which is the desired contradiction.
 \end{proof}
 
 
 Finally, by restriction, the action $\Phi^\rmN$ induces the mapping
-\[\psi^\rmN:G\times \rmN_mO\to \rmN O,\quad \psi^\rmN(g,[X])=\Phi^\rmN_g([X]).\label{eq 6.4.4 RS1}\]
+\[\psi^\rmN:G\times \rmN_m\scrO\to \rmN \scrO,\quad \psi^\rmN(g,[X])=\Phi^\rmN_g([X]).\label{eq 6.4.4 RS1}\]
 
 \begin{lem}[{{\cite[Lem.~6.4.6]{RS1}}}]\label{lem 6.4.6 RS1}
     \begin{enumerate}
         \item The map $\psi^\rmN$ is a surjective submersion.
-        \item If $g_1,g_2\in G$ and $[X_1],[X_2]\in \rmN_mO$ satisfy the relation $\psi^\rmN(g_1,[X_1])=\psi^\rmN(g_2,[X_2])$, then $[X_2]=\Phi^\rmN_{g_2^{-1}g_1}([X_1])$ and $g_2^{-1}g_1\in G_m$.
+        \item If $g_1,g_2\in G$ and $[X_1],[X_2]\in \rmN_m\scrO$ satisfy the relation $\psi^\rmN(g_1,[X_1])=\psi^\rmN(g_2,[X_2])$, then $[X_2]=\Phi^\rmN_{g_2^{-1}g_1}([X_1])$ and $g_2^{-1}g_1\in G_m$.
     \end{enumerate}
 \end{lem}
 \begin{proof}
-    1. Surjectivity is due to the fact that $\psi^\rmN$ covers the action of $G$ on $O$, which is transitive. Since $\psi^\rmN(g,[X])=\Phi^\rmN_g(\psi^\rmN(e,[X]))$ and since $\psi^\rmN$ is linear in the second variable, for proving that $\psi^\rmN$ is a submersion it suffices to show it's a submersion at $(e,0)$. The latter follows by observing that w.r.t.\ the decomposition 
-    \[\T_{\psi^\rmN(e,0)}\rmN O=\T_m O\oplus \rmN_m O,\]
+    1. Surjectivity is due to the fact that $\psi^\rmN$ covers the action of $G$ on $\scrO$, which is transitive. Since $\psi^\rmN(g,[X])=\Phi^\rmN_g(\psi^\rmN(e,[X]))$ and since $\psi^\rmN$ is linear in the second variable, for proving that $\psi^\rmN$ is a submersion it suffices to show it's a submersion at $(e,0)$. The latter follows by observing that w.r.t.\ the decomposition 
+    \[\T_{\psi^\rmN(e,0)}\rmN \scrO=\T_m \scrO\oplus \rmN_m \scrO,\]
     provided by Remark~\ref{rem 6.3.6 RS1}(4), the derivative is given by 
     \[\left(\psi^\rmN\right)_{\ast (e,0)}(A,[X])=\left((A_\ast)_m,[X]\right).\]
 
-    2. Since the projection $\rmN O\to O$ is equivariant, $\psi^\rmN(g_1,[X_1])=\psi^\rmN(g_2,[X_2])$ implies $\Phi_{g_1}(m)=\Phi_{g_2}(m)$ and hence $g_2^{-1}g_1\in G_m$. The rest is obvious.
+    2. Since the projection $\rmN \scrO\to \scrO$ is equivariant, $\psi^\rmN(g_1,[X_1])=\psi^\rmN(g_2,[X_2])$ implies $\Phi_{g_1}(m)=\Phi_{g_2}(m)$ and hence $g_2^{-1}g_1\in G_m$. The rest is obvious.
 \end{proof}
 
 
 
 
 \begin{proof}[Proof of Theorem~\ref{thm 6.4.3 RS1 equiv tubular neighb}]
-    We will construct a tubular neighborhood by means of the normal bundle $\rmN O$ and the action $\Phi^\rmN$. Choose a point $m\in O$. The plan of the proof can be summarized in the following commutative diagram
+    We will construct a tubular neighborhood by means of the normal bundle $\rmN \scrO$ and the action $\Phi^\rmN$. Choose a point $m\in \scrO$. The plan of the proof can be summarized in the following commutative diagram
     \[
     \begin{tikzcd}[every matrix/.append style={name=m}]
-       G\times M\arrow[d,"\Phi",swap]\arrow[hookleftarrow]{r} &  G\times U_m \arrow[r,"\id_G\times \varphi"]\arrow[d,"\psi",swap] & G\times \rmN_mO \arrow[d,"\psi^\rmN"]\arrow[hookrightarrow]{r}& G\times \rmN O\arrow[d,"\psi^\rmN"]\\
-       M\arrow[hookleftarrow]{r}&  U \arrow[r,"\chi",dashed,swap] & \rmN O \arrow[r,"="]& \rmN O.
+       G\times M\arrow[d,"\Phi",swap]\arrow[hookleftarrow]{r} &  G\times U_m \arrow[r,"\id_G\times \varphi"]\arrow[d,"\psi",swap] & G\times \rmN_m\scrO \arrow[d,"\psi^\rmN"]\arrow[hookrightarrow]{r}& G\times \rmN \scrO\arrow[d,"\psi^\rmN"]\\
+       M\arrow[hookleftarrow]{r}&  U \arrow[r,"\chi",dashed,swap] & \rmN \scrO \arrow[r,"="]& \rmN \scrO.
     \end{tikzcd}\label{eq 6.4.1 RS1}
     \]
     whose ingredients were constructed step by step in the lemmas above and ultimately define the desired diffeomorphism $\chi$.
 
-    As a consequence of Lemmas~\ref{lem 6.4.5 RS1}(2) and \ref{lem 6.4.6 RS1}(2) and the $G_m$-equivariance of $\varphi$, there exists a unique injective mapping $\chi:U\to \rmN O$ such that the central square in the diagram above commutes. Since $\psi$ is a submersion, $\chi$ is smooth. Since $\psi^\rmN$ is a submersion, $\chi$ has open imge $V$ and the inverse mapping is smooth, too. Thus, $\chi$ is a diffeomorphism onto $V$. Since $\psi$ intertwines the action of $G$ on $G\times U_m$ by left translation on the first factor with $\Phi$  and since an analogous statement holds for $\psi^\rmN$, $\chi$ is equivariant. This completes the proof.
+    As a consequence of Lemmas~\ref{lem 6.4.5 RS1}(2) and \ref{lem 6.4.6 RS1}(2) and the $G_m$-equivariance of $\varphi$, there exists a unique injective mapping $\chi:U\to \rmN \scrO$ such that the central square in the diagram above commutes. Since $\psi$ is a submersion, $\chi$ is smooth. Since $\psi^\rmN$ is a submersion, $\chi$ has open image $V$ and the inverse mapping is smooth, too. Thus, $\chi$ is a diffeomorphism onto $V$. Since $\psi$ intertwines the action of $G$ on $G\times U_m$ by left translation on the first factor with $\Phi$  and since an analogous statement holds for $\psi^\rmN$, $\chi$ is equivariant. This completes the proof.
 \end{proof}
+
+\begin{rem}[Strata]\label{rem strata}
+    The Equivariant Tubular Neighborhood Theorem implies that the orbit space $\wh{M}\coloneqq M\slash G$ of a proper action $G\acts M$ admits a disjoint decomposition into smooth manifolds. Namely, $M$ and $\wh{M}$ decompose into orbit type subsets $M_{[H]}$ and $\wh{M}_{[H]}$. The connected components of each orbit type subset $\wh{M}_{[H]}$ are called the \emph{strata of the orbit space $\wh{M}$}.\index{Stratum} Thus, each stratum is described by a conjugacy class $[H]$ of subgroups of $G$ and a label for a connected component of the corresponding orbit type subset. 
+    
+    Let $\pi:M\to \wh{M}$ be the canonical quotient map. Let $\sigma$ be a label for a stratum $\wh{M}_\sigma$ and let $M_\sigma=\pi^{-1}(\wh{M}_\sigma)$ be the union of the corresponding orbits. Suppose $H\emb G$ is a subgroup representing $\sigma$. Then we can define 
+    \[M_{\sigma,H}\coloneqq M_\sigma\cap M_H.\]
+    Unless $G$ is connected, $M_\sigma$ and $M_{\sigma,H}$ need not be connected. We have the obvious relations
+    \[M_\sigma=G\cdot M_{\sigma,H},\quad M_\sigma\subset M_{[H]},\quad M_{\sigma,H}\subset M_H.\]
+
+    In Proposition~\ref{prop strata}, we will show that the natural inclusion $M_{\sigma,H}\hookrightarrow M_\sigma$ descends to a diffeomorphism 
+    \[M_{\sigma,H}\slash \Gamma_H\cong \wh{M}_\sigma.\] 
+    This will complete the description of the topology of the orbit space of a proper action in terms of its decomposition into smooth strata.
+\end{rem}
+
+
+
+
+
 
 
 
@@ -3030,7 +3081,7 @@ In case of a free proper action, the tubular neighborhoods constructed in Theore
     The orbit space $M\slash G$ of a free proper Lie group action $(M,G,\Phi)$ admits a unique smooth structure such that the natural projection $M\to M\slash G$ is a submersion.
 \end{cor}
 \begin{proof}
-    Uniqueness follows from the universal property of submersions. To prove existence, let $\pi:M\to M\slash G$ denote the natural projection. By Proposition~\ref{prop 6.3.4 RS1}(3), the orbit space $M\slash G$ is Hausdorff. By Proposition~\ref{prop 6.1.5 RS1}(3), it is second countable. Let $m\in M$ and let $O$ be the orbit of $m$. Since the action $\Phi$ is free, Lemma~\ref{lem 6.4.6 RS1} implies that the mapping $\psi_m:G\times \rmN_m O\to \rmN O$, defined by formula (\ref{eq 6.4.4 RS1}), is a diffeomorphism (in fact, it is an isomorphism of $G$-vector bundles, and so $\rmN O$ is globally trivial). Taking a tubular neighborhood $\chi:U\to \rmN O$ of $O$ and composing $\chi$ with $\psi_m^{-1}$, we obtain a $G$-equivariant diffeomorphism $\wt\chi$ from $U$ onto a $G$-invariant neighborhood of $G\times\{0\}$, which by $G$-invariance must have the form $G\times V_m$ for some open neighborhood $V_m$ of the origin in $\rmN_mO$. By embedding $V_m$ as the subset $\{e\}\times V_m$ into $G\times V_m$, we obtain a bijective continuous map
+    Uniqueness follows from the universal property of submersions. To prove existence, let $\pi:M\to M\slash G$ denote the natural projection. By Proposition~\ref{prop 6.3.4 RS1}(3), the orbit space $M\slash G$ is Hausdorff. By Proposition~\ref{prop 6.1.5 RS1}(3), it is second countable. Let $m\in M$ and let $\scrO$ be the orbit of $m$. Since the action $\Phi$ is free, Lemma~\ref{lem 6.4.6 RS1} implies that the mapping $\psi_m:G\times \rmN_m \scrO\to \rmN \scrO$, defined by formula (\ref{eq 6.4.4 RS1}), is a diffeomorphism (in fact, it is an isomorphism of $G$-vector bundles, and so $\rmN \scrO$ is globally trivial). Taking a tubular neighborhood $\chi:U\to \rmN \scrO$ of $\scrO$ and composing $\chi$ with $\psi_m^{-1}$, we obtain a $G$-equivariant diffeomorphism $\wt\chi$ from $U$ onto a $G$-invariant neighborhood of $G\times\{0\}$, which by $G$-invariance must have the form $G\times V_m$ for some open neighborhood $V_m$ of the origin in $\rmN_m\scrO$. By embedding $V_m$ as the subset $\{e\}\times V_m$ into $G\times V_m$, we obtain a bijective continuous map
     \[V_m\to G\times V_m\overset{\wt{\chi}^{-1}}{\to}U\overset{\pi}{\to}\wh{U}\coloneqq \pi(U),\]
     where $\wh{U}\coloneqq \pi(U)$ is an open neighborhood of $\pi(m)$ in $M\slash G$. This map is open and hence a homeomorphism, because it maps an open subset $W\subset V_m$ to the open subset $\pi(\wt{\chi}^{-1}(G\times W))\subset \wh{U}$. Thus the invese of this map defines a local chart $(\wh U,\wh \kappa)$ on $M\slash G$ at $\pi(m)$. The transition map between two such local charts is given by
     \begin{gather}
@@ -3041,41 +3092,42 @@ In case of a free proper action, the tubular neighborhoods constructed in Theore
 \end{proof}
 
 \begin{rem}
-    This result actually holds not only for free proper actions, but for all proper actions with a single orbit type (i.e., such that the stabilizer subgroups of all points are conjugate).
+    This result actually holds not only for free proper actions, but for all proper actions with a single orbit type (i.e., such that the stabilizer subgroups of all points are conjugate). For the proof, see Proposition~\ref{prop strata} and the remark following it.
 \end{rem}
 
 
-Accordingly, if $\Phi$ is free and proper, $M\slash G$ will be referred to as the orbit manifold of $\Phi$. From here, we immediately get:
+Accordingly, if $\Phi$ is free and proper, $M\slash G$ will be referred to as the \emph{orbit manifold}\index{Orbit manifold} of $\Phi$. From here, we immediately get:
 
 \begin{cor}[{{\cite[Cor.~6.5.3]{RS1}}}]\label{cor 6.5.3 RS1}
     If $(M,G,\Phi)$ is a free proper Lie group action, then:
     \begin{enumerate}
-        \item if $H\sub G$ is a closed normal subgroup, then $\Phi$ descends to a free proper action of $G\slash H$ on $M\slash H$ and $\id_M$ induces a diffeomorphism between $(M\slash H)\slash (G\slash H)$ and $M\slash G$.
-        \item If $N\overset{\varphi}{\to}M$ is a $G$-invariant embedded submanifold, then the induced action of $G$ on $N$ is free and proper and the map $\wh{\varphi}:N\slash H\to M\slash G$, induced by passing to the quotients, defines an embedded submanifold of $M\slash G$.
+        \item if $H\embsub G$ is a closed normal subgroup, then $\Phi$ descends to a free proper action of $G\slash H$ on $M\slash H$ and $\id_M$ induces a diffeomorphism between $(M\slash H)\slash (G\slash H)$ and $M\slash G$.
+        \item If $N\overset{\varphi}{\to}M$ is a $G$-invariant embedded submanifold, then the induced action of $G$ on $N$ is free and proper and the map $\wh{\varphi}:N\slash G\to M\slash G$, induced by passing to the quotients, defines an embedded submanifold of $M\slash G$.
     \end{enumerate}
 \end{cor}
 
 \begin{example}[{{\cite[Example~6.5.4]{RS1}}}]
     \begin{enumerate}
         \item The action of $G=\bbZ$ on $M=\bbR\times (-1,1)$ defined by $\Phi_k(x,t)=(x+k,(-1)^kt)$ is free. It is also proper (recall that a proper action of a discrete group is called properly discontinuous): it is easy to see that if $(x_n,t_n)$ and $\Phi_{k_n}(x_n,t_n)$ both converge as $n\to \infty$, then $k_n$ must become constant at large $n$, hence it converges as well. The quotient manifold coincides with the M\"obius strip (the smooth structure coincides because the natural projection is a smooth submersion w.r.t.\ either definition of the M\"obius strip and submersions have a universal property). Applying Corollary~\ref{cor 6.5.3 RS1} to the closed normal subgroup $H=2\bbZ$ yields that the M\"obius strip is diffeomorphic to the quotient manifold of the free proper action of $G\slash H=\bbZ_2$ on $M\slash H\cong \bbS^1\times (-1,1)$, where the generator of $\bbZ_2$ acts by $(\alpha,t)\mapsto (-\alpha,-t)$, as expected.
-        \item Let $\bbK_1$ be the Lie group given by the unit sphere in $\bbK=\bbR,\bbC$, or $\bbH$ (so $\bbR_1=O_1$, $\bbC_1=\U_1$, and $\bbH_1=\Sp_1\cong \SU_2$). The action of $\bbK_1$ on $\bbK^n$ is proper because $\bbK_1$ is compact. Since this action is isometric w.r.t.\ the standard dot product, it restricts to an action of $\bbK_1$ on the unit sphere $\bbS^{dn-1}$, where $d=\dim_\bbR\bbK$. The latter action is in addition free. The quotient manifold $\bbS^{dn-1}\slash\bbK_1$ coincides with the projective space $\KP^{n-1}$. In the case of $\U_1$ acting on $\bbC^2$ this construction reproduces exactly the Hopf bundle \index{Hopf fibration} $\bbS^1\hookrightarrow \bbS^3\to \bbS^2$.
+        \item Let $\bbK_1$ be the Lie group given by the unit sphere in $\bbK=\bbR,\bbC$, or $\bbH$ (so $\bbR_1=\Or_1$, $\bbC_1=\U_1$, and $\bbH_1=\Sp_1\cong \SU_2$). The action of $\bbK_1$ on $\bbK^n$ is proper because $\bbK_1$ is compact. Since this action is isometric w.r.t.\ the standard dot product, it restricts to an action of $\bbK_1$ on the unit sphere $\bbS^{dn-1}$, where $d=\dim_\bbR\bbK$. The latter action is in addition free. The quotient manifold $\bbS^{dn-1}\slash\bbK_1$ coincides with the projective space $\KP^{n-1}$. In the case of $\U_1$ acting on $\bbC^2$ this construction reproduces exactly the Hopf bundle \index{Hopf fibration} $\bbS^1\hookrightarrow \bbS^3\to \bbS^2$.
     \end{enumerate}
 \end{example}
 
 
-Corollary~\ref{cor 6.5.1 RS1} gives us a very important class of fiber bundles, which we now turn to. The Tubular Neighborhood Theorem guarantees that every free proper action generates equivariant local trivializations of $\pi:M\to M\slash G$ by neighborhoods of the form $U_m\times G$, which makes it a fiber bundle. Conversely, a free action that admits such local trivializations must be proper:
+Corollary~\ref{cor 6.5.1 RS1} gives us a very important class of fiber bundles, which we now turn to. The Tubular Neighborhood Theorem guarantees that every free proper action generates equivariant local trivializations of $\pi:M\to M\slash G$ by neighborhoods of the form $U_m\times G$, which makes it a fiber bundle. Conversely, a free action that admits such local trivializations must be proper (note that we now rename $M$ to $P$ and $M\slash G$ to $M$):
 
 \begin{prop}\label{prop equiv local triv pfb}
-    Let $(P,G,\Phi)$  be a free action Lie group action and let $\pi:P\to M$ be a smooth map such that for every $m\in M$ there is an equivariant local trivialization at $m$, that is, an open neighborhood $W$ of $m$ and a diffeomorphism $\chi:\pi^{-1}(W)\to W\times G$ such that
+    Let $(P,G,\Phi)$  be a free action Lie group action and let $\pi:P\to M$ be a smooth map such that for every $m\in M$ there is an equivariant local trivialization at $m$, that is, an open neighborhood $U$ of $m$ and a diffeomorphism $\chi:\pi^{-1}(U)\to U\times G$ such that
     \begin{enumerate}
         \item $\chi$ intertwines $\Phi$ with the $G$-action on $W\times G$ by translations (left or right according to the type of $\Phi$) on the factor $G$,
-        \item $\pr_1\circ \chi(p)=\pi(p)$ for all $p\in\pi^{-1}(W)$.
+        \item $\pr_1\circ \chi(p)=\pi(p)$ for all $p\in\pi^{-1}(U)$.
     \end{enumerate}
-    Then $\Phi$ is proper, $M$ is diffeomorphic to the orbit manifold $P\slash G$, and $\pi$ corresponds, via this diffeomorphism to the natural projection $P\to P\slash G$.
+    Then $\Phi$ is proper, $M$ is diffeomorphic to the orbit manifold $P\slash G$, and $\pi$ corresponds, via this diffeomorphism, to the natural projection $P\to P\slash G$.
 \end{prop}
-\begin{proof}
-    Exercise.
-\end{proof}
+
+\begin{xca}
+    Prove the above proposition.
+\end{xca}
 
 Denoting $\kappa=\pr_2\circ\chi :\pi^{-1}(W)\to G$, for a right action $\Phi$, property 1 can be rewritten as 
 \[\kappa\left(\Phi_g(p)\right)=\kappa(p)g,\quad p\in\pi^{-1}(W),\; a\in G.\]
@@ -3084,23 +3136,20 @@ Denoting $\kappa=\pr_2\circ\chi :\pi^{-1}(W)\to G$, for a right action $\Phi$, p
 \begin{defn}[Principal fiber bundle I]\index{Principal fiber bundle}\label{def pfb}
     A \gls{pfb} is the fiber bundle $\pi:P\to P\slash G$ associated with a free proper Lie group action $(P,G,\Phi)$. Equivalently, it is a tuple $(P\overset{\pi}{\to}M,G,\Phi)$, where $(P,G,\Phi)$ is a free Lie group action and $\pi$ is a smooth map that admits equivariant local trivializations at every $m\in M$ in the sense of Proposition~\ref{prop equiv local triv pfb}.
 
-    The group $G$ is called the structure group of $P$, and $P$ is also called a principal $G$-bundle. The existence of local trivializations implies that $\pi$ is a submersion. Hence the fibers of $P$ are submanifolds, each of them is diffeomorphic to $G$, and in fact is a $G$-torsor.
+    The group $G$ is called the structure group of $P$, and $P$ is also called a principal $G$-bundle. The existence of local trivializations implies that $\pi$ is a submersion. Hence, the fibers of $P$ are submanifolds, each of them is diffeomorphic to $G$, and in fact is a $G$-torsor.
 \end{defn}
 
 
 \begin{example}[Homogeneous spaces as principal bundles]\label{ex homogeneous principal bundles}
-    Every homogeneous space $G\slash H$, where $H\sube G$ is a closed subgroup, is a principal $H$-bundle because the action of $H$ on $G$ is always free and proper: if $\Phi:H\times G\to G$ is the action by right translations, then $\Phi_{\mathrm{ext}}(h,g)=(g,gh)$, which is clearly a closed map, hence proper by Proposition~\ref{cor 6.3.3 RS1}(3).
+    Every homogeneous space $G\slash H$, where $H\emb G$ is a closed subgroup, is the base of a principal $H$-bundle  $G\to G\slash H$ because the action of $H$ on $G$ is always free and proper: if $\Phi:H\times G\to G$ is the action by right translations, then $\Phi_{\mathrm{ext}}(h,g)=(g,gh)$, which is clearly a closed map, hence proper by Proposition~\ref{cor 6.3.3 RS1}(3). Such bundles are called \emph{homogeneous principal $H$-bundles} and will be examined in detail in \Chap~\ref{chap: Klein geom}.
 \end{example}
 
 
 \begin{example}\label{ex O2 Stiefel bundle}
-    Every Stiefel manifold $\St_k(\bbK^n)$ (cf.\ \ref{def stiefel manifolds}) is therefore the base manifold of a $\calO_k$-bundle with total space $\calO_n$. A particular instance of an orthogonal Stiefel bundle is \[\pi:\SO_3\to \St_1(\bbR^3)\cong \bbS^2.\]
+    Every Stiefel manifold $\St_k(\bbK^n)$ (cf.\ \ref{def stiefel manifolds}) is therefore the base manifold of a $\calO_{n-k}$-bundle with total space $\calO_n$. A particular instance of an orthogonal Stiefel bundle is \[\pi:\SO_3\to \St_1(\bbR^3)\cong \bbS^2.\]
     We can see that this bundle is in fact isomorphic to the \emph{unit circle bundle} of $\T\bbS^2$:\index{Sphere bundle}\index{Unit circle bundle|see {Sphere bundle}}
     \[\bbS(\T\bbS^2)=\{(\bf{x},\bf{v})\in\bbS^2\times\bbS^3\mid \bf{x}\perp\bf{v}\}.\]
     Indeed, to each point $(\bf{x},\bf{v})$ in this bundle we can assign a unique positively oriented orthonormal frame $(\bf{x},\bf{v},\bf{x}\times\bf{v})$, i.e., an element of $\SO_3$. This is an isomorphism of $\SO_3$-torsors $\SO_3\cong \bbS(\T\bbS^2)$, and in particular a vertical isomorphism of fiber bundles over $\bbS^2$.  Therefore the principal $\U_1$-bundle $\SO_3\to \bbS^2$ is isomorphic to the circle bundle of the complex line bundle $\calO(2)$ (see Example~\ref{ex tangent bundle of S2}), and has Chern number $2$.
-
-    Another Stiefel bundle is the Hopf bundle viewed as the principal $\U_1$-bundle\index{Hopf fibration}
-    \[\pi':\SU_2\to \St_1(\bbC^2)\cong \CP^1.\]
 \end{example}
 
 
@@ -3136,7 +3185,7 @@ as well as the (topological) principal bundle
 \[\calO_k\hookrightarrow \calO_\infty\to \St_k(\bbK^\infty).\]
 over the infinite Stiefel space of $k$-frames in $\bbK^\infty$.
 
-Now, each element of $\St_k(\bbK^n)$ can be identified with a $k$-frame, and thus determines the linear $k$-dimensional subspace $W\subset \bbK^n$ spanned by that frame. Thus we have a quotient map $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$. The fiber of this map above $W$ consists of all orthonormal frames on $W$ and thus is identified with the orbit of the free and proper action of $\calO_k$ on $\St_k(\bbK^n)$. Thus $\St_k(\bbK^n)$ becomes a principal bundle over the Grassmann manifold (we shall call it the \emph{Stiefel principal bundle}):
+Now, each element of $\St_k(\bbK^n)$ can be identified with a $k$-frame, and thus determines the linear $k$-dimensional subspace $W\subset \bbK^n$ spanned by that frame. Thus we have a quotient map $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$. The fiber of this map above $W$ consists of all orthonormal frames on $W$ and thus is identified with the orbit of the free and proper action of $\calO_k$ on $\St_k(\bbK^n)$. Thus $\St_k(\bbK^n)$ becomes a principal bundle over the Grassmann manifold (we shall call it the \emph{Stiefel principal bundle}):\index{Stiefel bundle}
 \[\calO_k\hookrightarrow \St_k(\bbK^n)\to \Gr_k(\bbK^n),\label{eq Stiefel pfb}\]
 and by taking the direct limit w.r.t.\ the inclusions $\bbK^n\hookrightarrow \bbK^{n+1}$ we also get the (topological) principal bundle
 \[\calO_k\hookrightarrow \St_k(\bbK^\infty)\to \Gr_k(\bbK^\infty).\]
@@ -3144,8 +3193,13 @@ We thus have the alternative definition of the Grassmann manifolds not as homoge
 \[\Gr_k(\bbK^n)\cong \St_k(\bbK^n)\slash \calO_k, \quad \Gr_k(\bbK^\infty)\cong \St_k(\bbK^\infty)\slash \calO_k\]
 (in the infinite case we didn't prove any theorems about quotients by a free group action, but this issue can be circumvented by identifying the quotient with the direct limit of the finite-dimensional smooth ones).
 
-
-
+\begin{example}\index{Hopf bundle}
+    One complex Stiefel bundle is the Hopf bundle viewed as the principal $\U_1$-bundle\index{Hopf fibration}
+    \[\U_1\cong\bbS^1\hookrightarrow \St_1(\bbC^2)\cong \SU_2\cong\bbS^3\to \Gr_1(\bbC^2)=\CP^1.\]
+    The quaternionic analog of this bundle is 
+    \[\SU_2\cong \bbS^3\hookrightarrow \St_1(\bbH^2)\cong \bbS^7\to \Gr_1(\bbH^2)=\bbH\bbP^1\cong \bbS^4,\]
+    and thus is called the \emph{quaternionic Hopf bundle}.
+\end{example}
 
 \begin{rem}
    Define the square matrix $\tau=\left[\begin{smallmatrix}
@@ -3169,7 +3223,7 @@ We thus have the alternative definition of the Grassmann manifolds not as homoge
 shows that the inclusion map $\calO_k\hookrightarrow \St_{k}(\bbK^n)$ is nullhomotopic. Then the long exact sequence of homotopy groups (Theorem~\ref{thm long exact seq of homotopy}) for the fibration $\calO_k\hookrightarrow \St_k(\bbK^n)\to \Gr_k(\bbK^n)$ implies the asserted isomorphism.
 \end{proof}
 
-Thus we can compute the homotopy groups of Grassmann manifolds provided we compute those of Stiefel manifolds and orthogonal groups. 
+Thus, we can compute the homotopy groups of Grassmann manifolds, provided we compute those of Stiefel manifolds and orthogonal groups. 
 
 \begin{prop}[Stable homotopy groups {{\cite[Thm.~10.9.6]{Shastri}}}]\label{prop 10.9.6 Shastri}
     The homomorphism $\pi_q(\calO_n)\to \pi_q(\calO_{n+1})$ induced by the inclusion $\calO_n\hookrightarrow \calO_{n+1}$  is an isomorphism for $q<d(n+1)-2$ and an epimorphism for $q=d(n+1)-2$. Equivalently, the pair $(\calO_{n+1},\calO_n)$ is $(d(n+1)-2)$-connected.
@@ -3200,7 +3254,7 @@ In the case of unitary groups we have $d=2$, so the isomorphism proven above hol
 \end{proof}
 \begin{rem}
 \begin{enumerate}
-    \item Note that in fact the determinant fibration used in this proof is trivial: $\U_n\cong \SU_n\times \bbS^1$. Indeed, the trivialization is given by $A\mapsto (\mathrm{diag}(\det A^{-1},1,\ldots,1)\cdot A,\det A)$. Thus instead of the exact sequence we could also use $\pi_q(\U_n)\cong\pi_q(\SU_n)\times \pi_q(\bbS^1)=\pi_q(\SU_n)$ for $q>1$.
+    \item Note that in fact the determinant fibration used in this proof is trivial: $\U_n\cong \SU_n\times \bbS^1$. Indeed, the trivialization is given by $A\mapsto (\diag(\det A^{-1},1,\ldots,1)\cdot A,\det A)$. Thus instead of the exact sequence we could also use $\pi_q(\U_n)\cong\pi_q(\SU_n)\times \pi_q(\bbS^1)=\pi_q(\SU_n)$ for $q>1$.
     \item We will later prove, using Morse theory, the very deep fact that $\pi_2(G)=0$ for \emph{any} connected Lie group $G$.
 \end{enumerate}
 \end{rem}
@@ -3301,7 +3355,7 @@ The case $r=1$ and $n_1=k$ reproduces the Grassmann manifolds, $\mathrm{Flag}_{(
 
 \section{Example: projective, conformal, and CR spheres}\label{sec: projective, conformal CR spheres}
 
-The same homogeneous space can arise from different Lie groups $G$. Each of these Lie groups induces a corresponding action on that space, and a certain canonical $G$-invariant structure. The constructions of the sphere $\bbS^n$ correspond to the invariant Riemannian metric of the ``round sphere'' inherited from the standard $\Or_n$-action. In this \sect\ we present a few other ways the sphere can be represented as a homogeneous space with corresponding invariant structures.
+The same homogeneous space can arise from different Lie groups $G$. Each of these Lie groups induces a corresponding action on that space, and a certain canonical $G$-invariant structure. The last \sect's construction of the sphere $\bbS^n$ corresponds to the invariant Riemannian metric of the ``round sphere'' (unit sphere in $\bbR^{n+1}$) inherited from the standard $\Or_n$-action. In this \sect\ we present a few other ways the sphere can be represented as a homogeneous space with corresponding invariant structures.
 
 \begin{defn}[Projective space and sphere]
     Consider the tautological bundle $\gamma_1(\bbR^{n+1})\to \RP^n$. Its total space can be identified with $\bbR^{n+1}\setminus\{0\}$ and the structure group is $\bbR^\times$. The standard action of $\SL_{n+1}(\bbR)$ on $\bbR^{n+1}$ restricts to an action on $\gamma_1(\bbR^{n+1})$. The resulting diffeomorphisms of $\RP^n$ are exactly the projective transformations. The stabilizer subgroup of the line through $\bf{e}_{n+1}\in\bbR^{n+1}$ is given by
@@ -3352,7 +3406,7 @@ The $\SU_{n+1,1}$-invariant structure on the odd-dimensional sphere induced by t
 \section{(*) Diffeomorphism groups}\label{sec: Diff groups}
 
 
-Much of basic differential geometry on manifolds that we've covered translates to the locally convex case: if $M$ is modeled on a locally convex space $V$, then its tangent bundle $\T M$ (with tangent vectors defined as equivalence classes of curves at a point) has smooth local trivializations over $U_\alpha\subset M$ mapping to $U_\alpha\times V$, and the transition maps are smooth as functions of $(m,v)\in U_{\alpha\beta}\times V$. We can construct the tangent functor $\T$ by defining derivatives of smooth maps between locally convex manifolds. Since the pairing between $V$ and $V^\ast$ is usually not very nice, one often finds another vector space $W$ (which can be thought of as a subspace of $V^\ast$) with a nondegenerate pairing $V\times W\to \bbK$. This allows one to define natural adjoints of linear maps and hence a cotangent bundle $\T^\ast M$ with typical fiber $W$. Smooth vector fields can be defined as usual, and $\fX(M)$ is still a Lie algebra with the Lie bracket. The Lie bracket is again natural w.r.t.\ smooth maps. The calculus of differential forms then also extends once we've defined $\T^\ast M$.
+Much of basic differential geometry on manifolds that we've covered translates to the locally convex case: if $M$ is modeled on a locally convex space $V$, then its tangent bundle $\T M$ (with tangent vectors defined as equivalence classes of curves at a point) has smooth local trivializations over $U_\alpha\subset M$ mapping to $U_\alpha\times V$, and the transition maps are smooth as functions of $(m,v)\in U_{\alpha\beta}\times V$. We can construct the tangent functor $\T$ by defining derivatives of smooth maps between locally convex manifolds. Since the pairing between $V$ and $V^\ast$ is usually not very nice, one often finds another vector space $W$ (which can be thought of as a subspace of $V^\ast$) with a nondegenerate pairing $V\times W\to \bbK$. This allows one to define natural adjoints of linear maps and hence a cotangent bundle $\T^\ast M$ with typical fiber $W$. Smooth vector fields can be defined as usual, and $\fX(M)$ is still a Lie algebra with the Lie bracket. The Lie bracket is again natural w.r.t.\ smooth maps. The calculus of differential forms then also extends once we've defined $\T^\ast M$. This \sect\ is a brief summary of parts of \cite{Neeb}.
 
 For integration of differential forms one requires Mackey completeness. Then, e.g., the Stokes theorem for differential forms on manifolds with boundaries holds. The Poincar\'e Lemma holds in the following form.
 
@@ -3519,7 +3573,7 @@ Moreover, $\fX(M)$ for non-compact $M$ is not integrable at all.
 \clearpage 
 \chapter{Principal and Associated Bundles}
 
-    Now that we have comprehensively reviewed the fundamentals of Lie groups and their actions on manifolds, we are finally ready to return to Klein's Erlangen program as described at the beginning of \S\ref{sec: Lie theory ii}. We will do so using the more modern language of principal bundles.
+    Now that we have comprehensively reviewed the fundamentals of Lie groups and their actions on manifolds, we are finally ready to return to Klein's Erlangen program as described at the beginning of \Chap~\ref{chap: Lie theory ii}. We will do so using the more modern language of principal bundles.
 
     Principal bundles appeared in the last \chap\ as a natural special case of Lie group actions on manifolds. In this \chap, however, they will acquire a special elevated status in the theory of general fiber bundles. Recall that any fiber bundle that admits a $G$-atlas such that the structure group $G$ acts on the typical fiber $F$ faithfully is completely determined by the cocycle of its transition functions. This led to the equivalence of any two categories of fiber bundles $\FB^\sigma$ and $\FB^{\sigma'}$ for any two faithful $G$-actions $G\overset{\sigma}{\acts}F$ and $G\overset{\sigma'}{\acts}F'$ (see (\ref{eq equivalence of bundle categories})). This means that most functorial geometric structures on fiber bundles can be defined by providing their description on any one of these equivalent categories. The choice of the category of principal bundles is natural and convenient for two reasons. 
     
@@ -3565,7 +3619,7 @@ The existence of local trivializations implies that $\pi$ is a smooth submersion
     \begin{enumerate}
         \item $\pr_M:M\times G\to M$ with the right action of $G$ on the second factor is a trivial $G$-\gls{pfb}.
         \item The direct product $P_1\times P_2$ of two \glspl{pfb} with respective structure groups $G_1,G_2$ over bases $M_1$ and $M_2$, has a natural structure of a principal $G_1\times G_2$-bundle over $M_1\times M_2$.
-        \item If $H\sub G$ is a closed subgroup, then $H$ acts on $G$ freely by right translation and this action is proper by Example~\ref{ex homogeneous principal bundles}. Thus, $G\to G\slash H$ is a principal $H$-bundle. We call such bundles \emph{homogeneous principal bundles}.
+        \item If $H\emb G$ is a closed subgroup, then $H$ acts on $G$ freely by right translation and this action is proper by Example~\ref{ex homogeneous principal bundles}. Thus, $G\to G\slash H$ is a principal $H$-bundle. We call such bundles \emph{homogeneous principal bundles}.
     \end{enumerate}
 \end{example}
 
@@ -3637,7 +3691,7 @@ It might seem that Definition~\ref{def pfb 2} contains more structure in the for
         \item We call the morphism vertical if $M=M'$ and $\theta=\id_M$. If $G=G'$ and $\lambda=\id_G$, then $\vartheta$ is called a $G$-morphism. By local triviality, every vertical $G$-morphism is a diffeomorphism and hence an isomorphism.
         \item If $\theta$ and $\lambda$ are injective immersions, then $\vartheta$ is one as well. In this case $P$ is called a \emph{subbundle} of $P'$, and we write $P<P'$.
         \begin{enumerate}
-            \item If, additionally, $\theta$ and $\lambda$ are embeddings, then we write $P\sub P'$. In the latter case $P$ may be identified with the image of the morphism $\vartheta$ in $P'$.
+            \item If, additionally, $\theta$ and $\lambda$ are embeddings, then we write $P\emb P'$. In the latter case $P$ may be identified with the image of the morphism $\vartheta$ in $P'$.
             \item If, additionally, $M=M'$ and $\theta=\id_M$, then $P$ is called a \emph{$\lambda$-reduction}\index{Bundle reduction} of $P'$. In this case one says that $G$ is a reduction of the structure group $G'$. Two reductions are said to be equivalent  if they differ by a vertical automorphism of $P$.
         \end{enumerate}
     \end{enumerate}
@@ -3684,22 +3738,22 @@ is a diffeomorphism projecting to the identity on $U$. The inverse map $\xi:\pi_
     The map $P\times^G F\overset{\pi_F}{\to } M$ provides it with a natural structure of a fiber bundle. Such a bundle is said to be associated to the principal bundle $P$ and the $G$-manifold $F$.
 \end{defn}
 
-More generally the quotient of the product of a right $G$-space and a left $G$-space as above is called a \emph{balanced product}\index{Balanced product}. In the smooth case, for these products to have well-defined smooth structures, we require the group actions to be free and proper, so that orbit manifolds are well-defined.
+More generally the quotient $X\times^G Y=(X\times Y)\slash G$ of the product of a right $G$-space $X$ and a left $G$-space $Y$ as above is called a \emph{balanced product}.\index{Balanced product} In the smooth case, for these products to have well-defined smooth structures, we require the group action on $X\times Y$ to be proper and with one orbit type, so that the orbit manifold is well-defined.
 
 \begin{example}
     \begin{enumerate}
         \item If $X$ is a right $G$-manifold and $G$ acts on itself by left translations, then $X\times^G G\cong X$.
         \item We say that $Y$ is a $(G,H)$-manifold if it carries a left action of $G$ and a right action of $H$, and these two actions commute. Then balanced products are associative up to isomorphism in the sense that if $X$ is a right $G$-manifold, $Y$ is a $(G,H)$-manifold, and $Z$ is a left $H$-manifold, then there is a natural diffeomorphism
         \[(X\times^G Y)\times^H Z\cong X\times^G (Y\times^H Z).\]
-        \item If $H\sub G$ is a closed subgroup, then $G$ can be viewed as a $(G,H)$-manifold. Combining the previous two examples, we conclude that the symbol $\times^G G$ (or $G\times^G$) can be cancelled whenever it occurs:
+        \item If $H\emb G$ is a closed subgroup, then $G$ can be viewed as a $(G,H)$-manifold. Combining the previous two examples, we conclude that the symbol $\times^G G$ (or $G\times^G$) can be cancelled whenever it occurs:
         \[X\times^G G\times^H Y\cong X\times^H Y.\]
-        \item Taking $Y$ to be a point in the last example, we have for a right $G$-manifold $X$ and a closed subgroup $H\sub G$ a natural diffeomorphism
+        \item Taking $Y$ to be a point in the last example, we have for a right $G$-manifold $X$ and a closed subgroup $H\emb G$ a natural diffeomorphism
         \[X\times^G (G\slash H)\cong X\slash H.\]
         In particular, if $P$ is a principal $G$-bundle, then we can identify $P\slash H$ with the total space of the associated bundle $P\times^G (G\slash H)$.
     \end{enumerate}
 \end{example}
 
- The following proposition is an exercise.
+The following proposition is an exercise.
 \begin{prop}[{{\cite[Prop.~1.2.2]{RS2}}}]\label{prop 1.2.2 RS2}
     Let $P(M,G)$ and $P'(M',G')$ be principal bundles and let $(F,G,\sigma)$ and $(F',G',\sigma')$ be left Lie group actions. Let $(\vartheta,\lambda)$ be a principal bundle morphism $P\to P'$ covering $\theta:M\to M'$ and let $T:F\to F'$ be an equivariant map (morphism of Lie group actions). Then $\vartheta\times T:P\times F\to P'\times F'$ induces a bundle morphism $P\times^G F\to P'\times^{G'} F'$ covering $\theta$.
 \end{prop}
@@ -3737,7 +3791,7 @@ The following is an exercise.
 
 \begin{example}\label{ex 1.2.4 RS2}
     \begin{enumerate}
-        \item Let $P(M,G)$ be a \gls{pfb} and let $H\sub G$ be a closed subgroup. Then by the Closed Subgroup Theorem~\ref{thm closed subgroup}, $H$ is an embedded Lie subgroup, and we get the homogeneous space $G\slash H$ with a $G$-action by left translation. Then $P\times^G G\slash H$ is an associated bundle over $M$ with typical fiber being a transitive $G$-manifold. One can show the following:
+        \item Let $P(M,G)$ be a \gls{pfb} and let $H\emb G$ be a closed subgroup. Then by the Closed Subgroup Theorem~\ref{thm closed subgroup}, $H$ is an embedded Lie subgroup, and we get the homogeneous space $G\slash H$ with a $G$-action by left translation. Then $P\times^G G\slash H$ is an associated bundle over $M$ with typical fiber being a transitive $G$-manifold. One can show the following:
         \begin{enumerate}
             \item As a bundle over $M$, the bundle $P\times^G G\slash H$ is isomorphic to the quotient $P\slash H$ endowed with the natural bundle structure induced from $P$.
             \item $P$ may be viewed as a principal $H$-bundle over $P\times^G G\slash H$.
@@ -3919,6 +3973,116 @@ This definition can be adapted accordingly to the case of a right action $\sigma
 
 
 
+\section{(*) Orbit spaces of proper actions}
+
+As an application of associated bundles, for the next proposition we briefly go back to the discussion of arbitrary proper Lie group actions and their strata as described in Remark~\ref{rem strata}.
+
+\begin{rem}[{{\cite[Rem.~6.5.8]{RS1}}}]\label{rem 6.5.8 RS1}
+    Let $(M,G,\Phi)$ be a proper Lie group action, \gls{wlog} assumed to be a left action. Let $\scrO$ be an orbit and let $m\in\scrO$. The action of the stabilizer $G_m$ on $G$ by right translation defines a right \gls{pfb}. After having turned this into a right \gls{pfb}, we can form the associated real \gls{vb} $G\times^{G_m}\rmN_m\scrO$, where $G_m$ acts on $\rmN_m\scrO$ by the slice representation. The action of $G$ on $G\times\rmN_m\scrO$ by left translation on the first factor induces a natural $G$-vector bundle structure on $G\times^{G_m}\rmN_m\scrO$. As a consequence of Lemma~\ref{lem 6.4.6 RS1}, in this structure,  $G\times^{G_m}\rmN_m\scrO$ is isomorhic to $\rmN\scrO$ (exercise). Thus, every orbit admits a tubular neighborhood taking values in $G\times^{G_m}\rmN_m\scrO$.
+
+    More generally, one can prove the following. Let $G_m\acts W$ be a real linear representation of $G_m$ and let $\lambda:W\to \T_m M$ be an equivariant injective linear map onto a subspace complementary to $\T_m\scrO$. Then there exists a tubular neighborhood $\chi:U\to G\times^{G_m}W$ of $\scrO$ such that, under the natural identification 
+    \[\T_{[e,0]}(G\times^{G_m}W)\cong \frakg\slash\frakg_m\oplus W,\]
+    one has 
+    \[\left(\chi^{-1}\right)_{\ast[(e,0)]}\left([A],w\right)=(A_\ast)_m+\lambda(w)\quad\text{for}\quad  [A]\in\frakg\slash\frakg_m,\; w\in W.\]
+\end{rem}
+
+Recall that $\Gamma_H=\rmN_G(H)\slash H$ is a Lie group (since the normalizer of a closed subgroup contains that subgroup as a closed normal subgroup) that is also a subset of the homogeneous space $G\slash H$. This group acts naturally from the left on $G\slash H$:
+\[\Gamma_H\times (G\slash H)\to G\slash H,\quad (gH,g'H)\mapsto g'g^{-1}H.\]
+Since the natural projeciton $\rmN_G(H)\times G\to \Gamma_H\times (G\slash H)$ is a direct product of submersions, this action is smooth. We now show that the subset $M_{[H]}\subset M$ of points of orbit type $[H]$ can be identified with a bundle with fiber $(G\slash H)$ associated to a certain principal $\Gamma_H$-bundle over $\wh{M}_H=M_H\slash G$.
+
+\begin{prop}[{{\cite[Prop.~6.6.1]{RS1}}}]\label{prop strata}
+    Let $(M,G,\Phi)$ be a proper left Lie group action. Let $\sigma$ be the label of a stratum and let $H\emb G$ be a subgroup representing $\sigma$.\index{Stratum}
+    \begin{enumerate}
+        \item $M_\sigma$ and $M_{\sigma,H}$ are embedded submanifolds of $M$. For $m\in M_{\sigma,H}$, one has 
+        \[\T_m M_{\sigma,H}=(\T_m M)^H,\quad \T_m M_\sigma=(T_m M)^H+\T_m (G\cdot m).\]
+        \item $\Phi$ induces a free and proper left action of $\Gamma_H$ on $M_{\sigma,H}$, making it a left principal $\Gamma_H$-bundle over $\wh{M}_{\sigma,H}$.
+        \item The twisted product $M_{\sigma,H}\times_{\Gamma_H}(G\slash H)$ carries a left $G$-action given by 
+        \[\left(g,\left[(m,g'H)\right]\right)\mapsto \left[(m,gg'H)\right]\]
+        and induces a $G$-equivariant diffeomorphism 
+        \[\phi:M_{\sigma,H}\times_{\Gamma_H}(G\slash H)\to M_\sigma,\quad \phi\left(\left[(m,gH)\right]\right)\coloneqq \Phi_g(m).\]
+        \item There exists a unique smooth structure on $\wh{M}_\sigma$ such that the natural projection $\pi_\sigma:M_\sigma\to \wh{M}_\sigma$ is a submersion. W.r.t.\ this structure, the natural projection $\pi_{\sigma,H}:M_{\sigma,H}\to \wh{M}_{\sigma,H}$ is a submersion, too, and the natural inclusion $M_{\sigma,H}\hookrightarrow M_\sigma$ descends to a diffeomorphism 
+        \[M_{\sigma,H}\slash \Gamma_H\cong \wh{M}_\sigma.\]
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    1. To demonstrate an embedding, it suffices to work locally on open subsets of $M$, for example, tubular neighborhoods. By the Equivariant Tubular Neighborhood Theorem~\ref{thm 6.4.3 RS1 equiv tubular neighb} and Remark~\ref{rem 6.5.8 RS1}, it is enough to consider the case $M=G\times^H V$, where $H\overset{\rho}{\acts} V$ is a finite-dimensional real representation of $H$. This is simultaneously a vector bundle over the orbit $G\slash H$ and over the slice $W$. To determine the stabilizers, let $g\in G$ and $v\in V$. One has $\Phi_{g'}\left([g,v]\right)\equiv [(g'g,v)]=[(g,v)]$ iff $g'g=gh^{-1}$ and $v=\rho(h)v$ for some $h\in H$. 
+    Hence,  $G_{[(g,v)]}=gH_v g^{-1}$, where $H_v$ is the stabilizer of $v$ under the representation $H\acts V$. This implies 
+    \[M_\sigma=G\times^H V^H,\quad M_{\sigma, H}=\rmN_G(H)\times^H V^H,\]
+    where $V^H< V$ is the subspace of fixed points under $H\acts V$. That is, $M_\sigma$ is a vertical vector subbundle of $M=G\times^H V$ and $M_{\sigma,H}$ is the restriction of this subbundle to the subset $\Gamma_H\subset G\slash H$, which is easily seen to be an embedded submanifold. Hence, the assertion follows from the fact that vertical subbundles are embedded and from Exercise~\ref{example 2.7.3 RS1}(3). This argument yields, in addition, that the map $G\times M_{\sigma, H}\to M_\sigma$ defined by $\Phi$ is a submersion. This will be needed in the proof of assertion 3. To prove the formulas for the tangent spaces, we write tangent vectors of $G\times^H V$ at a point $[(g,v)]\in \rmN_G(H)\times^H V^H$ in the form $\pr_\ast(\rmL_{g\ast}A,u)$ with $A\in\frakg$ and $u\in V$ and with $\pr:G\times V\to G\times^H V$ denoting the natural projection. One can show that such a tangent vector is invariant under the isotropy representation of $G_{[(g,v)]}=H$ iff $u\in V^H$ and $A\in \Lief\rmN_G(H)$. This yields $\T_m M_{\sigma,H}=(\T_m M)^H$. The formula for $\T_m M_\sigma$ then follows.
+
+    2. Since $M_{\sigma,H}$ is invariant under $\rmN_G(H)$, $\Phi$ induces an action of $\rmN_G(H)$ on $M_{\sigma,H}$. By Proposition~\ref{prop 6.3.4 RS1}(1), the latter is proper. Since it has kernel $H$, by Proposition~\ref{prop 6.1.5 RS1}(5), it induces an action of $\Gamma_H$ on $M_{\sigma, H}$. Using Corollary~\ref{cor 6.3.3 RS1}(2), it is easy to see that the latter remains proper. By construction, it is also free.
+
+    3. According to point 2, we can build the twisted product $M_{\sigma,H}\times^{\Gamma_H} (G\slash H)$. Since the action of $G$ on $M_{\sigma,H}\times(G\slash H)$ by left translations on the second factor commutes with the action of $\Gamma_H$, it descends to an action of $G$ on the twisted product, given by the asserted formula. Now, consider the map $\phi$. It is well-defined: if $[(m_1,g_1H)]=[(m_2,g_2H)]$, then $m_2=\phi(m_1)$ and $g_2=g_1n^{-1}$ for some $n\in\rmN_G(H)$, and hence $\Phi_{g_2}(m_2)=\Phi_{g_1}(m_1)$. Moreover, $\phi$ is $G$-equivariant. By construction, we have the commutative diagram 
+    \[\begin{tikzcd}
+        M_{\sigma,H}\times G\arrow[r,"\Phi"]\arrow[d] & M_\sigma\\
+        M_{\sigma,H}\times^{\Gamma_H} (G\slash H). \arrow[ur,"\phi",swap]
+    \end{tikzcd}\]
+   Since the vertical arrow is a submersion, $\phi$ is smooth. Since, as noticed under point 1, the horizontal arrow is a submersion, $\phi$ is a submersion, too. For dimensional reasons, it is also an immersion. Hence, it remains to show that $\phi$ is bijective. Surjectivity is obvious. To prove injectivity, let $m_1,m_2\in M_{\sigma,H}$ and $g_1,g_2\in G$ be such that $\Phi_{g_1}(m_1)=\Phi_{g_2}(m_2)$. Then, $n\coloneqq g_2^{-1}g_1\in\rmN_G(H)$, because both $m_1$ and $\Phi_n(m_1)=m_2$ have stabilizer $H$. Thus, $g_2=g_1n^{-1}$ and hence $[(m_1,g_1H)]=[(m_2,g_2H)]$.
+
+    4. The natural inclusion mapping $M_{\sigma,H}\to M_\sigma$ descends to a mapping 
+    \[\wh\phi:M_{\sigma,H}\slash\Gamma_H\to \wh{M}_\sigma.\]
+    Since two points of $M_{\sigma,H}$ are conjugate under $G$ iff they are conjugate under $\rmN_G(H)$, $\wh\phi$ is a bijection. According to assertion 2 and Corollary~\ref{cor 6.5.1 RS1}, $M_{\sigma,H}\slash \Gamma_H$ carries a unique smooth structure such that the natural projection $M_{\sigma,H}\to M_{\sigma,H}\slash\Gamma_H$ is a submersion. We have the commutative diagram 
+    \[\begin{tikzcd}
+        M_{\sigma,H}\times^{\Gamma_H}(G\slash H)\arrow[r,"\phi"]\arrow[d,"\pi_{G\slash H}",swap] & M_\sigma \arrow[d,"\pi_\sigma"]\\
+        M_{\sigma,H}\slash \Gamma_H \arrow[r,"\wh\phi"] & \wh{M}_\sigma,
+    \end{tikzcd}\]
+    where $\pi_{G\slash H}$ is the natural projection in the corresponding associated fiber bundle. Thus, it is a submersion, and so it is open. Since $M_\sigma$ is an embedded submanifold, $\pi_\sigma$ is open, too. Thus, since $\phi$ is a homeomorphism, so is $\wh\phi$. We define a smooth structure on $\wh{M}_\sigma$ by requiring $\wh\phi$ to be a diffeomorphism. In view of the above diagram, w.r.t.\ this structure, $\pi_\sigma$ is a smooth submersion, and so is $\pi_{\sigma,H}$. Uniqueness is then obvious.
+\end{proof}
+
+\begin{rem}[{{\cite[Rem.~6.6.2]{RS1}}}]
+    \begin{enumerate}
+        \item The finer decomposition of the orbit type subsets of $\wh{M}$ into connected components is necessary because the latter may have different dimensions.
+        \item Since the smooth structure of $\wh{M}_\sigma$ is unique, assertion 4 above implies that the different choices of the subgroup $H\emb G$ representing $\sigma$ lead to diffeomorphic orbit manifolds $M_{\sigma,H}\slash\Gamma_H$. This assertion also generalizes Corollary~\ref{cor 6.5.1 RS1} to the case where the action is not free, but has a single orbit type.
+        \item The diffeomorphism $\wh\phi$ turns $M_{\sigma,H}$ into a principal $\Gamma_H$-bundle over $\wh{M}_\sigma$ with projection $\pi_{\sigma,H}$. Similarly, the diffeomorphisms $\phi$ and $\wh\phi$ turn $M_\sigma$ into a locally trivial fiber bundle over $\wh{M}_\sigma$ with typical fiber $G\slash H$ and projection $\pi_\sigma$, associated with that \gls{pfb}.
+        \item Since $\pi_\sigma:M_\sigma\to\wh{M}_\sigma$ is a submersion, it admits local sections. Tubular neighborhoods provide a distinguished class of local sections in the following way. Let $m\in M_\sigma$, let $\chi:U\to E$ be a tubular neighborhood of the orbit $G\cdot m$ and let $U_m$ be the corresponding slice at $m$. We have $M_\sigma\cap U_m=M_{\sigma,H}\cap U_m$, where $H=G_m$. Since the subset is mapped under $\chi$ onto $V_m^H=E_m^H\cap V_m$, it is an embedded submanifold of $M$. THe standard properties of slices stated in Remark~\ref{rem 6.4.2 RS1}(3) imply that any two distinct points in $M_\sigma\cap U_m$ belong to different orbits. It follows that the restriction of the surjective submersions $\pi_\sigma$ to $M_\sigma\cap U_m$ is injective and hence a diffeomorphism onto an open neighborhood of $\pi(m)$ in $\wh{M}_\sigma$. Then, the inverse of this map yields a local section of $\pi_\sigma$ at $\pi_\sigma(m)$, taking values in $U_m$, and composition of this section with $\chi$ yields a local chart on $\wh{M}_\sigma$ at $\pi_\sigma(m)$, taking values in the open subset $V^H_m$ of the vector space $E_m^H$.
+        \item The family $\{\wh{M}_\sigma\}_\sigma$ establishes a disjoint decomposition of $\wh{M}$ into manifolds. This decomposition has several additional properties reflecting how these manifolds fit together. In fact, it is a so-called \emph{Whitney stratification}. A similar statement is true for $M$ and the family $\{M_\sigma\}_\sigma$. If the orbit space $M\slash G$ is connected, there exists an orbit type which is minimal in the sense that one (and hence any) of its representatives is conjugate  to a subgroup of the stabilizer of an arbitrary point. The corresponding orbit type subset of $M\slash G$ is open and dense in $M\slash G$ and connected. It is therefore referred to as the \emph{principal stratum} of $M\slash G$. Correspondingly, all the other strata are called \emph{secondary strata}.
+    \end{enumerate}
+\end{rem}
+
+Part of the next proposition requires the definition of a Riemannian metric and uses Proposition~\ref{prop 1.3.7 RS1} showing their existence on any manifold.
+
+\begin{prop}[{{\cite[Prop.~6.3.7]{RS1}}}]\label{prop 6.3.7 RS1}
+    Let $(M,G,\Phi)$ be a proper Lie group action.
+    \begin{enumerate}
+        \item The $G$-invariant smooth functions separate the points of $M\slash G$: for any $m_1,m_2\in M$ such that $m_1\notin G\cdot m_2$, there exists a $f\in C^\infty(M)^G$ with $f(m_1)\neq f(m_2)$.
+        \item Every covering of $M$ by $G$-invariant open subsets admits a countable subordinate \gls{pou} by $G$-invariant smooth functions.
+        \item There exists a $G$-invariant Riemannian metric on $M$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Let $\pi: M\to M\slash G$ be the natural projection.
+
+    1. Let $m_1,m_2\in M$ be such that $\pi(m_1)\neq \pi(m_2)$. Since the orbit $G\cdot m_2$ is closed, using a local chart at $m_1$ one can construct a smooth function $f\geq 0$ with compact support such that $f(m_1)=1$ and $\supp(f)\cap (G\cdot m_2)=\varnothing$. Then, the average satisfies $f^G(m_1)>0$ and $f^G(m_2)=0$.
+
+    2. Let $\{U_j\}$ be an open covering of $M$ by $G$-invariant open sets. Then $\{\pi(U_j)\}$ is an open covering of $M\slash G$. Since, by Propositions~\ref{prop 6.1.5 RS1}(3) and \ref{prop 6.3.4 RS1}(3), $M\slash G$ is locally compact, second countable, and Hausdorff, there exists a countable subordinate open covering $\{V_i:i\in I\subset \bbN\}$ which is locally finite, see \cite[Lem.~1.9]{Warner}. Then $\{\pi^{-1}(V_i):i\in I\}$ is a locally finite covering of $M$ by invariant open subsets, subordinate to $\{U_j\}$. According to Proposition~\ref{prop 1.3.7 RS1}, there exists a \gls{pou} $\{f_{i,\alpha}:(i,\alpha)\in A\subset I\times\bbN\}$ with compact supports such that $\supp(f_{i,\alpha})\subset \pi^{-1}(V_i)$ for all $(i,\alpha)\in A$. By passing to the averages $f_{i,\alpha}^G$ we obtain a family of invariant smooth functions. However, these functions need no longer add up to $1$ and the family of their supports need no longer be locally finite. This can be remedied by an appropriate summation as follows. For $f\in C^\infty(M)$, let $f^{(k)}(m)$ denote the $k$-th order tangent map at $m$, viewed as a $k$-linear map $(\T_m M)^{\times k}\to \bbR$, and let $\lVert f^{(k)}(m)\rVert$ denote the operator norm of this map w.r.t.\ a chosen Riemannian metric on $M$, cf.\ Proposition~\ref{prop 4.4.2 RS1}. Define 
+    \[C_{i,\alpha}\coloneqq \sup\left\{\lVert f_{i,\alpha}^{(k)}(m)\rVert:0\leq k\leq \alpha\right\},\quad f_i(m)\coloneqq \sum_{\alpha=0}^\infty 2^{-\alpha}C_{i,\alpha}^{-1}f_{i,\alpha}^G(m).\]
+    The latter series converges absolutely for all $m\in M$, and so do all formal derivatives, hence $f_i$ is well-defined and smooth (in fact, this sequence converges in an appropriate topology on $C^\infty(M)$). By construction, $f_i$ is invariant and $\supp(f_i)\subset\pi^{-1}(V_i)$. In particular, the family $\{\supp(f_i):i\in I\}$ is a locally finite covering of $M$. Hence, $\sum_{i\in I}f_i(m)$ is well-defined for all $m$ and by dividing $f_i(m)$ by this sum one finally obtains the desired \gls{pou}.
+
+    3. Choose a countable atlas $\{(U_\alpha,\varphi_\alpha):\alpha\in A\}$ on $M$ such that the closures of the $U_\alpha$ are compact and carry out the construction of the symmetric rank $(0,2)$ tensor fields $\sfg_\alpha$, $\alpha\in A$, as in the proof of Proposition~\ref{prop 4.4.2 RS1}. Averaging yields invariant tensor fields $\sfg_\alpha^G$. As noted in the proof of point 2, the open covering $\{\pi(\supp(\sfg_\alpha))\}$ of $M\slash G$ admits a subordinate countable, locally finite covering $\{V_j:j\in J\}$. For each $j$, choose $\alpha_j$ so that $V_j\subset \supp(\sfg_{\alpha_j})$ and define $\sfg(m)\coloneqq\sum_{j\in J}\sfg_{\alpha_j}^G(m)$. This is an invariant smooth $(0,2)$-tensor field on $M$. Since on the interior of their supports the $\sfg_\alpha$ are Riemannian metrics, and since averaging does not affect this property, $\sfg$ is a Riemannian metric.
+\end{proof}
+
+Next we discuss the concept of a smooth function on the orbit space. Let $(M,G,\Phi)$ be a free proper Lie group action. In this case, $\wh{M}$ is a smooth manifold and $\pi:M\to \wh{M}$ is a principal bundle projection. Since $\pi$ is surjective, the pullback $\pi^\ast:C^\infty(\wh{M})\to C^\infty(M)$ is injective. Its image is contained in the subalgebra $C^\infty(M)^G$ of $G$-invariant functions. Conversely, every $f\in C^\infty(M)^G$ defines a function $\wh{f}$ on $\wh{M}$ by $\pi^\ast\wh{f}=f$. Since $\pi $ is a submersion, $\wh f$ is smooth. This shows that $\pi^\ast$ induces an algebra isomorphism from $C^\infty(\wh M)$ onto $C^\infty(M)^G$. If $(M,G,\Phi)$ is proper but not free, $\wh{M}$ does not inherit a smooth structure from $M$, hence a priori we do not have the concept of a smooth function on $\wh{M}$. However, the above observation and the fact that, due to Proposition~\ref{prop 6.3.7 RS1}(1), $C^\infty(M)^G$ separates the points of $\wh{M}$, motivate the following generalization.
+
+
+\begin{defn}[Smooth function on $M\slash G$]
+    $(M,G,\Phi)$ be a proper Lie group action and let $\wh{M}=M\slash G$ be its orbit space.
+    A continuous function $f\in C(\wh{M})$ is said to be smooth if the function $f\circ\pi\in C(M)$ is smooth. The set of smooth functions on $\wh{M}$ is denoted by $C^\infty(\wh{M})$.
+\end{defn}
+
+Obviously, $C^\infty(\wh{M})$ is an associative algebra, with operations being defined pointwise. By construction, the pullback $\pi^\ast$ defines an algebra isomorphism from $C^\infty(\wh M)$ onto $C^\infty(M)^G$.
+
+\begin{prop}
+    For every $\wh f\in C^\infty(\wh M)$ and every stratum $\sigma$, $\restr{\wh f}{\wh{M}_\sigma}\in C^\infty(\wh{M}_\sigma)$.
+\end{prop}
+\begin{proof}
+    Let $H\emb G$ be a subgroup representing $\sigma$. By assumption, $(\pi^\ast\wh{f})_{M_{\sigma,H}}=\pi^\ast_{\sigma,H}(\restr{\wh{f}}{\wh{M}_\sigma})$ is a smooth function on $M_{\sigma,H}$. Hence, the above argument for proper free actions yields that $\restr{\wh f}{\wh{M}_\sigma}$ is a smooth function on $\wh{M}_\sigma$.
+\end{proof}
+
+
+
+
+
+
 
 \section{Principal bundle morphisms}
 
@@ -4028,7 +4192,7 @@ First we characterize bundle reductions in terms of transition functions.
 The second criterion for reducibility is in terms of equivariant functions.
 
 \begin{prop}[{{\cite[Prop.~1.6.2]{RS2}}}]\label{prop 1.6.2 RS2}
-    Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a principal bundle and $G\overset{\sigma}{\acts}F$ a \emph{transitive} Lie group action. Let $f\in F$ and let $G_f\sub G$ be the stabilizer group of $f$ under the action $\sigma$. Then every equivariant map $\varphi\in\Hom_G(P,F)$ defines a reduction of $P$ to an embedded principal $G_f$-subbundle
+    Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a principal bundle and $G\overset{\sigma}{\acts}F$ a \emph{transitive} Lie group action. Let $f\in F$ and let $G_f\emb G$ be the stabilizer group of $f$ under the action $\sigma$. Then every equivariant map $\varphi\in\Hom_G(P,F)$ defines a reduction of $P$ to an embedded principal $G_f$-subbundle
     \[Q_f\coloneqq \varphi^{-1}(f)=\{p\in P:\varphi(p)=f\}.\]
     Conversely, every such reduction defines an element $\varphi\in \Hom_G(P,F)$.
 \end{prop}
@@ -4068,7 +4232,7 @@ The following proposition characterizes the isomorphism classes of bundle reduct
 Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions of a principal bundle $P(M,G)$ to a given closed subgroup $H$ if $G$. To formulate it, we consider the natural action of $G$ on the homogeneous space $G\slash H$ by left translation and build the associated bundle $P\times^G G\slash H$, whose total space is $P\slash H$.
 
 \begin{cor}[{{\cite[Cor.~1.6.5]{RS2}}}]\label{cor 1.6.5 RS2}
-    The reductions of a principal $G$-bundle $P$ to a closed subgroup $H\sub G$ are in a natural one-to-one correspondence with the smooth sections of the associated bundle $P\times^G G\slash H\cong P\slash H$.
+    The reductions of a principal $G$-bundle $P$ to a closed subgroup $H\emb G$ are in a natural one-to-one correspondence with the smooth sections of the associated bundle $P\times^G G\slash H\cong P\slash H$.
 \end{cor}
 \begin{proof}
     By Proposition~\ref{prop 1.2.6 RS2}, the sections of $P\times^G G\slash H$ are in one-to-one correspondence with elements of $\Hom_G(P,G\slash H)$. Since $G\slash H$ is a transitive $G$-manifold, we can apply Proposition~\ref{prop 1.6.2 RS2} with $f=[e]$.

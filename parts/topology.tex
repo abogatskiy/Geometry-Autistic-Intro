@@ -2732,7 +2732,7 @@ From now on we work only with smooth manifolds, and use the word ``manifold''  t
     The above exercise illustrates the general alternative approach to manifolds: instead of defining a smooth structure in terms of charts, we could describe it by specifying \emph{what smooth functions should be} by describing the subsets of the sets of local continuous functions $C(U_\alpha)$ that we want to be smooth (more precisely, one has to pick a subsheaf of the sheaf of continuous functions that is locally isomorphic to the sheaf of smooth functions on $\bbR^n$).
 \end{rem}
 \begin{defn}[Manifolds with boundaries]\index{Manifold!with boundaries/corners}
-    Let $\wb\bbR_+^n$ be the closed upper half-space in $\bbR^n$ (i.e., $x^n\geq 0$). An $n$-dimensional manifold with boundaries is defined just like a smooth manifold, only now some of the chart maps can map to $\wb\bbR_+^n$. The smoothness of boundary transitions is characterized as follows: any function $\wb\bbR_+^n\to \wb\bbR_+^n$ is called smooth if it can be extended as a smooth function into an open neighborhood of $\wb\bbR_+^n$. The set of points of $M$ that map to the boundary of $\wb\bbR_+^n\subset \bbR^n$, i.e., the hyperplane $x^n=0$, is called the boundary $\partial M$. We also denote the interior by $\mathring M=M\setminus \partial M$.
+    Let $\wb\bbR_+^n$ \index{$\wb\bbR_+^n$} be the closed upper half-space in $\bbR^n$ (i.e., $x^n\geq 0$). An $n$-dimensional manifold with boundaries is defined just like a smooth manifold, only now some of the chart maps can map to $\wb\bbR_+^n$. The smoothness of boundary transitions is characterized as follows: any function $\wb\bbR_+^n\to \wb\bbR_+^n$ is called smooth if it can be extended as a smooth function into an open neighborhood of $\wb\bbR_+^n$. The set of points of $M$ that map to the boundary of $\wb\bbR_+^n\subset \bbR^n$, i.e., the hyperplane $x^n=0$, is called the boundary $\partial M$. We also denote the interior by $\mathring M=M\setminus \partial M$.
 \end{defn}
 \begin{example}
     $\sqrt{y}:\wb\bbR_+\to\bbR $ is not smooth on $\wb\bbR_+$ with the standard smooth structure. However, it can be taken to be the chart map defining a new smooth structure on $\wb\bbR_+$, and in that new structure it'll become smooth, because its local representative will be the identity map.
@@ -2796,7 +2796,7 @@ This expression is well-defined because the sum in the denominator is finite for
     Any open covering of a paracompact Hausdorff space admits a subordinate \gls{pou}.
 \end{prop}
 
-\begin{prop}
+\begin{prop}[{{\cite[Prop.~1.3.7]{RS1}}}]\label{prop 1.3.7 RS1}
     Any open covering of a smooth manifold admits a subordinate partition of unity.
 \end{prop}
 \begin{proof}
@@ -3099,13 +3099,13 @@ $f\in C^\infty (M,N)$ is an immersion iff it is a local embedding (i.e., every p
 \section{Submanifolds}
 Immersions and embeddings give rise to the notions of immersed and embedded submanifolds.
 
-\begin{defn}\index{Submanifold!immersed}\index{Submanifold!embedded}\index{Submanifold!weakly embedded}\index{Submanifold!initial}\index{Submanifold!properly embedded}
+\begin{defn}[Submanifolds]\index{Submanifold!Immersed}\index{Submanifold!Embedded}\index{Submanifold!Weakly embedded}\index{Submanifold!Initial}\index{Submanifold!properly embedded}
 Let $S$ and $M$ be smooth manifolds and let $i:S\to M$ be a continuous map. This triple $S\overset{i}{\to}M$ is called:\index{Submanifold}
 \begin{enumerate}
-    \item an immersed submanifold if $i$ is a smooth immersion. We write $S<M$.
-    \item  a weakly embedded submanifold, or \emph{initial}, if it is immersed and every smooth map $f:N\to M$ such that $\im f\subset S$ restricts in the codomain to a smooth map $f:N\to S$.
-    \item an embedded submanifold if $i$ is a smooth embedding map. Often $S\subset M$ with the subspace topology. Then $i$ is required to be a only a topological embedding (and a smooth structure on $S$ can be induced via $i$). We write $S\sub M$.
-    \item a properly embedded submanifold if $i$ is a proper smooth embedding map. We write $S\sube M$.
+    \item an \emph{immersed submanifold} if $i$ is a smooth immersion. We write $S<M$.\index{$<$}
+    \item  a \emph{weakly embedded submanifold}, or an \emph{initial submanifold}, if it is immersed and every smooth map $f:N\to M$ such that $\im f\subset S$ restricts in the codomain to a smooth map $f:N\to S$. We write $S\embweak M$.
+    \item an \emph{embedded submanifold} if $i$ is a smooth embedding map. Often $S\subset M$ with the subspace topology. Then $i$ is required to be a only a topological embedding (and a smooth structure on $S$ can be induced via $i$). We write $S\emb M$.\index{$\emb$}
+    \item a \emph{properly embedded submanifold} if $i$ is a proper smooth embedding map. We write $S\embprop M$.\index{$\embprop$}
 \end{enumerate}
 The codimension \index{Codimension} of a submanifold is defined as $\codim S=\dim M -\dim S$.
 \end{defn}
@@ -3115,11 +3115,12 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 \begin{example}\label{example submanifolds}
 \begin{enumerate}
     \item Any open subset is a codimension zero embedded submanifold.
-    \item If $F:M\to N$ is an embedding, then $F(M)\sub N$ in the subset sense. i.e., embedded submanifolds inside $N$ are exactly the images of embedding maps.
-    \item If $S\sub M$ as a subset, then $S$ is closed iff $S\sube M$.
-    \item If $S\sub M$ and $S$ is compact, then $S\sube M$.
+    \item If $F:M\to N$ is an embedding, then $F(M)\emb N$ in the subset sense. i.e., embedded submanifolds inside $N$ are exactly the images of embedding maps.
+    \item If $S\emb M$ as a subset, then $S$ is closed iff $S\embprop M$.
+    \item If $S\emb M$ and $S$ is compact, then $S\embprop M$.
     \item  The figure eight immersion $t\mapsto (\sin 2t,\sin t)$ is a weak embedding but not an embedding.
-    \item If $f\in C^\infty(N,M)$, then its graph $\mathrm{graph}(f)\subset N\times M$ is an embedded submanifold.
+    \item If $f\in C^\infty(N,M)$, then its graph $\graph(f)\subset N\times M$ is an embedded submanifold.
+    \item The inverse of the stereographic projection $\bbS^n\setminus \{\bf{e}_n\}\to \bbR^n$ gives an embedding $\bbR^n\hookrightarrow \bbS^n$. It is not proper.
 \end{enumerate}
 \end{example}
 
@@ -3133,7 +3134,7 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 
 
 \begin{prop}[Slice charts {{\cite[Thm.~5.8]{Lee}}}]\index{Slice chart}
-    A subset $S\subset M$ is an embedded submanifold iff every point $m\in S$ has a local \emph{slice chart}, that is, a local chart map $\varphi$ on a neighborhood $U_m\subset M$  such that its image is a slice ball: $\varphi(S\cap U_m)=\{(x^1,\ldots,x^k,0,\ldots,0)\}$, where $k$ is a fixed number called the \emph{dimension} of $S$. In particular, given the existence of slice charts, there is a unique smooth structure on $S$ (given by a codomain restriction of the slice atlas) compatible with the subset topology such that $S\sub M$.
+    A subset $S\subset M$ is an embedded submanifold iff every point $m\in S$ has a local \emph{slice chart}, that is, a local chart map $\varphi$ on a neighborhood $U_m\subset M$  such that its image is a slice ball: $\varphi(S\cap U_m)=\{(x^1,\ldots,x^k,0,\ldots,0)\}$, where $k$ is a fixed number called the \emph{dimension} of $S$. In particular, given the existence of slice charts, there is a unique smooth structure on $S$ (given by a codomain restriction of the slice atlas) compatible with the subset topology such that $S\emb M$.
 \end{prop}
 \begin{proof}
     It suffices to check that slice charts, whose existence was proved above, form a smooth atlas on $S$. This also proves that, given a topologically embedded submanifold $S$ in a smooth manifold $M$, one can induce a smooth structure on $S$, essentially by defining the slice atlas. See the cited reference for full details.
@@ -3182,8 +3183,8 @@ Note that sometimes immersed ``submanifolds'' are defined as images of arbitrary
 
 \begin{thm}[Extensions of functions]
 \begin{enumerate}
-    \item If $S\sub M$ as a subset, then any $f\in C^\infty(S)$ can be extended to a $\wt f\in C^\infty(U)$ for some open neighborhood $S\subset U\subset M$ (possibly $U=S$).
-    \item If in the above, $S\sube M$, then there is extension to the whole $M$.
+    \item If $S\emb M$ as a subset, then any $f\in C^\infty(S)$ can be extended to a $\wt f\in C^\infty(U)$ for some open neighborhood $S\subset U\subset M$ (possibly $U=S$).
+    \item If in the above, $S\embprop M$, then there is extension to the whole $M$.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -3202,7 +3203,7 @@ Let $S< M$ as a subset and $f\in C^\infty(M,N)$. Then:
 \begin{enumerate}
     \item the restriction $\restr{f}{S}:S\to N$ is smooth;
     \item if $K<N$, $f(M)\subset K$, and $f$ is continuous as a map $M\to K$, then the codomain restriction $\restr{f}{}^{K}:S\to K$ is also smooth.
-    \item if $K\sub N$ and $f(S)\subset K$, then the double restriction $\restr{f}{S}^{K}:S\to K$ is also smooth.
+    \item if $K\emb N$ and $f(S)\subset K$, then the double restriction $\restr{f}{S}^{K}:S\to K$ is also smooth.
 \end{enumerate}
 \end{thm}
 \begin{proof}
@@ -3217,7 +3218,7 @@ Note that to be able to restrict a smooth map in range to an immersed manifold $
 \end{rem}
 
 \begin{thm}[{{\cite[Thm.~5.31]{Lee}}}]\label{thm 5.31 Lee}
-    If $S\sub M$ is embedded, then the subspace topology on $S$ and the smooth structure defined by slice charts are the only topology and smooth structure w.r.t.\ which $S$ is an embedded or even immersed manifold.
+    If $S\emb M$ is embedded, then the subspace topology on $S$ and the smooth structure defined by slice charts are the only topology and smooth structure w.r.t.\ which $S$ is an embedded or even immersed manifold.
 \end{thm}
 
 \begin{thm}[{{\cite[Thm.~5.32]{Lee}}}]\label{thm 5.32 Lee}
@@ -5598,6 +5599,11 @@ This gives us yet another way of proving that $\pi_1(G)$ is always abelian.
     Moreover, $\Gamma$ is closed because otherwise there would exist a Cauchy sequence $(\gamma_k)\in\Gamma$, i.e.~$\gamma_k-\gamma_{k+1}\to 0$ (the existence of a limit is irrelevant for this proof, a mere existence of a Cauchy sequence is enough), which would contradict the fact that $0$ is isolated in $\Gamma$. Therefore, by definition of the quotient topology and since $\Gamma$ is $q$-saturated, $q(\Gamma)$ is also closed.  Therefore $q(\Gamma)\cong \Gamma\slash \bbZ^k$ is compact and discrete, hence finite. Since $\bbZ^k$ and $\Gamma\slash \bbZ^k$ are both finitely generated, it follows that $\Gamma$ is also finitely generated (by the union of the generators of $\bbZ^k$ and $\Gamma\slash \bbZ^k$). Since $V$ is torsion-free, we obtain that $\Gamma$ is free abelian.  The fact that $\Gamma\slash \bbZ^k$ is finite then implies that $\rank \Gamma=k$. Therefore there exists a set of generators $x_1,\ldots,x_k$ for $\Gamma$ which also provide a basis for $V$.
     % In summary, $G$ is the quotient of its universal covering group, which must be abelian and simply connected, hence isomorphic to $\bbR^n$, by a discrete subgroup. As we just showed, this produces a decomposition $\bbR^n\slash\Gamma \cong (\bbR^k\slash\Gamma) \oplus \bbR^{n-k}\cong \bbT^k\oplus \bbR^{n-k}$.
 \end{proof}
+
+\begin{rem}
+    The topology of $\Gamma$ here is assumed to be the relative topology induced from $\bbR^n$. Otherwise, we could take $\Gamma=\bbQ^n$ with the discrete topology on it.
+\end{rem}
+
 \begin{rem}
     We will later show that $\bbR^n$ are the only simply connected abelian Lie groups, and it will follow that any other connected abelian Lie group $G$ is a quotient of $\bbR^n$ by a lattice of rank $k\leq n$, so $G\cong \bbT^k\oplus \bbR^{n-k}$.
     
@@ -6076,7 +6082,7 @@ This kind of a semiproduct is called \emph{internal}, but this theorem essential
 An important class of matrix Lie groups closely related to classical groups are affine groups, extending the definition of the Euclidean group above.
 
 \begin{defn}[Affine extension]\index{Affine extension}
-    Let $G\sub \GL_n(\bbK)$, where $\bbK=\bbR$ or $\bbC$, be a matrix Lie group. The \emph{affine extension} of $G$ is the semidirect product 
+    Let $G\emb \GL_n(\bbK)$, where $\bbK=\bbR$ or $\bbC$, be a matrix Lie group. The \emph{affine extension} of $G$ is the semidirect product 
     \[\bbA G\coloneqq G\ltimes \bbK^n,\]
     where the canonical action of $G$ on $\bbK^n$ is implied. The resulting normal subgroup $\bbK^n$ is called the \emph{group of translations}. $\bbA G$ is isomorphic to the subgroup of $\GL_{n+1}(\bbK)$ consisting of matrices of the block form
     \[\begin{bmatrix}
@@ -6579,13 +6585,15 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 
 \begin{defn}[Ideal]\index{Ideal}
-    An ideal of a Lie algebra $\frakg$ is a linear subspace $\frakn\subset\frakg$ such that
+    An ideal of a Lie algebra $\frakg$ is a linear subspace $\frakn<\frakg$ such that
     \[[\frakg,\frakn]\subset \frakn.\]
-    In other words, $\frakn$ must be stable under all inner derivations of $\frakg$. Note that an ideal is automatically a Lie subalgebra, but in this case we use the special notation $\frakn\sube \frakg$.
+    In other words, $\frakn$ must be stable under all inner derivations of $\frakg$. Note that an ideal is automatically a Lie subalgebra, but for ideals we use the special notation $\frakn\sub \frakg$.\index{$\sub$}
 \end{defn}
 
+Since ideals are also well-defined in all rings, algebras and groups, we will use the symbol $\sub$ for ideals in all of these categories. For example an ideal in a group is just a normal subgroup.
+
 \begin{prop}
-    If $H\subset G$ is a normal immersed Lie subgroup, then $\Lief H\leq \Lief G$ is an ideal.
+    If $H\sub G$ is a normal immersed Lie subgroup, then $\Lief H\leq \Lief G$ is an ideal.
 \end{prop}
 \begin{proof}
     If $H$ is normal, $\Ad:G\to \GL(\T_eG)$ takes values in the subgroup of $\GL(\T_eG)$ that leaves $\T_e H$ invariant. Hence the same applies to its derivative $\ad$.
@@ -6620,12 +6628,12 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 \begin{enumerate}
     \item The centralizer of an ideal in a Lie algebra is also an ideal.
     \item The kernel of any Lie algebra homomorphism is an ideal.
-    \item if $A,B\sube\frakg$ are two ideals, then $A+B$ and $A\cap B$ are also ideals.
-    \item If $A,B\sube \frakg$ are two ideals, then the commutator subspace $[A,B]=\{[a,b]\mid a\in A,b\in B\}$ is itself an ideal. This is in fact equivalent to the Jacobi identity.
-    \item For $A,B,C\sube \frakg$, verify
+    \item if $A,B\sub\frakg$ are two ideals, then $A+B$ and $A\cap B$ are also ideals.
+    \item If $A,B\sub \frakg$ are two ideals, then the commutator subspace $[A,B]=\{[a,b]\mid a\in A,b\in B\}$ is itself an ideal. This is in fact equivalent to the Jacobi identity.
+    \item For $A,B,C\sub \frakg$, verify
     \[[A+B,C]=[A,C]+[B,C].\]
     Is it true that $[A\cap B,C]=[A,C]\cap [B,C]$?
-    \item For $A,B,C\sube \frakg$, verify
+    \item For $A,B,C\sub \frakg$, verify
     \[[[A,B],C]=[[B,C],A]+[[C,A],B].\]
     \item $\Inn(\frakg)$ is an ideal of $\Der(\frakg)$.
     \item The normalizer of the Lie algebra of a Lie group $G$ is the Lie algebra of the normalizer of $G$.
@@ -6633,7 +6641,7 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 \end{xca}
 
 \begin{defn}[Quotient algebra]
-    For an ideal $\frakn\sube\frakg$, one can define the quotient Lie algebra $\frakg\slash \frakn$ as the quotient of vector spaces (whose elements are all the subspaces of the form $A+\frakn$) with the Lie bracket
+    For an ideal $\frakn\sub\frakg$, one can define the quotient Lie algebra $\frakg\slash \frakn$ as the quotient of vector spaces (whose elements are all the subspaces of the form $A+\frakn$) with the Lie bracket
     \[[A+\frakn,B+\frakn]=[A,B]+\frakn.\]
 \end{defn}
 
@@ -6648,7 +6656,7 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 
 \begin{defn}[Semidirect product of Lie algebras]\index{Semidirect product}
-    Let $\frakh\leq \frakg$ and $\frakn\sube \frakg$. We say that $\frakg$ is the semidirect product of $\frakh$ and $\frakn$ if the restriction of the canonical projection $\frakg\to \frakg\slash\frakn$ to $\frakh$ induces an isomorphism $\frakh\cong \frakg\slash\frakn$.
+    Let $\frakh\leq \frakg$ and $\frakn\sub \frakg$. We say that $\frakg$ is the semidirect product of $\frakh$ and $\frakn$ if the restriction of the canonical projection $\frakg\to \frakg\slash\frakn$ to $\frakh$ induces an isomorphism $\frakh\cong \frakg\slash\frakn$.
 
     Every semidirect product can be constructed as the modification of the direct sum of the Lie algebras $\frakh\oplus\frakn$ where for any $A\in \frakh$ and $B\in\frakn$ we set $[A,B]=\theta(A)B$ with some Lie algebra homomorphism $\theta:\frakh\to \Der(\frakn)$.
 \end{defn}
@@ -6663,7 +6671,7 @@ The obvious question is now: Does the converse hold? The answer turns out to be 
 
 \section{Low-dimensional Lie algebras}\label{sec: low-dim lie algebras}
 
-Recall that an ideal is a subspace that is stable under only inner derivations on $\frakg$. Moreover, $A\sube B\sube C$ doesn't imply $A\sube C$. These defects are corrected in the next concept.
+Recall that an ideal is a subspace that is stable under only inner derivations on $\frakg$. Moreover, $A\sub B\sub C$ doesn't imply $A\sub C$. These defects are corrected in the next concept.
 
 \begin{defn}[Characteristic ideal]
     A subspace $\frakn\subset \frakg$ is called a characteristic ideal of the Lie algebra $\frakg$ if 
@@ -6676,7 +6684,7 @@ Recall that an ideal is a subspace that is stable under only inner derivations o
     \item A characteristic ideal of an ideal is an ideal.
     \item A characteristic ideal of a characteristic ideal is a characteristic ideal.
     \item If $A,B$ are two characteristic ideals of $\frakg$, then $[A,B]$ is one too.
-    \item If $\frakn\sube \frakg$ is such that $[\frakn,\frakn]=\frakn$, then it is characteristic.
+    \item If $\frakn\sub \frakg$ is such that $[\frakn,\frakn]=\frakn$, then it is characteristic.
 \end{enumerate}
 \end{xca}
 
@@ -6709,7 +6717,7 @@ Recall that an ideal is a subspace that is stable under only inner derivations o
 \end{proof}
 
 \begin{lem}\label{lem 2}
-    If the two-dimensional Lie algebra $M$ is an ideal $M\sube \frakg$, then it is a direct summand of $\frakg$.
+    If the two-dimensional Lie algebra $M$ is an ideal $M\sub \frakg$, then it is a direct summand of $\frakg$.
 \end{lem}
 \begin{proof}
     As we know, $\frakn=\rmC_\frakg(M)$ is an ideal of $\frakg$. Since the center of $M$ is trivial, $\frakn\cap M=0$. On the other hand, for any $x\in\frakg$ the restriction $\restr{\ad_x}{M}$ is a derivation of $M$ and thus, by the preceding lemma, is inner. Thus there exists $y\in M$ such that $\restr{\ad_x}{M}=\restr{\ad_y}{M}$. But then $\ad_{x-y}(M)=0$, hence $x-y\in \frakn$ and we have the decomposition $x=(x-y)+y\in \frakn\oplus M$.

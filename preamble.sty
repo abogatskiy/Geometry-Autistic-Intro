@@ -19,6 +19,7 @@
 %\usepackage[amsthm]{ntheorem}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{graphicx}
 % \usepackage{mathabx}
 \usepackage{ytableau}
 \usepackage{wasysym}
@@ -363,7 +364,7 @@
 \newcommand{\calV}{\mathcal{V}}
 \newcommand{\calVo}{\mathcal{V}_{\mathrm{o}}}
 \newcommand{\calVr}{\mathcal{V}_{\mathrm{r}}}
-
+\newcommand{\calY}{\mathcal{Y}}
 
 \newcommand{\fraka}{\mathfrak{a}}
 \newcommand{\frake}{\mathfrak{e}}
@@ -379,6 +380,7 @@
 \newcommand{\frakb}{\mathfrak{b}}
 \newcommand{\frakd}{\mathfrak{d}}
 \newcommand{\frakp}{\mathfrak{p}}
+\newcommand{\frakr}{\mathfrak{r}}
 \newcommand{\fraku}{\mathfrak{u}}
 \newcommand{\frakz}{\mathfrak{z}}
 \newcommand{\frakgl}{\mathfrak{gl}}
@@ -403,8 +405,21 @@
 \newcommand{\dd}{\mathop{}\!\mathrm{d}}
 % \usepackage{bm}
 \newcommand{\bm}[1]{\boldsymbol{#1}}
+
+
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
+\newcommand{\emb}{\mathop{\mathbin{\raisebox{.0ex}{\rotatebox[origin=c]{180}{$\ge$}}}}}
+\newcommand{\embweak}{\mathop{\mathbin{\raisebox{.3ex}{\rotatebox[origin=c]{180}{$\gtrsim$}}}}}
+\newcommand{\embsub}{\mathop{\mathbin{\raisebox{.2ex}{\rotatebox[origin=c]{180}{$\trianglerighteq$}}}}}
+\newcommand{\embprop}{\mathop{\mathbin{\raisebox{.1ex}{\rotatebox[origin=c]{180}{$\sqsupseteq$}}}}}
+% \newcommand{\embprop}{\mathrel{\mathpalette\bleqinn\relax}}
+% \newcommand{\bleqinn}[2]{%
+%   \ooalign{%
+%     \raisebox{.0ex}{$#1\blacktriangleleft$}\cr
+%     $#1\emb$\cr}}
+
+
 \renewcommand{\i}{\mathrm{i}}
 \renewcommand{\Re}{\operatorname{\mathsf{Re}}}
 \renewcommand{\Im}{\operatorname{\mathsf{Im}}}
@@ -465,7 +480,9 @@
 % \DeclareMathOperator{\Ad}{Ad}
 % \DeclareMathOperator{\Adg}{\mathbf{Ad}}
 % \DeclareMathOperator{\Span}{span}
+\newcommand{\diag}{\mathrm{diag}}
 \renewcommand{\implies}{\Rightarrow}
+\DeclareMathOperator{\graph}{graph}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\ver}{ver}
 \DeclareMathOperator{\hor}{hor}
@@ -481,6 +498,8 @@
 \DeclareMathOperator{\Mat}{Mat}
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\aut}{\mathfrak{aut}}
+\DeclareMathOperator{\cha}{\mathfrak{char}}
+\DeclareMathOperator{\sym}{\mathfrak{sym}}
 \DeclareMathOperator{\Gau}{Gau}
 \DeclareMathOperator{\gau}{\mathfrak{gau}}
 \DeclareMathOperator{\Fr}{Fr}
@@ -609,7 +628,8 @@
         \fi}
 \makeatother
 
-\usepackage{graphicx}
+
+% This block needs graphicx
 \newcommand{\PRLsep}{   %decorative line used to separate sections
            \noindent\makebox[\linewidth]{
                 \resizebox{0.5\linewidth}{1pt}{$\blacklozenge$}}}
