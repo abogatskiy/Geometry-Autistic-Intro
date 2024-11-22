@@ -134,7 +134,7 @@ The following fundamental theorem gives us a useful sufficient condition for a m
 So far we have only given a purely topological (or geometric in the smooth case) description of fiber bundles. The fascinating thing about fiber bundles, however, is that the requirement of local triviality gives rise to an alternative \emph{algebraic} description of fiber bundles, which will eventually lead us into the realm of cohomology. A similar, but more cumbersome, description appears for general topological fibrations as well. We now characterize fiber bundles in terms of their systems of local trivializations and identify their transition maps with certain Lie group actions. Note that everything here easily translates to the category of topological fiber bundles as well.
 
 
-\begin{defn}[Bundle atlas, $G$-structure, cocycle]
+\begin{defn}[Bundle atlas, $G$-structure, cocycle]\label{def G-bundle}
     Let $E\overset{\pi}{\to}M$ be a smooth \gls{fb} with typical fiber $F$, and let $\{U_\alpha\}_\alpha$ be an open covering of $M$ such that the restrictions $\restr{E}{U_\alpha}$ are trivial. By definition of local triviality, we have some diffeomorphisms $\chi_\alpha: \restr{E}{U_\alpha}\to U_\alpha\times F$, called \emph{local trivializations}. Then:
 \begin{itemize}
 
@@ -2469,15 +2469,19 @@ Recall that a distribution $D$ on a manifold is an assignment of a subspace $D_m
 \end{defn}
 
 \begin{defn}[Integrable distribution]\index{Integrable distribution}
-    A smooth distribution $D< \T M$ is called integrable if every $m\in M$ is contained in a (local) integral manifold of $D$.
+    A smooth distribution $D< \T M$ is called (completely) integrable if every $m\in M$ is contained in a (local) integral manifold of $D$.
 \end{defn}
+
+\begin{rem}
+    Rarely in the literature, a distribution may be called integrable if it has integral manifolds of \emph{some} positive dimension at every point, but we will treat the term ``integrable distribution' as synonymous to ``completely integrable distribution''. Integrability will be distinguished from complete integrability in \Chap~\ref{chap eds}.
+\end{rem}
 
 \begin{defn}[Involutive distribution]\index{Involutive distribution}
     For a smooth distribution $D< \T M$, denote by $\Gamma^\infty(D)\subset\fX(M)$ the space of $D$-valued vector fields. $D$ is called involutive if $\Gamma^\infty(D)$ is a Lie subalgebra of $\fX(M)$, i.e., $[X,Y]\in\Gamma^\infty(D)$ for all $X,Y\in\Gamma^\infty(D)$.
 \end{defn}
 
 \begin{thm}[Frobenius Theorem (Clebsch 1866) {{\cite[Thm.~19.12]{Lee}}}]\index{Theorem!Frobenius}\label{thm frobenius}
-    A smooth distribution $D$ is involutive iff it is integrable.
+    A smooth distribution $D$ is involutive iff it is completely integrable.
 \end{thm}
 \begin{proof}
     The backwards direction is trivial: if $D$ is integrable, then $D=\T N$ locally, which implies involutivity.
@@ -3566,7 +3570,7 @@ The system of PDEs (\ref{eq 4.7.2 RS1}) is the \emph{Pfaffian system of equation
 
     Given a $k$-th order system of PDEs for maps $f:\bbR^n\to \bbR^s$, 
     \[F^r(x^i,u^a,\partial_I u^a)=0,\quad 1\leq r\leq R,\; 1\leq \deg(I)\leq k,\]
-    we define a submanifold $S\subset \rmJ^k$ by the equations $F^r(x^i,u^a,p_I^a)=0$. The $k$-graphs of solutions of the PDE system are precisely such that the pullback of the contact system to them vanishes. Note that usually we only seek $n$-dimensional integral manifolds (graphs of functions of $n$ variables), and $n$ is typically lower than the dimension required by the Frobenius integrability (which would be $s\left(n+\binom{n}{k}\right)-R$). For this reason, one usually specifies a so called \emph{independence condition}\index{Independence condition} $\dd x^1\wedge\cdots\wedge\dd x^n$, which is required to induce a volume form on integral manifolds, thus specifying their dimensionality (see below). Since this setting is outside of the scope of the Frobenius Theorem, we delay its full exploration until \Sect~\ref{sec: PDEs}.
+    we define a submanifold $S\subset \rmJ^k$ by the equations $F^r(x^i,u^a,p_I^a)=0$. The $k$-graphs of solutions of the PDE system are precisely such that the pullback of the contact system to them vanishes. Note that usually we only seek $n$-dimensional integral manifolds (graphs of functions of $n$ variables), and $n$ is typically lower than the dimension required by the Frobenius integrability (which would be $s\left(n+\binom{n}{k}\right)-R$). For this reason, one usually specifies a so called \emph{independence condition}\index{Independence condition} $\dd x^1\wedge\cdots\wedge\dd x^n$, which is required to induce a volume form on integral manifolds, thus specifying their dimensionality (see below). Since this setting is outside of the scope of the Frobenius Theorem, we delay its full exploration until \Sect~\ref{chap: EDSs}.
 \end{rem}
 
 If the $\{\theta^j\}_{j=1}^r$, $r=n-p$, are linearly independent, $\Delta$ is regular of rank $r$. Then $\Delta$ is integrable iff so is the annihilator $\Delta^0=\ker\theta^1\cap\cdots\cap\ker\theta^{n-r}$. In the special case $r=1$, the Pfaffian system can be viewed as defining a \emph{field of hyperplanes} on $M$, and we obtain the following simple solvability criterion.
@@ -3617,7 +3621,7 @@ Now, we are going to derive Frobenius' integrability criterion for regular Pfaff
     A Pfaffian system whose algebraic closure $\Omega^{\smbullet}_\Delta(M)$ is a differential ideal is sometimes called \emph{closed} (referring to the fact that $\Omega^{\smbullet}_\Delta(M)$ is closed under the action of $\dd$).
     The power of the Frobenius Theorem is thus in reducing the question of the existence of \emph{complete solutions} for a system of arbitrary Pfaffian equations to a problem in linear algebra: is a certain subspace of the space of differential forms invariant under the action of the linear operator $\dd$ or not? Problems that have solutions in the Frobenius sense are called \emph{completely integrable}, and the theorem itself states that a system is completely integrable iff it is closed. In the language of dynamical systems, solutions of completely integrable systems can be expressed in terms of a \emph{complete set of conserved quantities} (integrals of motion, cf.\ Definition~\ref{def complete integral}), which are simply the local coordinates in a neighborhood of the integral manifold which are constant along the integral foliation and complementary to the independent variables that parametrize the leaf. By specifying a single point on $M$, parametrized by the independent variables plus the integrals of motion, we get a unique solution. Note that this class of systems does not include systems where the solution depends on arbitrary \emph{functions} as opposed to constants (e.g., $u_x=u_y$ or $u_{xy}=0$). These arbitrary functions parametrize the values of the solution along certain submanifolds (e.g.~``boundary conditions''), thus no single point can fix a unique integral manifold, and so this is clearly not a Frobenius setting.
     
-    In summary, the Frobenius Theorem is not sufficient for studying the solvability of arbitrary PDEs because they almost never have complete integrals, and moreover, we are usually content with integral manifolds of dimension lower than the rank of the system. In fact, if there are $n$ independent variables, then an $n$-dimensional integral manifold is all we need. These general problems will require a much more sophisticated machinery (albeit still nothing but linear algebra), developed by Cartan, that we will turn to in \Chap~\ref{sec: PDEs}.
+    In summary, the Frobenius Theorem is not sufficient for studying the solvability of arbitrary PDEs because they almost never have complete integrals, and moreover, we are usually content with integral manifolds of dimension lower than the rank of the system. In fact, if there are $n$ independent variables, then an $n$-dimensional integral manifold is all we need. These general problems will require a much more sophisticated machinery (albeit still nothing but linear algebra), developed by Cartan, that we will turn to in \Chap~\ref{chap: EDSs}.
 \end{rem}
 
 Next, we derive local criteria for a regular Pfaffian system to be integrable. We need
@@ -3934,7 +3938,7 @@ The following final general relation is an immediate consequence of Lemma~\ref{l
 \end{thm}
 
 \begin{rem}
-    Each of the summands in the above formula looks like a semidirect product of graded Lie algebras. However, the maps $i:\Omega^{\smbullet}(M;\T M)\to \End(\Omega^{\smbullet}(M;\T M),[\,,\,])$ and $\ad:\Omega^{\smbullet}(M;\T M)\to \End(\Omega^{\smbullet}(M;\T M),[\,,\,]^{\wedge})$ do not take values in the subspaces of graded derivations. That is, $i_L[K_1,K_2]$ differs from $[i_LK_1,K_2]+(-1)^{k_1l}[K_1,i_LK_2]$, and $[K,[L_1,L_2]^{\wedge}]$ differs from $[[K,L_1],L_2]^{\wedge}+(-1)^{kk_1}[L_1,[K,L_2]]^{\wedge}$. The formulas containing the right correction terms (see \cite[Thm.~8.11]{Kolar}) define a so called Zappa-Szep product.
+    Each of the summands in the above formula looks like a semidirect product of graded Lie algebras. However, the maps $i:\Omega^{\smbullet}(M;\T M)\to \End(\Omega^{\smbullet}(M;\T M),[\,,\,])$ and $\ad:\Omega^{\smbullet}(M;\T M)\to \End(\Omega^{\smbullet}(M;\T M),[\,,\,]^{\wedge})$ do not take values in the subspaces of graded derivations. That is, $i_L[K_1,K_2]$ differs from $[i_LK_1,K_2]+(-1)^{k_1l}[K_1,i_LK_2]$, and $[K,[L_1,L_2]^{\wedge}]$ differs from $[[K,L_1],L_2]^{\wedge}+(-1)^{kk_1}[L_1,[K,L_2]]^{\wedge}$. The formulas containing the right correction terms (see \cite[Thm.~8.11]{Kolar}) define a so called \emph{Zappa-Szep product}.
 \end{rem}
 
 

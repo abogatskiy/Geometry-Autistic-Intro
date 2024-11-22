@@ -1,9 +1,13 @@
 % !TEX root = ../geom_autistic_intro.tex
 \chapter{Klein Geometry}\label{chap: Klein geom}
 
+This \partt{} gradually introduces the final crucial element that has so far lacked in our general theory of $G$-structures: connections. We start with the simplest class of principal bundles, namely the bundles associated with homogeneous spaces. Due to the fact that the total space of such a bundle is a Lie group, there is an additional natural structure that is not present on general principal bundles -- the Maurer-Cartan form. In this \chap\ we explore the surprisingly rich world of geometries that arise from the interaction between these bundle structures on a Lie group and the Maurer-Cartan form.
+
+
+
 \section{Klein geometry}
 
-Felix Klein saw geometry as the study of invariants under actions of Lie groups. This led him to start the famous Erlangen program for the classification of all ``symmetric'' geometries corresponding to simple Lie groups. He noticed that each interesting symmetric geometry is based on a connected manifold with a \emph{transitive} action of a Lie group $G$ of ``motions'', and moreover, all properties of figures studied in the geometry remain invariant under these motions. For example, in the case of Euclidean geometry, the properties studied are angle and length, and the group is the group of rigid motions. Thus Klein unified a wide range of classical geometries by \emph{defining} a geometry as consisting of a Lie group $G$, a smooth manifold $M$ with a smooth, faithful, and transitive action of $G$. This means that Klein geometries are a special kind of principal bundles. We shall not require faithfulness in our treatment here.
+Felix Klein saw geometry as the study of invariants under actions of Lie groups. This led him to start the famous Erlangen program for the classification of all ``symmetric'' geometries corresponding to simple Lie groups. He noticed that each interesting symmetric geometry is based on a connected manifold with a \emph{transitive} action of a Lie group $G$ of ``motions'', and moreover, all properties of figures studied in the geometry remain invariant under these motions. For example, in the case of Euclidean geometry, the properties studied are angle and length, and the group is the group of rigid motions. Thus Klein unified a wide range of classical geometries by \emph{defining} a geometry as consisting of a Lie group $G$ and a smooth manifold $M$ with a smooth, faithful, and transitive action of $G$. We shall not require faithfulness in our treatment here. This means that a Klein geometry is essentially a homogeneous space together with the Lie group $G$ serving as the total space of a principal bundle over that space.
 
 Let $H\emb G$ be a closed Lie subgroup and consider the action $H\acts G$ by right translation. Let $K\sub G$ be the maximal normal subgroup of $G$ lying inside $H$. By the Initial Subgroup Theorem~\ref{thm initial subgroup}, $K$ is a weakly embedded Lie subgroup of $G$. Since $H$ is closed, the closure $\wb{K}$ is also a normal subgroup of $G$ lying inside $H$. By maximality, we conclude that $K$ is closed, and hence embedded, so $K\emb H\emb G$. By Corollary~\ref{cor 6.5.3 RS1}(1), the canonical map $\pi:G\slash K\to G\slash H$ is a \gls{pfb} with fiber $H\slash K$, inducing a diffeomorphism
 \[(G\slash K)\slash (H\slash K)\to G\slash H\]
@@ -67,7 +71,7 @@ Much like with principal bundles, we shall follow up the original geometric defi
     \begin{enumerate}[label=(\roman*)]
         \item $\theta_G$ is a linear isomorphism on each fiber,
         \item $\rmR_h^\ast \theta_G=\Ad_h^{-1}\theta_G$ for all $h\in H$,
-        \item $\theta_G(X_\rmL)=X$ for any $X\in \frakh$ and corresponding left-invariant vector field $X_\rmL$. These vector fields should be thought of as $H$-invariant \emph{vertical} (tangent to the fibers) vector fields on the principal bundle.
+        \item $\theta_G(A_\rmL)=X$ for any $A\in \frakh$ and corresponding left-invariant vector field $A_\rmL$. These vector fields should be thought of as $H$-invariant \emph{vertical} (tangent to the fibers) vector fields on the principal bundle.
     \end{enumerate}
 \end{enumerate}
 
@@ -75,25 +79,25 @@ The notion of isomorphism of Klein geometries is exactly that of isomorphisms of
 
 
 
-\begin{defn}[Isomorphic Klein geometries]
-    An isomorphism between two Klein geometries $(G,H)$ and $(G',H')$ is a Lie group homomorphism $\vartheta:G\to G'$ such that $\vartheta(H)=H'$.
+\begin{defn}[Isomorphism of Klein geometries]
+    An isomorphism between two Klein geometries $(G,H)$ and $(G',H')$ is a Lie group isomorphism $\vartheta:G\to G'$ such that $\vartheta(H)=H'$.
 \end{defn}
 
 In particular, $(G,H)\cong (G,gHg^{-1})$ is an isomorphism that effectively changes the basepoint of the homogeneous space from $[e]$ to $[g]$.
 
-\begin{example}
+\begin{example}\label{ex basic klein geometries}
     \begin{enumerate}
         \item $(\Aff_n(\bbK), \GL_n(\bbK))$ is the affine geometry on $\bbK^n$, and the bundle $\Aff_n(\bbK)\to \bbA(\bbK^n)$ is the frame bundle of the affine space $\bbA(\bbK^n)$. Similarly, $(\Aff_n^+(\bbK), \GL_n^+(\bbK))$ is the affine geometry with an orientation.
 
         \item $(\SE_n,\SO_n)$ is the Euclidean geometry (``school geometry'') of orientation-preserving congruences, or rigid motions, on $\bbA(\bbR^n)$. The corresponding principal bundle $\SE_n\to \bbA(\bbR^n)$ is the bundle of orthonormal frames at every point of the Euclidean space. This adds a metric to the real affine geometry.
 
-        \item Let $H$ be the subgroup of $\GL_n^+(\bbR)$ consisting of matrices $A$ such that $AA^T=\lambda I$ for some $\lambda>0$. Every such matrix has the form $\sqrt{\lambda}R$ where $R\in\SO_n$ is a rotation matrix, so this is precisely the group of similarity transformations in Euclidean geometry. Then the Klein geometry $(H\ltimes \bbR^n,H)$ can be called the ``geometry of similarity'' on $\bbR^n$.
+        \item Let $H$ be the subgroup $\CO_n(\bbR)\emb\GL_n^+(\bbR)$ consisting of \emph{conformal} matrices $A$, i.e., such that $AA^T=\lambda \rmI$ for some $\lambda>0$.\index{Conformal group} Every such matrix has the form $\sqrt{\lambda}R$ where $R\in\SO_n$ is a rotation matrix, so this is precisely the group of similarity transformations in Euclidean geometry. Then the Klein geometry $(H\ltimes \bbR^n,H)$ can be called the ``geometry of similarity'' on $\bbR^n$.
         
         \item The space of $(\SL_2(\bbR),\SO_2)$ is the \emph{hyperbolic half-plane} $\bbC^+=\{z\in \bbC\mid \Im z>0\}$ from Example~\ref{ex siegel upper half-space} with the transitive action of real \glspl{flt} $\SL_2(\bbR)$ acting by \index{Hyperbolic half-plane}
         \[\begin{pmatrix}
             a&b\\c&d
         \end{pmatrix}\cdot z=\frac{az+b}{cz+d}.\]
-        Note that the negative identity $-\rmI_2$ acts on $\bbC^+$ trivially. Thus, to be more precise, the \emph{M\"obius group} is the image of this homomorphism, which is the projective special linear group $\PSL_2(\bbR)=\SL_2(\bbR)\slash \{\pm \rmI_2\}$. It is also isomorphic to $\PGL^+_2(\bbR)=\GL^+_2(\bbR)\slash (\bbR^\times\cdot \rmI_2)$. Thus, the hyperbolic plane is also a homogeneous space of type $(\PGL^+_2(\bbR),\SO_2)=(\PSL_2(\bbR),\SO_2)$. The latter geometry is effective.
+        Note that the negative identity $-\rmI_2$ acts on $\bbC^+$ trivially. Quotienting out this kernel, we get the \emph{M\"obius group}, or the \emph{projective} special linear group $\PSL_2(\bbR)=\SL_2(\bbR)\slash \{\pm \rmI_2\}$. It is also isomorphic to $\PGL^+_2(\bbR)=\GL^+_2(\bbR)\slash (\bbR^\times\cdot \rmI_2)$. Thus, the hyperbolic plane is also a homogeneous space of type $(\PGL^+_2(\bbR),\SO_2)=(\PSL_2(\bbR),\SO_2)$. The latter geometry is effective. All of these geometries are called \emph{projective}.
 
         \item Let $H<\GL_{n+1}(\bbR)$ be the subgroup
         \[H=\left\{\begin{pmatrix}
@@ -130,7 +134,7 @@ In particular, $(G,H)\cong (G,gHg^{-1})$ is an isomorphism that effectively chan
 
 
 \begin{defn}[Klein manifold]
-    A Klein manifold is a triple $(\Gamma,G,H, M)$, where $H\emb G$ is a closed subgroup, $\Gamma\emb G$ is a discrete subgroup, and $M\subset G\slash H$ is an open $\Gamma$-invariant subset such that the action of $\Gamma$ on $M$ obtained by restriction of the action of $G$ on $G\slash H$ is properly discontinuous, and such that the double coset space $\Gamma\bslash G\slash H$ is connected. The pair $(G,H)$ is called the \emph{model geometry} of the Klein manifold. If $M=G\slash H$, the Klein manifold is called \emph{complete}.
+    A Klein manifold is a tuple $(\Gamma,G,H, M)$, where $H\emb G$ is a closed subgroup, $\Gamma\emb G$ is a discrete subgroup, and $M\subset G\slash H$ is an open $\Gamma$-invariant subset such that the action of $\Gamma$ on $M$ obtained by restriction of the action of $G$ on $G\slash H$ is properly discontinuous, and such that the double coset space $\Gamma\bslash G\slash H$ is connected. The pair $(G,H)$ is called the \emph{model geometry} of the Klein manifold. If $M=G\slash H$, the Klein manifold is called \emph{complete}.
 \end{defn}
 
 We will usually be interested only in complete Klein manifolds, and so will describe them simply as triples $(\Gamma,G,H)$. Note that we do not require $G\slash H$ to be connected. However, the following exercise shows that we can always replace $(\Gamma,G,H)$ by $(\Gamma',G',H)$ with the same space, for which $(G',H)$ is a Klein geometry.
@@ -185,7 +189,7 @@ where the left and right arrows are principal $\Gamma$-bundles and the top and b
 
 According to the last exercise, the principal bundle $\Gamma\bslash G\to \Gamma\bslash G\slash H$ is the same as the principal bundle $\Gamma'\bslash G'\to \Gamma'\bslash G'\slash H$, where $G'=G_0\cdot H$ and $\Gamma'=G'\cap\Gamma$.
 
-Since the Maurer-Cartan form $\theta_G$ on $G$ is left-invariant, it induces a form $\theta_{\Gamma\bslash G}$ on $\Gamma\bslash G$ with all the same properties. For example, since there is a principal right $H$-action on $\gamma\bslash G$, the \emph{vertical} Killing vector fields $A_\ast$ generated by $A\in\frakh$ correspond to the left-invariant vector fields $A_\rmL$ on $G$, so 
+Since the Maurer-Cartan form $\theta_G$ on $G$ is left-invariant, it induces a form $\theta_{\Gamma\bslash G}$ on $\Gamma\bslash G$ with all the same properties. For example, since there is a principal right $H$-action on $\Gamma\bslash G$, the \emph{vertical} Killing vector fields $A_\ast$ generated by $A\in\frakh$ correspond to the left-invariant vector fields $A_\rmL$ on $G$, so 
 \[\theta_{\Gamma\bslash G}(A_\ast)=A.\]
 But more generally, even though there is no $G$-action, left-invariant fields on $G$ project to \emph{constant vector fields} $X_A$ for each $A\in \frakg$ defined by 
 \[\theta_{\Gamma\bslash G}(X_A)=A.\]
@@ -203,7 +207,7 @@ These vector fields are complete, which is why the form $\theta_{\Gamma\bslash G
 \end{defn}
 
 \begin{example}
-    Restricting the homogeneous principal bundle $G\to G\slash H$ to an open subset $U\subset G\slash H$, we get an incomplete locally Klein geometry.
+    Restricting the homogeneous principal bundle $G\to G\slash H$ to a proper open subset $U\subset G\slash H$, we get an incomplete locally Klein geometry.
 \end{example}
 
 Note that the group $G$ doesn't directly enter this definition, so we can actually say that the model geometry is $(\frakg,H)$. We will see later that this is exactly the definition of a \emph{flat Cartan geometry}. For now we prove the main theorem of locally Klein geometries, showing that all of them are locally isomorphic to Klein geometries, and in fact the complete ones are coverings of homogeneous spaces.
@@ -235,7 +239,7 @@ Note that the group $G$ doesn't directly enter this definition, so we can actual
     Now, the action of $[\gamma]\in \pi_1(M,m)$ on $\wt M$ can be lifted to $\wt P$ by
     \[[\gamma]\cdot (m,p)\coloneqq ([\gamma]\cdot m,p).\]
     Hence, $\wt{\pi}_P\circ [\gamma]=\wt{\pi}_P$. We obtain
-    \[\wt\eta={\wt{\pi}_P}^\ast \eta=[\gamma]^\ast {\wt{\pi}_P}^\ast \eta=[\gamma]^\ast\wt\eta.\]
+    \[\wt\eta=\wt{\pi}_P^\ast \eta=[\gamma]^\ast \wt{\pi}_P^\ast \eta=[\gamma]^\ast\wt\eta.\]
     Since $[\gamma]$ is an automorphism of $\wt P$, it corresponds to a left translation by an element $\hol([\gamma])\in G$. Indeed, for any path $\tau$ based at $p\in\wt P$, the forms $\tau^\ast\wt\eta$ and $\tau^\ast[\gamma]^\ast\wt\eta$ are equal and hence the endpoints of their developments differ by $\hol([\gamma])$ which does not depend on $\tau$. It is easy to check that $\hol:\pi_1(M,m)\to G$ is a homomorphism by concatenating loops. It also equivariant as asserted by Proposition~\ref{prop 8.1 Sharpe}. Changing $\dev\to \wh{\rmL}_g\circ \dev$ clearly leads to $\hol\to \Adg_g\circ\hol$.
 
     Now suppose $\eta$ is complete. The shortcut way of concluding that $\dev$ is a covering map is to observe that it must be a fiber bundle by Corollary~\ref{thm Ehresmann vector fields}. However, let us also provide a direct argument. The developing map $\dev$ is a covering map iff it has the path lifting property. We check that $\dev$ can uniquely lift any path in $G\slash H$ given a choice of starting points $x\in\wt{M}$ and $\dev(x)\in G\slash H$. Any smooth path $\gamma:[0,1]\to G\slash H$ can be arbitrarily lifted to a path $\wt\gamma:[0,1]\to G$. Then its logarithmic derivative is $\delta\wt\gamma={\wt\gamma}^\ast \theta_G$, and there is a unique path $\alpha:[0,1]\to \wt{P}$ such that $\alpha^\ast \wt\eta=\delta\wt\gamma$ (this is because completeness of $\wt\eta$ guarantees that the universal cover of $\wt P$ is a Lie group by Theorem~\ref{thm 8.7 Sharpe}, so a development exists in that group and can then be projected back onto $\wt P$). The projection of $\alpha$ onto $\wt M$ is a lifting of $\gamma$ by construction. It is unique because developments of curves in Lie groups are unique under given initial conditions (Proposition~\ref{prop 7.13 Sharpe}).
@@ -534,7 +538,7 @@ We can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash\frakh
 
 Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of $H$ via $\wh{\rmL}_h$, $h\in H$, thus it generates an isotropy representation of $H$, which we specify in the following definition.
 
-\begin{defn}[Isotropy representation]
+\begin{defn}[Isotropy representation]\label{def isotropy rep}
     For a Klein geometry $(G,H)$, identify $\T_{[e]}(G\slash H)$ with $\frakg\slash\frakh$ using the natural isomorphism constructed above. We call the induced representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ given by $h\mapsto \wh{\rmL}_{h\ast [e]}$, the isotropy representation of the Klein geometry.
 
     Since $\frakh<\frakg$ is invariant under $\Ad(H)$, the restriction of the adjoint representation to $H$, $\restr{\Ad}{H}:G\to \GL(\frakg)$, which descends to a map $H\to \GL(\frakg\slash h)$, which coincides with $\underline{\Ad}$.
@@ -542,18 +546,18 @@ Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of 
 
 Since tangent bundles involve only first derivatives, we can make the following rough division of Klein geometries into two types according to whether $H$ is faithfully represented by this action.
 
-\begin{defn}[First order Klein geometry]
-    A Klein geometry $(G,H)$ is of first order if the isotropy representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ is faithful. Otherwise, the geometry is said to have \emph{higher order}.
+\begin{defn}[First-order Klein geometry]
+    A Klein geometry $(G,H)$ is of first-order if the isotropy representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ is faithful. Otherwise, the geometry is said to have \emph{higher order}.
 \end{defn}
 
 \begin{rem}
-    First order Klein geometries have a simple intuitive description in terms of $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, via the global trivialization of $\T M$ constructed above, it traces out an $H$-orbit in the set of linear frames mapping $\T_mM\to \frakg\slash\frakh$ for each $m\in M$. This was exactly our original definition of an $H$-structure on $\T M$. Equivalently, this describes the principal bundle $G\to M$ as a reduction of the frame bundle $\Fr(\T M)$ to structure group $H$.
+    First-order Klein geometries have a simple intuitive description in terms of $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, via the global trivialization of $\T M$ constructed above, it traces out an $H$-orbit in the set of linear frames mapping $\T_mM\to \frakg\slash\frakh$ for each $m\in M$. This was exactly our original definition of an $H$-structure on $\T M$. Equivalently, this describes the principal bundle $G\to M$ as a reduction of the frame bundle $\Fr(\T M)$ to structure group $H$.
 \end{rem}
 
 The tangent bundle of a Klein geometry is an example of an important class of bundles that are equivariant w.r.t.\ the natural $G$-action $\wh L$ on the base $G\slash H$ in the following sense.
 
 
-\begin{defn}[Homogeneous bundle]
+\begin{defn}[Homogeneous bundle]\index{Homogeneous bundle}
     Let $G$ be a Lie group and $H\emb G$ a closed subgroup. A (left) homogeneous, or \emph{equivariant}, \gls{fb} of type $(G,H)$ is a \gls{fb} $E\overset{\pi}{\to}G\slash H$ over the homogeneous space of (left) cosets $G\slash H$ together with a (left) action $G\overset{\wt L}{\acts} E$ that lifts the natural (left) action $\wh L$ on $G\slash H$, i.e., which satisfies \[\pi\circ \wt{L}_g=\wh{\rmL}_g\circ \pi,\text{ for all } g\in G.\] 
 
     In particular, a homogeneous \gls{vb} is a \gls{vb} which is also a homogeneous \gls{fb} such that the $G$-action is by \gls{vb} morphisms. Similarly, a homogeneous \gls{pfb} is a \gls{pfb} which is also a homogeneous \gls{fb} such that the $G$-action is by \gls{pfb} morphisms, i.e., by maps equivariant w.r.t.\ the (right) action of the structure group.
@@ -565,7 +569,7 @@ The tangent bundle of a Klein geometry is an example of an important class of bu
     The principal $H$-bundle $G\to G\slash H$ is obviously homogeneous because the left action $\rmL$ is a lift of $\wh \rmL$.
 \end{example}
 
-One common way of producing homogeneous bundles is by applying a natural bundle functor $F$ to $G\slash H$. Since by definition such a functor maps local diffeomorphisms to bundle morphisms, $F(\wh{\rmL}_g)$ is a $G$-action as required in the definition of a homogeneous bundle. Thus, any natural bundle over a homogeneous space is homogeneous. As we will see below, the tangent bundle functor $T$ that we considered in the previous section is an example of this.
+One common way of producing homogeneous bundles is by applying a natural bundle functor $\bf{F}$ to $G\slash H$. Since by definition such a functor maps local diffeomorphisms to bundle morphisms, $\bf{F}(\wh{\rmL}_g)$ is a $G$-action as required in the definition of a homogeneous bundle. Thus, any natural bundle over a homogeneous space is homogeneous. As we will see below, the tangent functor $\T$ that we considered in the previous section is an example of this.
 
 Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in G\slash H$ and the fiber $E_{[e]}$. The $G$-action on $E$ restricts to an $H$-action on $F$, thus we can build the associated bundle $G\times^H E_{[e]}\to G\slash H$. We now show that this bundle is isomorphic to $E$, thus characterizing all homogeneous bundles as bundles associated to principal bundles of the form $G\to G\slash H$.
 
@@ -589,7 +593,7 @@ Thus an alternative definition of homogeneous bundles is simply as bundles assoc
 \begin{example}\label{ex 1.4.3 Cap}
     The  tangent  bundle $\T(G\slash H)$ that we studied in Proposition~\ref{prop 4.5.1 Sharpe} is clearly homogeneous because the left action $\wh{\rmL}_g$ on $G\slash H$ induces a lifted action $\wh{\rmL}_{g\ast}$ on $\T(G\slash H)$, and it corresponds to the $H$-representation on $\frakg\slash \frakh$ coming from the restriction to $H$ of the adjoint representation of $G$. The isomorphism with $G\times^H (\frakg\slash\frakh)$ established in that proposition is exactly the same as what we would obtain from Proposition~\ref{prop 1.4.3 Cap}. Namely, it maps $X\in \T_{gH}(G\slash H)$ to $[(g^{-1},\omega(Y)+\frakh)]$, where $Y\in \T_g G$ is some lift of $X$, i.e., $\pi_\ast Y=X$.
 
-    By the naturality of the correspondence, the cotangent bundle $\T^\ast(G\slash H)$ corresponds to the dual representation $(\frakg\slash\frakh)^\ast$. Note that the latter is just the annihilator of $\frakh$ in $\frakg^\ast$, so this is a subrepresentation of the restriction of the coadjoint representation of $G$ to $H$. Again, by naturality, the tensor bundle $\T^k_l G\slash H$ corresponds to $\bbT^k_l(\frakg\slash\frakh)=(\frakg\slash\frakh)^{\otimes k}\otimes (\frakg\slash\frakh)^{\ast\otimes l}$.
+    By the naturality of the correspondence, the cotangent bundle $\T^\ast(G\slash H)$ corresponds to the dual representation $(\frakg\slash\frakh)^\ast$. Note that the latter is just the annihilator of $\frakh$ in $\frakg^\ast$, so this is a subrepresentation of the restriction of the coadjoint representation of $G$ to $H$. Again, by naturality, the tensor bundle $\bbT^k_l G\slash H$ corresponds to $\bbT^k_l(\frakg\slash\frakh)=(\frakg\slash\frakh)^{\otimes k}\otimes (\frakg\slash\frakh)^{\ast\otimes l}$.
 \end{example}
 
 
@@ -746,7 +750,7 @@ Next, recall that the $r$-jet of a smooth map can be identified, given a particu
     For $r=1$, $K_1=K_{\frakh}$ is the set of elements $h\in H$ such that $\underline{\Ad}_h$ is trivial. But, as established above, $\underline{\Ad}$ is exactly the isotropy representation of the action $\wh{\rmL}$, i.e., $\underline{\Ad}_h$ being trivial is equivalent to the first derivative of $\wh{\rmL}_h$ at $[e]$ being the identity.
 
     Now we prove for $r>1$ by induction. Assume that the statement is known for all $i\leq r-1$. To each $g\in G$ we associate the $r$-th order jet $\rmj^r_{[e]}\wh{\rmL}_g$ (its target is $gH\in M$). This defines a smooth map into the $r$-th jet space (and in particular invertible $r$-jets):
-    \[\Phi_r\coloneqq \rmj_{[e]}^r\circ \wh{\rmL}_{\smbullet}: G\to \rmJ^r_{[e]}(M,M)^\times.\]
+    \[\Phi_r\coloneqq \rmj_{[e]}^r\circ \wh{\rmL}_{\smbullet}:\quad  G\to \rmJ^r_{[e]}(M,M)^\times.\]
     By hypothesis, $K_{r-1}$ is exactly the elements of $G$ whose $r$-jets are trivial:
     \[K_{r-1}=\Phi_{r-1}^{-1}\left(e_r\right), \quad \text{ where }e_r\coloneqq \rmj^r_{[e]}\id_M.\]
     Thus, $\Phi_{r-1}$ descends to an \emph{injective immersion} of the quotient manifold
@@ -786,8 +790,8 @@ Next, recall that the $r$-jet of a smooth map can be identified, given a particu
 \section{Frobenius reciprocity}\label{sec: Frobenius reciprocity}
 
 Consider the set $\Gamma^\infty(E)$ of sections of a homogeneous vector bundle $E\to G\slash H$. There is a natural left $G$-action on $\Gamma^\infty(E)$ defined by
-\[g\cdot s\coloneqq \wt{L}_g\circ s\circ\wh{\rmL}^{-1}_g,\]
-where $\wt L$ and $\wh L$ are the actions on $E$ and $G\slash H$, respectively. Note that this particular combination of the two actions is required so that sections get mapped to sections, i.e., so that the action preserves the point in the base.
+\[g\cdot s\coloneqq \wt{\rmL}_g\circ s\circ\wh{\rmL}^{-1}_g,\]
+where $\wt \rmL$ and $\wh \rmL$ are the actions on $E$ and $G\slash H$, respectively. Note that this particular combination of the two actions is required so that sections get mapped to sections, i.e., so that the action preserves the point in the base.
 
 \begin{defn}[Induced representation]\index{Induced representation}
     Let $(G,H)$ be a homogeneous space, $G\acts V$ a finite-dimensional linear representation $G$, and $E=G\times^H V$ be the corresponding homogeneous \gls{vb}. The representation of $G$ on $\Gamma^\infty(E)$ defined above is called the \emph{induced representation} of $G$, denoted $\Ind^G_H(V)$. The association functor for bundles makes this a functor of $V$.
@@ -828,7 +832,7 @@ The next fundamental result shows that in certain situations one can reduce ques
     \[\dim\Hom_{\SU_2}(V_k,\Gamma^\infty(L_n))=\dim \Hom_{\U_1}(V_k,n)\]
     where $L_n$ is the complex line bundle over $\bbS^2$ corresponding to $n$. The right hand side is the multiplicity of the weight $n$ in $V_k$ (that is, the multiplicity of $n$ in the restriction of the representation on $V_k$ to $T$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we can see that the decomposition of $\Gamma^\infty(L_n)$ into irreducibles will include all $V_k$ where $k$ is the same parity as $n$ and $k\geq n$.
 
-    In the case $n=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma^\infty(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $n=0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl theorem, the direct sum of all the $V_{2l}$, once endowed with a proper topology and completed, is not exactly $C^\infty(\bbS^2)$, but rather the Hilbert space $L^2(\bbS^2)$ of square integrable functions:
+    In the case $n=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma^\infty(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $n=0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl Theorem, the direct sum of all the $V_{2l}$, once endowed with a proper topology and completed, is not exactly $C^\infty(\bbS^2)$, but rather the Hilbert space $L^2(\bbS^2)$ of square integrable functions:
     \[L^2(\bbS^2,\bbC)\cong \bigoplus_{l=0}^\infty V_{2l}.\]
     This holds both over reals and complexes. The space $V_{2l}$ is $(2l+1)$-dimensional and a standard basis is given by the spherical harmonics $Y^l_m(\theta,\varphi)$. If we replace $\SU_2$ by $\SO_3$, the only difference is that $V_k$ with odd $k$ disappear from the list of irreps, so the final result for $n=0$ is the same. This is the beginning of the subject of \emph{harmonic analysis} (and in particular Fourier transforms) on Lie groups.
 \end{example}
@@ -840,10 +844,10 @@ The next fundamental result shows that in certain situations one can reduce ques
 
 
 
-The geometric version of Frobenius reciprocity immediately allows us to reduce questions about the existence of invariant Riemannian metrics and other invariant tensor fields to problems of finite-dimensional representation theory: if $M=G\slash H$ is a homogeneous space, then from Proposition~\ref{prop 1.4.3 Cap} we know that the tensor bundle $\bbT^k_lM$ is associated to $G\to M$ w.r.t.\ the representation $\bbT^k_l(\frakg\slash \frakh)$. By Frobenius reciprocity, $G$-invariant sections of this bundle are in bijective correspondence with $H$-invariant elements in the representation. Since invariant elements are the same as homomorphisms from the trivial representation, this can be rephrased in such a way that the dimension of invariant tensor fields of type $\left(\begin{smallmatrix}k\\l\end{smallmatrix}\right)$
+The geometric version of Frobenius reciprocity immediately allows us to reduce questions about the existence of invariant Riemannian metrics and other invariant tensor fields to problems of finite-dimensional representation theory: if $M=G\slash H$ is a homogeneous space, then from Proposition~\ref{prop 1.4.3 Cap} we know that the tensor bundle $\bbT^k_lM$ is associated to $G\to M$ w.r.t.\ the representation $\bbT^k_l(\frakg\slash \frakh)$. By Frobenius reciprocity, $G$-invariant sections of this bundle are in bijective correspondence with $H$-invariant elements in the representation. Since invariant elements are the same as homomorphisms from the trivial representation, this can be rephrased in such a way that the dimension of invariant tensor fields of rank $(k,l)$
 on $G\slash H$ equals the multiplicity of the trivial representation in $\bbT^k_l(\frakg\slash\frakh)$. Moreover, the proof of Theorem~\ref{thm 1.4.4 Cap} gives an explicit construction of the invariant tensor field from the invariant element in the representation. Clearly, the whole construction respects symmetries of any kind, so invariant tensor fields having certain symmetries are in correspondence with invariant elements of the representations having the same symmetries. Finally, if we consider (pointwise) questions of non-degeneracy they clearly reduce to the analogous non-degeneracy properties in the representation. In particular, the set of $G$-invariant Riemannian metrics on $G\slash H$ is in bijective correspondence with the set of $H$-invariant inner products on $\frakg\slash\frakh$. Hence, we get
 \begin{cor}
-    A homogeneous space $G\slash H$ admits a $G$-invariant Riemannian metric iff the image $H_1=\underline{\Ad}(H)\subset \GL(\frakg\slash\frakh)$ of $H$ under the map induced by the restriction to $H$ of the adjoint representation of $G$ has compact closure in $\GL(\frakg\slash\frakh)$.
+    A homogeneous space $G\slash H$ admits a $G$-invariant Riemannian metric iff the image $H_1=\underline{\Ad}(H)\subset \GL(\frakg\slash\frakh)$ of $H$ under the isotropy representation of $H$ (Definition~\ref{def isotropy rep}) has compact closure in $\GL(\frakg\slash\frakh)$.
 \end{cor}
 \begin{proof}
     From above we know that existence of an invariant Riemannian metric is equivalent to existence of an $H_1$-invariant positive definite inner product on $\frakg\slash\frakh$. If such an inner product exists, then $H_1$ is contained in the orthogonal group of this  product, which is compact. Hence $H_1$ has compact closure. Conversely, if $K\subset \GL(\frakg\slash\frakh)$ is a compact subgroup containing $H_1$, then averaging any inner product on $\frakg\slash\frakh$ over $K$ (as in Proposition~\ref{prop 5.5.6 RS1}) gives a $K$-invariant and thus a $H_1$-invariant inner product.
@@ -1273,7 +1277,7 @@ The forms $\theta^i$ vanish on $H_{\bf{c}}$ for $i\leq r$. Hence, by the Frobeni
 
 Observe now that $[\calY,\calY]$ is a nondegenerate Lie algebra of symmetries of the distribution $D_{\bf{c}}$. Actually, the flows of any element $X\in [\calY,\calY]$ permute the leaves of $D_{\bf{c}}$. Nondegeneracy follows from the fact that $\{\theta^i(X_j)\}$, $r<i,j\leq k$, is the identity matrix. Because of this, we can subject $[\calY,\calY]$ to the same procedure that was formerly applied to $\calY$. If $[[\calY,\calY],[\calY,\calY]]\neq [\calY,\calY]$, then some of the $1$-forms $\restr{\theta^{r+1}}{\dd H_{\bf{c}}},\ldots,\restr{\theta^k}{\dd H_{\bf{c}}}$ are closed and give rise to local first integrals of $D_{\bf{c}}$. The distribution $D_{\bf{c}}$ can be restricted to the mutual level set of these integrals, etc.
 
-We continue in this fashion obtaining a so called \emph{derived series} of subalgebras 
+We continue in this fashion obtaining a so called \emph{derived series} of subalgebras \index{Derived series}
 \[\calY>[\calY,\calY]>[[\calY,\calY],[\calY,\calY]]>[[[\calY,\calY],[\calY,\calY]],[[\calY,\calY],[\calY,\calY]]]>\cdots.\]
 
 \begin{defn}[Solvable Lie algebra]
@@ -1347,18 +1351,41 @@ It is these results which caused the concept of solvability, originating from th
 
 
 
-\section{Jet bundles and Cartan distributions}
+\section{Jets and Cartan distributions}\label{sec: jets and cartan distr}
 
 
-We will now put the study of differential equations in the language of jet bundles, following \cite[\S3.2]{Kras}. Unfortunately, as we will see, there are many slightly different jet bundles, so the nomenclature can get confusing. Recall that an $r$-jet $\rmj^r_m f$ of a smooth map $f:M\to M'$ at point $m\in M$ is simply the equivalence class of all maps $M\to M'$ whose order $\leq r$ terms of the Taylor series  at $m$ coincide with those of $f$ in any local coordinates around $m$ and $f(m)$. The jet space $\rmJ^r(M,M')$ is the set of all such jets at all points of $m$. For example, $\rmJ^0(M,M')=M\times M'$. If we have a set of local coordinates $\bf{x}=(x^1,\ldots,x^n)$ on $M$ and $\bf{y}=(y^1,\ldots,y^{n'})$ on $M'$, then, much like in the definition of tensor bundles, we can obtain \emph{canonical coordinates} $p^j_I$ on the jet space by 
+We will now put the study of differential equations in the language of jet bundles, following \cite[\S3.2]{Kras}. Unfortunately, as we will see, there are many slightly different jet bundles, so the nomenclature can get confusing. Recall that an $r$-jet $\rmj^r_m f$ of a smooth map $f:M\to M'$ at point $m\in M$ is simply the equivalence class of all maps $M\to M'$ whose order $\leq r$ terms of the Taylor series  at $m$ coincide with those of $f$ in any local coordinates around $m$ and $f(m)$. The jet space $\rmJ^r(M,M')$ is the set of all such jets at all points of $m$. For example, $\rmJ^0(M,M')=M\times M'$. If we have a set of local coordinates $\bf{x}=(x^1,\ldots,x^n)$ on $M$ and $\bf{u}=(u^1,\ldots,u^{n'})$ on $M'$, then, much like in the definition of tensor bundles, we can obtain \emph{canonical coordinates} $p^j_I$ on the jet space by 
 \[p^j_I\left(\rmj^r_mf\right)\coloneqq \partial^I_{\bf{x}}f^j(\bf{x})=\frac{\partial^{|I|}f^j}{\partial x_1^{i_1}\cdots\partial x_n^{i_n}}(\bf{x}),\quad j=1,\ldots,n',\quad |I|\leq r,\] 
-where $I=(i_1,\ldots,i_n)$, $|I|=i_1+\cdots+i_n$, and $f^j(\bf{x})=y^j(f(\bf{x}^{-1}(\bf{x})))$ is a component of a local representative of $f$. These coordinates have smooth transition functions and thus turn $\rmJ^r(M,M')$ into a smooth manifold. There is a set of natural projections $\pi^r_{s}:\rmJ^r(M,N)\to \rmJ^s(M,N)$ for $r>s$ which simply keep only the first $s$ monomials, $|I|\leq s$. From the construction of the canonical coordinates it is clear that these projections are locally trivial submersions, and thus \glspl{vb}.
+where $I=(i_1,\ldots,i_n)$, $|I|=i_1+\cdots+i_n$, and $f^j(\bf{x})=u^j(f(\bf{x}^{-1}(\bf{x})))$ is a component of a local representative of $f$. These coordinates have smooth transition functions and thus turn $\rmJ^r(M,M')$ into a smooth manifold. By counting the coordinates, we find 
+\[\dim \rmJ^r (M,M')=n+n'\sum_{i=0}^r\binom{n+i-1}{n-1}=n+n'\binom{n+r}{r}.\]
+There is a set of natural projections $\pi^r_{s}:\rmJ^r(M,M')\to \rmJ^s(M,M')$ for $r>s$ which simply keep only the first $s$ monomials, $|I|\leq s$. From the construction of the canonical coordinates it is clear that these projections are locally trivial submersions, and thus \glspl{vb}.
 
 Recall that the \emph{differential group of order $r$}, or just the \emph{$r$-jet group},  $\GL_n^r(\bbR)$ is defined as the set of $r$-jets at the origin of diffeomorphisms $\bbR^n\to \bbR^n$ that fix the origin. Clearly, under a change of coordinates on $M$, the canonical coordinates transform under an action of the differential group. This makes $\rmJ^r(M,M')$ into a vector bundle over $M\times M'$ with structure group $\GL_n^r(\bbR)$. 
 
 We can describe the Lie algebra of $\GL^r_n(\bbR)$. Consider the set of all vector fields $X\in\fX(\bbR^n)$ on $\bbR^n$ such that $X_0=0$. Denote by $\frakgl^r_n(\bbR)$ the set of all $r$-jets at $0$ of these vector fields. This is a vector space, and there is a natural Lie algebra structure on it, inherited from the Lie bracket of vector fields:
 \[[\rmj_0^r X,\rmj_0^r Y]=\rmj^r_0[X,Y].\]
 By looking at the flows of these vector fields, it is easy to confirm that this is the Lie algebra of $\GL^r_n(\bbR)$.
+
+Consider on $\rmJ^r(\bbR^n,\bbR^{n'})$ the \emph{Cartan distribution} $\calC$ defined as the annihilator of the \emph{canonical Cartan}, or \emph{$r$-th order contact, forms} \index{Cartan distribution}\index{Contact form}
+\[\theta^j_I=\dd p^j_I-\sum_{i=1}^n p^j_{I+1_i}\dd x^i,\quad 1\leq j\leq n,\quad |I|\leq r-1,\]
+where $1_i=(0,\ldots,0,1,0,\ldots,0)$ has $1$ in the $i$-th place. Again by counting, the number of contact forms is 
+\[N=n'\sum_{i=0}^{r-1}\binom{n+i-1}{n-1}=n'\binom{n+r-1}{r-1},\]
+and they are all obviously linearly independent at each point. Thus, the rank of the Cartan distribution is
+\[\rank\calC=\dim\rmJ^r(\bbR^n,\bbR^{n'})-N=n+n'\binom{n+r-1}{n-1}.\]
+The next theorem shows that the Cartan distribution allows one to recognize sections of the jet bundle $\pi^r:\rmJ^r(\bbR^n,\bbR^{n'})\to \bbR^n$ that are prolongations of smooth functions $\bbR^n\to \bbR^{n'}$.
+
+\begin{thm}[{{\cite[Thm.~3.1.1]{Kras}}}]\label{thm 3.1.1 Kras}
+    Let $Q\subset\rmJ^r(\bbR^n,\bbR^{n'})$ be an $n$-dimensional surface projecting immersively to the space of independent variables $\bbR^n$ in a neighborhood of a point $p\in Q$ (we call such submanifolds \emph{transverse}). The surface $Q$ is an integral manifold of the Cartan distribution $\calC$ in that neighborhood iff it can be given by relations of the form 
+    \[u^i=f^i(\bf{x}),\quad p^j_I=\frac{\partial^{|I|}f^j}{(\partial x^1)^{i_1}\cdots (\partial x^n)^{i_n}}(\bf{x}),\]
+    for some smooth functions $f^1,\ldots,f^{n'}$, where $I=(i_1,\ldots,i_n)$ and $|I|\leq r$.
+\end{thm}
+\begin{proof}
+    The nondegeneracy of the projection $\restr{\pi^r}{Q}$ means that locally the equation of $Q$ can be represented as 
+    \[u^j=f^j(\bf{x}),\quad p^j_I=f^j_I(\bf{x}),\quad j=1,\ldots,n',\quad |I|\leq r,\]
+    for some smooth $f^j,f^j_I$. The surface $Q$ is an integral manifold for $\calC$ if the contact forms vanish along it, i.e., 
+    \[\restr{\theta^j_I}{\T Q}=\dd f^j_I+\sum_i f^j_{I+1_i}\dd x^i=\sum_i \left(\frac{\partial f^j_I}{\partial x^i}-f^j_{I+1_i}\right)\dd x^i=0,\]
+    which is equivalent to the equalities $f^j_I=\frac{\partial^{|I|}f^j}{(\partial x^1)^{i_1}\cdots(\partial x^n)^{i_n}}$ for all $j=1,\ldots,n'$ and $|I|\leq r$.
+\end{proof}
 
 For us it will be important to consider jets not of arbitrary maps, but of sections of a vector bundle. Let $\pi:E\to M$ be a \gls{vb} and denote by $\rmJ^rE$ the space of $r$-jets of sections $s:M\to E$. It is easy to see that the space of such jets is still a \gls{vb} over $\rmJ^0(E)=E$ with the same structure group. There are projection maps $\pi^r_s:\rmJ^rE\to \rmJ^s(E)$ for $r>s$, in particular $\pi^r_0:\rmJ^rE\to E$. Moreover, there are projections $\pi^r\coloneqq \pi\circ \pi^r_0:\rmJ^rE\to M$.
 
@@ -1372,19 +1399,31 @@ Obviously, every R-plane is transversal to the fibers of $\pi^r$. Note that a po
 
 Fix a point $p\in \rmJ^rE$ and consider various points $p'\in \rmJ^{r+1}E$ projecting to $p$ under $\pi^{r+1}_r$, i.e., in the fiber $(\rmJ^{r+1}E)_p\coloneqq (\pi^{r+1}_r)^{-1}(p)$. As $p'$ moves in this fiber, the corresponding $n$-plane $L_{p'}<\T_p\rmJ^rE$ rotates somehow around the point $p$, but always remains horizontal with respect to the projection $\pi^r:\rmJ^rE\to M$.
 
-We are ready to define the general Cartan distribution, also called the \emph{contact system}.
+We are ready to define the extend the definition of the Cartan distribution to jets of arbitrary vector bundles.
 
-\begin{defn}
-    Let $E\overset{\pi}{\to} M$ be a \gls{vb} and fix an integer $r>0$. The Cartan distribution $\calC<\T \rmJ^rE$ is defined as follows: for a point $p\in \rmJ^rE$, the fiber $\calC_p$ is defined as the span of all R-planes $L_{p'}$ for $p'\in (\rmJ^{r+1}E)_p$. In other words, $\calC$ is the union of all tangent spaces of $r$-graphs of all sections $s$ such that $\rmj^r_m s=p$.
+\begin{defn}[Canonical contact system/Cartan distribution]\index{Contact system}\index{Cartan distribution}
+    Let $E\overset{\pi}{\to} M$ be a \gls{vb} and fix an integer $r>0$. The Cartan distribution, or the \emph{$r$-th order canonical contact system}, $\calC<\T \rmJ^rE$ is defined as follows: for a point $p\in \rmJ^rE$, the fiber $\calC_p$ is defined as the span of all R-planes $L_{p'}$ for $p'\in (\rmJ^{r+1}E)_p$. In other words, $\calC$ is the union of all tangent spaces of $r$-graphs of all sections $s$ such that $\rmj^r_m s=p$.
+
+    As we will show below, in the canonical coordinates $\calC$ is locally generated as the annihilator of the contact forms $\theta^j_I=\dd p^j_I-\sum_{i=1}^n \dd x^i$, $|I|\leq r-1$.
 \end{defn}
 
 Let us give a coordinate description of the distribution. Namely, we will write down a basis of the plane $L_{p'}$ corresponding to the point $p'\in \rmJ^{r+1}E$ in an bundle coordinate system $x^1,\ldots,x^n,u^1,\ldots,u^k$ on $E$, where $u^1,\ldots,u^k$ are the coordinates along the fiber of $E$. The canonical coordinates of the point $p'$ will be denoted by $x^i(p')$, $u^j(p')$ and $p^j_I(p')$.
 
 Let $s$ be a section such that $\rmj^{r+1}_m s=p'$, and let the R-plane $L_{p'}$ be tangent to $\graph^r(s)$. Let us choose a basis in $L_{p'}$ consisting of the vectors $X_1^p,\ldots,X_n^p$ whose projections to $M$ coincide with $\partial_{x^1}(m),\ldots,\partial_{x^n}(m)$. From the definition of the canonical coordinates, it is easy to deduce the formulas for the basis vectors $X^p_i$:
-\[X^p_i=\frac{\partial}{\partial x^i}+\sum_{|I|\leq k}\sum_{j=1}^m p^j_{I+1_i}(p')\frac{\partial}{\partial p^j_I}\quad \in L_{p'}<\T_p \rmJ^rE,\]
-where $I+1_i$ is the multi-index obtained from $I$ by increasing its $i$-th component by $1$.
+\[X^p_i=\frac{\partial}{\partial x^i}+\sum_{|I|\leq r}\sum_{j=1}^k p^j_{I+1_i}(p')\frac{\partial}{\partial p^j_I}\quad \in L_{p'}<\T_p \rmJ^rE,\]
+where $I+1_i$ is the multi-index obtained from $I$ by increasing its $i$-th component by $1$. From here we see that the total span of all of these vectors for all possible $p'$ is exactly the annihilator of the contact forms $\theta_I^j=\dd p^j_I-\sum_{i=1}^n p^j_{I+1_i}\dd x^i$, $|I|\leq r-1$, which is the dual definition of the Cartan distribution $\calC$.
 
-It is easily seen that the above sum over $I$ is determined only by the point $p$ and is independent of the choice of $p'$ in the fiber above $p$. Thus, any plane $L_{\wt p'}$ corresponding to another jet $\wt p'\in (\rmJ^{r+1}E)_p$ can be obtained from the given plane $L_{p'}$ by rotating in the ``vertical direction''. More exactly, the position of $L_{\wt p'}$ w.r.t.\ $L_{p'}$ can be determined by the set of $n$ \emph{shift vectors} $\delta_i\coloneqq X^{\wt p'}_i-X^{p'}_i$ which are vertical w.r.t.\ the projection $\pi^r_{r-1}$.
+\begin{xca}\label{ex 3.3.6 Kras}
+    Show that any $1$-form on $\rmJ^rE$ is locally uniquely represented as 
+    \[\omega=\sum_{i=1}^n \varphi_i \dd x^i+\omega_\calC,\]
+    where $\varphi_i$ are local smooth functions on $\rmJ^rE$ and $\omega_\calC$ is a section of $\Ann(\calC)$, i.e., a combination of the contact forms.
+\end{xca}
+
+It is easily seen that the part of the above sum over $|I|<r$ is determined only by the point $p$ and is independent of the choice of $p'$ in the fiber above $p$. In fact, if the canonical coordinates of $p$ are $p^j_I$, $|I|\leq r$, $j=1,\ldots,k$, and $s$ is a section with $p'=\rmj^{r+1}_m s$, then we can write 
+\[X^p_i=D_i^p+\sum_{|I|=r}\frac{\partial^{r+1}s^j}{(\partial x^1)^{i_1}\cdots (\partial x^n)^{i_n}\partial x^i}(\bf{x})\frac{\partial}{\partial p^j_I},\]
+where 
+\[D_i^p\coloneqq \frac{\partial}{\partial x^i}+\sum_{|I|\leq r-1}\sum_{j=1}^k p^j_{I+1_i}\frac{\partial}{\partial p^j_I}\]
+are the ``truncated total derivative'' operators determined only by $p\in \rmJ^rE$. Thus, any plane $L_{\wt p'}$ corresponding to another jet $\wt p'\in (\rmJ^{r+1}E)_p$ can be obtained from the given plane $L_{p'}$ by rotating in the ``vertical direction'' of the fibration $\pi^{r+1}_r$. More exactly, the position of $L_{\wt p'}$ w.r.t.\ $L_{p'}$ can be determined by the set of $n$ \emph{shift vectors} $\delta_i\coloneqq X^{\wt p'}_i-X^{p'}_i$ which are vertical w.r.t.\ the projection $\pi^r_{r-1}$.
 
 Denote the space of vertical vectors at the point $p$ by 
 \[\calV_p\rmJ^rE\coloneqq \T_p\left(\rmJ^rE_{\pi^r_{r-1}(p)}\right)<\T_p \rmJ^rE.\]
@@ -1401,7 +1440,10 @@ We have thus shown that the space of $(r+1)$-jets that project to a given $r$-je
         \[\left((\pi^r)^\ast \bigodot^{r+1}(\T^\ast M)\right)\otimes (\pi^r_0)^\ast (\calV E);\]        
         \item The Cartan plane $\calC_p<\T_p \rmJ^rE$ can be written as the direct sum
         \[\calC_p=\calV_p\rmJ^rE\oplus L_{p'},\label{eq 3.2.2 Kras}\]
-        where $\calV_p\rmJ^rE$ is the tangent space to the fiber of the projection $\pi^r_{r-1}$ and $L_{p'}$ is the R-plane corresponding to an arbitrary $(r+1)$-jet $p'\in(\pi^{r+1}_r)^{-1}(p)$;
+        where $\calV_p\rmJ^rE$ is the tangent space to the fiber of the projection $\pi^r_{r-1}$ and $L_{p'}$ is the R-plane corresponding to an arbitrary $(r+1)$-jet $p'\in(\pi^{r+1}_r)^{-1}(p)$. In canonical coordinates, the vertical component is spanned by the basis
+        \[\frac{\partial}{\partial p^j_{I}}, \quad |I|=r,\] 
+        whereas the R-plane is spanned by the basis
+        \[X^p_i=\frac{\partial}{\partial x^i}+\sum_{|I|\leq r-1}\sum_{j=1}^k p^j_{I+1_i}\frac{\partial}{\partial p^j_I},\quad i=1,\ldots,n;\]
         \item The Cartan plane $\calC_p$ consists of tangent vectors at $p$ that project to $L_p$ under the projection $\pi^r_{r-1}$, i.e.,
         \[\calC_p=\left(\pi^r_{r-1}\right)_\ast^{-1}(L_p).\]
     \end{enumerate}
@@ -1413,15 +1455,592 @@ We have thus shown that the space of $(r+1)$-jets that project to a given $r$-je
 \end{proof}
 
 
+\begin{example}
+    Consider functions of a single variable as sections of the bundle $E=\bbR\times\bbR\to \bbR$. Write them as $x\mapsto u(x)$. The first jet bundle $\rmJ^1 E$ has coordinates $(x,u,p)$ and the $1$-graph of a function $u$ is given by $p=u_x$. On the second jet bundle $\rmJ^2 E$, there is another coordinate $q$ corresponding to $u_{xx}$. The R-line defined by a $2$-jet $(x,u,p,q)$ is spanned by the basis vector 
+    \[X^q=\partial_x+p\partial_u+q\partial_p.\]
+    This decomposes into a vertical (w.r.t.\ $\pi^2_1$) component $q\partial_p$ and the complement $\partial_x+p\partial_u$, but this decomposition is not natural since it is not preserved under changes of the coordinate $x$. The Cartan plane at $(x,u,p)\in\rmJ^1 E$ is spanned by $X^q$ and $\partial_p$, or just by $X^{q}$ and $X^{q'}$ for any pair $q\neq q'$. It is annihilated by the contact form $\theta=\dd u-p\dd x$.
+\end{example}
+
+\begin{cor}
+    A plane $L<\calC_p$ projects submersively to $\rmJ^{r-1}E$ under $\pi^r_{r-1}:\rmJ^r E\to \rmJ^{r-1}E$ iff it projects submersively to $M$ by $\pi^r:\rmJ^r E\to M$. That, is the degeneracy of the Cartan plane under the sequence of projections 
+    \[\rmJ^r E\to \rmJ^{r-1}E\to\cdots\to \rmJ^0 E\to M\] 
+    may occur at the first step only.
+\end{cor}
+
+Let us find a coordinate representation for a vector field $X\in\fX(\rmJ^r E)$ lying in the Cartan distribution. Use the splitting (\ref{eq 3.2.2 Kras}): the vertical basis elements $\partial/\partial p_I^j$, $j=1,\ldots,k$, $|I|=r$, forms a basis of the vertical subspace $\calV_p\rmJ^r E$ at $p$. A basis of the complement is given by the vectors $D^p_i$. Thus, any vector field $X\in\Gamma^\infty(\calC)$ can be decomposed as 
+\[X_p=\sum_{i=1}^n a^i D_i^p+\sum_{|I|=r}b^j_I \frac{\partial}{\partial p^j_I}.\label{eq 3.2.5 Kras}\]
+The Cartan distribution $\calC$ on $\rmJ^r E$ is \emph{not} integrable since, for example, for $|I|=r-1$, the commutator 
+\[\left[\frac{\partial}{\partial p^j_{I+1_i}},D_i^p\right]=\frac{\partial}{\partial p^j_I}\]
+is not of the form (\ref{eq 3.2.5 Kras}). Consequently, maximal integral manifolds of $\calC$ are of dimension less than $\rank \calC$. To obtain a completely integrable distribution, we must restrict $\calC$ to a submanifold.
+
+\begin{rem}[Contact structures]
+    A defining feature of contact forms is that the distribution defined by them is not just not completely integrable, but it is \emph{maximally non-integrable}. Consider a manifold $M$ with a nowhere-vanishing $1$-form $\theta\in\Omega^1(M)$ such that the hyperplane distribution $\ker\theta$ is \emph{non-integrable}. By Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1}, this is equivalent to the condition $\theta\wedge\dd\theta\neq 0$
+    everywhere. If it is violated, so $(\theta\wedge\dd\theta)_m=0$, then we can consider a vector $X\in\ker\theta_m$ and write 
+    \[0=i_X(\theta\wedge\dd\theta)=\theta(X)\dd\theta-\theta\wedge i_X\dd\theta=-\theta\wedge i_X\dd\theta,\]
+    which implies $i_X\dd\theta=0$. Since $\dd\theta$ is a $2$-form, at a single point of $M$ it is represented by a square matrix, and the above non-integrability condition demands that it have positive rank when restricted to $\ker\theta$ (there must exist an $X\in \ker\theta$ such that $i_X\dd\theta\neq 0$).  
+    
+    By definition, a \emph{contact manifold} \index{Contact manifold} is a tuple $(M,\theta)$, where $\dim M=2n+1$ and $\theta\in\Omega^1(M)$ is a $1$-form such that the distribution of $2n$-planes (\emph{contact elements}) $\ker\theta$ is \emph{maximally} non-integrable, namely $\restr{\dd\theta}{\ker\theta}$ is non-degenerate, i.e., of \emph{maximal rank}. Note that this is possible only on odd-dimensional manifolds. By a straightforward extension of the above argument, this is equivalent to 
+    \[\theta\wedge(\dd\theta)^{\wedge n}\neq 0 \quad \text{(a volume form)}.\]
+    
+    More generally, an \emph{almost contact structure}\index{Almost contact manifold} is an odd-dimensional manifold with a closed $2$-form of maximal rank (analog of $\dd\theta$). The canonical examples of such structures come from classical mechanics, where one starts out with a symplectic manifold $(M,\omega)$, $\dim M=2n$ and a smooth function (Hamiltonian) $H\in C^\infty(M)$. Then one defines on $E=M\times \bbR\overset{\pi}{\to}M$, where the coordinate on $\bbR$ is time $t$, the $2$-form
+    \[\omega_H\coloneqq \pi^\ast \omega+\dd H\wedge\dd t.\]
+    It is easy to check that this is an almost contact form and the Hamiltonian vector field $X_H\coloneqq \omega^{-1}\circ \dd H$ spans the \emph{characteristic distribution} $\ker\omega_H$. If there exists a \emph{symplectic potential} $\theta\in \Omega^1(M)$, i.e., $\omega=\dd\theta$, then $\omega_H=\dd\theta_H$, where $\theta_H=\pi^\ast\theta+H\dd t$. If $H+(\pi^\ast\theta)(X_H)$ is nowhere zero, then $\theta_H$ is a contact form on $M\times \bbR$.
+\end{rem}
 
 
+
+\begin{example}
+    For a canonical example of a contact structure, let $E=\bbR^n\times \bbR\to \bbR^n$ be the bundle of values of functions of $n$ variables $x^1,\ldots,x^n$. The canonical coordinates on the first jet bundle $\rmJ^1 E$ are $(x^1,\ldots,x^n,u,p_1,\ldots,p_n)$, and the only contact form is $\theta=\dd u-\sum_{i=1}^n p_i\dd x^i$. It is easy to see that $\theta\wedge(\dd\theta)^{\wedge n}$ is a volume form on $\rmJ^1 E$. 
+\end{example}
+
+\begin{defn}[Differential equation]\index{Differential equation}
+    An $r$-order differential equation on a bundle $E\to M$ is a submanifold $\calE\subset \rmJ^r E$ endowed with the restricted Cartan distribution $\calC(\calE)=\calC\cap \T \calE$. A maximal integral manifold (of dimension $\dim M$) of the Cartan distribution $\calC(\calE)$ is called a (generalized) solution of the equation $\calE$.
+\end{defn}
+
+\begin{figure}[tp]
+    \centering
+    \includegraphics[scale=0.5]{figures/oscillator.png}
+    \caption{A generalized trajectory of the harmonic oscillator and its projection to the $qu$-plane.}
+    \label{fig:oscillator}
+\end{figure}
+
+\begin{example}
+    Consider the stationary Hamilton-Jacobi equation 
+    \[\left(\frac{\partial S}{\partial q}\right)^2+q^2=C=\const\]
+    describing a $1$-dimensional harmonic oscillator. The corresponding locus $\calE:p^2+q^2=C$ is the cylinder in the $(q,u,p)$-space. The Cartan distribution $\calC(\calE)$ is a direction field on this cylinder. Integral curves are generalized solutions of the equation. It is obvious that these curves project to the $q$-axis with degeneration, see Figure~\ref{fig:oscillator}.
+\end{example}
+
+In Theorem~\ref{thm 3.1.1 Kras} we showed that the $r$-graphs of sections are integral manifolds of the Cartan distribution. Now we will describe the structure of arbitrary maximal integral manifolds.
+
+\begin{defn}[Prolongation of submanifold]
+    Let $P<\calC_p^{r-1}$ be a plane of dimension $s\leq \dim M$. The subset 
+    \[\ell(P)\coloneqq \{p'\in \rmJ^r E\mid P<L_{p'}\}\] 
+    of the fiber over $p$ is called the \emph{ray submanifold} (or just \emph{ray}) corresponding to the plane $P$. If $N<\rmJ^{r-1}E$ is a submanifold, then the set 
+    \[L(N)\coloneqq \bigcup_{q\in N}\ell(\T_q N)\]
+    is called the \emph{prolongation} (or \emph{lifting}) of the submanifold of $N$.
+\end{defn}
+
+The prolongation of $N$ consists of $r$-jets that are the possible derivatives of sections whose $(r-1)$-jets lie in $N$.
+
+\begin{xca}
+    Show that if $\graph^{r-1} (f)\subset N$, then $\graph^r(f)\subset L(N)$.
+\end{xca}
+
+\begin{example}
+    Let $E=\bbR^2\times\bbR\to M=\bbR^2$. Consider an integral curve $Q$ of the Cartan distribution on $\rmJ^1E$ and its prolongation to $\rmJ^2E$. The prolongation is not empty iff the curve $Q$ is horizontal w.r.t.\ $\pi^1:\rmJ^1E\to \bbR^2$. Then we can choose coordinates $x,y$ on $\bbR^2$ such that the projection $S$ of $Q$ in a neighborhood of some point is of the form $y=0$.  The curve itself in this case can be described by relations of the form 
+    \[y=0,\quad u=\alpha(x),\quad p=\beta(x),\quad q=\gamma(x).\]
+    Since this curve is an integral manifold of the Cartan distribution given by $\restr{(\dd u-p\dd x-q\dd y)}{Q}=0$, one has $\beta=\alpha_x$. The relations above mean that we know the values of the function $u(x,y)$  together with the values of its derivative $u_y(x,y)$ for $y=0$. Thus we obtained the standard formulation for the Cauchy problem for second-order equations. Hence, in this situation the problem of prolongation is equivalent to describing the $2$-graphs of functions satisfying Cauchy conditions along $S$.
+
+    Let $(x,y,u,p,q)\in Q$ and  let $\xi=(X,Y,U,P,Q)$ be a tangent vector. Let us describe the set $\ell(\xi)\subset (\pi^2_1)^{-1}(x,y,u,p,q)$. Denote by $r,s,t$ coordinates in the fiber of $\pi^2_1:\rmJ^2E\to \rmJ^1E$ (corresponding to $u_{xx},u_{xy},u_{yy}$). Then the equations 
+    \[Xr+Ys=P,\quad Xs+Yt=Q\label{eq 3.2.8 Kras}\]
+    describe the line $\ell(\xi)$. Note that the classical concept of a characteristic for second order equations is based on consideration of system (\ref{eq 3.2.8 Kras}) together with the initial equation $\calE\subset\rmJ^2E$.
+\end{example}
+
+For clarity let us denote by $\calC^r$ the Cartan distribution on $\rmJ^r E$.
+
+\begin{cor}
+    For an integral manifold $N\embweak\rmJ^{r-1}E$ of $\calC^{r-1}$ transverse w.r.t.\ the projection $\pi^{r-1}$ to the base, the corresponding prolongation $L(N)\subset \rmJ^rE$ is an integral manifold of $\calC^r$.
+\end{cor}
+\begin{proof}
+    It suffices, applying Theorem~\ref{thm 3.2.1 Kras}, to check that at any $p'\in L(N)$ the image of $\T_{p'}L(N)$ under $\pi^r_{r-1}$ lies in $L_{p'}$. By definitions and the construction of $L(N)$, we have $(\pi^r_{r-1})_{\ast p'}L(N)=\T_{p'}L(N)=\T_pN< L_{p'}$. Thus, $L(N)$ is an integral manifold.
+\end{proof}
+
+As we will prove below, the above construction is of a universal nature. We now describe the local structure of transverse integral manifolds $N$ and deduce a formula to compute $\dim L(N)$ in terms of $\dim N$.
+
+\begin{prop}\label{prop 3.2.4 Kras}
+    Any transverse integral manifold $N$ of the Cartan distribution on $\rmJ^rE$ locally lies in the $r$-graph $\graph^r(s)$ of some section $s$.
+\end{prop}
+\begin{proof}
+    Let $l=\dim N\leq n$ and $\rank E=k$. Let us introduce in a neighborhood of the point $m=\pi^r(p)$, $p\in N$, coordinates $x^1,\ldots,x^n$ such that $\underline{N}=\pi^r(N)$ is given by the equations $x^{l+1}=\cdots=x^n=0$. Since the manifold $N$ is transverse, it is described by the equations 
+    \[x^i=0,\; i>l,\quad p^j_I=\underline f^j_I(\bf{x}),\; j=1,\ldots,k,\; |I|\leq r.\]
+    Restricting the contact forms to $N$ (cf. the proof of Theorem~\ref{thm 3.1.1 Kras}), we obtain that 
+    \[\underline f^j_{I+1_i}=\frac{\partial\underline f^j_I(x^1,\ldots,x^l)}{\partial x^i},\quad |I|\leq l-1,\quad i=1,\ldots,l.\]
+    Thus, the functions $\underline f^1,\ldots,\underline f^k$ are defined on $\underline{N}$. They satisfy the above conditions and the values of all their normal derivatives are given along $\underline{N}$. Hence, there exist functions $f^1,\ldots,f^k$ such that $\restr{f^j}{\underline{N}}=\underline{f}^j$ and with the given values of normal derivatives on $\underline{N}$. Consequently, $\bf{f}(\bf{x})=(f^1,\ldots,f^k)$ is the section we need.
+\end{proof}
+
+\begin{prop}[{{\cite[Prop.~3.2.5]{Kras}}}]\label{prop 3.2.5 Kras}
+    Let $\pi:E\to M$ be a rank $k$ \gls{vb} over an $n$-dimensional manifold $M$ and $N\embweak \rmJ^r E$ a transverse integral manifold of dimension $l\leq n$ of the Cartan distribution. Then 
+    \[\dim L(N)=l+k\binom{n-l+r}{n-l-1}.\]
+\end{prop}
+
+\begin{cor}\label{cor 3.2.6 Kras}
+    If $l_1=\dim N_1<l_2=\dim N_2$, then $\dim L(N_1)\geq \dim L(N_2)$ and equality is achieved only in the following cases:
+    \begin{enumerate}[label=(\alph*)]
+        \item $k=n=1$.
+        \item $r=0,k=1$.
+        \item $k=1$, $l_1=n-1$, $l_2=n$.
+    \end{enumerate}
+\end{cor}
+
+\begin{thm}\label{thm 3.2.7 Kras}
+    An integral manifold $Q$ of the Cartan distribution on $\rmJ^r E$ is maximal iff everywhere, except possibly for a manifold of lower dimension, it is locally of the form $L(N)$ for some transverse integral manifold $N\embweak\rmJ^{r-1}E$. 
+\end{thm}
+\begin{proof}
+    Let $Q\embweak \rmJ^rE$ be a maximal integral manifold of $\calC^r$. We shall prove the theorem for any point $p\in Q$ such that in its neighborhood the rank of $\pi^r_{r-1}$ is constant (clearly, such points form an open everywhere dense set in $Q$). The following lemma follows from the \gls{immt} and is given without proof.
+
+    \begin{lem}
+        Let $A,B$ be smooth manifolds and $f:A\to B$ be a smooth mapping of constant rank $p$ in a neighborhood of a point $a\in A$. Then there exists a neighborhood $U\ni a$ such that the set $f(U)$ is a submanifold in a neighborhood of $b=f(a)$. Moreover, its tangent space at $b$ is the image of the tangent space of $A$ at $a:\T_b (f(U))=f_\ast(\T_a A)$.
+    \end{lem}
+
+    Now let $p\in Q$ and $N=\pi^r_{r-1}(U)$ be the projection of the corresponding neighborhood $U\subset Q$ to $\rmJ^{r-1}E$. By the lemma, $N$ is submanifold in $\rmJ^{r-1}E$. Let $p'=\pi^r_{r-1}(p)$. By the same lemma and by Theorem~\ref{thm 3.2.1 Kras}, one has $\T_{p'}(N)=\T_{p'}(\pi^r_{r-1}(Q))=(\pi^r_{r-1})_\ast (\T_p Q)\subset (\pi^r_{r-1})_\ast (\calC^r_p)=L_p$. It follows that $N$ is a transverse manifold and $\dim N\leq n$, and we can apply Proposition~\ref{prop 3.2.4 Kras}. The embedding $L_p\emb \T_{p'}N$, by definition, means that $p\in L(N)$. Hence, $U\subset L(N)$, i.e., $Q\subset L(N)$ locally. Therefore, by maximality, $Q=L(N)$.
+
+    Conversely, consider a manifold of the form $L(N)$. As it was just proved, it contains in the maximal integral manifold $L(N_1)$ and $\dim L(N)\leq \dim L(N_1)$. But $N=\pi^r_{r-1}(L(N))$, $N_1=\pi^r_{r-1}(L(N_1))$. Therefore, $N\subset N_1$ and $\dim N\leq \dim N_1$. By Corollary~\ref{cor 3.2.6 Kras}, one has $\dim L(N_1)\leq \dim L(N)$, i.e., $L(N)=L(N_1)$.
+\end{proof}
+
+Note that if $N$ is the $(r-1)$-graph of some section of $E$, then the manifold $L(N)$ is the $r$-graph of the same section. Hence, $r$-graphs of sections are maximal integral manifolds of $\calC^r$.
+
+From the above theorem and Corollary~\ref{cor 3.2.6 Kras}, we get the following.
+
+\begin{cor}\label{cor 3.2.9 Kras}
+    Except for the cases $k=n=1$ ($1$ function of $1$ variable) and $r=k=1$ ($1$-jets of $1$ function), manifolds of the form $L(N)$, where $\dim N=0$, are of the maximal dimension among all integral manifolds of $\calC^r$. In other words, the fibers of $\pi^r_{r-1}$ are integral manifolds of maximal dimension.
+\end{cor}
+
+This fact is of fundamental importance in the description of the symmetries of the Cartan distribution, which we do next.
+
+
+
+
+
+
+
+\section{Contact transformations}
+
+\begin{defn}[Contact transformation, Prolongation, Point symmetry]\index{Lie transformation}\index{Point transformation}\index{Contact transformation}\index{Prolongation}
+    A ($r$-th order) contact, or \emph{Lie}, transformation on a jet bundle $\rmJ^r E$ of a \gls{vb} $E\to M$, is a symmetry of the Cartan distribution $\calC^r$.
+
+    The \emph{$(r+q)$-th order prolongation} $F^{(q)}$ of a contact transformation $F:\rmJ^rE\to \rmJ^rE$ is the unique contact transformation on $\rmJ^{r+q}E$ which projects back to $F$, i.e., $\pi^{r+q}_r\circ F^{(q)}=F\circ \pi^{r+q}_r$.
+
+    Prolongations of diffeomorphisms of $E$ are called \emph{point transformations} (they are obviously contact transformations).
+\end{defn}
+
+\begin{rem}
+    Let us give an explicit description of the prolongation. Let $F:E\to E$ be a diffeomorphism and let $p\in \rmJ^r E$, $\pi^r_0(p)=e\in E$, $\pi^r(p)=m\in M$. Choose a section $s\in\Gamma^\infty(E)$ such that $p=\rmj_m^r s$ and consider its graph $\graph(s)\subset E$. If, in a neighborhood of $e'=F(e)$, the image $F(\graph(s))$ is the graph of some section $s'$, we shall define $p'\coloneqq \rmj_{m'}^r s'$, where $m'=\pi(e')$ and define the $r$-th order prolongation of $F$ by $F^{(r)}(p)\coloneqq p'$.
+\end{rem}
+
+\begin{xca}
+    \begin{enumerate}
+        \item In the above remark, show that the point $p'$ is independent of the choice of the section $s'$, given $p$.
+        \item Show that if $F^{(1)}$ is defined around some point $p\in \rmJ^1E$, then $F^{(r)}$ is defined around any point $p'\in \rmJ^rE$ lying above $p$ (w.r.t.\ $\pi^r_1$).
+        \item Show that, where $F^{(r+s)}$ is well-defined, the equality $\left(F^{(r)}\right)^{(s)}=F^{(r+s)}$ holds.
+    \end{enumerate}
+\end{xca}
+
+\begin{example}[Point transformations]
+    \begin{enumerate}
+        \item The translation along a constant vector field in $\bbR^n\times\bbR^k$ is a point transformation described by 
+        \[x^i\mapsto x^i+\xi^i,\quad u^j\mapsto u^j+\eta^j.\]
+        It acts as the identity on all variables $p^j_I$.
+        \item A Galilean transformation on the space of functions $u(t,x)$ is given by 
+        \[t\mapsto t,\quad x\mapsto x-vt,\quad u\mapsto u.\]
+        The prolongation of this to $1$-jets is of the form 
+        \[u_t\mapsto u_t+vu_x,\quad u_x\mapsto u_x.\]
+        \item An arbitrary diffeomorphism of the plane $(x,u)\mapsto (\lambda(x,u),\mu(x,u))$ induces a \gls{flt} in $p$ of the $3$-dimensional $xup$-space. It is easily checked that
+        \[p\mapsto \frac{\dd \mu}{\dd \lambda}=\frac{\mu_x\dd x+\mu_u\dd u}{\lambda_x\dd x+\lambda_u\dd u}=\frac{\mu_x+\mu_up}{\lambda_x+\lambda_up}.\]
+        \item For a general point transformation 
+        \[\wb{\bf{x}}\mapsto \bf{f}(\bf{x},\bf{u}),\quad \wb{\bf{u}}=\bf{g}(\bf{x},\bf{u}),\]
+        its prolongation to the space of $1$-jets $p^i_j\mapsto \wb p^{i}_j$ is given by the system of $n k$ linear equations 
+        \[\sum_{l=1}^n D_i(\wb x^{ l})\wb p_l^{j}=D_i(\wb u^{j}),\quad i=1,\ldots,n,\; j=1,\ldots,k,\]
+        where $D_i$ is the \emph{total derivative operator} along $x^i$, defined by 
+        \[(D_i f)(\bf{x},\bf{u},\bf{p})=\frac{\partial f}{\partial x^i}+\sum_{j=1}^k p^j_i\frac{\partial f}{\partial u^j}.\label{def total deriv}\]
+        (Note that it produces a function of 1-jets; its extensions to higher-order jets will be defined below.) The determinant of the matrix $\{D_i(\wb x^{j})\}_{i,j}$ is unsurprisingly called the ``total Jacobian'' of the system of functions $\wb x^{j}$. Note that the vanishing of this Jacobian on some open set implies functional dependence of the functions $\wb x^{j}$. Since the point transformation is a local diffeomorphism, the Jacobian is almost never zero, so the above linear equations determine the $\wb p^{j}_i$ uniquely almost everywhere.
+    \end{enumerate}
+\end{example}
+
+
+\begin{example}[Legendre transform]
+    Not every contact transformation is a point transformation. Let $E=\bbR^n\times \bbR\to M=\bbR^n$ and consider the \emph{Legendre transformation} \index{Legendre transform}
+    \[\mathscr{L}:\quad x^i\mapsto p_i,\quad u\mapsto \sum_{j=1}^n x^jp_j-u,\quad p_i\mapsto x^i,\quad i=1,\ldots,n,\]
+    where $x^1,\ldots,x^n,u,p_1,\ldots,p_n$ are the canonical coordinates. It is easy to check that this preserves the Cartan distribution.
+\end{example}
+
+Defining the notion of symmetry for a differential equation $\calE$ is a subtle undertaking, and as a result there are many different types of symmetries. Conceptually, the most natural definition would be as a diffeomorphism of $\calE$ that preserves the restricted Cartan distribution $\calC(\calE)$ (an \emph{internal symmetry}). However, computations are much simpler if one takes the broader point of view from the ambient jet bundle. The following class of symmetries may also be called \emph{external}.
+
+\begin{defn}[Equivalent equations, Contact symmetry]\index{Contact symmetry}
+    Two equations $\calE,\calE'\subset\rmJ^r E$ are called (locally) equivalent if there is a contact transformation $F\in\Aut(\calC^r)$ such that the image of $\calE$ is $\calE'$. The transformation $F$ is called a \emph{contact, or classical, symmetry} of $\calE$ if $F(\calE)=\calE$.
+\end{defn}
+
+The next few examples show the power of contact symmetries for solving differential equations.
+
+\begin{example}[Legendre transform]\index{Legendre transform}
+    The Legendre transform is a contact symmetry of the equation 
+    \[\calE=\left\{u-\frac12\sum_{i=1}^n x^ip_i=0\right\}.\]
+    This equation has the $n$-parameter family of solutions $u=\sum_{i=1}^n b_i(x^i)^2$, where $b_i\in\bbR$. This family is invariant under the Legendre transform:
+    \[\mathscr{L}\left(\rmj^1\left(\sum_i b_i(x^i)^2\right)\right)=\rmj^1\left(\sum_i \frac{(x^i)^2}{4b_i}\right).\]
+    The $1$-graph of the constant function $u=c$ transformed by the Legendre transform $\{u=c,\bf{p}=0\}\mapsto \{u=-c,\bf{x}=0\}$ is an integral manifold whose projection to the manifold of independent variables is the point $\bf{x}=0$.
+\end{example}
+
+As the above example shows, finding a contact transformation that maps the equation to one that doesn't depend on the derivatives (i.e., is a subbundle of jets) is as good as solving the equation. In the next two examples we give an explicit example.
+
+\begin{example}[Clairaut equations]\index{Equation!Clairaut}
+    The general \emph{Clairaut equation} has the form 
+    \[\calE:\quad F\left(\sum_i x^ip_i-u,p_1,\ldots,p_n\right)=0,\]
+    where $F$ is a smooth function of $n+1$ variables. The image of this equation under the Legendre transform is the equation 
+    \[\calE'=\mathscr{L}(\calE):\quad F(u,x^1,\ldots,x^n)=0,\]
+    which contains no derivatives. $\calE'$ is an $n$-dimensional surface in the $(n+1)$-dimensional space $E=\bbR^n\times\bbR$, the corresponding first-order differential equation being its preimage under the projection $\pi^1_0:\rmJ^1E\to E$.
+
+    Take a point $(a_1,\ldots,a_n,b)\in E$ such that $F(b,a_1,\ldots,a_n)=0$. The fiber of $\pi^1_0$ over this point is a generalized solution of $\calE'$. Applying the Legendre transformation to these generalized solutions yields an $n$-parameter family of single-valued solutions of $\calE$, which is hence a \emph{complete integral} of the Clairaut equation.
+
+    On the other hand, solving $\calE'$ for $u$ in the vicinity of a nonsingular point (where $F_u\neq 0$) yields 
+    \[u=f(x^1,\ldots,x^n).\]
+    To find the image of this solution under the Legendre transformation observe that the $1$-graph of $f$ has the form 
+    \[p_i=f_{x^i}(\bf{x}),\quad F(u,x^1,\ldots,x^n)=0.\]
+    Under the Legendre transform, this maps to the system 
+    \[x^i=f_{x^i}(\bf{p}),\quad F\left(\sum_i x^ip_i-u,p_1,\ldots,p_n\right)=0,\]
+    which is compatible. Express $\bf{p}$ in terms of $\bf{x}$ via the first equation. Substituting into the last equation and solving for $u$ in terms of $\bf{x}$ yields a discrete set of solutions to the Clairaut equation, which are called \emph{exceptional integrals}.
+\end{example}
+
+\begin{example}
+    Consider the following Clairaut equation with two independent variables 
+    \[\calE:\quad xp_x+yp_y-u=\frac13(p_x^3+p_y^3).\]
+    Using the Legendre transform, we obtain $\calE':u=\frac13(x^3+y^3)$, which gives the following complete integral of the original equation:
+    \[u=a_1x+a_2y-\frac13(x^3+y^3),\quad a_1,a_2=\const.\]
+    Exceptional integrals are found from the system 
+    \[u=xp_x+yp_y-\frac13(p_x^3+p_y^3),\quad x=p_x^2,\quad y=p_y^2.\label{eq 1.1.25 Kras}\]
+    It follows that exceptional integrals exist in the quadrant $x>0,y>0$ and have the form 
+    \[p_x=\alpha_1\sqrt{x},\quad p_y=\alpha_2\sqrt{y},\quad u=\frac23(\alpha_1x^{3/2}+\alpha_2y^{3/2}),\label{eq 1.1.26 Kras}\]
+    with $\alpha_1,\alpha_2\in \{-1,1\}$. This formula defines $4$ exceptional integrals. However, from the geometric point of view, the system (\ref{eq 1.1.25 Kras}) defines only one generalized solution, which is a surface of the fourth order and degenerately projecting to the $\bf{x}$-plane. Formula (\ref{eq 1.1.26 Kras}) defines the four branches of this generalized solution.
+\end{example}
+
+The following surprising theorem gives a complete description of contact transformations.
+
+\begin{thm}[B\"acklund (1876) {{\cite[Thm.~3.3.1]{Kras}}}]\label{thm 3.3.1 Kras}
+    Any contact transformation $F$ of the jet space $\rmJ^rE$, $r\geq 1$, is described as follows:
+    \begin{enumerate}
+        \item For $\rank E=1$, the transformation $F$ is the $(r-1)$-st prolongation of some contact transformation of $\rmJ^1E$.
+        \item For $\rank E=k>1$, the transformation $F$ is the $r$-th prolongation of a diffeomorphism of $E$, i.e., $F$ is a point transformation.
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    The proof is based on the above established fact: the fibers of $\pi^r_{r-1}$ are integral manifolds of maximal dimension of the Cartan distribution $\calC^r$ (cf.\ Corollary~\ref{cor 3.2.9 Kras}). The case $k=n=1$ needs a special treatment.
+
+    Assume that $kn>1$. Let $F:\rmJ^rE\to \rmJ^rE$ be a contact transformation and $r\geq 2$ if $k=1$, and $r\geq 1$ if $k>1$. Since $F$ preserves the Cartan distribution, it must take its maximal integral manifolds to maximal integral manifolds. Since $F$ is a diffeomorphism, the dimension of these manifolds is preserved. Consequently, $F$ takes a fiber of $\pi^r_{r-1}$ to another fiber. Hence, $F$ induces a transformation $F_1$ of $\rmJ^{r-1}E$: if $F\left((\pi^r_{r-1})^{-1}(p)\right)=(\pi^r_{r-1})^{-1}(p')$ for $p,p'\in\rmJ^{r-1}E$, then $A_1(p)=p'$.
+
+    Since $F_1$ is the projection of the contact transformation $F$, it is itself a contact transformation. Let us consider the transformation $F$ and the prolongation $F_1^{(1)}$ of $F_1$. They both are symmetries of the Cartan distribution $\calC^r$, preserve the fibers of $\pi^r_{r-1}$, and induce the same transformation of $\rmJ^{r-1}E$. Therefore, the diffeomorphism $F'\coloneqq F^{(1)}\circ F^{-1}$ is a contact transformation of $\rmJ^rE$ inducing the identity map on $\rmJ^{r-1}E$.
+
+    \begin{xca}
+        Prove that a contact transformation of $\rmJ^rE$ that projects to the identity map on $\rmJ^{r-1}E$ must be the identity map.
+    \end{xca}
+
+    By the above exercise, $F=F_1^{(1)}$. Applying the same argument inductively, we obtain some transformation $f$ of $\rmJ^1E$ if $k=1$ or of $\rmJ^0E=E$ if $k>1$. To conclude the proof, it suffices to use the property $(f^{(r)})^{(s)}=f^{(r+s)}$.
+
+    In the case $k=n=1$, the proof is implied by the following considerations. Let $x,p_0,\ldots,p_r$ be canonical coordinates on $\rmJ^r(\bbR,\bbR)$. The Cartan distribution $\calC$ on $\rmJ^r(\bbR,\bbR)$ is of rank $2$, generated by the vector fields $Z=\partial/\partial p_r$ and $D=\partial_x+\sum_{i=1}^{r-1}p_{i+1}\partial/\partial p_i$. It suffices to prove that any contact transformation $F$ takes $Z$ to itself; all further reasoning will be similar to the above used. Denote by $V$ the rank $1$ distribution spanned by $Z$.
+
+    \begin{lem}
+        Let $\calC'=[\calC,\calC]$ be the distribution on $\rmJ^r(\bbR,\bbR)$, $r\geq 2$, spanned by the commutators of elements of $\Gamma^\infty(\calC)$. Then, denoting by $\calC_D$ the normalizer of the set $\Gamma^\infty(\calC)$ within the Lie algebra of all vector fields, i.e.,
+        \[\calC_D=\{X\in \fX(\rmJ^r(\bbR,\bbR))\mid [X,\Gamma^\infty(\calC)]\subset  \Gamma^\infty(\calC)\},\]
+        one has 
+        \[\Gamma^\infty(V)=\Gamma^\infty(\calC)\cap \calC_D'.\]
+    \end{lem}
+    \begin{proof}[Proof of the lemma]
+        Obviously, the distribution $\calC'$ is of rank $3$. It is spanned by the fields $Z,D$, and $[Z,D]=\partial/\partial p_{r-1}\eqqcolon Y$. It is easily seen that $[Z,Y]=0$, $[Y,D]=X=\partial/\partial p_{r-2}$. Let the field $S\coloneqq \alpha Z+\beta D$ be a symmetry of $\calC'$. Then $[Y,S]\in\Gamma^\infty(\calC')$, i.e., $[Y,S]$ is represented as a linear combination of $Z,D,Y$. But since 
+        \[[Y,S]=[Y,\alpha Z+\beta D]=Y(\alpha)Z+Y(\beta)D+\beta X,\]
+        and the fields $X,D,Z$ are linearly independent at all points, we obtain $\beta=0$. Hence, $S\in\Gamma^\infty(V)$.
+    \end{proof}
+    Let now $F:\rmJ^r(\bbR,\bbR)\to \rmJ^r(\bbR,\bbR)$. Then, obviously, $F_\ast \Gamma^\infty(\calC)=\Gamma^\infty(\calC)$, $F_\ast\calC'=\calC'$ and $F_\ast \calC_D'=\calC_D'$. Then, by the lemma, one has $F_\ast \Gamma^\infty(V)=\Gamma^\infty(V)$. The theorem is proved.
+\end{proof}
+
+\begin{rem}
+    In fact, B\"acklund proved this result not just for infinitesimal transformations, but for actual contact transformations. The restrictions imposed by B\"acklund's theorem severely limit the range of applicability of contact transformations. The core issue is that we have been considering symmetries of the full Cartan distribution $\calC$, whereas for a particular differential equation $\calC$ only the restricted distribution $\calC(\calE)$ matters. It is possible that, on the submanifold $\calE$ of the jet bundle defined by a system of differential equations, there exist additional higher-order symmetries, known as \emph{internal symmetries}, which are not merely restrictions of contact transformations of the jet bundle. See \cite[\S3.7]{Kras} or \cite{Olver93} for details.
+\end{rem}
+
+
+\begin{defn}[Contact vector field]\index{Lie vector field}\index{Contact vector field}
+    A vector field $X\in\fX(\rmJ^r E)$ is called a ($r$-th order) contact, or \emph{Lie}, vector field, if its flow boxes are local contact transformations, i.e. $[X,\Gamma^\infty(\calC^r)]=0$. 
+    
+    For an equation $\calE\subset\rmJ^rE$, a contact vector field $X\in\fX(\rmJ^r E)$ is called a \emph{classical infinitesimal symmetry} if it is tangent to $\calE$.
+\end{defn}
+
+Let $X$ be a contact vector field on $\rmJ^r E$. In the same way as we defined prolongations for diffeomorphisms of $\rmJ^r E$, we can define prolongations of vector fields by prolonging their (local if incomplete) flows. We denote the resulting vector fields by $X^{(l)}\in \fX(\rmJ^{r+l}E)$, $l\geq 1$. Again, $\left(X^{(l)}\right)^{(s)}=X^{(l+s)}$. Also, since prolongation respects the composition of maps, and the commutator of the flows is generated by the Lie bracket of the vector fields, prolongation is a Lie algebra homomorphism:
+\[[X^{(r)},Y^{(r)}]=[X,Y]^{(r)}.\]
+The above theorem implies the following infinitesimal analog.
+
+\begin{thm}\label{thm 3.3.3 Kras}
+    Any contact vector field $X\in\fX(\rmJ^rE)$, $r\geq 1$, is of the form:
+    \begin{enumerate}[label=(\alph*)]
+        \item $X^{(r)}$ if $\rank E>1$, where $X\in\fX(E)$.
+        \item $X^{(r-1)}$ if $\rank E=1$, where $X$ is a contact vector field on $\rmJ^1 E$.
+    \end{enumerate} 
+\end{thm}
+
+Note that any contact vector field on $\rmJ^1E$ can be lifted to a Lie field on any $\rmJ^r E$ by prolongation. Also, unlike for contact transformations, the prolongation of contact vector fields is always well-defined globally, since it suffices to know an arbitrarily small part of the integral curve of $X^{(1)}$ through a point, and R-planes necessarily get mapped to R-planes by the flow $\Fl^X_t$ for sufficiently small $t$.
+
+Another advantage of contact vector fields is that there are explicit formulas for their prolongations, and one can use the techniques of generating functions (see below). To this end, we first note that a vector field $X\in\fX(\rmJ^r E)$ is a contact vector field iff its inner product with any of the standard contact forms $\theta^j_I$ satisfies
+\[i_X \theta^j_I=\sum_{l=1}^k\sum_{|K|\leq r-1}\lambda^{jK}_{Il}\theta^l_K.\]
+
+\begin{defn}[Total derivative operator]\index{Total derivative operator}
+    Fixing a bundle $E\to M$ of rank $k$ with coordinates $(\bf{x},\bf{u})$ as above, the total derivative operators $D_i$, $i=1,\ldots,n$, acting on functions on any jet bundle $\rmJ^rE$ and producing functions on $\rmJ^{r+1}E$ are defined in canonical coordinates by 
+    \[D_i \coloneqq \frac{\partial}{\partial x^i}+\sum_{j=1}^k\sum_{I}p_{I+1_i}^j\frac{\partial}{\partial p^j_I}.\label{eq def total derivative}\]
+    Here, $I$ ranges over all possible multi-indices, so this can be considered an infinite-order operator, but when acting on $\rmJ^r E$, only the terms with $|I|\leq r$ contribute.
+\end{defn}
+
+\begin{thm}\label{thm 3.3.4 Kras}
+     Let $X=\sum_{i=1}^n a^i \frac{\partial}{\partial x^i}+\sum_{j=1}^k \sum_{|I|\leq r}b^j_I \frac{\partial}{\partial p^j_I}$ be a contact vector field on $\rmJ^r E$. Then the first-order coefficients $a^i$ and $b^j_i$ depend at most only on the $1$-jets $(x^i,u^j,p^j_i)$ (and if $\rank E>1$, then only on the $0$-jets $(x^i,u^j)$), and the higher-order coefficients $b^j_I$, $0\leq |I|\leq r-1$, $j=1,\ldots,k$, are computed by the recurrent formulas 
+     \[b^j_{I+1_i}=D_i(b^j_I)-\sum_{s=1}^n p^j_{I+1_s}D_i(a^s),\quad 0\leq |I|\leq r-1,\; i=1,\ldots,n. \label{eq 3.3.9 Kras}\]
+    Moreover, $X$ is a point vector field iff the $a^i$ are independent of the $p^j_I$.
+\end{thm}
+\begin{proof}
+    By the invariance of the Cartan distribution, the forms 
+    \[\Lie_X \theta^j_I=(\dd i_X+i_X\dd)\left(\dd p^j_I-\sum_i p^j_{I+1_i}\dd x^i\right)=\dd b^j_I-\sum\left(b^j_{I+1_i}\dd x^i+p^j_{I+1_i}\dd a^i\right)\label{eq 3.3.10 Kras}\]
+    are linear combinations of contact forms.  According to Exercise~\ref{ex 3.3.6 Kras}, for any smooth function $\varphi$ on $\rmJ^rE$ one can locally write 
+    \[\dd \varphi=\sum_i D_i(\varphi)\dd x^i+\sum_{j,I}\frac{\partial\varphi}{\partial p^j_I}\theta^j_I.\]
+    Note that the first term vanishes on the Cartan distribution iff the coefficients $\varphi_i$ are trivial. Applying this observation to (\ref{eq 3.3.10 Kras}), we obtain 
+    \[\Lie_X \theta^j_I=\sum_i \left(D_i(b^j_I)-b^j_{I+1_i}-\sum_s p^j_{I+1_i}D_i(a^s)\right)\dd x^i+\omega_\calC,\]
+    which implies (\ref{eq 3.3.9 Kras}).
+\end{proof}
+
+Thus, a contact vector field is a point vector field iff it depends on the $p$-variables only in a prescribed polynomial way. In particular, it has to depend on the first-order derivatives $p^j_i$ affinely.
+
+\begin{xca}
+    Check that in the case $r=1$ the above theorem provides the following representation of arbitrary contact vector fields on $\rmJ^1(M\times\bbR\to M)$ in terms of a smooth function $\varphi$:
+    \[X_\varphi=-\sum_i \varphi_{p_i}\frac{\partial}{\partial x^i}+\left(\varphi-\sum_i p_i \varphi_{p_i}\right)\frac{\partial}{\partial u}+\sum_i \left(\varphi_{x^i}+p_i\varphi_u\right)\frac{\partial}{\partial p_i}.\label{eq Xf}\]
+    (This also trivially extends to $k>1$.) In particular, such a field generates point transformations iff $\varphi$ is affine in the $p_i$, so we can write $\varphi=b-\sum_i p_ia^i$, and then 
+    \[X_\varphi=\sum_i a^i\partial_{x^i}+b\partial_u+\sum_i\left(b_{x^i}-\sum_l p_l a^l_{x^i}\right)\partial_{p_i}.\]
+\end{xca}
+
+This result, combined with the fact that all contact vector fields are the prolongations of at most first-order contact vector fields, means that all contact vector fields are fully parametrized by some set of coefficients that are functions on $\rmJ^1E$. These coefficients can be formed into a single geometric object. To this end, we now introduce the concept of the \emph{generating section} of a contact vector field. 
+
+Consider the evolution of the graphs of sections of $E$ under the action of the corresponding \gls{ops} of (local) contact transformations. Let $X=a^i\partial_{x^i}+b^j\partial_{u^j}+\cdots $ be a contact vector field on $\rmJ^r E$ and let $F_t$ be the corresponding local flow. Consider a local section $s\in\Gamma^\infty(E)$. The $r$-graph $\graph^r(s)\subset \rmJ^rE$ is a transverse $n$-dimensional integral manifold of the Cartan distribution on $\rmJ^rE$. As was already pointed out, for sufficiently small $t$, the manifold $F_t(\graph^r(s))$ is also an $r$-graph of some other local section $s_t$:
+\[F_t(\graph^r(s))=\graph^r(s_t).\]
+
+Thus, the contact transformations $F_t$ generate the evolution $s_t$ of $s$. Let us find the velocity $\dot s_t$ of this evolution at $t=0$. To compute it, let us represent $X$ as the sum of two fields
+\[X=X_1+X_2,\quad X_1\in\Gamma^\infty(\calV\rmJ^r E),\quad X_2\in\fX(\graph^r(s)),\]
+one vertical and the other tangent to $\graph^r(s)$. If $s$ is locally represented by $u^j=s^j(\bf{x})$, $j=1,\ldots,k$, then a basis of vector fields tangent to $\graph^r(s)$ can be written in the following form (note that $p^j_I=\partial^{|I|}s^j/\partial x^I$ on this manifold):
+\[D_i^{(s)}=\frac{\partial}{\partial x^i}+\sum_{j=1}^k \left(\sum_{|I|< r}p^j_{I+1_i}\frac{\partial}{\partial p^j_I}+\sum_{|I|=r}\frac{\partial^{|I|+1}s^j}{\partial x^I\partial x^i}\frac{\partial}{\partial p^j_I}\right).\]
+Therefore, a vector field tangent to the $r$-graph is of the form 
+\[X_2=\sum_i a^i D_i^{(s)},\]
+while the vertical component of the contact vector field $X$ equals 
+\[X_1=X-\sum_i a^i D_i^{(s)}=\sum_j\left(b^j-\sum_i a^ip^j_i\right)\frac{\partial}{\partial u^j}+\cdots.\]
+Since $X_2$ shifts the manifold $\graph^r(s)$ along itself, it does not influence the evolution. On the other hand, the coefficients of the field $X_1$ at $\partial/\partial u^j$ exactly coincide with the velocities of the components of $s_t$:
+\[\dot s^j_0=\restr{\left(b^j-\sum_i a^i p^j_i\right)}{\graph^r(s)}.\]
+Recall from Theorem~\ref{thm 3.3.4 Kras} that $a^i,b^j$ depend (at worst) only on $1$-jets, so these velocities actually depend only on the $1$-graph of $s$. Moreover, they are exactly the coefficients of $\partial_{u^j}$ in $X_1$. Thus, they can be interpreted as the components of a section of the pullback bundle $(\pi^1_0)^\ast E\to \rmJ^1 E$ whose fiber over a point $p\in \rmJ^1 E$ is a copy of the corresponding fiber $\pi^{-1}(\pi^1_0(p))$ of $E$. 
+% Note that these are exactly the vertical components of the projected vector field $(\pi^r_0)_\ast X_1\in\fX(E)$. Since the vertical bundle of a \gls{vb} $E$, restricted to a section, can be canonically identified with $E$ itself, $s^\ast \calV E\cong E$, these velocities describe a unique section of $E$. Since the values of the velocities don't depend on the choice of the section $s$ (only on the point in its graph), by applying this procedure to arbitrary sections of $E$, we get an $E$-valued $0$-form on $E$, i.e., a section of the pullback of $E$ along itself.
+
+\begin{defn}[Generating section]
+    Let $\pi:E\to M$ be a \gls{vb} of rank $k$. The section $\varphi\in\Gamma^\infty((\pi^1_0)^\ast E)$ whose components (in any local frame of $E$ and its lift) are 
+    \[\varphi^j=\theta^j_{(0,\ldots,0)}(X)=b^j-\sum_i a^ip^j_i,\quad j=1,\ldots,k,\]
+    is called the \emph{generating section}, or the \emph{characteristic}, of the contact vector field 
+    \[X=\sum_{i=1}^n a^i \frac{\partial}{\partial x^i}+\sum_{j=1}^k b^j\frac{\partial}{\partial u^j}+\cdots.\]
+    Upon restriction to the $1$-graph of a section of $E$, the resulting vertical vector field $X_1\coloneqq \sum_j \varphi^j \frac{\partial}{\partial u^j}$ on $E$ is called the \emph{evolutionary vector field} of $X$.
+\end{defn}
+
+By virtue of Theorem~\ref{thm 3.3.3 Kras}, each contact vector field is uniquely determined by its generating section. Indeed, if $k>1$, this is obvious since the $a^i$ and $b^j$ provide the components of the point vector field whose prolongation recovers $X$. In the case $k=1$, $a^i$ and $b^j$ determine uniquely the remaining coefficients $b^i_j=D_i(b^j)-\sum_l p^j_l D_i(a^l)$ of the contact vector field on $\rmJ^1E$ whose prolongation recovers $X$. 
+
+Thus, \emph{the correspondence between generating sections and contact vector fields is bijective}. 
+The only caveat is that, when $k>1$, not every section of $(\pi^1_0)^\ast E$ is a generating section. Indeed, if $k>1$, then the $a^i$ and the $b^j$ are functions only of the $x^i$ and the $u^j$, so the generating section depends affinely on the variables $p^j_i$, and moreover, for all $i,j,l$ we have 
+\[\frac{\partial \varphi^j}{\partial p^j_i}=\frac{\partial\varphi^l}{\partial p^l_i},\quad \frac{\partial\varphi^j}{\partial p^l_i}=0,\quad l\neq j.\]
+Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relations generate contact vector fields. 
+
+\begin{rem}
+    More general generating sections (violating the above conditions) lead to the theory of \emph{higher symmetries}. These are symmetries not just of a given differential equation $\calE$ (or rather the distribution $\calC(\calE)$), but of its \emph{infinite prolongation} $\calE^{(\infty)}\subset \rmJ^\infty E$. We shall not consider them here, and direct the reader to \cite[Ch.~4]{Kras} instead.
+\end{rem}
+
+
+\begin{rem}[Prolongations of point vector fields]\label{rem prolong of point fields}
+    We can combine Theorems~\ref{thm 3.3.3 Kras} and \ref{thm 3.3.3 Kras} with the definition of the generating section to obtain a general formula for the prolongation of vector fields on $E$. For a \emph{point vector field} $X=\sum_i a^i\partial_{x^i}+\sum_j b^j\partial_{u^j}$, where $a^i,b^j$ depend only on $\bf{x}$ and $\bf{u}$, its $r$-th prolongation is
+    \[X^{(r)}=\sum_{i=1}^n a^i\partial_{x^i}+\sum_{j=1}^k\sum_{|J|\leq r}b^j_J\frac{\partial}{\partial p^j_J},\]
+    where 
+    \[b^j_J=D_J \varphi^j+\sum_{i=1}^n a^i p^j_{J+1_i}\]
+    and $D_J=D_1^{j_1}\cdots D_n^{j_n}$ (note that the $D_i$ commute).
+
+    We can simplify these formulas further by noticing that the term $\sum_J a^ip^j_{J+1_i}\frac{\partial}{\partial p^j_J}$ together with the term $a^i\partial_{x^i}$ combines to exactly $a^i D_i$. Using the notation from above, denote $X_1=\sum_j \varphi^j \partial_{u^j}$. Then the prolongation is written as
+    \[X^{(r)}=X_1^{(r)}+\sum_i a^i D_i,\quad \text{where}\quad X_1^{(r)}=\sum_{j=1}^k \sum_{|J|\leq r} D_J \varphi^j \frac{\partial}{\partial p^j_J}.\]
+    As a sanity check, at $r=0$, $n=k=1$, we find $X^{(0)}=\varphi\partial_u+a(\partial_x+p\partial_u)=a\partial_x+b\partial_u=X$.
+\end{rem}
+
+
+\begin{example}
+    If $k=1$, then the only contact form is $\theta_0=\dd u-\sum_ip_i\dd x^i$, so the generating function of the contact vector field (\ref{eq Xf}) associated with a function (or section) $f$ is given by $f$ itself:
+    \[\varphi=\theta_0(X_f)=f.\]
+\end{example}
+
+\begin{example}
+    
+\end{example}
+
+
+\begin{example}
+    \begin{enumerate}
+        \item The generating function of the rotation vector field $-u\partial_x+x\partial_u$ is $\varphi=x+up$. Any rotationally invariant function of $(x,u)$ must then satisfy the differential equation $x+uu_x=0$. This is easily integrated: $x^2+u^2=\const$. In other words, any rotationally invariant function is a function of only the radius.
+        \item Similarly, the generator of the scaling transformation, $x\partial_x+\alpha y\partial_y+\beta u\partial_u$, has $\varphi=\beta u-xp_x-\alpha y p_y$, and the scale-invariant functions constitute the general solution to the PDE $xu_x+\alpha yu_y=\beta u$.
+    \end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+\section{Classical symmetries of equations}
+
+Let $\calE\subset \rmJ^rE$ be a differential equation of order $r$. As defined above, a classical symmetry of $\calE$ is a contact transformation $F:\rmJ^rE\to \rmJ^rE$ such that $F(\calE)\subset\calE$.
+
+A direct consequence of the considerations of the last \sect\ is the following.
+
+\begin{prop}[{{\cite[Prop.~3.4.1]{Kras}}}]
+    \begin{enumerate}
+        \item Let $F:\rmJ^rE\to \rmJ^rE$ be a symmetry of the equation $\calE\subset\rmJ^rE$ and $f$ a (local) solution of this equation, i.e., a section of $E$ whose $r$-graph lies in $\calE$. Then $F(\graph^r(f))$ is a generalized solution of $\calE$. In particular, if the manifold $F(\graph^r(f))$ is of the form $\graph^r(f')$ for some (local) section $f'=F^\ast f$, then $f'$ is also a solution of $\calE$.
+        \item If $X$ is an infinitesimal symmetry of $\calE$ and $f$ is a solution, then any point $p\in \graph^r(f)$ has a neighborhood $U$ such that for any sufficiently small $t$ the manifold $\Fl^X_t(U)$ is locally of the form $\graph^r(f_t)$, where $f_t=(\Fl^X_t)^\ast f$. In other words, $X$ determines a flow on the set of solutions of $\calE$.
+    \end{enumerate}
+\end{prop}
+
+Since contact vector fields are described by generating sections, there is a concrete algorithm for finding all classical infinitesimal symmetries of an equation. 
+
+As usual, $k$ will be the rank of the bundle $E$ (the number of dependent variables). Let $\varphi$ and $\psi$ be the sections generating two symmetries of the equation $\calE\subset\rmJ^rE$, i.e., the contact vector fields $X_\varphi^{(q)}$ and $X_\psi^{(q)}$ are tangent to $\calE$ ($s=r$ for $k>1$ and $s=r-1$ for $k=1$). 
+
+\begin{defn}[Jacobi bracket]\index{Jacobi bracket}
+    The commutator $[X_\varphi^{(q)},X_\psi^{(q)}]$ is obviously also a symmetry of the equation $\calE$, and consequently is of the form $X_\rho^{(q)}$ for some generating section $\rho$. This section is called the Jacobi bracket of the generating sections $\varphi,\psi$, and is denoted by $\{\varphi,\psi\}$. The set of infinitesimal symmetries of an equation forms a Lie algebra w.r.t.\ the Jacobi bracket.
+\end{defn}
+
+
+\begin{example}
+    Taking $r=k=1$ and contact vector fields of the form (\ref{eq Xf}), we can compute the Jacobi bracket of two generating functions $f,g$ by computing the commutator $[X_f,X_g]$. Let $\theta\coloneqq \theta^1_{(0,\ldots,0)}$ be the contact form. Then $\Lie_{X_f}\theta=i_{X_f}\dd\theta+\dd(i_{X_f}\theta)=i_{X_f}\dd\theta+\dd f$ and $\Lie_{X_f}\theta=f_u\cdot \theta$, it follows that 
+    \[\dd \theta(X_f,X_g)=gf_u-X_g(f).\]
+    Hence, 
+    \begin{multline}
+        \{f,g\}=\theta([X_f,X_g])=X_f(\theta(X_g))-X_g(\theta(X_f))-\dd\theta(X_f,X_g)=\\=X_f(g)-X_g(f)-gf_u+X_g(f)=X_f(g)-f_u g.
+    \end{multline}
+    In canonical coordinates, 
+    \[\{f,g\}=\sum_i \left(f_{x^i}g_{p_i}-f_{p_i}g_{x^i}\right)+\sum_i p_i\left(f_u g_{p_i}-g_uf_{p_i}\right)+fg_u-gf_u.\label{eq jacobi br}\]
+\end{example}
+
+\begin{rem}
+    The $r=k=1$ Jacobi bracket is closely related to two other brackets. The \emph{Mayer bracket} $[f,g]$ of functions on $\rmJ^1 (M\times\bbR\to M)$ is defined by \index{Mayer bracket}
+    \[[f,g]\coloneqq \dd\theta(X_f,X_g),\]
+    which comes out to be the first two sums in (\ref{eq jacobi br}). Instead of the regular Jacobi identity, it satisfies the identity (also by Jacobi)
+    \[[[f,g],h]+[[h,f],g]+[[g,h],f]=[f,g]h_u+[h,f]g_u+[g,h]f_u.\]
+
+    The \emph{Poisson bracket} $(f,g)$ for functions on $\rmJ^1(M\times \bbR\to M)$ is defined by \index{Poisson bracket}
+    \[(f,g)\coloneqq X_f(g),\]
+    which comes out to be all but the last term of (\ref{eq jacobi br}). 
+\end{rem}
+
+
+In canonical coordinates on $\rmJ^rE$, we have from (\ref{eq 3.3.9 Kras}) the general formula
+\begin{multline}
+    \{\varphi,\psi\}^j=\sum_{\alpha=1}^k\left(\varphi^\alpha\frac{\partial\psi^j}{\partial u^\alpha}-\psi^\alpha \frac{\partial \varphi^j}{\partial u^\alpha}\right)+\\ 
+    +\sum_{i=1}^n\sum_{\alpha=1}^k \left(\left[\frac{\partial\varphi^\alpha}{\partial x^i}+\sum_{\beta=1}^k p^\beta_i\frac{\partial \varphi^\alpha}{\partial u^\beta}\right]\frac{\partial \psi^j}{\partial p^\alpha_i}-
+    \left[\frac{\partial \psi^\alpha}{\partial x^i}+\sum_{\beta=1}^k p^\beta_i\frac{\partial \psi^\alpha}{\partial u^\beta}\right]\frac{\partial \varphi^j}{\partial p^\alpha_i}
+    \right).\label{eq ex 3.3.7 Kras}
+\end{multline}
+
+Let us now deduce local conditions for a contact vector field $X$ to be a symmetry of the equation $\calE\subset\rmJ^rE$. To do this, let us choose canonical coordinates in $\rmJ^rE$ and assume that the submanifold $\calE$ in these coordinates is described by the relations
+\[F^\alpha=0,\quad \alpha=1,\ldots,R,\]
+where the $F^\alpha$ are smooth functions on $\rmJ^rE$. Suppose that this system is locally of maximal rank. Then the condition that $X$ is tangent to the manifold $\calE=\{\bf{F}=0\}$, where $\bf{F}=(F^1,\ldots,F^R)$, is of the form 
+\[X(F^\alpha)=\sum_{\beta=1}^R \lambda^\alpha_\beta F^\beta,\quad \alpha=1,\ldots,R,\label{eq 3.4.3 Kras}\]
+for some smooth functions $\lambda^\alpha_\beta$, or equivalently, 
+\[\restr{X(F^\alpha)}{\calE}=0,\quad \alpha=1,\ldots,R.\label{eq 3.4.4 Kras}\]
+Let us represent the field $X$ in the form $X_\varphi^{(s)}$, where $s=r$ or $s=r-1$, depending on the rank of $E$, and express the coefficients of the prolongation of $X_\varphi$ in terms generating functions using equations (\ref{eq 3.3.9 Kras}). Then from the relations (\ref{eq 3.4.3 Kras}) or from (\ref{eq 3.4.4 Kras}) we shall obtain a system of equations on $\varphi$ called \emph{determining equations}.
+
+We have proven the following result.
+
+\begin{thm}[Infinitesimal symmetry criterion]
+    A contact vector field $X\in\fX(\rmJ^rE)$ is an infinitesimal classical symmetry of the transverse equation $\calE=\{\bf{F}=0\}$ iff it annihilates the system on the equation, i.e.,
+    \[\restr{X(\bf{F})}{\bf{F}=0}=0.\]
+\end{thm}
+
+Note that, as mentioned above, contact transformations locally take $r$-graphs of sections to $r$-graphs of sections. Hence, the symmetry condition can be equivalently formulated as the vanishing of $X(\bf{F})$ on the $r$-graphs of solutions. 
+
+\begin{rem}[Infinitesimal point symmetry criterion]
+    Using the formula for the prolongation of a point vector field from Remark~\ref{rem prolong of point fields}, we can simplify the criterion for finding point symmetries of equations. Since $D_i\bf{F}$ vanishes on ($r$-graphs of) solutions, the determining equation restricted to a solution $u$ becomes 
+    \[\restr{X_1^{(r)}(\bf{F})}{\graph^r(\bf{u})}=\sum_{j=1}^k \sum_{|J|\leq r} D_J \varphi^j \frac{\partial}{\partial p^j_J}\restr{\bf{F}}{\graph^r(\bf{u})}=0,\]
+    where $\varphi^j$ are the generating functions of $X$.
+\end{rem}
+
+
+\begin{example}[First-order ODE]
+    Consider a first-order ODE 
+    \[u_x=\omega(x,u).\]
+    Then $F(x,u,p)=p-\omega$ and the general point vector field (\ref{eq Xf}) has the form 
+    \[X=a\partial_x+b\partial_u+(\varphi_x+p\varphi_u)\partial_p,\]
+    where $\varphi=b-pa$ and $a,b$ are functions of $x,u$. We can apply this vector field to $p-\omega$ and then set $p=\omega$:
+    \[\restr{X(F)}{p=\omega}=-a\omega_x-b\omega_u+b_x-\omega a_x+\omega(b_u-\omega a_u).\]
+    The determining equation is thus
+    \[b_x+(b_u-a_x)\omega- a_u\omega^2=a\omega_x+b\omega_u,\]
+    which is a single linear PDE on two functions $(a,b)$ of two variables $(x,u)$. Each solution of this equation (potentially) generates an \gls{ops} of point symmetries of the original ODE. 
+    
+    Clearly, solving the determining equation is a much more difficult problem than solving the first-order ODE. However, inspired guesswork or geometric intuition can allow one to find particular symmetries that suffice to integrate the original equation. This is where the art of Lie's method comes in.
+
+    Note that if $a$, $b$ are any functions such that $b/a=\omega$, then the determining equation is automatically satisfied. In other words, $\partial_x+\omega\partial_u$ and its multiples are always symmetries of the ODE. Let us show that they correspond to infinitesimal reparametrizations of the form
+    \[F_\epsilon:\quad (x,u)\mapsto (\wb x,\wb u)\coloneqq \left(x+\epsilon(x),u+\epsilon(x)\omega(x,u)\right),\]
+    where $\epsilon(x)$ is an arbitrary infinitesimal shift. To first order in $\epsilon$, this mapping takes the graph of a solution $u(x)$ to itself since $u(x+\epsilon)\approx u+u_x\epsilon=u+\epsilon\omega$. We can show that this is a symmetry more explicitly. The prolongation of this map is computed by considering a solution $u(x)$ such that $u_x(x)=p=\omega(x,u(x))$ at a fixed point $x$, and computing the jet at $x$ of the transformed graph:
+    \[\wb{p}=(u(x-\epsilon)+\epsilon\omega)_x=u_x-u_x\epsilon_x+u_x\epsilon_x+\epsilon\omega_x+\epsilon\omega_u\omega\approx p+\epsilon\cdot (\omega_x+\omega\omega_u).\]
+    To see that this is a symmetry of the equation, we only need to observe that $\omega+\epsilon\cdot (\omega_x+\omega\omega_u)$, to first order, is exactly $\omega(F_\epsilon(x,u(x)))$. Thus, after the application of $F_\epsilon$, the equation $\wb p=\omega(\wb x,\wb u)$ is satisfied by the image of the original solution. Since this symmetry takes each solution to itself, it is trivial. Trivial infinitesimal symmetries are not helpful because finding their integral curves is exactly the same problem as the original equation.
+
+    However, once a \emph{nontrivial} symmetry is found (and there is no general formula, but one always exists), it only remains to rectify $X$ (which is done by computing its integral curves by separation of variables or the method of characteristics), and then in the resulting coordinates $(y,v)$, in which $X=X^{(1)}=\partial_v$, the original ODE takes the form $v_y=H(y)$, which is integrated by quadrature. Note that for this method to be feasible the symmetry needs to have a simpler form than the original problem.
+\end{example}
+
+
+\begin{example}
+    Consider the elementary second-order equation 
+    \[u_{xx}=0.\]
+    Since the solutions of this equation are affine functions, one may guess that the symmetry group of this equation consists of those transformation of the $xu$-plane that take straight lines to straight lines. Consider a point vector field $X=a\partial_x+b\partial_u$ and compute its second prolongation:
+    \[X^{(2)}=a\partial_x+b\partial_u+b_{(1)}\partial_p+b_{(2)}\partial_{p_{(2)}},\]
+    where $p_{(2)}$ is the coordinate corresponding to $u_{xx}$ and 
+    \[b_{(1)}=D_x \varphi+a p_{(2)},\quad b_{(2)}=D_x^2\varphi+a p_{(3)}.\]
+    The determining equation is simply 
+    \[b_{(2)}=0 \quad\text{whenever}\quad p_{(2)}=0.\]
+    Substituting the formula for $b_{(2)}$ and setting $p_{(2)}$ to zero results in the equation 
+    \[b_{xx}+(2b_{xu}-a_{xx})p+(b_{uu}-2a_{xu})p^2-a_{uu}p^3=0.\]
+    Since we can prescribe $x,u,p$ arbitrarily, and $a,b$ only depend on $x,u$, this is satisfied iff the individual coefficients of the powers of $p$ vanish:
+    \[b_{xx}=0,\quad 2b_{xu}=a_{xx},\quad b_{uu}=2a_{xu},\quad a_{uu}=0.\]
+    The general solution of this system is readily found:
+    \[a=c_1x^2+c_2xu+c_3x+c_4u+c_5,\quad b=c_1xu+c_2u^2+c_6x+c_7u+c_8.\]
+    Thus, the most general classical infinitesimal symmetry of this equation is a linear combination of the following $8$ generators:
+    \begin{gather}
+        X_1=\partial_x,\quad X_2=\partial_u,\quad         X_3=x\partial_x,\quad X_4=u\partial_u,\quad X_5=u\partial_x,\\
+        X_6=x\partial_u,\quad X_7=x^2\partial_x+xu\partial_u,\quad X_8=xu\partial_x+u^2\partial_u.
+    \end{gather}
+    These are, in fact, exactly the generators of the action of $\SL_3(\bbR)$ (or $\PSL_3(\bbR)$) by \glspl{flt}:
+    \[(x,u)\mapsto \left(\frac{ax+bu+c}{hx+ju+k},\frac{dx+eu+f}{hx+ju+k}\right), \quad \det\begin{pmatrix}
+        a & b& c\\ d & e&f\\h&j&k
+    \end{pmatrix}\neq 0.\]
+    This is indeed the most general transformation of the plane that takes straight lines to straight lines. Note that some points are sent to infinity (which could also be foreseen from the fact that $X_7$ and $X_8$ are not complete), so the better way of viewing this action is as the natural action of $\SL_3(\bbR)$ on its homogeneous space $\SL_3(\bbR)\slash H\cong \RP^2$, where $H\emb \SL_3(\bbR)$ is the stabilizer of a line, say $\bf{e}_1\bbR$, under the standard action on $\bbR^3$ (cf.\ Example~\ref{ex basic klein geometries}(5)).
+
+    The situation is markedly different if we try to find all \emph{contact} symmetries of this equation. The calculations are simplified if we first place the contact vector field into the form $X_1=\varphi(x,u,p)\partial_u$ in terms of the generating function. The determining equation is simply $D_x^2 \varphi=0$, which must hold whenever $u_{xx}=u_{xxx}=0$. Evaluating the second total derivative, we deduce that any solution $\varphi$ to the second-order linear PDE 
+    \[(\partial_x+p\partial_u)^2 \varphi=0\]
+    determines an infinitesimal contact symmetry. The general solution is clearly 
+    \[\varphi=A(u-xp,p)+xB(u-xp,p),\]
+    where $A,B$ are arbitrary functions of two variables -- the characteristic variables for the vector field $D_x$. Therefore, in contrast to the point transformations, the contact symmetry group is infinite-dimensional. In fact, the same argument proves that \emph{every} second-order ODE has an infinite-dimensional contact symmetry group, which reflects the fact that every (nonsingular) second-order ODE can be mapped by a suitable contact transformation to the elementary equation $u_{xx}=0$. On the other hand, the point symmetry group of a second-order ODE has dimension at most $8$ and, moreover, only those equations that can be mapped by a point transformation to $u_{xx}=0$ have an $8$-dimensional point symmetry group.
+\end{example}
+
+
+\begin{example}
+    Consider in $\rmJ^2(\bbR^2,\bbR)$ a general second-order equation on one function of two variables:
+    \[F(x^1,x^2,u,p_1,p_2,p_{(2,0)},p_{(1,1)},p_{(0,2)})=0.\]
+    Let 
+    \[X_\varphi=-\sum_{i=1}^n \varphi_{p_i}\partial_{x^i}+\left(\varphi-\sum_{i=1}^n p_i\varphi_{p_i}\right)\partial_u+\sum_{i=1}^n \left(\varphi_{x^i}+p_i\varphi_u\right)\partial_{p_i}\]
+    be a contact vector field on $\rmJ^1(\bbR^2,\bbR)$ (by (\ref{eq ex 3.3.7 Kras})). Then the coefficients $b_{(i,j)}$ at $\partial_{p_{(i,j)}}$, $i+j=2$, of the prolongation of $X_\varphi$ to $\rmJ^2(\bbR^2,\bbR)$ are of the following form. Here we will rename the variables to $x=x^1$, $y=x^2$, $p=p_1$, $q=p_2$, $r=p_{(2,0)}$, $s=p_{(1,1)}$, $t=p_{(0,2)}$.
+    \begin{multline}
+        b_{(2,0)}=r\varphi_u+\varphi_{xx}+2p\varphi_{xu}+2r\varphi_{xp}+2s \varphi_{xq}+p^2\varphi_{uu}+\\
+        +2pr\varphi_{up}+2ps\varphi_{uq}+r^2\varphi_{pp}+2rs\varphi_{pq}+s^2\varphi_{qq},
+    \end{multline}
+    \begin{multline}
+        b_{(1,1)}=s\varphi_u+\varphi_{xy}+q\varphi_{xu}+s\varphi_{xp}+t\varphi_{xq}+r\varphi_{yp}+\\
+        +s\varphi_{yq}+pq\varphi_{uu}+(ps+qr)\varphi_{up}+(pt+qs)\varphi_{uq}+\\
+        rs\varphi_{pp}+(rt+s^2)\varphi_{pq}+st\varphi_{qq},
+    \end{multline}
+    \begin{multline}
+        b_{(0,2)}=t\varphi_u+\varphi_{yy}+2q\varphi_{yu}+2s\varphi_{yp}+2t\varphi_{yq}+q^2\varphi_{uu}+\\
+        +2qs\varphi_{up}+2qt\varphi_{uq}+s^2\varphi_{pp}+2st\varphi_{pq}+t^2\varphi_{qq}.
+    \end{multline}
+    The equation $X_\varphi^{(1)}F=\lambda F$, where the components of the field $X_\varphi^{(1)}$ are computed by the above formulas, is the determining equation in the situation under consideration, which in this case is a second-order PDE on the generating function $\varphi$.
+\end{example}
+
+\begin{example}[Heat equation]
+    The heat equation in two independent variables $(t,x)$ is 
+    \[u_t=u_{xx}.\]
+    Applying the prolongation formula from the last example, the determining equation reads 
+    \[b^t=b^{xx} \quad \text{whenever}\quad p_t=p_{xx} ,\]
+    where $b^t=b_{(1,0)}$ and $b^xx=b_{(0,2)}$. 
+\end{example}
 
 
 
 
 
 \clearpage
-\chapter{Exterior Differential Systems}\label{sec: PDEs}
+\chapter{Exterior Differential Systems}\label{chap: EDSs}
 
 
 This \chap\ is devoted to the first side of Cartan geometry, namely as a study of geometric structures described by systems of PDEs.
@@ -1703,11 +2322,11 @@ can be viewed as a polynomial $P=P(\bf{x},\partial)$ in the operators $\partial_
 \end{defn}
 
 \begin{defn}[Linear differential operator]\index{Differential operator (linear)}
-    Let $E\overset{\pi}{\to}M$ and $E'\overset{\pi}{\to}M$ be two \glspl{vb} over a manifold $M$. Let $\OP(E,E')=\Hom(\Gamma^\infty(E), \Gamma^\infty(E'))$ be the space of all linear operators between sections of $E$ and $E'$. We give several equivalent definitions of the space of linear differential operators $\PDO(E,E')$.
+    Let $E\overset{\pi}{\to}M$ and $E'\overset{\pi}{\to}M$ be two \glspl{vb} over a manifold $M$. Let $\OP(E,E')=\Hom(\Gamma^\infty(E), \Gamma^\infty(E'))$ be the space of all linear operators between sections of $E$ and $E'$. We give several (locally) equivalent definitions of the space of linear differential operators $\PDO(E,E')$.
     \begin{enumerate}
         \item $\PDO(E,E')$ is the subspace of $\OP(E,E')$ consisting of operators that are locally represented by linear partial differential operators with coefficients in (local) vertical \gls{vb} morphisms.
         \item $\PDO(E,E')$ is the subspace of $\OP(E,E')$ consisting of \emph{support non-increasing} operators, i.e., $D\in\OP(E,E')$ such that $\supp Ds\subset \supp s$ for any $s\in\Gamma^\infty(E)$.\footnote{The support of a section $s\in\Gamma^\infty(E)$ is defined as the closure of the set of points $m\in M$ where $s(m)\neq 0$. Recall also that the closure of a set $A$ is the intersection of all open sets containing $A$.}
-        \item Recall that the $k$-jet prolongation bundle $\rmJ^k E\to M$ is also a \gls{vb}. Then $\PDO(E,E')$ is the subspace of $\OP(E,E')$ consisting of elements $D$ that factor through $k$-jet prolongations of sections, i.e.,
+        \item Recall that the $k$-jet prolongation bundle $\rmJ^k E\to M$ is also a \gls{vb}. Then $\PDO(E,E')$ is the subspace of $\OP(E,E')$ consisting of elements $D$ that factor through $k$-jet prolongations of sections for some $k$, i.e.,
         \[D(s)(m)=\wt{D}(\rmj^ks)(m),\quad s\in \Gamma^\infty(E),\; m\in M,\]
         for some \gls{vb} morphism $\wt{D}:\rmJ^kE\to E'$.
     \end{enumerate}
@@ -1722,7 +2341,7 @@ can be viewed as a polynomial $P=P(\bf{x},\partial)$ in the operators $\partial_
 \end{defn}
 
 \begin{thm}[Peetre Theorem {{\cite[\S19]{Kolar}}}]
-    The above three definitions of linear differential operators are equivalent.
+    The above three definitions of linear differential operators are (locally) equivalent.
 \end{thm}
 \begin{proof}
     The statement of the theorem is invariant under local diffeomorphisms, so it suffices to prove it for $M=U$ an open subset of $\bbR^n$ and trivial vector bundles $E=U\times\bbR^s$, $E'=U\times\bbR^r$ over it.
@@ -1761,6 +2380,7 @@ can be viewed as a polynomial $P=P(\bf{x},\partial)$ in the operators $\partial_
 
 \begin{rem}
     \begin{enumerate}
+        \item The equivalence of the definitions is only local because over a non-compact base manifold one can construct a support non-increasing operator by gluing an infinite sequence of differential operators of increasing order using a \gls{pou}. Thus, in general, differential operators of infinite order may be defined as factoring through $\rmJ^\infty E$. As stated, Peetre's Theorem holds globally over compact manifolds. 
         \item Linearity of the operators is not actually essential to this result. In the case of nonlinear support non-increasing operators, the modified statement is that for any $\epsilon>0$ we can find a neighborhood $V$ of $\bf{x}$ on which the value of $Df$ remains within some ball of radius $\epsilon$ regardless of the choice of $f$ with a fixed $k$-jet $(\rmj^kf)(\bf{x})$. Meanwhile, the assumption of smoothness of the operator (i.e., that it maps smooth sections to smooth sections) is key to establishing that it depends only on finitely many derivatives. As a counterexample, we can consider the continuous operator $C^\infty(\bbR)\to C^0(\bbR)$ given by $f\mapsto \sum_{k\geq 0} 2^{-k}\arctan\circ f^{(k)}$.
         \item There is another natural way of defining differential operators without reference to local representations that uses connections (see \S\ref{sec: koszul lin connections}). Namely, the space of all differential operators is generated by covariant derivatives $\nabla_X$, $X\in\fX(M)$, corresponding to any fixed linear connection $\nabla$ on $E$ (one always exists), with morphism-valued coefficients as above.
     \end{enumerate}
@@ -2174,7 +2794,7 @@ This means that we can calculate the retracting space by finding a minimal set o
 \begin{example}[First-order PDEs, method of characteristics]\index{Method of characteristics}
     Let $x^1,\ldots,x^n,u,p_1,\ldots,p_n$ be the usual coordinates on $\rmJ^1(\bbR^n,\bbR)$, and consider the PDE 
     \[F(\bf{x},u,\bf{p})=0.\label{eq 7.4 Ivey}\]
-    Let $M\subset  \rmJ^1$ be the subset defined by this equation. To ensure that $M$ is a smooth manifold, and the equation is genuinely of first order, assume that $\partial_{p_i}F\neq 0$ for some $i$ at each point of $M$.
+    Let $M\subset  \rmJ^1$ be the subset defined by this equation. To ensure that $M$ is a smooth manifold, and the equation is genuinely of first-order, assume that $\partial_{p_i}F\neq 0$ for some $i$ at each point of $M$.
 
     Let $\theta$ be the pullback to $M$ of the contact form $\dd u-p_1\dd x^1-\cdots-p_n\dd x^n$. The solutions of the PDE are in 1-to-1 correspondence with integral $n$-manifolds $N\subset M$ of the Pfaffian system generated by $\theta$ with the independence condition $\dd x^1\wedge \cdots\wedge\dd x^n\neq 0$.
 
@@ -2262,8 +2882,8 @@ where $\pi:\Gr_n(\T M)\to M$ is the Grassmann bundle projection.
 Now $\Gr_n(\T M)$ comes endowed with a canonical \gls{eds} $\calC$ called the \emph{canonical system}. Abstractly, it is defined as follows: 
 
 \begin{defn}[Canonical contact system]\index{Contact system}
-    If $M$ is a manifold, there is a canonical rank $(n+ns)$ distribution $C< \T \Gr_n(\T M)$ defined by 
-    \[C_E=\pi_\ast^{-1}(E)\subset \T_E\Gr_n(\T M).\]
+    If $M$ is a manifold, there is a canonical rank-$(n+ns)$ distribution $\calC< \T \Gr_n(\T M)$ defined pointwise by 
+    \[\calC_E=\pi_\ast^{-1}(E)\subset \T_E\Gr_n(\T M).\]
     Then $\calC\subset\Omega^{\smbullet}(\Gr_n(\T M))$ is the ideal generated by the set of $1$-forms on $\Gr_n(\T M)$ that vanish on $C$. From the canonical nature by definition, it is clear that for any diffeomorphism $F:M\to M'$, the corresponding lift $F^{(1)}$ will identify the two contact systems.
 \end{defn}
 
@@ -2275,7 +2895,7 @@ Almost by construction, $i_\ast^{(1)}(\T_p N)\subset C_{i^{(1)}(p)}$, so that $(
     Prove the last statement.
 \end{xca}
 
-Thus, the contact system $\calC$ essentially distinguishes the tangential lifts of immersions of $n$-manifolds into $M$ from arbitrary immersions of $n$-manifolds into $\Gr_n(\T M)$. As for the adjective ``contact'', it comes from the interpretation that two different immersions $i,j:N\to M$ will satisfy $i^{(1)}(p)=j^{(1)}(p)$ iff $i(p)=j(p)$ and the two image submanifolds share the same tangent $n$-plane at $p$. Intuitively, the two image submanifolds $i(N), j(N)$ have ``first order contact'' at $p$.
+Thus, the contact system $\calC$ essentially distinguishes the tangential lifts of immersions of $n$-manifolds into $M$ from arbitrary immersions of $n$-manifolds into $\Gr_n(\T M)$. As for the adjective ``contact'', it comes from the interpretation that two different immersions $i,j:N\to M$ will satisfy $i^{(1)}(p)=j^{(1)}(p)$ iff $i(p)=j(p)$ and the two image submanifolds share the same tangent $n$-plane at $p$. Intuitively, the two image submanifolds $i(N), j(N)$ have ``first-order contact'' at $p$.
 
 \begin{xca}
     Show that, in canonically extended coordinates $(\bf{x},\bf{u},\bf{p})$ on $\Gr_n(\T M,\bf{x})$, 
@@ -4277,7 +4897,7 @@ As the following simple example shows, the presence of integrability conditions 
     This is equivalent to $\dd\varphi=0$. In other words, our Pfaffian system has an integral element over each point iff $\dd\varphi=0$, which of course is exactly Poincar\'e's Lemma.
 \end{example}
 
-The above examples illustrate our assertion that the compatibility conditions for the equations (\ref{eq iv.65 Bryant}) are integrability conditions; more precisely, they are \emph{first order integrability conditions}, since these conditions, upon being added to the system, might generate their own (second order) compatibility conditions, and so on. We will now demonstrate how these integrability conditions are reflected in the structure equations of a linear Pfaffian system.
+The above examples illustrate our assertion that the compatibility conditions for the equations (\ref{eq iv.65 Bryant}) are integrability conditions; more precisely, they are \emph{first-order integrability conditions}, since these conditions, upon being added to the system, might generate their own (second order) compatibility conditions, and so on. We will now demonstrate how these integrability conditions are reflected in the structure equations of a linear Pfaffian system.
 
 We say that apparent torsion $T^a_{\lambda i}$ is \emph{absorbable} if it can be made zero by a proper choice of frame $\{\pi^\lambda\}$ for $\T^\ast M\slash J$. If this is not possible, we say that there is \emph{intrinsic torsion} $[T]\neq 0$, where $[T]$ is the equivalence class consisting of all possible apparent torsion $1$-forms. Note that $[T]$ depends only on the space spanned by the $\pi^\lambda$ modulo $I$, so this space needs to be changed if one hopes to absorb apparent torsion. In other words, the $\pi^\lambda$ need to be modified by adding multiples of the $\omega^j$.\index{Torsion!intrinsic}
 
@@ -5340,7 +5960,7 @@ where $f$ is an arbitrary function of one variable.
 
 Engel's normal form is they key tool in the theory of the \emph{Monge equation}\index{Equation!Monge}
 \[F(x,u,v,p,q)=0,\quad p=u_x,\quad q=v_x,\label{eq monge}\]
-which is an under-determined first order equation for two unknown functions $u,v$ of one variable $x$. (In fact, the general Monge equation on $\bbR^3$ has the form $F(x,y,z,\dd x,\dd y,\dd z)=0$, where the differentials will be replaced by partial derivatives depending on how one chooses independent variables, but it reduces to the above form if the independence condition is just $\dd x$.) The Pfaffian equivalent of this problem is 
+which is an under-determined first-order equation for two unknown functions $u,v$ of one variable $x$. (In fact, the general Monge equation on $\bbR^3$ has the form $F(x,y,z,\dd x,\dd y,\dd z)=0$, where the differentials will be replaced by partial derivatives depending on how one chooses independent variables, but it reduces to the above form if the independence condition is just $\dd x$.) The Pfaffian equivalent of this problem is 
 \[I=\<\dd u-p \dd x,\dd v-q\dd x\>.\]
 The integral manifold in question is a 2-dimensional surface in the $5$-dimensional jet manifold $\rmJ^1(\bbR,\bbR^2)$ parametrized by $(x,u,v,p,q)$. The equation $\dd F=0$ expands to give 
 \[F_{p}\dd p+F_q \dd q+F_u(\dd u-p\dd x)+F_v(\dd v-q\dd x)+\frac{\dd F}{\dd x}\dd x=0,\]
@@ -7246,7 +7866,7 @@ A Riemannian surface $(\Sigma,\sfg)$ is called \emph{(geodesically) complete} if
 Hence, even if the sine-Gordon solution is defined for all $x$ and $y$, the corresponding surface will become singular. In fact, $\theta^1\wedge\theta^2=\sin 2u \dd x\wedge \dd y$ shows that the surface will be singular whenever $u$ is a multiple of $\pi/2$, i.e., when the asymptotic lines are tangent to each other. This is why the surfaces in Figure~\ref{fig: SGE 1-soliton} have singularities and are made by joining two pseudospherical surfaces along an edge: the values of the $1$-soliton solution always span $(0,\pi)$.
 
 \begin{rem}
-    The sine-Gordon has an obvious scaling symmetry given by $x\mapsto \lambda x$, $y\mapsto \lambda^{-1}y$. Hence, each immersion of $\Sigma$ belongs to a one-parameter family of isometric immersions. These deformations of pseudospherical surfaces are called \emph{Lie transformations}. In the next \sect\ we will find a similar one-parameter family of deformations of minimal surfaces (but parametrized by an element of $\U_1$ instead of $\bbR$ because the coresponding system is elliptic).
+    The sine-Gordon has an obvious scaling symmetry given by $x\mapsto \lambda x$, $y\mapsto \lambda^{-1}y$. Hence, each immersion of $\Sigma$ belongs to a one-parameter family of isometric immersions. These deformations of pseudospherical surfaces are called \emph{Lie transformations}. In the next \sect\ we will find a similar one-parameter family of deformations of minimal surfaces (but parametrized by an element of $\U_1$ instead of $\bbR$ because the corresponding system is elliptic).
 \end{rem}
 
 \begin{xca}\label{xca 7.4.19 Ivey}
