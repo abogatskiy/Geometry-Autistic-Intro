@@ -57,11 +57,11 @@ being the objects of the category and the arrows being the morphisms.
 \end{example}
 %
 \begin{example}
-    We can also consider $\mathsf{Set}_{\bullet}$ \index{Category!of pointed sets}, the category of ``pointed
-    sets''. The objects of the category are doubles $(A,x)$ where $A$
-    is a set and $x\in A$ is an element of the set (a ``basepoint'').
+    We can also consider $\mathsf{Set}_{\bullet}$ \index{Category!of pointed sets}, the category of \emph{pointed
+    sets}. The objects of the category are doubles $(A,x)$ where $A$
+    is a set and $x\in A$ is an element of the set, called the \emph{basepoint}.
     The morphisms $\mor((A,x),(B,y))$ are restricted to those maps $f:A\rightarrow B$
-    such that $f(x)=y$, i.e., maps that preserve basepoints.
+    such that $f(x)=y$, called \emph{pointed maps}.
 \end{example}
 %
 \begin{example}
@@ -133,7 +133,7 @@ The definition of a (covariant) functor is set up in such a way that any sequenc
     & F(A_2)  \arrow[ru, "F(f_2)"'] & 
     \end{tikzcd}
 \end{equation}
-The circular arrow here indicates that the composition of morphism along any path in this triangle must give the same morphism, i.e., precisely that $F(f_1f_2)=F(f_1)F(f_2)$. When this holds, we say that ``the diagram commutes''. Now suppose $A_3=A_1$ and $f_1=f_2^{-1}$ is an isomorphism between $A_1$ and $A_2$. Then for any functor $F$, not only is it true that $F(\mathrm{id}_{A_1})$ is still an identity morphism, but also that $F(f_1)$ is still an isomorphism, since $F(f_1)F(f_2)=\mathrm{id}_{F(A_1)}$ and $F(f_2)F(f_1)=\mathrm{id}_{F(A_2)}$. Intuitively, this means that \emph{the definition of $F$ itself cannot use any information contained in the objects of $\mathcal{C}$ that is not preserved by isomorphisms}. 
+The circular arrow here indicates that the composition of morphisms along any path in this triangle must give the same morphism, i.e., precisely that $F(f_1f_2)=F(f_1)F(f_2)$. When this holds, we say that ``the diagram commutes''. Now suppose $A_3=A_1$ and $f_1=f_2^{-1}$ is an isomorphism between $A_1$ and $A_2$. Then for any functor $F$, not only is it true that $F(\mathrm{id}_{A_1})$ is still an identity morphism, but also that $F(f_1)$ is still an isomorphism, since $F(f_1)F(f_2)=\mathrm{id}_{F(A_1)}$ and $F(f_2)F(f_1)=\mathrm{id}_{F(A_2)}$. Intuitively, this means that \emph{the definition of $F$ itself cannot use any information contained in the objects of $\mathcal{C}$ that is not preserved by isomorphisms}. 
 
 \begin{example}[Non-examples of functors]
     Some common constructions are not functors. For example, for a set $X$ one can define the group $\mathrm{Aut}(X)$ of bijections (permutations) $X\to X$. This is not a functor because there is no nontrivial way to define its action on maps (the trivial way would be to send everything to the identity map).
@@ -243,7 +243,7 @@ that the square commutes. % We didn't have to require commutativity to make this
     on objects), so some of the ``vertices'' of $\mathcal{J}$ might
     map to the same object in $\mathcal{C}$.
 
-    Now, the category of $\mathcal{J}$-shaped diagrams in $\mathcal{C}$
+    Now, the category $\calC^\calJ$ of $\mathcal{J}$-shaped diagrams in $\mathcal{C}$
     has all $\mathcal{J}$-shaped diagrams as its objects, and morphisms
     between two $\mathcal{J}$-shaped diagrams $F_{1}$ and $F_{2}$ are
     sets of pairwise morphisms $\alpha_{i}:F_{1}\left(i\right)\to F_{2}\left(i\right),$
@@ -271,7 +271,7 @@ that the square commutes. % We didn't have to require commutativity to make this
 \begin{example}
     A yet further generalization of the above construction is one where
     some vertices and/or morphisms in $F\left(\mathcal{J}\right)$ are
-    fixed, which would be a full subcategory of $\mathcal{J}\text{-}\mathsf{Diag}\left(\mathcal{C}\right)$.
+    fixed, which would be a full subcategory of $\calC^\calJ$.
     Moreover, in concrete categories some of the fixed vertices may even
     belong to a different category than $\mathcal{C}$, with morphisms
     attached to them being a special kind of maps between objects of different
