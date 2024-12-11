@@ -3684,9 +3684,9 @@ Recall that the maps $\Phi_{\alpha a}:U_{\alpha a}\times (G\times G')\to C^\inft
 \end{defn}
 
 \begin{defn}[Principal fiber bundle III]\label{def pfb 3}
-    A (right) \gls{pfb} is a $\mathsf{LieGr}$-bundle in the sense of Definition~\ref{def S-bundle}, using the action of every Lie group on itself by (left) translations. The resulting category $\mathsf{LieGr}\mFB^\infty$ is denoted $\PFB$. 
+    A right (left) \gls{pfb} is a $\mathsf{LieGr}$-bundle in the sense of Definition~\ref{def S-bundle}, using the action of every Lie group on itself by left (right) translations. The resulting category $\mathsf{LieGr}\mFB^\infty$ is denoted $\PFB$. 
     
-    Upon restricting to a specific Lie group $G$ and morphisms with $\lambda=\id_G$ one gets the category $\PFB^G$, which coincides with the category $\FB^\rmL$ (Definition~\ref{def FB^sigma}) where $\rmL$ is the action of $G$ on itself by left translations. Upon further restricting the base to a specific manifold $M$ and morphisms to those covering the identity one gets $\PFB^G_M$ (all morphisms in this category are isomorphisms).
+    Upon restricting to a specific Lie group $G$ and morphisms with $\lambda=\id_G$ one gets the category $\PFB^G$, which coincides with the category $\FB^\rmL$ (cf.\ Definition~\ref{def FB^sigma}), where $\rmL$ is the action of $G$ on itself by left translations. Upon further restricting the base to a specific manifold $M$ and morphisms to those covering the identity one gets $\PFB^G_M$ (all morphisms in this category are isomorphisms).
 \end{defn}
 
 It might seem that Definition~\ref{def pfb 2} contains more structure in the form of \emph{equivariant} trivializations, however the bundle construction of a $\mathsf{LieGr}$-bundle (with action by translations) out of a cocycle (say acting on the left on the typical fiber $G$) allows us to \emph{lift} the right $G$-action to the whole bundle. Right $G$-equivariance of trivializations is therefore automatic under this definition.
@@ -3820,14 +3820,14 @@ Recall that all categories $\FB^\sigma$ for different \emph{faithful} $G$-action
 \end{defn}
 
 \begin{rem}[Warning on bundle notation]
-    When the $G$-structure is fixed, it is common to omit it in the notation for the frame bundle. For example of $E$ is a \gls{vb} of rank $k$, then $\Fr(E)$ is a $\GL_k(\bbR)$-bundle.
+    When the $G$-structure is fixed, it is common to omit it in the notation for the frame bundle. For example, if $E$ is a \gls{vb} of rank $k$, then $\Fr(E)$ is a $\GL_k(\bbR)$-bundle.
 
     $E\mapsto \Fr(E)$ is a functor on the category of $G$-bundles, not manifolds, so the more rigorous notation would've been $\Fr(\pi)$, and the same applies to all functors of bundles. However, it is often cumbersome to have to introduce names for all bundle projections, so we will apply functors to the total spaces of bundles when doing so is not confusing. In the rare cases where the same space $E$ is the total space of multiple bundles, we will use the respective bundle projections instead.
 \end{rem}
 
 Since we've already established that $P$ and $P^{[\sigma]}$ have the same transition functions, this means that there is a natural isomorphism between the functors $[\sigma]$ and $C_{\sigma \rmL}$. We thus have
 \begin{prop}
-    If $G\overset{\sigma}{\acts}F$ is a faithful Lie group action, then the association functor $[\sigma]:P\mapsto P^{[\sigma]}$ establishes an equivalence of categories $\PFB^G$ and $\FB^\sigma$. Its pseudoinverse $\calP$ reconstructs the principal $G$-frame bundle.
+    If $G\overset{\sigma}{\acts}F$ is a faithful Lie group action, then the association functor $[\sigma]:P\mapsto P^{[\sigma]}$ establishes an equivalence of categories $\PFB^G$ and $\FB^\sigma$. Its pseudoinverse $\Fr_G$ reconstructs the principal $G$-frame bundle.
 \end{prop}
 
 \begin{rem}
@@ -3843,7 +3843,7 @@ Since we've already established that $P$ and $P^{[\sigma]}$ have the same transi
 \end{rem}
 
 \begin{example}[Covering spaces]
-    Recall that for a discrete (and countable) group $G$, principal $G$-bundles are nothing but regular covering maps whose group of deck transformations is $G$. In particular, the universal covering of $M$ is regular with $G=\pi_1(M)$. Any other covering of $M$ has structure group that is the image of $\pi_1(M)$ under some homomorphism $\lambda:\pi_1(M)\to \Diff(F)$. Thus, every covering can be written as $P^{[\lambda]}$ for some regular covering $P$.
+    Recall that for a discrete (and countable) group $G$, principal $G$-bundles are nothing but regular covering maps whose group of deck transformations is $G$. In particular, the universal covering of $M$ is regular with $G=\pi_1(M)$. Any other covering of $M$ has structure group that is the image of $\pi_1(M)$ under some homomorphism $\lambda:\pi_1(M)\to \Diff(F)$. Thus, every covering can be written as $P^{[\lambda]}$ for some regular covering $P$. This is another way to formulate the Classification Theorem~\ref{covering spaces category equivalence thm}. 
 \end{example}
 
 
@@ -3889,7 +3889,7 @@ Therefore, in this special case, we have a functor of the categories of principa
         
         \item The ``antipodal quotient'' of the total space $\bbS^3$ of the Hopf bundle (Chern number $-1$) produces the bundle $\SO_3\to \bbS^2$ (Chern number $-2$), which can be written as $\pi(A)=A_1$, where $A\in\SO_3$ and $A_1\in \bbS^2\subset \bbR^3$ is the first row of $A$ viewed as a unit vector. This bundle is the orthonormal frame bundle of the sphere, $\Fr_{\SO_2}(\T\bbS^2)$.
         
-        \item Recall the principal Stiefel $\Or_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$ (see (\ref{eq Stiefel pfb})). Its projection map takes an orthonormal $k$-frame and produces the $k$-dimensional subspace $W$ of $\bbK^n$ spanned by that $k$-frame. Meanwhile, this very subspace is the fiber above $W\in \Gr_k(\bbK^n)$ in the tautological bundle $\gamma_k(\bbK^n)\to \Gr_k(\bbK^n)$. It is obvious that the transition functions of these two bundles coincide. Therefore, the tautological bundle is associated to the Stiefel principal bundle:\index{Stiefel manifolds}\index{Grassmannian manifolds}
+        \item Recall the principal Stiefel $\calO_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$, cf.\ (\ref{eq Stiefel pfb}). Its projection map takes an orthonormal $k$-frame and produces the $k$-dimensional subspace $W$ of $\bbK^n$ spanned by that $k$-frame. Meanwhile, this very subspace is the fiber above $W\in \Gr_k(\bbK^n)$ in the tautological bundle $\gamma_k(\bbK^n)\to \Gr_k(\bbK^n)$. It is obvious that the transition functions of these two bundles coincide. Therefore, the tautological bundle is associated to the Stiefel principal bundle:\index{Stiefel manifolds}\index{Grassmannian manifolds}
         \[\gamma_k(\bbK^n)=\St_k(\bbK^n)\times^{\calO_k}\bbK^k.\]
 
         \item The structure group of the tangent bundle $\T\bbS^n$ can be reduced to $\Or_n$, and the corresponding orthonormal frame bundle $\Fr_{\SO_n}(\T\bbS^n)$ is the space of pairs $(x,\underline{v})$ where $x\in\bbS^n\subset\bbR^{n+1}$ and $\underline{v}$ is an orthonormal $n$-frame in $\bbR^{n+1}$ perpendicular to $x$. But this space is nothing but $\St_{n+1}(\bbR^{n+1})=\Or_{n+1}$. This once again confirms that $\bbS^n$ is the homogeneous space $\Or_{n+1}\slash \Or_n$.
@@ -3928,20 +3928,20 @@ Therefore, in this special case, we have a functor of the categories of principa
 
     One often requires the following extra properties:
     \begin{enumerate}[label=(\alph*)]
-        \item $\bf{F}$ is \emph{local}, i.e., for any inclusion $i:U\hookrightarrow N$ of an open subset, $\bf{F}(i)$ is the inclusion $p^{-1}_N(U)\hookrightarrow F(N)$.
+        \item $\bf{F}$ is \emph{local}, i.e., for any inclusion $i:U\hookrightarrow N$ of an open subset, $\bf{F}(i)$ is the inclusion $\pi^{-1}_N(U)\hookrightarrow F(N)$.
     
         \item $\bf{F}$ is \emph{regular}, i.e., if $M$ is any smooth manifold and $f:M\times N_1\to N_2$ is smooth such that for each $m\in M$ the map $f_m:N_1\to N_2$ defined by $f_m(n)\coloneqq f(m,n)$ is a local diffeomorphism, then the map $M\times \bf{F}(N_1)\to F(N_2)$ defined by $(m,p)\mapsto \bf{F}(f_m)(p)$ is smooth as well. Thus, regularity means that smoothly parametrized families of local diffeomorphisms are transformed into smoothly parametrized families.
     \end{enumerate}
     It turns out that regularity follows from locality and functoriality.
 \end{defn}
 
-For example, all tensor bundle functors $\bbT^r_s$ are natural bundles. The following intuitive characterization of natural bundles holds.
+For example, all tensor bundle functors $\bbT^r_s$ are local natural bundles. The following intuitive characterization of local natural bundles holds. We omit the proof.
 
 \begin{thm}[{{\cite[Thm.~1.2.8]{Cap}}}]
     Any local natural bundle on $n$-dimensional manifolds can be obtained as an associated bundle to $\Fr^k (\T M)$ for some $k\geq 0$ w.r.t.\ a left action of the jet group $\GL^k_n(\bbR)\acts F$ on a finite-dimensional manifold $F$.
 \end{thm}
 
-The lowest possible choice for $k$ in this theorem is called the \emph{order of the natural bundle}. Notice that the composition of the jet prolongation functor $\rmj^k$ with a $r$-th order natural bundle is the $(k+r)$-th order natural bundle $\rmJ^k \bf{F}$.
+The lowest possible choice for $k$ in this theorem is called the \emph{order of the local natural bundle}. Notice that the composition of the jet prolongation functor $\rmj^k$ with a $r$-th order natural bundle is the $(k+r)$-th order natural bundle $\rmJ^k \bf{F}$.
 
 
 
@@ -4002,7 +4002,7 @@ As an application of associated bundles, for the next proposition we briefly go 
 
 Recall that $\Gamma_H=\rmN_G(H)\slash H$ is a Lie group (since the normalizer of a closed subgroup contains that subgroup as a closed normal subgroup) that is also a subset of the homogeneous space $G\slash H$. This group acts naturally from the left on $G\slash H$:
 \[\Gamma_H\times (G\slash H)\to G\slash H,\quad (gH,g'H)\mapsto g'g^{-1}H.\]
-Since the natural projeciton $\rmN_G(H)\times G\to \Gamma_H\times (G\slash H)$ is a direct product of submersions, this action is smooth. We now show that the subset $M_{[H]}\subset M$ of points of orbit type $[H]$ can be identified with a bundle with fiber $(G\slash H)$ associated to a certain principal $\Gamma_H$-bundle over $\wh{M}_H=M_H\slash G$.
+Since the natural projection $\rmN_G(H)\times G\to \Gamma_H\times (G\slash H)$ is a direct product of submersions, this action is smooth. We now show that the subset $M_{[H]}\subset M$ of points of orbit type $[H]$ can be identified with a bundle with fiber $(G\slash H)$ associated to a certain principal $\Gamma_H$-bundle over $\wh{M}_H=M_H\slash G$.
 
 \begin{prop}[{{\cite[Prop.~6.6.1]{RS1}}}]\label{prop strata}
     Let $(M,G,\Phi)$ be a proper left Lie group action. Let $\sigma$ be the label of a stratum and let $H\emb G$ be a subgroup representing $\sigma$.\index{Stratum}
@@ -4069,7 +4069,7 @@ Part of the next proposition requires the definition of a Riemannian metric and 
     1. Let $m_1,m_2\in M$ be such that $\pi(m_1)\neq \pi(m_2)$. Since the orbit $G\cdot m_2$ is closed, using a local chart at $m_1$ one can construct a smooth function $f\geq 0$ with compact support such that $f(m_1)=1$ and $\supp(f)\cap (G\cdot m_2)=\varnothing$. Then, the average satisfies $f^G(m_1)>0$ and $f^G(m_2)=0$.
 
     2. Let $\{U_j\}$ be an open covering of $M$ by $G$-invariant open sets. Then $\{\pi(U_j)\}$ is an open covering of $M\slash G$. Since, by Propositions~\ref{prop 6.1.5 RS1}(3) and \ref{prop 6.3.4 RS1}(3), $M\slash G$ is locally compact, second countable, and Hausdorff, there exists a countable subordinate open covering $\{V_i:i\in I\subset \bbN\}$ which is locally finite, see \cite[Lem.~1.9]{Warner}. Then $\{\pi^{-1}(V_i):i\in I\}$ is a locally finite covering of $M$ by invariant open subsets, subordinate to $\{U_j\}$. According to Proposition~\ref{prop 1.3.7 RS1}, there exists a \gls{pou} $\{f_{i,\alpha}:(i,\alpha)\in A\subset I\times\bbN\}$ with compact supports such that $\supp(f_{i,\alpha})\subset \pi^{-1}(V_i)$ for all $(i,\alpha)\in A$. By passing to the averages $f_{i,\alpha}^G$ we obtain a family of invariant smooth functions. However, these functions need no longer add up to $1$ and the family of their supports need no longer be locally finite. This can be remedied by an appropriate summation as follows. For $f\in C^\infty(M)$, let $f^{(k)}(m)$ denote the $k$-th order tangent map at $m$, viewed as a $k$-linear map $(\T_m M)^{\times k}\to \bbR$, and let $\lVert f^{(k)}(m)\rVert$ denote the operator norm of this map w.r.t.\ a chosen Riemannian metric on $M$, cf.\ Proposition~\ref{prop 4.4.2 RS1}. Define 
-    \[C_{i,\alpha}\coloneqq \sup\left\{\lVert f_{i,\alpha}^{(k)}(m)\rVert:0\leq k\leq \alpha\right\},\quad f_i(m)\coloneqq \sum_{\alpha=0}^\infty 2^{-\alpha}C_{i,\alpha}^{-1}f_{i,\alpha}^G(m).\]
+    \[C_{i,\alpha}\coloneqq \sup\left\{\left\lVert f_{i,\alpha}^{(k)}(m)\right\rVert:0\leq k\leq \alpha\right\},\quad f_i(m)\coloneqq \sum_{\alpha=0}^\infty 2^{-\alpha}C_{i,\alpha}^{-1}f_{i,\alpha}^G(m).\]
     The latter series converges absolutely for all $m\in M$, and so do all formal derivatives, hence $f_i$ is well-defined and smooth (in fact, this sequence converges in an appropriate topology on $C^\infty(M)$). By construction, $f_i$ is invariant and $\supp(f_i)\subset\pi^{-1}(V_i)$. In particular, the family $\{\supp(f_i):i\in I\}$ is a locally finite covering of $M$. Hence, $\sum_{i\in I}f_i(m)$ is well-defined for all $m$ and by dividing $f_i(m)$ by this sum one finally obtains the desired \gls{pou}.
 
     3. Choose a countable atlas $\{(U_\alpha,\varphi_\alpha):\alpha\in A\}$ on $M$ such that the closures of the $U_\alpha$ are compact and carry out the construction of the symmetric rank $(0,2)$ tensor fields $\sfg_\alpha$, $\alpha\in A$, as in the proof of Proposition~\ref{prop 4.4.2 RS1}. Averaging yields invariant tensor fields $\sfg_\alpha^G$. As noted in the proof of point 2, the open covering $\{\pi(\supp(\sfg_\alpha))\}$ of $M\slash G$ admits a subordinate countable, locally finite covering $\{V_j:j\in J\}$. For each $j$, choose $\alpha_j$ so that $V_j\subset \supp(\sfg_{\alpha_j})$ and define $\sfg(m)\coloneqq\sum_{j\in J}\sfg_{\alpha_j}^G(m)$. This is an invariant smooth $(0,2)$-tensor field on $M$. Since on the interior of their supports the $\sfg_\alpha$ are Riemannian metrics, and since averaging does not affect this property, $\sfg$ is a Riemannian metric.
@@ -4254,8 +4254,8 @@ Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions
 
 \begin{example}[{{\cite[Ex.~1.6.6]{RS2}}}]\label{ex 1.6.6 RS2}
     \begin{enumerate}
-        \item Let $E$ be a $\bbK$-vector bundle of rank $k$. Recall that $E$ is orientable iff it admits a bundle atlas with transition functions of positive determinant. Equivalently, $E$ is orientable iff it admits a nowhere vanishing section of the determinant line bundle $\det E=\bigwedge^k E^\ast$. Thus, an orientation of $E$ may be viewed as a section of the associated bundle
-        \[\Fr(E)\times^{\GL_k(\bbK)}(\GL_k(\bbK)\slash \GL^+_k(\bbK)).\]
+        \item Let $E$ be a $\bbK$-vector bundle of rank $k$. Recall that $E$ is orientable iff it admits a bundle atlas with transition functions of positive determinant. Equivalently, $E$ is orientable iff it admits a nowhere vanishing section of the determinant line bundle $\det E=\bigwedge^k E^\ast$. Thus, an orientation of $E$ may be viewed as a section of the associated bundle -- the orientation bundle (cf.\ Definition~\ref{def orientation bundle})
+        \[\calO(E)=\Fr(E)\times^{\GL_k(\bbK)}(\GL_k(\bbK)\slash \GL^+_k(\bbK)).\]
         Now, Corollary~\ref{cor 1.6.5 RS2} implies that $E$ is orientable iff $\Fr(E)$ is reducible to $\GL_k^+(\bbK)$.
 
         \item Let $E$ be a $\bbK$-vector bundle of rank $n$ endowed with a fiber metric $\sfh$ (sesquilinear in the cases $\bbK=\bbC,\bbH$). It need not be positive-definite.

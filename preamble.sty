@@ -241,9 +241,12 @@
 \AddToHook{env/example/begin}{\parindent=0pt \parskip=\baselineskip}
 \AddToHook{env/xca/begin}{\parindent=0pt \parskip=\baselineskip}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
     %Configure tcolorbox so that footnotes are printed outside of it
 %From https://tex.stackexchange.com/a/558922/44577
-
 \makeatletter
 % restore footnote internals to those in normal page, not minipage
 \def\tcb@restore@footnote{%
@@ -251,7 +254,6 @@
   \def\thempfn{\arabic{footnote}}%
   \let\@footnotetext\tcb@footnote@collect
 }
-
 % collect footnote text
 \long\def\tcb@footnote@collect#1{%
   % expand \@thefnmark before appending before app to \tcb@footnote@acc
@@ -259,14 +261,11 @@
     \expandafter\footnotetext\expandafter[\@thefnmark]{#1}%
   }%
 }
-
 \def\tcb@footnote@use{%
   \tcb@footnote@acc
   \global\let\tcb@footnote@acc\@empty
 }
 \global\let\tcb@footnote@acc\@empty
-
-
 \tcbset{
   % restore for every box
   every box/.style={
@@ -506,7 +505,7 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\Int}{int}
 \DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\rank}{rk}
 \DeclareMathOperator{\pr}{pr}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\Hom}{Hom}
