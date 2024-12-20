@@ -320,7 +320,7 @@ multiplication and an identity element.} with the morphisms being group homomorp
     functor acts on homomorphisms by restricting them to their action
     on the commutant subgroup, i.e., for $f:G\rightarrow H$, $F(f)=\restr f{[G,G]}$.
 
-    Commutant subgroups are also normal subgroups\footnote{$H$is a normal subgroup of $G$ if $ghg^{-1}\in H~\forall~g\in G,h\in H$.}
+    Commutant subgroups are also normal subgroups\footnote{$H$is a normal subgroup of $G$ if $ghg^{-1}\in H~\forall~g\in G,h\in H$. We denote this by $H \trianglelefteqslant G$. General subgroups are denoted by $H\leq G$ or $H<G$.}
     and one can verify that the quotient\footnote{The quotient group is the group of equivalence classes under conjugation
     with multiplication inherited from the original group.} $G/[G,G]$ is an abelian group, called the \emph{abelianization}
     of $G$. Hence, one can define the abelianization functor
@@ -340,8 +340,7 @@ multiplication and an identity element.} with the morphisms being group homomorp
     $G$ is a group and $H$ is its normal subgroup, $H\trianglelefteqslant G$.
     Morphisms are group homomorphisms $f:G_{1}\to G_{2}$ such that the
     image of $H_{1}$ is contained in $H_{2}$, $f\left(H_{1}\right)\leq H_{2}$
-    (inequality sign signifies that the l.h.s is also a subgroup in the
-    r.h.s.). We can construct the \emph{quotient functor} $F:\mathsf{GrPair}\to\mathsf{Gr}$
+    ($\leq$ denotes subgroups). We can construct the \emph{quotient functor} $F:\mathsf{GrPair}\to\mathsf{Gr}$
     such that $F\left(\left(G,H\right)\right)=G/H$ and $F\left(f\right):G_{1}/H_{1}\to G_{2}/H_{2}$
     is the induced homomorphism of the quotients. The existence and uniqueness
     (i.e., naturality) of this homomorphism (and that it preserves compositions)
@@ -421,16 +420,16 @@ We can define two categories:
     Just as we can define square matrices of real numbers, we can also
     define square matrices with coefficients taken from a commutative
     ring $R$, the set of matrices being denoted by $\Mat_n(R)$,
-    $n$ being the size of the matrix. $\Mat_n(n,R)$ forms an associative
+    $n$ being the size of the matrix. $\Mat_n(R)$ forms an associative
     ring. Hence, we have a covariant functor $F:\mathsf{CommRing}\rightarrow\mathsf{AssRing}$
-    that takes a commutative ring to matrices of the ring. 
+    that takes a commutative ring to the associative ring of matrices consisting of elements of that ring. 
 \end{example}
 \begin{xca}
     How does this functor act on morphisms? Check its functoriality.
 \end{xca}
 \begin{example}
-    If we restrict to invertible matrices the associative ring $\Mat_n(n,R)$
-    reduces to the group $\GL(n,R)$ of invertible matrices with
+    If we restrict to invertible matrices the associative ring $\Mat_n(R)$
+    reduces to the group $\GL_n(R)$ of invertible matrices with
     coefficients in $R$ and we have a functor $F:\mathsf{CommRing}\rightarrow\mathsf{Gr}$.
 \end{example}
 %

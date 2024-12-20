@@ -3140,7 +3140,9 @@ Denoting $\kappa=\pr_2\circ\chi :\pi^{-1}(W)\to G$, for a right action $\Phi$, p
 
 
 \begin{defn}[Principal fiber bundle I]\index{Principal fiber bundle}\label{def pfb}
-    A \gls{pfb} is the fiber bundle $\pi:P\to P\slash G$ associated with a free proper Lie group action $(P,G,\Phi)$. Equivalently, it is a tuple $(P\overset{\pi}{\to}M,G,\Phi)$, where $(P,G,\Phi)$ is a free Lie group action and $\pi$ is a smooth map that admits equivariant local trivializations at every $m\in M$ in the sense of Proposition~\ref{prop equiv local triv pfb}.
+    A \gls{pfb} is the fiber bundle $\pi:P\to P\slash G$ associated with a free proper Lie group action $(P,G,\Phi)$. 
+    
+    Equivalently, it is a tuple $(P\overset{\pi}{\to}M,G,\Phi)$, where $(P,G,\Phi)$ is a free Lie group action and $\pi$ is a smooth map that admits equivariant local trivializations at every $m\in M$ in the sense of Proposition~\ref{prop equiv local triv pfb}.
 
     The group $G$ is called the structure group of $P$, and $P$ is also called a principal $G$-bundle. The existence of local trivializations implies that $\pi$ is a submersion. Hence, the fibers of $P$ are submanifolds, each of them is diffeomorphic to $G$, and in fact is a $G$-torsor.
 \end{defn}
@@ -3186,12 +3188,12 @@ Denoting $\kappa=\pr_2\circ\chi :\pi^{-1}(W)\to G$, for a right action $\Phi$, p
 \end{defn}
 
 Let us denote by $\calO_n=\calO_n(\bbK)$ for $\bbK=\bbR,\bbC,\bbH$ the corresponding group of isometries ($\Or_n$, $\U_n$, and $\Sp_n$, respectively). Consider the smooth left action of $\calO_n$ on $\bbK^{n\times k}$ given by left multiplication $(g,A)\mapsto gA$. The orbit of the element $p=(\bf{e}_1,\ldots,\bf{e}_k)$, where $\bf{e}_1,\ldots,\bf{e}_n\in\bbK^n$ is the standard basis, is diffeomorphic to the Stiefel manifold $\St_k(\bbK^n)$. As we have seen, the quotient map $\alpha_n:\calO_n\to \St_k(\bbK^n)$ given by $\alpha_n(g)=(g\bf{e}_1,\ldots,g\bf{e}_k)$ is a locally trivial fiber bundle. The stabilizer of the element $p$ is nothing by the subgroup $\calO_{n-k}\subset \calO_n$ which acts as identity on the first $k$ components of $\bbK^n$. We shall denote this subgroup by $\calO_{,n-k}$. The inclusions $\bbK^n\hookrightarrow \bbK^{n+1}$ induce the compatible inclusions  of Stiefel manifolds $\St_k(\bbK^n)\hookrightarrow \St_k(\bbK^{n+1})$ and the corresponding principal bundles
-\[\calO_k\hookrightarrow \calO_n\to \St_k(\bbK^n),\]
+\[\calO_{n-k}\hookrightarrow \calO_n\to \St_k(\bbK^n),\]
 as well as the (topological) principal bundle
-\[\calO_k\hookrightarrow \calO_\infty\to \St_k(\bbK^\infty).\]
+\[\calO_{n-k}\hookrightarrow \calO_\infty\to \St_k(\bbK^\infty).\]
 over the infinite Stiefel space of $k$-frames in $\bbK^\infty$.
 
-Now, each element of $\St_k(\bbK^n)$ can be identified with a $k$-frame, and thus determines the linear $k$-dimensional subspace $W\subset \bbK^n$ spanned by that frame. Thus we have a quotient map $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$. The fiber of this map above $W$ consists of all orthonormal frames on $W$ and thus is identified with the orbit of the free and proper action of $\calO_k$ on $\St_k(\bbK^n)$. Thus $\St_k(\bbK^n)$ becomes a principal bundle over the Grassmann manifold (we shall call it the \emph{Stiefel principal bundle}):\index{Stiefel bundle}
+Now, each element of $\St_k(\bbK^n)$ can be identified with a $k$-frame, and thus determines the linear $k$-dimensional subspace $W\subset \bbK^n$ spanned by that frame. Thus we have a quotient map $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$. The fiber of this map above $W$ consists of all orthonormal frames on $W$ and thus is identified with the orbit of the free and proper action of $\calO_k$ on $\St_k(\bbK^n)$. Thus $\St_k(\bbK^n)$ becomes a principal bundle over the Grassmann manifold (we shall call it the \emph{Stiefel bundle}):\index{Stiefel bundle}
 \[\calO_k\hookrightarrow \St_k(\bbK^n)\to \Gr_k(\bbK^n),\label{eq Stiefel pfb}\]
 and by taking the direct limit w.r.t.\ the inclusions $\bbK^n\hookrightarrow \bbK^{n+1}$ we also get the (topological) principal bundle
 \[\calO_k\hookrightarrow \St_k(\bbK^\infty)\to \Gr_k(\bbK^\infty).\]
@@ -3220,13 +3222,15 @@ We thus have the alternative definition of the Grassmann manifolds not as homoge
     \[\pi_q(\Gr_k(\bbK^n))\cong \pi_q(\St_k(\bbK^n))\times \pi_{q-1}(\calO_k),\quad q\geq 1.\]
 \end{prop}
 \begin{proof}
-    If $n\geq 2l$, then the homotopy
-\[(A,t)\mapsto \begin{bmatrix}
-    A\cos\frac{\pi t}{2}\\
+    If $n\geq 2k$, then the homotopy
+    \[(a,t)\mapsto \begin{bmatrix}
+    a\cos\frac{\pi t}{2}\\
     \rmI_k \sin\frac{\pi t}{2}\\
     0
-\end{bmatrix},\quad 0\leq t\leq 1,\]
-shows that the inclusion map $\calO_k\hookrightarrow \St_{k}(\bbK^n)$ is nullhomotopic. Then the long exact sequence of homotopy groups (Theorem~\ref{thm long exact seq of homotopy}) for the fibration $\calO_k\hookrightarrow \St_k(\bbK^n)\to \Gr_k(\bbK^n)$ implies the asserted isomorphism.
+    \end{bmatrix},\quad a\in\calO_k,\; t\in [0,1],\]
+    shows that the inclusion map $\calO_k\hookrightarrow \St_{k}(\bbK^n)$ is nullhomotopic, so the induced homomorphism $i_\ast:\pi_q(\calO_k)\to \pi_q(\St_k(\bbK^n))$ is zero. Then the long exact sequence of homotopy groups (Theorem~\ref{thm long exact sequence of serre fibration}) for the fibration $\calO_k\hookrightarrow \St_k(\bbK^n)\to \Gr_k(\bbK^n)$ breaks up into short exact sequences of the form
+    \[0\to \pi_q(\St_k(\bbK^n))\to \pi_q(\Gr_k(\bbK^n))\overset{\partial}{\to} \pi_{q-1}(\calO_k)\to 0.\]
+    It remains to show that this sequence splits, i.e., there exists a right inverse of the connecting homomorphism $\partial$ on the right. Given a map $\gamma:\bbS^{q-1}\to \calO_k$ representing an element of $\pi_{q-1}(\calO_k)$, it can be continued via the above homotopy to a map of the disk, $\wt \gamma:\bbD^{q}\to \St_k(\bbK^n)$. Now consider the projection $\pi\circ \wt\gamma:\bbD^n\to \Gr_k(\bbK^n)$, where $\pi:\St_k(\bbK^n)\to \Gr_k(\bbK^n)$ is the bundle projection. Note that $\pi\circ\wt \gamma(\partial\bbD^q)=\{\ast \}$ is a single point, so it represents a map of $\bbS^q$ to $\Gr_k(\bbK^n)$, and so it gives an element of $\pi_n(\Gr_k(\bbK^n))$. It is easy to verify that this produces a well-defined homomorphism $\sigma:\pi_{q-1}(\calO_k)\to \pi_q(\Gr_k(\bbK^n))$ and that it is a splitting: $\partial\circ\sigma=\id$. The result follows.
 \end{proof}
 
 Thus, we can compute the homotopy groups of Grassmann manifolds, provided we compute those of Stiefel manifolds and orthogonal groups. 
@@ -3235,7 +3239,7 @@ Thus, we can compute the homotopy groups of Grassmann manifolds, provided we com
     The homomorphism $\pi_q(\calO_n)\to \pi_q(\calO_{n+1})$ induced by the inclusion $\calO_n\hookrightarrow \calO_{n+1}$  is an isomorphism for $q<d(n+1)-2$ and an epimorphism for $q=d(n+1)-2$. Equivalently, the pair $(\calO_{n+1},\calO_n)$ is $(d(n+1)-2)$-connected.
 \end{prop}
 \begin{proof}
-    Let us consider the standard action of $\calO_{n+1}$ on the unit sphere $\bbS^{d(n+1)-1}\subset \bbK^{n+1}$, where $d=\dim_\bbR\bbK$. Given any $v\in \bbS^{d(n+1)-1}$, there exists $A\in\calO_{n+1}$ whose last column is $v$, i.e., $ A\bf{e}_{n+1}=v$. This means that the action is transitive, and clearly the stabilizer of $\bf{e}_{n+1}$ is the subgroup $\calO_n$. This we have the \gls{pfb}
+    Let us consider the standard action of $\calO_{n+1}$ on the unit sphere $\bbS^{d(n+1)-1}\subset \bbK^{n+1}$, where $d=\dim_\bbR\bbK$. Given any $v\in \bbS^{d(n+1)-1}$, there exists $a\in\calO_{n+1}$ whose last column is $v$, i.e., $ a\bf{e}_{n+1}=v$. This means that the action is transitive, and clearly the stabilizer of $\bf{e}_{n+1}$ is the subgroup $\calO_n$. This we have the \gls{pfb}
     \[\calO_n\hookrightarrow \calO_{n+1}\to \bbS^{d(n+1)-1}.\]
     The long exact sequence of this fibration combined with the triviality of the homotopy groups of spheres up to $d(n+1)-2$ gives the asserted result.
 \end{proof}
@@ -3252,7 +3256,7 @@ In the case of unitary groups we have $d=2$, so the isomorphism proven above hol
     $\pi_1(\SU_n)=0$, $\pi_1(\U_n)\cong \bbZ$, $\pi_2(\SU_n)=\pi_2(\U_n)=0$, $\pi_3(\SU_n)\cong \pi_3(\U_n)\cong\bbZ$.
 \end{cor}
 \begin{proof}
-    Take the last proposition and set $i=1$. This gives an isomorphism $\pi_1(\calO_n)\cong \pi_1(\calO_{n+1})$. Since $\pi_1(\SU_1)\pi_1(\{1\})=0$ and $\pi_1(\U_1)=\pi_1(\bbS^1)\cong\bbZ$, this proves the first two equalities. 
+    Take the last proposition and set $i=1$. This gives an isomorphism $\pi_1(\calO_n)\cong \pi_1(\calO_{n+1})$. Since $\pi_1(\SU_1)=\pi_1(\{1\})=0$ and $\pi_1(\U_1)=\pi_1(\bbS^1)\cong\bbZ$, this proves the first two equalities. 
 
     The same principle applied to $i=2$ and $\pi_2(\SU_1)=\pi_2(\U_1)=0$ gives $\pi_2(\SU_n)=\pi_2(\U_n)=0$.
 
@@ -3260,7 +3264,7 @@ In the case of unitary groups we have $d=2$, so the isomorphism proven above hol
 \end{proof}
 \begin{rem}
 \begin{enumerate}
-    \item Note that in fact the determinant fibration used in this proof is trivial: $\U_n\cong \SU_n\times \bbS^1$. Indeed, the trivialization is given by $A\mapsto (\diag(\det A^{-1},1,\ldots,1)\cdot A,\det A)$. Thus instead of the exact sequence we could also use $\pi_q(\U_n)\cong\pi_q(\SU_n)\times \pi_q(\bbS^1)=\pi_q(\SU_n)$ for $q>1$.
+    \item Note that in fact the determinant fibration used in this proof is trivial: $\U_n\cong \SU_n\times \bbS^1$. Indeed, the trivialization is given by $a\mapsto (\diag(\det a^{-1},1,\ldots,1)\cdot a,\det a)$. Thus instead of the exact sequence we could also use $\pi_q(\U_n)\cong\pi_q(\SU_n)\times \pi_q(\bbS^1)=\pi_q(\SU_n)$ for $q>1$.
     \item We will later prove, using Morse theory, the very deep fact that $\pi_2(G)=0$ for \emph{any} connected Lie group $G$.
 \end{enumerate}
 \end{rem}
@@ -3282,7 +3286,7 @@ In the case of unitary groups we have $d=2$, so the isomorphism proven above hol
 \end{cor}
 
 \begin{rem}
-    It is in fact possible to provide a $CW$-structure for Stiefel manifolds, including the infinite one, so by Whitehead's Theorem we can conclude that $\St_k(\bbK^\infty)$ is contractible. Below we provide a direct proof. The fact that this gives us a contractible principal $\calO_k$-bundle will be crucial later when we study the classification of principal bundles.
+    It is in fact possible to provide a $CW$-structure for Stiefel manifolds, including the infinite one, so by Whitehead's Theorem we can conclude that $\St_k(\bbK^\infty)$ is contractible. Below we provide a direct proof. The fact that this gives us a contractible principal $\calO_k$-bundle (over $\Gr_k(\bbK^\infty)$) will be crucial later when we study the classification of principal bundles.
 \end{rem}
 
 Let us provide an explicit deformation retraction here, extending the one we constructed for $\bbS^\infty$ (which corresponded to the case $k=1$).
@@ -3311,7 +3315,7 @@ The isomorphisms between homotopy groups of the spaces $\calO_n\cong \St_{n}(\bb
     given by the projection $q$ onto the last coordinate vector. The long exact sequence of homotopy groups combined with the triviality of the homotopy groups of spheres in the specified range gives the result.
 \end{proof}
 
-For real orthogonal groups $d=1$ and thus the isomorphism $\pi_q(\Or_n)=\pi_q(\Or_{n-1})$ holds only for $q<n-2$, to the smallest group we can reduced this to is $\Or_{q+3}$. Luckily we already know that there is a homeomorphism $\SO_4\cong \SO_3\times \bbS^3$ (Example~\ref{example universal covering groups of so3 and so4}), and of course $\SO_3\cong \RP^3$. This lets us compute at least the fundamental groups.
+For real orthogonal groups $d=1$ and thus the isomorphism $\pi_q(\Or_n)=\pi_q(\Or_{n-1})$ holds only for $q<n-2$, so the smallest group we can reduce this problem to is $\Or_{q+3}$. Luckily, we already know that there is a homeomorphism $\SO_4\cong \SO_3\times \bbS^3$ (Example~\ref{example universal covering groups of so3 and so4}), and of course $\SO_3\cong \RP^3$. This lets us compute at least the fundamental groups.
 
 \begin{cor}
     $\pi_1(\Or_n)\cong \pi_1(\SO_n)\cong\bbZ_2$ for $n\geq 3$. Also $\pi_2(\SO_n)=\pi_2(\Or_n)=0$ for $n\leq 4$, and $\pi_3(\SO_4)\cong\pi_3(\Or_4)\cong\bbZ^2$.
@@ -3352,7 +3356,9 @@ Finally, we define an even further generalization of Grassmann manifolds, althou
     where the stabilizer subgroups consist of block-diagonal matrices. As before, these equalities define a smooth structure on $\mathrm{Flag}_K(V)$.
 \end{defn}
 
-The case $r=1$ and $n_1=k$ reproduces the Grassmann manifolds, $\mathrm{Flag}_{(k,n-k)}(\bbK^n)\cong \Gr_k(\bbK^n)$.
+The case $r=1$ and $n_1=k$ reproduces the Grassmann manifolds, $\mathrm{Flag}_{(k,n-k)}(\bbK^n)\cong \Gr_k(\bbK^n)$. Note also that each type of flags produces a hierarchy of principal bundles in between $\calO_n$ and $\mathrm{Flag}_K(V)$.
+
+
 
 
 
@@ -3361,7 +3367,7 @@ The case $r=1$ and $n_1=k$ reproduces the Grassmann manifolds, $\mathrm{Flag}_{(
 
 \section{Example: projective, conformal, and CR spheres}\label{sec: projective, conformal CR spheres}
 
-The same homogeneous space can arise from different Lie groups $G$. Each of these Lie groups induces a corresponding action on that space, and a certain canonical $G$-invariant structure. The last \sect's construction of the sphere $\bbS^n$ corresponds to the invariant Riemannian metric of the ``round sphere'' (unit sphere in $\bbR^{n+1}$) inherited from the standard $\Or_n$-action. In this \sect\ we present a few other ways the sphere can be represented as a homogeneous space with corresponding invariant structures.
+The same homogeneous space can arise from different Lie groups $G$. Each of these Lie groups induces a corresponding action on that space, and a certain canonical $G$-invariant structure. For example, as we will see later, last \sect's construction of the sphere $\bbS^n$ corresponds to the invariant Riemannian metric of the ``round sphere'' (unit sphere in $\bbR^{n+1}$) inherited from the standard $\Or_n$-action. In this \sect\ we present a few other ways the sphere can be represented as a homogeneous space with corresponding invariant structures.
 
 \begin{defn}[Projective space and sphere]
     Consider the tautological bundle $\gamma_1(\bbR^{n+1})\to \RP^n$. Its total space can be identified with $\bbR^{n+1}\setminus\{0\}$ and the structure group is $\bbR^\times$. The standard action of $\SL_{n+1}(\bbR)$ on $\bbR^{n+1}$ restricts to an action on $\gamma_1(\bbR^{n+1})$. The resulting diffeomorphisms of $\RP^n$ are exactly the projective transformations. The stabilizer subgroup of the line through $\bf{e}_{n+1}\in\bbR^{n+1}$ is given by
@@ -3379,7 +3385,7 @@ The $\SL_{n+1}(\bbR)$-invariant structure on $\RP^n$ associated with this princi
 The idea of getting a transitive action on $\RP^n$ (resp.~$\bbS^n)$ by viewing it as the space of lines (resp.~rays) in $\bbR^{n+1}$ clearly generalizes to certain subgroups of $\SL_{n+1}(\bbR)$. If we take the sphere and an orthogonal group, then we return to the setting of the previous section, since then the embedding of $\bbS^n$ as the unit sphere is equivariant, so we can view it as a subspace as well. Hence, in the realm of simple groups the main remaining possibility is to consider the group $\Sp_{2n}(\bbR)$ of transformations preserving the standard symplectic form on $\bbR^{2n}$.
 
 \begin{defn}[Contact spheres]
-    The linear action of $\Sp_{2n}(\bbR)$ induces transitive actions on $S^{2n-1}$ and $\RP^{2n-1}$. The stabilizer subgroup $P$ of the line through $\bf{e}_1$ again turns out to be a parabolic subgroup of $\Sp_{2n}(\bbR)$, and its identity component $P_0$ is the stabilizer of the ray through $\bf{e}_1$.
+    The linear action of $\Sp_{2n}(\bbR)$ induces transitive actions on $\bbS^{2n-1}$ and $\RP^{2n-1}$. The stabilizer subgroup $P$ of the line through $\bf{e}_1$ again turns out to be a parabolic subgroup of $\Sp_{2n}(\bbR)$, and its identity component $P_0$ is the stabilizer of the ray through $\bf{e}_1$.
 \end{defn}
 
 
@@ -3469,7 +3475,7 @@ Like with finite-dimensional Lie groups, we also find that the adjoint represent
     where $\pi_{\T M}$ is the tangent bundle projection. The multiplication in the group $\T\Diff(M)$ is given by the formula
     \[X\times Y=\pi_{\T^2M}\circ \T X\circ Y,\]
     where $\pi_{\T^2M}:\T^2M\to \T M$ is the bundle projection. Note that $\pi_{\T M}\circ (X\times Y)=\pi_{\T M}\circ X\circ \pi_{\T M}\circ Y$, so $\pi$ is a group homomorphism. Identifying $\varphi\in\Diff(M)$ with the origin in $\T_\varphi\Diff(M)$, we get 
-    \[X\cdot \varphi=\pi_{\T^2M}\circ TX\circ \varphi=X\circ \varphi,\quad \varphi\cdot X=\pi_{\T^2M}\circ \T\varphi\circ X=\T\varphi\circ X.\]
+    \[X\cdot \varphi=\pi_{\T^2M}\circ \T X\circ \varphi=X\circ \varphi,\quad \varphi\cdot X=\pi_{\T^2M}\circ \T\varphi\circ X=\T\varphi\circ X.\]
     In particular, the adjoint representation on $\T_e\Diff(M)=\fX(M)$ is given by push-forwards,
     \[\Ad_\varphi X=\T\varphi\circ X\circ \varphi^{-1}=\varphi_\ast (X),\]
     according to (\ref{eq pushforward formula}).
@@ -3581,7 +3587,7 @@ Moreover, $\fX(M)$ for non-compact $M$ is not integrable at all.
 
     Now that we have comprehensively reviewed the fundamentals of Lie groups and their actions on manifolds, we are finally ready to return to Klein's Erlangen program as described at the beginning of \Chap~\ref{chap: Lie theory ii}. We will do so using the more modern language of principal bundles.
 
-    Principal bundles appeared in the last \chap\ as a natural special case of Lie group actions on manifolds. In this \chap, however, they will acquire a special elevated status in the theory of general fiber bundles. Recall that any fiber bundle that admits a $G$-atlas such that the structure group $G$ acts on the typical fiber $F$ faithfully is completely determined by the cocycle of its transition functions. This led to the equivalence of any two categories of fiber bundles $\FB^\sigma$ and $\FB^{\sigma'}$ for any two faithful $G$-actions $G\overset{\sigma}{\acts}F$ and $G\overset{\sigma'}{\acts}F'$ (see (\ref{eq equivalence of bundle categories})). This means that most functorial geometric structures on fiber bundles can be defined by providing their description on any one of these equivalent categories. The choice of the category of principal bundles is natural and convenient for two reasons. 
+    Principal bundles appeared in the last \chap\ as a natural special case of Lie group actions on manifolds. In this \chap, however, they will acquire a special elevated status in the theory of general fiber bundles. Recall that any fiber bundle that admits a $G$-atlas such that the structure group $G$ acts on the typical fiber $F$ faithfully is completely determined by the cocycle of its transition functions. This led to the equivalence of any two categories of fiber bundles $\FB^\sigma$ and $\FB^{\sigma'}$ for any two faithful $G$-actions $G\overset{\sigma}{\acts}F$ and $G\overset{\sigma'}{\acts}F'$ (see (\ref{eq equivalence of bundle categories})). This means that most natural (functorial) geometric structures on fiber bundles can be defined by providing their description on any one of these equivalent categories. The choice of the category of principal bundles is natural and convenient for two reasons. 
     
     On a fundamental level, principal $G$-bundles are exactly the $G$-bundles whose typical fiber is $G$ itself, and the action $\sigma$ is the action by translations (which is faithful indeed). The definition of this category, therefore, requires no additional information aside from the group $G$ itself. 
     
@@ -3594,7 +3600,7 @@ Moreover, $\fX(M)$ for non-compact $M$ is not integrable at all.
 \section{Principal fiber bundles}\label{sec: principal bundles}
 
 
-In Definition \ref{def pfb}, we defined principal bundles as free and proper Lie group actions, and provided an equivalent characterization in terms of equivariant local trivializations given by the equivariant tubular neighborhoods. We now make the latter definition explicit.
+In Definition \ref{def pfb}, we defined principal bundles as free and proper Lie group actions. Proposition~\ref{prop equiv local triv pfb} showed that each such action generates a \emph{natural} maximal bundle atlas given by the equivariant tubular neighborhoods. We now make the alternative definition in terms of such an atlas explicit.
 
 \begin{defn}[Principal fiber bundle II]\index{Principal fiber bundle}\label{def pfb 2}
     Let $(P,G,\Phi)$ be a free Lie group action, let $M$ be a manifold and let $\pi:P\to M$ be a smooth mapping. The tuple $(P\overset{\pi}{\to}M,G,\Phi)$ is called a principal $G$-bundle if for every $m\in M$ there exists an open neighborhood $U_m$ of $m$ and a diffeomorphism $\chi:\pi^{-1}(U_m)\to U_m\times G$ such that
@@ -3605,15 +3611,15 @@ In Definition \ref{def pfb}, we defined principal bundles as free and proper Lie
     For brevity we will often denote principal bundles by $P(G,M)$.
 \end{defn}
 
-The existence of local trivializations implies that $\pi$ is a smooth submersion. The fibers of a surjective submersion are embedded submanifolds, all diffeomorphic to the structure group $G$. They are also the orbits of the $G$-action on $P$. Following convention, we will usually assume that $\Phi$ is a right action and call $P$ a \emph{right} principal $G$-bundle (not to be confused with the left $G$-action on the typical fiber).
+The existence of local trivializations implies that $\pi$ is a smooth submersion. The fibers of a surjective submersion are embedded submanifolds, all diffeomorphic to the structure group $G$. They are also the orbits of the $G$-action on $P$, hence $G$-torsors. Following convention, we will usually assume that $\Phi$ is a right action and call $P$ a \emph{right} principal $G$-bundle (not to be confused with the left $G$-action on the typical fiber).
 
 \begin{rem}
     \begin{enumerate}
-        \item Principal bundles can also be understood in terms of $G$-structures, as defined in \S\ref{sec: structure groups}-\ref{sec: bundle morphisms}. Namely, a $G$-bundle $(P\overset{\pi}{\to}M,G\acts F,\calG)$ is principal iff the action $G\acts F$ is free and transitive. With an arbitrary choice of identity, $F$ inherits a group structure isomorphic to $G$, and then the right action of $G$ on itself lifts to a free right action on $P$, since it commutes with the left action of the transition functions.
+        \item Principal bundles can also be understood in terms of $G$-structures, as defined in \S\ref{sec: structure groups}-\ref{sec: bundle morphisms}. Namely, a $G$-bundle $(P\overset{\pi}{\to}M,G\acts F,\calG)$ is principal iff the action $G\acts F$ is free and transitive, so $F$ is a $G$-torsor. Upon arbitrary choice of identity, $F$ inherits a group structure isomorphic to $G$, and then the right action of $G$ on itself lifts to a free right action on $P$, since it commutes with the left action of the transition functions.
         
         \item Recall that a $G$-invariant structure can be naturally lifted from the typical fiber to the fibers of the $G$-bundle itself. However, the Lie group structure of $G$ is not translation-invariant: e.g., the identity element is not invariant under translations. Therefore, \emph{the fibers of a \gls{pfb} do not carry a natural group structure}. In particular, unlike \glspl{vb}, they have no distinguished elements and therefore no analog of a zero section. Instead, the fibers are merely $G$-torsors (that is, $G\slash \{e\}$).
 
-        \item Another feature that distinguishes \glspl{pfb} from all other $G$-bundles is that the typical fiber $G$ carries \emph{two} commuting actions of $G$. The bundle construction via transition functions has those functions act on $G$, say, from the left, which precludes the existence of any left $G$-action on the bundle itself (unless $G$ is abelian). However, the action of $G$ on itself by right translations is left untouched by the bundle construction, and this is the action w.r.t.\ which the trivializations are equivariant in the above definition. Even if $G$ is abelian, then the two actions coincide anyway, so there still won't be two actions on the bundle.
+        \item Another feature that distinguishes \glspl{pfb} from all other $G$-bundles is that the typical fiber $G$ carries \emph{two} commuting actions of $G$. The bundle construction via transition functions has those functions act on $G$, say, from the left, which precludes the existence of a natural left $G$-action on the bundle itself (unless $G$ is abelian). However, the action of $G$ on itself by right translations is left untouched by the bundle construction, and this is the action w.r.t.\ which the trivializations are equivariant in the above definition. Even if $G$ is abelian, then the two actions coincide anyway, so there still won't be two actions on the bundle.
     \end{enumerate}
     Since all of these facts are easier to state explicitly in the definition of a principal bundle, Definition~\ref{def pfb 2} is the most common one in the literature.
 \end{rem}
@@ -3666,8 +3672,7 @@ Now we need to specify the notion of morphism of \glspl{pfb}. Recall that a morp
     so setting $g'=\varphi(e)$ proves the assertion. The other direction is obvious.
 \end{proof}
 
-
-Recall that the maps $\Phi_{\alpha a}:U_{\alpha a}\times (G\times G')\to C^\infty(G,G')$ defined in (\ref{def Phiab}) are equivariant w.r.t.\ the $G\times G'$-action on $C^\infty(G,G')$ so that requiring their values to be in an orbit of a homomorphism $\lambda$ means exactly requiring that these values take the form $h\mapsto h'\lambda (h)$ (strictly speaking it should be $h'\lambda(\wt{h}^{-1}h)$, but we can just redefine $h'$ since $\lambda$ is a homomorphism). Note that $h'$ can be a function of $p$ and the indices $\alpha,a$. Thus, the definition of a $\mathsf{LieGr}$-bundle simply requires that the maps $\Phi_{\alpha a}$ take values in right $\lambda$-equivariant maps $G\to G'$. We thus arrive at the following definition of morphisms of \glspl{pfb} and the final alternative definition of principal bundles as $\mathsf{LieGr}$-bundles.
+We now use this to ``derive'' a definition of morphisms of \glspl{pfb} from our general Definition~\ref{def S-bundle} of categories of $\calS$-bundles, substituting the category of Lie groups for $\calS$. Readers unfamiliar with that construction can safely jump to the definition. Recall that the maps $\Phi_{\alpha a}:U_{\alpha a}\times (G\times G')\to C^\infty(G,G')$ defined in (\ref{def Phiab}) are equivariant w.r.t.\ the $G\times G'$-action on $C^\infty(G,G')$, so that requiring their values to be in an orbit of a homomorphism $\lambda$ means exactly requiring that these values take the form $h\mapsto h'\lambda (h)$ (strictly speaking it should be $h'\lambda(\wt{h}^{-1}h)$, but we can just redefine $h'$ since $\lambda$ is a homomorphism). Note that $h'$ can be a function of $p$ and the indices $\alpha,a$. Thus, the definition of a $\mathsf{LieGr}$-bundle simply requires that the maps $\Phi_{\alpha a}$ take values in right $\lambda$-equivariant maps $G\to G'$. We thus arrive at the following definition of morphisms of \glspl{pfb} and the final alternative definition of principal bundles as $\mathsf{LieGr}$-bundles.
 
 % must have the same form of a $\lambda$-equivariant map for some homomorphism $\lambda$. 
 % We can verify this directly using equivariance by assuming that $\Phi_{\alpha a}(p,e,e)(h_1)$, which is $\wh{h}_{\alpha a}(p,h_1)$, has this form, and computing $\Phi_{\alpha a}(p,g_1,g_2)(h_1)$ by equivariance:
@@ -3684,12 +3689,12 @@ Recall that the maps $\Phi_{\alpha a}:U_{\alpha a}\times (G\times G')\to C^\inft
 \end{defn}
 
 \begin{defn}[Principal fiber bundle III]\label{def pfb 3}
-    A right (left) \gls{pfb} is a $\mathsf{LieGr}$-bundle in the sense of Definition~\ref{def S-bundle}, using the action of every Lie group on itself by left (right) translations. The resulting category $\mathsf{LieGr}\mFB^\infty$ is denoted $\PFB$. 
+    A right (left) \gls{pfb} is a $\mathsf{LieGr}$-bundle in the sense of Definition~\ref{def S-bundle}, using the action of every Lie group on itself by left (right) translations. The resulting category $\mathsf{LieGr}\mFB^\infty$ is denoted $\PFB$ (usually referring to right principal bundles). 
     
-    Upon restricting to a specific Lie group $G$ and morphisms with $\lambda=\id_G$ one gets the category $\PFB^G$, which coincides with the category $\FB^\rmL$ (cf.\ Definition~\ref{def FB^sigma}), where $\rmL$ is the action of $G$ on itself by left translations. Upon further restricting the base to a specific manifold $M$ and morphisms to those covering the identity one gets $\PFB^G_M$ (all morphisms in this category are isomorphisms).
+    Upon restricting to right \glspl{pfb} with a specific structure group $G$ and morphisms with $\lambda=\id_G$ one gets the category $\PFB^G$, which coincides with the category $\FB^\rmL$ (cf.\ Definition~\ref{def FB^sigma}), where $\rmL$ is the action of $G$ on itself by left translations. Upon further restricting the base to a specific manifold $M$ and morphisms to those covering the identity one gets $\PFB^G_M$ (all morphisms in this category are isomorphisms).
 \end{defn}
 
-It might seem that Definition~\ref{def pfb 2} contains more structure in the form of \emph{equivariant} trivializations, however the bundle construction of a $\mathsf{LieGr}$-bundle (with action by translations) out of a cocycle (say acting on the left on the typical fiber $G$) allows us to \emph{lift} the right $G$-action to the whole bundle. Right $G$-equivariance of trivializations is therefore automatic under this definition.
+It might seem that Definition~\ref{def pfb 2} contains more structure in the form of \emph{equivariant} trivializations, however the bundle construction of a $\mathsf{LieGr}$-bundle out of a cocycle (say acting from the left on the typical fiber $G$) allows us to \emph{lift} the right $G$-action to the whole bundle. Right $G$-equivariance of trivializations is therefore automatic under this definition. Moreover, the reconstruction of the principal right $G$-action establishes the equivalence of this definition with Definition~\ref{def pfb}.
 
 \begin{rem}[Special morphisms, bundle reduction]\label{rem 1.1.8 RS2}
     \begin{enumerate}
@@ -3719,14 +3724,14 @@ It might seem that Definition~\ref{def pfb 2} contains more structure in the for
 
 
 
-\section{Associated Bundles}\label{sec: assoc bundles}
+\section{Associated bundles}\label{sec: assoc bundles}
 
 
 In our investigation of the consequences of the general bundle construction in the case of principal bundles it remains to examine what the compatibility condition (\ref{eq transformation of Phiab}) means for morphisms of principal bundles. According to the above discussion, the $\Phi_{\alpha a}$ can be written as
 \[\Phi_{\alpha a}(p,h,h')(g)=h'\wh{g}'_{\alpha a}(p)\lambda(h^{-1}g),\]
 where the functions $\wh{g}'_{\alpha a}:U_{\alpha a}\to G'$ are uniquely determined by this equation.  Together with the homomorphism $\lambda$, these functions completely describe the bundle morphism. Denoting by $\theta:M\to M'$ the horizontal part of the bundle morphism $\vartheta$, the transformation law (\ref{eq transformation of Phiab}) becomes
 \[\boxed{\wh{g}'_{\beta b}(m)=t_{ba}'(\theta(m))\wh{g}_{\alpha a}'(m)\lambda(t_{\beta\alpha}(m))^{-1}.}\label{eq trans rule for ghat}\]
-This formula suggests viewing the functions $\{\wh{g}'_{\alpha a}\}_{\alpha,a}$ as local representatives of a global section of some bundle with typical fiber $G'$ whose transition functions are $(\lambda\circ t_{\beta\alpha},t_{ba}'(\theta(m)))$ acting on $G'$ as in the formula above. To understand what this bundle is we will need the concept of associated bundles.
+This formula suggests viewing the functions $\{\wh{g}'_{\alpha a}\}_{\alpha,a}$ as local representatives of a global section of some bundle with typical fiber $G'$ whose transition functions are $(t_{\beta\alpha},t_{ba}'(\theta(m)))\in G\times G'$ acting on $G'$ as in the formula above. We will return to identifying this bundle in \S\ref{sec: pfb morphisms}, but for that we will need the concept of associated bundles.
 
 Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a right principal bundle and let $(F,G,\sigma)$ be a left Lie group action. We will now formalize the idea of a bundle consisting of ``products'' $p\cdot f$, which are understood as equivalence classes of pairs $(p,f)\sim (p\cdot g,g^{-1}\cdot f)$. This lets us interpret points of $P$ as ``$G$-frames'' for points of the new bundle, so that $p\cdot f$ is the point whose ``coordinates'' in the frame $p$ are $f$. 
 
@@ -3799,7 +3804,7 @@ The following is an exercise.
     \begin{enumerate}
         \item Let $P(M,G)$ be a \gls{pfb} and let $H\emb G$ be a closed subgroup. Then by the Closed Subgroup Theorem~\ref{thm closed subgroup}, $H$ is an embedded Lie subgroup, and we get the homogeneous space $G\slash H$ with a $G$-action by left translation. Then $P\times^G (G\slash H)$ is an associated bundle over $M$ with typical fiber being a transitive $G$-manifold. One can show the following:
         \begin{enumerate}
-            \item As a bundle over $M$, the bundle $P\times^G G\slash H$ is isomorphic to the quotient $P\slash H$ endowed with the natural bundle structure induced from $P$.
+            \item As a bundle over $M$, the bundle $P\times^G (G\slash H)$ is isomorphic to the quotient $P\slash H$ endowed with the natural bundle structure induced from $P$.
             \item $P$ may be viewed as a principal $H$-bundle over $P\times^G (G\slash H)$.
         \end{enumerate}
         \item If $P(M,G)$ is a \gls{pfb}, $E=P\times^G F$ is an associated bundle, and $f:N\to M$ a smooth map, then $f^\ast E$ is naturally associated to $f^\ast P$ via the isomorphism
@@ -3896,7 +3901,7 @@ Therefore, in this special case, we have a functor of the categories of principa
 
         \item The Grassmannian of a rank-$n$ \gls{vb} $E$ can be defined as \index{Grassmann bundle!of a vector bundle}
         \[\Gr_k(E)\coloneqq \Fr(E)\times^{\GL_n(\bbK)} \Gr_k(\bbK^n),\]
-        where $\GL_n(\bbK)$ acts on $\Gr_k(\bbK^n)$ in the standard way. It can also be defined by applying the functor $\Gr_k$ to $E$ as in Definition~\ref{functors VB}. The fibers of this bundle are the Grassmannians of the corresponding fibers of $E$, and its sections are nothing but regular distributions on $E$ of rank $k$.  If $E\to M$ and $E'\to M'$ are two \glspl{vb} and $h:E\to E'$ is a bundle morphism of constant rank $k$ (i.e., the image of each fiber is $k$-dimensional), then it induces a unique smooth immersion (exercise) $\wb{h}:M\to \Gr_k(E')$ given by $\wb{h}(m)=h(E_m)$.
+        where $\GL_n(\bbK)$ acts on $\Gr_k(\bbK^n)$ in the standard way. It can also be defined by applying the functor $\Gr_k$ to $E$ as in Definition~\ref{functors VB}. The fibers of this bundle are the Grassmannians of the corresponding fibers of $E$, and its sections are nothing but regular distributions on $E$ of rank $k$.  If $E\to M$ and $E'\to M'$ are two \glspl{vb} and $h:E\to E'$ is a bundle morphism of constant rank $k$ (i.e., the image of each fiber is $k$-dimensional), then it induces a unique smooth immersion (Exercise) $\wb{h}:M\to \Gr_k(E')$ given by $\wb{h}(m)=h(E_m)$.
         
         Similarly, the Stiefel principal bundle of $k$-frames of $E$ is\index{Stiefel bundle!of a vector bundle}
         \[\St_k(E)\coloneqq \Fr(E)\times^{\GL_n(\bbK)}\St_k(\bbK^n).\]
@@ -4008,7 +4013,7 @@ Since the natural projection $\rmN_G(H)\times G\to \Gamma_H\times (G\slash H)$ i
     Let $(M,G,\Phi)$ be a proper left Lie group action. Let $\sigma$ be the label of a stratum and let $H\emb G$ be a subgroup representing $\sigma$.\index{Stratum}
     \begin{enumerate}
         \item $M_\sigma$ and $M_{\sigma,H}$ are embedded submanifolds of $M$. For $m\in M_{\sigma,H}$, one has 
-        \[\T_m M_{\sigma,H}=(\T_m M)^H,\quad \T_m M_\sigma=(T_m M)^H+\T_m (G\cdot m).\]
+        \[\T_m M_{\sigma,H}=(\T_m M)^H,\quad \T_m M_\sigma=(\T_m M)^H+\T_m (G\cdot m).\]
         \item $\Phi$ induces a free and proper left action of $\Gamma_H$ on $M_{\sigma,H}$, making it a left principal $\Gamma_H$-bundle over $\wh{M}_{\sigma,H}$.
         \item The twisted product $M_{\sigma,H}\times_{\Gamma_H}(G\slash H)$ carries a left $G$-action given by 
         \[\left(g,\left[(m,g'H)\right]\right)\mapsto \left[(m,gg'H)\right]\]
@@ -4048,7 +4053,7 @@ Since the natural projection $\rmN_G(H)\times G\to \Gamma_H\times (G\slash H)$ i
         \item The finer decomposition of the orbit type subsets of $\wh{M}$ into connected components is necessary because the latter may have different dimensions.
         \item Since the smooth structure of $\wh{M}_\sigma$ is unique, assertion 4 above implies that the different choices of the subgroup $H\emb G$ representing $\sigma$ lead to diffeomorphic orbit manifolds $M_{\sigma,H}\slash\Gamma_H$. This assertion also generalizes Corollary~\ref{cor 6.5.1 RS1} to the case where the action is not free, but has a single orbit type.
         \item The diffeomorphism $\wh\phi$ turns $M_{\sigma,H}$ into a principal $\Gamma_H$-bundle over $\wh{M}_\sigma$ with projection $\pi_{\sigma,H}$. Similarly, the diffeomorphisms $\phi$ and $\wh\phi$ turn $M_\sigma$ into a locally trivial fiber bundle over $\wh{M}_\sigma$ with typical fiber $G\slash H$ and projection $\pi_\sigma$, associated with that \gls{pfb}.
-        \item Since $\pi_\sigma:M_\sigma\to\wh{M}_\sigma$ is a submersion, it admits local sections. Tubular neighborhoods provide a distinguished class of local sections in the following way. Let $m\in M_\sigma$, let $\chi:U\to E$ be a tubular neighborhood of the orbit $G\cdot m$ and let $U_m$ be the corresponding slice at $m$. We have $M_\sigma\cap U_m=M_{\sigma,H}\cap U_m$, where $H=G_m$. Since the subset is mapped under $\chi$ onto $V_m^H=E_m^H\cap V_m$, it is an embedded submanifold of $M$. THe standard properties of slices stated in Remark~\ref{rem 6.4.2 RS1}(3) imply that any two distinct points in $M_\sigma\cap U_m$ belong to different orbits. It follows that the restriction of the surjective submersions $\pi_\sigma$ to $M_\sigma\cap U_m$ is injective and hence a diffeomorphism onto an open neighborhood of $\pi(m)$ in $\wh{M}_\sigma$. Then, the inverse of this map yields a local section of $\pi_\sigma$ at $\pi_\sigma(m)$, taking values in $U_m$, and composition of this section with $\chi$ yields a local chart on $\wh{M}_\sigma$ at $\pi_\sigma(m)$, taking values in the open subset $V^H_m$ of the vector space $E_m^H$.
+        \item Since $\pi_\sigma:M_\sigma\to\wh{M}_\sigma$ is a submersion, it admits local sections. Tubular neighborhoods provide a distinguished class of local sections in the following way. Let $m\in M_\sigma$, let $\chi:U\to E$ be a tubular neighborhood of the orbit $G\cdot m$ and let $U_m$ be the corresponding slice at $m$. We have $M_\sigma\cap U_m=M_{\sigma,H}\cap U_m$, where $H=G_m$. Since the subset is mapped under $\chi$ onto $V_m^H=E_m^H\cap V_m$, it is an embedded submanifold of $M$. The standard properties of slices stated in Remark~\ref{rem 6.4.2 RS1}(3) imply that any two distinct points in $M_\sigma\cap U_m$ belong to different orbits. It follows that the restriction of the surjective submersions $\pi_\sigma$ to $M_\sigma\cap U_m$ is injective and hence a diffeomorphism onto an open neighborhood of $\pi(m)$ in $\wh{M}_\sigma$. Then, the inverse of this map yields a local section of $\pi_\sigma$ at $\pi_\sigma(m)$, taking values in $U_m$, and composition of this section with $\chi$ yields a local chart on $\wh{M}_\sigma$ at $\pi_\sigma(m)$, taking values in the open subset $V^H_m$ of the vector space $E_m^H$.
         \item The family $\{\wh{M}_\sigma\}_\sigma$ establishes a disjoint decomposition of $\wh{M}$ into manifolds. This decomposition has several additional properties reflecting how these manifolds fit together. In fact, it is a so-called \emph{Whitney stratification}. A similar statement is true for $M$ and the family $\{M_\sigma\}_\sigma$. If the orbit space $M\slash G$ is connected, there exists an orbit type which is minimal in the sense that one (and hence any) of its representatives is conjugate  to a subgroup of the stabilizer of an arbitrary point. The corresponding orbit type subset of $M\slash G$ is open and dense in $M\slash G$ and connected. It is therefore referred to as the \emph{principal stratum} of $M\slash G$. Correspondingly, all the other strata are called \emph{secondary strata}.
     \end{enumerate}
 \end{rem}
@@ -4098,7 +4103,7 @@ Obviously, $C^\infty(\wh{M})$ is an associative algebra, with operations being d
 
 
 
-\section{Principal bundle morphisms}
+\section{Principal bundle morphisms}\label{sec: pfb morphisms}
 
 
 We have previously defined morphisms of principal bundles as bundle morphisms modeled on homomorphisms of Lie groups. In the restricted category $\PFB^G$, these morphisms are modeled on $\id_G$ and therefore are exactly the $G$-equivariant maps. Indeed, orbits are exactly the fibers of a principal bundle, and every $G$-equivariant map $\varphi:P\to P'$ of right principal $G$-bundles must map orbits to orbits and be bijective when restricted to one orbit. This proves that $\Hom_G(P,P')=\mor_{\PFB^G}(P,P')$.
@@ -4126,7 +4131,7 @@ where $\Delta:M\hookrightarrow M\times M$ is the diagonal embedding map $m\mapst
 \end{rem}
 
 
-We are finally ready to wrap up the discussion from the beginning of \S\ref{sec: assoc bundles}. Recall that we started with a morphism of principal bundles $\vartheta:P\to P'$ with differing structure groups $G,G'$ covering $\theta:M\to M'$ and reduced it to a collection of local $G'$-valued functions $\{\wh{g}_{\alpha a}'\}$ that must satisfy the transformation rule (\ref{eq trans rule for ghat}). By now it should be clear that these functions represent a global section of a bundle whose typical fiber is $G'$ and whose structure group is $G\times G'$ acting on $G$ via $((h,h'),g')\mapsto h'g'\lambda(h)^{-1}$. Its transition functions are pairs $m\mapsto (\lambda\circ t_{\beta\alpha}(m),t_{ba}'(\theta(m)))\in G\times G'$. By comparing with the definitions of associated bundles and pullbacks we conclude that the functions $\{\wh{g}_{\alpha a}'\}$ define a global section of the bundle
+We are finally ready to wrap up the discussion from the beginning of \S\ref{sec: assoc bundles}. Recall that we started with a morphism of principal bundles $\vartheta:P\to P'$ with differing structure groups $G,G'$ covering $\theta:M\to M'$ and reduced it to a collection of local $G'$-valued functions $\{\wh{g}_{\alpha a}'\}$ that must satisfy the transformation rule (\ref{eq trans rule for ghat}). By now it should be clear that these functions represent a global section of a bundle whose typical fiber is $G'$ and whose structure group is $G\times G'$ acting on $G$ via $((h,h'),g')\mapsto h'g'\lambda(h)^{-1}$. Its transition functions are pairs $m\mapsto (t_{\beta\alpha}(m),t_{ba}'(\theta(m)))\in G\times G'$. By comparing with the definitions of associated bundles and pullbacks we conclude that the functions $\{\wh{g}_{\alpha a}'\}$ define a global section of the bundle
 \[\boxed{P^{[\lambda,\theta]}\coloneqq P^{[\lambda]}\times^{G'}_M(\theta^\ast P')\to M.}\]
 This bundle can also be written as an associated bundle $(P\times_M \theta^\ast P')\times^{G\times G'} G'$, or as $(\id_M\times \theta)^\ast(P\times P')\times^{G\times G'}G'$. All of these are easily seen to be isomorphic by comparing the transition functions. The elements of this bundle can be seen informally as ratios $p'\lambda(p)^{-1}$, where $\pi'(p')=\theta(\pi(p))$, which makes the transformation law (\ref{eq trans rule for ghat}) manifest. We thus have
 \begin{prop}\label{prop pfb morphisms}
@@ -4243,13 +4248,13 @@ The following proposition characterizes the isomorphism classes of bundle reduct
     \[\{p\in P:\varphi\circ\vartheta(p)=f\}=\vartheta^{-1}\left(\{p\in P:\varphi(p)=f\}\right)=\vartheta^{-1}(Q_f).\]
 \end{proof}
 
-Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions of a principal bundle $P(M,G)$ to a given closed subgroup $H$ if $G$. To formulate it, we consider the natural action of $G$ on the homogeneous space $G\slash H$ by left translation and build the associated bundle $P\times^G G\slash H$, whose total space is $P\slash H$.
+Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions of a principal bundle $P(M,G)$ to a given closed subgroup $H$ if $G$. To formulate it, we consider the natural action of $G$ on the homogeneous space $G\slash H$ by left translation and build the associated bundle $P\times^G (G\slash H)$, whose total space is $P\slash H$.
 
 \begin{cor}[{{\cite[Cor.~1.6.5]{RS2}}}]\label{cor 1.6.5 RS2}
-    The reductions of a principal $G$-bundle $P$ to a closed subgroup $H\emb G$ are in a natural one-to-one correspondence with the smooth sections of the associated bundle $P\times^G (G\slash H)\cong P\slash H$.
+    Reductions of a principal $G$-bundle $P$ to a closed subgroup $H\emb G$ are in a natural one-to-one correspondence with smooth sections of the associated bundle $P\times^G (G\slash H)\cong P\slash H$.
 \end{cor}
 \begin{proof}
-    By Proposition~\ref{prop 1.2.6 RS2}, the sections of $P\times^G G\slash H$ are in one-to-one correspondence with elements of $\Hom_G(P,G\slash H)$. Since $G\slash H$ is a transitive $G$-manifold, we can apply Proposition~\ref{prop 1.6.2 RS2} with $f=[e]$.
+    By Proposition~\ref{prop 1.2.6 RS2}, the sections of $P\times^G (G\slash H)$ are in one-to-one correspondence with elements of $\Hom_G(P,G\slash H)$. Since $G\slash H$ is a transitive $G$-manifold, we can apply Proposition~\ref{prop 1.6.2 RS2} with $f=[e]$.
 \end{proof}
 
 \begin{example}[{{\cite[Ex.~1.6.6]{RS2}}}]\label{ex 1.6.6 RS2}
@@ -4267,8 +4272,8 @@ Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions
             and $E$ admits a fiber metric with signature $(k,l)$ iff $\Fr(E)$ is reducible to a principal $\Or_{k,l}$-bundle. The latter is the bundle of orthonormal frames $\Fr_{\Or_{k,l}}(E,\sfh)$. Note that specifying such a reduction is equivalent to specifying a bundle metric (section of the associated bundle) according to Proposition~\ref{prop 1.6.1 RS2}, or alternatively a metric ($f$ in the language of Proposition~\ref{prop 1.6.2 RS2}) on the model fiber plus an equivariant $\bigodot^2_{(k,l)}(\bbR^n)^\ast$-valued (metric-valued) function on the frame bundle.
 
             \item If $\bbK=\bbC$, then a fiber metric can be seen as a section of the associated bundle
-            \[\Fr(E)\times^{\GL_n(\bbC)} \wb{{(\bbC^n)}}^\ast\overset{s}{\otimes} (\bbC^n)^\ast,\]
-            where $\overset{s}{\otimes}$ is the symmetric tensor product. By the Sylvester Theorem, $\GL_n(\bbC)$ acts transitively on the subset of nondegenerate elements in $\wb{{(\bbC^n)}}^\ast\overset{s}{\otimes} (\bbC^n)^\ast$ with stabilizer $\U_n$. Thus $E$ admits a Hermitian fiber metric iff $\Fr(E)$ is reducible to a principal $\U_n$-bundle, which then coincides with the bundle of unitary frames $\Fr_{\U_n}(E)$.
+            \[\Fr(E)\times^{\GL_n(\bbC)} \wb{{(\bbC^n)}}^\ast\odot (\bbC^n)^\ast,\]
+            where $\odot$ is the symmetric tensor product. By the Sylvester Theorem, $\GL_n(\bbC)$ acts transitively on the subset of nondegenerate elements in $\wb{{(\bbC^n)}}^\ast\odot(\bbC^n)^\ast$ with stabilizer $\U_n$. Thus $E$ admits a Hermitian fiber metric iff $\Fr(E)$ is reducible to a principal $\U_n$-bundle, which then coincides with the bundle of unitary frames $\Fr_{\U_n}(E)$.
         \end{enumerate}
     \end{enumerate}
 \end{example}
