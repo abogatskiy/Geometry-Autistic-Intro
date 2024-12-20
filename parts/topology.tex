@@ -11,10 +11,10 @@ The language of category theory is extremely useful throughout all modern mathem
     A category\index{Category} $\mathcal{C}$ consists of
     \begin{enumerate}
     \item A class $\ob(\mathcal{C})$ of \emph{objects};
-    \item For any $X,Y\in\ob(\mathcal{C})$ there is a set $\mor_{\mathcal{C}}(X,Y)$ (also denoted by $\Hom_{\mathcal{C}}(X,Y)$) of \emph{morphisms}\index{Morphism} (arrows) from $X$ to $Y$ with the following properties:
+    \item For any $X,Y\in\ob(\mathcal{C})$ there is a set $\mor_{\mathcal{C}}(X,Y)$ (also denoted by $\Hom_{\mathcal{C}}(X,Y)$) of \emph{morphisms (arrows)} \index{Morphism} from $X$ to $Y$ with the following properties:
     \begin{enumerate}
-    \item The set of morphisms is closed under \emph{composition}: $\forall f\in\mor(A,B)$
-    and $\forall g\in\mor(B,C)$, $\exists h=fg=g\circ f\in\mor(A,C)$.
+    \item There is a partial binary operation on morphisms called the \emph{composition}: $\forall f\in\mor(A,B)$
+    and $\forall g\in\mor(B,C)$, $\exists fg=g\circ f\in\mor(A,C)$.\footnote{The notation $fg$ for the composition where $f$ acts first and $g$ second is more natural for category theory than it is for set theory, because we usually don't refer to arguments of functions here, which means that we'll never have to write strange-looking formulas like $(fg)(x)=g(f(x))$. This style also matches the representation of morphisms as arrows in diagrams. In the cases where we do need arguments, we will use the set-theoretical notation $g\circ f$. We will always use the set-theoretical notation outside of this \chap\ on categories.}
     \item The composition is associative, $\left(fg\right)h=f\left(gh\right)$.
     \item There is an identity morphism for every object: $\forall A\in\ob(\mathcal{C})$
     $\exists\,\id_{A}\in\mor(A,A)$ such that for any morphisms $f,g$ with
@@ -23,8 +23,6 @@ The language of category theory is extremely useful throughout all modern mathem
     \end{enumerate}
     The set $\mor(A,A)=\Hom(A,A)$ is also denoted $\End(A,A)$ or just $\End(A)$, its elements are called \emph{endomorphisms}\index{Endomorphism} of $A$.
 \end{defn}
-
-Notice how the notation $fg$ for the composition where $f$ acts first and $g$ second is more natural for category theory than it is for set theory, because we usually don't refer to arguments of functions here, which means that we'll never have to write strange-looking formulas like $(fg)(x)=g(f(x))$. In the cases where we do need arguments, we will use the set-theoretical notation $g\circ f$. We will always use the set-theoretical notation outside of this section on categories.
 
 A category can be visualized as a directed graph with the vertices
 being the objects of the category and the arrows being the morphisms.
@@ -1463,7 +1461,7 @@ isomorphic objects without considering the resulting category different.
  Two categories are equivalent, $\mathcal{C}\simeq\mathcal{D}$,
 if there are two functors $F:\mathcal{C}\to\mathcal{D}$ and $G:\mathcal{D}\to\mathcal{C}$
 such that the following are isomorphic as functors, i.e., have natural
-isomorphisms: $FG\cong1_{\mathcal{C}}$ and $GF\cong1_{\mathcal{D}}$.
+isomorphisms: $FG\cong1_{\mathcal{C}}$ and $GF\cong1_{\mathcal{D}}$ (such pairs of functors are also called \emph{pseudoinverses}). \index{Pseudoinverse functor}
 Two categories are anti-equivalent if $\mathcal{C}\simeq\mathcal{D}^{\ast}$.
 \end{defn}
 %
@@ -1537,8 +1535,7 @@ locally compact groups:
 \[
 \mathsf{LocCompGr}\simeq\left(\mathsf{LocCompGr}\right)^{\ast},
 \]
-where the mapping is $G\mapsto\wh{G}$, $\wh{G}$ being the dual
-group. For instance, $\wh{\bbS^{1}}=\bbZ$, which means that the
+where the mapping is $G\mapsto\wh{G}$, where $\wh{G}=\Hom(G,\U_1)$ is the \emph{Pontryagin dual group}. \index{Pontryagin dual group} For instance, $\wh{\U_1}=\bbZ$, which means that the
 Fourier transform maps functions on the circle to functions on $\bbZ$
 (i.e., sequences of numbers). Similarly, $\wh{\bbR }=\bbR $,
 so Fourier transforms here are continuous. Pontryagin's theory shows
@@ -1720,18 +1717,20 @@ Homeomorphisms are isomorphisms in the category of topological spaces. Propertie
 Since there is no universal algorithm that allows one to answer the first question, most of the hard work in topology goes into constructing new topological invariants that help us define certain classes of topological spaces and then computing them. The part of topology that is especially efficient in finding these invariants is \emph{algebraic topology}, which we will not discuss in this part (but it is the subject of \Part~\ref{Part II}).
 
 \begin{rem}
-    In some applications, like knot theory, we are interested in \emph{isotopies} of embedded topological subspaces, which are essentially smooth deformations of embeddings without self-intersections. Isotopy is an even stronger condition than homotopy or homeomorphism, which allows for more interesting invariants like knot polynomials, which would not be invariant under homotopies or homeomorphisms (every knot can be ``untied'' by a homeomorphism!). In particular, there are more chances to find a complete system of isotopy invariants for certain classes of embeddings, therefore completely classifying all such objects by a fixed set of topological invariants.
+    In some applications, like knot theory, we are interested in \emph{isotopies} of embedded topological subspaces, which are essentially smooth deformations of embeddings without self-intersections. Isotopy is an even stronger condition than homotopy or homeomorphism, which allows for more interesting invariants like knot polynomials, which would not be invariant under homotopies or homeomorphisms (every knot can be ``untied'' by a homeomorphism!). In particular, there are more chances to find a complete system of isotopy invariants for certain classes of embeddings, therefore completely classifying all such objects by a fixed set of topological invariants. 
+    
+    Beyond isotopy, there are many other kinds of topological isomorphisms on various categories of topological spaces, but the basic task of topology remains the same: identify invariants that help classify spaces up to isomorphism.
 \end{rem}
 
 
 \begin{defn}[Comparison of topologies]\index{Topology!fine}\index{Topology!coarse}
     Let $\tau,\rho$ be two topologies on a set $X$. If the inclusion
     \[\tau \subset \rho\]
-    holds, we say that $\rho$ is a finer topology, and $\tau$ is coarser. The trivial topology is the coarsest and the discrete topology is the finest. We have the inclusions $C((X,\tau),Y)\subset C((X,\rho),Y)$ and $C(Y,(X,\rho))\subset C(Y,(X,\tau))$.
+    holds, we say that $\rho$ is a \emph{finer topology}, and $\tau$ is \emph{coarser}. The trivial topology is the coarsest and the discrete topology is the finest. We have the inclusions $C((X,\tau),Y)\subset C((X,\rho),Y)$ and $C(Y,(X,\rho))\subset C(Y,(X,\tau))$.
 \end{defn}
 
-\begin{defn}[Initial/Final topology]\index{Topology!final}\index{Topology!initial}
-    Let $X,Y$ be two sets and $f:X\to Y$ a map between them. If $X$ has a topology then the finest topology on $Y$ under which $f$ is still continuous is called the \emph{final} topology. Similarly, if $Y$ has a topology, then the coarsest topology on $X$ under which $f$ is continuous is called the initial topology. Similarly, a family of functions $f_i:X_i\to Y$ defines a final topology on $Y$, and a family $f_i:X\to Y_i$ defines an initial one on $X$.
+\begin{defn}[Initial/final topology]\index{Topology!final}\index{Topology!initial}
+    Let $X,Y$ be two sets and $f:X\to Y$ a map between them. If $X$ has a topology then the finest topology on $Y$ under which $f$ is still continuous is called the final topology. Similarly, if $Y$ has a topology, then the coarsest topology on $X$ under which $f$ is continuous is called the initial topology. Similarly, a family of functions $f_i:X_i\to Y$ defines a final topology on $Y$, and a family $f_i:X\to Y_i$ defines an initial one on $X$.
 \end{defn}
 
 For a set $X$ and an equivalence relation $\sim$ on $X$, one can define the quotient set $X/\sim$ as the set of equivalence classes under the relation, i.e.,
@@ -4280,23 +4279,23 @@ Every $CW$-complex therefore can be thought of as a \emph{decomposition} of a Ha
 
 
 
-\begin{defn}[Directed system, Direct limit]\index{Direct limit}
-    A directed system of topological spaces consists of a directed set $(A,\leq)$ (a poset such that for all $a,b\in A$ there exists $c\in A$ such that $a\leq c$ and $b\leq c$), a topological space $X_\alpha$ for every $\alpha \in A$ and a continuous mapping $f_{\beta\alpha}:X_\alpha\to X_\beta$ for every pair $\alpha\leq\beta$ such that $f_{\alpha\alpha}=\id_{X_\alpha}$ and $f_{\gamma\beta}\circ f_{\beta\alpha}=f_{\gamma\alpha}$ for all $\alpha\leq\beta\leq \gamma$. The direct limit (\textit{colimit})
+\begin{defn}[Directed system, Directed colimit]\index{Direct limit!see {Directed colimit}}\index{Directed colimit}\label{def directed system}\index{Directed system}
+    A directed system of topological spaces consists of a directed set $(A,\leq)$ (a poset such that for all $a,b\in A$ there exists $c\in A$ such that $a\leq c$ and $b\leq c$), a topological space $X_\alpha$ for every $\alpha \in A$ and a continuous mapping $f_{\beta\alpha}:X_\alpha\to X_\beta$ for every pair $\alpha\leq\beta$ such that $f_{\alpha\alpha}=\id_{X_\alpha}$ and $f_{\gamma\beta}\circ f_{\beta\alpha}=f_{\gamma\alpha}$ for all $\alpha\leq\beta\leq \gamma$. The \emph{colimit indexed by a directed category}, or just the directed colimit (historically \emph{direct limit})
     \[X=\colimit X_\alpha\]
     of the directed system $\{X_\alpha,f_{\beta\alpha}\}$ is (up to homeomorphism) the topological quotient of the disjoint union $\bigsqcup_{\alpha\in A} X_\alpha$ w.r.t.\ the equivalence relation that $x\in X_\alpha$ is equivalent to $y\in X_\beta$ iff $\gamma\in A: f_{\gamma\alpha}(x)=f_{\gamma\beta} (y)$. Composition of the natural inclusions $X_\alpha\hookrightarrow \bigsqcup_\alpha X_\alpha$ with the quotient map yields continuous mappings
     \[\varphi_\alpha:X_\alpha\to X\]
-    and the topology of $X$ coincides with the final topology defined by these maps. That is, a subset of $X$ is open iff its preimage under $\varphi_\alpha$ is open in $X_\alpha$ for all $\alpha$. In other words, the direct limit space is the set-theoretic direct limit with the final topology for the maps $\varphi_{\alpha}$.
+    and the topology of $X$ coincides with the final topology defined by these maps. That is, a subset of $X$ is open iff its preimage under $\varphi_\alpha$ is open in $X_\alpha$ for all $\alpha$. In other words, the directed colimit space is the set-theoretic directed colimit with the final topology for the maps $\varphi_{\alpha}$.
 \end{defn}
 
-Direct limits are nothing but a generalization of pushouts to infinite families of objects, and will come up again in a more general categorical setting when we discuss homological algebra.
+Directed colimits are nothing but a generalization of pushouts to infinite families of objects, and will come up again in a more general categorical setting when we discuss homological algebra. Historically they are called \emph{direct limits}, but we avoid this nomenclature due to its proneness to confusion. A much more complete investigation of directed colimits will be done in \S\ref{Limits and colimits}.
 
 
 \begin{prop}[{{\cite[Prop.~3.1.14]{RS2}}}]\label{prop 3.1.14 RS2}
-    Let $\{X_\alpha,f_{\beta\alpha}\}$ and $\{Y_\alpha,g_{\beta\alpha}\}$ be directed systems of topological spaces over the same index set $A$ and let $X$ and $Y$, respectively, be the direct limits. Every family of continuous mappings $h_\alpha:X_\alpha\to Y_\alpha$ satisfying $h_\beta \circ f_{\beta\alpha}=g_{\beta\alpha}\circ h_\alpha$ whenever $\alpha\leq \beta$ descends to a continuous mapping $h:X\to Y$.
+    Let $\{X_\alpha,f_{\beta\alpha}\}$ and $\{Y_\alpha,g_{\beta\alpha}\}$ be directed systems of topological spaces over the same index set $A$ and let $X$ and $Y$, respectively, be the directed colimits. Every family of continuous mappings $h_\alpha:X_\alpha\to Y_\alpha$ satisfying $h_\beta \circ f_{\beta\alpha}=g_{\beta\alpha}\circ h_\alpha$ whenever $\alpha\leq \beta$ descends to a continuous mapping $h:X\to Y$.
 \end{prop}
 
 \begin{prop}[{{\cite[Prop.~3.1.15]{RS2}}}]\label{prop 3.1.15 RS2}
-    Let $\{X_\alpha,f_{\beta\alpha}\}$ be a directed system of topological spaces and let $X$ be the direct limit. If for some $i$ one has $\pi_i(X_\alpha)=0$ for almost all (i.e., all but finitely many) $\alpha$, then $\pi_i(X)=0$.
+    Let $\{X_\alpha,f_{\beta\alpha}\}$ be a directed system of topological spaces and let $X$ be the directed colimit. If for some $i$ one has $\pi_i(X_\alpha)=0$ for almost all (i.e., all but finitely many) $\alpha$, then $\pi_i(X)=0$.
 \end{prop}
 
 
@@ -4313,19 +4312,19 @@ Direct limits are nothing but a generalization of pushouts to infinite families 
 \end{proof}
 
 \begin{cor}
-    The family of skeleta $X^{(k)}$ of a $CW$-complex together with the natural inclusion maps $f_{lk}:X^{(k)}\hookrightarrow X^{(l)}$ for $k\leq l$ forms a directed system of spaces. The direct limit of this system is homeomorphic to $X$: 
+    The family of skeleta $X^{(k)}$ of a $CW$-complex together with the natural inclusion maps $f_{lk}:X^{(k)}\hookrightarrow X^{(l)}$ for $k\leq l$ forms a directed system of spaces. The directed colimit of this system is homeomorphic to $X$: 
     \[X\cong \colimit X^{(n)}.\]
 \end{cor}
 
 
 \begin{example}[$\bbR^\infty$]\index{$\bbR^\infty$}\label{R-infty}
-    By including $\bbR^n\hookrightarrow \bbR^{\bbN }$ via $x=(x_1,\ldots,x_n)\mapsto (x_1,\ldots,x_n,0,0,\ldots)$, we can take the direct limit
+    By including $\bbR^n\hookrightarrow \bbR^{\bbN }$ via $x=(x_1,\ldots,x_n)\mapsto (x_1,\ldots,x_n,0,0,\ldots)$, we can take the directed colimit
     \[\bbR^\infty=\colimit \bbR^n.\]
     This space consists of sequences of reals with only finitely many nonzero elements. The final topology on this space is strictly finer than the subspace topology inherited on it from the direct product topology on $\bbR^{\mathbb{N}}$.\footnote{The direct product topology on $\prod_\alpha X_\alpha$ is the coarsest topology under which the natural projections $\prod_\alpha X_\alpha\overset{\mathrm{pr}_\alpha}{\to} X_\alpha$ are continuous, and it is generated by sets of the form $\prod_\alpha U_\alpha$ where $U_\alpha\subset X_\alpha$ is open and for almost all $\alpha$, $U_\alpha=X_\alpha$.} In fact, $\bbR^\infty$ itself is not open as a subset of $\bbR^{\mathbb{N}}$.
 \end{example}
 
 \begin{example}[$\bbS^\infty$]\index{$\bbS^\infty$}\label{S-infty}
-    Since we can obtain $\bbS^n$ from $\bbS^{n-1}$ by attaching two cells, we can take the direct limit
+    Since we can obtain $\bbS^n$ from $\bbS^{n-1}$ by attaching two cells, we can take the directed colimit
     \[\bbS^\infty=\colimit \bbS^n.\]
     This space includes every sphere $\bbS^n$ as a subcomplex. By the above theorem, $\pi_n(\bbS^\infty)=0$ for all $n$, however let us show the stronger result that $\bbS^\infty$ is contractible.
 
@@ -4664,7 +4663,7 @@ One can think of $Z$ as a homotopy-theoretic hybrid of $X$ and $A$. As $n$ incre
 
 
 
-\begin{example}[Postnikov towers]
+\begin{example}[Postnikov towers]\index{Postnikov tower}
     We can use this technique to construct, for each connected $CW$-complex $X$, and each $n\geq 1$, a $CW$-complex $X_n$ containing $X$ as a subcomplex such that:
     \begin{enumerate}[label=(\alph*)]
         \item $\pi_i(X_n)=0$ for $i>n$;
@@ -4672,7 +4671,7 @@ One can think of $Z$ as a homotopy-theoretic hybrid of $X$ and $A$. As $n$ incre
     \end{enumerate}
     To do this, apply the general construction to the constant map of $X$ to a point, starting at the stage of attaching cells of dimension $n+2$. Thus we attach $(n+2)$-cells to $X$ using cellular maps $\bbS^{n+1}\to X$ that generate $\pi_{n+1}(X)$ to form a space with trivial $\pi_{n+1}$, then for this space we attach $(n+3)$-cells to make $\pi_{n+2}$ trivial, and so on. The result is a complex $X_n$ with the desired properties.
 
-    The inclusion $X\hookrightarrow X_n$ extends to a map $X_{n+1}\to X_n$ since $X_{n+1}$ is obtained from $X$ by attaching cells of dimension at least $n+3$, and $\pi_i(X_n)=0$ for $i>n$ so we can apply the Extension Lemma~\ref{extension lemma}. Thus we have a commutative diagram called a Postnikov tower for X. One can regard the spaces $X_n$ as truncations of $X$ which provide successively better approximations to $X$ as $n$ increases. There is a weak homotopy equivalence between $X$ and the inverse limit of the Postnikov tower $\limit X_n$, i.e.~$X$ is a $CW$ approximation of $\limit X_n$.
+    The inclusion $X\hookrightarrow X_n$ extends to a map $X_{n+1}\to X_n$ since $X_{n+1}$ is obtained from $X$ by attaching cells of dimension at least $n+3$, and $\pi_i(X_n)=0$ for $i>n$ so we can apply the Extension Lemma~\ref{extension lemma}. Thus we have a commutative diagram called a \emph{Postnikov tower} for $X$. One can regard the spaces $X_n$ as truncations of $X$ which provide successively better approximations to $X$ as $n$ increases. There is a weak homotopy equivalence between $X$ and the \emph{projective (codirected) limit} of the Postnikov tower $\limit X_n$, i.e.~$X$ is a $CW$ approximation of $\limit X_n$.
     \[
     \begin{tikzcd}[every matrix/.append style={name=m}]
        & \vdots \arrow[d]\\
@@ -6829,7 +6828,7 @@ Throughout this \sect\  we assume that $\bbK$ is either $\bbR$ or $\bbC$.
 
 \begin{example}
     \begin{enumerate}[label=(\alph*)]
-        \item Let $U\subset \bbR^n$ be an open subset and consider the algebra $C^\infty(U,\bbR)$. For each multiindex $m=(m_1,\ldots,m_n)\in\bbN_0^n$ with $|m|=m_1+\cdots+m_n$, we consider the differential operator
+        \item Let $U\subset \bbR^n$ be an open subset and consider the algebra $C^\infty(U,\bbR)$. For each multiindex $m=(m_1,\ldots,m_n)\in\bbZ_{\geq 0}^n$ with $|m|=m_1+\cdots+m_n$, we consider the differential operator
         \[D^m=D_1^{m_1}\cdots D_n^{m_n}=\frac{\partial^{|m|}}{{\partial_1^{m_1}\cdots \partial_n^{m_n}}}.\]
         For each $m$ and each compact subset $K\subset U$ we define a seminorm on $C^\infty(U,\bbR)$ by 
         \[p_{K,m}(f)=\sup_{x\in K}|D^mf(x)|.\]
@@ -6843,7 +6842,7 @@ Throughout this \sect\  we assume that $\bbK$ is either $\bbR$ or $\bbC$.
         \[\Phi:C^\infty(M,\bbR)\hookrightarrow \prod_{\alpha}C^\infty(\varphi_\alpha(U_\alpha),\bbR),\quad f\mapsto (\restr{f}{U}\circ \varphi^{-1})_\alpha\]
         where $\alpha$ is an index enumerating all charts $(U_\alpha,\varphi_\alpha)$ in an atlas of $M$, and endow the right hand side with the product topology, turning it into a locally convex algebra (this is an easy exercise). Therefore the inverse image of this topology turns $C^\infty(M,\bbR)$ into a locally convex algebra.
 
-        This description is convenient but not very explicit. To see how it can be defined by seminorms, note that for each compact $K\subset M$ for which there exists a chart $\varphi:U\to \bbR^n$ with $K\subset U$ and for each multiindex $m\in \bbN_0^n$ we have a seminorm
+        This description is convenient but not very explicit. To see how it can be defined by seminorms, note that for each compact $K\subset M$ for which there exists a chart $\varphi:U\to \bbR^n$ with $K\subset U$ and for each multiindex $m\in \bbN_{\geq 0}^n$ we have a seminorm
         \[p_{K,m}(f)=\sum_{x\in \varphi(K)}\lvert D^m(f\circ \varphi^{-1})\rvert.\]
         It is easy to see that these seminorms define the same topology on $C^\infty(M,\bbR)$ and that we obtain the structure of a Fr\'echet algebra on $C^\infty,\bbR)$. This is called the \emph{topology of local uniform convergence of all partial derivatives}.
 

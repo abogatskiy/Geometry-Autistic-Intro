@@ -112,19 +112,19 @@ Note that limits and colimits typically do not commute.
 \begin{example}[Siefert-van Kampen theorem redux]\index{Theorem!Siefert-van~Kampen}
     We've learned by now that contravariant representable (or hom-) functors map colimits to limits, so they're not the functors that preserve colimits. It is the left adjoints that do. Siefert-van~Kampen theorem essentially states that the fundamental functors $\pi_1$ or $\Pi$ preserve \emph{some} colimits (namely pushouts). 
     
-    While not a proof, one categorical source of intuition for this is that both of these functors are left adjoints. The reason $\pi_1$ preserves only pushouts, and not all colimits, is that the functor that maps the category $\mathsf{Top}$ into the homotopy category $\mathsf{hTop}$ doesn't preserve colimits, so $\pi_1$ doesn't either. However, the descended version of this functor, $\pi_1:\mathsf{hTop}\to \mathsf{Gr}$ happens to be the left adjoint of a certain functor that constructs a topological space given a group. Looking far ahead, this is the functor $B:G\mapsto BG$ that constructs the classifying space of $G$. It is so called because $BG$ is the base space of a universal principal $G$-bundle such that any other $G$-bundle is a pullback along some continuous map into $BG$. For example, universal covering spaces are exactly the classifying spaces for the fundamental groups of their base, -- e.g., $B\bbZ=\bbS^1$ and $B(\bbZ\ast \bbZ)=\bbS^1\vee \bbS^1$ etc. $BG$ is in fact the unique (up to ``weak'' homotopy equivalence) space whose fundamental group is $G$ and all other homotopy groups are trivial (which also identifies it with the first  Eilenberg-MacLane space $\rmK(G,1)$).
+    While not a proof, one categorical source of intuition for this is that both of these functors are left adjoints. The reason $\pi_1$ preserves only pushouts, and not all colimits, is that the functor that maps the category $\mathsf{Top}$ into the homotopy category $\mathsf{hTop}$ doesn't preserve colimits, so $\pi_1$ doesn't either. However, the descended version of this functor, $\pi_1:\mathsf{hTop}\to \mathsf{Gr}$ happens to be the left adjoint of a certain functor that constructs a topological space given a group. Looking far ahead, this is the functor $\rmB:G\mapsto \rmB G$ that constructs the classifying space of $G$. It is so called because $\rmB G$ is the base space of a universal principal $G$-bundle such that any other $G$-bundle is a pullback along some continuous map into $\rmB G$. For example, universal covering spaces are exactly the classifying spaces for the fundamental groups of their base, -- e.g., $B\bbZ=\bbS^1$ and $\rmB(\bbZ\ast \bbZ)=\bbS^1\vee \bbS^1$ etc. $\rmB G$ is in fact the unique (up to ``weak'' homotopy equivalence) space whose fundamental group is $G$ and all other homotopy groups are trivial (which also identifies it with the first  Eilenberg-MacLane space $\rmK(G,1)$).
 
     So, by a happy coincidence, pushouts in the homotopy category lined up with pushouts in the original topological category.
 \end{example}
 
 The most common examples of infinite limits and colimits are ones where $\mathcal{J}$ can be indexed by integers.
 
-\begin{defn}[Direct and inverse limits]\index{Limit!direct}\index{Limit!inverse}
-    If $\calJ$ is a directed system and $F:\calJ\to \calC$ a functor, then $\colimit(F)$ is called a direct, or an inductive, limit. It is also often written as $\colimit A_j$, where $A_j=F(j)$.
+\begin{defn}[Directed colimits, codirected limits]\index{Inverse limit!see {Codirected limit}}\index{Direct limit!see {Directed colimit}}\index{Directed colimit}\index{Directed colimit}
+    If $\calJ$ is a directed system (cf.\ Definition~\ref{def directed system}) and $F:\calJ\to \calC$ a functor, then $\colimit(F)$ is called a directed colimit (historically \emph{direct limit}, or \emph{inductive limit}). \index{Inductive limit!see {Directed colimit}} It is also often written as $\colimit A_j$, where $A_j=F(j)$. \index{Inductive limit!see {Directed colimit}}
     
-    If $\calJ$ is an inverse system (i.e.~$\calJ^{\mathrm{op}}$ is a directed system), then $\limit(F)$ is called an inverse, or a projective, limit.
+    If $\calJ$ is a \emph{codirected system} \index{Codirected system} (i.e.~$\calJ^{\mathrm{op}}$ is a directed system), then $\limit(F)$ is called a codirected limit (historically \emph{inverse limit}, or \emph{projective limit}). \index{Projective limit!see {Codirected limit}}
     
-    More generally, if $\calJ$ is a poset category (see Example~\ref{poset example}), then it is said to be directed to the right (left) if $\forall i,j\in \ob(\calJ)$ $\exists k\in \ob(\calJ)$ such that $i,j\leq k$ (respectively, $k\leq i,j$). Then one can define direct limits of diagrams directed to the right and inverse limits of diagrams directed to the left.
+    More generally, if $\calJ$ is a poset category (see Example~\ref{poset example}), then it is said to be directed to the right (left) if $\forall i,j\in \ob(\calJ)$ $\exists k\in \ob(\calJ)$ such that $i,j\leq k$ (respectively, $k\leq i,j$). Then one can define directed colimits of diagrams directed to the right and codirected limits of diagrams directed to the left.
 \end{defn}
 
 
@@ -133,19 +133,19 @@ The most common examples of infinite limits and colimits are ones where $\mathca
     \item In $\colimit$, most commonly all arrows are monomorphisms. For example, consider the category $\mathsf{Gr}$ of groups and the sequence $\rmS_n$ of symmetric groups with the embeddings $\rmS_n\hookrightarrow \rmS_m$ for every $n<m$ defined as permutations of the first $n$ symbols. Then $\colimit(\rmS_n)=\rmS_\infty$, which is the group of all permutations of $\mathbb{N}$ of finite support.
     
     Alternatively, we can define another partial order on the set of symmetric groups $\rmS_n$. Namely, define $n\preccurlyeq m\Leftrightarrow n\mid m$ and the inclusion $\rmS_n\hookrightarrow \rmS_m$ by $m/n$ copies of the permutation. Then $\colimit (\rmS_n)$ is a different group.
-    \item For any unital ring $R$, the direct limit of the general linear matrix groups over $R$ (where matrices of size $n$ are embedded into groups of larger matrices by filling in the diagonal with ones) is $\colimit(\GL(n,R))=\GL(R)$, the \emph{quite general linear group} of $R$.
-    \item In $\mathsf{Set}$, direct limits are simply infinite unions factored by identifying elements with coincident ``descendants'', i.e. $\colimit A_i=\bigsqcup_i A_i/\sim$, where $x\in A_i$ is equivalent to $y\in A_j$ iff $\exists f_{jk},f_{jk}$ such that $f_{ik}(x)=f_{jk}(y)$. The inverse limit is the set of infinite sequences of descendants $\limit (A_i)=\{(a_i)\mid a_i\in A_i,\forall i\leq j, f_{ij}(a_i)=a_j\}$.
+    \item For any unital ring $R$, the directed colimit of the general linear matrix groups over $R$ (where matrices of size $n$ are embedded into groups of larger matrices by filling in the diagonal with ones) is $\colimit(\GL(n,R))=\GL(R)$, the \emph{quite general linear group} of $R$.
+    \item In $\mathsf{Set}$, directed colimits are simply infinite unions factored by identifying elements with coincident ``descendants'', i.e. $\colimit A_i=\bigsqcup_i A_i/\sim$, where $x\in A_i$ is equivalent to $y\in A_j$ iff $\exists f_{jk},f_{jk}$ such that $f_{ik}(x)=f_{jk}(y)$. The codirected limit is the set of infinite sequences of descendants $\limit (A_i)=\{(a_i)\mid a_i\in A_i,\forall i\leq j, f_{ij}(a_i)=a_j\}$.
     \item Consider the polynomial ring $K[t]$ over a field $K$ and its factor rings $K[t]/t^n$ of truncated polynomials. Then we have the sequence of epimorphisms 
     \[\cdots \to K[t]/t^3\to K[t]/t^2\to K,\]
-    and the inverse limit is $\limit(K[t]/t^n)=K[[t]]$, which is the ring of \emph{all} formal power series $\sum_{i\geq 0}a_i t^i$. This illustrates the more general fact that projective limits are generally enormous, so much so that the cardinality of the limit is often higher than of any object in the sequence.
+    and the codirected limit is $\limit(K[t]/t^n)=K[[t]]$, which is the ring of \emph{all} formal power series $\sum_{i\geq 0}a_i t^i$. This illustrates the more general fact that projective limits are generally enormous, so much so that the cardinality of the limit is often higher than of any object in the sequence.
     \item Let $p$ be a prime integer and consider the sequence of groups
     \[\cdots\to \bbZ/p^3 \bbZ\overset{\mod p^2}\to \bbZ/p^2\bbZ\overset{\mod p}\to \bbZ/p\bbZ.\]
     Then $\limit(\bbZ/p^n\bbZ)=\bbZ_p$ is the group of $p$-adic integers (it has the cardinality of continuum!).
     \item Consider the poset diagram directed to the left consisting of group epimorphisms $\bbZ/m\bbZ\overset{\mod n}\to \bbZ/n\bbZ$ for $n\mid m$. Then 
     $\limit (\bbZ/n\bbZ)=\hat{\bbZ}$ is the \emph{profinite completion of $\bbZ$}.
-    \item The monomorphism sequence $\bbZ/p^n\bbZ\overset{\cdot p}\to \bbZ/p^{n+1}\bbZ$ gives the direct limit $\colimit(\mathbb{Z
+    \item The monomorphism sequence $\bbZ/p^n\bbZ\overset{\cdot p}\to \bbZ/p^{n+1}\bbZ$ gives the directed colimit $\colimit(\mathbb{Z
     }/p^n\bbZ)=\bbZ(p^\infty)$, which is called a Pr\"ufer group (it can be realized as the group of all roots of unity of the form $\exp(2\pi\rmi \cdot m/p^n)$).
-    \item In topological and geometric categories, direct limits are similar to unions (when they exist). For instance, the $n$-sphere can be embedded $\bbS^n\hookrightarrow \bbS^{n+1}$ as the equator, and the direct limit gives $\bbS^\infty=\colimit \bbS^n$.
+    \item In topological and geometric categories, directed colimits are similar to unions (when they exist). For instance, the $n$-sphere can be embedded $\bbS^n\hookrightarrow \bbS^{n+1}$ as the equator, and the directed colimit gives $\bbS^\infty=\colimit \bbS^n$.
 \end{enumerate}
 \end{example}
 
@@ -208,7 +208,7 @@ Here are the properties of this relation:
 
 \section{Abelian categories}
 
-Abelian categories are, roughly speaking, categories where objects and morphisms form abelian groups themselves, and where the First Isomorphism theorem holds. Examples include $\mathsf{Ab}$, $\mathsf{Vect}_K$, $R-\mathsf{Mod}$ or $\mathsf{Mod}-R$, $\mathsf{SheafAb}$. Notably, $\mathsf{TopAb}$ is not abelian because the First Isomorphism theorem generally doesn't hold for topological groups (we call such a category pre-abelian).
+Abelian categories are, roughly speaking, categories where objects and morphisms form abelian groups themselves, and where the First Isomorphism Theorem holds. Examples include $\mathsf{Ab}$, $\mathsf{Vect}_K$, $R-\mathsf{Mod}$ or $\mathsf{Mod}-R$, $\mathsf{SheafAb}$. Notably, $\mathsf{TopAb}$ is not abelian because the First Isomorphism Theorem generally doesn't hold for topological groups (instead, this category is \emph{pre-abelian}).
 
 \begin{defn}[Abelian categories]\index{Abelian category}
     A category $\calC$ is called abelian if:
@@ -244,7 +244,7 @@ We can give alternative definition of kernels and cokernels.
 \end{defn}
 
 \begin{example}
-    It is easy to check that in the category $\mathsf{Ab}$ of abelian groups, $\coker\varphi=H/\varphi(G)$ for $\varphi:G\to H$. Thus the last axiom of abelian categories is equivalent to the First Isomorphism theorem in this case. Note that this factor doesn't exist neither in $\mathsf{Gr}$ nor in $\mathsf{TopAb}$.
+    It is easy to check that in the category $\mathsf{Ab}$ of abelian groups, $\coker\varphi=H/\varphi(G)$ for $\varphi:G\to H$. Thus the last axiom of abelian categories is equivalent to the First Isomorphism Theorem in this case. Note that this factor doesn't exist neither in $\mathsf{Gr}$ nor in $\mathsf{TopAb}$.
     
     The same formula holds for all ring modules. In $\mathsf{Gr}$ (which is not an abelian category, but in which kernels and cokernels can be similarly defined), the cokernel is the quotient by the normal closure of the image.
 \end{example}
@@ -272,13 +272,13 @@ Therefore in abelian categories we have the shortened decomposition
 where
 \[\text{factorization property}:\quad \varphi=i\circ j,\quad i\text{ -- mono}, j\text{ -- epi}.\]
 
-\begin{defn}[Additive functor]
+\begin{defn}[Additive functor]\index{Additive functor}
     A functor $F:\calC\to\calD$ between two abelian categories is called additive if for any $A,B\in\ob(\calC)$, the map $F_{A,B}:\Hom_\calC(A,B)\to \Hom_\calD(F(A),F(B))$ defined by $\varphi\mapsto F_{A,B}(\varphi)=F(\varphi)$ is a homomorphism of abelian groups.
 \end{defn}
 
 The following theorem is the main general result about abelian categories and effectively states that all abelian categories can be realized as (almost arbitrarily nice) full subcategories of categories of ring modules. It is essentially a much stronger version of the Yoneda Lemma~\ref{Yoneda} for abelian categories.
 
-\begin{thm}[Freyd-Mitchell]
+\begin{thm}[Freyd-Mitchell]\label{Theorem!Freyd-Mitchell}
     For any abelian category $\calC$ there exists a ring $R$ and a functor $F:\calC\to R\text{-}\mathsf{Mod}$ that is: additive, full and faithful (surjective and injective on sets of morphisms for each pair of objects), preserves kernels, cokernels, products and coproducts, is exact (preserves exact sequences, see below)...
 \end{thm}
 The ellipsis indicates that one can keep requiring various extra properties of the functor without violating the theorem. This theorem justifies all diagrammatic methods that we will develop in the next two sections: since $R\text{-}\mathsf{Mod}$ is a concrete category, its objects are sets. Therefore, by the Freyd-Mitchell theorem, it suffices to prove any general statement about abelian categories only for categories of ring modules, which allows us to refer to \emph{elements} of objects as sets, and apply morphisms as \emph{functions} to those elements! It is a way to completely side-step so called ``abstract nonsense'' proofs that deliberately avoid talking about elements of objects as if they are sets.
@@ -321,16 +321,16 @@ From now on in this Part we work only with abelian categories. In fact, homologi
  Such a sequence (and the object $B$ in particular) is also called an \emph{extension} of $A$ by $C$. The exactness of this sequence is equivalent to $f$ being mono, $g$ being epi, and $\im f=\ker g$.
 \end{defn}
 
-\begin{prop}[First isomorphism theorem]
+\begin{prop}[First isomorphism Theorem]
     If $0\to A\overset f\to B\overset g \to C\to 0$ is a short exact sequence, then 
     \[A\cong \im f,\quad C\cong B/\im f.\]
 \end{prop}
 \begin{proof}
-    The first isomorphism is known in concrete categories, which is sufficient. It states that $B/\ker g\cong \im g$, and by exactness $\ker g=\im f$ and $\im g=C$, thus $B/\im f\cong C$.
+    The first isomorphism is known in concrete categories, which is sufficient by the Freyd-Mitchell Theorem. It states that $B/\ker g\cong \im g$, and by exactness $\ker g=\im f$ and $\im g=C$, thus $B/\im f\cong C$.
 \end{proof}
 
 \begin{defn}[Split sequence]\index{Split sequence}
- A short exact sequence $0\to A\overset i\to B\overset p \to C\to 0$ is called split if there exists a morphism $j:C\to B$ with $p\circ j=1_C$, i.e. if $p$ is a split epi.
+    A short exact sequence $0\to A\overset i\to B\overset p \to C\to 0$ is called split if there exists a morphism $j:C\to B$ with $p\circ j=1_C$, i.e. if $p$ is a split epi.
 \end{defn}
 
 \begin{prop}[Rank-nullity theorem]\index{Theorem!Rank-nullity}
@@ -365,16 +365,14 @@ From now on in this Part we work only with abelian categories. In fact, homologi
 
 
 \begin{defn}[Exact functors]\index{Exact functor}
- A functor $F:\calC\to\calD$ is called exact if it maps every exact sequence into an exact sequence.
+    A functor $F:\calC\to\calD$ is called exact if it maps every exact sequence into an exact sequence.
 \end{defn}
 
 \begin{prop}
     For an additive functor $F$ to be exact it suffices to be exact on short sequences.
 \end{prop}
 \begin{proof}
-    The idea of the proof is to expand any segment of an exact sequence $A\to B\to C$ into a combination of short exact sequences (this method is generally called ``splicing'' of short sequences).
-    
-    Namely, we have the following \emph{commutative} diagram with exact diagonals:
+    The idea of the proof is to expand any segment of an exact sequence $A\to B\to C$ into a combination of short exact sequences (this method is generally called ``splicing'' of short sequences). \index{Splicing (of short sequences)} Namely, we have the following \emph{commutative} diagram with exact diagonals:
     \[\adjustbox{scale=0.8,center}{\begin{tikzcd}
         0 \arrow[dr]& & & & 0 \arrow[dr]& & 0 & & \\ 
         & \ker f \arrow[dr]&&&& \im g \arrow[dr]\arrow[ur]&&&\\
@@ -459,15 +457,15 @@ There are in fact very few exact functors. Here are a few relevant examples.
 
 The moral of these examples is that whereas in categories of vector spaces $\mathsf{Vect}_K$ everything would be exact, exactness is generically broken as soon as we pass to structures over rings. The study of ring modules is a natural extension of linear (matrix) algebra over fields, and largely reduces to homological algebra.
 \[
-\boxed{\begin{array}{c}
-\text{The goal of homological algebra is:}\\
-\text{to characterize the obstructions to the exactness of certain additive functors}\\ \text{(these obstructions are called derived functors).}
-\end{array}}
+    \boxed{\begin{array}{c}
+    \text{The goal of homological algebra is:}\\
+    \text{to characterize the obstructions to the exactness of certain additive functors}\\ \text{(these obstructions are called derived functors).}
+    \end{array}}
 \]
 Given a non-exact functor, the values of its derived functors need to be added into the image of a short exact sequence to produce a fully exact (albeit potentially infinitely long) sequence. For example, in the case of the invariants functor, every short exact sequence $0\to A\to B\to B/A\to 0$ becomes a \emph{long exact sequence of group cohomology}
 \[
-\scriptstyle
-0\to A^G\to B^G\to (B/A)^G\to \rmH^1(G,A)\to \rmH^1(G,B)\to \rmH^1(G,B/A)\to \rmH^2(G,A)\to\cdots
+    \scriptstyle
+    0\to A^G\to B^G\to (B/A)^G\to \rmH^1(G,A)\to \rmH^1(G,B)\to \rmH^1(G,B/A)\to \rmH^2(G,A)\to\cdots
 \]
 For the Hom functor, the obstruction to right exactness is evaluated by the Ext-functors (the name comes from ``extension''):
 \begin{gather}
@@ -478,8 +476,8 @@ For the Hom functor, the obstruction to right exactness is evaluated by the Ext-
 \end{gather}
 Finally, for the tensor functor, the obstruction to left exactness is evaluated by the Tor-functors (``torsion''):
 \[
-\scriptstyle
-\cdots\to \Tor_2(C,X)\to \Tor_1(A,X)\to \Tor_1(B,X)\to\Tor_1(C,X)\to A\otimes X\to B\otimes X\to C\otimes X\to 0.
+    \scriptstyle
+    \cdots\to \Tor_2(C,X)\to \Tor_1(A,X)\to \Tor_1(B,X)\to\Tor_1(C,X)\to A\otimes X\to B\otimes X\to C\otimes X\to 0.
 \]
 All of them are examples of (co)homology theories. We will return to a proper discussion of these objects later. The takeaway so far should be: since on manifolds we are studying spaces of sections of vector bundles, which are really $C^\infty(M)$-modules, we need homological algebra to deal with the linear algebra over the ring of functions, and the (co)homology groups will measure the non-exactness of certain constructions.
 
@@ -488,7 +486,7 @@ All of them are examples of (co)homology theories. We will return to a proper di
 
 
 
-\section{Direct limits and exactness}
+\section{Directed colimits and exactness}
 
 \begin{defn}[Complete category]\index{Complete category}
     A category $\calC$ is called complete if all limits in $\calC$ with a small index category (i.e.~$\ob(\calJ)$ is a proper set and not a class) exist. $\calC$ is called cocomplete if all small colimits in $\calC$ exist.
@@ -515,13 +513,13 @@ All of them are examples of (co)homology theories. We will return to a proper di
 In abelian categories, kernels are limits (namely equalizers), and cokernels are colimits. Therefore exactness can be rephrased in terms of preservation of kernels and cokernels. The following proposition is obvious.
 
 \begin{prop}[{{\cite[Prop.~5.25]{Rotman}}}]
-    Let be a covariant functor between abelian categories. Then $F$ preserves kernels iff it is left exact, and it preserves cokernels iff it is right exact.
+    Let $F$ be a covariant functor between abelian categories. Then $F$ preserves kernels iff it is left exact, and it preserves cokernels iff it is right exact.
 \end{prop}
 
 \begin{prop}
     In an abelian category $\calC$, the colimit functor $\colimit$ is right exact. That is, if $J$ is small ($\ob(\calJ)$ is a proper set) and $F,G,H:\calJ\to \calC$ are functors with natural transformations $F\overset{\alpha}{\Longrightarrow}G\overset{\beta}{\Longrightarrow}H$ such that the sequence 
     \[0\to F(i)\overset{\alpha_i}{\to} G(i)\overset{\beta_i}{\to} H(i)\to 0\] is exact for all $i\in\ob(\calJ)$, then the sequence
-    \[\colimit F\overset{\colimit \alpha_i}\colimit G\overset{\colimit \beta_i}\colimit H\to 0\]
+    \[\colimit F\overset{\colimit \alpha_i}{\to}\colimit G\overset{\colimit \beta_i}{\to}\colimit H\to 0\]
     is exact. Similarly, the limit functor $\limit$ is left exact.
 \end{prop}
 \begin{proof}
@@ -534,20 +532,20 @@ In abelian categories, kernels are limits (namely equalizers), and cokernels are
     for some $a_i'\in F(i)$. Since $B(x)$ is a finite sum of $B(a_i'-G(i\to j)$, we can replace $x$ by another representative such that $B(x)=0$. Then $x=A(y)$ for some $y\in \bigoplus_i F(i)$.
 \end{proof}
 
-Therefore neither limits nor colimits preserve exactness on both sides, in general. For example pushouts in abelian categories do not preserve exactness. As we will now show, direct limits in abelian categories \emph{are} exact. However, a dual statement for inverse limits does not hold.
+Therefore neither limits nor colimits preserve exactness on both sides, in general. For example pushouts in abelian categories do not preserve exactness. As we will now show, directed colimits in abelian categories \emph{are} exact. However, a dual statement for \emph{codirected limits} does not hold.
 
 \begin{prop}\label{prop direct limits preserve exactness}
-    Direct limits preserve exactness in abelian categories.
+    Directed colimits preserve exactness in abelian categories.
 \end{prop}
 \begin{proof}
-    It suffices to prove this for direct limits by duality. Right exactness holds for all colimits, so we only need to check left exactness.
+    It suffices to prove this for directed colimits by duality. Right exactness holds for all colimits, so we only need to check left exactness.
     
-    Suppose we take a direct limit of modules $A_i$. Every element of the colimit is represented by some $a_i\in A_i$ for some $i$. This is because any element of the colimit is represented by some sum of elements $a_j\in A_j$ for various $j$, and we can pick an index $i$ dominating all of these $j$'s and take $a_i$ to be the sum of the images of $a_j$'s in $A_i$.
+    Suppose we take a directed colimit of modules $A_i$. Every element of the colimit is represented by some $a_i\in A_i$ for some $i$. This is because any element of the colimit is represented by some sum of elements $a_j\in A_j$ for various $j$, and we can pick an index $i$ dominating all of these $j$'s and take $a_i$ to be the sum of the images of $a_j$'s in $A_i$.
 
     Now suppose we have exact sequences $0\to A_i\to B_i\to C_i\to 0$ over the same directed system. We want to show that $\colimit A_i\to \colimit B_i$ is injective. Pick $a\in\colimit A_i$ and let it be represented by $a_i\in A_i$ as above. Now suppose $a_i$ has image $0$ in $\colimit B_i$. If $b_i$ is the image of $s_i$, then $b_i=0$ in the colimit. So for some $j$, the image of $b_i$ in $B_j$ is $0$. So if $a_j$ is the image of $a_i$ in $A_j$, then $a_j$ has image $0$. Then $a_j=0$, which makes $A_j\to B_j=0$, and so $s_j=0$ in the colimit.
 \end{proof}
 \begin{rem}
-    Elements of inverse limits aren't represented by finite combinations of elements in the $A_i$'s, therefore the analogous attempt at a proof for inverse limits breaks down. However, inverse limits still sometimes preserve exactness, in particular when the $A_i$'s satisfy the \emph{Mittag-Leffler condition}\index{Mittag-Leffler condition}: for any $k\in \ob(\calJ)$ there must exist $i\geq k$ such that for all $j\geq i\geq k$, the two images must coincide, $\im(A_i\to A_k)\simeq \im(A_j\to A_k)$. This is satisfied, for example, if all morphisms in the inverse system are surjective.
+    Elements of codirected limits aren't represented by finite combinations of elements in the $A_i$'s, therefore the analogous attempt at a proof for codirected limits breaks down. However, codirected limits still sometimes preserve exactness, in particular when the $A_i$'s satisfy the \emph{Mittag-Leffler condition}\index{Mittag-Leffler condition}: for any $k\in \ob(\calJ)$ there must exist $i\geq k$ such that for all $j\geq i\geq k$, the two images must coincide, $\im(A_i\to A_k)\simeq \im(A_j\to A_k)$. This is satisfied, for example, if all morphisms in the codirected system are surjective.
 \end{rem}
 
 
@@ -1420,11 +1418,11 @@ for the descendants of maps in (co)homology.
 \end{proof}
 
 \begin{prop}
-    The direct limit of the homology groups of a directed system of chain complexes $\bm{C}^i$ is the homology group  of the direct limit:
+    The directed colimit of the homology groups of a directed system of chain complexes $\bm{C}^i$ is the homology group  of the directed colimit:
     \[\colimit_i \rmH_n(\bm{C}^i)\cong \rmH_n(\colimit_i \bm{C}^i).\]
 \end{prop}
 \begin{proof}
-    This follows immediately from the preceding lemma and the fact that direct limits preserve exactness in abelian categories (Proposition~\ref{prop direct limits preserve exactness}).
+    This follows immediately from the preceding lemma and the fact that directed colimits preserve exactness in abelian categories (Proposition~\ref{prop direct limits preserve exactness}).
 \end{proof}
 \begin{rem}
     Note that the analogous statement for homotopy groups $\pi_n$ was proven by us only for sequences of $CW$ subcomplexes (Corollary~\ref{cor direct limit of pi_n for CW}) and does not hold in general even for $\pi_1$.
@@ -2193,7 +2191,7 @@ Let us now study singular homology of $CW$-complexes.
     This follows from Lemma~\ref{lem 39.1 munkres}. By applying it to all $n$-cells at once (which is easy because open cells are disjoint), the ``total'' characteristic map $f:X^{(n-1)}\cup \bigsqcup_{\alpha\in A_n} \bbD^n\to X^{(n)}$ induces homology isomorphisms
     \[\rmH_k(X^{(n)},X^{(n-1)})\cong \rmH_n\left(\bigsqcup_\alpha \bbD^n,\bigsqcup_\alpha \partial \bbD^n\right).\]
     
-    Notice that if $k\neq n$, $\rmH_k(\bbD^n,\partial \bbD^n)=0$, so $\rmH_k(\bigsqcup_\alpha \bbD^n,\bigsqcup_\alpha \partial \bbD^n)=0$ for $k\neq n$ (the chain complex of a disjoint union is the direct sum of the respective chain complexes, and recall that the homology functors commute with direct limits), thus $\rmH_k(X^{(n)},X^{(n-1)})=0$.
+    Notice that if $k\neq n$, $\rmH_k(\bbD^n,\partial \bbD^n)=0$, so $\rmH_k(\bigsqcup_\alpha \bbD^n,\bigsqcup_\alpha \partial \bbD^n)=0$ for $k\neq n$ (the chain complex of a disjoint union is the direct sum of the respective chain complexes, and recall that the homology functors commute with directed colimits), thus $\rmH_k(X^{(n)},X^{(n-1)})=0$.
 
     For the case $k=n$, we know from singular homology that $\rmH_n(\bigsqcup_\alpha \bbD^n,\bigsqcup_\alpha \partial \bbD^n)$ is free abelian and is isomorphic to a subgroup of $\bbZ^{A_n}$ (where $A_n$ is the indexing set for $n$-cells), hence so is $\rmH_n(X^{(n)},X^{(n-1)})$, with exactly one basis element for each $n$-cell.
 \end{proof}
@@ -2210,7 +2208,7 @@ We thus have, for example, that if $X$ has $k<\infty$ $n$-cells, then $\rmH_n(X^
     
     Now do the same for the pair $(X^{(n+1)},X^{(n)})$:
     \[\cdots\to \rmH_{k+1}(X^{(n+1)},X^{(n)})\to \rmH_k(X^{(n)})\to \rmH_k(X^{(n+1)})\to \rmH_k(X^{(n+1)},X^{(n)})\to\cdots \]
-    Since for $k<n$ we have $k+1\neq n+1$ and $k\neq n+1$, by the preceding proposition, the two terms at the edges vanish, thus the remaining two are isomorphic: $\rmH_k(X^{(n)})\cong \rmH_k(X^{(n+1)})$. Since $X=\limit X^{(n)}$ and homology commutes with direct limits, we get $\rmH_k(X)=\rmH_k(X^{(n)})$.
+    Since for $k<n$ we have $k+1\neq n+1$ and $k\neq n+1$, by the preceding proposition, the two terms at the edges vanish, thus the remaining two are isomorphic: $\rmH_k(X^{(n)})\cong \rmH_k(X^{(n+1)})$. Since $X=\limit X^{(n)}$ and homology commutes with directed colimits, we get $\rmH_k(X)=\rmH_k(X^{(n)})$.
 \end{proof}
 
 It remains to find out how the boundary operator acts on singular chains $C_n(X)$. Since $\rmH_k(X^{(n)},X^{(n-1)})$ is generated by $n$-cells, it is natural to try to relate the singular boundary operator $\partial$ and the attaching maps. However the image of the attaching map lies in $X^{(n-1)}$, which is still a complicated space, unless we excise $X^{(n-2)}$. We thus consider the following composition of operators
@@ -2237,7 +2235,7 @@ since $\partial_n\circ j_n=0$ is a composition of two consecutive maps in an exa
 
     Finally, the other nontrivial exact segment that we haven't used yet comes from the long exact sequence of the pair $(X^{(n+1)},X^{(n)})$:
     \[\rmH_{n+1}(X^{(n+1)},X^{(n)})\overset{\partial_{n+1}}{\to} \rmH_n(X^{(n)})\overset{i_n}{\to}\rmH_n(X^{(n+1)})\cong \rmH_n(X)\to \rmH_{n}(X^{(n+1)},X^{(n)})=0,\]
-    and since the last term vanishes, $i_n$ is surjective and the first isomorphism theorem says
+    and since the last term vanishes, $i_n$ is surjective and the First Isomorphism Theorem says
     \[\rmH_n(X)\cong X_n(X^{(n)})\slash \ker i_m\cong \rmH_n(X^{(n)})\slash \im \partial_{n+1}^{\mathrm{CW}},\]
     where the second equality holds by exactness.
     
@@ -2377,7 +2375,7 @@ In this section we will study $CW$-complexes of \emph{finite type}, i.e.~those w
 \[A\cong \bbZ^r\oplus T(A),\quad r=\rank(A),\]
 where $T(A)$ is the torsion subgroup that can be brought to the form
 \[T(A)\cong \bbZ/n_1\oplus \bbZ/n_2\oplus \cdots \oplus \bbZ/n_t,\quad n_1|n_2|\cdots |n_t,\]
-so that the invariant factors $n_1,n_2,\ldots,n_t$ are determined uniquely. We also call them \emph{torsion coefficients}.\index{Torsion coefficients} The following lemma follows immediately from the first isomorphism theorem.
+so that the invariant factors $n_1,n_2,\ldots,n_t$ are determined uniquely. We also call them \emph{torsion coefficients}.\index{Torsion coefficients} The following lemma follows immediately from the First Isomorphism Theorem.
 
 \begin{lem}
     If $0\to A\to B\to C\to 0$ is a short exact sequence of finitely generated abelian groups, then
@@ -3255,7 +3253,7 @@ This allows us to compute Tor functors for all finitely generated groups.
     $0\to \bbZ\to \bbZ\to \bbZ\slash n\bbZ \to 0$ is a projective resolution concentrated in degrees $0$ and $1$ and hence the homologies will be concentrated in those degrees as well. $\Tor_1$ is already computed.
 \end{proof}
 
-The only extra fact we used in proving that $\Tor_n(A,B)=0$ for $A$ finitely generated and $n\geq 2$ was that $\oplus_i P_i$ is projective and hence $\Tor_n(\oplus_i P_i,B)=0$. However for this to hold it is sufficient for $\oplus_i P_i$ to be flat. Since direct limits of flat modules are flat, we can replace direct sums with arbitrary direct limits.
+The only extra fact we used in proving that $\Tor_n(A,B)=0$ for $A$ finitely generated and $n\geq 2$ was that $\oplus_i P_i$ is projective and hence $\Tor_n(\oplus_i P_i,B)=0$. However for this to hold it is sufficient for $\oplus_i P_i$ to be flat. Since directed colimits of flat modules are flat, we can replace direct sums with arbitrary directed colimits.
 
 \begin{thm} In the category of abelian groups,
     $\Tor_n(\colimit A_i,B)=\colimit \Tor_n(A_i,B)$.
@@ -3371,7 +3369,7 @@ Obviously $\Ext^1_\bbZ(\bbZ,\bbQ)=0$ (either because $\bbZ$ is projective or bec
     Similar proof by dimension shifting, using the fact that direct sums of projectives are projective and products of injectives are injective.
 \end{proof}
 
-However we quickly start to run into issues because, unlike direct sums (which are an example of a direct limit), other direct limits of injective modules are not always injective. Generally, limits of injectives/projectives are not injective/projective, so $\Tor$ and $\Ext$ functors commute only with finite  limits. If they did commute with infinite limits, since $\bbQ=\colimit \frac{1}{n}\bbZ$, we would get a trivial $\Ext^1(\bbQ,\bbZ)$ since $\Ext^1(\bbZ,\bbZ)=0$. We present this computation purely ``for fun'', but it is actually foundational in several areas of modern mathematics, such as the Langlands program and the theory of algebraic groups.
+However we quickly start to run into issues because, unlike direct sums (which are an example of a directed colimit), other directed colimits of injective modules are not always injective. Generally, limits of injectives/projectives are not injective/projective, so $\Tor$ and $\Ext$ functors commute only with finite  limits. If they did commute with infinite limits, since $\bbQ=\colimit \frac{1}{n}\bbZ$, we would get a trivial $\Ext^1(\bbQ,\bbZ)$ since $\Ext^1(\bbZ,\bbZ)=0$. We present this computation purely ``for fun'', but it is actually foundational in several areas of modern mathematics, such as the Langlands program and the theory of algebraic groups.
 
 \begin{defn}[Group of adeles]
     Recall that the $p$-adic integers can be defined as $\bbZ_p=\limit \bbZ\slash p^n\bbZ$. Denote their field of fractions by $\bbQ_p=Q(\bbZ_p)$. The additive group of finite ad\`eles of $\bbQ$ is defined as the \emph{restricted} product of $\bbQ_p$ over all prime numbers $p$, i.e.~almost all components must land in $\bbZ_p$:
@@ -3400,7 +3398,7 @@ However we quickly start to run into issues because, unlike direct sums (which a
     \[\bbQ\slash \bbZ\cong \bigoplus_{p\in\bbP}\bbZ[p^{-1}]\slash\bbZ.\]
     As an aside, we can notice that 
     \[\bbZ[p^{-1}]\slash\bbZ\cong \bbZ\slash p^\infty\bbZ=\colimit \bbZ\slash p^n\bbZ,\]
-    where the direct limit is w.r.t.\ the embeddings $\bbZ\slash p^n\bbZ\overset{\cdot n}{\to} \bbZ\slash p^{n+1}\bbZ$. This is contrasted with the $p$-adic integers $\bbZ_p=\limit \bbZ\slash p^n\bbZ$, which is a projective limit taken w.r.t.\ the epimorphisms given by $\bbZ\slash p^n\bbZ\overset{\mod p^{n-1}}{\to} \bbZ\slash p^{n-1}\bbZ$. The fundamental difference between these two limits is that $\mod n$ is a homomorphism of rings with unity, whereas $\cdot n$ is not. This means that the projective limit defining $\bbZ_p$ will preserve the multiplicative structure of a ring, whereas $\bbZ\slash p^\infty\bbZ$ supports only an additive structure.
+    where the directed colimit is w.r.t.\ the embeddings $\bbZ\slash p^n\bbZ\overset{\cdot n}{\to} \bbZ\slash p^{n+1}\bbZ$. This is contrasted with the $p$-adic integers $\bbZ_p=\limit \bbZ\slash p^n\bbZ$, which is a projective limit taken w.r.t.\ the epimorphisms given by $\bbZ\slash p^n\bbZ\overset{\mod p^{n-1}}{\to} \bbZ\slash p^{n-1}\bbZ$. The fundamental difference between these two limits is that $\mod n$ is a homomorphism of rings with unity, whereas $\cdot n$ is not. This means that the projective limit defining $\bbZ_p$ will preserve the multiplicative structure of a ring, whereas $\bbZ\slash p^\infty\bbZ$ supports only an additive structure.
 
     A direct sum $\bigoplus_i G_i$ of an infinite sequence of groups $G_i$ consists of sequences $(g_i)$ which are almost everywhere identity. This is strictly a subset of the direct product $\prod_i G_i$, which consists of all possible sequences $(g_i)$. By the universal property of products, a map to the product is the same as a tuple of maps to each factor, i.e.~
     \[\Hom\left(\bbQ,\prod_p \bbZ\slash p^\infty\bbZ\right)=\prod_p \Hom\left(\bbQ,\bbZ\slash p^\infty\bbZ\right).\]
