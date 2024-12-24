@@ -1156,141 +1156,141 @@ a universal property for products. Similarly, the disjoint union $X\sqcup Y$
 has two \emph{canonical inclusions} of $X$ and $Y$ into the union.
 
 \begin{defn}[Products]\index{Product (in a category)}\index{Universal property!of products}
-In a general category $\mathcal{C}$, a \emph{product} $X\times Y$ of two
-objects is a \emph{terminal} object in the category of diagrams
-in $\mathcal{C}$ that look like this:\[\begin{tikzcd}
-    & \bullet \arrow[dl]\arrow[dr]& \\
-   X& & Y\\
-\end{tikzcd}\]Here, only the vertices $X$ and $Y$ are fixed, whereas the top vertex
-and the two morphisms can be anything, and morphisms between such
-diagrams are morphisms between the top vertices such that all triangles
-commute. Then the universal property looks like this (this diagram
-is called a \emph{Cartesian square}):
-\[\begin{tikzcd}
-    & \bullet \arrow[dl]\arrow[dr]\arrow[dd,dashed,"\exists!"]& \\
-   X& & Y\\
-   &X\times Y\arrow[ul,"\pi_1"]\arrow[ur,swap,"\pi_2"]& \\
-\end{tikzcd}\]
-meaning that for any top (unlabeled) part of the diagram there exists
-a unique middle morphism that makes both triangles commute. This property
-is very easy to check for Cartesian products in set theory. If the
-top morphisms are $f$ and $g$, then the middle morphism is denoted
-$f\times g$ and its action in set theory is $(f\times g)(z)=(f(z),g(z))$, which is uniquely fixed by the commutation of the triangles.
+    In a general category $\mathcal{C}$, a \emph{product} $X\times Y$ of two
+    objects is a \emph{terminal} object in the category of diagrams
+    in $\mathcal{C}$ that look like this:\[\begin{tikzcd}
+        & \bullet \arrow[dl]\arrow[dr]& \\
+    X& & Y\\
+    \end{tikzcd}\]Here, only the vertices $X$ and $Y$ are fixed, whereas the top vertex
+    and the two morphisms can be anything, and morphisms between such
+    diagrams are morphisms between the top vertices such that all triangles
+    commute. Then the universal property looks like this (this diagram
+    is called a \emph{Cartesian square}):
+    \[\begin{tikzcd}
+        & \bullet \arrow[dl]\arrow[dr]\arrow[dd,dashed,"\exists!"]& \\
+    X& & Y\\
+    &X\times Y\arrow[ul,"\pi_1"]\arrow[ur,swap,"\pi_2"]& \\
+    \end{tikzcd}\]
+    meaning that for any top (unlabeled) part of the diagram there exists
+    a unique middle morphism that makes both triangles commute. This property
+    is very easy to check for Cartesian products in set theory. If the
+    top morphisms are $f$ and $g$, then the middle morphism is denoted
+    $f\times g$ and its action in set theory is $(f\times g)(z)=(f(z),g(z))$, which is uniquely fixed by the commutation of the triangles.
 \end{defn}
 %
 \begin{defn}[Coproducts]\index{Coproduct}\index{Universal property!of coproducts}
-Similarly, a coproduct $X\sqcup Y$ is defined as an \emph{initial}
-object in the category of the following diagrams:\[\begin{tikzcd}
-    & \bullet \arrow[dl,leftarrow]\arrow[dr,leftarrow]& \\
-   X& & Y\\
-\end{tikzcd}\quad\quad\quad\quad
-\begin{tikzcd}
-    & \bullet \arrow[dl,leftarrow]\arrow[dr,leftarrow]\arrow[dd,leftarrow,dashed,"\exists!"]& \\
-   X& & Y\\
-   &X\sqcup Y\arrow[ul,leftarrow,"i_1"]\arrow[ur,leftarrow,swap,"i_2"]& \\
-\end{tikzcd}
-\]If the top morphisms are $f$ and $g$, then the middle morphism is
-denoted $f\sqcup g$ (in set theory, ``piecewise function'').
+    Similarly, a coproduct $X\sqcup Y$ is defined as an \emph{initial}
+    object in the category of the following diagrams:\[\begin{tikzcd}
+        & \bullet \arrow[dl,leftarrow]\arrow[dr,leftarrow]& \\
+    X& & Y\\
+    \end{tikzcd}\quad\quad\quad\quad
+    \begin{tikzcd}
+        & \bullet \arrow[dl,leftarrow]\arrow[dr,leftarrow]\arrow[dd,leftarrow,dashed,"\exists!"]& \\
+    X& & Y\\
+    &X\sqcup Y\arrow[ul,leftarrow,"i_1"]\arrow[ur,leftarrow,swap,"i_2"]& \\
+    \end{tikzcd}
+    \]If the top morphisms are $f$ and $g$, then the middle morphism is
+    denoted $f\sqcup g$ (in set theory, ``piecewise function'').
 \end{defn}
 %
 \begin{defn}[Pullback]\index{Pullback (in a category)}\index{Fibered product|see {Pullback (in a category)}}\index{Universal property!of pullbacks}\label{pullbacks}
-We can further generalize the above definitions and consider the
-category of commuting diagrams of the shape: \[\begin{tikzcd}[every matrix/.append style={name=m},   
-execute at end picture={\draw [<-] ([xshift=-7mm,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
-   \bullet \arrow[r]\arrow[d]& Y\arrow[d,"g"] \\
-   X\arrow[r,swap,"f"]& Z\\
-\end{tikzcd}\]
-Here, only $X,Y,Z$ and $f,g$ are fixed. Morphisms between such diagrams
-are defined as usual. The terminal object in this category is called
-the \emph{pullback}, or the \emph{fibered product}, $X\times_{Z}Y$.
-This universal property is described by the commuting diagram:\[\begin{tikzcd}
-  \bullet   \arrow[drr, bend left]   \arrow[ddr, bend right]   \arrow[dr, dashed,"\exists!" description] & & \\
-    & X \times_Z Y \arrow[r,swap, "\pi_2"] \arrow[d, "\pi_1"]       & Y \arrow[d, "g"] \\ & X \arrow[r,swap, "f"] &Z 
-\end{tikzcd}\]meaning that for every top (unlabeled solid) part of the diagram,
-there exists a unique dashed morphism that makes this diagram commute
-(i.e., the top two triangles). Note that the pullback strongly depends
-on the morphisms $f$ and $g$!
+    We can further generalize the above definitions and consider the
+    category of commuting diagrams of the shape: \[\begin{tikzcd}[every matrix/.append style={name=m},   
+    execute at end picture={\draw [<-] ([xshift=-7mm,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
+    \bullet \arrow[r]\arrow[d]& Y\arrow[d,"g"] \\
+    X\arrow[r,swap,"f"]& Z\\
+    \end{tikzcd}\]
+    Here, only $X,Y,Z$ and $f,g$ are fixed. Morphisms between such diagrams
+    are defined as usual. The terminal object in this category is called
+    the \emph{pullback}, or the \emph{fibered product}, $X\times_{Z}Y$.
+    This universal property is described by the commuting diagram:\[\begin{tikzcd}
+    \bullet   \arrow[drr, bend left]   \arrow[ddr, bend right]   \arrow[dr, dashed,"\exists!" description] & & \\
+        & X \times_Z Y \arrow[r,swap, "\pi_2"] \arrow[d, "\pi_1"]       & Y \arrow[d, "g"] \\ & X \arrow[r,swap, "f"] &Z 
+    \end{tikzcd}\]meaning that for every top (unlabeled solid) part of the diagram,
+    there exists a unique dashed morphism that makes this diagram commute
+    (i.e., the top two triangles). Note that the pullback strongly depends
+    on the morphisms $f$ and $g$!
 \end{defn}
 %
 \begin{defn}[Pushouts]\index{Pushout}\index{Fibered coproduct|see {Pushout}}\index{Universal property!of pushouts}\label{pushouts}
-The dual concept to pullbacks is the initial object, called the \emph{pushout}, or \emph{fibered coproduct} $X\sqcup_{Z}Y$, in the category of the following diagrams:
-\[\begin{tikzcd}[every matrix/.append style={name=m},   
-execute at end picture={\draw [<-] ([xshift=-7mm,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
-   \bullet \arrow[r,leftarrow]\arrow[d,leftarrow]& Y\arrow[d,leftarrow,"g"] \\
-   X\arrow[r,,leftarrow,swap,"f"]& Z\\
-\end{tikzcd}\quad\quad\quad\quad\quad
-\begin{tikzcd}
-  \bullet   \arrow[drr,leftarrow, bend left]   \arrow[ddr,leftarrow, bend right]   \arrow[dr,leftarrow, dashed,"\exists!" description] & & \\
-    & X \sqcup_Z Y \arrow[r,leftarrow,swap, "i_2"] \arrow[d,leftarrow, "i_1"]       & Y \arrow[d,leftarrow, "g"] \\ & X \arrow[r,leftarrow,swap, "f"] &Z 
-\end{tikzcd}
-\]
-In concrete categories, where $i_1,i_2$ are usually \emph{inclusion} maps, we say that there is a unique morphism that \emph{restricts} to $i_1$ and $i_2$ on $X$ and $Y$.
+    The dual concept to pullbacks is the initial object, called the \emph{pushout}, or \emph{fibered coproduct} $X\sqcup_{Z}Y$, in the category of the following diagrams:
+    \[\begin{tikzcd}[every matrix/.append style={name=m},   
+    execute at end picture={\draw [<-] ([xshift=-7mm,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
+    \bullet \arrow[r,leftarrow]\arrow[d,leftarrow]& Y\arrow[d,leftarrow,"g"] \\
+    X\arrow[r,,leftarrow,swap,"f"]& Z\\
+    \end{tikzcd}\quad\quad\quad\quad\quad
+    \begin{tikzcd}
+    \bullet   \arrow[drr,leftarrow, bend left]   \arrow[ddr,leftarrow, bend right]   \arrow[dr,leftarrow, dashed,"\exists!" description] & & \\
+        & X \sqcup_Z Y \arrow[r,leftarrow,swap, "i_2"] \arrow[d,leftarrow, "i_1"]       & Y \arrow[d,leftarrow, "g"] \\ & X \arrow[r,leftarrow,swap, "f"] &Z 
+    \end{tikzcd}
+    \]
+    In concrete categories, where $i_1,i_2$ are usually \emph{inclusion} maps, we say that there is a unique morphism that \emph{restricts} to $i_1$ and $i_2$ on $X$ and $Y$.
 \end{defn}
 %
 \begin{example}\label{pullbacks in Set}
-In $\mathsf{Set}$, the pullback is simply the \emph{equalizer}\index{Equalizer}
-of $f$ and $g$, 
-\[
-X\times_{Z}Y=\left\{ \left(x,y\right)\in X\times Y\mid f(x)=g(y)\right\} ,
-\]
-with projections $\pi_{1}$ and $\pi_{2}$ being just the restrictions
-of the canonical projections in the Cartesian product.
+    In $\mathsf{Set}$, the pullback is simply the \emph{equalizer}\index{Equalizer}
+    of $f$ and $g$, 
+    \[
+    X\times_{Z}Y=\left\{ \left(x,y\right)\in X\times Y\mid f(x)=g(y)\right\} ,
+    \]
+    with projections $\pi_{1}$ and $\pi_{2}$ being just the restrictions
+    of the canonical projections in the Cartesian product.
 
-Pushouts are more sophisticated: in set theory, it is the \emph{coequalizer}\index{Coequalizer}
-\[
-X\sqcup_{Z}Y=\bigslant{\left(X\sqcup Y\right)}{\sim},
-\]
-where $\sim$ is the finest (i.e., has smallest truth domain) equivalence
-relation under which $f(z)\sim g(z)$.
+    Pushouts are more sophisticated: in set theory, it is the \emph{coequalizer}\index{Coequalizer}
+    \[
+    X\sqcup_{Z}Y=\bigslant{\left(X\sqcup Y\right)}{\sim},
+    \]
+    where $\sim$ is the finest (i.e., has smallest truth domain) equivalence
+    relation under which $f(z)\sim g(z)$.
 \end{example}
 %
 \begin{example}
-Category $\mathsf{Top}_{\bullet}$ of pointed topological spaces has
-a coproduct equal to the wedge sum $X\sqcup Y=X\vee Y$, which is
-the disjoint union with only the two basepoints identified (glued).
-The product $\times$ in this category, on the other hand, takes the
-Cartesian product and identifies all points in the set $\left(X\times\left\{ y\right\} \right)\cup\left(\left\{ x\right\} \times Y\right)$
-to make a new basepoint out of it.
+    Category $\mathsf{Top}_{\bullet}$ of pointed topological spaces has
+    a coproduct equal to the wedge sum $X\sqcup Y=X\vee Y$, which is
+    the disjoint union with only the two basepoints identified (glued).
+    The product $\times$ in this category, on the other hand, takes the
+    Cartesian product and identifies all points in the set $\left(X\times\left\{ y\right\} \right)\cup\left(\left\{ x\right\} \times Y\right)$
+    to make a new basepoint out of it.
 \end{example}
 %
 \begin{example}\label{pushouts in groups}
-In $\mathsf{Gr}$, the product is the direct product of groups, while
-the coproduct is the \emph{free product} of groups 
-\[
-G\sqcup H=G\ast H,
-\]
-which is the quotient of the free group formed by all elements of
-both $G$ and $H$ by all relations within $G$ and within $H$ separately.
-In other words, it is the ``most free'' group containing $G$ and
-$H$ as subgroups. 
+    In $\mathsf{Gr}$, the product is the direct product of groups, while
+    the coproduct is the \emph{free product} of groups 
+    \[
+    G\sqcup H=G\ast H,
+    \]
+    which is the quotient of the free group formed by all elements of
+    both $G$ and $H$ by all relations within $G$ and within $H$ separately.
+    In other words, it is the ``most free'' group containing $G$ and
+    $H$ as subgroups. 
 
-Fibered coproducts $\sqcup_{Z}$ in group theory also exist and are
-called \emph{amalgamated free products}. Namely $G\ast_K H$ is the factor of the free product by all relations of the form $f(k)g(k)^{-1}=e$. E.g., $\bbZ_{4}\ast_{\bbZ_{2}}\bbZ_{6}=\mathrm{SL}\left(2,\bbZ\right)$.
+    Fibered coproducts $\sqcup_{Z}$ in group theory also exist and are
+    called \emph{amalgamated free products}. Namely $G\ast_K H$ is the factor of the free product by all relations of the form $f(k)g(k)^{-1}=e$. E.g., $\bbZ_{4}\ast_{\bbZ_{2}}\bbZ_{6}=\mathrm{SL}\left(2,\bbZ\right)$.
 \end{example}
 %
 \begin{example}
-In $\mathsf{CommRing}$, $\mathsf{Vect}_{\bbK}$, $\mathsf{Alg}_{\bbK}$,
-$R\text{-}\mathsf{Mod}$ and many others, we have the direct product
-$R\times S$, and the tensor product $R\otimes S$ for the coproduct.
+    In $\mathsf{CommRing}$, $\mathsf{Vect}_{\bbK}$, $\mathsf{Alg}_{\bbK}$,
+    $R\text{-}\mathsf{Mod}$ and many others, we have the direct product
+    $R\times S$, and the tensor product $R\otimes S$ for the coproduct.
 \end{example}
 
 \begin{example}
-In $\mathsf{Vect}$, $\mathsf{Ab}$, $R\text{-}\mathsf{Mod}$ (with commutative $R$), and more generally in any \emph{abelian category}, products and coproducts are isomorphic and are the direct sum $\times\cong\sqcup\cong\oplus$.
+    In $\mathsf{Vect}$, $\mathsf{Ab}$, $R\text{-}\mathsf{Mod}$ (with commutative $R$), and more generally in any \emph{abelian category}, products and coproducts are isomorphic and are the direct sum $\times\cong\sqcup\cong\oplus$.
 \end{example}
 %
 \begin{example}
-$\mathsf{Comp}$ is the category of compact Hausdorff topological
-spaces. The classical Tikhonoff theorem states that products exist
-not only for any two objects in this category, but for any \emph{infinite}
-set of objects (of any cardinality)!
+    $\mathsf{Comp}$ is the category of compact Hausdorff topological
+    spaces. The classical Tikhonoff theorem states that products exist
+    not only for any two objects in this category, but for any \emph{infinite}
+    set of objects (of any cardinality)!
 \end{example}
 %
 \begin{rem}
-Geometry is hard because products are difficult to construct (see
-how restrictive Tikhonoff theorem is), especially fibered products
-(you are forced to extend the category). Conversely, in algebra, coproducts
-are usually very complicated objects. In a precise sense, these statements
-are actually dual to each other (see below).
+    Geometry is hard because products are difficult to construct (see
+    how restrictive Tikhonoff theorem is), especially fibered products
+    (one is forced to extend the category). Conversely, in algebra, coproducts
+    are usually very complicated objects. In a precise sense, these statements
+    are actually dual to each other (see below).
 \end{rem}
 
 
@@ -1298,76 +1298,77 @@ are actually dual to each other (see below).
 \section{Natural transformations and category equivalence}
 
 \begin{defn}[Natural transformations of functors]\index{Natural transformation}
-For two functors (both, say, covariant) $F,G:\mathcal{C}\to\mathcal{D}$,
-a natural transformation $\tau$ of $F$ into $G$, written as $\tau:F\Longrightarrow G$,
-is a collection of morphisms $\left\{ \tau_{X}:F\left(X\right)\to G\left(X\right)\mid X\in\ob\left(\mathcal{C}\right)\right\} $
-in $\mathcal{D}$ such that the images of any morphism $f:X\to Y$
-in $\mathcal{C}$ under $F$ and $G$ together with $\tau_{X}$ and
-$\tau_{Y}$ form commuting squares:
-\[\begin{tikzcd}[every matrix/.append style={name=m},   
-execute at end picture={\draw [<-] ([xshift=-2.7em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
-   F(X) \arrow[r,"F(f)"]\arrow[d,swap,"\tau_X"]& F(Y)\arrow[d,"\tau_Y"] \\
-   G(X)\arrow[r,swap,"G(f)"]& G(Y)
-\end{tikzcd}\]
-The higher-level depiction of natural transformations is \[\begin{tikzcd}[column sep=huge]
-\mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G$]{} & \mathcal D   \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau$] {} (D)}]{} 
-\end{tikzcd}\]
+    For two functors (both, say, covariant) $F,G:\mathcal{C}\to\mathcal{D}$,
+    a natural transformation $\tau$ of $F$ into $G$, written as $\tau:F\Longrightarrow G$,
+    is a collection of morphisms $\left\{ \tau_{X}:F\left(X\right)\to G\left(X\right)\mid X\in\ob\left(\mathcal{C}\right)\right\} $
+    in $\mathcal{D}$ such that the images of any morphism $f:X\to Y$
+    in $\mathcal{C}$ under $F$ and $G$ together with $\tau_{X}$ and
+    $\tau_{Y}$ form commuting squares:
+    \[\begin{tikzcd}[every matrix/.append style={name=m},   
+    execute at end picture={\draw [<-] ([xshift=-2.7em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
+    F(X) \arrow[r,"F(f)"]\arrow[d,swap,"\tau_X"]& F(Y)\arrow[d,"\tau_Y"] \\
+    G(X)\arrow[r,swap,"G(f)"]& G(Y)
+    \end{tikzcd}\]
+    The higher-level depiction of natural transformations is \[\begin{tikzcd}[column sep=huge]
+    \mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G$]{} & \mathcal D   \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau$] {} (D)}]{} 
+    \end{tikzcd}\]
 \end{defn}
 \begin{rem}
-There are two ways to compose natural transformations, namely the
-\emph{horizontal composition} $\tau\varobar\rho$:\[\begin{tikzcd}[column sep=huge]
-\mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F_1$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G_1$]{} & \mathcal{D}\arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau$]{} (D)}]{} \arrow[bend left=50]{r}[name=U2,label=above:$F_2$]{}   \arrow[bend right=50]{r}[name=D2,label=below:$G_2$]{} & \mathcal{E}  \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U2) -- node[label=right:$\rho$] {} (D2)}]{} 
-\end{tikzcd}\quad\quad\leadsto\quad\quad
-\begin{tikzcd}[column sep=7em]
-\mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F_1F_2$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G_1G_2$]{} & \mathcal E   \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau\varobar\rho$] {} (D)}]{} 
-\end{tikzcd}
-\]and the \emph{vertical composition} $\tau\varominus\rho$:\[\begin{tikzcd}[column sep=10em]
-\mathcal{C}   \arrow[bend left=40]{r}[name=U,label=above:$F$]{} \arrow[r,"G" description,""{name=Mu,above},""{name=Md,below}]  \arrow[bend right=40]{r}[name=D,label=below:$H$]{} & \mathcal D   
-\arrow[shorten <=3pt,shorten >=1pt, Rightarrow,to path={(U) -- node[label=right:$\tau$]{} (Mu)}]{}
-\arrow[Rightarrow,to path={(Md) -- node[label=right:$\rho$] {} (D)}]{} 
-\end{tikzcd}\quad\quad\leadsto\quad\quad
-\begin{tikzcd}[column sep=7em]
-\mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G$]{} & \mathcal D   \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau\varominus\rho$] {} (D)}]{} 
-\end{tikzcd}
-\]These two compositions are both associative on their own, and in addition
-to that they satisfy the ``\emph{2-associativity}'' law \[\left(\pi\varominus\rho\right)\varobar\left(\sigma\varominus\tau\right)=\left(\pi\varobar\rho\right)\varominus\left(\sigma\varobar\tau\right),\quad\quad\quad
-\begin{tikzcd}[column sep=huge]
-\bullet   \arrow[r,bend left=70,""{name=U,below}] \arrow[r,""{name=Mu,above},""{name=Md,below}]  \arrow[bend right=70]{r}[name=D]{} & \bullet   \arrow[Rightarrow,from=U,to=Mu]{} \arrow[Rightarrow,to path={(Md) -- node[] {} (D)}]{} \arrow[r,bend left=70,""{name=U2,below}] \arrow[r,""{name=Mu2,above},""{name=Md2,below}]  \arrow[bend right=70]{r}[name=D2]{}& \bullet \arrow[Rightarrow,from=U2,to=Mu2]{} \arrow[Rightarrow,from=Md2,to=D2]{}
-\end{tikzcd}\]which illustrates that the double composition of the above diagram
-should be independent of the order of compositions. 
+    There are two ways to compose natural transformations, namely the
+    \emph{horizontal composition} $\tau\varobar\rho$:\[\begin{tikzcd}[column sep=huge]
+    \mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F_1$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G_1$]{} & \mathcal{D}\arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau$]{} (D)}]{} \arrow[bend left=50]{r}[name=U2,label=above:$F_2$]{}   \arrow[bend right=50]{r}[name=D2,label=below:$G_2$]{} & \mathcal{E}  \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U2) -- node[label=right:$\rho$] {} (D2)}]{} 
+    \end{tikzcd}\quad\quad\leadsto\quad\quad
+    \begin{tikzcd}[column sep=7em]
+    \mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F_1F_2$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G_1G_2$]{} & \mathcal E   \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau\varobar\rho$] {} (D)}]{} 
+    \end{tikzcd}
+    \]and the \emph{vertical composition} $\tau\varominus\rho$:\[\begin{tikzcd}[column sep=10em]
+    \mathcal{C}   \arrow[bend left=40]{r}[name=U,label=above:$F$]{} \arrow[r,"G" description,""{name=Mu,above},""{name=Md,below}]  \arrow[bend right=40]{r}[name=D,label=below:$H$]{} & \mathcal D   
+    \arrow[shorten <=3pt,shorten >=1pt, Rightarrow,to path={(U) -- node[label=right:$\tau$]{} (Mu)}]{}
+    \arrow[Rightarrow,to path={(Md) -- node[label=right:$\rho$] {} (D)}]{} 
+    \end{tikzcd}\quad\quad\leadsto\quad\quad
+    \begin{tikzcd}[column sep=7em]
+    \mathcal{C}   \arrow[bend left=50]{r}[name=U,label=above:$F$]{}   \arrow[bend right=50]{r}[name=D,label=below:$G$]{} & \mathcal D   \arrow[shorten <=10pt,shorten >=5pt,Rightarrow,to path={(U) -- node[label=right:$\tau\varominus\rho$] {} (D)}]{} 
+    \end{tikzcd}
+    \]These two compositions are both associative on their own, and in addition
+    to that they satisfy the ``\emph{2-associativity}'' law \[\left(\pi\varominus\rho\right)\varobar\left(\sigma\varominus\tau\right)=\left(\pi\varobar\rho\right)\varominus\left(\sigma\varobar\tau\right),\quad\quad\quad
+    \begin{tikzcd}[column sep=huge]
+    \bullet   \arrow[r,bend left=70,""{name=U,below}] \arrow[r,""{name=Mu,above},""{name=Md,below}]  \arrow[bend right=70]{r}[name=D]{} & \bullet   \arrow[Rightarrow,from=U,to=Mu]{} \arrow[Rightarrow,to path={(Md) -- node[] {} (D)}]{} \arrow[r,bend left=70,""{name=U2,below}] \arrow[r,""{name=Mu2,above},""{name=Md2,below}]  \arrow[bend right=70]{r}[name=D2]{}& \bullet \arrow[Rightarrow,from=U2,to=Mu2]{} \arrow[Rightarrow,from=Md2,to=D2]{}
+    \end{tikzcd}\]which illustrates that the double composition of the above diagram
+    should be independent of the order of compositions. 
 
-This allows us to define \emph{2-categories}: they consist of an
-$\ob$ class, 1-morphisms $\mathrm{Mor}_{1}$ acting between objects
-with an associative composition, and 2-morphisms $\mathrm{Mor}_{2}$
-acting between 1-morphisms with two associative and 2-associative
-compositions. However, now that we have a notion of isomorphism of
-functors (via natural isomorphisms), there is no reason to require
-literal associativity of the composition of morphisms and literal
-equality of $1_{A}f$ (or $f1_{A}$) and $f$. Instead, we require
-that there be a natural isomorphism $\tau$ (\emph{associator})
-such that $\tau_{X,Y,Z}\left(\left(fg\right)h\right)=f\left(gh\right)$
-and $u_{X,Y}^{L/R}$ (\emph{unitor}) such that $u_{X,Y}^{L}\left(1_{X}f\right)=f$
-and $u_{X,Y}^{R}\left(f1_{Y}\right)=f$.
+    This allows us to define \emph{2-categories}: they consist of an
+    $\ob$ class, 1-morphisms $\mathrm{Mor}_{1}$ acting between objects
+    with an associative composition, and 2-morphisms $\mathrm{Mor}_{2}$
+    acting between 1-morphisms with two associative and 2-associative
+    compositions. However, now that we have a notion of isomorphism of
+    functors (via natural isomorphisms), there is no reason to require
+    literal associativity of the composition of morphisms and literal
+    equality of $1_{A}f$ (or $f1_{A}$) and $f$. Instead, we require
+    that there be a natural isomorphism $\tau$ (\emph{associator})
+    such that $\tau_{X,Y,Z}\left(\left(fg\right)h\right)=f\left(gh\right)$
+    and $u_{X,Y}^{L/R}$ (\emph{unitor}) such that $u_{X,Y}^{L}\left(1_{X}f\right)=f$
+    and $u_{X,Y}^{R}\left(f1_{Y}\right)=f$.
 
-For example, the category of all categories with $\mathrm{Mor}_{2}$
-being the classes of natural transformations is a 2-category.
+    For example, the category of all categories with $\mathrm{Mor}_{2}$
+    being the classes of natural transformations is a 2-category.
 
-Obviously, this can be extended to \emph{$n$-categories}, where
-at each level we have $n$ different compositions that need to be
-``$n$-associative''. And similarly to the above, in an $n$-category,
-all laws imposed on $\mathrm{Mor}_{k}$ with $k<n$ should be understood
-only up to $\left(k+1\right)$-isomorphism. $n$-Categories can be
-visualized as $n$-dimensional volumes: 1-morphisms are lines, 2-morphisms
-are membranes stretched between two lines, 3-morphisms are 3-dimensional
-volumes between two membranes with common edges, etc. In theoretical
-computer science, category theory replaces \emph{type theory}: the
-main category is the category of all types of data (Int, Float, List,
-String are examples of objects in this category), 1-morphisms are
-functions/programs that convert types to types, 2-morphisms are functions
-that rewrite functions, etc. See \cite{CTCS}.
+    Obviously, this can be extended to \emph{$n$-categories}, where
+    at each level we have $n$ different compositions that need to be
+    ``$n$-associative''. And similarly to the above, in an $n$-category,
+    all laws imposed on $\mathrm{Mor}_{k}$ with $k<n$ should be understood
+    only up to $\left(k+1\right)$-isomorphism. $n$-Categories can be
+    visualized as $n$-dimensional volumes: 1-morphisms are lines, 2-morphisms
+    are membranes stretched between two lines, 3-morphisms are 3-dimensional
+    volumes between two membranes with common edges, etc. In theoretical
+    computer science, category theory replaces \emph{type theory}: the
+    main category is the category of all types of data (Int, Float, List,
+    String are examples of objects in this category), 1-morphisms are
+    functions/programs that convert types to types, 2-morphisms are functions
+    that rewrite functions, etc. See \cite{CTCS}.
 \end{rem}
+
 \begin{example}
-The identity transformation $1_{F}:F\Longrightarrow F$, $\tau_{X}=\id_{F(X)}$.
+    The identity transformation $1_{F}:F\Longrightarrow F$, $\tau_{X}=\id_{F(X)}$.
 \end{example}
 %
 \begin{example}
@@ -1380,30 +1381,30 @@ This can be interpreted as saying that the embedding $\sigma_X$ looks the same r
 \end{example}
 %
 \begin{example}[Duals and double duals]
-$\mathcal{C}=\mathcal{D}=\mathsf{FinVect}_{\bbK}$. We have the identity
-functor $1_{\mathcal{C}}$ and the double dual functor $F:V\mapsto V^{\ast\ast}$.
-A \href{https://en.wikipedia.org/wiki/Dual_space\#Double_dual}{classical theorem in linear algebra}
-states that $V^{\ast\ast}$ is naturally isomorphic to $V$, i.e.
-there is a natural transformation $1_{\mathcal{C}}\Longrightarrow F$
-that is invertible (i.e., every $\tau_{V}$ is an isomorphism and $\left(\tau^{-1}\right)_{V}=\left(\tau_{V}\right)^{-1}$).
+    $\mathcal{C}=\mathcal{D}=\mathsf{FinVect}_{\bbK}$. We have the identity
+    functor $1_{\mathcal{C}}$ and the double dual functor $F:V\mapsto V^{\ast\ast}$.
+    A \href{https://en.wikipedia.org/wiki/Dual_space\#Double_dual}{classical theorem in linear algebra}
+    states that $V^{\ast\ast}$ is naturally isomorphic to $V$, i.e.
+    there is a natural transformation $1_{\mathcal{C}}\Longrightarrow F$
+    that is invertible (i.e., every $\tau_{V}$ is an isomorphism and $\left(\tau^{-1}\right)_{V}=\left(\tau_{V}\right)^{-1}$).
 
-Explicitly, the isomorphism is given by $v\mapsto v^{\ast\ast}$,
-where $v^{\ast\ast}\in V^{\ast\ast}$ is defined as a functional on
-$V^{\ast}$ by the formula $v^{\ast\ast}\left(\alpha\right)=\alpha\left(v\right)$
-for any $\alpha\in V^{\ast}$. This formula does not contain any arbitrary
-choices, which makes it natural intuitively. Indeed, it is a natural isomorphism because 
-the square formed by this $\tau_V$ and any automorphism of $V$ and its double dual commutes.
+    Explicitly, the isomorphism is given by $v\mapsto v^{\ast\ast}$,
+    where $v^{\ast\ast}\in V^{\ast\ast}$ is defined as a functional on
+    $V^{\ast}$ by the formula $v^{\ast\ast}\left(\alpha\right)=\alpha\left(v\right)$
+    for any $\alpha\in V^{\ast}$. This formula does not contain any arbitrary
+    choices, which makes it natural intuitively. Indeed, it is a natural isomorphism because 
+    the square formed by this $\tau_V$ and any automorphism of $V$ and its double dual commutes.
 
-Contrast this with the statement that $V$ is isomorphic to $V^{\ast}$.
-The only way to construct an isomorphism of this kind is to explicitly introduce
-a basis $\left\{ e_{i}\right\} _{i=1}^{n}$ on $V$ and define its
-dual basis $\left\{ \alpha^{i}\right\} _{i=1}^{n}$ by $\alpha^{i}\left(e_{j}\right)=\delta_{j}^{i}$ (or any other basis of $V^\ast$).
-Then we have an isomorphism $V\to V^{\ast}$ that maps $e_{i}\mapsto\alpha^{i}$.
-However, this isomorphism is \emph{not natural} because it
-depends on the choice of basis, i.e., it is not invariant under isomorphisms
-of $V$. In categorical language, there simply are no natural transformations between a covariant functor (the identity functor) and a contravariant one (the dualization functor). Even if we were to define what's called \emph{dinatural transformations} (where the analogous square with only the arrow $G(Y)\to G(X)$ reversed must commute), one can show that the only such transformation from the identity to the dualization functor is the zero transformation.
+    Contrast this with the statement that $V$ is isomorphic to $V^{\ast}$.
+    The only way to construct an isomorphism of this kind is to explicitly introduce
+    a basis $\left\{ e_{i}\right\} _{i=1}^{n}$ on $V$ and define its
+    dual basis $\left\{ \alpha^{i}\right\} _{i=1}^{n}$ by $\alpha^{i}\left(e_{j}\right)=\delta_{j}^{i}$ (or any other basis of $V^\ast$).
+    Then we have an isomorphism $V\to V^{\ast}$ that maps $e_{i}\mapsto\alpha^{i}$.
+    However, this isomorphism is \emph{not natural} because it
+    depends on the choice of basis, i.e., it is not invariant under isomorphisms
+    of $V$. In categorical language, there simply are no natural transformations between a covariant functor (the identity functor) and a contravariant one (the dualization functor). Even if we were to define what's called \emph{dinatural transformations} (where the analogous square with only the arrow $G(Y)\to G(X)$ reversed must commute), one can show that the only such transformation from the identity to the dualization functor is the zero transformation.
 
-Note that the situation is much more complicated in the infinite-dimensional case. For example, the space dual to the space of compactly supported scalar functions on a locally compact Hausdorff space is the space of \emph{measures}. Any infinite-dimensional space can always be embedded in its double dual, and sometimes shown to be strictly ``smaller'' (e.g., when this embedding is a proper map). However, there is no obvious embedding of the original space into its single dual in these examples at all.
+    Note that the situation is much more complicated in the infinite-dimensional case. For example, the space dual to the space of compactly supported scalar functions on a locally compact Hausdorff space is the space of \emph{measures}. Any infinite-dimensional space can always be embedded in its double dual, and sometimes shown to be strictly ``smaller'' (e.g., when this embedding is a proper map). However, there is no obvious embedding of the original space into its single dual in these examples at all.
 \end{example}
 %
 \begin{xca}
@@ -1415,39 +1416,39 @@ Note that the situation is much more complicated in the infinite-dimensional cas
 \end{xca}
 %
 \begin{defn}[Skeleton]\index{Skeleton}
-A category is called \emph{skeletal} if it does not have any nontrivial
-isomorphisms, i.e., two objects are isomorphic iff they are equal.
-For any category $\mathcal{C}$, its \emph{skeleton} $\mathsf{Sk}\left(\mathcal{C}\right)$
-is a \emph{full} (i.e., all morphisms between surviving objects are left intact) skeletal subcategory
-of $\mathcal{C}$ such that every object in $\mathcal{C}$ is isomorphic
-to some object in $\mathsf{Sk}\left(\mathcal{C}\right)$. (Essentially
-the skeleton is a ``minimal'' subcategory that is equivalent to
-$\mathcal{C}$. Notice that skeletons are defined only up to isomorphisms
-of categories.)
+    A category is called \emph{skeletal} if it does not have any nontrivial
+    isomorphisms, i.e., two objects are isomorphic iff they are equal.
+    For any category $\mathcal{C}$, its \emph{skeleton} $\mathsf{Sk}\left(\mathcal{C}\right)$
+    is a \emph{full} (i.e., all morphisms between surviving objects are left intact) skeletal subcategory
+    of $\mathcal{C}$ such that every object in $\mathcal{C}$ is isomorphic
+    to some object in $\mathsf{Sk}\left(\mathcal{C}\right)$. (Essentially
+    the skeleton is a ``minimal'' subcategory that is equivalent to
+    $\mathcal{C}$. Notice that skeletons are defined only up to isomorphisms
+    of categories.)
 \end{defn}
 \begin{example}
-$\ob\left(\mathsf{Sk}\left(\mathsf{Set}\right)\right)=\mathsf{Ord}$,
-the class of cardinal numbers. $\ob\left(\mathsf{Sk}\left(\mathsf{FinSet}\right)\right)=\mathbb{N}$. 
+    $\ob\left(\mathsf{Sk}\left(\mathsf{Set}\right)\right)=\mathsf{Ord}$,
+    the class of cardinal numbers. $\ob\left(\mathsf{Sk}\left(\mathsf{FinSet}\right)\right)=\mathbb{N}$. 
 \end{example}
 %
 \begin{example}
-$\ob\left(\mathsf{Sk}\left(\mathsf{Vect}_{\bbK}\right)\right)$ consists
-of all powers of $\bbK$, $\bbK^{\alpha}$, where $\alpha$ is any cardinal
-number. $\ob\left(\mathsf{Sk}\left(\mathsf{FinVect}_{\bbK}\right)\right)$
-is the set of ``column-vector spaces'' $\bbK^{n}$.
-\end{example}
-%
-\begin{example}
-In $\mathsf{Set},$ the functor $\mathrm{Map}\left(\_\times\_,\_\right)$
-is naturally isomorphic to $\mathrm{Map}\left(\_,\mathrm{Map}\left(\_,\_\right)\right)$
-(order of arguments preserved).
+    $\ob\left(\mathsf{Sk}\left(\mathsf{Vect}_{\bbK}\right)\right)$ consists
+    of all powers of $\bbK$, $\bbK^{\alpha}$, where $\alpha$ is any cardinal
+    number. $\ob\left(\mathsf{Sk}\left(\mathsf{FinVect}_{\bbK}\right)\right)$
+    is the set of ``column-vector spaces'' $\bbK^{n}$.
+    \end{example}
+    %
+    \begin{example}
+    In $\mathsf{Set},$ the functor $\mathrm{Map}\left(\_\times\_,\_\right)$
+    is naturally isomorphic to $\mathrm{Map}\left(\_,\mathrm{Map}\left(\_,\_\right)\right)$
+    (order of arguments preserved).
 \end{example}
 \begin{defn}[Isomorphism of categories]
-Categories $\mathcal{C}$ and $\mathcal{D}$ are called \emph{isomorphic}
-if there exists a pair of functors $F:\mathcal{C}\to\mathcal{D}$
-and $G:\mathcal{D}\to\mathcal{C}$ such that $FG=1_{\mathcal{C}}$
-and $GF=1_{\mathcal{D}}$. The notation is $\mathcal{C}\cong\mathcal{D}$.
-They are called anti-isomorphic if $\mathcal{C}\cong\mathcal{D}^{\ast}$.
+    Categories $\mathcal{C}$ and $\mathcal{D}$ are called \emph{isomorphic}
+    if there exists a pair of functors $F:\mathcal{C}\to\mathcal{D}$
+    and $G:\mathcal{D}\to\mathcal{C}$ such that $FG=1_{\mathcal{C}}$
+    and $GF=1_{\mathcal{D}}$. The notation is $\mathcal{C}\cong\mathcal{D}$.
+    They are called anti-isomorphic if $\mathcal{C}\cong\mathcal{D}^{\ast}$.
 \end{defn}
 
 \begin{example}
@@ -1466,7 +1467,7 @@ Two categories are anti-equivalent if $\mathcal{C}\simeq\mathcal{D}^{\ast}$.
 \end{defn}
 %
 \begin{prop}
-$\mathcal{C}\simeq\mathcal{D}$ iff $\mathsf{Sk}\left(\mathcal{C}\right)\cong\mathsf{Sk}\left(\mathcal{D}\right)$.
+    $\mathcal{C}\simeq\mathcal{D}$ iff $\mathsf{Sk}\left(\mathcal{C}\right)\cong\mathsf{Sk}\left(\mathcal{D}\right)$.
 \end{prop}
 
 %
@@ -1475,99 +1476,99 @@ $\mathcal{C}\simeq\mathcal{D}$ iff $\mathsf{Sk}\left(\mathcal{C}\right)\cong\mat
 \end{defn}
 %
 \begin{example}
-Consider a special case of the quotient functor $\mathsf{GrPair}\to\mathsf{Gr}$
-that we constructed in Example~\ref{quotient functor}. Namely, restrict
-the category $\mathsf{GrPair}$ to have only morphisms $f:\left(G_{1},H_{1}\right)\to\left(G_{2},H_{2}\right)$
-such that $\ker f=H_{1}$. Let us call thus category $\mathsf{Ker}$.
-Then we have a functor that maps $\left(G,H\right)$ to $\left(G/H,G,\pi\right)$
-where $\pi$ is the natural projection (quotient map) $G\to G/H$.
-This is a functor into the category $\mathsf{Fact}$ of triples $\left(K,G,\pi\right)$
-where $\pi$ is a group epimorphism $G\to K$. Morphisms are pairs
-of homomorphisms on $K$ and $G$ that form commuting squares with
-the projections. Then we can invert this functor (up to natural isomorphism),
-namely an object $\left(K,G,\pi\right)$ goes to $\left(G,\ker\pi\right)$
-and a morphism $f_{\ast}:\left(K_{1},G_{1},\pi_{1}\right)\to\left(K_{2},G_{2},\pi_{2}\right)$
-can be mapped to $f=\pi_{1}f_{\ast}=f_{\ast}\circ\pi_{1}:G_{1}\to G_{2}$.
-Clearly $\ker f=\ker\pi_{1}$, so we end up in the category we started
-with. It is easy to check that a sequential application of these two
-functors in any order produces an isomorphic object. Thus we have
-restated the first isomorphism theorem as an equivalence of two categories:
-\[
-\mathsf{Ker}\simeq\mathsf{Fact}.
-\]
+    Consider a special case of the quotient functor $\mathsf{GrPair}\to\mathsf{Gr}$
+    that we constructed in Example~\ref{quotient functor}. Namely, restrict
+    the category $\mathsf{GrPair}$ to have only morphisms $f:\left(G_{1},H_{1}\right)\to\left(G_{2},H_{2}\right)$
+    such that $\ker f=H_{1}$. Let us call thus category $\mathsf{Ker}$.
+    Then we have a functor that maps $\left(G,H\right)$ to $\left(G/H,G,\pi\right)$
+    where $\pi$ is the natural projection (quotient map) $G\to G/H$.
+    This is a functor into the category $\mathsf{Fact}$ of triples $\left(K,G,\pi\right)$
+    where $\pi$ is a group epimorphism $G\to K$. Morphisms are pairs
+    of homomorphisms on $K$ and $G$ that form commuting squares with
+    the projections. Then we can invert this functor (up to natural isomorphism),
+    namely an object $\left(K,G,\pi\right)$ goes to $\left(G,\ker\pi\right)$
+    and a morphism $f_{\ast}:\left(K_{1},G_{1},\pi_{1}\right)\to\left(K_{2},G_{2},\pi_{2}\right)$
+    can be mapped to $f=\pi_{1}f_{\ast}=f_{\ast}\circ\pi_{1}:G_{1}\to G_{2}$.
+    Clearly $\ker f=\ker\pi_{1}$, so we end up in the category we started
+    with. It is easy to check that a sequential application of these two
+    functors in any order produces an isomorphic object. Thus we have
+    restated the first isomorphism theorem as an equivalence of two categories:
+    \[
+    \mathsf{Ker}\simeq\mathsf{Fact}.
+    \]
 \end{example}
 \begin{xca}
-Extend the last example to cover the general fundamental homomorphism
-theorem.
+    Extend the last example to cover the general fundamental homomorphism
+    theorem.
 \end{xca}
 \begin{example}\label{covering category thm}
-\emph{The fundamental theorem of covering spaces},
-which we will cover later (Theorem~\ref{covering spaces category equivalence thm}), is the statement that the category of covering
-spaces of a space $X$, denoted by $\mathsf{Cov}_{X}$, is equivalent
-to the category of sets with an action of the fundamental group of
-$X$, denoted by $\pi_{1}\left(X\right)\text{-}\mathsf{Set}$:
-\[
-\mathsf{Cov}_{X}\simeq \pi_{1}(X){\text -}\mathsf{Set}.
-\]
+    \emph{The fundamental theorem of covering spaces},
+    which we will cover later (Theorem~\ref{covering spaces category equivalence thm}), is the statement that the category of covering
+    spaces of a space $X$, denoted by $\mathsf{Cov}_{X}$, is equivalent
+    to the category of sets with an action of the fundamental group of
+    $X$, denoted by $\pi_{1}\left(X\right)\text{-}\mathsf{Set}$:
+    \[
+    \mathsf{Cov}_{X}\simeq \pi_{1}(X){\text -}\mathsf{Set}.
+    \]
 \end{example}
 %
 \begin{example}
-A lot of geometric categories are anti-equivalent to algebraic categories.
-For instance, we have \emph{Gelfand's theory of commutative $C^{\ast}$-algebras}:
-\[
-\mathsf{CompHaus}\simeq\left(\mathsf{Ban}\right)^{\ast},
-\]
-where $\mathsf{CompHaus}$ is the category of compact Hausdorff topological
-spaces, and $\mathsf{Ban}$ is the category of commutative complex
-Banach $C^{\ast}$-algebras. Explicitly, a topological space $X$
-on the left corresponds to the algebra $C\left(X\right)$ of continuous
-complex-valued functions on the right. In fact, all basic differential
-geometry can be rewritten as a collection of statements about (sufficiently nice)
-commutative algebras (see e.g. \cite{JetNest}). Moreover, this principle was used to define \emph{non-commutative geometry} as the dual of some categories of non-commutative algebras \cite{Connes}.
+    A lot of geometric categories are anti-equivalent to algebraic categories.
+    For instance, we have \emph{Gelfand's theory of commutative $C^{\ast}$-algebras}:
+    \[
+    \mathsf{CompHaus}\simeq\left(\mathsf{Ban}\right)^{\ast},
+    \]
+    where $\mathsf{CompHaus}$ is the category of compact Hausdorff topological
+    spaces, and $\mathsf{Ban}$ is the category of commutative complex
+    Banach $C^{\ast}$-algebras. Explicitly, a topological space $X$
+    on the left corresponds to the algebra $C\left(X\right)$ of continuous
+    complex-valued functions on the right. In fact, all basic differential
+    geometry can be rewritten as a collection of statements about (sufficiently nice)
+    commutative algebras (see e.g. \cite{JetNest}). Moreover, this principle was used to define \emph{non-commutative geometry} as the dual of some categories of non-commutative algebras \cite{Connes}.
 \end{example}
 %
 \begin{example}
-A fundamental theorem of group theory, and the foundational theorem
-of \emph{harmonic analysis}, is the \emph{Pontryagin duality}.
-Its generalization to non-abelian groups (known as Tannaka-Krein duality)
-can be formulated as the anti-self-equivalence of the category of
-locally compact groups:
-\[
-\mathsf{LocCompGr}\simeq\left(\mathsf{LocCompGr}\right)^{\ast},
-\]
-where the mapping is $G\mapsto\wh{G}$, where $\wh{G}=\Hom(G,\U_1)$ is the \emph{Pontryagin dual group}. \index{Pontryagin dual group} For instance, $\wh{\U_1}=\bbZ$, which means that the
-Fourier transform maps functions on the circle to functions on $\bbZ$
-(i.e., sequences of numbers). Similarly, $\wh{\bbR }=\bbR $,
-so Fourier transforms here are continuous. Pontryagin's theory shows
-how to define Fourier transforms for functions on an arbitrary topological
-abelian group.
+    A fundamental theorem of group theory, and the foundational theorem
+    of \emph{harmonic analysis}, is the \emph{Pontryagin duality}.
+    Its generalization to non-abelian groups (known as Tannaka-Krein duality)
+    can be formulated as the anti-self-equivalence of the category of
+    locally compact groups:
+    \[
+    \mathsf{LocCompGr}\simeq\left(\mathsf{LocCompGr}\right)^{\ast},
+    \]
+    where the mapping is $G\mapsto\wh{G}$, where $\wh{G}=\Hom(G,\U_1)$ is the \emph{Pontryagin dual group}. \index{Pontryagin dual group} For instance, $\wh{\U_1}=\bbZ$, which means that the
+    Fourier transform maps functions on the circle to functions on $\bbZ$
+    (i.e., sequences of numbers). Similarly, $\wh{\bbR }=\bbR $,
+    so Fourier transforms here are continuous. Pontryagin's theory shows
+    how to define Fourier transforms for functions on an arbitrary topological
+    abelian group.
 
-See \cite[II.2]{GelMan} for more details on these and other examples
-of equivalences of categories.
+    See \cite[II.2]{GelMan} for more details on these and other examples
+    of equivalences of categories.
 \end{example}
 \begin{thm}[Yoneda Lemma]\index{Lemma!Yoneda}\label{Yoneda}
-Let $\mathcal{C}$ be a category and let $h^{A}=\Hom_{\mathcal{C}}\left(A,\_\right):\mathcal{C}\to\mathsf{Set}$
-be a covariant representable (Hom-) functor. Let also $F:\mathcal{C}\to\mathsf{Set}$
-be a covariant functor. Then all natural transformations $\tau:h^{A}\Longrightarrow F$
-are in one-to-one correspondence with the elements of the set $F(A)$,
-and this bijection is natural in $A$ and $F$. Namely, $\tau$ corresponds to the element $\tau_A(\mathrm{id}_A)\in F(A)$ (here we view $\mathrm{id}_A\in h^A(A)$).
+    Let $\mathcal{C}$ be a category and let $h^{A}=\Hom_{\mathcal{C}}\left(A,\_\right):\mathcal{C}\to\mathsf{Set}$
+    be a covariant representable (Hom-) functor. Let also $F:\mathcal{C}\to\mathsf{Set}$
+    be a covariant functor. Then all natural transformations $\tau:h^{A}\Longrightarrow F$
+    are in one-to-one correspondence with the elements of the set $F(A)$,
+    and this bijection is natural in $A$ and $F$. Namely, $\tau$ corresponds to the element $\tau_A(\mathrm{id}_A)\in F(A)$ (here we view $\mathrm{id}_A\in h^A(A)$).
 \end{thm}
 \begin{defn}[Representable functors]
     Following Yoneda's lemma, $\mathsf{Set}$-valued functors that are naturally isomorphic to a hom-functor ($h^A$ or $h_A$) are called \emph{representable}.
 \end{defn}
 \begin{rem}
-We don't prove this theorem here, but the moral of Yoneda's Lemma
-is that we can naturally realize \emph{elements} of the sets
-$F(A)$ in purely categorical terms! In other words, the structure of a category can be ``probed'' by set-theoretical means by considering various set-valued functors.
+    We don't prove this theorem here, but the moral of Yoneda's Lemma
+    is that we can naturally realize \emph{elements} of the sets
+    $F(A)$ in purely categorical terms! In other words, the structure of a category can be ``probed'' by set-theoretical means by considering various set-valued functors.
 \end{rem}
 \begin{quote}
-\small In his Algebraic Geometry class a few years back, Ravi Vakil
-explained Yoneda's lemma like this: You work at a particle accelerator.
-You want to understand some particle. All you can do is throw other
-particles at it and see what happens. If you understand how your mystery
-particle responds to all possible test particles at all possible test
-energies, then you know everything there is to know about your mystery
-particle. {[}\href{https://mathoverflow.net/a/3223/22773}{Source}{]}
+    \small In his Algebraic Geometry class a few years back, Ravi Vakil
+    explained Yoneda's lemma like this: You work at a particle accelerator.
+    You want to understand some particle. All you can do is throw other
+    particles at it and see what happens. If you understand how your mystery
+    particle responds to all possible test particles at all possible test
+    energies, then you know everything there is to know about your mystery
+    particle. {[}\href{https://mathoverflow.net/a/3223/22773}{Source}{]}
 \end{quote}
 
 
@@ -1597,18 +1598,18 @@ This \chap\ contains an \emph{extremely brief} introduction into general point-s
 This \sect\ will be a quick review of the basic definitions and results of point-set topology. To keep it brief, we shall skip the proofs for most results and refer the reader to any standard textbook on general topology (e.g., \cite{Munk}).
 
 \begin{defn}[Topology]\index{Topological space}
-A topology $\mathcal{{T}}$ on a set $X$ is a collection of subsets
-of $X$ with the following properties
-\begin{enumerate}
-\item $\varnothing$, $X\in\mathcal{{T}}$.
-\item $\mathcal{{T}}$ is closed under union of arbitrary (finite, countably
-or uncountably infinite) number of its elements.
-\item $\mathcal{{T}}$ is closed under intersection of a finite number of
-its elements.
-\end{enumerate}
-The elements of the topology of a set are called \emph{open sets},
-and the pair $(X,\mathcal{{T}})$ is called a \emph{topological
-space}.
+    A topology $\mathcal{{T}}$ on a set $X$ is a collection of subsets
+    of $X$ with the following properties
+    \begin{enumerate}
+    \item $\varnothing$, $X\in\mathcal{{T}}$.
+    \item $\mathcal{{T}}$ is closed under union of arbitrary (finite, countably
+    or uncountably infinite) number of its elements.
+    \item $\mathcal{{T}}$ is closed under intersection of a finite number of
+    its elements.
+    \end{enumerate}
+    The elements of the topology of a set are called \emph{open sets},
+    and the pair $(X,\mathcal{{T}})$ is called a \emph{topological
+    space}.
 \end{defn}
 
 The intuitive meaning of a topology is that we ``distinguish'' two points in $X$ only if one of them can be put in an open set not containing the other. Thus, we tend to associate the property of belonging to the same ``small'' open set with proximity (the smaller the open set, in terms of inclusion, the ``closer'' the points), even though there is no notion of distance at this point. There are variations of this interpretation of topology, see \S\ref{Separation Axioms}.
@@ -1622,10 +1623,10 @@ The intuitive meaning of a topology is that we ``distinguish'' two points in $X$
 \end{enumerate}
 \end{example}
 \begin{prop}[Open iff contains open neighborhoods]\label{open iff contains neighborhoods}
-Let $(X,\mathcal{T})$ be a topological space. A set $M\subset X$ is open iff for every $x\in M$ there exists an open set $U_x$ such that $x\in U_x$ (i.e., an open neighborhood of $x$) and $U_x\subset M$.
+    Let $(X,\mathcal{T})$ be a topological space. A set $M\subset X$ is open iff for every $x\in M$ there exists an open set $U_x$ such that $x\in U_x$ (i.e., an open neighborhood of $x$) and $U_x\subset M$.
 \end{prop}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 \begin{defn}[Interior]\index{Interior}
@@ -1634,20 +1635,20 @@ The interior of a subset $M$ of a topological space $X$ is defined as the union 
 
 
 \begin{defn}[Subspace Topology]\index{Subspace topology}
-For $M\subset X$, $(X,\mathcal{T})$ being a topological space, one can define the \emph{subspace} (or \emph{induced}) topology $\mathcal{T}_M$ on $M$ as the set of those subsets of $M$ that can be written as an intersection of $M$ with an open set, i.e.,
+    For $M\subset X$, $(X,\mathcal{T})$ being a topological space, one can define the \emph{subspace} (or \emph{induced}) topology $\mathcal{T}_M$ on $M$ as the set of those subsets of $M$ that can be written as an intersection of $M$ with an open set, i.e.,
 \begin{equation}
     \mathcal{T}_M = \{ M\cap U ~|~ U\in \mathcal{T} \}.
 \end{equation}
 \end{defn}
 
 \begin{defn}[Closed Set]\index{Closed set}
-A set $A\subset X$ is said to be closed in $X$ if $X\setminus A$ is open.
+    A set $A\subset X$ is said to be closed in $X$ if $X\setminus A$ is open.
 \end{defn}
 
 One can equivalently define a topology on a set as the collection of all closed sets instead of open sets, by using the following theorem.
 
 \begin{thm}
-For $X$, a topological space, the following properties are true:
+    For $X$, a topological space, the following properties are true:
 \begin{enumerate}
     \item $\varnothing$ and $X$ are closed.
     \item The intersection of any collection of closed sets is closed.
@@ -1655,7 +1656,7 @@ For $X$, a topological space, the following properties are true:
 \end{enumerate}
 \end{thm}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 Note that the empty set and the whole space are both open and closed (\emph{clopen}).\index{Clopen set}
@@ -1666,7 +1667,7 @@ Note that the empty set and the whole space are both open and closed (\emph{clop
 
 We also have
 \begin{equation}
-\Int M \subset M \subset \xoverline{M}.
+    \Int M \subset M \subset \xoverline{M}.
 \end{equation}
 
 \begin{xca}
@@ -1708,11 +1709,11 @@ Note that replacing `open' by `closed' in the above definition gives an equivale
 
 Homeomorphisms are isomorphisms in the category of topological spaces. Properties of topological spaces that are preserved by homeomorphisms (and more generally, by homotopies, which are essentially continuous deformations as opposed to isomorphisms, see \S\ref{sec.homotopy}) are called \emph{topological invariants}. Topological invariants can take values in words (``connected''/``disconnected'', ``compact''/``non-compact''), in integers (winding numbers, Chern numbers, Euler characteristic, genus, etc.), in groups (homotopy groups, homology groups, etc.), and even in more complicated classes like algebras, bundles, differential forms... The only way to show that two spaces are \emph{not} homeomorphic is to find a topological invariant that is different between the two spaces.
 \begin{gather*}
-\boxed{\begin{array}{c}
-\text{The problem topology serves to solve is:}\\
-\text{Are two given topological spaces homeomorphic/homotopic or not?}\\
-\text{If not, what \emph{topological invariant} distinguishes them?}
-\end{array}}
+    \boxed{\begin{array}{c}
+    \text{The problem topology serves to solve is:}\\
+    \text{Are two given topological spaces homeomorphic/homotopic or not?}\\
+    \text{If not, what \emph{topological invariant} distinguishes them?}
+    \end{array}}
 \end{gather*}
 Since there is no universal algorithm that allows one to answer the first question, most of the hard work in topology goes into constructing new topological invariants that help us define certain classes of topological spaces and then computing them. The part of topology that is especially efficient in finding these invariants is \emph{algebraic topology}, which we will not discuss in this part (but it is the subject of \Part~\ref{Part II}).
 
@@ -1745,22 +1746,22 @@ We also have the canonical map $\pi:X\rightarrow X/\sim$ that takes an element $
 
 
 \begin{defn}[Quotient/Factor Topology]\index{Topology!quotient}
-The quotient topology on $X/\sim$ is the collection of sets  in the quotient space whose inverse image under the canonical projection $\pi$ is open in $X$, i.e.,
-\begin{equation}
-    \mathcal{T}_{X/\sim} = \{U\in X/\sim ~ \mid ~ \pi^{-1}(U) \in \mathcal{T}_X\}.
-\end{equation}
-In other words, it is the finest topology on $X/\sim$ that makes $\pi$ continuous.
+    The quotient topology on $X/\sim$ is the collection of sets  in the quotient space whose inverse image under the canonical projection $\pi$ is open in $X$, i.e.,
+    \begin{equation}
+        \mathcal{T}_{X/\sim} = \{U\in X/\sim ~ \mid ~ \pi^{-1}(U) \in \mathcal{T}_X\}.
+    \end{equation}
+    In other words, it is the finest topology on $X/\sim$ that makes $\pi$ continuous.
 \end{defn}
 
 The quotient space together with the canonical projection can be instead defined by its \emph{universal property}\index{Universal property!of quotient maps}: any continuous function $f:X\to Z$ (valued in any topological space $Z$) that is constant on the equivalence classes in $X$ uniquely factors through  $\pi$, so $f=f_\ast\circ\pi$, where $f_\ast$ is the unique continuous map satisfying this condition (we say that ``$f$ descends to $X/\sim$'' as $f_\ast$). This universal property also implies that the quotient topology on $X\slash\sim$ is unique.
 
 \begin{xca}
-Check that the topology constructed above for $X/\sim$ indeed satisfies the universal property (i.e., $f_\ast$ is continuous).
+    Check that the topology constructed above for $X/\sim$ indeed satisfies the universal property (i.e., $f_\ast$ is continuous).
 \end{xca}
 
 The quotient topology can also be defined in an equivalent way by first defining quotient maps.
 \begin{defn}[Quotient Map]\index{Quotient map}
-A surjective map $\pi:X\rightarrow Y$ is called a \emph{quotient map} if a subset $U$ of $Y$ is open in $Y$ iff $\pi^{-1}(U)$ is open in $X$. In other words, a quotient map is a surjective, strongly continuous map. Another way to put this is that the topology on $Y$ must coincide with the final topology defined by $\pi$.
+    A surjective map $\pi:X\rightarrow Y$ is called a \emph{quotient map} if a subset $U$ of $Y$ is open in $Y$ iff $\pi^{-1}(U)$ is open in $X$. In other words, a quotient map is a surjective, strongly continuous map. Another way to put this is that the topology on $Y$ must coincide with the final topology defined by $\pi$.
 \end{defn}
 
 Now, for any surjective map $\pi$ from a topological space $X$ to a \emph{set} $Z$, we can show that there exists exactly one topology on $Z$ for which $\pi$ is a quotient map. This topology is called the quotient topology on $Z$. To connect with our previous definition of the quotient topology, define $x_1\sim x_2$ iff $\pi(x_1)=\pi(x_2)$. The quotient topologies defined either way coincide with each other.
@@ -1784,29 +1785,29 @@ From the above example, one can see that quotienting a topological space is equi
 For most topological spaces, it is possible to specify the topology  using a smaller collection of open sets than the entire topology. Such a collection is called the \emph{basis} for the topology.
 
 \begin{defn}[Basis]\index{Basis of topology}
-A collection  $\mathfrak{B}\subset \mathcal{T}$ of open sets is called a basis of the topology $\mathcal{T}$ if every open set in $\mathcal{T}$ can be written as a union of elements of the basis: $U=\bigcup_\alpha B_\alpha$, $B_\alpha \in \mathfrak{B}$.
+    A collection  $\mathfrak{B}\subset \mathcal{T}$ of open sets is called a basis of the topology $\mathcal{T}$ if every open set in $\mathcal{T}$ can be written as a union of elements of the basis: $U=\bigcup_\alpha B_\alpha$, $B_\alpha \in \mathfrak{B}$.
 \end{defn}
 
 \begin{prop}[Criterion of a basis]
-A collection of sets $\mathfrak{B}\subset\mathcal{T}$ is a basis for $\mathcal{T}$ if and only if the following conditions hold:
+    A collection of sets $\mathfrak{B}\subset\mathcal{T}$ is a basis for $\mathcal{T}$ if and only if the following conditions hold:
 \begin{enumerate}
     \item For every $x\in X$, there is at least one basis element that contains $x$, i.e., $\mathfrak{B}$ \emph{covers} $X$.
     \item For $x\in B_1 \cap B_2$, where $B_1,B_2\in\mathfrak{B}$, there exists $B_3\in\mathfrak{B}$ such that $x\in B_3\subset B_1\cap B_2 $.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 \begin{prop}\label{characterization of topology using basis}
-Given a basis of topology, one can characterize the topology as follows: a subset $U$ of $X$ is open iff for every point $x\in U$, there is a basis element $B\in \mathfrak{B}$ such that $x\in B\subset U$.
+    Given a basis of topology, one can characterize the topology as follows: a subset $U$ of $X$ is open iff for every point $x\in U$, there is a basis element $B\in \mathfrak{B}$ such that $x\in B\subset U$.
 \end{prop} 
 Therefore in many cases it is convenient to describe topologies by only giving a basis for them.
 
 \begin{prop}
-If there exists a countable basis for a topological space (also known as \emph{second countability}), the space is separable.
+    If there exists a countable basis for a topological space (also known as \emph{second countability}), the space is separable.
 \end{prop}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 \begin{example}\label{examples of basis of topology}
@@ -1819,18 +1820,18 @@ Exercise.
 Using the definition of a basis, we can define the topology on the Cartesian product of two topological spaces.
 
 \begin{defn}[Product Topology]\index{Product (in topology)}
-For two topological spaces $X$ and $Y$, the product topology on $X\times Y$ is defined as the topology generated by the basis $\mathfrak{B}$ consisting of all sets of the form $U\times V$, where $U$ and $V$ are open in $X$ and $Y$ respectively.
+    For two topological spaces $X$ and $Y$, the product topology on $X\times Y$ is defined as the topology generated by the basis $\mathfrak{B}$ consisting of all sets of the form $U\times V$, where $U$ and $V$ are open in $X$ and $Y$ respectively.
 \end{defn}
 
 \begin{xca}
-Show that the topology on $\bbR^n$ defined in Example~\ref{examples of basis of topology} coincides with the product topology on $\mathbb R\times \cdots \times \mathbb R$, where the topology on $\bbR $ is the standard one (generated by open intervals).
+    Show that the topology on $\bbR^n$ defined in Example~\ref{examples of basis of topology} coincides with the product topology on $\mathbb R\times \cdots \times \mathbb R$, where the topology on $\bbR $ is the standard one (generated by open intervals).
 \end{xca}
 \begin{xca}
-Recall that $X\times Y$ in reality is not a set theoretical, but a categorical construction. Check the universal property for products and thus verify that this defines a product on the category $\mathsf{Top}$.
+    Recall that $X\times Y$ in reality is not a set theoretical, but a categorical construction. Check the universal property for products and thus verify that this defines a product on the category $\mathsf{Top}$.
 \end{xca}
 
 \begin{rem}
-The set of all pairwise Cartesian products of basis elements forms a basis for the product topology.
+    The set of all pairwise Cartesian products of basis elements forms a basis for the product topology.
 \end{rem}
 
 \begin{defn}[Wedge sum]\index{Wedge sum}
@@ -1861,26 +1862,26 @@ The set of all pairwise Cartesian products of basis elements forms a basis for t
 \subsection{Connectedness}
 
 \begin{defn}[Connected Space]\index{Connected space}
-A space $X$ is said to be connected if there do not exist two non-empty open sets $U,V$ such that $U\cap V=\varnothing$ and $U\cup V=X$.
-Equivalently, $X$ is connected iff the only clopen\footnote{Closed and open.}\index{Clopen set} subsets in it are $\varnothing$ and $X$.
+    A space $X$ is said to be connected if there do not exist two non-empty open sets $U,V$ such that $U\cap V=\varnothing$ and $U\cup V=X$.
+    Equivalently, $X$ is connected iff the only clopen\footnote{Closed and open.}\index{Clopen set} subsets in it are $\varnothing$ and $X$.
 \end{defn}
 
 
 \begin{defn}[Connected subspace]
-A subset of a topological space $X$ is said to be connected if it forms a connected topological space under the subset topology.
+    A subset of a topological space $X$ is said to be connected if it forms a connected topological space under the subset topology.
 \end{defn}
 
 \begin{xca}
-Show that the interval $[a,b]\subset\bbR $ is connected in the standard topology. \emph{Hint:} prove that any nonempty clopen subset of the interval has to contain the whole interval.
+    Show that the interval $[a,b]\subset\bbR $ is connected in the standard topology. \emph{Hint:} prove that any nonempty clopen subset of the interval has to contain the whole interval.
 \end{xca}
 
 
 \begin{prop}[Connectedness is a Topological Invariant]
-The image of a connected space under a continuous map is connected, i.e., if $f\in C(X,Y)$ and $X$ is connected, so is $f(X)$.
+    The image of a connected space under a continuous map is connected, i.e., if $f\in C(X,Y)$ and $X$ is connected, so is $f(X)$.
 \end{prop}
 
 \begin{defn}[Connected Components]
-We define an equivalence relation on elements of a space $X$ by declaring that $x\sim y$ if there exists a connected subspace of $X$ that contains $x$ and $y$. The equivalence classes generated by this relation are called the connected components of $X$.
+    We define an equivalence relation on elements of a space $X$ by declaring that $x\sim y$ if there exists a connected subspace of $X$ that contains $x$ and $y$. The equivalence classes generated by this relation are called the connected components of $X$.
 \end{defn}
 
 \begin{xca}
@@ -1904,23 +1905,23 @@ The equivalence classes of the connectedness relation are also the maximal conne
 
 
 \begin{defn}[Path]\index{Path}
-A (continuous) path in a topological space $X$ is defined as a continuous map $f:[0,1]\rightarrow X$. A path is said to connect the points $x_0=f(0)$ and $x_1=f(1)$.
-\end{defn}
+    A (continuous) path in a topological space $X$ is defined as a continuous map $f:[0,1]\rightarrow X$. A path is said to connect the points $x_0=f(0)$ and $x_1=f(1)$.
+    \end{defn}
 
-\begin{defn}[Path-Connected Space]\index{Path-connected space}
-A topological space is path-connected if every pair of points in $X$ can be connected by a path in $X$.
+    \begin{defn}[Path-Connected Space]\index{Path-connected space}
+    A topological space is path-connected if every pair of points in $X$ can be connected by a path in $X$.
 \end{defn}
 
 Similar to connected components, we can define an equivalence relation on $X$ by stating that two points are equivalent if there exists a path connecting them. The equivalence classes of this relation are called the \emph{path components} of $X$.
 
 \begin{prop}[path-connectedness is a topological invariant] The following properties hold for path-connected spaces:
-\begin{enumerate}
-    \item If $X$ is a path-connected space and $f\in C(X,Y)$, then $f(X)$ is also path-connected.
-    \item Every path-connected space is also connected.
-\end{enumerate}
+    \begin{enumerate}
+        \item If $X$ is a path-connected space and $f\in C(X,Y)$, then $f(X)$ is also path-connected.
+        \item Every path-connected space is also connected.
+    \end{enumerate}
 \end{prop}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 Note that the converse of the second point above is not true. To see why, consider the example of the \emph{topologists' sine curve}, which is the set of points
@@ -1937,11 +1938,11 @@ as a subset of the real plane (Fig.\ \ref{tsine}).
 The set is connected, since every point on the y-axis is a limit point of the curve. However, there is no continuous path connecting the y-axis to the rest of the curve, because $\sin(1/x)$ itself is not continuous.
 
 \begin{xca}
-\begin{enumerate}
-    \item Show that the $n$-dimensional sphere $\bbS^n$ (defined as the unit sphere in $\bbR^{n+1}$ with the subset topology) is path-connected.
-    \item Show that $\mathbb{Q}\subset\bbR $ is not connected.
-    \item Show that the product of two path-connected spaces is path-connected.
-\end{enumerate}
+    \begin{enumerate}
+        \item Show that the $n$-dimensional sphere $\bbS^n$ (defined as the unit sphere in $\bbR^{n+1}$ with the subset topology) is path-connected.
+        \item Show that $\mathbb{Q}\subset\bbR $ is not connected.
+        \item Show that the product of two path-connected spaces is path-connected.
+    \end{enumerate}
 \end{xca}
 
 
@@ -1951,29 +1952,29 @@ The set is connected, since every point on the y-axis is a limit point of the cu
 \subsection{Compactness}
 
 \begin{defn}[Covering/cover]
-A collection of subsets of a topological space $X$ is said to cover $X$ if the union of these subsets equals $X$. If the subsets are all open (or closed), the covering (also often called a cover) is said to be open (resp.~closed).
+    A collection of subsets of a topological space $X$ is said to cover $X$ if the union of these subsets equals $X$. If the subsets are all open (or closed), the covering (also often called a cover) is said to be open (resp.~closed).
 \end{defn}
 
 \begin{defn}[Compact Space]\index{Compact space}
-A space $X$ is called compact if every open covering of $X$ contains a finite subcollection that also covers $X$ (\emph{subcovering}).
+    A space $X$ is called compact if every open covering of $X$ contains a finite subcollection that also covers $X$ (\emph{subcovering}).
 \end{defn}
 
 \begin{defn}[Compact Subset]
-A subset $A\subset X$ is called compact if it is compact in the subspace topology.
+    A subset $A\subset X$ is called compact if it is compact in the subspace topology.
 \end{defn}
 
 \begin{prop}
-If $Y_i\subset X$, $i = 1,\dots, m$ are compact subsets, then their union $\bigcup_{i=1}^m Y_i$ is also compact.
+    If $Y_i\subset X$, $i = 1,\dots, m$ are compact subsets, then their union $\bigcup_{i=1}^m Y_i$ is also compact.
 \end{prop}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 \begin{prop}[Compactness is a topological invariant]\label{prop f(compact)=compact}
-The image $f(X)$ of a compact space $X$ under a continuous map $f\in C(X,Y)$ is compact.
+    The image $f(X)$ of a compact space $X$ under a continuous map $f\in C(X,Y)$ is compact.
 \end{prop}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 \begin{xca}
@@ -1986,12 +1987,12 @@ Exercise.
 
 
 \begin{defn}[Classes of continuous maps]\index{Open map}\index{Closed map}\index{Proper map}
-A map $f:X\to Y$ (not necessarily continuous) is called
-\begin{enumerate}
-    \item \emph{open} if the image of every open subset of $X$ is open in $Y$;
-    \item \emph{closed} if the image of every closed subset of $X$ is closed in $Y$;
-    \item \emph{proper} if it is continuous and the preimage of any compact subset of $Y$ is compact in $X$;
-\end{enumerate}
+    A map $f:X\to Y$ (not necessarily continuous) is called
+    \begin{enumerate}
+        \item \emph{open} if the image of every open subset of $X$ is open in $Y$;
+        \item \emph{closed} if the image of every closed subset of $X$ is closed in $Y$;
+        \item \emph{proper} if it is continuous and the preimage of any compact subset of $Y$ is compact in $X$;
+    \end{enumerate}
 \end{defn}
 
 \begin{xca}
@@ -3893,7 +3894,7 @@ Thus for every right $G$-principal covering $\pi$ (over some base $B$) we have c
 \end{defn}
 
 The classification theorem~\ref{covering spaces category equivalence thm} can now be restated as follows.
-\begin{thm}[Classification of coverings III]
+\begin{thm}[Classification of coverings III]\label{thm classification of coverings iii}
      If a covering map $\pi:E\to B$ is universal (i.e., $E$ is simply connected), then it is also universal $\pi_1(B)$-principal (i.e., the functor $A(\pi)$ is an equivalence of categories).
 \end{thm}
 

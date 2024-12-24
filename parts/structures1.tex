@@ -1,7 +1,7 @@
 % !TEX root = ../geom_autistic_intro.tex
 \chapter{Klein Geometry}\label{chap: Klein geom}
 
-This \partt{} gradually introduces the final crucial element that has so far lacked in our general theory of $G$-structures: connections. We start with the simplest class of principal bundles, namely the bundles associated with homogeneous spaces. Due to the fact that the total space of such a bundle is a Lie group, there is an additional natural structure that is not present on general principal bundles -- the Maurer-Cartan form. In this \chap\ we explore the surprisingly rich world of geometries that arise from the interaction between these bundle structures on a Lie group and the Maurer-Cartan form.
+This \partt{} gradually introduces the final crucial element that has so far lacked in our general theory of $G$-structures: connections. As discussed in the previous \chap, it is only the second fundamentally new kind of geometric structure on manifolds, following Lie group actions. We start with the simplest class of principal bundles, namely the bundles associated with homogeneous spaces. Due to the fact that the total space of such a bundle is a Lie group, there is an additional natural structure that is not present on general principal bundles -- the Maurer-Cartan form. In this \chap\ we explore the surprisingly rich world of geometries that arise from the interaction between these bundle structures on a Lie group and the Maurer-Cartan form.
 
 
 
@@ -381,7 +381,7 @@ The Uniformization Theorem of Riemann Surfaces itself can be proven by reduction
     \[\hol^0:\Lambda\to G,\quad \lambda\mapsto (1,\lambda).\]
     There are other affine structures on $E$. For every $c\in \bbC^\times$, we can produce an affine structure on $E$ via the developing map $\dev^c:\bbC\to \bbC^\times,$ $z\mapsto \rme^{cz}$, with holonomy morphism 
     \[\hol^c:\Lambda\to G,\quad \lambda\mapsto (\rme^{c\lambda},0).\]
-    Since the developing map of an affine structure is unique up to affine transformations, we could just as well use the map $z\mapsto c^{-1}(\rme^{cz}-1)$, which lets us think of $\dev=\id_\bbC$ as the limiting case $c\mapsto 0$.  To forget the chose of affine coordinate $z$, we can identify the moduli space of affine structures on an elliptic curve $E$ with the space of holomorphic $1$-forms on $E$: each $1$-form is expressed in terms of an affine chart as $c\dd z$. The developing map $\dev^c$ is a map to the \emph{linear} geometry on $\bbC\setminus\{0\}$, i.e., $(G',H')=(\bbC^\times,\{e\})$.  The holomorphic $1$-form $\dd\zeta/\zeta$ on $\bbC\setminus\{0\}$, with the standard coordinate $\zeta$, is $G'$-invariant, and pulls back to $c\dd z$ on $\bbC$. Hence, we identify the isomorphism class of the affine structure with this induced holomorphic $1$-form, and take the zero $1$-form as the limit $c\to 0$.  It is well known that every holomorphic affine structure arises uniquely this way. The automorphism group of the affine structure with $c=0$, the one with linear developing map, is the biholomorphism group of the elliptic curve (which is a semidirect product of the translation group $\bbC$ with a finite group of at most $24$ elements). The automorphism group of any of the affine structures with $c\neq 0$ is only the group $\bbC$ of translations.
+    Since the developing map of an affine structure is unique up to affine transformations, we could just as well use the map $z\mapsto c^{-1}(\rme^{cz}-1)$, which lets us think of $\dev=\id_\bbC$ as the limiting case $c\mapsto 0$.  To forget the chose of affine coordinate $z$, we can identify the moduli space of affine structures on an elliptic curve $E$ with the space of holomorphic $1$-forms on $E$: each $1$-form is expressed in terms of an affine chart as $c\dd z$. The developing map $\dev^c$ is a map to the \emph{linear} geometry on $\bbC\setminus\{0\}$, i.e., $(G',H')=(\bbC^\times,\{e\})$.  The holomorphic $1$-form $\dd\zeta/\zeta$ on $\bbC\setminus\{0\}$, with the standard coordinate $\zeta$, is $G'$-invariant, and pulls back to $c\dd z$ on $\bbC$. Hence, we identify the isomorphism class of the affine structure with this induced holomorphic $1$-form, and take the zero $1$-form as the limit $c\to 0$.  It is well-known that every holomorphic affine structure arises uniquely this way. The automorphism group of the affine structure with $c=0$, the one with linear developing map, is the biholomorphism group of the elliptic curve (which is a semidirect product of the translation group $\bbC$ with a finite group of at most $24$ elements). The automorphism group of any of the affine structures with $c\neq 0$ is only the group $\bbC$ of translations.
 \end{example}
 
 \begin{example}[Projective structures on Riemann surfaces]\index{Projective structure}\label{ex projective structure}
@@ -828,7 +828,7 @@ The next fundamental result shows that in certain situations one can reduce ques
 \begin{example}[Spherical harmonics]
     Looking ahead, we can take $H$ to be a maximal torus subgroup $T\emb G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma^\infty(L_n))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma^\infty(L_n)$ into irreps. Therefore the Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
 
-    Consider $G=\SU_2$ and $T=\U_1$ the subgroup fixing a vector. Then $G\slash T\cong \bbS^2$. Since $T$ is abelian, all of its representations decompose into sums of one-dimensional (hence irreducible) ones, and the one-dimensional representations are labeled by an integer $n\in\bbZ$ (namely the representation is given by multiplication by $z^n$, where $z\in\U_1\subset \bbC$). Meanwhile the irreducible representations $V_k$ of $\SU_2$ are known to be labeled by non-negative integers $k$, where $k$ is the largest integer that occurs when you restrict $V_k$ to be a $\U_1$ representation. Frobenius reciprocity implies
+    Consider $G=\SU_2$ and $T=\U_1$ the subgroup fixing a vector. Then $G\slash T\cong \bbS^2$. Since $T$ is abelian, all of its representations decompose into sums of one-dimensional (hence irreducible) ones, and the one-dimensional representations are labeled by an integer $n\in\bbZ$ (namely the representation is given by multiplication by $z^n$, where $z\in\U_1\subset \bbC$). Meanwhile the irreducible representations $V_k$ of $\SU_2$ are known to be labeled by non-negative integers $k$, where $k$ is the largest integer that occurs when one restricts $V_k$ to be a $\U_1$ representation. Frobenius reciprocity implies
     \[\dim\Hom_{\SU_2}(V_k,\Gamma^\infty(L_n))=\dim \Hom_{\U_1}(V_k,n)\]
     where $L_n$ is the complex line bundle over $\bbS^2$ corresponding to $n$. The right hand side is the multiplicity of the weight $n$ in $V_k$ (that is, the multiplicity of $n$ in the restriction of the representation on $V_k$ to $T$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we can see that the decomposition of $\Gamma^\infty(L_n)$ into irreducibles will include all $V_k$ where $k$ is the same parity as $n$ and $k\geq n$.
 
@@ -947,7 +947,7 @@ If the equation is solved w.r.t.\ the derivative, i.e., $F=-p+f(x,u)$, then $\ca
 \[Y_F=\partial_x+p\partial_u+\left(f_x+pf_u\right)\partial_p.\]
 The projection of this field to the $(x,u)$-plane has the form 
 \[\partial_x+f(x,u)\partial_u.\]
-The integral curves of $Y_F$ are, as is well known, integral curves of the equation at hand. 
+The integral curves of $Y_F$ are, as is well-known, integral curves of the equation at hand. 
 
 A point $m\in \calE$ is singular if the relation (\ref{eq 2.3 Kras}) at this point holds for all $\alpha$ and $\beta_k$. Since the right-hand side of this relation vanish on $\calE$, the equalities 
 \[F=F_x+p_1F_u+\cdots+p_kF_{p_{k-1}}=F_{p_k}=0\]
@@ -2149,7 +2149,7 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     \end{split}\]
     Since each $G_i$ is a symmetry group, it maps solutions to solutions. For example, if $u(t,x)$ is a solution, then so are $\exp(\epsilon X_5)\cdot u=\rme^{-\epsilon x-\epsilon^2 t}u(x-2\epsilon t,t)$ and 
     \[\exp(\epsilon X_6)\cdot u=\frac{1}{\sqrt{1+4\epsilon t}}\exp\frac{\epsilon x^2}{1+4\epsilon t}u\left(\frac{t}{1+4\epsilon t},\frac{x}{1+4\epsilon t}\right).\]
-    The symmetries $G_3$ and $G_\alpha$ simply express the fact that the heat equation is linear: $\rme^{\epsilon X_\alpha}\cdot u=u+\epsilon\alpha$. The groups $G_1$ and $G_2$ demonstrate the time- and space-translation invariance of the equation. The well known scaling symmetry turns up in $G_4$, while $G_5$ represents a kind of Galilean boost to a moving coordinate frame. The last group $G_6$ is a genuinely local group of transformations which allows one to obtain genuinely new solutions of the equation. If we let $u=c$ be a constant, then we immediately conclude that the function 
+    The symmetries $G_3$ and $G_\alpha$ simply express the fact that the heat equation is linear: $\rme^{\epsilon X_\alpha}\cdot u=u+\epsilon\alpha$. The groups $G_1$ and $G_2$ demonstrate the time- and space-translation invariance of the equation. The well-known scaling symmetry turns up in $G_4$, while $G_5$ represents a kind of Galilean boost to a moving coordinate frame. The last group $G_6$ is a genuinely local group of transformations which allows one to obtain genuinely new solutions of the equation. If we let $u=c$ be a constant, then we immediately conclude that the function 
     \[u=\frac{c}{\sqrt{1+4\epsilon t}}\exp\frac{-\epsilon x^2}{1+4\epsilon t}\]
     is a solution. In particular, if we set $c=\sqrt{\epsilon/\pi}$, we obtain the fundamental solution to the heat equation at the point $(t_0,x_0)=(-\frac{1}{4\epsilon},0)$. To obtain the fundamental solution 
     \[u=\frac{1}{4\pi t}\exp\frac{-x^2}{4t},\]
@@ -2179,7 +2179,7 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     \[\wt{x}=\frac{x-\epsilon(x^2+y^2)}{1-2\epsilon x+\epsilon^2(x^2+y^2)},\quad \wt y=\frac{y}{1-2\epsilon x+\epsilon^2(x^2+y^2)}.\label{eq 2.27 Gungor}\]
     This transformation admits the invariant function $\zeta(x,y)=\frac{y}{x^2+y^2}$, satisfying the relation $\zeta(\wt x,\wt y)=\zeta(x,y)$ on $\bbR^2\setminus\{0\}$. It is readily obtained by eliminating the group parameter $\epsilon$ in (\ref{eq 2.27 Gungor}).
 
-    One may notice that $\bf{c}_x$ is related to $\partial_x$ via the complex inversion map $I(x,y)\coloneqq \frac{(x,y)}{(x^2+y^2)^2}$. It is well known that, away from the origin, $I$ is a discrete (not path-connected to the identity) symmetry of the Laplace equation. It is easy to see that $I$ also provides the coordinates rectifying $\bf{c}_x$ to $-\partial_x$.
+    One may notice that $\bf{c}_x$ is related to $\partial_x$ via the complex inversion map $I(x,y)\coloneqq \frac{(x,y)}{(x^2+y^2)^2}$. It is well-known that, away from the origin, $I$ is a discrete (not path-connected to the identity) symmetry of the Laplace equation. It is easy to see that $I$ also provides the coordinates rectifying $\bf{c}_x$ to $-\partial_x$.
 
     Conjugating any symmetry by $I$ will produce another symmetry. For example, as we already saw, $I_\ast(-\partial_x)=\wt{\bf{c}}_{\wt x}$, where tilde means that the vector field is written in the new coordinates $(\wt x,\wt y)=I(x,y)$. Thus, $\rme^{\epsilon \bf{c}_x}(x,y)$ can be recovered by conjugating the translational group along the $x$-axis by $I$:
     \[\rme^{\epsilon\bf{c}_x}(x,y)=I\circ\rme^{-\epsilon\partial_x}\circ I(x,y).\]
@@ -2256,6 +2256,10 @@ We now introduce differential invariants of the action of a Lie (pseudo)group on
 
 \begin{defn}[Differential invariant]\index{Differential invariant}
     Let $M$ be manifold and let $\Gamma$ be a Lie pseudogroup acting on $M$ with Lie algebra $\calY$. The action of $\Gamma$ naturally lifts to every jet space $\rmJ^r M$ as well. A (local) function or a tensor field defined on $\rmJ^r M$ is an \emph{order $r$ differential invariant} of the action of $\Gamma$ if for every $f\in\Gamma$ the action of $f^{(r)}_\ast$ maps that object to itself.
+
+    The set of $r$-th order \emph{scalar} differential invariants of $\calY$ will be denoted by $\calI^r(\calY)$.\footnote{This is a slight abuse of notation since they are invariants of the action, not the Lie algebra itself} This is a real algebra w.r.t.\ the pointwise multiplication of functions, since any function of invariants is an invariant. These sets also satisfy the inclusions 
+    \[\calI^0(\calY)\subset\calI^1(\calY)\subset\cdots\subset\calI^r(\calY)\subset\cdots.\]
+    The total algebra $\bigcup_{r=0}^\infty \calI^r(\calY)$ is called the \emph{algebra of (scalar) differential invariants}.
 \end{defn}
 
 We will be especially interested in the differential invariants of (pseudo)groups of symmetries of differential equations, which act by contact transformations. Since in most cases contact transformations are point transformations, it often suffices to consider actions on the original bundle $E\to M$.
@@ -2454,13 +2458,48 @@ where $D(I_1,\ldots,I_n)=\det (D_i I_j)$ denotes the total Jacobian determinant.
 \end{xca}
 
 
+\paragraph{Invariant equations} One of the most important uses of differential invariants is in the construction of general systems of differential equations (and variational problems) which admit a prescribed symmetry group. The following theorem shows that finding a complete set of differential invariants for a given symmetry $\frakg$ suffices to classify all differential equations with that symmetry algebra.
+
+\begin{thm}
+    Let the differential functions $I_1,\ldots,I_k\in\calI^r(\frakg)$ form a complete set of functionally independent $r$-th order differential invariants of $G$. Then a system of $r$-th order PDEs $\calE$ is invariant under $G$ iff it can be written in terms of the differential invariants:
+    \[\calE:\quad H_\nu(I_1,\ldots,I_k)=0,\quad \nu=1,2,\ldots,R.\]
+\end{thm}
+\begin{proof}
+    This follows immediately from the fact that any $G$-invariant submanifold of a regular $G$-action admits slice charts given by the vanishing of a set of scalar invariants. Indeed, these invariants are simply a set of coordinates on an arbitrary slice of the $G$-action extended to an open set by $G$-invariance.
+\end{proof}
+  
+
+\begin{example}[{{\cite[Example~6.26]{Olver93}}}]
+    Consider the usual action of $\SO_2$ on $E=\bbR\times\bbR$. According to Example~\ref{ex 5.2 Olver}, there are two first-order differential invariants -- the radius $r=\sqrt{x^2+u^2}$ and the angular invariant $w=(xp-u)/(x+up)$. Therefore, the most general first-order ordinary differential equation admitting $\SO_2$ as a symmetry group can be written in the form $F(r,w)=0$. Solving for $w$, we deduce that the equation has the explicit form 
+    \[\frac{xu_x-u}{x+uu_x}=H\left(\sqrt{x^2+u^2}\right).\]
+    In terms of the polar coordinates $r,\theta$, this equation takes the separable form $\theta_r=r^{-1}H(r)$ and can thus be integrated.
+
+    The most general second-order differential equation admitting a rotational symmetry group can be written in the form $F(r,w,\kappa)=0$, where $\kappa$ is the curvature. In polar coordinates, this can be written as 
+    \[r\theta_{rr}=(1+\theta_r^2)H(r,r\theta_r)-r^2\theta_r^3-2\theta_r.\]
+    Since the latter equation does not explicitly depend on $\theta$, it can be reduced to a first-order equation on $v=\theta_r$.
+\end{example}
+
+Since all differential invariants can be expressed in terms of derivatives of fundamental ones, any $r$-th order ODE with an $s$-dimensional symmetry group can be written as 
+\[F(u,w,w_y,\ldots,w^{(r-s)})=0\]
+involving only the two fundamental differential invariants: $u=I$, $w=J$ which have orders $s'<s=\dim G$  with $s'=s-1$ unless $G$ is either intransitive, in which case $s'=0$, or pseudo-stabilizes, in which case $s'=s-2$. Therefore, we have reduced the original $r$-th order ODE to an $(r-s)$-th order ODE in the differential invariants. However, once we have solved for $w=h(y)$, we then must solve an auxiliary $s$-th order ODE 
+\[J=h(I),\]
+in order to recover $u$ as a function of $x$. 
+
+
+\begin{rem}[Reduction to a fiber]
+    In the special case when $\Gamma$ acts transitively on $M$, the problem of computing the differential invariants can be greatly simplified. Locally, we can assume that $\Gamma$ contains all transformations of the form $\bf{x}\mapsto \bf{x}+\bf{x}_0$, so scalar invariants will be independent of $\bf{x}$. Meanwhile, each orbit of $\Gamma$ intersects each fiber of $\pi^r:\rmJ^r E\to M$, so the fiber $(\pi^r)^{-1}(p)$ is divided into disjoint orbits of the prolonged stabilizer group 
+    \[\Gamma^{(r)}_p\coloneqq \{f^{(r)}\mid f\in\Gamma,f(p)=p\}.\]
+    We thus see that there is a one-to-one correspondence between differential invariants of $\Gamma$ on $\rmJ^r E$ and invariants of $\Gamma^{(r)}_p$ on $(\pi^r)^{-1}(p)$. 
+\end{rem}
 
 
 
 
 
 
-\section{Symmetry reduction of differential equations}
+
+
+\section{Symmetry reduction of ODEs}
 
 Sophus Lie observed that virtually all the classical methods for solving specific types of ODEs (separable, homogeneous, exact, etc.) are particular examples of a general method for integrating ODEs that admit a group of symmetries. (This was essentially the core motivation behind the development of his theory of continuous groups.) In particular, knowledge of a one-parameter group of symmetries allows us to reduce the order of an ODE by one. Crucially, however, this method does not produce \emph{all} solutions of the equation.
 
@@ -2495,7 +2534,7 @@ In particular, a first-order ODE $u_x=f(x,u)$ admitting a one-parameter symmetry
     The equation admits three obvious symmetries: translation $x\mapsto x+\epsilon$, and two independent scaling transformations $(x,u)\mapsto (\lambda x,\mu u)$. To reduce w.r.t.\ the translation, we set $y=u$, $v=x$, so that $u_x=1/v_y$, $u_{xx}=-v_{yy}/v_y^3$, and the equation reduces to a linear equation $yv_{yy}+\alpha v_y=0$, with solution $v=c y^{1-\alpha}+d$ for $\alpha\neq 1$, or $v=c\ln y+d$ for $\alpha=1$. The corresponding solution of (\ref{eq 6.27 Olver}) is then $u=(ax+b)^{1/(1-\alpha)}$, or $u=\exp(ax+b)$. (Note that the translation-invariant constant solutions are recovered as limiting cases of these.) Alternatively, if we use the scaling symmetry in $u$, then the appropriate coordinates are $x$ and $v=\ln u$, in terms of which the equation becomes $v_{yy}=(\alpha-1)v_y^2$, which reduces to a homogeneous (separable) equation for $w=v_y$.
 \end{example}
 
-\begin{example}
+\begin{example}\label{ex 2nd order ODE to Riccati}
     Finally, consider a general homogeneous second-order linear ODE 
     \[u_{xx}+f(x)u_x+g(x)u=0.\]
     Like any linear equation, this admits the scaling symmetry generated by $u\partial_u$. Upon reduction, we should expect a nonlinear equation. According to the general reduction procedure, as long as $u\neq 0$, we can introduce the new variable $v=\ln u$, in terms of which the equation becomes 
@@ -2518,64 +2557,175 @@ If a higher-order ODE admits several symmetries, then it may be reducible in ord
     which admits the two-parameter symmetry group $(x,u)\mapsto (\lambda x,u+\mu x)$ with generators $X=x\partial_x$, $Y=x\partial_u$. Since $[X,Y]=Y$, if we reduce w.r.t.\ $Y$, then the resulting first-order ODE will retain a symmetry corresponding to $X$, and hence by Theorem~\ref{thm 6.23 Olver} it can be integrated. In this case, we set $v=u/x$, $w=v_x=x^{-2}(xu_x-u)$, so that the equation reduces to $x^3w=F(x^2w)+2x^2w$. This admits a scaling symmetry generated by the reduced vector field $\wh X=x\partial_x-2w\partial_w$, which means that it is of homogeneous form (\ref{eq 6.26 Olver}) and can be integrated as before. On the other hand, if we try to reduce the original equation w.r.t.\ $X$ first, using the variables $\wt y=u$, $\wt v=\ln x$, equation (\ref{eq 6.29 Olver}) reduces to a first-order equation $w_y=-w(1+F(w^{-1}-y))$ having no obvious symmetry. Had we started with this equation, the best way to solve it would be to transform back to the original equation and start over.
 \end{example}
 
-Finally, from Theorem~\ref{thm 6.23 Olver} we may also observe that the most efficient way to reduce equations would be to find a sequence of symmetry groups such that each is a normal subgroup of the next with an abelian (or $1$-dimensional) quotients. This is exactly the definition of a solvable symmetry group, so we get the Bianchi-Lie Theorem~\ref{thm Bianchi-Lie} as a corollary.
+Finally, from Theorem~\ref{thm 6.23 Olver} we may also observe that the most efficient way to reduce equations would be to find a sequence of symmetry groups such that each is a normal subgroup of the next with an abelian (or $1$-dimensional) quotients. This is exactly the definition of a solvable symmetry group, so we get the Bianchi-Lie Theorem~\ref{thm Bianchi-Lie} as a corollary. In particular, since all $2$-dimensional Lie algebras are solvable, any second-order ODE with a $2$-dimensional symmetry group can be solved in quadratures. Any higher-order ODE with a $2$-dimensional symmetry group can be reduced to one two orders lower so that the original solutions are recovered from the reduced ones via two quadratures.
+
+\begin{example}[Schwarzian equation]
+    The simplest non-solvable Lie algebra is $\fraksl_2(\bbR)$. To see what happens when the symmetry group is not solvable, we consider a third-order ODE known as the Schwarzian equation \index{Equation!Schwarzian}
+    \[\frac{u_{xxx}}{u_x}-\frac32\left(\frac{u_{xx}}{u_x}\right)^2=F(x),\label{eq schwarz}\]
+    where $F$ is an arbitrary smooth function. This equation admits the nonsolvable symmetry algebra $\fraksl_2(\bbR)$ spanned by 
+    \[X_1=\partial_u,\quad X_2=u\partial_u,\quad X_3=u^2\partial_u,\]
+    which generates the \glspl{flt} acting on $u$: $u\mapsto (au+b)/(cu+d)$, with $x$ unchanged. The expression on the left hand side of (\ref{eq schwarz}) is the \emph{Schwarzian derivative} of $u$ that we will study more closely in Example~\ref{ex projective structures and schwarzians}. It is invariant under \glspl{flt}. The $2$-dimensional solvable subalgebra $\frakg_0=\<X_1,X_2\>$ can be used to reduce the equation to a first-order one. The second-order differential invariants of $\frakg_0$ are $x$ and $w=u_{xx}/u_x$, in terms of which the reduced equation becomes 
+    \[w_x=\frac12 w^2+F(x),\]
+    which is a Riccati equation. This equation does not inherit the symmetry $X_3$ of the original equation. Indeed, the reduced vector field $\wt X_3$ in terms of the invariants $x$ and $w$ is nonlocal (a so called \emph{exponential vector field}):
+    \[\wt X_3=2\rme^{\int w\dd x}\partial_w.\]
+    On the other hand, the well-known transformation $w=-2(\ln \tau(x))_x$ (so $u_x=\tau^{-2}$) from Example~\ref{ex 2nd order ODE to Riccati} linearizes the Riccati equation to a Schr\"odinger equation
+    \[\tau_{xx}+\frac12F(x)\tau=0.\label{eq 123 Gungor}\]
+    Let $\tau$ and $\psi$ be two independent solutions of this equation. Then we have $\psi/\tau=W\int \tau^{-2}\dd x+\const$, where $W$ is the (constant) Wronskian of $\tau$ and $\psi$ (and we can set $W=1$ by rescaling $\psi$). The constant can be absorbed into $\psi$ \gls{wlog}. The solution $u$ can now be expressed as the ratio $u=\psi/\tau$ of two linearly independent solutions of (\ref{eq 123 Gungor}).
+
+    When $F=0$, the resulting equation is known as the Kummer-Schwarz equation (it comes up in the study of geodesic curves in spaces of constant curvature) and it has an enlarged $6$-dimensional symmetry algebra $\frakg\cong \fraksl_2(\bbR)\oplus\fraksl_2(\bbR)$ with the additional generators 
+    \[X_4=\partial_x,\quad X_5=x\partial_x,\quad X_6=x^2\partial_x.\]
+    The symmetry group is then a group of \glspl{flt} of both $x$ and $u$ coordinates. The corresponding solutions are the linear fractional functions of $x$: $u=(ax+b)/(cx+d)$, $ad-bc\neq 0$.
+\end{example}
 
 
-The situation with symmetry reduction is very different in PDEs and we only touch on it briefly. Since a generic PDE includes partial derivatives w.r.t.\ multiple variables, even upon finding rectifying coordinates such that $X=\partial_v$ we will not be able to reduce the order of the equation. Instead, the most that can happen is that we might be able to eliminate some of the independent variables. 
 
-\begin{example}
+
+
+
+\section{Symmetry reduction of PDEs}
+
+
+The situation with symmetry reduction is very different in PDEs and we only touch on it briefly. Since a generic PDE includes partial derivatives w.r.t.\ multiple variables, even upon finding rectifying coordinates such that $X=\partial_v$ we will not be able to reduce the order of the equation. Instead, the reduced equation is usually of the same order.
+
+Let $\calE\subset\rmJ^r E$ be an equation with a symmetry group $G$. The Cartan distribution $\calC=\calC^r$ is invariant w.r.t.\ the symmetries and the solutions are $n$-dimensional maximal integral manifolds of $\calC^r(\calE)$. Consider the orbit space of $G$ and denote by $\mu$ the corresponding quotient map:
+\[\begin{tikzcd}
+    \calE \arrow[r,hookrightarrow]\arrow[d,"\restr{\mu}{\calE}"] & \rmJ^rE \arrow[d,"\mu"]\\
+    \calE'\arrow[r] & \rmJ^rE\slash G.
+\end{tikzcd}\]
+As we will now show, the quotient distribution $\calC'$ is defined on $\calE'$ and almost everywhere it is of the same rank as $\calC$. Let $\calC'_p=\mu_\ast(\calC_{\mu^{-1}(p)})$ for $p\in\rmJ^r E\slash G$. It is a well-defined construction since $\calC$ is $G$-invariant. Besides, vectors tangent to the orbits of $G$ almost everywhere do not belong to $\calC$. In fact, let $p\in\rmJ^rE$ and $\scrO_p$ be the orbit of the point $p$ under the action of $G$. Then the orbit map $G\mapsto \scrO_p$, $g\mapsto g\cdot p$, generates an epimorphism of the corresponding Lie algebra $\frakg$ onto the tangent space $\T_p \scrO_p$. Therefore, any vector $X_p\in\T_p \scrO_p$ is of the form $\restr{X_\varphi}(p)$, where $\varphi$ is the generating section of an element $X_\varphi\in \frakg$.  Let $X_p\in\calC_p$. This means, in particular, that 
+\[i_{X_\varphi}\left(\dd u^j-\sum_{i=1}^n p^j_i\dd x^i\right)_p=\varphi^j(p)=0.\]
+Therefore, for almost all $p\in \rmJ^rE$, one has $\calC_p\cap \ker\mu_{\ast p}=0$, and consequently $\rank \calC=\rank\calC'$.
+
+Solutions of $\calE$ are maximal integral $n$-dimensional manifolds of $\calC$ and in general they project to $n$-dimensional integral manifolds of $\calC'$ lying inside $\calE'$. It should be stressed that we are not interested in \emph{all} integral manifolds of $\calC'$, but only in those which are images of solutions of $\calE$. Therefore, the desired condition defining in $\calE'$ the integral manifolds of $\calC'$ will be the quotient equation (assuming, of course, that it can be realized, at least locally, as a submanifold of some jet space $\rmJ^{r'}E'$ for some $r'$ and $E'$).
+
+Let $L'\subset\calE'$ be the image of some solution $L$ of the equation $\calE$. Then 
+\[\mu^{-1}(L')=G\cdot L=\bigcup_{g\in G}g\cdot L.\]
+Denote by $i_{L'}$ the immersion $\mu^{-1}(L')\hookrightarrow \rmJ^rE$. Then the restriction of $\calC$ to $\mu^{-1}(L')$ is determined by the Pfaffian contact system $\calD_{L'}=i^\ast_{L'}\calD$, where $\calD=\Ann(\calC)\subset \T^\ast(\rmJ^rE)$ is the Pfaffian system spanned by the contact forms and determining $\calC$. It is easily seen that the distribution $\calD_{L'}$ is completely integrable: any $g\cdot L$ is its integral manifold and the union of these manifolds is $\mu^{-1}(L')$. The Frobenius integrability condition $\dd \calD_{L'}\subset \calD_{L'}$ (cf.\ Theorem~\ref{thm 4.7.8 RS1}) of the distribution $\calD_{L'}$ is exactly the condition defining those $L'$ which are the images of solutions of the initial equation under the factorization w.r.t.\ $G$. Thus, precisely these conditions constitute the quotient equation. We have proven the following.
+
+\begin{prop}
+    Let $G$ be a group of point symmetries of a differential equation $\calE\subset\rmJ^r E$. Then the \emph{reduced equation} (working locally and assuming smoothness) $\calE'\subset \rmJ^rE\slash G$ is defined as the Frobenius integrability condition $\dd \calD_{L'}\subset \calD_{L'}$ on its solutions $L'\subset\calE'$. If $\dim G=s$, then each solution of $\calE'$ corresponds to a $s$-parameter family of solutions of $\calE$ which can be recovered by solving a system of first-order PDEs.
+\end{prop}
+
+For concreteness, consider a second-order equation in two independent variables and one dependent variable, where a $2$-dimensional group $G$ acts freely. In other words, $E=\rmJ^2(\bbR^2,\bbR)$ and let $x,y,u,p,q,r,s,t$ be the canonical coordinates. Then $\dim\calE=7$, $\dim \calE\slash G=5$. In the same coordinates, a basis of the contact system defining the Cartan distribution is 
+\[\theta_0=\dd u-p\dd x-q\dd y,\quad \theta_1=\dd p-r\dd x-s\dd y,\quad \theta_2=\dd q-s\dd x-t\dd y,\]
+and consequently the rank of $\calC$ at a generic point is $7-3=4$.
+
+As already explained, the vector fields forming the Lie algebra $\frakg$ do not intersect the Cartan distribution almost everywhere, so the quotient Cartan distribution $\calC'$ on the $5$-dimensional $\calE\slash H$ is also of rank $4$. Hence, the Pfaffian system $\calD'$ determining this distribution is of rank $1$, spanned by a single differential form $\omega$. In the generic situation, a $1$-form on an even-dimensional manifold determines a contact structure and by the Darboux Theorem~\ref{thm darboux normal forms} can be written as 
+\[\omega=\dd v-p_1 \dd q_1-p_2\dd q_2 \]
+in appropriate coordinates $q_1,q_2,p_1,p_2,v$ on $\calE\slash H$. 
+
+In these coordinates, ``almost all'' integral manifolds of $\omega$ can be represented as $1$-graphs of functions of two variables:
+\[v=g(q_1,q_2),\quad p_1=g_{q_1},\quad p_2=g_{q_2}.\]
+Let us denote such a manifold by $V_g$. The Frobenius conditions $\dd\calD_{V_g}\subset\calD_{V_g}$ are first-order PDEs for the functions determining the graph of $\rmj^1 g$. Hence, they are second-order equations for the function $g$. Actually, in the examples below a scalar second-order equation arises and this is the desired quotient equation. Its solutions then correspond to two-parameter families of solutions of the initial equation.
+
+
+\begin{example}[{{\cite[Example~3.6.2]{Kras}}}]
+    The entire process in specific examples is quite cumbersome, so we only summarize the results. Starting with the Laplace equation $\calE=\{r+t=0\}$, we can let $G$ be the group of translations generated by $\partial_x$ and $\partial_y$. Then the quotient by $G$ can be identified with the projection to the plane $\{x=y=0\}\subset\rmJ^2(\bbR^2,\bbR)$. The contact form generating the reduced Cartan distribution then can be chosen as 
+    \[\omega=\dd u-\frac{qs+pr}{r^2+s^2}\dd p-\frac{ps-qr}{r^2+s^2}\dd q,\]
+    where it is implied that the coordinates are restricted to the new equation. This immediately suggests the new coordinates:
+    \[v=u,\quad (q_1,q_2)=(p,q),\quad p_1=\frac{qs+pr}{r^2+s^2},\quad p_2=\frac{ps-qr}{r^2+s^2}.\]
+    One then rewrites the original Cartan distribution in these new coordinates. Upon restriction to the $1$-graph of a function $g(q_1,q_2)$, this distribution has Frobenius integrability conditions that end up simplifying to a single PDE $p_2(g_{q_1q_1}+g_{q_2q_2})=0$. Considering the domain $p_2\neq 0$, we get nothing but the Laplace equation on $g$ as our reduced equation:
+    \[\calE\slash G:\quad \quad g_{q_1q_1}+g_{q_2q_2}=0.\]
+
+    Thus, each solution of the Laplace equation can be used to generate a two-parameter family of solutions of the same equation. In fact, we can recover each family by solving a simple system of first-order PDEs. The manifolds $\wt V_g=\mu^{-1}(V_g)$ are integral manifolds of the Cartan distribution and one can restrict the total derivative operators $D_x,D_y$ to $\wt V_g$ to produce 
+    \begin{align}
+        D^g_{x}&=\partial_x+\frac{q_1p_1-q_2p_2}{p_1^2+p_2^2}\partial_{q_1}+\frac{q_1p_2+q_2p_1}{p_1^2+p_2^2}\partial_{q_2},\\
+        D^g_y&=\partial_y+\frac{q_1p_2+q_2p_1}{p_1^2+p_2^2}\partial_{q_1}-\frac{q_1p_1-q_2p_2}{p_1^2+p_2^2}\partial_{q_2},
+    \end{align}
+    where $p_i=g_{q_i}$. $2$-dimensional integral manifolds of the Cartan distribution are given by sections whose total derivatives vanish. For example, if we look for integral manifolds of the form 
+    \[x=\varphi(q_1,q_2),\quad y=\psi(q_1,q_2)\]
+    inside $\wt V_g$, they are constrained by the four conditions 
+    \[D^g_x(x-\varphi)=D^g_y(x-\varphi)=D^g_x(y-\psi)=D^g_y(y-\psi)=0.\]
+    In general, this is a system of first-order PDEs on $\varphi,\psi$. It can be rewritten using the explicit formulas for $D^g_x,D^g_y$. Resolving it w.r.t.\ $\varphi_{q_i},\psi_{q_i}$, we obtain 
+    \begin{align}
+        \varphi_{q_1}&=\left(q_1g_{q_1}-q_2g_{q_2}\right)R, \quad & \varphi_{q_2}&=\left(q_1g_{q_2}+q_2g_{q_1}\right)R,\\ 
+        \psi_{q_1}&=\left(q_1g_{q_2}+q_2g_{q_1}\right)R,\quad &\psi_{q_2}&=\left(q_2g_{q_2}-q_1g_{q_1}\right)R,
+    \end{align}
+    where $R=1/(q_1^2+q_2^2)$. Thus, when $g$ is given, the functions $\varphi$, $\psi$ are obtained by straightforward integration.
+
+    For example, if $g=q_2$, then $\varphi=\arctan(q_2/q_1)+C_1$, $\psi=\ln(q_1^2+q_2^2)/2+C_2$. Coming back to the standard coordinates, we have the following relations valid on $\wt V_g$ (where $g=q_2$):
+    \begin{gather}
+        u=q,\quad r=-t,\quad r=-q,\quad s=p,\\
+        C_1+x=\arctan\frac{q}{p},\quad C_2+y=\frac12\ln(p^2+q^2),
+    \end{gather}
+    where $C_1,C_2\in\bbR$. Expressing $q=u$ via $x,y$, we shall obtain the desired two-parameter family of harmonic functions:
+    \[u=\rme^{y+C_2}\sin (x+C_1).\]
+\end{example}
+
+
+\begin{example}[{{\cite[Example~3.6.3]{Kras}}}]
+    The same Laplace equation $\calE=\{r+t=0\}$ on $\rmJ^2(\bbR^2,\bbR)$ also has a symmetry group generated by $X_{x}=\partial_p+y\partial_u$ and $X_y=\partial_q+y\partial_u$. Repeating the procedure from the preceding example, one finds that the quotient equation again coincides with the Laplace equation. To any solution $g$ of the quotient equation there corresponds a two-parameter family of the initial one, found by solving the following system of equations:
+    \begin{gather}
+        u=g(x,y)+xp+yq,\quad t=-r,\quad r=-\frac{xg_x-yg_y}{x^2+y^2},\quad s=-\frac{yg_x+xg_y}{x^2+y^2},\\
+        p=\varphi(x,y)+C_1,\quad q=\psi(x,y)+C_2,
+    \end{gather}
+    where $C_1,C_2\in\bbR$ are arbitrary. In turn, the functions $\varphi,\psi$ are determined by the following relations:
+    \begin{gather}
+        g_x \dd x+g_y\dd y+x\dd p+u\dd q=x\dd(p-\varphi)+y\dd(q-\psi),\\
+        (x^2+y^2)\dd p+(xg_x-yg_y)\dd x+(xg_y+yg_x)\dd y=(x^2+y^2)\dd(p-\varphi).
+    \end{gather}
+    For example, if $g=x$, we obtain the following two-parameter family of harmonic functions:
+    \[u=x\left(C_1-\frac12\ln(x^2+y^2)\right)+y\left(C_2+\arctan\frac{y}{x}\right).\]
+\end{example}
+
+
+\begin{example}[{{\cite[Example~3.6.4]{Kras}}}]
     Consider the heat equation in $1+1$ dimensions on $u(x,t)$,
     \[u_t=u_{xx}.\]
     Choose the group of translations along the independent variables, generated by $\partial_t$ and $\partial_x$. In suitable coordinates $y,z,v$, the quotient equation is a quasilinear parabolic equation of the form 
     \[(yv_y)^2v_{yy}-2(yv_y)(z-yv_z)v_{yz}+(z-yv_z)^2v_{zz}=0.\]
-    On the other hand, if we consider the scaling group $u\mapsto \lambda u$, then the reduced equation on $v=(\ln u)_x$ is the (viscous) Burgers equation
+    On the other hand, if we consider the scaling group $u\mapsto \lambda u$, then the reduced equation on $v=(\ln u)_x$ is the viscous Burgers equation
     \[v_t+vv_x+v_{xx}=0.\]
 \end{example}
-\begin{example}
+\begin{example}[{{\cite[Example~3.6.5]{Kras}}}]
     Consider the viscous Burgers equation 
     \[u_t+uu_x+u_{xx}=0.\]
-    Let $G$ be the Galilean symmetry group generated by $\partial_x$ and $-t\partial_x+\partial_u$. In suitable coordinates $y,z,v$ the quotient equation reads 
-    \[v_{yy}-\frac{v_y^2}{2v}+v_y\frac{y^2}{2v}+\frac{v_z}{2v}-3x=0.\]
+    Let $G$ be the Galilean symmetry group generated by $\partial_x$ and $-t\partial_x+\partial_u$. In suitable coordinates $t,y,v$ the quotient equation reads 
+    \[\frac{v_t}{2v}+v_{yy}-\frac{v_y^2}{2v}+v_y\frac{y^2}{2v}-3x=0.\]
 \end{example}
 
-
-
-
-
-
-
-\section{Invariant differential equations}
-
-The following theorem shows that finding a complete set of differential invariants suffices to classify all differential equations with a given symmetry algebra $\frakg$.
+Since the above procedure is quite cumbersome and rarely leads to any simplification of the differential equation, a more common use of symmetries of a general PDE is for finding its \emph{invariant solutions}. This is done by passing to a reduced equation with fewer independent variables (as above) and recovering invariant solutions by making them independent of the remaining variables. The following theorem is clear.
 
 \begin{thm}
-    Let the differential functions $I_1,\ldots,I_k\in\calI^r(\frakg)$ form a complete set of functionally independent $r$-th order differential invariants of $G$. Then a system of $r$-th order differential equations $\calE$ is invariant under $G$ iff it can be written in terms of the differential invariants:
-    \[\calE:\quad H_\nu(I_1,\ldots,I_k)=0,\quad \nu=1,2,\ldots,R.\]
+    Suppose that a point symmetry group $G$ of an equation $\calE\subset\rmJ^r E$ produces orbits of generic dimension $s$. Then all $G$-invariant solutions of $\calE$ can be found by solving a reduced equation $\calE\slash G$ in $s$ fewer independent variables.
 \end{thm}
 
+For example, given a system of PDEs in two independent variables, its solutions invariant under a one-parameter group (e.g., \emph{traveling wave solutions} in evolution equations in $(t,x)$) can all be found by integrating a system of ODEs. Reduction in the number of independent variables will be possible if the orbit dimension is no higher than the number of independent variables: $s\leq n$. If $s=n$, the reduced system is algebraic, while if $s>n$, there are no invariant solutions. (All of this should be caveated as true only in the generic situation.) In particular, if $s=n-1$, we get a system of ODEs.
+
+Let $G$ be a local Lie group of symmetry transformations with generators $X_1,\ldots,X_s$ and associated generating functions $\varphi^j_1,\ldots,\varphi^j_s$. Then a function is $G$-invariant iff it is a solution to the system of quasilinear first-order PDEs
+\[\varphi^j_l(\bf{x},\bf{p})=0,\quad j=1,\ldots,k,\quad l=1,\ldots,s.\label{eq 178 Gungor}\]
+Any invariant solution will satisfy both the original system $\calE$ and these invariance constraints, which form an overdetermined system of PDEs. The method of symmetry reduction consists of solving (\ref{eq 178 Gungor}) in terms of invariant coordinates and substituting these into the original system. In the final step all non-invariant coordinates will drop out of the resulting reduced system. What remains to derive invariant solutions is to solve the reduced system with fewer independent variables.
+
+Let $G$ be the full (perhaps infinite-dimensional) symmetry group of $\calE$.Given a solution invariant under any subgroup $H<G$, it can be transformed into other $gHg^{-1}$-invariant solutions by arbitrary elements $g\in G$. For example, the stationary solutions $u=f(x)$ of an evolution equation such as the heat equation invariant under the Galilean transformations $X_b=-t\partial_x+\partial_u$ can be conjugated by the Galilean boosts $\rme^{-c X_b}\partial_t\rme^{c X_b}$ to map to traveling wave solutions $u=f(x-ct)$ and vice versa. This motivates one to classify all solutions based on the conjugacy classes of their symmetry groups.
+
+\begin{defn}
+    Let $G$ be a Lie group with Lie algebra $\frakg$. An optimal system of $G$, resp.\ $\frakg$, is a choice of a single representative for each conjugacy class of Lie subgroups of $G$, resp.\ Lie subalgebras of $\frakg$. (Lie subalgebras are conjugated via the action of the adjoint representation, $H\mapsto \Ad_g(H)$.)
+\end{defn}
+
+For a finite-dimensional Lie algebra of dimension $\geq 2$, the construction of an optimal system is in general a complicated problem which can be solved algorithmically in some special cases like when $\frakg$ is a direct or semidirect product of several algebras. For some explicit examples, see \cite{Gungor}.
+
+Consequently, the problem of classifying invariant solutions is tantamount to finding the optimal system of subalgebras. Once this is done, it is sufficient to construct only invariant solutions corresponding to each symmetry algebra present in the representative list (optimal system). All other solutions can be obtained by applying symmetry transformations to the representative classes of solutions. Note that, in principle, this includes even solutions with no symmetries, since the trivial group $\{e\}$ is an element of any optimal system, and finding $\{e\}$-invariant solutions is essentially equivalent to solving the equation completely.
 
 
-The set of $r$-th order scalar differential invariants of $\frakg$ will be denoted by $\calI^r(\frakg)$. This is a real algebra w.r.t.\ the pointwise multiplication of functions, since any function of invariants is an invariant. These sets also satisfy the inclusions 
-\[\calI^0(\frakg)\subset\calI^1(\frakg)\subset\cdots\subset\calI^r(\frakg)\subset\cdots.\]
-The total algebra $\bigcup_{r=0}^\infty \calI^r(\frakg)$ is called the \emph{algebra of (scalar) differential invariants}.
 
 
-\begin{rem}[Reduction to a fiber]
-    In the special case when $\Gamma$ acts transitively on $M$, the problem of computing the differential invariants can be greatly simplified. Locally, we can assume that $\Gamma$ contains all transformations of the form $\bf{x}\mapsto \bf{x}+\bf{x}_0$, so scalar invariants will be independent of $\bf{x}$. Meanwhile, each orbit of $\Gamma$ intersects each fiber of $\pi^r:\rmJ^r E\to M$, so the fiber $(\pi^r)^{-1}(p)$ is divided into disjoint orbits of the prolonged stabilizer group 
-    \[\Gamma^{(r)}_p\coloneqq \{f^{(r)}\mid f\in\Gamma,f(p)=p\}.\]
-    We thus see that there is a one-to-one correspondence between differential invariants of $\Gamma$ on $\rmJ^r E$ and invariants of $\Gamma^{(r)}_p$ on $(\pi^r)^{-1}(p)$. 
-\end{rem}
 
 
-In the context of differential equations, the relevant symmetries take graphs of solutions to graphs of solutions, and differential invariants need to be evaluated only on the graphs of solutions. This leads to the following concept.
+\section{Equivalence of solutions}
+
+
+When it comes to finding not just invariant but also general solutions of a differential equation, one clearly needs to find only one solution from each orbit of the equation's symmetry group. In other words, we declare two different solutions of an equation $\calE$ to be (locally) \emph{equivalent} if there exists a (local) symmetry of the equation $\calE$ that (locally) takes one solution to the other.
+
+\begin{defn}[Equivalence problem for sections]\index{Equivalence problem}
+    Suppose $s_1,s_2$ are two local sections of the bundle $E\overset{\pi}{\to}M$. Suppose we are given a (pseudo)group $G$ acting on $E$. The equivalence problem for these two sections w.r.t.\ $G$ is the problem of finding a transformation $f\in\Gamma$ such that it transforms $s_1$ to $s_2$ (on the domain of $s_1$).
+\end{defn}
+
+To find criteria for equivalence of solutions, we need to study how symmetries of the equation act on them. The symmetries take graphs of solutions to graphs of solutions, and differential invariants need to be evaluated only on the graphs of solutions. This leads to the following concept.
 
 \begin{defn}[Differential invariant of a section]
     Let $s:U\to E$ be a local section of the bundle $E\overset{\pi}{\to}M$ and $I$ a differential invariant of order $r$ of the action of some (pseudo)group $\Gamma$ on $E$. Then the restriction $\restr{I}{\graph^{r}(s)}$ is called a \emph{differential invariant of order $r$ of the section $s$}. As $\rmj^r s:U\to \graph^{r}(s)\subset\rmJ^rE$ is always a diffeomorphism, $\restr{I}{\graph^{r}(s)}$ can be viewed as an object on the domain $U$ of $s$.
 \end{defn}
 
-\begin{defn}[Equivalence problem for sections]\index{Equivalence problem}
-    Suppose $s_1,s_2$ are two local sections of the bundle $E\overset{\pi}{\to}M$. Suppose we are given a pseudogroup $\Gamma$ acting on $E$. The equivalence problem for these two sections w.r.t.\ $\Gamma$ is the problem of finding a transformation $f\in\Gamma$ such that it transforms $s_1$ to $s_2$ (on the domain of $s_1$).
-\end{defn}
 
 In particular, if $f$ realizes the equivalence between $s_1$ and $s_2$, then $f^{(r)}$ transforms any $r$-th order differential invariant $\restr{I}{\graph^{r}(s_1)}$ to $\restr{I}{\graph^{r}(s_2)}$. Thus, the matching of differential invariants of sections gives necessary conditions for equivalence. In many cases, computing the invariants is also sufficient for solving the equivalence problem, i.e., they completely describe the sections \emph{up to the action of $\Gamma$}. Below, we consider such cases.
 
@@ -5214,7 +5364,7 @@ Here the first equation expresses $p$ in coordinates, and the second expresses t
     Recall that the space of integral elements at a point is actually identified with the \emph{prolongation} of the original tableau. In particular, $A_E$ is \emph{not} the tableau of the original system $\calI$, but rather of its prolongation, as we will see in the following \sect s. Thus, its reduced characters should not be confused with those of $\calI$.
 \end{rem}
 
-It is clear that $A_E$ is canonically associated to $E$. Our geometric interpretation is that $A_E$ is canonically identified with the set of integral elements lying over the origin of the linearization of $\calI$ at $E$. Another geometric interpretation of $A_E$ is as follows: we consider the $n$-dimensional integral elements of $\calI$ lying over $m_0$ as a subset $\calV^n(\calI)_{m_0}\subset \Gr_n(\T_{m_0} M)$. It is well known that there is a canonical isomorphism 
+It is clear that $A_E$ is canonically associated to $E$. Our geometric interpretation is that $A_E$ is canonically identified with the set of integral elements lying over the origin of the linearization of $\calI$ at $E$. Another geometric interpretation of $A_E$ is as follows: we consider the $n$-dimensional integral elements of $\calI$ lying over $m_0$ as a subset $\calV^n(\calI)_{m_0}\subset \Gr_n(\T_{m_0} M)$. It is well-known that there is a canonical isomorphism 
 \[\T_E(\Gr_n(\T_{m_0}M))\cong \Hom(E,Q),\]
 and we will show the following.
 
@@ -6179,7 +6329,7 @@ Similarly, the second assertion in Theorem~\ref{thm v.3.15 Bryant} gives $\Xi^\b
     \[\Lambda_0=\{E\in\Gr_n(\bbR^{2n}):E\cap \sfJ(E)\neq \{0\}\}.\]
     In other words, $\Lambda_0$ consists of real $n$-planes that contain at least one \emph{complex line} (i.e., a \emph{real} $\sfJ$-invariant $2$-plane). 
 
-    It is, of course, well known that real $n$-dimensional submanifolds $Y^n\subset \bbC^n$ such that $\T_y Y\cap \sfJ(\T_y Y)=\{0\}$ for every $y\in Y$ are locally determining sets for holomorphic functions. 
+    It is, of course, well-known that real $n$-dimensional submanifolds $Y^n\subset \bbC^n$ such that $\T_y Y\cap \sfJ(\T_y Y)=\{0\}$ for every $y\in Y$ are locally determining sets for holomorphic functions. 
 
     In general we have 
     \[\Lambda_{p,0}=\{E\in\Gr_p(\bbR^{2n})\mid \dim E\cap \sfJ(E)\geq \max(1,2(p-m)+1)\}.\]
@@ -6470,7 +6620,7 @@ Another important theorem by Darboux provides a normal form for \emph{closed $2$
 
 We will later prove the symplectic case of this theorem, which is just the case of $2k=n$, i.e., when $\omega$ is non-degenerate. By combining the three theorems above, one can further simplify the normal form for $\theta$.
 
-\begin{thm}[Darboux]
+\begin{thm}[Darboux]\label{thm darboux normal forms}
     Let $\theta\in\Omega^1(M)$ have Pfaff rank $k$ near $m\in M$. Necessarily either $(\dd\theta)^{k+1}$ vanishes at $m$ or it is nonzero near $m$. Then there exist local coordinates $\{w^0,\ldots,w^n\}$ near $m$ such that $\<\theta\>_{\mathrm{diff}}$ is locally generated by 
     \[\wt\theta=\dd w^0+w^{k+1}\dd w^1+\cdots +w^{2k}\dd w^k\]
     (i.e., $\theta$ is locally a nonzero multiple of $\wt\theta$). Moreover, there exist local coordinates $\{x^0,\ldots,x^{n-1}\}$ near $m\in M$ such that
@@ -6832,7 +6982,7 @@ The next two examples deal with curves in Euclidean space of dimension $2$ and h
 
 The final example is a complex analog of the Galilean principle. It has to do with complex curves and complex projective structures on Riemann surfaces. It has higher-dimensional generalizations, but the one-dimensional case is already sufficiently intricate.
 
-\begin{example}[Projective structures and Schwarzian derivatives {{\cite[\S1.7]{Ivey}}}]
+\begin{example}[Projective structures and Schwarzian derivatives {{\cite[\S1.7]{Ivey}}}]\label{ex projective structures and schwarzians}
     Here is an example of a study of curves in a less familiar homogeneous space, the complex projective line $\bbC  P^1$. To find differential invariants in such situations, we generally seek a uniquely defined lift that renders the pullback of the Maurer-Cartan form as simple as possible. Then, after finding differential invariants, we interpret them.
 
     Recall that a \gls{flt} is a map $\CP^1\to \CP^1$ given in terms of the homogeneous coordinates $[z_1:z_2]$ by 
@@ -7785,7 +7935,7 @@ where $\wt\theta^i$ are the standard forms on $\SE_3$ and $\theta^i$ are the fix
     Therefore, there is a $3$-dimensional space of integal elements at each point. But $s_1+2s_2=4>3$, so involution fails and we can't apply the Cartan-K\"aher Theorem, and prolongation is necessary. Another way to see this is to check whether the generic integral line sits in an integral plane. The equations on integral lines are $\wt\theta^1=\theta^1$, $\wt\theta^2=\theta^2$, $\wt\theta^3=0$. On any integral plane $\wt\omega^2_1=\omega^2_1$. The generic integral line does not sit in an integral plane because it doesn't have to satisfy $\wt\omega^2_1=\omega^2_1$.
 \end{example}
 
-The procedure in the last \sect\ where we adjoined the Second Fundamental Form to the system as an indepedent variable is in fact exactly the \emph{first prolongation} of $\calI_{\mathrm{taut}}$. We also call the resulting system the tautological system on $\SE_3\times\bbR^3_{h_{ij}}$ for surfaces in $\bbE^3$. The integral manifolds of this system are still the first-order adapted lifts of arbitrary surfaces in $\bbR^3$, together with the components of the second fundamental form $\{h_{ij}\}$, which we view as coordinates of another space $\bbR^3$. This Pfaffian system $\calI^{(1)}_{\mathrm{taut}}=\<I\>_{\mathrm{diff}}$ is generated by 
+The procedure in the last \sect\ where we adjoined the Second Fundamental Form to the system as an independent variable is in fact exactly the \emph{first prolongation} of $\calI_{\mathrm{taut}}$. We also call the resulting system the tautological system on $\SE_3\times\bbR^3_{h_{ij}}$ for surfaces in $\bbE^3$. The integral manifolds of this system are still the first-order adapted lifts of arbitrary surfaces in $\bbR^3$, together with the components of the second fundamental form $\{h_{ij}\}$, which we view as coordinates of another space $\bbR^3$. This Pfaffian system $\calI^{(1)}_{\mathrm{taut}}=\<I\>_{\mathrm{diff}}$ is generated by 
 \[\begin{pmatrix}
     \vartheta^1\\
     \vartheta^2\\
@@ -8016,8 +8166,8 @@ We can also obtain the following useful formula for the mean curvature in isothe
     \end{pmatrix}\equiv 
     \begin{pmatrix}
         0 & 0\\
-        -dk & -2k\omega^2_1\\
-        -2k\omega^2_1 & dk
+        -\dd k & -2k\omega^2_1\\
+        -2k\omega^2_1 & \dd k
     \end{pmatrix}
     \wedge \begin{pmatrix}
         \theta^1\\\theta^2
@@ -8356,7 +8506,7 @@ on $\SE_3\times \bbR$. Then a Darboux framing along a pseudospherical surface co
 The vanishing of the exterior derivatives modulo $I$ of the last two $1$-forms generating $I$ implies that $\theta^1/\cos u$ and $\theta^2/\sin u$ pull back to be closed $1$-forms on any integral surface. Hence, there exist local coordinates $(t_1,t_2)$ such that 
 \[\theta^1=\cos u\dd t_1,\quad \theta^2=\sin u\dd t_2.\]
 Moreover, 
-\[x\coloneqq (t_1+ t_2)/2,\quad y\coloneqq (t_1-t_2)/2,\] are exactly the arclength parameters along the asymptotic lines. This implies that asymptotic lines form what is called a \emph{Chebyshev net} on the surface: parallel transport of one of the two families of curves along the other preserves it. In other words, opposite edges of the net quadrilaterals have the same length. Thus you can stretch a flexible ``knitted'' square mesh over this surface. Note also that the asymptotic lines are bisected by the lines of curvature.
+\[x\coloneqq (t_1+ t_2)/2,\quad y\coloneqq (t_1-t_2)/2,\] are exactly the arclength parameters along the asymptotic lines. This implies that asymptotic lines form what is called a \emph{Chebyshev net} on the surface: parallel transport of one of the two families of curves along the other preserves it. In other words, opposite edges of the net quadrilaterals have the same length. Thus, one can stretch a flexible ``knitted'' square mesh over this surface. Note also that the asymptotic lines are bisected by the lines of curvature.
 
 Substituting $\dd u=u_x\dd x+u_y\dd y$ into the $2$-forms of the \gls{eds} shows that $\omega_2^1=u_x\dd x-u_y\dd y$ along any integral surface. Then it is easy to see that the structure equation $\dd\omega^1_2=\omega^3_1\wedge\omega^3_2$ (i.e., the Gauss equation) implies that $u$ (or rather $2u$) satisfies \gls{sge}:
 \[u_{xy}=\sin u\cos u.\]
@@ -8877,7 +9027,7 @@ For a much more detailed review of the concept of integrable systems, we direct 
 
 \section{Gauss-Bonnet and Poincar\'e theorems}\label{sec: gauss-bonnet}
 
-We finish this \chap\ with a classical theorem that is a major early milestone in the history of differential geometry due to being the first \emph{global} result of the theory of surfaces. Moreover, it turns out to relate local geometric data (Gauss curvature) to global topological data, which is indepedent of the choice of metric, thus becoming a harbinger of the more modern results about topological invariants constructed out of geometric data.
+We finish this \chap\ with a classical theorem that is a major early milestone in the history of differential geometry due to being the first \emph{global} result of the theory of surfaces. Moreover, it turns out to relate local geometric data (Gauss curvature) to global topological data, which is independent of the choice of metric, thus becoming a harbinger of the more modern results about topological invariants constructed out of geometric data.
 
 
 Suppose $\frake=(e_1,e_2)$ and $\wt\frake=(\wt e_1,\wt e_2)$ are two local orthonormal frames on a Riemannian surface $(\Sigma,\sfg)$. They are related by $\wt\frake=\frake\cdot R$ for some function $R:\Sigma\to \SO_2$. We have seen that the \emph{local connection form} $\omega\coloneqq\frake^\ast\omega^2_1$ is intrinsic and can be expressed using an isometric immersion of $\Sigma$ into $\bbE^3$ via 
