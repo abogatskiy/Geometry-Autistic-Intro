@@ -3869,7 +3869,7 @@ Since left and right translations on $H$ commute, the action of $H$ on $P\times 
         \item A morphism $\vartheta:P\to P'$ of principal $G$-bundles induces a morphism of associated principal $H$-bundles via
         \[P^{[\lambda]}\to P^{\prime[\lambda]},\quad [(p,h)]\mapsto \left[\left(\vartheta(p),h\right)\right].\]
         \item Any $f:N\to M$ smooth map induces a natural vertical isomorphism
-        \[f^\ast\left(P^{[\lambda]}\right)\to (f^\ast P)^{[\lambda]},\quad \left(m,[(p,h)]\right)\mapsto \left[\left((m,p),h\right)\right].\]
+        \[f^\ast\left(P^{[\lambda]}\right)\to (f^\ast P)^{[\lambda]},\quad \left(n,[(p,h)]\right)\mapsto \left[\left((n,p),h\right)\right],\quad n\in N,p\in P,h\in H.\]
         \item If $(P_i,G_i,\lambda_i,H_i)$ are two tuples as above, then the rearrangement $(P_1\times P_2)\times(H_1\times H_2)\to (P_1\times H_1)\times(P_2\times H_2)$ induces a vertical isomorphism
         \[\left(P_1\times P_2\right)^{[\lambda_1\times\lambda_2]}\cong P_1^{[\lambda_1]}\times P_2^{[\lambda_2]}.\]
     \end{enumerate}
@@ -3904,7 +3904,7 @@ Therefore, in this special case, we have a functor of the categories of principa
         \item Recall the principal Stiefel $\calO_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$, cf.\ (\ref{eq Stiefel pfb}). Its projection map takes an orthonormal $k$-frame and produces the $k$-dimensional subspace $W$ of $\bbK^n$ spanned by that $k$-frame. Meanwhile, this very subspace is the fiber above $W\in \Gr_k(\bbK^n)$ in the tautological bundle $\gamma_k(\bbK^n)\to \Gr_k(\bbK^n)$. It is obvious that the transition functions of these two bundles coincide. Therefore, the tautological bundle is associated to the Stiefel principal bundle:\index{Stiefel manifolds}\index{Grassmannian manifolds}
         \[\gamma_k(\bbK^n)=\St_k(\bbK^n)\times^{\calO_k}\bbK^k.\]
 
-        \item The structure group of the tangent bundle $\T\bbS^n$ can be reduced to $\Or_n$, and the corresponding orthonormal frame bundle $\Fr_{\SO_n}(\T\bbS^n)$ is the space of pairs $(x,\underline{v})$ where $x\in\bbS^n\subset\bbR^{n+1}$ and $\underline{v}$ is an orthonormal $n$-frame in $\bbR^{n+1}$ perpendicular to $x$. But this space is nothing but $\St_{n+1}(\bbR^{n+1})=\Or_{n+1}$. This once again confirms that $\bbS^n$ is the homogeneous space $\Or_{n+1}\slash \Or_n$.
+        \item The structure group of the tangent bundle $\T\bbS^n$ can be reduced to $\Or_n$, and the corresponding orthonormal frame bundle $\Fr_{\SO_n}(\T\bbS^n)$ is the space of pairs $(x,\underline{v})$ where $x\in\bbS^n\subset\bbR^{n+1}$ and $\underline{v}$ is an orthonormal $n$-frame in $\bbR^{n+1}$ perpendicular to $x$. But this space is nothing but $\St_{n+1}(\bbR^{n+1})$, which is a $\Or_{n+1}$-torsor. This once again confirms that $\bbS^n$ is the homogeneous space $\Or_{n+1}\slash \Or_n$.
 
         \item The Grassmannian of a rank-$n$ \gls{vb} $E$ can be defined as \index{Grassmann bundle!of a vector bundle}
         \[\Gr_k(E)\coloneqq \Fr(E)\times^{\GL_n(\bbK)} \Gr_k(\bbK^n),\]
@@ -3918,7 +3918,7 @@ Therefore, in this special case, we have a functor of the categories of principa
 \begin{example}[$k$-th order frame bundle]
     Recall Definition~\ref{def jet bundles} of jet bundles. We can naturally identify the set $\rmJ^1_0(\bbR^n,\bbR^n)_0^\times$ of invertible $1$-jets on $\bbR^n$ with source and target zero with the group $\GL_n(\bbR)$. This leads to an interpretation of the linear frame bundle $\Fr(\T M)$ of an $n$-dimensional manifold $M$ as the space $\rmJ^1_0(\bbR^n,M)^\times$ of invertible $1$-jets from $\bbR^n$ to $M$ with source $0$.
 
-    More generally, the $k$-th order frame bundle $\Fr^n(\T M)$ is defined as $\rmJ^k_0(\bbR^n,M)^\times$, so it consists of $k$-jets of local charts. Its structure group, as before, is the jet group $\GL^k_n(\bbR)$, and the principal right action is given by jet composition from the right. The $k$-th order tangent bundle $\rmJ^k_0(\bbR,M)$ is associated to $\Fr^k(\T M)$ w.r.t.\ the obvious left action of $\GL^k_n(\bbR)$ on $F=\rmJ^k_0(\bbR,\bbR^n)$.
+    More generally, the $r$-th order frame bundle $\Fr^r(\T M)$ is defined as $\rmJ^r_0(\bbR^n,M)^\times$, so it consists of $r$-jets of local charts. Its structure group, as before, is the jet group $\GL^r_n(\bbR)$, and the principal right action is given by jet composition from the right. The $r$-th order tangent bundle $\rmJ^r_0(\bbR,M)$ is associated to $\Fr^r(\T M)$ w.r.t.\ the obvious left action of $\GL^r_n(\bbR)$ on $F=\rmJ^r_0(\bbR,\bbR^n)$.
 \end{example}
 
 
@@ -3926,23 +3926,23 @@ Therefore, in this special case, we have a functor of the categories of principa
     Let $G$ be a real Lie group and let $\pi:P=G\times G\to G$, $\pi(g_1,g_2)=g_1g_2^{-1}$, be the principal $G$-bundle with the ``diagonal'' principal right $G$-action: $\Phi_g(g_1,g_2)=(g_1g,g_2g)$.  It is trivial because there is a global section given by $s:[(g_1,g_2)]\mapsto (g_1g_2^{-1},e)$. The Lie subalgebra corresponding to the $G$-action on $P$ is 
     \[\frakh=\{(A,A)\in \frakg\times\frakg\mid A\in\frakg\}.\]
 
-    Now consider the adjoint representation $G\overset{\Ad}{\acts}\frakg$ and the associated bundle $P^{[\Ad]}=P\times^G \frakg$. Since $P$ is trivial, this bundle is also trivial, and hence isomorphic to the tangent bundle $\T G$. The isomorphism is not unique, but by identifying $\T G$ with $G\times\frakg$ using the left-invariant Maurer-Cartan form, every such isomorphism can be seen as a global trivialization, hence uniquely determined by a global section of $P$. The isomorphism corresponding to the global section $s$ defined above is the following:
-    \begin{gather}
-    	\vartheta: \T G\to P \times^G \frakg,\quad (g,X)\mapsto [(g,e),\rmL_{g\ast}^{-1}X],\\
-    	\vartheta^{-1}: P\times^G \frakg\to \T G,\quad [(g_1,g_2),A]\mapsto \rmL_{g_1\ast}\rmR_{g_2\ast}^{-1}  A.
-    \end{gather}
-    This example is continued in Example~\ref{ex TG, part 2}.
+    Now consider the adjoint representation $G\overset{\Ad}{\acts}\frakg$ and the associated bundle $P^{[\Ad]}=P\times^G \frakg$. Since $P$ is trivial, this bundle is also trivial, and hence isomorphic to the tangent bundle $\T G$. The isomorphism is not unique, but by identifying $\T G$ with $G\times\frakg$ using the left-invariant Maurer-Cartan form (denote this global trivialization by $\chi:\T G\to G\times \frakg$), every such isomorphism can be seen as a global trivialization, hence uniquely determined by a global section of $P$. The isomorphism corresponding to the global section $s$ defined above is the following:
+    \begin{align}
+    	\vartheta&: \T G\to P \times^G \frakg,&\quad (g,X)\mapsto \left[\left(s(g),\chi(X)\right)\right]&=\left[\left((g,e),\rmL_{g\ast}^{-1}X\right)\right],\\
+    	\vartheta^{-1}&: P\times^G \frakg\to \T G,&\quad \left[\left((g_1,g_2),A\right)\right]&\mapsto \left(g_1g_2^{-1},\rmL_{g_1\ast}\rmR_{g_2\ast}^{-1}  A\right).
+    \end{align}
+    In conclusion, the structure (bundle atlas) of the tangent bundle $\T G$ can be chosen so that its transition functions take values in $G$ itself and act on the typical fiber $\frakg$ via the adjoint representation. The usefulness of this representation is at this point unclear because $\T G$ is a trivial bundle, so, in principle, one could choose an arbitrary structure group for it (in particular, $\{e\}$). This example will be continued in Example~\ref{ex TG, part 2}, where the intent behind this construction will start to become more clear.
 \end{example}
 
 
 \begin{defn}[Natural bundle]\label{def natural bundle}\index{Natural bundle}
-    A natural bundle $\bf{F}$ on the category $\calM_n$ of $n$-dimensional smooth manifolds and local diffeomorphisms is a functor assigning to any $n$-manifold $N$ a \gls{fb} $\pi_N:\bf{F}(N)\to N$ and to any local diffeomorphism $f:N_1\to N_2$ a bundle morphism $\bf{F}(f):\bf{F}(N_1)\to \bf{F}(N_2)$ with base map $f$, i.e., such that $\pi_{N_2}\circ \bf{F}(f)=f\circ \pi_{N_2}$. 
+    A natural bundle $\bf{F}$ on the category $\calM_n$ of $n$-dimensional smooth manifolds and local diffeomorphisms is a functor assigning to any $n$-manifold $N$ a \gls{fb} $\pi_N:\bf{F}(N)\to N$ and to any local diffeomorphism $f:N_1\to N_2$ a bundle morphism $\bf{F}(f):\bf{F}(N_1)\to \bf{F}(N_2)$ with base map $f$, i.e., such that $\pi_{N_2}\circ \bf{F}(f)=f\circ \pi_{N_1}$. 
 
     One often requires the following extra properties:
     \begin{enumerate}[label=(\alph*)]
-        \item $\bf{F}$ is \emph{local}, i.e., for any inclusion $i:U\hookrightarrow N$ of an open subset, $\bf{F}(i)$ is the inclusion $\pi^{-1}_N(U)\hookrightarrow F(N)$.
+        \item $\bf{F}$ is \emph{local}, i.e., for any inclusion $i:U\hookrightarrow N$ of an open subset, $\bf{F}(i)$ is the inclusion $\pi^{-1}_N(U)\hookrightarrow \bf{F}(N)$.
     
-        \item $\bf{F}$ is \emph{regular}, i.e., if $M$ is any smooth manifold and $f:M\times N_1\to N_2$ is smooth such that for each $m\in M$ the map $f_m:N_1\to N_2$ defined by $f_m(n)\coloneqq f(m,n)$ is a local diffeomorphism, then the map $M\times \bf{F}(N_1)\to F(N_2)$ defined by $(m,p)\mapsto \bf{F}(f_m)(p)$ is smooth as well. Thus, regularity means that smoothly parametrized families of local diffeomorphisms are transformed into smoothly parametrized families.
+        \item $\bf{F}$ is \emph{regular}, i.e., if $M$ is any smooth manifold and $f:M\times N_1\to N_2$ is smooth such that for each $m\in M$ the map $f_m:N_1\to N_2$ defined by $f_m(n)\coloneqq f(m,n)$ is a local diffeomorphism, then the map $M\times \bf{F}(N_1)\to \bf{F}(N_2)$ defined by $(m,p)\mapsto \bf{F}(f_m)(p)$ is smooth as well. Thus, regularity means that smoothly parametrized families of local diffeomorphisms are transformed into smoothly parametrized families.
     \end{enumerate}
     It turns out that regularity follows from locality and functoriality.
 \end{defn}
@@ -3950,10 +3950,10 @@ Therefore, in this special case, we have a functor of the categories of principa
 For example, all tensor bundle functors $\bbT^r_s$ are local natural bundles. The following intuitive characterization of local natural bundles holds. We omit the proof.
 
 \begin{thm}[{{\cite[Thm.~1.2.8]{Cap}}}]
-    Any local natural bundle on $n$-dimensional manifolds can be obtained as an associated bundle to $\Fr^k (\T M)$ for some $k\geq 0$ w.r.t.\ a left action of the jet group $\GL^k_n(\bbR)\acts F$ on a finite-dimensional manifold $F$.
+    Any local natural bundle on $n$-dimensional manifolds can be obtained as an associated bundle to $\Fr^r (\T M)$ for some $r\geq 0$ w.r.t.\ a left action of the jet group $\GL^r_n(\bbR)\acts F$ on a finite-dimensional manifold $F$.
 \end{thm}
 
-The lowest possible choice for $k$ in this theorem is called the \emph{order of the local natural bundle}. Notice that the composition of the jet prolongation functor $\rmj^k$ with a $r$-th order natural bundle is the $(k+r)$-th order natural bundle $\rmJ^k \bf{F}$.
+The lowest possible choice for $r$ in this theorem is called the \emph{order of the local natural bundle}. In particular, the theorem implies that all first-order natural vector bundles are sums of tensor bundles, which explains their prominence. Notice that the composition of the jet prolongation functor $\rmj^k$ with a $r$-th order natural bundle is the $(k+r)$-th order natural bundle $\rmJ^k \bf{F}$.
 
 
 \PRLsep
@@ -3976,14 +3976,14 @@ This definition can be adapted accordingly to the case of a right action $\sigma
     For a given equivariant map $\wt{s}$, define
     \[s(m)\coloneqq [(p,\wt{s}(p))]=\iota_p(\wt{s}(p)),\label{eq 1.2.11 RS2}\]
     where $p\in \pi^{-1}(m)$. This is a well-defined section of $P\times^G F$ because the equivariance property (\ref{eq 1.2.9 RS2}) implies
-    \[[(\Phi_g(p),\wt{s}(\Phi_g(p)))]=[(\Phi_g(p),\sigma_{g^{-1}}(\wt{s}(p)))]=[(p,\wt{s}(p))]\]
+    \[\left[(\Phi_g(p),\wt{s}(\Phi_g(p)))\right]=\left[(\Phi_g(p),\sigma_{g^{-1}}(\wt{s}(p)))]=[(p,\wt{s}(p))\right]\]
     for all $g\in G$. By definition of $s$, the diagram commutes. Conversely, since $\iota_p$ is a bijection, $\wt{s}$ can be uniquely reconstructed from $s$.
 \end{proof}
 
 \begin{rem}
     Since $F$ is the typical fiber and elements of $P$ are frames for the corresponding fiber of $E$ (cf.\ Example~\ref{ex principal hom spaces}(4)), $\wt{s}$ can be thought of as a ``moving frame'' describing the section $s$. For example, if $F=\bbR^n$, then the values of $\wt{s}(p)$ on $P_m$ are literally the coordinates of $s(m)\in E_m$ in every possible frame for $E_m$. The equivariance of $\wt{s}$ describes the transformations of these coordinates under changes of frames.
 
-    More generally, a moving frame (\emph{rep\`ere mobile}) \index{Moving frames} on a $G$-manifold $X$ is any equivariant function $\varphi:X\to G$, where $G$ acts on itself by translations. Moving frames exist locally iff the action is free and \emph{regular}. The latter means that the orbits form a regular foliation: every point has a system of arbitrarily small neighborhoods whose intersection with every orbit is connected. Obviously principal bundles are a special case of this. Cartan geometries will be a natural generalization.
+    More generally, a moving frame (\emph{rep\`ere mobile}) \index{Moving frames} on a $G$-manifold $X$ is any equivariant function $\varphi:X\to G$, where $G$ acts on itself by translations. Moving frames exist locally iff the action is free and \emph{regular}. The latter means that the orbits form a regular foliation: every point has a system of arbitrarily small neighborhoods whose intersection with every orbit is connected. Obviously principal bundles are a special case of this.
 \end{rem}
 
 \begin{example}[Tangent bundle of a Lie group, part 2]\label{ex TG, part 2}
@@ -4195,7 +4195,7 @@ The last map is generally not surjective.
 
 
 
-\section{Bundle reduction}\label{sec: bundle reduction}
+\section{Bundle reduction and \texorpdfstring{$G$}{G}-structures}\label{sec: bundle reduction}
 
 First we recall our definition of reductions of principal bundles.
 
@@ -4256,7 +4256,7 @@ The following proposition characterizes the isomorphism classes of bundle reduct
     \[\{p\in P:\varphi\circ\vartheta(p)=f\}=\vartheta^{-1}\left(\{p\in P:\varphi(p)=f\}\right)=\vartheta^{-1}(Q_f).\]
 \end{proof}
 
-Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions of a principal bundle $P(M,G)$ to a given closed subgroup $H$ if $G$. To formulate it, we consider the natural action of $G$ on the homogeneous space $G\slash H$ by left translation and build the associated bundle $P\times^G (G\slash H)$, whose total space is $P\slash H$.
+Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions of a principal bundle $P(M,G)$ to a given closed subgroup $H$ of $G$. To formulate it, we consider the natural action of $G$ on the homogeneous space $G\slash H$ by left translation and build the associated bundle $P\times^G (G\slash H)$, whose total space is $P\slash H$.
 
 \begin{cor}[{{\cite[Cor.~1.6.5]{RS2}}}]\label{cor 1.6.5 RS2}
     Reductions of a principal $G$-bundle $P$ to a closed subgroup $H\emb G$ are in a natural one-to-one correspondence with smooth sections of the associated bundle $P\times^G (G\slash H)\cong P\slash H$.
@@ -4308,6 +4308,19 @@ We have previously defined $G$-structures as equivalence classes of $G$-atlases 
 
 As we have shown, every reduction of $\Fr_{\Diff}(E)$ to $G$ can be identified with a section of the bundle $\Fr_{\Diff}(E)\slash G$, which is equivalent to picking a $G$-equivalence class of frames over each point of the base.
 
+\begin{defn}[Geometric structure]\index{Geometric structure}
+    Given a \gls{pfb} $P(M,G)$ and a $G$-manifold $G\acts F$, a geometric structure on $P$ is an equivariant function $\varphi\in \Hom_G(P,F)$, or, equivalently, a section of the associated bundle $s\in \Gamma^\infty(P\times^G F)$. By Proposition~\ref{prop 1.6.2 RS2}, for each element $f\in F$ the geometric structure defines a $G_f$-structure $Q_f=\varphi^{-1}(f)$.
+\end{defn}
+
+\begin{example}
+    We can now rephrase Example~\ref{ex 1.6.6 RS2} as follows. 
+    \begin{enumerate}
+        \item An orientation on a rank $k$ \gls{vb} $E$ is a $\GL_k^+(\bbR)$-structure, and can be defined by the geometric structure given by an arbitrary volume form $\sfv\in \bigwedge^k E^\ast$, since the stabilizer of an element of $\bigwedge^k \bbR^k$ under the action of $\GL_k(\bbR)$ is $\GL_k^+(\bbR)$.
+        \item A metric on the same \gls{vb} $E$ is an $\Or_{p,q}$-structure. A corresponding geometric structure is a metric tensor $\sfg\in \Gamma^\infty\left(\bigodot_{(k,l)}^2 E^\ast\right)$, since the stabilizer of a value of $\sfg$ is isomorphic to $\Or_{p,q}$. 
+        \item A structure of a complex vector bundle is a $\GL_{k/2}(\bbC)$-structure. A corresponding geometric structure is an almost complex structure tensor field $\sfJ\in \End(E)$ such that $\sfJ^2=\id_E$, since the stabilizer of any of its values is isomorphic to $\GL_{k/2}(\bbC)$.
+    \end{enumerate}
+    \'Elie Cartan was the first to realize that essentially all smooth geometric structures can be represented by collections of differential forms (coframes), which can in turn be identified with equivariant functions on frame bundles. This motivates our definition of a geometric structure. We will return to this connection (no pun intended) in \S\ref{sec: connections on G-structures}.
+\end{example}
 
 Now that we have come full circle and finished defining fiber bundles -- a task that we started in \Chap~\ref{chap: Fiber bundles} -- we are ready to start looking at more sophisticated additional structures on them. These structures, in turn, will help us find quantitative criterions for the existence of particular $G$-structures on a given bundle, and eventually classify all bundles in terms of certain topological invariants.
 

@@ -184,7 +184,7 @@ where the left and right arrows are principal $\Gamma$-bundles and the top and b
     If $(\Gamma,G,H)$ is a complete Klein manifold, then the quotient map $\Gamma\bslash G\to \Gamma\bslash G\slash H$ is a principal $H$-bundle.
 \end{cor}
 \begin{proof}
-    Apply Lemma~\ref{lem 3.3.12 Sharpe}, taking $P=G$, and use the left and right translation actions of $\Gamma$ and $H$, respectively. Since $\Gamma$ and $H$ are closed subgroups, these actions are proper. Since $(\Gamma,G,H)$ is a complete Klein manifold, it follows that the action $\Gamma\times(G\slash H)\to G\slash H$ is free and proper. By the preceding lemma, $(\Gamma\bslash G)\times H\to \Gamma\bslash G$ is also free and proper.
+    Apply Lemma~\ref{lem 3.3.12 Sharpe}, taking $P=G$, and use the left and right translation actions of $\Gamma$ and $H$, respectively. Since $\Gamma$ and $H$ are closed subgroups, these actions are proper (cf.\ Example~\ref{ex homogeneous principal bundles}). Since $(\Gamma,G,H)$ is a complete Klein manifold, it follows that the action $\Gamma\times(G\slash H)\to G\slash H$ is free and proper. By the preceding lemma, $(\Gamma\bslash G)\lacts H$ is also free and proper.
 \end{proof}
 
 According to the last exercise, the principal bundle $\Gamma\bslash G\to \Gamma\bslash G\slash H$ is the same as the principal bundle $\Gamma'\bslash G'\to \Gamma'\bslash G'\slash H$, where $G'=G_0\cdot H$ and $\Gamma'=G'\cap\Gamma$.
@@ -404,18 +404,18 @@ The Uniformization Theorem of Riemann Surfaces itself can be proven by reduction
 
 
 \begin{example}[Monopole bundles]\label{ex monopole bundles}\index{Monopole!bundles}\index{Hopf fibration}
-    Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$. Let $m\geq 1$ and $\Gamma=\bbZ_m\subset \U_1$ act on $\bbS^3$ by the restriction of the $\U_1$ action. The space $\Gamma\bslash \bbS^3$ is the loop space $L(m;1)$. We get the principal $\U_1$-bundle
+    Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$. Let $m\geq 1$ and $\Gamma=\bbZ_m\subset \U_1$ act on $\bbS^3$ by the restriction of the $\U_1$ action. The space $\Gamma\bslash \bbS^3$ is the lens space $L(m;1)$ (cf.\ Example~\ref{example Lens spaces}). We get the principal $\U_1$-bundle
     \[L(m;1)\to L(m;1)\slash \U_1=\bbS^2\]
     (since the induced action of $\U_1$ on $L(m;1)$ is trivial).
     Note that the structure groups here are abelian so right and left actions are indistinguishable.
     
     In the standard atlas consisting of two hemispheres (Example~\ref{ex hopf bundle atlas}), the transition function of this new bundle is $\tau_{-+}(z)=z^{-m}$, i.e., this is exactly the $\U_1$-bundle with Chern number $-m$ from Example~\ref{ex circle bundles over S2}. This proves that the lens space is simultaneously $\bbS^3\slash \bbZ_m$ and the gluing of two solid tori, thus solving Exercise~\ref{xca two definitions of lens spaces}. As principal $\U_1$-bundles, these bundles are known as \emph{monopole bundles}.
 
-    We thus have the surjective vertical morphism of principal bundles $\vartheta:\bbS^3\to L(m;1)$ given by the quotient by the $\bbZ_m$-action and the group homomorphism $\lambda:\U_1\to \U_1$ given by the $m$-fold covering of the circle. Note that these bundles are also defined for $m$ negative as the duals (inverse transition functions), or via the inverse $\U_1$-action on $\bbS^3$.
+    We thus have the surjective vertical morphism of principal bundles $\vartheta:\bbS^3\to L(m;1)$ given by the quotient by the $\bbZ_m$-action and the group homomorphism $\lambda:\U_1\to \U_1$ given by the $m$-fold covering of the circle $z\mapsto z^m$. Note that these bundles are also defined for $m$ negative as the duals (inverse transition functions), or via the inverse $\U_1$-action on $\bbS^3$.
 \end{example}
 
 \begin{example}
-    In many cases of interest, a $(G,H)$-structure on $M$ is equivalent to the specification of a $G$-invariant geometric object on $G\slash H$. The most prominent example is a locally homogeneous Riemannian metric. For example, if $X$ is a simply connected Riemannian manifold of constant curvature $K$ and $G$ is its group of isometries with stabilizer $H$, then locally modeling $M$ on $X\cong G\slash H$ is equivalent to giving $M$ a metric of constant curvature $K$.
+    In many cases of interest, namely when the principal bundle can be identified with some $H$-structure, a $(G,H)$-structure on $M$ is equivalent to the specification of a $G$-invariant geometric object on $G\slash H$. The most prominent example is a locally homogeneous Riemannian metric. For example, if $X$ is a simply connected Riemannian manifold of constant curvature $K$ and $G$ is its group of isometries with stabilizer $H$, then locally modeling $M$ on $X\cong G\slash H$ is equivalent to giving $M$ a metric of constant curvature $K$.
 \end{example}
 
 
@@ -2758,6 +2758,154 @@ Note that this leads to complete integrability, provided we can find sufficientl
 %     \[\rmJ^0 \pi=\{u^2=0\}\cap \{u^2\neq 0\}.\]
 %     On the first orbit, $\rank \calD=1$, and on the second $\rank \calD=2$.
 % \end{example}
+
+
+
+
+\section{Equivalence of coframes}
+
+Recall that a local coframe on a manifold $M$ is a maximal collection of pointwise linearly independent local $1$-forms. Alternatively, it is a local section of the coframe bundle $\Fr(\T^\ast M)$. Suppose $(x^1,\ldots,x^n)$ are local coordinates on $M$, so that the coframe $\theta^1,\ldots,\theta^n$ can be written in components as 
+\[\theta^i=\sum_j a^i_j\dd x^j.\]
+The dual frame of vector fields is given by 
+\[\frac{\partial}{\partial\theta^j}=\sum b^j_i \frac{\partial}{\partial x^i},\]
+where the matrix $(b^i_j(x))$ is the inverse of the matrix $(a^i_j(x))$. The frame defines a basis of directional derivatives specified by the coframe. Indeed, the differential of a function can be expressed in the coframe-adapted form 
+\[\dd f=\sum_j \frac{\partial f}{\partial\theta^j}\theta^j.\label{eq 8.2 Olver93}\]
+We will refer to the resulting directional derivatives $\partial f/\partial\theta^j$ as the \emph{coframe derivatives} of $f$. Notably, unlike regular partial derivatives, these derivatives are general vector fields that need not commute.
+
+If $\bm\theta=(\theta^1,\ldots,\theta^n)$ is a coframe, then any the $1$-form can be uniquely written as a linear combination $\omega=h_1\theta^1+\cdots+h_n\theta^n$. Even more, any differential $p$-form $\Omega$ can be uniquely written as a linear combination of $p$-fold exterior products of the coframe elements:
+\[\Omega=\sum_I h_I(x)\theta^{i_1}\wedge\cdots\wedge\theta^{i_p},\]
+where $I$ ranges over strictly increasing multi-indices $1\leq i_1\leq \ldots\leq i_p\leq n$.
+
+\begin{example}
+    The components Maurer-Cartan form $\theta_G$ on a Lie group $G$ w.r.t.\ an arbitrary basis of the Lie algebra comprise a global coframe for $\T^\ast G$.
+\end{example}
+
+Suppose we are given two coframes, one $\bm\theta$ on a manifold $M$, and $\bar{\bm\theta}$ on a manifold $\wb M$ of the \emph{same} dimension $n$. The basic \emph{equivalence problem} for coframes is to determine whether the two coframes can be mapped to each other by a (local) diffeomorphism $F:M\to \wb M$, so that 
+\[F^\ast\wb{\theta}^i=\theta^i,\quad i=1,\ldots,n.\label{eq 8.7 Olver93}\]
+Here we shall only look at \emph{local} equivalence, so $F$ is required to be defined only on a suitable open subset of $M$. Cartan made the fundamental observation that the naturality of the exterior derivative $\dd$ is the key to the solution of the equivalence problem. If (\ref{eq 8.7 Olver93}) holds, then we also have 
+\[F^\ast\dd\wb{\theta}^i=\dd\theta^i,\quad i=1,\ldots,n.\]
+The solution to the coframe equivalence problem lies in the detailed analysis of these differentiated conditions.
+
+Since the $\theta^i$ form a coframe, we can rewrite their exterior derivatives in terms of wedge products of themselves. This produces the fundamental \emph{structure equations}
+\[\dd\theta^i=\sum_{j<k}T^i_{jk}\theta^j\wedge\theta^k,\quad i=1,\ldots,n.\]
+The $n^2(n-1)/2$ \emph{structure functions} $T^i_{jk}(m)=-T^i_{kj}(m)$ are uniquely defined. We note that the structure functions measure the degree to which the coframe derivatives $\partial/\partial\theta^i$ fail to commute:
+\[\left[\frac{\partial}{\partial\theta^j},\frac{\partial}{\partial\theta^k}\right]=-\sum_i T^i_{jk}\frac{\partial}{\partial\theta^i}.\label{eq 8.10 Olver93}\]
+The last two equations are equivalent owing to the formula (\ref{eq prop 4.1.6}) relating differentials and Lie brackets. For example, if $\bm\theta$ is the Maurer-Cartan coframe for a Lie group $G$ relative to some choice of basis for the Lie algebra $\frakg$, then the structure equations coincide with the Maurer-Cartan equations (\ref{eq 5.5.4 RS1 MC in coords}). Thus, in this case, the structure functions agree (up to a sign) with the structure constants for $\frakg$: $T^i_{jk}=-c^i_{jk}$. The commutation formula, therefore, reduces to the standard bracket formula for the Lie algebra.
+
+Any equivalent coframe $\bar{\bm\theta}$ will have its own structure equations 
+\[\dd\wb\theta^i=\sum_{j<k}\wb T^i_{jk}\wb\theta^j\wedge\wb\theta^k,\quad i=1,\ldots,n,\]
+on $\wb M$, and so has its own set of structure functions $\wb T^i_{jk}(\wb m)$. Substituting the two structure equations into the invariance condition $F^\ast \dd \bar{\bm\theta}=\dd \bm\theta$ and recalling the invariance of the coframe elements themselves, $F^\ast \bar{\bm\theta}=\bm\theta$, we find 
+\[\sum_{j<k}T^i_{jk}(m)\theta^j\wedge\theta^k=\dd\theta^i=F^\ast\dd \wb\theta^i=\sum_{j<k}\wb T^i_{jk}(F(m))\theta^j\wedge\theta^k.\]
+Since the $\theta^i$ are linear independent, the coefficients of each $\theta^j\wedge\theta^k$ must agree. This implies the invariance of the structure functions:
+\[\wb T^i_{jk}(\wb m)=T^i_{jk}(m) \quad \text{when}\quad \wb{m}=F(m),\quad i,j,k=1,\ldots,n,\quad j<k.\label{eq 8.12 Olver93}\]
+Therefore, given a coframe, we deduce the existence of intrinsically associated \emph{scalar} invariants provided by the structure functions $T^i_{jk}$. Moreover, the invariance conditions provide an important set of necessary conditions for equivalence. For instance, if a structure equation $T^i_{jk}$ of a coframe $\bm\theta$ is constant, the corresponding structure function $\wb T^i_{jk}$ for any equivalent coframe $\bar{\bm\theta}$ must assume the same constant value. On the other hand, if a structure function is not constant, then it is of less direct use, since its local coordinate formula is \emph{not} invariant. Just because an invariant $I=T^i_{jk}$ has the formula $I=x^2+y^2$ in one coordinate system, and $\wb I=\tan(\wb x-\wb y)$ in another, this says nothing one way or the other as to whether the two coframes are equivalent. As we discuss in detail below, the key is not the invariants themselves, but rather their functional interrelationships.
+
+\begin{example}[{{\cite[Example~8.5]{Olver93}}}]
+    It is instructive to look at the simplest nontrivial case in some detail. A coframe on $M \subset \bbR^2$ consists of a pair of one-forms
+    \begin{align}
+    \theta^1 &= A\dd x + B\dd y, \qquad \theta^2 = C\dd x + D\dd y,
+    \end{align}
+    where $A,B,C,D$ are smooth functions of $x,y$, satisfying $AD-BC \neq 0$, so that $\theta^1 \wedge \theta^2 = (AD-BC)\,dx \wedge dy \neq 0$. The structure equations of the coframe $\bm\theta$ are readily computed:
+    \begin{align}
+    \dd \theta^1 = J\, \theta^1 \wedge \theta^2, \qquad \dd \theta^2 = K\, \theta^1 \wedge \theta^2,
+    \end{align}
+    where the two structure functions are explicitly given by
+    \begin{align}
+    T_{12}^1 = J = \frac{B_x - A_y}{AD-BC}, \qquad T_{12}^2 = K = \frac{D_x - C_y}{AD-BC}.
+    \end{align}
+    Any change of variables $\wb{x} = \xi(x,y)$, $\wb{y} = \eta(x,y)$ must preserve both invariants, meaning that $\wb{J}(\wb{x},\wb{y}) = J(x,y)$, $\wb{K}(\wb{x},\wb{y}) = K(x,y)$, a fact that can be verified by a tedious direct chain rule computation. In particular, the two invariants vanish, $J = K = 0$, if and only if both coframe forms are (locally) exact: $\theta^1 = \dd f$, $\theta^2 = \dd g$ for functions $f,g$. Clearly, any equivalent coframe must also consist of a pair of locally exact forms, and hence have vanishing invariants $\wb{J} = \wb{K} = 0$. More generally, if $J$ and $K$ are constant, then so must be $\wb{J}$ and $\wb{K}$; later we will see that this necessary condition is also sufficient to conclude that the two coframes are equivalent.
+\end{example}
+
+\PRLsep
+
+The structure functions associated with a coframe thus provide us with quite a few invariant functions -- $n^2(n-1)/2$ to be precise -- but that's not all! Suppose $I(m)$ is any scalar invariants, which is mapped to a corresponding invariant $\wb I(\wb m)$ under the given change of variables: $\wb{I}(\wb m)=\wb I(F(m))=I(m)$. Then the differentials $\dd I$ and $\dd \wb{I}$ must also agree: $F^\ast\dd \wb I=\dd I$. On the other hand, we can re-express $\dd I$ and $\dd\wb I$ in terms of the respective coframes; using the definition of the coframe derivatives and the equivalence conditions $F^\ast\bar{\bm\theta}=\bm\theta$, we find 
+\[\sum_j \frac{\partial I}{\partial\theta^j}(m)\theta^j=\dd I(m)=F^\ast\dd\wb{I}(\wb m)=\sum_j \frac{\partial \wb{I}}{\partial \wb\theta^j}(F(m))\theta^j.\] 
+Again, since the $1$-forms $\theta^j$ are pointwise linearly independent, we can conclude that the coframe derivatives of any invariant function are themselves invariant functions:
+\[\frac{\partial \wb{I}}{\partial\wb\theta^j}(\wb m)=\frac{\partial I}{\partial \theta^j}(m)\quad\text{when}\quad \wb m=F(m),\quad j=1,\ldots,n.\]
+Clearly, we can keep taking higher and higher coframe derivatives to obtain invariants of arbitrarily high order: $\partial^2 I/\partial\theta^j\partial\theta^k$, etc., known as the \emph{derived invariants}. Note that, since the coframe derivatives do not, in general, commute, we need to fix out notational convention for the higher-order derived invariants, which will be 
+\[\frac{\partial^2 I}{\partial\theta^j\partial\theta^k}=\frac{\partial}{\partial\theta^j}\left(\frac{\partial I}{\partial \theta^k}\right).\]
+
+Not all of the derived invariants associated with a given invariant are independent. First, the Lie bracket identities (\ref{eq 8.10 Olver93}) allow us to permute coframe derivatives at the expense of introducing lower-order invariants:
+\[\frac{\partial^2 I}{\partial\theta^k\partial\theta^j}-\frac{\partial^2 I}{\partial\theta^j\partial\theta^k}=\sum_i T^i_{jk}\frac{\partial I}{\partial\theta^i}.\]
+Additional identities can be found by writing out the Jacobi identity for the frame vector fields $\partial/\partial\theta^i$ (keeping in mind that $T^i_{jk}$ are not necessarily constant). These reduce to the general \emph{Jacobi identities} for the structure functions of a coframe \index{Equation!Jacobi identity}
+\[\frac{\partial T^i_{jk}}{\partial\theta^l}+\frac{T^i_{kl}}{\partial\theta^j}+\frac{\partial T^i_{lj}}{\partial\theta^k}=\sum_{m=1}^n\left[T^i_{jm}T^m_{kl}+T^i_{km}T^m_{lj}+T^i_{lm}T^m_{jk}\right],\quad 1\leq i,j,k,l\leq n.\]
+Here, $T^i_{kj}=-T^i_{jk}$ and $T^i_{jj}=0$ by convention. For example, in the case of a Maurer-Cartan frame, the structure functions are all constant, and so the general coframe Jacobi identities reduce to the usual Lie algebra Jacobi identities (see Exercise~\ref{xca structure constants}). 
+
+\PRLsep
+
+How do we make effective use of the plethora of invariants that we have found? As remarked above, the invariants themselves, unless constant, are of very little direct use in solving the equivalence problem. Suppose that $I_1,I_2,I_3$ are three invariants in the plain coordinates $\bf{x}$, and $\wb I_1,\wb I_2,\wb I_3$ are the corresponding invariants in the barred coordinates $\wb{\bf x}$. If the original invariants are functionally dependent, say $I_3=H(I_1,I_2)$ for some function $H(z_1,z_2)$ of two abstract arguments, then, by invariance, the barred invariants satisfy the same functional relationship, $I_3=H(\wb I_1,\wb I_2)$ for the \emph{same} function $H$; thus, the function $H$ is an invariant of the problem, which is \emph{completely independent of the coordinates}! We will call the collection of such functional relationships (including the constant ones) the \emph{classifying functions} associated with the coframe. \index{Classifying functions} Clearly, if two coframes are to be equivalent, their classifying functions must all be identical. These conditions amount to a system of PDEs on the structure functions.
+
+The crucial question now is whether these necessary conditions are also sufficient, and, on a more practical level, how many of these conditions must we in fact verify in order to be assured of the equivalence of the two coframes. The complete answer is based on Cartan's theory of \emph{exterior differential systems}. Before stating the general problem, though, we need to be more precise on the nature of classifying functions. In fact, in themselves, they do not provide the complete story, since they ignore common complications such as domains of definition and multi-valuedness, both of which are important. We now describe a more formal approach.
+
+Let us continue by introducing the notation 
+\[T_\sigma\coloneqq \frac{\partial^r T^i_{jk}}{\partial\theta^{l_r}\partial\theta^{l_{r-1}}\cdots\partial\theta^{l_1}},\quad\text{where}\quad \sigma=(i,j,k,l_1,\ldots,l_r),\]
+for the most general \emph{structure invariant} associated with the coframe. The indices $i,j,k,l_\kappa$ run from $1$ to $n$, with $j<k$. The integer $r$ is called the \emph{order} of the derived invariant $T_\sigma$. If two coframes are equivalent via a diffeomorphism $\wb{m}=F(m)$, then the following \emph{invariance equations} are satisfied:
+\[\wb{T}_\sigma(\wb m)=T_\sigma (m),\quad \text{when}\quad \wb{m}=F(m),\label{eq 8.23 Olver93}\]
+for all $\sigma$. As we shall see, the algebraic solvability of the system of invariance equations is, in the ``regular'' case, both necessary and sufficient for the equivalence of the two coframes.
+
+\begin{defn}[Classifying space]
+    The $r$-th order classifying space $K^{(r)}=K^{(r)}(n)$ associated with an $n$-dimensional manifold $M$ is the Euclidean space of dimension $q_r(n)=\frac12 n^2(n-1)\binom{n+r}{n}$, which is parametrized by the coordinates $\bf{z}^{(r)}=(\ldots,z_\sigma,\ldots )$. The entries of $\wb{z}^{(r)}$ are labeled by non-decreasing multi-indices $\sigma=(i,j,k,l_1,\ldots,l_{r'})$, $j<k$, $1\leq l_1\leq l_2\leq \cdots \leq l_{r'}\leq n$, $0\leq r'\leq r$. The $r$-th order \emph{structure map} associated with a coframe $\bm\theta$ on $M$ is the map $\bf{T}^{(r)}:M\to K^{(r)}$ whose components are the structure invariants: $z_\sigma=T_\sigma(m)$, for $\sigma$ of order $\leq r$.\footnote{Note that $K^{(r)}$ forms the fiber of the $r$-th order jet bundle $\rmJ^r\left(\T M\otimes \bigwedge^2 \T^\ast M\right)$. The coframe provides a natural local connection on the anti-symmetric tensor bundle $\T M\otimes \bigwedge^2 \T^\ast M$ of type $(1,2)$ whose fiber coordinates are given by the structure invariants. This allows one to project $K^{(r)}$ and thus define the structure map intrinsically. However, the local definition presented above suffices for practical purposes.}
+\end{defn}
+
+This concept takes care of the fact that not all of the equations in (\ref{eq 8.23 Olver93}) are independent. In particular, the commutation identities (\ref{eq 8.10 Olver93}) allow us to permute the coframe derivatives, so we need only consider the $q_r(n)$ derived invariants corresponding to non-decreasing multi-indices. The Jacobi identities, which must also automatically hold, could be used to further reduce the collection of ``basic'' structure invariants, but we shall ignore them for now.
+
+If $\bm\theta$ and $\bar{\bm\theta}$ are equivalent coframes, the invariance equations must be satisfies, so for each order $r$, the structure maps must have the same image:
+\[\wb{\bf{T}}^{(r)}(\wb{m})=\bf{T}^{(r)}(m),\quad\text{where}\quad \wb{m}=F(m).\]
+
+\begin{defn}
+    The $r$-th order \emph{classifying set} $\scrC^{(r)}=\scrC^{(r)}(\bm\theta,U)$ associated with a coframe $\bm\theta$ an an open subset $U\subset M$ is defined as the image of the structure map $\bf{T}^{(r)}$:
+    \[\scrC^{(r)}(\bm\theta,U)=\bf{T}^{(r)}(U)\subset K^{(r)}.\]
+\end{defn}
+
+We now have the following obvious coordinate-independent necessary condition for equivalence.
+
+\begin{prop}[{{\cite[Prop.~8.11]{Olver93}}}]\label{prop 8.11 Olver93}
+    Suppose $\bm\theta$ and $\bar{\bm\theta}$ are equivalent coframes under $F:M\to \wb M$. Then, for each $r\geq 0$, the $r$-th order classifying sets are the same. Thus, $\scrC^{(r)}(\bm\theta,U)=\scrC^{(r)}(\bar{\bm\theta},\wb U)$, where $U\subset M$ is the domain of $\bm\theta$ and $\wb U=F(U)\subset\wb M$.
+\end{prop}
+
+We now impose an additional condition that ensures that the classifying sets are smooth, which is needed for our basic geometric methods to work.
+
+\begin{defn}[Fully regular coframe]
+    A coframe $\bm\theta$ is called fully regular if, for each $r\geq 0$, the $r$-th order structure map $\bf{T}^{(r)}:M\to K^{(r)}$ is regular.
+\end{defn}
+
+In the regular case, we let 
+\[\rho_r\coloneqq \rank \bf{T}^{(r)}\]  
+be the (constant) rank of the structure map, which is computed as the rank of its Jacobian matrix. By The Regular Level Set Theorem~\ref{thm regular level set}, the classifying set $\scrC^{(r)}$ is a $\rho_r$-dimensional submanifold (possibly with self-intersections) of the classifying space $K^{(r)}$. From now on, to emphasize the regularity assumption, we will refer to $\scrC^{(r)}$ as the $r$-th order \emph{classifying manifold} associated with the coframe $\bm\theta$. Furthermore, $\rho_r$ equals the number of functionally independent structure invariants up to order $r$. Let 
+\[\calF^{(r)}=\calF^{(r)}(\bm\theta)\coloneqq \{T_\sigma\mid \ord(\sigma)\leq r\},\quad r\geq 0,\]
+denote the family of functions consisting of all the structure invariants up to order $r$, so $\calF^{(0)}\subset\calF^{(1)}\subset\cdots$. Then, locally, we can choose $\rho_s$ functionally independent \emph{fundamental structure invariants} $I_\nu=T_{\sigma_\nu}$, $\nu=1,\ldots,\rho_r$, which \emph{generate} the full set of $r$-th order structure invariants $\calF^{(r)}$, in the sense that all other invariants of order $\leq r$ can be expressed as functions of the fundamental ones:
+\[T_\sigma=H_\sigma(I_1,\ldots,I_{\rho_r}),\quad \ord(\sigma)\leq r.\]
+In this way, the invariants $I_1,\ldots,I_{\rho_r}$, furnish local coordinates on the $\rho_r$-dimensional classifying manifold $\scrC^{(r)}$, which can thereby locally identified with an open subset of the graph of the function 
+\[\bf{H}^{(r)}\coloneqq (\ldots,H_\sigma,\ldots).\]
+The components $H_\sigma$ are the classifying functions associated with the coframe, and, in most treatments of the equivalence problem, form the primary focus of interest. However, they are defined only locally and are often globally multivalued, which is why we prefer to focus on the classifying manifold.
+
+Since we are primarily interested in local equivalence of coframes, the classifying manifolds need only agree locally, i.e., in the domain of the equivalence map $F$. Therefore, in view of Proposition~\ref{prop 8.11 Olver93}, necessary conditions for local equivalence of coframes are that, for each $r\geq 0$, their $r$-th order classifying manifolds \emph{overlap} (i.e., their intersection is an open submanifold of both). Moreover, the domain of $F$ will be contained in the preimage under $\bf{T}^{(r)}$ of the overlap $\scrC^{(r)}(\bm\theta)\cap \scrC^{(r)}(\bar{\bm\theta})$, whereas its range is contained in the preimage of the overlap under $\wb{\bf{T}}^{(r)}$. Further, note that the overlapping of the $r$-th order classifying manifolds automatically implies overlapping of all lower-order classifying manifolds.
+
+
+The fundamental theorem underlying the solution to the local equivalence problem for coframes states that, in the fully regular case, these necessary conditions are also sufficient. The obvious difficulty with this criterion is that it requires one to look at an infinite number of manifolds, one for each order $r$. Luckily, as in the rank $0$ case, we can reduce the problem to one of finite order. Since the structure invariants of order $r$ also appear as components of $\bf{T}^{(r+1)}$, the ranks are nondecreasing, $\rho_r\leq \rho_{r+1}$, and bounded by $n=\dim M$. Therefore, the ranks must eventually stabilizer, and, in fact, once they stabilize they remain fixed. 
+
+\begin{prop}[{{\cite[Prop.~8.18]{Olver93}}}]\label{prop 8.18 Olver93}
+    Let $\bm\theta$ be a fully regular coframe, and left $\rho_r$ denote the rank of its $r$-th order structure map $\bf{T}^{(r)}$. The smallest $r$ for which $\rho_r=\rho_{r+1}$ is called the \emph{rank of the coframe}, and we have 
+    \[0\leq \rho_0< \rho_1< \cdots <\rho_r=\rho_{r+1}=\rho_{r+2}=\cdots=r\leq n.\] 
+    The stabilizing rank $r$ will be referred to as the \emph{order of the coframe}. \index{Order of a coframe} \index{Rank of a coframe}
+\end{prop}
+\begin{proof}
+    If we know the classifying function for any structure invariant $T_\sigma$ in terms of some conveniently chosen set of fundamental invariants $I_1,\ldots,I_\rho$, then we automatically know the classifying functions for all derived invariants thereof, and so those coordinates on $K^{(r)}$ are completely redundant for describing the classifying manifold $\scrC^{(r)}(\bm\theta)$. Indeed, given the functional dependency $T_\sigma=H_\sigma(I_1,\ldots,I_\rho)$ specified by the classifying function $H_\sigma(z^1,\ldots,z^\rho)$, we evaluate its differential using the chain rule and formula (\ref{eq 8.2 Olver93}):
+    \[\sum_{i=1}^n\frac{\partial T_\sigma}{\partial\theta^j}\theta^j=\dd T_\sigma=\sum_{\nu=1}^r \frac{\partial H_\sigma}{\partial z^\nu}(I_1,\ldots,I_\rho)\dd I_\nu.\]
+    Since $\dd I_\nu=\sum_j \partial I_\nu/\partial\theta^j\, \theta^j$, the linear independence of the coframe elements $\theta^j$ implies that 
+    \[\frac{\partial T_\sigma}{\partial\theta^j}=\sum_{\nu=1}^\rho\frac{\partial H_\sigma}{\partial z^\nu}(I_1,\ldots,I_\rho)\frac{\partial I_\nu}{\partial\theta^j}.\label{eq 8.37 Olver93}\]
+    Therefore, if we know the classifying functions for the derived invariants of our fundamental set, 
+    \[\frac{\partial I_\nu}{\partial \theta^j}=H_{\nu,j}(I_1,\ldots,I_\rho),\quad \nu=1,\ldots,\rho,\quad j=1,\ldots,n,\]
+    then we automatically know the classifying functions for all the derived invariants $\partial T_\sigma/\partial \theta^j$, and hence they play no role in the analysis of the classifying manifold. 
+    
+    In particular, the chain rule formula (\ref{eq 8.37 Olver93}) shows that the structure functions of order $r$ can be written as linear combinations of first-order derivatives of the fundamental invariants $I_\nu$. If, say, the $I_\nu$ are of orders $\leq r$, and we assume that $\rho_r=\rho_{r+1}$, then the first derivatives of the fundamental invariants are functionally dependent on those fundamental invariants themselves, so the expression for $\partial T_\sigma/\partial\theta^j$ provides the classifying function for $T_{\sigma,j}$ in terms of the same fundamental invariants. This implies that $\rho_{r+1}=\rho_{r+2}$, so the ranks must stabilize as soon as they fail to increase.
+\end{proof}
+
+This theorem is a direct consequence of the Frobenius Theorem and can be seen as a generalization of Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, which deals with rank $0$ coframes.
+
+\begin{thm}[{{\cite[Thm.~8.15]{Olver93}}}]\label{thm 8.15 Olver93}
+    Let $\bm\theta$ and $\bar{\bm\theta}$ be smooth, fully regular coframes defined, respectively, on $n$-dimensional manifolds $M$ and $\wb M$. A local diffeomorphism $F:M\supset U\to \wb{M}$ mapping the coframes to each other, $F^\ast \bar{\bm\theta}=\bm\theta$, exists iff for each $r\geq 0$, their $r$-th order classifying manifolds $\scrC^{(r)}(\bm\theta)$ and $\scrC^{(r)}(\bar{\bm\theta})$ overlap.
+\end{thm}
 
 
 
