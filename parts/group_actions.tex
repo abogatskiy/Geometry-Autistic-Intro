@@ -3667,8 +3667,8 @@ Now we need to specify the notion of morphism of \glspl{pfb}. Recall that a morp
     Let $G_1\acts F_1$ and $G_2\acts F_2$ be two right Lie group actions and let $\lambda:G_1\to G_2$ be a Lie group homomorphism. A smooth map $\varphi:F_1\to F_2$ is called (right) $\lambda$-equivariant if $\varphi(f\cdot g_1)=\varphi(f)\cdot \lambda(g_1)$ for all $f\in F,g_1\in G_1$.
 \end{defn}
 
-\begin{prop}
-    Let $\lambda:G\to G'$ be a Lie group homomorphism and let $G,G'$ act on themselves by right translations. Then a smooth map $\varphi:G\to G'$ is right $\lambda$-equivariant iff it has the form $\varphi(g)=g'\lambda(g)$ for some $g'\in G'$.
+\begin{prop}\label{prop lambda-equiv maps}
+    Let $\lambda:G\to G'$ be a Lie group homomorphism and let $G,G'$ act on themselves by right translations. Then a smooth map $\varphi:G\to G'$ is right $\lambda$-equivariant iff it has the form $\varphi(g)=g'\lambda(g)$ for some $g'\in G'$. In particular, the set of all $\lambda$-equivariant maps between $G$ and $G'$ is a $G'$-torsor.
 \end{prop}
 \begin{proof}
     Let $\varphi$ be right $\lambda$-equivariant. Then
@@ -4002,7 +4002,7 @@ This definition can be adapted accordingly to the case of a right action $\sigma
 
 \section{(*) Orbit spaces of proper actions}
 
-As an application of associated bundles, for the next proposition we briefly go back to the discussion of arbitrary proper Lie group actions and their strata as described in Remark~\ref{rem strata}.
+As an application of associated bundles, for the next proposition we briefly go back to the discussion of arbitrary proper Lie group actions and their strata as described in Remark~\ref{rem strata}. This \sect\ can be safely skipped.
 
 \begin{rem}[{{\cite[Rem.~6.5.8]{RS1}}}]\label{rem 6.5.8 RS1}
     Let $(M,G,\Phi)$ be a proper Lie group action, \gls{wlog} assumed to be a left action. Let $\scrO$ be an orbit and let $m\in\scrO$. The action of the stabilizer $G_m$ on $G$ by right translation defines a right \gls{pfb}. After having turned this into a right \gls{pfb}, we can form the associated real \gls{vb} $G\times^{G_m}\rmN_m\scrO$, where $G_m$ acts on $\rmN_m\scrO$ by the slice representation. The action of $G$ on $G\times\rmN_m\scrO$ by left translation on the first factor induces a natural $G$-vector bundle structure on $G\times^{G_m}\rmN_m\scrO$. As a consequence of Lemma~\ref{lem 6.4.6 RS1}, in this structure,  $G\times^{G_m}\rmN_m\scrO$ is isomorhic to $\rmN\scrO$ (exercise). Thus, every orbit admits a tubular neighborhood taking values in $G\times^{G_m}\rmN_m\scrO$.
@@ -4123,7 +4123,7 @@ This is a \gls{fb} with typical fiber $G$: given local trivializations $(U_\alph
     \pi^{-1}(U_\alpha)\times \pi^{\prime-1}(U_a') \arrow[r,"{(\chi_\alpha,\chi_a')}"]\arrow[d,swap]& U_\alpha\times U_a'\times(G\times G)\arrow[d,"\id_{U_\alpha}\times\id_{U_a'}\times \mu"] \\
     (\pi\times^G\pi ')^{-1}(U_\alpha\times U_a')\arrow[r,swap,"\chi_\alpha\times^G\chi_a'",dashed]& U_\alpha\times U_a'\times G,
     \end{tikzcd}\]
-with $\mu(g,h)=gh^{-1}$, is a diffeomorphism. Indeed, elements of $P\times^G P'$ should be invariant under the simultaneous right $G$-action on $P$ and $P'$ and therefore can be thought of as ``ratios'' $p' p^{-1}$ where $p\in P$ and $p'\in P'$.\footnote{In the case of left principal bundles this would be $p^{-1}p'$).} Clearly such formal combinations are invariant under the right $G$-action and thus accurately represent elements of $P\times^G P'$. Moreover, from this representation it is obvious that the transition functions in this bundle are exactly the pairs $t_{\beta\alpha}\times t_{ba}':U_{\alpha\beta}\times U_{ab}'\to G\times G$ acting on the typical fiber $G$ via $\rmL\times \rmR^{-1}$, so that the transformation law for the local representatives $\{\wh{g}_{\alpha a}\}$ of a (local) section of this bundle reads
+with $\mu(g,h)=gh^{-1}$, is a diffeomorphism. Indeed, elements of $P\times^G P'$ should be invariant under the simultaneous right $G$-action on $P$ and $P'$ and therefore can be thought of as ``ratios'' $p' p^{-1}$ where $p\in P$ and $p'\in P'$.\footnote{In the case of left principal bundles this would be $p^{-1}p'$.} Clearly such formal combinations are invariant under the right $G$-action and thus accurately represent elements of $P\times^G P'$. Moreover, from this representation it is obvious that the transition functions in this bundle are exactly the pairs $t_{\beta\alpha}\times t_{ba}':U_{\alpha\beta}\times U_{ab}'\to G\times G$ acting on the typical fiber $G$ via $\rmL\times \rmR^{-1}$, so that the transformation law for the local representatives $\{\wh{g}_{\alpha a}\}$ of a (local) section of this bundle reads
 \[\wh{g}_{\beta b}(m,m')=t_{\beta\alpha}(m)\wh{g}_{\alpha a}(m,m')t_{ba}'(m')^{-1}.\]
 Now let us further specialize to the case $M=M'$. We can then restrict this bundle over $M\times M$ to the diagonal by defining
 \[\boxed{P\times^G_M P'\coloneqq \Delta^\ast(P\times^G P'),}\]
@@ -4139,9 +4139,9 @@ where $\Delta:M\hookrightarrow M\times M$ is the diagonal embedding map $m\mapst
 \end{rem}
 
 
-We are finally ready to wrap up the discussion from the beginning of \S\ref{sec: assoc bundles}. Recall that we started with a morphism of principal bundles $\vartheta:P\to P'$ with differing structure groups $G,G'$ covering $\theta:M\to M'$ and reduced it to a collection of local $G'$-valued functions $\{\wh{g}_{\alpha a}'\}$ that must satisfy the transformation rule (\ref{eq trans rule for ghat}). By now it should be clear that these functions represent a global section of a bundle whose typical fiber is $G'$ and whose structure group is $G\times G'$ acting on $G'$ via $((h,h'),g')\mapsto h'g'\lambda(h)^{-1}$. Its transition functions are pairs $m\mapsto (t_{\beta\alpha}(m),t_{ba}'(\theta(m)))\in G\times G'$. By comparing with the definitions of associated bundles and pullbacks we conclude that the functions $\{\wh{g}_{\alpha a}'\}$ define a global section of the bundle
-\[\boxed{P^{[\lambda,\theta]}\coloneqq P^{[\lambda]}\times^{G'}_M(\theta^\ast P')\to M.}\]
-This bundle can also be written as an associated bundle $(P\times_M \theta^\ast P')\times^{G\times G'} G'$, or as $(\id_M\times \theta)^\ast(P\times P')\times^{G\times G'}G'$. All of these are easily seen to be isomorphic by comparing the transition functions. The elements of this bundle can be seen informally as ratios $p'\lambda(p)^{-1}$, where $\pi'(p')=\theta(\pi(p))$, which makes the transformation law (\ref{eq trans rule for ghat}) manifest. We thus have
+We are finally ready to drop the assumption that both bundles have the same structure group and wrap up the discussion from the beginning of \S\ref{sec: assoc bundles}. Recall that we started with a morphism of principal bundles $\vartheta:P\to P'$ with differing structure groups $G,G'$ covering $\theta:M\to M'$ and reduced it to a collection of local $G'$-valued functions $\{\wh{g}_{\alpha a}'\}$ that must satisfy the transformation rule (\ref{eq trans rule for ghat}). By now it should be clear that these functions represent a global section of a bundle whose typical fiber is $G'$ and whose structure group is $G\times G'$ acting on $G'$ via $((h,h'),g')\mapsto h'g'\lambda(h)^{-1}$. Its transition functions are pairs $m\mapsto (t_{\beta\alpha}(m),t_{ba}'(\theta(m)))\in G\times G'$. By comparing with the definitions of associated bundles and pullbacks we conclude that the functions $\{\wh{g}_{\alpha a}'\}$ define a global section of the bundle
+\[\boxed{P^{[\lambda,\theta]}\coloneqq P^{[\lambda]}\times^{G'}_M(\theta^\ast P')\to M.}\label{eq bundle of pfb morphisms}\]
+This bundle can also be written as an associated bundle $(P\times_M \theta^\ast P')\times^{G\times G'} G'$, or as $(\id_M\times \theta)^\ast(P\times P')\times^{G\times G'}G'$. All of these are easily seen to be isomorphic by comparing the transition functions. The elements of this bundle can be seen informally as ratios $p'\lambda(p)^{-1}$, where $\pi'(p')=\theta(\pi(p))$. By $p'\lambda(p)^{-1}$ we really mean the equivalence class of $(p',p)\sim (p'\cdot g', p\cdot \lambda(g)^{-1})$. This makes the transformation law (\ref{eq trans rule for ghat}) manifest. We thus have
 \begin{prop}\label{prop pfb morphisms}
     Let $P(G,M)$ and $P'(G',M')$ be \glspl{pfb}, $\lambda:G\to G'$ a Lie group homomorphism, and $\theta:M\to M'$ a smooth map. Then there is a natural bijection between morphisms $P\to P'$ modeled on $\lambda$ and covering $\theta$ and the set of global sections of the bundle $P^{[\lambda,\theta]}$ and also $G\times G'$-equivariant $G'$-valued functions on $P\times_M (\theta^\ast P')$, where $G\times G'$ acts on $G'$ by $((h,h'),g')\mapsto h'g'\lambda(h)^{-1}$:
     \[\Hom_{\lambda,\theta}(P,P')\cong \Gamma^\infty\left(P^{[\lambda,\theta]}\right)\cong \Hom_{G\times G'}(P\times_M (\theta^\ast P'),G').\]
@@ -4163,10 +4163,22 @@ This bundle can also be written as an associated bundle $(P\times_M \theta^\ast 
 This result is very intuitive: $G$-morphisms $P\to P'$ are identified with sections of the ``bundle of ratios $p'p^{-1}$''. Locally, such a section is represented by $G$-valued functions that prescribe how each fiber should be ``twisted''. This also confirms that every $G$-morphism of bundles over the same base is an isomorphism.
 
 \begin{rem}
-    Proposition~\ref{prop 1.2.2 RS2} shows that a morphism of principal bundles, together with an equivariant maps of typical fibers, induces a morphism of associated bundles. It is natural to ask whether every bundle morphism can be obtained this way from some principal bundle morphism. Clearly the answer is no because general bundle morphisms need not be modeled on equivariant maps.
+    Proposition~\ref{prop 1.2.2 RS2} shows that a morphism of principal bundles, together with an equivariant map of typical fibers, induces a morphism of associated bundles. It is natural to ask whether every bundle morphism can be obtained this way from some principal bundle morphism. Clearly the answer is no because general bundle morphisms need not be modeled on equivariant maps.
     
-    Recall that principal bundles are just $\mathsf{LieGr}$-bundles as defined in Definition~\ref{def S-bundle}. One can similarly approach a classification of all morphisms between $\calS$-bundles for arbitrary categories $\calS$ of typical fibers. We notice that the maps $\Phi_{\alpha a}$ with transformation law (\ref{eq transformation of Phiab}) define a $C^\infty(F,F')$-valued $(G\times G')$-equivariant map $\varphi:P\times_M h^\ast P'\to C^\infty(F,F')$, where $P$ and $P'$ are the principal bundles associated to $E$ and $E'$, respectively. The values of this map lie in a $(G\times G')$-orbit of an element of $\calS(F,F')$ (which in the case of principal bundles is the set of homomorphisms $\Hom(G,G')$). Therefore general bundle morphisms can be identified with sections of $(P\times_M h^\ast P')\times^{G\times G'}\calS(F,F')$ (assuming $\calS(F,F')$ carries a sufficiently nice topology). This set is usually very different from the set of morphisms between $P$ and $P'$.
+    Recall that principal bundles are just $\mathsf{LieGr}$-bundles as defined in Definition~\ref{def S-bundle}. One can similarly approach a classification of all morphisms between $\calS$-bundles for arbitrary categories $\calS$ of typical fibers. We notice that the maps $\Phi_{\alpha a}$ with transformation law (\ref{eq transformation of Phiab}) define a $C^\infty(F,F')$-valued $(G\times G')$-equivariant map $\varphi:P\times_M \underline{h}^\ast P'\to C^\infty(F,F')$, where $P$ and $P'$ are the principal bundles associated to $E$ and $E'$, respectively. The values of this map on each fiber of the bundle must lie in a particular $(G\times G')$-orbit $\scrO_f$ of an element $f\in \calS(F,F')$ (but $f$ may change with the point $m \in M$). Therefore, general bundle morphisms whose base map is $\underline{h}:M\to M'$ can be identified with sections of the (in general, topological) bundle
+    \[\boxed{(P\times_M \underline{h}^\ast P')\times^{G\times G'}\calS(F,F')\to M,}\] 
+    whereas the morphisms modeled on a particular map $f:F\to F'$ (for example, constant rank morphisms of \glspl{vb}) can be identified with sections of the smooth bundle
+    \[\boxed{(P\times_M \underline{h}^\ast P')\times^{G\times G'}\scrO_f\to M}\] 
+    (assuming $\calS(F,F')$ and $\scrO_f$ carry sufficiently nice topologies). These sets are usually very different from the sets of morphisms between $P$ and $P'$. 
+    
+    In the case of \glspl{pfb}, we have $F=G$, $F'=G'$, and $f=\lambda$ is a homomorphism, so $\scrO_\lambda$ is the set of $\lambda$-equivariant maps, which is diffeomorphic to $G'$ by Proposition~\ref{prop lambda-equiv maps}. Thus, the last formula agrees with (\ref{eq bundle of pfb morphisms}).
 \end{rem}
+
+We have thus managed to describe all morphisms between completely arbitrary \glspl{fb} as sections of other \glspl{fb}, which makes the study of spaces of such morphisms much easier.
+
+\PRLsep
+
+Let us now return to morphisms of principal bundles. Vertical automorphisms of a principal bundle play a particularly big role in applications such as physics and have a special name.
 
 \begin{defn}[Gauge transformations]\index{Gauge transformation}\index{Gauge group}
     Let $P\overset{\pi}{\to}M$ be a principal $G$-bundle. Its group of automorphisms in the category $\PFB^G_M$, i.e., vertical bundle automorphisms, is denoted 
@@ -4275,7 +4287,7 @@ Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions
         \begin{enumerate}
             \item If $\bbK=\bbR$, then a bundle metric can be viewed as a section of the associated bundle
             \[\Fr(E)\times^{\GL_n(\bbR)} \bigodot^2(\bbR^n)^\ast,\]
-            where $\bigodot^2$ denotes the symmetric tensor square. By the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $\bigodot^2_{(k,l)}(\bbR^n)^\ast< \bigodot^2(\bbR^n)^\ast$ consisting of elements of rank $n=k+l$ and signature $(k,l)$ and the stabilizer of the element $\eta=\rmI_k\oplus (-\rmI_l)$ is $\Or_{k,l}$. Thus
+            where $\bigodot^2$ denotes the symmetric tensor square. By the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $\bigodot^2_{(k,l)}(\bbR^n)^\ast< \bigodot^2(\bbR^n)^\ast$ consisting of elements of rank $n=k+l$ and signature $(k,l)$, and the stabilizer of the element $\eta=\rmI_k\oplus (-\rmI_l)$ is $\Or_{k,l}$. Thus
             \[\GL_n(\bbR)\slash \Or_{k,l}\cong \bigodot^2_{(k,l)}(\bbR^n)^\ast,\]
             and $E$ admits a fiber metric with signature $(k,l)$ iff $\Fr(E)$ is reducible to a principal $\Or_{k,l}$-bundle. The latter is the bundle of orthonormal frames $\Fr_{\Or_{k,l}}(E,\sfh)$. Note that specifying such a reduction is equivalent to specifying a bundle metric (section of the associated bundle) according to Proposition~\ref{prop 1.6.1 RS2}, or alternatively a metric ($f$ in the language of Proposition~\ref{prop 1.6.2 RS2}) on the model fiber plus an equivariant $\bigodot^2_{(k,l)}(\bbR^n)^\ast$-valued (metric-valued) function on the frame bundle.
 
