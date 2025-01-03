@@ -393,7 +393,7 @@ Our definition of general connections so far hasn't taken into account any $G$-s
 We start by examining general connections on principal bundles before we narrow down a natural special class of such connections. In this \sect\ we assume that $(P\overset{\pi}{\to}M,G,\Phi)$ is a right principal $G$-bundle with the principal right action $\Phi$. This action induces an action of the Lie algebra $\frakg=\Lief G$, given by the homomorphism $\frakg\to \fX(P)$, $A\mapsto A_\ast$ (see \S\ref{sec Killing vectors}). Recall that the space $\Gamma^\infty(\calV P)$ of vertical vector fields forms a Lie subalgebra of $\fX(P)$. Since the orbits of $\Phi$ are exactly the fibers of $P$, we have actually constructed a Lie algebra homomorphism $\frakg\to \Gamma^\infty(\calV P)$. As we now show, this map actually trivializes $\calV P$, much in the same way as the Maurer-Cartan form trivializes the tangent bundle of a Lie group. The triviality of $\calV P$ is a key property of principal bundles.
 
 \begin{prop}[{{\cite[Lem.~1.3.1]{RS2}}}]\label{lem 1.3.1 RS2}
-    The map $\psi:P\times\frakg\to \calV P$ given by $(p,A)\mapsto A_\ast(p)$ is an isomorphism of \glspl{vb} over $P$. Hence, $\psi^{-1}$ is a global trivialization for $VP$.
+    The map $\psi:P\times\frakg\to \calV P$ given by $(p,A)\mapsto A_\ast(p)$ is an isomorphism of \glspl{vb} over $P$. Hence, $\psi^{-1}$ is a global trivialization for $\calV P$.
 \end{prop}
 \begin{proof}
     $\psi$ clearly respects the fibers since $A_\ast(p)\in \calV_pP$, so it covers the identity on $P$. It is also fiberwise linear. Now let $p\in P$ and $(U,\chi)$ be a trivialization of $P$ around $p$. We have $\psi(p,A)=\Phi^p_{\ast}(A)$. Note that $\Phi^p$ is a diffeomorphism $G\to P_p$. Therefore $\Phi^{p}_\ast:\frakg\to \calV_pP$ is an isomorphism of vector spaces. $\psi$ is obviously smooth, as $\psi(p,A)=\Phi^p_\ast(A)=\Phi_\ast(0_p,A)$, where $0_p\in T_pP$ is the origin. Since $\psi$ is a smooth vertical bundle morphism that is a fiberwise diffeomorphism, it is a bundle isomorphism.
@@ -2004,7 +2004,7 @@ To summarize, we have the following.
 
 
 
-\chapter{Affine Structures}
+\chapter{Affine Structures}\label{ch affine structures}
 
 
 \section{Affine connections}
@@ -2652,7 +2652,7 @@ In \S\ref{sec: bundle reduction} we have defined $G$-structures and compatible c
 \begin{defn}[$G$-structure on a manifold]
     Let $M$ be a smooth manifold of dimension $n$.
     \begin{enumerate}
-        \item A (first-order) $G$-structure of order $r$ on $M$ is a bundle reduction $P\subset \Fr(\T M)$ of the frame bundle to a Lie subgroup $G< \GL_n(\bbR)$.
+        \item A (first-order) $G$-structure on $M$ is a bundle reduction $P\subset \Fr(\T M)$ of the frame bundle to a Lie subgroup $G< \GL_n(\bbR)$. Similarly, an $G$-structure of order $r$ is a reduction of the $r$-th order frame bundle $\Fr^r(\T M)$ to $G<\GL_n^r(\bbR)$.
         \item A $G$-structure $P$ is called \emph{integrable} if for every $m\in M$ there exists a local chart $(U,\kappa)$ with local coordinates $x^i$ such that the induced holonomic frame $\{\partial_i\}$ is a local section of $P$. Such local coordinates are called admissible.
         \item Let $f:M\to M$ be a diffeomorphism. If $f_\ast:\T M\to \T M$ leaves $P$ invariant, then $f$ is called an automorphism of the $G$-structure.
     \end{enumerate}
@@ -2660,10 +2660,8 @@ In \S\ref{sec: bundle reduction} we have defined $G$-structures and compatible c
 
 Recall that by Corollary~\ref{cor 1.6.5 RS2}, reductions of $\Fr(\T M)$ to $G<\GL_n(\bbR)$ are in one-to-one correspondence with smooth sections of the associated bundle $\Fr(\T M)\times^{\GL_n(\bbR)}(\GL_n(\bbR)\slash G)$, or, equivalently, with elements of $\Hom_{\GL_n(\bbR)}(\Fr(\T M),\GL_n(\bbR)\slash G)$. Thus, the existence of a $G$-structure is a topological problem that can be dealt with by applying methods of obstruction theory, as we will see in the future. In particular, if $\GL_n(\bbR)\slash H$ is contractible, then a $G$-structure certainly exists. Note that, geometrically, a $G$-structure should be viewed as a bundle of distinguished frames on $M$.
 
-\begin{rem}\label{rem G-structure as soldering}
-    Clearly, for a given $G$-structure $P$, we may pull back (or restrict) the soldering form $\theta$ of $\Fr(\T M)$ to $P$, and, thus, for any connection $\omega$ on $P$ we have a torsion $2$-form $\Theta$ on $P$ defined by (\ref{eq 2.1.10 RS2}). Denoting the reduction morphism by $i:P\hookrightarrow \Fr(\T M)$, the soldering form on $P$ is $i^\ast\theta$. For given $m\in M$ and $p\in P_m$, consider the map 
-    \[\chi_p:\T_m M\to \bbR^n,\quad X\mapsto (i^\ast\theta)_p(X^\ast),\]
-    where $X^\ast$ is an arbitrary lift of $X$ to $p$. This is an isomorphism, and hence can be identified with a unique frame $u\in \Fr(\T M)$ such that $\iota_u^\vartheta=\chi_p^{-1}$. Therefore, we can recover the reduction $i:p\mapsto u$ from the soldering form on $P$. Thus, writing simply $\theta$ for $i^\ast\theta$, a first-order $G$-structure on $M$ can be identified with a tuple $(P\to M,\lambda,\theta)$, where $P$ is a principal $G$-bundle, $\lambda:G\to \GL_n(\bbR^n)$ is a homomorphism, and $\theta\in \Omega^1_{\hor}(P;\bbR^n)^{\sigma_0^n\circ\lambda}$ is a soldering form.
+\begin{rem}
+    Clearly, for a given $G$-structure $P$, we may pull back (or restrict) the soldering form $\theta$ of $\Fr(\T M)$ to $P$, and, thus, for any connection $\omega$ on $P$ we have a torsion $2$-form $\Theta$ on $P$ defined by (\ref{eq 2.1.10 RS2}). Recall from Remark~\ref{rem G-structure as soldering} that a first-order $G$-structure on $M$ can be identified with a tuple $(P\to M,\lambda,\theta)$, where $P$ is a principal $G$-bundle, $\lambda:G\to \GL_n(\bbR^n)$ is a homomorphism, and $\theta\in \Omega^1_{\hor}(P;\bbR^n)^{\sigma_0^n\circ\lambda}$ is a soldering form.
 \end{rem}
 
 \begin{rem}
@@ -2988,7 +2986,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 
 
 
-\section{Equivalence problem}
+\section{Equivalence problem \texorpdfstring{\ucmark}{}}
 
 Cartan's \emph{equivalence problem}, generalizing questions posed earlier by Gauss and Riemann, poses the following very general question: given two geometric structures (a pair of Riemannian manifolds, a pair of manifolds with a collection of foliations, a pair of manifolds with certain differential equations on them, etc.), does there exist a diffeomorphism of those two manifolds that induces an isomorphism of the structures? In particular, what are the \emph{differential invariants} of those structures that determine the local existence of such a diffeomorphism? 
 
@@ -3546,7 +3544,7 @@ Lastly, we note the obvious isomorphisms under swapping the sign of the entire m
 
 
 
-\chapter{Cartan Geometry \texorpdfstring{\ucmark}{}}
+\chapter{Cartan Geometry \texorpdfstring{\ucmark}{}}\label{ch: cartan geom}
 
 
 Our encounter with geometric structures on manifolds started with Lie groups, in which we saw that the Maurer-Cartan equation provided the basis for the entire Lie group structure, and hence the theory of Lie groups. Then, separately, we developed the theory of principal connections and saw that the structure equation for the curvature is very reminiscent of the Maurer-Cartan equation, thus suggesting that all connections are, in some way, ``deformations'' of canonical geometries on Lie groups and their homogeneous spaces. Nevertheless, the Maurer-Cartan form itself couldn't exactly be interpreted as neither a connection form nor a soldering form. It is very close to being a soldering form in its relation to the torsion of canonical flat connections (Example~\ref{ex connections on G, part 6}), whereas the only way to turn it into a principal connection is to project it onto a Lie subalgebra in a reductive Klein geometry (Example~\ref{ex 1.3.19 RS2}). Cartan geometry will finally unify these approaches, allow us to intepret the Maurer-Cartan form as a fundamental example of a general geometric structure, and all other geometric structures that we've seen so far as ``deformations'' of the ``model structures'' of Klein geometries. In this picture, we may succinctly describe all of modern differential geometry as a vast generalization of the Maurer-Cartan equation.
@@ -3565,8 +3563,8 @@ Any Cartan geometry is derived from a homogeneous space, called the homogeneous 
     Then a \emph{Cartan geometry of type $(G,H)$ on a manifold $M$} is a tuple $(P\overset{\pi}{\to}M,G,H,\Phi,\eta)$, where $(G,H)$ is a Klein geometry (i.e., $H\emb G$ is a closed subgroup of a Lie group $G$ such that $G\slash H$ is connected),
     $(P\overset{\pi}{\to}M,H,\Phi)$ a principal $H$-bundle, and $\eta\in\Omega^1(P;\frakg)$ is a $\frakg$-valued $1$-form, called the \emph{Cartan connection}, which is required to be $H$-equivariant, to reproduce the generators of Killing vector fields, and to define an absolute parallelism on $P$. More formally,
     \begin{enumerate}
-        \item $\Phi_h^\ast \eta=\Ad_h^{-1}\circ \eta$ for all $h\in H$,
-        \item $\eta(A_\ast(p))=A$ for all $A\in\frakh$,
+        \item $\Phi_h^\ast \eta=\Ad_h^{-1}\circ \eta$ for all $h\in H$;
+        \item $\eta(A_\ast(p))=A$ for all $A\in\frakh$ and $p\in P$;
         \item (Cartan condition) $\ker\eta_p=0$ (hence $\eta_p$ is a linear isomorphism) for all $p\in P$, i.e., $\eta$ determines an absolute parallelism presented by the bundle isomorphism $\eta:\T P\to P\times\frakg$.
     \end{enumerate}
     The \emph{homogeneous model} for Cartan geometries of type $(G,H)$ is the canonical Klein geometry (homogeneous principal $H$-bundle) $G\to G\slash H$ endowed with the left Maurer-Cartan form $\theta_G\in\Omega^1(G;\frakg)$.
@@ -3574,9 +3572,8 @@ Any Cartan geometry is derived from a homogeneous space, called the homogeneous 
     Given a Cartan geometry, the \emph{constant vector fields} are $\eta^{-1}(A)\in\fX(P)$ defined for all $A\in\frakg$ by $\eta(\eta^{-1}(A)_p)=A$ at any $p\in P$. Projections of integral curves of constant vector fields to $M$ are called \emph{spirals}, \emph{generalized circles}, or \emph{canonical curves}. The Cartan connection $\eta$ is called \emph{complete} if all of its constant vector fields are complete.
 \end{defn}
 
-By equivariance of $\eta$ we get 
-\[\eta^{-1}(A)_{p\cdot h}=\Phi_{h\ast}\circ \eta^{-1}(\Ad_h A)_p\]
-for all $h\in H$. 
+We will often use the simplified notation $p\cdot h$ for $\Phi_h(p)$. By equivariance of $\eta$, we get the transformation rule for constant vector fields
+\[\eta^{-1}(A)_{p\cdot h}=\Phi_{h\ast}\circ \eta^{-1}(\Ad_h A)_p,\quad \text{for all}\quad h\in H.\]
 
 
 \begin{example}
@@ -3617,7 +3614,7 @@ In other words, curvature measures the failure of the assignment of the constant
         \Phi_h^\ast \Omega&=\Ad_h^{-1}\circ \Omega,\\
         \Phi_h^\ast\scrK&=\lambda(h)^{-1}\circ\scrK,
     \end{align}
-    where $\lambda$ is the tensor product of the actions $\bigwedge^2 \underline{\Ad}^\ast$ on $\bigwedge^2(\frakg\slash\frakh)$ and $\Ad$ on $\frakg$.
+    where $\lambda$ is the tensor product of the actions $\bigwedge^2 \underline{\Ad}^\ast$ on $\bigwedge^2(\frakg\slash\frakh)^\ast$ and $\Ad$ on $\frakg$.
 \end{lem}
 \begin{proof}
     By definition of $\eta$, if $A\in\frakh$, then $\eta^{-1}(A)=A_\ast$, the Killing vector field. Equivariance of $\eta$ implies that $\Lie_{A_\ast}\eta=i_{A_\ast}\dd\eta=-\ad_A\circ\eta$. This gives 

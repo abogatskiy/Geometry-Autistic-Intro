@@ -5016,7 +5016,7 @@ Note that a locally trivial map is open and hence a topological quotient map.
 \end{example}
 \begin{example}[Exact sequence of a covering space]
     Let $p:E\to B$ be a covering map with typical fiber $F$. Since each map $\bbD^n\to F$ must be constant because of discreteness of $F$, $\pi_n(F,*)$ is trivial for $n\geq 1$. The exact sequence of $p$ then confirms the isomorphisms $\pi_n(E,f)\cong \pi_n(B,b)$, $n\geq 2$, that we proved in Corollary~\ref{cor homotopy groups of coverings}. Moreover we have the exact sequence (omitting the common basepoint)
-    \[1\to \pi_1(E)\overset{p_\ast}{\to} \pi_1(B)\overset{\partial}{\to} \pi_0(F)\overset{i_\ast}{\to} \pi_0(E)\overset{p_\ast}{\to} \pi_0(B)\to 1\]
+    \[\{e\}\to \pi_1(E)\overset{p_\ast}{\to} \pi_1(B)\overset{\partial}{\to} \pi_0(F)\overset{i_\ast}{\to} \pi_0(E)\overset{p_\ast}{\to} \pi_0(B)\to \{e\}\]
     with the inclusion $i:F=p^{-1}(*)\subset E$ and $\pi_0(F)=F$. It yields for the universal covering $p:\bbR \to \bbS^1$ the familiar bijection $\partial:\pi_1(\bbS^1)\cong \bbZ$.
 \end{example}
 
@@ -5935,7 +5935,7 @@ This result can be used to easily compute the homology groups of $\SO_n$, as is 
     \[\text{(left action) }\quad \Phi_{gh}=\Phi_g\circ \Phi_h\quad \text{ for all } g,h\in G, \]
     or
     \[\text{(right action) }\quad \Phi_{gh}=\Phi_h\circ \Phi_g\quad \text{ for all } g,h\in G.\]
-    In particular, $\Phi_{g}^{-1}=\Phi_{g^{-1}}$, and thus each $\Phi_g$ is a diffeomorphism of $M$. As before, we will sometimes simply write $g\cdot m=\Phi(g,m)$ for left actions and $m\cdot g=\Phi(g,m)$ for right actions. The triple $(M,G,\Phi)$ is referred to as a Lie group action and the pair $(M,\Phi)$ as a $G$-manifold. When the name of the action is not needed, we will simply write $G\acts M$ for a left action and $M\lacts G$ for a right one.
+    In particular, $\Phi_{g}^{-1}=\Phi_{g^{-1}}$, and thus each $\Phi_g$ is a diffeomorphism of $M$. As before, we will sometimes simply write $g\cdot m=\Phi(g,m)$ for left actions and $m\cdot g=\Phi(g,m)$ for right actions. The triple $(M,G,\Phi)$ is referred to as a Lie group action and the pair $(M,\Phi)$ as a \emph{$G$-manifold}.\index{$G$-manifold} We will also often simply write $G\overset{\Phi}{\acts} M$ for a left action and $M\overset{\Phi}{\lacts} G$ for a right one.
 \end{defn}
 
 \begin{rem}
@@ -5975,7 +5975,7 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
        M \arrow[r,"F", swap] & M'.
     \end{tikzcd}
     \]
-    This condition is also often expressed by saying \emph{$F$ intertwines $\Phi$ and $\Phi'$}. Equivariant maps comprise the morphisms of the category $G\mathsf{-Man}^\infty$ of smooth manifolds with a $G$-action.
+    This condition is also often expressed by saying \emph{$F$ intertwines $\Phi$ and $\Phi'$}. Equivariant maps comprise the morphisms of the category $G\mathsf{-Man}^\infty$ of smooth $G$-manifolds.
 
     Furthermore, for two Lie group actions $(M_i,G_i,\Phi^i)$, $i=1,2$, a morphism between them is a pair $(\varphi,\rho)$ consisting of a smooth map $F:M_1\to M_2$ and a Lie group homomorphism $\rho:G_1\to G_2$ such that the corresponding square commutes:
     \[F\circ \Phi^1=\Phi^2\circ \left(\rho\times F \right).\]
@@ -6083,7 +6083,7 @@ An important class of matrix Lie groups closely related to classical groups are 
 \begin{defn}[Affine extension]\index{Affine extension}
     Let $G\emb \GL_n(\bbK)$, where $\bbK=\bbR$ or $\bbC$, be a matrix Lie group. The \emph{affine extension} of $G$ is the semidirect product 
     \[\bbA G\coloneqq G\ltimes \bbK^n,\]
-    where the canonical action of $G$ on $\bbK^n$ is implied. The resulting normal subgroup $\bbK^n$ is called the \emph{group of translations}. $\bbA G$ is isomorphic to the subgroup of $\GL_{n+1}(\bbK)$ consisting of matrices of the block form
+    where the canonical action of $G$ on $\bbK^n$ is implied. (In more abstract terms, $G$ is a Lie group with a faithful linear representation.) The resulting normal subgroup $\bbK^n$ is called the \emph{group of translations}. $\bbA G$ is isomorphic to the subgroup of $\GL_{n+1}(\bbK)$ consisting of matrices of the block form
     \[\begin{bmatrix}
         g & \bf{x}\\
         \bf{0}_n^T & 1
@@ -6110,12 +6110,12 @@ An important class of matrix Lie groups closely related to classical groups are 
 
 \section{Representations}
 
-\begin{defn}[Linear representation]\index{Lie group!representation}
+\begin{defn}[Linear representation]\index{Representation}
     Let $\bbK$ be either $\bbR$ or $\bbC$. A $\bbK$-linear representation of a Lie group $G$ is a $\bbK$-vector space $V$ with a smooth left $G$-action $\Phi$ such that each map $\Phi_g:V\to V$ is a $\bbK$-linear automorphism. Equivalently, a representation is a smooth homomorphism $\rho=\Phi_\bullet:G\to \GL_{\bbK}(V)$. 
 
-    A representation $\rho :G\to \GL(V)$ is called \emph{faithful} if it is injective.
+    A representation $\rho :G\to \GL(V)$ is called \emph{faithful}, or \emph{effective}, if it is injective.
 \end{defn}
-Note that in principle it is possible do define infinite-dimensional representations even of finite-dimensional groups, but it will take some extra work to introduce the proper topology and smooth structure in that case.
+Note that one can also define infinite-dimensional representations even of finite-dimensional groups, but it will take some extra work to introduce the proper topology and smooth structure in that case.
 
 \begin{example}[Lie group representations]\label{ex Lie group representations}
     \begin{enumerate}[label=(\alph*)]

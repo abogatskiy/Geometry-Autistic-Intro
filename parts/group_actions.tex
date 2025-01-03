@@ -6,7 +6,7 @@
     
     On the way to the discovery of general notions of parallelism, geometry split into two tracks. The first one considered local deformations of Euclidean geometry. In the late 1820's, Gauss was able to work around the lack of parallelism by studying 2-dimensional surfaces embedded in Euclidean space, where vectors can always be transported. Each embedding produced a specific \emph{extrinsic} geometry on the surface, so Gauss then proceeded to deliberately derive quantities that are \emph{intrinsic} to the surface in the sense that they are independent of the embedding (under some constraints), such as geodesics and Gauss curvature. Berhnhard Riemann's extension of Gauss' work to higher dimensions involved the invention of what we now call \emph{$n$-dimensional manifolds}. He defined intrinsic quantities on these manifolds, such as Riemann metrics and curvature. By the early 20th century, in large part thanks to the Italian school of mathematics, this became a vast science now known as Riemannian and pseudo-Riemannian geometry. Nevertheless, the notion of parallelism on Riemannian manifolds remained elusive, and Riemann's philosophical notion of geometry remained largely ignored until after the publication of Einstein's theory of General Relativity in 1915. In the meantime, Riemannian geometry was regarded and developed as an analytical framework. This is why we delay the discussion of Riemannian \emph{geometry} until we develop a more general approach consistent with the second historical track of differential geometry.
 
-    On the other hand, by the second half of the 19th century mathematicians started recognizing that different types of geometries discovered by that point (Euclidean, projective, Lobachevskian, spherical, affine, M\"obius, Lie sphere, Laguerre, etc.), despite each having its own unique set of theorems, could all be characterized by a certain property of \emph{homogeneity}. Namely, each of these spaces supported a set of \emph{distinguished transformations} (homeomorphisms of the space) that acted on the space \emph{transitively}. The ``geometry'' is then obtained by declaring two figures \emph{equal} if they are related by a distinguished transformation. This equality must naturally be an equivalence relation on the set of all figures (subsets of the space), i.e., be reflexive, symmetric, and transitive. This immediately implies that the distinguished transformations must form a \emph{group}. In 1872 Klein published a lecture in which he called for the organization of all geometric knowledge around the study of \emph{groups of transformations}, now known as the \emph{Erlangen program}:
+    On the other hand, by the second half of the 19th century mathematicians started recognizing that different types of geometries discovered by that point (Euclidean, projective, Lobachevskian, spherical, affine, M\"obius, Lie sphere, Laguerre, etc.), despite each having its own unique set of theorems, could all be characterized by a certain property of \emph{homogeneity}, which immediately implies the presence of a parallelism. Namely, each of these spaces supported a set of \emph{distinguished transformations} (homeomorphisms of the space) that acted on the space \emph{transitively}. The ``geometry'' is then obtained by declaring two figures \emph{equal} if they are related by a distinguished transformation. This equality must naturally be an equivalence relation on the set of all figures (subsets of the space), i.e., be reflexive, symmetric, and transitive. This immediately implies that the distinguished transformations must form a \emph{group}. In 1872 Klein published a lecture in which he called for the organization of all geometric knowledge around the study of \emph{groups of transformations}, now known as the \emph{Erlangen program}:
     \begin{quote}
         \small
         \emph{Given a manifoldness and a group of transformations of the same; to investigate the configurations belonging to the manifoldness with regard to such properties as are not altered by the transformation of the group.}
@@ -3676,7 +3676,7 @@ Now we need to specify the notion of morphism of \glspl{pfb}. Recall that a morp
     so setting $g'=\varphi(e)$ proves the assertion. The other direction is obvious.
 \end{proof}
 
-We now use this to ``derive'' a definition of morphisms of \glspl{pfb} from our general Definition~\ref{def S-bundle} of categories of $\calS$-bundles, substituting the category of Lie groups for $\calS$. Readers unfamiliar with that construction can safely jump to the definition. Recall that the maps $\Phi_{\alpha a}:U_{\alpha a}\times (G\times G')\to C^\infty(G,G')$ defined in (\ref{def Phiab}) are equivariant w.r.t.\ the $G\times G'$-action on $C^\infty(G,G')$, so that requiring their values to be in an orbit of a homomorphism $\lambda$ means exactly requiring that these values take the form $h\mapsto h'\lambda (h)$ (strictly speaking it should be $h'\lambda(\wt{h}^{-1}h)$, but we can just redefine $h'$ since $\lambda$ is a homomorphism). Note that $h'$ can be a function of $p$ and the indices $\alpha,a$. Thus, the definition of a $\mathsf{LieGr}$-bundle simply requires that the maps $\Phi_{\alpha a}$ take values in right $\lambda$-equivariant maps $G\to G'$. We thus arrive at the following definition of morphisms of \glspl{pfb} and the final alternative definition of principal bundles as $\mathsf{LieGr}$-bundles.
+We now use this to ``derive'' a definition of morphisms of \glspl{pfb} from our general Definition~\ref{def S-bundle} of categories of $\calS$-bundles, substituting the category of Lie groups for $\calS$. Readers unfamiliar with that construction can safely skip to the definition. Recall that the maps $\Phi_{\alpha a}:U_{\alpha a}\times (G\times G')\to C^\infty(G,G')$ defined in (\ref{def Phiab}) are equivariant w.r.t.\ the $G\times G'$-action on $C^\infty(G,G')$, so that requiring their values to be in an orbit of a homomorphism $\lambda$ means exactly requiring that these values take the form $h\mapsto h'\lambda (h)$ (strictly speaking it should be $h'\lambda(\wt{h}^{-1}h)$, but we can just redefine $h'$ since $\lambda$ is a homomorphism). Note that $h'$ can be a function of $p$ and the indices $\alpha,a$. Thus, the definition of a $\mathsf{LieGr}$-bundle simply requires that the maps $\Phi_{\alpha a}$ take values in right $\lambda$-equivariant maps $G\to G'$. We thus arrive at the following definition of morphisms of \glspl{pfb} and the final alternative definition of principal bundles as $\mathsf{LieGr}$-bundles.
 
 % must have the same form of a $\lambda$-equivariant map for some homomorphism $\lambda$. 
 % We can verify this directly using equivariance by assuming that $\Phi_{\alpha a}(p,e,e)(h_1)$, which is $\wh{h}_{\alpha a}(p,h_1)$, has this form, and computing $\Phi_{\alpha a}(p,g_1,g_2)(h_1)$ by equivariance:
@@ -3738,7 +3738,9 @@ where the functions $\wh{g}'_{\alpha a}:U_{\alpha a}\to G'$ are uniquely determi
 \[\boxed{\wh{g}'_{\beta b}(m)=t_{ba}'(\theta(m))\wh{g}_{\alpha a}'(m)\lambda(t_{\beta\alpha}(m))^{-1}.}\label{eq trans rule for ghat}\]
 This formula suggests viewing the functions $\{\wh{g}'_{\alpha a}\}_{\alpha,a}$ as local representatives of a global section of some bundle with typical fiber $G'$ whose transition functions are $(t_{\beta\alpha},t_{ba}'(\theta(m)))\in G\times G'$ acting on $G'$ as in the formula above. We will return to identifying this bundle in \S\ref{sec: pfb morphisms}, but for that we will need the concept of associated bundles.
 
-Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a right principal bundle and let $G\overset{\sigma}{\acts}F$ be a left Lie group action. We will now formalize the idea of a bundle consisting of ``products'' $p\cdot f$, which are understood as equivalence classes of pairs $(p,f)\sim (p\cdot g,g^{-1}\cdot f)$. This lets us interpret points of $P$ as ``$G$-frames'' for points of the new bundle, so that $p\cdot f$ is the point whose ``coordinates'' in the frame $p$ are $f$. 
+\begin{intu*}
+    Let $(P\overset{\pi}{\to}M,G,\Phi)$ be a right principal bundle and let $G\overset{\sigma}{\acts}F$ be a left Lie group action. We will now formalize the idea of a bundle consisting of ``products'' $p\cdot f$, which are understood as equivalence classes of $(p,f)\sim (p\cdot g,g^{-1}\cdot f)$. This lets us interpret points of $P$ as ``$G$-frames'' for points of the new bundle, so that $p\cdot f$ is the point whose ``coordinates'' in the frame $p$ are $f$. 
+\end{intu*}
 
 Let $\check\sigma$ be the right action associated with $\sigma$:
 \[\check\sigma:F\times G\to F,\quad (f,g)\mapsto \check{\sigma}_g(f)\coloneqq \sigma_{g^{-1}}(f).\]
@@ -3840,7 +3842,7 @@ Since we've already established that $P$ and $P^{[\sigma]}$ have the same transi
     If $G\overset{\sigma}{\acts}F$ is a faithful Lie group action, then the association functor $[\sigma]:P\mapsto P^{[\sigma]}$ establishes an equivalence of categories $\PFB^G$ and $\FB^\sigma$. Its pseudoinverse $\Fr_G$ reconstructs the principal $G$-frame bundle.
 \end{prop}
 
-\begin{rem}
+\begin{intu*}
     The above equivalence is intuitive: with the action $\sigma$ fixed, bundles on both sides of the equivalence are determined up to isomorphism by a $G$-valued cocycle. One crucial implication of this equivalence is:
     \begin{center}
         To classify all fiber bundles it suffices to classify principal bundles.
@@ -3852,7 +3854,7 @@ Since we've already established that $P$ and $P^{[\sigma]}$ have the same transi
     As we will see, this also leads to a coordinate-free definition of $G$-structures. This situation is fundamentally different from the definition of general manifolds, in which the references to local Euclidean structures cannot be circumvented. 
     
     With these considerations, the largest amount of geometric structure on a manifold that we have so far introduced in this book have been Lie group actions, whereas the entire theory of bundles is a special case related to free proper actions. The first glimpses of the \emph{second} geometric structure will be encountered in the next \chap\ on Klein geometries, with that new structure being the Maurer-Cartan form, a prototypical example of a Cartan connection.
-\end{rem}
+\end{intu*}
 
 \begin{example}[Covering spaces]
     Recall that for a discrete (and countable) group $G$, principal $G$-bundles are nothing but regular covering maps whose group of deck transformations is $G$. In particular, the universal covering of $M$ is regular with $G=\pi_1(M)$. Any other covering of $M$ has structure group that is the image of $\pi_1(M)$ under some homomorphism $\lambda:\pi_1(M)\to \Diff(F)$. Thus, every covering can be written as $P^{[\lambda]}$ for some regular covering $P$. This is another way to formulate the Classification Theorem~\ref{thm classification of coverings iii}. 
@@ -3915,7 +3917,7 @@ Therefore, in this special case, we have a functor of the categories of principa
     \end{enumerate}
 \end{example}
 
-\begin{example}[$k$-th order frame bundle]
+\begin{example}[$r$-th order frame bundle]\label{ex r-th frame bundle}
     Recall Definition~\ref{def jet bundles} of jet bundles. We can naturally identify the set $\rmJ^1_0(\bbR^n,\bbR^n)_0^\times$ of invertible $1$-jets on $\bbR^n$ with source and target zero with the group $\GL_n(\bbR)$. This leads to an interpretation of the linear frame bundle $\Fr(\T M)$ of an $n$-dimensional manifold $M$ as the space $\rmJ^1_0(\bbR^n,M)^\times$ of invertible $1$-jets from $\bbR^n$ to $M$ with source $0$.
 
     More generally, the $r$-th order frame bundle $\Fr^r(\T M)$ is defined as $\rmJ^r_0(\bbR^n,M)^\times$, so it consists of $r$-jets of local charts. Its structure group, as before, is the jet group $\GL^r_n(\bbR)$, and the principal right action is given by jet composition from the right. The $r$-th order tangent bundle $\rmJ^r_0(\bbR,M)$ is associated to $\Fr^r(\T M)$ w.r.t.\ the obvious left action of $\GL^r_n(\bbR)$ on $F=\rmJ^r_0(\bbR,\bbR^n)$.
@@ -4166,10 +4168,10 @@ This result is very intuitive: $G$-morphisms $P\to P'$ are identified with secti
     Proposition~\ref{prop 1.2.2 RS2} shows that a morphism of principal bundles, together with an equivariant map of typical fibers, induces a morphism of associated bundles. It is natural to ask whether every bundle morphism can be obtained this way from some principal bundle morphism. Clearly the answer is no because general bundle morphisms need not be modeled on equivariant maps.
     
     Recall that principal bundles are just $\mathsf{LieGr}$-bundles as defined in Definition~\ref{def S-bundle}. One can similarly approach a classification of all morphisms between $\calS$-bundles for arbitrary categories $\calS$ of typical fibers. We notice that the maps $\Phi_{\alpha a}$ with transformation law (\ref{eq transformation of Phiab}) define a $C^\infty(F,F')$-valued $(G\times G')$-equivariant map $\varphi:P\times_M \underline{h}^\ast P'\to C^\infty(F,F')$, where $P$ and $P'$ are the principal bundles associated to $E$ and $E'$, respectively. The values of this map on each fiber of the bundle must lie in a particular $(G\times G')$-orbit $\scrO_f$ of an element $f\in \calS(F,F')$ (but $f$ may change with the point $m \in M$). Therefore, general bundle morphisms whose base map is $\underline{h}:M\to M'$ can be identified with sections of the (in general, topological) bundle
-    \[\boxed{(P\times_M \underline{h}^\ast P')\times^{G\times G'}\calS(F,F')\to M,}\] 
+    \[\boxed{(P\times_M \underline{h}^\ast P')\times^{G\times G'}\left((G\times G')\cdot \calS(F,F')\right)\to M,}\] 
     whereas the morphisms modeled on a particular map $f:F\to F'$ (for example, constant rank morphisms of \glspl{vb}) can be identified with sections of the smooth bundle
     \[\boxed{(P\times_M \underline{h}^\ast P')\times^{G\times G'}\scrO_f\to M}\] 
-    (assuming $\calS(F,F')$ and $\scrO_f$ carry sufficiently nice topologies). These sets are usually very different from the sets of morphisms between $P$ and $P'$. 
+    (assuming the typical fibers $(G\times G')\cdot \calS(F,F')$ and $\scrO_f$ carry sufficiently nice topologies). These sets are usually very different from the sets of morphisms between $P$ and $P'$. 
     
     In the case of \glspl{pfb}, we have $F=G$, $F'=G'$, and $f=\lambda$ is a homomorphism, so $\scrO_\lambda$ is the set of $\lambda$-equivariant maps, which is diffeomorphic to $G'$ by Proposition~\ref{prop lambda-equiv maps}. Thus, the last formula agrees with (\ref{eq bundle of pfb morphisms}).
 \end{rem}
@@ -4183,8 +4185,8 @@ Let us now return to morphisms of principal bundles. Vertical automorphisms of a
 \begin{defn}[Gauge transformations]\index{Gauge transformation}\index{Gauge group}
     Let $P\overset{\pi}{\to}M$ be a principal $G$-bundle. Its group of automorphisms in the category $\PFB^G_M$, i.e., vertical bundle automorphisms, is denoted 
     \[\Gau(P)\coloneqq \Aut_M(P),\]
-    and is called its group of \emph{active local gauge transformations}, or simply the \emph{gauge group}. By Proposition~\ref{prop 1.2.6 RS2} and Corollary~\ref{cor 1.2.7 RS2}, there are natural bijections \[\Gau(P)\cong \Gamma^\infty(P\times^G_MP)\cong \Hom_G(P,G)\cong \Gamma^\infty\left(\Adg(P)\right),\]
-    where $\Hom_G(P,G)$ is the group (via pointwise multiplication) of equivariant $G$-valued functions on $P$ intertwining the right $G$-action on $P$ with the action of $G$ on itself by conjugations $\Adg$ (i.e., $\sigma=\Adg$ in (\ref{eq 1.2.9 RS2})).
+    and is called its group of \emph{active local gauge transformations}, or simply the \emph{gauge group}. By Proposition~\ref{prop 1.2.6 RS2} and Corollary~\ref{cor 1.2.7 RS2}, there are natural bijections \[\Gau(P)\cong \Gamma^\infty(P\times^G_MP)\cong \Hom_{\Adg(G)}(P,G)\cong \Gamma^\infty\left(\Adg(P)\right),\]
+    where $\Hom_{\Adg(G)}(P,G)$ is the group (via pointwise multiplication) of equivariant $G$-valued functions on $P$ intertwining the right $G$-action on $P$ with the action of $G$ on itself by conjugations $\Adg$ (i.e., $\sigma=\Adg$ in (\ref{eq 1.2.9 RS2})).
 \end{defn}
 
 Note that in the general category $\PFB^\infty$, the automorphism group $\Aut(P)$ also contains automorphisms that cover nontrivial diffeomorphisms of the base. Thus we have the exact sequence
@@ -4199,7 +4201,7 @@ The last map is generally not surjective.
 \begin{rem}
     \begin{enumerate}
         \item It might seem strange that we have identified a group, which has a canonical basepoint, with spaces of sections, because most bundles don't have any distinguished sections. However, since the structure group of the group bundle $P^{[\Adg]}$ acts by conjugation, it preserves the identity of the typical fiber $G$, and thus this bundle does have a natural ``identity section''. Similarly, $P\times^G_MP$ has the same kind of section given by $m\mapsto [(p,p)]$ where $p\in \pi^{-1}(m)$.
-        \item In physics, the phrase ``gauge transformation'' usually refers to the \emph{passive} local gauge transformations, which are just different choices of a $G$-atlas. By selecting a local frame (section) $s_U:U\to P$ we can identify every active gauge transformation $\varphi\in \Hom_G(P,G)$ with a local $G$-valued function $\varphi\circ s_U:U\to G$. However, unlike these local functions, the equivariant map $\varphi$ is an intrinsic quantity of the bundle.
+        \item In physics, the phrase ``gauge transformation'' usually refers to the \emph{passive} local gauge transformations, which are just different choices of a $G$-atlas. By selecting a local frame (section) $s_U:U\to P$ we can identify every active gauge transformation $\varphi\in \Hom_G(P,G)$ with a local $G$-valued function $\varphi\circ s_U:U\to G$ (a local $G$-frame on $M$). However, unlike these local functions, the equivariant map $\varphi$ is an intrinsic quantity of the bundle.
     \end{enumerate}
 \end{rem}
 
@@ -4254,7 +4256,7 @@ The element $f$ should be thought of as the ``model $G$-invariant structure'', a
 \begin{rem}[{{\cite[Rem.~1.6.3]{RS2}}}]
     The reduction $Q_f$ depends on the choice of $f\in F$ as follows: for every $f'\in F$ there is a $g\in G$ such that $f'=\sigma_g(f)$. Then for every $q\in Q_f$ we have
     \[\varphi(\Phi_{g^{-1}}(q))=\sigma_g(\varphi(q))=\sigma_g(f)=f'.\]
-    Thus $Q_{f'}=\Phi_{g^{-1}}(Q)$. Moreover, the corresponding structure group is $G_{f'}=G_{\sigma_g(f)}=gG_fg^{-1}$.
+    Thus $Q_{f'}=\Phi_{g^{-1}}(Q_f)$. Moreover, the corresponding structure group is $G_{f'}=G_{\sigma_g(f)}=gG_fg^{-1}$.
 \end{rem}
 
 
@@ -4271,17 +4273,30 @@ The following proposition characterizes the isomorphism classes of bundle reduct
 Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions of a principal bundle $P(M,G)$ to a given closed subgroup $H$ of $G$. To formulate it, we consider the natural action of $G$ on the homogeneous space $G\slash H$ by left translation and build the associated bundle $P\times^G (G\slash H)$, whose total space is $P\slash H$.
 
 \begin{cor}[{{\cite[Cor.~1.6.5]{RS2}}}]\label{cor 1.6.5 RS2}
-    Reductions of a principal $G$-bundle $P$ to a closed subgroup $H\emb G$ are in a natural one-to-one correspondence with smooth sections of the associated bundle $P\times^G (G\slash H)\cong P\slash H$.
+    Reductions of a principal $G$-bundle $P(M,G)$ to a closed subgroup $H\emb G$ are in a natural one-to-one correspondence with smooth sections of the associated bundle $P\times^G (G\slash H)\cong P\slash H$. Moreover, the reduction coresponding to a section $h:M\to P\slash H$ is exactly the pullback $\prescript{h}{}{P}\coloneqq h^\ast P$ of the principal $H$-bundle $P\to P\slash H$.
 \end{cor}
 \begin{proof}
     By Proposition~\ref{prop 1.2.6 RS2}, the sections of $P\times^G (G\slash H)$ are in one-to-one correspondence with elements of $\Hom_G(P,G\slash H)$. Since $G\slash H$ is a transitive $G$-manifold, we can apply Proposition~\ref{prop 1.6.2 RS2} with $f=[e]$.
+
+    Let $h:M\to P\slash H$ be a global section. It corresponds to the equivariant function $\wt h:P\to G\slash H$ via $h(m)=[(p,\wt h(p))]$. On the other hand, the projection $P\to P\slash H$ is given by $p\mapsto [(p,[e])]$. By comparing the two expressions, it is obvious the fiber above $h(m)$ in the $H$-bundle $P\to P\slash H$ is exactly the set of points $p$ where $\wt h(p)=[e]$. Thus, the pullback bundle $h^\ast P$ coincides with the reduction $\wt{h}^{-1}([e])$.
 \end{proof}
+
+\begin{rem}
+    \begin{enumerate}
+        \item We thus have the composite bundle 
+        \[P\to P\slash H\to M.\]
+        and each global section $h:M\to P\slash H$ of the latter bundle determines a reduction of $P\to M$ as the pullback $\prescript{h}{}{P}=h^\ast P$ of the former principal $H$-bundle.
+        \item In the language of gauge theories, bundle reduction represents \emph{symmetry breaking}:\index{Symmetry breaking} from the whole (unbroken) symmetry group $G$ to the group $H$ of reduced symmetry. A section $h$ of $P\slash H$ can be interpreted as a \emph{classical Nambu-Goldstone field} \cite{Giachetta}.\index{Nambu-Goldstone field} Let us denote the $H$-subbundle corresponding to $h$ by $\prescript{h}{}{P}<P$ as above. Matter fields are sections of (typically vector) bundles associated to $\prescript{h}{}{P}$, so they transform under some representation of $H$. For example, ``$V$-valued matter fields'' are sections of $E=\prescript{h}{}{P}\times^H V$ for some representation $H\acts V$. If we choose another field $h'$, we get an isomorphic, but not canonically isomorphic, $H$-bundle $\prescript{h'}{}{P}$ and associated bundle $\prescript{h'}{}{P}\times^H V$. Thus, matter fields associated to one Nambu-Goldstone field cannot, in general, be naturally interpreted as being associated to another one. In other words, matter fields must be described as \emph{pairs} $(h,s)$, where $s$ is a section of $\prescript{h}{}{P}\times^H V$. An isomorphism by which a general \gls{fb} is identified with an associated bundle of a given principal bundle is called a \emph{soldering}. Thus, a choice of Nambu-Goldstone field is a choice of soldering that allows one to interpret sections of a given bundle $E$ as matter fields associated to a particular $H$-structure $\prescript{h}{}{P}$. The interplay between soldering and $G$-structures will be examined in depth in \Chap~\ref{ch affine structures}.
+    \end{enumerate}
+\end{rem}
 
 \begin{example}[{{\cite[Ex.~1.6.6]{RS2}}}]\label{ex 1.6.6 RS2}
     \begin{enumerate}
         \item Let $E$ be a $\bbK$-vector bundle of rank $k$. Recall that $E$ is orientable iff it admits a bundle atlas with transition functions of positive determinant. Equivalently, $E$ is orientable iff it admits a nowhere vanishing section of the determinant line bundle $\det E=\bigwedge^k E^\ast$. Thus, an orientation of $E$ may be viewed as a section of the associated bundle -- the orientation bundle (cf.\ Definition~\ref{def orientation bundle})
         \[\calO(E)=\Fr(E)\times^{\GL_k(\bbK)}(\GL_k(\bbK)\slash \GL^+_k(\bbK)).\]
         Now, Corollary~\ref{cor 1.6.5 RS2} implies that $E$ is orientable iff $\Fr(E)$ is reducible to $\GL_k^+(\bbK)$.
+
+        \item Similarly, a volume form is a global section of the bundle associated to $\Fr(E)$ with fiber $\GL_k(\bbR)\slash \SL_k(\bbR)\cong \bbR^\times$, since the stabilizer of any element of $\bigwedge^k (\bbR^k)^\ast$ is $\SL_k(\bbR)$. Hence, volume forms correspond to reductions to $\SL_k(\bbR)$.
 
         \item Let $E$ be a $\bbK$-vector bundle of rank $n$ endowed with a fiber metric $\sfh$ (sesquilinear in the cases $\bbK=\bbC,\bbH$). It need not be positive-definite.
         \begin{enumerate}
@@ -4292,8 +4307,8 @@ Proposition~\ref{prop 1.6.2 RS2} implies a useful characterization of reductions
             and $E$ admits a fiber metric with signature $(k,l)$ iff $\Fr(E)$ is reducible to a principal $\Or_{k,l}$-bundle. The latter is the bundle of orthonormal frames $\Fr_{\Or_{k,l}}(E,\sfh)$. Note that specifying such a reduction is equivalent to specifying a bundle metric (section of the associated bundle) according to Proposition~\ref{prop 1.6.1 RS2}, or alternatively a metric ($f$ in the language of Proposition~\ref{prop 1.6.2 RS2}) on the model fiber plus an equivariant $\bigodot^2_{(k,l)}(\bbR^n)^\ast$-valued (metric-valued) function on the frame bundle.
 
             \item If $\bbK=\bbC$, then a fiber metric can be seen as a section of the associated bundle
-            \[\Fr(E)\times^{\GL_n(\bbC)} \wb{{(\bbC^n)}}^\ast\odot (\bbC^n)^\ast,\]
-            where $\odot$ is the symmetric tensor product. By the Sylvester Theorem, $\GL_n(\bbC)$ acts transitively on the subset of nondegenerate elements in $\wb{{(\bbC^n)}}^\ast\odot(\bbC^n)^\ast$ with stabilizer $\U_n$. Thus $E$ admits a Hermitian fiber metric iff $\Fr(E)$ is reducible to a principal $\U_n$-bundle, which then coincides with the bundle of unitary frames $\Fr_{\U_n}(E)$.
+            \[\Fr(E)\times^{\GL_n(\bbC)} \overbar{{(\bbC^n)}}^\ast\odot (\bbC^n)^\ast,\]
+            where $\odot$ is the symmetric tensor product. By the Sylvester Theorem, $\GL_n(\bbC)$ acts transitively on the subset of nondegenerate elements in $\overbar{{(\bbC^n)}}^\ast\odot(\bbC^n)^\ast$ with stabilizer $\U_n$. Thus $E$ admits a Hermitian fiber metric iff $\Fr(E)$ is reducible to a principal $\U_n$-bundle, which then coincides with the bundle of unitary frames $\Fr_{\U_n}(E)$.
         \end{enumerate}
     \end{enumerate}
 \end{example}
@@ -4316,26 +4331,24 @@ We have previously defined $G$-structures as equivalence classes of $G$-atlases 
 
 \begin{defn}[$G$-structure]\index{$G$-structure}
     Given a locally trivial \gls{fb} $E\overset{\pi}{\to}M$ with typical fiber $F$, and a faithful action $G\acts F$ (so that $G$ can be seen as a Lie subgroup of $\Diff(F)$), a $G$-structure on $E$ is a (smooth) bundle reduction $Q$ of the associated (topological) principal $\Diff(F)$-bundle $\Fr_{\Diff}(E)$ to $G$, together with the induced isomorphism $E\cong Q\times^G F$.
+
+    A \emph{$G$-structure of order $r$ on a manifold $M$} is a $G$-structure on a local natural bundle $\bf{F}(M)$ of order $r$, or, equivalently, a bundle reduction of the $r$-th order frame bundle $\Fr^r(\T M)$.
 \end{defn}
 
 As we have shown, every reduction of $\Fr_{\Diff}(E)$ to $G$ can be identified with a section of the bundle $\Fr_{\Diff}(E)\slash G$, which is equivalent to picking a $G$-equivalence class of frames over each point of the base.
 
-\begin{defn}[Geometric structure]\index{Geometric structure}
+\begin{defn}[Geometric structure]\index{Geometric structure}\label{def geom structure}
     Given a \gls{pfb} $P(M,G)$ and a $G$-manifold $G\acts F$, a geometric structure on $P$ is an equivariant function $\varphi\in \Hom_G(P,F)$, or, equivalently, a section of the associated bundle $s\in \Gamma^\infty(P\times^G F)$. By Proposition~\ref{prop 1.6.2 RS2}, for each element $f\in F$ the geometric structure defines a $G_f$-structure $Q_f=\varphi^{-1}(f)$.
 \end{defn}
 
 \begin{example}
     We can now rephrase Example~\ref{ex 1.6.6 RS2} as follows. 
     \begin{enumerate}
-        \item An orientation on a rank $k$ \gls{vb} $E$ is a $\GL_k^+(\bbR)$-structure, and can be defined by the geometric structure given by an arbitrary volume form $\sfv\in \bigwedge^k E^\ast$, since the stabilizer of an element of $\bigwedge^k \bbR^k$ under the action of $\GL_k(\bbR)$ is $\GL_k^+(\bbR)$.
+        \item An orientation on a rank $k$ \gls{vb} $E$ is a $\GL_k^+(\bbR)$-structure, and can be defined by the geometric structure given by an arbitrary volume form $\sfv\in \Gamma^\infty(\bigwedge^k E^\ast)$, since the stabilizer of an element of $\bigwedge^k \bbR^k$ under the action of $\GL_k(\bbR)$ is $\SL_k(\bbR)$, which specifies an $\SL_k(\bbR)$-structure and hence a $\GL_k^+(\bbR)$-structure.
         \item A metric on the same \gls{vb} $E$ is an $\Or_{p,q}$-structure. A corresponding geometric structure is a metric tensor $\sfg\in \Gamma^\infty\left(\bigodot_{(k,l)}^2 E^\ast\right)$, since the stabilizer of a value of $\sfg$ is isomorphic to $\Or_{p,q}$. 
-        \item A structure of a complex vector bundle is a $\GL_{k/2}(\bbC)$-structure. A corresponding geometric structure is an almost complex structure tensor field $\sfJ\in \End(E)$ such that $\sfJ^2=\id_E$, since the stabilizer of any of its values is isomorphic to $\GL_{k/2}(\bbC)$.
+        \item A structure of a complex vector bundle is a $\GL_{k/2}(\bbC)$-structure. A corresponding geometric structure is an almost complex structure tensor field $\sfJ\in \End(E)$ such that $\sfJ^2=-\id_E$, since the stabilizer of any of its values is isomorphic to $\GL_{k/2}(\bbC)$.
     \end{enumerate}
     \'Elie Cartan was the first to realize that essentially all smooth geometric structures can be represented by collections of differential forms (coframes), which can in turn be identified with equivariant functions on frame bundles. This motivates our definition of a geometric structure. We will return to this connection (no pun intended) in \S\ref{sec: connections on G-structures}.
 \end{example}
 
-Now that we have come full circle and finished defining fiber bundles -- a task that we started in \Chap~\ref{chap: Fiber bundles} -- we are ready to start looking at more sophisticated additional structures on them. These structures, in turn, will help us find quantitative criterions for the existence of particular $G$-structures on a given bundle, and eventually classify all bundles in terms of certain topological invariants.
-
-
-
-
+Now that we have come full circle and finished defining fiber bundles -- a task that we started in \Chap~\ref{chap: Fiber bundles} -- we are ready to start looking at additional geometric structures on them. All of them will fit the above general definition of a geometric structure. These structures, in turn, will help us find quantitative criteria for the existence of particular $G$-structures on a given bundle, and eventually classify all bundles in terms of certain topological invariants.

@@ -7,7 +7,9 @@ This \partt{} gradually introduces the final crucial element that has so far lac
 
 \section{Klein geometry}
 
-Felix Klein saw geometry as the study of invariants under actions of Lie groups. This led him to start the famous Erlangen program for the classification of all ``symmetric'' geometries corresponding to simple Lie groups. He noticed that each interesting symmetric geometry is based on a connected manifold with a \emph{transitive} action of a Lie group $G$ of ``motions'', and moreover, all properties of figures studied in the geometry remain invariant under these motions. For example, in the case of Euclidean geometry, the properties studied are angle and length, and the group is the group of rigid motions. Thus Klein unified a wide range of classical geometries by \emph{defining} a geometry as consisting of a Lie group $G$ and a smooth manifold $M$ with a smooth, faithful, and transitive action of $G$. We shall not require faithfulness in our treatment here. This means that a Klein geometry is essentially a homogeneous space together with the Lie group $G$ serving as the total space of a principal bundle over that space.
+\begin{intu*}
+    Felix Klein saw geometry as the study of invariants under actions of Lie groups. This led him to start the famous Erlangen program for the classification of all ``symmetric'' geometries corresponding to simple Lie groups. He noticed that each interesting symmetric geometry is based on a connected manifold with a \emph{transitive} action of a Lie group $G$ of ``motions'', and moreover, all properties of figures studied in the geometry remain invariant under these motions. For example, in the case of Euclidean geometry, the properties studied are angle and length, and the group is the group of rigid motions. Thus Klein unified a wide range of classical geometries by \emph{defining} a geometry as consisting of a Lie group $G$ and a smooth manifold $M$ with a smooth, faithful, and transitive action of $G$. We shall not require faithfulness in our treatment here. This means that a Klein geometry is essentially a homogeneous space together with the Lie group $G$ serving as the total space of a principal bundle over that space.
+\end{intu*}
 
 Let $H\emb G$ be a closed Lie subgroup and consider the action $H\acts G$ by right translation. Let $K\sub G$ be the maximal normal subgroup of $G$ lying inside $H$. By the Initial Subgroup Theorem~\ref{thm initial subgroup}, $K$ is a weakly embedded Lie subgroup of $G$. Since $H$ is closed, the closure $\wb{K}$ is also a normal subgroup of $G$ lying inside $H$. By maximality, we conclude that $K$ is closed, and hence embedded, so $K\emb H\emb G$. By Corollary~\ref{cor 6.5.3 RS1}(1), the canonical map $\pi:G\slash K\to G\slash H$ is a \gls{pfb} with fiber $H\slash K$, inducing a diffeomorphism
 \[(G\slash K)\slash (H\slash K)\to G\slash H\]
@@ -75,9 +77,15 @@ Much like with principal bundles, we shall follow up the original geometric defi
     \end{enumerate}
 \end{enumerate}
 
+For future reference, we introduce the general definition of the vertical bundle.
+
+\begin{defn}[Vertical bundle]\index{Vertical bundle}
+    Let $\pi:E\to M$ be a \gls{fb}. Its vertical bundle $\calV E$ is the subbundle of $\T E$ consisting of vectors tangent to the fibers: 
+    \[\calV E\coloneqq \ker \pi_\ast.\]
+    It is a smooth subbundle by virtue of being the kernel of the derivative of a smooth map. Its fiber at $p\in E$ will be denoted by $\calV_p E$.
+\end{defn}
+
 The notion of isomorphism of Klein geometries is exactly that of isomorphisms of \glspl{pfb}, with the extra requirement that they be Lie group isomorphisms (which amounts to the preservation of identity).
-
-
 
 \begin{defn}[Isomorphism of Klein geometries]
     An isomorphism between two Klein geometries $(G,H)$ and $(G',H')$ is a Lie group isomorphism $\vartheta:G\to G'$ such that $\vartheta(H)=H'$.
@@ -566,7 +574,7 @@ The tangent bundle of a Klein geometry is an example of an important class of bu
 \end{defn}
 
 \begin{example}
-    The principal $H$-bundle $G\to G\slash H$ is obviously homogeneous because the left action $\rmL$ is a lift of $\wh \rmL$.
+    The principal $H$-bundle $G\to G\slash H$ is obviously homogeneous because the left action $\rmL$ is a lifting of $\wh \rmL$.
 \end{example}
 
 One common way of producing homogeneous bundles is by applying a natural bundle functor $\bf{F}$ to $G\slash H$. Since by definition such a functor maps local diffeomorphisms to bundle morphisms, $\bf{F}(\wh{\rmL}_g)$ is a $G$-action as required in the definition of a homogeneous bundle. Thus, any natural bundle over a homogeneous space is homogeneous. As we will see below, the tangent functor $\T$ that we considered in the previous section is an example of this.
@@ -591,7 +599,7 @@ Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in 
 Thus an alternative definition of homogeneous bundles is simply as bundles associated to principal bundles of the form $G\to G\slash H$. Functoriality implies that these equivalences are compatible with various constructions such as fibered produces, Whitney sums, tensor products, etc. Conversely, for example, a decomposition of a tensor product of representations into a direct some of smaller representations induces a similar decomposition of corresponding Whitney products of homogeneous \glspl{vb}.
 
 \begin{example}\label{ex 1.4.3 Cap}
-    The  tangent  bundle $\T(G\slash H)$ that we studied in Proposition~\ref{prop 4.5.1 Sharpe} is clearly homogeneous because the left action $\wh{\rmL}_g$ on $G\slash H$ induces a lifted action $\wh{\rmL}_{g\ast}$ on $\T(G\slash H)$, and it corresponds to the $H$-representation on $\frakg\slash \frakh$ coming from the restriction to $H$ of the adjoint representation of $G$. The isomorphism with $G\times^H (\frakg\slash\frakh)$ established in that proposition is exactly the same as what we would obtain from Proposition~\ref{prop 1.4.3 Cap}. Namely, it maps $X\in \T_{gH}(G\slash H)$ to $[(g^{-1},\omega(Y)+\frakh)]$, where $Y\in \T_g G$ is some lift of $X$, i.e., $\pi_\ast Y=X$.
+    The  tangent  bundle $\T(G\slash H)$ that we studied in Proposition~\ref{prop 4.5.1 Sharpe} is clearly homogeneous because the left action $\wh{\rmL}_g$ on $G\slash H$ induces a lifted action $\wh{\rmL}_{g\ast}$ on $\T(G\slash H)$, and it corresponds to the $H$-representation on $\frakg\slash \frakh$ coming from the restriction to $H$ of the adjoint representation of $G$. The isomorphism with $G\times^H (\frakg\slash\frakh)$ established in that proposition is exactly the same as what we would obtain from Proposition~\ref{prop 1.4.3 Cap}. Namely, it maps $X\in \T_{gH}(G\slash H)$ to $[(g^{-1},\omega(Y)+\frakh)]$, where $Y\in \T_g G$ is some lifting of $X$, i.e., $\pi_\ast Y=X$.
 
     By the naturality of the correspondence, the cotangent bundle $\T^\ast(G\slash H)$ corresponds to the dual representation $(\frakg\slash\frakh)^\ast$. Note that the latter is just the annihilator of $\frakh$ in $\frakg^\ast$, so this is a subrepresentation of the restriction of the coadjoint representation of $G$ to $H$. Again, by naturality, the tensor bundle $\bbT^k_l G\slash H$ corresponds to $\bbT^k_l(\frakg\slash\frakh)=(\frakg\slash\frakh)^{\otimes k}\otimes (\frakg\slash\frakh)^{\ast\otimes l}$.
 \end{example}
@@ -836,11 +844,6 @@ The next fundamental result shows that in certain situations one can reduce ques
     \[L^2(\bbS^2,\bbC)\cong \bigoplus_{l=0}^\infty V_{2l}.\]
     This holds both over reals and complexes. The space $V_{2l}$ is $(2l+1)$-dimensional and a standard basis is given by the spherical harmonics $Y^l_m(\theta,\varphi)$. If we replace $\SU_2$ by $\SO_3$, the only difference is that $V_k$ with odd $k$ disappear from the list of irreps, so the final result for $n=0$ is the same. This is the beginning of the subject of \emph{harmonic analysis} (and in particular Fourier transforms) on Lie groups.
 \end{example}
-
-
-
-
-
 
 
 
@@ -1397,13 +1400,15 @@ For us it will be important to consider jets not of arbitrary maps, but of secti
 
 For a section $s\in \Gamma^\infty(E)$, its \emph{$r$-prolongation} is the section $\rmj^r s\in \Gamma^\infty(\rmJ^rE\to M)$ defined pointwise as $(\rmj^r s)(m)=\rmj_m^r s$. We will denote the graph of the prolonged section by $\graph^r(s)\subset \rmJ^rE$ and call it the \emph{$r$-graph} of $s$.
 
-\begin{defn}[R-plane]
+\begin{defn}[R-plane]\label{def R-plane}\index{R-plane}
     Let $E\overset{\pi}{\to}M$ be a \gls{vb} over an $n$-dimensional manifold $M$. Let us call an $n$-dimensional plane in the tangent space $\T_p \rmJ^rE$ an R-plane if it is the tangent space of the graph of the prolongation of some section of $E$.
 \end{defn}
 
-Obviously, every R-plane is transversal to the fibers of $\pi^r$. Note that a point $p'\in \rmJ^{r+1}E$ in the fiber over $m\in M$ can be considered as the pair consisting of the point $p=\pi^{r+1}_r(p')\in \rmJ^rE$ and an R-plane $L_{p'}<\T_p \rmJ^rE$ defined as the plane tangent to $\graph^r(s)$ for some section $s\in\Gamma^\infty(E)$ such that $\rmj^{r+1}_m s=p'$. (It is easily seen that this plane is uniquely determined by the jet $\rmj^{r+1}_m s$). In other words, $p'$ is the set of values of derivatives up to order $r+1$ while the plane $L_{p'}<\T_p \rmJ^rE$ is determined by the values of first derivatives of $r$-th derivatives.
+\begin{rem}\label{jets and R-planes}
+    Obviously, every R-plane is transversal to the fibers of $\pi^r$. Note that a point $p'\in \rmJ^{r+1}E$ in the fiber over $m\in M$ can be considered as the pair consisting of the point $p=\pi^{r+1}_r(p')\in \rmJ^rE$ and an R-plane $L_{p'}<\T_p \rmJ^rE$ defined as the plane tangent to $\graph^r(s)$ for some section $s\in\Gamma^\infty(E)$ such that $\rmj^{r+1}_m s=p'$. (It is easily seen that this plane is uniquely determined by the jet $\rmj^{r+1}_m s$). In other words, $p'$ is the set of values of derivatives up to order $r+1$ while the plane $L_{p'}<\T_p \rmJ^rE$ is determined by the values of first derivatives of $r$-th derivatives.
+\end{rem}
 
-Fix a point $p\in \rmJ^rE$ and consider various points $p'\in \rmJ^{r+1}E$ projecting to $p$ under $\pi^{r+1}_r$, i.e., in the fiber $(\rmJ^{r+1}E)_p\coloneqq (\pi^{r+1}_r)^{-1}(p)$. As $p'$ moves in this fiber, the corresponding $n$-plane $L_{p'}<\T_p\rmJ^rE$ rotates somehow around the point $p$, but always remains horizontal with respect to the projection $\pi^r:\rmJ^rE\to M$.
+Fix a point $p\in \rmJ^rE$ and consider various points $p'\in \rmJ^{r+1}E$ projecting to $p$ under $\pi^{r+1}_r$, i.e., in the fiber $(\rmJ^{r+1}E)_p\coloneqq (\pi^{r+1}_r)^{-1}(p)$. As $p'$ moves in this fiber, the corresponding $n$-plane $L_{p'}<\T_p\rmJ^rE$ rotates somehow around the point $p$, but always remains transversal w.r.t.\ the projection $\pi^r:\rmJ^rE\to M$. 
 
 We are ready to define the extend the definition of the Cartan distribution to jets of arbitrary vector bundles.
 
@@ -2865,11 +2870,11 @@ We now have the following obvious coordinate-independent necessary condition for
 
 We now impose an additional condition that ensures that the classifying sets are smooth, which is needed for our basic geometric methods to work.
 
-\begin{defn}[Fully regular coframe]
-    A coframe $\bm\theta$ is called fully regular if, for each $r\geq 0$, the $r$-th order structure map $\bf{T}^{(r)}:M\to K^{(r)}$ is regular.
+\begin{defn}[Fully regular coframe]\label{def fully regular coframe}
+    A coframe $\bm\theta$ is called fully regular if, for each $r\geq 0$, the $r$-th order structure map $\bf{T}^{(r)}:M\to K^{(r)}$ is of constant rank (``regular'').
 \end{defn}
 
-In the regular case, we let 
+In the fully regular case, we let 
 \[\rho_r\coloneqq \rank \bf{T}^{(r)}\]  
 be the (constant) rank of the structure map, which is computed as the rank of its Jacobian matrix. By The Regular Level Set Theorem~\ref{thm regular level set}, the classifying set $\scrC^{(r)}$ is a $\rho_r$-dimensional submanifold (possibly with self-intersections) of the classifying space $K^{(r)}$. From now on, to emphasize the regularity assumption, we will refer to $\scrC^{(r)}$ as the $r$-th order \emph{classifying manifold} associated with the coframe $\bm\theta$. Furthermore, $\rho_r$ equals the number of functionally independent structure invariants up to order $r$. Let 
 \[\calF^{(r)}=\calF^{(r)}(\bm\theta)\coloneqq \{T_\sigma\mid \ord(\sigma)\leq r\},\quad r\geq 0,\]
@@ -2881,31 +2886,380 @@ The components $H_\sigma$ are the classifying functions associated with the cofr
 
 Since we are primarily interested in local equivalence of coframes, the classifying manifolds need only agree locally, i.e., in the domain of the equivalence map $F$. Therefore, in view of Proposition~\ref{prop 8.11 Olver93}, necessary conditions for local equivalence of coframes are that, for each $r\geq 0$, their $r$-th order classifying manifolds \emph{overlap} (i.e., their intersection is an open submanifold of both). Moreover, the domain of $F$ will be contained in the preimage under $\bf{T}^{(r)}$ of the overlap $\scrC^{(r)}(\bm\theta)\cap \scrC^{(r)}(\bar{\bm\theta})$, whereas its range is contained in the preimage of the overlap under $\wb{\bf{T}}^{(r)}$. Further, note that the overlapping of the $r$-th order classifying manifolds automatically implies overlapping of all lower-order classifying manifolds.
 
+The fundamental theorem underlying the solution to the local equivalence problem for coframes states that, in the fully regular case, these necessary conditions are also sufficient. The obvious difficulty with this criterion is that it requires one to look at an infinite number of manifolds, one for each order $r$. Luckily, as in the rank $0$ case, we can reduce the problem to one of finite order. Since the structure invariants of order $r$ also appear as components of $\bf{T}^{(r+1)}$, the ranks are non-decreasing, $\rho_r\leq \rho_{r+1}$, and bounded by $n=\dim M$. Therefore, the ranks must eventually stabilize, and, in fact, once they stabilize they remain fixed. 
 
-The fundamental theorem underlying the solution to the local equivalence problem for coframes states that, in the fully regular case, these necessary conditions are also sufficient. The obvious difficulty with this criterion is that it requires one to look at an infinite number of manifolds, one for each order $r$. Luckily, as in the rank $0$ case, we can reduce the problem to one of finite order. Since the structure invariants of order $r$ also appear as components of $\bf{T}^{(r+1)}$, the ranks are nondecreasing, $\rho_r\leq \rho_{r+1}$, and bounded by $n=\dim M$. Therefore, the ranks must eventually stabilizer, and, in fact, once they stabilize they remain fixed. 
-
-\begin{prop}[{{\cite[Prop.~8.18]{Olver93}}}]\label{prop 8.18 Olver93}
-    Let $\bm\theta$ be a fully regular coframe, and left $\rho_r$ denote the rank of its $r$-th order structure map $\bf{T}^{(r)}$. The smallest $r$ for which $\rho_r=\rho_{r+1}$ is called the \emph{rank of the coframe}, and we have 
+\begin{prop}[{{\cite[Props.~8.18, 14.22]{Olver93}}}]\label{prop 8.18 Olver93}
+    Let $\bm\theta$ be a coframe on $M$, and let $\rho_r$ denote the rank of its $r$-th order structure map $\bf{T}^{(r)}$ (potentially varying across $M$). The smallest $r$ for which $\rho_r=\rho_{r+1}$ are equal and \emph{constant} is called the \emph{rank of the coframe}, and we have 
     \[0\leq \rho_0< \rho_1< \cdots <\rho_r=\rho_{r+1}=\rho_{r+2}=\cdots=r\leq n.\] 
-    The stabilizing rank $r$ will be referred to as the \emph{order of the coframe}. \index{Order of a coframe} \index{Rank of a coframe}
+    The stabilizing rank $r$ (bounded by $n$ if $\bm\theta$ is \emph{fully regular}) will be referred to as the \emph{order of the coframe}. \index{Order of a coframe} \index{Rank of a coframe}
 \end{prop}
 \begin{proof}
     If we know the classifying function for any structure invariant $T_\sigma$ in terms of some conveniently chosen set of fundamental invariants $I_1,\ldots,I_\rho$, then we automatically know the classifying functions for all derived invariants thereof, and so those coordinates on $K^{(r)}$ are completely redundant for describing the classifying manifold $\scrC^{(r)}(\bm\theta)$. Indeed, given the functional dependency $T_\sigma=H_\sigma(I_1,\ldots,I_\rho)$ specified by the classifying function $H_\sigma(z^1,\ldots,z^\rho)$, we evaluate its differential using the chain rule and formula (\ref{eq 8.2 Olver93}):
     \[\sum_{i=1}^n\frac{\partial T_\sigma}{\partial\theta^j}\theta^j=\dd T_\sigma=\sum_{\nu=1}^r \frac{\partial H_\sigma}{\partial z^\nu}(I_1,\ldots,I_\rho)\dd I_\nu.\]
     Since $\dd I_\nu=\sum_j \partial I_\nu/\partial\theta^j\, \theta^j$, the linear independence of the coframe elements $\theta^j$ implies that 
     \[\frac{\partial T_\sigma}{\partial\theta^j}=\sum_{\nu=1}^\rho\frac{\partial H_\sigma}{\partial z^\nu}(I_1,\ldots,I_\rho)\frac{\partial I_\nu}{\partial\theta^j}.\label{eq 8.37 Olver93}\]
-    Therefore, if we know the classifying functions for the derived invariants of our fundamental set, 
+    But since each $I_\nu$ has order at most $r$, its coframe derivatives $I_{\nu,j}=\partial I_\nu/\partial\theta^j$ have order at most $r+1$, and by assumption all such functions are generated by the same $I_\mu$. Hence, we already know the classifying functions
     \[\frac{\partial I_\nu}{\partial \theta^j}=H_{\nu,j}(I_1,\ldots,I_\rho),\quad \nu=1,\ldots,\rho,\quad j=1,\ldots,n,\]
-    then we automatically know the classifying functions for all the derived invariants $\partial T_\sigma/\partial \theta^j$, and hence they play no role in the analysis of the classifying manifold. 
-    
-    In particular, the chain rule formula (\ref{eq 8.37 Olver93}) shows that the structure functions of order $r$ can be written as linear combinations of first-order derivatives of the fundamental invariants $I_\nu$. If, say, the $I_\nu$ are of orders $\leq r$, and we assume that $\rho_r=\rho_{r+1}$, then the first derivatives of the fundamental invariants are functionally dependent on those fundamental invariants themselves, so the expression for $\partial T_\sigma/\partial\theta^j$ provides the classifying function for $T_{\sigma,j}$ in terms of the same fundamental invariants. This implies that $\rho_{r+1}=\rho_{r+2}$, so the ranks must stabilize as soon as they fail to increase.
+    for these structure invariants. In combination with the chain rule formula (\ref{eq 8.37 Olver93}) applied to a $\sigma$ of order $r+1$, this gives us the classifying functions for all structure invariants $T_{\sigma,j}$ of order $r+2$. Continuing this process, we eventually determine the classifying functions for all higher-order invariants.
 \end{proof}
 
-This theorem is a direct consequence of the Frobenius Theorem and can be seen as a generalization of Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, which deals with rank $0$ coframes.
+Since stabilization itself doesn't require full regularity, we also introduce a more general notion of regularity for coframes.
 
-\begin{thm}[{{\cite[Thm.~8.15]{Olver93}}}]\label{thm 8.15 Olver93}
-    Let $\bm\theta$ and $\bar{\bm\theta}$ be smooth, fully regular coframes defined, respectively, on $n$-dimensional manifolds $M$ and $\wb M$. A local diffeomorphism $F:M\supset U\to \wb{M}$ mapping the coframes to each other, $F^\ast \bar{\bm\theta}=\bm\theta$, exists iff for each $r\geq 0$, their $r$-th order classifying manifolds $\scrC^{(r)}(\bm\theta)$ and $\scrC^{(r)}(\bar{\bm\theta})$ overlap.
+\begin{defn}[Regular coframe]\index{Regular coframe}
+    A coframe $\bm\theta$ on $M$ is \emph{regular of rank $\rho$} if, for some $r\geq 0$, the ranks $\rho_r=\rho_{r+1}=\rho$ are equal and \emph{constant on $M$}. The smallest integer $r$ for which this condition holds is called the \emph{order of the coframe}, and $\rho$ its \emph{rank}.
+\end{defn}
+
+Crucially, unlike in the definition of a fully regular coframe, we do not require that structure maps $\bf{T}^{(r)}$ have constant rank for \emph{all} orders $r$, but only for sufficiently high orders. As the following example shows, this implies that the order of a regular coframe is no longer bounded by the dimension of $M$.
+
+\begin{example}
+    Suppose $M=\bbR$ and we have just one invariant $I(x)$ with coframe derivative $I'(x)$. If $I(x)=x^n$, then $I'(x)=nx^{n-1}$, $I''(x)=n(n-1)x^{n-2}$, etc. In this case the coframe has rank $1$ everywhere since, upon taking $n$ derivatives, we get a structure map of constant rank $1$. However, at $x=0$, $\rho_r=0$ for $r<n$, and $n$ can be made arbitrarily large.
+\end{example}
+
+Nevertheless, just as before, the ranks must stabilize as soon as they stop increasing (notice that Proposition~\ref{prop 8.18 Olver93} was formulated and proven for general regular frames). As a consequence, one we have fixed a set of fundamental invariants $I_1,\ldots,I_\rho$, we need only determine the classifying functions associated with a) any other $0$-th order structure functions $T^i_{jk}$, and b) the first-order coframe derivatives $\partial I_\nu/\partial\theta^j$ of the fundamental invariants. The chain rule formula (\ref{eq 8.37 Olver93}) implies that all other classifying functions for the associated derived invariants are automatically determined.
+
+In summary, regular coframes allow us to reduce our analysis to a finite number of classifying manifolds. The following is immediate.
+
+\begin{cor}[{{\cite[Prop.~14.23]{Olver93}}}]
+    If $\bm\theta$ and $\bar{\bm\theta}$ are regular coframes of order $r=\wb r$, and their $(r+1)$-st order classifying manifolds are overlapping, then so are all higher-order classifying manifolds.
+\end{cor}
+
+The following main theorem is a direct consequence of the Frobenius Theorem and can be seen as a generalization of Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}, which deals with rank $0$ coframes.
+
+\begin{thm}[Local equivalence criterion for coframes {{\cite[Thms.~8.15, 14.24]{Olver93}}}, {{\cite[Thm.~VII.4.1]{Sternberg}}}]\label{thm 8.15 Olver93}
+    Let $\bm\theta$ and $\bar{\bm\theta}$ be smooth, regular coframes defined, respectively, on $n$-dimensional manifolds $M$ and $\wb M$. A local diffeomorphism $F:M\supset U\to \wb{M}$ mapping the coframes to each other, $F^\ast \bar{\bm\theta}=\bm\theta$, exists iff
+    \begin{enumerate}[label=(\alph*)]
+        \item the coframes have the same order $r$;
+        \item their $(r+1)$-st order classifying manifolds $\scrC^{(r+1)}(\bm\theta)$ and $\scrC^{(r+1)}(\bar{\bm\theta})$ overlap.
+    \end{enumerate}
+    Moreover, if $m_0\in M$ and $\wb m_0\in \wb M$ are two points with the same value of the respective structure maps, 
+    \[z_0=\bf{T}^{(r+1)}(m_0)=\wb{\bf{T}}^{(r+1)}(\wb m_0)\in\scrC^{(r+1)}(\bm\theta)\cap\scrC^{(r+1)}(\bar{\bm\theta})\]
+    lying in the overlap of the two classifying manifolds, then there is a unique local equivalence map $F$ such that $\wb m_0=F(m_0)$.
 \end{thm}
+\begin{proof}
+    The proof relies on the method of the graph, much like the proof of Cartan's Fundamental Theorem. In other words, the graph of $F$ will be an integral manifold of a certain distribution on $M\times \wb M$. Thus, we begin by introducing a Pfaffian system $\calI$ on $M\times \wb M$ generated by the $1$-forms $\vartheta^i\coloneqq \wb\theta^i-\theta^i$, $i=1,\ldots,n$. As it stands, $\calI$ is not, in general, involutive, since we have not yet take the structure invariants into account. However, any equivalence map $F$ must necessarily satisfy the system of invariance equations 
+    \[F_\sigma(m,\wb m)=\wb T_\sigma(\wb m)-T_\sigma(m)=0,\quad \ord(\sigma)\leq r+1,\label{eq 14.24 Olver93}\]
+    which is the same as requiring that $m$ and $\wb m$ map to the same point of the $(r+1)$-st order classifying manifold. Therefore, the graph of $F$ will be the subset of the variety (zero locus)
+    \[\calS=\{(m,\wb m)\mid \wb{\bf T}^{(r+1)}(\wb m)=\bf{T}^{(r+1)}(m)\}\subset M\times\wb M,\]
+    defined by the vanishing of the functions $F_\sigma(m,\wb m)$ for $\ord(\sigma)\leq r+1$. Thus, we should first restrict the Pfaffian system $\calI$ to $\calS$, and \emph{then} prove involutivity.
+
+    First we need to prove that $\calS$ is locally a smooth submanifold of $M\times \wb M$. This is tricky since the functions $F_\sigma$ almost never form a regular family and so the \gls{immt} is not immediately applicable.\footnote{A regular family is a collection of functions whose differentials form a map of constant rank, so that the \gls{immt} can be used. For a full discussion of regular families see Definition~\ref{def ordinary zero}.}\index{Regular family} To see why, suppose $\wb x$ and $x$ are scalar variables. Then the two functions $\wb x-x$ and $\wb x^2-x^2$ arising from the functionally independent functions $x,x^2$ and $\wb x,\wb x^2$, do \emph{not} form a regular family since their Jacobian matrix has rank $1$ on the associated variety $\calS=\{\wb x=x\}$, but has rank $2$ elsewhere. However, the first function $\wb x-x$ by itself is regular, and hence its variety, which is also $\calS$, is indeed a submanifold. In general, we proceed in a similar cautious fashion.
+
+    Let $m_0\in M$, $\wb m_0\in \wb M$, and $z_0$ be as in the assumption. Since $\scrC^{(r)}$ is a $\rho$-dimensional submanifold of the Euclidean space $K^{(r)}$, we can choose $\rho$ of the local coordinate functions $z_{\sigma_1},\ldots,z_{\sigma_\rho}$, $\ord(\sigma_\nu)\leq r$, such that $\restr{\dd z_{\sigma_1}\wedge\cdots\wedge\dd z_{\sigma_\rho}}{\scrC^{(r)}}\neq 0$ in some neighborhood of $z_0$. This implies that the $z_{\sigma_\nu}$ provide local coordinates on $\scrC^{(r)}$, which is equivalent to the statement that the invariants $T_{\sigma_1},\ldots,T_{\sigma_\rho}$ are functionally independent in a neighborhood of $m_0\in M$. Moreover, since $\scrC^{(r+1)}$ is also $\rho$-dimensional, and projects to $\scrC^{(r)}$, the \emph{same} coordinate functions remain independent when restricted to $\scrC^{(r+1)}$. Furthermore, the corresponding barred invariants $\wb T_{\sigma_\nu}$ must also be functionally independent in a neighborhood of $\wb m_0\in \wb M$ since they locally parametrize the same classifying manifold inside $K^{(r)}$.  This clearly implies that the differences $F_{\sigma_\nu}$, $\nu=1,\ldots,\rho$, are functionally independent in a neighborhood of $(m_0,\wb m_0)$, and hence form a regular family there. Therefore, we can now use the \gls{immt} to conclude that the variety $\wt\calS=\{(m,\wb m)\mid F_{\sigma_\nu}(m,\wb m)=0,\; \nu=1,\ldots,\rho\}$ forms a $(2n-\rho)$-dimensional submanifold of $M\times \wb M$.
+
+    It only remains to check the restriction $\restr{\calI}{\calS}$ of our Pfaffian system satisfies the hypotheses of the Frobenius Theorem~\ref{prop 4.7.10 RS1}. First we compute the rank of the restricted system and verify that it is constant. On $\calS$, the differentials $\dd F_{\sigma_\nu}$ of the local coordinate functions will vanish, as above, which must be taken into account when computing the rank. For any $\sigma=\sigma_\nu$, we find 
+    \begin{align}
+        \dd F_\sigma=\dd \wb{T}_\sigma-\dd T_\sigma&=\sum_{j=1}^n \left(\frac{\partial \wb T_\sigma}{\partial \wb\theta^j}\wb\theta^j-\frac{\partial T_\sigma}{\partial \theta^j}\theta^j\right)\notag\\
+        &=\sum_{j=1}^n\left[\left(\wb T_{\sigma,j}-T_{\sigma,j}\right)\wb\theta^j+T_{\sigma,j}\left(\wb\theta^j-\theta^j\right)\right].
+    \end{align}
+    Since $\ord(\sigma)\leq r$, the difference $\wb T_{\sigma,j}-T_{\sigma,j}=F_{\sigma,j}$ vanishes as a consequence of the invariance equations (\ref{eq 14.24 Olver93}). Therefore, each differential $\dd F_\sigma=\sum_k T_{\sigma,j}\vartheta^j$ is a linear combination of the $1$-forms $\vartheta^i$ defining our Pfaffian system $\calI$. Linear independence of the $\dd F_{\sigma_\nu}$ therefore implies that, at each point of $\calS$, precisely $n-\rho$ of the restricted $1$-forms $\restr{\vartheta^j}{\calS}$ remain linearly independent, and hence the rank of $\restr{\calI}{\calS}$ is $n-\rho$ at every point of $\calS$.
+
+    Second, we need to prove that $\restr{\calI}{\calS}$ is involutive, and this requires computing the differentials of the generating $1$-forms:
+    \begin{align}
+        \dd\vartheta^i=\dd \wb\theta^i-\dd \theta^i&=\sum_{j<k}\left(\wb T^i_{jk}\wb\theta^j\wedge\wb\theta^k-T^i_{jk}\theta^j\wedge\theta^k\right)\notag\\
+        & = \sum_{j<k}\left[\left(\wb T^i_{jk}-T^i_{jk}\right)\wb\theta^j\wedge\wb\theta^k+T^i_{jk}\left(\vartheta^j\wedge\wb\theta^k+\theta^j\wedge\vartheta^k\right)\right].
+    \end{align}
+    On the submanifold $\calS$, the first set of summands vanishes since the $T^i_{jk}$ appear among our complete collection of structure invariants $T_\sigma$. Therefore, $\restr{\dd\vartheta^i}{\calS}\in \restr{\calI}{\calS}$, which proves involutivity. The Frobenius Theorem~\ref{prop 4.7.10 RS1} guarantees the existence of a unique $n$-dimensional integral manifold $N\subset\calS\subset M\times\wb M$ passing through each point $(m,\wb m)\in \calS$. The fact that $N$ projects non-degenerately onto both $M$ and $\wb M$ follows easily in the same manner as in the proof of Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local}. Hence, $N$ is locally a graph of a local diffeomorphism $F:U\supset M\to \wb M$.
+\end{proof}
+
+\begin{rem}
+    Notice how the Pfaffian system had to be restricted to the submanifold $\calS$ to become integrable. Such submanifolds are called \emph{restricting manifolds} and we will encounter them in full generality in the discussion of the Cartan-K\"ahler Theorem in the next \chap.\index{Restricting manifold}
+\end{rem}
+
+As an immediate corollary, the rank $0$ case gets us back to a local version of Theorem~\ref{thm 8.7 Sharpe} stating that a coframe satisfying the Maurer-Cartan equation determines a structure of a local Lie group.
+
+\begin{cor}[{{\cite[Thms.~8.16, 14.18-19]{Olver93}}}]\label{thm 14.18 Olver93}
+    Let $\bm\eta$ be a rank $0$ coframe on an $n$-dimensional manifold $M$, thus with constant structure functions $T^i_{jk}=-c^i_{jk}$, $i,j,k=1,\ldots,n$. Let $G$ be an $n$-dimensional Lie group whose Lie algebra has structure constants $c^i_{jk}$ relative to some basis $\{\bf{t}_1,\ldots,\bf{t}_n\}$ and let $\{\theta^1,\ldots,\theta^n\}$ be the dual basis of Maurer-Cartan forms. Then for every $m_0\in M$ and sufficiently small open neighborhood $U\subset M$ of $m_0$, there exists a unique local diffeomorphism $F:U\to G$ such that $F(m_0)=e$ and mapping the given coframe to the Maurer-Cartan coframe on $G$: $F^\ast\theta^i=\eta^i$, $i=1,\ldots,n$.
+\end{cor}
+
+
+\PRLsep
+
+Just like Cartan's Fundamental Theorem, Theorem~\ref{thm 8.15 Olver93} can be extended to a global version, but the result is simple only in two special cases. Predictably, in the global treatment we need to allow frame equivalences to be defined on covering spaces of $M$. A coframe $\hat{\bm\theta}$ on a connected covering space $\wh M\to M$ is called a \emph{covering coframe} for $\bm\theta$ if the covering map $\wh\pi:\wh M\to M$ defines an equivalence, so $\wh\pi^\ast \hat{\bm\theta}=\bm\theta$. The following obvious statement holds.
+
+\begin{prop}
+    Let $\hat{\bm\theta}$ be a covering coframe for $\bm\theta$. Then all of their classifying manifolds are identical: $\scrC^{(r)}(\hat{\bm\theta})=\scrC^{(r)}(\bm\theta)$, $r\geq 0$.
+\end{prop}
+
+Thus, any pair of coframes with a common covering coframe or covering a common coframe will have identical classifying manifolds. The main problem is thus to establish whether or not such coverings exhaust the possible coframes having the same classifying manifolds (globally). We will call two coframes $\bm\theta,\bar{\bm\theta}$ (defined on $M,\wb M$, respectively) \emph{globally equivalent up to covering} if they have a common covering coframe defined on a connected manifold $\wh M$ which covers both $M$ and $\wb M$. 
+
+Before considering the general case, take the rank $0$ case. The corresponding global equivalence problem has already been solved by us in Theorem~\ref{thm 8.7 Sharpe}. We restate it here in simpler terms for convenience.
+
+\begin{thm}[{{\cite[Thm.~14.28]{Olver93}}}]
+    Let $\bm\theta$ be a coframe of rank $0$ on a (parallelizable) connected manifold $M$. Then $\bm\theta$ is globally equivalent up to covering to a Maurer-Cartan coframe $\bm{\theta}_G$ on an open subset of a Lie group $G$.
+\end{thm}
+
+The equivalence map is given by the (covering) developing map $D:\wh M\to G$. 
+
+\begin{example}[{{\cite[Example~14.29]{Olver93}}}]
+    To see that, even if $M$ is simply connected, it may not be directly realizable as an open subset of a Lie group, consider the coframe 
+    \[\theta^1=\cos\varphi-r\sin\varphi\dd r,\quad \theta^2=\sin\varphi\dd r+r\cos\varphi\dd\varphi,\]
+    defined on the half-plane $M=\{(r,\varphi)\mid r>0\}$. Clearly, in terms of polar coordinates, this coframe is locally diffeomorphic to the Maurer-Cartan coframe $\dd x,\dd y$ for the abelian Lie group $\bbR^2$. Indeed, $M$ can be identified with the universal covering space for the punctured plane $\bbR^2\setminus\{(-1,0)\}$ so that the forms $\theta^1,\theta^2$ are the pullbacks of $\dd x,\dd y$ under the covering map 
+    \[\pi(r,\varphi)=(r\cos\varphi-1,r\sin\varphi)\in\bbR^2\setminus\{(-1,0)\}.\]
+    (We choose to puncture at $(-1,0)$ so as to retain the origin -- the group identity element.) However, it is not difficult to see that the coframe $\theta^1,\theta^2$ is not globally equivalent to the Maurer-Cartan coframe on any open subset of the Lie group $\bbR^2$.
+\end{example}
+
+\begin{rem}
+    In fact, the above example shows that local Lie groups are strictly more general than Lie groups, in that the local Lie group constructed above cannot be globalized (identified with an open subset of a Lie group). It has been shown that such non-globalizable local Lie groups are characterized by failure of associativity (when applied to products of arbitrary length). In the example above, one could add two points $v,w$ to a given point $u$ so that the triangle formed by $u,u+v,u+w$ encloses the point $(-1,0)$, and so the two expressions $(u+v)+w$ and $u+(v+w)$ end up different sheets of the covering, which explicitly violates the axioms of a group.
+\end{rem}
+
+At the other extreme, if a regular coframe $\bm\theta$ has \emph{maximal rank} $n=\dim M$, then its classifying manifold is itself an $n$-dimensional submanifold of the classifying space. In fact, this allows one to unambiguously define an equivalent coframe on the classifying manifold itself, in such a way that $\bm\theta$ is a covering coframe of the ``classifying coframe''. This will lead to the following global equivalence theorem for coframes of maximal rank.
+
+\begin{thm}[Global equivalence criterion for coframes of maximal rank {{\cite[Thm.~14.30]{Olver93}}}]
+    Let $\bm\theta$ and $\bar{\bm\theta}$ be coframes defined on $n$-dimensional manifolds $M$ and $\wb M$, respectively. Let them be regular and of the same order $r$ and of \emph{maximal} rank, $\rho=n$. Then $\bm\theta$ and $\bar{\bm\theta}$ have identical $(r+1)$-st order classifying manifolds iff they both cover a common coframe $\bm{\vartheta}$.
+\end{thm}
+\begin{proof}
+    In fact, $\bm\vartheta$ will be a coframe on the common classifying manifold $N=\scrC^{(r+1)}(\bm\theta)=\scrC^{(r+1)}(\bar{\bm\theta})$. To construct it, let $\bf{T}=\bf{T}^{(r+1)}:M\to N$ be the $(r+1)$-st order structure map. Since $\bm\theta$ has maximal rank, $\bf{T}$ is a local diffeomorphism, and hence a covering map from $M$ onto $N$. Suppose $U\subset M$ is an open subset such that $\bf{T}_U\coloneqq \restr{\bf{T}}{U}$ defines a one-to-one map from $U$ onto some open subset $V=\bf{T}(U)\subset N$. Define the coframe $\bm\vartheta_U\coloneqq (\bf{T}^{-1}_U)^\ast \bm\theta$ on $V$ to be the inverse pullback of the original coframe on $U$, so that $\bf{T}_U$ defines an equivalence between two coframes $\restr{\bm\theta}{U}$ and $\bm\vartheta_U$. We claim that $\bm\vartheta_U$ is just the restriction of a globally defined coframe $\vartheta$ on the universal covering $\wt M$ of $M$, so $\bm\vartheta_U=\restr{\bm\vartheta}{V}$. To see this, suppose $\wt U\subset M$ is another open set of the same type, with one-to-one image $\wt V=\bf{T}(\wt U)$. We need to show that, on the intersection $V\cap\wt U$, the two coframes $\bm\vartheta_U$ and $\bm\vartheta_{\wt U}$ agree. By shrinking their domains $U,\wt U$ if necessary, we can assume $V=\wt V$. Theorem~\ref{thm 8.15 Olver93} implies that the composite map $\bf{T}_{\wt U}^{-1}\circ \bf{T}_U:U\to \wt U$ defines an equivalence between the restrictions of $\bm\theta$ to $U$ and $V$, so that 
+    \[\restr{\bm\theta}{U}=\left[\bf{T}_{\wt U}^{-1}\circ \bf{T}_U\right]^\ast \left(\bm\theta\mid\wt U\right)=[\bf{T}_U]^\ast\circ \left[\bf{T}_{\wt U}^{-1}\right]^\ast \left(\restr{\bm\theta}{\wt U}\right)\].
+    This implies 
+    \[\bm\vartheta_U=\left[\bf{T}_U^{-1}\right]^\ast\left(\restr{\bm\theta}{U}\right)=\left[\bf{T}^{-1}_{\wt U}\right]^\ast\left(\restr{\bm\theta}{\wt U}\right)=\bm\vartheta_{\wt U}\]
+    define the \emph{same} coframe on the common domain $V=\wt V$, which proves the claim. We conclude that $\bm\theta$ is a covering coframe for $\bm\vartheta$. The same construction clearly works for $\bar{\bm\theta}$, and leads to the same coframe $\bm\vartheta$ on the common classifying manifold $N$.
+\end{proof}
+
+
+
+\PRLsep 
+
+The solution to the equivalence problem for coframes also determines the structure of the symmetry group of a given coframe.
+
+\begin{defn}[Symmetry of a coframe]
+    Let $\bm\theta=(\theta^1,\ldots,\theta^n)$ be a coframe on a manifold $M$. The symmetry (pseudo)group of $\bm\theta$ is the (pseudo)group of self-equivalences, meaning local diffeomorphisms $F:M\supset U\to M$ satisfying $F^\ast \theta^i=\theta^i$, $i=1,\ldots,n$. An \emph{infinitesimal symmetry} of $\bm\theta$ is a vector field $X\in\fX(M)$ such that $\Lie_X \bf{\theta}=0$.
+\end{defn}
+
+For any equivalence problem that can be formulated as an equivalence problem for coframes, this definition coincides with the usual notion of symmetry group, the symmetries in question being, of course, restricted to lie in the prescribed class of automorphisms. Here we will only consider the \emph{local symmetry group}, i.e., the group of symmetries generated by short-time flows of infinitesimal symmetries.
+
+Consider the case of rank $0$, which means that all structure functions are constant. According to Theorem~\ref{thm 14.18 Olver93}, there is a local diffeomorphism mapping the coframe to the Maurer-Cartan coframe on a Lie group $G$ whose structure constants coincide with the constant structure functions (up to sign). Since the Maurer-Cartan forms are right-invariant, the Lie group $G$ itself, acting via right translation, provides the symmetry group of the coframe. Therefore, the structure of the symmetry group can be immediately determined from the coframe's structure equations.
+
+At the other extreme, if the coframe has maximal rank $\rho=n$, then the \gls{inmt} implies that the invariance equations $F^\ast\bm\theta=\bm\theta$ implicitly determine the relevant change of variables $\wb m=F(m)$. In this case, the coframe admits at most a discrete symmetry group. 
+
+In the intermediate cases, when the rank satisfies $0\leq \rho<n$, we can introduce local coordinates $(y,z)=(y^1,\ldots,y^\rho,z^1,\ldots,z^{n-\rho})$ on $M$ so that the $y^i$ form a complete system of fundamental invariants, meaning that every other structure invariant can be written as a function of the $y^i$ alone. This is equivalent to the statement that each slice $N_{\bf c}=\{y^1=c^1,\ldots,y^\rho=c^\rho\}$, $\bf{c}\in\bbR^\rho$, forms a level set for the structure map $\bf{T}^{(n)}$. Let us restrict the coframe $\bm\theta$ to a slice $N=N_{\bf c}$, and then choose a set of $n-\rho$ independent $1$-forms $\restr{\theta^i}{N}$ which form a coframe on $N$. The structure functions for this restricted coframe must be constant on $N$, since otherwise there would be invariants of the original coframe that depended essentially on the $z^j$, contradicting our assumptions. Therefore, on each slice $N_{\bf c}$, we have reduced to the rank $0$ case, and thereby produced an $(n-\rho)$-dimensional symmetry group. Remarkably, the resulting restricted symmetry groups are all isomorphic to the same $(n-\rho)$-dimensional Lie group $G$ and, in fact, come from the restriction of an action of $G$ on $M$ itself which leaves the original coframe invariant.
+
+\begin{thm}[{{\cite[Thm.~14.26]{Olver93}}}]
+    The (local) symmetry group $G$ of a regular coframe $\bm\theta$ of constant rank $\rho$ on an $n$-dimensional manifold $M$ is a local Lie group of dimension $n-\rho$.
+\end{thm}
+\begin{proof}
+    A symmetry is just a self-equivalence, so we set $\wb M=M$, $\bar{\bm\theta}=\bm\theta$. Clearly, symmetries form a local transformation group, since the composition of two symmetries is, where defined, again a symmetry. According to Theorem~\ref{thm 8.15 Olver93}, through each point $(m,\wb m)\in M\times\wb M$ which satisfies the invariance equations (\ref{eq 14.24 Olver93}), there passes a \emph{unique} $n$-dimensional integral submanifold $N$ of the Pfaffian system $\calI$ determining the graph of a symmetry. Using the \gls{immt}, for each fixed $m$, there is an $(n-\rho)$-dimensional submanifold of $\wb m$'s which satisfy the restrictions $\{\wb m\mid \wb T_\sigma(\wb m)=T_\sigma(m)\}$, so that the collection of such symmetries forms an $(n-\rho)$-parameter group. (In particular, the only symmetry of a regular coframe which has a fixed point is the identity map!) Smoothness of the group action follows from the smoothness of the foliation provided by the Frobenius Theorem.
+\end{proof}
+
+
+\begin{rem}
+    The level sets $N_{\bf z}=\{m\in M\mid \bf{T}^{(r+1)}(m)=\bf{z}\}\subset M$ of the fundamental structure invariants of a coframe of order $r$ must be invariant subsets under the symmetry group, since any symmetry must leave the invariants fixed. In fact, the proof of the above theorem implies the group acts locally transitively and freely on $N_{\bf z}$, so the coframe reduces to a coframe on $N_{\bf z}$ satisfying the Maurer-Cartan equations for the symmetry group $G$. What is remarkable is that the reductions to each $N_{\bf{z}}$ are isomorphic coframes, corresponding to the same Lie group $G$. In other words, $N_{\bf{z}}$ become fibers of a local principal $G$-bundle. Meanwhile, the coframe provides a global trivialization of the total space of that bundle. The global version of this kind of structure is known as Cartan geometry, to be studied in \Chap~\ref{ch: cartan geom}.
+\end{rem}
+
+
+
+\section{\texorpdfstring{$G$}{G}-equivalence problems}
+
+In general, the geometric structures whose equivalence we might want to establish are not directly represented by a coframe. In Cartan's approach, the equivalence conditions must be reformulated in terms of a collection of $1$-forms which need not comprise a coframe. Correspondingly, an equivalence between such structures is required to be not just a general diffeomorphism, but a diffeomorphism belonging to a special class of transformations that respect the geometric structures under consideration. These restrictions on transformations must also be encoded in terms of $1$-forms. 
+
+If we think of geometric structures as equivariant functions $\varphi:P\to F$ on principal $G$-bundles $P\to M$ (cf.\ Definition~\ref{def geom structure}), then an \emph{equivalence of geometric structures} is simply an isomorphism $h:P\to \wb P$ of the principal bundles which takes one function to the other: $h^\ast \wb\varphi=\varphi$. Since each value $f\in F$ of $\varphi$ determines a reduction of $P$ to a $G_f$-bundle $Q=\varphi^{-1}(f)$, this agrees with the similarly intuitive definition of \emph{equivalence of $G_f$-structures} as isomorphisms of the corresponding principal $G_f$-bundles. These two concepts become completely identical if the geometric structure is \emph{homogeneous}, which means that its image is an orbit of single point $f\in F$: $\im(\varphi)=\scrO_f=G\cdot f$ (in general, $\im(\varphi)$ consists of many orbits).
+
+However, true equivalence problems are \emph{not} referring to mere isomorphisms of principal bundles. Cartan's equivalence problem refers specifically to geometric structures on the \emph{base} $M$, i.e., on its natural bundles. In this case, we are working with the principal bundles of $r$-th order frames (or coframes) on $M$, and $F=V$ is a finite-dimensional vector space carrying an action of the $r$-th order jet group $\GL^r_n(\bbR)$. Equivalences between structures on such bundles require solving an additional \emph{integrability problem}, in the sense that the bundle isomorphism must be naturally determined by a diffeomorphism of the bases.
+
+\begin{defn}[Holonomic isomorphism]\index{Holonomic isomorphism}
+    Let $P<\Fr^r(\T M)$ and $\wb P<\Fr^r(\T \wb M)$ be $G$-structures on manifolds $M$ and $\wb M$. An \gls{pfb} isomorphism $h:P\to \wb P$ is called holonomic if it is the lifting (prolongation) of a diffeomorphism $F:M\to \wb M$: $h=F^{(r)}$.
+\end{defn}
+
+\begin{defn}[Equivalence]\index{Equivalence of structures}
+    For natural bundles over two manifolds $M$ and $\wb M$, an equivalence of geometric or $G$-structures on them is a holonomic isomorphism of the corresponding principal bundles that takes one structure to the other. An \emph{equivalence problem} is the problem of finding such an $F$, or deciding it doesn't exist.    
+\end{defn}
+
+In more detail, it is a diffeomorphism $F:M\to \wb M$ such that its lifting (prolongation) $F^{(r)}:\Fr^r(\T M)\to \Fr^r(\T \wb M)$ to the appropriate frame bundle is an equivalence in the above sense:
+\[\left(F^{(r)}\right)^\ast \wb\varphi=\varphi.\]
+For $G$-structures $P<\Fr^r(\T M)$, $\wb P<\Fr^r(\T \wb M)$, this translates to 
+\[F^{(r)}(P)=\wb P.\]
+Note that these equations can be seen as a system of $r$-th order PDEs on $F$.
+
+The reason this problem is much more substantial is that there are relatively very few holonomic isomorphisms between natural principal bundles. For example, there are no \emph{vertical} self-equivalences of frame bundles other than the identity (because the base map $F$ must be the identity, so $F^{(r)}$ is, too), whereas general vertical automorphisms of a frame bundle comprise the infinite-dimensional (unless $M$ is discrete) gauge group. 
+
+One type of equivalences plays a particularly crucial role across all of differential geometry, and it has to do with finding special coordinates on $M$ that ``generate'' the given $G$-structure. To understand how this happens, note that every local coordinate system $(U,\bf{x}=(x^1,\ldots,x^n))$ on $M$ determines a canonical holonomic local section of $\Fr^r(\T M)$ given by the formula 
+\[U\to \Fr^r(\T M),\quad m\mapsto \rmj^r_0\left(\bf{x}-\bf{x}(m)\right)^{-1}.\]
+For example, for $r=1$, this section is simply the local frame made up from the coordinate vector fields $\partial/\partial x^1,\ldots,\partial/\partial x^n$. The \emph{problem of integrating a $G$-structure} is exactly the problem of finding coordinates on $M$ in which this canonical frame is a section of the $G$-structure. 
+
+In particular, the standard coordinate system on $\bbR^n$ generates a canonical section of the frame bundle $\bbR^n\times \GL_n^r(\bbR)$. By applying the action of $G$ to this canonical section of $\bbR^n\times \GL_n^r(\bbR)$ from the right, we span the whole ``flat'' $G$-structure $\bbR^n\times G<\bbR^n\times \GL_n^r(\bbR)$. Any choice of local coordinates on $M$ establishes a correspondence between the two canonical frames on $M$ and $\bbR^n$.  Since any isomorphism of principal bundles is completely determined by its action on any one section, this leads to the following general definition of integrability.
+
+\begin{defn}[Integrable $G$-structure]\index{Integrable $G$-structure}
+    A $G$-structure $P<\Fr^r(\T M)$ on a manifold $M$ is called \emph{integrable}, or \emph{locally flat}, if it is locally equivalent to the canonical flat $G$-structure on $\bbR^n$ given by the subbundle $\bbR^n\times G < \bbR^n\times\GL_n^r(\bbR)$. 
+
+    A geometric structure $\varphi:\Fr^r(\T M)\to F$, where $F$ carries an action (usually a linear representation) of the jet group $\GL_n^r(\bbR)$, and whose image contains a point $f\in F$ with stabilizer $G$, is called integrable, or locally flat, if it is locally equivalent to the canonical flat geometric structure on $\bbR^n$ uniquely determined (via equivariance) by its (constant) value $f$ on the canonical $G$-structure $\bbR^n\times G < \bbR^n\times\GL_n^r(\bbR)$ defined above. 
+\end{defn}
+
+In particular, a $G_f$-structure defined by a geometric structure $\varphi$ as $\varphi^{-1}(f)$ is integrable iff the geometric structure $\varphi$ is itself integrable.
+
+\begin{intu*}
+    Integrability is fundamental in defining special \emph{types of geometries} on $M$. While, in general, a choice of a $G$-structure as a subbundle of the frame bundle is an additional free choice separated from the base manifold, an integrable $G$-structure is completely determined by a particular atlas on $M$. Thus, integrable $G$-structures \emph{become natural} (functorial) when restricted to the category of manifolds with the corresponding special kind of atlas. For example, an integrable almost complex structure is the same as a complex manifold, which is defined by an atlas with holomorphic transition maps. An integrable $\{e\}$-structure, as we have seen, is a coframe with constant structure functions, hence a local Lie group.
+\end{intu*}
+
+Since Cartan's approach demands that we put every equivalence problem in the language of differential $1$-forms, we need to find a way to identify every $G$-structure with a collection of $1$-forms on some manifold. To this end, let $L^{-1}$ denote the Lie algebra of $\infty$-jets at $0\in\bbR^n$ of arbitrary vector fields on $\bbR^n$ (as maps $\bbR^n\to\bbR^n$). If $X\in\fX(\bbR^n)$, then its $\infty$-jet is represented by the canonical coordinates 
+\[\rmj^\infty_0 X\mapsto (X^i,X^i_j,X^i_{j_1j_2},X^i_{j_1j_2j_3},\ldots).\]
+Similarly, any diffeomorphism $F\in \Diff(\bbR^n)$ such that $F(0)=0$ has an $\infty$-jet $g=\rmj^\infty_0 F\in\GL_n^\infty(\bbR)$ at the origin that is described by the canonical coordinates 
+\[g=\rmj^\infty_0 F\mapsto  \left(g^i_{j_1\ldots j_r}\coloneqq \frac{\partial F^i(0)}{\partial x^{j_1}\cdots x^{j_r}}\right)_{r\geq 1}.\]
+(The requirement that $F(0)=0$ is necessary for these jets to form a group.)
+The group $\GL_n^\infty(\bbR)$ then naturally acts on $L^{-1}$ via the chain rule applied to the action $X\mapsto g_\ast\circ X\circ g^{-1}$ on vector fields:
+\[(\rmj_0^\infty F)\cdot (\rmj^\infty_0 X)=(g^i_jX^j,g^i_kX^k_j+g^i_{kj}X^j,g^i_kX^k_{j_1j_2}+g^i_{kj_1}X^k_{j_2}+g^i_{kj_2}X^k_{j_1}+g^i_{kj_1j_2}X^k,\ldots).\]
+In addition, we denote 
+\[L^r\coloneqq \{\rmj_0^\infty X\mid X\in\fX(\bbR^n): \rmj^r_0X=0\},\quad r\geq 0.\]
+Thus, $L^r$ is the space of $r$-jets of diffeomorphisms of $\bbR^n$ that fix the origin and whose $r$-jet at the origin is the identity. In particular, $L^0$ is the Lie algebra of $\GL_n^\infty(\bbR)$. Note that $L^{r'}$ is naturally included as a subspace into $L^{r}$ for $r'<r$. 
+It is obvious that the above action descends to actions of $(r+1)$-jets of diffeomorphisms on $r$-jets of vector fields. In other words, $\GL_n^{r+1}(\bbR)$ has a natural action on $L^{-1}\slash L^r$. Since the Lie algebra of $\GL_n^\infty(\bbR)$ is exactly $L^0$, the above action on the $r>0$ part with $X^k=0$ is exactly the adjoint action. Crucially, this adjoint action of $\GL_n^\infty(\bbR)$ on $L^0$ can be truncated at finite $r$ to produce the adjoint action of $\GL_n^r(\bbR)$ on $L^0\slash L^r$:
+\[\Ad_{g}\left(X^i_j,\ldots,X^i_{j_1\ldots j_r}\right)=\left(g^i_kX^k_j,\ldots, g^i_kX^k_{j_1\ldots j_r}+\cdots+g^i_{kj_1\ldots j_{r-1}}X^k_{j_r}+\cdots +g^i_{kj_2\ldots j_r}X^k_{j_1}\right).\]
+The quotient spaces $L^0\slash L^r$, therefore, are the Lie algebras of the finite jet groups $\GL^r_n(\bbR)$. The remaining part of $L^{-1}\cong(L^{-1}\slash L^0)\oplus L^0$ is the model tangent space that we denote by
+\[V\coloneqq L^{-1}\slash L^0\cong \T_0\bbR^n,\]
+so we have the canonical decompositions $L^{-1}\slash L^r\cong V\oplus(L^0\slash L^r)$.
+We also have the standard bundle projections 
+\[\pi^r:\Fr^r(\T M)\to \Fr^0(\T M)\coloneqq M,\]
+and
+\[\pi^r_{r'}:\Fr^r(\T M)\to \Fr^{r'}(\T M),\quad \pi^r_{r'}(\rmj^r_0 s)=\rmj^{r'}s,\quad r>r',\]
+where $s:\bbR^n\to M$ is a local diffeomorphism with $s(0)=m$ (recall the definition of the higher-order frame bundles from Example~\ref{ex r-th frame bundle}). The following proposition compliments Remark~\ref{jets and R-planes}, where we identified $(r+1)$-jets with R-planes on the $r$-th order jet bundle.
+
+\begin{prop}[{\cite[Prop.~8.1]{Yuma}}]\label{prop 8.1 Yuma}
+    Let $p\in\Fr^r(\T M)$ be an $r$-th order frame at point $m\in M$ and let $p'\in (\pi^{r+1}_r)^{-1}(p)$ be an $(r+1)$-st order frame that projects to $p'$. Then:
+    \begin{enumerate}
+        \item $p'$ determines a unique isomorphism of vector spaces 
+        \[\iota_{p'}:L^{-1}\slash L^r\to \T_p\Fr^r(\T M).\]
+        \item The correspondence $p'\mapsto \iota_{p'}$ intertwines the principal right action of the jet group with its natural ``extended adjoint'' action $\sigma^r_g$ on $L^{-1}\slash L^r$ described above: 
+        \[\iota_{p'\cdot g}=\iota_{p'}\circ \sigma^r_g,\quad g\in \GL_n^{r+1}(\bbR).\]
+        \item The restriction of $\iota_{p'}$ to $L^0\slash L^r<L^{-1}\slash L^r$ does not depend on $p'$ and coincides with the canonical isomorphism (the inverse of the Maurer-Cartan form) $\psi_p$ identifying the Lie algebra of the structure group $\GL_n^r(\bbR)$ with the vertical space $\calV_p \Fr^r(\T M)=\T_p(\pi^r)^{-1}(p)$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Let $s:\bbR^n\to M$ be a local diffeomorphism such that $s(0)=m$ and $\rmj_0^{r+1}s=p'$. By $\rmJ^r_m\T M$ we denote the space of $r$-jets at $m$ of all vector fields in $M$. Obviously, the map 
+    \[\alpha:\rmJ^r_m\T M\to \T_p\Fr^r(\T M),\quad \rmj^r_mX\mapsto \restr{\frac{\dd}{\dd t}}{t=0}\left(\rmj^r_0(\Fl^X_t\circ s)\right),\]
+    is an isomorphism of vector spaces. So is the map 
+    \[\beta:\rmJ^r_m\T M\to \rmJ^r_0\T\bbR^n\cong L^{-1}\slash L^r,\quad \rmj^r_m X\mapsto \restr{\frac{\dd}{\dd t}}{t=0}\left(\rmj^r_0(s^{-1}\circ \Fl^X_t\circ s)\right).\]
+    The isomorphism $\iota_{p'}$ is defined now by the formula 
+    \[\iota_{p'}\coloneqq \alpha\circ\beta^{-1}.\]
+    
+    The canonical isomorphism $L^0\slash L^r\to \calV_p\Fr^r(\T M)$ is defined by the formula 
+    \[\restr{\frac{\dd}{\dd t}}{t=0}\left(\rmj^r_0F_t\right)\mapsto \restr{\frac{\dd}{\dd t}}{t=0}\left(\rmj^r_0(s\circ F_t)\right),\]
+    where $F_t$ is a smooth family of diffeomorphisms of $\bbR^n$ such that $F_t(0)=0$. This formula can be rewritten as follows:
+    \[\restr{\frac{\dd}{\dd t}}{t=0}\left(\rmj^r_0[s^{-1}\circ (s\circ F_t\circ s^{-1})\circ s]\right)\mapsto \restr{\frac{\dd}{\dd t}}{t=0}\left(\rmj^r_0[(s\circ F_t\circ s^{-1})\circ s]\right).\]
+    This has exactly the form of $\alpha\circ\beta^{-1}$ and thus coincides with the action of $\iota_{p'}$.
+\end{proof}
+
+\begin{rem}
+    \begin{enumerate}
+        \item The meaning of the proposition is more trivial than might seem. The diffeomorphism $s^{-1}$ is a local chart on $M$ that generates canonical coordinates $p\mapsto (x^i,p^i_j,\ldots,p^i_{j_1\ldots j_r})$ on $\Fr^r(\T M)$ as usual. Within this chart, the isomorphism $\iota_{p'}$ is given by the obvious map
+        \[\iota_{p'}:\quad\left(X^i,\ldots,X^i_{j_1\ldots j_r}\right)\mapsto X^i\frac{\partial}{\partial x^i}+\cdots +X^i_{j_1\ldots j_r}\frac{\partial}{\partial p^i_{j_1\ldots j_r}}.\]
+        For example, if $r=0$, we conclude that each frame $p'\in\Fr(\T M)$ over a point $m=p\in M$ determines an isomorphism between $\T_m M$ and $V\cong\bbR^n$, which is indeed the definition of a frame. The second statement says that, restricted to $X^i=0$ for all $i$, this map spans the vertical tangent space on the frame bundle. 
+
+        \item Meanwhile, in the case $r=1$, isomorphisms between $\T_p \Fr(\T M)$ and $L^{-1}\slash L^1$ are parametrized by second-order frames $p'\in\Fr^2(\T M)$. The second isomorphism for $r=1$ says that the vertical frame of vector fields $\partial/\partial p^i_j$ is identified with the left-invariant vector fields on $\GL_n(\bbR)$, which is also obvious.
+        \item The fact that this isomorphism is independent of $p'$ means that the only part of $\iota_{p'}$ that can vary is the choice of a nowhere vertical $n$-dimensional tangent plane at $p$ which gets identified with $V=\<\frac{\partial}{\partial x^1},\ldots,\frac{\partial}{\partial x^n}\>$. As we will see later, the choice of such a plane at every point $p$, described locally by functions $p^i_{j_1j_2}(m)$, is exactly the function of a \emph{connection}, which can hence be identified with a section of $\pi^2_1$.\index{Connection}
+    \end{enumerate} 
+\end{rem}
+
+\begin{cor}
+    There is a natural isomorphism of \glspl{vb} 
+    \[\vartheta:\T \Fr^r(\T M) \to \Fr^{r+1}(\T M)\times^{\GL_n^{r+1}(\bbR)}\left(L^{-1}\slash L^r\right).\]
+\end{cor}
+\begin{proof}
+    The map $\vartheta^{-1}$ is given by $[(p',X)]\mapsto \iota_{p'}(X)$, which is well-defined because $[(p'\cdot g,g^{-1}\cdot X)]$ leads to the same result due to the equivariance property of $\iota$. It is clearly an isomorphism.
+\end{proof}
+
+Since the representation of $\GL_n^{r+1}(\bbR)$ on $L^{-1}\slash L^r$ is faithful, this immediately implies that the $(r+1)$-st frame bundle of $M$ is also the regular frame bundle of the $r$-th order frame bundle of $M$:
+\begin{cor}
+    There is a natural isomorphism 
+    \[\Fr(\T \Fr^r(\T M))\cong \Fr^{r+1}(\T M).\]
+\end{cor}
+
+In other words, \emph{tangent frames on the $r$-th order frame bundle are $(r+1)$-st order frames on $M$}. This makes it possible to consider the natural bundle $\pi^r_{r-1}:\Fr^r(\T M)\to \Fr^{r-1}(\T M)$ as a principal $N^r$-bundle, where $N^r=\GL^r_n(\bbR)\slash \GL^{r-1}_n(\bbR)$ is the kernel of the natural homomorphism $\GL^r_n(\bbR)\to \GL^{r-1}_n(\bbR)$ which projects $r$-jets to $(r-1)$-jets. Every $G$-structure of order $r$ thus has a related sequence of first-order $G$-structures
+\[P=P_r\to P_{r-1}\to P_{r-2}\to \cdots \to P_0=M,\]
+where $P_{i-1}=\pi^i_{i-1}(P_i)\subset \Fr^{i-1}(\T M)$. Consequently, the study of $G$-structures of higher order reduces to the study of first-order $G$-structures.
+
+Therefore, let us focus on first-order $G$-structures for the moment. In the first-order case, the isomorphism $\vartheta$ can be identified with the following important differential form on the frame bundle.
+
+\begin{defn}[Soldering form]\index{Soldering form}
+    Let $M$ be a manifold with model tangent space $V\cong\bbR^n$. The soldering form, or the \emph{displacement form}, on the frame bundle $\Fr(\T M)$ is the $V$-valued $1$-form $\theta\in \Omega^1(\Fr(\T M);V)$ defined by 
+    \[\theta_u(X)=\iota_u^{-1}(\pi_\ast(X)),\quad u\in\Fr(\T M),\; X\in \T_u \Fr(\T M).\]
+\end{defn}
+
+Simply put, the soldering form at frame $p$ evaluates the coordinates of the projection $\pi^1_\ast X\in \T M$ in the frame $p$ itself, which is why it is sometimes called the \emph{tautological form}. The equivariance property of $\iota_p$ implies the equivariance of $\theta$ w.r.t.\ the standard action $\GL(V)\overset{\sigma^0}{\acts}V$:
+\[\Phi_g^\ast\theta=\sigma^0(g)^{-1}\circ \theta,\quad g\in \GL(V).\]
+Now let $\pi:P\to M$ be a first-order $G$-structure, so $G$ is a subgroup of $\GL(V)$ and $P<\Fr(\T M)$. 
+
+\begin{rem}\label{rem G-structure as soldering}
+    Crucially, the soldering form can be restricted to $\T P$ (as $i^\ast\theta$, where $i:P\hookrightarrow \Fr(\T M)$ is the reduction morphism/inclusion), and we will still denote the resulting soldering form on $P$ by $\theta$. For given $m\in M$ and $p\in P_m$, consider the map 
+    \[\chi_p:\T_m M\to V, \quad X\mapsto \theta_p(X^\ast),\]
+    where $X^\ast\in \T_p P$ is an arbitrary lift of $X$ to $p$ (i.e., $\pi_\ast(X^\ast)=X$). This map is well-defined since vertical vectors annihilate $\theta$. Moreover, it is an isomorphism, and hence can be identified with a unique frame $u\in \Fr(\T M)$ such that $\iota_u=\chi_p^{-1}$. Therefore, we can recover the reduction morphism $i:p\mapsto u$ from the soldering form on $P$. In other words, any first-order $G$-structure on $M$ can be identified with the tuple $(P\to M,\lambda,\theta)$, where $P$ is a principal $G$-bundle, $\lambda:G\to \GL_n(V)$ is a homomorphism, and $\theta\in \Omega^1(P;V)^{\sigma^0\circ\lambda}$ is a soldering form, defined as an equivariant $V$-valued differential form that vanishes on vertical directions and reduces to an isomorphism on any complement.
+\end{rem}
+
+This remark immediately implies the following.
+
+\begin{cor}
+    Two first-order $G$-structures $(P\to M,\theta)$, $(P'\to M',\theta')$ are equivalent iff their soldering forms are equivalent in the sense that there exists a \gls{pfb} isomorphism $h:P\to P'$ such that $h^\ast\theta'=\theta$.
+\end{cor}
+
+\begin{example}[Equivalence of differential forms]
+    The simplest possible example is the problem of equivalence for $1$-forms. Two differential forms $\omega,\wb\omega$ on manifolds $M,\wb M$, respectively, are equivalent iff there is a smooth local diffeomorphism $F:M\supset U\to \wb M$ such that $F^\ast \wb\omega=\omega$. If these are $1$-forms, this is already in the necessary form for Cartan's approach: in this case, $G=\{e\}$. 
+    
+    However, if they are $2$-forms or higher, we must re-express them in terms of $1$-forms. If $\dim M=n$, then define the \emph{rank} of a $2$-form $\omega$ at $m\in M$ as the smallest integer $0\leq r\leq \frac12 n$ such that 
+    \[\omega^{\wedge r}_m\neq 0,\quad \text{but}\quad \omega^{\wedge(r+1)}_m=0.\]
+    It is obvious that rank is invariant under local diffeomorphisms, in particular equivalences. To be able to solve the equivalence problem, we have to assume that this rank is constant (at least on some open set). Then we can notice that the action $A\mapsto gAg^T$ of $\GL_n(\bbR)$ on the space of \emph{skew-symmetric} $n\times n$ matrices $A$ can be identified with its induced action on the space of $2$-forms $\bigwedge^2\bbR^n$. A consequence of the Jordan normal form is that the orbits of this action are completely classified by the rank $r$ of the $2$-form. Hence, any $2$-form of rank $r$ can be locally brought to the canonical form 
+    \[\omega=\sum_{j=1}^r \omega^j\wedge\omega^{j+r},\]
+    by some choice of a local $2r$-coframe $\omega^1,\ldots,\omega^{2r}$ on $M$. Assuming $\wb \omega$ also has rank $r$ (which it has to for there to be an equivalence), an analogous formula can be written for $\wb\omega$ in terms of a $2r$-coframe $\wb\omega^1,\ldots,\wb\omega^{2r}$ on $\wb M$. The Jacobian of any potential equivalence $F$ can be written in components w.r.t.\ these coframes (completed arbitrarily to full coframes), and the equivalence condition will reduce to the requirement that the top left $2r\times 2r$ block of $F_\ast$ belong to the symplectic group $\Sp_{2r}(\bbR)$. Therefore, the $2$-forms $\omega,\wb\omega$ are equivalent iff they have the same rank and the corresponding sets of $1$-forms obey the transformation rule 
+    \[\left(F^\ast\wb\omega^i\right)(m)=\sum_{j=1}^{2r}g^i_j(m)\omega^j(m),\quad i=1,\ldots,2r,\]
+    where $g(m)=\left(g^i_j(m)\right)$ is a $\Sp_{2r}(\bbR)$-valued function on $M$.
+\end{example}
+
+
+\PRLsep
+
+If $p\in P$, then the soldering form $\theta$ maps $\T_p P$ surjectively onto $V$ and its kernel is exactly the vertical subspace $\ker\pi_{\ast}$. Thus, restricted to any subspace $\calH_p<\T_p P$ complementary to the vertical, $\theta$ becomes an isomorphism. 
+
+\begin{defn}[Horizontal subspace]\index{Horizontal subspace}
+    Let $E\to M$ be a \gls{fb}. A subspace $\calH_p<\T_p E$ is called horizontal if it is complementary to the vertical subspace: $\calH_p\oplus\calV_p E=\T_p E$.
+\end{defn}
+
+\begin{prop}[{{\cite[p.~316]{Sternberg}}}]
+    Let $\pi:P\to M$ be a first-order $G$-structure, let $V$ be the model tangent space of $M$, and $\theta\in\Omega^1(P;V)$ the soldering form. Then the space of all horizontal subspaces at $p\in P$ is naturally an affine space modeled on the space of linear maps $\Lin(V,\frakg)$.
+\end{prop}
+\begin{proof}
+    Let $\calH_p$ and $\calH_p'$ are two horizontal subspaces at $p$ and let $X\in \calH_p$, $X'\in\calH_p'$ be such that $\theta(X_1)=\theta(X_2)=v\in V$. Then, by definition of $\theta$, $\iota_p^{-1}(v)=\pi_\ast(X)=\pi_\ast(X')$, so $\pi_\ast(X-X')=0$ and $X-X'$ is vertical. Since $\calV_p P$ is naturally identified with the Lie algebra $\frakg$ of $G$ via the map $\psi_p$ from Proposition~\ref{prop 8.1 Yuma}, we have constructed a linear map $V\to \frakg$ given by $v\mapsto \psi_p^{-1}(X-X')$. Since, in any given horizontal space at $p$, there is only one vector projecting onto $\iota_p^{-1}(v)$, this map depends only on $\calH_p$ and $\calH_p'$. Let is denote the map by $f_{\calH_p,\calH_p'}$. It is easy to see that, with $\calH_p$ fixed and $f\in \Lin(V,\frakg)$, there exists an $\calH_p'$ such that $f\in f_{\calH_p,\calH_p'}$.
+\end{proof}
+ 
+
+
+
+We can use this to produce an analogous isomorphism $\vartheta$ for arbitrary $G$-structures. Let $\pi:P\to M$ be an $r$-th order $G$-structure. Then the bundle $\pi':\rmJ^1 P\to P$ of jets of sections of $P$ can be considered as a $G'$-structure on $P$, where $G'=\Lin(V,\frakg)$ is the abelian group of linear maps, $\frakg$ is the Lie algebra of $G$. $G'$ is faithfully represented on $V\oplus\frakg$ by the formula 
+\[G'\acts (V\oplus\frakg):\quad a\cdot (\bf{x},A)\coloneqq (\bf{x},A+a(\bf{x})),\quad a\in G',\; \bf{x}\in V,\; A\in\frakg,\]
+and acts on the manifold $P'$ via the formula
+\[L_{a\cdot p'}\coloneqq \{\psi_p(a(\theta(X)))+X\mid a\in G',\; p=\pi'(p'),\; X\in L_{p'}\},\]
+where $\psi_p:\frakg\to \calV_p P$ is the canonical isomorphism from Proposition~\ref{prop 8.1 Yuma}, and $L_{p'}<\T_p P$ is the R-plane at $p$ determined by $p'$. Thus, the point $p'\in P$ above $p\in P$ determines a coframe $\theta_{p'}:\T_p P\to V\oplus \frakg$, which is given on the vertical subspace by $\psi_p$ and on the complementary R-plane $L_{p'}$ by the soldering $\theta_p$. The vector function 
+\[c':P'\to W\coloneqq \Hom\left(\bigwedge^2 V,V\right),\quad p'\mapsto c_{p'},\quad c_{p'}(u,v)=\dd \theta(\theta_p^{-1}(u),\theta_p^{-1}(v)),\]
+is called the \emph{torsion function} of the $G$-structure $P$. 
+
+% A section $s:M\to P'$ of the bundle $\pi\circ \pi':P'\to M$ defines a \emph{principal connection} on $P\to M$, while the restriction 
+
+The mapping $c:P'\to W$ is $G'$-equivariant w.r.t.\ the above-mentioned action of $G'$ on $P$ and the action of $G'$ on $W$ given by 
+\[G'\times W\to W,\quad a,w\mapsto a\cdot w\coloneqq w+\delta a,\]
+where the linear map 
+\[\delta:G'\to W,\quad (\delta a)(u,v)=a(u)v-a(v)u.\]
+is called the \emph{Spencer differential}. 
+
+\begin{defn}
+    Let $P<\Fr^r(\T M)$ be an $r$-th order $G$-structure for some Lie group $G<\GL_n^r(\bbR)$. Then the first prolongation $P^{(1)}$ of $P$ is defined as the space of $1$-jets of local sections of $P$:
+    \[P^{(1)}\coloneqq \rmJ^1(P\to M).\]
+\end{defn}
+
+
+% Note that the Lie bracket of vector fields induces the relations $[L^r,L^q]=L^{r+q}$, $r,g\geq -1$, and so the bracket can be restricted to form maps 
+% \begin{align}
+%     [\cdot,\cdot]&: (L^{-1}\slash L^r)\times (L^{-1}\slash L^r)\to L^{-1}\slash L^{r-1},\\
+%     [\cdot,\cdot]&: V\times L^r\slash L^{r+1}\to L^{r-1}\slash L^r.
+% \end{align}
+% The latter bracket allows one to define the following important concept.
+% \begin{defn}
+%     Let $g_r$ be a subspace of $L^{r-1}\slash L^r$. Its first prolongation $g_r^{(1)}$ is defined as 
+%     \[g_r^{(1)}\coloneqq \{X\in L^r\slash L^{r+1}\mid \forall v\in V\; \;[v,X]\in g_r\}.\]
+% \end{defn}
+% Suppose a sequence of subspaces $g_1,g_2,\ldots$ with $g_r<L^{r-1}\slash L^r$ satisfies the property $[V,g_{r+1}]<g_r$. Then for every $r$ we have the short exact sequence 
+% \[0\to g_r\overset{\partial_{r,0}}{\to}g_{r-1}\otimes V^\ast\overset{\partial_{r-1,1}}{\to}g_{r-2}\otimes \bigwedge^2 V^\ast \overset{\partial_{r-2,2}}{\to}0,\]
+% where the operators $\partial_{r,q}:g_r\otimes\bigwedge^q V^\ast\to g_{r-1}\otimes \bigwedge^{q+1}V^\ast$ are defined in the following way: any element $\xi\in g_r\otimes \bigwedge^q V^\ast$ can be considered as an exterior $g_r$-valued $q$-form on $V$, and then 
+% \[\left(\partial_{r,q}\xi\right)(v_1,\ldots,v_{q+1})=\sum_{i=1}^{q+1}(-1)^{i+1}\left[v_i,\xi(v_1,\ldots,\wh v_i,\ldots,v_{q+1})\right].\]
+% Moreover, it is easy to check using this formula that $\partial_{r+1,q-1}\circ \partial_{r,q}=0$ for all $r,q$. This means that the image of each map in the above sequence lies in the kernel of the next, which allows one to define the vector spaces
+% \[\rmH^{r,q}\coloneqq \bigslant{\ker \partial_{r,q}}{\im \partial_{r-1,q+1}},\]
+% called the \emph{Spencer cohomology groups} of the sequence $(g_r)$.
+
+% Now let $P<\Fr^r(\T M)$ be a $G$-structure of order $r$ and let $\frakg<L^0\slash L^r$ be the Lie algebra of $G$. By definition,
+
 
 
 
@@ -3759,10 +4113,10 @@ Now $\Gr_n(\T M)$ comes endowed with a canonical \gls{eds} $\calC$ called the \e
 \begin{defn}[Canonical contact system]\index{Contact system}
     If $M$ is a manifold, there is a canonical rank-$(n+ns)$ distribution $\calC< \T \Gr_n(\T M)$ defined pointwise by 
     \[\calC_E=\pi_\ast^{-1}(E)\subset \T_E\Gr_n(\T M).\]
-    Then $\calC\subset\Omega^{\smbullet}(\Gr_n(\T M))$ is the ideal generated by the set of $1$-forms on $\Gr_n(\T M)$ that vanish on $C$. From the canonical nature by definition, it is clear that for any diffeomorphism $F:M\to M'$, the corresponding lift $F^{(1)}$ will identify the two contact systems.
+    Then $\calC\subset\Omega^{\smbullet}(\Gr_n(\T M))$ is the ideal generated by the set of $1$-forms on $\Gr_n(\T M)$ that vanish on $C$. From the canonical nature by definition, it is clear that for any diffeomorphism $F:M\to M'$, the corresponding lifting $F^{(1)}$ will identify the two contact systems.
 \end{defn}
 
-Why is $\calC$ called a ``contact'' system? Consider an immersion $i:N\to M$ where $N$ has dimension $n$. This has a canonical ``tangential'' lift $i^{(1)}:N\to \Gr_n(\T M)$ defined by 
+Why is $\calC$ called a ``contact'' system? Consider an immersion $i:N\to M$ where $N$ has dimension $n$. This has a canonical ``tangential'' lifting $i^{(1)}:N\to \Gr_n(\T M)$ defined by 
 \[i^{(1)}(p)=i_\ast(\T_p N)\subset \T_{i(p)}M,\quad p\in N.\]
 Almost by construction, $i_\ast^{(1)}(\T_p N)\subset C_{i^{(1)}(p)}$, so that $(N,i^{(1)})$ is an integral manifold of $\calC$. Conversely, if $(N,i)$ is an integral manifold of $\calC$ that is transversal to the Grassmann fibration $\pi:\Gr_n(\T M)\to M$, i.e., $\pi\circ i$ is an immersion, then $i=(\pi\circ i)^{(1)}$.
 
@@ -3937,10 +4291,10 @@ With this notation, $\calV^n(\calI)\cap \Gr_n(\T M,\bf{x})$ is seen to be the co
 
 So far, we only have that $\calV^n(\calI)$ is a closed subset of $\Gr_n(\T M)$. We would like to find conditions under which it becomes a smooth submanifold, at least locally.
 
-\begin{defn}[Ordinary zero]\index{Ordinary zero}
+\begin{defn}[Ordinary zero]\index{Ordinary zero}\label{def ordinary zero}
     Let $S\subset C^\infty(M)$ be a collection of smooth functions on a manifold $M$. Let the common zero locus be 
     \[Z_S\coloneqq \{m\in M\mid f(m)=0\text{ for all }f\in S\}.\]
-    This is a closed set but not always a submanifold, which prompts the following. A point $z\in Z_S$ is called an ordinary zero of $S$ if there is an open $z$-neighborhood $U\subset M$ such that either $U$ is contained in $Z_S$ or else there is a finite set of functions $f_1,\ldots,f_c\in S$ so that $\dd f_1\wedge\cdots\wedge\dd f_c\neq 0$ on $U$\footnote{This means that the differentials $\dd f_i$ are linearly independent, which allows us to treat the $f_i$ as the complementary coordinate functions such that $(\bf{x},\bf{f})$ become slice coordinates.} while $Z_S\cap U=\{y\in U\mid f_1(y)=\cdots =f_c(y)=0\}$. Then by the \gls{immt}, $Z_S\cap U$ is an embedded submanifold of $U$ of codimension $c$. We denote by $Z^{\mathrm{o}}_S\subset Z_S$ the set of ordinary zeros of $S$.
+    This is a closed set but not always a submanifold, which prompts the following. A point $z\in Z_S$ is called an ordinary zero of $S$ if there is an open $z$-neighborhood $U\subset M$ such that either $U$ is contained in $Z_S$ or else there is a finite set of functions $f_1,\ldots,f_c\in S$ so that $\dd f_1\wedge\cdots\wedge\dd f_c\neq 0$ on $U$\footnote{This means that the differentials $\dd f_i$ are linearly independent, which allows us to treat the $f_i$ as the complementary coordinate functions such that $(\bf{x},\bf{f})$ become slice coordinates.} while $Z_S\cap U=\{y\in U\mid f_1(y)=\cdots =f_c(y)=0\}$. Then by the \gls{immt}, $Z_S\cap U$ is an embedded submanifold of $U$ of codimension $c$. We denote by $Z^{\mathrm{o}}_S\subset Z_S$ the set of ordinary zeros of $S$. The set $S$ is called a \emph{regular family} on $Z_S^{\mathrm{o}}$. \index{Regular family}
 \end{defn}
 
 \begin{xca}
@@ -6037,12 +6391,12 @@ The following important result is, as we will see, a generalization of both the 
     \[\Omega^\ast(\dd x^i)=0,\quad \Omega^\ast(\dd y^\alpha)=\dd u^\alpha.\]
     Using multi-index notations, we may write a typical element in $C^{p,q}$ as 
     \[\wt\varphi=\sum_{I,A}\varphi_{IA}(\bf{x},\bf{y})\dd \bf{u}^I\wedge\dd \bf{w}^A,\]
-    where $\varphi_{IA}(\bf{x},\bf{y})$ is a polynomial such that $\deg\varphi_{IA}=p$ and $\deg I+\deg A=q$. We shall identify $\wt\varphi$ with the expression 
+    where $\varphi_{IA}(\bf{x},\bf{y})$ is a polynomial such that $\deg\varphi_{IA}=p$ and $\ord I+\ord A=q$. We shall identify $\wt\varphi$ with the expression 
     \[\varphi=\sum_{I,A}\varphi_{IA}(\bf{x},\bf{y})\dd \bf{y}^I\wedge\dd \bf{w}^A.\]
     When this is done, 
     \[\delta_\Omega(\varphi)=\sum_{I,A}\partial_{y^\alpha}\varphi_{IA}(\bf{x},\bf{y})\dd y^\alpha\wedge\dd \bf{y}^I\wedge\dd \bf{w}^A.\]
     In other words, $\delta_\Omega$ is the exterior derivative w.r.t.\ the $\bf{y}$ variables, treating $\bf{x}$ and $\bf{w}$ as parameters. This suggests that we set 
-    \[C^{r,s,\rho,\sigma}\coloneqq \{\varphi\mid \deg_{\bf{x}}\varphi_{IA}=r,\deg_{\bf{y}}\varphi_{IA}=s,\deg I=\rho,\deg A=\sigma\}.\]
+    \[C^{r,s,\rho,\sigma}\coloneqq \{\varphi\mid \deg_{\bf{x}}\varphi_{IA}=r,\deg_{\bf{y}}\varphi_{IA}=s,\ord I=\rho,\ord A=\sigma\}.\]
     Then $\delta_\Omega:C^{r,s,\rho,\sigma}\to C^{r,s-1,\rho+1,\sigma}$ and with the obvious notation, 
     \[\rmH^{p,q}(\Omega)\cong \bigoplus_{
         \begin{smallmatrix}
@@ -6090,7 +6444,7 @@ When $r=q=1$, this corollary is the usual \emph{Cartan Lemma}~\ref{lem cartan}. 
 We now discuss a variant of the lemma relevant to prolongation theory. Let us redefine the spaces $C^{p,q}$ as 
 \[C^{p,q}\coloneqq W\otimes \bigodot^k V^\ast\otimes \bigwedge^q V^\ast.\]
 Choosing bases $\{w_a\}$ for $W$ and $\{x^i=\dd x^i\}$ for $V^\ast$ we may think of $\varphi\in C^{k,q}$ as a $W$-valued polynomial form 
-\[\varphi=\sum_{\deg I=k,\deg J=q}w_a\otimes \varphi^a_{IJ}\bf{x}^I \dd \bf{x}^J.\]
+\[\varphi=\sum_{\ord I=k,\ord J=q}w_a\otimes \varphi^a_{IJ}\bf{x}^I \dd \bf{x}^J.\]
 We define $\delta:C^{k,q}\to C^{k-1,q+1}$ to be the usual exterior derivative treating the $w_a$ as constants. Denoting the resulting cohomology by $\rmH^{k,q}$, we have from Cartan-Poincar\'e Lemma, namely (\ref{eq viii.13 Bryant}), 
 \[\rmH^{k,q}=\begin{cases}
     W,& k=q=0,\\
@@ -6108,7 +6462,7 @@ implies that $\delta$ maps
 and we denote by $\rmH^{k,q}(A)$ the resulting \emph{Spencer cohomology}:
 \[\rmH^{k,q}(A)\coloneqq \bigslant{\ker\left(C^{k,q}(A)\overset{\delta}{\to}C^{k-1,q+1}(A)\right)}{\im \left(C^{k+1,q-1}(A)\overset{\delta}{\to}C^{k,q}(A)\right)}.\]
 
-\begin{rem}
+\begin{rem}\index{Spencer cohomology}
     More explicitly, the Spencer cohomology groups $\rmH^{i,j}(A)$ of a tableau $A<W\otimes V^\ast$ are defined as follows. Let 
     \[\delta_j:(W\otimes \bigodot^iV^\ast)\otimes \bigwedge^j V^\ast\to W\otimes \bigodot^{i-1}V^\ast\otimes \bigwedge^{j+1}V^\ast\]
     be defined by 
@@ -6992,7 +7346,7 @@ A fundamental problem in Cartan geometry will be the lifting problem for a map i
                                     & G\arrow[d]\\
     S\arrow[r,"f"]\arrow[ur,"\wt{f}",dashed]& G\slash H.
 \end{tikzcd}\]
-Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order Klein geometry $(G,H)$, the choice of a lift $\wt{f}:S\to G$ is equivalent to a choice of frames of $G\slash H$ along the submanifold $S$. In specific examples we will demand that these frames be \emph{adapted} to some structure on $S$ to make the lift unique, e.g., that $\T_mS$ get mapped by the corresponding frame to a fixed subspace $V\subset \frakg\slash\frakh$ for all $m\in S$. This is the basis of \emph{Cartan's method of moving frames} (``rep\`ere mobile'').\index{Rep\`ere mobile|see {Moving frames}}\index{Moving frames!Cartan's method of} Its power is in the fact that the frame is determined only by the value $f(s)\in G\slash H$, and not by any specific way the map $f$ is parametrized. Therefore, this method provides an extremely powerful way for finding \emph{intrinsic} geometric quantities of submanifolds, called \emph{differential invariants}.\index{Differential invariant} In this section we demonstrate the method in action in a few elementary examples, and in the next \sect\ we apply it to the classical problem of characterizing surfaces in three-dimensional Euclidean space up to congruence. These examples will be useful to us as motivation for the general theory of connections. The general characterization of submanifolds with structure is a subject of Cartan geometry.
+Suppose $f:S\to G\slash H$ is an immersion. Then, in the case of a first-order Klein geometry $(G,H)$, the choice of a lifting $\wt{f}:S\to G$ is equivalent to a choice of frames of $G\slash H$ along the submanifold $S$. In specific examples we will demand that these frames be \emph{adapted} to some structure on $S$ to make the lifting unique, e.g., that $\T_mS$ get mapped by the corresponding frame to a fixed subspace $V\subset \frakg\slash\frakh$ for all $m\in S$. This is the basis of \emph{Cartan's method of moving frames} (``rep\`ere mobile'').\index{Rep\`ere mobile|see {Moving frames}}\index{Moving frames!Cartan's method of} Its power is in the fact that the frame is determined only by the value $f(s)\in G\slash H$, and not by any specific way the map $f$ is parametrized. Therefore, this method provides an extremely powerful way for finding \emph{intrinsic} geometric quantities of submanifolds, called \emph{differential invariants}.\index{Differential invariant} In this section we demonstrate the method in action in a few elementary examples, and in the next \sect\ we apply it to the classical problem of characterizing surfaces in three-dimensional Euclidean space up to congruence. These examples will be useful to us as motivation for the general theory of connections. The general characterization of submanifolds with structure is a subject of Cartan geometry.
 
 Before diving into the more sophisticated examples, let walk through the classical Galilean principle of relativity in this language, which has to do with affine structures on manifolds.
 
@@ -7039,7 +7393,7 @@ The next two examples deal with curves in Euclidean space of dimension $2$ and h
 
     To solve this problem, we introduce an \emph{adapted frame} along each curve $\gamma$. That is, for each $t$ we pick an orthonormal frame in $\T_{\gamma(t)}\bbE^2$ such that it maps the direction tangent to $\gamma$ to the first axis of $\bbR^2=\frakse_2\slash\frakso_2$. Namely, assuming $\dot\gamma$ is non-vanishing (so $\gamma$ is an immersion), we put 
     \[e_1(t)=\dot\gamma(t)\slash \lVert\dot\gamma(t)\rVert,\] 
-    and we let $e_2(t)$ be the unit normal to $\gamma$, namely the unique unit vector such that $\frake(t)\coloneqq (e_1(t),e_2(t))\in\SO_2$. Therefore we have constructed exactly the lift we needed:
+    and we let $e_2(t)$ be the unit normal to $\gamma$, namely the unique unit vector such that $\frake(t)\coloneqq (e_1(t),e_2(t))\in\SO_2$. Therefore we have constructed exactly the lifting we needed:
     \[\wt{\gamma}:\bbR\to \SE_2,\quad t\mapsto\begin{pmatrix}
         \frake(t)&\gamma(t) \\
         0&  1
@@ -7131,7 +7485,7 @@ The next two examples deal with curves in Euclidean space of dimension $2$ and h
 The final example is a complex analog of the Galilean principle. It has to do with complex curves and complex projective structures on Riemann surfaces. It has higher-dimensional generalizations, but the one-dimensional case is already sufficiently intricate.
 
 \begin{example}[Projective structures and Schwarzian derivatives {{\cite[\S1.7]{Ivey}}}]\label{ex projective structures and schwarzians}
-    Here is an example of a study of curves in a less familiar homogeneous space, the complex projective line $\bbC  P^1$. To find differential invariants in such situations, we generally seek a uniquely defined lift that renders the pullback of the Maurer-Cartan form as simple as possible. Then, after finding differential invariants, we interpret them.
+    Here is an example of a study of curves in a less familiar homogeneous space, the complex projective line $\bbC  P^1$. To find differential invariants in such situations, we generally seek a uniquely defined lifting that renders the pullback of the Maurer-Cartan form as simple as possible. Then, after finding differential invariants, we interpret them.
 
     Recall that a \gls{flt} is a map $\CP^1\to \CP^1$ given in terms of the homogeneous coordinates $[z_1:z_2]$ by 
     \[
@@ -7159,18 +7513,18 @@ The final example is a complex analog of the Galilean principle. It has to do wi
 
     The coordinate approach to getting invariants would be to use an \gls{flt} to normalize the map at some point $z_0$, say by requiring $f(z_0)=0$, $f'(z_0)=1$ and $f''(z_0)=0$. Since this is exactly the extent of normalization that $\PSL_2(\bbC)$ can achieve, then $f'''(z_0)$ must be an invariant. Of course, this is valid only at the point $z_0$.
 
-    Instead we construct a lift to the group $\PSL_2(\bbC)$ of ``projective frames'', which we will treat as $\SL_2(\bbC)$ in order to work with a matrix Lie group -- just keep in mind that the overall sign of the frames doesn't matter. As an obvious first try, let 
+    Instead we construct a lifting to the group $\PSL_2(\bbC)$ of ``projective frames'', which we will treat as $\SL_2(\bbC)$ in order to work with a matrix Lie group -- just keep in mind that the overall sign of the frames doesn't matter. As an obvious first try, let 
     \[F\coloneqq \begin{pmatrix}
         f&-1\\
         1&0
     \end{pmatrix}.
     \]
-    Since the projection to $\CP^1$ is the equivalence class of the fist column, any other lift $\wt F$ of $f$ must be of the form $\wt F(z)=F(z)g(z)$, where 
+    Since the projection to $\CP^1$ is the equivalence class of the fist column, any other lifting $\wt F$ of $f$ must be of the form $\wt F(z)=F(z)g(z)$, where 
     \[g(z)=\begin{pmatrix}
         a(z)& b(z)\\
         0 & a(z)^{-1}
     \end{pmatrix},\quad a(z)\neq 0.\]
-    We want to pick $a$ and $b$ to obtain a new lift whose Maurer-Cartan form is as simple as possible. We have 
+    We want to pick $a$ and $b$ to obtain a new lifting whose Maurer-Cartan form is as simple as possible. We have 
     \begin{multline}
         \wt{F}^{-1}\dd\wt{F}=g^{-1}(F^{-1}\dd F)g+g^{-1}\dd g=\\
         =\left\{
@@ -7202,7 +7556,7 @@ The final example is a complex analog of the Galilean principle. It has to do wi
     \end{multline}
     Choose $a(z)=1/\sqrt{f'(z)}$. (This is the analog of setting $f'(z_0)=1$ in the coordinate approach.) The function $b$ is still free. We use it to set the diagonal term in the pullback of the Maurer-Cartan form to zero, i.e., to set $abf'+a^{-1}a'=0$. This implies 
     \[b=-\frac{a'}{a^2f'}=-a'=\frac{f''}{2(f')^{3/2}}.\]
-    Now our lift is unique and its pullback of the Maurer-Cartan form is 
+    Now our lifting is unique and its pullback of the Maurer-Cartan form is 
     \[
         \wt{F}^{-1}\dd\wt{F}=\begin{pmatrix}
             0 & -\frac12 \calS_f(z)\\
@@ -7548,7 +7902,7 @@ i_P^\ast
     \theta^1 \\ \theta^2
 \end{pmatrix},\label{def h}
 \]
-where $h_{ij}=h_{ji}$ are some uniquely determined functions defined on $P$ (they are related to the Hessian of the parametrizing immersion $\bf{x}:U\to \bbE^3$). We view them as components of a symmetric matrix $h$. Given an adapted (local) lift $\frake:\Sigma\to P$, we have 
+where $h_{ij}=h_{ji}$ are some uniquely determined functions defined on $P$ (they are related to the Hessian of the parametrizing immersion $\bf{x}:U\to \bbE^3$). We view them as components of a symmetric matrix $h$. Given an adapted (local) lifting $\frake:\Sigma\to P$, we have 
 \[\frake^\ast \begin{pmatrix}
     \omega_1^3 \\ \omega_2^3
 \end{pmatrix}=
@@ -7738,7 +8092,7 @@ We are now ready to prove that $K$ is an intrisic quantity, i.e., it depends onl
     \[\dd\eta^1=a\eta^1\wedge\eta^2,\quad \dd\eta^2=b\eta^1\wedge \eta^2.\]
     By antisymmetrizing these two formulas, we find that there exists a $1$-form $\alpha$ such that 
     \[\dd\eta^1=-\alpha\wedge\eta^2,\quad \dd\eta^2=\alpha\wedge\eta^1.\]
-    Now, if $\wt\frake$ is a different adapted lift with $\wt\eta^j=\wt\frake^\ast\theta^j$, then it is easy to show that $\dd\wt\alpha=\dd\alpha$. Thus the function $\kappa$ uniquely determined by $\dd\alpha=\kappa\eta^1\wedge\eta^2$ is also invariant under the change of the lift, and hence depends only on the Riemannian metric $(\eta^1)^2+(\eta^2)^2$.
+    Now, if $\wt\frake$ is a different adapted lifting with $\wt\eta^j=\wt\frake^\ast\theta^j$, then it is easy to show that $\dd\wt\alpha=\dd\alpha$. Thus the function $\kappa$ uniquely determined by $\dd\alpha=\kappa\eta^1\wedge\eta^2$ is also invariant under the change of the lift, and hence depends only on the Riemannian metric $(\eta^1)^2+(\eta^2)^2$.
 
     Finally, we check that $\alpha=\frake^\ast\omega_2^1$, so, by (\ref{eq 2.14 Ivey}), $\kappa=\frake^\ast K$.
 \end{proof}
@@ -7769,7 +8123,7 @@ Having constructed $h$, we can finally define a natural orthonormal frame. Note 
     Away from umbilic points, local Darboux frames $(e_1,e_2)$ exist. The flows of these two vector fields generate local coordinates via $m=\Fl^{e_1}_x\circ \Fl^{e_2}_y(m_0)$, and by construction the coordinate lines are lines of curvature (i.e., their tangent directions are principal), so $\rmII$ is diagonalized. Since principal directions are orthogonal (because $\rmII$ is symmetric), the coordinate vector fields $\partial_u$ and $\partial_v$ are orthogonal, hence $\rmI$ is also diagonalized.
 \end{proof}
 
-Thus, Darboux frames provide the necessary unique lift of $\Sigma$ into $\SE_3$, and $H,K$ become well-defined differential invariants. The main question now is: to what extent do the functions $H$ and $K$ determine the surface? That is, given an open subset $U\subset\bbR^2$ and functions $H,K\in C^\infty(U)$, does there exist (locally) a map $\bf{x}:U\to \bbE^3$ such that $H$ and $K$ are (the pullbacks of) the mean and Gauss curvatures of $\Sigma=\bf{x}(U)$? There are certain inequalities on admissible pairs of functions because $H,K$ are symmetric functions of the principal curvatures (so, e.g., $H=0$ implies $K\leq 0$). However, stronger compatibility conditions are uncovered when one differentiates and checks that mixed partials commute (in the spirit of the Frobenius Theorem). But first, consider the following two examples of surfaces which demonstrate that $H$ and $K$ don't uniquely determine an immersed surface even in the absence of umbilic points.
+Thus, Darboux frames provide the necessary unique lifting of $\Sigma$ into $\SE_3$, and $H,K$ become well-defined differential invariants. The main question now is: to what extent do the functions $H$ and $K$ determine the surface? That is, given an open subset $U\subset\bbR^2$ and functions $H,K\in C^\infty(U)$, does there exist (locally) a map $\bf{x}:U\to \bbE^3$ such that $H$ and $K$ are (the pullbacks of) the mean and Gauss curvatures of $\Sigma=\bf{x}(U)$? There are certain inequalities on admissible pairs of functions because $H,K$ are symmetric functions of the principal curvatures (so, e.g., $H=0$ implies $K\leq 0$). However, stronger compatibility conditions are uncovered when one differentiates and checks that mixed partials commute (in the spirit of the Frobenius Theorem). But first, consider the following two examples of surfaces which demonstrate that $H$ and $K$ don't uniquely determine an immersed surface even in the absence of umbilic points.
 
 \begin{figure}[tp]
     \centering
@@ -7864,7 +8218,7 @@ Nevertheless, $H$ and $K$ are usually sufficient to determine $\Sigma$ up to con
 Let us now derive the compatibility condition on $\sfh$ by setting up a Pfaffian system. Treat $\{h_{11},h_{12},h_{22}\}$ as coordinates in $\bigodot^2 \bbR^2\cong\bbR^3$ and define an \gls{eds} $\calI\subset \Omega^{\smbullet }(\SE_3\times \bbR^3)$ by
 \[\calI\coloneqq \<\theta^3,\omega_1^3-h_{11}\theta^1-h_{12}\theta^2,\omega_2^3-h_{12}\theta^1-h_{22}\theta^2\>_{\mathrm{diff}}\]
 with independence condition $\theta^1\wedge\theta^2\neq 0$.
-From our above computations, we know that along the lift of any hypothetical surface $\Sigma$, this entire \gls{eds} must vanish. The independence condition means that $\theta^1\wedge\theta^2$ must produce a volume form after pullback to $\Sigma$. The integral manifolds of this system are graphs of immersions $\restr{P}{U}\to \SE_3$ that are adapted frame bundles of isometric immersions $\bf{x}:U\to \bbE^3$ satisfying $\bf{x}^\ast \rmI=\sfg$ and $\bf{x}^\ast \wt{Q}=\sfh$. By the Frobenius Theorem~\ref{thm 4.7.8 RS1}, the derivatives of the generators of $\calI$ must vanish modulo $\calI$ on $\Sigma$. First, it is easy to check that $\dd\theta^3\equiv 0 \pmod{\calI}$. The differentials of the other two forms can be combined into a column-vector and rewritten modulo $\calI$ using the definition of $\sfh$:
+From our above computations, we know that along the lifting of any hypothetical surface $\Sigma$, this entire \gls{eds} must vanish. The independence condition means that $\theta^1\wedge\theta^2$ must produce a volume form after pullback to $\Sigma$. The integral manifolds of this system are graphs of immersions $\restr{P}{U}\to \SE_3$ that are adapted frame bundles of isometric immersions $\bf{x}:U\to \bbE^3$ satisfying $\bf{x}^\ast \rmI=\sfg$ and $\bf{x}^\ast \wt{Q}=\sfh$. By the Frobenius Theorem~\ref{thm 4.7.8 RS1}, the derivatives of the generators of $\calI$ must vanish modulo $\calI$ on $\Sigma$. First, it is easy to check that $\dd\theta^3\equiv 0 \pmod{\calI}$. The differentials of the other two forms can be combined into a column-vector and rewritten modulo $\calI$ using the definition of $\sfh$:
 \begin{multline}
     \dd \left\{
         \begin{pmatrix}

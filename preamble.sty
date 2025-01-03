@@ -163,6 +163,7 @@
 \providecommand{\exercisename}{Exercise}
 \providecommand{\propositionname}{Proposition}
 \providecommand{\remarkname}{Remark}
+\providecommand{\intuitionname}{Intuition}
 \providecommand{\theoremname}{Theorem}
 
 % number equations within sections
@@ -177,6 +178,7 @@
 \newtheorem{cor}[prop]{Corollary}%cor with counter inherited from prop
 \theoremstyle{definition}
 \newtheorem{rem}[prop]{\protect\remarkname}
+\newtheorem*{intu*}{\protect\intuitionname}
 \newtheorem*{rem*}{\protect\remarkname}
 \newtheorem*{hrem*}{Historical Remark}
 \newtheorem{example}[prop]{\protect\examplename}
@@ -198,17 +200,23 @@
     top=2pt,bottom=2pt, colback=gray!20, sharp corners,enhanced,
     leftrule=3pt, rightrule=0pt, toprule=0pt, bottomrule=0pt,
     breakable=true}
+\tcbwrap{intu*}{
+  grow to left by=5pt,grow to right by=5pt,
+  boxsep=1pt,left=4pt,right=4pt,
+  top=2pt,bottom=2pt, colback=gray!10, sharp corners,enhanced,
+  leftrule=1pt, rightrule=1pt, toprule=1pt, bottomrule=1pt,
+  breakable=true}
 \tcbwrap{defn}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1.5pt}{0pt}{black!80},
     breakable=true}
-\tcbwrap{rem}{
+\tcbwrap{rem,rem*}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt,colback=white,boxrule=0pt,frame hidden,sharp corners,enhanced,borderline west={1pt}{0pt}{black!80},
     breakable=true}
-\tcbwrap{hrem}{
+\tcbwrap{hrem*}{
     grow to left by=5pt,grow to right by=5pt,
     boxsep=1pt,left=4pt,right=4pt,
     top=0pt,bottom=0pt, colback=white,boxrule=1pt,frame hidden, enhanced,
@@ -641,7 +649,10 @@
 
 
 
-%%%% DEFINE A BETTER WIDEBAR \wb
+%%%% DEFINE A BETTER WIDEBAR \wb ... plus \overbar
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
 \makeatletter
 \renewcommand*\rel@kern[1]{\kern#1\dimexpr\macc@kerna}
 \newcommand*\wb[1]{%
