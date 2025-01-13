@@ -1,5 +1,8 @@
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+
+% NB Recommended compiler: LuaLaTeX. Pdflatex should work as well, but uncomment the first two lines with fontenc and inputenc. The alternative (currently commented) sets of fonts can be made to work but will likely cause wrong outputs.
+
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
 \usepackage{anyfontsize}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=1.5cm,lmargin=1cm,rmargin=1cm,heightrounded}
@@ -58,15 +61,91 @@
 \newenvironment{nscenter}{\parskip=0pt\par\nopagebreak\centering}{\par\noindent\ignorespacesafterend} 
 
 
-%%%%%% FONTS
-%\usepackage[onlytext,lf]{MinionPro}      % enable all this to get custom fonts
-%\usepackage[amsbb,subscriptcorrection,mtpcal,mtphrb]{mtpro2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Force numbering of all equations
+% \renewenvironment{equation*}{\equation}{\endequation}
+% \renewenvironment{align*}{\align}{\endalign}
+% \renewenvironment{alignat*}{\alignat}{\endalignat}
+% \renewenvironment{multline*}{\multline}{\endmultline}
+% \renewenvironment{gather*}{\gather}{\endgather}
+
+% Redefine \[...\] to be \begin{equation}...\end{equation}
+\newcommand{\myequation}{\begin{equation}}
+  \newcommand{\myendequation}{\end{equation}}
+  \let\[\myequation
+  \let\]\myendequation
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% FONTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}
+\usepackage{newtxtext}
+\usepackage[varvw]{newtxmath}
+%OR
+% \usepackage{fontspec}
+% \usepackage{newtxtext}
+% \renewcommand{\rmdefault}{ptm}
+% \renewcommand{\ttdefault}{pcr}
+% \renewcommand{\sfdefault}{phv}
+% \let\Bbbk\relax
+% \let\circledS\relax
+% \usepackage[subscriptcorrection,mtphrb,mtpcal,mtpscr,mtpfrak]{mtpro2}
 %OR
 %\usepackage{pscyr}
 %\usepackage[libertine]{newtxmath}
 %OR
-\usepackage{newtxtext}
-\usepackage[varvw]{newtxmath}
+% \usepackage{stix2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% FONT-DEPENDENT DEFINITIONS OF WIDE ACCENTS, BARS %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            %%%%%% USE THESE WITH MTPRO2 %%%%%%%
+
+% \newcommand\wh[1]{\what{#1}} 
+% \newcommand\wt[1]{\wtilde{#1}} 
+% \newcommand\wb[1]{\wbar{#1}}
+
+
+           %%%%%% USE THESE WITHOUT MTPRO2 %%%%%%%
+
+\newcommand{\altI}{I}
+
+\usepackage{scalerel}
+\newcommand\wh[1]{\hstretch{1.42}{\hat{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu} %requires \usepackage{graphicx,scalerel}
+\newcommand\wt[1]{\hstretch{1.42}{\tilde{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
+
+    %%%% \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+    %%%% \newcommand\wb[1]{\hstretch{1.42}{\bar{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
+
+% define a slightly wider bar \wb
+\makeatletter
+\renewcommand*\rel@kern[1]{\kern#1\dimexpr\macc@kerna}
+\newcommand*\wb[1]{%
+  \begingroup
+  \def\mathaccent##1##2{%
+    \rel@kern{0.8}%
+    \overline{\rel@kern{-0.8}\macc@nucleus\rel@kern{0.2}}%
+    \rel@kern{-0.2}%
+  }%
+  \macc@depth\@ne
+  \let\math@bgroup\@empty \let\math@egroup\macc@set@skewchar
+  \mathsurround\z@ \frozen@everymath{\mathgroup\macc@group\relax}%
+  \macc@set@skewchar\relax
+  \let\mathaccentV\macc@nested@a
+  \macc@nested@a\relax111{#1}%
+  \endgroup
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%   FORMATTING and ENVS  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%% THIS ALLOWS PAGE BREAKS IN DISPLAY MATH GLOBALLY %%%%%
 \allowdisplaybreaks
@@ -129,9 +208,12 @@
 \newcommand{\subsect}{subsection}
 
 
-%%%%%%%
+%%%%%%%%%  TOC FORMATTING %%%%%%%%%%%%%
 
- 
+\makeatletter
+  \renewcommand\@pnumwidth{3em} %give more space to page numbers in TOC
+\makeatother 
+
 \usepackage[nottoc]{tocbibind} % list bibiliography and other secondary sections in TOC
 % \usepackage{tocloft} % needed for the next line
 % \addtolength{\cftsubsecnumwidth}{1em} % increase the space given to numbers in TOC
@@ -146,15 +228,14 @@
 %   \let\toc@post\relax
 % \makeatother
 
+%%%%%%%%%%%%%%%%% LISTS FORMATTING  %%%%%%%%%%%%%%%%%%
+
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=2em}
 \setlist[enumerate]{leftmargin=2em,topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% theorem envs %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% THEOREM ENVS %%%%%%%%%%%%%%%%%%%%%%%
 
 \flushbottom
 \renewcommand\qedsymbol{$\blacksquare$}
@@ -180,7 +261,7 @@
 \newtheorem{rem}[prop]{\protect\remarkname}
 \newtheorem*{intu*}{\protect\intuitionname}
 \newtheorem*{rem*}{\protect\remarkname}
-\newtheorem*{hrem*}{Historical Remark}
+\newtheorem*{hrem*}{Historical note}
 \newtheorem{example}[prop]{\protect\examplename}
 \newtheorem{defn}[prop]{\protect\definitionname}
 \newtheorem{xca}{\protect\exercisename}[section]
@@ -237,7 +318,8 @@
     borderline west={0.75pt}{0pt}{decoration={zigzag,amplitude=1pt,pre=moveto,pre length=12pt},decorate},
     breakable=true}
 
-% Workaround for a hyperref-related bug in tcolorbox's parbox=false option: pass the definition of parskip directly
+    % Workaround for a hyperref-related bug in tcolorbox's parbox=false option: pass the definition of parskip directly
+    
 \AddToHook{env/rem/begin}{\parindent=0pt \parskip=0.3\baselineskip plus 2pt\relax}
 \AddToHook{env/hrem/begin}{\parindent=0pt \parskip=\baselineskip}
 \AddToHook{env/thm/begin}{\parindent=0pt \parskip=\baselineskip}
@@ -251,8 +333,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-
-    %Configure tcolorbox so that footnotes are printed outside of it
+%Configure tcolorbox so that footnotes are printed outside of it
 %From https://tex.stackexchange.com/a/558922/44577
 \makeatletter
 % restore footnote internals to those in normal page, not minipage
@@ -288,27 +369,11 @@
 }
 \makeatother
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Under construction symbol
-
-\usepackage{fontawesome} % requires XeTeX or LuaTeX
+%%%%%%%%%%%%%%%% Under construction symbol %%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontawesome} % requires fontspec when used with XeTeX or LuaTeX
 \newcommand{\ucmark}{\faWrench}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Force numbering of all equations
-% \renewenvironment{equation*}{\equation}{\endequation}
-% \renewenvironment{align*}{\align}{\endalign}
-% \renewenvironment{alignat*}{\alignat}{\endalignat}
-% \renewenvironment{multline*}{\multline}{\endmultline}
-% \renewenvironment{gather*}{\gather}{\endgather}
-
-% Redefine \[...\] to be \begin{equation}...\end{equation}
-\newcommand{\myequation}{\begin{equation}}
-\newcommand{\myendequation}{\end{equation}}
-\let\[\myequation
-\let\]\myendequation
-
+%%%%%%%%%%%%%%%%%%%% Colored text commands %%%%%%%%%%%%%%%%%%%%%
 \usepackage{color}
 \def\white{\color{white}}
 \def\black{\color{black}}
@@ -320,16 +385,20 @@
 \def\yellow{\color{yellow}}
 
 
-%%%%%%%%%%%%%%%%  HYPERREF (load as late as possible)
-
-
+%%%%%%%%%%%%%%%%  HYPERREF (load as late as possible) %%%%%%%%%%%
 \usepackage[unicode=true,pdfusetitle,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
  {hyperref}
 
 
-%%%%%%%%%%%%%%%%%%%   MACROS   %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%   MACROS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \usepackage{bm}
+\renewcommand{\bf}[1]{\mathbf{#1}}
+\newcommand{\bm}[1]{\boldsymbol{#1}}
 
 % backslash for left side quotients
 \newcommand{\bslash}{\mkern-.5mu\backslash\mkern-2mu}
@@ -350,6 +419,33 @@
 \newcommand{\bbD}{\mathbb{D}}
 \newcommand{\bbS}{\mathbb{S}}
 
+\newcommand{\rmA}{\mathrm{A}}
+\newcommand{\rmB}{\mathrm{B}}
+\newcommand{\rmC}{\mathrm{C}}
+\newcommand{\rmD}{\mathrm{D}}
+\newcommand{\rmE}{\mathrm{E}}
+\newcommand{\rmF}{\mathrm{F}}
+\newcommand{\rmG}{\mathrm{G}}
+\newcommand{\rmH}{\mathrm{H}}
+\newcommand{\rmI}{\mathrm{I}}
+\newcommand{\rmII}{\mathrm{II}}
+\newcommand{\rmJ}{\mathrm{J}}
+\newcommand{\rmj}{\mathrm{j}}
+\newcommand{\rmK}{\mathrm{K}}
+\newcommand{\rmL}{\mathrm{L}}
+\newcommand{\rmN}{\mathrm{N}}
+\newcommand{\rmP}{\mathrm{P}}
+\newcommand{\rmQ}{\mathrm{Q}}
+\newcommand{\rmR}{\mathrm{R}}
+\newcommand{\rmS}{\mathrm{S}}
+\newcommand{\rmT}{\mathrm{T}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\D}{\mathrm{D}}
+\newcommand{\rmV}{\mathrm{V}}
+\newcommand{\rmZ}{\mathrm{Z}}
+\newcommand{\rmi}{\i}
+\newcommand{\rme}{\mathrm{e}}
+
 \newcommand{\calA}{\mathcal{A}}
 \newcommand{\calC}{\mathcal{C}}
 \newcommand{\calD}{\mathcal{D}}
@@ -357,7 +453,7 @@
 \newcommand{\calF}{\mathcal{F}}
 \newcommand{\calG}{\mathcal{G}}
 \newcommand{\calH}{\mathcal{H}}
-\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calI}{\mathcal{\altI}}
 \newcommand{\calJ}{\mathcal{J}}
 \newcommand{\calL}{\mathcal{L}}
 \newcommand{\calM}{\mathcal{M}}
@@ -407,12 +503,33 @@
 \newcommand{\scrR}{\mathscr{R}}
 \newcommand{\scrT}{\mathscr{T}}
 
-\newcommand{\acts}{\curvearrowright}
-\newcommand{\lacts}{\curvearrowleft}
-\newcommand{\dd}{\mathop{}\!\mathrm{d}}
-% \usepackage{bm}
-\newcommand{\bm}[1]{\boldsymbol{#1}}
+\newcommand{\sfg}{\mathsf{g}}
+\newcommand{\sfh}{\mathsf{h}}
+\newcommand{\sfv}{\mathsf{v}}
+\newcommand{\sfw}{\mathsf{w}}
+\newcommand{\sfK}{\mathsf{K}}
+\newcommand{\sfJ}{\mathsf{J}}
+\newcommand{\sfR}{\mathsf{R}}
+\newcommand{\sfT}{\mathsf{T}}
 
+
+\newcommand{\acts}{%
+  \mathchoice{\raisebox{1pt}{$\displaystyle\curvearrowright$}}
+             {\raisebox{1pt}{$\curvearrowright$}}
+             {\raisebox{0.5pt}{$\scriptstyle\curvearrowright$}}
+             {\raisebox{0.2pt}{$\scriptscriptstyle\curvearrowright$}}
+}
+
+\newcommand{\lacts}{%
+  \mathchoice{\raisebox{1pt}{$\displaystyle\curvearrowleft$}}
+             {\raisebox{1pt}{$\curvearrowleft$}}
+             {\raisebox{0.5pt}{$\scriptstyle\curvearrowleft$}}
+             {\raisebox{0.2pt}{$\scriptscriptstyle\curvearrowleft$}}
+}
+
+% \newcommand{\acts}{\curvearrowright}
+% \newcommand{\lacts}{\curvearrowleft}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
 
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\leq}{\leqslant}
@@ -435,48 +552,12 @@
 \newcommand{\Adg}{\mathrm{\mathbf{Ad}}}
 \newcommand{\Fl}{\mathrm{Fl}}
 
-\newcommand{\rmA}{\mathrm{A}}
-\newcommand{\rmB}{\mathrm{B}}
-\newcommand{\rmC}{\mathrm{C}}
-\newcommand{\rmD}{\mathrm{D}}
-\newcommand{\rmE}{\mathrm{E}}
-\newcommand{\rmF}{\mathrm{F}}
-\newcommand{\rmG}{\mathrm{G}}
-\newcommand{\rmH}{\mathrm{H}}
-\newcommand{\rmI}{\mathrm{I}}
-\newcommand{\rmII}{\mathrm{II}}
-\newcommand{\rmJ}{\mathrm{J}}
-\newcommand{\rmj}{\mathrm{j}}
-\newcommand{\rmK}{\mathrm{K}}
-\newcommand{\rmL}{\mathrm{L}}
-\newcommand{\rmN}{\mathrm{N}}
-\newcommand{\rmP}{\mathrm{P}}
-\newcommand{\rmQ}{\mathrm{Q}}
-\newcommand{\rmR}{\mathrm{R}}
-\newcommand{\rmS}{\mathrm{S}}
-\newcommand{\rmT}{\mathrm{T}}
-\newcommand{\T}{\mathrm{T}}
-\newcommand{\D}{\mathrm{D}}
-\newcommand{\rmV}{\mathrm{V}}
-\newcommand{\rmZ}{\mathrm{Z}}
-\newcommand{\rmi}{\i}
-\newcommand{\rme}{\mathrm{e}}
-
 \newcommand{\KP}{\mathbb{K}\mathbb{P}}
 \newcommand{\RP}{\mathbb{R}\mathbb{P}}
 \newcommand{\CP}{\mathbb{C}\mathbb{P}}
 
 \newcommand{\const}{\mathrm{const}}
 % \newcommand{\Lin}{\bm\mathrm{L}}
-
-\newcommand{\sfg}{\mathsf{g}}
-\newcommand{\sfh}{\mathsf{h}}
-\newcommand{\sfv}{\mathsf{v}}
-\newcommand{\sfw}{\mathsf{w}}
-\newcommand{\sfK}{\mathsf{K}}
-\newcommand{\sfJ}{\mathsf{J}}
-\newcommand{\sfR}{\mathsf{R}}
-\newcommand{\sfT}{\mathsf{T}}
 
 \newcommand{\mFB}{\mathsf{-FB}}
 \newcommand{\FB}{\mathsf{FB}}
@@ -559,6 +640,7 @@
 \DeclareMathOperator{\lcm}{lcm}
 \let\div\relax
 \DeclareMathOperator{\div}{div}
+\DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\curl}{curl}
 \let\grad\relax
 \DeclareMathOperator{\grad}{grad}
@@ -583,14 +665,16 @@
 \newcommand{\<}{\left\langle}
 \renewcommand{\>}{\right\rangle}
 \renewcommand{\mod}{\ \mathrm{mod}\ }
-\renewcommand{\bf}[1]{\mathbf{#1}}
 % \newcommand{\bull}{{\scriptscriptstyle\bullet}}
-\newcommand\sbullet[1][.5]{\mathbin{\ThisStyle{\vcenter{\hbox{%
-  \scalebox{#1}{$\SavedStyle\bullet$}}}}}%
-}
-\newcommand\smbullet[1][.8]{\mathbin{\ThisStyle{\vcenter{\hbox{%
-  \scalebox{#1}{$\SavedStyle\bullet$}}}}}%
-}
+
+\usepackage{scalerel}
+\makeatletter
+  \newcommand\sbullet[1][.5]{\mathbin{\ThisStyle{\vcenter{\hbox{%
+    \scalebox{#1}{$\SavedStyle\bullet$}}}}}%
+  }
+  \newcommand\smbullet[1][.8]{\mathbin{\ThisStyle{\vcenter{\hbox{%
+    \scalebox{#1}{$\SavedStyle\bullet$}}}}}%
+  }
 \makeatother
 
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
@@ -615,12 +699,36 @@
 \let\originalmiddle=\middle
 \def\middle#1{\mathrel{}\originalmiddle#1\mathrel{}}
 
+% This definition needs graphicx
+\newcommand{\PRLsep}{   %decorative line used to separate sections
+    \noindent\makebox[\linewidth]{
+      \resizebox{0.5\linewidth}{1pt}{$\blacklozenge$}
+    }
+}
 
-\makeatletter  %define \xoverline, automatically sized overline
+% define \tuple and \set which allow line breaks at commas in inline math
+% from https://tex.stackexchange.com/a/309558/44577
+\newcommand{\splitatcommas}[1]{%
+  \begingroup
+  \ifnum\mathcode`,="8000
+  \else
+    \begingroup\lccode`~=`, \lowercase{\endgroup
+      \edef~{\mathchar\the\mathcode`, \penalty0 \noexpand\hspace{0pt plus 1em}}%
+    }\mathcode`,="8000
+  \fi
+  #1%
+  \endgroup
+}
+\newcommand{\tuple}[1]{\splitatcommas{#1}}
+
+
+% Define \widebar[widthpercent]{text}, custom sized \overline
+% You may need to replace \renewcommand with \newcommand depending on other packages
+\makeatletter 
     \newsavebox\myboxA
     \newsavebox\myboxB
     \newlength\mylenA
-    \newcommand*\xoverline[2][0.75]{%
+    \renewcommand*\widebar[2][0.9]{%
         \sbox{\myboxA}{$\m@th#2$}%
         \setbox\myboxB\null% Phantom box
         \ht\myboxB=\ht\myboxA%
@@ -637,162 +745,119 @@
 \makeatother
 
 
-% This block needs graphicx
-\newcommand{\PRLsep}{   %decorative line used to separate sections
-           \noindent\makebox[\linewidth]{
-                \resizebox{0.5\linewidth}{1pt}{$\blacklozenge$}}}
-
-\usepackage{scalerel}
-\newcommand\wh[1]{\hstretch{1.42}{\hat{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu} %requires \usepackage{graphicx,scalerel}
-\newcommand\wt[1]{\hstretch{1.42}{\tilde{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
-% \newcommand\wb[1]{\hstretch{1.42}{\bar{\hstretch{.7}{#1\mkern2mu}}}\mkern-2mu}
-
-
-
-%%%% DEFINE A BETTER WIDEBAR \wb ... plus \overbar
-
-\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
-
-\makeatletter
-\renewcommand*\rel@kern[1]{\kern#1\dimexpr\macc@kerna}
-\newcommand*\wb[1]{%
-  \begingroup
-  \def\mathaccent##1##2{%
-    \rel@kern{0.8}%
-    \overline{\rel@kern{-0.8}\macc@nucleus\rel@kern{0.2}}%
-    \rel@kern{-0.2}%
-  }%
-  \macc@depth\@ne
-  \let\math@bgroup\@empty \let\math@egroup\macc@set@skewchar
-  \mathsurround\z@ \frozen@everymath{\mathgroup\macc@group\relax}%
-  \macc@set@skewchar\relax
-  \let\mathaccentV\macc@nested@a
-  \macc@nested@a\relax111{#1}%
-  \endgroup
-}
-\makeatother
-
-
-
-
-
-
-
-
-
 % WIDTH OF CAPTIONS
 \usepackage{caption}
 \usepackage{subcaption}
 % \captionsetup{width=0.6\columnwidth}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%   BIBLIOGRAPHY  %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BIBLIOGRAPHY
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{csquotes}
 
 \AtBeginDocument{
 
-%\AtEveryBibitem{\clearfield{month}} %remove day and month from dates
-%\AtEveryBibitem{\clearfield{day}}
+  %\AtEveryBibitem{\clearfield{month}} %remove day and month from dates
+  %\AtEveryBibitem{\clearfield{day}}
 
-\renewbibmacro*{doi+eprint+url}{%
-  \iftoggle{bbx:doi}
-    {\iffieldundef{url}{\printfield{doi}}{}}
-    {}%
-  \newunit\newblock
-  \iftoggle{bbx:eprint}
-    {\usebibmacro{eprint}}
-    {}%
-  \newunit\newblock
-  \iftoggle{bbx:url}
-    {\usebibmacro{url+urldate}}
-    {}
+  \renewbibmacro*{doi+eprint+url}{%
+    \iftoggle{bbx:doi}
+      {\iffieldundef{url}{\printfield{doi}}{}}
+      {}%
+    \newunit\newblock
+    \iftoggle{bbx:eprint}
+      {\usebibmacro{eprint}}
+      {}%
+    \newunit\newblock
+    \iftoggle{bbx:url}
+      {\usebibmacro{url+urldate}}
+      {}
+    }
+
+  \newbibmacro{string+doiurlisbn}[1]{%
+    \iffieldundef{url}{%
+      \iffieldundef{doi}{%
+      \iffieldundef{eprint}{%
+        \iffieldundef{isbn}{%
+          \iffieldundef{issn}{%
+            #1%
+          }{%
+            \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
+          }%
+        }{%
+          \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
+        }%
+      }{
+          \href{http://arxiv.org/abs/\thefield{eprint}}{#1}
+      }%
+      }{%
+        \href{http://dx.doi.org/\thefield{doi}}{#1}%
+      }%
+    }{%
+      \href{\thefield{url}}{#1}%
+    }%
   }
 
-\newbibmacro{string+doiurlisbn}[1]{%
-  \iffieldundef{url}{%
-    \iffieldundef{doi}{%
-     \iffieldundef{eprint}{%
-      \iffieldundef{isbn}{%
-        \iffieldundef{issn}{%
-          #1%
-        }{%
-          \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
-        }%
-      }{%
-        \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
-      }%
-     }{
-        \href{http://arxiv.org/abs/\thefield{eprint}}{#1}
-     }%
-    }{%
-      \href{http://dx.doi.org/\thefield{doi}}{#1}%
-    }%
-  }{%
-    \href{\thefield{url}}{#1}%
-  }%
-}
 
+  \renewbibmacro*{journal}{%
+    \ifboolexpr{ test {\ifcitation} and not test {\iffieldundef{shortjournal}} }
+      {\printfield[journaltitle]{shortjournal}}
+      {\iffieldundef{journaltitle}
+        {}
+        {\printtext[journaltitle]{%
+            \printfield[titlecase]{journaltitle}%
+            \setunit{\subtitlepunct}%
+            \printfield[titlecase]{journalsubtitle}}}}}
 
-\renewbibmacro*{journal}{%
-  \ifboolexpr{ test {\ifcitation} and not test {\iffieldundef{shortjournal}} }
-    {\printfield[journaltitle]{shortjournal}}
-    {\iffieldundef{journaltitle}
-       {}
-       {\printtext[journaltitle]{%
-          \printfield[titlecase]{journaltitle}%
-          \setunit{\subtitlepunct}%
-          \printfield[titlecase]{journalsubtitle}}}}}
+  \newbibmacro*{journal+sub}{%
+    \ifboolexpr{ test {\ifcitation} and not test {\iffieldundef{shortjournal}} }
+      {\printfield[journaltitle]{shortjournal}}
+      {\iffieldundef{journaltitle}
+        {}
+        {\printtext[journaltitle]{%
+          \printfield[noformat]{journaltitle}%
+          \setunit{\addcolon\addspace}%
+          \printfield[noformat]{journalsubtitle}}}}}
 
-\newbibmacro*{journal+sub}{%
-  \ifboolexpr{ test {\ifcitation} and not test {\iffieldundef{shortjournal}} }
-    {\printfield[journaltitle]{shortjournal}}
-    {\iffieldundef{journaltitle}
-       {}
-       {\printtext[journaltitle]{%
-        \printfield[noformat]{journaltitle}%
-        \setunit{\addcolon\addspace}%
-        \printfield[noformat]{journalsubtitle}}}}}
-
-\DeclareSourcemap{%
-  \maps[datatype=bibtex]{
-    % Journal abbreviations
-    \map[overwrite]{
-      \step[fieldsource=shortjournal]
-      \step[fieldset=journaltitle,origfieldval]
+  \DeclareSourcemap{%
+    \maps[datatype=bibtex]{
+      % Journal abbreviations
+      \map[overwrite]{
+        \step[fieldsource=shortjournal]
+        \step[fieldset=journaltitle,origfieldval]
+      }
     }
   }
-}
 
-% remove "in" word before journal name for articles
-%\renewbibmacro{in:}{}
-\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+  % remove "in" word before journal name for articles
+  %\renewbibmacro{in:}{}
+  \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 
-% removes period at the very end of bibliographic record
-\renewcommand{\finentrypunct}{}
+  % removes period at the very end of bibliographic record
+  \renewcommand{\finentrypunct}{}
 
-% back reference text preceding the page number ("see p.")
-\DefineBibliographyStrings{english}{%
-    backrefpage  = {\lowercase{s}ee p.}, % for single page number
-    backrefpages = {\lowercase{s}ee pp.} % for multiple page numbers
-}
+  % back reference text preceding the page number ("see p.")
+  \DefineBibliographyStrings{english}{%
+      backrefpage  = {\lowercase{s}ee p.}, % for single page number
+      backrefpages = {\lowercase{s}ee pp.} % for multiple page numbers
+  }
 
-% removes period after DOI and suppresses capitalization
-% of the word following DOI ("See p. xx" -> "see p. xx")
-%\renewcommand{\newunitpunct}{\addspace\midsentence}
+  % removes period after DOI and suppresses capitalization
+  % of the word following DOI ("See p. xx" -> "see p. xx")
+  %\renewcommand{\newunitpunct}{\addspace\midsentence}
 
-\DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{#1}}
-\DeclareFieldFormat[article, incollection, inproceedings]{title}{\usebibmacro{string+doiurlisbn}{\mkbibquote{#1}}}
-\DeclareFieldFormat{journaltitle}{\mkbibemph{#1},} % italic journal title with comma
-\DeclareFieldFormat[inbook,thesis]{title}{\mkbibemph{#1}\addperiod} % italic title with period
-\DeclareFieldFormat[article]{volume}{\textbf{#1}} % makes volume of journal bold and adds colon
-\DeclareFieldFormat{pages}{#1} % removes pagination (p./pp.) before page numbers
+  \DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{#1}}
+  \DeclareFieldFormat[article, incollection, inproceedings]{title}{\usebibmacro{string+doiurlisbn}{\mkbibquote{#1}}}
+  \DeclareFieldFormat{journaltitle}{\mkbibemph{#1},} % italic journal title with comma
+  \DeclareFieldFormat[inbook,thesis]{title}{\mkbibemph{#1}\addperiod} % italic title with period
+  \DeclareFieldFormat[article]{volume}{\textbf{#1}} % makes volume of journal bold and adds colon
+  \DeclareFieldFormat{pages}{#1} % removes pagination (p./pp.) before page numbers
 
-\usepackage{setspace} % to change line spacing in bibliography with \setstretch
-\renewcommand*{\bibfont}{\small}
+  \usepackage{setspace} % to change line spacing in bibliography with \setstretch
+  \renewcommand*{\bibfont}{\small} % set font size to small
 
 } % end of AtBeginDocument{...}
 
@@ -804,9 +869,10 @@
 
 
 
-%%%%%%%%%%             %%%%%%%%%%%%%%%%%
-%%%%%%%%%%   GLOSSARY  %%%%%%%%%%%%%%%%%
-%%%%%%%%%%             %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%   GLOSSARY  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \usepackage[acronym,toc,section=section,nogroupskip]{glossaries}
 \usepackage[automake]{glossaries-extra}

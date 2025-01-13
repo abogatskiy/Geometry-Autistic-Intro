@@ -121,7 +121,7 @@ The length functional has an important property called \emph{reparametrization i
 
     First let us show that this claim implies the theorem. Let $(x_n)$ be a Cauchy sequence w.r.t.\ $d_{\wt{g}}$. Then $(x_n)$ is $\wt{g}$-bounded and precompact, i.e., contains a convergent subsequence. But then $(x_n)$ itself must converge to the same limit, proving completeness.
 
-    Now we prove the claim. Let $f$ be an exhaustion function and $V_j=f^{-1}((-\infty,j))$ be the family of precompact sets that exhaust $M$. Let $K_j=\overline{V_j}$ be the corresponding compact sets and define the distances $\delta_j=\mathrm{dist}_g(\partial K_j,\partial K_{j+1})$ between their boundaries. Choosing a \gls{pou} $\{\chi_j\}$ subordinate to the covering $\{V_{j}\setminus K_{j-1}\}$, define $\Omega=\sum_j \frac{1}{j\cdot \delta_j} \chi_j$. Now it is easy to check that if a set $A$ has finite diameter in the metric $\wt{g}=\Omega\cdot g$, i.e., $\mathrm{diam}_{\wt{g}} A<\infty$, then $\restr{f}{A}$ is bounded. Namely, if $(x_n)$ is a sequence that is not contained in any compact set, i.e., such that $\forall\,j \;\exists\, N:\;\forall n>N \;x_n\notin K_j$, then $x_n\in K_{k(n)}\setminus K_{k(n)-1}$ with $k(n)\to\infty$ and  $d_{\wt{g}}(x_1,x_n)\geq\sum_{j=1}^{k(n)} \frac{1}{j}\to\infty$. The contrapositive of this statement is that every $\wt{g}$-bounded sequence is contained in a compact set. This implies that all $\wt{g}$-bounded sets are precompact, which makes $d_{\wt{g}}$ a complete metric.
+    Now we prove the claim. Let $f$ be an exhaustion function and $V_j=f^{-1}((-\infty,j))$ be the family of precompact sets that exhaust $M$. Let $K_j=\widebar{V_j}$ be the corresponding compact sets and define the distances $\delta_j=\mathrm{dist}_g(\partial K_j,\partial K_{j+1})$ between their boundaries. Choosing a \gls{pou} $\{\chi_j\}$ subordinate to the covering $\{V_{j}\setminus K_{j-1}\}$, define $\Omega=\sum_j \frac{1}{j\cdot \delta_j} \chi_j$. Now it is easy to check that if a set $A$ has finite diameter in the metric $\wt{g}=\Omega\cdot g$, i.e., $\mathrm{diam}_{\wt{g}} A<\infty$, then $\restr{f}{A}$ is bounded. Namely, if $(x_n)$ is a sequence that is not contained in any compact set, i.e., such that $\forall\,j \;\exists\, N:\;\forall n>N \;x_n\notin K_j$, then $x_n\in K_{k(n)}\setminus K_{k(n)-1}$ with $k(n)\to\infty$ and  $d_{\wt{g}}(x_1,x_n)\geq\sum_{j=1}^{k(n)} \frac{1}{j}\to\infty$. The contrapositive of this statement is that every $\wt{g}$-bounded sequence is contained in a compact set. This implies that all $\wt{g}$-bounded sets are precompact, which makes $d_{\wt{g}}$ a complete metric.
 \end{proof}
 \begin{rem}
     In physics, particularly AdS/CFT, the space $(M,\wt{g})$ is often referred to as ``conformal compactification'' (this terminology was introduced by Roger Penrose). However, the choice of a metric doesn't modify the topology of $M$ in any sense, so it can't make a non-compact manifold compact. Therefore a proper name for this procedure is conformal completion.
@@ -225,11 +225,11 @@ In local (positively ordered) coordinates, \[\mu_g=\sqrt{\det(g_{ij})}\dd x^1\we
 \end{proof}
 
 \begin{rem}
-    Notice that traditionally in multivariable calculus the components of vector fields are defined w.r.t.\ to an orthonormal frame as $X=\sum_i \wh{X}^i \wh{e}_i$, where $\wh{e}_i=\frac{\partial_i}{\lVert \partial_i\lVert}=\frac{\partial_i}{\sqrt{g_{ii}}}$, but in differential geometry we use the components defined regardless of the metric, $X=\sum_i X^i \partial_i$. Thus there is a discrepancy between the formulas found on, say, Wikipedia, with the ones in differential geometry textbooks (like (\ref{divergence in components}) and (\ref{laplacian in components})), given by $\wh{X}^i=X^i\cdot \sqrt{g_{ii}}$ (of course, this only makes sense as long as we use orthogonal coordinates, in which the metric is diagonal). In a general framework where coordinates can't always be assumed to be orthogonal, the basis of the $\partial_i$ is preferred.
+    Notice that traditionally in multivariable calculus the components of vector fields are defined w.r.t.\ to an orthonormal frame as $X=\sum_i \wh{X}^i \wh{e}_i$, where $\wh{e}_i=\frac{\partial_i}{\lVert \partial_i\lVert}=\frac{\partial_i}{\sqrt{g_{ii}}}$, but in differential geometry we use the components defined regardless of the metric, $X=\sum_i X^i \partial_i$. Thus there is a discrepancy between the formulas found on, say, Wikipedia, with the ones in differential geometry textbooks (like \eqref{divergence in components} and \eqref{laplacian in components}), given by $\wh{X}^i=X^i\cdot \sqrt{g_{ii}}$ (of course, this only makes sense as long as we use orthogonal coordinates, in which the metric is diagonal). In a general framework where coordinates can't always be assumed to be orthogonal, the basis of the $\partial_i$ is preferred.
 \end{rem}
 
 \begin{xca}
-    Using (\ref{divergence in components}) and (\ref{laplacian in components}), derive the standard expressions for the divergence and the Laplace-Beltrami operator in polar, cylindrical, and spherical  coordinates. 
+    Using \eqref{divergence in components} and \eqref{laplacian in components}, derive the standard expressions for the divergence and the Laplace-Beltrami operator in polar, cylindrical, and spherical  coordinates. 
 \end{xca}
 
 
@@ -287,7 +287,7 @@ which means the parametrization of a geodesic is proportional to its length. In 
     If $\gamma[0,\varepsilon]\to M$ is a geodesic, then $\gamma^\lambda(t)\coloneqq \gamma(\lambda t):[0,\varepsilon/\lambda]\to M$ is also a geodesic with $\dot\gamma^\lambda(0)=\lambda\dot\gamma(0)$. Since $\gamma_v$ depends smoothly on $v$ and the unit sphere $S=\{v\in \T_pM\mid \lVert v\rVert=1\}$ is compact, $\exists\,\varepsilon_0>0$ such that the domain of $\gamma_v$ for all $v\in S$ contains $[0,\varepsilon_0]$. Then for all $\lVert v\rVert\leq \varepsilon_0$, the geodesics $\gamma_v$ are defined on $[0,1]$.
 \end{cor}
 \begin{defn}[Exponential mapping]\index{Exponential mapping}
-    Consider the set $V_p=\{v\in \T_p M\mid \gamma_v \text{ exists on }[0,1]\}$. This set is non-empty and is an open neighborhood of the origin in $\T_p M$ by the local solvability of the geodesic equation. We define the exponential mapping of the Riemannian manifold $(M,g)$ as
+    Consider the set $V_p=\{v\in \T_p M\mid \gamma_v \text{ exists on }\allowbreak [0,1]\}$. This set is non-empty and is an open neighborhood of the origin in $\T_p M$ by the local solvability of the geodesic equation. We define the exponential mapping of the Riemannian manifold $(M,g)$ as
     \[\exp_p :V_p\to M,\quad v\mapsto \gamma_v(1).\]
 \end{defn}
 
@@ -326,7 +326,7 @@ which means the parametrization of a geodesic is proportional to its length. In 
 
 
 \begin{defn}[Riemann polar coordinates]
-    Introducing polar coordinates $(r,\varphi^1,\ldots,\varphi^{n-1})$ on $\bbR^n$ identified locally with a neighborhood of $p\in M$ via the exponential mapping, we have $g_{rr}=1$, $\partial_r g_{r\varphi}=0$, and thus $g_{r\varphi}\equiv 0$ on the entire chart (here $\varphi$ denotes all polar angles collectively). Then the metric takes the canonical form $g=(\dd r)^2+g_{\varphi\varphi}$ on the entire neighborhood, where $g_{\varphi\varphi}$ denotes the angular part of the metric, which itself has to be positive-definite. These are the Riemann polar coordinates.
+    Introducing polar coordinates $(\tuple{r,\varphi^1,\ldots,\varphi^{n-1}})$ on $\bbR^n$ identified locally with a neighborhood of $p\in M$ via the exponential mapping, we have $g_{rr}=1$, $\partial_r g_{r\varphi}=0$, and thus $g_{r\varphi}\equiv 0$ on the entire chart (here $\varphi$ denotes all polar angles collectively). Then the metric takes the canonical form $g=(\dd r)^2+g_{\varphi\varphi}$ on the entire neighborhood, where $g_{\varphi\varphi}$ denotes the angular part of the metric, which itself has to be positive-definite. These are the Riemann polar coordinates.
 \end{defn}
 
 \begin{cor}
@@ -487,7 +487,7 @@ Let $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ be the standard coordinates on $\mathbb{C}
     Furthermore, define the two eigen-subbundles of $\T^\mathbb{C}$
     \[\T^{1,0}M\coloneqq \ker(J-i\cdot \id),\quad \T^{0,1}M\coloneqq\ker(J+i\cdot\id).\]
     If $M$ was a complex manifold and $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ are coordinates on it as described above, then 
-    \[\T^{1,0}M=\<\partial_{z^j}\equiv \frac12(\partial_{x^j}-i\partial_{y^j})\>_\bbC,\quad T^{0,1}M=\overline{\T^{1,0}M}=\<\partial_{\bar z^j}\equiv \frac12(\partial_{x^j}+i\partial_{y^j})\>_\bbC.\]
+    \[\T^{1,0}M=\<\partial_{z^j}\equiv \frac12(\partial_{x^j}-i\partial_{y^j})\>_\bbC,\quad \T^{0,1}M=\widebar{\T^{1,0}M}=\<\partial_{\wb z^j}\equiv \frac12(\partial_{x^j}+i\partial_{y^j})\>_\bbC.\]
     The subbundles are called the holomorphic and anti-holomorphic tangent bundles, respectively.
 \end{defn}
 
@@ -501,8 +501,8 @@ Let $(x^1,\ldots,x^n,y^1,\ldots,y^n)$ be the standard coordinates on $\mathbb{C}
 
 Specifying the subbundle $\T^{1,0}M<\T^\mathbb{C}M$ is equivalent to specifying an almost complex structure $\sfJ$.
 
-There is a natural isomorphism $\T^{1,0}M\cong \T M$ given by $v\in \T^{1,0}M\mapsto v^\bbR =v+\bar v\in \T M\subset \T^\mathbb{C} M$. Its inverse is $v\in \T M\mapsto v^\mathbb{C}=\frac12(v-\rmi\sfJ v)$. In particular,
-\[(\partial_{z^j})^\bbR =(\partial_{\bar z^j})^\bbR =\partial_{x^k},\quad (i\partial_{z^j})^\bbR =\partial_{y^k}.\]
+There is a natural isomorphism $\T^{1,0}M\cong \T M$ given by $v\in \T^{1,0}M\mapsto v^\bbR =v+\wb v\in \T M\subset \T^\mathbb{C} M$. Its inverse is $v\in \T M\mapsto v^\mathbb{C}=\frac12(v-\rmi\sfJ v)$. In particular,
+\[(\partial_{z^j})^\bbR =(\partial_{\wb z^j})^\bbR =\partial_{x^k},\quad (i\partial_{z^j})^\bbR =\partial_{y^k}.\]
 
 If $M$ is a complex manifold, then $\T^{1,0}M$ has a naturally induced structure of a holomorphic bundle because its transition functions are $(\tau_{\alpha\beta})^j_k=\frac{\partial z_\beta^j}{\partial z_\alpha^k}$, which are holomorphic as complex derivatives of homolorphic maps (namely of the transition maps on $M$).
 
@@ -517,7 +517,7 @@ But when is the converse true, i.e., what conditions on the almost complex struc
 \begin{proof}
     See also proof via Cartan's first structure equation  in \url{https://math.berkeley.edu/~bmcmilla/Talks/Newlander-Nirenberg%20Theorem.pdf}.
     
-    This is a difficult theorem in analysis. The integrability of $\T^{0,1}M$ implies the existence of a convergent Taylor series at every point for all charts of an atlas on $M$. The theorem is easy to prove if it is already known that $M$ is a real analytic manifold: by Frobenius theorem, $\T^{0,1}M$ integrates to local submanifolds of $M$ which by dimension counting are open subsets, therefore the vector fields $\partial_{\bar z^j}\coloneqq\frac12(\partial_{x^j}+i\partial_{y^j})$ actually come from holomorphic local coordinates.
+    This is a difficult theorem in analysis. The integrability of $\T^{0,1}M$ implies the existence of a convergent Taylor series at every point for all charts of an atlas on $M$. The theorem is easy to prove if it is already known that $M$ is a real analytic manifold: by Frobenius theorem, $\T^{0,1}M$ integrates to local submanifolds of $M$ which by dimension counting are open subsets, therefore the vector fields $\partial_{\wb z^j}\coloneqq\frac12(\partial_{x^j}+\i\partial_{y^j})$ actually come from holomorphic local coordinates.
 \end{proof}
 
 \begin{rem}
@@ -532,9 +532,9 @@ But when is the converse true, i.e., what conditions on the almost complex struc
 
 Since $\T^\mathbb{C}M=\T^{1,0}\oplus \T^{0,1}M$, we have
 \begin{gather}
-    (\T^\mathbb{C}M)^\ast=(\T^{1,0}M)^\ast \oplus (\T^{0,1}M)^\ast=\T^\ast_{0,1}M\oplus \T^\ast_{1,0}M,\\ \T^\ast_{0,1}M=\<\dd z^j\>_\bbC,\;\; \T^\ast_{1,0}M=\<\dd\bar z^j\>_\bbC.
+    (\T^\mathbb{C}M)^\ast=(\T^{1,0}M)^\ast \oplus (\T^{0,1}M)^\ast=\T^\ast_{0,1}M\oplus \T^\ast_{1,0}M,\\ \T^\ast_{0,1}M=\<\dd z^j\>_\bbC,\;\; \T^\ast_{1,0}M=\<\dd\wb z^j\>_\bbC.
 \end{gather}
-Indeed, $\dd z^j(\partial_{z^k})=\delta^j_k$ and $\dd \bar z^j (\partial_{\bar z^k})=\delta^j_k$.
+Indeed, $\dd z^j(\partial_{z^k})=\delta^j_k$ and $\dd \wb z^j (\partial_{\wb z^k})=\delta^j_k$.
 Finally, 
 \begin{align}
     \T^\ast_{1,0}M=\{\alpha\in \T^{0,1}_{\mathbb{C}}M\mid \forall v\in \T^{0,1}M,\; \alpha(v)=0\}=\{\alpha-\rmi\sfJ^\ast\alpha\mid \alpha\in \T^\ast M\},\\
@@ -548,36 +548,36 @@ We define the corresponding exterior bundles.
     Furthermore, we define the spaces of complex differential forms of degree $(p,q)$, denoted by $\Omega^{p,q}(M)$, as the sections of these bundles:
     \[\Omega^{p,q}(M)=\Gamma^\infty(\bigwedge^{p,q}M).\]
     If $\omega\in\Omega^{p,q}(M)$, then in local coordinates it has the form
-    \[\omega=\sum_{I,J}\underbrace{\omega_{i_1\cdots i_pj_1\cdots j_q}}_{\omega_{I,J}}\underbrace{\dd z^i\wedge\cdots\wedge \dd z^{i_p}\wedge\dd \bar z^{j_1}\wedge\cdots\wedge \dd\bar z^{j_q}}_{\dd z^I\wedge \dd\bar z^J},\]
+    \[\omega=\sum_{I,J}\underbrace{\omega_{i_1\cdots i_pj_1\cdots j_q}}_{\omega_{I,J}}\underbrace{\dd z^i\wedge\cdots\wedge \dd z^{i_p}\wedge\dd \wb z^{j_1}\wedge\cdots\wedge \dd\wb z^{j_q}}_{\dd z^I\wedge \dd\wb z^J},\]
     where the sum is over all multi-indices, e.g. $I=(i_1,\ldots,i_p)$, $1\leq i_1<i_2\cdots<i_p\leq n$. Here, the coefficients are $\omega_{I,J}\in C^\infty (U,\mathbb{C})$.
 \end{defn}
 
  The exterior derivative is extended by $\mathbb{C}$-linearity:
-    \[\dd \omega=\sum_{I,J}\dd\omega_{I,J}\wedge\dd z^I\wedge\dd \bar z^J\in\Omega^{p+q+1}_\mathbb{C}(M).\]
+    \[\dd \omega=\sum_{I,J}\dd\omega_{I,J}\wedge\dd z^I\wedge\dd \wb z^J\in\Omega^{p+q+1}_\mathbb{C}(M).\]
 Clearly $\dd\omega$ is uniquely represented as a sum of an element of $\Omega^{p+1,q}(M)$ and an element of $\Omega^{p,q+1}(M)$, i.e.
 \[\dd(\Omega^{p,q}(M))\subset \Omega^{p+1,q}(M)\oplus\Omega^{p,q+1}(M).\]
 
 \begin{defn}[Dolbeault operators]\index{Dolbeault operators}
-    The Dolbeault operators $\partial:\Omega^{p,q}(M)\to\Omega^{p+1,q}(M)$ and $\bar\partial:\Omega^{p,q}(M)\to\Omega^{p,q+1}(M)$ uniquely defined by the formula
-    \[\dd\omega=\partial\omega+\bar\partial\omega.\]
+    The Dolbeault operators $\partial:\Omega^{p,q}(M)\to\Omega^{p+1,q}(M)$ and $\wb\partial:\Omega^{p,q}(M)\to\Omega^{p,q+1}(M)$ uniquely defined by the formula
+    \[\dd\omega=\partial\omega+\wb\partial\omega.\]
     Locally, we have 
     \begin{align}
-        \partial\omega=\sum_{k,I,J}\partial_{z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\bar z^J,\\
-        \bar\partial\omega=\sum_{k,I,J}\partial_{\bar z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\bar z^J.
+        \partial\omega=\sum_{k,I,J}\partial_{z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\wb z^J,\\
+        \wb\partial\omega=\sum_{k,I,J}\partial_{\wb z^k}\omega_{I,J}\dd z^k\wedge\dd z^I\wedge \dd\wb z^J.
     \end{align}
 \end{defn}
 
 These derivatives have the following basic properties:
 \begin{enumerate}
-    \item $\partial(\alpha\wedge\beta)=\partial\alpha\wedge\beta+(-1)^{\deg\alpha}\alpha\wedge\partial\beta$, and the same for $\bar\partial$;
-    \item $\overline{\bar\partial\bar\alpha}=\partial\alpha$;
-    \item $\partial^2=\bar\partial^2=\partial\bar\partial+\bar\partial\partial=0.$
+    \item $\partial(\alpha\wedge\beta)=\partial\alpha\wedge\beta+(-1)^{\deg\alpha}\alpha\wedge\partial\beta$, and the same for $\wb\partial$;
+    \item $\widebar{\wb\partial\wb\alpha}=\partial\alpha$;
+    \item $\partial^2=\wb\partial^2=\partial\wb\partial+\wb\partial\partial=0.$
 \end{enumerate}
-The last property follows from the decomposition \[0=\dd^2=(\partial+\bar\partial)^2=\underbrace{\partial^2}_{p\to p+2}+\underbrace{\bar\partial^2}_{q\to q+2}+\underbrace{\partial\bar\partial+\bar\partial\partial}_{(p,q)\to(p+1,q+1)}.\]
+The last property follows from the decomposition \[0=\dd^2=(\partial+\wb\partial)^2=\underbrace{\partial^2}_{p\to p+2}+\underbrace{\wb\partial^2}_{q\to q+2}+\underbrace{\partial\wb\partial+\wb\partial\partial}_{(p,q)\to(p+1,q+1)}.\]
 
 
 \begin{defn}[Holomorphic differential forms]\index{Holomorphic differential form}
-    A form $\omega\in\Omega^{p,0}(M)$ is called holomorphic if $\bar\partial\omega=0$, i.e., if all of its components $\omega_I$ are holomorphic functions. (For elements of $\Omega^{p,q}(M)$ this property is called ``$\bar\partial$-closed''.)
+    A form $\omega\in\Omega^{p,0}(M)$ is called holomorphic if $\wb\partial\omega=0$, i.e., if all of its components $\omega_I$ are holomorphic functions. (For elements of $\Omega^{p,q}(M)$ this property is called ``$\wb\partial$-closed''.)
 \end{defn}
 
 \begin{defn}[Canonical line bundle]\index{Canonical bundle}

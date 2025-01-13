@@ -5,19 +5,19 @@
 Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now generalize their construction to define limits and colimits of $\calJ$-shaped diagrams.
 
 \begin{defn}[Limits and colimits]\index{Limit of a functor}\index{Colimit of a functor}
-    Let $\mathcal{J}$ be an index category and $F$ a functor into any category $\mathcal{C}$, $F:\mathcal{J}\to \mathcal{C}$, thus representing a $J$-shaped diagram in $\mathcal{C}$ (see Def. \ref{categories of diagrams}). Then the limit
+    Let $\calJ $ be an index category and $F$ a functor into any category $\calC $, $F:\calJ \to \calC $, thus representing a $J$-shaped diagram in $\calC $ (see Def. \ref{categories of diagrams}). Then the limit
     \[\limit (F)\]
-    is defined as the \emph{terminal object in the category of commutative cones} over the diagram $F(\mathcal{J})$, see Fig.\ \ref{fig:limits}. That is, it is an object  $L\in\ob(\calC)$ together with a collection of morphisms $L\overset{\psi_i}{\to}F(i)$ for each $i\in\ob(\calJ)$ such that each triangle 
+    is defined as the \emph{terminal object in the category of commutative cones} over the diagram $F(\calJ )$, see Fig.\ \ref{fig:limits}. That is, it is an object  $L\in\ob(\calC)$ together with a collection of morphisms $L\overset{\psi_i}{\to}F(i)$ for each $i\in\ob(\calJ)$ such that each triangle 
     \[\begin{tikzcd}[every matrix/.append style={name=m},   
         execute at end picture={\draw [<-] ([xshift=13mm,yshift=0mm]m-2-2.north) arc[start angle=-90,delta angle=-270,radius=0.25cm];}]
         & L\arrow[dl,swap,"\psi_i" ]\arrow[dr,"\psi_j"] & \\
         F(i) \arrow[rr,swap,"f_{ij}"]& & F(j)
     \end{tikzcd}\]
-    commutes and for any other object $A\in\ob(\mathcal{C})$ with a similar collection of morphisms $A\overset{\phi_i}\to F(i)$ there exists a unique morphism $A\to \limit (F)$ such that the entire diagram including $F(\mathcal{J})$, $\{\psi_i\}$, and $\{\phi_i\}$, commutes.
+    commutes and for any other object $A\in\ob(\calC )$ with a similar collection of morphisms $A\overset{\phi_i}\to F(i)$ there exists a unique morphism $A\to \limit (F)$ such that the entire diagram including $F(\calJ )$, $\{\psi_i\}$, and $\{\phi_i\}$, commutes.
     
     Similarly, the colimit
     \[\colimit (F)\]
-    is an initial co-cone (i.e., with morphisms pointing towards $L$) over $F(\mathcal{J})$. Like all universal objects, limits and colimits are defined uniquely up to a unique isomorphism (if they exist at all).
+    is an initial co-cone (i.e., with morphisms pointing towards $L$) over $F(\calJ )$. Like all universal objects, limits and colimits are defined uniquely up to a unique isomorphism (if they exist at all).
 \end{defn}
 
 \begin{figure}[tp]
@@ -31,7 +31,7 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
 \begin{enumerate}
     \item $\calJ=\varnothing$ and $F$ is the empty functor into $\calC$. Then $\limit(F)$ is a terminal object in $\calC$ and $\colimit(F)$ is an initial object in $\calC$.
     \item $\calJ=(\bullet\quad\bullet)$ (discrete category with two objects). Then $\limit(F)=F(1)\times F(2)$ and $\colimit(F)=F(1)\sqcup F(2)$.
-    \item $\calJ=(A\bullet\to \bullet_D\longleftarrow \bullet B$, then $\limit(F)=A\times_D B$.
+    \item $\calJ=(A\bullet\to \bullet_D\longleftarrow \bullet B)$, then $\limit(F)=A\times_D B$.
     \item $F(\calJ)=(A\bullet\to \bullet B)$, then $\limit(F)=A$ and $\colimit{F}=B$.
     \item $F(\calJ)=(A\bullet\toto[\alpha]{\beta}\bullet B)$. Then $\limit(F)=\mathrm{eq}(\alpha,\beta)=\{a\mid \alpha(a)=\beta(a)\}$ is the equalizer and $\colimit(F)=\mathrm{coeq}(\alpha,\beta)=B/(\alpha(a)\sim \beta(a))$ is the coequalizer.
 
@@ -39,17 +39,17 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
 \end{example} 
 
 \begin{defn}[Preservation of limits]
-    A covariant functor $G:\mathcal{C}\to\mathcal{D}$ preserves the limits of the functor $F:\mathcal{J}\to \mathcal{C}$ if $\limit(G\circ F)=G \limit(F)$. Recall that a limit consists of an object and a set of morphisms from that object that make up the limit cone, so $G$ also acts on these morphisms. Preservation of colimits is defined analogously.
+    A covariant functor $G:\calC \to\calD $ is said to preserve the limits of the functor $F:\calJ \to \calC $ if $\limit(G\circ F)=G \limit(F)$. Recall that a limit consists of an object and a set of morphisms from that object that make up the limit cone, so $G$ also acts on these morphisms. Preservation of colimits is defined analogously.
 
-    $G$ is said to preserve all $J$-shaped (co)limits if it preserves the (co)limits of all functors $F:\mathcal{J}\to \mathcal{C}$. 
+    $G$ is said to preserve all $\calJ$-shaped (co)limits if it preserves the (co)limits of all functors $F:\calJ\to \calC $. 
 
     Note that for contravariant functors the analogous concepts would be functors that take limits to colimits, or colimits to limits.
 \end{defn}    
 \begin{defn}[Continuous functors]\index{Continuous functor}
-    A functor is called (co)continuous if it preserves all \emph{small (co)limits} (that is, $J$-shaped (co)limits for all categories $J$ such that $\mathrm{Ob}(J)$ is a set and not a proper class).
+    A functor is called (co)continuous if it preserves all \emph{small (co)limits} (that is, $\calJ$-shaped (co)limits for all categories $\calJ$ such that $\mathrm{Ob}(\calJ)$ is a set and not a proper class).
 \end{defn}
 \begin{thm}[Continuity of hom-functors]
-    Covariant hom-functors $h^A:B\mapsto \mathrm{Hom}_{\mathcal{C}}(A,B)$ preserve all limits. Similarly, contravariant hom-functors take colimits to limits.
+    Covariant hom-functors $h^A:B\mapsto\allowbreak \mathrm{Hom}_{\calC }(A,B)$ preserve all limits. Similarly, contravariant hom-functors take colimits to limits.
 \end{thm}
 \begin{rem}
      Note that the same is not generally true for colimits, -- e.g., $h^A(B\sqcup C)\neq h^A(B)\sqcup h^A(C)$ in $\mathsf{Set}$.
@@ -58,45 +58,45 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
     Combining the above theorem with Yoneda's Lemma~\ref{Yoneda}, we conclude that all representable covariant functors preserve all limits. Similarly, representable contravariant functors map all colimits to limits.
 \end{cor}
 \begin{thm}\label{thm diagonal functor adjoint to limit}
-    Recall that $\mathcal{C}^\mathcal{J}$ is the category of $J$-shaped diagrams in $\mathcal{C}$, i.e., covariant functors from $\mathcal{J}$ to $\mathcal{C}$ (see Example~\ref{categories of diagrams}). Suppose that for each functor $F:\mathcal{J}\to\mathcal{C}$ the limit $\limit F$ exists in $\mathcal{C}$. Then the \emph{diagonal functor} which assigns to each object $A$ the \emph{constant diagram} $\underline A\in \mathcal{C}^\mathcal{J}$ (i.e., all objects of $\mathcal{J}$ are mapped to $A$ and all morphisms to $\mathrm{id}_A$),
-    \[\Delta: \mathcal{C}\to \mathcal{C}^{\mathcal{J}};\; A\mapsto \underline{A},\]
+    Recall that $\calC ^\calJ $ is the category of $J$-shaped diagrams in $\calC $, i.e., covariant functors from $\calJ $ to $\calC $ (see Example~\ref{categories of diagrams}). Suppose that for each functor $F:\calJ \to\calC $ the limit $\limit F$ exists in $\calC $. Then the \emph{diagonal functor} which assigns to each object $A$ the \emph{constant diagram} $\underline A\in \calC ^\calJ $ (i.e., all objects of $\calJ $ are mapped to $A$ and all morphisms to $\mathrm{id}_A$),
+    \[\Delta: \calC \to \calC ^{\calJ };\; A\mapsto \underline{A},\]
     is left adjoint to the limit functor
-    \[\limit: \mathcal{C}^\mathcal{J}\to \mathcal{C};\; F\mapsto \limit F\]
+    \[\limit: \calC ^\calJ \to \calC ;\; F\mapsto \limit F\]
     (this functor forgets the morphisms associated with the limiting object).
 \end{thm}
 \begin{proof}
     For the bijection 
     \[
-        \Hom_{\mathcal{C}^\mathcal{J}}(\underline{A},F)\cong \Hom_{\mathcal{C}}(A,\limit F),\label{limit functor bijection}
+        \Hom_{\calC ^\calJ }(\underline{A},F)\cong \Hom_{\calC }(A,\limit F),\label{limit functor bijection}
     \]
-    note that a natural transformation $\tau: \underline{A}\Longrightarrow F$ (which is what morphisms in $\mathcal{C}^\mathcal{J}$ are) with component morphisms $\tau_j:A\to F(j)$ ($j$ ranges over all objects in $\mathcal{J}$) corresponds to a unique morphism $\limit \tau: A\to \limit F$ in $\mathcal{C}$. Conversely, a morphism $l:A\to \limit F$ determines a unique natural transformation $\tau:\underline{A}\Longrightarrow F$ such that $l=\limit \tau$, namely its components are $\tau_j=l\pi_j$ given the morphisms $\pi_j$ included in the definition of $\limit F$. It is easy to check that this bijection is natural in $A$.
+    note that a natural transformation $\tau: \underline{A}\Longrightarrow F$ (which is what morphisms in $\calC ^\calJ $ are) with component morphisms $\tau_j:A\to F(j)$ ($j$ ranges over all objects in $\calJ $) corresponds to a unique morphism $\limit \tau: A\to \limit F$ in $\calC $. Conversely, a morphism $l:A\to \limit F$ determines a unique natural transformation $\tau:\underline{A}\Longrightarrow F$ such that $l=\limit \tau$, namely its components are $\tau_j=l\pi_j$ given the morphisms $\pi_j$ included in the definition of $\limit F$. It is easy to check that this bijection is natural in $A$.
 \end{proof}
 \begin{cor}\label{corollary on limits}
-    The natural bijection (\ref{limit functor bijection}) (with some object $L$ from $\mathcal{C}$ instead of $\limit F$ to avoid confusion) holds for each object $A$ in $\mathcal{C}$ iff the functor $F$ has a limit.
+    The natural bijection \eqref{limit functor bijection} (with some object $L$ from $\calC $ instead of $\limit F$ to avoid confusion) holds for each object $A$ in $\calC $ iff the functor $F$ has a limit.
 \end{cor}
 \begin{proof}
     The existence of the limit is equivalent to the existence of a unique morphism $\limit \tau: A\to L$ for each natural transformation $\tau:\underline{A}\to F$.
 \end{proof}
 \begin{rem}
-    Since a morphism (natural transformation) $\underline{A}\Longrightarrow F$ in the category $\mathcal{C}^\mathcal{J}$ is the same as a cone from $A$ to $F$, the limit $\limit F$ can be defined as the universal natural transformation $\Delta \Longrightarrow F$. Similarly, colimits are the universal natural transformations $F\Longrightarrow \Delta$.
+    Since a morphism (natural transformation) $\underline{A}\Longrightarrow F$ in the category $\calC ^\calJ $ is the same as a cone from $A$ to $F$, the limit $\limit F$ can be defined as the universal natural transformation $\Delta \Longrightarrow F$. Similarly, colimits are the universal natural transformations $F\Longrightarrow \Delta$.
 \end{rem}
 \begin{thm}[Continuity of adjoint functors]\label{continuity of adjoints thm}
     Every functor that has a left adjoint (and therefore is a right adjoint) is continuous. The dual statement is that every functor that has a right adjoint (and therefore is a left adjoint) is cocontinuous.
 \end{thm}
 \begin{proof}
-    Let $R:\mathcal{C}\to \mathcal{D}$ be the right adjoint to $L:\mathcal{D}\to\mathcal{C}$. Suppose that $\limit F$ exists in $\mathcal{C}$. For each object $A$ in $\mathcal{C}$, a natural bijection
-    \[\Hom_{\mathcal{C}^\mathcal{J}}(\underline{L(A)},F)\cong \Hom_{\mathcal{D}^\mathcal{J}}(\underline{A},R\circ F) \label{adjunction bijeciton}\]
+    Let $R:\calC \to \calD $ be the right adjoint to $L:\calD \to\calC $. Suppose that $\limit F$ exists in $\calC $. For each object $A$ in $\calC $, a natural bijection
+    \[\Hom_{\calC ^\calJ }(\underline{L(A)},F)\cong \Hom_{\calD ^\calJ }(\underline{A},R\circ F) \label{adjunction bijeciton}\]
     is provided by the natural adjunction bijection
-    \[\Hom_{\mathcal{C}}(L(A),F(j))\cong \Hom_{\mathcal{D}}(A,R(F(j))\]
-    for each object $j$ in $\mathcal{J}$, sending the component $h_j$ of an element of the l.h.s.~of (\ref{adjunction bijeciton}) to the corresponding component of the natural transformation on the right. Now consider the string of natural bijections
+    \[\Hom_{\calC }(L(A),F(j))\cong \Hom_{\calD }(A,R(F(j))\]
+    for each object $j$ in $\calJ $, sending the component $h_j$ of an element of the l.h.s.~of \eqref{adjunction bijeciton} to the corresponding component of the natural transformation on the right. Now consider the string of natural bijections
     \begin{multline}
-        \Hom_{\mathcal{D}^\mathcal{J}}(\underline{A},R\circ F)\cong \Hom_{\mathcal{C}^\mathcal{J}}(\underline{L(A)},F)\cong \\ 
-        \cong \Hom_{\mathcal{C}}(L(A),\limit F)\cong \Hom_{\mathcal{D}}(A,R(\limit F))
+        \Hom_{\calD ^\calJ }(\underline{A},R\circ F)\cong \Hom_{\calC ^\calJ }(\underline{L(A)},F)\cong \\ 
+        \cong \Hom_{\calC }(L(A),\limit F)\cong \Hom_{\calD }(A,R(\limit F))
     \end{multline}
-    coming respectively from (\ref{adjunction bijeciton}), (\ref{limit functor bijection}), and the adjunction. By Corollary~\ref{corollary on limits} combined with the uniqueness of adjoints (Proposition~\ref{uniqueness of adjoints prop}), we have $\limit(R\circ F)= R(\limit F)$ as required.
-    % Let $G:\mathcal{D}\to\mathcal{C}$ be a left adjoint, i.e., $G^\ast$ exists. Then for a colimit $\colimit(F)$ of $F:\mathcal{J}\to \mathcal{D}$, by continuity of hom-functors, we have
+    coming respectively from \eqref{adjunction bijeciton}, \eqref{limit functor bijection}, and the adjunction. By Corollary~\ref{corollary on limits} combined with the uniqueness of adjoints (Proposition~\ref{uniqueness of adjoints prop}), we have $\limit(R\circ F)= R(\limit F)$ as required.
+    % Let $G:\calD \to\calC $ be a left adjoint, i.e., $G^\ast$ exists. Then for a colimit $\colimit(F)$ of $F:\calJ \to \calD $, by continuity of hom-functors, we have
     % \begin{multline}
-    %     \Hom_{\mathcal{C}}(G\colimit F,B)\cong \Hom_{\mathcal{D}}(\colimit F,G^\ast(B))\cong \limit \Hom_{\mathcal{D}}(F,G^\ast(B)) \cong \\\cong \limit \Hom_{\mathcal{C}}(G\circ F,B)\cong \mathrm{Cocones}(G\circ F,B),
+    %     \Hom_{\calC }(G\colimit F,B)\cong \Hom_{\calD }(\colimit F,G^\ast(B))\cong \limit \Hom_{\calD }(F,G^\ast(B)) \cong \\\cong \limit \Hom_{\calC }(G\circ F,B)\cong \mathrm{Cocones}(G\circ F,B),
     % \end{multline}
     % and these bijections are natural in $B$. However, the existence of a natural bijection with the set of cones from $G\circ F$ is exactly the characteristic property of a colimit (see definition).
 \end{proof}
@@ -104,25 +104,25 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
     Limits commute with limits (assuming all limits of the necessary shapes exist). Colimits commute with colimits.
 \end{cor}
 \begin{proof}
-    Viewing the limit is a functor  $\limit:\calC^J\to \calC$, we have just shown that it is right adjoint to the diagonal functor (a.k.a.~the constant diagram functor). Therefore it is continuous, i.e.~commutes with limits. 
+    Viewing the limit is a functor  $\limit:\calC^\calJ\to \calC$, we have just shown that it is right adjoint to the diagonal functor (a.k.a.~the constant diagram functor). Therefore it is continuous, i.e., commutes with limits. 
 \end{proof}
 
 Note that limits and colimits typically do not commute.
 
-\begin{example}[Siefert-van Kampen theorem redux]\index{Theorem!Siefert-van~Kampen}
-    We've learned by now that contravariant representable (or hom-) functors map colimits to limits, so they're not the functors that preserve colimits. It is the left adjoints that do. Siefert-van~Kampen theorem essentially states that the fundamental functors $\pi_1$ or $\Pi$ preserve \emph{some} colimits (namely pushouts). 
+\begin{example}[Seifert-van Kampen theorem redux]\index{Theorem!Seifert-van~Kampen}
+    We've learned by now that contravariant representable (or hom-) functors map colimits to limits, so they're not the functors that preserve colimits. It is the left adjoints that do. Seifert-van~Kampen theorem essentially states that the fundamental functors $\pi_1$ or $\Pi$ preserve \emph{some} colimits (namely pushouts). 
     
     While not a proof, one categorical source of intuition for this is that both of these functors are left adjoints. The reason $\pi_1$ preserves only pushouts, and not all colimits, is that the functor that maps the category $\mathsf{Top}$ into the homotopy category $\mathsf{hTop}$ doesn't preserve colimits, so $\pi_1$ doesn't either. However, the descended version of this functor, $\pi_1:\mathsf{hTop}\to \mathsf{Gr}$ happens to be the left adjoint of a certain functor that constructs a topological space given a group. Looking far ahead, this is the functor $\rmB:G\mapsto \rmB G$ that constructs the classifying space of $G$. It is so called because $\rmB G$ is the base space of a universal principal $G$-bundle such that any other $G$-bundle is a pullback along some continuous map into $\rmB G$. For example, universal covering spaces are exactly the classifying spaces for the fundamental groups of their base, -- e.g., $B\bbZ=\bbS^1$ and $\rmB(\bbZ\ast \bbZ)=\bbS^1\vee \bbS^1$ etc. $\rmB G$ is in fact the unique (up to ``weak'' homotopy equivalence) space whose fundamental group is $G$ and all other homotopy groups are trivial (which also identifies it with the first  Eilenberg-MacLane space $\rmK(G,1)$).
 
     So, by a happy coincidence, pushouts in the homotopy category lined up with pushouts in the original topological category.
 \end{example}
 
-The most common examples of infinite limits and colimits are ones where $\mathcal{J}$ can be indexed by integers.
+The most common examples of infinite limits and colimits are ones where $\calJ $ can be indexed by integers.
 
 \begin{defn}[Directed colimits, codirected limits]\index{Inverse limit!see {Codirected limit}}\index{Direct limit!see {Directed colimit}}\index{Directed colimit}\index{Directed colimit}
     If $\calJ$ is a directed system (cf.\ Definition~\ref{def directed system}) and $F:\calJ\to \calC$ a functor, then $\colimit(F)$ is called a directed colimit (historically \emph{direct limit}, or \emph{inductive limit}). \index{Inductive limit!see {Directed colimit}} It is also often written as $\colimit A_j$, where $A_j=F(j)$. \index{Inductive limit!see {Directed colimit}}
     
-    If $\calJ$ is a \emph{codirected system} \index{Codirected system} (i.e.~$\calJ^{\mathrm{op}}$ is a directed system), then $\limit(F)$ is called a codirected limit (historically \emph{inverse limit}, or \emph{projective limit}). \index{Projective limit!see {Codirected limit}}
+    If $\calJ$ is a \emph{codirected system} \index{Codirected system} (i.e., $\calJ^{\mathrm{op}}$ is a directed system), then $\limit(F)$ is called a codirected limit (historically \emph{inverse limit}, or \emph{projective limit}). \index{Projective limit!see {Codirected limit}}
     
     More generally, if $\calJ$ is a poset category (see Example~\ref{poset example}), then it is said to be directed to the right (left) if $\forall i,j\in \ob(\calJ)$ $\exists k\in \ob(\calJ)$ such that $i,j\leq k$ (respectively, $k\leq i,j$). Then one can define directed colimits of diagrams directed to the right and codirected limits of diagrams directed to the left.
 \end{defn}
@@ -143,8 +143,7 @@ The most common examples of infinite limits and colimits are ones where $\mathca
     Then $\limit(\bbZ/p^n\bbZ)=\bbZ_p$ is the group of $p$-adic integers (it has the cardinality of continuum!).
     \item Consider the poset diagram directed to the left consisting of group epimorphisms $\bbZ/m\bbZ\overset{\mod n}\to \bbZ/n\bbZ$ for $n\mid m$. Then 
     $\limit (\bbZ/n\bbZ)=\hat{\bbZ}$ is the \emph{profinite completion of $\bbZ$}.
-    \item The monomorphism sequence $\bbZ/p^n\bbZ\overset{\cdot p}\to \bbZ/p^{n+1}\bbZ$ gives the directed colimit $\colimit(\mathbb{Z
-    }/p^n\bbZ)=\bbZ(p^\infty)$, which is called a Pr\"ufer group (it can be realized as the group of all roots of unity of the form $\exp(2\pi\rmi \cdot m/p^n)$).
+    \item The monomorphism sequence $\bbZ/p^n\bbZ\overset{\cdot p}\to \bbZ/p^{n+1}\bbZ$ gives the directed colimit $\colimit(\mathbb{Z}/p^n\bbZ)\allowbreak=\bbZ(p^\infty)$, which is called a Pr\"ufer group (it can be realized as the group of all roots of unity of the form $\exp(2\pi\rmi \cdot m/p^n)$).
     \item In topological and geometric categories, directed colimits are similar to unions (when they exist). For instance, the $n$-sphere can be embedded $\bbS^n\hookrightarrow \bbS^{n+1}$ as the equator, and the directed colimit gives $\bbS^\infty=\colimit \bbS^n$.
 \end{enumerate}
 \end{example}
@@ -268,7 +267,7 @@ The last axiom of abelian categories states that $\coim\varphi = \im\varphi$, wh
     Prove that the last axiom of abelian categories is indeed equivalent to the boxed statement.
 \end{xca}
 Therefore in abelian categories we have the shortened decomposition
-\[\ker\varphi\to X \overset{j\text{, epi}}\longrightarrow\im\varphi\overset{i\text{, mono}}\longrightarrow Y\to \coker\varphi,\]
+\[\ker\varphi\rightarrowtail X \overset{j}\twoheadrightarrow\im\varphi\overset{i}\rightarrowtail Y\twoheadrightarrow \coker\varphi,\]
 where
 \[\text{factorization property}:\quad \varphi=i\circ j,\quad i\text{ -- mono}, j\text{ -- epi}.\]
 
@@ -293,7 +292,7 @@ The ellipsis indicates that one can keep requiring various extra properties of t
 
 \section{Exact sequences and functors}
 
-From now on in this Part we work only with abelian categories. In fact, homological algebra can be viewed as the extension of linear algebra to all abelian categories.
+From now on in this \partt\ we work only with abelian categories. In fact, homological algebra can be viewed as the extension of linear algebra to all abelian categories (most importantly, ring modules). As we have already seen, it arises inevitably in geometric problems, where the spaces of functions, differential forms, etc., form modules over the ring of smooth functions, and so the classic tools of the linear algebra of fields and vector spaces do not suffice.
 
 \begin{defn}[Exact sequences]\index{Exact sequence}
     A sequence of morphisms in an abelian category 
@@ -351,17 +350,6 @@ From now on in this Part we work only with abelian categories. In fact, homologi
 \begin{proof}
     By the standard rank-nullity theorem, the l.h.s.\ equals \[\sum_{i=1}^{n-1}(-1)^i\dim \ker f_i+\sum_{i=1}^{n-1}(-1)^i\dim \im f_i.\] By exactness, this sum vanishes.
 \end{proof}
-
-
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 19 on 26 Apr 2019 ended here}
-        \end{center}
-    \end{samepage}
-\end{comment}
-
 
 
 \begin{defn}[Exact functors]\index{Exact functor}
@@ -462,7 +450,7 @@ The moral of these examples is that whereas in categories of vector spaces $\mat
     \text{to characterize the obstructions to the exactness of certain additive functors}\\ \text{(these obstructions are called derived functors).}
     \end{array}}
 \]
-Given a non-exact functor, the values of its derived functors need to be added into the image of a short exact sequence to produce a fully exact (albeit potentially infinitely long) sequence. For example, in the case of the invariants functor, every short exact sequence $0\to A\to B\to B/A\to 0$ becomes a \emph{long exact sequence of group cohomology}
+Given a non-exact functor, the values of its derived functors need to be added into the image of a short exact sequence to produce a fully exact (albeit potentially infinitely long) sequence. For example, in the case of the invariants functor, every short exact sequence $0\to A\to B\to B/A\to 0$ becomes a \emph{long exact sequence of group cohomology} \index{Long exact sequence!of group cohomology}
 \[
     \scriptstyle
     0\to A^G\to B^G\to (B/A)^G\to \rmH^1(G,A)\to \rmH^1(G,B)\to \rmH^1(G,B/A)\to \rmH^2(G,A)\to\cdots
@@ -489,7 +477,7 @@ All of them are examples of (co)homology theories. We will return to a proper di
 \section{Directed colimits and exactness}
 
 \begin{defn}[Complete category]\index{Complete category}
-    A category $\calC$ is called complete if all limits in $\calC$ with a small index category (i.e.~$\ob(\calJ)$ is a proper set and not a class) exist. $\calC$ is called cocomplete if all small colimits in $\calC$ exist.
+    A category $\calC$ is called complete if all limits in $\calC$ with a small index category (i.e., $\ob(\calJ)$ is a proper set and not a class) exist. $\calC$ is called cocomplete if all small colimits in $\calC$ exist.
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~5.23]{Rotman}}}]\label{prop abelian complete and cocomplete}
@@ -917,17 +905,6 @@ Retracing the construction of the connecting homomorphism, we find that
     \[\rmH^1_{\rm dR}(\text{M\"obius band})=\rmH^1_{\rm dR}(\bbS^1)=\bbZ.\]
 \end{xca}
 
-
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 20 on 3 May 2019 ended here}
-        \end{center}
-    \end{samepage}
-\end{comment}
-
-
 \section{De Rham cohomology with compact support}
 
 \begin{defn}[de Rham cohomology with compact support]\index{Cohomology!with compact support}
@@ -1089,7 +1066,7 @@ Similar to de Rham cohomology, we can define cohomology of complex differential 
 There is also an analog of the Poincar\'e lemma for $\bar\partial$, but at first only over one-dimensional complex manifolds.
 
 \begin{lem}[$\bar\partial$-Poincar\'e lemma in one variable]
-    Let $D=\{z\in\bbC\mid |z|<\epsilon\}$ and $U\mathring\subset \bbC$ such that $\overline{D}\subset U$. Let $\omega\in \Omega^{0,1}(U)$. Then $\omega$ is $\bar\partial$-exact:
+    Let $D=\{z\in\bbC\mid |z|<\epsilon\}$ and $U\mathring\subset \bbC$ such that $\wb{D}\subset U$. Let $\omega\in \Omega^{0,1}(U)$. Then $\omega$ is $\bar\partial$-exact:
     \[\omega=\bar\partial g,\quad g(z)=\frac{1}{2\pi\rmi }\int_{D}\frac{\dd\xi\wedge \omega(\xi)}{\xi-z}.\]
 \end{lem}
 \begin{proof}
@@ -1238,15 +1215,6 @@ Intuitively, $H^\Delta_p$ detects the ``$p$-dimensional holes'' in the complex, 
     
     An orientation on a complex $K=(E,S)$ is a partial order on $E$ that induces an orientation on each simplex of $K$ (i.e., orientations of faces of a simplex can be induced from the orientation of the simplex). Orientations are considered to be equivalent if they induce equivalent orientations on all simplices.
 \end{defn}
-
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 21 on 10 May 2019 ended here (but Section \ref{finite dim de rham} was covered in the next lecture)}
-        \end{center}
-    \end{samepage}
-\end{comment}
 
 \begin{example}[Simplicial homology of $\bbS^1$]
     A circle $\bbS^1$ can be triangulated by a regular $n$-gon with vertices  $e_0,\ldots,e_{n-1}$ and oriented simplices $s_i=\langle e_i,e_{i+1}\rangle$, $0\leq i\leq n-1$ with the identification $e_n=e_0$. 
@@ -1444,7 +1412,7 @@ for the descendants of maps in (co)homology.
     Moreover, one needs to check that if $[z]=[z']$, then $[x]=[x']$. Lastly, we need to check that $\delta$ is a homomorphism. These checks are left as an exercise.
 \end{proof}
 
-\begin{thm}[Zig-zag lemma/Long exact sequence in homology]\label{thm long exact seq in homology}
+\begin{thm}[Zig-zag lemma/Long exact sequence in homology]\label{thm long exact seq in homology} \index{Long exact sequence!of homology}
     For any short exact sequence of complexes 
     \[0\to \bm{A}\overset i\to \bm{B}\overset\pi\to \bm{C}\to 0 ,\]
     the induced sequence in homology
@@ -1495,15 +1463,6 @@ for the descendants of maps in (co)homology.
     \[0\to \ker\pi \to \ker\rho\to \ker\sigma\to \coker\pi\to \coker\rho\to\coker\sigma\to 0, \]
     which is exactly the Snake Lemma \ref{snake lemma}.
 \end{proof}
-
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 22 on 17 May 2019 ended here (included Section \ref{finite dim de rham})}
-        \end{center}
-    \end{samepage}
-\end{comment}
 
 
 \begin{prop}[Naturality of the connecting homomorphism\footnote{Tape worm lemma?}]\label{naturality of connecting hom}
@@ -1825,7 +1784,7 @@ For a space $X$, let $\calU=\{U_\alpha\}_\alpha$ be a collection of subspaces of
          
          To us it is important that the diameter of any simplex in the barycentric subdivision of $\sigma$ is bounded by $\frac{n}{n+1}\cdot \text{diam}(\sigma)$. Since $\frac{n}{n+1}<1$, iterating the subdivision creates simplices uniformly and arbitrarily small in size.
          
-         \item \emph{Barycenric subdivision of linear chains.} For a convex set $Y$ in a Euclidean space, all linear maps $\Delta^n\to Y$ generate a subgroup of $C_n(Y)$ that we denote by $\rmL_n(Y)$, the linear chains. They form a chain complex with the same boundary operator. Each such linear simplex can be identified with a regular simplex in $Y$ itself.  For convenience we augment the complex with $L_{-1}(Y)=\bbZ$ generated by the empty simplex $\langle \varnothing \rangle$ with $\partial \sigma=\langle \varnothing \rangle$ for all $\sigma\in \rmL_1(Y)$.
+         \item \emph{Barycenric subdivision of linear chains.} For a convex set $Y$ in a Euclidean space, all linear maps $\Delta^n\to Y$ generate a subgroup of $C_n(Y)$ that we denote by $\rmL_n(Y)$, the linear chains. They form a chain complex with the same boundary operator. Each such linear simplex can be identified with a regular simplex in $Y$ itself.  For convenience we augment the complex with $\rmL_{-1}(Y)=\bbZ$ generated by the empty simplex $\langle \varnothing \rangle$ with $\partial \sigma=\langle \varnothing \rangle$ for all $\sigma\in \rmL_1(Y)$.
          
          Each point $b\in Y$ determines a homomorphism $b:\rmL_n(Y)\to L_{n+1}(Y)$ defined on simplices by $b(\langle w_0,\ldots,w_n\rangle)=\langle b,w_0,\ldots,w_n\rangle$ (a ``cone operator''). It is easy to check that $\partial b+b\partial =\id$, so $b$ is a chain homotopy between the identity and zero on the augmented chain complex $L_\bullet(Y)$.
          
@@ -1876,15 +1835,6 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 \begin{xca}
     Compute the singular homology groups of the sphere $\bbS^n$ using the \gls{mv} sequence.
 \end{xca}
-
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 23 on 24 May 2019 ended here}
-        \end{center}
-    \end{samepage}
-\end{comment}
 
 
 \begin{defn}[Good pair]\index{Good pair}
@@ -2116,14 +2066,6 @@ We show now that simplicial and singular homology groups of triangulable spaces 
 This corollary is analogous to the theorem about the finite-dimensionality of de Rham cohomology for manifolds of finite type (with finite good cover). It also means that we have already effectively computed the singular homology groups of examples like the torus, the M\"obius band, and the projective plane, by computing the simplicial homologies of their triangulations. This illustrates the value of having multiple types of equivalent homology theories on the same space: singular homology is very general and provides powerful theoretical results but is very hard to compute directly, whereas simplicial homology can be very easy to compute in specific applications.
 
 
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 24 on 7 June 2019 ended here}
-        \end{center}
-    \end{samepage}
-\end{comment}
 
 
 
@@ -2174,10 +2116,10 @@ Let us now study singular homology of $CW$-complexes.
 
 
 \begin{prop}[{{\cite[Lem.~39.1]{Munkres}}}]\label{lem 39.1 munkres}
-    If the $CW$-complex $X$ is obtained from a subcomplex $A$ by attaching one $n$-cell along $\chi:\partial \bbD^n\to A$, so $X=A\cup_\chi \bbD^n$, then the characteristic map $f:\bbD^n\to X$ of this cell induces isomorphisms in relative homology: $\rmH_k(X,A)\cong \rmH_k(\bbD^n,\partial \bbD^n)$, i.e.~$\bbZ$ when $k=n$ and $0$ otherwise. Moreover, the attaching map applied to any generator of $\rmH_n(\bbD^n,\partial \bbD^n)$ gives a generator of $\rmH_n(X,A)$.
+    If the $CW$-complex $X$ is obtained from a subcomplex $A$ by attaching one $n$-cell along $\chi:\partial \bbD^n\to A$, so $X=A\cup_\chi \bbD^n$, then the characteristic map $f:\bbD^n\to X$ of this cell induces isomorphisms in relative homology: $\rmH_k(X,A)\cong \rmH_k(\bbD^n,\partial \bbD^n)$, i.e., $\bbZ$ when $k=n$ and $0$ otherwise. Moreover, the attaching map applied to any generator of $\rmH_n(\bbD^n,\partial \bbD^n)$ gives a generator of $\rmH_n(X,A)$.
 \end{prop}
 \begin{proof}
-    Denote the $n$-cell $e^n=f(\bbD^n)$ and let $N\subset e^n$ be a small open neighborhood of the boundary (e.g.~the image of $\partial \bbD^n\times (1-\epsilon,1]$ under $f$). By gradually shrinking $N$ back to the boundary we obtain a homotopy equivalence $(X,A)\simeq (X,A\cup N)$ and hence isomorphisms $\rmH_k(X,A)\cong \rmH_k(X,A\cup N)$ by homotopy invariance. But $A$ is in the interior of $A\cup N$, so by excision the map induced by the inclusion in homology is an isomorphism:
+    Denote the $n$-cell $e^n=f(\bbD^n)$ and let $N\subset e^n$ be a small open neighborhood of the boundary (e.g, the image of $\partial \bbD^n\times (1-\epsilon,1]$ under $f$). By gradually shrinking $N$ back to the boundary we obtain a homotopy equivalence $(X,A)\simeq (X,A\cup N)$ and hence isomorphisms $\rmH_k(X,A)\cong \rmH_k(X,A\cup N)$ by homotopy invariance. But $A$ is in the interior of $A\cup N$, so by excision the map induced by the inclusion in homology is an isomorphism:
     \[\rmH_k(X\setminus A,N\setminus A)\cong \rmH_k(X,A\cup N).\]
     Now $X\setminus A$ is an open ball of dimension $n$ and $N\setminus A$ is a collar, so clearly by collapsing this collar to a sphere we obtain an additional homotopy equivalence $(X\setminus A,N\setminus A)\simeq (e^n,\partial e^n)\simeq (\bbD^n,\partial \bbD^n)$ (the latter equivalence is induced by the attaching map $f$), and hence isomorphisms in homology:
     \[\rmH_k(X\setminus A,N\setminus A)\cong \rmH_k(\bbD^n,\partial \bbD^n).\]
@@ -2292,15 +2234,15 @@ The following result provides a way of computing the coefficients.
          \item $f_\alpha^n$ is the characteristic map (so $\partial f_\alpha^n=\varphi_\alpha^n$); 
          \item $q_\ast:\wt{H}_{n-1}(X^{(n-1)})\to \wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})=\bigoplus_\beta \wt{H}_{n-1}(\bbD^{n-1}\slash \partial \bbD^{n-1})$ is induced by the quotient map $q:X^{(n-1)}\to X^{(n-1)}\slash X^{(n-2)}$; 
          \item $q_\beta:X^{(n-1)}\slash X^{(n-2)}\to \bbS^{(n-1)}$ collapses the complement of the cell $e^{n-1}_\beta$ to a point, the resulting quotient sphere being identified with $\bbS^{n-1}$ via the characteristic map $f^{n-1}_\beta$;
-         \item $\Delta_{\alpha\beta}:\bbS^{n-1}\to \bbS^{n-1}$ is the composition $q_\beta\circ q\circ \varphi^n_\alpha$, i.e.~the attaching map of $e^n_\alpha$ followed by the quotient map $X^{(n-1)}\to \bbS^{n-1}$ collapsing the complement of $e^{n-1}_\beta$ in $X^{n-1}$ to a point.
+         \item $\Delta_{\alpha\beta}:\bbS^{n-1}\to \bbS^{n-1}$ is the composition $q_\beta\circ q\circ \varphi^n_\alpha$, i.e., the attaching map of $e^n_\alpha$ followed by the quotient map $X^{(n-1)}\to \bbS^{n-1}$ collapsing the complement of $e^{n-1}_\beta$ in $X^{n-1}$ to a point.
     \end{enumerate}
     Note that $(\Delta_{\alpha\beta})_\ast$ is defined so that the top right square commutes. The upper left square is natural and therefore commutes (it is induced by the characteristic map of a cell), while the lower left triangle is part of the exact diagram defining the chain complex $C_\bullet^{\mathrm{CW}}$ and is defined to commute as well. The map $(f_\alpha^n)_\ast$ takes the generator $[\bbD^n]\in \rmH_n(\bbD^n,\bbS^{n-1})$ to a generator of the $\bbZ$-summand of $\rmH_n(X^{(n)},X^{(n-1)})$ corresponding to $e^n_\alpha$, i.e., 
     \[(f^n_\alpha)_\ast([\bbD^n])=[e^n_\alpha].\]
     Since the top left square and the bottom left triangle commute, his gives that 
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=\partial_n^{\mathrm{CW}}\circ (f^n_\alpha)_\ast([\bbD^n])=j_{n-1}\circ (\varphi_\alpha^n)_\ast\circ \partial_n([\bbD^n]).\]
-    Looking to the bottom right square, recall that since $X$ is a $CW$-complex, $(X^{(n)},X^{(n-1)})$ is a good pair. This gives the isomorphism $\rmH_{n-1}(X^{(n-1)},X^{(n-2)})\cong \wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})$. Moreover, we also have that $\wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\cong \rmH_{n-1})(X^{(n-1)}\slash X^{(n-2)},X^{(n-2)}\slash X^{(n-2)})$. The bottom right square commutes by definition of $j_{n-1}$ and $q_\ast$, which combined with the commutativity of the top left square yields that
+    Looking to the bottom right square, recall that since $X$ is a $CW$-complex, $(X^{(n)},X^{(n-1)})$ is a good pair. This gives the isomorphism $\rmH_{n-1}(X^{(n-1)},X^{(n-2)})\cong \wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})$. Moreover, we also have that $\wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\cong \rmH_{n-1}(X^{(n-1)}\slash X^{(n-2)},X^{(n-2)}\slash\allowbreak X^{(n-2)})$. The bottom right square commutes by definition of $j_{n-1}$ and $q_\ast$, which combined with the commutativity of the top left square yields that
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=q_\ast\circ \partial_n\circ (f_\alpha^n)_\ast([\bbD^n])=q_\ast\circ (\varphi^n_\alpha)_\ast\circ \partial_n([\bbD^n]),\]
-    where formally we should precompose on the left hand side with the isomorphism $\rmH_{n-1}(X^{(n-1)},X^{(n-2)})\cong \wt{H}_{n-1}(X^{(n-1)},X^{(n-2)})$. This last map takes the generator $[\bbD^n]$ to a linear combination of generators in $\bigoplus_\beta \wt{H}_{n-1}(\bbD^{n-1}\slash \partial \bbD^{n-1})$. To see which generators it maps to, we project down to the respective $\beta$ summands to obtain
+    where formally we should precompose on the left hand side with the isomorphism $\rmH_{n-1}(X^{(n-1)},\allowbreak X^{(n-2)})\cong \wt{H}_{n-1}(X^{(n-1)},X^{(n-2)})$. This last map takes the generator $[\bbD^n]$ to a linear combination of generators in $\bigoplus_\beta \wt{H}_{n-1}(\bbD^{n-1}\slash \partial \bbD^{n-1})$. To see which generators it maps to, we project down to the respective $\beta$ summands to obtain
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=\sum_\beta q_{\beta\ast}\circ q_\ast\circ (\varphi^n_\alpha)_\ast\circ \partial_n([\bbD^n]).\]
     As noted before, we have defined $(\Delta_{\alpha\beta})_\ast=q_{\beta\ast}\circ q_\ast\circ (\varphi^n_\alpha)_\ast$. So writing
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=\sum_\beta (\Delta_{\alpha\beta})_\ast \circ \partial_n([\bbD^n]),\]
@@ -2371,7 +2313,7 @@ From now on we will drop the superscript in the name of the cellular boundary op
 
 \section{Euler characteristic}
 
-In this section we will study $CW$-complexes of \emph{finite type}, i.e.~those which contain only a finite number of cells in each dimension (but they can still be infinite-dimensional). In this case each homology group is finitely generated, and from Theorem~\ref{thm classification of finitely generated abelian gr} we know that each finitely generated abelian group $A$ has the form
+In this section we will study $CW$-complexes of \emph{finite type}, i.e., those which contain only a finite number of cells in each dimension (but they can still be infinite-dimensional). In this case each homology group is finitely generated, and from Theorem~\ref{thm classification of finitely generated abelian gr} we know that each finitely generated abelian group $A$ has the form
 \[A\cong \bbZ^r\oplus T(A),\quad r=\rank(A),\]
 where $T(A)$ is the torsion subgroup that can be brought to the form
 \[T(A)\cong \bbZ/n_1\oplus \bbZ/n_2\oplus \cdots \oplus \bbZ/n_t,\quad n_1|n_2|\cdots |n_t,\]
@@ -2703,7 +2645,7 @@ The next theorem finally explains in what sense derived functors of $F$ measure 
 \begin{thm}[Long exact sequence of left derived functors]
     Given a covariant additive functor $F:\calC\to\calD$ as above, for every short exact sequence in $\calC$
     \[0\to A\to B\to C\to 0\]
-    there is a long exact sequence of left derived functors
+    there is a long exact sequence of left derived functors \index{Long exact sequence!of left derived functors}
     \[
     \cdots \to (\rmL_1 F)(C)\overset{\delta_1}\to (\rmL_0 F)(A)\to (\rmL_0 F)(B)\to (\rmL_0 F)(C)\to 0.
     \]
@@ -2716,8 +2658,8 @@ The next theorem finally explains in what sense derived functors of $F$ measure 
      Since each row $0\to P_n' \to \wt{P}_n\to P_n''\to 0$ is a split exact sequence (by projectivity of $P_{n}''$), and additive functors preserve split short exact sequences, the sequence above is also exact. Therefore we have a long exact sequence
      \[\cdots\to \rmH_n(F\bm{P}'_{A})\overset{(Fj)_\ast}\to \rmH_n(F\wt{\bm{P}}_B) \overset {(Fq)_\ast}\to \rmH_n(F\bm{P}''_{C})\overset{\delta_n}\to \rmH_{n-1}(F\bm{P}'_{A})\to \cdots,\]
      which translates to
-     \[\cdots\to (\rmL_nF)(A)\overset{(Fj)_\ast}\to (\wt{L}_n F)(B)\overset{(Fq)_\ast}\to (\rmL_nF)(C)\overset{\delta_n}\to (L_{n-1}F)A\to \cdots. \]
-     This sequence indeed terminates with $0$ because $L_{-1}F$ is zero by construction.
+     \[\cdots\to (\rmL_nF)(A)\overset{(Fj)_\ast}\to (\rmL_n F)(B)\overset{(Fq)_\ast}\to (\rmL_nF)(C)\overset{\delta_n}\to (L_{n-1}F)(A)\to \cdots. \]
+     This sequence indeed terminates with $0$ because $\rmL_{-1}F$ is zero by construction.
      
      Using the homotopy invariance property of derived functors, one can replace $\wt{L}_n$ here by $\rmL_n$ without breaking the exactness of the sequence, see \cite[Thm. 6.27]{Rotman} for details.
 \end{proof}
@@ -2741,7 +2683,7 @@ This case will not come up in practice, so we quickly go over it for completenes
     Let $F:\calC\to \calD$ be an additive contravariant functor between abelian categories and let $\calC$ have enough injectives. For an object $A\in\ob(\calC)$, choose an arbitrary deleted injective resolution $\bm{E}^A$:
     \[0\to E^0\to E^1\to E^2\to\cdots.\]
     Then $F(\bm{E}^A)$ is a complex in $\calD$. We define the left derived contravariant functors $\rmL_nF$ by
-    \[(\rmL_nF(A)=\rmH_n(F(\bm{E}^A)),\; n\geq 0.\]
+    \[(\rmL_nF)(A)=\rmH_n(F(\bm{E}^A)),\; n\geq 0.\]
     Their (contravariant) actions on morphisms $f:A\to B$ are defined using the chain maps from the comparison theorem,
     \[(\rmL_nF)(f)=\rmH_n(F(f_n))=F(f)_{\ast n}.\]
 \end{defn}
@@ -2779,8 +2721,8 @@ By repeating the derivations from the covariant case we get the following proper
     Given a covariant additive functor $F$, 
     \begin{enumerate}
         \item $\rmR^nF$ is a covariant additive functor for each $n\geq 0$, and different choices of the injective resolution lead to naturally isomorphic functors $\rmR^nF$.
-        \item If $F$ is left exact, there is a natural isomorphism $R^0F\cong F$.
-        \item A short exact sequence of objects $0\to A\to B\to C\to 0$ gives rise to a long exact sequence
+        \item If $F$ is left exact, there is a natural isomorphism $\rmR^0F\cong F$.
+        \item A short exact sequence of objects $0\to A\to B\to C\to 0$ gives rise to a long exact sequence \index{Long exact sequence!of right derived functors}
         \[0\to (\rmR^0F)(A)\to (\rmR^0F)(B)\to (\rmR^0F)(C)\overset{\delta^0}{\to} (\rmR^1F)(A)\to \cdots.\]
         \item The long exact sequence above is functorial w.r.t.\ morphisms between short exact sequences.
     \end{enumerate}
@@ -2810,7 +2752,7 @@ By repeating the derivations from the covariant case we get the following proper
 
 \section{Tor functors}
 
-By far the most common application of derived functors is to the functors $\Hom_R$ and $\otimes_R$. These are, generally speaking, functors of two arguments, and it is possible to define their derived functors w.r.t.\ both arguments at once. However, it is easier to apply the existing construction to the functors obtained by fixing one of the arguments. The natural isomorphism of these two approaches is proven e.g.~in \cite{Rotman}.
+By far the most common application of derived functors is to the functors $\Hom_R$ and $\otimes_R$. These are, generally speaking, functors of two arguments, and it is possible to define their derived functors w.r.t.\ both arguments at once. However, it is easier to apply the existing construction to the functors obtained by fixing one of the arguments. The natural isomorphism of these two approaches is proven e.g, in \cite{Rotman}.
 
 Recall that the tensor product $A\otimes_R B \in \mathsf{Ab}$ of a right $R$-module $A$ and a left $R$-module $B$ can be defined by the universal property that any $R$-bilinear map $f:A\times B\to G$ (these are properly called \emph{$R$-balanced products}: they have to be additive in both arguments and also satisfy $f(a\cdot r,b)=f(a,r\cdot b)$ for all $a\in A,b\in B,r\in R$) into any abelian group $G$ uniquely factors through $A\otimes_R B$. Alternatively, the tensor product can be defined as the adjoint of the hom-functor (here we use the fact that $\bbZ$-modules are the same thing as abelian groups, so we can write $\Hom_\bbZ$ to denote the morphism sets in $\mathsf{Ab})$:
 \[\Hom_\bbZ(A\otimes_R B,G)\cong \Hom_R(A,\Hom_\bbZ(B,G)).\]
@@ -2819,7 +2761,7 @@ If $R$ is commutative (and hence right and left $R$-modules are isomorphic), the
 
 \begin{example}
     \begin{enumerate}
-        \item If $G$ is an torsion abelian group, i.e.~every element has finite order, then $\bbQ\otimes_\bbZ G=0$. Indeed, every element of this group can be written as $\sum_i q_i\otimes g_i$, and assuming $n_i\cdot g_i=0$, this is the same as $\sum_i (q_i/n_i)\otimes n_ig_i=0$.
+        \item If $G$ is an torsion abelian group, i.e., every element has finite order, then $\bbQ\otimes_\bbZ G=0$. Indeed, every element of this group can be written as $\sum_i q_i\otimes g_i$, and assuming $n_i\cdot g_i=0$, this is the same as $\sum_i (q_i/n_i)\otimes n_ig_i=0$.
         \item $\bbZ_m\otimes_\bbZ \bbZ_n\cong \bbZ_{\gcd(m,n)}$. More generally, for any pair of ideals $I,J\sub R$, we have
          \[R\slash I\otimes_R R\slash J=\frac{R\slash J}{I(R\slash J)}=\frac{R\slash J}{(I+J)/J}=R\slash(I+J).\]
         \item Tensor products with the cyclic groups can be used to control the order of elements of groups. If $G$ is an abelian group, then $G\otimes_\bbZ \bbZ_n=G\slash nG$. All multiples of $n$ in this group are zero.
@@ -2841,10 +2783,10 @@ Applying the general properties of left derived covariant functors, we get the f
     The left $\Tor$ functor $\Tor_n^R(\_,M)$ has the following properties:
     \begin{enumerate}
         \item There is a natural isomorphism $\Tor_0^R(A,M)\cong A\otimes_R M$.
-        \item A short exact sequence $0\to A\to B\to C\to 0$ of right $R$-modules gives rise to a long exact sequence
+        \item A short exact sequence $0\to A\to B\to C\to 0$ of right $R$-modules gives rise to a long exact sequence \index{Long exact sequence!of Tor functors}
         \[\cdots\to \Tor_1^R(B,M)\to \Tor_1^R(C,M)\overset{\delta_1}{\to} A\otimes_R M\to B\otimes_R M\to C\otimes_R M\to 0,\]
         and the connecting homomorphisms $\delta_i$ are natural.
-        \item If $A$ is projective (i.e.~$0\to A\overset{1}{\to} A\to 0$ is a projective resolution), then $\Tor_n^R(A,M)=0$, $n\geq 1$.
+        \item If $A$ is projective (i.e., $0\to A\overset{1}{\to} A\to 0$ is a projective resolution), then $\Tor_n^R(A,M)=0$, $n\geq 1$.
     \end{enumerate}
 \end{thm}
 
@@ -2921,7 +2863,7 @@ Recall that a module is called flat if the functor of the tensor product with it
         \item Show that the $\bbZ$-module $\bbQ$ is flat.
         \item Show that the $\bbZ$-module $\bbQ$ is not projective, and hence not free.
         \item Show that the $\bbZ$-modules $\bbQ\slash\bbZ$ and $\bbZ_2$ are both not flat.
-        \item Let $R$ be a principal ideal domain (that is, a ring in which every ideal is generated by a single element; every element of a PID has a unique prime factorization, and any two elements gave a GCD), and let $M$ be an $R$-module. Show that $M$ is injective iff $M$ is divisible (i.e.~multiplication by any $r\in R$ that is not a zero divisor is a surjective map on $M$). Conclude that the $\bbZ$-modules $\bbQ$ and $\bbQ\slash\bbZ$ are injective.
+        \item Let $R$ be a principal ideal domain (that is, a ring in which every ideal is generated by a single element; every element of a PID has a unique prime factorization, and any two elements gave a GCD), and let $M$ be an $R$-module. Show that $M$ is injective iff $M$ is divisible (i.e., multiplication by any $r\in R$ that is not a zero divisor is a surjective map on $M$). Conclude that the $\bbZ$-modules $\bbQ$ and $\bbQ\slash\bbZ$ are injective.
         \item Verify that the functor $\Hom(\_,\bbZ)$ is not exact by applying it to the short exact sequence $0\to \bbZ\overset{\times 2}{\to}\bbZ\to \bbZ_2\to 0$.
         \item Show that 
             \[\Tor_k^\bbZ(\bbZ_m,\bbZ_n)=
@@ -2990,10 +2932,10 @@ The following characterization theorem for these functors can once again be obta
 Similarly, we have the following axiomatic characterization.
 
 \begin{thm}
-    Fix an $R$-module $M$. The following three properties define the contravariant Ext functors $\ext_R^n(\_,M)$ uniquely up to natural isomorphism:
+    Fix an $R$-module $M$. The following three properties define the contravariant Ext functors $\ext_R^n(\_,M)$ uniquely up to natural isomorphism: 
     \begin{enumerate}
         \item $\ext^0_R(\_,M)\cong\Hom_R(\_,M)$.
-        \item Every short exact sequence $0\to A\to B\to C\to 0$ gives rise to a long exact sequence
+        \item Every short exact sequence $0\to A\to B\to C\to 0$ gives rise to a long exact sequence \index{Long exact sequence!of Ext functors}
         \[0\to \Hom_R(C,M)\to \Hom_R(B,M)\to \Hom_R(A,M)\overset{\delta^0}{\to} \ext^1_R(C,M)\to\cdots \]
         \item If $A$ is projective, then $\ext_R^n(A,M)=0$, $n\geq 1$.
     \end{enumerate}
@@ -3001,7 +2943,7 @@ Similarly, we have the following axiomatic characterization.
 
 By the same Theorem~\ref{thm Tor=tor}, we conclude the natural isomorphisms
 \[\Ext^n_R(A,B)\cong \ext^n_R(A,B),\]
-which means that from now on we can simplify the notation by always writing $\Ext_R^n$ regardless of whether we view it as a covariant or contravariant functor. Nevertheless, it is important to remember the duality between these two functors, e.g.~when writing out their long exact sequences.
+which means that from now on we can simplify the notation by always writing $\Ext_R^n$ regardless of whether we view it as a covariant or contravariant functor. Nevertheless, it is important to remember the duality between these two functors, e.g, when writing out their long exact sequences.
 
 
 \begin{example}[Continuation of Example~\ref{example Tor with R=Z[t]/(tn-1)}]
@@ -3136,7 +3078,7 @@ Thus $\Ext(A,B)$ is indeed an abelian group, and we can finally establish its is
 
     We claim that the map $E\mapsto [\sigma_1]$ is the required isomorphism. Thus we need to check that $[\sigma_1]$ depends only on the equivalence class $[E]$. Indeed, if we've constructed an extension of $1_A$ to all of $\bm{P}_A$ that corresponds to $E_1$, then the same extension will be valid for any isomorphic extension $E_2$, and conversely any two extensions are homotopic, so they will produce the same class $[\sigma_1]$.
 
-    Finally, we need to check that $[E]\mapsto [\sigma_1]$ is an homomorphism of abelian groups, i.e.~$[E_1+E_2]$ gets mapped to the sum of the images of $[E_1]$ and $[E_2]$. This an exercise in chasing on a 3D diagram.
+    Finally, we need to check that $[E]\mapsto [\sigma_1]$ is an homomorphism of abelian groups, i.e., $[E_1+E_2]$ gets mapped to the sum of the images of $[E_1]$ and $[E_2]$. This an exercise in chasing on a 3D diagram.
 
     Now we need to construct an inverse homomorphism. This is a construction via functoriality. Since the resolution $\bm{P}$ is exact, $\im d_2=\ker d_1$ and so we can quotient $P_1$ by this image, obtaining a short exact sequence $0\to \bigslant{P_1}{\ker d_1} \to P_0\to A\to 0$. We end up with the diagram
     \[\begin{tikzcd}
@@ -3168,7 +3110,7 @@ This means that, naively speaking, two extensions $X$ and $Y$ are Yoneda equival
                  & \bullet\arrow[dl]\arrow[dr]&         & \bullet\arrow[dl]\arrow[dr] &         &  \bullet\arrow[dl]\arrow[dr] \\
         X  &                             &\bullet &                             &\cdots &                             &Y 
     \end{tikzcd}\]
-The nontrivial fact about extensions is that two extensions are Yoneda equivalent  if and only if there exists a single third extension that admits elementary equivalences into them, i.e.~the following diagram is all one needs to look for:
+The nontrivial fact about extensions is that two extensions are Yoneda equivalent  if and only if there exists a single third extension that admits elementary equivalences into them, i.e., the following diagram is all one needs to look for:
     \[\begin{tikzcd}[column sep=small,row sep=small]
                  & \bullet\arrow[dl]\arrow[dr]&         \\
         X  &                                & Y
@@ -3205,7 +3147,7 @@ One can check that this product is in fact well defined on equivalence classes o
 
 \section{Elementary examples}
 
-Let $R=\bbZ$, i.e.~we are working with abelian groups. We will thus omit $\bbZ$ in the notation for the functors. Let $A$ be an abelian group. We can simultaneously compute $\Tor_1(\bbZ_n,A)$ and $\Hom(\bbZ_n,A)$. First we note that in the exact sequence
+Let $R=\bbZ$, i.e., we are working with abelian groups. We will thus omit $\bbZ$ in the notation for the functors. Let $A$ be an abelian group. We can simultaneously compute $\Tor_1(\bbZ_n,A)$ and $\Hom(\bbZ_n,A)$. First we note that in the exact sequence
 \[0\to \bbZ\overset{\cdot n}{\to}\bbZ\to \bbZ\slash n\bbZ \to 0,\]
 the first $\bbZ$ is free, and hence projective and flat, which makes this a projective resolution. We can thus write the ``long'' exact sequence in homology:
 \[\Tor_1(\bbZ,A)=0\to \Tor_1(\bbZ_n,A)\to \bbZ\otimes A\overset{\cdot n}{\to} \bbZ\otimes A\to \bbZ_n\otimes A\to 0.\]
@@ -3213,7 +3155,7 @@ We have canonically $\bbZ\otimes A=A$. The kernel of the multiplication by $n$ i
 \[\boxed{\bbZ_n\otimes A=A\slash nA,\quad \Tor_1(\bbZ_n,A)=A[n].}\]
 
 Similarly for Ext, we have the long exact sequence
-\[\Hom(\bbZ_n,A)\to \Hom(\bbZ,A)\to \Hom(\bbZ,A)\to \Ext^1_\bbZ(\bbZ_n,A)\to \Ext^1_\bbZ(\bbZ,A)=0l\]
+\[\Hom(\bbZ_n,A)\to \Hom(\bbZ,A)\to \Hom(\bbZ,A)\to \Ext^1_\bbZ(\bbZ_n,A)\to \Ext^1_\bbZ(\bbZ,A)=0,\]
 where we have the canonical identification $\Hom(\bbZ,A)=A$, and the arrow between these two copies of $A$ is still multiplication by $n$. The kernel of this map is $A\slash nA$, hence we get the dual result
 \[\boxed{\Hom(\bbZ_n,A)=A[n],\quad \Ext^1(\bbZ_n,A)=A\slash nA.}\]
     
@@ -3336,13 +3278,13 @@ Higher Tor functors don't have such a simple interpretation, but we can at least
     Let $R$ be an integral domain, let $n\geq 1$, and let $A,B$ be $R$-modules. Then $\Tor_n(A,B)$ is a torsion module.
 \end{thm}
 \begin{proof}
-    First we prove the special case when $B$ is a torsion module, i.e.~ $B=T(B)$, and in this case we can even allow $n=0$: for $n=0$ we get $A\otimes B$, which is a torsion module because $n(a\otimes b)=a\otimes nb$. For $n\geq 1$, we can perform dimension shifting. Let $P$ be a projective module giving an exact sequence of the form (e.g.~it can be the free module generated by the generators of $A$)
+    First we prove the special case when $B$ is a torsion module, i.e.,  $B=T(B)$, and in this case we can even allow $n=0$: for $n=0$ we get $A\otimes B$, which is a torsion module because $n(a\otimes b)=a\otimes nb$. For $n\geq 1$, we can perform dimension shifting. Let $P$ be a projective module giving an exact sequence of the form (e.g, it can be the free module generated by the generators of $A$)
     \[0\to C\to P\to A\to 0.\]
     Now we have the exact segment
     \[\Tor_n(P,B)\to \Tor_n(A,B)\to \Tor_{n-1}(C,B).\]
     The left end vanishes because $P$ is projective. Moreover, $\Tor_{n-1}(C,B)$ is a torsion module by the assumption of the induction step. Therefore $\Tor_n(A,B)$ is embedded into a torsion module and hence must be a torsion module itself.
 
-    Now we consider another special case where $B$ is torsion-free, i.e.~$T(B)=0$. We can build another exact sequence of the form
+    Now we consider another special case where $B$ is torsion-free, i.e., $T(B)=0$. We can build another exact sequence of the form
     \[0\to B\to B\otimes_R K\to C\to 0,\]
     and thus its exact sequence reads, in part,
     \[\Tor_{n+1}(A,C)\to \Tor_n(A,B)\to \Tor_1(A,B\otimes_R K).\]
@@ -3372,7 +3314,7 @@ Obviously $\Ext^1_\bbZ(\bbZ,\bbQ)=0$ (either because $\bbZ$ is projective or bec
 However we quickly start to run into issues because, unlike direct sums (which are an example of a directed colimit), other directed colimits of injective modules are not always injective. Generally, limits of injectives/projectives are not injective/projective, so $\Tor$ and $\Ext$ functors commute only with finite  limits. If they did commute with infinite limits, since $\bbQ=\colimit \frac{1}{n}\bbZ$, we would get a trivial $\Ext^1(\bbQ,\bbZ)$ since $\Ext^1(\bbZ,\bbZ)=0$. We present this computation purely ``for fun'', but it is actually foundational in several areas of modern mathematics, such as the Langlands program and the theory of algebraic groups.
 
 \begin{defn}[Group of adeles]
-    Recall that the $p$-adic integers can be defined as $\bbZ_p=\limit \bbZ\slash p^n\bbZ$. Denote their field of fractions by $\bbQ_p=Q(\bbZ_p)$. The additive group of finite ad\`eles of $\bbQ$ is defined as the \emph{restricted} product of $\bbQ_p$ over all prime numbers $p$, i.e.~almost all components must land in $\bbZ_p$:
+    Recall that the $p$-adic integers can be defined as $\bbZ_p=\limit \bbZ\slash p^n\bbZ$. Denote their field of fractions by $\bbQ_p=Q(\bbZ_p)$. The additive group of finite ad\`eles of $\bbQ$ is defined as the \emph{restricted} product of $\bbQ_p$ over all prime numbers $p$, i.e., almost all components must land in $\bbZ_p$:
     \[\bbA_f(\bbQ)={\prod_{p}}^\prime_{\bbZ_p}\bbQ_p=\{(x_2,x_3,x_5,\ldots)\mid x_p\in\bbQ_p \text{ and almost all }x_p\in\bbZ_p \}.\]
 \end{defn}
 
@@ -3384,15 +3326,15 @@ However we quickly start to run into issues because, unlike direct sums (which a
     \[0\to \bbZ\to \bbQ\to \bbQ\slash\bbZ\to 0,\]
     which is at once a flat resolution of $\bbQ\slash\bbZ$ and an injective resolution of $\bbZ$. We can take the corresponding long exact sequence for the functor $\Ext(\bbQ,\_)$:
     \[0\to \Hom(\bbQ,\bbZ)\to \Hom(\bbQ,\bbQ)\to \Hom(\bbQ,\bbQ\slash \bbZ)\to \Ext^1(\bbQ,\bbZ)\to \Ext^1(\bbQ,\bbQ).\]
-    We know that $\Ext^1(\bbQ,\bbQ)=0$ since $\bbQ$ is an injective $\bbZ$-module. Now, $\Hom(\bbQ,\bbZ)=0$: if $q\in \bbQ$, then we can write $q=nq'$ for any $n$, so if $f\in\Hom(\bbQ,\bbZ)$ then $f(q)=nf(q')$, i.e.~$f(q)$ is divisible by $n$ for all $n$, which is possible only if $f=0$. We also know $\Hom(\bbQ,\bbQ)\cong\bbQ$ since any $\bbZ$-linear map from $\bbQ$ to $\bbQ$ is just multiplication by an element of $\bbQ$. So the exact sequence implies the isomorphism
+    We know that $\Ext^1(\bbQ,\bbQ)=0$ since $\bbQ$ is an injective $\bbZ$-module. Now, $\Hom(\bbQ,\bbZ)=0$: if $q\in \bbQ$, then we can write $q=nq'$ for any $n$, so if $f\in\Hom(\bbQ,\bbZ)$ then $f(q)=nf(q')$, i.e., $f(q)$ is divisible by $n$ for all $n$, which is possible only if $f=0$. We also know $\Hom(\bbQ,\bbQ)\cong\bbQ$ since any $\bbZ$-linear map from $\bbQ$ to $\bbQ$ is just multiplication by an element of $\bbQ$. So the exact sequence implies the isomorphism
     \[\Ext^1(\bbQ,\bbZ)\cong \Hom(\bbQ,\bbQ\slash \bbZ)\slash \bbQ.\]
     Thus it suffices to describe the group $\Hom(\bbQ,\bbQ\slash \bbZ)$.
 
-    Let's start by describing the structure of $\bbQ\slash\bbZ$. For any prime $p$, there is the subgroup $\bbZ\slash p^\infty\bbZ=\bbZ[p^{-1}]\slash\bbZ$, called the (additive) Pr\"ufer group\footnote{It is isomorphic to (multiplicative) cyclic group of roots of unity $C_{p^\infty}=\bigcup_{n\geq 0}C_{p^n}\cong\{\epsilon\in\bbC^k\mid \exists n\in\bbN: \epsilon^{p^n}=1\}$. Here, $\bbZ[p^{-1}]$ is the additive group of all rational numbers whose denominators are powers of $p$.}\index{Pr\"ufer group}, consisting of elements of the form $a/p^k$ with $p\nmid a$ and $0\leq a\leq p^k$. Putting all these subgroups together, we get a map from $\bigoplus_p\bbZ[p^{-1}]\slash\bbZ=\bigoplus_p\left(\bbZ[p^{-1}]\slash\bbZ\right)$ into $\bbQ\slash\bbZ$. This map is injective: if $\frac am+\frac bn=\frac{an+bm}{nm}=0$ in $\bbQ\slash\bbZ$ with $n,m$ coprime, then $\frac{an+bm}{nm}\in\bbZ$, i.e.~$nm\mid an+bm$, so $n\mid bm$ and $m\mid an$. But since $n,m$ are coprime, this means $m\mid a$ and $n\mid b$. Thus $\frac am$ and $\frac bn$ are in $\bbZ$, so they are $0$ in $\bbQ\slash\bbZ$. Now, we can write an element of $\bigoplus_p\bbZ[p^{-1}]\slash\bbZ$ as:
+    Let's start by describing the structure of $\bbQ\slash\bbZ$. For any prime $p$, there is the subgroup $\bbZ\slash p^\infty\bbZ=\bbZ[p^{-1}]\slash\bbZ$, called the (additive) Pr\"ufer group\footnote{It is isomorphic to (multiplicative) cyclic group of roots of unity $C_{p^\infty}=\bigcup_{n\geq 0}C_{p^n}\cong\{\epsilon\in\bbC^k\mid \exists n\in\bbN: \epsilon^{p^n}=1\}$. Here, $\bbZ[p^{-1}]$ is the additive group of all rational numbers whose denominators are powers of $p$.}\index{Pr\"ufer group}, consisting of elements of the form $a/p^k$ with $p\nmid a$ and $0\leq a\leq p^k$. Putting all these subgroups together, we get a map from $\bigoplus_p\bbZ[p^{-1}]\slash\bbZ=\bigoplus_p\left(\bbZ[p^{-1}]\slash\bbZ\right)$ into $\bbQ\slash\bbZ$. This map is injective: if $\frac am+\frac bn=\frac{an+bm}{nm}=0$ in $\bbQ\slash\bbZ$ with $n,m$ coprime, then $\frac{an+bm}{nm}\in\bbZ$, i.e., $nm\mid an+bm$, so $n\mid bm$ and $m\mid an$. But since $n,m$ are coprime, this means $m\mid a$ and $n\mid b$. Thus $\frac am$ and $\frac bn$ are in $\bbZ$, so they are $0$ in $\bbQ\slash\bbZ$. Now, we can write an element of $\bigoplus_p\bbZ[p^{-1}]\slash\bbZ$ as:
     \[\frac{a_1}{p_1^{k_1}}+\cdots +\frac{a_n}{p_n^{k_n}}=\frac{N}{p_1^{k_1}\cdots p_{n-1}^{k_{n-1}}}+\frac{a_n}{p_n^{k_n}}.\]
     Thus, the above argument shows that $\frac{a_n}{p_n^{k_n}}\in\bbZ$, so we may perform induction on $n$ to show that the whole sum is in $\bbZ$ and therefore vanishes in the quotient $\bigoplus_p\bbZ[p^{-1}]\slash\bbZ$.
 
-    Now let us show that this map is also surjective. To do this, let $\frac aq\in\bbQ$ with $q=q_1q_2$ coprime. Then we may write $1=aq_1+bq_2$ for some $a,b\in\bbZ$ (e.g.~by the Chinese Remainder Theorem, or by the fact that $\bbZ$ is a principal integral domain, so the ideal $(q_1,q_2)$ is $(\gcd(q_1,q_2))=(1)$). Then we can take the ``partial fraction'' decomposition:
+    Now let us show that this map is also surjective. To do this, let $\frac aq\in\bbQ$ with $q=q_1q_2$ coprime. Then we may write $1=aq_1+bq_2$ for some $a,b\in\bbZ$ (e.g, by the Chinese Remainder Theorem, or by the fact that $\bbZ$ is a principal integral domain, so the ideal $(q_1,q_2)$ is $(\gcd(q_1,q_2))=(1)$). Then we can take the ``partial fraction'' decomposition:
     \[\frac{1}{q_1q_2}=\frac{aq_1+bq_2}{q_1q_2}=\frac{a}{q_2}+\frac{b}{q_1}.\]
     By breaking $q$ into its prime factorization and repeatedly using this identity, we may write $q$ as an element of the image of $\bigoplus_p \bbZ[p^{-1}]\slash\bbZ$. This proves the isomorphism 
     \[\bbQ\slash \bbZ\cong \bigoplus_{p\in\bbP}\bbZ[p^{-1}]\slash\bbZ.\]
@@ -3400,7 +3342,7 @@ However we quickly start to run into issues because, unlike direct sums (which a
     \[\bbZ[p^{-1}]\slash\bbZ\cong \bbZ\slash p^\infty\bbZ=\colimit \bbZ\slash p^n\bbZ,\]
     where the directed colimit is w.r.t.\ the embeddings $\bbZ\slash p^n\bbZ\overset{\cdot n}{\to} \bbZ\slash p^{n+1}\bbZ$. This is contrasted with the $p$-adic integers $\bbZ_p=\limit \bbZ\slash p^n\bbZ$, which is a projective limit taken w.r.t.\ the epimorphisms given by $\bbZ\slash p^n\bbZ\overset{\mod p^{n-1}}{\to} \bbZ\slash p^{n-1}\bbZ$. The fundamental difference between these two limits is that $\mod n$ is a homomorphism of rings with unity, whereas $\cdot n$ is not. This means that the projective limit defining $\bbZ_p$ will preserve the multiplicative structure of a ring, whereas $\bbZ\slash p^\infty\bbZ$ supports only an additive structure.
 
-    A direct sum $\bigoplus_i G_i$ of an infinite sequence of groups $G_i$ consists of sequences $(g_i)$ which are almost everywhere identity. This is strictly a subset of the direct product $\prod_i G_i$, which consists of all possible sequences $(g_i)$. By the universal property of products, a map to the product is the same as a tuple of maps to each factor, i.e.~
+    A direct sum $\bigoplus_i G_i$ of an infinite sequence of groups $G_i$ consists of sequences $(g_i)$ which are almost everywhere identity. This is strictly a subset of the direct product $\prod_i G_i$, which consists of all possible sequences $(g_i)$. By the universal property of products, a map to the product is the same as a tuple of maps to each factor, i.e., 
     \[\Hom\left(\bbQ,\prod_p \bbZ\slash p^\infty\bbZ\right)=\prod_p \Hom\left(\bbQ,\bbZ\slash p^\infty\bbZ\right).\]
     We will deal with the difference between products and sums later. For now the next step is to compute $\Hom(\bbQ,\bbZ\slash p^{\infty}\bbZ)$.  Such homomorphisms of course restrict to homomorphisms from $\bbZ[p^{-1}]$ to $\bbZ[p^{-1}]\slash \bbZ$, and in fact any such homomorphism extends \emph{uniquely} to $\bbQ$. To see this, we will use the following claims.
 
@@ -3438,7 +3380,7 @@ However we quickly start to run into issues because, unlike direct sums (which a
 
 \section{Homology with coefficients}
 
-Suppose that we are given integer homology (e.g.~singular homology) $H_\ast(X)$. Clearly instead of having the coefficients of simplices in chains be integers, they could be elements of any ring $R$. This way we can define $H_\ast(X;R)$. It satisfies all Eilenberg-Steenrod axioms with the only change that the zeroth homology of a singleton space is $\rmH_0(\{\ast\};R)=R$. Consider, for example, $H_\ast(\RP^n;\bbZ_2)$. The cellular chain complex has $C_k(\RP^n;\bbZ_2)=\bbZ_2$ for $0\leq k\neq n$, and the boundary operator alternates between multiplication by $2$ and by $0$ (see formula~\ref{eq degree of cells in RPn}). But in $\bbZ_2$, $2=0$, therefore $\partial=0$ and the homology mimics the chain complex itself:
+Suppose that we are given integer homology (e.g, singular homology) $H_\ast(X)$. Clearly instead of having the coefficients of simplices in chains be integers, they could be elements of any ring $R$. This way we can define $H_\ast(X;R)$. It satisfies all Eilenberg-Steenrod axioms with the only change that the zeroth homology of a singleton space is $\rmH_0(\{\ast\};R)=R$. Consider, for example, $H_\ast(\RP^n;\bbZ_2)$. The cellular chain complex has $C_k(\RP^n;\bbZ_2)=\bbZ_2$ for $0\leq k\neq n$, and the boundary operator alternates between multiplication by $2$ and by $0$ (see formula~\ref{eq degree of cells in RPn}). But in $\bbZ_2$, $2=0$, therefore $\partial=0$ and the homology mimics the chain complex itself:
 \[\rmH_k(\RP^n;\bbZ_2)=\begin{cases}
     \bbZ_2,& 0\leq k\leq n,\\
     0, & k>n.
@@ -3482,7 +3424,7 @@ The universal coefficients theorem states that the homology with coefficients in
     \[B_n\otimes G\overset{i\otimes 1}{\to} Z_n\otimes G\to \rmH_n(\bm{C}\otimes G)\to B_{n-1}\otimes G\overset{i\otimes 1}{\to }Z_{n-1}\otimes G.\]
     One verifies that the connecting homomorphism is exactly $i\otimes 1$, where $i:B_n\hookrightarrow Z_n$. The sequence $B_n\otimes G\to Z_n\otimes G\to \rmH_n\otimes G\to 0$ is exact, hence the cokernel of $i\otimes 1$ is $\rmH_n(\bm{C})\otimes G$, and the resulting map $\rmH_n(\bm{C})\otimes G\to \rmH_n(\bm{C}\otimes G)$ is $\alpha$. The kernel of $B_{n-1}\otimes G\to Z_{n-1}\otimes G$ is $\Tor(\rmH_{n-1}(\bm{C}),G)$, because $0\to B_{n-1}\to Z_{n-1}\to \rmH_{n-1}(\bm{C})\to 0$ is a free resolution. Let $r:C_n\to Z_n$ be a splitting of $Z_n\hookrightarrow C_n$. Then
     \[Z_n(\bm{C}\otimes G)\hookrightarrow C_n\otimes G\overset{r\otimes 1}{\to}Z_n\otimes G\to \rmH_n(\bm{C})\otimes G\]
-    maps $B_n(\bm{C}\otimes G)$ to zero and induces $\rho:\rmH_n(\bm{C}\otimes G)\to \rmH_n(\bm{C})\otimes G$ with $\rho\circ\alpha=1$, i.e.~a splitting of the universal coefficient sequence.
+    maps $B_n(\bm{C}\otimes G)$ to zero and induces $\rho:\rmH_n(\bm{C}\otimes G)\to \rmH_n(\bm{C})\otimes G$ with $\rho\circ\alpha=1$, i.e., a splitting of the universal coefficient sequence.
 \end{proof}
 
 
@@ -3606,11 +3548,11 @@ To study group (co)homology we will need $G$ to act on an abelian group $A$ so t
 To interpret this object let us return to the axiomatic characterization of Ext functors.
 
 \begin{enumerate}
-    \item $H^0(G,A)=\Ext^0_{\bbZ[G]}(\bbZ,A)=\Hom_{\bbZ G}(\bbZ,A)$, i.e.~the set of $G$-equivariant morphisms $f:\bbZ\to A$. But the action on $\bbZ$ is trivial, so the condition reduces to $f(1)=f(g\cdot 1)=g\cdot f(1)$. Therefore each such $f$ can be identified with an element of the \emph{module of $G$-invariants}
+    \item $H^0(G,A)=\Ext^0_{\bbZ[G]}(\bbZ,A)=\Hom_{\bbZ G}(\bbZ,A)$, i.e., the set of $G$-equivariant morphisms $f:\bbZ\to A$. But the action on $\bbZ$ is trivial, so the condition reduces to $f(1)=f(g\cdot 1)=g\cdot f(1)$. Therefore each such $f$ can be identified with an element of the \emph{module of $G$-invariants}
     \[A^G=\{a\in A:g\cdot a=a\text{ for all }g\in G\}.\]
     We need to confirm that $(G,A)\mapsto A^G$ is in fact a functor contravariant in $G$ and covariant in $A$ (acting $\mathsf{Gr}\times G\mathsf{-Mod}\to \mathsf{Gr}$, and in fact into $G$-modules).
 
-    Let $f:A\to B$ be a homomorphism of $G$-modules, i.e.~an equivariant linear map. Then we claim that $f(A^G)\leq B^G$. Let $a\in A^G, g\in G$, and write
+    Let $f:A\to B$ be a homomorphism of $G$-modules, i.e., an equivariant linear map. Then we claim that $f(A^G)\leq B^G$. Let $a\in A^G, g\in G$, and write
     \[g\cdot f(a)=f(g\cdot a)=f(a).\]
     This means that to each $f:A\to B$ corresponds a $f_\ast :A^G\to B^G$. This confirms that $A^G$ is covariant w.r.t.\ $A$.
 
@@ -3636,7 +3578,7 @@ To interpret this object let us return to the axiomatic characterization of Ext 
 
 Now we interpret $\rmH_0(G,A)=\bbZ\otimes_{\bbZ[G]}A$. Since $\bbZ$ is embedded in $\bbZ[G]$, all integer numbers can be absorbed into $A$  and thus this set is generated by elements of the form $1\otimes_{\bbZ[G]} a$, $a\in A$. Now, keeping in mind that the tensor product is over $\bbZ[G]$, so we can swap the action of $G$ between the two factors, we note that
 \[g\cdot (1\otimes a)=1\otimes g\cdot a=g\cdot 1\otimes a=1\otimes a.\]
-Defining the augmentation map $\eta:\bbZ[G]\to \bbZ$ by $\eta(g)=1$ for all $g\in G$ (i.e.~it simply counts the number of nonzero terms in the element of the group ring), we have the exact sequence
+Defining the augmentation map $\eta:\bbZ[G]\to \bbZ$ by $\eta(g)=1$ for all $g\in G$ (i.e., it simply counts the number of nonzero terms in the element of the group ring), we have the exact sequence
 \[0\to I_G\to \bbZ[G]\overset{\eta}{\to} \bbZ\to 0,\]
 where $I_G=\ker \eta$ is the \emph{augmentation ideal}. This generates the long exact sequence
 \[\cdots\to I_G\otimes_{\bbZ[G]}A\to A\to \bbZ\otimes_{\bbZ[G]}A\to 0,\]
@@ -3801,7 +3743,7 @@ The result of this exercise will also follow from the following theorem, which i
  \[\beta:I_G\to G\slash [G,G],\quad (g-1)\mapsto g[G,G].\]
  We notice that $\beta(I_G^2)=0$ thus this descends to 
 \[\beta:I_G\slash I_G^2\to G\slash [G,G],\quad (g-1)+I_G^2\mapsto g[G,G].\]
-The same chain of equalities  (\ref{47024}) confirms that this definition of $\beta$ is consistent. It also shows that $\beta$ is a homomorphism. It should be obvious that $\alpha$ and $\beta$ are mutual inverses, proving the theorem.
+The same chain of equalities  \eqref{47024} confirms that this definition of $\beta$ is consistent. It also shows that $\beta$ is a homomorphism. It should be obvious that $\alpha$ and $\beta$ are mutual inverses, proving the theorem.
 \end{proof}
 
 Now we move on to $\rmH^1(G,A)$ in the general case. Given a left action $G\acts A$, we have the trivial extension of $G$ by $A$, called the semidirect product:
@@ -3847,7 +3789,7 @@ $\rmH^1(G,A)\cong \Der(G,A)\slash \{\text{principal crossed homs}\}$.
         A&v\\
         0&1
     \end{pmatrix},\quad A\in \SL_n(K),v\in K^n.\]
-    In other words, is it true that every subgroup of the set of such matrices that is isomorphic to $\SL_n(K)$ conjugate to the canonical subgroup with $v=0$? Surprisingly, for several finite fields the answer turns out to be no, e.g.~$\rmH^1(\SL_4(\bbF_2),\bbF_2^4)\neq 0$. All such cases were classified by I.~Schur and Higman.
+    In other words, is it true that every subgroup of the set of such matrices that is isomorphic to $\SL_n(K)$ conjugate to the canonical subgroup with $v=0$? Surprisingly, for several finite fields the answer turns out to be no, e.g, $\rmH^1(\SL_4(\bbF_2),\bbF_2^4)\neq 0$. All such cases were classified by I.~Schur and Higman.
 \end{example}
 
 \begin{defn}
@@ -3877,11 +3819,11 @@ It is non-canonically isomorphic to the following object.
     Exercise. On a more fundamental level this arises from the fact that $\{e\}\to R\to F\to G\to \{e\}$ is an exact sequence, and we could develop yet another set of derived functors w.r.t.\ this group argument, as opposed to the module argument ($A$). This leads to the concepts of restriction, corestriction (transfer), inflation, and coinflation.
 \end{proof}
 
-Historically Schur was interested in projective representations of groups, i.e.~homomorphisms $\varphi:G\to \PGL_n(K)$. This is equivalent to replacing the homomorphism law for regular linear representations with
+Historically Schur was interested in projective representations of groups, i.e., homomorphisms $\varphi:G\to \PGL_n(K)$. This is equivalent to replacing the homomorphism law for regular linear representations with
 \[\varphi_{gh}=\lambda_{h,g}\varphi_g\varphi_h,\quad\lambda_{h,g}\in K^\times.\]
 Associativity then forces $\lambda$ to be a cocycle. Schur was studying when a projective representation can be lifted to a regular one. 
 
-A group $G$ is called \emph{perfect} if $G=[G,G]$, i.e.~$\rmH^1(G,\bbZ)=0$. Topologically this is a requirement that $G$ be ``connected''. The Schur multiplier then explains the algebraic analog of being simply connected. 
+A group $G$ is called \emph{perfect} if $G=[G,G]$, i.e., $\rmH^1(G,\bbZ)=0$. Topologically this is a requirement that $G$ be ``connected''. The Schur multiplier then explains the algebraic analog of being simply connected. 
 
 \begin{defn}[Central extension]
     A group epimorphism $\pi:E\to G$ is called a \emph{central extension} if $\ker\pi\leq Z(E)$.  Morphisms of central extensions are homomorphisms $E_1\to E_2$ that create commuting triangles. A \emph{trivial central extension} is one isomorphic to $\pr_1:G\times C\to G$, where $C$ is an abelian group. $G$ is called \emph{centrally closed} if it has no nontrivial central extensions. A central extension is called \emph{universal} if it is the terminal object in the category of central extensions of $G$.
@@ -3894,7 +3836,7 @@ A group $G$ is called \emph{perfect} if $G=[G,G]$, i.e.~$\rmH^1(G,\bbZ)=0$. Topo
 This is the discrete analog of the existence of universal covering groups and $M(G)$ is the analog of $\pi_1(G)$.
 
 \begin{thm}[Schur]
-    The groups $\SL_n(\bbF_q),n\geq 5$, are centrally closed (i.e.~have trivial Schur multipliers).
+    The groups $\SL_n(\bbF_q),n\geq 5$, are centrally closed (i.e., have trivial Schur multipliers).
 \end{thm}
 
 Moving on to cohomology, Schreier theory deals with extensions by abelian groups.
@@ -3914,7 +3856,7 @@ In an extension by an abelian kernel, any two preimages of a point $g\in G$ diff
     \[\sigma(f,h)\sigma(fh,g)=f\sigma(h,g)f^{-1}\sigma(f,hg).\]
     In the additive notation this reads
     \[f\cdot\sigma(h,g)-\sigma(fh,g)+\sigma(f,hg)-\sigma(f,h)=0.\]
-    The is the defining equation of a 2-cocycle in the bar resolution, i.e.~$d^2\sigma=0$.
+    The is the defining equation of a 2-cocycle in the bar resolution, i.e., $d^2\sigma=0$.
 
     The second part of the theorem is showing that two different factor sets define the same extension iff they differ by a coboundary. If $y_g$ is another system of preimages with a corresponding factor set $\tau$, then $y_g=a_gx_g$ for some $a_g\in A$. We now write $y_hy_g=a_hx_ha_gx_g$ and expand both sides using the factors. This leads to
     \[\tau(h,g)a_{hg}=a_h (ha_gh^{-1})\sigma(h,g),\]
@@ -3923,7 +3865,7 @@ In an extension by an abelian kernel, any two preimages of a point $g\in G$ diff
     It remains to check that this is an isomorphism of groups, which we omit (it is an easy exercise given that we have explicit equations for the bijection).
 \end{proof}
 
-In summary, $\rmH^1$ describes the conjugacy classes of embeddings of $G$ into a semidirect product, whereas $\rmH^2$ describes extensions with a given action that differ from a semidirect product (i.e.~the semidirect product corresponds to the zero element of $\rmH^2$ because its factors are everywhere equal to $1$, i.e., the cocycle is trivial).
+In summary, $\rmH^1$ describes the conjugacy classes of embeddings of $G$ into a semidirect product, whereas $\rmH^2$ describes extensions with a given action that differ from a semidirect product (i.e., the semidirect product corresponds to the zero element of $\rmH^2$ because its factors are everywhere equal to $1$, i.e., the cocycle is trivial).
 
 \section{Relation to topology}
 
@@ -3971,7 +3913,7 @@ The desired space $X$ is then the following object.
     The universal covering space of $\rmK(G,1)$ is called the classifying space of $G$, denoted $\bf{B}G$. It is acyclic, $G$ acts properly on $\bf{B}G$, and $\bf{B}G\slash G\cong \rmK(G,1)$.
 \end{defn}
 
-It follows from (\ref{eq 2 rotman}) that if $A$ is a $G$-trivial module, then
+It follows from \eqref{eq 2 rotman} that if $A$ is a $G$-trivial module, then
 \[\rmH^n(\rmK(G,1),A)\cong \rmH^n(G,A);\]
 the cohomology of an abstract group $G$ coincides with the cohomology of its first Eilenberg-MacLane space.
 
