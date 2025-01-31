@@ -6,72 +6,72 @@
 
 
 \begin{defn}[Riemannian metric on a \gls{vb}]\index{Metric!on a bundle}
-Let $E\overset\pi\to M$ be a real \gls{vb}. A (Riemannian) bundle metric on $E$ is a covariant tensor field $h\in\Gamma^\infty(\T^0_2 E)$ such that
-\begin{enumerate}
-    \item $h$ is symmetric, i.e., $h\in\Gamma^\infty(\Sigma^2 E^\ast)$;
-    \item $h$ is non-degenerate, i.e., when viewed as a morphism $h\in\Hom(E,E^\ast)$, it is an isomorphism;
-    \item $h$ is positive: $h(e,e)\geq 0$ and $h(e,e)=0$ iff $e=0$. This in fact implies Property 2.
-\end{enumerate}
-For $e,e'\in E_p$, we denote $\langle e,e'\rangle_g=g_p(e,e')$.
+    Let $E\overset\pi\to M$ be a real \gls{vb}. A (Riemannian) bundle metric on $E$ is a covariant tensor field $h\in\Gamma^\infty(\T^0_2 E)$ such that
+    \begin{enumerate}
+        \item $h$ is symmetric, i.e., $h\in\Gamma^\infty\left(\bigodot^2 E^\ast\right)$;
+        \item $h$ is non-degenerate, i.e., when viewed as a morphism $h\in\Hom(E,E^\ast)$, it is an isomorphism;
+        \item $h$ is positive: $h(e,e)\geq 0$ and $h(e,e)=0$ iff $e=0$. This in fact implies Property 2.
+    \end{enumerate}
+    For $e,e'\in E_p$, we denote $\langle e,e'\rangle_g=g_p(e,e')$.
 \end{defn}
 
 Given a bundle metric on $E$, all tensor bundles $E^r_s$ inherit natural bundle metrics as well.
 
 \begin{prop}
-The space of all bundle metrics on $E$ is convex, i.e., if $h_1$ and $h_2$ are two metrics on $E$, then all tensors $h_t=t \cdot h_1+(1-t)\cdot h_2$, $t\in[0,1]$, are metrics.
+    The space of all bundle metrics on $E$ is convex, i.e., if $h_1$ and $h_2$ are two metrics on $E$, then all tensors $h_t=t \cdot h_1+(1-t)\cdot h_2$, $t\in[0,1]$, are metrics.
 \end{prop}
 \begin{proof}
-Only non-degeneracy is not obvious. If $h_t$ is degenerate, then there exists an $e\in E\setminus E_0$ such that $h_t(e,e)=0$. Then by positivity, $h_1(e,e)=h_2(e,e)=0$, which leads to a contradiction.
+    Only non-degeneracy is not obvious. If $h_t$ is degenerate, then there exists an $e\in E\setminus E_0$ such that $h_t(e,e)=0$. Then by positivity, $h_1(e,e)=h_2(e,e)=0$, which leads to a contradiction.
 \end{proof}
 
 \begin{thm}[Existence of bundle metrics]\label{prop 4.4.2 RS1}
-Every \gls{vb} $E\overset\pi\to M$ admits a bundle metric. 
+    Every \gls{vb} $E\overset\pi\to M$ admits a bundle metric. 
 \end{thm}
 \begin{proof}
-Choose a bundle atlas consisting of local trivializations $\chi_\alpha:\restr{E}{U_\alpha}\to U_\alpha\times\bbR^k$, and on the trivial bundles $U_\alpha\times\bbR^k$ define a metric $h_{\text{stand}}$ using the standard metric on $\bbR^k$. Then $\restr{h_\alpha}{U_\alpha}\coloneqq \chi_\alpha^\ast h_{\text{stand}}$ and 
-\[h\coloneqq \sum_\alpha \xi_\alpha \cdot h_\alpha,\]
-where $\xi_\alpha$ is a \gls{pou} on $M$ subordinate to the atlas. This is obviously a metric on $E$.
-\end{proof}
-\begin{cor}
-With the help of a metric, any \gls{vb} has local \emph{orthonormal frames}. The local trivializations induced by such frames have transition functions that preserve distances, i.e., the cocycle takes values in the orthogonal group, $\tau_{\alpha\beta}:U_{\alpha\beta}\to \Or_k$. In other words, the structure group of any real \gls{vb} can be reduced from $\GL_k(\bbR )$ to $\Or_k$. Furthermore, if the bundle is orientable iff the structure group can be further reduced to $\mathrm{SO}_k$.
+    Choose a bundle atlas consisting of local trivializations $\chi_\alpha:\restr{E}{U_\alpha}\to U_\alpha\times\bbR^k$, and on the trivial bundles $U_\alpha\times\bbR^k$ define a metric $h_{\text{stand}}$ using the standard metric on $\bbR^k$. Then $\restr{h_\alpha}{U_\alpha}\coloneqq \chi_\alpha^\ast h_{\text{stand}}$ and 
+    \[h\coloneqq \sum_\alpha \xi_\alpha \cdot h_\alpha,\]
+    where $\xi_\alpha$ is a \gls{pou} on $M$ subordinate to the atlas. This is obviously a metric on $E$.
+    \end{proof}
+    \begin{cor}
+    With the help of a metric, any \gls{vb} has local \emph{orthonormal frames}. The local trivializations induced by such frames have transition functions that preserve distances, i.e., the cocycle takes values in the orthogonal group, $\tau_{\alpha\beta}:U_{\alpha\beta}\to \Or_k$. In other words, the structure group of any real \gls{vb} can be reduced from $\GL_k(\bbR )$ to $\Or_k$. Furthermore, if the bundle is orientable iff the structure group can be further reduced to $\mathrm{SO}_k$.
 \end{cor}
 
 \begin{prop}
-Let $h$ a bundle metric on $E\overset\pi\to M$ and let $D< E$ be a subbundle. Define
-\[D^\perp \coloneqq \{v\in E\mid h(v,e)=0 \text{ for all }e\in D\}=\ker (\pr_D),\]
-where $\pr_D$ is the fiberwise orthogonal projection onto $D$. Then $D^\perp$ is a subbundle of $E$.
+    Let $h$ a bundle metric on $E\overset\pi\to M$ and let $D< E$ be a subbundle. Define
+    \[D^\perp \coloneqq \{v\in E\mid h(v,e)=0 \text{ for all }e\in D\}=\ker (\pr_D),\]
+    where $\pr_D$ is the fiberwise orthogonal projection onto $D$. Then $D^\perp$ is a subbundle of $E$.
 \end{prop}
 \begin{proof}
-Let $\{E_1,\ldots,E_k\}$ be a local orthonormal frame such that $D=\<E_1,\ldots,E_m\>$ for some $m\leq k$ (such local frames exist by the standard Gram-Schmidt orthogonalization procedure). Then the orthogonal projection is locally written as
-\[\pr_D \left(\sum_{j=1}^k s^j E_j\right)=\sum_{j=1}^m s^j E_j.\]
-This definition is in fact basis independent, i.e., defines a global bundle morphism $\pr_D:E\to E$. Therefore $D^\perp =\ker (\pr_D)$ and is a subbundle by Theorem \ref{subbundles thm}.
+    Let $\{E_1,\ldots,E_k\}$ be a local orthonormal frame such that $D=\<E_1,\ldots,E_m\>$ for some $m\leq k$ (such local frames exist by the standard Gram-Schmidt orthogonalization procedure). Then the orthogonal projection is locally written as
+    \[\pr_D \left(\sum_{j=1}^k s^j E_j\right)=\sum_{j=1}^m s^j E_j.\]
+    This definition is in fact basis independent, i.e., defines a global bundle morphism $\pr_D:E\to E$. Therefore $D^\perp =\ker (\pr_D)$ and is a subbundle by Theorem \ref{subbundles thm}.
 \end{proof}
 
 
 \begin{defn}[Riemannian manifold]\index{Riemannian manifold}
-A Riemannian manifold is a pair $(M,g)$, where $M$ is a smooth manifold and $g\in\Gamma^0_2(M)$ is a metric on the tangent bundle $\T M$.
+    A Riemannian manifold is a pair $(M,g)$, where $M$ is a smooth manifold and $g\in\Gamma^0_2(M)$ is a metric on the tangent bundle $\T M$.
 \end{defn}
 
 
 \begin{defn}[Isometry]\index{Isometry}
-A smooth map between two Riemannian manifolds $f:(M,g)\to(M',g')$ is called an isometry if $f^\ast g'=g$.
+    A smooth map between two Riemannian manifolds $f:(M,g)\to(M',g')$ is called an isometry if $f^\ast g'=g$.
 \end{defn}
 
 \begin{cor}[Normal bundle]
-Let $(M^m,g)$ be a Riemannian manifold and $S\emb M$ with $\dim S=k$. Define $D=\T S$ and consider the normal bundle $\rmN S\coloneqq D^\perp<\restr{\T M}{S}$. Since this is a subbundle of $\T M$, we can find local orthonormal $(m-k)$-frames for $\rmN S$. If $\codim S=1$, then $\rmN S=\<N\>$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{\T M}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
+    Let $(M^m,g)$ be a Riemannian manifold and $S\emb M$ with $\dim S=k$. Define $D=\T S$ and consider the normal bundle $\rmN S\coloneqq D^\perp<\restr{\T M}{S}$. Since this is a subbundle of $\T M$, we can find local orthonormal $(m-k)$-frames for $\rmN S$. If $\codim S=1$, then $\rmN S=\<N\>$, where $N$ is a locally defined vector field. $N$ can be extended to a global section of $\restr{\T M}{S}$ iff $S$ is orientable, and given an orientation on $M$, the direction of $N$ induces an orientation on $S$.
 \end{cor}
 
 
 \begin{defn}[Flat Riemannian manifold]
-A Riemannian manifold $(M,g)$ is called flat if it is locally isometric to $(\bbR^m,g_{\text{stand}})$.
+    A Riemannian manifold $(M,g)$ is called flat if it is locally isometric to $(\bbR^m,g_{\text{stand}})$.
 \end{defn}
 
 
 \begin{thm}
-Let $f\in C^\infty(M,N)$ and let $g$ be a metric on $N$. Then $f^\ast g$ is a metric on $M$ iff $f$ is an immersion. In particular, one can always induce metrics on submanifolds.
+    Let $f\in C^\infty(M,N)$ and let $g$ be a metric on $N$. Then $f^\ast g$ is a metric on $M$ iff $f$ is an immersion. In particular, one can always induce metrics on submanifolds.
 \end{thm}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 
 \begin{thm}
@@ -83,10 +83,10 @@ For a Riemannian manifold $(M,g)$,  \gls{tfae}:
 \end{enumerate}
 \end{thm}
 \begin{proof}
-Exercise.
+    Exercise.
 \end{proof}
 \begin{cor}
-All one-dimensional Riemannian manifolds are flat.
+    All one-dimensional Riemannian manifolds are flat.
 \end{cor}
 
 
@@ -315,14 +315,6 @@ which means the parametrization of a geodesic is proportional to its length. In 
     Finally, this implies that $\partial_m g_{kj}+\partial_k g_{mj}-\partial_j g_{km}(p)=0$ and thus $\partial_k g_{jm}(p)=0$.
 \end{proof}
 
-\begin{comment}
-    \begin{samepage}
-        \PRLsep
-        \begin{center}
-            {\red Lecture 17 on 5 Apr 2019 ended here}
-        \end{center}
-    \end{samepage}
-\end{comment}
 
 
 \begin{defn}[Riemann polar coordinates]

@@ -5,14 +5,14 @@
     
     On the way to the discovery of general notions of parallelism, geometry split into two tracks. The first one considered local deformations of Euclidean geometry. In the late 1820's, Gauss was able to work around the lack of parallelism by studying 2-dimensional surfaces embedded in Euclidean space, where vectors can always be transported. Each embedding produced a specific \emph{extrinsic} geometry on the surface, so Gauss then proceeded to deliberately derive quantities that are \emph{intrinsic} to the surface in the sense that they are independent of the embedding (under some constraints), such as geodesics and Gauss curvature. Berhnhard Riemann's extension of Gauss' work to higher dimensions involved the invention of what we now call \emph{$n$-dimensional manifolds}. He defined intrinsic quantities on these manifolds, such as Riemann metrics and curvature. By the early 20th century, in large part thanks to the Italian school of mathematics (jumpstarted by Betti and other Italian mathematicians meeting Riemann during a 1858 visit to Germany), this became a vast science now known as Riemannian and pseudo-Riemannian geometry. Nevertheless, the notion of parallelism on Riemannian manifolds remained elusive, and Riemann's philosophical notion of geometry remained largely ignored until after the publication of Einstein's theory of General Relativity in 1915. (In 1917, Levi-Civita published the first rigorous intrinsic definition of parallel transport in Riemannian geometry.) In the meantime, Riemannian geometry was regarded and developed as an analytical framework. This is why we delay the discussion of Riemannian \emph{geometry} until we develop a more general approach consistent with the second historical track of differential geometry.
 
-    On the other hand, by the second half of the 19th century mathematicians started recognizing that different types of geometries discovered by that point (Euclidean, projective, Lobachevskian, spherical, affine, M\"obius, Pl\"ucker, Lie sphere, Laguerre, etc.), despite each having its own unique set of theorems, could all be characterized by a certain property of \emph{homogeneity}, which immediately implies the presence of a parallelism. Namely, each of these spaces supported a set of \emph{distinguished transformations} (homeomorphisms of the space) that acted on the space \emph{transitively}. The ``geometry'' is then obtained by declaring two figures \emph{equal} if they are related by a distinguished transformation. This equality must naturally be an equivalence relation on the set of all figures (subsets of the space), i.e., be reflexive, symmetric, and transitive. This immediately implies that the distinguished transformations must form a \emph{group}. Klein's serendipitous 1869 rendezvous with Sophus Lie, who was beginning to work on a theory of continuous groups to describe symmetries of differential equations, led to an exciting collaboration trying to elucidate the role of such groups in geometry. In 1872 Klein published a lecture in which he called for the organization of all geometric knowledge around the study of \emph{groups of transformations}, now known as the \emph{Erlangen program}:
+    On the other hand, by the second half of the 19th century mathematicians started recognizing that different types of geometries discovered by that point (Euclidean, projective, Lobachevskian, spherical, affine, M\"obius, Pl\"ucker, Lie sphere, Laguerre, etc.), despite each having its own unique set of theorems, could all be characterized by a certain property of \emph{homogeneity}, which immediately implies the presence of a parallelism. Namely, each of these spaces supported a set of \emph{distinguished transformations} (homeomorphisms of the space) that acted on the space \emph{transitively}. The ``geometry'' is then obtained by declaring two figures \emph{equal} if they are related by a distinguished transformation. This equality must naturally be an equivalence relation on the set of all figures (subsets of the space), i.e., be reflexive, symmetric, and transitive. This immediately implies that the distinguished transformations must form a \emph{group}. Klein's serendipitous 1869 rendezvous with Sophus Lie, who was beginning to work on a theory of continuous groups to describe symmetries of differential equations, led to an exciting collaboration trying to elucidate the role of such groups in geometry. In 1872 Klein published a lecture in which he called for the organization of all geometric knowledge around the study of \emph{groups of transformations}, particularly of invariants under their actions. This effort to systematize geometry became known as the \emph{Erlangen program}, named after the town where Klein wrote it down:
     \begin{quote}
         \small
         \emph{Given a manifoldness and a group of transformations of the same; to investigate the configurations belonging to the manifoldness with regard to such properties as are not altered by the transformation of the group.}
         
         \hfill Felix Klein, 1872.
     \end{quote}
-    By 1874, the basics of the theory of continuous groups were fleshed out by Sophus Lie through the continuing encouragement by Klein, even as Lie was struggling to attract a wider audience. Despite this history, Klein and Lie were interested in very different aspects of the theory of continuous groups, and both would have to wait at least 20 years for a general acceptance of their approaches \cite{Birkhoff}. 
+    By 1874, the basics of the theory of continuous groups were fleshed out by Sophus Lie through the continuing encouragement by Klein, even as Lie was struggling to attract a wider audience. Despite this history, Klein and Lie were interested in very different aspects of the theory of continuous groups, and both would have to wait at least 20 years for a general acceptance of their approaches \cite{Birkhoff}. Klein's attempt to systematize all of geometry also parallels David Hilbert's (who owed his job at G\"ottingen to Klein) program for formalizing and axiomatizing all of mathematics. And again, despite the apparent closeness of these approaches, Klein's very intuitive and visual approach was not natural for Hilbert, who was interested in a strictly formal approach so much so that he neglected to attribute any of his ideas to Klein's influence.
     
     Since Riemannian geometry is easier to present in the modern language as a subset of a more general class of structured geometries on fiber bundles, we devote the next four \chap s to the study of Lie groups and their actions on manifolds, since this path leads to a rigorous understanding of the very phrase ``structured geometry''. Of particular importance to us will be the \emph{Maurer-Cartan equation} and its role in encoding the group structure of any Lie group. In particular, we will see that every Lie group has a canonical notion of parallelism, which was the key element driving Klein's interest in the theory in the first place. The Maurer-Cartan equation, also known as the \emph{structure equation} in Cartan geometry, can thus be seen as the starting point of all modern differential geometry. Finally, the concept of principal bundles will allows us to gain a very general and powerful understanding of what constitutes a geometric structure.
     
@@ -112,7 +112,7 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
     \begin{enumerate}
         \item The left-invariant version of the Maurer-Cartan equation, where $\xi=\rmL_{g\ast}^{-1}\partial_t g$ and $\eta =\rmL_{g\ast}^{-1}\partial_s g$, differs only in the sign of the Lie bracket: 
         \[\partial_t\eta-\partial_s\xi+[\xi,\eta]=0.\label{eq Maurer-Cartan left xi eta}\]
-        \item The Maurer-Cartan equation in the above form for $G=\GL_n(\bbC)$ is obviously equivalent to the zero curvature condition from Example~\ref{ex UV pairs}. As we will see throughout this \partt\ of the book, this rapprochement between the integrability of PDEs (Frobenius Theorem) and group theory is the ultimate key to the unification of geometry of manifolds (e.g., Riemannian geometry), theory of differential equations, and classical geometry (in the form of homogeneous spaces). This culminates in the development of Cartan geometry.
+        \item The Maurer-Cartan equation in the above form for $G=\GL_n(\bbC)$ is obviously equivalent to the zero curvature condition from Example~\ref{ex UV pairs}. As we will see throughout the next \partt\ of the book, this rapprochement between the integrability of PDEs (Frobenius Theorem) and group theory is the ultimate key to the unification of geometry of manifolds (e.g., Riemannian geometry), theory of differential equations, and classical geometry (in the form of homogeneous spaces). This culminates in the development of Cartan geometry.
     \end{enumerate}
 \end{rem}
 
@@ -259,7 +259,7 @@ with ordinary differential $r$-forms $\xi^i\in\Omega^r(G)$. The form $\xi$ is le
 \end{rem}
 
 
-There holds the following analogue of Proposition~\ref{prop 5.5.2 RS1}.
+There holds the following analog of Proposition~\ref{prop 5.5.2 RS1}.
 
 \begin{prop}[{{\cite[Prop.~5.5.10]{RS1}}}]\label{prop 5.5.10 RS1}
     Let $G$ be a Lie group with Lie algebra $\frakg$ and let $\Omega^{\smbullet }_\rmL(G,\frakg)^G$ denote the space of left-invariant $\frakg$-valued differential forms on $G$.
@@ -556,10 +556,10 @@ In particular, the adjoint representation $\Ad:G\to \GL(\frakg)$ has logarithmic
     where on the right hand side we have the value of the constant vector field $\omega^{-1}(\xi(t))$ at the point $\wt\gamma(t)$. Since the developed curve is independent of the parametrization of $\gamma$, the geometric interpretation of development is that $G$ is being ``rolled without slipping'' on $M$: the velocity of the contact point between $M$ and $G$ is equal to the velocity of that point in $M$ as it follows $\gamma$ and in $G$ as it follows $\wt\gamma$. See Figure~\ref{fig:development}.
 \end{rem}
 
-Thus, each such $1$-form produces a well-defined map from the fundamental group $\pi_1(M,x_0)$ to $G$ by $\Phi([\gamma])=\wt{\gamma}(1)$. We immediately observe that the concatenation of loops in $M$ produces products of corresponding group elements in $G$: $\Phi(\gamma_1\bullet \gamma_2)=(\wt{\gamma}_1\bullet\wt{\gamma}_2)(1)=\Phi(\gamma_1)\wt{\gamma}_2(1)=\Phi(\gamma_1)\Phi(\gamma_2)$. Thus this is a homomorphism.
+Thus, each such $1$-form produces a well-defined map from the fundamental group $\pi_1(M,x_0)$ to $G$ by $\hol([\gamma])=\wt{\gamma}(1)$. We immediately observe that the concatenation of loops in $M$ produces products of corresponding group elements in $G$: $\hol(\gamma_1\bullet \gamma_2)=(\wt{\gamma}_1\bullet\wt{\gamma}_2)(1)=\hol(\gamma_1)\wt{\gamma}_2(1)=\hol(\gamma_1)\hol(\gamma_2)$. Thus this is a homomorphism.
 
 \begin{defn}[Monodromy representation]\index{Monodromy representation}
-    If $\omega\in\Omega^1(M;\frakg)$ satisfies the structure equation, then its developments along closed loops starting at $x_0\in M$ determine a homomorphism $\Phi_\omega:\pi_1(M,x_0)\to G$, called the monodromy representation of $\omega$. The image of $\Phi_\omega$ denoted by $\varGamma\subset G$ is called the \emph{period group}, or the \emph{monodromy group}. Assuming $M$ is path-connected, different choices of $x_0$ lead to conjugate monodromy groups.
+    If $\omega\in\Omega^1(M;\frakg)$ satisfies the structure equation, then its developments along closed loops starting at $x_0\in M$ determine a homomorphism $\hol_\omega:\pi_1(M,x_0)\to G$, called the monodromy representation of $\omega$. The image of $\hol_\omega$ denoted by $\varGamma\subset G$ is called the \emph{period group}, or the \emph{monodromy group}. Assuming $M$ is path-connected, different choices of $x_0$ lead to conjugate monodromy groups.
 \end{defn}
 
 \begin{prop}\label{prop 7.13 Sharpe}
@@ -572,7 +572,7 @@ Thus, each such $1$-form produces a well-defined map from the fundamental group 
 The following theorem is the main result of this \sect, and it is remarkable in that it presents the Maurer-Cartan equation, which is generally a (system of) nonlinear PDE, as the integrabiity condition for a certain (system of) linear PDE, and guarantees the existence of \emph{global} solutions under a simple topological condition.
 
 \begin{thm}[Cartan's Fundamental Theorem, global version {{\cite[Thm.~7.14]{Sharpe}}}]\label{thm 7.14 Sharpe fundamental global}
-    Let $G$ be a Lie group with Lie algebra $\frakg$. Let $M$ be a smooth connected manifold, let $x_0\in M$, and let $\omega \in\Omega^1(M;\frakg)$. Then there exists a smooth map $f:M\to G$ such that $\delta f=\omega$ iff $\dd\omega+\frac12[\omega,\omega]=0$ and the monodromy representation $\Phi_\omega:\pi_1(M,x_0)\to G$ is trivial. Moreover, if there are two solutions $f_1$ and $f_2$, then $f_1\equiv c\cdot f_2$ for some $c\in G$.
+    Let $G$ be a Lie group with Lie algebra $\frakg$. Let $M$ be a smooth connected manifold, let $x_0\in M$, and let $\omega \in\Omega^1(M;\frakg)$. Then there exists a smooth map $f:M\to G$ such that $\delta f=\omega$ iff $\dd\omega+\frac12[\omega,\omega]=0$ and the monodromy representation $\hol_\omega:\pi_1(M,x_0)\to G$ is trivial. Moreover, if there are two solutions $f_1$ and $f_2$, then $f_1\equiv c\cdot f_2$ for some $c\in G$.
 \end{thm}
 \begin{proof}
     The uniqueness part was already shown in the local theorem~\ref{thm 6.1 Sharpe fundamental local}. The forward implication  was shown in Proposition~\ref{prop 7.13 Sharpe}.
@@ -676,13 +676,13 @@ In this \sect\ we apply Cartan's Fundamental Theorem to study to what extent glo
 This means that the representation theory of simply connected Lie groups such as $\SU_2$ reduces entirely to the representation theory of the corresponding Lie algebras. Meanwhile, the following proposition interprets the monodromy representation in terms of deck transformations of the universal covering acting on $G$.
 
 \begin{prop}[Monodromy and coverings {{\cite[Prop.~8.1]{Sharpe}}}]\label{prop 8.1 Sharpe}\index{Monodromy!of Lie groups}
-    Let $\omega\in\Omega^1(M;\frakg)$ satisfy the structure equation. Let $\pi:(\wt{M},p_0)\to (M,x_0)$ be the universal covering map of $M$ and let $\Aut(\pi)\cong \pi_1(M,x_0)$ be its group of deck transformations. The Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global} applied to the pair $(\wt{M},\pi^\ast\omega)$ gives a unique map $f:\wt{M}\to G$ with $f(p_0)=e$. Then there is a unique homomorphism $\wt{\Phi}: \Aut(\pi)\to G$ satisfying $f\circ a=\wt{\Phi}(a)\cdot f$ for all $a\in\Aut(\pi)$.
+    Let $\omega\in\Omega^1(M;\frakg)$ satisfy the structure equation. Let $\pi:(\wt{M},p_0)\to (M,m_0)$ be the universal covering map of $M$ and let $\Aut(\pi)\cong \pi_1(M,m_0)$ be its group of deck transformations. The Fundamental Theorem~\ref{thm 7.14 Sharpe fundamental global} applied to the pair $(\wt{M},\pi^\ast\omega)$ gives a unique map $f:\wt{M}\to G$ with $f(p_0)=e$. Then there is a unique homomorphism $\hol: \Aut(\pi)\cong\pi_1(M,m_0)\to G$ satisfying $f\circ a=\hol(a)\cdot f$ for all $a\in\Aut(\pi)$.
 \end{prop}
 \begin{proof}
     Every deck transformation $a\in \Aut(\pi)$ preserves the form $\pi^\ast\omega$ (since $a^\ast \pi^\ast\omega=(\pi\circ A)^\ast\omega=\pi^\ast\omega$), and so we have
     \[(f\circ a)^\ast\theta_G=a^\ast f^\ast\theta_G=a^\ast \pi^\ast\omega=\pi^\ast\omega=f^\ast\theta_G.\]
-    By the Fundamental Theorem, $f\circ a$ and $f$ differ by a left multiplication by a constant element $\wt{\Phi}(a)\in G$, that is, $f\circ a=\wt{\Phi}(a)f$. In particular, $f\circ a(p_0)=\wt{\Phi}(a)f(p_0)=\wt{\Phi}(a)$. To see that $\wt{\Phi}$ is a homomorphism, note that 
-    \[\wt{\Phi}(ab)=f(ab(p_0))=\wt{\Phi}(a)f(b(p_0))=\wt{\Phi}(a)\wt{\Phi}(b)f(p_0)=\wt{\Phi}(a)\wt{\Phi}(b).\]
+    By the Fundamental Theorem, $f\circ a$ and $f$ differ by a left multiplication by a constant element $\hol(a)\in G$, that is, $f\circ a=\hol(a)f$. In particular, $f\circ a(p_0)=\hol(a)f(p_0)=\hol(a)$. To see that $\hol$ is a homomorphism, note that 
+    \[\hol(ab)=f(ab(p_0))=\hol(a)f(b(p_0))=\hol(a)\hol(b)f(p_0)=\hol(a)\hol(b).\]
 \end{proof}
 
 The final result shows that in a certain sense the Maurer-Cartan form determines the group up to a covering map. (It is this description of a Lie group that will generalize to the notion of a Cartan connection on a principal bundle.)
@@ -708,7 +708,7 @@ Note that the Maurer-Cartan form is always complete because its constant vector 
     Then
     \begin{enumerate}[label=(\alph*)]
         \item The universal cover of $M$, $\pi:G\to M$, has, for an arbitrary choice $e\in G$, a unique (up to unique isomorphism) structure of a Lie group with identity element $e$ and Lie algebra $\frakg$ whose Maurer-Cartan form is $\pi^\ast\eta$.
-        \item The period group $\varGamma=\Phi_\eta(\pi_1(M,x_0))\subset G$ acts by left multiplication on $G$ as the group of deck transformations for $\pi$.
+        \item The period group $\varGamma=\hol_\eta(\pi_1(M,x_0))\subset G$ acts by left multiplication on $G$ as the group of deck transformations for $\pi$.
     \end{enumerate}
 \end{thm}
 
@@ -791,7 +791,7 @@ Before we prove this, we will need the following generalization of the Fundament
     \[m\circ(i\times\id)\circ\Delta=e\in M,\]
     where $\Delta:M\to M\times M$ is the diagonal map $\Delta(x)=(x,x)$. Since $M$ is connected, it suffices to show that the form $\eta$ on $M$ pulls back to the same form on $M$ along the two possible routes. Since it obviously pulls back to $0$ via the right hand side, we must show that $(m\circ(i\times\id)\circ\Delta)^\ast\eta=0$. As in the previous steps, a lengthy substitution using the formula for $m^\ast\eta$ verifies this identity. Thus, $i$ is an inverse for $m$.
 
-    \emph{The case $\pi_1(M)\neq 0$.} Here the form $\eta$ on $M$ lifts to the form $\pi^\ast \eta$ on the universal cover $G$. Clearly it satisfies the same three conditions on $G$ that $\eta$ does on $M$. Then our proof applies to the pair $(G,\pi^\ast\eta)$ and we see that for any fixed choice $e\in G$ there is a Lie group structure on $G$ for which $e$ is the identity and $\pi^\ast\eta$ is the Maurer-Cartan form. Its uniqueness follows from Theorem~\ref{thm second principle}: the unique isomorphism between any two group structures on $G$ is provided by the identity map. By Proposition~\ref{prop 8.1 Sharpe}, there is a unique injective homomorphism $\wt{\Phi}:\Aut(\pi)\to G$ satisfying $\wt{\Phi}(A)g=A(g)$ for all deck transformations $A\in \Aut(\pi)$. Thus the group of deck transformations is identified with the period group, a discrete subgroup $\varGamma\subset G$.
+    \emph{The case $\pi_1(M)\neq 0$.} Here the form $\eta$ on $M$ lifts to the form $\pi^\ast \eta$ on the universal cover $G$. Clearly it satisfies the same three conditions on $G$ that $\eta$ does on $M$. Then our proof applies to the pair $(G,\pi^\ast\eta)$ and we see that for any fixed choice $e\in G$ there is a Lie group structure on $G$ for which $e$ is the identity and $\pi^\ast\eta$ is the Maurer-Cartan form. Its uniqueness follows from Theorem~\ref{thm second principle}: the unique isomorphism between any two group structures on $G$ is provided by the identity map. By Proposition~\ref{prop 8.1 Sharpe}, there is a unique injective homomorphism $\hol:\Aut(\pi)\to G$ satisfying $\hol(A)g=A(g)$ for all deck transformations $A\in \Aut(\pi)$. Thus the group of deck transformations is identified with the period group, a discrete subgroup $\varGamma\subset G$.
 \end{proof}
 
 \begin{rem}
@@ -1204,17 +1204,17 @@ If $A\in\mathfrak{sl}_2(\bbR)$, then $\rme^A$ has eigenvalues equal to $-1$ iff 
 \end{smallmatrix}\right)$, \emph{are not in the image of $\exp:\mathfrak{sl}_2(\bbR)\to \SL_2(\bbR)$} (and only they aren't).
 
 Defining the algebraic variety in $\frakg$
-\[\Sigma_1=\left\{A\in\frakg\mid \det\left(\ad_A^\bbC -2\pi\rmi  \rmI\right)=0\right\},\]
-the set of all singular points of the exponential map is $\Sigma=\bigcup_{k\in\bbC\setminus\{0\}} k\Sigma_1$. In the case of $\SL_2(\bbC)$,
-\[\Sigma_1=\left\{\begin{pmatrix}
+\[\varSigma_1=\left\{A\in\frakg\mid \det\left(\ad_A^\bbC -2\pi\rmi  \rmI\right)=0\right\},\]
+the set of all singular points of the exponential map is $\varSigma=\bigcup_{k\in\bbC\setminus\{0\}} k\varSigma_1$. In the case of $\SL_2(\bbC)$,
+\[\varSigma_1=\left\{\begin{pmatrix}
     a&b\\c&-a
 \end{pmatrix}\in\mathfrak{sl}_2(\bbC)\mid a^2+bc=-\pi^2\right\}.\]
 Thus for $G=\SU_2$,
-\[\Sigma_1=\left\{\begin{pmatrix}
+\[\varSigma_1=\left\{\begin{pmatrix}
     \i\alpha&\beta\\-\wb{\beta}&-\i\alpha
 \end{pmatrix}\in\mathfrak{su}_2\mid |\alpha|^2+|\beta|^2=\pi^2\right\},\]
-which is a sphere $\bbS^2$ in $\mathfrak{su}_2$ of Euclidean radius $\pi$, and $\exp$ maps the ball $|\alpha|^2+|\beta|^2<\pi^2$ diffeomorphically onto $\SU_2\setminus\{-\rmI\}$. On the other hand, for $G=\SL_2(\bbR)$, the set $\Sigma_1$ is the two-sheeted hyperboloid
-\[\Sigma_1=\left\{\begin{pmatrix}
+which is a sphere $\bbS^2$ in $\mathfrak{su}_2$ of Euclidean radius $\pi$, and $\exp$ maps the ball $|\alpha|^2+|\beta|^2<\pi^2$ diffeomorphically onto $\SU_2\setminus\{-\rmI\}$. On the other hand, for $G=\SL_2(\bbR)$, the set $\varSigma_1$ is the two-sheeted hyperboloid
+\[\varSigma_1=\left\{\begin{pmatrix}
     a&b\\c&-a
 \end{pmatrix}\in\mathfrak{sl}_2(\bbR)\mid a^2+bc=-\pi^2\right\},\]
 mapped to $\{-\rmI\}$ by the exponential. Here $\exp$ is a diffeomorphism from the set $a^2+bc>-\pi^2$ onto the complement in $\SL_2(\bbR)$ of $\{-\rmI\}$ and the conjugacy classes of $\left(\begin{smallmatrix}
@@ -2538,7 +2538,7 @@ Next we investigate the special case where $H$ is a normal subgroup. This means 
     \end{enumerate}
 \end{proof}
 
-This leads us to the Lie group analogue of the homomorphism theorem.
+This leads us to the Lie group analog of the homomorphism theorem.
 
 \begin{prop}[Homomorphism theorem {{\cite[Prop.~5.7.11]{RS1}}}]
     Let $\Phi:G\to H$ be a Lie group homomorphism, Then $\im\Phi$ is a Lie subgroup of $H$ and the induced mapping $\wh{\Phi}:G\slash \ker \Phi\to \im\Phi$ is a Lie group isomorphism.
@@ -3423,7 +3423,7 @@ The $\SU_{n+1,1}$-invariant structure on the odd-dimensional sphere induced by t
 
 Much of basic differential geometry on manifolds that we've covered translates to the locally convex case: if $M$ is modeled on a locally convex space $V$, then its tangent bundle $\T M$ (with tangent vectors defined as equivalence classes of curves at a point) has smooth local trivializations over $U_\alpha\subset M$ mapping to $U_\alpha\times V$, and the transition maps are smooth as functions of $(m,v)\in U_{\alpha\beta}\times V$. We can construct the tangent functor $\T$ by defining derivatives of smooth maps between locally convex manifolds. Since the pairing between $V$ and $V^\ast$ is usually not very nice, one often finds another vector space $W$ (which can be thought of as a subspace of $V^\ast$) with a nondegenerate pairing $V\times W\to \bbK$. This allows one to define natural adjoints of linear maps and hence a cotangent bundle $\T^\ast M$ with typical fiber $W$. Smooth vector fields can be defined as usual, and $\fX(M)$ is still a Lie algebra with the Lie bracket. The Lie bracket is again natural w.r.t.\ smooth maps. The calculus of differential forms then also extends once we've defined $\T^\ast M$. This \sect\ is a brief summary of parts of \cite{Neeb}.
 
-For integration of differential forms one requires Mackey completeness. Then, e.g., the Stokes theorem for differential forms on manifolds with boundaries holds. The Poincar\'e Lemma holds in the following form.
+For integration of differential forms one requires Mackey completeness. Then, e.g., the Stokes-Cartan theorem for differential forms on manifolds with boundaries holds. The Poincar\'e Lemma holds in the following form.
 
 \begin{lem}[Poincar\'e Lemma {{\cite[Lem.~II.4.11]{Neeb}}}]
     Let $V$ be locally convex, $W$ Mackey complete locally convex, and $U\subset V$ an open star-shaped (w.r.t\ $0$) subset. Let $\omega\in \Omega^{k+1}(U,W)$ be a $W$-valued closed $(k+1)$-form. Then $\omega=\dd \varphi$ for some $\varphi\in \Omega^k(U,W)$ satisfying $\varphi(0)=0$ given by
@@ -3917,9 +3917,11 @@ Therefore, in this special case, we have a functor of the categories of principa
 \end{example}
 
 \begin{example}[$r$-th order frame bundle]\label{ex r-th frame bundle}
-    Recall Definition~\ref{def jet bundles} of jet bundles. We can naturally identify the set $\rmJ^1_0(\bbR^n,\bbR^n)_0^\times$ of invertible $1$-jets on $\bbR^n$ with source and target zero with the group $\GL_n(\bbR)$. This leads to an interpretation of the linear frame bundle $\Fr(\T M)$ of an $n$-dimensional manifold $M$ as the space $\rmJ^1_0(\bbR^n,M)^\times$ of invertible $1$-jets from $\bbR^n$ to $M$ with source $0$.
+    Recall Definition~\ref{def jet bundles} of jet bundles. We can naturally identify the set $\rmJ^1_0(\bbR^n,\bbR^n)_0^\times$ of invertible $1$-jets on $\bbR^n$ with source and target zero with the group $\GL_n(\bbR)$. This leads to an interpretation of the linear frame bundle $\Fr(\T M)$ of an $n$-dimensional manifold $M$ as the space $\rmJ^1_0(\bbR^n,M)^\times$ of invertible $1$-jets from $\bbR^n$ to $M$ with source $0$.\index{Frame bundle!Higher-order}
 
-    More generally, the $r$-th order frame bundle $\Fr^r(\T M)$ is defined as $\rmJ^r_0(\bbR^n,M)^\times$, so it consists of $r$-jets of local charts. Its structure group, as before, is the jet group $\GL^r_n(\bbR)$, and the principal right action is given by jet composition from the right. The $r$-th order tangent bundle $\rmJ^r_0(\bbR,M)$ is associated to $\Fr^r(\T M)$ w.r.t.\ the obvious left action of $\GL^r_n(\bbR)$ on $F=\rmJ^r_0(\bbR,\bbR^n)$.
+    More generally, the \emph{$r$-th order frame bundle} $\Fr^r(M)$ is defined as the set $\rmJ^r_0(\bbR^n,M)^{\mathrm{diff}}$ of $r$-jets at $0$ of local diffeomorphisms from $\bbR^n$ to $M$, i.e., it consists of $r$-jets of the inverses of local charts. (In particular, $\Fr^1(M)\cong \Fr(\T M)$ and $\Fr^0(M)\cong M$.) Its structure group, as before, is the jet group $\GL^r_n(\bbR)$, and the principal right action is given by jet composition from the right. The $r$-th order tangent bundle $\rmJ^r_0(\bbR,M)$ is associated to $\Fr^r(M)$ w.r.t.\ the obvious left action of $\GL^r_n(\bbR)$ on $F=\rmJ^r_0(\bbR,\bbR^n)$.
+
+    Similarly, the \emph{$r$-th order coframe bundle} $\Fr^{\ast r}(M)$ is $\rmJ^r(M,\bbR^n)_0^{\mathrm{diff}}$, i.e., the set of $r$-jets with target $0$ of local charts. In particular, $\Fr^{\ast 0}(M)\cong M$ and $\Fr^{\ast 1}(M)\cong\Fr(\T^\ast M)$.
 \end{example}
 
 
@@ -3951,14 +3953,14 @@ Therefore, in this special case, we have a functor of the categories of principa
 For example, all tensor bundle functors $\bbT^r_s$ are local natural bundles. The following intuitive characterization of local natural bundles holds. We omit the proof.
 
 \begin{thm}[{{\cite[Thm.~1.2.8]{Cap}}}]\label{thm 1.2.8 Cap}
-    Any local natural bundle on $n$-dimensional manifolds can be obtained as an associated bundle to $\Fr^r (\T M)$ for some $r\geq 0$ w.r.t.\ a left action of the jet group $\GL^r_n(\bbR)\acts F$ on a finite-dimensional manifold $F$.
+    Any local natural bundle on $n$-dimensional manifolds can be obtained as an associated bundle to $\Fr^r (M)$ for some $r\geq 0$ w.r.t.\ a left action of the jet group $\GL^r_n(\bbR)\acts F$ on a finite-dimensional manifold $F$.
 \end{thm}
 
 The lowest possible choice for $r$ in this theorem is called the \emph{order of the local natural bundle}. In particular, the theorem implies that all first-order natural vector bundles are sums of tensor bundles, which explains their prominence. Notice that the composition of the jet prolongation functor $\rmj^k$ with a $r$-th order natural bundle is the $(k+r)$-th order natural bundle $\rmJ^k \bf{F}$.
 
 \begin{xca}
     \begin{enumerate}
-        \item Describe the \emph{second tanget bundle} $\T (\T M)\to M$ as a natural bundle, i.e., as associated to $\Fr^2(\T M)$ with some typical fiber. Compare to the second-order tangent bundle $\T^2 M=\rmJ^2_0(\bbR,M)$.
+        \item Describe the \emph{second tanget bundle} $\T (\T M)\to M$ as a natural bundle, i.e., as associated to $\Fr^2(M)$ with some typical fiber. Compare to the second-order tangent bundle $\T^2 M=\rmJ^2_0(\bbR,M)^\times$.
         \item Describe the bundle $\rmJ^1\T M$ of $1$-jets of vector fields on $M$ as a natural bundle.
         \item Describe the bundle $\rmJ^r(M,s)\subset \rmJ^r_0(\bbR^s,\T M)$ of $r$-jets of $s$-dimensional submanifolds of $M$ (i.e., only the jets of local immersions $\bbR^s\to M$ are considered) as a natural bundle. This bundle can be seen as an $r$-th order general linear (not orthogonal) analog of the Stiefel bundle $\St_s(\T M)$.
     \end{enumerate}
@@ -4340,7 +4342,7 @@ We have previously defined $G$-structures as equivalence classes of $G$-atlases 
 \begin{defn}[$G$-structure]\index{$G$-structure}
     Given a locally trivial \gls{fb} $E\overset{\pi}{\to}M$ with typical fiber $F$, and a faithful action $G\acts F$ (so that $G$ can be seen as a Lie subgroup of $\Diff(F)$), a $G$-structure on $E$ is a (smooth) bundle reduction $Q$ of the associated (topological) principal $\Diff(F)$-bundle $\Fr_{\Diff}(E)$ to $G$, together with the induced isomorphism $E\cong Q\times^G F$.
 
-    A \emph{$G$-structure of order $r$ on a manifold $M$} is a $G$-structure on a local natural bundle $\bf{F}(M)$ of order $r$, or, equivalently, a bundle reduction of the $r$-th order frame bundle $\Fr^r(\T M)$.
+    A \emph{$G$-structure of order $r$ on a manifold $M$} is a $G$-structure on a local natural bundle $\bf{F}(M)$ of order $r$, or, equivalently, a bundle reduction of the $r$-th order frame bundle $\Fr^r(M)$.
 \end{defn}
 
 As we have shown, every reduction of $\Fr_{\Diff}(E)$ to $G$ can be identified with a section of the bundle $\Fr_{\Diff}(E)\slash G$, which is equivalent to picking a $G$-equivalence class of frames over each point of the base.
@@ -4350,16 +4352,16 @@ As we have shown, every reduction of $\Fr_{\Diff}(E)$ to $G$ can be identified w
 \end{defn}
 
 \begin{rem}\label{rem geometric structures}
-    Note that this definition actually encompasses much more than just equivariant \emph{functions} on $P$. Indeed, geometric structures are often represented by equivariant vector fields, differential forms, or, most generally, equivariant sections of arbitrary natural bundles $\bf{F}(P)$ over $P$. All of these can, in turn, be identified with equivariant \emph{functions} on some frame bundle $\Fr^r(\T P)$, using a combination of Propositions~\ref{thm 1.2.8 Cap} and \ref{prop 1.2.6 RS2}. Such a frame bundle still carries a proper free action of $G$, namely the prolongation $\Phi^{(r)}_g$, and the quotient is $\Fr^r(\T P)\slash G\cong \Fr^r(\T M)$, which makes it a principal bundle over $\Fr^r(\T M)$. The resulting functions on $\Fr^r(\T P)$ will be equivariant w.r.t.\ this $G$-action, hence falling under the above definition.
+    Note that this definition actually encompasses much more than just equivariant \emph{functions} on $P$. Indeed, geometric structures are often represented by equivariant vector fields, differential forms, or, most generally, equivariant sections of arbitrary natural bundles $\bf{F}(P)$ over $P$. All of these can, in turn, be identified with equivariant \emph{functions} on some frame bundle $\Fr^r(P)$, using a combination of Propositions~\ref{thm 1.2.8 Cap} and \ref{prop 1.2.6 RS2}. Such a frame bundle still carries a proper free action of $G$, namely the prolongation $\Phi^{(r)}_g$, and the quotient is $\Fr^r(P)\slash G\cong \Fr^r(M)$, which makes it a principal bundle over $\Fr^r(M)$. The resulting functions on $\Fr^r(P)$ will be equivariant w.r.t.\ this $G$-action, hence falling under the above definition.
 \end{rem}
 
 \begin{example}
     We can now rephrase Example~\ref{ex 1.6.6 RS2} as follows. 
     \begin{enumerate}
         \item An orientation on a rank $k$ \gls{vb} $E$ is a $\GL_k^+(\bbR)$-structure, and can be defined by the geometric structure given by an arbitrary volume form $\sfv\in \Gamma^\infty(\bigwedge^k E^\ast)$, since the stabilizer of an element of $\bigwedge^k \bbR^k$ under the action of $\GL_k(\bbR)$ is $\SL_k(\bbR)$, which specifies an $\SL_k(\bbR)$-structure and hence a $\GL_k^+(\bbR)$-structure.
-        \item A metric on the same \gls{vb} $E$ is an $\Or_{p,q}$-structure. A corresponding geometric structure is a metric tensor $\sfg\in \Gamma^\infty\left(\bigodot_{(k,l)}^2 E^\ast\right)$, since the stabilizer of a value of $\sfg$ is isomorphic to $\Or_{p,q}$. 
+        \item A metric on the same \gls{vb} $E$ is an $\Or_{k,l}$-structure. A corresponding geometric structure is a metric tensor $\sfg\in \Gamma^\infty\left(\bigodot_{(k,l)}^2 E^\ast\right)$, since the stabilizer of a value of $\sfg$ is isomorphic to $\Or_{k,l}$. 
         \item A structure of a complex vector bundle is a $\GL_{k/2}(\bbC)$-structure. A corresponding geometric structure is an almost complex structure tensor field $\sfJ\in \End(E)$ such that $\sfJ^2=-\id_E$, since the stabilizer of any of its values is isomorphic to $\GL_{k/2}(\bbC)$.
-        \item An $\{e\}$-structure is equivalent to a global section of $P$, a global trivialization of $P$, or an equivariant $G$-valued function on $P$ (with the left action $G\overset{\rmL}G$ on the target). $\{e\}$-structures are also called \emph{absolute parallelisms}.\index{Absolute parallelism}
+        \item An $\{e\}$-structure is equivalent to a global section of $P$, a global trivialization of $P$, or an equivariant $G$-valued function on $P$ (with the left action $G\overset{\rmL}{\acts}G$ on the target). $\{e\}$-structures are also called \emph{absolute parallelisms}.\index{Absolute parallelism}
     \end{enumerate}
     \'Elie Cartan was the first to realize that essentially all smooth geometric structures can be represented by collections of differential forms (coframes), which can in turn be identified with equivariant functions on frame bundles. This motivates our definition of a geometric structure. We will return to this connection (no pun intended) in \S\ref{sec: connections on G-structures}.
 \end{example}

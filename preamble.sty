@@ -83,6 +83,10 @@
 \usepackage{fontspec}
 \usepackage{newtxtext}
 \usepackage[varvw]{newtxmath}
+% \usepackage{pzccal}
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
 %OR
 % \usepackage{fontspec}
 % \usepackage{newtxtext}
@@ -319,7 +323,7 @@
     breakable=true}
 
     % Workaround for a hyperref-related bug in tcolorbox's parbox=false option: pass the definition of parskip directly
-    
+
 \AddToHook{env/rem/begin}{\parindent=0pt \parskip=0.3\baselineskip plus 2pt\relax}
 \AddToHook{env/hrem/begin}{\parindent=0pt \parskip=\baselineskip}
 \AddToHook{env/thm/begin}{\parindent=0pt \parskip=\baselineskip}
@@ -468,6 +472,8 @@
 \newcommand{\calVr}{\mathcal{V}_{\mathrm{r}}}
 \newcommand{\calY}{\mathcal{Y}}
 
+\newcommand{\pzcG}{\mathpzc{G}}
+
 \newcommand{\fraka}{\mathfrak{a}}
 \newcommand{\frake}{\mathfrak{e}}
 \newcommand{\frakg}{\mathfrak{g}}
@@ -499,6 +505,7 @@
 \newcommand{\scrH}{\mathscr{H}}
 \newcommand{\scrJ}{\mathscr{J}}
 \newcommand{\scrK}{\mathscr{K}}
+\newcommand{\scrL}{\mathscr{L}}
 \newcommand{\scrO}{\mathscr{O}}
 \newcommand{\scrR}{\mathscr{R}}
 \newcommand{\scrT}{\mathscr{T}}
@@ -507,10 +514,13 @@
 \newcommand{\sfh}{\mathsf{h}}
 \newcommand{\sfv}{\mathsf{v}}
 \newcommand{\sfw}{\mathsf{w}}
+\newcommand{\sfE}{\mathsf{E}}
 \newcommand{\sfK}{\mathsf{K}}
 \newcommand{\sfJ}{\mathsf{J}}
 \newcommand{\sfR}{\mathsf{R}}
 \newcommand{\sfT}{\mathsf{T}}
+\newcommand{\sfI}{\mathsf{I}}
+\newcommand{\sfII}{\mathsf{II}}
 
 
 \newcommand{\acts}{%

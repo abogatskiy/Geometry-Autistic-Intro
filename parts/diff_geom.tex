@@ -3217,7 +3217,7 @@ Exercise.
 
 The following is the famous Generalized Stokes Theorem, perhaps more appropriately called the Stokes-Cartan Theorem, and it is a modern form of the classical Kelvin-Stokes ``curl theorem''.
 
-\begin{thm}[Kelvin (1850), Stokes (1854), Volterra-Poincar\'e (1899), Cartan (1945)]\index{Theorem!Stokes-Cartan}
+\begin{thm}[Kelvin (1850), Stokes (1854), Volterra-Poincar\'e (1899), Cartan (1945)]\index{Theorem!Stokes-Cartan}\label{thm stokes-cartan}
     Let $M^n$ be an oriented manifold with or without a boundary, let $\omega\in \Omega^{n-1}(M)$ be a form with \emph{compact support}. Let $i:\partial M\hookrightarrow M$ be the embedding inclusion of the boundary. Then $i^\ast\omega\in\Omega^{n-1}(\partial M)$, which can be treated as the restriction of $\omega$  to $\partial M$, satisfies
     \[\int_{\partial M}i^\ast \omega=\int_M \dd \omega,\]
     where the orientation on $\partial M$ is induced from $M$ by the outward normals.
@@ -3241,7 +3241,7 @@ The following is the famous Generalized Stokes Theorem, perhaps more appropriate
     \[\int_{\partial U}i^\ast\omega=(-1)^{n}\int_{\bbR^{n-1}}\omega_n(x^1,\ldots,x^{n-1},0)\dd x^1\cdots\dd x^{n-1}=\int_U \dd\omega.\]
 \end{proof}
 \begin{rem}
-    The classical Stokes' Theorem for line integrals in $3$ dimensions is just the special case of this theorem for $1$-forms $\omega$. Similarly, the Gauss-Ostrogradskii theorem (a.k.a.\ ``divergence theorem'', or Gauss law in physics) is the special case for integrals of $2$-forms. In fact, even Cauchy's residue theorem in complex analysis can be obtained as an application of the Stokes theorem.\index{Theorem!Gauss-Ostrogradskii}
+    The classical Stokes' Theorem for line integrals in $3$ dimensions is just the special case of this theorem for $1$-forms $\omega$. Similarly, the Gauss-Ostrogradskii theorem (a.k.a.\ ``divergence theorem'', or Gauss law in physics) is the special case for integrals of $2$-forms. In fact, even Cauchy's residue theorem in complex analysis can be obtained as an application of the Stokes-Cartan theorem.\index{Theorem!Gauss-Ostrogradskii}
 \end{rem}
 
 \begin{cor}
@@ -3283,18 +3283,18 @@ The final application requires some familiarity with complex analysis. Some basi
     \[\wb\partial f=0,\]
     which is why holomorphic functions are often described as ``functions of only $z$ and not $\wb{z}$''.
 
-    Here we will focus only on $1$-dimensional complex manifolds $\Sigma$ (Riemann surfaces),\index{Riemann surface} which means that around every point there is a local complex coordinate $z\in \bbC$ with holomorphic transition maps, and so every complex-valued $1$-form $\omega\in\Omega^1(\Sigma;\bbC)$ can be locally uniquely written as $\omega=\omega_z \dd z+\omega_{\wb{z}} \dd \wb{z}$, where $\omega_z,\omega_{\wb{z}}$ are local smooth complex-valued functions.
+    Here we will focus only on $1$-dimensional complex manifolds $\varSigma$ (Riemann surfaces),\index{Riemann surface} which means that around every point there is a local complex coordinate $z\in \bbC$ with holomorphic transition maps, and so every complex-valued $1$-form $\omega\in\Omega^1(\varSigma;\bbC)$ can be locally uniquely written as $\omega=\omega_z \dd z+\omega_{\wb{z}} \dd \wb{z}$, where $\omega_z,\omega_{\wb{z}}$ are local smooth complex-valued functions.
     The local formula \eqref{eq local formula for d} for $\dd$ can be rewritten in complex coordinates and ends up working the same way as it would in real coordinates:
     \[\dd\omega=(\partial_{z} \omega_{\wb z}-\partial_{\wb z} \omega_{z})\dd z\wedge \dd \wb{z}.\label{eq d of complex form}\]
-    The space of complex $1$-forms that contain only a $\dd z$ term (this property is independent of the choice of the complex chart) is denoted $\Omega^{1,0}(\Sigma)$, and similarly $\Omega^{0,1}(\Sigma)$ is spanned by $\dd \wb{z}$ (over $C^\infty(\Sigma,\bbC)$). A $(1,0)$-form $\omega\in\Omega^{1,0}(\Sigma)$ is called \emph{holomorphic}\index{Holomorphic!$(1,0)$-form} if it is locally of the form $\omega=f\dd z$, where $f$ is a holomorphic function, so $\wb\partial f=0$ (again, this property is independent of the chart).
+    The space of complex $1$-forms that contain only a $\dd z$ term (this property is independent of the choice of the complex chart) is denoted $\Omega^{1,0}(\varSigma)$, and similarly $\Omega^{0,1}(\varSigma)$ is spanned by $\dd \wb{z}$ (over $C^\infty(\varSigma,\bbC)$). A $(1,0)$-form $\omega\in\Omega^{1,0}(\varSigma)$ is called \emph{holomorphic}\index{Holomorphic!$(1,0)$-form} if it is locally of the form $\omega=f\dd z$, where $f$ is a holomorphic function, so $\wb\partial f=0$ (again, this property is independent of the chart).
 \end{rem}
 \begin{cor}[Cauchy-Goursat Theorem]\index{Theorem!Cauchy-Goursat}
-    Let $\Sigma$ be a Riemann surface (complex $1$-dimensional manifold) and let $\omega\in\Omega^{1,0}(\Sigma)$ be a complex $(1,0)$-form. Then the equality
+    Let $\varSigma$ be a Riemann surface (complex $1$-dimensional manifold) and let $\omega\in\Omega^{1,0}(\varSigma)$ be a complex $(1,0)$-form. Then the equality
     \[\int_{\gamma_1}\omega=\int_{\gamma_2}\omega\]
-    holds for \emph{any} two homotopic paths $\gamma_1,\gamma_2$ with the same endpoints in $\Sigma$ iff $\omega$ is holomorphic.
+    holds for \emph{any} two homotopic paths $\gamma_1,\gamma_2$ with the same endpoints in $\varSigma$ iff $\omega$ is holomorphic.
 \end{cor}
 \begin{proof}
-    Consider $\int_{\gamma_1}\omega-\int_{\gamma_2}\omega=\oint_{\gamma}\omega$, where $\gamma=\gamma_1\bullet \gamma_2^{-1}$ (the integral is well-defined for piecewise smooth paths as well). Then, by the Stokes Theorem, 
+    Consider $\int_{\gamma_1}\omega-\int_{\gamma_2}\omega=\oint_{\gamma}\omega$, where $\gamma=\gamma_1\bullet \gamma_2^{-1}$ (the integral is well-defined for piecewise smooth paths as well). Then, by the Stokes-Cartan Theorem, 
     \[\oint_\gamma \omega=\iint_D \dd\omega,\]
     where $D$ is the domain enclosed by $\gamma$.
     By \eqref{eq d of complex form}, this vanishes regardless of the contour iff $0=\dd \omega=-\wb\partial\omega_z \dd z\wedge\dd\wb{z}$. The wedge factor is proportional to a volume form:
@@ -3311,7 +3311,7 @@ The final application requires some familiarity with complex analysis. Some basi
 
 \begin{rem}[$\wb\partial$-problem]
     Similarly, one can derive the Cauchy residue theorem by using the \emph{Sokhotski-Plemelj formula}\index{Equation!Sokhotski-Plemelj} 
-    \[\wb\partial \frac{1}{z}=\pi \delta(z),\label{eq Sokhotski-Plemelj}\] where $\delta(z)=\delta(x)\delta(y)$ is the regular Dirac delta-function in the plane. Its more general form, which follows directly from \eqref{eq Sokhotski-Plemelj} and the Stokes Theorem, is the so called $\wb\partial$-formula:\index{Equation!$\wb\partial$-formula}
+    \[\wb\partial \frac{1}{z}=\pi \delta(z),\label{eq Sokhotski-Plemelj}\] where $\delta(z)=\delta(x)\delta(y)$ is the regular Dirac delta-function in the plane. Its more general form, which follows directly from \eqref{eq Sokhotski-Plemelj} and the Stokes-Cartan Theorem, is the so called $\wb\partial$-formula:\index{Equation!$\wb\partial$-formula}
     \[f(z_0,\wb{z}_0)=\frac{1}{2\pi \i}\oint_{\partial D}\frac{f(z,\wb{z})\dd z}{z-z_0}+\frac{1}{2\pi\i}\iint_D \frac{\wb\partial f}{z-z_0}\dd z\wedge\dd\wb{z},\label{eq dbar formula}\]
     which holds as long as $f$ is smooth (in fact it only needs to be differentiable) up to the boundary of the domain $D\subset\bbC$, and $z_0\in D$.
     This formula provides the solution to the classical \emph{$\wb\partial$-problem}, which is a boundary value problem for PDEs of the form $\wb\partial f=g$, where $g$ is given and $f$ is unknown.
@@ -3622,9 +3622,9 @@ We can now go back to Pfaff's condition from Proposition~\ref{prop 4.7.6 RS1 pfa
     \[0=\dd(f\restr{\theta}{U})=\dd f\wedge\restr{\theta}{U}+f\dd\restr{\theta}{U},\]
     hence $\dd\restr{\theta}{U}=\restr{\theta}{U}\wedge \dd f/f$, and Theorem~\ref{prop 4.7.10 RS1}(2) yields that $\Delta$ is integrable. Conversely, if $\Delta$ is integrable, so is the regular distribution $\Delta^0$ of rank $n-1$ on $M$. Hence, according, for example, to \ref{cor 19.13 Lee}, for every $m\in M$ there exists a local chart $(U,\bf{x})$ at $m$ such that $\{\partial^{x_i}\}_{i=1}^{n-1}$ is a local frame in $\Delta^0$ at $m$. Then $\theta=h\dd x^n$ for some $h\in C^\infty(U)$. Since $\theta$ is nowhere-vanishing, so is $h$. Thus $f=h^{-1}$ is an integrating factor for $\restr{\theta}{U}$.
 
-    Next, let $g\in C^\infty(U)$ be such that $f\restr{\theta}{U}=\dd g$ and let $\Sigma$ be a level set component of $g$. Since $\dd g=f\restr{\theta}{U}$ is nowhere-vanishing, every point of $U$ is regular for $g$. Thus $\Sigma$ is an embedded submanifold of dimension $n-1$ of $U$ (and hence of $M$). Let $i:\Sigma\hookrightarrow M$ denote the natural inclusion. Due to
-    \[i^\ast\restr{\theta}{U}=\frac{1}{\restr{f}{\Sigma}}i^\ast(f\restr{\theta}{U})=\frac{1}{\restr{f}{\Sigma}}i^\ast(\dd g)=\frac{1}{\restr{f}{\Sigma}}\dd(\restr{g}{\Sigma})=0, \]
-    one has $\T_m\Sigma\subset\Delta_m^0$ for all $m\in\Sigma$. By counting dimensions we obtain equality. Hence, $\Sigma$ is an integral manifold of $\Delta$.
+    Next, let $g\in C^\infty(U)$ be such that $f\restr{\theta}{U}=\dd g$ and let $\varSigma$ be a level set component of $g$. Since $\dd g=f\restr{\theta}{U}$ is nowhere-vanishing, every point of $U$ is regular for $g$. Thus $\varSigma$ is an embedded submanifold of dimension $n-1$ of $U$ (and hence of $M$). Let $i:\varSigma\hookrightarrow M$ denote the natural inclusion. Due to
+    \[i^\ast\restr{\theta}{U}=\frac{1}{\restr{f}{\varSigma}}i^\ast(f\restr{\theta}{U})=\frac{1}{\restr{f}{\varSigma}}i^\ast(\dd g)=\frac{1}{\restr{f}{\varSigma}}\dd(\restr{g}{\varSigma})=0, \]
+    one has $\T_m\varSigma\subset\Delta_m^0$ for all $m\in\varSigma$. By counting dimensions we obtain equality. Hence, $\varSigma$ is an integral manifold of $\Delta$.
 \end{proof}
 
 

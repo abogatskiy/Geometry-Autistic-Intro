@@ -1574,7 +1574,7 @@ Two categories are anti-equivalent if $\mathcal{C}\simeq\mathcal{D}^{\ast}$.
 
 
 \clearpage
-\chapter{General Topology}
+\chapter{General Topology}\label{ch: general topology}
 
 This \chap\ contains an \emph{extremely brief} introduction into general point-set topology. It is in no way meant to be comprehensive, and many of the theorems are left as exercises. Thus, it is mostly meant as a reference for future \chap s, and we encourage the reader to use other sources for point-set topology if they need to brush up on this subject.
 
@@ -2596,7 +2596,7 @@ The following is a straightforward consequence of the Seifert-van~Kampen Theorem
 
 \chapter{Manifolds}
 
-\section{Topological manifolds}
+\section{Topological manifolds}\label{sec topological manifolds}
 \begin{defn}[Locally Euclidean Space]\index{Locally Euclidean Space}
     A topological space $X$ is locally $n$-dimensional Euclidean if every $x\in X$ has an open neighborhood homeomorphic to the open $n$-dimensional ball, $U_x\cong B^n$. 
 \end{defn}
@@ -2692,7 +2692,6 @@ Throughout these notes we also adopt the notation where for any atlas as above, 
 \end{rem}
 
 Keeping in mind the above remark that one may be interested only in a particular narrowly defined category of differentiable structures, we can define differential geometry broadly as the study of natural constructions (functors) on categories of differentiable structures. These functors, in turn, can take values in various categories: sets, groups, vector spaces, algebras, manifolds, fiber bundles, etc. Some of the most important examples are the tangent bundle functor, the de Rham complex functor, and the connection bundles of principal bundles. Oftentimes, however, we are interested in studying certain non-natural structures on manifolds as well, which require a manual choice of some \emph{geometric structure} that cannot be described simply by a kind of atlas. For example, a Riemannian metric is a choice of a positive definite inner product on each tangent space, which is not a functorial construction. The study of such structures is also part of differential geometry, which leads to the following definition.
-
 \begin{gather*}
     \boxed{\begin{array}{c}
     \text{The basic task of differential geometry is:}\\
@@ -2700,8 +2699,7 @@ Keeping in mind the above remark that one may be interested only in a particular
     \text{categories of differentiable and geometric structures.}
     \end{array}}
 \end{gather*}
-
-We will be able to give a precise definition of geometric structures at the end of \Part~\ref{part Lie group actions}.
+This definition is usually too broad, seeing as it covers many purely topological or algebraic properties of manifolds. We will be able to give a precise definition of geometric structures at the end of \Part~\ref{part Lie group actions}, and appropriately modify the definition of geometry after that, see the opening of \Part~\ref{Part Structured Geom I} and of \Chap~\ref{ch equivalence problems}.
 
 \begin{example}
 \begin{enumerate}
@@ -2870,7 +2868,7 @@ The main property of regular values of smooth maps is that they are generic, as 
 
 
 
-\section{Inverse \& Implicit Mapping Theorems}
+\section{Inverse and implicit mapping theorems}
 
 In this \sect\ we just recall the statements of two basic theorems of multivariate calculus.
 \begin{thm}[\gls{inmt}]\label{InMT}\index{Theorem!Inverse mapping}
@@ -5296,13 +5294,13 @@ Since $\id_{\bbS^n}$ generates the $n$-th homotopy group of $\bbS^n$, this allow
 
 \section{Lie groups}
 
-\begin{defn}[Topological group]
+\begin{defn}[Topological group]\index{Topological group}
     A topological group is a group $G$ together with a topology on it that is compatible with the group structure. That is, both the inversion $g\mapsto g^{-1}$ and the multiplication $(g,h)\mapsto gh$ maps are continuous. This is equivalent to requiring that the map $G\times G\to G$ given by $(g,h)\mapsto gh^{-1}$ is continuous.
 \end{defn}
 
 Topological groups form a very big class and include things like ``infinite-dimensional Lie groups'', $p$-adic numbers, rational numbers, etc. It turns out that every locally compact and locally contractible topological group (in particular topological groups that are also topological manifolds) have a unique smooth structure compatible with the group structure, which is what a Lie group is. Hence we skip right to the definition of Lie groups, and for the most part will assume that they are smooth.
 
-\begin{defn}[Lie group]
+\begin{defn}[Lie group]\index{Lie group}
     A (real) Lie group is a group $G$ with a structure of a differentiable (or $C^k$-differentiable, $C^\infty$-smooth, $C^\omega$-analytic) manifold on it that is compatible with the group structure. That is, the map $G\times G\to G$ given by $(g,h)\mapsto gh^{-1}$ is differentiable (resp.~$C^k$, $C^\infty$, $C^\omega$). A complex Lie group is defined similarly, with both the manifold structure and the group structure being holomorphic (complex analytic).
 \end{defn}
 
@@ -5313,12 +5311,12 @@ We will show that any twice differentiable Lie group has a unique compatible rea
 \end{prop}
 
 
-\begin{defn}[Group translation and adjoint operators]
+\begin{defn}[Group translation and adjoint operators]\index{Translation operator}\index{Adjoint operator}
     The left and right translation operators on a group $G$ are defined by
     \[\rmL_g(h)=gh,\quad \rmR_g(h)=hg.\]
     
-    The adjoint operator corresponding to an element $g\in G$ is
-    \[\Adg_g h=\rmL_g\circ \rmR_g^{-1}(h)=ghg^{-1}.\]
+    The adjoint, or \emph{conjugation}, operator corresponding to an element $g\in G$ is the map
+    \[\Adg_g:G\to G,\quad \Adg_g h=\rmL_g\circ \rmR_g^{-1}(h)=ghg^{-1}.\]
 \end{defn}
 
 
@@ -5336,7 +5334,7 @@ We will show that any twice differentiable Lie group has a unique compatible rea
     \end{enumerate}
 \end{example}
 
-\begin{defn}[Lie group homomorphism]
+\begin{defn}[Lie group homomorphism]\index{Homomorphism!of Lie groups}
     A Lie group homomorphism between two Lie groups $G,H$ is a smooth map $F:G\to H$ that is also a group homomorphism. If it is a diffeomorphism, it is called an isomorphism. These maps comprise the morphisms of the category $\mathsf{LieGr}$ of Lie groups.
 \end{defn} 
 

@@ -1,0 +1,116 @@
+% pzccal.sty: calligraphic math alphabet with Zapf Chancery
+% ****************************************************************
+% 
+% :Copyright: © 2008, 2010 Günter Milde
+% :Licence:   This work may be distributed and/or modified under the
+%             conditions of the `LaTeX Project Public License`_, either
+%             version 1.3 of this license or (at your option) any later version.
+% 
+% :Identification:
+%  ::
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pzccal}
+[2011/02/03 v0.1 Zapf Chancery calligraphic math alphabet]
+
+% `The Comprehensive LaTeX Symbol List`_ by Scott Pakin describes the
+% use of Zapf Chancery as a mathematical alphabet that contains capital
+% and small Latin letters as well as digits. This allows full coverage
+% of the `script` Unicode Mathematical Alphabet with 8-bit LaTeX
+% engines.
+% 
+% This package sets up the Zapf Chancery font as script (calligraphic)
+% math alphabet ``\mathpzc``. It provides options to scale the font and to
+% configure the alias command name. By default, `pzccal` overwrites the
+% predefined math alphabet command ``\mathcal``. 
+% 
+% .. tip:: 
+% 
+%   The urwchancal_ package (developed independently and published less than a
+%   month after pzcal.sty) provides not only a style file but also virtual
+%   fonts solving problems with accents and spacing.  Like `pzcal`, it
+%   provides both lowercase and capital Latin math script letters. It is
+%   highly recommended to use ``urwchancal.sty`` instead of ``pzcal.sty``.
+% 
+% 
+% Options
+% =======
+% 
+% Options are defined with the key=value interface provided by
+% kvoptions_::
+
+\RequirePackage{kvoptions}
+
+% cmdname
+% -------
+% 
+% The name of the math alphabet command alias (default ``\mathcal``). 
+% An existing command is overwritten without asking. ::
+
+\DeclareStringOption[mathcal]{cmdname}
+
+% mathcal, mathscr, mathpzc
+% -------------------------
+% 
+% For compatibility with the (no longer available) `eucal` package, the
+% ``mathcal`` and ``mathscr`` options are equivalent to ``cmdname=mathcal``
+% and ``cmdname=mathscr``. The option ``mathpzc`` prevents aliasing to a new
+% name::
+
+\DeclareVoidOption{mathcal}{} % this is the default
+\DeclareVoidOption{mathscr}{\renewcommand{\pzccal@cmdname}{mathscr}}
+\DeclareVoidOption{mathpzc}{\renewcommand{\pzccal@cmdname}{mathpzc}}
+
+% scaled
+% ------
+% The Zapf Chancery font can be scaled with the ``scaled`` option. The
+% default is to enlarge the font to get a matching size without making
+% it too dark::
+  
+\DeclareStringOption[1.125]{scaled}
+
+\ProcessKeyvalOptions*
+
+% Implementation  
+% ==============
+% 
+% Scaling
+% -------
+% 
+% Define the font family ``pzcm`` as a scaled variant of ``pzc``::
+
+\DeclareFontFamily{OT1}{pzcm}{}
+\DeclareFontShape{OT1}{pzcm}{mb}{it}{<-> s * [\pzccal@scaled] pzcmi7t}{}
+
+% Setup
+% -----
+% 
+% As suggested in `The Comprehensive LaTeX Symbol List`_:: 
+
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzcm}{mb}{it}
+
+% Alias  
+% -----
+% 
+% Make the new alphabet available under the command specified by the
+% ``cmdname`` option (default: overwrite``\ mathcal``)::
+
+\@namedef\pzccal@cmdname{\mathpzc}
+
+% References
+% ~~~~~~~~~~
+% 
+% .. _LaTeX Project Public License: http://www.latex-project.org/lppl.txt
+% .. _`The Comprehensive LaTeX Symbol List`: 
+%    http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf
+% .. _eucal: http://www.ctan.org/pkg/eucal
+% .. _kvoptions: http://www.ctan.org/pkg/kvoptions
+% .. _urwchancal: http://www.ctan.org/pkg/urwchancal
+% 
+% Alternative LaTeX script fonts that might be useful in math:
+% 
+% :Auriocus Kalligraphicus: http://www.tug.dk/FontCatalogue/aurical/
+% :Calligra: http://www.tug.dk/FontCatalogue/calligra/
+% :Jana Skrivana: http://www.tug.dk/FontCatalogue/janaskrivana/
+% :Vicentino: http://www.tug.dk/FontCatalogue/vicentino/ (bitmap)
+% 
