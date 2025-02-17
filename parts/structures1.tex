@@ -364,24 +364,28 @@ Now we can try to give a local bundle-free definition of Klein manifolds. Since 
     \label{fig:klein}
 \end{figure}
 
-\begin{defn}[Effective $(G,H)$-structure]\label{def GH-structure}
-    A locally homogeneous structure \emph{modeled on} an effective homogeneous space of type $(G,H)$ is a connected manifold $M$ with a \emph{$(G,H)$-atlas} $\{(U_\alpha,\varphi_\alpha)\}_\alpha$, where $\{U_\alpha\}$ is an open covering of $M$ and $\varphi_\alpha:U_\alpha\to \wh{U}_{\alpha}\subset G\slash H$ are diffeomorphisms such that for each non-empty intersection $U_{\alpha\beta}=U_\alpha\cap U_\beta$ there exists $g_{\beta\alpha}\in G$ such that 
+\begin{defn}[$(G,H)$-structure]\label{def GH-structure}
+    A \emph{locally homogeneous structure} modeled on a homogeneous space of type $(G,H)$ is a connected manifold $M$ with a \emph{$(G,H)$-atlas} $\{(U_\alpha,\varphi_\alpha)\}_\alpha$, where $\{U_\alpha\}$ is an open covering of $M$ and $\varphi_\alpha:U_\alpha\to \wh{U}_{\alpha}\subset G\slash H$ are diffeomorphisms such that for each non-empty intersection $U_{\alpha\beta}=U_\alpha\cap U_\beta$ there exists $g_{\beta\alpha}\in G$ such that 
     \[\varphi_{\beta}=\wh{\rmL}_{g_{\beta\alpha}}\circ \varphi_\alpha\text{ on }U_{\alpha\beta}.\]
     A \emph{$(G,H)$-structure} on $M$ is a maximal $(G,H)$-atlas $\calA$. The tuple $(M,\calA)$ is called a \emph{$(G,H)$-manifold}.
 \end{defn}
 
 \begin{rem}
-    We could drop the effectiveness condition in the above definition, but then a $(G,H)$-structure is the same thing as an effective $(G/K,H/K)$-structure, where $K$ is the kernel of the Klein geometry $(G,H)$.
+    We will be interested only in effective models for locally homogeneous structures, since in the ineffective case a $(G,H)$-structure is the same thing as an effective $(G/K,H/K)$-structure, where $K$ is the kernel of the Klein geometry $(G,H)$.
 \end{rem}
 
-For a deep exploration of many classical $(G,H)$-structures see the book \cite{Goldman}. We now show that this is indeed a special case of a locally Klein geometry, and that the two definitions of effective locally Klein geometries are equivalent. In light of this, the procedure of development becomes very intuitive: every local chart map is a local diffeomorphism into $G\slash H$, so by stitching them together we get a map from the universal cover to $G\slash H$.
+For a deep exploration of many classical $(G,H)$-structures see the book \cite{Goldman}. We now show that this is indeed a special case of a locally Klein geometry, and that the two definitions of effective locally Klein geometries are equivalent. In light of this, the procedure of development becomes very intuitive: every local chart map is a local diffeomorphism into $G\slash H$, so by stitching them together we get a map from the universal cover to $G\slash H$. The following proposition shows that in the effective case a $(G,H)$-structure is equivalent to a locally Klein geometry.
 
 \begin{prop}
-    An effective $(G,H)$-structure on $M$ naturally induces a locally Klein geometry on $M$.
+    An effective $(G,H)$-structure on $M$ naturally induces a locally Klein geometry on $M$. Conversely, any locally Klein geometry (not necessarily with an effective model) determines a $(G,H)$-structure.
 \end{prop}
 \begin{proof}
     First we need to construct a principal $H$-bundle over $M$. Using the chart maps $\varphi_\alpha:U_\alpha\to G\slash H$, define the local pullback bundles  $P_\alpha\coloneqq \varphi_\alpha^\ast G$ over the $U_\alpha$. We would like to glue them into a single bundle over $M$. Since $(G,H)$ is effective, the $g_{\beta\alpha}$ in each equation $\varphi_\beta=\wh\rmL_{g_{\beta\alpha}}\circ\varphi_\alpha$ on the overlap $U_{\alpha\beta}$ is unique. This implies, in particular, that on triple overlaps $U_{\alpha\beta\gamma}$, we have $g_{\gamma\beta}g_{\beta\alpha}=g_{\gamma\alpha}$, so the cocycle condition $g_{\alpha\gamma}g_{\gamma\beta}g_{\beta\alpha}=e$ is satisfied. The left translation $\rmL_{g_{\beta\alpha}}:G\to G$ then defines the gluing diffeomorphism $\restr{P_\alpha}{U_{\alpha\beta}}\to \restr{P_\beta}{U_{\alpha\beta}}$. Even though the $g_{\beta\alpha}$ are not the transition functions of any bundle here, the fact that they satisfy the cocycle condition implies that these gluings of the local bundles $P_\alpha\to U_\alpha$ are defined consistently on all overlaps. Therefore, the $P_\alpha$ stitch together into a unique principal $H$-bundle $P\to M$. Finally, by left-invariance, the Maurer-Cartan form $\theta_G$ also pulls back to the $P_\alpha$ so that the gluing maps respect its pullbacks, and so these pullbacks stitch to a globally well-defined $1$-form $\eta\in\Omega^1(P;\frakg)$ that satisfies the definition of a locally Klein geometry.
+
+    For the converse direction, by the Development Theorem~\ref{prop locally klein}, we get a development map $\dev:\wt M\to G\slash H$. By projection it gives rise to local diffeomorphisms $\varphi_\alpha:M\supset U_\alpha\to G\slash H$, and by the equivariance property of the developing map w.r.t.\ deck transformations, on overlaps the charts $\varphi_\alpha$ are related exactly in the way necessary to define a $(G,H)$-structure.
 \end{proof}
+
+This correspondence is, in fact, an equivalence of categories, if one restricts to isomorphisms and defines isomorphisms in the category of $(G,H)$-structures as diffeomorphisms whole local representatives in the $(G,H)$-atlases act by elements of $G$.
 
 \begin{intu*}
     As was noted before, the discussion of locally Klein geometries is, in part, motivated by the search for an ``intrinsic'' definition of geometries on manifolds. Effective $(G,H)$-structures are a perfect example of such a definition. Manifolds themselves are defined as sets with an atlas, and we can trace most other structures on manifolds as simply imposing certain constraints on the original chart maps, and each structure compatible with the original topological structure is a choice of sub-atlas satisfying those constraints. In this way, smooth, analytic, and complex structures on a topological manifold are defined by sub-atlases with not just continuous, but smooth, resp.\ analytic and holomorphic, transition maps. Notably, fiber bundles are also defined by atlases of local trivializations, and $G$-structures on fiber bundles are defined by atlases with $G$-valued transition functions, but these definitions aren't local and therefore don't fit the same pattern. However, $(G,H)$-structures provide our first example of truly \emph{geometric} (i.e., related to actions of Lie groups) structures that can be defined \emph{without} reference to any additional fiber bundles. Instead, they are simply special kinds of sub-atlases on the original manifold $M$ itself. This concept will be later subsumed into the wider class of \emph{integrable $G$-structures}, which are exactly the $G$-structures that can be characterized by special choices of local coordinates on the base manifold. Complex and symplectic structures on manifolds are the most famous examples of integrable structures.
@@ -390,7 +394,7 @@ For a deep exploration of many classical $(G,H)$-structures see the book \cite{G
 We will discuss locally Klein geometries (more commonly known as flat Cartan geometries) in more detail, including many important examples, in \S\ref{sec: uniformization of cartan}. To wrap up this \sect, let us look at what kind of local differential forms can be defined on $M=\varGamma\bslash G\slash H$ using the Maurer-Cartan form. The following holds for Klein and locally Klein geometries.
 
 \begin{prop}[{{\cite[Prop.~4.7.1]{Sharpe}}}]\label{prop 4.7.1 Sharpe}
-    If $\chi:\pi^{-1}(U)\to U\times H$ is a local chart for the principal bundle $G\to G\slash H$ corresponding to the local section $ s:U\to G$. Then the local representative of the Maurer-Cartan form $\theta_G$ in this chart at point $(m,h)$ is $\Ad_h^{-1}\circ  s^\ast\theta_G +\pr_2^\ast\theta_H$, that is,
+    If $\chi:\pi^{-1}(U)\to U\times H$ is a local chart for the principal bundle $G\to G\slash H$ corresponding to the local section $ s:U\to G$. Then the local representative of the Maurer-Cartan form $\theta_G$ in this chart at point $(m,h)$ is $\Ad_h^{-1}\circ  s^\ast\theta_G +\theta_H$, more strictly written as $\Ad_h^{-1}\circ  \pr_U^\ast \circ s^\ast\theta_G +\pr_H^\ast\theta_H$, and in full detail,
     \[(\chi^{-1})^\ast\theta_G(X_m,Y_h)=\Ad_h^{-1}\theta_G( s_\ast X_m)+\theta_H(Y_h),\quad X_m\in \T_mU,Y_h\in \T_h H.\label{eq prop 4.7.1 Sharpe}\]
 \end{prop}
 \begin{proof}
@@ -404,9 +408,7 @@ There is another way of interpreting this result. Let $ s_\alpha:U_\alpha\to G$ 
 The Maurer-Cartan equation for $\theta_G$ then yields the structure equation for $\theta_\alpha$:
 \[\dd\theta_\alpha+\frac 12[\theta_\alpha,\theta_\alpha]=0.\]
 Note that $\theta_\alpha$ \emph{almost} determines $ s_\alpha$ since the Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} says that $\theta_\alpha$ determines $ s_\alpha$ up to left multiplication by a fixed element of $G$. Then, for an effective Klein geometry, if $ s$ is a section, then $g s$ is a section iff $g=e$, so in this case $ s_\alpha$ is recovered uniquely.\footnote{If $g s$ is a section, then $u=\pi(g s(u))$ and hence $g\cdot u=u$ for all $u\in U$. Thus $f^{-1}gf\in H$ for all $f\in\pi^{-1}(U)\subset G$. Thus shows that $\{f\in G\mid f^{-1}gf\in H\}$ contains an open subset of $G$. But it is also an analytic subset of $G$, so it must be equal to $G$, at least for connected $G$. Thus $g\in \bigcap_{f\in G}fHf^{-1}$, and this latter is a normal subgroup of $G$ inside $H$ and is therefore trivial.} 
-For this reason we may refer to $\theta_\alpha$ as an \emph{infinitesimal gauge}. We have the non-canonical isomorphism at every $m\in U_\alpha$
-\[\underline{\theta}_\alpha:\T_mU_\alpha\overset{\theta_\alpha}{\longrightarrow}\frakg\overset{\mod\frakh}{\longrightarrow} \frakg\slash\frakh.\]
-The infinitesimal gauge $\theta_\alpha$ can be roughly interpreted as assigning to each tangent vector $X_m\in \T_mM$ an infinitesimal ``motion'' $\theta_\alpha(X_m)\in \frakg$ of $M$ whose Killing vector field at $m$ coincides with $X_m$.
+For this reason we may refer to $\theta_\alpha$ as an \emph{infinitesimal gauge}. The infinitesimal gauge $\theta_\alpha$ can be roughly interpreted as assigning to each tangent vector $X_m\in \T_mM$ an infinitesimal ``motion'' $\theta_\alpha(X_m)\in \frakg$ of $M$ whose Killing vector field at $m$ coincides with $X_m$.
 
 By differentiating the transformation rule $ s_\beta(m)= s_\alpha(m)h_{\alpha\beta}(m)$ (cf.\ \eqref{eq transf rule for sections}) we get
 \[ s_\beta^{\ast}\theta_G=\Ad_{h_{\alpha\beta}}^{-1} s_\alpha^\ast\theta_G+h_{\alpha\beta}^\ast\theta_H,\]
@@ -416,10 +418,15 @@ This transformation, equivalent to \eqref{eq prop 4.7.1 Sharpe}, is called an \e
 
 Since in the effective case the $\theta_\alpha$ let us recover the local sections $s_\alpha$ uniquely, one can give an alternative definition of effective locally Klein geometries in terms of a collection of local $1$-forms on $M$ satisfying the structure equation and the above compatibility rule (gauge equivalence). Up to isomorphism, this allows one to reconstruct the principal bundle of the geometry and the global form $\eta$. Completeness is a little more subtle, so we shall delay this approach to locally Klein geometry until our discussion of flat Cartan geometries in \S\ref{sec: uniformization of cartan}.
 
+\begin{rem}
+    We have the non-canonical isomorphism at every $m\in U_\alpha$
+    \[\underline{\theta}_\alpha:\T_mU_\alpha\overset{\theta_\alpha}{\longrightarrow}\frakg\overset{\mod\frakh}{\longrightarrow} \frakg\slash\frakh.\]
+    Indeed, one of the defining properties of $\theta_G$ is that its value belongs to $\frakh$ \emph{only} for \emph{vertical} directions on the bundle $G\to G\slash H$, so its pullback $\theta_\alpha$ by a section can never attain values in $\frakh$. This establishes that the quotient $\frakg\slash\frakh$ naturally plays the role of the model tangent space of the effective homogeneous space $G\slash H$. In \S\ref{sec: homogeneous bundles} we will see that this is true for non-effective spaces as well, but in the effective case $\underline\theta_\alpha$ provide non-natural local trivializations of the tangent bundles. We will return to the tangent bundle of a homogeneous space in \S\ref{sec: homogeneous bundles}.
+\end{rem}
 
-\begin{intu*}
-    An effective locally Klein geometry is completely characterized by the collection of local $1$-forms $\{\theta_\alpha\}$ on $M$. By picking an arbitrary basis in the Lie algebra, $\frakg$, we can identify $\theta_\alpha$ with a collection of $d=\dim G$ scalar local $1$-forms on $M$, called an \emph{extended moving coframe} (since $d\geq \dim M$). By retracing the steps of the above derivations, one can recover the local charts identifying subsets of $M$ and $G\slash H$. If $M=G\slash H$, then any local diffeomorphism of $M$ that preserves the form $\theta_\alpha$ is an automorphism of the Klein geometry, and hence coincides with a group action $\wh \rmL_g$. Thus, the preservation of moving coframes uniquely determines the principal group of motions defining the Klein geometry. Describing group action by a collection of differential $1$-forms an extremely powerful computational gadget that is at the core of Cartan's geometric methods. We will learn to describe completely general Lie group actions via moving coframes in \Chap~\ref{ch equivalence problems}.
-\end{intu*}
+% \begin{intu*}
+%     An effective locally Klein geometry is completely characterized by the collection of local $1$-forms $\{\theta_\alpha\}$ on $M$. By picking an arbitrary basis in the Lie algebra, $\frakg$, we can identify $\theta_\alpha$ with a collection of $d=\dim G$ scalar local $1$-forms on $M$, called an \emph{extended moving coframe} (since $d\geq \dim M$). By retracing the steps of the above derivations, one can recover the local charts identifying subsets of $M$ and $G\slash H$. If $M=G\slash H$, then any local diffeomorphism of $M$ that preserves the form $\theta_\alpha$ is an automorphism of the Klein geometry, and hence coincides with a group action $\wh \rmL_g$. Thus, the preservation of moving coframes uniquely determines the principal group of motions defining the Klein geometry. Describing group action by a collection of differential $1$-forms an extremely powerful computational gadget that is at the core of Cartan's geometric methods. We will learn to describe completely general Lie group actions via moving coframes in \Chap~\ref{ch equivalence problems}.
+% \end{intu*}
 
 
 % \begin{defn}[Effective locally Klein geometry III]
@@ -449,10 +456,12 @@ Since in the effective case the $\theta_\alpha$ let us recover the local section
     In the case of $\CP^1$, it is not the covering space of anything else, so every genus $0$ surface is isomorphic to $\CP^1$. In the case of $\bbC$, every properly discontinuous action is determined by a lattice $\varLambda\subset \bbC$, so the quotient $\bbC\slash\varLambda$ has genus $1$, and thus every Riemann surface of genus $1$ is isomorphic to such a quotient. Finally, any oriented surface $\varSigma_g$ of genus $g>1$ is isomorphic to $\varGamma\bslash \bbC^+$ for some choice of discrete subgroup $\varGamma<\SL_2(\bbR)$. Let $\varGamma_g$ be such a subgroup. Then $\varSigma_g\cong \varGamma_g\bslash \bbC^+$ is a locally Klein geometry.
 \end{example}
 
-The Uniformization Theorem of Riemann Surfaces itself can be proven by reduction to the Uniformization Theorem of flat Cartan geometries, but the hard part is in fully demonstrating that every Riemann surface carries a \emph{complete} holomorphic projective connection (every such connection is automatically flat because the space is $1$-dimensional). 
+\begin{rem}
+    The Uniformization Theorem of Riemann Surfaces itself can be proven by reduction to the Uniformization Theorem of flat Cartan geometries, but the hard part is in fully demonstrating that every Riemann surface carries a \emph{complete} Cartan connection. The standard way of doing this is by constructing a complete Riemannian metric on the surface; these metrics are chosen so as to have constant Gauss curvature, which makes them flat Cartan geometries. One could also approach this by constructing a \emph{holomorphic projective connection} (i.e., a holomorphic Cartan connection of type $(\PSL_2(\bbC),\U_1)$ with model space $\CP_1$) on every Riemann surface, which will be automatically flat because surfaces are $1$-dimensional over complex numbers. The projective connection then needs to be appropriately deformed so that the development map to $\CP^1$ is biholomorphic. All of these approaches and their history can be found in the famous book \cite{Gervais} (Henri Paul de Saint-Gervais is a pen name for a collective of mathematicians, referencing Henri Poincar\'e, Paul Koebe, and the French town where the collective first met).
+\end{rem}
 
 \begin{example}[Moduli spaces of algebraic curves]
-    An \emph{elliptic curve} is a Riemann surface $\varSigma$ of genus $1$. Per the preceding example, $\varSigma\cong \bbC\slash\varLambda$ for some lattice $\varLambda\subset\bbC$, hence $\varSigma$ is a homogeneous space. Any biholomorphism between elliptic curves arises from a complex affine linear map $\bbC\to\bbC$ matching lattices. We can always arrange by isomorphism that $\varLambda$ is generated by $1,\tau$ for some $\tau\in \bbC^+$. But then $\tau$ is only determined up to \glspl{flt} of $\bbC^+$ with integer coefficients (so that $1$ is a fixed point). Hence, the ``coarse moduli space'' of elliptic curves is a complete Klein manifold $\varGamma\bslash \bbC^+$, where $\varGamma\cong \SL_2(\bbZ)$ is the set of \glspl{flt} with integer coefficients. Similarly, the coarse moduli space of compact Riemann surfaces of genus $g$ is a complete Klein manifold $\Sp_{2g}(\bbZ) \bslash \calH_g$ where $\calH_g$ is the complex hyperbolic space of complex dimension $g(g+1)$ (cf.\ Example~\ref{ex siegel upper half-space}).
+    An \emph{elliptic curve} is a Riemann surface $\varSigma$ of genus $1$. Per the preceding example, $\varSigma\cong \bbC\slash\varLambda$ for some lattice $\varLambda\subset\bbC$, hence $\varSigma$ is a homogeneous space. Any biholomorphism between elliptic curves arises from a complex affine linear map $\bbC\to\bbC$ matching lattices. We can always arrange by isomorphism that $\varLambda$ is generated by $1,\tau$ for some $\tau\in \bbC^+$. But then $\tau$ is only determined up to \glspl{flt} of $\bbC^+$ with integer coefficients (so that $1$ is a fixed point). Hence, the ``coarse moduli space'' of elliptic curves is a complete Klein manifold $\varGamma\bslash \bbC^+$, where $\varGamma\cong \SL_2(\bbZ)$ is the set of \glspl{flt} with integer coefficients. Similarly, the coarse moduli space of compact Riemann surfaces of genus $g$ is a complete Klein manifold $\Sp_{2g}(\bbZ) \bslash \calH_g$ where $\calH_g$ is the complex hyperbolic space of real dimension $g(g+1)$ (cf.\ Example~\ref{ex siegel upper half-space}).
 \end{example}
 
 
@@ -461,7 +470,7 @@ The Uniformization Theorem of Riemann Surfaces itself can be proven by reduction
     \[\hol^0:\varLambda\to G,\quad \lambda\mapsto (1,\lambda).\]
     There are other affine structures on $E$. For every $c\in \bbC^\times$, we can produce an affine structure on $E$ via the developing map $\dev^c:\bbC\to \bbC^\times,$ $z\mapsto \rme^{cz}$, with holonomy morphism 
     \[\hol^c:\varLambda\to G,\quad \lambda\mapsto (\rme^{c\lambda},0).\]
-    Since the developing map of an affine structure is unique up to affine transformations, we could just as well use the map $z\mapsto c^{-1}(\rme^{cz}-1)$, which lets us think of $\dev=\id_\bbC$ as the limiting case $c\mapsto 0$.  To forget the chose of affine coordinate $z$, we can identify the moduli space of affine structures on an elliptic curve $E$ with the space of holomorphic $1$-forms on $E$: each $1$-form is expressed in terms of an affine chart as $c\dd z$. The developing map $\dev^c$ is a map to the \emph{linear} geometry on $\bbC\setminus\{0\}$, i.e., $(G',H')=(\bbC^\times,\{e\})$.  The holomorphic $1$-form $\dd\zeta/\zeta$ on $\bbC\setminus\{0\}$, with the standard coordinate $\zeta$, is $G'$-invariant, and pulls back to $c\dd z$ on $\bbC$. Hence, we identify the isomorphism class of the affine structure with this induced holomorphic $1$-form, and take the zero $1$-form as the limit $c\to 0$.  It is well known that every holomorphic affine structure arises uniquely this way. The automorphism group of the affine structure with $c=0$, the one with linear developing map, is the biholomorphism group of the elliptic curve (which is a semidirect product of the translation group $\bbC$ with a finite group of at most $24$ elements). The automorphism group of any of the affine structures with $c\neq 0$ is only the group $\bbC$ of translations.
+    Since the developing map of an affine structure is unique up to affine transformations, we could just as well use the map $z\mapsto c^{-1}(\rme^{cz}-1)$, which lets us think of $\dev=\id_\bbC$ as the limiting case $c\to 0$.  To forget the choice of affine coordinate $z$, we can identify the moduli space of affine structures on an elliptic curve $E$ with the space of holomorphic $1$-forms on $E$: each $1$-form is expressed in terms of an affine chart as $c\dd z$. The developing map $\dev^c$ is a map to the \emph{linear} geometry on $\bbC\setminus\{0\}$, i.e., $(G',H')=(\bbC^\times,\{e\})$.  The holomorphic $1$-form $\dd\zeta/\zeta$ on $\bbC\setminus\{0\}$, with the standard coordinate $\zeta$, is $G'$-invariant (in fact, it is the Maurer-Cartan form of $\bbC^\times$), and pulls back to $c\dd z$ on $\bbC$. Hence, we identify the isomorphism class of the affine structure with this induced holomorphic $1$-form, and take the zero $1$-form as the limit $c\to 0$.  It is known that every holomorphic affine structure on an elliptic curve arises uniquely this way. The automorphism group of the affine structure with $c=0$, the one with linear developing map, is the biholomorphism group of the elliptic curve (which is a semidirect product of the translation group $\bbC$ with a finite group of at most $24$ elements). The automorphism group of any of the affine structures with $c\neq 0$ is only the group $\bbC$ of translations.
 \end{example}
 
 \begin{example}[Projective structures on Riemann surfaces]\index{Projective structure}\label{ex projective structure}
@@ -482,23 +491,12 @@ The Uniformization Theorem of Riemann Surfaces itself can be proven by reduction
     Clearly, $\CP^1$ has an obvious projective structure, being the model geometry. The developing map and the holonomy homomorphism are trivial and the biholomorphism group is $G=\PSL_2(\bbC)$.
 \end{example}
 
-
-\begin{example}[Monopole bundles]\label{ex monopole bundles}\index{Monopole!bundles}\index{Hopf fibration}
-    Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$. Let $m\geq 1$ and $\varGamma=\bbZ_m\subset \U_1$ act on $\bbS^3$ by restriction of the $\U_1$-action. The space $\varGamma\bslash \bbS^3$ is the lens space $L(m;1)$ (cf.\ Example~\ref{example Lens spaces}). We get the principal $\U_1$-bundle
-    \[L(m;1)\to L(m;1)\slash \U_1=\bbS^2\]
-    (since the induced action of $\U_1$ on $L(m;1)$ is trivial).
-    Note that the structure groups here are abelian so right and left actions are indistinguishable.
-    
-    In the standard atlas consisting of two hemispheres (Example~\ref{ex hopf bundle atlas}), the transition function of this new bundle is $\tau_{-+}(z)=z^{-m}$, i.e., this is exactly the $\U_1$-bundle with Chern number $-m$ from Example~\ref{ex circle bundles over S2}. This proves that the lens space is simultaneously $\bbS^3\slash \bbZ_m$ and the gluing of two solid tori, thus solving Exercise~\ref{xca two definitions of lens spaces}. As principal $\U_1$-bundles, these bundles are known as \emph{monopole bundles}. The Maurer-Cartan form of $\SU_2$ induces an $\fraksu_2$-valued $1$-form $\eta$ on $L(m;1)$ which we will later interpret as the Cartan connection of a magnetic monopole of charge $m$, see Example~\ref{ex connection on monopole bundles}.
-
-    We thus have the surjective vertical morphism of principal bundles $\vartheta:\bbS^3\to L(m;1)$ given by the quotient by the $\bbZ_m$-action and the group homomorphism $\lambda:\U_1\to \U_1$ given by the $m$-fold covering of the circle $z\mapsto z^m$. Note that these bundles are also defined for $m$ negative as the duals (inverse transition functions), or via the inverse $\U_1$-action on $\bbS^3$.
-\end{example}
-
 \begin{example}
     In many cases of interest, namely when the principal bundle can be identified with some $H$-structure, a $(G,H)$-structure on $M$ is equivalent to the specification of a $G$-invariant geometric object on $G\slash H$. The most prominent example is a locally homogeneous Riemannian metric. For example, if $X$ is a simply connected Riemannian manifold of constant curvature $K$ and $G$ is its group of isometries with stabilizer $H$, then locally modeling $M$ on $X\cong G\slash H$ is equivalent to giving $M$ a metric of constant curvature $K$. In particular, Riemannian surfaces of constant curvature can all be given locally homogeneous structures of either the round sphere (if $K>0$), the plane (if $K=0$), or the hyperbolic half-plane ($K<0$). 
     % If the surface is complete (as a locally homogeneous structure, or, equivalently, geodesically complete), the developing map identifies one of these three models with the universal cover of the surface. This is another version of the Uniformization Theorem of Riemann Surfaces.
 \end{example}
 
+For more examples of locally Klein geometries, see \S\ref{sec: uniformization of cartan}.
 
 
 
@@ -510,13 +508,13 @@ The Uniformization Theorem of Riemann Surfaces itself can be proven by reduction
 In this \sect\ we discuss changing the models of $(G,H)$-structures via morphisms. We use the term ``$(G,H)$-structure'' loosely to refer to locally Klein geometries of type $(G,H)$.
 
 \begin{defn}[Morphism of Klein geometries]
-    If $(G,H)$ and $(G',H')$ are two Klein geometries, then a morphism between them \emph{modeled on} a Lie group homomorphism $\lambda:G\to G'$ such that $\lambda(H)\subset H'$ is a right $\lambda$-equivariant smooth map $\vartheta:G\to G'$ (i.e., $\vartheta(gh)=\vartheta(g)\lambda(h)$ for $g,h\in G$). Equivalently, it is a morphism $\vartheta G\to G'$ of the principal bundles $G\to G\slash H$ and $G'\to G'\slash H'$ which is right $\lambda$-equivariant, or whose base map $\underline{\vartheta}:G\slash H\to G'\slash H'$ is $G$-equivariant: $\underline{\vartheta}([g])=\wh{\rmL}_{\vartheta(g)}([e])$.
+    If $(G,H)$ and $(G',H')$ are two Klein geometries, then a morphism between them \emph{modeled on} a Lie group homomorphism $\lambda:G\to G'$ such that $\lambda(H)\subset H'$ is a right $\lambda$-equivariant smooth map $\vartheta:G\to G'$ (i.e., $\vartheta(gh)=\vartheta(g)\lambda(h)$ for $g,h\in G$). Equivalently, it is a morphism $\vartheta :G\to G'$ of the principal bundles $G\to G\slash H$ and $G'\to G'\slash H'$ which is right $\lambda$-equivariant, or whose base map $\underline{\vartheta}:G\slash H\to G'\slash H'$ is $G$-equivariant: $\underline{\vartheta}([g])=\wh{\rmL}_{\vartheta(g)}([e])$.
 \end{defn}
 
 Note that any right $\lambda$-equivariant map $\vartheta:G\to G'$ differs from $\lambda$ only by a left translation: $\vartheta=\rmL_{g'}\circ\lambda$ for some $g'\in G'$ (cf.\ Proposition~\ref{prop lambda-equiv maps}). Since left translations are automorphisms of Klein geometries, in practice it suffices to consider morphisms which are homomorphisms, i.e., $\vartheta=\lambda$. We will proceed under this assumption and write such morphisms as $\lambda:(G,H)\to (G',H')$.
 
 \begin{example}
-    The double cover $\bbS^n\to \RP^n$ can be realized as a morphism of two Klein geometries $(G,H)\to (G',H')$, where $G$ is the subgroup of $\GL_{n+1}(\bbR)$ consisting of matrices with determinant $\pm 1$, and $G'=\PGL_{n+1}(\bbR)=G\slash \{\pm \rmI\}$. Then $\bbS^n\to \RP^n$ is $G$-equivariant with $\lambda(g)=g/\det g$.
+    The double cover $\bbS^n\to \RP^n$ can be realized as a morphism of two Klein geometries $(G,H)\to (G',H')$, where $G\cong\SL_{n+1}\times\bbZ_2$ is the subgroup of $\GL_{n+1}(\bbR)$ consisting of matrices with determinant $\pm 1$, and $G'=\SL_{n+1}$. Then $\bbS^n\to \RP^n$ is $G$-equivariant with $\lambda(g)=g/\det g$.
 \end{example}
 
 Given a manifold $M$ with a $(G,H)$-structure (with its principal $H$-bundle $P\to M$) and a morphism $\lambda:(G,H)\to (G',H')$ of models, we can induce a $(G',H')$-structure by composing the charts with the $G$-equivariant base map $\underline{\lambda}$. This also gives the new $H'$-bundle $P'\to M$.
@@ -532,16 +530,28 @@ First consider surjective morphisms. First, to be able to reconstruct a $\frakg$
     \begin{enumerate}
         \item Consider the trivial double cover $(\tuple{\Aff_n(\bbR),\GL_n(\bbR)})\to(\tuple{\Aff_n^+(\bbR),\GL_n^+(\bbR)})$. Thus, any oriented affine manifold can be turned into a regular affine manifold (e.g., by adding reflected chart maps to the atlas).
         \item Consider the nontrivial double cover $(\Spin_n\ltimes\bbR^n,\Spin_n)\to (\SE_n,\SO_n)$. Thus, assuming we are given a corresponding covering bundle morphism $P\to P'$, then we can reconstruct the affine spin structure from the affine Riemannian structure. The assumption of the existence of a covering spin bundle here is crucial because not every Riemannian structure admits one, or may admit multiple.
-        \item If $M=\bbS^1$, then (by picking an arbitrary connection) all bundles over $M$ are quotients of the form $P=(\bbR\times H)\slash \sim$, where $(x,h)\sim (x+1,h_0h)$ with $h_0$ (the generator of monodromy) determined up to conjugacy. So every element of $H'$ is conjugate to an element of the image $\lambda(H)\subset H'$ iff all $H'$-bundles arise from $H$-bundles.
+        \item If $M=\bbS^1$, then, by picking an arbitrary locally Klein geometry $\eta$ and developing it, all bundles over $M$ are quotients of the form $P=(\bbR\times H)\slash \sim$, where $(x,h)\sim (x+1,h_0h)$ with $h_0$ (the generator of monodromy) determined up to conjugacy. So every element of $H'$ is conjugate to an element of the image $\lambda(H)< H'$ iff all $H'$-bundles arise from $H$-bundles.
         \item If $M$ is contractible, then every $(G',H')$-structure on it lifts to a $(G,H)$-structure since all bundles over $M$ are trivial.
         \item If $M=\bbS^n$, it has a covering by two open sets whose intersection deformation retracts to the equator. So if the induced homomorphism of homotopy groups $\pi_{n-1}(H)\to \pi_{n-1}(H')$ is surjective, we can lift every $H'$-bundle on $\bbS^n$ to an $H$-bundle.
     \end{enumerate}
 \end{example}
 
+
+\begin{example}[Monopole bundles]\label{ex monopole bundles}\index{Monopole!bundles}\index{Hopf fibration}
+    Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$, cf.\ Example~\ref{ex Hopf principal bundle}, where the $\U_1$ subgroup multiplies by diagonal matrices of the form $\diag(\rme^{\i \varphi},\rme^{-\i\varphi})$ from the right. Let $m\geq 1$ and $\lambda:\U_1\to \U_1$ be the homomorphism $\lambda(z)=z^m$ with kernel $\varGamma=\bbZ_m\subset \U_1$. The space $\bbS^3\slash\Gamma$ is the lens space $L(m;1)$ (cf.\ Example~\ref{example Lens spaces}). We get the principal $\U_1$-bundle
+    \[L(m;1)\to L(m;1)\slash \U_1=\bbS^2\]
+    (since the induced action of $\U_1$ on $L(m;1)$ is trivial) and a $\lambda$-equivariant covering morphism of $\U_1$-bundles $\vartheta:\bbS^3\to L(m;1)$, which looks similar to $\lambda$ on every fiber.
+    
+    Since the transition functions in the new bundle can be obtained by composition with $\lambda$, in the standard atlas consisting of two hemispheres (Example~\ref{ex hopf bundle atlas}), the transition function of this new bundle is $\tau_{-+}(z)=z^{-m}$, i.e., this is exactly the $\U_1$-bundle with Chern number $-m$ from Example~\ref{ex circle bundles over S2}. This proves that the lens space is simultaneously $\bbS^3\slash \bbZ_m$ and the gluing of two solid tori, thus solving Exercise~\ref{xca two definitions of lens spaces}. As principal $\U_1$-bundles, these bundles are known as \emph{monopole bundles}. The Maurer-Cartan form of $\SU_2$ induces an $\fraksu_2$-valued $1$-form $\eta$ on $L(m;1)$ which we will later interpret as the Cartan connection of a magnetic monopole of charge $m$, see Example~\ref{ex connection on monopole bundles}.
+
+    We thus have the surjective vertical morphism of principal bundles $\vartheta:\bbS^3\to L(m;1)$ given by the quotient by the $\bbZ_m$-action and the group homomorphism $\lambda:\U_1\to \U_1$ given by the $m$-fold covering of the circle $z\mapsto z^m$. Note that these bundles are also defined for $m$ negative as the duals (inverse transition functions), or via the inverse $\U_1$-action on $\bbS^3$.
+\end{example}
+
+
 In the injective case, not every structure on $P'$ is induced from one on $P$, and we will have to learn about general Cartan connections before we identify the criterion for this via holonomy in Theorem~\ref{thm 16.30 McKay}. Nevertheless, let us return to the problem of what structure a Klein geometry (i.e., its principal bundle and Maurer-Cartan form) can induce under morphisms. We will describe the new principal bundle $P'$ and its associated form $\eta'$ in a language more suited to our ultimate study of Cartan geometries. The following details may be safely skipped on first reading.
 
 \begin{lem}[{{\cite[Lem.~16.2]{McKayCartan}}}]\label{lem 13.2 McKay}
-    Let $\lambda:(G,H)\to (G',H')$ be a morphism of Klein geometries (or homogeneous spaces). Denote $M\coloneqq G\slash H$ and $M'\coloneqq G'\slash H'$. Also denote $H''\coloneqq \lambda^{-1}(H')\subset G$ and $M''\coloneqq \underline{\lambda}(M)\subset M'$. Then $\underline{\lambda}\circ\pi:G\to M''$ is a principal $H''$-bundle and is associated to the $H'$-bundle $\restr{G'}{M''}\to M''$. 
+    Let $\lambda:(G,H)\to (G',H')$ be a morphism of Klein geometries (or homogeneous spaces). Denote $M\coloneqq G\slash H$ and $M'\coloneqq G'\slash H'$. Also denote $H''\coloneqq \lambda^{-1}(H')< G$ and $M''\coloneqq \underline{\lambda}(M)\subset M'$ (note that $H<H''$). Then $\underline{\lambda}\circ\pi:G\to M''$ is a principal $H''$-bundle and is associated to the $H'$-bundle $\restr{G'}{M''}\to M''$. 
     
     In more detail, define $\psi:G\times H'\to G'$ by $\psi(g,h')=\lambda(g)h'$. Then, at any point $(g,h')\in G\times H'$, 
     \[\psi^\ast\theta_{G'}=\theta_{H'}+\Ad_{h'}^{-1}\circ\lambda_{\ast e}\circ \theta_G.\] 
@@ -580,29 +590,30 @@ The resulting form $\eta'$ on the $H'$-bundle $P'$ satisfies all properties of a
 \section{Homogeneous bundles}\label{sec: homogeneous bundles}
 
 
-We now consider the tangent bundle of a Klein geometry. Since it is a locally trivial principal bundle, we have local diffeomorphisms of the form $\T(\pi^{-1}(U))\cong \T(U\times H)\to \T U\times \T H$. Local trivializations of $\T U$ and $\T H$ are given by the Maurer-Cartan forms $\theta_G$ and $\theta_H$, respectively, so the diagram
+We now consider the tangent bundle of a Klein geometry. Since it is a locally trivial principal bundle, we have local diffeomorphisms of the form $\T(\pi^{-1}(U))\cong \T(U\times H)\to \T U\times \T H$. Local trivializations of $\T (\pi^{-1}(U))$ and $\T H$ are given by the Maurer-Cartan forms $\theta_G$ and $\theta_H$, respectively, and on vertical directions $\theta_H$ coincides with the representative of $\theta_G$. In other words, the restriction of $\theta_G$ to vertical directions produces a \emph{canonical} global trivialization of the \emph{vertical} bundle $\calV G\to G\slash H$. At a particular point $g\in G$, we can quotient out the vertical directions, and this corresponds to quotienting $\frakg$ by $\frakh$. Thus, choosing a point $g\in G$, we have the commutative diagram
 \[
 \begin{tikzcd}
-    \T_g(gH)\arrow[r]\arrow[d,"\theta_H","\cong"'] & \T_g G\arrow[r]\arrow[d,"\theta_G","\cong"'] & \T_{m}(G\slash H)\arrow[d,dashed,"\chi_g","\cong"'] \\
-    \frakh\arrow[r,hookrightarrow]&\frakg \arrow[r] & \frakg\slash \frakh
+    0\arrow[r]&\T_g(gH)\arrow[r]\arrow[d,"\theta_H","\cong"'] & \T_g G\arrow[r,"\mod \T_g(gH)"]\arrow[d,"\theta_G","\cong"'] & \T_{m}(G\slash H)\arrow[d,dashed,"\chi_g","\cong"'] \arrow[r] & 0\\
+    0\arrow[r]&\frakh\arrow[r,hookrightarrow]&\frakg \arrow[r,"\mod \frakh"] & \frakg\slash \frakh\arrow[r]  & 0
 \end{tikzcd}
 \]
-is commutative with exact rows. Since $\frakh$  us only a subalgebra (not an ideal), the quotient $\frakg\slash\frakh$ is merely a vector space. The linear isomorphism $\chi_g$ is the unique map making the diagram commute.
-
-We can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash\frakh$, but the identification $\chi_g$ depends on the choice of $g\in G$ over $m$. In fact, since $\pi\circ \rmR_h=\pi$, the relation $\rmR_h^\ast \theta_H=\Ad_h^{-1}\theta_H$ implies that $\chi_{gh}=\Ad_h^{-1}\circ \chi_g$. It follows that the identification of $\T_m(G\slash H)$ with $\frakg\slash \frakh$ is determined only up to the adjoint action of $H$ on $\frakg\slash\frakh$. This accounts for the frequent occurrence of the adjoint action in the sequel.
+with exact rows. The linear isomorphism $\chi_g$ is the unique map making the diagram commute, namely, 
+\[\chi_g(X)=\theta_G(\wt X)+\frakh\quad \in\frakg\slash\frakh,\]
+where $X\in\T_{[g]}(G\slash H)$ and $\wt X\in\T_g G$ is an arbitrary lift, i.e., $\pi_\ast \wt X=X$.
+Thus, we can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash\frakh$, but the identification $\chi_g$ depends on the choice of $g\in G$ over $m$. In fact, the relation $\rmR_h^\ast \theta_G=\Ad_h^{-1}\theta_G$ implies that $\chi_{gh}=\underline{\Ad}_h^{-1}\circ \chi_g$, where $\underline{\Ad}_h$ is the induced $H$-action on $\frakg\slash \frakh$ (it will be properly defined below). It follows that the identification of $\T_m(G\slash H)$ with $\frakg\slash \frakh$ is determined only up to the action of $H$ on $\frakg\slash\frakh$, and hence is not canonical for $G\slash H$ itself. This accounts for the frequent occurrence of the adjoint action in the sequel.
 
 \begin{prop}[{{\cite[Prop.~4.5.1]{Sharpe}}}]\label{prop 4.5.1 Sharpe}
     $\T(G\slash H)\cong G\times^H (\frakg\slash\frakh)$ as \glspl{vb} over $G\slash H$.
 \end{prop}
 \begin{proof}
-    Define a map $\varphi:G\times \frakg\to \T(G\slash H)$ by $\varphi(g, X)=(\pi(g),\pi_\ast \circ \rmL_{g\ast}X)$, where $\pi:G\to G\slash H$ is the canonical projection. Clearly $\varphi$ is smooth, surjective, and fiberwise linear. Moreover, for $X\in \T_eH$, $\rmL_{g\ast}X\in \T_g(gH)\in\ker\pi_\ast$. Thus, $\varphi(g, X)=(g,0)$. On the other hand,
+    Define a map $\varphi:G\times \frakg\to \T(G\slash H)$ by $\varphi(g, A)=(\pi(g),\pi_\ast \circ \rmL_{g\ast}A)$, where $\pi:G\to G\slash H$ is the canonical projection. Clearly $\varphi$ is smooth, surjective, and fiberwise linear. Moreover, for $A\in \T_eH$, $\rmL_{g\ast}A\in \T_g(gH)\in\ker\pi_\ast$. Thus, $\varphi(g, A)=(g,0)$. On the other hand,
     \begin{multline}
-        \varphi(gh,\Ad_h^{-1}X)=(\pi(gh),\pi_\ast \rmL_{gh\ast}\Ad_h^{-1}X)=(\pi(g),\pi_\ast(\rmL_{gh\ast}\rmL_{h\ast}^{-1} \rmR_{h\ast}X))=\\
-        =(\pi(g),\rmL_{g\ast }\pi_\ast (\rmR_{h\ast}X))=(\pi(g),\rmL_{g\ast}(\pi \rmR_h)_\ast X)
-        =(\pi(g),\rmL_{g\ast}(\pi_\ast X))=\varphi(g,X).
+        \varphi(gh,\Ad_h^{-1}A)=(\pi(gh),\pi_\ast \rmL_{gh\ast}\Ad_h^{-1}A)=(\pi(g),\pi_\ast(\rmL_{gh\ast}\rmL_{h\ast}^{-1} \rmR_{h\ast}A))=\\
+        =(\pi(g),\rmL_{g\ast }\pi_\ast (\rmR_{h\ast}A))=(\pi(g),\rmL_{g\ast}(\pi \rmR_h)_\ast A)
+        =(\pi(g),\rmL_{g\ast}(\pi_\ast A))=\varphi(g,A).
     \end{multline}
-    Thus $\varphi$ induces a smooth quotient map $\psi:G\times^H (\frakg\slash\frakh)\to \T(G\slash H)$. Moreover, this map is injective since $\varphi(g,X)=\varphi(g',X')$ implies $g'=gh$ for some $h\in H$ and $\pi_\ast \rmL_{gh\ast}X'=\pi_\ast \rmL_{g\ast}X$. The latter means that $\pi_\ast \rmL_{h\ast}X'=\pi_\ast X$ and hence that $X'-\Ad_h^{-1}X\in\frakh$. So,
-    \[[(g',X')]=[(gh,\Ad_h^{-1}X+\frakh)]=[(g,X+\frakh)]\in G\times^H(\frakg\slash\frakh).\]
+    Thus $\varphi$ induces a smooth quotient map $\psi:G\times^H (\frakg\slash\frakh)\to \T(G\slash H)$. Moreover, this map is injective since $\varphi(g,A)=\varphi(g',A')$ implies $g'=gh$ for some $h\in H$ and $\pi_\ast \rmL_{gh\ast}A'=\pi_\ast \rmL_{g\ast}A$. The latter means that $\pi_\ast \rmL_{h\ast}A'=\pi_\ast A$ and hence that $A'-\Ad_h^{-1}A\in\frakh$. So,
+    \[[(g',A')]=[(gh,\Ad_h^{-1}A+\frakh)]=[(g,A+\frakh)]\in G\times^H(\frakg\slash\frakh).\]
     Thus, $\psi$ is a vertical \gls{vb} isomorphism.
 \end{proof}
 
@@ -634,9 +645,9 @@ Since tangent bundles involve only first derivatives, we can make the following 
 \end{defn}
 
 \begin{rem}
-    First-order Klein geometries have a simple intuitive description in terms of first-order $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, via the global trivialization of $\T M$ constructed above, it traces out an $H$-orbit in the set of linear coframes mapping $\T_mM\to \frakg\slash\frakh$ for each $m\in M$. This was exactly our original definition of an $H$-structure on $\T M$ as a reduction to structure group $H$ of the coframe bundle $\Fr(\T^\ast M)$.
+    First-order Klein geometries have a simple intuitive description in terms of first-order $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, its action on the above constructed coframes $\chi_g:\T_m (G\slash H)\to \frakg\slash \frakh$ via the transformation rule $\chi_{gh}=\underline{\Ad}_h^{-1}\circ\chi_g$, $h\in H$, traces out an $H$-orbit in the set of linear coframes at $m$ for each $m\in M$. This was exactly our original definition of a first-order $H$-structure on $M$ as a reduction to structure group $H$ of the coframe bundle $\Fr(\T^\ast M)$.
 
-    The generalization to higher orders is clear. By considering the $r$-jet of $\wh{\rmL}_h$ at $[e]$, one gets a homomorphism $H\to \GL^r(\frakg\slash\frakh)$. If this is faithful at order $r$ but not $r-1$, the geometry is said to be of order $r$. While this is harder to visualize, this simply means that the motions $\wh{\rmL}_h$ of the homogeneous space described by $H$ are uniquely fixed by their first $r$ derivatives at a point.
+    The generalization to higher orders is clear. By considering the $r$-jet of $\wh{\rmL}_h$ at $[e]$, one gets a homomorphism $H\to \GL^r(\frakg\slash\frakh)$. If this is faithful at order $r$ but not $r-1$, the geometry is said to be of order $r$, and its bundle is identified with a reduction of the $r$-th order coframe bundle $\Fr^{\ast r}(M)$. While this is harder to visualize, it simply means that the motions $\wh{\rmL}_h$ of the homogeneous space described by $H$ are uniquely determined by the values of their partial derivatives at a point of orders up to $r$.
 \end{rem}
 
 The tangent bundle of a Klein geometry is an example of an important class of bundles that are equivariant w.r.t.\ the natural $G$-action $\wh\rmL$ on the base $G\slash H$ in the following sense.
@@ -657,10 +668,10 @@ The tangent bundle of a Klein geometry is an example of an important class of bu
 
 One common way of producing homogeneous bundles is by applying a natural bundle functor $\bf{F}$ to $G\slash H$. Since by definition such a functor maps local diffeomorphisms to bundle morphisms, $\bf{F}(\wh{\rmL}_g)$ is a $G$-action as required in the definition of a homogeneous bundle. Thus, any natural bundle over a homogeneous space is homogeneous. As we will see below, the tangent functor $\T$ that we considered in the previous section is an example of this.
 
-Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in G\slash H$ and the fiber $E_{[e]}$. The $G$-action on $E$ restricts to an $H$-action on $F$, thus we can build the associated bundle $G\times^H E_{[e]}\to G\slash H$. We now show that this bundle is isomorphic to $E$, thus characterizing all homogeneous bundles as bundles associated to principal bundles of the form $G\to G\slash H$.
+Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in G\slash H$ and the fiber $E_{[e]}$. The $G$-action on $E$ restricts to an $H$-action on $E_{[e]}$, thus we can build the associated bundle $G\times^H E_{[e]}\to G\slash H$. We now show that this bundle is isomorphic to $E$, thus characterizing all homogeneous bundles as bundles associated to principal bundles of the form $G\to G\slash H$.
 
 \begin{thm}[{{\cite[Prop.~1.4.3]{Cap}}}]\label{prop 1.4.3 Cap}
-    The mapping $E\to E_{[e]}$ (and restrictions of morphisms to the fiber) induces equivalences of categories $\FB(G,H)\simeq H\mathsf{-Man}$ and $\VB(G,H)\simeq H\mathsf{-FinVect}$, where $H\mathsf{-FinVect}$ is the category of finite-dimensional representations of $H$.
+    The mapping $E\to E_{[e]}$ (and restrictions of morphisms to the fiber) induces equivalences of categories $\FB_{(G,H)}\simeq H\mathsf{-Man}$ and $\VB_{(G,H)}\simeq H\mathsf{-FinVect}$, where $H\mathsf{-FinVect}$ is the category of finite-dimensional representations of $H$.
 \end{thm}
 \begin{proof}
     Consider the map $G\times E_{[e]}\to E$ given by $(g,f)\mapsto g\times f$, where we use the action of $G$ on $E$. Since the action $H\acts E_{[e]}$ is simply a restriction of this action, this map descends to a map $\varphi:G\times^H E_{[e]}\to E$ which is smooth since the projection $G\times E_{[e]}\to G\times^H E_{[e]}$ is a surjective submersion. Moreover, the definition $\varphi=g\cdot f$ implies that $\varphi$ covers the identity and is also right $G$-equivariant, so it is a morphism of homogeneous bundles.
@@ -674,7 +685,7 @@ Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in 
     Finally, note that for a homogeneous \gls{vb}, the above construction clearly produces an isomorphism $G\times^H E_{[e]}\to E$ of homogeneous \glspl{vb}, and homogeneous \glspl{vb} correspond to linear $H$-equivariant maps between their typical fibers.
 \end{proof}
 
-Thus an alternative definition of homogeneous bundles is simply as bundles associated to principal bundles of the form $G\to G\slash H$. Functoriality implies that these equivalences are compatible with various constructions such as fibered produces, Whitney sums, tensor products, etc. Conversely, for example, a decomposition of a tensor product of representations into a direct some of smaller representations induces a similar decomposition of corresponding Whitney products of homogeneous \glspl{vb}.
+Thus, an alternative definition of homogeneous bundles is simply as bundles associated to principal bundles of the form $G\to G\slash H$. Functoriality implies that these equivalences are compatible with various constructions such as fibered products, Whitney sums, tensor products, etc. Conversely, for example, a decomposition of a tensor product of representations into a direct sum of smaller representations induces a similar decomposition of corresponding Whitney products of homogeneous \glspl{vb}.
 
 \begin{example}\label{ex 1.4.3 Cap}
     The  tangent  bundle $\T(G\slash H)$ that we studied in Proposition~\ref{prop 4.5.1 Sharpe} is clearly homogeneous because the left action $\wh{\rmL}_g$ on $G\slash H$ induces a lifted action $\wh{\rmL}_{g\ast}$ on $\T(G\slash H)$, and it corresponds to the $H$-representation on $\frakg\slash \frakh$ coming from the restriction to $H$ of the adjoint representation of $G$. The isomorphism with $G\times^H (\frakg\slash\frakh)$ established in that proposition is exactly the same as what we would obtain from Proposition~\ref{prop 1.4.3 Cap}. Namely, it maps $X\in \T_{gH}(G\slash H)$ to $[(g^{-1},\omega(Y)+\frakh)]$, where $Y\in \T_g G$ is some lifting of $X$, i.e., $\pi_\ast Y=X$.
@@ -691,11 +702,11 @@ Finally, we provide a similar classification of principal homogeneous bundles.
     The bundles corresponding to two homomorphisms $\lambda,\lambda':H\to K$ are (vertically) isomorphic  iff $\lambda$ and $\lambda'$ are conjugate, i.e., $\lambda'(h)=k\lambda(h)k^{-1}$ for some $k\in K$ and all $h\in H$.
 \end{prop}
 \begin{proof}
-    Let $P_{[e]}$ be the fiber of $P$ over $[e]=eH\in G\slash H$. The left $G$-action on $P$ restricts to a left $H$-action on $P_{[e]}$, and $P\cong G\times^H P_{[e]}$ as homogeneous bundles. Fixing a point $p_0\in P_{[e]}$, the map $k\mapsto p_0\cdot g$ is a diffeomorphism $K\to P_{[e]}$, so it remains to describe the $H$-action in this picture.
+    Let $P_{[e]}$ be the fiber of $P$ over $[e]=eH\in G\slash H$. The left $G$-action on $P$ restricts to a left $H$-action on $P_{[e]}$, and $P\cong G\times^H P_{[e]}$ as homogeneous bundles. Fixing a point $p_0\in P_{[e]}$, the orbit map $k\mapsto p_0\cdot k$ is a diffeomorphism $K\to P_{[e]}$, so it remains to describe the $H$-action in this picture.
 
     For $h\in H$, we have $h\cdot p_0\in P_{[e]}$, so there is a unique element $\lambda(h)\in K$ such that $h\cdot p_0=p_0\cdot \lambda(h)$. By smoothness of the two actions, the map $\lambda:H\to K$ defined this way is smooth, and $\lambda(e)=e$. Since $H$ acts by principal bundle maps, we see that $h\cdot (p_0\cdot k)=(h\cdot p_0)\cdot k=p_0\cdot \lambda(h)k$. From here, $\lambda$ is a homomorphism.
 
-    Suppose that we are given an isomorphism $G\times_\lambda K\to G\times^{\lambda'}K$ of homogeneous \glspl{pfb}/ Then the restriction to the fibers over $[e]$ is a diffeomorphism $\phi:K\to K$ which commutes with the principal right $K$-action and is equivariant for the two left $H$-actions. By the first property, $\phi(k)=k_0k$, where $k_0=\phi(e)$. But then the second property reads as follows:
+    Suppose that we are given an isomorphism $G\times^\lambda K\to G\times^{\lambda'}K$ of homogeneous \glspl{pfb}, Then the restriction to the fibers over $[e]$ is a diffeomorphism $\phi:K\to K$ which commutes with the principal right $K$-action and is equivariant for the two left $H$-actions. By the first property, $\phi(k)=k_0k$, where $k_0=\phi(e)$. But then the second property reads as follows:
     \[k_0\lambda(h)k=\phi(\lambda(h)k)=\lambda'(h)\phi(k)=\lambda'(h)k_0k.\]
     In particular, $\lambda'(h)=k_0\lambda(h)k_0^{-1}$. Conversely, if $\lambda$ and $\lambda'$ are conjugate, right multiplication by $k_0$ induces a diffeomorphism with the two required equivariance properties. From Proposition~\ref{prop 1.4.3 Cap} we conclude that this gives rise to an isomorphism of homogeneous principal bundles. 
 \end{proof}
@@ -961,7 +972,7 @@ on $G\slash H$ equals the multiplicity of the trivial representation in $\bbT^k_
 \section{Reduction of order in ODEs}
 
 
-As an introduction, we will present a symmetry-based method for the reduction of ODEs of an arbitrary order $k$ to order $k-1$. This method is traditionally known as the \emph{method of characteristics} (although it is more commonly applied to first-order PDEs).
+As an introduction, we will present a symmetry-based method for the reduction of ODEs of an arbitrary order $k$ to order $k-1$. This method is traditionally known as the \emph{method of characteristics} (although it is more commonly applied to first-order PDEs). The general definitions of objects encountered throughout this \sect\ will be given later in the \chap.
 
 Consider first a $k$-th order ODE in one independent variable $x$ and one dependent variable $u$:
 \[F\left(x,u,u_x,\ldots,u^{(k)}\right)=0.\]
@@ -1453,7 +1464,7 @@ We can describe the Lie algebra of $\GL^r_n(\bbR)$. Consider the set of all vect
 \[[\rmj_0^r X,\rmj_0^r Y]=\rmj^r_0[X,Y].\]
 By looking at the flows of these vector fields, it is easy to confirm that this is the Lie algebra of $\GL^r_n(\bbR)$.
 
-Consider on $\rmJ^r(\bbR^n,\bbR^{n'})$ the \emph{Cartan distribution} $\calC$ defined as the annihilator of the \emph{canonical Cartan forms}, or just \emph{$r$-th order contact forms} \index{Cartan distribution}\index{Contact form}
+Consider on $\rmJ^r(\bbR^n,\bbR^{n'})$ the \emph{Cartan distribution} $\calC$ defined as the annihilator of the \emph{contact bundle} spanned by the \emph{canonical Cartan forms}, or just \emph{$r$-th order contact forms} \index{Cartan distribution}\index{Contact form}\index{Contact bundle}
 \[\theta^j_I=\dd p^j_I-\sum_{i=1}^n p^j_{I+1_i}\dd x^i,\quad 1\leq j\leq n,\quad |I|\leq r-1,\]
 where $1_i=(0,\ldots,0,1,0,\ldots,0)$ has $1$ in the $i$-th place. Again by counting, the number of contact forms is 
 \[N=n'\sum_{i=0}^{r-1}\binom{n+i-1}{n-1}=n'\binom{n+r-1}{r-1},\]
@@ -2427,7 +2438,7 @@ For example, if $r=0$, then simply by rectifying any vector field $X\in\calY$, s
 
 Recall that effectiveness of a group action is measured by its kernel, or global isotropy group, $G_M=\{g\in G\mid \forall m\in M\;\; g\cdot m=m\}$. An effective (faithful) action is one with a trivial kernel. An action is called \emph{locally effective} if the kernel is discrete. Since $G_M$ is a normal subgroup, a locally effective action of $G$ is locally equivalent to the faithful action of $G\slash G_M$.
 
-\begin{thm}[{{\cite[Thm.~5.11]{Olver93}}}]
+\begin{thm}[Ovsiannikov {{\cite[Thm.~5.11]{Olver93}}}]\label{thm 5.11 Olver93 Ovsiannikov}
     Let $G$ be a Lie group of point or contact transformations. Then $G$ acts locally effectively iff its stable orbit dimension equals its dimension, so $s_m=\dim G$ for sufficiently large $m$.
 \end{thm}
 
@@ -3902,20 +3913,20 @@ Two equivalent extended coframes \emph{must} have the same number $l$ of invaria
 
 The converse to this lemma is not, in general, true: one must impose an additional \emph{involutivity condition} on the extended coframes in order to prove sufficiency. In preparation, we note that one can (simultaneously) perform two elementary operations on extended coframes that preserve their symmetry and equivalence constraints.
 
-\begin{defn}[Invariantly related extended coframes]\label{def 4.6 OlverCo2}
+\begin{defn}[Invariantly related extended coframes]\label{def 5.6 OlverCo2}
     Two regular extended coframes $\varOmega=\{\bm\omega,\bm J\}$ and $\varTheta=\{\bm\theta,\bm I\}$ on $U\subset M$ are said to be invariantly related if 
     \begin{enumerate}[label=(\alph*)]
         \item There exists a local diffeomorphism $\varphi:\scrC(\varOmega)\to \scrC(\varTheta)$ such that $\bm J=\varphi\circ \bm I$;
         \item There is a smooth map $a:\scrC(\varOmega)\to \GL_n(\bbR)$ such that $\bm\theta=(a\circ\bm I)\cdot \bm\omega$, where $n=\dim M$.
     \end{enumerate}
-    We shall write $\varTheta=\Phi(\varOmega)$, where $\Phi(\varphi,a)$.
+    We shall write $\varTheta=\varPhi(\varOmega)$, where $\varPhi=(\varphi,a)$.
 \end{defn}
 
 Note that the first condition boils down to the statement that the two classifying manifolds have the same dimension, and so both coframes contain the same number of functionally independent invariants. Moreover, each invariant in $\varTheta$ is functionally dependent on the invariants in $\varOmega$, i.e., $J_\nu=\varphi_\nu(I_1,\ldots,I_l)$, and vice versa. The second condition means that the $1$-forms in the two coframes are \emph{invariant} (i.e., coefficients depend only on the values of the invariants) linear combinations of each other, so 
 \[\theta^i=\sum_{j=1}^n (a^i_j\circ \bm I)\omega^j,\quad i=1,\ldots,n.\label{eq 5.3 OlverCo2}\]
 
 \begin{prop}[{\cite[Prop.~5.7]{OlverCo2}}]\label{prop 5.7 OlverCo2}
-    If $F^\ast\wb\varTheta=\varTheta$ is an equivalence of extended coframes, and $\varOmega=\Phi(\varTheta)$ and $\wb\varOmega=\Phi(\wb \varTheta)$ are invariantly related coframes with the same functions $\Phi=(\varphi,a)$, then the equivalence $F^\ast \wb\varOmega=\varOmega$ also holds.
+    If $F^\ast\wb\varTheta=\varTheta$ is an equivalence of extended coframes, and $\varOmega=\varPhi(\varTheta)$ and $\wb\varOmega=\varPhi(\wb \varTheta)$ are invariantly related coframes with the same functions $\varPhi=(\varphi,a)$, then the equivalence $F^\ast \wb\varOmega=\varOmega$ also holds.
 \end{prop}
 
 The proof is immediate. This allows us to always assume (at least locally) that the functions occurring in our extended coframe are functionally independent, and in particular, $l\leq n$. For example, we can use those corresponding to a consistent choice of local coordinates on the classifying manifold.
@@ -3985,7 +3996,7 @@ The fundamental equivalence and symmetry theorems for coframes can now be adapte
 
 The following is obvious.
 
-\begin{prop}
+\begin{prop}[{\cite[Prop.~2.5]{OlverCo2}}]\label{prop 2.5 OlverCo2}
     A $d$-dimensional Lie group $G$ acts locally freely on $M$ iff its orbits all have dimension $d$.
 \end{prop}
 
@@ -4007,7 +4018,7 @@ In general, any group action can be ``regularized'' by lifting it to a suitable 
 
 \begin{defn}[Regularized action]\index{Regularized action}
     The left and right regularizations of the action $G\acts M$, also called \emph{lifted actions}, are the diagonal actions of $G$ on $P=G\times M$ provided by the maps 
-    \[\wt \rmL_g(h,m)=(gh,g\cdot m),\quad \wt\rmR_g(h,m)=(hg^{-1},g\cdot m),\quad g\in G,\quad (h,m)\in P.\]
+    \[\wt \rmL_g(h,m)=(gh,g\cdot m),\quad \wt\rmR_g(h,m)=(hg^{-1},g\cdot m),\quad g\in G,\quad (h,m)\in P. \label{eq 3.2 OlverCo2}\]
 \end{defn}
 
 In the sequel, the left, resp.\ right, regularization of an action will lead to left, resp.\ right, moving frames associated with submanifolds of $M$. The key elementary result is that regularizing any action immediately eliminates all singularities and irregularities, e.g., lower-dimensional orbits, non-embedded orbits, etc. Moreover, the orbits of $G$ in $M$ are the projections of their lifted counterparts in $P$; all of the lifted orbits have the same dimension as $G$ itself. We have the following.
@@ -4187,7 +4198,7 @@ The essence of the normalization procedure that appears both in the method of mo
 Every level set of a lifted invariant forms a $G$-invariant subset of the regularized action. Note that the regularity assumption on the lifted invariant implies that the projection $\pi_M:\scrL_c\to M$ maps $\scrL_c$ onto an open subset of $M$. Thus, regularity ensures that the normalization does not introduce any dependencies among the $z$-coordinates, since that would introduce unacceptable constraints on the original manifold $M$.
 
 In local coordinates, if $L(g,z)=(L_1(g,z),\ldots,L_{n'}(g,z))$, $n'=\dim N$, is a regular lifted invariant and $\bf c=(c_1,\ldots,c_{n'})$ are the coordinates of a $c\in N$ belonging to the image of $L$, then the \gls{immt} says that we can locally solve the system of $n'$ equations 
-\[L_i(g,z)c_i,\quad i=1,\ldots,n',\]
+\[L_i(g,z)=c_i,\quad i=1,\ldots,n',\]
 for $n'$ of the group parameters, say $\hat{\bf g}=(g^1,\ldots,g^{n'})$, in terms of the remaining $d-n'$ group parameters, which we denote by $\bf h=(h^1,\ldots,h^{d-n'})=(g^{n'+1},\ldots,g^d)$, and the $z$ coordinates:
 \[g^i=\gamma^i(\bf h,\bf z),\quad i=1,\ldots,n',\]
 or simply $\hat{\bf g}=\bm\gamma(\bf h,\bf z)$.  The coordinates $\bf h$ and $\bf z$ serve to parametrize the $G$-invariant level set $\scrL_c=L^{-1}(c)$. The remaining group parameters $\bf h$ can be interpreted as parametrizing the stabilizer of the entire submanifold $\{m\mid L(e,m)=c\}\subset M$.
@@ -4234,31 +4245,12 @@ Thus, barring algebraic complications, the normalization procedure provides a si
     Consider the joint action $(x,y)\mapsto (Rx+a,Ry+a)$ of the Euclidean group $(R,a)\in\SE_2$ on pairs of vectors $(x,y)\in M=\bbR^2\times\bbR^2$. The action is free on $M\setminus \varDelta$, where $\varDelta=\{x=y\}$ is the diagonal. The lifted invariants are the components of $z=Rx+a$, $w=Ry+a$. We normalize $z=0$ by setting $a=-Rx$. The remaining normalized invariant now reduces to $w=R(y-x)$. Away from the diagonal, we can further normalize the second component of $w$ to be zero by specifying the rotation matrix $R$ to have angle normalizations specify the right moving frame for the joint Euclidean action. The first component of $w$ then reduces to the distance $\lVert x-y\rVert$, which forms the fundamental joint invariant for the Euclidean group. A similar construction for the $n$-dimensional Euclidean group $\rmE_n$ provides a simple proof of an analytical version of a theorem by Weyl that the only joint Euclidean invariants are functions of the distances between points. Extensions to joint invariants for other transformation groups are straightforward.
 \end{example}
 
-In applications to equivalence problems, one restricts the moving frame to a submanifold of the underlying space $M$. The resulting maps from the submanifold to the group agree with the traditional definition of a moving frame in classical geometrical situations. Assume that $(X,i)$ is an immersed submanifold, so $i:X\hookrightarrow M$ is an immersion with $S=i(X)$.
-
-\begin{defn}[Moving frame on a submanifold]
-    A moving frame on an immersed submanifold $S=i(X)$ is a local map $\lambda:X\supset U\to G$ that factors through a $G$-equivariant map $\rho:M\supset \wt U\to G$ (where $\wt U$ is a neighborhood of $U$ in $M$), so that $\lambda=\rho\circ i$.
-\end{defn}
-
-In other words, a moving frame $\lambda$ on $S$ can be realized by the following commutative diagram 
-\[\begin{tikzcd}
-    & M \arrow[dr,"\rho"]& \\
-    X\arrow[ur,"i"] \arrow[rr,"\lambda"] &  & G.
-\end{tikzcd}\]
-The moving frame $\rho$ must, of course, be defined in a neighborhood of $U\subset S$. As before, we can consider left or right moving frames on $S$, and, as usual, they are related to each other via inversion.
 
 
+\PRLsep
 
 
-
-
-
-
-
-\section{Moving coframes}
-
-
-The method of moving coframes was introduced by P.~Olver as a practical means of determining moving frames for general transformation groups. The following definition is based on Cartan's approach to equivalence problems, which always begins by characterising the (pseudo)group of allowable transformations by a suitable collection of differential forms.
+Another often computationally preferrable method for constructing moving frames is the \emph{method of moving coframes}, which was already employed by Cartan and generalized by P.~Olver to general transformation groups. The following definition is based on Cartan's approach to equivalence problems, which always begins by characterising the (pseudo)group of allowable transformations by a suitable collection of differential forms.
 
 \begin{defn}[$G$-coframe]\index{$G$-coframe}
     Let $G$ be a finite-dimensional Lie group acting on a manifold $M$. A $G$-coframe is a regular, involutive extended coframe $\varTheta=(\bm\theta,\bm I)$ on $M$, whose symmetry group coincides with the transformation group $G$.
@@ -4286,11 +4278,11 @@ If $G$ does not act transitively, then the $1$-forms $\bm\theta=\rho^\ast\bm\the
 form a coframe on $M$.
 
 \begin{defn}[Moving coframe]\index{Moving coframe}
-    The moving coframe associated with a moving frame $\rho:M\supset U\to G$ is the extended coframe $\varSigma=(\bm\theta,\dd \bm y,\bm y)$ consisting of the pulled back Maurer-Cartan forms $\bm\theta=\rho^\ast\bm\theta_G^\rmR$ along with the invariant functions $\bm y$ and their differentials.
+    The moving coframe associated with a moving frame $\rho:M\supset U\to G$ is the extended coframe $\varSigma_\rho=(\bm\theta,\dd \bm y,\bm y)$ consisting of the pulled back Maurer-Cartan forms $\bm\theta=\rho^\ast\bm\theta_G^\rmR$ along with the invariant functions $\bm y$ and their differentials.
 \end{defn}
 
 \begin{lem}[{\cite[Lem.~6.4]{OlverCo2}}]\label{lem 6.4 OlverCo2}
-    The moving coframe $\varSigma$ forms a (involutive) $G$-coframe on $M$.
+    The moving coframe $\varSigma_\rho$ forms a (involutive) $G$-coframe on $M$.
 \end{lem}
 \begin{proof}
     Involutivity is immediate since the Maurer-Cartan equations, along with the equations $\dd(\dd y^i)=0$, imply that all the derived invariants for the moving coframe are constant. To prove that the only symmetries are the group transformations $z\mapsto g\cdot z$, we note that, in the flat coordinates of Example~\ref{ex 2.7 OlverCo2}, the associated moving coframe consists of the Maurer-Cartan forms $\bm\theta_G^\rmR$ pulled back to the orbits $G\times \{\bm y_0\}$, along with the invariants and their differentials. Invariance of the $y^i$ implies that any symmetry of the moving coframe must have the form $\psi(x,y)=(\varphi(x),y)$, where $\varphi:G\to G$ is a symmetry of the Maurer-Cartan coframe, and hence agrees with the right translation by a group element.
@@ -4312,7 +4304,7 @@ There is a second important method that can be used to construct an alternative 
 where the coefficients $F(\mu)\in \GL_n(\bbR)$ are explicitly determined by \eqref{eq 3.8 OlverCo2}. We now pull back $\dd_M\mu$ via our moving frame section $\sigma$ to construct a system of $G$-invariant $1$-forms on $M$.
 
 \begin{thm}[{\cite[Thm.~6.6]{OlverCo2}}]\label{thm 6.6 OlverCo2}
-    Let $G$ act freely on $M$. Let $\rho:M\supset U\to G$ be a right moving frame. Then the extended coframe $\varGamma=\{\bm\gamma,\bm I\}$ consisting of the invariant functions $\bm I(z)=\rho(z)\cdot \bm z$ along with the $1$-forms $\bm\gamma=\rho(z)\cdot\dd\bm z$ forms a $G$-coframe on $M$.
+    Let $G$ act freely on $M$. Let $\rho:M\supset U\to G$ be a right moving frame. Then the extended coframe $\varGamma=\{\bm\gamma,\bm I\}$ consisting of the invariant functions $\bm I(\bm z)=\rho(\bm z)\cdot \bm z$ along with the $1$-forms $\bm\gamma=\rho(\bm z)\cdot\dd\bm z$ forms a $G$-coframe on $M$.
 \end{thm}
 \begin{proof}
     The fact that $\bm I=\sigma^\ast\bm \mu$ include a complete sustem of functionally independent invariants was given in Theorem~\ref{thm 4.5 OlverCo2}. Applying $\sigma^\ast$ to \eqref{eq 6.3 OlverCo2}, we find 
@@ -4321,8 +4313,8 @@ where the coefficients $F(\mu)\in \GL_n(\bbR)$ are explicitly determined by \eqr
 \end{proof}
 
 
-Formula \eqref{eq 3.8 OlverCo2} provides an explicit local coordinate formula relating the normalized coframe forms $\bm\gamma$ with the Maurer-Cartan forms:
-\[\gamma^k=\dd I^k-\sum_{\nu=1}^{d}(f^k_\nu\circ I)\theta^{\rmR,\nu}_G,\quad k=1,\ldots,n,\label{eq 6.4 OlverCo2}\]
+Formula \eqref{eq 3.8 OlverCo2} provides an explicit local coordinate formula relating the normalized coframe forms $\bm\gamma$ with the (right-invariant) Maurer-Cartan forms:
+\[\gamma^k=\dd I^k-\sum_{\nu=1}^{d}(f^k_\nu\circ I)\theta^{\nu}_G,\quad k=1,\ldots,n,\label{eq 6.4 OlverCo2}\]
 where $I^k(\bm z)$ is the $k$-th component of $\bm I(\bm z)=\rho(\bm z)\cdot\bm z$. Note that the coefficients \eqref{eq 6.4 OlverCo2} areobtained by invariantization of coefficients $f^k_\nu(\bm z)$ of the infinitesimal generators \eqref{eq 3.7 OlverCo2} w.r.t.\ the moving frame $\rho$. In particular, if we normalize $\mu^k=c^k$ to be constant, then $I^k=c^k$ is constant also, and the $\dd I^k$ term in \eqref{eq 6.4 OlverCo2} disappears.
 
 \begin{example}
@@ -4397,12 +4389,15 @@ where $I^k(\bm z)$ is the $k$-th component of $\bm I(\bm z)=\rho(\bm z)\cdot\bm 
 \end{example}
 
 
-\PRLsep
+
+
+
+\section{Equivalence of submanifolds}
 
 We now apply out general results to the equivalence problem for submanifolds under a \emph{freely} acting transformation group. (Non-free actions require prolongation, which we will address below.) Given submanifolds $S,\wb S\subset M$, we want to know whether or not they are \emph{congruent} under a group of transformations, meaning that $g\cdot S=\wb S$ for some $g\in G$. In this section, we shall only consider the local problem, so that the cogruence is only required to hold in a neighborhood of a point. Global questions can be handled by continuation processes (e.g., analytic continuation).
 
-\begin{defn}[Congruence of submaniolds]
-    Let $S=i(X)$ and $\wb S=\wb i(\wb X)$ be two embedded $p$-dimensional submanifolds of an $n$-dimensional manifold $M$ parametrized by maps $i:X\to M$ and $\wb i:\wb X\to M$. Let there be a smooth Lie group action $G\acts M$. The two submanifolds are called \emph{(locally) congruent} under $G$ if there exists a group element $g\in G$ and a (local) diffeomorphism $\psi:X\to \wb X$ such that 
+\begin{defn}[Congruence of submanifolds]
+    Let $S=i(X)$ and $\wb S=\wb i(\wb X)$ be two embedded $p$-dimensional submanifolds of an $n$-dimensional manifold $M$ parametrized by maps $i:X\to M$ and $\wb i:\wb X\to M$. Let there be a smooth Lie group action $G\acts M$. The two submanifolds are called \emph{(locally) congruent} under $G$ if there exists a group element $g\in G$ and a (local) diffeomorphism $\psi:X\supset U\to \wb U\subset\wb X$ such that 
     \[\wb i(\psi(x))=g\cdot i(x)\label{eq 7.1 OlverCo2}\]
     for all $x$ in the domain of $\psi$.
 \end{defn}
@@ -4416,14 +4411,14 @@ In the case when $G$ acts freely, the solution to the congruence problem follows
     The moving coframe $\varTheta$ is determined by the pullback of the Maurer-Cartan coframe on $G$ along the corresponding moving frame $\rho$. By Theorem~\ref{thm 6.1 Sharpe fundamental local}, the $G$-valued maps $\rho\circ i$ and $\rho\circ\wb i$ are completely characterized, up to congruence in $G$, by their logarithmic derivatives $\bm\theta=(\rho\circ i)^\ast\bm\theta_G$, resp.\ $\bar{\bm\theta}=(\wb\rho\circ \wb i)^\ast\bm\theta_G$, which are equivalent to the $G$-coframes $\varOmega$, resp.\ $\wb\varOmega$, described in the statement. Congruence of $\rho\circ i$ and $\rho\circ\wb i$ in $G$ is equivalent to congruence of $i$ and $\wb i$ in $M$, so the congruence problem is reduced to the equivalence problem for extended coframes.
 \end{proof}
 
-The local diffeomorphism $\psi:X\to \wb X$ determining the reparametrization part in the correspondence must satisfy $\psi^\ast\wb{\varOmega}=\varOmega$. In other words, in terms of the defining coframe and invariants, 
-\[(\wb i\circ\psi)^\ast\bm\theta,q\quad (\wb i\circ\psi)^\ast\bm I=i^\ast\bm I.\]
+The diffeomorphism $\psi:X\to \wb X$ determining the reparametrization part in the correspondence must satisfy $\psi^\ast\wb{\varOmega}=\varOmega$. In other words, in terms of the defining coframe and invariants, 
+\[(\wb i\circ\psi)^\ast\bar{\bm\theta}=\bm\theta,\quad (\wb i\circ\psi)^\ast\bar{\bm I}=i^\ast\bm I.\label{eq 7.2 OlverCo2}\]
 
 \begin{rem}
     For the fixed parameter equivalence problem, we do not allow the reparametrization map $\psi$ in the equivalence condition \eqref{eq 7.1 OlverCo2}, which thus reduces to $\wb i(x)=g\cdot i(x)$, $x\in X$. The solution to this problem again follows from Theorem~\ref{thm 7.2 OlverCo2}: the pulled back $G$-coframes must now be identical: $\wb \varOmega=\varOmega$.
 \end{rem}
 
-The original $G$-coframe is involutive; in particular, if $\varTheta$ is the moving coframe, it will have constant derived invariants. The pullback $\varOmega=i^\ast\varTheta$ will, of course, have the same structure equations as $\varTheta$. However, if the submanifold $S$ has strictly smaller dimension than $M$, $p<n$, the $1$-forms $\bm\omega=i^\ast\bm\theta$ are \emph{not} a coframe on $X$, but instead an \emph{overdetermined} system of $1$-forms. In order to apply the general equivalence theorems, we need to reduce $\varOmega$ to an extended coframe by eliminating linear dependencies and adding the extra scalar coefficients as invariants. The choice of the independent $1$-forms will be governed by a transversality condition on the submanifold $S$.
+The original $G$-coframe $\varTheta$ is involutive; in particular, if $\varTheta=\varSigma_\rho$ is the moving coframe corresponding to a moving frame $\rho$, it will have constant derived invariants. The pullback $\varOmega=i^\ast\varTheta$ will, of course, have the same structure equations as $\varTheta$. However, if the submanifold $S$ has strictly smaller dimension than $M$, $p<n$, the $1$-forms $\bm\omega=i^\ast\bm\theta$ are \emph{not} a coframe on $X$, but instead an \emph{overdetermined} system of $1$-forms. In order to apply the general equivalence theorems, we need to reduce $\varOmega$ to an extended coframe by eliminating linear dependencies and adding the extra scalar coefficients as invariants. The choice of the independent $1$-forms will be governed by a transversality condition on the submanifold $S$.
 
 \begin{defn}[Independence condition]\index{Independence condition}
     Let $\tilde{\bm\theta}=\{\wt\theta^1,\ldots,\wt\theta^p\}$ be a collection of $p$ pointwise linearly independent $1$-forms on an $n$-dimensional manifold $M$. A $p$-dimensional submanifold $S=i(X)$ is \emph{transverse} w.r.t.\ $\tilde{\bm \theta}$ iff the $1$-forms $\tilde{\bm\omega}=i^\ast\tilde{\bm\theta}$ form a coframe on the parameter space $X$, and so $S$ satisfies the independence condition 
@@ -4442,7 +4437,7 @@ On a transverse submanifold, $\tilde{\bm\omega}=i^\ast\tilde{\bm\theta}$ forms a
 The coefficients $K=(K^k_j)$ provide additional invariants for the overdetermined system $\varOmega$. Replacing the extra $1$-forms by these invariants reduces $\varOmega$ to an invariantly related extended coframe $\varUpsilon=\{\bm\omega,J,K\}$ on $X$, having the same symmetry and equivalence properties as $\varOmega$ does. We shall call $\varUpsilon$ the \emph{restricted} $G$-coframe on the submanifold $S$. If $\wb S$ is also transverse, we can similarly construct the extended coframe $\wb \varUpsilon=\{\bar{\tilde{\bm\omega}},\wb J,\wb K\}$ on $\wb X$ using the \emph{same} choice of coframe basis $\bar{\tilde{\bm\omega}}=\wb i^\ast\tilde{\bm \omega}$ relative to the given $G$-coframe.
 
 
-\begin{lem}
+\begin{lem}\label{lem 7.5 OlverCo2}
     Let $\varTheta$ be a $G$-coframe on $M$. Two transverse submanifolds $S=i(X)$ and $\wb S=\wb i(\wb X)$ are locally $G$-congruent iff the corresponding restricted $G$-coframes $\varUpsilon$ on $X$ and $\wb\varUpsilon$ on $\wb X$ are equivalent.
 \end{lem}
 
@@ -4458,10 +4453,234 @@ Using this construction, Theorem~\ref{thm 5.16 OlverCo2} then gives a complete s
     Let $G\acts M$ be a free, regular Lie group action, and let $\varTheta$ be a $G$-coframe on $M$. Let $S=i(X)$  and $\wb S=\wb i(\wb X)$ be regular $p$-dimensional submanifolds. Then $S$ and $\wb S$ are locally $G$-equivalent iff they have the same order, $s$, and their classifying manifolds $\scrC(S)$, $\scrC(\wb S)$ overlap.
 \end{thm}
 
-The symmetry group of $S$ is, by definition, its isotropy subgroup $G_S<G$. Theorem~\ref{thm 7.7 OlverCo2} demonstrates that the action of $G_S$ on $S$ can be identified with the symmetry group of the restricted $G$-coframe $\varUpsilon$ on the parameter space $X$.
+The symmetry group of $S$ is, by definition, its isotropy subgroup $G_S<G$, i.e., the set of elements of $G$ that take $S$ to itself as a set. Theorem~\ref{thm 7.7 OlverCo2} demonstrates that the action of $G_S$ on $S$ can be identified with the symmetry group of the restricted $G$-coframe $\varUpsilon$ on the parameter space $X$. We also immediately have the following.
+
+\begin{cor}\label{thm 7.8 OlverCo2}
+    Let $S\subset M$ be a regular $p$-dimensional submanifold of order $s$ and rank $t$ w.r.t.\ the action $G\acts M$. Then its isotropy group $G_S$ has dimension $p-t=\dim S-\rank S$ and acts freely on $S$.
+\end{cor}
+
+In particular, $S$ has maximal symmetry iff it has rank $0$, meaning that all the restricted invariants $J,K$ are constant on $S$. In this case, the dimension of the isotropy group equals the dimension of $S$ and hence $G_S$ acts transitively on (the connected components of) $S$. In particular, $S$ must lie in a single $G$-orbit in $M$.
+
+\begin{rem}
+    Later we shall see that the invariants $K$ arising from linear dependencies among the $1$-forms in $\varOmega$ can be identified with the first-order differential invariants for the group action. Moreover, the derived invariants correspond to suitable higher-order differential invariants. Thus, the classifying manifolds used to solve the equivalence problem are identified with those parametrized by the differential invariants for $G$.
+\end{rem}
+
+\begin{example}
+    Consider the abelian Lie group $G=\bbR^3$ acting by translation on $M=\bbR^3$. A $G$-coframe is given by the coordinate $1$-forms $\varTheta=(\dd x,\dd y,\dd u)$. The surface $S=\{x^2+2yu= 0\mid y\neq 0\}$ satisfies the transversality condition $\restr{\dd x\wedge \dd y}{S}\neq 0$. Parametrizing $S$ by $i:(x,y)\mapsto (x,y,-\frac12 x^2/y)$, we see that the restricted $1$-forms $\varOmega=i^\ast\varTheta$ satisfy the linear relation $\dd u=-(x/y)\dd x+\frac12(x/y)^2\dd y$, leading to the functionally dependent invariants $-x/y$ and $x^2/(2y^2)$. Therefore, the restricted coframe on $S$ is 
+    \[\varUpsilon=\left\{\dd x,\dd y,-\frac{x}{y},\frac{x^2}{2 y^2}\right\}.\]
+
+    However, $\varUpsilon$ is not involutive since $\dd(x/y)=y^{-1}\dd x-xy^{-2}\dd y$. so that the derived coframe\footnote{Actually, since the second invariant $x^2/(2y^2)$ is a function of the first, its derived invariants are derived, as their functional dependencies are automatically determined.}
+    \[\varUpsilon^{(1)}=\left\{\dd x,\dd y,-\frac{x}{y},\frac{x^2}{2y^2},-\frac{1}{y},\frac{x}{y^2},\frac{x}{y^2},-\frac{x^2}{y^3}\right\}\]
+    is involutive. Therefore, $S$ is a surface of rank $2$ and order $1$, and hence admits at most a discrete translation symmetry group; in fact, the isotropy group of $S$ is trivial. The classifying manifold is the surface parametrized by the twelve invariants in 
+    \[\varUpsilon^{(2)}=\left\{\dd x,\dd y,-\frac{x}{y},\frac{x^2}{2y^2},-\frac{1}{y},\frac{x}{y^2},\frac{x}{y^2},-\frac{x^2}{y^3},0,\frac{1}{y^2},-\frac{2x}{y^3},\frac{1}{y^2},-\frac{2x}{y^3},\frac{3x^2}{y^4}\right\},\]
+    so that 
+    \[\scrC(S)=\left\{(a_1,\ldots,a_12)\in \bbR^{12}\mid \begin{matrix}
+        a_2=\frac12a_1^2,a_4=a_5=-a_1a_3,a_6=a_1^2a_3,a_7=0,\\
+        a_8=a_{10}=a_3^2,a_9=a_{11}=2a_1a_3^2,a_{12}=3a_1^2a_3^2
+    \end{matrix}\right\}.\]
+    Any translationally equivalent surface $\wb S$ must have the same classifying manifold, so that $\wb S$ also has order $1$ and rank $2$, and has the same functional relationships among its corresponding twelve invariants.
+\end{example}
+
+\PRLsep
+
+We now discuss the role of the regularized action in the equivalence problem for general group actions. Here we no longer need to assume that $G$ acts freely on $M$, but we replace it by its freely acting regularization on $P=G\times M$. Associated with an embedded submanifold $S=i(X)\subset M$ is the submanifold $S_G=i_G(G\times X)\subset P$ parametrized by 
+\[i_G(g,x)=(g,i(x)),\quad g\in G,\; x\in X.\]
+The bundle $G\times X$ is the pullback under $i$ of $G\times M$. On $P$, we consider the $G$-coframe $\varTheta=(\bm \theta_G,\dd \mu,\mu)$. As a direct consequence of Theorem~\ref{thm 7.2 OlverCo2}, we obtain the following result.
+
+\begin{prop}\label{prop 7.10 OlverCo2}
+    Let $G\acts M$ be an arbitrary action. Two embedded submanifolds $S_G$ and $\wb S_G$ parametrized by maps $i_G:G\times X\to G\times M$, and $\wb i_G:G\times \wb X\to G\times M$ are locally $G$-congruent iff the pulled back extended coframes $\varOmega=(\bm\omega,\bm J)=i^\ast\varTheta$ on $X$ and $\wb\varOmega=(\bar{\bm \omega},\bar{\bm J})=\wb i^\ast\wb\varTheta$ are locally equivalent.
+\end{prop}
+
+Suppose that $S=i(X)$ satisfies the transversality condition specified by $\tilde{\bm \omega}$. Then $S_G=i_G(X)$ satisfies the transversality condition defined by $(\pi_M)^\ast\tilde{\bm\omega}\cup \bm\theta_G$. It is clear that we can construct a coframe $\wt\varOmega$ invariantly related to $\varTheta$ such that the $1$-forms $\omega^1,\ldots,\omega^p\in \wt\varOmega$ generate $(\pi_M)^\ast \tilde{\bm\omega}$. Following the procedure above Lemma~\ref{lem 7.5 OlverCo2}, we have the restricted $G$-coframe $\varUpsilon$ on $G\times X$, where $\tilde{\bm\omega}=(\wt\omega^1,\ldots,\wt\omega^p,\theta^1_G,\ldots,\theta^d_G)$ such that $\wt\omega^1,\ldots,\wt\omega^p$ annihilate the tangent space to the fibers of $\pi:G\times X\to X$. Denoting by similar barred expressions using the map $\wb i_G:G\times\wb X\to G\times M$, the equivalence theorem takes the following form.
+
+\begin{prop}\label{prop 7.11 OlverCo2}
+    Let $G\acts M$ be an arbitrary action. Two embedded submanifolds $i:X\to M$ and $\wb i:\wb X\to M$ which satisfy the transversality condition $\tilde{\bm\omega}$ are $G$-congruent iff the extended coframes $\varUpsilon$ on $G\times X$ and $\wb\varUpsilon$ on $G\times \wb X$ are equivalent.
+\end{prop}
+\begin{proof}
+    First suppose $X$ and $\wb X$ are equivalent. Thus, $\wb i=g\cdot (u\circ \psi^{-1})$, where $g\in G$ and $\psi:X\to \wb X$. Define the diffeomorphism $\Psi:G\times X\to G\times\wb X$ by 
+    \[\Psi(h,x)\coloneqq (g\cdot h,\psi(x)),\quad h\in G,\;x\in X.\label{eq 7.4 OlverCo2}.\]
+    Clearly, $\wb i_G\circ \Psi=\wt \rmR_g\circ i_G$, where $\wt\rmR_g$ is the right regularized action \eqref{eq 3.2 OlverCo2} of $G$. Then 
+    \[(\wb i_G\circ\Psi)^\ast\bm\theta_G=(\wt\rmR_g\circ i_G)^\ast\bm\theta_G=i_G^\ast\bm\theta_G,\quad (\wb i_G\circ\Psi)^\ast\mu=(\wt\rmR_g\circ i_G)^\ast\mu=i_G^\ast\mu.\]
+    Conversely, if there exists such a $\Psi$, then Proposition~\ref{prop 7.10 OlverCo2} implies that $\wb i_G\circ\Psi=\wt\rmR_g\circ i_G$ for some $g\in G$. In order to finish the proof, we need to check that $\Psi$ splits as in \eqref{eq 7.4 OlverCo2}. The conditions on $\Psi$ in the theorem then imply $\Psi^\ast\bar{\bm\theta}_G=\bm\theta_G$ and $\Psi^\ast \bar{\tilde{\bm\omega}}=\tilde{\bm\omega}$, and hence $\Psi$ has the form in \eqref{eq 7.4 OlverCo2}.
+\end{proof}
+
+Let $L:G\times M\to N$ be a regular lifted invariant. Let $c\in N$ be in the image of $L$ and let $\scrL_c=L^{-1}(c)$ be the corresponding invariant level set. Denote the restriction of $\bm\theta_G$ and $\mu$ to $\scrL_c$ by $\tilde{\bm\theta}_G$ and $\wt\mu$. The submanifold $\scrL_c$ is $G$-invariant and the local diffeomorphisms of $\scrL_c$ which preserve the restricted invariants $\wt\mu$ and forms $\tilde{\bm\theta}_G$ coincide with the action of $G$ on $\scrL_c$. That is, $(\tilde{\bm\theta}_G,\wt\mu)$ forms an overdetermined $G$-coframe on $\scrL_c$. Now let $R=i_G^{-1}(\scrL_c)\subset G\times X$, and similarly for $\wb R\subset G\times \wb X$.
+
+\begin{prop}\label{prop 7.12 OlverCo2}
+    Under the above hypothesis, the embedded submanifolds $i:X\to M$ and $\wb i:\wb X\to M$ are equivalent iff there exists a diffeomorphism $\wt\Psi:R\to \wb R$ such that\[\wt\Psi^\ast \bar{\bm I}=\bm I,\quad \wt\Psi^\ast\bar{\bm\theta}=\bm\theta,\]
+    where $\bm I,\bar{\bm I}$ and $\bm\theta,\bar{\bm\theta}$ are the pullbacks of the restricted invariants $\wt\mu$ and forms $\tilde{\bm\theta}_G$ by $i_G$ and $\wb i_G$, respectively.
+\end{prop}
+
+The proof is similar to that of Proposition~\ref{prop 7.11 OlverCo2}.
+
+\begin{rem}
+    \begin{enumerate}
+        \item If the function $L$ defining the invariant submanifold $\scrL_c$ is of rank $d=\dim G$ in the vertical direction for the projection $\pi_M:G\times M\to M$, then Proposition~\ref{prop 7.12 OlverCo2} is resolved by Theorem~\ref{thm 7.7 OlverCo2}.
+        \item The transformations in $G_S$ determined symmetries of the restricted coframe on $G\times X$. However, since at least $p$ of the invariants $\bm I$ are automatically functionally independent, $\dim G_S\leq\dim G$, as it should be.
+    \end{enumerate}
+\end{rem}
+
+In summary, regularization can be used to replace the equivalence of $p$-dimensional submanifolds $S<M$ under a non-free action of $G$ by the equivalence of $(p+d)$-dimensional submanifolds $S_G<P$ under the free regularized $G$-action. This approach avoids the use of differential invariants, and will also take care of singular submanifolds, since the lifted submanifold $R$ is always regular. Incidentally, Proposition~\ref{prop 7.12 OlverCo2} can be used to justify partial normalization, while the preceding remark can be used to justify complete normalization. 
 
 
+\PRLsep
 
+
+In applications to equivalence problems, one restricts the moving frame to a submanifold of the underlying space $M$. The resulting maps from the submanifold to the group agree with the traditional definition of a moving frame in classical geometrical situations. Assume that $(X,i)$ is an immersed submanifold, so $i:X\hookrightarrow M$ is an immersion with $S=i(X)$.
+
+\begin{defn}[Moving frame on a submanifold]
+    A moving frame on an immersed submanifold $i:X\hookrightarrow M$ is a restriction of a moving frame on a neighborhood of (a subset of) $X$ in $M$. That is, it is a local map $\lambda:X\supset U\to G$ that factors through a $G$-equivariant map $\rho:M\supset \wt U\to G$ (where $\wt U$ is a neighborhood of $U$ in $M$), so that $\lambda=\rho\circ i$.
+\end{defn}
+
+In other words, a moving frame $\lambda$ on $S$ can be realized by the following commutative diagram 
+\[\begin{tikzcd}
+    & M \arrow[dr,"\rho"]& \\
+    X\arrow[ur,"i"] \arrow[rr,"\lambda"] &  & G.
+\end{tikzcd}\]
+The moving frame $\rho$ must, of course, be defined in a neighborhood of some subset $U\subset S$ of the submanifold. As before, we can consider left or right moving frames on $S$, and, as usual, they are related to each other via inversion.
+
+In the rest of this \sect, we will briefly summarize the extension of the  method of moving frames to non-free group actions. If the action is not free, then an ordinary moving frame does not exist, and one needs to prolong to some jet space of suitably high order before the above procedure can be applied. In such cases, the higher-order moving frame naturally leads to the \emph{differential invariants} of the action.
+
+Given a manifold $M$, let $\rmJ^r$ denote the jet space $\rmJ^r_0(\bbR^p,M^{\mathrm{imm}})$ of jets at the origin of immersions $i:\bbR^p=X\to M$ for some fixed dimension $p\leq n=\dim M$. This space is called the \emph{$r$-th order jet space of $p$-dimensional submanifolds of $M$}, or the \emph{space of $r$-jets of $p$-submanifolds of $M$}. Locally this space is diffeomorphic to the space of jets of sections of some bundle of the form $M\to \bbR^p$, so the following definitions are natural analogs of their counterparts in \S\ref{sec: jets and cartan distr}.
+
+We introduce local coordinates $\bf{z}=(\bf x,\bf u)$ on $M$, considering the first $p$ components $\bf{x}=(x^1,\ldots,x^p)$ as independent variables, and the latter $s=n-p$ components $\bf u=(u^1,\ldots,u^s)$ as dependent variables. Splitting the coordinates this way has the effect of locally identifying $M$ with an open subset of a bundle $E=X\times U\cong \bbR^p\times\bbR^s$. Sections $\bf u=\bf f(\bf x)$ of $E$ correspond to $p$-dimensional submanifolds $S$ that are transverse w.r.t.\ the horizontal forms $\dd\bf x=(\dd x^1,\ldots,\dd x^p)$. The induced coordinates on the jet bundle $\rmJ^r$ are denoted by $\bf z^{(r)}=(\bf x,\bf u^{(r)})$, with components $u^\alpha_J$ representing the partial derivatives of the dependent variables w.r.t.\ the independent variables up to order $r$. Here, $J=(j_1,\ldots,j_p)$ ranges over $0\leq j_\nu \leq r$ and $|J|=j_1+\cdots+j_p\leq r$. The $(\bf x,\bf u^{(r)})$ define local coordinates on the open, dense subbundle $\rmJ^r E\subset \rmJ^r$ determined by the $r$-jets of transverse submanifolds, or, equivalently, local sections of $E$. In the limit, we let $\bf z^{(\infty)}=(\bf x,\bf u^{(\infty)})$ denote the corresponding coordinates on $\rmJ^\infty E\subset \rmJ^\infty$, defined as the usual projective limit of $\cdots \to \rmJ^{r+1}E\to \rmJ^r E\to\cdots\to \rmJ^0 E=E$.
+
+\begin{defn}[Contact bundle]
+    A differential form $\theta$ on the jet space $\rmj^r=\rmJ^r(\bbR^p,M)$ is called a contact form if it is annihilated by all $r$-jets of submanifolds, so $(\rmj^r_0 i)^\ast\theta=0$ for any immersion $i:\bbR^p\to M$.
+
+    The subbundle of $\T^\ast\rmJ^r$ spanned by contact $1$-forms is called the $r$-th order \emph{contact bundle}, denoted $\calC^{(r)}$. The infinite contact bundle $\calC^{(\infty)}\subset\T^\ast\rmJ^\infty$ is a a corank $p$ subbundle of $\T^\ast\rmJ^\infty$.
+\end{defn}
+
+As always, in the canonical jet coordinates $(\bf{x},\bf{u}^{(\infty)})$ induced by local coordinates $(\bf{x},\bf{u})$ on $X\times M$, the basic contact forms are 
+\[\theta_J^\alpha=\dd u^\alpha_J-\sum_{i=1}^p u^\alpha_{J,i}\dd x^i,\quad \alpha=1,\ldots,q,\quad |J|\geq 0.\]
+Combining the semibasic coordinate one-forms $\dd x^i$ with the basic contact forms $\theta^\alpha_J$ produces the local coordinate coframe $\{\dd x^i,\theta^\alpha_J\}_{i,\alpha,J}$ on $\rmJ^\infty$. Therefore, choosing local coordinates on $M$ induces a splitting $\T^\ast\rmJ^\infty=\calH\oplus\calC^{(\infty)}$ of the cotangent bundle into \emph{semibasic} and contact or \emph{vertical} subbundles, with $\calH$ spanned by the horizontal $1$-forms $\dd x^i$. Let $\calH:\T^\ast\rmJ^\infty \to\calH$ and $\calV:\T^\ast\rmJ^\infty\to \calC^{(\infty)}$ be the induced projections, so that any $1$-form $\omega=\omega_M+\vartheta$ splits into uniquely defined semibasic and contact components, where 
+\[\omega_M= \calH\circ \omega=\sum_{i=1}^p P_i(\bf{x},\bf{u}^{(\infty)})\dd x^i,\quad \vartheta=\calV\circ \omega=\sum_{\alpha,J}Q_J^\alpha(\bf{x},\bf{u}^{(\infty)})\theta^\alpha_J,\]
+cf.\ Remark~\ref{rem semibasic and contact forms}. If $\omega$ is a $1$-form on $\rmJ^r$ then, typically, its semibasic component $\omega_M$ is a $1$-form on $\rmJ^{r+1}$.
+
+The splitting of $\T^\ast\rmJ^\infty$ induces a bi-grading of the space of differential forms on $\rmJ^\infty$. The exterior derivative $\dd$ on $\rmJ^\infty$ naturally splits into semibasic and vertical components, $\dd =\dd_M+\dd_V$, where $\dd_M$ increases the semibasic degree and $\dd_V$ increases the vertical degree. Closure, $\dd\circ\dd=0$, implies that $\dd_M\circ\dd_M=\dd_V\circ\dd_V=0$, while $\dd_M\circ\dd_V=-\dd_V\circ\dd_M$. In particular, the semibasic or \emph{total differential} $\dd_M$ of a differential function $f\in C^\infty(\rmJ^r)$ is the semibasic $1$-form 
+\[\dd_M f=\sum_{i=1}^p (D_i f)\dd x^i \quad \in\Omega^1(\rmJ^{r+1}),\]
+where
+\[D_i=\frac{\partial}{\partial x^i}+\sum_{\alpha=1}^s\sum_J u^\alpha_{J+1_i}\frac{\partial}{\partial u^\alpha_J}\]
+denotes the usual total derivative w.r.t.\ $x^i$, which can be viewed as a vector field on $\rmJ^\infty E$. Similarly, the vertical differential of a function $f(\bf x,\bf u^{(r)})$ is the contact form 
+\[\dd_V f=\sum_{i=1}^p\sum_K \frac{\partial f}{\partial u^\alpha_K}\theta^\alpha_K.\]
+
+\begin{defn}[Total differential operator]
+    A total differential operator is a vector field on $\rmJ^\infty$ which lies in the annihilator of the contact bundle $\calC^{(\infty)}$, i.e., a section of the infinite-order Cartan distribution.
+\end{defn}
+
+As we saw in \S\ref{sec: jets and cartan distr}, the Cartan distribution is spanned by total derivatives, thus, we have the following.
+
+\begin{prop}
+    Every total differential operator has the form 
+    \[\calD=\sum_{i=1}^p Q_i(\bf x,\bf u^{(r)})D_i,\]
+    where $Q_1,\ldots,Q_p$ are differential functions.
+\end{prop}
+
+The existence of two differentials $\dd_M,\dd_V$ is the foundation of the \emph{variational bicomplex} that is of fundamental importance in the study of the geometry of jet bundles, differential equations and the calculus of variations.
+
+
+\PRLsep
+
+
+Any transformation group $G$ acting on $M$ preserves the \emph{order of contact} between submanifolds (defined as the minimal order $r$ at which the $r$-jets of the submanifolds disagree). Therefore, there is an induced action of $G$ on the $r$-th order jet bundle $\rmJ^r$ known as the \emph{$r$-th prolongation of $G$}. Alternatively, one can characterize the prolonged group transformations as the unique lifted maps on the jet bundle that preserve the space of contact forms.
+
+\begin{defn}[Contact transformation]\index{Contact transformation}
+    A map $\Psi:\rmJ^r\to \rmJ^r$ is a contact transformation if it preserves the order $r$ contact bundle: $\Psi^\ast\calC^{(r)}\subset\calC^{(r)}$.
+\end{defn}
+
+\begin{prop}
+    If $\psi:M\to M$ is a local diffeomorphism, then its $r$-th prolongation is the unique contact transformation $\psi^{(r)}:\rmJ^r\to\rmJ^r$ that satisfies $\psi\circ\pi^r_0=\pi^r_0\circ\psi^{(r)}$.
+\end{prop}
+
+We denote the prolonged group action on $\rmJ^r$ by $G^{(r)}\acts \rmJ^r$. Note that if $G$ acts globally on $M$, then its prolonged action $G^{(r)}$ is also a global transformation group on $\rmJ^r(\bbR^p,M)$, but, generally, only a local transformation group on the coordinate subbundles $\rmJ^r E$ since $G$ may not preserve transversality. Note also that B\"acklund's Theorem~\ref{thm 3.3.1 Kras} implies that contact transformations reduce to prolonged point transformation groups on $M$, or, in the codimension $1$ case $p=n-1$, prolonged first-order contact transformation groups.
+
+Let us choose a basis $\bf t_1,\ldots,\bf t_d$ for the Lie algebra $\frakg$ of nfinitesimal generators on $M$, and let $X_1^{(r)},\ldots,X_d^{(r)}$ denote the corresponding the infinitesimal generators of the prolonged group action $G^{(r)}$. In terms of local coordinates $(\bf x,\bf u^{(\infty)})$ on $\rmJ^\infty$, we obtain $X_\nu^{(r)}$ by truncating teh infinitely prolonged vector field 
+\[X_\nu^{(\infty)}=\sum_{i=1}^p a^i_\nu(\bf x,\bf u)\frac{\partial}{\partial x^i}+\sum_{\alpha=1}^s \sum_{r=|J|\geq 0} b^\alpha_{J+1_\nu}(\bf x,\bf u^{(r)})\frac{\partial}{\partial u^\alpha_J},\quad \nu=1,\ldots,d,\]
+at order $r$. The coefficients here are explicitly determined by the standard prolongation formula \eqref{eq prolongation formula}:
+\[b^\alpha_{J+1_\nu}=D_JQ^\alpha_\nu+\sum_{i=1}^p a^i_\nu u^\alpha_{J+1_i},\]
+where 
+\[Q^\alpha_\nu(\bf x,\bf u^{(1)})=b^\alpha_\nu(\bf x,\bf u)-\sum_{i=1}^p a^i_\nu(\bf x,\bf u)u^\alpha_i\]
+is the \emph{generating function} of $X_\nu$.
+
+The moving frame construction can be applied to the prolonged group action $G^{(r)}$ provided it is (locally) free on $\rmJ^r$. Therefore, we need to understand the basic geometry of the prolonged action in order to understand the full range of applicability of the higher-order moving frame construction.
+
+\begin{defn}[Stabilization of orbit dimension]
+    Given $G$ acting on $M$, we let $s_r$ denote the maximal orbit dimension of the prolonged action $G^{(r)}$ on $\rmJ^r$. The \emph{stable orbit dimension} $s_G=\max s_r$ is the maximal prolonged orbit dimension. The \emph{stabilization order} of $G$ is the minimal $r$ such that $s_r=s_G$.
+\end{defn}
+
+A fundamental Stabilization Theorem~\ref{thm 5.11 Olver93 Ovsiannikov} due to Ovsiannikov completely characterizes the stable orbit dimension: the action is locally effective iff the stable orbit dimension equals the dimension of the group: $s=d=\dim G$.
+
+\begin{defn}
+    The regular subset $\calV^r\subset\rmJ^r$ is the open subset consisting of all prolonged group orbits of dimension equal to the stable orbit dimension. The singular subset is the complement $\calS^r=\rmJ^r\setminus\calV^r$.
+\end{defn}
+
+Note that, by this definition, $\calV^r\neq 0$ and $\calS^r=\rmJ^r$ if $r\leq s_G$. If $G$ acts analytically, then $\calV^r$ is a dense open subset of $\rmJ^r$ for $r\geq s_G$. A point $\bf z^{(r)}\in\calV^r$ is called a \emph{regular jet}. The stabilization theorem, combined with Proposition~\ref{prop 2.5 OlverCo2}, immediately implies the freeness of the prolonged action on $\calV^r$.
+
+\begin{cor}[{\cite[Prop.~9.6]{OlverCo2}}]\label{prop 9.6 OlverCo2}
+    If $G$ acts locally effectively on subsets of $M$, then $G$ acts locally freely on the regular subset $\calV^r\subset\rmJ^r$.
+\end{cor}
+
+\begin{rem}
+    It would be nice to know that $G^{(r)}$ acts freely on (a dense subset of) $\calV^r$ provided $r$ is sufficiently large. Unfortunately, a general result of this kind is not yet known even in the analytic category, but in practice it is always true.
+\end{rem}
+
+\begin{rem} % Olver93 p200
+    Assuming $G$ acts locally effectively, if $r\geq s_G$, then $\calS^r$ is just the subset of $\rmJ^r$ where the prolonged infinitesimal generators of $G$ are linearly dependent. Therefore, once $r$ exceeds the stabilization order, the singular variety $\calS^{r+1}$ is contained in $\calS^r$ (or, more specifically, in $(\pi^{r+1}_r)^{-1}\calS^r$). In other words, if we regard $\calS^r\subset\rmJ^r$ as a system of differential equations, then, for sufficiently large $r$, the ``solution space'' to $\calS^{r+1}$  is always contained in that of $\calS^r$.
+\end{rem}
+
+\begin{defn}[Regular submanifold]
+    A submanifold $i:S\to M$ is \emph{order $r$ regular} if $\rmj^r i\subset\calV^r$. A submanifold $i:S\to M$ is totally singular if $\rmj^r i\subset \calS^r$ for all $r\geq 0$.
+\end{defn}
+
+The characterization of submanifolds that are singular to all orders is of importance for understanding the range of validity of the moving frames method. 
+
+\begin{thm}[{\cite[Thm.~9.20]{OlverCo2}}]
+    A submanifold $S<M$ is totally singular iff its stabilizer group $G_S$ does not act locally freely on $S$.
+\end{thm}
+
+\begin{rem}[Lie determinants]\label{rem Lie determinants} % Olver93 p201
+    In the ``scalar'' case -- one independent and one dependent variable -- the singular variety can be readily characterized using the method of Lie determinants, introduced by Lie himself. Suppose $G$ is a $d$-dimensional Lie group acting locally effectively on $E\cong\bbR\times\bbR$, with infinitesimal generators $X_1,\ldots,X_d$. The generators of the prolongation $G^{(d-2)}$ take the form 
+    \[X_\nu^{(d-2)}=a_\nu\frac{\partial}{\partial x}+\sum_{k=0}^{d-2}b^k_\nu \frac{\partial}{\partial u_k},\quad \nu=1,\ldots,d,\label{eq 6.60 Olver93}\]
+    where $u_k$ is the variable for $D_x^k u$. In the standard case, meaning that $G$ acts transitively and the orbit dimensions do not pseudo-stabilize, the stabilization order of $G$ is $d-2$, so the maximal orbit dimension is $s_{d-2}=d=\dim\rmJ^{d-2}$/ In this case, the singular variety is characterized as the subset where the prolonged infinitesimal generators \eqref{eq 6.60 Olver93} are linearly dependent, and hence is given by the determinantal condition 
+    \[\det\begin{pmatrix}
+        a_1 & b_1 & b_1^1 & \cdots & b^{d-1}_1\\
+        a_2 & b_2 & b_2^1 & \cdots & b^{d-1}_2\\
+        \vdots & \vdots & \vdots & \ddots & \vdots\\
+        a_d & b_d & b_d^1 & \cdots & b^{d-1}_d\\
+    \end{pmatrix}=0.\] \index{Lie determinant}
+    Note that this is a single ODE for $u$ as a function of $x$ and it is independent of the choice of basis of $\frakg$. Its left hand side is known as the \emph{Lie determinant} for $G$. Any invariant ODE of order $d-2$ or less must be contained in the singular variaety, and hence is described by the vanishing of the Lie determinant. Moreover, as we remarked above, since all the higher-order singular subvarieties are contained therein, we conclude that \emph{all} invariant ODEs can be written either in terms of the fundamental differential invariants, or by the vanishing of the Lie determinant.
+\end{rem}
+
+
+\begin{example}\label{ex 9.9 OlverCo2}
+    Consider the special affine group $\SAff_2(\bbR)=\SL_2(\bbR)\ltimes\bbR^2$ acting on the $(x,u)$-plane $M=\bbR^2$ via $\bf z\mapsto a\bf z+\bf b$, where $a\in\SL_2(\bbR)$. The totally singular curves are the straight lines, the stabilizer subgroup consists of translations, shears, and unimodular scalings in the direction of the line. In terms of the coordinates $\bf z=(x,u)$, the singular subset of $\rmJ^r$ is given by 
+    \[\calS^r=\left\{(x,u^{(r)})\mid u_{xx}=u_{xxx}=\cdots=u_r=0\right\},\]
+    where $u_r$ is the coordinate for $\dd^r u/\dd x^r$. A curve $u=f(x)$ is totally singular at a point $(x_0,f(x_0))$ iff $f^{(r)}(x_0)=0$ for all $r\geq 2$. In particular, an analytic curve that is totally singular at a point is necessarily a straight line.
+
+    The full affine group $\Aff_2(\bbR)$ is more interesting. Here, the totally singular curves are the parabolas and straight lines. The stabilizer of a parabolar, say $u=x^2$, is the $2$-dimensional nonabelian subgroup $(x,u)\mapsto (\lambda x+\mu,\lambda^2 u+2\lambda\mu x+\mu^2)$. In this case, the singular subset of $\rmJ^r$ is also determined by the total derivatives of the Lie determinant 
+    \[\calS^r\left\{(x,u^{(r)})\mid D_x^{r-4}\left[u_{xx}u_{xxxx}-\frac53 u_{xxx}^2\right]=0\right\}.\]
+    The parabolas and straight lines form the general solution to the ODE $u_{xx}u_{xxxx}-\frac53 u_{xxx}^2=0$.
+\end{example}
+
+A (scalar) \emph{differential invariant} of order $r$ is a (local) scalar differential function $I\in C^\infty(\rmJ^r)$ that is invariant under the action of $G^{(r)}$. Assuming $G$ acts locally effectively on subsets, there are 
+\[i_r=\dim \rmJ^r-\dim G=p+s\binom{p+r}{r}-d\label{eq 9.6 OlverCo2}\]
+functionally independent differential invariants of order $\leq r$ near any point of $\calV^r$.
+
+\begin{rem}
+    If $r\leq s_G$, then we replace $d$ in \eqref{eq 9.6 OlverCo2} by the maximal orbit dimension of $G$ on $\rmJ^r$ and restrict $\bf z^{(r)}$ to lie in the open subset of $\rmJ^r$ where the orbits of $G^{(r)}$ have the maximal dimension.
+\end{rem}
+
+The basic method, due to Lie and Tresse, for constructing a complete system of differential invariants is to use invariant differential operators. A total differential operator $\calD$ is said to be $G$-invariant if it commutes with the prolonged action of $G$. The most effective way to construct such operator relues on a suitably $G$-invariant basis for the semibasic $1$-forms on the jet space.
+
+\begin{defn}[Contact-invariant forms]
+    A differential $1$-form $\omega$ on $\rmJ^r$ is called contact-invariant if for every $g\in G$, we have $(g^{(r)})^\ast\omega=\omega+\theta_g$ for some contact form $\theta_g$. A \emph{semibasic contact-invariant coframe} on $\rmJ^r$ is a collection of $p$ linearly independent semibasic $1$-forms which are contact-invariant under $G^{(r)}$.
+\end{defn}
+
+We shall omit the adjective ``semibasic'' when describing contact-invariant coframes. Contact-invariant coframes are the jet space counterparts of the differential geometric coframes discussed above. Note that a contact-invariant coframe only forms a coframe for the horizontal subbundle $\calH<\T^\ast\rmJ^\infty$. A full coframe on $\rmJ^\infty$ requires additional forms.
+
+\begin{prop}
+    If $I$ is a differential invariant, its semibasic differential $\dd_M I$ is a contact-invariant $1$-form.
+\end{prop}
 
 
 
@@ -4549,7 +4768,7 @@ The order zero moving frame $\rho_0(m,h)$ which is the general solution to the l
 Thus, the action on the unnormalized group parameters $h$ can be explicitly determined by multiplying the moving frame on the left by the group element. The action of $G$ on $P_0$ projects to the original action of $G$ on $M$, so that $g\cdot (m,h)=(g\cdot m,\chi(g,m,h))$ for $g\in G$. In other words, we have constructed a homogeneous $H$-bundle over $G\slash H$. As we will see next, it also carries a $\frakg$-valued differential form that turns it into a true locally Klein geometry.
 
 \begin{example}[{\cite[Example~4.2]{OlverCo}}]
-    Consider the planar action (\ref{eq 3.10 OlverCo}) of $\GL_2(\bbR)$. It is transitive on $M=\bbR^2\setminus\{u=0\}$. Choose the basepoint $m_0=(0,1)$. Since $g\cdot m_0=(\beta/\delta,1/\delta)$, any compatible lift $g=\rho(x,u)$ must satisfy $\beta/\delta=x$, $1/\delta=u$, and hence the solution to \eqref{eq 4.1 OlverCo} is 
+    Consider the planar action \eqref{eq 3.10 OlverCo} of $\GL_2(\bbR)$. It is transitive on $M=\bbR^2\setminus\{u=0\}$. Choose the basepoint $m_0=(0,1)$. Since $g\cdot m_0=(\beta/\delta,1/\delta)$, any compatible lift $g=\rho(x,u)$ must satisfy $\beta/\delta=x$, $1/\delta=u$, and hence the solution to \eqref{eq 4.1 OlverCo} is 
     \[\beta=\frac{x}{u},\quad \delta=\frac{1}{u}.\label{eq 4.3 OlverCo}\]
     The most general compatible lift thus has the form 
     \[\rho_0(x,u,\alpha,\gamma)=\begin{pmatrix}
@@ -4724,8 +4943,8 @@ Note that we do not need the explicit isotropy groups for the transformation gro
 The instructive example we have considered above was conveniently chosen so that the actions of $G$ as well as its prolongations are all transitive, so that after two prolongations the jet space has the same number of dimensions as $G$, and specifying a moving coframe on it determines a local diffeomorphism to $G$. The next task is to extend the method to \emph{intransitive} actions. We still assume that $\dim G=d$ and $G$ acts effectively and regularly, which implies that its orbits, which we take to have dimension $s$, form a foliation of $M$. We choose a local \emph{slice} $\varSigma\subset M$ of this foliation, i.e., a submanifold of dimension $n-s$ intersecting the orbits transversally, and introduce a \emph{compatible lift} $\rho:M\to G$ by requiring that, for each $m$ near $\varSigma$, the lift $\rho$ satisfies 
 \[m=\rho(m)\cdot m_0,\quad \text{for some}\quad m_0\in\varSigma.\label{eq 5.1 OlverCo}\]
 The general solution to the compatible lift equations \eqref{eq 5.1 OlverCo} will be of the form $\rho(m,h)$ depending on $d-s$ group parameters $h$. Note that unless the stabilizer subgroups at each point in $\varSigma$ happen to be identical, we cannot identify the unspecified parameters as local coordinates on any subgroup $H<G$, leading us beyond any principal bundle interpretation of the method. Nevertheless, the \gls{immt} will allow us to locally write the general compatible lift in this form. In addition, the group admits (locally) $n-s$ functionally independent invariants $I_1(m),\ldots,I_{n-s}(m)$, whose level sets characterize the orbits. The $0$-th order moving frame will then be the map 
-\[\rho_0(m,h)=(\rho(m,h),I(m)),\]
-whose first components $g=\rho(m,h)$ are those of the general compatible lift (for the given slice $\varSigma$) and, in addition, has the invariants $w=I(m)=(I_1(m),\ldots,I_{n-s}(m))$ as further components. Note that $\rho_0$ is only locally defined, since $m$ must lie near $\varSigma$, and, moreover, the remaining parameters $h$ are determined in accordance with the \gls{immt}. 
+\[\rho_0(m,h)=(\rho(m,h),\bm I(m)),\]
+whose first components $g=\rho(m,h)$ are those of the general compatible lift (for the given slice $\varSigma$) and, in addition, has the invariants $\bf w=\bm I(m)=(I_1(m),\ldots,I_{n-s}(m))$ as further components. Note that $\rho_0$ is only locally defined, since $m$ must lie near $\varSigma$, and, moreover, the remaining parameters $h$ are determined in accordance with the \gls{immt}. 
 
 \begin{rem}
     We can view the range $G\times\bbR^{n-s}$ of $\rho_0$ as having the structure of a product Lie group, the additive group structure on the second factor formalizing the fact that we can add invariants.
@@ -4969,7 +5188,7 @@ where $s:\bbR^n\to M$ is a local diffeomorphism with $s(0)=m$ (recall the defini
         \item Meanwhile, in the case $r=1$, isomorphisms between $\T_p \Fr^1(M)$ and $L^{-1}\slash L^1$ are parametrized by second-order frames $p'\in\Fr^2(M)$. The second isomorphism for $r=1$ says that the vertical frame of vector fields $\partial/\partial p^i_j$ is identified with the left-invariant vector fields on $\GL_n(\bbR)$, which is also obvious.
         \item The fact that this isomorphism is independent of $p'$ means that the only part of $\iota_{p'}$ that can vary is the choice of a nowhere vertical $n$-dimensional tangent plane at $p$ which gets identified with $V=\<\frac{\partial}{\partial x^1},\ldots,\frac{\partial}{\partial x^n}\>$. As we will see later, the choice of such a plane at every point $p$, described locally by functions $p^i_{j_1j_2}(m)$, is exactly the function of a \emph{connection}, which can hence be identified with a section of $\pi^2_1$.\index{Connection}
         
-        \item The isomorphism $\iota_{p'}$ is \emph{almost} defining a global trivialization (or global frame) for the tangent bundle $\T \Fr^r(M)$. The only reason it doesn't is because $p'$ isn't actually point in $\Fr^r(M)$. Of course, this problem disappears as soon as one passes to the infinite order frame bundle $\Fr^\infty(M)$, where the tangent space at each point $p$ is thus naturally identified with $L^{-1}=V\oplus \frakgl_n^\infty(\bbR)$ by $\iota_p$. As we will see in future \chap s, this means that the infinite frame bundle carries a natural Cartan connection. This fact is related to the Cartan distribution defining a canonical flat connection on every jet bundle $\rmJ^r E$. It also has to do with the fact that $\Fr^\infty(M)$ is \emph{almost} the same as the diffeomorphism group $\Diff(M)$, and the difference is topological in nature. If we had worked in the analytic category, since any analytic diffeomorphism of a real analytic manifold $M$ is uniquely determined by its $\infty$-jet at any point, $\Fr^\infty(M)$ in this case could be identified with the group $\Diff^\omega(M)$ of analytic diffeomorphisms. Thus, omitting the topological subtleties, one can intuitively think of $\iota_p^{-1}$ as the Maurer-Cartan form of the diffeomorphism group, and of the frame bundle $\Fr^\infty(M)\to M$ as the Klein geometry $(\Diff(M),\Diff(M)_{m_0})$, where $\Diff(M)_{m_0}$ is the stabilizer of a point $m_0\in M$.
+        \item The isomorphism $\iota_{p'}$ is \emph{almost} defining a global trivialization (or global frame) for the tangent bundle $\T \Fr^r(M)$. The only reason it doesn't is because $p'$ isn't actually point in $\Fr^r(M)$. Of course, this problem disappears as soon as one passes to the infinite order frame bundle $\Fr^\infty(M)$, where the tangent space at each point $p$ is thus naturally identified with $L^{-1}=V\oplus \frakgl_n^\infty(\bbR)$ by $\iota_p$. As we will see in future \chap s, this means that the infinite frame bundle carries a natural Cartan connection. This fact is related to the Cartan distribution defining a canonical flat connection on the infinite jet bundle $\rmJ^\infty E$. It also has to do with the fact that $\Fr^\infty(M)$ is \emph{almost} the same as the diffeomorphism group $\Diff(M)$, and the difference is topological in nature. If we had worked in the analytic category, since any analytic diffeomorphism of a real analytic manifold $M$ is uniquely determined by its $\infty$-jet at any point, $\Fr^\infty(M)$ in this case could be identified with the group $\Diff^\omega(M)$ of analytic diffeomorphisms. Thus, omitting the topological subtleties, one can intuitively think of $\iota_p^{-1}$ as the Maurer-Cartan form of the diffeomorphism group, and of the frame bundle $\Fr^\infty(M)\to M$ as the Klein geometry $(\Diff(M),\Diff(M)_{m_0})$, where $\Diff(M)_{m_0}$ is the stabilizer of a point $m_0\in M$.
     \end{enumerate} 
 \end{rem}
 
@@ -5063,7 +5282,7 @@ We have thus succeeded in reformulating the equivalence problem for $G$-structur
 
 Since we are mostly interested in local equivalence problems, it is useful to look at the meaning of Proposition~\ref{prop 1.1.2.2 BryantEquiv} in local trivializations. Suppose $s$ and $\wb s$ are local sections of $P$ and $\wb P$, respectively. Due to the reproducing property of the soldering forms, these sections can be identified with the pullbacks $s^\ast\theta$ and $\wb s^\ast\wb\theta$, respectively. Because $\theta$ and $\wb\theta$ vanish only in vertical directions, these pullbacks define local coframes on $M$ and $\wb M$, respectively:
 \[\bm\theta\coloneqq s^\ast\theta,\quad \bar{\bm\theta}\coloneqq \wb s^\ast \wb\theta.\label{eq 1780135}\]
-For the two $G$-structures to be equivalent, we need to find a local diffeomorphism $F$ of the bases whose prolongation maps $s$ to \emph{some} section of $\wb P$ -- not necessarily $\wb s$. But any two local sections $\wb P$ differ by the application of a $G$-valued function $g$ via the principal action, in particular:
+For the two $G$-structures to be equivalent, we need to find a local diffeomorphism $F$ of the bases whose prolongation maps $s$ to \emph{some} section of $\wb P$ -- not necessarily $\wb s$. But any two local sections of $\wb P$ differ by the application of a $G$-valued function $g$ via the principal action, in particular:
 \[F^{(1)}\circ s(m)=\Phi_{g(m)}^{-1}\circ \wb s(m).\]
 Pulling back the original equivalence condition $\theta=\left(F^{(1)}\right)^\ast\wb\theta$ by $s$, we find 
 \[s^\ast \theta=s^\ast \left(F^{(1)}\right)^\ast\wb\theta=\left(F^{(1)}\circ s\right)^\ast\wb\theta=\wb s^\ast \circ \Phi_{g^{-1}}^\ast \wb\theta=\sigma^0_{g}\circ \wb s^\ast \wb\theta.\]
@@ -5079,6 +5298,10 @@ where we think of $g(m)$ as an $n\times n$ matrix-valued function acting on the 
     The local coframe on $U\subset M$ representing the soldering form can be used to recover the full soldering form over the domain of the coframe with the help of the local trivialization $\chi^{-1}(m,g)=\Phi_g(s(m))$:
     \[\theta_{\chi^{-1}(m,g)}=\sigma^0_g\circ \pi^\ast\bm\theta_m.\]
     This is usually used to ``lift'' $G$-equivalence problems for coframes to the manifold $U\times G$.
+\end{rem}
+
+\begin{rem}
+    The definition of $G$-equivalence is closely related to Definition~\ref{def 5.6 OlverCo2} of invariantly related coframes. Indeed, functionally independent invariants $\bm I$ in an extended coframe should be thought of as coordinates on the orbit space of the $G$-action, so in the present context they are the coordinates of $m\in M$. Thus, $G$-equivalence of coframes is exactly equivalence of extended coframes \emph{up to being invariantly related} with the additional constraint that the $\GL_n(\bbR)$-valued function $a(m)$ take values only in $G<\GL_n(\bbR)$.
 \end{rem}
 
 The following several examples display the surprisingly wide range of equivalence problems that can be reformulated as $G$-equivalence problems.
@@ -9694,7 +9917,7 @@ Since $\sfg= i^\ast \sfI$ defines a Riemannian metric on $\varSigma$, this makes
 \end{rem}
 
 Our goal will be to construct a natural orthonormal frame at every point of $\varSigma$, by analogy with the Frenet frame for curves, so as to compute the differential invariants characterizing the surface. A frame $\frake=(e_1,e_2,e_3)$ will be called a \emph{first-order adapted lift} (of the surface) if $e_3(p)\perp \T_p \varSigma$. 
-Thus, let $e_3(p)$ for each $p\in\varSigma$ be the unit normal to $\varSigma$, pointing outward in the sense of Theorem~\ref{thm orientation via normal vector}.  If $\varSigma$ is locally parametrized by a function $\bf{ x}: \bbR^2\supset U\to\bbE^3$ of two real parameters $(u,v)\in U$, then 
+Thus, let $e_3(p)$ for each $p\in\varSigma$ be the unit normal to $\varSigma$, pointing outward in the sense of Theorem~\ref{thm orientation via normal vector}.  If $\varSigma$ is locally parametrized by a function $\bf{ x}: \bbR^2\supset U\to\bbE^3$ of two real parameters $(x^1,x^2)=(u,v)\in U$, then 
 \[e_3=\frac{\bf{ x}_u\times \bf{x}_v}{\lVert \bf{x}_u\times \bf{x}_v\rVert},\]
 where $\bf{x}_u=\partial_u \bf{x}$ and $\bf{x}_v=\partial_v \bf{x}$. It is easy to verify that this vector is independent of the specific parametrization of $\varSigma$. Since $e_3$ is of unit length, we also conclude that $\partial_u e_3$ and $\partial_v e_3$ are tangent to $\varSigma$. Note, however, that these two vectors are, in general, only defined locally on $\varSigma$, so in the rest of this \sect\ we will freely identify $\varSigma$ with only the piece $\bf{x}(U)\subset \varSigma$, keeping in mind that everything below can be repeated on a neighborhood of any point of $\varSigma$.
 
