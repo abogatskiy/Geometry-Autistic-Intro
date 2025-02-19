@@ -1621,7 +1621,7 @@ The final proposition expresses the \emph{uniqueness} of the analytic structures
 
 
 \begin{hrem*}
-    The problem of establishing the existence of a universal Lie-polynomial formula (i.e.,  a series using only Lie brackets) for $\mu(A,B)$ was historically known as \emph{Campbell's problem}. Campbell himself (1897) was the first to introduce the Bernoulli series $A^\rmR(Z)$ and notice its relation to $\mu(tA,B)$ at small $t$. Then Poincar\'e (1900) characterized the full solution of the above ODE (however, he failed to observe the universal Lie-polynomial series). The observation that $C^2$ differentiability is sufficient for determinining an analytic structure is originally due to Schur (1890).
+    The problem of establishing the existence of a universal Lie-polynomial formula (i.e.,  a series using only Lie brackets) for $\mu(A,B)$ was historically known as \emph{Campbell's problem}. Campbell himself (1897) was the first to introduce the Bernoulli series $A^\rmR(Z)$ and notice its relation to $\mu(tA,B)$ at small $t$. Then Poincar\'e (1900) characterized the full solution of the above ODE (however, he failed to observe the universal Lie-polynomial series). The observation that $C^2$ differentiability is sufficient for determining an analytic structure is originally due to Schur (1890).
 \end{hrem*}
 
 
@@ -1681,7 +1681,7 @@ Dynkin's formula shows why certain classes of Lie algebras are particularly spec
     
     Crucially, the proof of the invertibility of $\exp$ above relied on the fact that the exponential map in matrix groups coincides with the matrix exponential, allowing us to explicitly write down its inverse. For general nilpotent Lie algebras, $\exp$ is not invertible. The above corollary is then a special case of a general statement that the exponential map is a universal covering map for any \emph{nilpotent} Lie algebra, and thus any connected nilpotent Lie group is diffeomorphic to a quotient of a vector space by a lattice.  \emph{Unipotent linear groups}\index{Unipotent group} are a special class of nilpotent groups defined as matrix groups consisting of unipotent matrices, and we have just proven that all unipotent groups $G$ are diffeomorphic to a vector space, and the exponential map identifies the Lie group structure with $(\frakg,\mu)$, where $\mu$ is the product defined via the \gls{bch} formula.
 
-    Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''. The next simplest class of Lie groups are solvable Lie groups, which we will study later in the book.
+    Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''. See \S\ref{sec: nilpotent groups} for more on them. The next simplest class of Lie groups are solvable Lie groups, which we will study later in the book.
 \end{rem}
 
 
@@ -2175,21 +2175,21 @@ We can now prove a slightly relaxed version of the Closed Subgroup Theorem~\ref{
     This implies that $g\in H$ because $g_m\in H$ and $H$ is a group. This shows that $H$ is closed in $G$. From Theorem~\ref{thm 1.10.6 DK} we see that $H$ is a Lie subgroup of $G$; actually the proof of Theorem~\ref{thm 1.10.6 DK} becomes slightly simpler if we assume that $H$ is a closed subgroup of $G$ instead of only a closed local group. Note that in Theorem~\ref{thm 1.10.6 DK} the exponential map is a homeomorphism from $U$ to a neighborhood of $e$ in $H$ w.r.t.\ the relative topology making the Lie group topology of $H$ equal to the relative topology.
 \end{proof}
 
-We end the \sect\ by showing that for a simply connected Lie group, its automorphism group is isomorphic to that of its Lie algebra.
+We end the \sect\ by using the Closed Subgroup Theorem to show that for a simply connected Lie group, its automorphism group is isomorphic to that of its Lie algebra.
 
 \begin{lem}[{\cite[Lem.~9.2.26]{HN}}]\label{lem 9.2.26 HN}
     Let $G$ and $N$ be Lie groups with Lie algebras $\frakg,\frakn$, and $\alpha:G\to \Aut(N)$ be a (set-theoretic) group homomorphism.
     \begin{enumerate}[label=(\roman*)]
         \item The action $\sigma(g,n)\coloneqq \alpha(g)(n)$ of $G$ on $N$ is smooth iff 
         \begin{enumerate}[label=(\alph*)]
-            \item $\Lie\circ\alpha:G\to \Aut(\frakn)$ is smooth as a map into $\GL(\frakn)$;
+            \item $\Lief\circ\alpha:G\to \Aut(\frakn)$ is smooth as a map into $\GL(\frakn)$;
             \item All orbit maps $\sigma^n:G\to N$, $g\mapsto \alpha(g)(n)$ are smooth.
         \end{enumerate}
         \item If $N$ is connected, then (a) implies (b).
     \end{enumerate}
 \end{lem}
 \begin{proof}
-    (i) If $\sigma$ is smooth, then (b) is clearly satisfied. Moreover, $\exp_N\circ\Lief(\alpha(g))=\alpha(g)\circ\exp_N$ holds for each $g\in G$, so that the map $G\times\frakn\to\frakn$, $(g,A)\mapsto \Lief(\alpha(g))A$ is smooth on an open neighborhood of $(e,0)$. This implies that $\Lie\circ\alpha:G\to \GL(\frakn)$ is smooth in an open neighborhood of $e$, hence smooth because it is a group homomorphism.
+    (i) If $\sigma$ is smooth, then (b) is clearly satisfied. Moreover, $\exp_N\circ\Lief(\alpha(g))=\alpha(g)\circ\exp_N$ holds for each $g\in G$, so that the map $G\times\frakn\to\frakn$, $(g,A)\mapsto \Lief(\alpha(g))A$ is smooth on an open neighborhood of $(e,0)$. This implies that $\Lief\circ\alpha:G\to \GL(\frakn)$ is smooth in an open neighborhood of $e$, hence smooth because it is a group homomorphism.
 
     Next we assume that (a) and (b) are satisfied. We have to show that for any pair $(g_1,n_1)\in G\times N$ the expression 
     \[\sigma(g_1g_2,n_1n_2)=\alpha(g_1)(\alpha(g_2)(n_1)\alpha(g_2)(n_2))\]
@@ -2202,13 +2202,13 @@ We end the \sect\ by showing that for a simply connected Lie group, its automorp
 
 \begin{cor}[{\cite[Cor.~9.5.11]{HN}}]\label{cor 9.5.11 HN}
     If $G$ is a connected and simply connected Lie group with Lie algebra $\frakg$, then the Lie functor
-    \[\Lie:\; \Aut(G)\to \Aut(\frakg), \quad \varphi\mapsto \varphi_{\ast e}\]
-    is an isomorphism of groups. As a closed subgroup of $\GL(\frakg)$, the group $\Aut(\frakg)$ carries a natural Lie group structure, and we endow $\Aut(G)$ with the Lie group structure for which $\Lie$ is an isomorphism of Lie groups. Then the action $\Aut(G)\acts G$ is smooth.
+    \[\Lief:\; \Aut(G)\to \Aut(\frakg), \quad \varphi\mapsto \varphi_{\ast e}\]
+    is an isomorphism of groups. As a closed subgroup of $\GL(\frakg)$, the group $\Aut(\frakg)$ carries a natural Lie group structure, and we endow $\Aut(G)$ with the Lie group structure for which $\Lief$ is an isomorphism of Lie groups. Then the action $\Aut(G)\acts G$ is smooth.
 \end{cor}
 \begin{proof}
-    First, we recall from Proposition~\ref{prop 1.1.3 DK} that for each automorphism $\varphi\in\Aut(G)$ the endomorphism $\Lief(\varphi)=\varphi_{\ast e}$ of $\frakg$ is also automorphism. That $\Lie$ is injective follows from the connectedness of $G$ by the First Principle from Remark~\ref{rem Lie's principles} and that $\Lie$ is surjective from Lie's Second Theorem~\ref{thm second principle}.
+    First, we recall from Proposition~\ref{prop 1.1.3 DK} that for each automorphism $\varphi\in\Aut(G)$ the endomorphism $\Lief(\varphi)=\varphi_{\ast e}$ of $\frakg$ is also automorphism. That $\Lief$ is injective follows from the connectedness of $G$ by the First Principle from Remark~\ref{rem Lie's principles} and that $\Lief$ is surjective from Lie's Second Theorem~\ref{thm second principle}.
 
-    If we endow $\Aut(G)$ with the Lie group structure for which $\Lief$ is an isomorphism, then the smoothness of the action $\Aut(\frakg)\acts \frakg$ and Lemma imply that the action $\Aut(G)\acts G$ is smooth.
+    If we endow $\Aut(G)$ with the Lie group structure for which $\Lief$ is an isomorphism, then the smoothness of the action $\Aut(\frakg)\acts \frakg$ and Lemma~\ref{lem 9.2.26 HN}(ii) imply that the action $\Aut(G)\acts G$ is smooth.
 \end{proof}
 
 
@@ -2329,16 +2329,15 @@ All of these facts reflect the incredible rigidity of Lie group structures, a pr
 
 
 
-\section{(*) Nilpotent and solvable Lie groups}
+\section{(*) Nilpotent Lie groups}\label{sec: nilpotent groups}
 
-
+In this section we study the basic structure of nilpotent (and, to much lesser extent, solvable) Lie algebras and groups. First we will need a criterion for a Lie group to decompose as a semidirect product, to which the first part of this \sect\ is devoted.
 
 \begin{defn}[Extension of Lie groups]
     An extension of Lie groups is a short exact sequence
     \[\{e\}\to N\overset{i}{\hookrightarrow} G\overset{q}{\to} H\to \{e\}\]
     of Lie group homomorphisms, i.e., such that $i:N\to \ker q$ is an isomorphism.
 \end{defn}
-
 
 A particularly important class of extensions of a Lie group $H$ by a Lie group $N$ are the semidirect products $H\ltimes_\alpha N$. We start with a criterion for a Lie group to decompose as a semidirect product. First we note that, by analogy with semidirect products of Lie groups, one can define \emph{semidirect sums} of Lie algebras $\frakg\ltimes_\beta\frakn$, where $\beta:\frakg\to \Der(\frakn)$ is a Lie algebra homomorphism which defines an action of $\frakg$ on $\frakn$ by derivations (infinitesimal automorphisms).\index{Semidirect sum of Lie algebras} The Lie bracket on the semidirect sum is defined as 
 \[[(A,B),(A',B')]=([A,A']_\frakg,[B,B']_\frakn+\beta(A)(B')-\beta(A')(B)).\]
@@ -2385,7 +2384,7 @@ We will also need the following simple theorem.
 This criterion, in turn, allows us to integrate semidirect sum decompositions of Lie algebras to the level of Lie groups, modulo a usual topological constraint.
 
 \begin{prop}[{\cite[Prop.~11.1.19]{HN}}]\label{prop 11.1.19 HN}
-    Let $G$, $H$, and $N$ be simply connected Lie groups with Lie algebras $\frakh,\frakh$, and $\frakn$. Suppose that $\frakg\cong\frakh\ltimes_\beta\frakn$ is a semidirect sum for some morphism $\beta:\frakh\to \Der(\frakn)$ (recall that $\Der(\frakn)<\frakgl(\frakn)$ is the Lie algebra of the full automorphism group $\Aut(\frakn)<\GL(\frakn)$). Then there is a unique smooth action $\gamma:H\to \Aut(N)\cong \Aut(\frakn)$ with $\gamma_{\ast e}=\beta:\frakh\to \Der(\frakn)$ and the two natural homomorphisms $i_H:H\to G$, $i_N:N\to G$ combine to an isomorphism 
+    Let $G$, $H$, and $N$ be simply connected Lie groups with Lie algebras $\frakh,\frakh$, and $\frakn$. Suppose that $\frakg\cong\frakh\ltimes_\beta\frakn$ is a semidirect sum for some morphism $\beta:\frakh\to \Der(\frakn)$.\footnote{Recall that $\Der(\frakn)<\frakgl(\frakn)$ is the Lie algebra of the full automorphism group $\Aut(\frakn)<\GL(\frakn)$.} Then there is a unique smooth action $\gamma:H\to \Aut(N)\cong \Aut(\frakn)$ with $\gamma_{\ast e}=\beta:\frakh\to \Der(\frakn)$ and the two natural homomorphisms $i_H:H\to G$, $i_N:N\to G$ combine to an isomorphism 
     \[m:H\ltimes_\gamma N\to G,\quad (h,n)\mapsto i_H(h)i_N(n).\]
 \end{prop}
 \begin{proof}
@@ -2431,6 +2430,15 @@ We now turn our attention to nilpotent and solvable Lie groups and algebras. Fir
     is an ideal of $\frakg(F)$ consisting of \emph{strictly} upper triangular block matrices. The subscript in $\frakg_{\mathrm{n}}$ stands for ``nilpotent''. Indeed, it is easy to check by induction that $C^m(\frakg_{\mathrm{n}}(F))V_l\subset V_{l-m}$, where we put $V_{i<0}\coloneqq 0$, so $C^l(\frakg_{\mathrm{n}}(F))=0$. 
 \end{example}
 
+\begin{example}[Oscillator algebra]\index{Oscillator algebra}
+    Consider the Heisenberg algebra $\heis_3(\bbR)$ defined in the basis $X,Y,C$ by 
+    \[[P,Q]=C,\quad [P,C]=[Q,C]=0\],
+    which is isomorphic to the algebra of $3\times 3$ strictly upper triangular matrices, hence nilpotent. The linear endomorphism of $\heis_3(\bbR)$ defined by 
+    \[D(C)=0,\quad D(P)=Q,\quad D(Q)=-P,\]
+    is then a derivation, so we can construct a semidirect sum algebra $\frakg\coloneqq \bbR\ltimes_D\heis_3(\bbR)$, called the \emph{oscillator algebra}. Writing $H\coloneqq (0,1)$ for the additional basis element in $\frakg$, the nonzero brackets of basis elements are 
+    \[[P,Q]=C,\quad [H,P]=Q,\quad [H,Q]=-P.\]
+    The name comes from the interpretation in quantum mechanics, where $H$ is identified with the Hamiltonian operator $P^2+Q^2$ of a one-dimensional harmonic oscillator.
+\end{example}
 
 \begin{defn}[Nilpotent, solvable Lie group]\index{Nilpotent!Lie group}\index{Sovable!Lie group}
     For a group $G$, its \emph{(lower) central series} is defined similarly as 
@@ -2442,7 +2450,7 @@ We now turn our attention to nilpotent and solvable Lie groups and algebras. Fir
     The group is called solvable if $D^r(G)=\{e\}$ for some $r\in\bbZ_{\geq 0}$.
 \end{defn}
 
-The following fundamental result establishes the relationship between the nilpotency or solvability of Lie groups and their Lie algebras. Unfortunately, its proof requires some structure theory that we have not yet developed.
+The following fundamental result establishes the relationship between the nilpotency or solvability of Lie groups and their Lie algebras. Unfortunately, its proof requires a bit of structure theory that we have not yet developed and would be out of place at this point.
 
 \begin{prop}[{\cite[Prop.~11.2.4]{HN}}]
     For any connected Lie group $G$ with Lie algebra $\frakg$, the groups $D^m(G)$ in the derived series and $C^m(G)$ in the lower central series are normal analytic subgroups with the Lie algebras 
@@ -2453,7 +2461,7 @@ The following fundamental result establishes the relationship between the nilpot
 
     %The proof is broken down into two lemmas.
 
-    % \begin{lem}[{\cite[Lem.~11.2.2]{HN}}]
+    % \begin{lem}[{\cite[Lem.~11.2.2]{HN}}]\label{lem 11.2.2 HN} 
     %     If $H,K< G$ are analytic subgroups with Lie algebras $\frakh,\frakk$, then $[H,K]$ is also an analytic subgroup and its Lie algebra contains $[\frakh,\frakk]$.
     % \end{lem}
     % \begin{proof}
@@ -2471,7 +2479,14 @@ The following fundamental result establishes the relationship between the nilpot
     %     Then $[H,K]\subset L$. If, in addition, $[\frakh,\frakk]=\frakl$, then $[H,K]=L$.
     % \end{lem}
     % \begin{proof}
-    %     From our assumptions, it immediately follows that $\frakh+\frakk+\frakl$ is a subalgebra of $\frakg$, and we may assume that it coincides with $\frakg$. Then $\frakl$ is an ideal of $\frakl$. First, we assume that $G$ is simply connected. Now $L$ is a closed subgroup of $G$ by Theorem~\ref{thm 11.2.21 }
+    %     From our assumptions, it immediately follows that $\frakh+\frakk+\frakl$ is a subalgebra of $\frakg$, and we may assume that it coincides with $\frakg$. Then $\frakl$ is an ideal of $\frakl$. First, we assume that $G$ is simply connected. Now $L$ is a closed subgroup of $G$ by Theorem~\ref{thm 11.2.21 HN}, so that $G\slash K$ carries a natural Lie group structure. Let $q:G\to G\slash L$ be the quotient morphism with $\ker q=L$. The relation $\ker q_{\ast e}=\frakl$ yields 
+    % \[[q_{\ast e}\frakh,q_{\ast e}\frakk]\subset q_{\ast e}[\frakh,\frakk]=\{0\}.\]
+    % Therefore, the two subalgebras $q_{\ast e}\frakh$ and $q_{\ast e}\frakk$ commute, which implies that the corresponding analytic subgroups $q(H)=\<\exp_{G\slash L}q_{\ast e}\frakh\>$ and $q(K)=\<\exp_{G\slash L}q_{\ast e}\frakk\>$ commute. This implies that $[H,K]\subset\keq q=L$.
+
+    % Now let $G$ be arbitrary, $q_G:\wt G\to G$ be the universal covering morphism of $G$, and $\wt H,\wt K$, and $\wt L$, resp., the analytic subgroups of $\wt G$ corresponding to $\frakh,\frakk$, and $\frakl$. By what we have just seen, $[\wt H,\wt K]\subset \wt L$, and this implies that 
+    % \[[H,K]=q_G\left((\wt H,\wt K)\right)\subset q_G(\wt L)=L.\]
+    
+    % If, in addition, $[\frakh,\frakk]=\frakl$, then Lemma~\ref{lem 11.2.2 HN} implies that $\frakl=[\frakh,\frakk]\subset \Lie([H,K])$, so that the analytic subgroups $[H,K]$ and $L$ must coincide.
     % \end{proof}
 % \end{proof}
 
@@ -2525,7 +2540,7 @@ Thus, in every nilpotent Lie algebra, all of the adjoint endomorphisms $\ad_A$, 
     We proceed by induction on $\dim \frakg$. For $dim \frakg = 0$, the assertion holds trivially for each nonzero $v_0 \in V$.
 
     Next we assume that $\dim \frakg > 0$ and pick a proper subalgebra $\frakh < \frakg$ of maximal dimension. According to Lemma~\ref{lem 5.2.4 HN}, for each $x \in \frakh$ the operators $\underline{\ad}(x)$ are nilpotent. Now our induction hypothesis implies the existence of some $x_0 \in \frakg\setminus\frakh$ with $\underline{\ad}(\frakh)(x_0) = \{0\}$, i.e., $[\frakh,x_0] \subset \frakh$. This implies that $\bbK x_0 + \frakh$ is a subalgebra of $\frakg$ and, again by maximality of $\frakh$, it follows that $\bbK x_0 + \frakh = \frakg$. The induction hypothesis also implies that the space $V_0 := \{v \in V : \frakh\cdot v = \{0\}\}$ is nonzero. Moreover,
-    \[yx(w) = xy(w) - [x,y](w) \in x\frakh(w) + \frakh(w) = \{0\}\]
+    \[yx(w) = xy(w) - [x,y](w) \quad \in x\frakh(w) + \frakh(w) = \{0\}\]
     for $x \in \frakg$, $y \in \frakh$, $w \in V_0$, implies that $\frakg\cdot V_0 \subset V_0$. Since $\restr{x_0}{V_0}$ is also nilpotent, there exists a nonzero $v_0 \in V_0$ with $x_0\cdot v_0 = 0$. Putting all this together, we arrive at $\frakg\cdot v_0 = \frakh\cdot v_0 + \bbK x_0\cdot v_0 = \{0\}$.
 \end{proof}
 
@@ -2555,7 +2570,7 @@ Now we are able to prove the aforementioned criterion for the nilpotency of a fi
     If $\ad_A$ is nilpotent for each $A\in\frakg$, then Corollary~\ref{cor 5.2.7 HN} implies that the Lie algebra $\ad(\frakg)\cong \frakg\slash\frakz(\frakg)$ is nilpotent. Now Proposition~\ref{prop 5.2.3 HN}(ii) shows that $\frakg$ is also nilpotent.
 \end{proof}
 
-Ado's Theorem (which we don't yet have the necessary structure theory to prove) states that every finite-dimensional real or complex Lie algebra can be embedded into a matrix algebra $\frakgl(V)$. Thus, combining the above two results, we conclude that nilpotent finite-dimensional Lie algebras can be represented by strictly triangular matrices: $\frakg\cdot V_i\subset V_{i-1}$.
+In particular, every representation of a finite-dimensional Lie algebra can be made strictly upper triangular by an appropriate choice of basis of $V$. Moreover, Ado's Theorem (which we don't yet have the necessary structure theory to prove) states that every finite-dimensional real or complex Lie algebra can be embedded into a matrix algebra $\frakgl(V)$. Thus, combining the above two results, we conclude that \emph{nilpotent finite-dimensional Lie algebras can be faithfully represented by strictly upper triangular matrices:} $\frakg\cdot V_i\subset V_{i-1}$.
 
 \begin{lem}[{\cite[Lem.~5.2.9]{HN}}]\label{lem 5.2.9 HN}
     If $\frakh,\frakk$ are nilpotent ideals of the Lie algebra $\frakg$, then so is their sum $\frakh+\frakk$.
@@ -2571,7 +2586,7 @@ Ado's Theorem (which we don't yet have the necessary structure theory to prove) 
 The main consequence of the above lemma is that in every finite-dimensional Lie algebra $\frakg$, there is a largest nilpotent ideal. In fact, if $\frakn\sub\frakg$ is a nilpotent ideal of maximal dimension and $\frakm\sub\frakg$ any other nilpotent ideal, then the nilpotency of $\frakn+\frakm$ implies that $\frakm\subset\frakn$. Therefore, the ideal $\frakn$ contains all other nilpotent ideals, and hence is unique.
 
 \begin{defn}[Nilradical]\index{Nilradical}
-    The nilradical of a finite-dimensional Lie algebra is the maximal nilpotent ideal, denoted by $\fraknil(\frakg)$.
+    The nilradical of a finite-dimensional Lie algebra is the unique maximal nilpotent ideal, denoted by $\fraknil(\frakg)$.
 \end{defn}
 
 We now move on to the structure of nilpotent Lie groups.
@@ -2661,10 +2676,10 @@ We are ready to extend the description of the structure of connected abelian Lie
 \end{proof}
 
 \begin{rem}
-    THe major difference between the abelian and nilpotent cases is that the exact sequence of groups 
+    The major difference between the abelian and nilpotent cases is that the exact sequence of groups 
     \[\{e\}\to T\to G\overset{q}{\to}G\slash T\to \{e\}\]
-    does not need to split in the nilpotent case, i.e., there may be no smooth homomorphism $\alpha:G\slash T\to G$ with $q\circ\alpha=\id_{G\slash T}$ (cf.\ Corollary~\ref{cor structure of abelian Lie groups}). We obtain an easy example from the $3$-dimensional Heisenberg-Lie algebra $\frakg$ spanned by basis elements $X,Y,C$ satisfying 
-    \[[X,Y]=C,\quad [C,X]=[C,Y]=0.\]
+    does not need to split in the nilpotent case, i.e., there may be no smooth homomorphism $\alpha:G\slash T\to G$ with $q\circ\alpha=\id_{G\slash T}$ (cf.\ Corollary~\ref{cor structure of abelian Lie groups}). We obtain an easy example from the $3$-dimensional Heisenberg-Lie algebra $\frakg$ spanned by basis elements $P,Q,C$ satisfying 
+    \[[P,Q]=C,\quad [C,P]=[C,Q]=0.\]
     For the quotient Lie group $G=(\frakg,\ast)\slash (\bbZ C)$, we obtain a circle $T=\bbR C\slash\bbZ C\cong \bbR\slash\bbZ\cong\bbS^1$, so that we get a diffeomorphism 
     \[G\cong (G\slash T)\times T\cong \bbR^2\times \bbS^1.\]
     Since the quotient Lie group $G\slash T\cong\bbR^2$ is abelian and $T$ is central, there is no morphism of Lie groups $\sigma:G\slash T\to G$ splitting the quotient map because otherwise $G\cong(G\slash T)\times T$ would be abelian. Another argument for the nonexistence of such a homomorphism is that the short exact sequence of Lie algebras 
@@ -2684,14 +2699,24 @@ We are ready to extend the description of the structure of connected abelian Lie
 \end{proof}
 
 
+\begin{rem}
+    The structure of solvable Lie algebras and groups is significantly more complicated than that of the nilpotent ones. Although it can be derived by elementary means (see, e.g., \cite{HN}), it becomes much easier to study once one developes some basic tools of homological algebra. For this reason, we delay this discussion until \Part~\ref{part Lie Theory}.
+\end{rem}
 
-\PRLsep 
+% \PRLsep 
 
 
-The structure of solvable Lie groups is substantially more complicated than that of the nilpotent ones. In particular, the exponential map need not be surjective. A simple example with this property is the universal covering group of the Euclidean group $\SE_2$ of the plane. Other difficulties aries from the fact that the center of a connected solvable Lie group is not connected (again $\SE_2$ provides an example). Therefore, the description of the center of the universal covering group and hence the classification of all solvable Lie groups with a given Lie algebra is more complicated than the nilpotent case, where everything boils down to factorization by a discrete subgroup of $\frakz(\frakg)$. Presently, we can only show that connected and simply connected solvable Lie groups are diffeomorphic to vector spaces by showing the existence of global coordinates of ``the second kind'' (products of exponentials).\footnote{Let $\bf{t}_i$, $i=1,\ldots,n$, be a basis of the Lie algebra $\frakg$. Coordinates of the first kind on the Lie group $G$ have the form $\bf{x}\mapsto \exp_G(x^i\bf{t}_i)$, whereas coordinates of the second kind are $\bf{x}\mapsto \exp_G(x^1\bf{t}_1)\cdots\exp_G(x^n\bf{t}_n)$.}
+% The structure of solvable Lie groups is substantially more complicated than that of the nilpotent ones. In particular, the exponential map need not be surjective. A simple example with this property is the universal covering group of the Euclidean group $\SE_2$ of the plane. Other difficulties aries from the fact that the center of a connected solvable Lie group is not connected (again $\SE_2$ provides an example). Therefore, the description of the center of the universal covering group and hence the classification of all solvable Lie groups with a given Lie algebra is more complicated than the nilpotent case, where everything boils down to factorization by a discrete subgroup of $\frakz(\frakg)$. Presently, we can only show that connected and simply connected solvable Lie groups are diffeomorphic to vector spaces by showing the existence of global coordinates of ``the second kind'' (products of exponentials).\footnote{Let $\bf{t}_i$, $i=1,\ldots,n$, be a basis of the Lie algebra $\frakg$. Coordinates of the first kind on the Lie group $G$ have the form $\bf{x}\mapsto \exp_G(x^i\bf{t}_i)$, whereas coordinates of the second kind are $\bf{x}\mapsto \exp_G(x^1\bf{t}_1)\cdots\exp_G(x^n\bf{t}_n)$.}
 
-
-
+% \begin{thm}[{\cite[Thm.~11.2.14]{HN}}]
+%     If $G$ is a connected and simply connected solvable Lie group, then there exists a basis $\bf{t}_1,\ldots,\bf{t}_n$ of its Lie algebra $\frakg$ such that the map 
+%     \[\varPhi:\bbR^n\to G,\quad (x^1,\ldots,x^n)\mapsto \prod_{j=1}^n \exp_G(x^j\bf{t}_j)\]
+%     is a diffeomorphism, the \glspl{ops} $R_j\coloneqq \exp_G(\bbR\bf{t}_j)$ of $G$ are closed, and 
+%     \[G\cong \left(\left(\ldots \left((R_1\rtimes R_2)\rtimes R_3\right)\ldots \right)\rtimes R_n\right).\]
+% \end{thm}
+% \begin{proof}
+    % TODO: once again this uses the Smooth Splitting Theorem, which requires Levi's Theorem.
+% \end{proof}
 
 
 
