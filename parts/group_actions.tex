@@ -2175,7 +2175,7 @@ We can now prove a slightly relaxed version of the Closed Subgroup Theorem~\ref{
     This implies that $g\in H$ because $g_m\in H$ and $H$ is a group. This shows that $H$ is closed in $G$. From Theorem~\ref{thm 1.10.6 DK} we see that $H$ is a Lie subgroup of $G$; actually the proof of Theorem~\ref{thm 1.10.6 DK} becomes slightly simpler if we assume that $H$ is a closed subgroup of $G$ instead of only a closed local group. Note that in Theorem~\ref{thm 1.10.6 DK} the exponential map is a homeomorphism from $U$ to a neighborhood of $e$ in $H$ w.r.t.\ the relative topology making the Lie group topology of $H$ equal to the relative topology.
 \end{proof}
 
-We end the \sect\ by using the Closed Subgroup Theorem to show that for a simply connected Lie group, its automorphism group is isomorphic to that of its Lie algebra.
+We end the \sect\ by using the Closed Subgroup Theorem to show that for a connected and simply connected Lie group, its automorphism group is isomorphic to that of its Lie algebra.
 
 \begin{lem}[{\cite[Lem.~9.2.26]{HN}}]\label{lem 9.2.26 HN}
     Let $G$ and $N$ be Lie groups with Lie algebras $\frakg,\frakn$, and $\alpha:G\to \Aut(N)$ be a (set-theoretic) group homomorphism.
@@ -2201,9 +2201,9 @@ We end the \sect\ by using the Closed Subgroup Theorem to show that for a simply
 
 
 \begin{cor}[{\cite[Cor.~9.5.11]{HN}}]\label{cor 9.5.11 HN}
-    If $G$ is a connected and simply connected Lie group with Lie algebra $\frakg$, then the Lie functor
-    \[\Lief:\; \Aut(G)\to \Aut(\frakg), \quad \varphi\mapsto \varphi_{\ast e}\]
-    is an isomorphism of groups. As a closed subgroup of $\GL(\frakg)$, the group $\Aut(\frakg)$ carries a natural Lie group structure, and we endow $\Aut(G)$ with the Lie group structure for which $\Lief$ is an isomorphism of Lie groups. Then the action $\Aut(G)\acts G$ is smooth.
+    If $G$ is a connected and simply connected Lie group with Lie algebra $\frakg$, then the Lie functor's action
+    \[\Lief:\; \Aut(G)\to \Aut(\frakg), \quad \varphi\mapsto \varphi_{\ast e},\]
+    defines an isomorphism of groups. As a closed subgroup of $\GL(\frakg)$, the group $\Aut(\frakg)$ carries a natural Lie group structure, and we endow $\Aut(G)$ with the Lie group structure for which $\Lief$ is an isomorphism of Lie groups. Then the action $\Aut(G)\acts G$ is smooth.
 \end{cor}
 \begin{proof}
     First, we recall from Proposition~\ref{prop 1.1.3 DK} that for each automorphism $\varphi\in\Aut(G)$ the endomorphism $\Lief(\varphi)=\varphi_{\ast e}$ of $\frakg$ is also automorphism. That $\Lief$ is injective follows from the connectedness of $G$ by the First Principle from Remark~\ref{rem Lie's principles} and that $\Lief$ is surjective from Lie's Second Theorem~\ref{thm second principle}.
@@ -2329,7 +2329,7 @@ All of these facts reflect the incredible rigidity of Lie group structures, a pr
 
 
 
-\section{(*) Nilpotent Lie groups}\label{sec: nilpotent groups}
+\section{(*) Nilpotent and solvable Lie algebras and groups}\label{sec: nilpotent groups}
 
 In this section we study the basic structure of nilpotent (and, to much lesser extent, solvable) Lie algebras and groups. First we will need a criterion for a Lie group to decompose as a semidirect product, to which the first part of this \sect\ is devoted.
 
@@ -2422,12 +2422,36 @@ We now turn our attention to nilpotent and solvable Lie groups and algebras. Fir
     In particular, $D^1(\frakg)=[\frakg,\frakg]=C^2(\frakg)$. The Lie algebra is called solvable if there exists $r\in\bbZ_{\geq 0}$ with $D^r(\frakg)=0$. 
 \end{defn}
 
-\begin{example}
+\begin{example}\label{ex 5.2.20 HN}
     An important generalization of strictly upper triangular matrices are sets of matrices that preserve a flag $F=(0=V_0<V_1<\cdots <V_l=V)$ on a vector space $V$. Namely, define 
     \[\frakg(F)\coloneqq \{A\in\frakgl(V):\; A\cdot V_j<V_j\;\text{for all}\; j\}.\]
-    It is easy to check that this is a Lie subalgebra of $\frakgl(V)$. By choosing a basis on $V$ such that each $V_j$ is spanned by the first $d_j=\dim(V_j)$ basis vectors, the matrices in $\frakg(F)$ are represented by ``upper triangular'' \emph{block} matrices consisting of $l\times l$ blocks, each block representing a linear map $V_i\slash V_{i-1}\to V_j\slash V_{j-1}$ for some pair $i\leq j$ (note that the ``diagonal'' blocks allow such matrices to not be upper triangular at all in the usual sense). It is also easy to see that 
+    It is easy to check that this is a Lie subalgebra of $\frakgl(V)$. By choosing a basis on $V$ such that each $V_j$ is spanned by the first $d_j=\dim(V_j)$ basis vectors, the matrices in $\frakg(F)$ are represented by ``upper triangular'' \emph{block} matrices consisting of $l\times l$ blocks, each block representing a linear map $V_i\slash V_{i-1}\to V_j\slash V_{j-1}$ for some pair $i\leq j$ (note that the ``diagonal'' blocks allow such matrices to not be upper triangular at all in the usual sense). 
+    
+    Next, it is also easy to see that 
     \[\frakg_{\mathrm{n}}(F)\coloneqq \{A\in\frakgl(V):\in A\cdot V_j\subset V_{j-1}\;\text{for all}\; j>0\}\]
     is an ideal of $\frakg(F)$ consisting of \emph{strictly} upper triangular block matrices. The subscript in $\frakg_{\mathrm{n}}$ stands for ``nilpotent''. Indeed, it is easy to check by induction that $C^m(\frakg_{\mathrm{n}}(F))V_l\subset V_{l-m}$, where we put $V_{i<0}\coloneqq 0$, so $C^l(\frakg_{\mathrm{n}}(F))=0$. 
+
+    To find a subalgebra complementary to this ideal, we choose subspaces $W_0,\ldots,W_{l-1}$ of $V$ with $V_{j+1}\cong V_j\oplus W_j$ for $j=0,\ldots,l-1$. Then 
+    \[\frakg_{\mathrm{s}}(F)\coloneqq \{A\in\frakgl(V):\; A\cdot W_j\subset W_j\;\text{for all}\; j\}\subset\frakg(F)\]
+    is a subalgebra with 
+    \[\frakg(F)\cong \frakg_{\mathrm{s}}(F)\ltimes\frakg_{\mathrm{n}}(F)\quad \text{and}\quad \frakg_{\mathrm{s}}(F)\cong \bigoplus_{j=1}^l\frakgl(W_j).\]
+    The subscript in $\frakg_{\mathrm{s}}(F)$ stands for ``semisimple''. Describing the elements of $\frakg(F)$ as above by block matrices, the semidirect decomposition of the Lie algebra $\frakg(F)$ corresponds to the decomposition of an upper triangular matrix as a sum of a strictly upper triangular matrix and a diagonal matrix. For $l=3$, we have, in particular:
+    \[A=\begin{pmatrix}
+        A_{11} & A_{12} & A_{13}\\
+        0 & A_{22} & A_{23}\\
+        0 & 0 & A_{33}
+    \end{pmatrix}=
+    \underbrace{\begin{pmatrix}
+        A_{11} & 0 & 0\\
+        0 & A_{22} & 0\\
+        0 & 0 & A_{33}\\
+    \end{pmatrix}}_{\in\frakg_{\mathrm{s}(F)}}+
+    \underbrace{\begin{pmatrix}
+        0 & A_{12} & A_{13} \\
+        0 & 0 & A_{23}\\
+        0 & 0 & 0
+    \end{pmatrix}}_{\in\frakg_{\mathrm{n}(F)}}.
+    \]
 \end{example}
 
 \begin{example}[Oscillator algebra]\index{Oscillator algebra}
@@ -2589,7 +2613,7 @@ The main consequence of the above lemma is that in every finite-dimensional Lie 
     The nilradical of a finite-dimensional Lie algebra is the unique maximal nilpotent ideal, denoted by $\fraknil(\frakg)$.
 \end{defn}
 
-We now move on to the structure of nilpotent Lie groups.
+We now move on to the structure of nilpotent Lie \emph{groups}.
 
 \begin{thm}[{\cite[Thm.~11.2.6]{HN}}]\label{thm 11.2.6 HN}
     If $\frakg$ is a nilpotent Lie algebra, then the Dynkin series defines a polynomial map 
@@ -2699,12 +2723,187 @@ We are ready to extend the description of the structure of connected abelian Lie
 \end{proof}
 
 
+
+\PRLsep 
+
+
+The structure of solvable Lie algebras and groups is significantly more complicated than that of the nilpotent ones. Although it can be derived by elementary means (see, e.g., \cite{HN}), it becomes much easier to study once one developes some basic tools of homological algebra. For this reason, we delay the full discussion until \Part~\ref{part Lie Theory}. For now, we only derive the most classic result on the structure of solvable Lie algebras -- Lie's Theorem, which was crucial in his study of symmetries of ODE's (in fact, the name of solvable algebras comes from solvability of ODE's with solvable symmetry groups). We will see it at work in \S\ref{sec: integration by quadratures}.
+
+\begin{prop}[{\cite[Prop.~5.4.3]{HN}}]\label{prop 5.4.3 HN}
+    For a Lie algebra $\frakg$, the following assertions hold:
+    \begin{enumerate}[label=(\roman*)]
+        \item If $\frakg$ is solvable, then all subalgebras and homomorphic images of $\frakg$ are solvable.
+        \item Solvability is an \emph{extension property}: if $\fraki\sub \frakg$ is a solvable ideal and $\frakg\slash\fraki$ is solvable, then $\frakg$ is solvable.
+        \item If $\fraki$ and $\frakj$ are solvable ideals of $\frakg$, then the ideal $\fraki+\frakj$ is solvable.
+        \item If $\fraki\sub \frakg$ is an ideal, then the derived subalgebras $D^r(\fraki)$ are ideals in $\frakg$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    (i) If $\frakh<\frakg$ is a subalgebra, then $D^r(\frakh)\subset D^r(\frakg)$ follows by induction, and if $\alpha:\frakg\to\frakh$ is a homomorphism of Lie algebras, then we obtain 
+    \[D^r(\alpha(\frakg))=\alpha(D^r(\frakg))\]
+    by induction. This implies (i).
+
+    (ii) Let $\pi:\frakg\to\frakg\slash\fraki$ be the quotient map. We have already seen in (i) that $\pi(D^r(\frakg))=D^r(\pi(\frakg))$ for each $r$. If $\frakg\slash\fraki$ is solvable, then $\pi(D^r(\frakg))$ vanishes for some $r\in\bbZ_{>0}$. Now $D^r(\frakg)\subset\ker\pi=\fraki$, so that $D^{r+k}(\frakg)\subset D^k(\fraki)$ for each $k\in\bbZ_{>0}$. If $\fraki$ is also solvable, we immediately derive that $\frakg$ is solvable.
+
+    (iii) The ideal $\frakj$ of $\fraki+\frakj$ is solvable and $(\fraki+\frakj)\slash\frakj\cong \fraki\slash(\fraki\cap\frakj)$ (Exercise~\ref{xca ideals}(4)) is solvable by (i). Hence, (ii) implies that $\fraki+\frakj$ is solvable.
+
+    (iv) We only have to observe that for each ideal $\fraki$, its commutator algebra $[\fraki,\fraki]$ also is an ideal (Exercise~\ref{xca ideals}(5)). Then (iv) follows by induction.
+\end{proof}
+
+\begin{example}\label{ex 5.4.4 HN}
+    If $F=(V_0<\ldots <V_n)$ is a complete flag in the $n$-dimensional vector space $V$, then $\frakg(F)$ is a solvable Lie algebra. In fact, 
+    \[\frakg(F)\cong \frakgl_1(\bbK)^{\mathrm{n}}\ltimes\frakg_{\mathrm{n}}(F)\cong \bbK^n\ltimes \frakg_{\mathrm{n}}(F)\]
+    (Example~\ref{ex 5.2.20 HN}). Since $\bbK^n\cong \frakg(F)\slash\frakg_{\mathrm{n}}(F)$ is abelian and $\frakg_{\mathrm{n}}(F)$ nilpotent (Example~\ref{ex 5.2.20 HN}), the solvability of $\frakg(F)$ follows from Proposition~\ref{prop 5.4.3 HN}(ii). Below we shall see that Lie's Theorem provides a converse for solvable subalgebras of $\frakgl(V)$ and $\bbK=\bbC$; they are always contained in some $\frakg(F)$ for a complete flag $F$.
+\end{example}
+
+\begin{defn}[Radical]\index{Radical}
+    Proposition~\ref{prop 5.4.3 HN}{iii} shows that in every finite-dimensional Lie algebra $\frakg$, there is a unique maximal solvable ideal (the sum of all solvable ideals). This ideal is called the radical of $\frakg$, denoted $\frakrad(\frakg)$.
+\end{defn}
+
 \begin{rem}
-    The structure of solvable Lie algebras and groups is significantly more complicated than that of the nilpotent ones. Although it can be derived by elementary means (see, e.g., \cite{HN}), it becomes much easier to study once one developes some basic tools of homological algebra. For this reason, we delay this discussion until \Part~\ref{part Lie Theory}.
+    The analog of Proposition~\ref{prop 5.4.3 HN}(iii) for nilpotent Lie algebras is also valid. Note that nilpotency is not an extension property, i.e., the analog of Proposition~\ref{prop 5.4.3 HN}(ii) is false for nilpotent Lie algebras (consider, e.g., the nonabelian 2-dimensional Lie algebra $\frakaff_1(\bbK)$). 
 \end{rem}
 
-% \PRLsep 
+Now we turn to solvable Lie subalgebras $\frakg$ of $\frakgl(V)$ and Lie's Theorem. In this context, we do not want to make any assumption on the elements of $\frakg$, as in Corollary~\ref{cor 5.2.7 HN}. Again, Ado's Theorem implies that these results apply to all finite-dimensional solvable Lie algebras. However, the underlying field does need to be algebraically closed, so we focus on complex Lie algebras.
 
+\begin{thm}[{\cite[Thm.~5.4.7]{HN}}]\label{thm 5.4.7 HN}
+    Let $V$ be a nonzero finite-dimensional $\bbC$-vector space and $\frakg$ be a solvable subalgebra of $\frakgl(V)$. Then there exists a nonzero common eigenvector $v$ for $\frakg$, i.e., $\frakg\cdot v\subset \bbC v$.
+\end{thm}
+\begin{proof}
+    We may \gls{wlog} assume that $\frakg\neq 0$. We proceed by induction on $\dim\frakg$. If $\frakg=\bbC x$, then every eigenvector of $x$ (and such an eigenvector always exists over $\bbC$) satisfies the requirement of the theorem. So let $\dim_\bbC\frakg>1$ and $\frakh$ be a complex hyperplane in $\frakg$ which contains $D^1(\frakg)=[\frakg,\frakg]$. Here we use that $D^1(\frakg)$ is a proper subspace since $\frakg$ is solvable. In view of $[\frakg,\frakg]\subset \frakh$, the subspace $\frakh$ is an ideal in $\frakg$ (in particular, a subalgebra). Now the induction hypothesis provides a nonzero common eigenvector $v$ for $\frakh$. If $x\cdot v=\lambda(x)v$ for $x\in\frakh$, then $\lambda:\frakh\to \bbC$ is a linear map and 
+    \[v\in V_\lambda(\frakh)\coloneqq \{w\in V\mid \forall x\in\frakh\; x\cdot w=\lambda(x)w\}.\]
+    Suppose that $V_\lambda(\frakh)$ is $\frakg$-invariant and pick $y\in\frakg\setminus\frakh$. Then there exists a nonzero eigenvector $v_0\in V_\lambda(\frakh)$ for $y$. Then $v_0$ is a common eigenvector for $\frakg=\frakh+\bbC y$ and the proof is complete.
+
+    It remains to show that $V_\lambda(\frakh)$ is $\frakg$-invariant. For this, we calculate as in the Proof of Theorem~\ref{thm 5.2.5 HN}:
+    \[yx\cdot w=xy\cdot w-[x,y]\cdot w=\lambda(y)x\cdot w-\lambda([x,y])w\]
+    for $w\in V_\lambda(\frakh)$, $x\in\frakg$ and $y\in\frakh$. Hence, it suffices to show that $[\frakg,\frakh]\subset\ker\lambda$. For fixed $w\in V_\lambda(\frakh)$, $x\in\frakg$ and $k\in\bbZ_{>0}$, we consider the space 
+    \[W^k=\bbC w+\bbC x\cdot w+\cdots +\bbC x^k\cdot w.\]
+    Since 
+    \[yx^k\cdot w=xy x^{k-1}\cdot w-[x,y]x^{k-1}\cdot w\label{eq 5.5 HN}\]
+    and $y\cdot w=\lambda(y)w$ for $y\in\frakh$, we see by induction on $k$ that $\frakh\cdot W^k\subset W^k$ for each $k\in \bbZ_{>0}$.
+
+    Now we choose $k_0\in\bbZ_{>0}$ maximal w.r.t.\ the property that 
+    \[\{w,x\cdot w,\ldots,x^{k_0}\cdot w\}\]
+    is a basis for $W^{k_0}$. Then $W^{k_0+m}=W^{k_0}$ for all $m\in\bbZ_{>0}$, and 
+    \[F=(0<W^1<\cdots<W^{k_0})\]
+    is a complete flag in $W^{k_0}$ which is invariant under $\frakh$. Thus, every $y\in\frakh$ corresponds to an upper triangular matrix $(y_{ij})$ w.r.t.\ the above basis for $W^{k_0}$. The diagonal entries $y_{ii}$ of this matrix are all equal to $\lambda(y)$ since $y\cdot w=\lambda(y)w$ and \eqref{eq 5.5 HN} imply by induction that 
+    \[yx^k\cdot w\;\in\; \lambda(y)x^k\cdot w+W^{k-1}.\]
+    Since $x$ and $y$ leave the space $W^{k_0}$ invariant, we have 
+    \[\restr{[x,y]}{W^{k_0}}=\left[\restr{x}{W^{k_0}},\restr{y}{W^{k_0}}\right].\]
+    In particular, $\restr{[x,y]}{W^{k_0}}$ is a commutator of two endomorphisms so that its trace vanishes. Finally, $[x,y]\in\frakh$ leads to 
+    \[0=\tr\left(\restr{[x,y]}{W^{k_0}}\right)=(k_0+1)\lambda([x,y]),\]
+    so that $\lambda([x,y])=0$.
+\end{proof}
+
+\begin{thm}[Lie {\cite[Thm.~5.4.8]{HN}}]\label{thm 5.4.8 HN Lie}\label{Theorem!Lie}
+    Let $V$ be a finite-dimensional $\bbC$-vector space and $\frakg<\frakgl(V)$ be a solvable subalgebra. Then there exists a complete $\frakg$-invariant flag in $V$.
+\end{thm}
+\begin{proof}
+    We may assume that $V\neq 0$. By Theorem~\ref{thm 5.4.7 HN}, there is a nonzero common $\frakg$-eigenvector $v_1\in V$. Put $V_1\coloneqq\bbC v_1$. Then 
+    \[\alpha:\frakg\to \frakgl(V\slash V_1),\quad \alpha(x)(v+V_1)\coloneqq x\cdot v+V_1,\]
+    defines a representation of $\frakg$ on the quotient space $V\slash V_1$ and $\alpha(\frakg)$ is solvable. Proceeding by induction on $\dim V$, we may assume that there exists an $\alpha(\frakg)$-invariant complete flag on $V\slash V_1$, and the preimage in $V$, together with $\{0\}$, is a complete $\frakg$-invariant flag in $V$.
+\end{proof}
+
+In the terms of Example~\ref{ex 5.2.20 HN}, Lie's Theorem states that \emph{complex solvable algebras can be faithfully represented by upper triangular matrices} (note that there are no ``blocks'' since the flag is complete now).
+
+\begin{rem}
+    If we apply Lie's Theorem~\ref{thm 5.4.8 HN Lie} to $V=\frakg$ and $\ad(\frakg)$, where $\frakg$ is solvable, we get a complete flag of ideals 
+    \[0=\frakg_0<\frakg_1<\cdots<\frakg_n=\frakg\]
+    of $\frakg$ with $\dim\frakg_k=k$. Such a chain is called a \emph{H\"older series} for $\frakg$.
+\end{rem}
+
+To derive the last few corollaries of Lie's Theorem, we need the concept of complexification.
+
+\begin{defn}[Complexification]
+    The complexification $V^\bbC$ of a real vector space $V$ is the tensor product $V\otimes_\bbR \bbC$. This is a complex vector space w.r.t.\ the scalar multiplication $\lambda\cdot (v\otimes z)=v\otimes\lambda z$. Identifying $V$ with the real subspace $V\otimes 1<V^\bbC$, each element of $V^\bbC$ can be written in a unique fashion as $v=u+\i v$ with $u,v\in V$. If $(\tuple{v_1,\ldots,v_n})$ is a real basis for $V$, then $(\tuple{v_1\otimes 1,\ldots,v_n\otimes 1})$ is a complex basis for $V^\bbC$.
+\end{defn}
+
+The following proposition is an elementary exercise.
+
+\begin{prop}[{\cite[Prop.~5.1.21]{HN}}]\label{prop 5.1.21 HN}
+    Let $\frakg$ be a real Lie algebra.
+    \begin{enumerate}[label=(\roman*)]
+        \item The complexification $\frakg^\bbC$ is a complex Lie algebra w.r.t.\ the complex bilinear Lie bracket, defined by 
+        \[[x+\i y,x'+\i y']\coloneqq ([x,x']-[y,y'])+\i([x,y']+[y,x'])\]
+        and satisfying 
+        \[[v\otimes z,v'\otimes z']=[v,v']\otimes zz'.\]
+        \item $[\frakg^\bbC,\frakg^\bbC]\cong [\frakg,\frakg]^\bbC$ as complex Lie algebras.
+    \end{enumerate}
+\end{prop}
+
+\begin{defn}[Real form of a Lie algebra]\index{Real form!of a Lie algebra}
+    If $\frakg$ is a complex Lie algebra, then a real form of $\frakg$ is a real Lie algebra $\frakh$ such that $\frakh^\bbC\cong\frakg$.
+\end{defn}
+
+As the following examples show, a given complex Lie algebra may have multiple non-isomorphic real forms, or no real forms at all.
+
+\begin{example}[Non-isomorphic real forms of $\fraksl_2(\bbC)$]
+    The complexifications of $\frakso_3$ and $\fraksl_2(\bbR)$ are both isomorphic to $\fraksl_2(\bbC)$, hence are two non-isomorphic real forms of $\fraksl_2(\bbC)$. To see this, we consider the bases 
+    \[H=\begin{pmatrix}
+        1 & 0\\0 & -1
+    \end{pmatrix},\quad U=\begin{pmatrix}
+        0 & 1\\ -1 & 0
+    \end{pmatrix},\quad T=\begin{pmatrix}
+        0 & 1\\ 1 & 0
+    \end{pmatrix}\]
+    of $\fraksl_2(\bbR)$, and 
+    \[X=\begin{pmatrix}
+        0 & 1 & 0\\
+        -1 & 0 & 0\\
+        0 & 0 & 0
+    \end{pmatrix},\quad 
+    Y=\begin{pmatrix}
+        0 & 0 & 1\\
+        0 & 0 & 0\\
+        -1 & 0 & 0
+    \end{pmatrix},\quad 
+    Z=\begin{pmatrix}
+        0 & 0 & 0\\
+        0 & 0 & -1\\
+        0 & 1 & 0
+    \end{pmatrix}\]
+    of $\frakso_3$. Then 
+    \[[H,U]=2T,\quad [H,T]=2U,\quad [U,T]=2H\]
+    and 
+    \[[X,Y]=Z,\quad [Z,X]=Y,\quad [Y,Z]=X.\]
+    Let 
+    \[\frakh=\bbR\i H+\bbR U+\bbR \i T.\]
+    Then $\frakh$ is a Lie algebra with $\frakh^\bbC=\fraksl_2(\bbC)$ which is isomorphic to $\frakso_3$ via 
+    \[\i H\mapsto 2X,\quad U\mapsto 2Y,\quad \i T\mapsto 2Z.\]
+    This proves that $\frakso_3^\bbC\cong\fraksl_2(\bbC)$. We note that $\frakh$ coincides with $\fraksu_2(\bbC)$. Since, obviously, $\fraksl_2(\bbR)^\bbC=\fraksl_2(\bbC)$, it only remains to show that $\fraksl_2(\bbR)$ and $\frakso_3$ are not isomorphic. For this, it suffices to show that $\bbR H+\bbR (U+T)$ is a $2$-dimensional subalgebra of $\fraksl_2(\bbR)$, while $\frakso_3$ has no $2$-dimensional subalgebra. Namely, the latter is isomorphic to $\bbR^3$ with the vector cross product, and since the vector product of two vectors is orthogonal to those vectors, a plane cannot be a subalgebra.
+\end{example}
+
+\begin{example}[Lie algebra with no real form]
+    Every complex $2$-dimensional Lie algebra has a real form. The minimal example of a $3$-dimensional complex Lie algebra with no real form can be constructed out of $V=\bbC^2$ via the linear operator defined by $De_1=2e_1$, $De_2=\i e_2$ w.r.t.\ the canonical basis. Then $\frakg\coloneqq \bbC\ltimes_D V$ contains $V=[\frakg,\frakg]$ as a $2$-dimensional ideal. See \cite[Example~5.1.24]{HN} for the proof that $\frakg$ doesn't admit a real form.
+\end{example}
+
+We are ready to get back to solvable algebras.
+
+\begin{defn}[Nilpotent representation]
+    We call a representation $\frakg\overset{\rho}{\acts} V$ of a Lie algebra $\frakg$ nilpotent if there exists an $r\in\bbZ_{>0}$ with $\rho(\frakg)^r=\{0\}$.
+\end{defn}
+
+\begin{cor}[{\cite[Cor.~5.4.11]{HN}}]\label{cor 5.4.11 HN}
+    Let $\rho:\frakg\to\frakgl(V)$ be a representation of a solvable real or complex Lie algebra $\frakg$. Then the restriction to $[\frakg,\frakg]$ is a nilpotent representation.
+\end{cor}
+\begin{proof}
+    (a) First, assume that $\bbK=\bbC$. Applying Lie's Theorem to the solvable subalgebra $\rho(\frakg)$ of $\frakgl(V)$, we obtain a complete flag $F$ with $\rho(\frakg)\subset \frakg(F)$. Then 
+    \[\rho([\frakg,\frakg])\subset[\frakg(F),\frakg(F)]\subset\frakg_{\mathrm{n}}(F)\]
+    implies the assertion.
+
+    (b) If $\bbK=\bbR$, then we \emph{complexify} by noting that
+    \[\rho^\bbC:\frakg^\bbC=\bbC\otimes\frakg\to\frakgl(V^\bbC)\cong \bbC\otimes\frakgl(V),\quad \rho^\bbC(z\otimes x)\coloneqq z\otimes \rho(x)\]
+    defines a representation of the complex Lie algebra $\frakg^\bbC$ on the complex vector space $V^\bbC=\bbC\otimes V$. Using Proposition~\ref{prop 5.1.21 HN}, we see by induction that $D^k(\frakg)^\bbC\cong D^k(\frakg^\bbC)$ for each $k\in\bbZ_{>0}$, so that $\frakg^\bbC$ is also solvable. Now (a) applies, and we obtain a complete flag $F$ in $V^\bbC$ with $\rho^\bbC([\frakg,\frakg])\subset\frakg_{\mathrm{n}}(F)$. In particular, each endomorphism $\rho(x)$, $x\in[\frakg,\frakg]$, is nilpotent. Finally, Corollary~\ref{cor 5.2.7 HN} provides a complete flag $F'$ in $V$ with $\rho([\frakg,\frakg])\subset\frakg_{\mathrm{n}}(F')$, and the assertion follows.
+\end{proof}
+
+This leads to the following important relationship between solvability and nilpotency.
+
+\begin{cor}[{\cite[Cor.~5.4.12]{HN}}]\label{cor 5.4.12 HN}
+    A real or complex Lie algebra $\frakg$ is solvable iff its commutator algebra $[\frakg,\frakg]$ is nilpotent.
+\end{cor}
+\begin{proof}
+    If $[\frakg,\frakg]$ is nilpotent, then $\frakg$ is solvable because $\frakg\slash[\frakg,\frakg]$ is abelian and solvability is an extension property (Proposition~\ref{prop 5.4.3 HN}(ii)). Conversely, if $\frakg$ is solvable, then Corollary~\ref{cor 5.4.11 HN} implies that the adjoint representation of $[\frakg,\frakg]$ on $\frakg$, and hence on $[\frakg,\frakg]$, is nilpotent. From that we derive, in particular, that $C^\infty([\frakg,\frakg])=0$, so that $[\frakg,\frakg]$ is nilpotent.
+\end{proof}
 
 % The structure of solvable Lie groups is substantially more complicated than that of the nilpotent ones. In particular, the exponential map need not be surjective. A simple example with this property is the universal covering group of the Euclidean group $\SE_2$ of the plane. Other difficulties aries from the fact that the center of a connected solvable Lie group is not connected (again $\SE_2$ provides an example). Therefore, the description of the center of the universal covering group and hence the classification of all solvable Lie groups with a given Lie algebra is more complicated than the nilpotent case, where everything boils down to factorization by a discrete subgroup of $\frakz(\frakg)$. Presently, we can only show that connected and simply connected solvable Lie groups are diffeomorphic to vector spaces by showing the existence of global coordinates of ``the second kind'' (products of exponentials).\footnote{Let $\bf{t}_i$, $i=1,\ldots,n$, be a basis of the Lie algebra $\frakg$. Coordinates of the first kind on the Lie group $G$ have the form $\bf{x}\mapsto \exp_G(x^i\bf{t}_i)$, whereas coordinates of the second kind are $\bf{x}\mapsto \exp_G(x^1\bf{t}_1)\cdots\exp_G(x^n\bf{t}_n)$.}
 
