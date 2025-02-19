@@ -514,7 +514,7 @@ In this \sect\ we discuss changing the models of $(G,H)$-structures via morphism
 Note that any right $\lambda$-equivariant map $\vartheta:G\to G'$ differs from $\lambda$ only by a left translation: $\vartheta=\rmL_{g'}\circ\lambda$ for some $g'\in G'$ (cf.\ Proposition~\ref{prop lambda-equiv maps}). Since left translations are automorphisms of Klein geometries, in practice it suffices to consider morphisms which are homomorphisms, i.e., $\vartheta=\lambda$. We will proceed under this assumption and write such morphisms as $\lambda:(G,H)\to (G',H')$.
 
 \begin{example}
-    The double cover $\bbS^n\to \RP^n$ can be realized as a morphism of two Klein geometries $(G,H)\to (G',H')$, where $G\cong\SL_{n+1}\times\bbZ_2$ is the subgroup of $\GL_{n+1}(\bbR)$ consisting of matrices with determinant $\pm 1$, and $G'=\SL_{n+1}$. Then $\bbS^n\to \RP^n$ is $G$-equivariant with $\lambda(g)=g/\det g$.
+    The double cover $\bbS^n\to \RP^n$ can be realized as a morphism of two Klein geometries $(G,H)\to (G',H')$, where $G\cong\SL_{n+1}(\bbR)\times\bbZ_2$ is the subgroup of $\GL_{n+1}(\bbR)$ consisting of matrices with determinant $\pm 1$,  and $G'=\SL_{n+1}(\bbR)$ is the identity component of $G$ (note that $H\cong H'$). Then $\bbS^n\to \RP^n$ is $\lambda$-equivariant with $\lambda(g)=g/\det g$.
 \end{example}
 
 Given a manifold $M$ with a $(G,H)$-structure (with its principal $H$-bundle $P\to M$) and a morphism $\lambda:(G,H)\to (G',H')$ of models, we can induce a $(G',H')$-structure by composing the charts with the $G$-equivariant base map $\underline{\lambda}$. This also gives the new $H'$-bundle $P'\to M$.
@@ -538,13 +538,13 @@ First consider surjective morphisms. First, to be able to reconstruct a $\frakg$
 
 
 \begin{example}[Monopole bundles]\label{ex monopole bundles}\index{Monopole!bundles}\index{Hopf fibration}
-    Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$, cf.\ Example~\ref{ex Hopf principal bundle}, where the $\U_1$ subgroup multiplies by diagonal matrices of the form $\diag(\rme^{\i \varphi},\rme^{-\i\varphi})$ from the right. Let $m\geq 1$ and $\lambda:\U_1\to \U_1$ be the homomorphism $\lambda(z)=z^m$ with kernel $\varGamma=\bbZ_m\subset \U_1$. The space $\bbS^3\slash\Gamma$ is the lens space $L(m;1)$ (cf.\ Example~\ref{example Lens spaces}). We get the principal $\U_1$-bundle
-    \[L(m;1)\to L(m;1)\slash \U_1=\bbS^2\]
-    (since the induced action of $\U_1$ on $L(m;1)$ is trivial) and a $\lambda$-equivariant covering morphism of $\U_1$-bundles $\vartheta:\bbS^3\to L(m;1)$, which looks similar to $\lambda$ on every fiber.
+    Consider the Hopf bundle $\bbS^3\to \bbS^2$ defined as a $\U_1$-principal bundle, or as a Klein geometry of type $(\SU_2,\U_1)$, cf.\ Example~\ref{ex Hopf principal bundle}, where the $\U_1$ subgroup multiplies by diagonal matrices of the form $\diag(\rme^{\i \varphi},\rme^{-\i\varphi})$ from the right. Let $q\in\bbZ$ and $\lambda:\U_1\to \U_1$ be the homomorphism $\lambda(z)=z^q$ with kernel $\varGamma=\bbZ_q\subset \U_1$. Since the structure group is Abelian, the left-invariant Maurer-Cartan form on $\SU_2$ is also right-invariant, and hence we can take a \emph{right} quotient by this discrete group and still obtain a locally Klein geometry whose fibers ``twist $q$ times faster'' than in the Hopf bundle. The space $\bbS^3\slash\Gamma$ is the lens space $L(q;1)$ (cf.\ Example~\ref{example Lens spaces}). We get the principal $\U_1$-bundle
+    \[L(q;1)\to L(q;1)\slash \U_1=\bbS^2\]
+    (since the induced action of $\U_1$ on $L(q;1)$ is trivial) and a $\lambda$-equivariant covering morphism of $\U_1$-bundles $\vartheta:\bbS^3\to L(q;1)$, which looks similar to $\lambda$ on every fiber.
     
-    Since the transition functions in the new bundle can be obtained by composition with $\lambda$, in the standard atlas consisting of two hemispheres (Example~\ref{ex hopf bundle atlas}), the transition function of this new bundle is $\tau_{-+}(z)=z^{-m}$, i.e., this is exactly the $\U_1$-bundle with Chern number $-m$ from Example~\ref{ex circle bundles over S2}. This proves that the lens space is simultaneously $\bbS^3\slash \bbZ_m$ and the gluing of two solid tori, thus solving Exercise~\ref{xca two definitions of lens spaces}. As principal $\U_1$-bundles, these bundles are known as \emph{monopole bundles}. The Maurer-Cartan form of $\SU_2$ induces an $\fraksu_2$-valued $1$-form $\eta$ on $L(m;1)$ which we will later interpret as the Cartan connection of a magnetic monopole of charge $m$, see Example~\ref{ex connection on monopole bundles}.
+    Since the transition functions in the new bundle can be obtained by composition with $\lambda$, in the standard atlas consisting of two hemispheres (Example~\ref{ex hopf bundle atlas}), the transition function of this new bundle is $\tau_{-+}(z)=z^{-q}$, i.e., this is exactly the $\U_1$-bundle with Chern number $-q$ from Example~\ref{ex circle bundles over S2}. This proves that the lens space is simultaneously $\bbS^3\slash \bbZ_q$ and the gluing of two solid tori, thus solving Exercise~\ref{xca two definitions of lens spaces}. As principal $\U_1$-bundles, these bundles are known as \emph{monopole bundles}. The Maurer-Cartan form of $\SU_2$ induces an $\fraksu_2$-valued $1$-form $\eta$ on $L(q;1)$ which we will later interpret as the Cartan connection of a magnetic monopole of charge $q$, see Example~\ref{ex connection on monopole bundles}.
 
-    We thus have the surjective vertical morphism of principal bundles $\vartheta:\bbS^3\to L(m;1)$ given by the quotient by the $\bbZ_m$-action and the group homomorphism $\lambda:\U_1\to \U_1$ given by the $m$-fold covering of the circle $z\mapsto z^m$. Note that these bundles are also defined for $m$ negative as the duals (inverse transition functions), or via the inverse $\U_1$-action on $\bbS^3$.
+    We thus have the surjective vertical morphism of principal bundles $\vartheta:\bbS^3\to L(q;1)$ given by the quotient by the $\bbZ_q$-action and the group homomorphism $\lambda:\U_1\to \U_1$ given by the $q$-fold covering of the circle $z\mapsto z^q$. Note that these bundles are also defined for $q$ negative as the duals (inverse transition functions), or via the inverse $\U_1$-action on $\bbS^3$.
 \end{example}
 
 
@@ -590,23 +590,23 @@ The resulting form $\eta'$ on the $H'$-bundle $P'$ satisfies all properties of a
 \section{Homogeneous bundles}\label{sec: homogeneous bundles}
 
 
-We now consider the tangent bundle of a Klein geometry. Since it is a locally trivial principal bundle, we have local diffeomorphisms of the form $\T(\pi^{-1}(U))\cong \T(U\times H)\to \T U\times \T H$. Local trivializations of $\T (\pi^{-1}(U))$ and $\T H$ are given by the Maurer-Cartan forms $\theta_G$ and $\theta_H$, respectively, and on vertical directions $\theta_H$ coincides with the representative of $\theta_G$. In other words, the restriction of $\theta_G$ to vertical directions produces a \emph{canonical} global trivialization of the \emph{vertical} bundle $\calV G\to G\slash H$. At a particular point $g\in G$, we can quotient out the vertical directions, and this corresponds to quotienting $\frakg$ by $\frakh$. Thus, choosing a point $g\in G$, we have the commutative diagram
+We now consider the tangent bundle of a Klein geometry. Tangent spaces of a Lie group $G$ are canonically identified with the Lie algebra $\frakg$ (using the Maurer-Cartan form), so it is natural to expect that the tangent spaces of a homogeneous space $G\slash H$ should be identified with the quotient $\frakg\slash\frakh$. However, as we will now show, this identification is not canonical. On the principal bundle $G\to G\slash H$, local trivializations induce local diffeomorphisms of the form $\T(\pi^{-1}(U))\cong \T(U\times H)\to \T U\times \T H$, where $U\subset G\slash H$. Local trivializations of $\T (\pi^{-1}(U))$ and $\T H$ are given by the Maurer-Cartan forms $\theta_G$ and $\theta_H$, respectively, and on vertical directions $\theta_H$ coincides with the representative of $\theta_G$. In other words, the restriction of $\theta_G$ to vertical directions produces a \emph{canonical} global trivialization of the \emph{vertical} bundle $\calV G\to G\slash H$. At a particular point $g\in G$, we can quotient out the vertical directions, and this corresponds to quotienting $\frakg$ by $\frakh$. Thus, choosing a point $g\in G$ over $m=[g]\in G\slash H$, we have the commutative diagram
 \[
 \begin{tikzcd}
-    0\arrow[r]&\T_g(gH)\arrow[r]\arrow[d,"\theta_H","\cong"'] & \T_g G\arrow[r,"\mod \T_g(gH)"]\arrow[d,"\theta_G","\cong"'] & \T_{m}(G\slash H)\arrow[d,dashed,"\chi_g","\cong"'] \arrow[r] & 0\\
+    0\arrow[r]&\calV_g G\arrow[r]\arrow[d,"\theta_H","\cong"'] & \T_g G\arrow[r,"\mod \calV_g G"]\arrow[d,"\theta_G","\cong"'] & \T_m(G\slash H)\arrow[d,dashed,"\chi_g","\cong"'] \arrow[r] & 0\\
     0\arrow[r]&\frakh\arrow[r,hookrightarrow]&\frakg \arrow[r,"\mod \frakh"] & \frakg\slash \frakh\arrow[r]  & 0
 \end{tikzcd}
 \]
 with exact rows. The linear isomorphism $\chi_g$ is the unique map making the diagram commute, namely, 
 \[\chi_g(X)=\theta_G(\wt X)+\frakh\quad \in\frakg\slash\frakh,\]
-where $X\in\T_{[g]}(G\slash H)$ and $\wt X\in\T_g G$ is an arbitrary lift, i.e., $\pi_\ast \wt X=X$.
-Thus, we can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash\frakh$, but the identification $\chi_g$ depends on the choice of $g\in G$ over $m$. In fact, the relation $\rmR_h^\ast \theta_G=\Ad_h^{-1}\theta_G$ implies that $\chi_{gh}=\underline{\Ad}_h^{-1}\circ \chi_g$, where $\underline{\Ad}_h$ is the induced $H$-action on $\frakg\slash \frakh$ (it will be properly defined below). It follows that the identification of $\T_m(G\slash H)$ with $\frakg\slash \frakh$ is determined only up to the action of $H$ on $\frakg\slash\frakh$, and hence is not canonical for $G\slash H$ itself. This accounts for the frequent occurrence of the adjoint action in the sequel.
+where $X\in\T_m(G\slash H)$ and $\wt X\in\T_g G$ is an arbitrary lifting of $X$, i.e., $\pi_\ast \wt X=X$.
+Thus, we can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash\frakh$, but the identification $\chi_g$ depends on the choice of $g\in G$ over $m$. In fact, the relation $\rmR_h^\ast \theta_G=\Ad_h^{-1}\theta_G$ implies that $\chi_{gh}=\underline{\Ad}_h^{-1}\circ \chi_g$, where $\underline{\Ad}_h$ is the induced $H$-action on $\frakg\slash \frakh$ (it will be properly defined below). It follows that the identification of $\T_m(G\slash H)$ with $\frakg\slash \frakh$ is not natural, and instead is determined only up to the action of $H$ on $\frakg\slash\frakh$. This accounts for the frequent occurrence of the adjoint action in the sequel.
 
 \begin{prop}[{{\cite[Prop.~4.5.1]{Sharpe}}}]\label{prop 4.5.1 Sharpe}
     $\T(G\slash H)\cong G\times^H (\frakg\slash\frakh)$ as \glspl{vb} over $G\slash H$.
 \end{prop}
 \begin{proof}
-    Define a map $\varphi:G\times \frakg\to \T(G\slash H)$ by $\varphi(g, A)=(\pi(g),\pi_\ast \circ \rmL_{g\ast}A)$, where $\pi:G\to G\slash H$ is the canonical projection. Clearly $\varphi$ is smooth, surjective, and fiberwise linear. Moreover, for $A\in \T_eH$, $\rmL_{g\ast}A\in \T_g(gH)\in\ker\pi_\ast$. Thus, $\varphi(g, A)=(g,0)$. On the other hand,
+    Define a map $\varphi:G\times \frakg\to \T(G\slash H)$ by $\varphi(g, A)=(\pi(g),\pi_\ast \circ \rmL_{g\ast}A)$, where $\pi:G\to G\slash H$ is the canonical projection. Clearly $\varphi$ is smooth, surjective, and fiberwise linear. Moreover, for $A\in \T_eH$, $\rmL_{g\ast}A\in \calV_g G\in\ker\pi_\ast$. Thus, $\varphi(g, A)=(g,0)$. On the other hand,
     \begin{multline}
         \varphi(gh,\Ad_h^{-1}A)=(\pi(gh),\pi_\ast \rmL_{gh\ast}\Ad_h^{-1}A)=(\pi(g),\pi_\ast(\rmL_{gh\ast}\rmL_{h\ast}^{-1} \rmR_{h\ast}A))=\\
         =(\pi(g),\rmL_{g\ast }\pi_\ast (\rmR_{h\ast}A))=(\pi(g),\rmL_{g\ast}(\pi \rmR_h)_\ast A)
@@ -630,7 +630,7 @@ Thus, we can identify the tangent space of $G\slash H$ at $m$ with $\frakg\slash
 \end{example}
 
 
-Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of $H$ via $\wh{\rmL}_h$, $h\in H$, thus it generates an isotropy representation of $H$, which we specify in the following definition.
+Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of $H$ via $\wh{\rmL}_h$, $h\in H$, thus it generates an isotropy representation of $H$ (cf.\ Proposition~\ref{prop 6.1.5 RS1}), which we specify in the following definition.
 
 \begin{defn}[Isotropy representation]\label{def isotropy rep}
     For a Klein geometry $(G,H)$, identify $\T_{[e]}(G\slash H)$ with $\frakg\slash\frakh$ using the natural isomorphism constructed above. We call the induced representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ given by $h\mapsto \wh{\rmL}_{h\ast [e]}$, the isotropy representation of the Klein geometry.
@@ -638,17 +638,22 @@ Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of 
     Since $\frakh<\frakg$ is invariant under $\Ad(H)$, the restriction of the adjoint representation to $H$, $\restr{\Ad}{H}:G\to \GL(\frakg)$, descends to a map $H\to \GL(\frakg\slash \frakh)$, which coincides with $\underline{\Ad}$.
 \end{defn}
 
-Since tangent bundles involve only first derivatives, we can make the following rough division of Klein geometries into two types according to whether $H$ is faithfully represented by this action.
+Since tangent bundles involve only first derivatives, we can make the following grouping of Klein geometries into two types according to whether $H$ is faithfully represented by this action.
 
 \begin{defn}[First-order Klein geometry]
     A Klein geometry $(G,H)$ is called \emph{first-order} if the isotropy representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ is faithful. Otherwise, the geometry is said to be \emph{higher-order}. 
 \end{defn}
 
 \begin{rem}
-    First-order Klein geometries have a simple intuitive description in terms of first-order $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, its action on the above constructed coframes $\chi_g:\T_m (G\slash H)\to \frakg\slash \frakh$ via the transformation rule $\chi_{gh}=\underline{\Ad}_h^{-1}\circ\chi_g$, $h\in H$, traces out an $H$-orbit in the set of linear coframes at $m$ for each $m\in M$. This was exactly our original definition of a first-order $H$-structure on $M$ as a reduction to structure group $H$ of the coframe bundle $\Fr(\T^\ast M)$.
+    First-order Klein geometries have a simple intuitive description in terms of first-order $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, its action on the above constructed coframes $\chi_g:\T_m (G\slash H)\to \frakg\slash \frakh$ via the transformation rule $\chi_{gh}=\underline{\Ad}_h^{-1}\circ\chi_g$, $h\in H$, traces out an $H$-orbit in the set of linear coframes at $m$ for each $m\in M$. This was exactly our original definition of a first-order $H$-structure on $M$ as a reduction to structure group $H$ of the coframe bundle $\Fr(\T^\ast M)$. Hence, \emph{a first-order Klein geometry $(G,H)$ can be identified with a first-order $H$-structure on $G\slash H$}.
 
     The generalization to higher orders is clear. By considering the $r$-jet of $\wh{\rmL}_h$ at $[e]$, one gets a homomorphism $H\to \GL^r(\frakg\slash\frakh)$. If this is faithful at order $r$ but not $r-1$, the geometry is said to be of order $r$, and its bundle is identified with a reduction of the $r$-th order coframe bundle $\Fr^{\ast r}(M)$. While this is harder to visualize, it simply means that the motions $\wh{\rmL}_h$ of the homogeneous space described by $H$ are uniquely determined by the values of their partial derivatives at a point of orders up to $r$.
 \end{rem}
+
+
+\begin{example}
+    The tangent spaces of the round sphere $\bbS^n$ viewed as the Klein geometry $(\SO_{n+1},\SO_n)$ are identified with $\frakso_{n+1}\slash\frakso_n\cong\bbR^n$ on which the isotropy representation of $\SO_n$ acts in the standard way. Hence, the above statement expresses the obvious fact that there aren't natural isomorphisms between $\T_m\bbS^n$ and $\bbR^n$, but there is a natural \emph{collection} of such isomorphisms differing from each other by a rotation of $\bbR^n$. These collections comprise the standard Riemannian ($\SO_n$-)structure of the round sphere.
+\end{example}
 
 The tangent bundle of a Klein geometry is an example of an important class of bundles that are equivariant w.r.t.\ the natural $G$-action $\wh\rmL$ on the base $G\slash H$ in the following sense.
 
@@ -666,7 +671,7 @@ The tangent bundle of a Klein geometry is an example of an important class of bu
     The principal $H$-bundle $G\to G\slash H$ is obviously homogeneous because the left action $\rmL$ is a lifting of $\wh \rmL$.
 \end{example}
 
-One common way of producing homogeneous bundles is by applying a natural bundle functor $\bf{F}$ to $G\slash H$. Since by definition such a functor maps local diffeomorphisms to bundle morphisms, $\bf{F}(\wh{\rmL}_g)$ is a $G$-action as required in the definition of a homogeneous bundle. Thus, any natural bundle over a homogeneous space is homogeneous. As we will see below, the tangent functor $\T$ that we considered in the previous section is an example of this.
+One common way of producing homogeneous bundles is by applying a natural bundle functor $\bf{F}$ to $G\slash H$. Since, by definition, such a functor maps local diffeomorphisms to bundle morphisms, $\bf{F}(\wh{\rmL}_g)$ is a $G$-action as required in the definition of a homogeneous bundle. Thus, any natural bundle over a homogeneous space is homogeneous. As we will see below, the tangent functor $\T$ that we considered in the previous section is an example of this.
 
 Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in G\slash H$ and the fiber $E_{[e]}$. The $G$-action on $E$ restricts to an $H$-action on $E_{[e]}$, thus we can build the associated bundle $G\times^H E_{[e]}\to G\slash H$. We now show that this bundle is isomorphic to $E$, thus characterizing all homogeneous bundles as bundles associated to principal bundles of the form $G\to G\slash H$.
 
@@ -674,7 +679,7 @@ Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in 
     The mapping $E\to E_{[e]}$ (and restrictions of morphisms to the fiber) induces equivalences of categories $\FB_{(G,H)}\simeq H\mathsf{-Man}$ and $\VB_{(G,H)}\simeq H\mathsf{-FinVect}$, where $H\mathsf{-FinVect}$ is the category of finite-dimensional representations of $H$.
 \end{thm}
 \begin{proof}
-    Consider the map $G\times E_{[e]}\to E$ given by $(g,f)\mapsto g\times f$, where we use the action of $G$ on $E$. Since the action $H\acts E_{[e]}$ is simply a restriction of this action, this map descends to a map $\varphi:G\times^H E_{[e]}\to E$ which is smooth since the projection $G\times E_{[e]}\to G\times^H E_{[e]}$ is a surjective submersion. Moreover, the definition $\varphi=g\cdot f$ implies that $\varphi$ covers the identity and is also right $G$-equivariant, so it is a morphism of homogeneous bundles.
+    Consider the map $G\times E_{[e]}\to E$ given by $(g,f)\mapsto \wt\rmL_g(f)$, where we use the action of $G$ on $E$. Since the action $H\acts E_{[e]}$ is simply a restriction of this action, this map descends to a map $\varphi:G\times^H E_{[e]}\to E$ which is smooth since the projection $G\times E_{[e]}\to G\times^H E_{[e]}$ is a surjective submersion. Moreover, its definition implies that $\varphi$ covers the identity and is also right $G$-equivariant, so it is a morphism of homogeneous bundles.
 
     Now we build the inverse morphism. If $p\in E$, then by transitivity there exists a $g\in G$ such that $g\cdot \pi_E(p)=[e]$. Then $\pi_E(g\cdot p)=[e]$, so $g\cdot p\in E_{[e]}$, and we may consider $[(g^{-1},g\cdot p)]\in G\times^H E_{[e]}$. This is independent of the choice of $g$, since for another choice $g'\in G$ we must have $(g'g^{-1})\cdot p=p$, thus $g'g^{-1}\in H$, and thus
     \[[(g^{\prime-1},g'\cdot p)]=[(g^{\prime-1}g'g^{-1},gg^{\prime-1}g'\cdot p)]=[(g^{-1},g\cdot p)].\]
@@ -688,7 +693,7 @@ Let $E\to G\slash H$ be a homogeneous bundle. Consider the basepoint $[e]=eH\in 
 Thus, an alternative definition of homogeneous bundles is simply as bundles associated to principal bundles of the form $G\to G\slash H$. Functoriality implies that these equivalences are compatible with various constructions such as fibered products, Whitney sums, tensor products, etc. Conversely, for example, a decomposition of a tensor product of representations into a direct sum of smaller representations induces a similar decomposition of corresponding Whitney products of homogeneous \glspl{vb}.
 
 \begin{example}\label{ex 1.4.3 Cap}
-    The  tangent  bundle $\T(G\slash H)$ that we studied in Proposition~\ref{prop 4.5.1 Sharpe} is clearly homogeneous because the left action $\wh{\rmL}_g$ on $G\slash H$ induces a lifted action $\wh{\rmL}_{g\ast}$ on $\T(G\slash H)$, and it corresponds to the $H$-representation on $\frakg\slash \frakh$ coming from the restriction to $H$ of the adjoint representation of $G$. The isomorphism with $G\times^H (\frakg\slash\frakh)$ established in that proposition is exactly the same as what we would obtain from Proposition~\ref{prop 1.4.3 Cap}. Namely, it maps $X\in \T_{gH}(G\slash H)$ to $[(g^{-1},\omega(Y)+\frakh)]$, where $Y\in \T_g G$ is some lifting of $X$, i.e., $\pi_\ast Y=X$.
+    The  tangent  bundle $\T(G\slash H)$ that we studied in Proposition~\ref{prop 4.5.1 Sharpe} is clearly homogeneous because the left action $\wh{\rmL}_g$ on $G\slash H$ induces a lifted action $\wh{\rmL}_{g\ast}$ on $\T(G\slash H)$, and it corresponds to the $H$-representation on $\frakg\slash \frakh$ coming from the restriction to $H$ of the adjoint representation of $G$. The isomorphism with $G\times^H (\frakg\slash\frakh)$ established in that proposition is exactly the same as what we would obtain from Proposition~\ref{prop 1.4.3 Cap}. Namely, it maps $X\in \T_{gH}(G\slash H)$ to $[(g^{-1},\theta_G(\wt X)+\frakh)]$, where $\wt X\in \T_g G$ is some lifting of $X$, i.e., $\pi_\ast \wt X=X$.
 
     By the naturality of the correspondence, the cotangent bundle $\T^\ast(G\slash H)$ corresponds to the dual representation $(\frakg\slash\frakh)^\ast$. Note that the latter is just the annihilator of $\frakh$ in $\frakg^\ast$, so this is a subrepresentation of the restriction of the coadjoint representation of $G$ to $H$. Again, by naturality, the tensor bundle $\bbT^k_l (G\slash H)$ corresponds to $\bbT^k_l(\frakg\slash\frakh)=(\frakg\slash\frakh)^{\otimes k}\otimes (\frakg\slash\frakh)^{\ast\otimes l}$.
 \end{example}
@@ -706,10 +711,15 @@ Finally, we provide a similar classification of principal homogeneous bundles.
 
     For $h\in H$, we have $h\cdot p_0\in P_{[e]}$, so there is a unique element $\lambda(h)\in K$ such that $h\cdot p_0=p_0\cdot \lambda(h)$. By smoothness of the two actions, the map $\lambda:H\to K$ defined this way is smooth, and $\lambda(e)=e$. Since $H$ acts by principal bundle maps, we see that $h\cdot (p_0\cdot k)=(h\cdot p_0)\cdot k=p_0\cdot \lambda(h)k$. From here, $\lambda$ is a homomorphism.
 
-    Suppose that we are given an isomorphism $G\times^\lambda K\to G\times^{\lambda'}K$ of homogeneous \glspl{pfb}, Then the restriction to the fibers over $[e]$ is a diffeomorphism $\phi:K\to K$ which commutes with the principal right $K$-action and is equivariant for the two left $H$-actions. By the first property, $\phi(k)=k_0k$, where $k_0=\phi(e)$. But then the second property reads as follows:
+    Suppose that we are given an isomorphism $G\times^\lambda K\to G\times^{\lambda'}K$ of homogeneous \glspl{pfb}. Then the restriction to the fibers over $[e]$ is a diffeomorphism $\phi:K\to K$ which commutes with the principal right $K$-action and is equivariant for the two left $H$-actions. By the first property, $\phi(k)=k_0k$, where $k_0=\phi(e)$. But then the second property reads as follows:
     \[k_0\lambda(h)k=\phi(\lambda(h)k)=\lambda'(h)\phi(k)=\lambda'(h)k_0k.\]
     In particular, $\lambda'(h)=k_0\lambda(h)k_0^{-1}$. Conversely, if $\lambda$ and $\lambda'$ are conjugate, right multiplication by $k_0$ induces a diffeomorphism with the two required equivariance properties. From Proposition~\ref{prop 1.4.3 Cap} we conclude that this gives rise to an isomorphism of homogeneous principal bundles. 
 \end{proof}
+
+
+\begin{example}
+    Since the monopole bundle $L(q;1)\to \CP^1$, defined in Example~\ref{ex monopole bundles}, is obtained from the Hopf bundle $\SU_2\to \CP^1$ by quotient from the \emph{right}, it still carries an induced left action of $\SU_2$, and this action respects the fibers of the monopole bundle. Thus, monopole bundles are homogeneous $\U_1$-bundles over $\CP^1$. In agreement with the above proposition, they can be described as associated to the original Hopf bundle via the homomorphism $\lambda:\U_1\to\U_1$ given by $\lambda(z)=z^q$, and this confirms again that the transition functions of the monopole bundle are obtained by applying $\lambda$ to the transition functions of the Hopf bundle.
+\end{example}
 
 
 
@@ -718,7 +728,7 @@ Finally, we provide a similar classification of principal homogeneous bundles.
 \section{Kernels and jets}
 
 
-Since we will in the future describe the group $G$ of a Klein geometry $(G,H)$ as defining a certain geometric structure on the manifold $G\slash H$, it is important to better understand the induced $G$-action on $G\slash H$, which is not necessarily faithful. In particular, the kernel $K$ acts trivially on $G\slash H$ and hence on the model tangent space $\frakg\slash\frakh$. However, the kernel of the isotropy representation $\underline{\Ad}:\frakh\to \GL(\frakg\slash\frakh)$ does not necessarily coincide with $K$ (it might be larger). In this section we examine how one could nevertheless compute $K$ using only infinitesimal information.
+Since we ultimately want to describe the group $G$ of a Klein geometry $(G,H)$ as defining a certain geometric structure on the manifold $G\slash H$, it is important to better understand the induced $G$-action on $G\slash H$, which is not necessarily faithful. In particular, the kernel $K$ acts trivially on $G\slash H$ and hence on the model tangent space $\frakg\slash\frakh$. However, the kernel of the tangent isotropy representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ does not necessarily coincide with $K$ (it might be larger). In this section we examine how one could nevertheless compute $K$ using only infinitesimal information.
 
 Let $G$ be a Lie group with Lie algebra $\frakg$. To each linear subspace $\frakl<\frakg$ and closed subgroup $H\emb G$, associate the closed subgroup $K_\frakl\emb H\emb G$ defined as follows:
 \[K_\frakl\coloneqq \left\{h\in H\mid \forall A\in\frakg\;\; \Ad_h A-A\in \frakl\right\},\]
@@ -760,7 +770,7 @@ As an immediate corollary, we find the following infinitesimal description of th
     \[K=\{h\in H\mid \Ad_h X-X\in\frakk\; \text{for all}\; X\in\frakg\}.\]
 \end{thm}
 
-As a special case, in effective Klein geometries there are no proper subgroups of $H$ whose lie algebra is $\Ad(H)$-invariant.
+As a special case, in effective Klein geometries there are no proper subgroups of $H$ whose Lie algebra is $\Ad(H)$-invariant.
 
 \begin{cor}[Fundamental property of effective Klein geometries{{\cite[Cor.~4.4.2]{Sharpe}}}]\label{Cor 4.2 Sharpe}
     If $(G,H)$ is an effective Klein geometry, $N$ is a subgroup of $H$, and $\frakn=\Lief N$, then
@@ -773,7 +783,7 @@ As a special case, in effective Klein geometries there are no proper subgroups o
         a & \bf{0}_n \\
         \bf{x}^T & (\det a)^{-1} 
     \end{pmatrix},\quad a\in \GL_n(\bbR),\bf{x}\in\bbR^n.\]
-    $H$ acts on $\frakg=\fraksl_{n+1}(\bbR)$ via conjugation. The tangent space $\T_{[e]}(\RP^n)=\frakg\slash\frakp$ then consists of elements of the form 
+    $H$ acts on $\frakg=\fraksl_{n+1}(\bbR)$ via conjugation. The tangent space $\T_{[e]}(\RP^n)=\frakg\slash\frakh$ then consists of elements of the form 
     $\left(\begin{smallmatrix}
         \ast & \bf{y} \\
         \ast & \ast
@@ -922,19 +932,36 @@ The next fundamental result shows that in certain situations one can reduce ques
     Finally, if $E$ is a natural \gls{vb} induced by an $H$-representation $W$ and $X$ is a $G$-representation $V$, then $\Lin(V,\Gamma^\infty(E))$ and $\Lin(V,E_{[e]})$ are vector spaces under the pointwise operations, and the evaluation at $[e]$ induces a linear map $\Lin(V,\Gamma^\infty(E))\to \Lin(V,E_{[e]})$. If we start from a linear map $\varphi:V\to E_{[e]}$, the construction above produces $ s_v(gH)=g\cdot \varphi(g^{-1}\cdot v)$. Since $\varphi$ is linear and $G$ acts by linear maps, this is linear in $v$.
 \end{proof}
 
-\begin{example}[Spherical harmonics]
-    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\emb G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma^\infty(L_n))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma^\infty(L_n)$ into irreps. Therefore the Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
+\begin{example}[Spherical and monopole harmonics]
+    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\emb G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma^\infty(L_\lambda))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma^\infty(L_\lambda)$ into irreps. Therefore, Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
 
-    Consider $G=\SU_2$ and $T=\U_1$ the subgroup fixing a vector. Then $G\slash T\cong \bbS^2$. Since $T$ is abelian, all of its representations decompose into sums of one-dimensional (hence irreducible) ones, and the one-dimensional representations are labeled by an integer $n\in\bbZ$ (namely the representation is given by multiplication by $z^n$, where $z\in\U_1\subset \bbC$). Meanwhile the irreducible representations $V_k$ of $\SU_2$ are known to be labeled by non-negative integers $k$, where $k$ is the largest integer that occurs when one restricts $V_k$ to be a $\U_1$ representation. Frobenius reciprocity implies
-    \[\dim\Hom_{\SU_2}(V_k,\Gamma^\infty(L_n))=\dim \Hom_{\U_1}(V_k,n)\]
-    where $L_n$ is the complex line bundle over $\bbS^2$ corresponding to $n$. The right hand side is the multiplicity of the weight $n$ in $V_k$ (that is, the multiplicity of $n$ in the restriction of the representation on $V_k$ to $T$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we can see that the decomposition of $\Gamma^\infty(L_n)$ into irreducibles will include all $V_k$ where $k$ is the same parity as $n$ and $k\geq n$.
+    Consider $G=\SU_2$ and $T=\U_1$ the subgroup fixing a vector. Then $G\slash T\cong \bbS^2$. Since $T$ is abelian, all of its representations decompose into sums of one-dimensional (hence irreducible) ones, and the one-dimensional representations $W_q\cong \bbC$ are labeled by an integer $q\in\bbZ$, namely, the representation is given by the multiplication by $z^q$, where $z\in\U_1\subset \bbC$. We can use $W_q$ to induce a representation $\Ind^{\SU_2}_{\U_1}(W_q)$ of $\SU_2$, which is the space of sections
+    \[\Gamma^\infty(L_q)=\Ind^{\SU_2}_{\U_1}(W_q),\]
+    where $L_q$ is the homogeneous complex line bundle over $\bbS^2$ corresponding to $q$ (associated to the $q$-th monopole bundle).
+    This induced representation is not irreducible, and we can use Frobenius reciprocity to compute how it decomposes into a sum of irreducible ones. 
+    
+    The irreducible representations $V_k$ of $\SU_2$ are known to be labeled by non-negative integers $k$, where $k$ is the largest integer that occurs when one restricts $V_k$ to be a $\U_1$ representation, and $\dim_\bbC V_k=k+1$. Frobenius reciprocity implies
+    \[\dim\Hom_{\SU_2}(V_k,\Gamma^\infty(L_q))=\dim \Hom_{\U_1}(V_k,W_q).\]
+    The right hand side is the multiplicity of the weight $q$ in $V_k$ (that is, the multiplicity of $W_q$ in the restriction of the representation on $V_k$ to $T$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we have 
+    \[\Res^{\U_1}_{\SU_2}(V_k)\cong \bigoplus_{j \in \{-k,-k+2,\ldots,k-2,k\}}W_j.\]
+    Thus, every $V_k$ which (after restriction) contains $W_q$ will appear once in the decomposition of $\Gamma^\infty(L_q)$ and this can happen only if $k\geq |q|$ and $k-|q|$ is even. The resulting decomposition of $\Gamma^\infty(L_q)$ into $\SU_2$-modules reads 
+    \[\Ind^{\SU_2}_{\U_1}(W_q)=\Gamma^\infty(L_q)\cong \bigoplus_{l\in \bbZ_{\geq 0}}V_{2l+|q|}.\]
 
-    In the case $n=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma^\infty(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $n=0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl Theorem, the direct sum of all the $V_{2l}$, once endowed with a proper topology and completed, is not exactly $C^\infty(\bbS^2)$, but rather the Hilbert space $L^2(\bbS^2)$ of square integrable functions:
+    In the case $q=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma^\infty(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $W_0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl Theorem, the direct sum of all the $V_{2l}$, once endowed with a proper topology and completed, is not exactly $C^\infty(\bbS^2)$, but rather the Hilbert space $L^2(\bbS^2)$ of square integrable functions:
     \[L^2(\bbS^2,\bbC)\cong \bigoplus_{l=0}^\infty V_{2l}.\]
-    This holds both over reals and complexes. The space $V_{2l}$ is $(2l+1)$-dimensional and a standard basis is given by the spherical harmonics $Y^l_m(\theta,\varphi)$. If we replace $\SU_2$ by $\SO_3$, the only difference is that $V_k$ with odd $k$ disappear from the list of irreps, so the final result for $n=0$ is the same. This is the beginning of the subject of \emph{harmonic analysis} (and in particular Fourier transforms) on Lie groups.
+    This holds both over reals and complexes. The space $V_{2l}$ is $(2l+1)$-dimensional and a standard basis is given by the spherical harmonics $Y^l_m(\theta,\varphi)$, $m=-l,-l+1,\ldots,l$. If we replace $\SU_2$ by $\SO_3$, the only difference is that $V_k$ with odd $k$ disappear from the list of irreps, so the final result for $q=0$ is the same. This is the beginning of the subject of \emph{harmonic analysis} (and in particular Fourier transforms) on Lie groups.
+
+    The case $q\neq 0$ gives rise to \emph{monopole harmonics} $Y_{q,\ell}^m$, $\ell\coloneqq l+|q|/2$, $m=-\ell,-\ell+1,\ldots,\ell$,\index{Monopole harmonics} which, for a fixed $l$, comprise a standard basis for the irreducible component $V_{2l+|q|}=V_{2\ell}$ of the space of sections of $L_q$. There are $2l+|q|+1=2\ell+1$ of them since that is the dimensionality of $V_{2\ell}$. The reason for the name is that monopole harmonics span the space of solutions of the equation $\Delta_q\psi=0$, where $\Delta_q=\nabla^\ast\nabla$ is the \emph{Bochner Laplacian} acting on sections of $L_q$.\index{Bochner Laplacian} In physics, they describe the states of a particle in the magnetic field of a magnetic monopole of strength $q$, and they also span the Hilbert space of the geometric quantization of the standard symplectic structure of $\CP^1$ at level $q$ (or spin $q\hbar/2$), see \cite[p.~177]{Woodhouse}. In the standard stereographic coordinate $z\in\bbC$ on $\CP^1$, the $l=0$ (holomorphic, or ``ground state'') component $V_{|q|}$ of $\Gamma^\infty(L_q)$ is identified with the space of polynomials of $z$ of degree up to $|q|$:
+    \[\psi_{q,0}(z)=\sum_{m=0}^{|q|}\psi_m z^m,\quad \psi_m\in\bbC.\]
+    Since the transition function on $L_q$ sends $z^m\mapsto z^{|q|-m}$, this formula defines a global section consistently. The non-holomorphic monopole harmonics $Y^m_{q,\ell}$ with $l>0$ can be obtained as solutions of the modified Legendre equation with a potential:
+    \[(1-x^2)\psi_{xx}-2x\psi_x+\left(\ell(\ell+1)-\frac{q^2}{4}\right)\psi=\frac{\left(m+\frac{q}{2}x\right)^2}{1-x^2}\psi,\]
+    where $x=\cos\theta$. The solutions can be expressed in terms of the Jacobi polynomials $P^{(\alpha,\beta)}_n(x)$: 
+    \begin{align}
+        Y^m_{q,\ell}(x)&\propto \left(\frac{1+x}{1-x}\right)^{q/4}(1-x^2)^{-m/2}P^{(-\frac{q}{2}-m,\frac{q}{2}-m)}_{\ell+m}(x)\rme^{\i (q/2+m)\varphi},\\
+        P^{(\alpha,\beta)}_n(x)&= \frac{(-1)^n}{2^n n!} (1-x)^{-\alpha}(1+x)^{-\beta}\frac{\dd^n}{\dd x^n}\left[(1-x)^{\alpha+n}(1+x)^{\beta+n}\right],
+    \end{align}
+    where $n,n+\alpha,n+\beta,n+\alpha+\beta\in\bbZ_{\geq 0}$.
 \end{example}
-
-
 
 The geometric version of Frobenius reciprocity immediately allows us to reduce questions about the existence of invariant Riemannian metrics and other invariant tensor fields to problems of finite-dimensional representation theory: if $M=G\slash H$ is a homogeneous space, then from Proposition~\ref{prop 1.4.3 Cap} we know that the tensor bundle $\bbT^k_lM$ is associated to $G\to M$ w.r.t.\ the representation $\bbT^k_l(\frakg\slash \frakh)$. By Frobenius reciprocity, $G$-invariant sections of this bundle are in bijective correspondence with $H$-invariant elements in the representation. Since invariant elements are the same as homomorphisms from the trivial representation, this can be rephrased in such a way that the dimension of invariant tensor fields of rank $(k,l)$
 on $G\slash H$ equals the multiplicity of the trivial representation in $\bbT^k_l(\frakg\slash\frakh)$. Moreover, the proof of Theorem~\ref{thm 1.4.4 Cap} gives an explicit construction of the invariant tensor field from the invariant element in the representation. Clearly, the whole construction respects symmetries of any kind, so invariant tensor fields having certain symmetries are in correspondence with invariant elements of the representations having the same symmetries. Finally, if we consider (pointwise) questions of non-degeneracy they clearly reduce to the analogous non-degeneracy properties in the representation. In particular, the set of $G$-invariant Riemannian metrics on $G\slash H$ is in bijective correspondence with the set of $H$-invariant inner products on $\frakg\slash\frakh$. Hence, we get
