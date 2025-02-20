@@ -635,19 +635,22 @@ Note that the basepoint $[e]=H\in G\slash H$ is preserved by the left action of 
 \begin{defn}[Isotropy representation]\label{def isotropy rep}
     For a Klein geometry $(G,H)$, identify $\T_{[e]}(G\slash H)$ with $\frakg\slash\frakh$ using the natural isomorphism constructed above. We call the induced representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ given by $h\mapsto \wh{\rmL}_{h\ast [e]}$, the isotropy representation of the Klein geometry.
 
-    Since $\frakh<\frakg$ is invariant under $\Ad(H)$, the restriction of the adjoint representation to $H$, $\restr{\Ad}{H}:G\to \GL(\frakg)$, descends to a map $H\to \GL(\frakg\slash \frakh)$, which coincides with $\underline{\Ad}$.
+    Since $\frakh<\frakg$ is invariant under $\Ad(H)$, the restriction of the adjoint representation to $H$, $\restr{\Ad}{H}:G\to \GL(\frakg)$, descends to a map $H\to \GL(\frakg\slash \frakh)$. It coincides with $\underline{\Ad}$ by virtue of 
+    \begin{multline}
+        \underline{\Ad}_h(A+\frakh)=\wh \rmL_{h\ast [e]}(A+\frakh)=\restr{\frac{\dd}{\dd t}}{t=0}\left(h\rme^{tA}H\right)=\\=\restr{\frac{\dd}{\dd t}}{t=0}\left(\rme^{t\Ad_h A}hH\right)=\restr{\frac{\dd}{\dd t}}{t=0}\left(\rme^{t\Ad_h A}H\right)=\Ad_h A+\frakh.
+    \end{multline}
 \end{defn}
 
 Since tangent bundles involve only first derivatives, we can make the following grouping of Klein geometries into two types according to whether $H$ is faithfully represented by this action.
 
-\begin{defn}[First-order Klein geometry]
+\begin{defn}[First-order Klein geometry]\index{Order!of Klein geometry}
     A Klein geometry $(G,H)$ is called \emph{first-order} if the isotropy representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ is faithful. Otherwise, the geometry is said to be \emph{higher-order}. 
 \end{defn}
 
 \begin{rem}
     First-order Klein geometries have a simple intuitive description in terms of first-order $H$-structures. Since $H$ is faithfully represented on $\frakg\slash\frakh$, its action on the above constructed coframes $\chi_g:\T_m (G\slash H)\to \frakg\slash \frakh$ via the transformation rule $\chi_{gh}=\underline{\Ad}_h^{-1}\circ\chi_g$, $h\in H$, traces out an $H$-orbit in the set of linear coframes at $m$ for each $m\in M$. This was exactly our original definition of a first-order $H$-structure on $M$ as a reduction to structure group $H$ of the coframe bundle $\Fr(\T^\ast M)$. Hence, \emph{a first-order Klein geometry $(G,H)$ can be identified with a first-order $H$-structure on $G\slash H$}.
 
-    The generalization to higher orders is clear. By considering the $r$-jet of $\wh{\rmL}_h$ at $[e]$, one gets a homomorphism $H\to \GL^r(\frakg\slash\frakh)$. If this is faithful at order $r$ but not $r-1$, the geometry is said to be of order $r$, and its bundle is identified with a reduction of the $r$-th order coframe bundle $\Fr^{\ast r}(M)$. While this is harder to visualize, it simply means that the motions $\wh{\rmL}_h$ of the homogeneous space described by $H$ are uniquely determined by the values of their partial derivatives at a point of orders up to $r$.
+    The generalization to higher orders is clear. By considering the $r$-jet of $\wh{\rmL}_h$ at $[e]$, one gets a homomorphism $H\to \GL^r(\frakg\slash\frakh)$. If this is faithful at order $r$ but not $r-1$, the geometry is said to be of order $r$, and its bundle is identified with a reduction of the $r$-th order coframe bundle $\Fr^{\ast r}(M)$. While this is harder to visualize, it simply means that the motions $\wh{\rmL}_h$ of the homogeneous space described by $H$ are uniquely determined by the values of their partial derivatives at a point of orders up to $r$. This interpretation of Klein geometries will be revisited in the next \sect.
 \end{rem}
 
 
@@ -738,21 +741,21 @@ i.e., $\frakl$ is $K_\frakl$-invariant and the induced action of $\Ad(K_\frakl)$
     If $\frakl<\frakh$ is an $\Ad(H)$-invariant linear subspace then $K_\frakl\emb H$ is a closed normal subgroup.
 \end{lem}
 \begin{proof}
-    For any $h\in H$ and $a\in H_\frakl$, the operator
+    For any $h\in H$ and $a\in K_\frakl$, the operator
     \[\Ad_{hah^{-1}}-\id_\frakg=\Ad_h\Ad_a\Ad_h^{-1}-\id_\frakg=\Ad_h(\Ad_a-\id_\frakg)\Ad_h^{-1}\]
     maps $\frakg$ to $\Ad_h (\frakl)=\frakl$ by definition of $K_\frakl$. Thus, $hah^{-1}\in K_\frakl$ and $K_\frakl$ is normal.
 \end{proof}
 
 Now let 
-\[K_1\coloneqq K_{\frakh},\quad K_{i+1}\coloneqq K_{\frakk_i},\quad i\geq 1.\]
-By induction, since $K_i\embsub H$ is normal, $\frakk_i\sub \frakh$ is an ideal, and $K_{i+1}\embsub H$ is also a closed normal subgroup (of $H$).
+\[K_1\coloneqq K_{\frakh},\quad K_{i+1}\coloneqq K_{\frakk_i},\quad i\geq 1,\]
+where $\frakk_i\coloneqq \Lief K_{i}$ is the Lie algebra of $K_i$. By induction, since $K_i\embsub H$ is normal, $\frakk_i\sub \frakh$ is an ideal, hence $\Ad(H)$-invariant, and thus $K_{i+1}\embsub H$ is also a closed normal subgroup of $H$. As we now show, the limit of this decreasing sequence of subgroups is actually a normal subgroup of $G$, namely the kernel of the Klein geometry.
 
 \begin{lem}
     If $(G,H)$ is a Klein geometry with kernel $K$ and $K_i\embsub H$ is the sequence of normal subgroups of $H$ defined above, then 
     \[K=\bigcap_{i=1}^\infty K_i.\]
 \end{lem}
 \begin{proof}
-    Let $M=G\slash H$. Every element $h\in K$ by definition acts trivially on $M$, hence preserves $\frakh$ and acts trivially on $\frakg\slash\frakh=\T_{[e]}(G\slash H)$, so lies in $K_1=K_{\frakh}$. Thus, $M_1\coloneqq G\slash K_1$ is identified with a $G$-invariant set of linear isomorphisms $\T_m M\to \frakg\slash\frakh$, $m\in M$. Therefore, $K$ acts trivially on $M_1$ as well. By induction, $K\subset \bigcap_i K_i$.
+    Let $M=G\slash H$. Every element $h\in K$ by definition acts trivially on $M$, hence, preserves $\frakh$ under the adjoint action and acts trivially on $\frakg\slash\frakh=\T_{[e]}(G\slash H)$, so lies inside $K_1=K_{\frakh}$. Thus, the quotient group $H_1\coloneqq H\slash K_1$ is identified with a $H$-invariant set of linear isomorphisms (coframes) $\T_{[e]} M\to \frakg\slash\frakh$, whereas its orbit $M_1\coloneqq G\cdot (H\slash K_1)=G\slash K_1$ is identified with a $G$-invariant set of linear coframes  $\T_m M\to \frakg\slash\frakh$ at arbitrary points $m\in M$. (Note that this defines a first-order $H_1$-structure on $M$.) Therefore, $K$ acts trivially on $M_1$ as well, in particular on its tangent space $\frakg\slash\frakk_1$, and hence $K$ is similarly included in $K_2$. By induction, $K\subset \bigcap_i K_i$.
 
     % Denote by $G_0$ the identity component of $G$. Let $G'<G$ be the subgroup generated by $G_0\cup H$. Let $G''$ be the union of all connected components of $G$ of the coset form $hG_0$, $h\in H$. First, we show that $G''=G'$. Clearly $H\cup G_0\subset G''$ and each component $hG_0$ lies in $G'$, so $G''\subset G'$. On the other hand, for $h,h'\in H$, $hG_0g'G_0=hh'G_0$ because $G_0$ is a normal subgroup of $G$, therefore $G''$ is a subgroup of $G$. Finally, since $G''$ contains both $G_0$ and $H$, it contains the group generated by them, which is $G'$. Hence, $G'=G''$.
 
@@ -763,7 +766,7 @@ By induction, since $K_i\embsub H$ is normal, $\frakk_i\sub \frakh$ is an ideal,
     Thus, $\Ad_k$ acts trivially on $\frakg\slash\frakk'$. We can exponentiate in $G\slash K'$ to conclude that $\Adg_k$ acts trivially on the identity component $(G\slash K')_0$. In other words, $K'$ commutes with $(G\slash K')_0$, which means that $K'$ is normal in $G_0$ and in $H$, and thus normal in $G$ (which is generated by $G_0$ and $H$ since $G\slash H$ is connected by definition of Klein geometry). Thus, $K'\subset K$.
 \end{proof}
 
-As an immediate corollary, we find the following infinitesimal description of the kernel.
+The \emph{order} of a (not necessarily effective) Klein geometry can thus be defined as the smallest integer $r$, if one exists, such that $K=K_r$. As an immediate corollary, we find the following infinitesimal description of the kernel.\index{Order!of Klein geometry}
 
 \begin{thm}[{{\cite[Thm.~4.4.1]{Sharpe}}}]\label{thm 4.4.1 Sharpe}
     Let $(G,H)$ be a Klein geometry with kernel $K$ and $\frakk=\Lief K$. Then 
@@ -814,8 +817,8 @@ As a special case, in effective Klein geometries there are no proper subgroups o
         \end{pmatrix} \middle| \bf{x}\in\bbR^n,\lambda\in\bbR, \lambda^{n+1}=1
     \right\}, \quad \frakk_1=\left\{ 
         \begin{pmatrix}
-            \mathrm{0}_{n,n} & \bf{x} \\
-            \bf{0}_n^T & 0
+            \mathrm{0}_{n,n} & \bf{0}_n \\
+            \bf{x}^T & 0
         \end{pmatrix} \middle| \bf{x}\in\bbR^n\right\}.\]
     This subgroup $K_1<G$ is precisely the subgroup preserving both $[e]=[\bf{e}_{n+1}]\in\RP^n$ and the standard basis for $\T_{[e]}\RP^n$, so $G\slash K_1\to \RP^n$ is the frame bundle of $\RP^n$, i.e., the set of pairs $(m,u)$ of point $m\in \RP^n$ and linear isomorphism $u:\T_m\RP^n\to \bbR^n$.  To act trivially on $\RP^n$, an element of $G$ must lie in $K_1$, but it must also act trivially on the frame bundle of $\RP^n$, i.e., on $G\slash K_1$. By the same reasoning, it must act trivially on $\T_{u_0}(G\slash K_1)$, where $u_0$ is the standard basis of $\bbR^n$ viewed as a frame on $\RP^n$. But $\T_{u_0}(G\slash K_1)=\frakg\slash\frakk_1$, and we compute that $K_1$ acts on $\frakg\slash\frakk_1$ by 
     \[\begin{pmatrix}
@@ -842,9 +845,8 @@ As a special case, in effective Klein geometries there are no proper subgroups o
             0 & \lambda
         \end{pmatrix} \middle| \lambda\in\bbR, \lambda^{n+1}=1
     \right\}=\rmZ(\SL_{n+1}(\bbR)).\]
-    This is clearly the kernel of this Klein geometry, as these are precisely the elements of $G$ that act trivially on $\RP^n$. As a consequence, the projective model $\RP^n\cong \PSL_{n+1}(\bbR)\slash (H\slash K)$ is effective.
+    This is clearly the kernel of this Klein geometry, as these are precisely the elements of $G$ that act trivially on $\RP^n$. As a consequence, the projective model $\RP^n\cong \PSL_{n+1}(\bbR)\slash (H\slash K)$ is effective and projective geometry is second-order.
 \end{example}
-
 
 Next, recall that the $r$-jet of a smooth map can be identified, given a particular coordinate chart, with the Taylor series of that map up to and including $r$-th order derivatives. We now show that $K_r$ consists of exactly those elements of $G$ which induce diffeomorphisms of $G\slash H$ with trivial derivatives up to order $r$ (by trivial we mean they coincide with the derivatives of the identity map).
 
@@ -856,23 +858,22 @@ Next, recall that the $r$-jet of a smooth map can be identified, given a particu
 \begin{proof}
     For $r=1$, $K_1=K_{\frakh}$ is the set of elements $h\in H$ such that $\underline{\Ad}_h$ is trivial. But, as established above, $\underline{\Ad}$ is exactly the isotropy representation of the action $\wh{\rmL}$, i.e., $\underline{\Ad}_h$ being trivial is equivalent to the first derivative of $\wh{\rmL}_h$ at $[e]$ being the identity.
 
-    Now we prove for $r>1$ by induction. Assume that the statement is known for all $i\leq r-1$. To each $g\in G$ we associate the $r$-th order jet $\rmj^r_{[e]}\wh{\rmL}_g$ (its target is $gH\in M$). This defines a smooth map into the $r$-th jet space (and in particular invertible $r$-jets):
-    \[\Phi_r\coloneqq \rmj_{[e]}^r\circ \wh{\rmL}_{\smbullet}:\quad  G\to \rmJ^r_{[e]}(M,M)^\times.\]
+    Now we prove for $r>1$ by induction. Assume that the statement is known for all $i\leq r-1$. To each $g\in G$ we associate the $r$-th order jet $\rmj^r_{[e]}\wh{\rmL}_g$ (its target is $gH\in M$). This defines a smooth map into the $r$-th jet space:
+    \[\Phi_r\coloneqq \rmj_{[e]}^r\circ \wh{\rmL}_{\smbullet}:\quad  G\to \rmJ^r_{[e]}(M,M).\]
     By hypothesis, $K_{r-1}$ is exactly the elements of $G$ whose $r$-jets are trivial:
     \[K_{r-1}=\Phi_{r-1}^{-1}\left(e_r\right), \quad \text{ where }e_r\coloneqq \rmj^r_{[e]}\id_M.\]
     Thus, $\Phi_{r-1}$ descends to an \emph{injective immersion} of the quotient manifold
-    \[\varphi_{r-1}:G\slash K_{r-1}\hookrightarrow \rmJ^{r-1}_{[e]}(M,M)^\times.\]
-    Therefore, we can identify $G\slash K_{r-1}$ with the submanifold $\varphi_{r-1}(G\slash K_{r-1})< \rmJ^{r-1}_{[e]}(M,M)^\times$, and replace the action $\wh{\rmL}_k$, $k\in K_{r-1}$ on $G\slash K_{r-1}$ with the action of $\rmj^{r-1}_{[e]}\wh{\rmL}_k$ on $\rmJ^{r-1}_{[e]}(M,M)^\times$ by pre-composition of jets. This is well-defined because $\wh{\rmL}_k$ preserves the basepoint of $G\slash K_{r-1}$.
+    \[\varphi_{r-1}:G\slash K_{r-1}\hookrightarrow \rmJ^{r-1}_{[e]}(M,M).\]
+    Therefore, we can identify $G\slash K_{r-1}$ with the submanifold $\varphi_{r-1}(G\slash K_{r-1})< \rmJ^{r-1}_{[e]}(M,M)$, and replace the action $\wh{\rmL}_k$, $k\in K_{r-1}$ on $G\slash K_{r-1}$ with the action of $\rmj^{r-1}_{[e]}\wh{\rmL}_k$ on $\rmJ^{r-1}_{[e]}(M,M)$ by pre-composition of jets. This is well-defined because $\wh{\rmL}_k$ preserves the basepoint of $G\slash K_{r-1}$.
     
-    By definition, $K_r$ is the subgroup of $K_{r-1}$ acting trivially on the tangent space of $G\slash K_{r-1}$ at the basepoint, i.e., the kernel of the isotropy representation of the Klein geometry $(G,K_{r-1})$. Thus, via the above identification with a submanifold of $\rmJ^{r-1}_{[e]}(M,M)^\times$, the subgroup $K_r$ can be identified with those elements of $K_{r-1}$ whose $1$-jets of the $(r-1)$-jets vanish. But this is the same as the vanishing of the $r$-jets: 
+    By definition, $K_r$ is the subgroup of $K_{r-1}$ acting trivially on the tangent space of $G\slash K_{r-1}$ at the basepoint, i.e., the kernel of the isotropy representation of the Klein geometry $(G,K_{r-1})$. Thus, via the above identification with a submanifold of $\rmJ^{r-1}_{[e]}(M,M)$, the subgroup $K_r$ can be identified with those elements of $K_{r-1}$ whose $1$-jets of the $(r-1)$-jets vanish. But this is the same as the vanishing of the $r$-jets: 
     \[K_r=\left\{k\in K_{r-1}: \rmj^1_{[e]}\circ \rmj^{r-1}_{[e]}\circ\wh{\rmL}_k=e_r\right\}=\left\{g\in G: \rmj^r_{[e]}\circ \wh{\rmL}_g=e_r\right\}.\]
     Indeed, since $\varphi_{r-1}$ is an immersion, the triviality of the derivative of its composition with $\wh{\rmL}_k$ is equivalent to the triviality of the derivative of $\wh{\rmL}_k$ itself. This concludes the induction step.
 \end{proof}
 
 
-
 \begin{example}[\ref{ex real projective Klein model} continued]
-    Consider the projective space $\RP^n$ viewed as a Klein geometry $(G,H)$ with $G=\PGL_{n+1}$. As we saw, $G\slash K_1$ is the frame bundle of $\RP^n$, i.e., all of $\rmJ^1_{[e]}(\RP^n,\RP^n)^\times$. Thus, any linear isomorphism of tangent spaces of $\RP^n$ arises as the first derivative of a projective transformation. Then $K_2$ is trivial, and $G\slash K_2=G=\PGL_{n+1}\subset \rmJ^2_{[e]}(\RP^n,\RP^n)^\times$ is the set of $2$-jets of projective transformations: a projective transformation is determined by its $2$-jet. Moreover, the set of $2$-jets with a given $1$-jet is $K_1\slash K_2=K_1$, the group of projective transformations of the form 
+    Consider the projective space $\RP^n$ viewed as a Klein geometry $(G,H)$ with $G=\PGL_{n+1}$. As we saw, $G\slash K_1$ is the frame bundle of $\RP^n$, i.e., all of $\rmJ^1_{[e]}(\RP^n,\RP^n)$. Thus, any linear isomorphism of tangent spaces of $\RP^n$ arises as the first derivative of a projective transformation. Then $K_2$ is trivial, and $G\slash K_2=G=\PGL_{n+1}\subset \rmJ^2_{[e]}(\RP^n,\RP^n)$ is the set of $2$-jets of projective transformations: a projective transformation is determined by its $2$-jet. Moreover, the set of $2$-jets with a given $1$-jet is $K_1\slash K_2=K_1$, the group of projective transformations of the form 
     \[\begin{pmatrix}
         \rmI_n & \bf{0}_n\\
         \bf{x}^T & 1
@@ -901,9 +902,9 @@ Consider the set $\Gamma^\infty(E)$ of sections of a homogeneous vector bundle $
 where $\wt \rmL$ and $\wh \rmL$ are the actions on $E$ and $G\slash H$, respectively. Note that this particular combination of the two actions is required so that sections get mapped to sections, i.e., so that the action preserves the point in the base.
 
 \begin{defn}[Induced representation]\index{Induced representation}
-    Let $(G,H)$ be a homogeneous space, $G\acts V$ a finite-dimensional linear representation $G$, and $E=G\times^H V$ be the corresponding homogeneous \gls{vb}. The representation of $G$ on $\Gamma^\infty(E)$ defined above is called the \emph{induced representation} of $G$, denoted $\Ind^G_H(V)$. The association functor for bundles makes this a functor of $V$.
+    Let $(G,H)$ be a homogeneous space, $H\acts V$ a finite-dimensional linear representation $H$, and $E=G\times^H V$ be the corresponding homogeneous \gls{vb}. The representation of $G$ on $\Gamma^\infty(E)$ defined above is called the \emph{induced representation} of $G$, denoted $\Ind^G_H(V)$. The association functor for bundles makes this a functor of $V$.
 
-    In addition, we denote by $\Res^G_H(V)$ the representation of $H$ on $G$ obtained by restriction of the representation of $G$. This is also obviously functorial in $V$.
+    In addition, we denote by $\Res^G_H(V)$ the representation of $H$ on $V$ obtained by restriction of the representation of $G$. This is also obviously functorial in $V$.
 \end{defn}
 
 The correspondence between sections of an associated bundle and equivariant functions on the principal bundle (Proposition~\ref{prop 1.2.6 RS2}) gives rise to another interpretation of the induced action of $G$ on sections. This picture is (in the case of homogeneous \glspl{vb}) frequently used in representation theory. Namely, via the isomorphism $E\cong G\times^H E_{[e]}$ from Proposition~\ref{prop 1.4.3 Cap}, we can identify $\Gamma^\infty(E)$ with $\varGamma\left(G\times^H E_{[e]}\right)$, which in turn by Proposition~\ref{prop 1.2.6 RS2} is in bijective correspondence with the set $\Hom_H(G,E_{[e]})$. Explicitly, the correspondence between a section $s$ and a function $\varphi$ is characterized by $s(gH)=[(g,\varphi(g))]=g\cdot \varphi(g)$ or by $\varphi(g)=g^{-1}\cdot s(gH)$. In the case of a homogeneous vector bundle, this bijection is clearly a linear isomorphism.
@@ -911,7 +912,7 @@ The correspondence between sections of an associated bundle and equivariant func
 To get the action of $G$ on $\Gamma^\infty(E)$ in the picture of equivariant functions, we only have to notice that by definition $(g\cdot  s)(g'H)=g\cdot  s(g^{-1}g'H)$. Consequently, the map $g\cdot f:G\to E_{[e]}$ corresponding to $g\cdot s\in \Gamma^\infty(E)$ is given by none other than the natural action by pullbacks $\rmL_g^\ast$:
 \[(g\cdot \varphi)(g')=g^{\prime-1}\cdot(g\cdot s(g^{-1}g'H))=(g^{-1}g')^{-1}\cdot s(g^{-1}g'H)=\varphi(g^{-1}g').\]
 
-The next fundamental result shows that in certain situations one can reduce questions about the infinite-dimensional space $\Gamma^\infty(E)$ to questions about the finite-dimensional manifold $E_{[e]}$. In particular, determining $G$-invariant sections of a homogeneous bundle always reduces to a finite-dimensional problem.
+The next fundamental result shows that, in certain situations, one can reduce questions about the infinite-dimensional space $\Gamma^\infty(E)$ to questions about the finite-dimensional manifold $E_{[e]}$. In particular, determining $G$-invariant sections of a homogeneous bundle always reduces to a finite-dimensional problem.
 
 \begin{thm}[Geometric Frobenius reciprocity {{\cite[Thm.~1.4.4]{Cap}}}]\label{thm 1.4.4 Cap}
     Let $E\to G\slash H$ be a homogeneous bundle with standard fiber $E_{[e]}$ (viewed as an $H$-space), and let $X$ be a smooth manifold endowed with a smooth left $G$-action. Then the evaluation at $[e]$ induces a natural bijection between the set of $G$-equivariant maps $X\to \Gamma^\infty(E)$ and the set of $H$-equivariant maps $X\to E_{[e]}$. In particular, there is a natural bijection between the set $\Gamma^\infty(E)^G$ of $G$-invariant sections of $E$ and the set $(E_{[e]})^H$ of $H$-invariant elements of the typical fiber.
@@ -933,7 +934,7 @@ The next fundamental result shows that in certain situations one can reduce ques
 \end{proof}
 
 \begin{example}[Spherical and monopole harmonics]
-    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\emb G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_k,\Gamma^\infty(L_\lambda))$ is simply counting the multiplicity of $V_k$ in the decomposition of $\Gamma^\infty(L_\lambda)$ into irreps. Therefore, Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
+    Looking ahead, we can take $H$ to be a maximal torus subgroup $T\emb G$. Since $T$ is abelian, its irreducible representations (irreps) are one-dimensional and are called \emph{weights}, labeled by $\lambda$. The associated homogeneous line bundles over $G\slash T$ are denoted $L_\lambda$. Further if $V_\gamma$ is an irrep of $G$ (labeled by a highest weight $\gamma$, irrelevant to this statement), then by Schur's Lemma the dimension of the space $\Hom_G(V_\gamma,\Gamma^\infty(L_\lambda))$ is simply counting the multiplicity of $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ into irreps. Therefore, Frobenius reciprocity in the language of representation theory states that the multiplicity of a $G$-irrep $V_\gamma$ in the decomposition of $\Gamma^\infty(L_\lambda)$ is equal to the multiplicity of the weight $\lambda$ in $V_\gamma$. If $G$ is compact, then for any given weight $\lambda$, the induced representation $\Gamma^\infty(L_\lambda)$ will decompose into an infinity of irreducibles (because each is finite-dimensional for compact $G$), namely all those that contain the weight $\lambda$.
 
     Consider $G=\SU_2$ and $T=\U_1$ the subgroup fixing a vector. Then $G\slash T\cong \bbS^2$. Since $T$ is abelian, all of its representations decompose into sums of one-dimensional (hence irreducible) ones, and the one-dimensional representations $W_q\cong \bbC$ are labeled by an integer $q\in\bbZ$, namely, the representation is given by the multiplication by $z^q$, where $z\in\U_1\subset \bbC$. We can use $W_q$ to induce a representation $\Ind^{\SU_2}_{\U_1}(W_q)$ of $\SU_2$, which is the space of sections
     \[\Gamma^\infty(L_q)=\Ind^{\SU_2}_{\U_1}(W_q),\]
@@ -942,16 +943,16 @@ The next fundamental result shows that in certain situations one can reduce ques
     
     The irreducible representations $V_k$ of $\SU_2$ are known to be labeled by non-negative integers $k$, where $k$ is the largest integer that occurs when one restricts $V_k$ to be a $\U_1$ representation, and $\dim_\bbC V_k=k+1$. Frobenius reciprocity implies
     \[\dim\Hom_{\SU_2}(V_k,\Gamma^\infty(L_q))=\dim \Hom_{\U_1}(V_k,W_q).\]
-    The right hand side is the multiplicity of the weight $q$ in $V_k$ (that is, the multiplicity of $W_q$ in the restriction of the representation on $V_k$ to $T$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we have 
-    \[\Res^{\U_1}_{\SU_2}(V_k)\cong \bigoplus_{j \in \{-k,-k+2,\ldots,k-2,k\}}W_j.\]
+    The right hand side is the multiplicity of the weight $q$ in $V_k$ (that is, the multiplicity of $W_q$ in the restriction of the representation on $V_k$ to $\U_1$). Since we know what the weights of $V_k$ are ($-k,-k+2,\ldots,k-2,k$, all with multiplicity one), we have 
+    \[\Res^{\SU_2}_{\U_1}(V_k)\cong \bigoplus_{j \in \{-k,-k+2,\ldots,k-2,k\}}W_j.\]
     Thus, every $V_k$ which (after restriction) contains $W_q$ will appear once in the decomposition of $\Gamma^\infty(L_q)$ and this can happen only if $k\geq |q|$ and $k-|q|$ is even. The resulting decomposition of $\Gamma^\infty(L_q)$ into $\SU_2$-modules reads 
     \[\Ind^{\SU_2}_{\U_1}(W_q)=\Gamma^\infty(L_q)\cong \bigoplus_{l\in \bbZ_{\geq 0}}V_{2l+|q|}.\]
 
-    In the case $q=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma^\infty(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $W_0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl Theorem, the direct sum of all the $V_{2l}$, once endowed with a proper topology and completed, is not exactly $C^\infty(\bbS^2)$, but rather the Hilbert space $L^2(\bbS^2)$ of square integrable functions:
+    In the case $q=0$, $L_0$ is the trivial $\bbC$-bundle and $\Gamma^\infty(E_0)\cong C^\infty(\bbS^2,\bbC)$ is just the space of complex-valued functions on $\bbS^2$. Only $V_k$ with even $k$ include the weight $0$, therefore $C^\infty(\bbS^2,\bbC)$ decomposes into a sum of such irreps. To compute the multiplicity of each of them, we use Frobenius reciprocity. As stated above, the multiplicity of $W_0$ in $V_{2l}$ is $1$. For analytic reasons that will be clarified in the Peter-Weyl Theorem, the direct sum of all the $V_{2l}$, once endowed with a proper topology and completed, is not just $C^\infty(\bbS^2)$, but rather the Hilbert space of square-integrable functions:
     \[L^2(\bbS^2,\bbC)\cong \bigoplus_{l=0}^\infty V_{2l}.\]
     This holds both over reals and complexes. The space $V_{2l}$ is $(2l+1)$-dimensional and a standard basis is given by the spherical harmonics $Y^l_m(\theta,\varphi)$, $m=-l,-l+1,\ldots,l$. If we replace $\SU_2$ by $\SO_3$, the only difference is that $V_k$ with odd $k$ disappear from the list of irreps, so the final result for $q=0$ is the same. This is the beginning of the subject of \emph{harmonic analysis} (and in particular Fourier transforms) on Lie groups.
 
-    The case $q\neq 0$ gives rise to \emph{monopole harmonics} $Y_{q,\ell}^m$, $\ell\coloneqq l+|q|/2$, $m=-\ell,-\ell+1,\ldots,\ell$,\index{Monopole harmonics} which, for a fixed $l$, comprise a standard basis for the irreducible component $V_{2l+|q|}=V_{2\ell}$ of the space of sections of $L_q$. There are $2l+|q|+1=2\ell+1$ of them since that is the dimensionality of $V_{2\ell}$. The reason for the name is that monopole harmonics span the space of solutions of the equation $\Delta_q\psi=0$, where $\Delta_q=\nabla^\ast\nabla$ is the \emph{Bochner Laplacian} acting on sections of $L_q$.\index{Bochner Laplacian} In physics, they describe the states of a particle in the magnetic field of a magnetic monopole of strength $q$, and they also span the Hilbert space of the geometric quantization of the standard symplectic structure of $\CP^1$ at level $q$ (or spin $q\hbar/2$), see \cite[p.~177]{Woodhouse}. In the standard stereographic coordinate $z\in\bbC$ on $\CP^1$, the $l=0$ (holomorphic, or ``ground state'') component $V_{|q|}$ of $\Gamma^\infty(L_q)$ is identified with the space of polynomials of $z$ of degree up to $|q|$:
+    The case $q\neq 0$ gives rise to \emph{monopole harmonics} $Y_{q,\ell}^m$, $\ell\coloneqq l+|q|/2$, $m=-\ell,-\ell+1,\ldots,\ell$,\index{Monopole harmonics} which, for a fixed $l$, comprise a standard basis for the irreducible component $V_{2l+|q|}=V_{2\ell}$ of the space of sections of $L_q$. There are $2l+|q|+1=2\ell+1$ of them since that is the dimensionality of $V_{2\ell}$.\footnote{The reason for the name is that monopole harmonics span the space of solutions of the equation $\Delta_q\psi=0$, where $\Delta_q=\nabla^\ast\nabla$ is the \emph{Bochner Laplacian} acting on sections of $L_q$.\index{Bochner Laplacian} In physics, they describe the states of a particle in the magnetic field of a magnetic monopole of strength $q$, and they also span the Hilbert space of the geometric quantization of the standard symplectic structure of $\CP^1$ at level $q$ (or spin $q\hbar/2$), see \cite[p.~177]{Woodhouse}.} In the standard stereographic coordinate $z\in\bbC$ on $\CP^1$, the $l=0$ (holomorphic, or ``ground state'') component $V_{|q|}$ of $\Gamma^\infty(L_q)$ is identified with the space of polynomials of $z$ of degree up to $|q|$:
     \[\psi_{q,0}(z)=\sum_{m=0}^{|q|}\psi_m z^m,\quad \psi_m\in\bbC.\]
     Since the transition function on $L_q$ sends $z^m\mapsto z^{|q|-m}$, this formula defines a global section consistently. The non-holomorphic monopole harmonics $Y^m_{q,\ell}$ with $l>0$ can be obtained as solutions of the modified Legendre equation with a potential:
     \[(1-x^2)\psi_{xx}-2x\psi_x+\left(\ell(\ell+1)-\frac{q^2}{4}\right)\psi=\frac{\left(m+\frac{q}{2}x\right)^2}{1-x^2}\psi,\]

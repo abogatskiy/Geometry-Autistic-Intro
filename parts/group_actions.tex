@@ -2818,6 +2818,10 @@ To derive the last few corollaries of Lie's Theorem, we need the concept of comp
     The complexification $V^\bbC$ of a real vector space $V$ is the tensor product $V\otimes_\bbR \bbC$. This is a complex vector space w.r.t.\ the scalar multiplication $\lambda\cdot (v\otimes z)=v\otimes\lambda z$. Identifying $V$ with the real subspace $V\otimes 1<V^\bbC$, each element of $V^\bbC$ can be written in a unique fashion as $v=u+\i v$ with $u,v\in V$. If $(\tuple{v_1,\ldots,v_n})$ is a real basis for $V$, then $(\tuple{v_1\otimes 1,\ldots,v_n\otimes 1})$ is a complex basis for $V^\bbC$.
 \end{defn}
 
+\begin{xca}
+    Show that complexification is a functor from the category of real vector spaces to the category of complex vector spaces by defining its action on linear maps.
+\end{xca}
+
 The following proposition is an elementary exercise.
 
 \begin{prop}[{\cite[Prop.~5.1.21]{HN}}]\label{prop 5.1.21 HN}
@@ -2892,8 +2896,8 @@ We are ready to get back to solvable algebras.
     implies the assertion.
 
     (b) If $\bbK=\bbR$, then we \emph{complexify} by noting that
-    \[\rho^\bbC:\frakg^\bbC=\bbC\otimes\frakg\to\frakgl(V^\bbC)\cong \bbC\otimes\frakgl(V),\quad \rho^\bbC(z\otimes x)\coloneqq z\otimes \rho(x)\]
-    defines a representation of the complex Lie algebra $\frakg^\bbC$ on the complex vector space $V^\bbC=\bbC\otimes V$. Using Proposition~\ref{prop 5.1.21 HN}, we see by induction that $D^k(\frakg)^\bbC\cong D^k(\frakg^\bbC)$ for each $k\in\bbZ_{>0}$, so that $\frakg^\bbC$ is also solvable. Now (a) applies, and we obtain a complete flag $F$ in $V^\bbC$ with $\rho^\bbC([\frakg,\frakg])\subset\frakg_{\mathrm{n}}(F)$. In particular, each endomorphism $\rho(x)$, $x\in[\frakg,\frakg]$, is nilpotent. Finally, Corollary~\ref{cor 5.2.7 HN} provides a complete flag $F'$ in $V$ with $\rho([\frakg,\frakg])\subset\frakg_{\mathrm{n}}(F')$, and the assertion follows.
+    \[\rho^\bbC:\frakg^\bbC\to\frakgl(V^\bbC)\cong \frakgl(V)\otimes\bbC,\quad \rho^\bbC(x\otimes z)\coloneqq \rho(x)\otimes z\]
+    defines a representation of the complex Lie algebra $\frakg^\bbC$ on the complex vector space $V^\bbC$. Using Proposition~\ref{prop 5.1.21 HN}, we see by induction that $D^k(\frakg)^\bbC\cong D^k(\frakg^\bbC)$ for each $k\in\bbZ_{>0}$, so that $\frakg^\bbC$ is also solvable. Now (a) applies, and we obtain a complete flag $F$ in $V^\bbC$ with $\rho^\bbC([\frakg,\frakg])\subset\frakg_{\mathrm{n}}(F)$. In particular, each endomorphism $\rho(x)$, $x\in[\frakg,\frakg]$, is nilpotent. Finally, Corollary~\ref{cor 5.2.7 HN} provides a complete flag $F'$ in $V$ with $\rho([\frakg,\frakg])\subset\frakg_{\mathrm{n}}(F')$, and the assertion follows.
 \end{proof}
 
 This leads to the following important relationship between solvability and nilpotency.
