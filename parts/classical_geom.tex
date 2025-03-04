@@ -8,7 +8,7 @@
 \begin{defn}[Riemannian metric on a \gls{vb}]\index{Metric!on a bundle}
     Let $E\overset\pi\to M$ be a real \gls{vb}. A (Riemannian) bundle metric on $E$ is a covariant tensor field $h\in\Gamma^\infty(\T^0_2 E)$ such that
     \begin{enumerate}
-        \item $h$ is symmetric, i.e., $h\in\Gamma^\infty\left(\bigodot^2 E^\ast\right)$;
+        \item $h$ is symmetric, i.e., $h\in\Gamma^\infty\left(\bigodot\nolimits^2 E^\ast\right)$;
         \item $h$ is non-degenerate, i.e., when viewed as a morphism $h\in\Hom(E,E^\ast)$, it is an isomorphism;
         \item $h$ is positive: $h(e,e)\geq 0$ and $h(e,e)=0$ iff $e=0$. This in fact implies Property 2.
     \end{enumerate}
@@ -110,18 +110,18 @@ The length functional has an important property called \emph{reparametrization i
 
 
 \begin{defn}[Conformal metrics]\index{Conformal metric}
-    Let $g$ and $\wt{g}$ be two metric on a manifold $M$. They are called conformal iff there exists a positive function $\Omega\in C^\infty(M)$, $\Omega>0$, such that $\wt{g}=\Omega\cdot g$.
+    Let $g$ and $\wt{g}$ be two metric on a manifold $M$. They are called conformal iff there exists a function $\lambda\in C^\infty(M)$ such that $\wt{g}=\lambda^2\cdot g$.
 \end{defn}
 
 \begin{thm}[Nomizu-Ozeki conformal completion theorem]
-    Any Riemannian metric $g$ on a manifold $M$ is conformal to a complete metric $\wt{g}$ (i.e., a metric that makes $M$ into a complete metric space). In particular, every manifold supports a complete metric.
+    Any Riemannian metric $\sfg$ on a manifold $M$ is conformal to a complete metric $\wt{\sfg}$ (i.e., a metric that makes $M$ into a complete metric space). In particular, every manifold supports a complete metric.
 \end{thm}
 \begin{proof}
-    We claim that there exists a conformal factor $\Omega>0$ such that all $\wt{g}$-bounded sets are precompact.
+    We claim that there exists a conformal factor $\lambda^2>0$ such that all $\wt{\sfg}$-bounded sets are precompact.
 
-    First let us show that this claim implies the theorem. Let $(x_n)$ be a Cauchy sequence w.r.t.\ $d_{\wt{g}}$. Then $(x_n)$ is $\wt{g}$-bounded and precompact, i.e., contains a convergent subsequence. But then $(x_n)$ itself must converge to the same limit, proving completeness.
+    First let us show that this claim implies the theorem. Let $(x_n)$ be a Cauchy sequence w.r.t.\ $d_{\wt{\sfg}}$. Then $(x_n)$ is $\wt{\sfg}$-bounded and precompact, i.e., contains a convergent subsequence. But then $(x_n)$ itself must converge to the same limit, proving completeness.
 
-    Now we prove the claim. Let $f$ be an exhaustion function and $V_j=f^{-1}((-\infty,j))$ be the family of precompact sets that exhaust $M$. Let $K_j=\widebar{V_j}$ be the corresponding compact sets and define the distances $\delta_j=\mathrm{dist}_g(\partial K_j,\partial K_{j+1})$ between their boundaries. Choosing a \gls{pou} $\{\chi_j\}$ subordinate to the covering $\{V_{j}\setminus K_{j-1}\}$, define $\Omega=\sum_j \frac{1}{j\cdot \delta_j} \chi_j$. Now it is easy to check that if a set $A$ has finite diameter in the metric $\wt{g}=\Omega\cdot g$, i.e., $\mathrm{diam}_{\wt{g}} A<\infty$, then $\restr{f}{A}$ is bounded. Namely, if $(x_n)$ is a sequence that is not contained in any compact set, i.e., such that $\forall\,j \;\exists\, N:\;\forall n>N \;x_n\notin K_j$, then $x_n\in K_{k(n)}\setminus K_{k(n)-1}$ with $k(n)\to\infty$ and  $d_{\wt{g}}(x_1,x_n)\geq\sum_{j=1}^{k(n)} \frac{1}{j}\to\infty$. The contrapositive of this statement is that every $\wt{g}$-bounded sequence is contained in a compact set. This implies that all $\wt{g}$-bounded sets are precompact, which makes $d_{\wt{g}}$ a complete metric.
+    Now we prove the claim. Let $f$ be an exhaustion function and $V_j=f^{-1}((-\infty,j))$ be the family of precompact sets that exhaust $M$. Let $K_j=\widebar{V_j}$ be the corresponding compact sets and define the distances $\delta_j=\mathrm{dist}_g(\partial K_j,\partial K_{j+1})$ between their boundaries. Choosing a \gls{pou} $\{\chi_j\}$ subordinate to the covering $\{V_{j}\setminus K_{j-1}\}$, define $\lambda^2=\sum_j \frac{1}{j\cdot \delta_j} \chi_j$. Now it is easy to check that if a set $A$ has finite diameter in the metric $\wt{g}=\lambda^2\cdot g$, i.e., $\mathrm{diam}_{\wt{g}} A<\infty$, then $\restr{f}{A}$ is bounded. Namely, if $(x_n)$ is a sequence that is not contained in any compact set, i.e., such that $\forall\,j \;\exists\, N:\;\forall n>N \;x_n\notin K_j$, then $x_n\in K_{k(n)}\setminus K_{k(n)-1}$ with $k(n)\to\infty$ and  $d_{\wt{g}}(x_1,x_n)\geq\sum_{j=1}^{k(n)} \frac{1}{j}\to\infty$. The contrapositive of this statement is that every $\wt{g}$-bounded sequence is contained in a compact set. This implies that all $\wt{g}$-bounded sets are precompact, which makes $d_{\wt{g}}$ a complete metric.
 \end{proof}
 \begin{rem}
     In physics, particularly AdS/CFT, the space $(M,\wt{g})$ is often referred to as ``conformal compactification'' (this terminology was introduced by Roger Penrose). However, the choice of a metric doesn't modify the topology of $M$ in any sense, so it can't make a non-compact manifold compact. Therefore a proper name for this procedure is conformal completion.
@@ -536,9 +536,9 @@ Finally,
 We define the corresponding exterior bundles.
 
 \begin{defn}
-    The complex exterior bundles $\bigwedge^{p,q}M$ are defined by the equalities \[\bigwedge^k(\T^\ast_\mathbb{C}M)=\bigwedge^k(\T^\ast_{1,0}M\oplus \T^\ast_{0,1}M)=\bigoplus_{p+q=k}\bigwedge^p(\T^\ast_{1,0}M)\otimes \bigwedge^q(\T^\ast_{0,1}M)\equiv \bigoplus_{p+q=k}\bigwedge^{p,q}M.\]
+    The complex exterior bundles $\bigwedge\nolimits^{p,q}M$ are defined by the equalities \[\bigwedge\nolimits^k(\T^\ast_\mathbb{C}M)=\bigwedge\nolimits^k(\T^\ast_{1,0}M\oplus \T^\ast_{0,1}M)=\bigoplus_{p+q=k}\bigwedge\nolimits^p(\T^\ast_{1,0}M)\otimes \bigwedge\nolimits^q(\T^\ast_{0,1}M)\equiv \bigoplus_{p+q=k}\bigwedge\nolimits^{p,q}M.\]
     Furthermore, we define the spaces of complex differential forms of degree $(p,q)$, denoted by $\Omega^{p,q}(M)$, as the sections of these bundles:
-    \[\Omega^{p,q}(M)=\Gamma^\infty(\bigwedge^{p,q}M).\]
+    \[\Omega^{p,q}(M)=\Gamma^\infty(\bigwedge\nolimits^{p,q}M).\]
     If $\omega\in\Omega^{p,q}(M)$, then in local coordinates it has the form
     \[\omega=\sum_{I,J}\underbrace{\omega_{i_1\cdots i_pj_1\cdots j_q}}_{\omega_{I,J}}\underbrace{\dd z^i\wedge\cdots\wedge \dd z^{i_p}\wedge\dd \wb z^{j_1}\wedge\cdots\wedge \dd\wb z^{j_q}}_{\dd z^I\wedge \dd\wb z^J},\]
     where the sum is over all multi-indices, e.g. $I=(i_1,\ldots,i_p)$, $1\leq i_1<i_2\cdots<i_p\leq n$. Here, the coefficients are $\omega_{I,J}\in C^\infty (U,\mathbb{C})$.
@@ -573,7 +573,7 @@ The last property follows from the decomposition \[0=\dd^2=(\partial+\wb\partial
 \end{defn}
 
 \begin{defn}[Canonical line bundle]\index{Canonical bundle}
-    The canonical bundle of a complex manifold $M$ (where $\dim_\mathbb{C} M=n$) is defined as $K_M\coloneqq \bigwedge^{n,0}M$, i.e., the determinant bundle of the holomorphic cotangent bundle. Its fiber is $\mathbb{C}$, so it is a complex line bundle. The dual bundle $K^\ast_M$ is called the anti-canonical bundle (note that $K^\ast_M\cong \bigwedge^n(\T^{1,0}M)$, not $\bigwedge^{0,n}M$).
+    The canonical bundle of a complex manifold $M$ (where $\dim_\mathbb{C} M=n$) is defined as $K_M\coloneqq \bigwedge\nolimits^{n,0}M$, i.e., the determinant bundle of the holomorphic cotangent bundle. Its fiber is $\mathbb{C}$, so it is a complex line bundle. The dual bundle $K^\ast_M$ is called the anti-canonical bundle (note that $K^\ast_M\cong \bigwedge\nolimits^n(\T^{1,0}M)$, not $\bigwedge\nolimits^{0,n}M$).
 \end{defn}
 
 

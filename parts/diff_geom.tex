@@ -333,20 +333,20 @@ This is a complicated condition on the collection of maps $\{\wh{h}_{\alpha a}\}
 \[(G\times G')\acts C^\infty(F,F'):\quad ((g,g'),\varphi)\mapsto g'\circ \varphi\circ g^{-1}.\]
 Then every $\hat{h}_{\alpha a}:U_{\alpha a}\times F\to F'$ can be used to define a fiberwise $G\times G'$-equivariant map
 \begin{gather}
-    \Phi_{\alpha a}: U_{\alpha a}\times (G\times G')\to C^\infty(F,F'),\\
+    \varPhi_{\alpha a}: U_{\alpha a}\times (G\times G')\to C^\infty(F,F'),\\
     (m,(g,g'))\mapsto \left(f\mapsto g'\cdot \hat{h}_{\alpha a}\left(m,g^{-1}\cdot f\right)\right).\label{def Phiab}
 \end{gather}
-It is easy to see that this map is $G\times G'$-equivariant (with $G\times G'$ acting on itself from the left). Moreover, every fiberwise $G\times G'$-equivariant map arises this way ($\hat{h}_{\alpha a}$ can be recovered by substituting $g=g'=e$), although the correspondence of course is not bijective.\footnote{Note how the fact that $\Phi_{\alpha a}$ are defined on sets of the form $U_{\alpha a}\times (G\times G')$ hints that they themselves represent a function defined globally on some \gls{fb} with typical fiber $G\times G'$. We will return to this in our discussion of principal bundles.} The transformation rule \eqref{eq transformation of hab} now becomes
-\[\boxed{\Phi_{\beta b}(m,g,g')=\Phi_{\alpha a}\left(m,gt_{\beta\alpha}(m),g't_{ba}'(\underline{h}(m))\right).}\label{eq transformation of Phiab}\]
+It is easy to see that this map is $G\times G'$-equivariant (with $G\times G'$ acting on itself from the left). Moreover, every fiberwise $G\times G'$-equivariant map arises this way ($\hat{h}_{\alpha a}$ can be recovered by substituting $g=g'=e$), although the correspondence of course is not bijective.\footnote{Note how the fact that $\varPhi_{\alpha a}$ are defined on sets of the form $U_{\alpha a}\times (G\times G')$ hints that they themselves represent a function defined globally on some \gls{fb} with typical fiber $G\times G'$. We will return to this in our discussion of principal bundles.} The transformation rule \eqref{eq transformation of hab} now becomes
+\[\boxed{\varPhi_{\beta b}(m,g,g')=\varPhi_{\alpha a}\left(m,gt_{\beta\alpha}(m),g't_{ba}'(\underline{h}(m))\right).}\label{eq transformation of Phiab}\]
 We would like to put some restriction on the values of these maps in $C^\infty(F,F')$ that produces a well-defined class of bundle morphisms $h$ which can be interpreted as ``respecting'' the given $G$- and $G'$-structures. This can be easily done by analogy with how we interpreted the structure of a $G$-fiber:
 \begin{gather}
-    \text{All maps }\{\Phi_{\alpha a}\}_{\alpha\in A,a\in A'}\text{, at fixed }m\text{, should be required to take values}\\
+    \text{All maps }\{\varPhi_{\alpha a}\}_{\alpha\in A,a\in A'}\text{, at fixed }m\text{, should be required to take values}\\
     \text{in a single orbit of the }G\times G'\text{-action on }C^\infty(F,F').
 \end{gather}
-This is a well-defined constraint because, due to the equivariance of $\Phi_{\alpha a}$, the transformation law \eqref{eq transformation of Phiab} implies that the fiber above $m$ gets mapped to the same orbit regardless of the values of the indices $\alpha,a$.
+This is a well-defined constraint because, due to the equivariance of $\varPhi_{\alpha a}$, the transformation law \eqref{eq transformation of Phiab} implies that the fiber above $m$ gets mapped to the same orbit regardless of the values of the indices $\alpha,a$.
 
 \begin{defn}[Category ${\calS \mFB}^\infty$]\label{def S-bundle}
-    Let the objects of the category $\calS\mFB^\infty$, called $\calS$-bundles, be all possible structured bundles $(E\overset{\pi}{\to}M,G\acts F,\calG)$ with model fibers $F\in\ob(\calS)$ and with sets of maps $\calS(F,F')\subset C^\infty(F,F')$ determined from a category $\calS$. Morphisms from such a bundle to another one, $(E'\overset{\pi'}{\to}M',G'\acts F',\calG')$, are bundle morphisms $h:E\to E'$ such that $\calG$ and $\calG'$ contain some $G$- and $G'$-atlas, respectively, in which $h$ is represented by a collection of $G\times G'$-equivariant maps $\{\Phi_{\alpha a}\}$ as above which satisfy the compatibility condition \eqref{eq transformation of Phiab} and which, for each fixed $m\in M$, take values in the orbit of a single element of $\calS(F,F')$ under the action of $G\times G'$ on the set $C^\infty(F,F')$. We say that $h_m\coloneqq \restr{h}{E_m}$ \emph{is modeled on} an element of $\calS(F,F')$.
+    Let the objects of the category $\calS\mFB^\infty$, called $\calS$-bundles, be all possible structured bundles $(E\overset{\pi}{\to}M,G\acts F,\calG)$ with model fibers $F\in\ob(\calS)$ and with sets of maps $\calS(F,F')\subset C^\infty(F,F')$ determined from a category $\calS$. Morphisms from such a bundle to another one, $(E'\overset{\pi'}{\to}M',G'\acts F',\calG')$, are bundle morphisms $h:E\to E'$ such that $\calG$ and $\calG'$ contain some $G$- and $G'$-atlas, respectively, in which $h$ is represented by a collection of $G\times G'$-equivariant maps $\{\varPhi_{\alpha a}\}$ as above which satisfy the compatibility condition \eqref{eq transformation of Phiab} and which, for each fixed $m\in M$, take values in the orbit of a single element of $\calS(F,F')$ under the action of $G\times G'$ on the set $C^\infty(F,F')$. We say that $h_m\coloneqq \restr{h}{E_m}$ \emph{is modeled on} an element of $\calS(F,F')$.
 
     In addition, ${\calS\mFB}_M^\infty$ is the subcategory of structured bundles over the fixed base manifold $M$ with morphisms covering the identity in $M$, i.e., we assume $h=\id_M$.
 \end{defn}
@@ -364,7 +364,7 @@ There are a number of other subcategories one may define by additionally either 
 
 
 \begin{defn}[Bundle construction]\label{def bundle construction}
-    \Glspl{fb} can be alternatively defined by specifying the base manifold $M$, the typical fiber $F$, the structure group $G$ acting on the fiber via a \emph{faithful}\footnote{The importance of faithfulness will be explained in Remark~\ref{rem: faithfulness of action on F}.} smooth left action which can be viewed as an injective homomorphism of Lie groups $\Phi:G\to \Diff(F)$ (i.e., we will write $g\cdot f=\Phi(g)(f)=\Phi_g(p)$ for $g\in G, f\in F$), a countable open covering $\{U_\alpha\}$ of $M$, and a cocycle  $t_{\beta\alpha}\in C^\infty (U_{\alpha\beta}, G)$. Namely, we can define $E$ as a topological space as the quotient $E\coloneqq \bigslant{(\bigsqcup_\alpha U_\alpha \times F)}{\sim}$, where $(m_1,f_1)\sim(m_2,f_2)$ iff $m_1=m_2=m$ and $f_1=t_{\beta\alpha}(m,f_2)$ for some $\alpha,\beta$, and the projection $\pi$ is defined as the descendent of the projections onto the fist component in each summand.\footnote{In categorical terms, this is literally the cofibered product (pushout) of the sets $U_\alpha \times F$ with pairs of maps $\restr{\chi_\alpha^{-1}}{U_{\alpha\beta}\times F}$ and $\restr{\chi_\beta^{-1}}{U_{\alpha\beta}\times F}$. For instance, if there were only two sets $U_1,U_2$, we would have $E=(U_1\times F)\sqcup_Z (U_2\times F)$, where $Z=U_{12}\times F$ and we have two morphisms $\restr{\chi_i^{-1}}{U_{12}\times F}:Z\to U_i\times F$ that are used in the definition of the pushout.}
+    \Glspl{fb} can be alternatively defined by specifying the base manifold $M$, the typical fiber $F$, the structure group $G$ acting on the fiber via a \emph{faithful}\footnote{The importance of faithfulness will be explained in Remark~\ref{rem: faithfulness of action on F}.} smooth left action which can be viewed as an injective homomorphism of Lie groups $\varPhi:G\to \Diff(F)$ (i.e., we will write $g\cdot f=\varPhi(g)(f)=\varPhi_g(p)$ for $g\in G, f\in F$), a countable open covering $\{U_\alpha\}$ of $M$, and a cocycle  $t_{\beta\alpha}\in C^\infty (U_{\alpha\beta}, G)$. Namely, we can define $E$ as a topological space as the quotient $E\coloneqq \bigslant{(\bigsqcup_\alpha U_\alpha \times F)}{\sim}$, where $(m_1,f_1)\sim(m_2,f_2)$ iff $m_1=m_2=m$ and $f_1=t_{\beta\alpha}(m,f_2)$ for some $\alpha,\beta$, and the projection $\pi$ is defined as the descendent of the projections onto the fist component in each summand.\footnote{In categorical terms, this is literally the cofibered product (pushout) of the sets $U_\alpha \times F$ with pairs of maps $\restr{\chi_\alpha^{-1}}{U_{\alpha\beta}\times F}$ and $\restr{\chi_\beta^{-1}}{U_{\alpha\beta}\times F}$. For instance, if there were only two sets $U_1,U_2$, we would have $E=(U_1\times F)\sqcup_Z (U_2\times F)$, where $Z=U_{12}\times F$ and we have two morphisms $\restr{\chi_i^{-1}}{U_{12}\times F}:Z\to U_i\times F$ that are used in the definition of the pushout.}
     Then $E$ has a unique smooth structure that makes $\pi$ a smooth submersion (see \cite[Lem.~10.6]{Lee} for the case of vector bundles, which is easily generalized to all \glspl{fb}).\footnote{Essentially we can take an atlas $\{F_\alpha,\psi_\alpha\}$ of $F$ and an atlas $\varphi_\alpha$ of $M$ (\gls{wlog} subordinate to the covering $\{U_\alpha\}$) to construct a smooth atlas $\{(U_\alpha\times F_\beta,\varphi_\alpha\times\psi_\beta)\}$ of $E$.} This construction is called the \emph{clutching construction} of a \gls{fb}.
 \end{defn}
 
@@ -632,7 +632,7 @@ We've seen that bundles are, in categorical terms, pushouts (i.e., quotients of 
 
     We sketch the rest of the proof. Since this construction applies to every $x\in M$, we can extract a locally finite open covering of the entire $M$ of the form $\{U_i\times I\}_i$ such that $E$ is trivial over every set in the covering (this can be done using a \gls{pou}). Let $\chi_i$ be the corresponding local trivializations and $\wh{\chi}_i$ the induced local trivializations of $\restr{E_0}{U_i}\times I$.
 
-    Now we construct a global trivialization inductively in $i$. For $V_1=U_1$, there is already an isomorphism $\Phi_1:\restr{E}{V_1\times I}\to\restr{E_0}{V_1}\times I$. We can construct a chain of open sets $V_1\subset V_2\subset\cdots$ that eventually covers all of $M$ and $U_i\subset V_i$, and by induction extend the isomorphism to $\Phi_i:\restr{E}{V_i\times I}\to\restr{E_0}{V_i}\times I$. Via the local trivializations $\chi_i$ and $\wh{\chi}_i$, bundle isomorphisms are represented by $G$-valued functions $g_i:U_{i}\times I\to G$ with $g_i(x,0)=e\in G$. Let $g_1:(V_1\cap U_2)\times I\to G$ be the representative of $\Phi_1$ in $\chi_2$ and $\wh{\chi}_2$. Then $g_1$ can be smoothly extended to $V_2\times I$ so that it equals $e$ on $(U_2\setminus V_1)\times I$. This represents the isomorphism $\Phi_2$ that agrees with $\Phi_1$ on the common domain. Repeating this procedure on $U_3$ and so on, we construct a global isomorphism of the bundles in question. See \cite[Thm.~3.3.1]{RS2} for details.
+    Now we construct a global trivialization inductively in $i$. For $V_1=U_1$, there is already an isomorphism $\varPhi_1:\restr{E}{V_1\times I}\to\restr{E_0}{V_1}\times I$. We can construct a chain of open sets $V_1\subset V_2\subset\cdots$ that eventually covers all of $M$ and $U_i\subset V_i$, and by induction extend the isomorphism to $\varPhi_i:\restr{E}{V_i\times I}\to\restr{E_0}{V_i}\times I$. Via the local trivializations $\chi_i$ and $\wh{\chi}_i$, bundle isomorphisms are represented by $G$-valued functions $g_i:U_{i}\times I\to G$ with $g_i(x,0)=e\in G$. Let $g_1:(V_1\cap U_2)\times I\to G$ be the representative of $\varPhi_1$ in $\chi_2$ and $\wh{\chi}_2$. Then $g_1$ can be smoothly extended to $V_2\times I$ so that it equals $e$ on $(U_2\setminus V_1)\times I$. This represents the isomorphism $\varPhi_2$ that agrees with $\varPhi_1$ on the common domain. Repeating this procedure on $U_3$ and so on, we construct a global isomorphism of the bundles in question. See \cite[Thm.~3.3.1]{RS2} for details.
 \end{proof}
 
 \begin{cor}
@@ -659,15 +659,15 @@ Now we are ready to prove the smooth version of the \gls{hlp} for \glspl{fb} (a 
     \]
     This is a bundle isomorphism of two bundles over $M$. Moreover, by Theorem~\ref{bundles over MxI}, there exists a bundle isomorphism 
     \[
-    \Phi:H^\ast E'\to \wt{H}_0^\ast E'\times I
+    \varPhi:H^\ast E'\to \wt{H}_0^\ast E'\times I
     \]
-    of bundles over $M\times I$ satisfying $\Phi\left((x,0),f\right)=\left((x,f),0\right)$. Together with the natural bundle morphism $\pr_2:H^\ast E'\to E'$, the isomorphisms $\lambda $ and $\Phi$ combine to a morphism
+    of bundles over $M\times I$ satisfying $\varPhi\left((x,0),f\right)=\left((x,f),0\right)$. Together with the natural bundle morphism $\pr_2:H^\ast E'\to E'$, the isomorphisms $\lambda $ and $\varPhi$ combine to a morphism
     \[
-    \wt{H}:E\times I\overset{\lambda\times\id_I}{\longrightarrow}H_0^\ast E' \times I\overset{\Phi^{-1}}{\to}H^\ast E'\overset{\pr_2}{\to}E'
+    \wt{H}:E\times I\overset{\lambda\times\id_I}{\longrightarrow}H_0^\ast E' \times I\overset{\varPhi^{-1}}{\to}H^\ast E'\overset{\pr_2}{\to}E'
     \]
     that covers $H$. Since 
     \[
-    \wt{H}(p,0)=\pr_2\circ\Phi^{-1}\left(\left(\pi(p),\wt{H}_0(p)\right),0\right)=\pr_2\circ \left(\left(\pi(p),0\right),\wt{H}_0(p)\right)=\wt{H}_0(p),
+    \wt{H}(p,0)=\pr_2\circ\varPhi^{-1}\left(\left(\pi(p),\wt{H}_0(p)\right),0\right)=\pr_2\circ \left(\left(\pi(p),0\right),\wt{H}_0(p)\right)=\wt{H}_0(p),
     \]
     $\wt{H}$ is indeed an extension of $\wt{H}_0$.
 \end{proof}
@@ -918,15 +918,15 @@ The following is an exercise.
     Every smooth local frame of a smooth \gls{vb} is associated with a smooth local trivialization.
 \end{prop}
 \begin{proof}
-    We need to construct a trivialization given a frame. Given a smooth local frame $(\sigma_i)$ define a map $\Psi:U\times\bbR^k\to \pi^{-1}(U)$ by
-    \[\Psi(m,(v^1,\ldots,v^k))=\sum_{i=1}^k v^i\sigma_i(m).\]
-    The fact that $(\sigma_i(m))$ forms a basis of $E_m$ at each $m\in U$ means that $\Psi$ is bijective, and clearly $\sigma_i=\Psi\circ \wt{e}_i$.  Thus it remains to show that $\Psi$ is a diffeomorphism, which will turn it into a local trivialization.
+    We need to construct a trivialization given a frame. Given a smooth local frame $(\sigma_i)$ define a map $\varPsi:U\times\bbR^k\to \pi^{-1}(U)$ by
+    \[\varPsi(m,(v^1,\ldots,v^k))=\sum_{i=1}^k v^i\sigma_i(m).\]
+    The fact that $(\sigma_i(m))$ forms a basis of $E_m$ at each $m\in U$ means that $\varPsi$ is bijective, and clearly $\sigma_i=\varPsi\circ \wt{e}_i$.  Thus it remains to show that $\varPsi$ is a diffeomorphism, which will turn it into a local trivialization.
 
-    The reason $\Psi$ is a diffeomorphism is that we already know that $E$ is a smooth \gls{vb}, so, by shrinking $U$ if necessary, we can assume that it has a local trivializing diffeomorphism $\chi:\pi^{-1}(U)\to U\times\bbR^k$. The maps $\chi\circ \sigma_i:U\to U\times\bbR^k$ are smooth with smooth components $\id_U\times \sigma^j_i(k),j=1,\ldots,k$, and therefore, the map
-    \[\chi\circ\Psi(m,(v^1,\ldots,v^k))=(m,(v^i\sigma^1_i(m),\ldots,v^i\sigma^k_i(m))),\]
+    The reason $\varPsi$ is a diffeomorphism is that we already know that $E$ is a smooth \gls{vb}, so, by shrinking $U$ if necessary, we can assume that it has a local trivializing diffeomorphism $\chi:\pi^{-1}(U)\to U\times\bbR^k$. The maps $\chi\circ \sigma_i:U\to U\times\bbR^k$ are smooth with smooth components $\id_U\times \sigma^j_i(k),j=1,\ldots,k$, and therefore, the map
+    \[\chi\circ\varPsi(m,(v^1,\ldots,v^k))=(m,(v^i\sigma^1_i(m),\ldots,v^i\sigma^k_i(m))),\]
     is clearly smooth. The matrix $\sigma_i^j(m)$ is invertible for each $m$, and since inversion is a smooth map on $\GL_n(\bbR)$, its inverse $\tau_i^j$ is also smooth function of $m$. Therefore
-    \[(\chi\circ\Psi)^{-1}(m,(w^1,\ldots,w^k))=(m,(w^i\tau_i^1(m),\ldots,w^i\tau_i^k(m)))\]
-    is also smooth, proving that $\Psi$ is a diffeomorphism.
+    \[(\chi\circ\varPsi)^{-1}(m,(w^1,\ldots,w^k))=(m,(w^i\tau_i^1(m),\ldots,w^i\tau_i^k(m)))\]
+    is also smooth, proving that $\varPsi$ is a diffeomorphism.
 \end{proof}
 
 \begin{rem}
@@ -1588,15 +1588,15 @@ Let $E\overset{\pi}{\to}M$ be a smooth vector bundle and $U_0\mathring{\subset}E
 \begin{proof}
 By Theorem~\ref{every VB is summand of trivial VB}, there is a vector bundle $P{\to} M$ such that $E\oplus P$ is trivial. Then we have the commutative diagram
     \[\begin{tikzcd}[every matrix/.append style={name=m}, execute at end picture={\draw [<-] ([xshift=-11mm,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.2cm];}]
-    f^\ast(E\oplus P) \arrow[r,"f'"]\arrow[d,swap,"\pi'"]& E\oplus P\arrow[d,"\Pi"] \\
+    f^\ast(E\oplus P) \arrow[r,"f'"]\arrow[d,swap,"\pi'"]& E\oplus P\arrow[d,"\varPi"] \\
     M'\arrow[r,swap,"f"]& E
     \end{tikzcd}\]
-defining the map $f'$. A global trivialization of $E\oplus P$ provides a diffeomorphism $\phi:M\times\bbR^n\to E\oplus P$. Let $g:E\oplus P\to\bbR^n$ be the resulting projection onto the fiber. Let $z\in\bbR^k$ be a fixed regular value of $g\circ f':f^\ast(E\oplus P)\to\bbR^n$. That is, $g_\ast \circ f'_\ast$ maps the tangent space at any point $v\in f^\ast(E\oplus P)$ with $g\circ f'(v)=z$ onto $\T_z\bbR^n$. This implies that $\im f_\ast '$ spans the complement of $\T_{(f'(v),z)}(M\times\{z\})$ and therefore, $f'$ is transverse to the section $\sigma':M\to E\oplus P$ given in terms of the trivialization by $\sigma'(p)=(p,z)$. Define the section $\sigma:M\to E$ by $\sigma(p)=\Pi\circ \sigma'(p)$, so that the following diagram commutes:
+defining the map $f'$. A global trivialization of $E\oplus P$ provides a diffeomorphism $\phi:M\times\bbR^n\to E\oplus P$. Let $g:E\oplus P\to\bbR^n$ be the resulting projection onto the fiber. Let $z\in\bbR^k$ be a fixed regular value of $g\circ f':f^\ast(E\oplus P)\to\bbR^n$. That is, $g_\ast \circ f'_\ast$ maps the tangent space at any point $v\in f^\ast(E\oplus P)$ with $g\circ f'(v)=z$ onto $\T_z\bbR^n$. This implies that $\im f_\ast '$ spans the complement of $\T_{(f'(v),z)}(M\times\{z\})$ and therefore, $f'$ is transverse to the section $\sigma':M\to E\oplus P$ given in terms of the trivialization by $\sigma'(p)=(p,z)$. Define the section $\sigma:M\to E$ by $\sigma(p)=\varPi\circ \sigma'(p)$, so that the following diagram commutes:
   \[\begin{tikzcd}
-    f^\ast(E\oplus P) \arrow[r,"f'"]\arrow[d,swap,"\pi'"]& E\oplus P\arrow[d,"\Pi"]& M\arrow[l,swap,"\sigma'"] \arrow[dl,"\sigma"]\\
+    f^\ast(E\oplus P) \arrow[r,"f'"]\arrow[d,swap,"\pi'"]& E\oplus P\arrow[d,"\varPi"]& M\arrow[l,swap,"\sigma'"] \arrow[dl,"\sigma"]\\
     M'\arrow[r,swap,"f"]& E &
     \end{tikzcd}\]
-We claim that $f\pitchfork \sigma$. To see this, let $x\in M'$ and $p\in M$ be such that $f(x)=\sigma(p)$. Then $\Pi\circ\sigma'(p)=\sigma(p)=f(x)$. By definition of the pullback bundle, the point $(x,\sigma'(p))\in f^\ast(E\oplus P)$ has $f'((x,\sigma'(p)))=\sigma'(p)$. Since $f'\pitchfork \sigma'$, the images of the differentials $f_{\ast(x,\sigma'(p))} '$ and $\sigma_{\ast p}'$ span the tangent space $\T_{f'((x,\sigma'(p)))=\sigma'(p)}(E\oplus P)$. Since $\Pi$ is a submersion, this must also hold for the images of the differentials $f_{\ast x}$ and $\sigma_{\ast p}$ to the tangent space $\T_{f(x)=\sigma(p)}E$. This precisely means that $f\pitchfork\sigma$.
+We claim that $f\pitchfork \sigma$. To see this, let $x\in M'$ and $p\in M$ be such that $f(x)=\sigma(p)$. Then $\varPi\circ\sigma'(p)=\sigma(p)=f(x)$. By definition of the pullback bundle, the point $(x,\sigma'(p))\in f^\ast(E\oplus P)$ has $f'((x,\sigma'(p)))=\sigma'(p)$. Since $f'\pitchfork \sigma'$, the images of the differentials $f_{\ast(x,\sigma'(p))} '$ and $\sigma_{\ast p}'$ span the tangent space $\T_{f'((x,\sigma'(p)))=\sigma'(p)}(E\oplus P)$. Since $\varPi$ is a submersion, this must also hold for the images of the differentials $f_{\ast x}$ and $\sigma_{\ast p}$ to the tangent space $\T_{f(x)=\sigma(p)}E$. This precisely means that $f\pitchfork\sigma$.
 
 Clearly $\sigma$ can be made arbitrarily close to the zero section because the neighborhood $U_0$ necessarily contains another neighborhood $E_0\subset U\mathring{\subset} U_0$ such that $E\cong U$ as bundles, and then the proof still applies to $U$ viewed as a bundle, with $f$ restricted to $f:f^{-1}(U)\to U$ (here $f^{-1}(U)$ is a smooth manifold being an open subset of $M'$).
 \end{proof}
@@ -1658,7 +1658,7 @@ $n\,\mathrm{mod}\,8$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\tabularnewline
 $\widetilde{\mathrm{KO}}(\bbS^{n})$ & $\bbZ_{2}$ & $\bbZ_{2}$ & $0$ & $\bbZ$ & $0$ & $0$ & $0$ & $\bbZ$\tabularnewline
 \hline 
 \end{tabular}\]
-The first column is this table confirms what we've discovered in Example~\ref{line bundles over S1}: up to addition of trivial bundles, there is only one non-trivial vector bundle over a circle -- the M\"obius band ($\GL_n(\bbR)$ has two connected components). However, this also encodes the information that the direct sum of two M\"obius bands is a trivial plane bundle (any plane bundle over the circle is trivial). In general the proof of the Bott periodicity by Corollary~\ref{HLP cor} comes down to the computation of the homotopy groups of the orthogonal matrix groups, $\pi_{n-1}(\Or_k)$ for sufficiently large $k$ (since $\GL_k(\bbR)$ is homotopy equivalent to $\Or_k$). This is a very deep result originally obtained by Milnor via Morse theory. One finds that $\pi_{n+8}(\Or_\infty)=\pi_n(\Or_\infty)$. More generally, one can show that $\widetilde{\mathrm{KO}}(M)\cong \widetilde{\mathrm{KO}}(\Sigma^8 M)$ where $\Sigma$ is the suspension functor. An even stronger source of this statement is the homotopy equivalence $\Omega^8\Or_\infty\simeq \Or_\infty$, where $\Omega^8$ is the eight-fold loop space functor.
+The first column is this table confirms what we've discovered in Example~\ref{line bundles over S1}: up to addition of trivial bundles, there is only one non-trivial vector bundle over a circle -- the M\"obius band ($\GL_n(\bbR)$ has two connected components). However, this also encodes the information that the direct sum of two M\"obius bands is a trivial plane bundle (any plane bundle over the circle is trivial). In general the proof of the Bott periodicity by Corollary~\ref{HLP cor} comes down to the computation of the homotopy groups of the orthogonal matrix groups, $\pi_{n-1}(\Or_k)$ for sufficiently large $k$ (since $\GL_k(\bbR)$ is homotopy equivalent to $\Or_k$). This is a very deep result originally obtained by John Milnor using Morse theory. One finds that $\pi_{n+8}(\Or_\infty)=\pi_n(\Or_\infty)$. More generally, one can show that $\widetilde{\mathrm{KO}}(M)\cong \widetilde{\mathrm{KO}}(\Sigma^8 M)$ where $\Sigma$ is the suspension functor. An even stronger source of this statement is the homotopy equivalence $\Omega^8\Or_\infty\simeq \Or_\infty$, where $\Omega^8$ is the eight-fold loop space functor.
 
 For complex vector bundles Bott periodicity ends up being simpler, with a period of $2$:
 \[\begin{tabular}{|c|c|c|}
@@ -1734,7 +1734,7 @@ The above relation can be written as $H^2+1=2H$, and so $(H-1)^2=0$.
 
 The bulk of the proof of Bott periodicity for the K-functors then consists of showing that the maps 
 \[\mu:\rmK(M)\otimes \rmK(\bbS^2)\to \rmK(M\times \bbS^2),\quad \mu_{\Or}:\mathrm{KO}(M)\otimes \mathrm{KO}(\bbS^8)\to \mathrm{KO}(M\times\bbS^8),\]
-are isomorphisms. The following theorem is the main ingredient in complex Bott periodicity, which we state without proof. It can be proven via complex analytic methods, as in Hatcher, or via more general topological arguments, as we will do later.
+are isomorphisms. The following theorem is the main ingredient in complex Bott periodicity, which we state without proof. It can be proven via complex analytic methods, as in Hatcher, or via more general topological arguments, as we will do later. % TODO give this proof
 
 \begin{thm}[Fundamental Product Theorem]
     The homomorphism $\rmK(M)\otimes \bbZ[H]\slash(H-1)^2\to \rmK(M\times\bbS^2)$ is an isomorphism.
@@ -1994,29 +1994,29 @@ From the above proof, it is clear that the following generalization holds. Note 
 
 
 \begin{defn}[Flow-outs]\index{Flow-out}
-    Let $S\emb M$ as a subset and pick a vector field $X\in\fX(M)$ that is nowhere parallel to $S$, i.e., $X(p)\notin \T S$ for all $p\in S$. If $\mathcal{D}$ is the flow domain of $X$, then $\Phi=\restr{F}{\mathcal{O}}$ with $\mathcal{O}=(S\times\bbR )\cap \mathcal{D}$ is called a flow-out of $S$.
+    Let $S\emb M$ as a subset and pick a vector field $X\in\fX(M)$ that is nowhere parallel to $S$, i.e., $X(p)\notin \T S$ for all $p\in S$. If $\mathcal{D}$ is the flow domain of $X$, then $\varPhi=\restr{F}{\mathcal{O}}$ with $\mathcal{O}=(S\times\bbR )\cap \mathcal{D}$ is called a flow-out of $S$.
 \end{defn}
 
 \begin{thm}[Flow-out lemma]\index{Lemma!Flow-out}
     With the notation of the above definition,
     \begin{enumerate}
-        \item If $\delta:S\to [0,+\infty)$ is chosen so that, when restricted to the set $\mathcal{O}_\delta=\{(p,t)\in\mathcal{O}\mid |t|<\delta(p)\}$, $\Phi$ is injective, then $\Phi:\mathcal{O}_\delta\to M$ is an immersion. Moreover, such a $\delta$ always exists;
-        \item $\Phi_\ast (\partial_t)=X$ on $\mathcal{O}$;
-        \item If $\codim S=1$, then $\Phi(\mathcal{O}_\delta)\emb M$.
+        \item If $\delta:S\to [0,+\infty)$ is chosen so that, when restricted to the set $\mathcal{O}_\delta=\{(p,t)\in\mathcal{O}\mid |t|<\delta(p)\}$, $\varPhi$ is injective, then $\varPhi:\mathcal{O}_\delta\to M$ is an immersion. Moreover, such a $\delta$ always exists;
+        \item $\varPhi_\ast (\partial_t)=X$ on $\mathcal{O}$;
+        \item If $\codim S=1$, then $\varPhi(\mathcal{O}_\delta)\emb M$.
     \end{enumerate}
 \end{thm}
 \begin{proof}
-    Exercise. The last part follows because the dimension of $\Phi(\mathcal{O}_\delta)$ coincides with the dimension of $M$, so injectivity and local diffeomorphism implies embedding.
+    Exercise. The last part follows because the dimension of $\varPhi(\mathcal{O}_\delta)$ coincides with the dimension of $M$, so injectivity and local diffeomorphism implies embedding.
 \end{proof}
 
 Let $\partial M$ be non-empty and let $\{U_\alpha\}$ be a family of boundary charts that cover $\partial M$. On each of them, define the local coordinate field $X_\alpha=\partial_n$ that points inward from the boundary. Further, let $\chi_\alpha$ be a subordinate \gls{pou}. Then 
 \[N=\sum_\alpha \chi_\alpha X_\alpha\]
 is a vector field defined on a neighborhood $U$ of $\partial M$. In the local boundary coordinates, $N^n=\sum \chi_\alpha X_\alpha^n>0$, therefore, $N$ is strictly \emph{inward}.
 
-Since $\codim \partial M=1$, we only need to find a $\delta$ to construct a flow-out of $\partial M$. With $\delta$, we have an embedding $\Phi:\mathcal{O}_\delta\to M$. Set 
+Since $\codim \partial M=1$, we only need to find a $\delta$ to construct a flow-out of $\partial M$. With $\delta$, we have an embedding $\varPhi:\mathcal{O}_\delta\to M$. Set 
 \[\psi:[0,1]\times\partial M\to\mathcal{O}_\delta,\;\; (p,t)\mapsto (p,t\delta(p)).\]
-Then $\psi$ is a diffeomorphism and $\Phi\circ\psi:[0,1]\times\partial M\to \Phi(\mathcal{O}_p)$ is also a diffeomorphism, so
-\[\Phi(\mathcal{O}_p)\cong [0,1)\times\partial M.\]
+Then $\psi$ is a diffeomorphism and $\varPhi\circ\psi:[0,1]\times\partial M\to \varPhi(\mathcal{O}_p)$ is also a diffeomorphism, so
+\[\varPhi(\mathcal{O}_p)\cong [0,1)\times\partial M.\]
 
 \begin{figure}[tp]
     \centering
@@ -2026,7 +2026,7 @@ Then $\psi$ is a diffeomorphism and $\Phi\circ\psi:[0,1]\times\partial M\to \Phi
 \end{figure}
 
 \begin{defn}[Collar]
-    The embedded submanifold $\Phi(\mathcal{O}_p)$ of a manifold $M$ with a boundary constructed above is called a collar of $M$.
+    The embedded submanifold $\varPhi(\mathcal{O}_p)$ of a manifold $M$ with a boundary constructed above is called a collar of $M$.
 \end{defn}
 
 \begin{cor}
@@ -2042,15 +2042,15 @@ then we can introduce two collar embeddings (which are also diffeomorphism onto 
 \]
 and unite them by
 \[
-\Phi: V\sqcup W\to \partial M\times (-1,1),\quad \Phi(x)=
+\varPhi: V\sqcup W\to \partial M\times (-1,1),\quad \varPhi(x)=
 \begin{cases}
 (p,-t),& x=\alpha(p,t)\in V,\\
 (h(q),t),& x=\beta(q,t)\in W.
 \end{cases}
 \]
-Clearly $\Phi$  is a topological embedding with a closed image (it's surjective), therefore, $\Phi$ is a closed mapping.
+Clearly $\varPhi$  is a topological embedding with a closed image (it's surjective), therefore, $\varPhi$ is a closed mapping.
 
-Now let $\pi:M\sqcup N\to X$ be the quotient map on whose fibers $\Phi$ is constant. Then $\Phi$ descends to $\wt{\Phi}:X\to [-1,1]\times\partial M$. $\Phi$ is continuous and bijective, $\wt{\Phi}(K)=\Phi(\pi^{-1}(K))$ is closed for any compact $K$ (because $\Phi$ is closed and $\pi$ is continuous), so $\wt{\Phi}$ is closed too. Therefore, $\wt{\Phi}$ is a homeomorphism and therefore, a diffeomorphism, and $X$ is a quotient manifold. Alternatively, this follows from the \emph{closed graph theorem}, which states that the graph of any continuous mapping into a Hausdorff space is closed.
+Now let $\pi:M\sqcup N\to X$ be the quotient map on whose fibers $\varPhi$ is constant. Then $\varPhi$ descends to $\wt{\varPhi}:X\to [-1,1]\times\partial M$. $\varPhi$ is continuous and bijective, $\wt{\varPhi}(K)=\varPhi(\pi^{-1}(K))$ is closed for any compact $K$ (because $\varPhi$ is closed and $\pi$ is continuous), so $\wt{\varPhi}$ is closed too. Therefore, $\wt{\varPhi}$ is a homeomorphism and therefore, a diffeomorphism, and $X$ is a quotient manifold. Alternatively, this follows from the \emph{closed graph theorem}, which states that the graph of any continuous mapping into a Hausdorff space is closed.
 
 \begin{defn}[Gluing of manifolds]
     The construction described above is called the gluing of two manifolds with diffeomorphic boundaries, denoted by $M\cup_h N$. See Figure~\ref{fig:collars}.
@@ -2083,13 +2083,13 @@ If $X\in\fX(M)$ and $X(p)\neq 0$, then there exists a local chart $(U,\varphi)$ 
 \end{proof}
 
 \begin{defn}[Complete integral]\index{Complete integral}\label{def complete integral}
-    A complete integral of a vector field $X\in \fX(M)$, $\dim M=n$, is a local function $\Psi:U\times I_\epsilon\to\bbR^n$ such that $\Psi^{-1}(\bf{c})$ for every $\bf{c}\in\bbR^n$ in the image of $\Psi$ is an integral curve of $X$ at a point $m\in U$. The components $\Psi^i:U\times I_\epsilon\to \bbR$ of this map are called a \emph{complete set of integrals of motion} for $X$.
+    A complete integral of a vector field $X\in \fX(M)$, $\dim M=n$, is a local function $\varPsi:U\times I_\epsilon\to\bbR^n$ such that $\varPsi^{-1}(\bf{c})$ for every $\bf{c}\in\bbR^n$ in the image of $\varPsi$ is an integral curve of $X$ at a point $m\in U$. The components $\varPsi^i:U\times I_\epsilon\to \bbR$ of this map are called a \emph{complete set of integrals of motion} for $X$.
 \end{defn}
 \begin{prop}
     Local complete integrals exists for all vector fields.
 \end{prop}
 \begin{proof}
-    First rectify the vector field, then the coordinates $\bf{c}=(\varphi^1(s),\varphi^2(s),\ldots,\varphi^n(s))$ of the point $s$ of intersection of each integral curve with the slice $S$ will be the (constant) value of the diffeomorphism $\Psi:(s,t)\mapsto \varphi(\Fl_t(s))$ on this whole curve.
+    First rectify the vector field, then the coordinates $\bf{c}=(\varphi^1(s),\varphi^2(s),\ldots,\varphi^n(s))$ of the point $s$ of intersection of each integral curve with the slice $S$ will be the (constant) value of the diffeomorphism $\varPsi:(s,t)\mapsto \varphi(\Fl_t(s))$ on this whole curve.
 \end{proof}
 
 
@@ -2365,7 +2365,7 @@ The following shows that this definition of holonomic frames agrees with the one
     Let $\{e_j\}_{j=1}^k$ with $k\leq n=\dim M$ be a holonomic local $k$-frame on $W\mathring{\subset}M$. Assume that $e_j(p)\notin \T_p S$ for all $p\in S$, where $S\emb M$ is a submanifold with $\codim S=k$. Then there exists a local chart of coordinates $(s^1,\ldots,s^n)$ in which $S=\{s^1=\cdots=s^k=0\}$ and for $j\leq k$ we have $\partial_j=e_j$.
 \end{thm}
 \begin{proof}
-    Parametrize $S$ as usual by $x:\Omega\to S$ with $\Omega\mathring{\subset}\bbR^{n-k}$, define a chart $\varphi=\psi^{-1}$, where
+    Parametrize $S$ as usual by $x:\varOmega\to S$ with $\varOmega\mathring{\subset}\bbR^{n-k}$, define a chart $\varphi=\psi^{-1}$, where
     \[\psi(s^1,\ldots,s^k,s^{k+1},\ldots,s^n)=F^{e_1}_{s_1}\circ\cdots\circ F^{e_k}_{s_k}(x(s^{k+1},\ldots,s^n)),\]
     and $F^{e_i}$ is the flow of $e_i$. The inverse $\psi^{-1}$ exists locally because the differential at $(0,\ldots,0)$ is identity. Finally we use commutation to compute the partials
     \begin{multline}
@@ -2492,8 +2492,8 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
 \begin{proof}
 \begin{enumerate}
     \item The assertion on $N_1\cup N_2$ follows from that on $N_1\cap N_2$, so it suffices to prove the latter. Let $\dim N_1=\dim N_2=\rank D=r$. Choose a local $r$-frame $\{X_i\}_{i=1}^r$ for $D$ at $m$. Since these vector fields are tangent to $N_i$, they are also local vector fields on $N_i$. Then the flows of these vector fields together generate a local coordinate system on $N_i$, mapping $(-\epsilon,\epsilon)^r$ into an open subset of $N_i$:
-    \[\Phi^{(i)}:(-\epsilon,\epsilon)^r\to U\cap N_i,\quad \Phi^{(i)}(\bf{t})\coloneqq \Fl^{X^{(i)}_1}_{t_1}\circ \cdots\circ \Fl^{X^{(i)}_r}_{t_r}(m),\quad i=1,2.\]
-    By construction these coordinates will coincide, $\Phi^{(1)}(\bf{t})=\Phi^{(2)}(\bf{t})$ (cf.\ Remark~\ref{rem 3.2.9 RS1}), and therefore, their values will cover the same subset $V\subset N_1\cap N_2$ open in both $N_i$'s. W.r.t.~the differentiable structure induced from either $N_i$, $V$ is diffeomorphic to $(-\epsilon,\epsilon)^r$. Since the construction works for any $m\in N_1\cap N_2$, the assertion follows. 
+    \[\varPhi^{(i)}:(-\epsilon,\epsilon)^r\to U\cap N_i,\quad \varPhi^{(i)}(\bf{t})\coloneqq \Fl^{X^{(i)}_1}_{t_1}\circ \cdots\circ \Fl^{X^{(i)}_r}_{t_r}(m),\quad i=1,2.\]
+    By construction these coordinates will coincide, $\varPhi^{(1)}(\bf{t})=\varPhi^{(2)}(\bf{t})$ (cf.\ Remark~\ref{rem 3.2.9 RS1}), and therefore, their values will cover the same subset $V\subset N_1\cap N_2$ open in both $N_i$'s. W.r.t.~the differentiable structure induced from either $N_i$, $V$ is diffeomorphic to $(-\epsilon,\epsilon)^r$. Since the construction works for any $m\in N_1\cap N_2$, the assertion follows. 
 
     \item Let $r=\dim N=\dim D_m$. If $N$ intersects a slice $U_{\bf{c}}$, then $U_{\bf{c}}$ contains a point where $\rank D=r$. Then $U_{\bf{c}}$ is an integral manifold of $D$ by dimension-counting. Now assertion 1 implies that $N\cap U_{\bf{c}}$ is open in $N$ and hence in $N\cap U$. Since this holds for all slices intersecting $N$ and since
     \[N\cap U_{\bf{c}}=(N\cap U)\setminus\left(\bigcup_{\bf{c}'\neq \bf{c}}N\cap U_{\bf{c}'}\right),\]
@@ -2561,6 +2561,13 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     \]
 \end{example}
 
+\begin{xca}
+    Show that the distribution on $\bbR^3\setminus \{0\}$ generated by the vector fields
+    \[X_1=x_2\partial_3-x_3\partial_2,\quad X_2=x_3\partial_1-x_1\partial_3,\quad X_3=x_1\partial_2-x_2\partial_1,\]
+    is regular of rank $2$ and involutive. Find the maximal integral manifolds. How are they related to the action of $\SO(3)$ on $\bbR^3$?
+\end{xca}
+
+
 \begin{example}[Zero curvature conditions]\label{ex UV pairs}
     Another important case is the following pair of equations on a function $\bf{y}:\bbR^2\to \bbC^n$ parametrized as $\bf{y}(x,t)$:
     \[\begin{cases}
@@ -2571,7 +2578,7 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
     \[(\partial_t U+UV)\bf{y}=(\partial_x V+VU)\bf{y},\]
     or (since the initial condition is arbitrary)
     \[\partial_t U-\partial_x V+[U,V]=0.\]
-    If this condition holds, then the Frobenius theorem guarantees the unique existence of solutions. This condition is called a \emph{zero curvature condition}, and when a given dynamical system can be expressed in the form of a zero curvature condition, the system~\eqref{eq UV pair} is called a \emph{$UV$-pair}, and the dynamical system is considered \emph{integrable}.\footnote{However, this is not the only test for integrability, and a general definition of integrability for dynamical systems doesn't exist} We will see its relation to the Maurer-Cartan equation in \sect\ \ref{subsec: invariant diff forms}.
+    If this condition holds, then the Frobenius theorem guarantees the unique existence of solutions. This condition is called a \emph{zero curvature condition}, and when a given dynamical system can be expressed in the form of a zero curvature condition, the system~\eqref{eq UV pair} is called a \emph{$UV$-pair}, and the dynamical system is considered \emph{(completely) integrable}.\footnote{Note, however, that this is not the only test for integrability, and a general definition of integrability for dynamical systems is not yet known.} We will see its relation to the Maurer-Cartan equation in \sect\ \ref{subsec: invariant diff forms}.
 \end{example}
 
 \begin{example}[Sine-Gordon equation]\label{ex sine-gordon}
@@ -2690,14 +2697,6 @@ Note that the number of slices of $U$ intersected by $N$ may, in fact, be counta
 \end{example}
 
 
-\begin{xca}
-    Show that the distribution on $\bbR^3\setminus \{0\}$ generated by the vector fields
-    \[X_1=x_2\partial_3-x_3\partial_2,\quad X_2=x_3\partial_1-x_1\partial_3,\quad X_3=x_1\partial_2-x_2\partial_1,\]
-    is regular of rank $2$ and involutive. Find the maximal integral manifolds. How are they related to the action of $\SO(3)$ on $\bbR^3$?
-\end{xca}
-
-
-
 
 
 
@@ -2722,35 +2721,35 @@ While symmetric algebras (or even commutative rings), and in particular symmetri
         \Alt t&=\frac{1}{k!}\sum_{\sigma\in \rmS_k} (\sign\sigma)\cdot t^\sigma,\\
         \Sym t&=\frac{1}{k!}\sum_{\sigma\in \rmS_k} t^\sigma,\label{def sym operator}
     \end{align}
-    where $\rmS_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $\bbT^k V$ by linearity. We also denote $\bigwedge^k V=\Alt(\bbT^k V)$ and $\bigodot^k V\coloneqq \Sym(\bbT^k V)$. Elements of the space $\bigwedge^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
+    where $\rmS_k$ is the $k$-th permutation group, and the operation $t\mapsto t^\sigma$ is defined on a basis as $(e_{i_1}\otimes\cdots\otimes e_{i_k})^\sigma=e_{\sigma(i_1)}\otimes\cdots\otimes e_{\sigma(i_k)}$ and extended to all of $\bbT^k V$ by linearity. We also denote $\bigwedge\nolimits^k V=\Alt(\bbT^k V)$ and $\bigodot\nolimits^k V\coloneqq \Sym(\bbT^k V)$. Elements of the space $\bigwedge\nolimits^k V^\ast$ are called \emph{exterior forms} of degree $k$ on $V$. 
     
-    If $\dim V=n$, then $\dim \bigwedge^k V=\binom{n}{k}$. In particular, 
-    \[\bigwedge^1 V=V,\quad \dim \bigwedge^0 V=\dim \bigwedge^n V=1,\quad \dim \bigwedge^{>n} V=0.\]
-    Elements of $\bigwedge^n V$ are called \emph{top forms}.\index{Top form}
-    Both $\bigwedge^k$ and $\bigodot^k$ are covariant functors $\mathsf{FinVect}_\bbK\to\mathsf{FinVect}_\bbK$ that act on morphisms by restriction: \[\bigwedge^k f=\restr{f^{\otimes k}}{\bigwedge^k V},\quad \bigodot^k f=\restr{f^{\otimes k}}{\bigodot^k V}.\]
+    If $\dim V=n$, then $\dim \bigwedge\nolimits^k V=\binom{n}{k}$. In particular, 
+    \[\bigwedge\nolimits^1 V=V,\quad \dim \bigwedge\nolimits^0 V=\dim \bigwedge\nolimits^n V=1,\quad \dim \bigwedge\nolimits^{>n} V=0.\]
+    Elements of $\bigwedge\nolimits^n V$ are called \emph{top forms}.\index{Top form}
+    Both $\bigwedge\nolimits^k$ and $\bigodot\nolimits^k$ are covariant functors $\mathsf{FinVect}_\bbK\to\mathsf{FinVect}_\bbK$ that act on morphisms by restriction: \[\bigwedge\nolimits^k f=\restr{f^{\otimes k}}{\bigwedge\nolimits^k V},\quad \bigodot\nolimits^k f=\restr{f^{\otimes k}}{\bigodot\nolimits^k V}.\]
 \end{defn}
 
 If $V$ has Cartesian coordinates $x^1,\ldots,x^n$, then a basis of $V$ is formed by $\{\partial_{x^i}\}$. The dual basis of $V^\ast$ is conventionally denoted by $\{\dd x^i\}$, so that
 \[
     \dd x^i\left(\partial_{x^j}\right)=\delta^i_j.
 \]
-Then this basis induces a basis of $\bigwedge^k V^\ast$ consisting of the $\binom{n}{k}$ elements
+Then this basis induces a basis of $\bigwedge\nolimits^k V^\ast$ consisting of the $\binom{n}{k}$ elements
 \[
 \dd x^{i_1}\wedge \cdots \wedge \dd x^{i_k}\coloneqq k!\Alt(\dd x^{i_1}\otimes\cdots\otimes \dd x^{i_k}),\;\;1\leq i_1<i_2<\cdots<i_k\leq n.
 \]
 Together with the wedge product, the direct sum of all exterior powers of $V$ makes up an algebra, called the exterior, or \emph{Grassmann}, algebra of $V$, of dimension $2^n$:\index{Grassmann algebra}
-\[\bigwedge V=\bigoplus_{k=0}^\infty \bigwedge^k V.\]
+\[\bigwedge V=\bigoplus_{k=0}^\infty \bigwedge\nolimits^k V.\]
 
 
 
 \begin{defn}[Determinant of a linear map]\index{Determinant of a linear map}
 Let $V$ be a vector space over a field $\bbK$ with $\dim V=n$ and let $f\in\End(V)$. The determinant of $f$ is defined as 
-\[\det f\coloneqq \bigwedge^n f\quad \in\bbK.\] 
-Being an element of $\Hom(\bigwedge^n V,\bigwedge^n V)$, which is naturally isomorphic to the field $\bbK$, it is a well-defined scalar. 
+\[\det f\coloneqq \bigwedge\nolimits^n f\quad \in\bbK.\] 
+Being an element of $\Hom(\bigwedge\nolimits^n V,\bigwedge\nolimits^n V)$, which is naturally isomorphic to the field $\bbK$, it is a well-defined scalar. 
 \end{defn}
 \begin{prop}
 \begin{enumerate}
-    \item If $\dim V=n$, then for any $t\in\bigwedge^n V^\ast$ and any $f\in\End(V)$, 
+    \item If $\dim V=n$, then for any $t\in\bigwedge\nolimits^n V^\ast$ and any $f\in\End(V)$, 
     \[f^\ast t=\det f\cdot t.\]
     \item If $f\in\End(V)$ is represented by a matrix $f(e_i)=A_i^j e_j$ in some basis $\{e_i\}$ of $V$, then
     \[\det f=\det A=\sum_{\sigma\in \rmS_n}(\sign\sigma)A^1_{\sigma(1)}\cdots A^n_{\sigma(n)}.\]
@@ -2758,11 +2757,11 @@ Being an element of $\Hom(\bigwedge^n V,\bigwedge^n V)$, which is naturally isom
 \end{prop}
 \begin{proof}
 \begin{enumerate}
-    \item By definition of $f^\ast$, if $v\in \bigwedge^n V$, then 
-    \[(f^\ast t)(v)=t\left(f_\ast(v)\right)=t\left(\left(\bigwedge^n f\right)(v)\right)=t(\det f\cdot v)=\det f\cdot t(v).\]
-    \item The one-dimensional space $\bigwedge^n V$ is spanned by the element $e_1\wedge \cdots \wedge e_n$. Acting on it, $\det f=\bigwedge^n f$ gives
+    \item By definition of $f^\ast$, if $v\in \bigwedge\nolimits^n V$, then 
+    \[(f^\ast t)(v)=t\left(f_\ast(v)\right)=t\left(\left(\bigwedge\nolimits^n f\right)(v)\right)=t(\det f\cdot v)=\det f\cdot t(v).\]
+    \item The one-dimensional space $\bigwedge\nolimits^n V$ is spanned by the element $e_1\wedge \cdots \wedge e_n$. Acting on it, $\det f=\bigwedge\nolimits^n f$ gives
     \begin{align}
-        \left(\bigwedge^n f\right)(e_1\wedge \cdots \wedge e_n)&=k!f^{\otimes n}\circ \Alt (e_1\otimes \cdots \otimes e_n)\notag\\
+        \left(\bigwedge\nolimits^n f\right)(e_1\wedge \cdots \wedge e_n)&=k!f^{\otimes n}\circ \Alt (e_1\otimes \cdots \otimes e_n)\notag\\
         &=k!\Alt(f(e_1)\otimes\cdots\otimes f(e_n))=\notag
         \\
         &=k! \Alt (A^{j_1}_1 \cdots A^{j_n}_n \cdot e_{j_1}\otimes\cdots \otimes e_{j_n})=\notag\\
@@ -2778,7 +2777,7 @@ Being an element of $\Hom(\bigwedge^n V,\bigwedge^n V)$, which is naturally isom
 
 \begin{defn}[Exterior/wedge product]\index{Exterior product}\index{Wedge product|see {Exterior product}}\label{def exterior and sym product}
     For $\alpha\in V^{\otimes p}$ and $\beta\in V^{\otimes q}$, we define their exterior/wedge product by
-    \[\alpha\wedge\beta\coloneqq\frac{(p+q)!}{p!q!}\Alt (\alpha\otimes \beta)\quad \in \bigwedge^{p+q}V.\]
+    \[\alpha\wedge\beta\coloneqq\frac{(p+q)!}{p!q!}\Alt (\alpha\otimes \beta)\quad \in \bigwedge\nolimits^{p+q}V.\]
     Similarly, we can define the symmetric product of tensors\index{Symmetric product of tensors} 
     \[t\odot t'\beta\coloneqq\Sym(t\otimes t').\]
 \end{defn}
@@ -2799,16 +2798,16 @@ Wedge products have the following basic properties (proofs of which are left as 
     \end{pmatrix}.\label{form determinant f-la}
     \end{multline}
     \item $\{\alpha_i\}_{i=1}^k\subset V^\ast$ are linearly dependent iff $\alpha_1\wedge\cdots\wedge\alpha_k=0$.
-    \item For $\alpha,\beta\in\bigwedge^{\smbullet } V^\ast$ and any linear map $f:V'\to V$,
+    \item For $\alpha,\beta\in\bigwedge\nolimits^{\smbullet } V^\ast$ and any linear map $f:V'\to V$,
     \[f^\ast(\alpha\wedge\beta)=(f^\ast\alpha)\wedge(f^\ast\beta).\label{pullbacks of wedges}\]
 \end{enumerate}
 
 The degree of an exterior form can be lowered by substituting a given vector as one of its arguments, which we use to define an operator.
 
 \begin{defn}[Interior product]\index{Interior product}
-    Let $\alpha\in\bigwedge^{p+1}V^\ast, p\geq 0,$ and $v\in V$. The interior product with $v$ is the operator $i_v:\bigwedge^{p+1}V^\ast\to \bigwedge^p(v)$ defined by 
+    Let $\alpha\in\bigwedge\nolimits^{p+1}V^\ast, p\geq 0,$ and $v\in V$. The interior product with $v$ is the operator $i_v:\bigwedge\nolimits^{p+1}V^\ast\to \bigwedge\nolimits^p(v)$ defined by 
     \[(i_v \alpha)(v_1,\ldots,v_p)=\alpha(v,v_1,\ldots,v_p),\]
-    for $v_1,\ldots,v_p\in V$. We also put $\restr{i_v}{\bigwedge^0V^\ast}=0$.
+    for $v_1,\ldots,v_p\in V$. We also put $\restr{i_v}{\bigwedge\nolimits^0V^\ast}=0$.
 \end{defn}
 
 Note that $i_v$ is a ``\emph{$\wedge$-derivation}'' on the exterior algebra (exercise):
@@ -2816,23 +2815,23 @@ Note that $i_v$ is a ``\emph{$\wedge$-derivation}'' on the exterior algebra (exe
 
 
 \begin{defn}[Exterior powers of \glspl{vb}]
-Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge^p$ and $\bigodot^p$ to all smooth \glspl{vb}. We focus only on $\bigwedge^p$. For a \gls{vb} $E\overset{\pi}{\to} M$, we obtain the exterior powers
-\[\bigwedge^p E=(E)^{\otimes p}_{\text{asym}}.\]
-$p$ is called the \emph{degree} of the elements or sections of $\bigwedge^p E$: \[\deg \alpha=p\;\text{ for }\;\alpha\in\Gamma^\infty\left(\bigwedge^p E\right).\]
+Following the logic of Definition \ref{functors VB}, we can extend the functors $\bigwedge\nolimits^p$ and $\bigodot\nolimits^p$ to all smooth \glspl{vb}. We focus only on $\bigwedge\nolimits^p$. For a \gls{vb} $E\overset{\pi}{\to} M$, we obtain the exterior powers
+\[\bigwedge\nolimits^p E=(E)^{\otimes p}_{\text{asym}}.\]
+$p$ is called the \emph{degree} of the elements or sections of $\bigwedge\nolimits^p E$: \[\deg \alpha=p\;\text{ for }\;\alpha\in\Gamma^\infty\left(\bigwedge\nolimits^p E\right).\]
 The wedge product $\wedge$ gets extended to sections of these bundles fiberwise.
-In particular, if $\rank E=k$, then \[\det E\coloneqq \bigwedge^k E\] is called the \emph{determinant (line) bundle}\index{Determinant bundle} of $E$. If the transition functions of $E$ are $\tau_{\alpha\beta}:U_{\alpha\beta}\to \GL_k(\bbR )$, then the transition functions of $\det E$ are $\det \tau_{\alpha\beta}$.
+In particular, if $\rank E=k$, then \[\det E\coloneqq \bigwedge\nolimits^k E\] is called the \emph{determinant (line) bundle}\index{Determinant bundle} of $E$. If the transition functions of $E$ are $\tau_{\alpha\beta}:U_{\alpha\beta}\to \GL_k(\bbR )$, then the transition functions of $\det E$ are $\det \tau_{\alpha\beta}$.
 
-The alternation and symmetrization maps get extended to $\Alt: E^{\otimes p}\to \bigwedge^p E$ and $\Sym: E^{\otimes p}\to \rmS^p E$.
+The alternation and symmetrization maps get extended to $\Alt: E^{\otimes p}\to \bigwedge\nolimits^p E$ and $\Sym: E^{\otimes p}\to \bigodot\nolimits^p E$.
 \end{defn}
 
 All properties of wedge products listed above immediately generalize to sections of the exterior bundles.
 
 \begin{defn}[Determinant of a \gls{vb} morphism]
-If $E\overset\pi\to M$ is a \gls{vb} of rank $k$ and $f:E\to E$ is a bundle map, then we define $\det f=\bigwedge^k f$. If $\omega\in\Gamma^\infty(\det E^\ast)$, then $f^\ast \omega=\det f\cdot \omega$.
+If $E\overset\pi\to M$ is a \gls{vb} of rank $k$ and $f:E\to E$ is a bundle map, then we define $\det f=\bigwedge\nolimits^k f$. If $\omega\in\Gamma^\infty(\det E^\ast)$, then $f^\ast \omega=\det f\cdot \omega$.
 \end{defn}
 
 \begin{defn}[Exterior/Grassmann algebra]\index{Exterior algebra}\index{Grassmann algebra|see {Exterior algebra}}
-For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma^\infty(\bigwedge^p E)=\Gamma^\infty\left(\bigoplus_{p\geq 0}\bigwedge^p E\right)$ with the product $\wedge$ is called the exterior, or Grassmann, algebra of $E$.
+For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma^\infty(\bigwedge\nolimits^p E)=\Gamma^\infty\left(\bigoplus_{p\geq 0}\bigwedge\nolimits^p E\right)$ with the product $\wedge$ is called the exterior, or Grassmann, algebra of $E$.
 \end{defn}
 
 % \begin{xca}
@@ -2852,10 +2851,10 @@ For a \gls{vb} $E$, the space $\bigoplus_{p\geq 0}\Gamma^\infty(\bigwedge^p E)=\
 We now move from arbitrary vector bundles to manifolds by applying the exterior power functor to the cotangent bundle.
 
 \begin{defn}[Differential forms]\index{Differential form}
-    Differential forms of degree $p$ on a smooth manifold $M$ are sections of $\bigwedge^p (\T^\ast M)$. The exterior algebra of differential forms is denoted
-    \[\Omega^p(M)\coloneqq \Gamma^\infty\left(\bigwedge^p(\T^\ast M)\right),\quad 0\leq 0\leq\dim M.\]
+    Differential forms of degree $p$ on a smooth manifold $M$ are sections of $\bigwedge\nolimits^p (\T^\ast M)$. The exterior algebra of differential forms is denoted
+    \[\Omega^p(M)\coloneqq \Gamma^\infty\left(\bigwedge\nolimits^p(\T^\ast M)\right),\quad 0\leq 0\leq\dim M.\]
     For $p<0$ and $p>\dim M$ we set $\Omega^p(M)=\{0\}$.
-    In particular, we have $\Omega^0(M)=C^\infty(M)$, $\Omega^1(M)=\fX^\ast (M)$, and $\Omega^p(M)\cong \bigwedge^p \fX^\ast(M)$ by Theorem~\ref{thm tensor characterization}. We also denote the \emph{exterior algebra} of $M$ by
+    In particular, we have $\Omega^0(M)=C^\infty(M)$, $\Omega^1(M)=\fX^\ast (M)$, and $\Omega^p(M)\cong \bigwedge\nolimits^p \fX^\ast(M)$ by Theorem~\ref{thm tensor characterization}. We also denote the \emph{exterior algebra} of $M$ by
     \[\Omega^{\smbullet}(M)\coloneq\bigoplus_{p=0}^{\dim M} \Omega^p(M).\]
     Note that elements of $\Omega^{\smbullet}(M)$ can have mixed degrees, i.e., contain terms that are differential forms of differing degrees.
 \end{defn}
@@ -3022,9 +3021,9 @@ The following classical theorem shows that every closed differential form is loc
     Let $\omega\in\Omega^p(M)$ with $\dd\omega=0$. Then every point $m\in M$ has an open neighborhood $U\subset M$ and a differential form $\eta\in\Omega^{p-1}(U)$ such that $\dd\eta=\restr{\omega}{U}$.
 \end{thm}
 \begin{proof}
-    Let $(U,\bf{x})$ be a chart on $M$ centered at $m$ such that $\bf{x}(U)=\bbR^n$. Thus we may just assume that $M=\bbR^n$. We consider a deformation retraction $\alpha:\bbR\times\bbR^n\to \bbR^n$ given by $\alpha(t,\bf{x})=\alpha_t(\bf{x})=t\bf{x}$. Let $I\in \fX(\bbR^n)$ be the linear vector field $I(\bf{x})=\bf{x}$. Then $\alpha(\rme^t,\bf{x})=F^I_t(\bf{x})$, where $F^I_t$ is the flow of $I$. For $t>0$ we have 
-    \[\frac{\dd}{\dd t}\alpha_t^\ast\omega=\frac{\dd}{\dd t}(F^I_{\ln t})^\ast\omega=\frac{1}{t}(F^I_{\ln t})^\ast \Lie_{I}\omega=\frac{1}{t}\alpha_t^\ast(i_{I}\dd\omega+\dd i_{I}\omega)=\frac{1}{t}\dd\alpha_t^\ast i_{I}\omega.\]
-    Note that $\T_{\bf{x}}(\alpha_t)=t\rmI_n$, where $\rmI_n$ is the identity matrix. Therefore, for $X_2,\ldots,X_p\in \bbR^n=\T_{\bf{x}}(\bbR^n)$,
+    Let $(U,\bf{x})$ be a chart on $M$ centered at $m$ such that $\bf{x}(U)=\bbR^n$. Thus we may just assume that $M=\bbR^n$. Consider the deformation retraction $\alpha:\bbR\times\bbR^n\to \bbR^n$ given by $\alpha(t,\bf{x})=\alpha_t(\bf{x})=t\bf{x}$. Let $I\in \fX(\bbR^n)$ be the linear vector field $I(\bf{x})=\bf{x}$. Then $\alpha(\rme^t,\bf{x})=\Fl^I_t(\bf{x})$, where $F^I_t$ is the flow of $I$. For $t>0$ we have 
+    \[\frac{\dd}{\dd t}\alpha_t^\ast\omega=\frac{\dd}{\dd t}(\Fl^I_{\ln t})^\ast\omega=\frac{1}{t}(\Fl^I_{\ln t})^\ast \Lie_{I}\omega=\frac{1}{t}\alpha_t^\ast(i_{I}\dd\omega+\dd i_{I}\omega)=\frac{1}{t}\dd\alpha_t^\ast i_{I}\omega.\]
+    Note that $\T_{\bf{x}}\alpha_t=t\rmI_n$, where $\rmI_n$ is the identity matrix. Therefore, for $X_2,\ldots,X_p\in \bbR^n=\T_{\bf{x}}\bbR^n$,
     \begin{multline}
         (\frac{1}{t}\alpha_t^\ast i_{I}\omega)_{\bf{x}}(X_2,\ldots,X_p)=\frac{1}{t}(i_I\omega)_{t\bf{x}}(tX_2,\ldots,tX_p)=\\
         =\frac{1}{t}\omega_{t\bf{x}}(t\bf{x},tX_2,\ldots,tX_p)=\omega_{t\bf{x}}(\bf{x},tX_2,\ldots,tX_p).
@@ -3121,13 +3120,13 @@ Exercise.
 \begin{defn}
     Let $M$ and $M'$ be oriented smooth manifolds with chosen volume forms $\sfv$, $\sfv'$, respectively. For a smooth map $f:M\to M'$, we define its determinant w.r.t.\ these volume forms by the equality
     \[f^\ast \sfv'=\left(\det_{\sfv,\sfv'}f\right)\cdot \sfv.\]
-    We will usually suppress the dependence on the volume forms. Clearly $f$ is orientation-preserving iff $\det f>0$ everywhere, and $f$ is a local diffeomorphism iff $\det f\neq 0$.
+    We will usually suppress the dependence on the volume forms. Clearly, $f$ is orientation-preserving iff $\det f>0$ everywhere, and $f$ is a local diffeomorphism iff $\det f\neq 0$.
 
-    This determinant is still multiplicative: $\det(f\circ g)(p)=(\det f)(g(p))\cdot \det g(p)$.
+    This determinant is still multiplicative: $\det_{\sfv,\sfv''}(f\circ g)(p)=(\det_{\sfv,\sfv'} f)(g(p))\cdot \det_{\sfv',\sfv''} g(p)$ for maps $M\overset{f}{\to}M'\overset{g}{\to}M''$.
 \end{defn}
 
 \begin{defn}[Tensor densities]\label{def tensor densities}
-    One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $\bbT^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $\bbT^r_s M$) are called \emph{tensor densities}\index{Tensor density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $\T M$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions include $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}
+    One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $\bbT^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $\bbT^r_s M$) are called \emph{tensor densities}\index{Tensor density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $\T M$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions are $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}
 \end{defn}
 
 \begin{thm}\label{thm orientation via normal vector}
@@ -3158,7 +3157,7 @@ Exercise.
 
 
 \begin{xca}
-    Using formula \eqref{3170}, show that, w.r.t.\ the standard volume form $\sfv_n=\dd x^1\wedge \cdots\dd x^n$ on $\bbR^n$, the divergence of a vector field $X=\sum_{i=1}^n X^i\partial_i\in\fX(\bbR^n)$ is 
+    Using formula \eqref{3170}, show that, w.r.t.\ the standard volume form $\sfv_n=\dd x^1\wedge \cdots\wedge\dd x^n$ on $\bbR^n$, the divergence of a vector field $X=\sum_{i=1}^n X^i\partial_i\in\fX(\bbR^n)$ is 
     \[\div_{\sfv_n} X=\sum_{i=1}^n \partial_i X^i.\]
 \end{xca}
 
@@ -3319,7 +3318,7 @@ The final application requires some familiarity with complex analysis. Some basi
 
 
 \begin{rem}[Integration of $1$-densities]
-    Integration can also be defined for $1$-densities (a.k.a.~\emph{pseudo-forms}), i.e., sections of the bundle $|\det|(\T M)$, whose transition functions are $|\det\tau_{\alpha\beta}|$ if $\tau_{\alpha\beta}$ are those on $\T M$ (cf.\ Definition~\ref{def tensor densities}). This bundle can also be identified with $(\det \T M)\otimes \calO(\T M)$, where $\det (\T M)=\bigwedge^n \T M$ and $\calO(\T M)$ is the orientation bundle thought of as a space that can ``absorb'' factors of $- 1$: $(-\omega)\otimes \mu=\omega\otimes (-\mu)$. This bundle is always a trivial line bundle, so we can always pick a nowhere-vanishing $1$-density as an analog of a volume form. Thus, $M$ doesn't need to be orientable and $1$-densities can be identified with smooth absolutely continuous measures. On orientable manifolds, each top form $\omega\in\Omega^n(M)$ defines a $1$-density $|\omega|$ by 
+    Integration can also be defined for $1$-densities (a.k.a.~\emph{pseudo-forms}), i.e., sections of the bundle $|\det|(\T M)$, whose transition functions are $|\det\tau_{\alpha\beta}|$ if $\tau_{\alpha\beta}$ are those on $\T M$ (cf.\ Definition~\ref{def tensor densities}). This bundle can also be identified with $(\det \T M)\otimes \calO(\T M)$, where $\det (\T M)=\bigwedge\nolimits^n \T M$ and $\calO(\T M)$ is the orientation bundle thought of as a space that can ``absorb'' factors of $- 1$: $(-\omega)\otimes \mu=\omega\otimes (-\mu)$. This bundle is always a trivial line bundle, so we can always pick a nowhere-vanishing $1$-density as an analog of a volume form. Thus, $M$ doesn't need to be orientable and $1$-densities can be identified with smooth absolutely continuous measures. On orientable manifolds, each top form $\omega\in\Omega^n(M)$ defines a $1$-density $|\omega|$ by 
     \[|\omega|(X_1,\ldots,X_n)=|\omega(X_1,\ldots,X_n)|.\]
     It is an exercise to check that integration of $1$-densities by analogy with forms is well-defined, and that all of the properties carry over with only a potential sign change. Even the Stokes' Theorem holds for pseudo-forms when properly understood, see T.~Frankel's \emph{Geometry of Physics}.
 \end{rem}
@@ -3335,8 +3334,8 @@ The final application requires some familiarity with complex analysis. Some basi
 Here we define differential forms that take values in a vector space, and more generally in a vector bundle. These objects will be fundamental in the study of Lie groups, and later, connections.
 
 \begin{defn}[Vector-valued and twisted differential forms]\index{Twisted differential forms}
-    let $E\overset\pi\to M$ be a \gls{vb} (in particular it can be a trivial bundle $M\times V$ with a vector space $V$). $E$-valued differential forms of degree $p$ are defined as sections of $\bigwedge^p\T M\otimes E$:
-    \[\Omega^p(M;E)\coloneqq \Gamma^\infty\left(\bigwedge^p \T M\otimes E\right).\]
+    let $E\overset\pi\to M$ be a \gls{vb} (in particular it can be a trivial bundle $M\times V$ with a vector space $V$). $E$-valued differential forms of degree $p$ are defined as sections of $\bigwedge\nolimits^p\T M\otimes E$:
+    \[\Omega^p(M;E)\coloneqq \Gamma^\infty\left(\bigwedge\nolimits^p \T M\otimes E\right).\]
      If $E$ is a line bundle, then we also say that the exterior bundle has been \emph{twisted} by $E$, and its sections are called \emph{twisted differential forms}.
 \end{defn}
 
@@ -3364,7 +3363,7 @@ Similarly, one can twist complex differential forms on a complex manifold by a  
 \end{rem}
 
 \begin{example}
-    If we're working with vector-valued forms, i.e., $\Omega^{\smbullet }(M;V)$ with $V$ a vector space, then these are simply antisymmetric $r$-linear maps from $(\T M)^{\otimes r}$ to $V$. The bundle of such $r$-forms can be identified with the tensor product of bundles $\bigwedge^r \T^\ast M\otimes (M\times V)$ and the space of its sections is isomorphic to $\Omega^r(M;V)\cong \Omega^r(M)\otimes V$. If a basis $\{e_a\}$ of $V$ is chosen, then every $V$-valued $r$-form $\alpha$ can be written as
+    If we're working with vector-valued forms, i.e., $\Omega^{\smbullet }(M;V)$ with $V$ a vector space, then these are simply antisymmetric $r$-linear maps from $(\T M)^{\otimes r}$ to $V$. The bundle of such $r$-forms can be identified with the tensor product of bundles $\bigwedge\nolimits^r \T^\ast M\otimes (M\times V)$ and the space of its sections is isomorphic to $\Omega^r(M;V)\cong \Omega^r(M)\otimes V$. If a basis $\{e_a\}$ of $V$ is chosen, then every $V$-valued $r$-form $\alpha$ can be written as
     \[\alpha=\sum_a \alpha^a\otimes e_a,\]
     where $\alpha^a\in \Omega^r(M)$ are uniquely determined ordinary $r$-forms and $e_a$ can be interpreted as either elements of $V$ or as constant global sections of $M\times V$. As a consequence, w.r.t.\ a local chart $(U,\bf{x})$ the form $\alpha$ has the local representation
     \[\restr{\alpha}{U}=\sum_{a,i_1,\ldots,i_r}\alpha^a_{i_1,\ldots,i_r}\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_r}\otimes e_a.\]
@@ -3686,7 +3685,7 @@ Just like with derivations on regular algebras, $\Der\Omega$ is also a Lie algeb
 
 \begin{defn}[Algebraic derivation]
     A derivation $D\in\Der_k\Omega$ is called algebraic if $D(\Omega^0)=\{0\}$. The graded Leibniz rule then implies $D(f\omega)=fD(\omega)$ for all $f\in \Omega^0$ and $\omega\in \Omega$, so $D$ can be identified with a tensor field by Theorem~\ref{thm tensor characterization}. Therefore, $D$ induces a derivation $D_m\in \Der_k \bigwedge (\T^\ast_m M)$ for each $m\in M$. By Willmore's Theorem~\ref{Willmore}, it is uniquely determined by its action on $1$-forms, $\restr{D}{\Omega^1}:\Omega^1\to \Omega^{k+1}$. This is also $C^\infty(M)$-linear and hence can be identified with a unique vector-valued differential form 
-    \[K\in \Gamma^\infty\left(\bigwedge^{k+1}\T^\ast M\otimes \T M\right)=\Omega^{k+1}(M;\T M).\]
+    \[K\in \Gamma^\infty\left(\bigwedge\nolimits^{k+1}\T^\ast M\otimes \T M\right)=\Omega^{k+1}(M;\T M).\]
     Hence $D$ coincides with the algebraic derivation $i_K$ defined uniquely by its action on $1$-forms:
     \[i_K(\omega)\coloneqq \omega\circ K,\quad \omega\in\Omega^1.\]
 \end{defn}

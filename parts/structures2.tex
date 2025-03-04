@@ -176,7 +176,7 @@ and we conclude
 We have proven the following.
 
 \begin{cor}\label{cor curvature in terms of hor}
-    Using the identification $\pi^\ast \T M\overset{i}{\cong}\calH E\subset \T E$, we can view $\calR$ as a map $\pi^\ast\left(\bigwedge^2\T M\right)\to \calV E$ given by 
+    Using the identification $\pi^\ast \T M\overset{i}{\cong}\calH E\subset \T E$, we can view $\calR$ as a map $\pi^\ast\left(\bigwedge\nolimits^2\T M\right)\to \calV E$ given by 
     \[(X_m,Y_m,p)\mapsto (X,Y,p)\mapsto [X^h,Y^h](p)-[X,Y]^h(p),\]
     where $X,Y\in \fX(M)$ are arbitrary vector fields on $M$ such that $X(m)=X_m$ and $Y(m)=Y_m$, and $m=\pi(p)$.
 \end{cor}
@@ -324,10 +324,10 @@ Now consider the associated bundle $E\coloneqq P^{[\sigma]}=P\times^G V$.
 \begin{prop}[{{\cite[Prop.~1.2.12]{RS2}}}]\label{prop 1.2.12 RS2}
     To every element $\wt{\eta}\in \Omega^k_{\hor}(P;V)^\sigma$ there corresponds a unique element $\eta\in \Omega^k(M;E)$ such that the following diagram commutes
     \[\begin{tikzcd}
-        \bigwedge^k P\arrow[r,"\pr\times\wt\eta"] \arrow[d,"\bigwedge^k \pi_\ast",swap]& P\times V\arrow[d,"\iota"]\\
-        \bigwedge^kM\arrow[r,"\eta"] & E,
+        \bigwedge\nolimits^k P\arrow[r,"\pr\times\wt\eta"] \arrow[d,"\bigwedge\nolimits^k \pi_\ast",swap]& P\times V\arrow[d,"\iota"]\\
+        \bigwedge\nolimits^kM\arrow[r,"\eta"] & E,
     \end{tikzcd}\]
-    where $\pr:\bigwedge^k P\to P$ denotes the natural projection. The assignment $\wt\eta\mapsto \eta$ defines a vector space isomorphism $\Omega^k_{\hor}(P;V)^\sigma\to \Omega^k(M;E)$.
+    where $\pr:\bigwedge\nolimits^k P\to P$ denotes the natural projection. The assignment $\wt\eta\mapsto \eta$ defines a vector space isomorphism $\Omega^k_{\hor}(P;V)^\sigma\to \Omega^k(M;E)$.
 \end{prop}
 \begin{proof}
     Let $m\in M$ and $X_i\in T_mM$, $i=1,\ldots,k$. Choose $p\in P$ fulfilling $\pi(p)=m$ and $Y_i\in T_pP$ such that $\pi_\ast (Y_i)=X_i$. We define
@@ -2345,9 +2345,9 @@ The following vector fields on the frame bundle will turn out to be closely conn
 
 \begin{rem}\label{rem 2.1.16 RS2}
     Since, for any $u\in\Fr(\T M)$, the assignment $\bbR^n\to \calH_u (\Fr(\T M))$, $\bf{x}\mapsto B(\bf{x})$, is an isomorphism of vector spaces, we have an induced isomorphism 
-    \[b_u:\bigwedge^2\bbR^n\to \bigwedge^2 \calH_u(\Fr(\T M)),\quad b_u(\bf{x}\wedge\bf{y})=B(\bf{x})_u\wedge B(\bf{y})_u.\]
+    \[b_u:\bigwedge\nolimits^2\bbR^n\to \bigwedge\nolimits^2 \calH_u(\Fr(\T M)),\quad b_u(\bf{x}\wedge\bf{y})=B(\bf{x})_u\wedge B(\bf{y})_u.\]
     Using this, we get yet another useful presentation of curvature and torsion. We define maps 
-    \[\scrR:\Fr(\T M)\to \bigwedge^2(\bbR^n)^\ast \otimes\frakgl_n(\bbR),\quad \scrT:\Fr(\T M)\to \bigwedge^2(\bbR^n)^\ast\otimes\bbR^n\]
+    \[\scrR:\Fr(\T M)\to \bigwedge\nolimits^2(\bbR^n)^\ast \otimes\frakgl_n(\bbR),\quad \scrT:\Fr(\T M)\to \bigwedge\nolimits^2(\bbR^n)^\ast\otimes\bbR^n\]
     by 
     \[\scrR(u)\coloneqq \Omega_u\circ b_u,\quad \scrT(u)\coloneqq \Theta_u\circ b_u.\label{eq 2.1.24 RS2}\]
     Since $B(\bf{x})_u=\theta^{-1}(\bf{x})_u$, we can write $b_u^{-1}=\frac12(\theta\wedge\theta)_u$, so 
@@ -2358,10 +2358,10 @@ The following vector fields on the frame bundle will turn out to be closely conn
         \scrT(\Phi_g(u))(\bf{x},\bf{y})&= g^{-1}\circ (\scrT(u)(g\bf{x},g\bf{y})).
     \end{align}
     By Proposition~\ref{prop 1.2.6 RS2}, to $\scrR$ and $\scrT$, there correspond unique sections of the associated bundles 
-    \[\Fr(\T M)\times^{\GL_n(\bbR)}\left(\bigwedge^2(\bbR^n)^\ast \otimes \frakgl_n(\bbR)\right),\quad \Fr(\T M)\times^{\GL_n(\bbR)}\left(\bigwedge^2(\bbR^n)^\ast \otimes\bbR^n\right),\]
+    \[\Fr(\T M)\times^{\GL_n(\bbR)}\left(\bigwedge\nolimits^2(\bbR^n)^\ast \otimes \frakgl_n(\bbR)\right),\quad \Fr(\T M)\times^{\GL_n(\bbR)}\left(\bigwedge\nolimits^2(\bbR^n)^\ast \otimes\bbR^n\right),\]
     respectively. By \eqref{eq 2.1.24 RS2}, they are given by 
-    \[m\mapsto \iota_u^\vartheta\circ \scrR(u)\circ (\iota_u^\vartheta)^{-1}=\sfR_m\circ\bigwedge^2 \iota_u^\vartheta,\quad m\mapsto \iota_u^\vartheta\circ\scrT(u)=\sfT_m\circ \bigwedge^2 \iota_u^\vartheta,\]
-    where $\bigwedge^2 \iota_u^\vartheta:\bbR^n\wedge\bbR^n\to \T_mM\wedge \T_mM$ and $m=\pi(u)$.
+    \[m\mapsto \iota_u^\vartheta\circ \scrR(u)\circ (\iota_u^\vartheta)^{-1}=\sfR_m\circ\bigwedge\nolimits^2 \iota_u^\vartheta,\quad m\mapsto \iota_u^\vartheta\circ\scrT(u)=\sfT_m\circ \bigwedge\nolimits^2 \iota_u^\vartheta,\]
+    where $\bigwedge\nolimits^2 \iota_u^\vartheta:\bbR^n\wedge\bbR^n\to \T_mM\wedge \T_mM$ and $m=\pi(u)$.
 \end{rem}
 
 
@@ -2759,17 +2759,17 @@ The function $\wt{\varphi}$ encodes the local information defining the $G$-struc
 Since any other connection $\omega'$ on $P$ differs from $\omega$ by a horizontal $1$-form $\alpha$ on $P$ with values in $\frakg=\Lief G$,
 \[\Theta'=\Theta+\alpha\wedge\theta,\quad\text{ or }\quad (\Theta'-\Theta)(X,Y)=\alpha(X)\theta(Y)-\alpha(Y)\theta(X).\]
 By Remark~\ref{rem 2.1.16 RS2}, $\Theta$ and $\alpha$ may be identified with $G$-equivariant functions 
-\[\scrT:P\to \bigwedge^2(\bbR^n)^\ast\otimes\bbR^n,\quad \wt\alpha:P\to (\bbR^n)^\ast\otimes\frakg,\]
+\[\scrT:P\to \bigwedge\nolimits^2(\bbR^n)^\ast\otimes\bbR^n,\quad \wt\alpha:P\to (\bbR^n)^\ast\otimes\frakg,\]
 respectively. Since $G\subset\GL_n(\bbR)$, we have a natural inclusion 
 \[\iota_\frakg:\frakg\to \End(\bbR^n)\cong (\bbR^n)^\ast\otimes\bbR^n.\]
-Thus, under the above identification, $\alpha\wedge\theta$ is a function on $P$ with values in $\bigwedge^2(\bbR^n)^\ast\otimes\bbR^n$. We claim that it coincides with the image of $\wt\alpha$ under the map 
-\[\delta:(\bbR^n)^\ast\otimes\frakg\to \bigwedge^2(\bbR^n)^\ast\otimes\bbR^n,\quad \delta\coloneqq (\Alt\otimes\id_{\bbR^n})\circ(\id_{(\bbR^n)^\ast}\otimes \iota_\frakg),\]
-where $\Alt:(\bbR^n)^\ast\otimes (\bbR^n)^\ast\to \bigwedge^2(\bbR^n)^\ast$ is the antisymmetrization map. Indeed, using $\wt\alpha(u)(\bf{x})=\alpha(B(\bf{x}))$, we calculate 
+Thus, under the above identification, $\alpha\wedge\theta$ is a function on $P$ with values in $\bigwedge\nolimits^2(\bbR^n)^\ast\otimes\bbR^n$. We claim that it coincides with the image of $\wt\alpha$ under the map 
+\[\delta:(\bbR^n)^\ast\otimes\frakg\to \bigwedge\nolimits^2(\bbR^n)^\ast\otimes\bbR^n,\quad \delta\coloneqq (\Alt\otimes\id_{\bbR^n})\circ(\id_{(\bbR^n)^\ast}\otimes \iota_\frakg),\]
+where $\Alt:(\bbR^n)^\ast\otimes (\bbR^n)^\ast\to \bigwedge\nolimits^2(\bbR^n)^\ast$ is the antisymmetrization map. Indeed, using $\wt\alpha(u)(\bf{x})=\alpha(B(\bf{x}))$, we calculate 
 \[(\alpha\wedge\theta)_u(B(\bf{x}),B(\bf{y}))=\left(\wt\alpha(u)(\bf{x})\right)\bf{y}-\left(\wt\alpha(u)(\bf{y})\right)\bf{x}=\left(\delta\circ\wt\alpha(u)\right)(\bf{x},\bf{y}).\]
 As a result,
 \[\scrT'=\scrT+\delta(\wt\alpha).\label{eq 2.2.3 RS2}\]
 Let 
-\[\pr :\bigwedge^2(\bbR^n)^\ast\otimes\bbR^n\to \coker(\delta)=\left(\bigwedge^2(\bbR^n)^\ast\otimes\bbR^n\right)\slash\im(\delta)\]
+\[\pr :\bigwedge\nolimits^2(\bbR^n)^\ast\otimes\bbR^n\to \coker(\delta)=\left(\bigwedge\nolimits^2(\bbR^n)^\ast\otimes\bbR^n\right)\slash\im(\delta)\]
 be the natural projection. Then the map 
 \[\tau:P\to \coker(\delta),\quad \tau(u)\coloneqq \pr(\scrT(u)),\]
 does not depend on the choice of the connection. This motivates the following definition.
@@ -2801,18 +2801,18 @@ In particular, as an immediate consequence that will be relevant in Riemannian g
 \end{rem}
 
 In summary, denoting by $V=\bbR^n$ the typical fiber, we have constructed the (obviously) exact sequence of linear maps of vector spaces
-\[0\to\frakg^{(1)}\coloneqq\ker\delta\to V^\ast\otimes\frakg\overset{\delta}{\to}\bigwedge^2 V^\ast \otimes V\overset{\pr}{\to}\coker\delta\to 0.\]
+\[0\to\frakg^{(1)}\coloneqq\ker\delta\to V^\ast\otimes\frakg\overset{\delta}{\to}\bigwedge\nolimits^2 V^\ast \otimes V\overset{\pr}{\to}\coker\delta\to 0.\]
 The space $\frakg^{(1)}=\ker\delta$ is called the first \emph{prolongation} of the subalgebra $\frakg<\frakgl_n(\bbR)$. Since these maps are $G$-equivariant, given a $G$-structure $P$ on a manifold $M$, we get the corresponding exact sequence of morphisms of associated \glspl{vb}. Namely, we simply apply the association functor $P^{[]}$ to each of the vector spaces above as typical fibers and then follow it up with the corresponding bundle isomorphism induced from the soldering map $\vartheta:\T M\to P\times^G \bbR^n$:
-\[ 0\to \ker \Delta \to \underset{\text{``Contorsion''}}{\T^\ast M\otimes \Ad(P)}\overset{\Delta}{\to} \underset{\text{``Torsion''}}{\bigwedge^2 \T^\ast M\otimes \T M}\to \underset{\text{``Intrinsic torsion''}}{\coker \Delta}\to 0,\]
-where $ \T^\ast M\otimes \Ad(P)$ is the bundle whose space of sections is the gauge algebra $\gau(P)=\Omega^1(M;\Ad(P))$ (consisting of differences $\wt\alpha$) and $\Delta$ computes  the corresponding change in the torsion map by $\delta(\wt\alpha)$. Note that torsion maps themselves are sections of the bundle $\bigwedge^2 \T^\ast M\otimes \T M$. Then, by exactness, $\scrT$ and $\scrT'$ have the same image in the last bundle, $\coker\Delta$. In other words, any two connections compatible with $P$ have torsions that map to the same section of $\coker\Delta$, and this section is exactly the intrinsic torsion of $P$, independent of the connection. Finally, sections of $\ker\Delta$ are the contorsions whose addition to the connection form doesn't change the torsion.
+\[ 0\to \ker \Delta \to \underset{\text{``Contorsion''}}{\T^\ast M\otimes \Ad(P)}\overset{\Delta}{\to} \underset{\text{``Torsion''}}{\bigwedge\nolimits^2 \T^\ast M\otimes \T M}\to \underset{\text{``Intrinsic torsion''}}{\coker \Delta}\to 0,\]
+where $ \T^\ast M\otimes \Ad(P)$ is the bundle whose space of sections is the gauge algebra $\gau(P)=\Omega^1(M;\Ad(P))$ (consisting of differences $\wt\alpha$) and $\Delta$ computes  the corresponding change in the torsion map by $\delta(\wt\alpha)$. Note that torsion maps themselves are sections of the bundle $\bigwedge\nolimits^2 \T^\ast M\otimes \T M$. Then, by exactness, $\scrT$ and $\scrT'$ have the same image in the last bundle, $\coker\Delta$. In other words, any two connections compatible with $P$ have torsions that map to the same section of $\coker\Delta$, and this section is exactly the intrinsic torsion of $P$, independent of the connection. Finally, sections of $\ker\Delta$ are the contorsions whose addition to the connection form doesn't change the torsion.
 
 Note that the map $\delta$ can be written as acting on $\kappa\in\Hom(V,\frakg)$:
-\[\delta:\Hom(V,\frakg)\to \Hom\left(\bigwedge^2 V,V\right),\quad (\delta\kappa)(v,w)=\kappa(v) w-\kappa(w) v,\quad v,w\in V.\]
+\[\delta:\Hom(V,\frakg)\to \Hom\left(\bigwedge\nolimits^2 V,V\right),\quad (\delta\kappa)(v,w)=\kappa(v) w-\kappa(w) v,\quad v,w\in V.\]
 This is a special instance  of a \emph{Spencer differential}. We may summarize this discussion as follows.\index{Spencer differential}
 
 \begin{prop}
     Let $P$ be a $G$-structure on $M$, let $\vartheta:\T M\to P\times^G V$ be the soldering map, and let $\omega$ be a principal connection form on $P$ with torsion $2$-form $\Theta\in\Omega^2_{\hor}(P;V)^\sigma$. If $\omega'=\omega+\alpha$ is another principal connection on $P$, then its torsion form is $\Theta'=\Theta+\Delta(\alpha)$, where $\Delta:\Omega^1_{\hor}(P;\frakg)^\Ad\to \Omega^2_{\hor}(P;V)^\sigma$ is induced from the Spencer differential 
-    \[\delta:\Hom(V,\frakg)\to \Hom\left(\bigwedge^2 V,V\right),\quad (\delta\kappa) (v,w)=\kappa(v)w-\kappa(w)v,\quad v,w\in V.\]
+    \[\delta:\Hom(V,\frakg)\to \Hom\left(\bigwedge\nolimits^2 V,V\right),\quad (\delta\kappa) (v,w)=\kappa(v)w-\kappa(w)v,\quad v,w\in V.\]
 \end{prop}
 
 \begin{rem}
@@ -2831,29 +2831,29 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \end{example}
 
 \begin{example}[Volume form]\index{Volume form}
-    Now consider $G=\SL_n(\bbR)$. The defining representation of $\GL_n(\bbR)$ on $\bbR^n$ induces the following $\GL_n(\bbR)$-action on $\bigwedge^n(\bbR^n)^\ast$: 
-    \[\GL_n(\bbR)\times \bigwedge^n(\bbR^n)^\ast\to  \bigwedge^n(\bbR^n)^\ast,\quad (g,\sfv)\mapsto \det(g)\cdot\sfv.\]
-    Restricted to $\bigwedge^n(\bbR^n)^\ast\setminus\{0\}$, this action is transitive and has the common stabilizer $\SL_n(\bbR)$. Thus, 
-    \[\GL_n(\bbR)\slash G\cong \bigwedge^n(\bbR^n)^\ast\setminus\{0\}.\]
-    Via the natural isomorphism $\bigwedge^n \T^\ast M\cong \Fr(\T M)\times^{\GL_n(\bbR)}\bigwedge^n(\bbR^n)^\ast$, the sections of the associated bundle $\Fr(\T M)\times^{\GL_n(\bbR)} \left(\bigwedge^n(\bbR^n)^\ast\setminus\{0\}\right)$ are in one-to-one correspondence with volume forms on $M$. The $\SL_n(\bbR)$-structure corresponding to a given volume form $\sfv$ consists of those frames $u$ fulfilling $\sfv=\sfv_0\circ \bigwedge^n u$, where $\sfv_0$ is the standard volume form on $\bbR^n$. Since $\GL_n(\bbR)\slash\SL_n(\bbR)$ is homotopy equivalent to $\GL_n(\bbR)\slash \GL_n^+(\bbR)$, $M$ admits an $\SL_n(\bbR)$-structure iff $M$ is orientable. Moreover, it is easy to show that any $\SL_n(\bbR)$-structure is integrable. Finally, note that the automorphisms of this structure are the volume-preserving diffeomorphisms of $M$.
+    Now consider $G=\SL_n(\bbR)$. The defining representation of $\GL_n(\bbR)$ on $\bbR^n$ induces the following $\GL_n(\bbR)$-action on $\bigwedge\nolimits^n(\bbR^n)^\ast$: 
+    \[\GL_n(\bbR)\times \bigwedge\nolimits^n(\bbR^n)^\ast\to  \bigwedge\nolimits^n(\bbR^n)^\ast,\quad (g,\sfv)\mapsto \det(g)\cdot\sfv.\]
+    Restricted to $\bigwedge\nolimits^n(\bbR^n)^\ast\setminus\{0\}$, this action is transitive and has the common stabilizer $\SL_n(\bbR)$. Thus, 
+    \[\GL_n(\bbR)\slash G\cong \bigwedge\nolimits^n(\bbR^n)^\ast\setminus\{0\}.\]
+    Via the natural isomorphism $\bigwedge\nolimits^n \T^\ast M\cong \Fr(\T M)\times^{\GL_n(\bbR)}\bigwedge\nolimits^n(\bbR^n)^\ast$, the sections of the associated bundle $\Fr(\T M)\times^{\GL_n(\bbR)} \left(\bigwedge\nolimits^n(\bbR^n)^\ast\setminus\{0\}\right)$ are in one-to-one correspondence with volume forms on $M$. The $\SL_n(\bbR)$-structure corresponding to a given volume form $\sfv$ consists of those frames $u$ fulfilling $\sfv=\sfv_0\circ \bigwedge\nolimits^n u$, where $\sfv_0$ is the standard volume form on $\bbR^n$. Since $\GL_n(\bbR)\slash\SL_n(\bbR)$ is homotopy equivalent to $\GL_n(\bbR)\slash \GL_n^+(\bbR)$, $M$ admits an $\SL_n(\bbR)$-structure iff $M$ is orientable. Moreover, it is easy to show that any $\SL_n(\bbR)$-structure is integrable. Finally, note that the automorphisms of this structure are the volume-preserving diffeomorphisms of $M$.
 \end{example}
 \begin{xca}
     Show that every $\SL_n(\bbR)$-structure is integrable.
 \end{xca}
 
 \begin{example}[Pseudo-Riemannian structure]\label{ex pseudo-riemannian structure}\index{Pseudo-Riemannian structure}
-    For simplicity let us denote $V=\bbR^n$. Denote the vector space of symmetric covariant tensors of second rank on $V$ by $\bigodot^2V^\ast$. Endow $V$ with a pseudo-Euclidean metric $\eta\in \bigodot^2V^\ast$ with signature $(k,l)$ where $n=k+l$. The defining representation of $\GL(V)$ induces a $\GL_n(\bbR)$-module structure on $\bigodot^2 V$ given by 
-    \[\sigma:\GL(V)\to \Aut\left(\bigodot^2 V^\ast\right),\quad \sigma(g)\coloneqq (g^{-1})^T\otimes (a^{-1})^T.\label{eq 2.2.21 RS2}\]
-    As we have noted before, by the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $\bigodot^2_{(k,l)}V^\ast\subset \bigodot^2 V^\ast$ consisting of elements with fixed signature, and the stabilizer of $\eta$ is $\Or_{k,l}$, that is,
-    \[\GL_n(\bbR)\slash \Or_{k,l}\cong \bigodot^2_{(k,l)}V^\ast.\]
+    For simplicity let us denote $V=\bbR^n$. Denote the vector space of symmetric covariant tensors of second rank on $V$ by $\bigodot\nolimits^2V^\ast$. Endow $V$ with a pseudo-Euclidean metric $\eta\in \bigodot\nolimits^2V^\ast$ with signature $(k,l)$ where $n=k+l$. The defining representation of $\GL(V)$ induces a $\GL_n(\bbR)$-module structure on $\bigodot\nolimits^2 V$ given by 
+    \[\sigma:\GL(V)\to \Aut\left(\bigodot\nolimits^2 V^\ast\right),\quad \sigma(g)\coloneqq (g^{-1})^T\otimes (a^{-1})^T.\label{eq 2.2.21 RS2}\]
+    As we have noted before, by the Sylvester Theorem, $\GL_n(\bbR)$ acts transitively on the subspace $\bigodot\nolimits^2_{(k,l)}V^\ast\subset \bigodot\nolimits^2 V^\ast$ consisting of elements with fixed signature, and the stabilizer of $\eta$ is $\Or_{k,l}$, that is,
+    \[\GL_n(\bbR)\slash \Or_{k,l}\cong \bigodot\nolimits^2_{(k,l)}V^\ast.\]
     Thus, $\Or_{k,l}$-structures are in one-to-one correspondence with pseudo-Riemannian metrics $\sfg$ on $M$ and the $\Or_{k,l}$-structure corresponding to $\sfg$ coincides with the bundle $\Fr_{\Or_{k,l}}(\T M)$ of orthonormal frames w.r.t.\ $\sfg$. If $(M,\sfg)$ is oriented, then $\Fr_{\Or_{k,l}}M$ further reduces to a principal $\SO_{k,l}$-bundle, denoted by $\Fr^+_{\Or_{k,l}}(\T M)$. 
     
     Note that $\GL_n(\bbR)\slash \Or_n$ is contractible. Thus, an $\Or_n$-structure, that is, a Riemannian metric, always exists. On the contrary, structures with arbitrary signatures $(k,l)$ may note exist. 
     
     Now we show that the corresponding Spencer differential 
-    \[\delta: V^\ast\otimes \frakso_{k,l}\to \bigwedge^2 V^\ast\otimes V\]
+    \[\delta: V^\ast\otimes \frakso_{k,l}\to \bigwedge\nolimits^2 V^\ast\otimes V\]
     is an isomorphism. Indeed, the dimensions of these two spaces coincide because there is a canonical isomorphism 
-    \[\Phi: \frakso_{k,l}\to \bigwedge^2 V,\quad \Phi(A)= \frac14 A(\bf{e}_i)\wedge \eta^{-1}(\alpha^i),\]
+    \[\Phi: \frakso_{k,l}\to \bigwedge\nolimits^2 V,\quad \Phi(A)= \frac14 A(\bf{e}_i)\wedge \eta^{-1}(\alpha^i),\]
     where $\bf{e}_i$ is a $\sfg$-orthonormal basis in $V$ and $\{\eta^i\}$ is the dual basis. Denoting $A_{ij}=\sfg(\bf{e}_i,A\bf{e}_j)$, we obtain 
     \[\Phi(A)=\frac14 \eta^{ij}A(\bf{e}_i)\wedge\bf{e}_j=\frac14 A^{ij}\bf{e}_j\wedge\bf{e}_j.\]
     Now it remains to check that $\ker\delta=0$. Let $\kappa\in \Hom(V,\frakso_{k,l})$. Then, for any $v,w,z\in V$, $\kappa(v)\in\frakso_{k,l}$, therefore 
@@ -2867,7 +2867,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     Let us interpret the consequences of this fact. First, since $\delta$ is an isomorphism, $\coker\delta=0$, and so every metric connection (assuming one exists!) can be modified to be torsion-free. Moreover, since $\ker\delta=0$, by Corollary~\ref{cor 2.2.7 RS2}, any $\Or_{k,l}$-structure admits a \emph{unique} torsion-free connection, called the \emph{Levi-Civita connection}. \index{Levi-Civita connection} In particular, this implies that an $\Or_{k,l}$-structure is always integrable to first order, but it is fully integrable only if it is flat (since a holonomic orthonormal frame determines a local isometry from $M$ to $\bbR^n$).
 
     Another consequence is that for any $G$-structure with $G<\Or_{k,l}$, we have $\ker\delta=0$, since $\delta$ is the restriction to $\frakg<\frakso_{k,l}$ of the Spencer differential we considered above. Thus the following  sequence is exact 
-    \[0\to V^\ast\otimes \frakg\overset{\delta}{\to}\bigwedge^2 V^\ast\otimes V\to \coker\delta\to 0\]
+    \[0\to V^\ast\otimes \frakg\overset{\delta}{\to}\bigwedge\nolimits^2 V^\ast\otimes V\to \coker\delta\to 0\]
     and 
     \[\dim\coker\delta =n\cdot \left(\binom{n}{2}-\dim\frakg\right).\]
     This is the rank of the bundle of metric intrinsic torsions.
@@ -2877,7 +2877,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \begin{example}[Conformal structure {{\cite[Example~2.2.17]{RS2}}}]\index{Conformal structure}\index{Conformal structure}
     For $n\geq 3$, consider the conformal orthogonal group \index{Conformal orthogonal group}
     \[\CO_n\coloneqq \left\{a\in\GL_n(\bbR):a^Ta=c\rmI_n,\; c>0\right\}.\]
-    Clearly, $\CO_n=\Or_n\times\bbR_+$. By the previous example, $\GL_n(\bbR)$ acts transitively on the space $\bigodot^2_{k,l}V^\ast$. Thus it also acts transitively on the set of conformal equivalence classes of elements of $\bigodot^2_{(k,l)}V^\ast$ defined by the relation $\eta\sim\eta'$ iff $\eta'=c\eta$ for some $c>0$. Clearly, the stabilizer of an element $[\eta]$ is $\CO_n$. Thus, $\CO_n$-structures are in one-to-one correspondence with conformal equivalence classes $[\sfg]$ of metrics on $M$, with the equivalence defined as follows: $\sfg'\sim\sfg$ iff $\sfg'_m=\rme^{\varphi(m)}\sfg_m$ for all $m\in M$ for some $\varphi\in C^\infty(M)$. The $\CO_n$-structure corresponding to class $[\sfg]$ is denoted by $\Fr_{\CO_n}M$ and is referred to as the bundle of conformal frames.
+    Clearly, $\CO_n=\Or_n\times\bbR_+$. By the previous example, $\GL_n(\bbR)$ acts transitively on the space $\bigodot\nolimits^2_{k,l}V^\ast$. Thus it also acts transitively on the set of conformal equivalence classes of elements of $\bigodot\nolimits^2_{(k,l)}V^\ast$ defined by the relation $\eta\sim\eta'$ iff $\eta'=c\eta$ for some $c>0$. Clearly, the stabilizer of an element $[\eta]$ is $\CO_n$. Thus, $\CO_n$-structures are in one-to-one correspondence with conformal equivalence classes $[\sfg]$ of metrics on $M$, with the equivalence defined as follows: $\sfg'\sim\sfg$ iff $\sfg'_m=\rme^{\varphi(m)}\sfg_m$ for all $m\in M$ for some $\varphi\in C^\infty(M)$. The $\CO_n$-structure corresponding to class $[\sfg]$ is denoted by $\Fr_{\CO_n}M$ and is referred to as the bundle of conformal frames.
     Since $\CO_n=\Or_n\times\bbR_+$, the representation theory of $\CO_n$ is essentially obtained as an extension of that of $\Or_n$. The irreducible representations of $\bbR_+$ on $\bbR$ are labeled by real numbers $r\in\bbR$ and are given by 
     \[\bbR_+\times\bbR\to \bbR,\quad (t,x)\mapsto t^r x.\]
     The number $r$ is called the \emph{conformal weight} of the representation under consideration. Let us denote this representation by $L^r$. Then a typical $\CO$-module is a tensor product of an $\Or_n$-module with $L^r$. Note that, w.r.t.\ the conformal structure $[\sfg]$, the tangent and the cotangent bundles can no longer be identified, because they correspond to the representations containing factors $L^r$ and $L^{-r}$, respectively. Clearly, at the level of \glspl{vb} over $M$, the additional factors $L^r$ correspond to building the tensor product with an associated line bundle characterized by $r$.
@@ -2894,7 +2894,7 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
     \[\Fr_{\Or_{k,l}}M=\{u \in\Fr(\T M):\wt\sfg(u)=\eta\},\]
     where $\eta$ is the standard inner product on $\bbR^n$ with signature $(k,l)$. By Proposition~\ref{prop 2.2.3 RS2}, a linear principal connection $\omega$ on $M$ is compatible with the $\Or_{k,l}$-structure iff $\sfg$ is parallel w.r.t.\ $\omega$. An affine connection fulfilling this condition is called metric. By \eqref{eq 2.2.21 RS2}, the metricity condition $D\wt\sfg=\dd\wt\sfg+\sigma_\ast(\omega)\wt\sfg=0$ reads 
     \[\dd\wt\sfg-\left(\omega^T\otimes \rmI_n+\rmI_n\otimes \omega^T\right)(\wt\sfg)=0.\label{eq 2.2.35 RS2}\]
-    More explicitly, decomposing $\omega$ w.r.t.\ the basis $\{E^j{}_i\}$ in $\frakgl_n(\bbR)$ and $\wt\sfg$ w.r.t.\ the basis in $\bigodot^2(\bbR^n)^\ast$ induced from the standard basis of $\bbR^n$, \eqref{eq 2.2.35 RS2} takes the form 
+    More explicitly, decomposing $\omega$ w.r.t.\ the basis $\{E^j{}_i\}$ in $\frakgl_n(\bbR)$ and $\wt\sfg$ w.r.t.\ the basis in $\bigodot\nolimits^2(\bbR^n)^\ast$ induced from the standard basis of $\bbR^n$, \eqref{eq 2.2.35 RS2} takes the form 
     \[\dd \wt\sfg_{jk}-\wt\sfg_{jl}\omega^l{}_k-\wt\sfg_{kl}\omega^l{}_j=0.\]
     But, on $\Fr_{\Or_{k,l}} M$ we have $\wt\sfg_{kl}=\eta_{kl}$, and thus $\dd\wt\sfg_{kl}=0$. This shows that $\omega$ is metric iff its reduction to $\Fr_{\Or_{k,l}}M$ fulfills 
     \[\omega_{jk}+\omega_{kj}=0,\]
@@ -2995,18 +2995,18 @@ This is a special instance  of a \emph{Spencer differential}. We may summarize t
 \begin{example}[Almost symplectic structure]\label{ex almost symplectic structures}
     Consider $G=\Sp_{2n}(\bbR)$, which is the group of linear transformations of $\bbR^{2n}$ that preserve the standard symplectic form $\omega_n$, cf.\ Example~\ref{ex linear G-structures}(9). There is a one-to-one correspondence between $\Sp_{2n}(\bbR)$-structures and almost symplectic manifolds, i.e., even-dimensional manifolds $M$ with a non-degenerate $2$-form $\omega\in \Omega^2(M)$. The non-degeneracy condition is equivalent to saying that the $2n$-form $\omega^n=\omega\wedge\cdots\wedge\omega$ is nowhere vanishing.
     % Since for every symplectic matrix there are coordinates in which it takes the form $\sfJ_{2n}$, there always exist local coordinates $(q^1,\ldots,q^n,p_1,\ldots,p_n)$ in which the symplectic form takes the canonical form $\omega=\sum_i \dd q^i\wedge\dd p_i$. 
-    Let $V=\bbR^{2n}$, so that the Lie algebra is $\fraksp(V)\cong \bigodot^2 V$. It is easy to check that $\ker\delta\cong \bigodot^3 V$ by using $\omega_n$ to identify $V$ with $V^\ast$, so the Spencer sequence reads 
-    \[0\to \bigodot^3 V\to V^\ast \otimes \bigodot^2V\to \bigwedge^2 V^\ast\otimes V\to \bigwedge^3 V^\ast\to 0.\]
-    The associated bundle with fiber $\bigwedge^3 V^\ast$ is simply $\bigwedge^3 \T^\ast M$, so intrinsic torsions are $3$-forms on $M$. The intrinsic torsion is exactly the part of $\nabla\omega$ that doesn't depend on the choice of connection under which $\omega$ is parallel. It is also the fully antisymmetric part of $\nabla\omega$ (since it's a $3$-form), so it coincides with $\dd\omega$.
+    Let $V=\bbR^{2n}$, so that the Lie algebra is $\fraksp(V)\cong \bigodot\nolimits^2 V$. It is easy to check that $\ker\delta\cong \bigodot\nolimits^3 V$ by using $\omega_n$ to identify $V$ with $V^\ast$, so the Spencer sequence reads 
+    \[0\to \bigodot\nolimits^3 V\to V^\ast \otimes \bigodot\nolimits^2V\to \bigwedge\nolimits^2 V^\ast\otimes V\to \bigwedge\nolimits^3 V^\ast\to 0.\]
+    The associated bundle with fiber $\bigwedge\nolimits^3 V^\ast$ is simply $\bigwedge\nolimits^3 \T^\ast M$, so intrinsic torsions are $3$-forms on $M$. The intrinsic torsion is exactly the part of $\nabla\omega$ that doesn't depend on the choice of connection under which $\omega$ is parallel. It is also the fully antisymmetric part of $\nabla\omega$ (since it's a $3$-form), so it coincides with $\dd\omega$.
 
-    If we want to classify almost symplectic structures based on some natural constraint on the intrinsic torsion, then we need to decompose $\bigwedge^3 V^\ast$, as a representation of $\Sp_{n}(\bbR)$, into irreducible representations (if possible). Since we can use the non-degenerate form $\omega$ to contract indices, we can use it to reduce a $3$-form to a $1$-form. This operation may be called ``trace''. Thus, $3$-forms that have the form $a\omega_n\wedge\alpha$ with some $a\in\bbR$ and some $\alpha\in V^\ast$ may be called ``diagonal'' (the space of these forms is isomorphic to $V^\ast$ as a representation of $\Sp_n(\bbR)$), and their complement in $\bigwedge^3 V^\ast$ consists of traceless forms:
-    \[\bigwedge^3 V^\ast \cong V^\ast\oplus \left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}.\]
+    If we want to classify almost symplectic structures based on some natural constraint on the intrinsic torsion, then we need to decompose $\bigwedge\nolimits^3 V^\ast$, as a representation of $\Sp_{n}(\bbR)$, into irreducible representations (if possible). Since we can use the non-degenerate form $\omega$ to contract indices, we can use it to reduce a $3$-form to a $1$-form. This operation may be called ``trace''. Thus, $3$-forms that have the form $a\omega_n\wedge\alpha$ with some $a\in\bbR$ and some $\alpha\in V^\ast$ may be called ``diagonal'' (the space of these forms is isomorphic to $V^\ast$ as a representation of $\Sp_n(\bbR)$), and their complement in $\bigwedge\nolimits^3 V^\ast$ consists of traceless forms:
+    \[\bigwedge\nolimits^3 V^\ast \cong V^\ast\oplus \left(\bigwedge\nolimits^3 V^\ast\right)_{\mathrm{traceless}}.\]
     These two components can be shown to be irreducible. Now it is easy to classify all choices of sub-representations:
     \begin{enumerate}
         \item The trivial representation $\{0\}$ leads to the torsion-free condition $\dd\omega=0$. Such structures are called \emph{symplectic manifolds}. By Darboux's theorem\index{Theorem!Darboux}, they are integrable -- there are always local coordinates in which $(M,\omega)$ is locally isomorphic to $(\bbR^{2n},\omega_n)$. Thus, first-order integrability is equivalent to integrability for almost symplectic structures. Note the drastic difference with the Riemannian case, where canonical coordinates exist only if the curvature vanishes.
         \item The representation $V^\ast$ leads to the condition $\dd\omega=\omega\wedge \alpha$ for some $\alpha\in\Omega^1(M)$. Since $0=\dd^2\omega=\omega\wedge\dd\alpha$, we also find $\dd\alpha=0$ (assuming $n>1$, otherwise any $\alpha$ works), thus \emph{locally} $\alpha=\dd f$ and $\dd (\rme^{-f}\omega)=0$. Such structures are called \emph{locally conformally symplectic} (l.c.s.) manifolds.
-        \item The representation $\left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}$ is more complicated. First note that for any $f\in C^\infty(M)$ we can consider the \emph{Hamiltonian vector field} $X_f\coloneqq \omega^{-1}(\dd f)$, where $\omega^1:\T^\ast M\to \T M$ is the fiberwise inverse of $\omega$. The condition that the intrinsic torsion takes values in the bundle associated to $\left(\bigwedge^3 V^\ast\right)_{\mathrm{traceless}}$ is equivalent to $\Lie_{X_f}\omega^n=0$ for all $f\in C^\infty$ (this condition is known as Liouville's Theorem). It is easy to see that this is equivalent to the condition $\dd\omega^{n-1}=0$. This fact is the basis of so called \emph{symplectic integrators}, which are used in computer simulations where one wants to preserve volume. Such almost symplectic structures are called \emph{balanced}.
-        \item If the intrinsic torsion is unconstrained and belongs only to the entire space $\bigwedge^3 V^\ast$, we call such an almost symplectic structure \emph{generic}.
+        \item The representation $\left(\bigwedge\nolimits^3 V^\ast\right)_{\mathrm{traceless}}$ is more complicated. First note that for any $f\in C^\infty(M)$ we can consider the \emph{Hamiltonian vector field} $X_f\coloneqq \omega^{-1}(\dd f)$, where $\omega^1:\T^\ast M\to \T M$ is the fiberwise inverse of $\omega$. The condition that the intrinsic torsion takes values in the bundle associated to $\left(\bigwedge\nolimits^3 V^\ast\right)_{\mathrm{traceless}}$ is equivalent to $\Lie_{X_f}\omega^n=0$ for all $f\in C^\infty$ (this condition is known as Liouville's Theorem). It is easy to see that this is equivalent to the condition $\dd\omega^{n-1}=0$. This fact is the basis of so called \emph{symplectic integrators}, which are used in computer simulations where one wants to preserve volume. Such almost symplectic structures are called \emph{balanced}.
+        \item If the intrinsic torsion is unconstrained and belongs only to the entire space $\bigwedge\nolimits^3 V^\ast$, we call such an almost symplectic structure \emph{generic}.
     \end{enumerate}
 \end{example}
 
@@ -3103,13 +3103,13 @@ We would like to classify principal connections $\omega\in\Omega^1(P;\frakk)$ on
     Notice that in general, a linear map $\varLambda:\frakg\to \frakk$ with properties (i) and (ii) need not exist. If there is one such map, however, then for two such maps, the difference vanishes on $\frakh$, and hence defines a linear map $\wt\varLambda:\frakg\slash\frakh\to \frakk$. By construction, $\wt\varLambda$ intertwines the two actions, $h\cdot (A+\frakg)\coloneqq \Ad_h(A)+\frakh$ on the left hand side and $h\cdot B=\Ad_{\lambda(h)}B$ on the right hand side. Conversely, if we have a map $\varLambda$ with properties (i) and (ii) and an equivariant map $\wt\varLambda$, then $\wh\varLambda(A)\coloneqq \varLambda(A)+\wt\varLambda(A+\frakh)$ also has properties (i) and (ii). Hence, we conclude that if one invariant principal connection exists, then the space of all such connections is an affine space modelled on $\Hom_H(\frakg\slash\frakh,\frakk)$.
 \end{rem}
 
-Next we will compute the curvature of invariant principal connections. Recall that the curvature form $\Omega$ can be viewed as a $2$-form on $M=G\slash H$ with values in the adjoint bundle $\Ad(P)$. \index{Adjoint vector bundle} We can identify $\Ad(P)$, whose typical fiber is $\frakk$, with $G\times^H \frakk$, where the action of $H$ on $\frakk$ is given by $h\cdot B\coloneqq \Ad_{\lambda(h)}B$, $h\in H, B\in\frakk$. We also have the natural isomorphism $\T^\ast(G\slash H)\coloneqq G\times^H (\frakg\slash\frakh)^\ast$. Hence, the curvature of any principal connection $\omega$ on $P$ has values in the homogeneous vector bundle corresponding to the representation $\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakk$, which consists of all antisymmetric bilinear maps $(\frakg\slash\frakh)^2\to\frakk$. 
+Next we will compute the curvature of invariant principal connections. Recall that the curvature form $\Omega$ can be viewed as a $2$-form on $M=G\slash H$ with values in the adjoint bundle $\Ad(P)$. \index{Adjoint vector bundle} We can identify $\Ad(P)$, whose typical fiber is $\frakk$, with $G\times^H \frakk$, where the action of $H$ on $\frakk$ is given by $h\cdot B\coloneqq \Ad_{\lambda(h)}B$, $h\in H, B\in\frakk$. We also have the natural isomorphism $\T^\ast(G\slash H)\coloneqq G\times^H (\frakg\slash\frakh)^\ast$. Hence, the curvature of any principal connection $\omega$ on $P$ has values in the homogeneous vector bundle corresponding to the representation $\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakk$, which consists of all antisymmetric bilinear maps $(\frakg\slash\frakh)^2\to\frakk$. 
 
 Suppose further that $\omega$ is invariant, i.e., $\wt{\rmL}_g^\ast \omega=\omega$, $g\in G$. This implies that the $\frakk$-valued curvature form on $P$ is also preserved by $\wh{\rmL}_g$. Hence $\Omega\in\Omega^2(G\slash H;G\times^H \frakk)$ is an invariant section. By Theorem~\ref{thm 1.4.4 Cap}, such a section is equivalent to a bilinear map $(\frakg\slash\frakh)^2\to\frakk$ which is $H$-equivariant. We now identify this map.
 \begin{prop}[{{\cite[Prop.~1.4.6]{Cap}}}]\label{prop 1.4.6 Cap}
     Consider a homogeneous space $G\slash H$ and the homogeneous principal $K$-bundle $P=G^{[\lambda]}=G\times^H K\to G\slash H$ corresponding to a homomorphism $\lambda:H\to K$. Let $\omega$ be an invariant principal connection on $P$ and let $\varLambda:\frakg\to \frakk$ be the corresponding linear map as in Theorem~\ref{thm 1.4.5 Cap}. Then the map $\frakg\times\frakg\to\frakk$ defined by 
     \[(A,B)\mapsto [\varLambda(A),\varLambda(B)]-\varLambda([A,B])\]
-    descends to an $H$-equivariant map $(\frakg\slash\frakh)\times(\frakg\slash\frakh)\to \frakk$. The corresponding invariant section of the homogeneous bundle $G\times^H \left(\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakk\right)$ is exactly the curvature of $\omega$.
+    descends to an $H$-equivariant map $(\frakg\slash\frakh)\times(\frakg\slash\frakh)\to \frakk$. The corresponding invariant section of the homogeneous bundle $G\times^H \left(\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakk\right)$ is exactly the curvature of $\omega$.
 \end{prop}
 \begin{proof}
     Property (ii) of $\varLambda$ from Theorem~\ref{thm 1.4.5 Cap} reads $\varLambda\circ\Ad_h=\Ad_{\lambda(h)}\circ\varLambda$ for all $h\in H$. Using this, we compute 
@@ -3135,7 +3135,7 @@ The most basic example of a homogeneous principal bundle is of course the bundle
 \begin{cor}[{{\cite[Cor.~1.4.6]{Cap}}}]\label{cor 1.4.6 Cap}
     There exists a $G$-invariant principal connection on the principal $H$-bundle $G\to G\slash H$ iff the Klein geometry $(G,H)$ is reductive. If this is the case and we have a chosen $\Ad(H)$-invariant decomposition $\frakg=\frakh\oplus\frakm$, then the set of all such connections is an affine space modeled on the vector space $\Hom_H(\frakm,\frakh)$.
 
-    The curvature of the invariant connection defined by $\frakm$ is induced by the map $\bigwedge^2\frakm\to\frakh$ given by $(A,B)\mapsto -\pr_\frakh([A,B])$.
+    The curvature of the invariant connection defined by $\frakm$ is induced by the map $\bigwedge\nolimits^2\frakm\to\frakh$ given by $(A,B)\mapsto -\pr_\frakh([A,B])$.
 \end{cor}
 \begin{proof}
     The bundle $G\to G\slash H$ of course corresponds to $\lambda=\id_H:H\to H$. By Theorem~\ref{thm 1.4.5 Cap} the existence of an invariant principal connection is equivalent to the existence of an $H$-equivariant map $\varLambda:\frakg\to\frakh$ such that $\restr{\varLambda}{\frakh}=\lambda_\ast=\id_\frakh$. Putting $\frakm=\ker\varLambda$ this condition is equivalent to $\frakg=\frakh\oplus \frakm$ as an $H$-module. Fixing the choice of $\varLambda$ (respectively $\frakm$), we have $\frakm\cong \frakg\slash\frakh$ as an $H$-module, and the remaining claims follow from Theorem~\ref{thm 1.4.5 Cap} and Proposition~\ref{prop 1.4.6 Cap}.
@@ -3161,7 +3161,7 @@ The most basic example of a homogeneous principal bundle is of course the bundle
 
     In particular, consider the case where $H=\Or_n$ and $\frakg\slash\frakh\cong \frakm\cong \bbR^n$ as an $H$-module, which occurs both in the case of the Riemann sphere (with $G=\Or_{n+1}$) and the Euclidean space (with $G=\SE_n$). In both cases, we not only have a $G$-invariant principal connection on $G\to G\slash H$ but it is also uniquely determined. This is due to the fact that both $\frakm\cong\bbR^n$ and $\frakh\cong \frakso_n$ are irreducible $\Or_n$-modules and thus the zero map is the only $H$-homomorphism $\frakm\to \frakh$. In the case of the Euclidean space, the complement $\frakm$ is an abelian subalgebra, so $[\frakm,\frakm]=\{0\}$ and the principal connection is flat.
 
-    On the other hand, in the case of the Riemann sphere, the decomposition $\frakg=\frakh\oplus\frakm$ is the unique $H$-invariant decomposition, and one immediately verifies that $[\frakm,\frakm]\subset\frakh$, but the bracket of two elements of $\frakm$ is nonzero in general, so we get nonzero curvature. More precisely, one easily computes that the curvature is induced by the map $\bbR^n\times\bbR^n\to \frakso_n$ defined $(\bf{x},\bf{y})\mapsto \bf{x}\bf{y}^T-\bf{y}\bf{x}^T$. Otherwise put, identifying $\frakso_n$ with $\bigwedge^2\bbR^n$, the curvature is simply induced by $(\bf{x},\bf{y})\mapsto \bf{x}\wedge \bf{y}$. Notice that up to scale this is the unique invariant tensor of this type.
+    On the other hand, in the case of the Riemann sphere, the decomposition $\frakg=\frakh\oplus\frakm$ is the unique $H$-invariant decomposition, and one immediately verifies that $[\frakm,\frakm]\subset\frakh$, but the bracket of two elements of $\frakm$ is nonzero in general, so we get nonzero curvature. More precisely, one easily computes that the curvature is induced by the map $\bbR^n\times\bbR^n\to \frakso_n$ defined $(\bf{x},\bf{y})\mapsto \bf{x}\bf{y}^T-\bf{y}\bf{x}^T$. Otherwise put, identifying $\frakso_n$ with $\bigwedge\nolimits^2\bbR^n$, the curvature is simply induced by $(\bf{x},\bf{y})\mapsto \bf{x}\wedge \bf{y}$. Notice that up to scale this is the unique invariant tensor of this type.
  \end{example}
 
  \begin{example}[Round sphere V, \ref{ex round sphere 4} continued]\label{ex round sphere 5}
@@ -3211,7 +3211,7 @@ By functoriality, an invariant principal connection on the principal $H$-bundle 
     \end{enumerate}
     In particular, if there is one such connection, then the space of all of them is an affine space modeled on the vector space $\Hom_H(\frakg\slash\frakh,\End(V))$.
 
-    The curvature of the invariant linear connection corresponding to $\varLambda$ is the invariant section of $\Omega^2(G\slash H,\End(E))$ induced by the map $\bigwedge^2(\frakg\slash\frakh)\to \End(V)$ defined by 
+    The curvature of the invariant linear connection corresponding to $\varLambda$ is the invariant section of $\Omega^2(G\slash H,\End(E))$ induced by the map $\bigwedge\nolimits^2(\frakg\slash\frakh)\to \End(V)$ defined by 
     \[(A+\frakh,B+\frakh)\mapsto [\varLambda(A),\varLambda(B)]-\varLambda([A,B]),\]
     where the former bracket is the commutator.
 \end{thm}
@@ -3296,12 +3296,12 @@ The most basic example deals with \emph{simple} Lie groups $G$. In this case $\f
 
 The question of existence of invariant linear connections is particularly important in the case of the tangent bundle $\T(G\slash H)$. From Example~\ref{ex 1.4.3 Cap} we know that this bundle corresponds to the representation $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ induced by the adjoint representation. By Theorem~\ref{thm 1.4.7 Cap}, invariant affine connections on $\T(G\slash H)$ correspond to linear maps $\varLambda:\frakg\to \End(\frakg\slash\frakh)$ such that $\restr{\varLambda}{\frakh}=\underline{\ad}$ and $\varLambda(\Ad_h A)=\underline{\Ad}_h\circ\varLambda(A)\circ \underline{\Ad}_h^{-1}$ for all $A\in\frakg$ and $h\in H$.
 
-Theorem~\ref{thm 1.4.7 Cap} also describes the map $\bigwedge^2(\frakg\slash\frakh)\to \End(\frakg\slash\frakh)$ which induces the curvature. For affine connections we have another invariant, the torsion. Recall that this is a bundle morphism $\sfT:\bigwedge^2 \T(G\slash H)\to \T(G\slash H)$ characterized by \eqref{eq 2.1.33 RS2}. For an invariant affine connection $\nabla$, the torsion is an invariant section, so it corresponds to an $H$-equivariant map $\bigwedge^2(\frakg\slash\frakh)\to \frakg\slash\frakh$. We can easily determine this map explicitly.
+Theorem~\ref{thm 1.4.7 Cap} also describes the map $\bigwedge\nolimits^2(\frakg\slash\frakh)\to \End(\frakg\slash\frakh)$ which induces the curvature. For affine connections we have another invariant, the torsion. Recall that this is a bundle morphism $\sfT:\bigwedge\nolimits^2 \T(G\slash H)\to \T(G\slash H)$ characterized by \eqref{eq 2.1.33 RS2}. For an invariant affine connection $\nabla$, the torsion is an invariant section, so it corresponds to an $H$-equivariant map $\bigwedge\nolimits^2(\frakg\slash\frakh)\to \frakg\slash\frakh$. We can easily determine this map explicitly.
 
 \begin{prop}[{{\cite[Prop.~1.4.8]{Cap}}}]\label{prop 1.4.8 Cap}
-    Let $\nabla$ be the affine connection on $\T(G\slash H)$ determined by a linear map $\varLambda:\frakg\to\End(\frakg\slash\frakh)$. Then the map $\wt\varXi:\bigwedge^2\frakg\to \frakg\slash\frakh$ defined by 
+    Let $\nabla$ be the affine connection on $\T(G\slash H)$ determined by a linear map $\varLambda:\frakg\to\End(\frakg\slash\frakh)$. Then the map $\wt\varXi:\bigwedge\nolimits^2\frakg\to \frakg\slash\frakh$ defined by 
     \[\wt\varXi(A,B)\coloneqq \varLambda(A)(Y+\frakh)-\varLambda(B)(A+\frakh)-[A,B]+\frakh\]
-    descends to an $H$-invariant map $\varXi:\bigwedge^2(\frakg\slash\frakh)\to \frakg\slash\frakh$. The corresponding section of $\Omega^2(M;\T M)$ is the torsion tensor of $\nabla$.
+    descends to an $H$-invariant map $\varXi:\bigwedge\nolimits^2(\frakg\slash\frakh)\to \frakg\slash\frakh$. The corresponding section of $\Omega^2(M;\T M)$ is the torsion tensor of $\nabla$.
 \end{prop}
 \begin{proof}
     From the equivariance of $\varLambda$ it follows that $\wt\varXi$ is $H$-equivariant. For $C\in\frakh$ we have $\varLambda(C)=\underline{\ad}_C$, which immediately implies that $\wt\varXi(C,B)=0$ for all $B\in\frakh$. Hence $\wt\varXi$ descents to an $H$-equivariant map $\varXi$ as claimed. For $X,Y\in\fX(G\slash H)$ choose local lifts $X^\ast$ and $Y^\ast$ on $G$ defined around $e$. Then locally the function $G\to \frakg\slash\frakh$ representing $\nabla_X Y$ is given by $X^\ast\cdot\theta_G(Y^\ast)+\frakh+\varLambda(\theta_G(X^\ast))(\theta_G(Y^\ast)+\frakh)$. Since $[X^\ast,Y^\ast]$ is a local lift of $[X,Y]$, the function describing this Lie bracket is, locally around $e$, given by $\theta_G([X^\ast,Y^\ast])+\frakh$. By definition of the exterior derivative, the section $\nabla_X Y-\nabla_Y X-[X,Y]$ corresponds to the function 
@@ -3310,10 +3310,10 @@ Theorem~\ref{thm 1.4.7 Cap} also describes the map $\bigwedge^2(\frakg\slash\fra
 \end{proof}
 
 Even more special, suppose that the invariant affine connection on $\T(G\slash H)$ is induced by the invariant principal connection on $G\to G\slash H$, corresponding to an $H$-equivariant projection $\pr_\frakh:\frakg\to\frakh$, cf.\ Corollary~\ref{cor 1.4.6 Cap}. Then the corresponding map $\varLambda:\frakg\to \End(\frakg\slash\frakh)$ is simply $\varLambda(A)=\underline{\ad}_{\pr_\frakh(A)}$. Hence, $\varLambda(A)=0$ for $A\in \frakm\coloneqq \ker\pr_\frakh$. Identifying $\frakg\slash\frakh$ with $\frakm$, the formulas for curvature and torsion simplify considerably. The curvature is induced by the map 
-\[\bigwedge^2\frakm\to \frakh,\quad (A,B)\mapsto -\pr_\frakh([A,B]),\]
+\[\bigwedge\nolimits^2\frakm\to \frakh,\quad (A,B)\mapsto -\pr_\frakh([A,B]),\]
 and the torsion is induced by  
-\[\varXi:\bigwedge^2\frakm\to \frakm,\quad (A,B)\mapsto \pr_\frakh([A,B])-[A,B]=-\pr_\frakm([A,B])\in\frakm.\]
-Hence, the curvature and the torsion are induced by the $\frakh$-component and the $\frakm$-component, respectively, of the negative of the Lie bracket $\bigwedge^2\frakm\to \frakg$.
+\[\varXi:\bigwedge\nolimits^2\frakm\to \frakm,\quad (A,B)\mapsto \pr_\frakh([A,B])-[A,B]=-\pr_\frakm([A,B])\in\frakm.\]
+Hence, the curvature and the torsion are induced by the $\frakh$-component and the $\frakm$-component, respectively, of the negative of the Lie bracket $\bigwedge\nolimits^2\frakm\to \frakg$.
 
 \begin{example}\label{ex 1.4.8 Cap}
     We show that in general there is no invariant affine connection on a homogeneous space. Consider the projective sphere from \S\ref{sec: projective, conformal CR spheres}. We know that for $\alpha\in (\bbR^n)^\ast$, the element $h\coloneqq \left(\begin{smallmatrix}
@@ -3636,24 +3636,24 @@ We will often use the simplified notation $p\cdot h$ for $\Phi_h(p)$. By equivar
 \end{example}
 
 
-Since the Cartan conection $\eta$ trivializes $\T P$, any differential form on $P$ is determined by its values on the constant vector fields $\eta^{-1}(A)$. Thus, the complete information about $\Omega$ is contained in the \emph{curvature function}\index{Curvature!Function} $\scrK:P\to \bigwedge^2\frakg^\ast\otimes\frakg$ defined by 
+Since the Cartan conection $\eta$ trivializes $\T P$, any differential form on $P$ is determined by its values on the constant vector fields $\eta^{-1}(A)$. Thus, the complete information about $\Omega$ is contained in the \emph{curvature function}\index{Curvature!Function} $\scrK:P\to \bigwedge\nolimits^2\frakg^\ast\otimes\frakg$ defined by 
 \[\scrK_p(A,B)=\Omega_p\left(\eta^{-1}(A),\eta^{-1}(B)\right),\]
 and then the standard formula for the exterior derivative yields 
 \[\scrK_p(A,B)=[A,B]-\eta_p\left(\left[\eta^{-1}(A),\eta^{-1}(B)\right]\right).\]
 In other words, curvature measures the failure of the assignment of the constant vector fields $A\mapsto \eta^{-1}(A)$ to be a homomorphism of Lie algebras $\frakg\to \fX(P)$.
 
 \begin{lem}[{{\cite[Lem.~1.5.1]{Cap}}}]\label{lem 1.5.1 Cap}
-    The curvature form $\Omega\in\Omega^2(P;\frakg)$ is horizontal, so the curvature function may be viewed as $\scrK:P\to \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$. Moreover, $\Omega$ is \emph{of type $\Ad$ w.r.t.\ $H$} in the sense that 
+    The curvature form $\Omega\in\Omega^2(P;\frakg)$ is horizontal, so the curvature function may be viewed as $\scrK:P\to \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg$. Moreover, $\Omega$ is \emph{of type $\Ad$ w.r.t.\ $H$} in the sense that 
     \begin{align}
         \Phi_h^\ast \Omega&=\Ad_h^{-1}\circ \Omega,\\
         \Phi_h^\ast\scrK&=\lambda(h)^{-1}\circ\scrK,
     \end{align}
-    where $\lambda$ is the tensor product of the actions $\bigwedge^2 \underline{\Ad}^\ast$ on $\bigwedge^2(\frakg\slash\frakh)^\ast$ and $\Ad$ on $\frakg$.
+    where $\lambda$ is the tensor product of the actions $\bigwedge\nolimits^2 \underline{\Ad}^\ast$ on $\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast$ and $\Ad$ on $\frakg$.
 \end{lem}
 \begin{proof}
     By definition of $\eta$, if $A\in\frakh$, then $\eta^{-1}(A)=A_\ast$, the Killing vector field. Equivariance of $\eta$ implies that $\Lie_{A_\ast}\eta=i_{A_\ast}\dd\eta=-\ad_A\circ\eta$. This gives 
     \[\dd\eta(\eta^{-1}(A),Y)+[A,\eta(Y)]=-\ad_{A}\eta(Y)+[A,\eta(Y)]=0\]
-    for all $A\in\frakh$ and all $Y\in \T P$. Since the Killing vector fields span the vertical bundle, we conclude that $\Omega$ is horizontal, and that each $\scrK_p$ descends to $\bigwedge^2(\frakg\slash\frakh)$.
+    for all $A\in\frakh$ and all $Y\in \T P$. Since the Killing vector fields span the vertical bundle, we conclude that $\Omega$ is horizontal, and that each $\scrK_p$ descends to $\bigwedge\nolimits^2(\frakg\slash\frakh)$.
     
     The equivariance property of $\Omega$ follows directly from the definition and the naturality of $\dd$ w.r.t.\ pullbacks. To prove the property for $\scrK$, we have to compute $\scrK_{p\cdot h}(X,Y)$. By definition, we find 
     \begin{align}
@@ -3714,12 +3714,12 @@ In other words, curvature measures the failure of the assignment of the constant
 \end{proof}
 
 
-Various useful subcategories in $\Car_{(G,H)}$ can be defined by restrictions on curvature. Such restrictions are usually necessary to characterize Cartan geometries that are equivalent to simpler structures. The simplest way to restrict curvatures is by requiring the curvature function $\scrK$ to have values in a fixed subspace $\frakM\subset \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$. The simple transformation law $\scrK=\scrK'\circ \vartheta$ immediately implies that this specifies a full subcategory in $\Car_{(G,H)}$. However, as we have seen, $\scrK(p\cdot g)=g^{-1}\cdot \scrK(p)$, so the values of $\scrK$ always span an $H$-invariant subset in $\bigwedge^2(\frakg\slash\frakh)^2\otimes\frakg$. Thus, it is natural to require that $\frakM$ is an $H$-submodule. 
+Various useful subcategories in $\Car_{(G,H)}$ can be defined by restrictions on curvature. Such restrictions are usually necessary to characterize Cartan geometries that are equivalent to simpler structures. The simplest way to restrict curvatures is by requiring the curvature function $\scrK$ to have values in a fixed subspace $\frakM\subset \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg$. The simple transformation law $\scrK=\scrK'\circ \vartheta$ immediately implies that this specifies a full subcategory in $\Car_{(G,H)}$. However, as we have seen, $\scrK(p\cdot g)=g^{-1}\cdot \scrK(p)$, so the values of $\scrK$ always span an $H$-invariant subset in $\bigwedge\nolimits^2(\frakg\slash\frakh)^2\otimes\frakg$. Thus, it is natural to require that $\frakM$ is an $H$-submodule. 
 
 \begin{defn}[$\Car_{(G,H)}^\frakM$]\label{def category of cartan geom}
-    Consider the category $\Car_{(G,H)}$. If $\frakM\subset \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ is an $H$-submodule, then we denote the full subcategory of Cartan geometries whose curvature functions take values in $\frakM$ by $\Car_{(G,H)}^\frakM$.
+    Consider the category $\Car_{(G,H)}$. If $\frakM\subset \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg$ is an $H$-submodule, then we denote the full subcategory of Cartan geometries whose curvature functions take values in $\frakM$ by $\Car_{(G,H)}^\frakM$.
 
-    In particular, if $\frakM=0$, such Cartan geometries are called \emph{locally flat}, and if $\frakM=\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakh$, then they are called \emph{torsion-free}. Finally, if $\frakM=\Hom_\frakh(\bigwedge^2(\frakg\slash\frakh), \frakh)$, i.e., the set of $\ad(\frakh)$-invariants, then we say the geometry has \emph{constant curvature}.
+    In particular, if $\frakM=0$, such Cartan geometries are called \emph{locally flat}, and if $\frakM=\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakh$, then they are called \emph{torsion-free}. Finally, if $\frakM=\Hom_\frakh(\bigwedge\nolimits^2(\frakg\slash\frakh), \frakh)$, i.e., the set of $\ad(\frakh)$-invariants, then we say the geometry has \emph{constant curvature}.
 \end{defn}
 
 More generally, the \emph{torsion} of a Cartan geometry is the composition of its curvature function with the quotient map $\frakg\to \frakg\slash\frakh$. Only in reductive geometries, where there is a chosen decomposition of $H$-modules $\frakg=\frakh\oplus\frakm$, torsion can be seen as a literal ``component'' of curvature.
@@ -3727,8 +3727,8 @@ More generally, the \emph{torsion} of a Cartan geometry is the composition of it
 \begin{example}
     When $H$ is compact, it is known from representation theory of Lie groups that $(\frakg\slash\frakh)^\ast\otimes\frakh$ decomposes into a direct sum of irreducible representations of $H$. Each irreducible component defines ``a component of curvature''. For example, in the Riemannian case it splits into three components, corresponding to the scalar, the Ricci, and the Weyl curvatures.\index{Curvature!Weyl}\index{Curvature!Ricci} In dimension $4$, the Weyl curvature further splits into a self-dual and an anti-self-dual part. If $H$ is noncompact, then a decomposition into irreducibles may not be possible, but it may still contain submodules worth examining. For example, the composite mapping 
     \begin{align}
-        \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakh\overset{\id\otimes \ad}{\to}&\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\End(\frakg\slash\frakh)\cong \notag\\
-        \cong &\underset{t^\ast\wedge u^\ast\otimes v\otimes w^\ast}{\bigwedge^2(\frakg\slash\frakh)^\ast\otimes(\frakg\slash\frakh)\otimes (\frakg\slash\frakh)^\ast}
+        \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakh\overset{\id\otimes \ad}{\to}&\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\End(\frakg\slash\frakh)\cong \notag\\
+        \cong &\underset{t^\ast\wedge u^\ast\otimes v\otimes w^\ast}{\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes(\frakg\slash\frakh)\otimes (\frakg\slash\frakh)^\ast}
         \underset{\mapsto}{\to} \underset{(t^\ast(v)u^\ast-u^\ast(v)t^\ast)\otimes w^\ast}{(\frakg\slash\frakh)^\ast\otimes (\frakg\slash\frakh)^\ast}
     \end{align}
     is $H$-equivariant, and hence its kernel is an $H$-submodule, called the \emph{normal submodule}. It is indirectly related to normal Cartan geometries, which are defined so that the Cartan geometry is uniquely determined by a set of geometric data that at the outset have no necessary relation to Cartan geometry, but determine one via Cartan's method of equivalence.
@@ -3963,10 +3963,10 @@ Now, in the special case of an \emph{effective} model $(G,H)$, the $G$-action on
 \end{rem}
 
 \begin{rem}
-    By definition of the curvature function, $\Omega=\frac12\scrK\circ \eta\wedge\eta$, where the value of $\scrK$ acts on the value of $\eta\wedge\eta$, which lies in $\bigwedge^2\frakg$. But since the curvature form is horizontal, $\eta$ can be replaced with $\eta+\frakh$, which is the soldering form:
+    By definition of the curvature function, $\Omega=\frac12\scrK\circ \eta\wedge\eta$, where the value of $\scrK$ acts on the value of $\eta\wedge\eta$, which lies in $\bigwedge\nolimits^2\frakg$. But since the curvature form is horizontal, $\eta$ can be replaced with $\eta+\frakh$, which is the soldering form:
     \[\Omega=\frac12\scrK \circ \theta\wedge\theta.\]
 
-    The curvature function $\scrK:P\to \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ is $H$-equivariant by Lemma~\ref{lem 1.5.1 Cap}, and therefore can be identified with a section of the associated bundle $P\times^H \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ via Proposition~\ref{prop 1.2.6 RS2}. By using the soldering isomorphism $\wt\theta:\T M\to P\times^H(\frakg\slash\frakh)$, this section can then be converted to a section of $\bigwedge^2\T^\ast M\otimes (P\times^H\frakg)$, i.e., an bundle-valued $2$-form 
+    The curvature function $\scrK:P\to \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg$ is $H$-equivariant by Lemma~\ref{lem 1.5.1 Cap}, and therefore can be identified with a section of the associated bundle $P\times^H \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg$ via Proposition~\ref{prop 1.2.6 RS2}. By using the soldering isomorphism $\wt\theta:\T M\to P\times^H(\frakg\slash\frakh)$, this section can then be converted to a section of $\bigwedge\nolimits^2\T^\ast M\otimes (P\times^H\frakg)$, i.e., an bundle-valued $2$-form 
     \[\sfK\in \Omega^2(M;P\times^H\frakg).\] 
     This is another useful way of viewing $\Omega$. In contrast with principal $H$-connections whose curvature form $\sfR$ took values in the adjoint bundle $\Ad(P)=P\times^H \frakh$, the Cartan curvature takes values in the larger associated bundle $P\times^H \frakg$.
 \end{rem}
@@ -4105,7 +4105,7 @@ Now, in the special case of an \emph{effective} model $(G,H)$, the $G$-action on
         \tau
     \end{pmatrix},
     \]
-    where $\tau=a\theta^1\wedge \theta^2+b\wb{\theta}^1\wedge\wb{\theta}^2+c_{pq}\theta^p\wedge\wb{\theta}^q$ for some complex numbers $a,b,c_{pq}$, $p,q=1,2$. By the Newlander-Nirenberg Theorem, the almost complex structure is integrable iff there are no $(0,2)$ terms in the exterior derivatives of the $(1,0)$-forms, i.e., just when $b=0$. A computation with constant-coefficient combinations of curvature components shows that $b$ is a component of the anti-self-dual Weyl curvature $\mathsf{W}^-$, defined as the orthogonal projection of the Riemann curvature $\sfR\in \bigodot^2\Omega^2$ into the trace-free symmetric square $\bigodot^2_0\Omega^2_-$ of the bundle $\Omega^2_-$ of anti-self-dual $2$-forms (cf.\ Example~\ref{ex self-dual equations}). The vanishing of $b$, by $H$-invariance, is equivalent to the vanishing of some irreducible component of the curvature, hence of the entire anti-self-dual Weyl curvature. Moreover, $H\emb H'$ is the largest group for which $\frakg\slash\frakh$ is a complex representation. 
+    where $\tau=a\theta^1\wedge \theta^2+b\wb{\theta}^1\wedge\wb{\theta}^2+c_{pq}\theta^p\wedge\wb{\theta}^q$ for some complex numbers $a,b,c_{pq}$, $p,q=1,2$. By the Newlander-Nirenberg Theorem, the almost complex structure is integrable iff there are no $(0,2)$ terms in the exterior derivatives of the $(1,0)$-forms, i.e., just when $b=0$. A computation with constant-coefficient combinations of curvature components shows that $b$ is a component of the anti-self-dual Weyl curvature $\mathsf{W}^-$, defined as the orthogonal projection of the Riemann curvature $\sfR\in \bigodot\nolimits^2\Omega^2$ into the trace-free symmetric square $\bigodot\nolimits^2_0\Omega^2_-$ of the bundle $\Omega^2_-$ of anti-self-dual $2$-forms (cf.\ Example~\ref{ex self-dual equations}). The vanishing of $b$, by $H$-invariance, is equivalent to the vanishing of some irreducible component of the curvature, hence of the entire anti-self-dual Weyl curvature. Moreover, $H\emb H'$ is the largest group for which $\frakg\slash\frakh$ is a complex representation. 
     
     Note that the distinction between self-dual and anti-self-dual Riemannian structures here is superficial -- one is turned into the other upon switching the orientation -- so, anti-self-dual metrics correspond to anti-holomorphic structures. Also note that (anti-)self-duality is a property of the whole conformal class, not just a particular metric, so the correspondence really is with self-dual conformal structures. The resulting \emph{twistor correspondence} (due to Atiyah, Hitchin, and Singer, 1978) allows one to fully reconstruct the self-dual conformal structure of $M'$ from the complex structure of the \emph{twistor correspondence space} $M$.\index{Twistor correspondence}\index{Correspondence space} A classic example is the standard Riemannian structure on $\bbS^4$, which is conformally flat and hence both self-dual and anti-self dual, and corresponding to it is the standard complex structure of $\CP^3$.
 \end{example}
@@ -4158,7 +4158,7 @@ The correspondence between natural bundles and typical fibers $F$ extends to nat
 \end{proof}
 
 \begin{example}[Natural Riemannian metrics]
-    Natural Riemannian metrics are natural sections of the natural bundle that takes $(P\to M,\eta)$ to $\bigodot^2 \T^\ast M$, where the latter is identified with $P\times^H \bigodot^2(\bbR^n)^\ast$ via the soldering. Thus, there exists a natural Riemannian metric on Cartan geometries of type $(G,H)$ iff there is a $G$-invariant Riemannian metric on $G\slash H$, and any choice of a $G$-invariant metric on $G\slash H$ canonically extends to a natural Riemannian metric.
+    Natural Riemannian metrics are natural sections of the natural bundle that takes $(P\to M,\eta)$ to $\bigodot\nolimits^2 \T^\ast M$, where the latter is identified with $P\times^H \bigodot\nolimits^2(\bbR^n)^\ast$ via the soldering. Thus, there exists a natural Riemannian metric on Cartan geometries of type $(G,H)$ iff there is a $G$-invariant Riemannian metric on $G\slash H$, and any choice of a $G$-invariant metric on $G\slash H$ canonically extends to a natural Riemannian metric.
 \end{example}
 
 
@@ -4724,26 +4724,26 @@ If, in addition to being reductive, the geometry is first-order ($\underline{\Ad
 \section{Cartan space forms}
 
 
-Having classified flat Cartan geometries, we now study Cartan geometries of constant curvature (the classic example are \emph{symmetric spaces} in Riemannian geometry). The existence of non-flat examples of these is governed by the $H$-module $\Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakh\right)$, which depends only on the model geometry. Recall that the torsion of a Cartan geometry is the projection of the values of its curvature function $\scrK$ to $\frakg\slash\frakh$, so a Cartan geometry is torsion-free exactly when $\scrK$, which normally takes values in $\Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakg\right)$, actually takes values in the smaller module $\Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakh\right)$.
+Having classified flat Cartan geometries, we now study Cartan geometries of constant curvature (the classic example are \emph{symmetric spaces} in Riemannian geometry). The existence of non-flat examples of these is governed by the $H$-module $\Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakh\right)$, which depends only on the model geometry. Recall that the torsion of a Cartan geometry is the projection of the values of its curvature function $\scrK$ to $\frakg\slash\frakh$, so a Cartan geometry is torsion-free exactly when $\scrK$, which normally takes values in $\Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakg\right)$, actually takes values in the smaller module $\Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakh\right)$.
 
 \begin{defn}[Cartan space form]\index{Space form!Cartan}
-    A Cartan space form is a complete, torsion-free, constant-curvature Cartan geometry. In particular, the curvature function $\scrK:P\to \Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakg\right)$ has a constant value $\scrK\in \Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakh\right)$.
+    A Cartan space form is a complete, torsion-free, constant-curvature Cartan geometry. In particular, the curvature function $\scrK:P\to \Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakg\right)$ has a constant value $\scrK\in \Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakh\right)$.
 \end{defn}
 
 The main result, another uniformization theorem, will be that these geometries are all complete Klein manifolds of the form $\varGamma\bslash G'\slash H$, where the Lie algebra of $G'$ may \emph{not} be the model algebra $\frakg$. As in the last \sect, we will thing of the pair $(\frakg,H)$ as the model, leaving the group $G$ determined only up to local isomorphism.
 
 Note that if we write $\Omega=\sum_{ij a}c_{ij}^a\eta^i\wedge\eta^j \bf{t}_a$, where $\eta=\sum_i \eta^i \bf{t}_i$ and $\{\bf{t}_i\}$ is a basis of $\frakg$ such that $\{\bf{t}_a\}\subset\{\bf{t}_i\}$ is a basis of $\frakh$, then the constant-curvature condition is equivalent to the functions $c_{ij}^a=-c_{ji}^a:P\to \bbR$ being constant. 
 
-The following exercise shows that the existence of non-flat Cartan space forms modeled on an infinitesimal model $(\frakg,H)$ depends on the nontriviality of $\Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakh\right)$.
+The following exercise shows that the existence of non-flat Cartan space forms modeled on an infinitesimal model $(\frakg,H)$ depends on the nontriviality of $\Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakh\right)$.
 
 \begin{xca}
-    Suppose that $\Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakh\right)$ is trivial and that $\scrK$ is constant along each fiber of $P$. Deduce that the geometry is flat.
+    Suppose that $\Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakh\right)$ is trivial and that $\scrK$ is constant along each fiber of $P$. Deduce that the geometry is flat.
 \end{xca}
 
 The fundamental fact about constant-cruvature Cartan geometries is that, at least locally, \emph{they are mutations of flat geometries}. The first step toward proving this is to find the appropriate mutation of $\frakg$.
 
 \begin{prop}[{{\cite[Prop.~5.6.8]{Sharpe}}}]\label{prop 5.6.8 Sharpe}
-    Let $\scrK\in \Hom_H\left(\bigwedge^2(\frakg\slash\frakh),\frakh\right)$ be the value of the curvature function of a torsion-free, constant-curvature Cartan geometry. Let $\frakg'$ be $\frakg$ equipped with the \emph{curvature-deformed bracket}\index{Curvature-deformed bracket} defined by 
+    Let $\scrK\in \Hom_H\left(\bigwedge\nolimits^2(\frakg\slash\frakh),\frakh\right)$ be the value of the curvature function of a torsion-free, constant-curvature Cartan geometry. Let $\frakg'$ be $\frakg$ equipped with the \emph{curvature-deformed bracket}\index{Curvature-deformed bracket} defined by 
     \[[A,B]'\coloneqq [A,B]-\scrK(A,B).\label{eq deformed bracket}\] 
     Then $\frakg'$ is a Lie algebra and $[\Ad_h A,\Ad_h B]'=\Ad_h [A,B]'$ for all $A,B\in \frakg$, $h\in H$.
 \end{prop}
@@ -4864,7 +4864,7 @@ Finally, we provide a hyperlocal way of finding at least part of the holonomy al
 \[\wb\eta\coloneqq (\pi'\circ i)^\ast \wt{\eta}= \Ad_g(\eta-\theta_G) \quad \in \Omega^1(\wt{P};\frakg)\]
 under the map we called $\pi'\circ i$. Taking an exterior derivative on $\calO$, the curvatures are thus related by 
 \[\wb{\Omega}=\Ad_g \Omega.\]
-Writing $\Omega=\frac12\scrK \theta\wedge\theta$, where $\theta=\eta+\frakh$ is the soldering form as usual, we have $\Ad_g \scrK\in\frakhol \otimes\bigwedge^2(\frakg\slash\frakh)^\ast$ at every point $(p,g)\in \calO\subset P\times G$.
+Writing $\Omega=\frac12\scrK \theta\wedge\theta$, where $\theta=\eta+\frakh$ is the soldering form as usual, we have $\Ad_g \scrK\in\frakhol \otimes\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast$ at every point $(p,g)\in \calO\subset P\times G$.
 
 \begin{lem}\label{lem 16.35 McKay}
     Let $(P\to M,\eta)$ be a Cartan geometry of type $(G,H)$, let $\sigma:G\acts V$ be a linear representation of $G$, and $s\in\varGamma^\infty\left(P^{[\sigma]}\right)$ a section of the associated bundle. Pick a point $p_0\in P$ and let $\wb{G}\coloneqq \Hol_{p_0}(\eta)$. Suppose $\wb{V}<V$ is a $\wb{G}$-submodule and that $gs$ takes values in $\wb{V}$ at every point $(p,g)$ of the orbit $\calO\subset P\times G$ of the holonomy bundle (recall that $\calO\slash H=P_{p_0}$). On $P$ write the covariant derivative of the corresponding equivariant function $\wt{s}\in \Hom_G(P,V)$ as (cf.\ \eqref{eq 1.4.2 RS2})
@@ -5508,14 +5508,14 @@ If the geometry is not effective, then it is natural to ask how many derivatives
 \begin{cor}
     \begin{enumerate}
         \item Two isomorphisms of Cartan geometries $F,F':(P\to M,\eta)\to (P'\to M,\eta')$ that agree on $M$ agree up to a vertical automorphism.
-        \item If every element of $K^{\pi_0(M)}$ arises from an vertical automorphism, then the curvature function takes values in $\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg^K$.
-        \item Conversely, if the curvature function takes values in $\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg^K$, then there is a homomorphism $\prod_i \pi_1(M_i)\to K$ such that, on the covering space $\wh{M}\to M$ whose deck transformations are given by the kernel of this morphism, $K^{\pi_0(M)}$ is exactly the group of vertical automorphism of the pullback geometry on $\wh{M}$.
+        \item If every element of $K^{\pi_0(M)}$ arises from an vertical automorphism, then the curvature function takes values in $\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg^K$.
+        \item Conversely, if the curvature function takes values in $\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg^K$, then there is a homomorphism $\prod_i \pi_1(M_i)\to K$ such that, on the covering space $\wh{M}\to M$ whose deck transformations are given by the kernel of this morphism, $K^{\pi_0(M)}$ is exactly the group of vertical automorphism of the pullback geometry on $\wh{M}$.
     \end{enumerate}
 \end{cor}
 \begin{proof}
     The first statement is trivial. Now suppose we find a linear subspace of a tangent space of $P\times K $  on which $\vartheta=0$. Compute on that subspace 
     \[\dd\vartheta=\frac12(\Ad_k^{-1}-\rmI)\circ \scrK\circ \theta\wedge\theta.\]
-    Since $k$ is valued in the kernel $K$, $(\Ad_k-\rmI)$ is valued in $\frakk$. Thus, $\dd\vartheta$ is valed in $\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakk$. Clearly, $\dd\vartheta=0$ on $\ker\vartheta$ iff the curvature $2$-form is $\frakg^K$-valued. Apply the Frobenius Theorem: the curvature $2$-form is $\frakg^K$-valued iff there is a unique foliation of $P\times K$ by graphs of local solutions $k:P\supset U\to K$. The solutions extend globally to graphs of components of $P$ because, just as we have global solvability of equations of Lie type, the equation $\vartheta=0$ is linear in any infinitesimally faithful representation of $K$, so is globally solvable along curves in $P$ with any initial condition. The solutions are defined on a covering space of $P$. Each local solution is a local section of the bundle $P\times^H K\to M$ (under the $H$-conjugation on $K$). So monodromy occurs on $M$, not on $P$ --  a homomorphism $\pi_1(M)\to K$.
+    Since $k$ is valued in the kernel $K$, $(\Ad_k-\rmI)$ is valued in $\frakk$. Thus, $\dd\vartheta$ is valed in $\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakk$. Clearly, $\dd\vartheta=0$ on $\ker\vartheta$ iff the curvature $2$-form is $\frakg^K$-valued. Apply the Frobenius Theorem: the curvature $2$-form is $\frakg^K$-valued iff there is a unique foliation of $P\times K$ by graphs of local solutions $k:P\supset U\to K$. The solutions extend globally to graphs of components of $P$ because, just as we have global solvability of equations of Lie type, the equation $\vartheta=0$ is linear in any infinitesimally faithful representation of $K$, so is globally solvable along curves in $P$ with any initial condition. The solutions are defined on a covering space of $P$. Each local solution is a local section of the bundle $P\times^H K\to M$ (under the $H$-conjugation on $K$). So monodromy occurs on $M$, not on $P$ --  a homomorphism $\pi_1(M)\to K$.
 \end{proof}
 
 Clearly, every infinitesimal automorphism $X\in\aut(P,\eta)$ commutes with every constant vector field. But then $X$ is invariant under the flow of every constant vector field. Since the constant vector fields point in all directions, $X$ is carried by them through an open set of $P$.
@@ -5618,7 +5618,7 @@ The following lemma establishes a simpler criterion for being a local automorphi
 \end{proof}
 
 \begin{cor}
-    If the automorphisms of a Cartan geometry $(P\to M,\eta)$ permute the components of $M$ and the (local) inifinitesimal automorphisms span the tangent space of some point (a dense set of points) of $P$, then the curvature function is constant and its value is an $H$-invariant element of $\frakg\otimes \bigwedge^2(\frakg\slash\frakh)^\ast$.
+    If the automorphisms of a Cartan geometry $(P\to M,\eta)$ permute the components of $M$ and the (local) inifinitesimal automorphisms span the tangent space of some point (a dense set of points) of $P$, then the curvature function is constant and its value is an $H$-invariant element of $\frakg\otimes \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast$.
 \end{cor}
 \begin{proof}
     The preceding lemma allows us to work locally at a point. Since the curvature function must have zero Lie derivative w.r.t.\ any infinitesimal automorphism, if they span the whole tangent space, then the function must be constant. Since it is always $H$-equivariant, its constant value must then be $H$-invariant.
@@ -5628,9 +5628,9 @@ In particular, if the geometry is torsion-free and complete, then this leads to 
 
 \begin{example}
     \begin{enumerate}
-        \item For a conformal structure, i.e., one modeled on the conformal sphere $\bbS^n$ with $G=\bbP \Or_{n+1,1}$, it is not difficult to check that $\left(\frakg\otimes \bigwedge^2(\frakg\slash\frakh)^\ast\right)^H=0$, so if $\dim \aut=\dim G$, the geometry must be flat.
+        \item For a conformal structure, i.e., one modeled on the conformal sphere $\bbS^n$ with $G=\bbP \Or_{n+1,1}$, it is not difficult to check that $\left(\frakg\otimes \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\right)^H=0$, so if $\dim \aut=\dim G$, the geometry must be flat.
         \item For a Riemannian geometry, $(G,H)=(\rmE_n,\Or_n)$, and it is easy to check that the space 
-        \[\left(\frakg\otimes \bigwedge^2(\frakg\slash\frakh)^\ast\right)^H\cong \Hom_{\Or_n}(\bbR^n\times\bbR^n,\frakg)\] 
+        \[\left(\frakg\otimes \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\right)^H\cong \Hom_{\Or_n}(\bbR^n\times\bbR^n,\frakg)\] 
         is $1$-dimensional, spanned by $(\bf{x},\bf{y})\mapsto \bf{x}\wedge\bf{y}\in\frako_n<\frakg$ (this element generates the rotations in the plane spanned by $\bf{x}$ and $\bf{y}$), cf.\ Example~\ref{ex 1.4.6 Cap}. Hence, if $\dim \aut=\dim G$, then there is a local isometry with either the Euclidean space, the round sphere, or the hyperbolic space.
     \end{enumerate}
 \end{example}
@@ -5952,7 +5952,7 @@ The following example shows that homogeneous geometries can indeed be incomplete
     The flat torus has a flat Riemannian geometry invariant under translations, hence a homogeneous projective connection. However, this geometry is incomplete by Example~\ref{ex flat projective structures}. Similarly, the conformal geometry of the flat torus of dimension $3$ or more is homogeneous but not complete by Example~\ref{ex flat conformal structures}.
 \end{example}
 
-The question for this \sect\ is: \emph{can we find homogeneous Cartan geometries with a given model, and perhaps even classify all such geometries?} Suppose $(P\to M,\eta)$ is a homogeneous Cartan geometry with model $(G,H)$. By Theorem~\ref{thm 12.13 McKay}, the automorphism group embeds into the total space $P$ as an automorphism orbit. Since the Cartan geometry is invariant under automorphisms, the curvature function $\scrK$ is constant along each automorphism orbit $\scrO$. Meanwhile, along the fibers it transforms under the usual representation of $H$ on the curvature module $\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$. 
+The question for this \sect\ is: \emph{can we find homogeneous Cartan geometries with a given model, and perhaps even classify all such geometries?} Suppose $(P\to M,\eta)$ is a homogeneous Cartan geometry with model $(G,H)$. By Theorem~\ref{thm 12.13 McKay}, the automorphism group embeds into the total space $P$ as an automorphism orbit. Since the Cartan geometry is invariant under automorphisms, the curvature function $\scrK$ is constant along each automorphism orbit $\scrO$. Meanwhile, along the fibers it transforms under the usual representation of $H$ on the curvature module $\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg$. 
 
 To classify homogeneous geometries of this type, we can use the structure group $H$ to being the curvature to some normal form, say some fixed value $\scrK_0$. Let $H_1\emb H$ be the stabilizer of $\scrK_0$ and let $P_1\subset P$ be the set on which $\scrK=\scrK_0$. Then $P_1\to M$ is a right principal $H_1$-bundle. Our automorphism orbit $\scrO$ is contained inside $P_1$. On $\scrO$, the structure equation 
 \[\dd\eta+\frac12[\eta,\eta]=\frac12\scrK_0\circ \theta\wedge\theta\label{eq 12469}\]
@@ -6152,15 +6152,15 @@ We now consider another important class of natural bundles, which essentially co
 \end{defn}
 
 The short exact sequence $0\to\frakh\to\frakg\to\frakg\slash\frakh\to 0$ of $H$-modules gives rise to the short exact sequence 
-\[0\to\Ad(P)\to \calT M\cong \Ad(\wt{P})\overset{\Pi}{\to} \T M\to 0,\]
+\[0\to\Ad(P)\to \calT M\cong \Ad(\wt{P})\overset{\varPi}{\to} \T M\to 0,\]
 where we have identified $\T M$ with $P\times^H (\frakg\slash\frakh)$ using the canonical soldering isomorphism $\wt\theta$ induced by the Cartan connection. Thus, we can view $\calT M$ as an extension of the tangent bundle. Note that every fiber of $\calT M$ carries a natural structure of a Lie algebra, whose bracket will be denoted by $\{\,,\,\}$. Then, the adjoint tractor bundle can act on elements (and sections) of all other tractor bundles via an action that will be denoted by $\bullet$. Finally, the space of sections $\varGamma^\infty(\calT M)$ admits another Lie bracket induced from the Lie derivative in the base. The following proposition describes these operations in detail.
 
 \begin{prop}[{{\cite[Prop.~1.5.7]{Cap}}}]\label{prop 1.5.7 Cap}
-    Let $(P\to M,\eta)$ be a Cartan geometry of type $(G,H)$, $\calT M\to M$ its adjoint tractor bundle and $\Pi:\calT M\to \T M$ the natural projection defined above. Let $E=P\times^H V$ be the tractor bundle coresponding to a representation $\sigma:G\to\GL(V)$. Then:
+    Let $(P\to M,\eta)$ be a Cartan geometry of type $(G,H)$, $\calT M\to M$ its adjoint tractor bundle and $\varPi:\calT M\to \T M$ the natural projection defined above. Let $E=P\times^H V$ be the tractor bundle coresponding to a representation $\sigma:G\to\GL(V)$. Then:
     \begin{enumerate}[label=(\arabic*)]
         \item The curvature function $\scrK$ of $\eta$ can be naturally viewed as an element of $\Omega^2(M;\calT M)$.
         \item There is a natural bundle morphism $\{\,,\,\}:\calT M\oplus\calT M\to \calT M$, called the \emph{algebraic bracket of adjoint tractors}, which makes each fiber $\calT_m M$, $m\in M$, into a Lie algebra isomorphic to $\frakg$.
-        \item There is an isomorphism between $\Gamma^\infty(\calT M)$ and the space $\fX(P)^H$ of invariant vector fields on $P$. This induces a \emph{Lie bracket of adjoint tractors}, denoted $[\,,\,]$, on $\Gamma^\infty(\calT M)$. For $s_1,s_2\in\Gamma^\infty(\calT M)$, one has $\Pi([s_1,s_2])=[\Pi(s_1),\Pi(s_2)]$, using the Lie derivative on the right hand side.
+        \item There is an isomorphism between $\Gamma^\infty(\calT M)$ and the space $\fX(P)^H$ of invariant vector fields on $P$. This induces a \emph{Lie bracket of adjoint tractors}, denoted $[\,,\,]$, on $\Gamma^\infty(\calT M)$. For $s_1,s_2\in\Gamma^\infty(\calT M)$, one has $\varPi([s_1,s_2])=[\varPi(s_1),\varPi(s_2)]$, using the Lie derivative on the right hand side.
         \item There is a natural bundle morphism $\bullet:\calT\oplus E\to E$. For each $m\in M$, this makes the fiber $E_m$ into a module over the Lie algebra $\calT_m M$. In particular, for $s_1,s_2\in\Gamma^\infty(\calT M)$ and $\psi\in \Gamma^\infty(E)$, 
         \[\{s_1,s_2\}\bullet t=s_1\bullet(s_2\bullet \psi)-s_2\bullet(s_1\bullet \psi).\]
         \item The operation introduced in (4) is parallel for the canonical tractor connections. Denoting them by $\nabla^\calT$ and $\nabla^E$, we get 
@@ -6173,13 +6173,13 @@ where we have identified $\T M$ with $P\times^H (\frakg\slash\frakh)$ using the 
 \end{prop}
 \begin{proof}
     \begin{enumerate}[label=(\arabic*)]
-        \item The curvature function $\scrK:P\to \bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakg$ was shown to be $H$-equivariant in Lemma~\ref{lem 1.5.1 Cap}, thus it corresponds to a smooth section of the associated bundle, which by definition is isomorphic (via $\eta$, or, more precisely, the soldering morphism $\wt\theta$) to $\bigwedge^2\T^\ast M\otimes\calT M$.
+        \item The curvature function $\scrK:P\to \bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakg$ was shown to be $H$-equivariant in Lemma~\ref{lem 1.5.1 Cap}, thus it corresponds to a smooth section of the associated bundle, which by definition is isomorphic (via $\eta$, or, more precisely, the soldering morphism $\wt\theta$) to $\bigwedge\nolimits^2\T^\ast M\otimes\calT M$.
         \item $\{\,,\,\}$ is simply the morphism between associated bundles induced by the Lie bracket of $\frakg$, which is $H$-equivariant.
         \item Since $\calT M=P\times^H\frakg$, sections of the adjoint tractor bundle are in bijective correspondence with equivariant functions $\varphi\in\Hom_H(P,\frakg)$. On the other hand, since $\eta$ trivializes $\T P$, the map $X\mapsto \eta(X)$ defines a linear isomorphism between $\fX(P)$ and $C^\infty(P,\frakg)$. A vector field $X$ corresponds to an $H$-equivariant function exactly when it is invariant since
         \[\eta(X_{p\cdot h})=\Ad_h^{-1}\eta(X_p)=\eta_{p\cdot h}(\Phi_{h\ast}X_p),\]
         and the actions of $\eta$ on both sides are linear isomorphisms.
 
-        Naturality of the Lie bracket implies that $\Phi_h^\ast([X,Y])=[\Phi_h^\ast X,\Phi_h^\ast Y]$. Therefore, $\fX(P)^H$ is a Lie subalgebra in $\fX(P)$, and we can pull back the Lie bracket via the isomorphism to $\Gamma^\infty(\calT M)$. Right invariant vector fields on $P$ are projectable. From the soldering isomorphism $\wt\theta:\T M\to P\times^H (\frakg\slash\frakh)$ we see that $\Pi:\calT M\to \T M$ corresponds to projecting right invariant vector fields. Thus, by naturality of the Lie derivative, $\Pi([s_1,s_2])=[\Pi(s_1),\Pi(s_2)]$.
+        Naturality of the Lie bracket implies that $\Phi_h^\ast([X,Y])=[\Phi_h^\ast X,\Phi_h^\ast Y]$. Therefore, $\fX(P)^H$ is a Lie subalgebra in $\fX(P)$, and we can pull back the Lie bracket via the isomorphism to $\Gamma^\infty(\calT M)$. Right invariant vector fields on $P$ are projectable. From the soldering isomorphism $\wt\theta:\T M\to P\times^H (\frakg\slash\frakh)$ we see that $\varPi:\calT M\to \T M$ corresponds to projecting right invariant vector fields. Thus, by naturality of the Lie derivative, $\varPi([s_1,s_2])=[\varPi(s_1),\varPi(s_2)]$.
         \item By the naturality properties of Lie group actions, for $g\in G$ and $A\in\frakg$, we have
         \[\sigma_\ast(\Ad_g A)\circ \sigma(g)=\sigma(g)\circ \sigma_\ast(A).\]
         This means that the bilinear map $\frakg\times V\to V$ induced by $\sigma_\ast$ is $G$-equivariant and hence $H$-equivariant, and thus induced a natural map $\bullet:\calT M\oplus E\to E$ on associated bundles.
@@ -6189,14 +6189,14 @@ where we have identified $\T M$ with $P\times^H (\frakg\slash\frakh)$ using the 
 
 
 \begin{defn}[Torsion tensor]
-    Let $\sfK\in\Omega^2(M;\calT M)$ be the curvature of a Cartan geometry. Then $\sfT\coloneqq \Pi\circ\sfK\in\Omega^2(M;\T M)$ is called the torsion tensor of the Cartan geometry.
+    Let $\sfK\in\Omega^2(M;\calT M)$ be the curvature of a Cartan geometry. Then $\sfT\coloneqq \varPi\circ\sfK\in\Omega^2(M;\T M)$ is called the torsion tensor of the Cartan geometry.
 
     The torsion tensor vanishes iff the Cartan geometry is torsion-free in the sense of Definition~\ref{def category of cartan geom}, and then its Cartan curvature takes values in the bundle $\Ad(P)=P\times^H \frakh$.
 \end{defn}
 
 Using the interpretation of $\scrK$ as a form with values in $\calT M$, we can give a general description of the curvatures of natural principal connections. For a Cartan geometry $(P\to M,\eta)$ of type $(G,H)$, and a Lie group homomorphism $\lambda:H\to K$, consider again the bundle $P^{[\lambda]}=P\times^H K$. Consider now a principal connection form $\omega_\varLambda$ on $P^{[\lambda]}$ determined by a map $\varLambda:\frakg\to\frakk$ via Theorem~\ref{thm 1.5.6 Cap}. This connection then has a curvature form $\Omega_\varLambda=\rmD^{\omega_\varLambda}\omega_\varLambda\in\Omega^2\left(M;\Ad\left(P^{[\lambda]}\right)\right)$.
 
-On the other hand, by Proposition~\ref{prop 1.4.6 Cap}, the map $(A,B)\mapsto [\varLambda(A),\varLambda(B)]-\varLambda([A,B])$ descends to an $H$-equivariant map $\bigwedge^2(\frakg\slash\frakh)\to \frakk$, which can be viewed as an $H$-invariant element of $S=\bigwedge^2(\frakg\slash\frakh)^\ast\otimes\frakk$. In view of Proposition~\ref{prop natural sections}, this gives rise to a natural section of the associated natural bundle, which is then identified with a natural element $\Omega^0_\varLambda\in\Omega^2(M;P\times^H \frakk)$ via the natural soldering isomorphism $\T M\to P\times^H(\frakg\slash\frakh)$.  Using the obvious isomorphism between $P\times^H \frakk$ and $\Ad(P^{[\lambda]})=(P\times^H K)\times^K\frakk$ given by 
+On the other hand, by Proposition~\ref{prop 1.4.6 Cap}, the map $(A,B)\mapsto [\varLambda(A),\varLambda(B)]-\varLambda([A,B])$ descends to an $H$-equivariant map $\bigwedge\nolimits^2(\frakg\slash\frakh)\to \frakk$, which can be viewed as an $H$-invariant element of $S=\bigwedge\nolimits^2(\frakg\slash\frakh)^\ast\otimes\frakk$. In view of Proposition~\ref{prop natural sections}, this gives rise to a natural section of the associated natural bundle, which is then identified with a natural element $\Omega^0_\varLambda\in\Omega^2(M;P\times^H \frakk)$ via the natural soldering isomorphism $\T M\to P\times^H(\frakg\slash\frakh)$.  Using the obvious isomorphism between $P\times^H \frakk$ and $\Ad(P^{[\lambda]})=(P\times^H K)\times^K\frakk$ given by 
 \[P\times^H \frakk\to \Ad\left(P^{[\lambda]}\right),\quad [(p,A)]\mapsto [(\iota_e(p),A)],\]
 where $\iota_e(p)=[(p,e)]\in P\times^H K$ is the canonical map $P\to P^{[\lambda]}$, we can view $\Omega^0_\varLambda$ as an element of $\Omega^2\left(M;\Ad\left(P^{[\lambda]}\right)\right)$ as well.
 
@@ -6257,14 +6257,14 @@ We next establish some basic properties of the fundamental derivative. Consider 
 \begin{prop}[{{\cite[Prop.~1.5.8]{Cap}}}]\label{prop 1.5.8 Cap}
     \begin{enumerate}[label=(\arabic*)]
         \item For a smooth function $f\in C^\infty(M)$ and $s\in \Gamma^\infty(\calT M)$, 
-        \[\D_s f=\Pi(s)\cdot f.\]
+        \[\D_s f=\varPi(s)\cdot f.\]
         \item If $s$ is a section of the subbundle $P\times^H\frakh<\calT M$, then 
         \[\D_s \psi=-s\bullet\psi\quad \text{ for any }\psi\in \Gamma^\infty(E).\]
         \item The fundamental derivative is compatible with all natural bundle maps coming from $H$-equivariant maps between the inducing representations. In particular, for natural \glspl{vb} $E$ and $F$, the dual $E^\ast$ of $E$, and sections $\psi\in\Gamma^\infty(E)$, $\tau\in\Gamma^\infty(F)$ and $\beta\in\Gamma^\infty(E^\ast)$, we get 
         \begin{align}
-            \D_s(f\psi)&=(\Pi(s)\cdot f)\psi+f\D_s\psi,\\
+            \D_s(f\psi)&=(\varPi(s)\cdot f)\psi+f\D_s\psi,\\
             \D_s(\psi\otimes\tau)&=(\D_s \psi)\otimes\tau +\psi\otimes\D_s\tau,\\
-            \Pi(s)\cdot(\beta(\psi))&=(\D_s\beta)(\psi)+\beta(\D_s\psi).
+            \varPi(s)\cdot(\beta(\psi))&=(\D_s\beta)(\psi)+\beta(\D_s\psi).
         \end{align}
     \end{enumerate}
 \end{prop}
@@ -6289,7 +6289,7 @@ Now we can use the fundamental derivative to derive a formula for homogeneous co
 
  \begin{thm}[{{\cite[Thm.~1.5.8]{Cap}}}]\label{thm 1.5.8 Cap}
     Consider the operation $\Gamma^\infty(\calT M)\times\Gamma^\infty(E)\to \Gamma^\infty(E)$ defined by $(s,\psi)\mapsto \D_s\psi+\varLambda(s,\psi)$. This vanishes identically if $s$ is a section of the subbundle $\Ad(P)=P\times^H\frakh<\calT M$. Hence, it descends to an operator $\fX(M)\times \Gamma^\infty(E)\to \Gamma^\infty(E)$ which is exactly the covariant derivative w.r.t.\ the natural linear connection induced by $\varLambda$. In particular, if $E$ is a tractor bundle, then the tractor connection $\nabla^E$ is given by 
-    \[\nabla^E_{\Pi(s)}\psi =\D_s \psi+s\bullet \psi \quad \text{ for }s\in\Gamma^\infty(\calT M),\psi\in\Gamma^\infty(E).\]
+    \[\nabla^E_{\varPi(s)}\psi =\D_s \psi+s\bullet \psi \quad \text{ for }s\in\Gamma^\infty(\calT M),\psi\in\Gamma^\infty(E).\]
  \end{thm}
  \begin{proof}
     Put $K\coloneqq \GL(V)$, let $P\times^\sigma K$ be the frame bundle of $E$, and let $\iota_e:P\to P\times^\sigma K$ be the natural map, as usual, given by $\iota_e(p)=[(p,e)]$. Then the natural principal connection $\omega_\varLambda$ on the frame bundle corresponding to $\varLambda$ is characterized by $\iota_e^\ast\omega_\varLambda=\varLambda\circ\eta$. Now take a tangent vector $X\in \T_p P$. Then the horizontal lift of $\pi_{\ast p}(X)$ in the point $\iota_e(p)$ by definition is $(\iota_e)_{\ast p}(X)-(\varLambda(\eta(X)))_\ast(p)$. If $\wt\psi:P\times^\sigma K\to V$ is the equivariant map corresponding to $\psi\in\Gamma^\infty(E)$, then its derivative w.r.t.\ this horizontal lift is 
@@ -6304,21 +6304,21 @@ Now we can use the fundamental derivative to derive a formula for homogeneous co
  \begin{cor}[{{\cite[Cor.~1.5.8]{Cap}}}]\label{cor 1.5.8 Cap}
     For $s_1,s_2\in\Gamma^\infty(\calT M)$, the Lie bracket is given by 
     \begin{align}
-        [s_1,s_2]&=\D_{s_1}s_2-\D_{s_2}s_1 -\scrK\left(\Pi(s_1),\Pi(s_2)\right)+\{s_1,s_2\}\\
-        &=\nabla^{\calT}_{\Pi(s_1)}s_2-\nabla^\calT_{\Pi(s_2)}s_1-\{s_1,s_2\}-\scrK\left(\Pi(s_1),\Pi(s_2)\right).
+        [s_1,s_2]&=\D_{s_1}s_2-\D_{s_2}s_1 -\scrK\left(\varPi(s_1),\varPi(s_2)\right)+\{s_1,s_2\}\\
+        &=\nabla^{\calT}_{\varPi(s_1)}s_2-\nabla^\calT_{\varPi(s_2)}s_1-\{s_1,s_2\}-\scrK\left(\varPi(s_1),\varPi(s_2)\right).
     \end{align}
  \end{cor}
  \begin{proof}
     For $i=1,2$ let $X_i\in\fX(P)^H$ be the vector field corresponding to $s_i$. By definition, the equivariant function $P\to\frakg$ corresponding to the Lie bracket $[s_1,s_2]$ is $\eta([X_1,X_2])$. Inserting the definition of the exterior derivative and of the curvature form, this reads as 
     \[X_1\cdot\eta(X_2)-X_2\cdot\eta(X_1)-\Omega(X_1,X_2)+[\eta(X_1),\eta(X_2)].\]
-    Now inserting the definitions of $\D$, $\scrK$, and $\{\,,\,\}$ this is exactly the first claimed formula. To get the second formula, we just have to note that for the adjoint tractor bundle, the formula for the tractor connection from the theorem reads as $\nabla_{\Pi(s_1)}s_2=\D_{s_1}s_2+\{s_1,s_2\}$ and likewise for the other term.
+    Now inserting the definitions of $\D$, $\scrK$, and $\{\,,\,\}$ this is exactly the first claimed formula. To get the second formula, we just have to note that for the adjoint tractor bundle, the formula for the tractor connection from the theorem reads as $\nabla_{\varPi(s_1)}s_2=\D_{s_1}s_2+\{s_1,s_2\}$ and likewise for the other term.
  \end{proof}
 
  \begin{rem}
     There also is a nonlinear analog of the fundamental derivative. Let $S$ be a smooth manifold with a left $H$-action and let $F$ be the corresponding natural bundle. As above, smooth sections of $F(P)$ may be identified with smooth $H$-equivariant functions $P\to S$, but hitting this with a vector field $X$ the resulting function $X\cdot f$ now has values in $\T S$ and is a lift of $f$. Nevertheless, if $X\in\fX(P)^H\cong \Gamma^\infty(\calT M)$, then the same argument as above shows that $X\cdot f$ is equivariant and hence defines a smooth section of $P\times^{H} \T S$ which may be identified with the vertical tangent bundle $\calV F(P)<\T (F(P))$. Hence, we get a fundamental derivative $\D:\Gamma(\calT M)\times\Gamma^\infty(F(P))\to \Gamma^\infty(\calV F(P))$ which is linear and tensorial in the first argument. Moreover, for $s\in\Gamma^\infty(\calT M)$ and $\psi\in \Gamma^\infty(F(P))$ the section $\D_s\psi$ of $\calV F(P)$ is a lift of $\psi$.
  \end{rem}
 
- We next derive the basic differential identities for the curvature and describe iterated fundamental derivatives. Above we saw that for any natural bundle $E$ there is a sequence of differential operators $\D^k:\Gamma^\infty(E)\to \Gamma^\infty(\calT^{\ast\otimes k}\otimes E)$. Moreover, there is a natural projection $\Pi:\calT\to \T M$, so any adjoint tractor field has an underlying vector field. Dually, we get an inclusion $\T M\hookrightarrow \calT^\ast$, which means that any differential form canonically extends to taking adjoint tractor fields as input. Otherwise put, we insert adjoint tractor fields into differential forms by first projecting to the underlying vector fields. We will thus often suppress the projection $\Pi$.
+ We next derive the basic differential identities for the curvature and describe iterated fundamental derivatives. Above we saw that for any natural bundle $E$ there is a sequence of differential operators $\D^k:\Gamma^\infty(E)\to \Gamma^\infty(\calT^{\ast\otimes k}\otimes E)$. Moreover, there is a natural projection $\varPi:\calT\to \T M$, so any adjoint tractor field has an underlying vector field. Dually, we get an inclusion $\T M\hookrightarrow \calT^\ast$, which means that any differential form canonically extends to taking adjoint tractor fields as input. Otherwise put, we insert adjoint tractor fields into differential forms by first projecting to the underlying vector fields. We will thus often suppress the projection $\varPi$.
 
 \begin{prop}[{{\cite[Prop.~1.5.9]{Cap}}}]\label{prop 1.5.9 Cap}
     Let $(P\overset{\pi}{\to}M,\eta)$ be a Cartan geometry of type $(G,H)$ with curvature $\scrK\in\Omega^2(M,\calT M)$, let $\nabla^\calT$ be the adjoint tractor connection and $\{\,,\,\}$ the algebraic bracket on $\calT M$.
@@ -6333,7 +6333,7 @@ Now we can use the fundamental derivative to derive a formula for homogeneous co
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    (1) Let us first prove the equivalence of the two asserted formulas. In view of the fact that $\Pi([s_1,s_2])=[\Pi(s_1),\Pi(s_2)]$, we may equivalently replace the vector field arguments $X_i$ in \eqref{eq 1.24 Cap} by adjoint tractor fields $s_i$. Then the formula for the adjoint tractor connection from Theorem~\ref{thm 1.5.8 Cap} shows that 
+    (1) Let us first prove the equivalence of the two asserted formulas. In view of the fact that $\varPi([s_1,s_2])=[\varPi(s_1),\varPi(s_2)]$, we may equivalently replace the vector field arguments $X_i$ in \eqref{eq 1.24 Cap} by adjoint tractor fields $s_i$. Then the formula for the adjoint tractor connection from Theorem~\ref{thm 1.5.8 Cap} shows that 
     \[\nabla^\calT_{s_1}(\scrK(s_1,s_2))=\D_{s_1}(\scrK(s_2,s_3))+\{s_1,\scrK(s_2,s_3)\},\]
     while the formula for the Lie bracket of adjoint tractors from Corollary~\ref{cor 1.5.8 Cap} gives 
     \[-\scrK([s_1,s_2],s_3)=-\scrK(\D_{s_1}s_2,s_3)+\scrK(\D_{s_2}s_1,s_3)+\scrK(\scrK(s_1,s_2),s_3)-\scrK(\{s_1,s_2\},s_3).\]
@@ -6346,7 +6346,7 @@ Now we can use the fundamental derivative to derive a formula for homogeneous co
     \end{multline}
     Forming the cyclic sum, the last two terms cancel by the antisymmetry of $\scrK$, and we obtain \eqref{eq 1.25 Cap}.
 
-    Now, \eqref{eq 1.25 Cap} is visibly linear over smooth functions in all arguments $s_i$, so it can be verified at a point. We may view $\scrK$ as the curvature function $P\to \Lin\left(\bigwedge^2 \frakg,\frakg\right)$ (recalling that the result vanishes if one entry is from $\frakh$). In these terms, the claimed identity has the form 
+    Now, \eqref{eq 1.25 Cap} is visibly linear over smooth functions in all arguments $s_i$, so it can be verified at a point. We may view $\scrK$ as the curvature function $P\to \Lin\left(\bigwedge\nolimits^2 \frakg,\frakg\right)$ (recalling that the result vanishes if one entry is from $\frakh$). In these terms, the claimed identity has the form 
     \[0=\Sym\left(\left[\scrK(A,B),C\right]+\scrK([A,B],C)-\scrK(\scrK(A,B),C)-\eta^{-1}(C)\cdot \scrK(A,B)\right)\]
     for all $A,B,C\in\frakg$. (Observe that since evaluation on $(A,B)$ is a linear map, there is no difference between $(\eta^{-1}(C)\cdot\scrK)(A,B)$ and $\eta^{-1}(C)\cdot (\scrK(A,B))$.) Let us evaluate the structure equation on the vector fields $[X,Y]$ and $Z$, where $\wt X=\eta^{-1}(A)$, $\wt Y=\eta^{-1}(B)$, $\wt Z=\eta^{-1}(C)$. Remember, in particular, $\scrK(A,B)=\Omega(X,Y)$ and $\eta([X,Y])=-\scrK(A,B)+[A,B]$. Thus, 
     \begin{multline}
@@ -6385,7 +6385,7 @@ To get the classical versions of the Bianchi and Ricci identities, let us specia
 
     In the setting of Theorem~\ref{thm 1.5.8 Cap}, we have to set $\varLambda(s,\psi)=s_\frakh\bullet \psi$, where $s_\frakh$ is the $\frakh$-component of $s$ w.r.t.\ the given decomposition. Hence, viewing $X\in\fX(M)$ as an adjoint tractor, $\D_X \psi=\nabla_X\psi$ by Theorem~\ref{thm 1.5.8 Cap}. Via the splitting of $\calT M$, also the Bianchi and Ricci identities split into components. 
 
-    The assumptions on $\frakh$ and $\frakm$ imply that $[\frakh,\frakh]<\frakh$ and $[\frakh,\frakm]<\frakm$, and we may split the remaining bracket $\bigwedge^2\frakn\to \frakg$ according to the reductive decomposition. From Theorem~\ref{thm 1.4.7 Cap} we know that the $\frakm$-component of the bracket corresponds to $-\sfT_0$, where $\sfT_0$ is the torsion of the invariant connection on $\T(G\slash H)$ induced by $\frakm$, while the $\frakh$-component corresponds to $-\sfR_0$, where $\sfR_0$ is the curvature of the invariant principal connection on $G\to G\slash H$.
+    The assumptions on $\frakh$ and $\frakm$ imply that $[\frakh,\frakh]<\frakh$ and $[\frakh,\frakm]<\frakm$, and we may split the remaining bracket $\bigwedge\nolimits^2\frakn\to \frakg$ according to the reductive decomposition. From Theorem~\ref{thm 1.4.7 Cap} we know that the $\frakm$-component of the bracket corresponds to $-\sfT_0$, where $\sfT_0$ is the torsion of the invariant connection on $\T(G\slash H)$ induced by $\frakm$, while the $\frakh$-component corresponds to $-\sfR_0$, where $\sfR_0$ is the curvature of the invariant principal connection on $G\to G\slash H$.
 
     Taking into account that $\varLambda:\frakg\to \frakh$ is the projection along $\frakm$, Corollary~\ref{cor 1.5.7 Cap} shows that the Cartan curvature is given by 
     \[\scrK(X,Y)=\begin{pmatrix}
@@ -6437,7 +6437,7 @@ To get the classical versions of the Bianchi and Ricci identities, let us specia
 Finally, let us revisit the Lie algebra $\aut(P,\eta)$ of infinitesimal automorphisms introduced in the proof of Theorem~\ref{thm 1.5.11 Cap}. Since $\aut(P,\eta)<\fX(P)^H\cong\Gamma^\infty(\calT M)$, infinitesimal automorphisms can be viewed as sections of the adjoint tractor bundle. In the above proof, we have seen that the Lie algebra of $\Aut(P,\eta)$ consists exactly of those elements of $\aut(P,\eta)$ that are complete as vector fields. Now we can easily characterize $\aut(P,\eta)<\Gamma^\infty(\calT M)$ and as the same time determine the Lie algebra structure on $\aut(P,\eta)$ in this picture. By definition, $\Lie_X \eta=0$ is equivalent to $0=X\cdot(\eta(Y))-\eta([X,Y])$ for all $Y\in\fX(P)$. Of course, it suffices to have this property for $Y\in \fX(P)^H\cong \Gamma^\infty(\calT M)$. Hence, we see that $s\in\Gamma^\infty(\calT M)$ corresponds to an infinitesimal automorphism iff $0=\D_s t-[s,t]$ for all $t\in\Gamma^\infty(\calT M)$. Using the formulas derived in \S\ref{sec: bianchi and ricci}, this equation can be equivalently written as 
 \begin{align}
     0&=\D_s t-(\D_s t-\D_t s+\{s,t\}-\scrK(s,t))=\D_t s+\{t,s\}+\scrK(s,t)=\\
-    &=\nabla^\calT_{\Pi(t)}s+\scrK(s,t),
+    &=\nabla^\calT_{\varPi(t)}s+\scrK(s,t),
 \end{align}
 where $\nabla^\calT$ is the adjoint tractor connection. Thus, we have proved 
 
@@ -6447,17 +6447,17 @@ where $\nabla^\calT$ is the adjoint tractor connection. Thus, we have proved
         \item The vector field $X\in\fX(P)^H$ corresponding to $s$ is an infinitesimal automorphism, $X\in\aut(P,\eta)$.
         \item $\D_s t=[s,t]$ for all $t\in\Gamma^\infty(\calT M)$.
         \item $\D_t s=-\{t,s\}+\scrK(t,s)$ for all $t\in\Gamma^\infty(\calT M)$.
-        \item $\nabla^\calT s=-i_{\Pi(s)}\scrK$.
+        \item $\nabla^\calT s=-i_{\varPi(s)}\scrK$.
     \end{enumerate}
 \end{lem}
 
-Viewing formula (4) as a differential equation defining infinitesimal automorphisms, one observes that this actually means that the infinitesimal automorphisms are exactly the parallel sections for the connection $\wh\nabla$ on the \gls{vb} $\calT M$ which is defined as \[\wh{\nabla}_X s\coloneqq \nabla^\calT_X s-\scrK(X,\Pi(s)).\]
+Viewing formula (4) as a differential equation defining infinitesimal automorphisms, one observes that this actually means that the infinitesimal automorphisms are exactly the parallel sections for the connection $\wh\nabla$ on the \gls{vb} $\calT M$ which is defined as \[\wh{\nabla}_X s\coloneqq \nabla^\calT_X s-\scrK(X,\varPi(s)).\]
 
 \begin{cor}[{{\cite[Cor.~1.5.12]{Cap}}}]
     $\aut(P,\eta)$ is isomorphic to the space of smooth sections of $\calT M$ that are parallel for the linear connection $\wh\nabla$.
 \end{cor}
 
-This provides an alternative proof for the fact that any infinitesimal automorphism is determined by its value at a single point, which implies the bound on the dimension of the automorphism group. This lemma also describes the Lie algebra structure on $\aut(P,\eta)$, which is by definition induced by the Lie bracket of vector fields on $P$ and thus be the Lie bracket of adjoint tractors. Indeed, using (2) and (3) we see that for $s,t\in\aut(P,\eta)<\Gamma^\infty(\calT M)$ we have $[s,t]=\scrK(s,t)-\{s,t\}$. Notice that $\Pi(s)(p)=0$ exactly means that the corresponding vector field $X$ is vertical at $p$, so the underlying point $m\in M$ is a fixed point of the base map of the infinitesimal automorphism. If one of the two infinitesimal automorphisms involved has this property, then the bracket is simply the negative of the algebraic bracket on $\calT M$, while in general one gets a curvature correction.
+This provides an alternative proof for the fact that any infinitesimal automorphism is determined by its value at a single point, which implies the bound on the dimension of the automorphism group. This lemma also describes the Lie algebra structure on $\aut(P,\eta)$, which is by definition induced by the Lie bracket of vector fields on $P$ and thus be the Lie bracket of adjoint tractors. Indeed, using (2) and (3) we see that for $s,t\in\aut(P,\eta)<\Gamma^\infty(\calT M)$ we have $[s,t]=\scrK(s,t)-\{s,t\}$. Notice that $\varPi(s)(p)=0$ exactly means that the corresponding vector field $X$ is vertical at $p$, so the underlying point $m\in M$ is a fixed point of the base map of the infinitesimal automorphism. If one of the two infinitesimal automorphisms involved has this property, then the bracket is simply the negative of the algebraic bracket on $\calT M$, while in general one gets a curvature correction.
 
 
 
@@ -6477,21 +6477,21 @@ In the special case of a homogeneous \gls{vb} $E\to G\slash H$, functoriality of
 \[g\cdot (\rmj^k_m s)\coloneqq \rmj^k_m(g\cdot s).\]
 By construction, a differential operator $D$ corresponding to the bundle map $\wt D:\rmJ^k E\to F$ is invariant iff $\wt D$ is a morphism of homogeneous bundles, i.e., $G$-equivariant. Hence, the problem of finding invariant differential operators is reduced to finding equivariant morphisms between corresponding homogeneous jet bundles. Since a morphism $\rmJ^k E\to F$ of homogeneous \glspl{vb} is the same thing as a $G$-invariant section of the homogeneous \gls{vb} $\End(\rmJ^k E,F)$, this reduced to representation theory of $H$ by Theorem~\ref{thm 1.4.4 Cap}.
 
-The problem with this is that even if the $H$-representation $V$ which induces the homogeneous bundle $E$ is very simple, the representations inducing $\rmJ^k E$ tend to become very complicated, thus making the problem unmanageable. In any case, there is one possible simple step, namely look at the symbol of the operator. Recall that the symbol of an operator $D$ of order $\leq k$ is the restriction of the corresponding bundle morphism $\wt D$ to the kernel of the natural projection $\pi^k_{k-1}:\rmJ^k E\to \rmJ^{k-1}E$, which is isomorphic to $\bigodot^l \T^\ast M\otimes E$.
+The problem with this is that even if the $H$-representation $V$ which induces the homogeneous bundle $E$ is very simple, the representations inducing $\rmJ^k E$ tend to become very complicated, thus making the problem unmanageable. In any case, there is one possible simple step, namely look at the symbol of the operator. Recall that the symbol of an operator $D$ of order $\leq k$ is the restriction of the corresponding bundle morphism $\wt D$ to the kernel of the natural projection $\pi^k_{k-1}:\rmJ^k E\to \rmJ^{k-1}E$, which is isomorphic to $\bigodot\nolimits^l \T^\ast M\otimes E$.
 
 There is a nice description in terms of linear connections. Take a linear connection $\nabla$ on $E$. For a section $s\in\Gamma^\infty(E)$, consider $\nabla s(m)\in\T^\ast_m M\otimes E_m$. This functional depends only on $\rmj^1_m s$ and if, in addition, $s(m)=0$, then it is independent of $\nabla$. Hence, it identifies $\ker \pi^1_0$ with $\T^\ast M\otimes E$. The identification of $\ker \pi^k_{k-1}$ for $k>1$ admits a similar description in terms of arbitrary linear connections on $E$ and on the tangent bundle $\T M$. Given these, one can define the $k$-fold covariant derivative $\nabla^k s$. The value $\nabla^k s(m)$ depends only on $\rmj^k_m s$, and if $\rmj^{k-1}_m s=0$, then $\nabla^k s(m)$ is totally symmetric and independent of $\nabla$. Hence, it induces the required isomorphism.
 
-If $F\to M$ is another \gls{vb} and $D:\PDO^{\leq k}(E,F)$ is a differential operator corresponding to a bundle map $\wt D:\rmJ^k E\to F$, then the $k$-th order symbol of $D$ is the vector bundle map $\sigma_D:\bigodot^k \T^\ast M\otimes E\to F$ given by the restriction of $\wt D$ to the kernel of $\pi^k_{k-1}$.
+If $F\to M$ is another \gls{vb} and $D:\PDO^{\leq k}(E,F)$ is a differential operator corresponding to a bundle map $\wt D:\rmJ^k E\to F$, then the $k$-th order symbol of $D$ is the vector bundle map $\sigma_D:\bigodot\nolimits^k \T^\ast M\otimes E\to F$ given by the restriction of $\wt D$ to the kernel of $\pi^k_{k-1}$.
 
-Returning to the case of a homogeneous \gls{vb} $E\to G\slash H$, the projections $\pi^k_l$ are by construction morphisms of homogeneous \glspl{vb}, and the inclusions $\bigodot^k\T^\ast M\otimes E\hookrightarrow \rmJ^k E$ are as well. In particular, for any invariant linear differential operator $D$ the symbol $\sigma_D$ is a morphism of homogeneneous \glspl{vb}. Hence, it corresponds to a $G$-invariant section of the bundle $\End(\bigodot^k T^\ast M\otimes E,F)$, which we know to be a very restricted set. It is crucial that the representation corresponding to this bundle is as manageable as $\frakg\slash\frakh$ and the representations $V$ and $W$ inducing $E$ and $F$. If there exist invariant linear connections on $E$ and $\T (G\slash H)$, things become easy:
+Returning to the case of a homogeneous \gls{vb} $E\to G\slash H$, the projections $\pi^k_l$ are by construction morphisms of homogeneous \glspl{vb}, and the inclusions $\bigodot\nolimits^k\T^\ast M\otimes E\hookrightarrow \rmJ^k E$ are as well. In particular, for any invariant linear differential operator $D$ the symbol $\sigma_D$ is a morphism of homogeneneous \glspl{vb}. Hence, it corresponds to a $G$-invariant section of the bundle $\End(\bigodot\nolimits^k T^\ast M\otimes E,F)$, which we know to be a very restricted set. It is crucial that the representation corresponding to this bundle is as manageable as $\frakg\slash\frakh$ and the representations $V$ and $W$ inducing $E$ and $F$. If there exist invariant linear connections on $E$ and $\T (G\slash H)$, things become easy:
 
 \begin{prop}[{{\cite[Prop.~1.4.9]{Cap}}}]\label{prop 1.4.9 Cap}
-    Let $E$ and $F$ be homogeneous \glspl{vb} over a homogeneous space $G\slash H$, and suppose that there exist $G$-invariant linear connections on $E$ and $\T(G\slash H)$. Fixing such connections, we can construct for each invariant bundle map $\Phi:\bigodot^k\T^\ast M\otimes E\to F$ a canonical invariant differential operator $D_\Phi:\Gamma^\infty(E)\to \Gamma^\infty(F)$ with symbol $\sigma_{D_{\Phi}}=\Phi$. Any $G$-invariant differential operator $D:\Gamma^\infty(E)\to \Gamma^\infty(F)$ can be written as a finite sum of operators obtained in this way.
+    Let $E$ and $F$ be homogeneous \glspl{vb} over a homogeneous space $G\slash H$, and suppose that there exist $G$-invariant linear connections on $E$ and $\T(G\slash H)$. Fixing such connections, we can construct for each invariant bundle map $\Phi:\bigodot\nolimits^k\T^\ast M\otimes E\to F$ a canonical invariant differential operator $D_\Phi:\Gamma^\infty(E)\to \Gamma^\infty(F)$ with symbol $\sigma_{D_{\Phi}}=\Phi$. Any $G$-invariant differential operator $D:\Gamma^\infty(E)\to \Gamma^\infty(F)$ can be written as a finite sum of operators obtained in this way.
 \end{prop}
 \begin{proof}
-    Let us denote the invariant linear connections on $E$ and $\T (G\slash H)$ by $\nabla$. Then for each $k\geq 0$ we get an induced invariant linear connection on the bundle $\bbT^0_k(G\slash H)\otimes E$, so we can define interated covariant derivatives $\nabla^k s\in\Gamma^\infty(\bbT^0_k (G\slash H)\otimes E)$. We can then symmetrize this section to obtain a section $\nabla^{(k)}s\in \Gamma^\infty(\bigodot^k \T^\ast (G\slash H)\otimes E)$.
+    Let us denote the invariant linear connections on $E$ and $\T (G\slash H)$ by $\nabla$. Then for each $k\geq 0$ we get an induced invariant linear connection on the bundle $\bbT^0_k(G\slash H)\otimes E$, so we can define interated covariant derivatives $\nabla^k s\in\Gamma^\infty(\bbT^0_k (G\slash H)\otimes E)$. We can then symmetrize this section to obtain a section $\nabla^{(k)}s\in \Gamma^\infty(\bigodot\nolimits^k \T^\ast (G\slash H)\otimes E)$.
 
-    By construction, $s\mapsto \nabla^{(k)}s$ is an invariant differential operator. Given a morphism $\Phi:\bigodot^k\T^\ast (G\slash H)\otimes E\to F$ of homogeneous \glspl{vb} we put $D_\Phi(s)\coloneqq \Phi(\nabla^{(k)}s)$. By construction, this is an invariant differential operator with symbol $\sigma_{D_\Phi}=\Phi$.
+    By construction, $s\mapsto \nabla^{(k)}s$ is an invariant differential operator. Given a morphism $\Phi:\bigodot\nolimits^k\T^\ast (G\slash H)\otimes E\to F$ of homogeneous \glspl{vb} we put $D_\Phi(s)\coloneqq \Phi(\nabla^{(k)}s)$. By construction, this is an invariant differential operator with symbol $\sigma_{D_\Phi}=\Phi$.
 
     Given a general invariant differential oeprator $D$ of order $k$, putting $\Phi=\varSigma_D$ we see that $D-D_\Phi$ has vanishing $k$-th order symbol and thus is of order $\leq k-1$. The result follows by induction.
 \end{proof}
@@ -6523,7 +6523,7 @@ The final ingredient is an algebraic version of Frobenius reciprocity, which we 
 In the case of a semisimple Lie algebra $\frakg$ and a parabolic subalgebra $\frakh$ the induced modules in question are called \emph{generalized Verma modules}, and they have been extensively studied in representation theory. In the even more special case of a Borel subalgebra $\frakh$, one obtains \emph{Verma modules}, and there is a complete classification of morphisms between such modules.
 
 
-Moving on to the case of general (non-flat) Cartan geometries of type $(G,H)$, let us first observe the simplest case in the presence of invariant connections. All the ingredients above generalize. The bundles $E,F$ give rise to natural bundles on the category $\Car_{(G,H)}$, and there are natural connections on $E$ and on $\T M$. An invariant bundle map $\Phi:\bigodot^k \T^\ast(G\slash H)\otimes E\to F$ is induced by a $G$-equivariant map on $\Car_{(G,H)}$. Applying this bundle map to symmetrized iterated covariant derivatives as in the proof of Proposition~\ref{prop 1.4.9 Cap} we obtain a natural differential operator whose symbol is given by the natural bundle map from above. Thus, we see that in the presence of invariant connections \emph{any invariant differential operator of homogenenous \glspl{vb} canonically extends to a natural differential operator on the category $\Car_{(G,H)}$}.
+Moving on to the case of general (non-flat) Cartan geometries of type $(G,H)$, let us first observe the simplest case in the presence of invariant connections. All the ingredients above generalize. The bundles $E,F$ give rise to natural bundles on the category $\Car_{(G,H)}$, and there are natural connections on $E$ and on $\T M$. An invariant bundle map $\Phi:\bigodot\nolimits^k \T^\ast(G\slash H)\otimes E\to F$ is induced by a $G$-equivariant map on $\Car_{(G,H)}$. Applying this bundle map to symmetrized iterated covariant derivatives as in the proof of Proposition~\ref{prop 1.4.9 Cap} we obtain a natural differential operator whose symbol is given by the natural bundle map from above. Thus, we see that in the presence of invariant connections \emph{any invariant differential operator of homogenenous \glspl{vb} canonically extends to a natural differential operator on the category $\Car_{(G,H)}$}.
 
 In the case of a general homogeneous \gls{vb}, the jet bundles $\rmJ^r E$ again give rise to natural \glspl{vb} on $\Car_{(G,H)}$ and the $H$-module morphism gives rise to a natural bundle map. Hence, it may seem that invariant differential operators would still automatically extend to natural operators on $\Car_{(G,H)}$. However, this is not true. The issue is that while the homogeneous model $\rmJ^r(G\times^H E_{[e]})$ is isomorphic to $G\times^H \rmJ^r E_{[e]}$, it is not true for a general Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ that $P\times^H \rmJ^r E_{[e]}$ is naturally isomorphic to $\rmJ^r(P\times^H E_{e})$. Already for conformal geometry there are examples of invariant differential operators on the homogeneous model which do not extend to the category of all conformal structures (the simplest case where this occurs has $r=6$ and a one-dimensional representation $E_{[e]}$). It is this partial breakdown of the correspondence between Klein and Cartan geometries that makes the theory of invariant differential operators difficult and interesting. For a more detailed discussion of how representation theory can nevertheless be used to tackle this problem, see \cite[Thm.~1.5.10]{Cap}.
 
@@ -6550,7 +6550,7 @@ At the level of Lie algebras, we have an obvious projection $\frakg\slash\frakk\
         \item $\calC(P)$ is the total space of a natural fiber bundle over $M$ with fiber $H\slash K$, and it carries a canonical Cartan geometry $(P\to \calC(P),\eta)$ of type $(G,K)$.
         \item The curvature functions $\scrK^M$ of $(P\to M,\eta)$ and $\scrK^{\calC(P)}$ of $(P\to \calC(P),\eta)$ are related as follows. For $p\in P$ and $A,B\in\frakg$ we have 
         \[\scrK^{\calC(P)}(p)(A+\frakk,B+\frakk)=\scrK^M(p)(A+\frakh,B+\frakh),\]
-        so $\scrK^M$ and $\scrK^{\calC(P)}$ are induced by the same function $P\to \Lin(\bigwedge^2\frakg,\frakg)$. In particular, $(P\to \calC(P),\eta)$ is locally flat iff $(P\to M,\eta)$ is locally flat.
+        so $\scrK^M$ and $\scrK^{\calC(P)}$ are induced by the same function $P\to \Lin(\bigwedge\nolimits^2\frakg,\frakg)$. In particular, $(P\to \calC(P),\eta)$ is locally flat iff $(P\to M,\eta)$ is locally flat.
         \item The subspace $\frakh\slash\frakk< \frakg\slash \frakk$ is a $K$-submodule, which gives rise to a distribution $\calV\calC(P)<\T \calC(P)$. This is exactly the vertical subbundle of the projection $\calC(P)\to M$. The Cartan curvature $\scrK^{\calC(P)}$ has the property that $i_X \scrK^{\calC(P)}=0$ for any $X\in\Gamma^\infty(\calV\calC(P))<\fX(\calC(P))$.
         \item The construction of correspondence spaces defines a functor $\Car_{(G,H)}\to \Car_{(G,K)}$. If $H\slash K$ is connected, then this is an equivalence onto a subcategory, i.e., any morphism between two correspondence spaces comes from a morphism of the original geometries.
     \end{enumerate}
