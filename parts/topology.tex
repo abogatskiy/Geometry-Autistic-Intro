@@ -2986,7 +2986,7 @@ Recall that for a matrix $A\in \bbR^{n\times m}$ its rank $\rank A$ is defined a
 
 Therefore we see that maps of maximal rank are of special significance. Moreover, they fall into two categories: if $\dim M\leq \dim N$, then the maximal rank equals $\dim M$; if $\dim M\geq \dim N$, the maximal rank is $\dim N$. In the first case, matrices of maximal rank are exactly the injective ones, whereas in the second case they are the surjective ones.
 
-\begin{defn}[Smooth immersions and submersions]
+\begin{defn}[Smooth immersions and submersions]\label{def immersion submersion}
     Among all maps of \emph{constant rank} we single out two special classes.\index{Immersion!smooth}\index{Submersion!smooth}
 \begin{enumerate}
     \item $f\in C^\infty(M,N)$ is called an immersion if $f_{\ast m}:\T_m  M\to \T_{f(m)} N$ is injective for all $m$. Equivalently, $f$ is an immersion iff it has everywhere maximal rank and $\dim M\leq \dim N$.
@@ -3220,7 +3220,7 @@ It is certainly possible for a given subset of $M$ to have more than one topolog
 
 \section{Submersions}\label{sec: submersions}
 
-Recall that a split epimorphism is an epi that has a ``right inverse'', or a section/coretraction. In the category $\mathsf{Man}^\infty$, epimorphisms are exactly the smooth maps whose images are dense in the target. Split epimorphisms, however, have to be truly surjective.
+Recall that a split epimorphism is an epi that has a ``right inverse'', or a section/coretraction. In the smooth category $\mathsf{Man}^\infty$, epimorphisms are exactly the smooth maps whose images are dense in the target. Split epimorphisms, however, have to be truly surjective.
 
 \begin{defn}[Local section]\index{Section}
 A local section of a continuous (or smooth) map $\pi:M\to N$ is a continuous (resp.~smooth) map $\sigma :U\to M$ defined on an open set $U\subset N$ such that $\pi\circ\sigma =\id_U$.
@@ -3229,43 +3229,43 @@ A local section of a continuous (or smooth) map $\pi:M\to N$ is a continuous (re
 This allows us to introduce a topological version of submersions. It looks drastically different from the definition in the smooth case.
 
 \begin{defn}[Topological submersion]\index{Submersion!topological}
-    A continuous map $f:X\to Y$ is called a topological submersion if for every $x\in X$ there exists an open neighborhood $V\subset Y$ of $f(x)$ and a local section $\sigma_V:V\to X$ of $f$ that contains $x$ in its image, i.e., $x\in \sigma(V)$ and $f\circ\sigma=\id_V$. 
+    A continuous map $f:X\to Y$ is called a topological submersion if, for every $x\in X$, there exists an open neighborhood $V\subset Y$ of $f(x)$ and a local section $\sigma_V:V\to X$ of $f$ that contains $x$ in its image, i.e., $x\in \sigma(V)$ and $f\circ\sigma=\id_V$. 
 \end{defn}
 
-An alternative way to define topological submersions would be to read the Rank Theorem~\ref{Rank thm} (also known as the Local Submersion Theorem in the special case of submersions) combined with our definition of rank (Def.~\ref{def.rank}) to write down a topological characterization of submersions: around every point $x\in X$ there is a neighborhood $U\subset X$ of $x$ and a neighborhood $V\subset Y$ of $f(x)$ and a homeomorphism $\phi:U\to V\times Z$ with some space $Z$ such that $f$ is locally equivalent to the projection onto the first component of $V\times Z$, i.e., $\restr{f}{U}=\pr_1\circ \phi$. This definition turns out to be a special case of the one given above.
+An narrower definition of topological submersions can be found by reading the Rank Theorem~\ref{Rank thm} (also known as the Local Submersion Theorem in the special case of submersions),\index{Theorem!Local Submersion} combined with our definition of rank (Definition~\ref{def.rank}), and writing down a topological characterization of submersions: around every point $x\in X$ there is a neighborhood $U\subset X$ of $x$ and a neighborhood $V\subset Y$ of $f(x)$ and a homeomorphism $\phi:U\to V\times Z$ with some space $Z$ such that $f$ is locally equivalent to the projection onto the first component of $V\times Z$, i.e., $\restr{f}{U}=\pr_1\circ \phi$. In simple terms, such a submersion is a map that locally looks like a Cartesian projection. In the topological case, these submersions are a proper subset of the set of all topological submersions as defined above.
 
-We will now show that smooth submersions are the exact analog of topological submersions: a smooth map is a submersion iff each point in the domain admits a smooth local section through it.
+We will now show that smooth submersions, as defined in Definition~\ref{def immersion submersion}, are precisely analogous to the latter narrow class of topological submersions: a smooth map is a submersion iff each point in the domain admits a smooth local section through it.
 
 \begin{thm}[Local Section Theorem {{\cite[Thm.~4.26]{Lee}}}]\index{Theorem!Local Section}\label{thm: local section}
-    $\pi\in C^\infty(M,N)$ is a submersion iff every $m\in M$ lies in the image of a smooth local section of $\pi$.
+    $\pi\in C^\infty(M,N)$ is a (smooth) submersion iff every $m\in M$ lies in the image of a smooth local section of $\pi$.
 \end{thm}
 \begin{proof}
     For the forward direction, we have in some local coordinates $f_{\alpha\beta}(x^1,\ldots,x^m)=(x^1,\ldots,x^n)$, where we assume that $m$ is the origin of the coordinate system. Therefore the map locally defined by $\sigma_{\alpha\beta}(y^1,\ldots,y^n)=(y^1,\ldots,y^n,0,\ldots,0)$ is indeed a local section and its image passes through $m$.
     
     For the backward direction, let $m\in M$ and find a local section $\sigma$ such that $m\in \sigma(U)$. Then $m=\sigma(q)$ for some $q\in N$ and $\pi\circ\sigma=\id_U$. Therefore, by taking the differential, $\pi_{\ast m} \sigma_{\ast q}=\id_{T_q N}$, which implies that $\pi_\ast$ is surjective.
-    \end{proof}
+\end{proof}
     
-    Next we would like to find the smooth analog for the concept of a quotient map. Recall that a \emph{topological quotient map} is a surjective, strongly continuous map (i.e., $V$ is open iff $f^{-1}(V)$ is open). Openness implies strong continuity, thus open surjective maps are necessarily quotient maps, but not every topological quotient map is open (e.g., the gluing $\bbD^n\slash \partial \bbD^n$ of the boundary of a ball that gives a sphere is not open). In fact, a surjective continuous map $q$ is a quotient map iff it takes open sets that are unions of fibers of $q$ to open sets. However, these subtleties turns out to be irrelevant in the smooth case as the natural smooth analogs of surjective continuous maps, \emph{submersions}, turn out to be open by the following proposition.
-    
-    \begin{prop}\label{thm submersions are open quotient maps}
-    Any smooth surjective submersion is an open topological quotient map.
-    \end{prop}
-\begin{proof}
-Call the map in question $\pi$. Let $W\mathring{\subset} M$ be an open set and $m\in W$. Pick a local section $\sigma $ passing through $m$, and pick a point $y\in \sigma^{-1}(W)$. Then $y=\pi\circ\sigma(y)\in\pi(W)$. Therefore $\sigma^{-1}(W)$ is an open neighborhood of $\pi(m)$ contained inside $\pi(W)$. Since $\pi(m)$ can be any point in $\pi(W)$, this means that $\pi(W)$ is open, making $\pi$ an open map.
+Next, we would like to find the smooth analog for the concept of a quotient map. Recall that a \emph{topological quotient map} is a surjective, strongly continuous map (i.e., $V$ is open iff $f^{-1}(V)$ is open). Openness implies strong continuity, thus open surjective maps are necessarily quotient maps, but not every topological quotient map is open (e.g., the gluing $\bbD^n\slash \partial \bbD^n$ of the boundary of a ball that gives a sphere is not open). In fact, a surjective continuous map $q$ is a quotient map iff it takes open sets that are unions of fibers of $q$ to open sets. However, these subtleties turns out to be irrelevant in the smooth case as the natural smooth analogs of surjective continuous maps, \emph{submersions}, turn out to be open by the following proposition.
 
-We have thus proved that a smooth submersion is open. A surjective submersion is then a topological quotient map.
+\begin{prop}\label{thm submersions are open quotient maps}
+    Any smooth surjective submersion is an open topological quotient map.
+\end{prop}
+\begin{proof}
+    Call the map in question $\pi$. Let $W\mathring{\subset} M$ be an open set and $m\in W$. Pick a local section $\sigma $ passing through $m$, and pick a point $y\in \sigma^{-1}(W)$. Then $y=\pi\circ\sigma(y)\in\pi(W)$. Therefore $\sigma^{-1}(W)$ is an open neighborhood of $\pi(m)$ contained inside $\pi(W)$. Since $\pi(m)$ can be any point in $\pi(W)$, this means that $\pi(W)$ is open, making $\pi$ an open map.
+
+    We have thus proved that a smooth submersion is open. A surjective submersion is then a topological quotient map.
 \end{proof}
 
 This result motivates the definition of quotient maps in the smooth category $\mathsf{Man}^\infty$. Namely, we only need to require the submersion property (i.e., ``infinitesimal surjectivity'') on top of simple surjectivity. By the above result, there is no need to require them to be topological quotient maps.
 
 \begin{defn}[Smooth quotient map]\index{Quotient map!in smooth category}
-A \emph{smooth} quotient map is a surjective submersion.
+    A \emph{smooth} quotient map is a surjective submersion.
 \end{defn}
 
 We have shown that smooth submersions are always open (unlike topological ones). Thus, given a smooth submersion $f:M\to N$, we know that $f(M)$ is open in $N$ and thus an embedded submanifold. Hence we can safely restrict $f$ in its range and obtain a smooth quotient map. With this remark, \emph{smooth submersions and smooth quotient maps are functionally the same thing}.
 
 \begin{rem}
-    $\pi\in C^\infty(M,N)$ is a smooth quotient map iff it is a topological quotient map and the given topology and smooth structure on $N$ are the unique ones that make $\pi$ into a smooth submersion. See \cite[Problem 4-7]{Lee}.
+    $\pi\in C^\infty(M,N)$ is a smooth quotient map iff it is a topological quotient map and the given topology and smooth structure on $N$ are the unique ones that make $\pi$ into a smooth submersion. See \cite[Problems 4-7]{Lee}.
 \end{rem}
 
 What we have learned can be summarized in the following table, with the lower right cell being a teaser of what's to come.
@@ -3283,7 +3283,7 @@ What we have learned can be summarized in the following table, with the lower ri
 \end{tabular}
 \end{center}
  
- This table also indicates two possible directions a course in differential geometry can take. The theory of embedding maps (including Whitney's and Nash's embedding theorems, among many others) is fairly sophisticated, and so is the theory of fiber bundles. However, we will mostly follow the ``submersion route'' due to its distinct relevance to physics.
+ This table also indicates two possible directions a course in differential geometry can take. The theory of embedding maps (including Whitney's and Nash's embedding theorems, among many others) is fairly sophisticated, and so is the theory of fiber bundles. However, we will mostly follow the ``submersion route'' due to its distinct relevance to physics. The next \Chap\ is devoted to the simplest kind of fiber bundles -- covering maps.
 
 
 
@@ -3295,7 +3295,7 @@ What we have learned can be summarized in the following table, with the lower ri
 
 \chapter{Covering spaces}
 
-A very special type of a submersion is a covering map (which, as we will see, is a special case of a fiber bundle). It turns out that the smooth structure doesn't add much to the study of these objects, so we will mostly work in the category of topological spaces. The content of this section is borrowed from the excellent books \cite{Bredon} and  \cite{tomDieck}, however we can also recommend \cite[Ch.~11]{LeeTop} for a quicker treatment of the case of topological manifolds.
+A very special type of a submersion is a covering map (which, as we will see, is a special case of a fiber bundle). It turns out that the smooth structure doesn't add much to the study of these objects, so we will mostly work in the category of topological spaces. The content of this section is borrowed from the excellent books \cite{Bredon} and  \cite{tomDieck}, however, we can also recommend \cite[Ch.~11]{LeeTop} for a quicker treatment of the case of topological manifolds.
 
 
 \section{Homotopy lifting}
@@ -3519,7 +3519,7 @@ One can show that the existence of a simply connected covering space is equivale
     For a given base $M$ that is a connected and \emph{locally relatively simply connected} Hausdorff space, there is a unique (up to homeomorphism) topological covering space $E\overset{\pi}{\to}M$ whose total space $E$ is simply connected. This covering space is denoted by $\wt M$ and is called the \emph{universal cover} of $M$.\index{Universal cover}
 \end{thm}
 \begin{proof}
-    For the full proof see the references in the title. The basic idea is to explicitly construct $\wt M$ as the space of endpoints of all possible paths in $M$ based at a fixed point $m\in M$. Two paths are equivalent if their endpoints coincide and they are homotopic with fixed endpoints. The topology on this set of paths is introduced by considering sets of homotopic paths with endpoints belonging to an open set in $M$ (and the homotopies fix the starting point but can move the endpoint within the open set, see Figure~\ref{fig univ cover}). The projection $\pi$ maps a path to its endpoint. It is not difficult to check that this is indeed a topological covering map and the total space is simply connected. Uniqueness will follow from the universal property described below.
+    For the full proof see the references in the title. The basic idea is to explicitly construct $\wt M$ as the space of endpoints of all possible paths in $M$ based at a fixed point $m\in M$. Two paths are declared equivalent if their endpoints coincide and they are homotopic with fixed endpoints. The topology on this set of paths is introduced by considering sets of homotopic paths with endpoints belonging to an open set in $M$ (and the homotopies fix the starting point but can move the endpoint within the open set, see Figure~\ref{fig univ cover}). The projection $\pi$ maps a path to its endpoint. It is not difficult to check that this is indeed a topological covering map and the total space is simply connected. Uniqueness will follow from the universal property described below.
 \end{proof}
 \begin{rem}
     By examining the details of the proof one can notice that local simply-connectedness is not actually required, and semilocal simply-connectedness is sufficient. The converse direction is clear: if a loop is in an evenly covered subspace of $M$ then it lifts to $E$, and if $E$ is simply connected, the loop must be trivial in $E$. But then the composition of its homotopy to a constant loop with the covering map $\pi$ shows that the original loop in $M$ must be trivial. Thus we have shown that a connected and locally path-connected $M$ has a universal covering space iff it is locally relatively simply connected.
@@ -3581,7 +3581,7 @@ In the topological and smooth categories one usually considers continuous or smo
     An action $\Phi$ is called free if no nontrivial elements of $G$ have any fixed points: $\exists\,x\in X: \Phi(g,x)=x\Leftrightarrow g=e$. 
 \end{defn}
 \begin{prop}
-    An action is simply transitive iff it is free and transitive.
+    A group action is simply transitive iff it is free and transitive.
 \end{prop}
 \begin{proof}
     Assume a left action for simplicity. For the necessary condition, we only need to show freeness. If $\Phi_g=\mathrm{id}_X$, then $g\cdot x=x=e\cdot x$, therefore by simple transitivity $g=e$.
@@ -3589,7 +3589,7 @@ In the topological and smooth categories one usually considers continuous or smo
     For the converse, assume there are two elements such that $g_1\cdot x=g_2\cdot x=y$. Then $g_2^{-1}g_1\cdot x=x$, which means $g_2^{-1}g_1=e$ by freeness.
 \end{proof}
 
-Throughout this section let $E\overset{\pi}{\to}M$ be a covering space with a fixed point $x_0\in M$. For simplicity we also denote
+Throughout this section, let $E\overset{\pi}{\to}M$ be a covering space with a fixed point $x_0\in M$. For simplicity, we also denote
 \[G=\pi_1(M,x_0),\quad \quad F=\pi^{-1}(x_0).\]
 The discrete set $F$ is called the \emph{fiber} of $\pi$ over $x_0$. We are going to describe an action of the group $G$ on $F$ as a group of permutations. 
 
@@ -5354,7 +5354,7 @@ We will show that any twice differentiable Lie group has a unique compatible rea
     \[F\circ \rmL_g (h)=F(gh)=F(g)F(h)=\rmL_{F(g)}\circ F(h),\]
     i.e., $F\circ \rmL_g=\rmL_{F(g)}\circ F$. Computing the differential of both sides at the identity $e\in G$ using the chain rule, we find
     \[\T_gF\circ \T_e \rmL_g=\T_{F(g)}\rmL_{F(g)}\circ \T_e F.\]
-    Left translation operators are diffeomorphisms and therefore both $\T_e \rmL_g$ and $\T_{F(g)}\rmL_{F(g)}$ are isomorphisms of tangent spaces. Compositions with isomorphisms don't change rank, therefore $\rank \T_gF=\rank \T_e F$ is constant on $G$.
+    Left translation operators are diffeomorphisms, and therefore, both $\T_e \rmL_g$ and $\T_{F(g)}\rmL_{F(g)}$ are isomorphisms of tangent spaces. Compositions with isomorphisms don't change rank, therefore, $\rank \T_gF=\rank \T_e F$ is constant on $G$.
 \end{proof}
 \begin{cor}[{{\cite[Cor.~5.3.7]{RS1}}}]\label{cor 5.3.7 RS1}
     For a Lie group homomorphism $\varphi:G\to H$, the following are equivalent:

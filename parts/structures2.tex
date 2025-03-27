@@ -299,7 +299,7 @@ Regardless of whether a connection is complete, we can always expect parallel tr
 
 \section{Horizontal forms}
 
-Before we discuss connections on principal bundles, it will be useful to introduce the concept of horizontal differential forms. The following discussion is independent of any connections on bundles -- despite the name, horizontal forms rely only on the concept of the vertical bundle.
+Before we discuss connections on principal bundles, it will be useful to introduce the concept of horizontal differential forms. The following discussion is independent of any choice of connection and relies only on the vertical bundle.
 
 \begin{defn}[Horizontal forms]\index{Horizontal form}
     Let $(P\to M,G\overset{\Phi}{\acts} P)$ be a (right) principal bundle and let $G\overset{\sigma}{\acts}V$ be a finite-dimensional representation of $G$ whose values we denote by $G\ni g\mapsto \sigma_g\in \GL(V)$. A $V$-valued differential $k$-form $\wt\eta\in\Omega^k(P;V)$ is called \emph{horizontal, or strongly semibasic, of type $\sigma$} if
@@ -313,7 +313,7 @@ Before we discuss connections on principal bundles, it will be useful to introdu
 
 \begin{rem}
     \begin{enumerate}
-        \item Despite the name, the definition of horizontal forms does not depend on any choice of the horizontal distribution. For this reason, horizontal forms are also often called \emph{strongly semibasic}. The difference between semibasic and strongly semibasic forms is that the kernel of the latter is \emph{exactly} the vertical bundle, and not more.\index{Semibasic form}
+        \item Despite the name, the definition of horizontal forms does not depend on any choice of the horizontal distribution. For this reason, horizontal forms are also sometimes called \emph{strongly semibasic}. The difference between semibasic and strongly semibasic forms is that the kernel of the latter is \emph{exactly} the vertical bundle, and not more.\index{Semibasic form}
         \item Differential forms on a \gls{fb} $E\overset{\pi}{\to} M$ that have the form $\pi^\ast\omega $ for some $\omega\in \Omega^{\smbullet}(M)$ are called \emph{basic}.\index{Basic form}
         \item If $x^1,\ldots,x^n,y^1,\ldots,y^r$ are local coordinates on the bundle $E\to M$ such that $x^1,\ldots,x^n$ project to form local coordinates on $M$, then every semibasic form can be written as $a_I(\bf{x},\bf{y})\dd \bf{x}^I$, where $I=(i_1,\ldots,i_p)$ is a multi-index, so $\dd \bf{x}^I=\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_p}$. Meanwhile, a local basis for basic forms is of the form $a_I(\bf{x})\dd \bf{x}^I$.
     \end{enumerate}
@@ -756,9 +756,9 @@ The following is immediate from $s_\alpha\cdot t_{\alpha\beta}=s_\beta$  or $\wt
     There are two obvious ways of defining a connection on the tangent bundle of a Lie group $\T G$. These connections are induced by the two canonical absolute parallelisms (global trivializations) $\T G\to G\times\frakg$ given either by the left or the right Maurer-Cartan forms. The left-invariant (resp.\ right-invariant) Maurer-Cartan form defines a global frame for $\T G$ consisting of left-invariant (resp.\ right-invariant) vector fields on $G$. Parallel transport of vectors from $g_2$ to $g_1$ can then be defined by left translation $\rmL_{g_1g_2^{-1}\ast}$ (resp.\ $\rmR_{g_1g_2^{-1}\ast}$). Clearly both of these connections are flat because the transport is independent of the path.
 
     A natural question is how to realize these connections as principal connections, and whether there are other canonical connections on $\T G$. Recall the construction from Examples~\ref{ex TG, part 1} and \ref{ex TG, part 2}, where we constructed an isomorphism $\vartheta:\T G\to P\times^G \frakg$ between the tangent bundle of a Lie group $G$ and the bundle associated to the trivial principal $G$-bundle $P=G\times G$. The principal right $G$-action on $P$ was given by $\Phi_g(g_1,g_2)=(g_1g,g_2g)$. The Lie subalgebra corresponding to this action is
-    \[\frakh=\{(A,A)\in \frakg\times\frakg\mid A\in\frakg\}.\]
-    There is a continuous family of natural reductive complements parametrized by $\lambda\in\bbR:$
-    \[\frakm_\lambda=\{((\lambda-1)A,(\lambda+1)A)\in \frakg\times\frakg\mid A\in\frakg\}.\] 
+    \[\frakh=\{(A,A)\mid A\in\frakg\}\subset  \frakg\times\frakg.\]
+    There is a natural continuous family of reductive complements parametrized by $\lambda\in\bbR:$
+    \[\frakm_\lambda=\{((\lambda-1)A,(\lambda+1)A)\mid A\in\frakg\}\subset  \frakg\times\frakg.\] 
     It is easy to see that any reductive complement to $\frakh$ has to be of this form under the assumption that $[\frakg,\frakg]=\frakg$. The corresponding decomposition of a vector $(X,Y)\in\frakg\times\frakg$ reads
     \[(A,B)=\left(\frac{1+\lambda}{2}A+\frac{1-\lambda}{2}B,\frac{1+\lambda}{2}A+\frac{1-\lambda}{2}B\right)+\left(\frac{\lambda-1}{2}(B-A),\frac{1+\lambda}{2}(B-A)\right).\]
     For each $\lambda\in\bbR$ we get a principal connection $\omega^\lambda$ on $P$:
@@ -1014,7 +1014,7 @@ If $M$ is connected, then for each pair $p_1,p_2\in P$ there exists a group elem
     \[t\mapsto \vartheta\circ F_t(1)\]
     is a smooth curve in $P$ starting at $p_0$ and ending at $\gamma^h(1)$. Via \eqref{eq 1.7.5 RS2} , it defines a smooth curve in $G$ starting at the identity and ending at $g_\gamma\in \Hol^0_{p_0}(\omega)$, that is, $\Hol^0_{p_0}(\omega)$ is a $C^\infty$-path-connected subgroup of $G$, and hence a Lie subgroup by Yamabe's Theorem. 
 
-    Now let us prove the second assertion. Clearly, for smooth closed curves $\gamma,\gamma'$ starting at $m_0\in M$, with $\gamma$ nullhomotopic, the curve $\gamma'\bullet\gamma\bullet\gamma^{\prime-1}$ is nullhomotopic, too. Thus $\Hol_p^0(\omega)$ is a normal subgroup of $\Hol_p^0(\omega)$. To prove that the quotient group is countable, we define a homomorphism $F:\pi_1(M,m)\to \Hol_p(\omega)\slash\Hol_p^0(\omega)$ as follows. For a given $\alpha\in\pi_1(M,m)$, let $t\mapsto \gamma(t)$ be a smooth curve representing $\alpha$ (it exists, e.g., by Whitney approximation). We put $F[\alpha]\coloneqq [g_{\gamma}]$. This map is well-defined because a different choice of $\gamma\in [\alpha]$ differs by a nullhomotopic path, this the corresponding $g_\gamma$ will change by a conjugation by an element of $\Hol^0_p(\omega)$. Clearly $F$ is surjective. Thus, $F$ is a (anti-)homomorphism onto $\calH_p(\omega)\slash \Hol^0_p(\omega)$. Now, countability of this quotient follows from the countability of $\pi_1(M,m)$ (because there is an everywhere dense countable subset in $M$, and each loop can be made homotopic to a product of pre-chosen paths connecting pairs of points of that set; there are countably many such paths).
+    Now let us prove the second assertion. Clearly, for smooth closed curves $\gamma,\gamma'$ starting at $m_0\in M$, with $\gamma$ nullhomotopic, the curve $\gamma'\bullet\gamma\bullet\gamma^{\prime-1}$ is nullhomotopic, too. Thus $\Hol_p^0(\omega)$ is a normal subgroup of $\Hol_p^0(\omega)$. To prove that the quotient group is countable, we define a homomorphism $F:\pi_1(M,m)\to \Hol_p(\omega)\slash\Hol_p^0(\omega)$ as follows. For a given $\alpha\in\pi_1(M,m)$, let $t\mapsto \gamma(t)$ be a smooth curve representing $\alpha$ (it exists, e.g., by Whitney approximation). We put $F[\alpha]\coloneqq [g_{\gamma}]$. This map is well-defined because a different choice of $\gamma\in [\alpha]$ differs by a nullhomotopic path, this the corresponding $g_\gamma$ will change by a conjugation by an element of $\Hol^0_p(\omega)$. Clearly $F$ is surjective. Thus, $F$ is a (anti-)homomorphism onto $\Hol_p(\omega)\slash \Hol^0_p(\omega)$. Now, countability of this quotient follows from the countability of $\pi_1(M,m)$.\footnote{Indeed, the fundamental group of any second-countable topological manifold is countable: there is an everywhere dense countable subset in $M$, and any path is homotopic to a product of pre-chosen paths connecting arbitrary pairs of points of that countable subset; there are countably many such paths. See also \cite[Prop.~1.16]{Lee}.}
 \end{proof}
 
 
@@ -1071,10 +1071,10 @@ The above remark implies, in particular, the following corollary.
 \end{defn}
 
 \begin{cor}\label{cor 16.18 McKay}
-    Under the conditions of the Reduction Theorem~\ref{prop 1.7.12 RS2}, if some $G$-invariant subspace (ideal) $\frakm\sub \frakg$ lies in the holonomy algebra $\frakhol_{p_0}(\omega)$ for \emph{some} $p_0\in P$, then the analytic subgroup $\<\frakm\><G$ generated by that subspace lies in the restricted holonomy group $\Hol_p^0(\omega)$ of \emph{every} point $p\in P$.
+    Under the conditions of the Reduction Theorem~\ref{prop 1.7.12 RS2}, if some $G$-invariant subspace (ideal) $\frakm\sub \frakg$ lies in the holonomy algebra $\frakhol_{p_0}(\omega)$ for \emph{some} $p_0\in P$, then the analytic subgroup $\<\exp\frakm\><G$ generated by that subspace lies in the restricted holonomy group $\Hol_p^0(\omega)$ of \emph{every} point $p\in P$.
 \end{cor}
 \begin{proof}
-    Since $\frakm$ is an ideal, $\Hol_{p_0}(\omega)$ contains the analytic subgroup $\<\frakm\>$. This subgroup is normal since each of its elements is a product of exponentials of elements of the ideal, and these are carried to one another by the adjoint $G$-action. By horizontal invariance, the subgroup $\<\frakm\>$ lies in $\frakhol_p(\omega)$ for any $p\in P_{p_0}(\omega)$. By horizontal invariance, $\<\frakm\>$ belongs to $\Hol_p(\omega)$ for \emph{some} point in each fiber of $P$. Since the action of the structure group conjugates this subgroup, and the subgroup is normal, it actually belongs to the restricted holonomy group of every point.
+    Since $\frakm$ is an ideal, $\Hol_{p_0}(\omega)$ contains the analytic subgroup $\<\exp\frakm\>$. This subgroup is normal since each of its elements is a product of exponentials of elements of the ideal, and these are carried to one another by the adjoint $G$-action. By horizontal invariance, the subgroup $\<\exp\frakm\>$ lies in $\frakhol_p(\omega)$ for any $p\in P_{p_0}(\omega)$. By horizontal invariance, $\<\exp\frakm\>$ belongs to $\Hol_p(\omega)$ for \emph{some} point in each fiber of $P$. Since the action of the structure group conjugates this subgroup, and the subgroup is normal, it actually belongs to the restricted holonomy group of every point.
 \end{proof}
 
 
@@ -1304,7 +1304,7 @@ It is quite rare that we can explicitly find the holonomy bundle, as it requires
     Let $P(G,M)$ be a principal bundle over a connected base $M$ with a principal connection $\omega$. Let $\frakn<\frakg$ be the span of the values of the curvature $\Omega$ at all points of $P$. Then 
     \begin{enumerate}
         \item $\frakn\sub \frakg$ is an ideal containing the holonomy algebra. 
-        \item Further, suppose that $N<G$ is a normal subgroup with Lie algebra $\frakn$. Then the restricted holonomy groups at all points of $P$ lie in $N$, and if the holonomy group at some point of $P$ lies in $N$, then so does the holonomy group at any point.
+        \item Further, suppose that $N\sub G$ is a normal subgroup with Lie algebra $\frakn$. Then the restricted holonomy groups at all points of $P$ lie in $N$, and if the full holonomy group at some point of $P$ lies in $N$, then so does the holonomy group at any point.
         \item The distribution $\omega^{-1}(\frakn)$ is integrable and each leaf of the corresponding foliation contains a holonomy bundle.
     \end{enumerate}
 \end{thm}
@@ -3283,7 +3283,7 @@ In practice, of course, we are usually more interested in bi-invariant connectio
     \[\nu(\Ad_g A,\Ad_g B)=\Ad_g \nu(A,B).\]
 \end{cor}
 
-The most basic example deals with \emph{simple} Lie groups $G$. In this case $\frakg$ is irreducible as a representation of $G$, and by Schur's Lemma the dimension of the space $\Hom_G(\frakg\otimes\frakg,\frakg)$ is equal to the multiplicity of $\frakg$ in $\frakg\otimes\frakg$. It can be shown that, among compact simple Lie groups, only for $\SU_n$ with $n\geq 3$ this multiplicity exceeds $1$ \cite{Laquer}. Therefore, with this exception, the Nomizu map has to be a multiple of the Lie bracket: $\nu(A,B)=\lambda[A,B]$, $\lambda\in\bbR$. Corresponding connections are exactly the canonical connections $\nabla^\lambda$ that we have been studying in Examples~\ref{ex connections on G, part 1} through \ref{ex connections on G, part 6}.
+The most basic example deals with \emph{simple} Lie groups $G$. In this case $\frakg$ is irreducible as a representation of $G$, and by Schur's Lemma the dimension of the space $\Hom_G(\frakg\otimes\frakg,\frakg)$ is equal to the multiplicity of $\frakg$ in $\frakg\otimes\frakg$. It can be shown that, among compact simple Lie groups, only for $\SU_n$ with $n\geq 3$ does this multiplicity exceed $1$ \cite{Laquer}. Therefore, with this exception, the Nomizu map has to be a multiple of the Lie bracket: $\nu(A,B)=\lambda[A,B]$, $\lambda\in\bbR$. Corresponding connections are exactly the canonical connections $\nabla^\lambda$ that we have been studying in Examples~\ref{ex connections on G, part 1} through \ref{ex connections on G, part 6}.
 
 
 
@@ -4119,15 +4119,15 @@ Now, in the special case of an \emph{effective} model $(G,H)$, the $G$-action on
 
 
 
-If the Cartan geometry is not effective, then one cannot reconstruct the principal Cartan bundle from its associated bundles. However, every Cartan geometry has a family of bundles (and certain structures on them akin to soldering) naturally associated with it, which we now turn to. Recall our discussion of natural bundles following Definition~\ref{def natural bundle}. We showed that all natural bundles on the category of smooth manifolds are associated to a $k$-th order frame bundle. Now, in the context of the category $\Car_{(G,H)}$ of Cartan geometries, the most general definition of a natural bundle is a functor $\bf{F}:\Car_{(G,H)}\to \FB^\infty$, known as a \emph{gauge natural bundle}. 
+If the Cartan geometry is not effective, then one cannot reconstruct the principal Cartan bundle from its associated bundles. However, every Cartan geometry has a family of bundles (and certain structures on them akin to soldering) naturally associated with it, which we now turn to. Recall our discussion of natural bundles following Definition~\ref{def natural bundle}. We showed that all natural bundles on the category of smooth manifolds are associated to an $r$-th order frame bundle. Now, in the context of the category $\Car_{(G,H)}$ of Cartan geometries, the most general definition of a natural bundle is a functor $\bf{F}:\Car_{(G,H)}\to \FB^\infty$, known as a \emph{gauge natural bundle}. 
 
 This definition can be made much more concrete. Given a gauge natural bundle $\bf{F}$ on $\Car_{(G,H)}$, we can apply it to the homogeneous model $(G\overset{\pi}{\to} G\slash H,\theta_G)$. Since the left translations $\rmL_g,g\in G$, are exactly the automorphisms of this Cartan geometry, $\bf{F}$ turns them into automorphisms of $\bf{F}(G)$, turning it into a \emph{homogeneous bundle} (as discussed in \S\ref{sec: homogeneous bundles}). By Proposition~\ref{prop 1.4.3 Cap}, we get an $H$-action $\sigma$ on the fiber $F\coloneqq \bf{F}(G)_{[e]}$, which determines the homogeneous bundle $\bf{F}(G)$ up to isomorphism. This allows us to reconstruct the entire functor $\bf{F}$ as the association functor for the action $\sigma$, which we denote as usual by $[\sigma]$. In other words, there is an equivalence between gauge natural bundles and functors of the form $[\sigma]:(P\to M,\eta)\mapsto P^{[\sigma]}=P\times^H F$. This leads to the following definition.
 
 \begin{defn}[Natural bundle of Cartan geometries]
-    Given a Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ and an $H$-action $H\overset{\sigma}{\to}F$, the associated bundle $P^{[\sigma]}=P\times^H F$ is called a \emph{natural bundle associated to the Cartan bundle} $P$. By functoriality of associated bundles, each $\sigma$ determines a natural bundle $[\sigma]:\Car_{(G,H)}\to \FB^\infty$. Its action on objects and morphisms will be denoted $P\mapsto P^{[\sigma]}$ and $\vartheta\mapsto \vartheta^{[\sigma]}$, respectively.
+    Given a Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ and an $H$-action $H\overset{\sigma}{\acts}F$, the associated bundle $P^{[\sigma]}=P\times^H F$ is called a \emph{natural bundle associated to the Cartan bundle} $P$. By functoriality of associated bundles, each $\sigma$ determines a natural bundle $[\sigma]:\Car_{(G,H)}\to \FB^\infty$. Its action on objects and morphisms will be denoted $P\mapsto P^{[\sigma]}$ and $\vartheta\mapsto \vartheta^{[\sigma]}$, respectively.
 \end{defn}
 
-Thus, natural bundles are to Cartan geometries exactly what homogeneous bundles were to Klein geometries. In this definition, $[\sigma](P\overset{\pi}{\to} M)$ doesn't depend on the Cartan connection $\eta$. However, as we have seen above, $\eta$ is necessary to produce soldering-like isomorphisms that allow us to identify natural bundles of $P$ with certain natural bundles of $M$, such as the tensor bundles. In particular, using the isomorphism $\wt\theta:\T M\to P\times^H(\frakg\slash\frakh)$, we can identify $\T^\ast M$ with $P\times^H(\frakg\slash\frakh)^\ast$, and similarly for all higher tensor bundles. Thus, a more precise definition of natural bundles would include these $\eta$-induced structures in the value of the functor. The following remark describes what these structures are in a general setting.
+Thus, natural bundles are to Cartan geometries exactly what homogeneous bundles were to Klein geometries. In this definition, $[\sigma](P\overset{\pi}{\to} M,\eta)=[\sigma](P\overset{\pi}{\to} M)$ doesn't depend on the Cartan connection $\eta$. However, as we have seen above, $\eta$ is necessary to produce soldering-like isomorphisms that allow us to identify natural bundles of $P$ with certain natural bundles of $M$, such as the tensor bundles. In particular, using the isomorphism $\wt\theta:\T M\to P\times^H(\frakg\slash\frakh)$, we can identify $\T^\ast M$ with $P\times^H(\frakg\slash\frakh)^\ast$, and similarly for all higher tensor bundles. Thus, a more precise definition of natural bundles would include these $\eta$-induced structures in the value of the functor. The following remark describes what these structures are in a general setting.
 
 \begin{rem}
     As in the case of the homogeneous model (cf.\ Remark~\ref{rem higher order Klein geometry}), we can describe natural bundles in terms of an underlying $G$-structure. Consider the familiar isotropy action $\underline{\Ad}:H\to \GL(\frakg\slash\frakh)$ and, as before, let $K_1=\ker \underline{\Ad}$ and $H_1=H\slash K_1$. Then the space $P_1\coloneqq P\slash K_1$ is naturally a principal $H_1$-bundle over $M$. There is an evident projection $\pi_1:P\to P_1$. Now define $\theta_1\in\Omega^1(P_1,\frakg\slash\frakh)$ as follows. For $p_0\in P_1$ and $X\in \T_{p_0}P_1$, choose $p\in P$ such that $\pi_0(p)=p_0$ and $X^\ast\in \T_p P$ such that $\pi_{0\ast}(X^\ast)=X$. With this, put 
@@ -4936,7 +4936,7 @@ Here is an alternative proof. The curvature on the extended bundle $\wt{P}=P\tim
 \]
 Notice that nonzero Gauss curvature generates both the rotational and the translational components of the curvature on $\wt{P}$, which we did not see on the $H$-bundle $P$.
 
-Consider the basepoint $(p_0,e)$ and let $\calO \subset P\times G$ be its development orbit as in the last \sect, i.e., the set of points accessible via pairs of paths in $P$ starting at $p_0$ and their developments in $G$. In particular, there is no constraint on the possible velocities of $g$ at any point of $\calO$ in the tangent space $\T_g G$. Hence, we can move $g$ to any points of $G$, i.e., make the group parameters $\varphi$ and $z$ move independently and reach any values while staying inside $\calO$.
+Consider the basepoint $(p_0,e)$ and let $\calO \subset P\times G$ be its development orbit as in the last \sect, i.e., the set of points accessible via pairs of paths in $P$ starting at $p_0$ and their developments in $G$. In particular, there is no constraint on the possible velocities of $g$ at any point of $\calO$ in the tangent space $\T_g G$. Hence, we can move $g$ to any point of $G$, i.e., make the group parameters $\varphi$ and $z$ move independently and reach any values while staying inside $\calO$.
 
 At each point of $\calO$, $\wt\Omega$ takes values in $\frakhol$. The holonomy algebra contains the span of $\left(\begin{smallmatrix}
     -\i & -\i z \\ 0 & 0
@@ -5078,7 +5078,7 @@ Conversely, take any oriented compact surface with Riemannian metric, and with g
 
 
 
-\section{Method of the moving frame}
+\section{Method of moving frames}
 
 
 In this \sect\ we will describe how to use moving frames to find differential invariants of \emph{submanifolds} of (the base of) a Cartan geometry. If we view the fibers of the Cartan bundle as frames, then each tangent space of the submanifold is given by a linear equation in each frame, which changes equivariantly with the frame. The trick is to find a wise choice of frame at each point in which the equation takes on some normal form; this normal form will be achieved only for certain frames, forming a subbundle of the original Cartan bundle with a reduced structure group.
@@ -5561,7 +5561,7 @@ If $X\in\aut(P,\eta)$ is complete, then its flows $\Fl^X_t$ are automorphisms. T
 The infinitesimal automorphisms of any Klein geometry, or even locally Klein geometry, are clearly the (restrictions of the) right-invariant vector fields of $G$. The actual Lie algebra of the automorphism group, meanwhile, consists only of those right-invariant vector fields that are complete. Let us compute explicitly the automorphism groups of complete Klein manifolds.
 
 \begin{thm}[{{\cite[Thm.~15.3]{McKayCartan}}}]
-    Let $M=\varGamma\bslash U$ be a Klein manifold of type $(G,H)$ (so $U\subset G\slash H$ is an open $\varGamma$-invariant subset such that the action of $\varGamma$ on $U$ is properly discontinuous). Let $\rmN_G(\varGamma)$ be the normalizer of $\varGamma$ in $G$ and let $N\subset \rmN_G(\varGamma)$ be the subgroup of elements that leave $U$ invariant. Clearly, $\varGamma$ is a normal subgroup of $N$. Then the automorphism group of (the geometry on) $M$ is exactly the quotient group
+    Let $M=\varGamma\bslash \wt M$ be a Klein manifold of type $(G,H)$ (so $\wt M\subset G\slash H$ is an open $\varGamma$-invariant subset such that the action of $\varGamma$ on $\wt M$ is properly discontinuous). Let $\rmN_G(\varGamma)$ be the normalizer of $\varGamma$ in $G$ and let $N\subset \rmN_G(\varGamma)$ be the subgroup of elements that leave $\wt M$ invariant. Clearly, $\varGamma$ is a normal subgroup of $N$. Then the automorphism group of (the geometry on) $M$ is exactly the quotient group
     \[\Aut_M=N\slash \varGamma.\]
     The identity component of $N$ is the identity component of the centralizer $\rmZ_G(\varGamma)$ of $\varGamma$ in $G$. The Lie algebra of infinitesimal automorphisms is thus the Lie algebra centralizer 
     \[\frakz_\frakg(\varGamma)=\{A\in\frakg\mid \Ad_g A=A\text{ for all }g\in\varGamma\}.\]
@@ -5569,7 +5569,7 @@ The infinitesimal automorphisms of any Klein geometry, or even locally Klein geo
     \[\pi_1(M)\to \varGamma\cong \pi_1(M)\slash \pi_1(G\slash H)\to N\to G.\] 
 \end{thm}
 \begin{proof}
-    Recall that only discrete groups can act properly discontinuously. By definition of properly discontinuous action, each point $x\in G\slash H$ has a neighborhood $U_x$ such that any of its translates $\gamma\cdot U_x$, $\gamma\in\varGamma$, intersects with $U_x$ only if $\gamma=e$. Then for arbitrary $g\in G$, $gU_x$ is clearly such a neighborhood of $gx\in G\slash H$ for the group $g\varGamma g^{-1}$. Hence, for $g$ normalizing $\varGamma$, the \emph{free regular set} \index{Free regular set} consisting of all points allowing such neighborhoods is $g$-invariant. The identity component of $\rmN_G(\varGamma)$ fixes every component of the free regular set, so fixes $U$, so belongs to $N$. 
+    Recall that only discrete groups can act properly discontinuously. By definition of properly discontinuous action, each point $x\in G\slash H$ has a neighborhood $U_x$ such that any of its translates $\gamma\cdot U_x$, $\gamma\in\varGamma$, intersects with $U_x$ only if $\gamma=e$. Then for arbitrary $g\in G$, $gU_x$ is clearly such a neighborhood of $gx\in G\slash H$ for the group $g\varGamma g^{-1}$. Hence, for $g$ normalizing $\varGamma$, the \emph{free regular set} \index{Free regular set} consisting of all points allowing such neighborhoods is $g$-invariant. The identity component of $\rmN_G(\varGamma)$ fixes every component of the free regular set, so fixes $\wt M$, so belongs to $N$. 
 
     Every automorphism $f\in \Aut_M$ lifts to a diffeomorphism of $G\slash H$ which is an automorphism of the model $(G,H)$-structure. By Proposition~\ref{prop 1.5.2 Cap}, the latter automorphism is given by a unique element $g\in G$. Any two such lifts agree up to a deck transformation by an element replacing $g$ with $\gamma g$ for some $\gamma\in\varGamma$. Let $P\subset G$ be the preimage of $U$ under the quotient map $G\to G\slash H$. The lifted automorphism $g$ acts by bundle morphisms on $P\to \varGamma\bslash P$, which means $g\cdot (\varGamma g_0)=\varGamma (gg_0)$ for any $g_0\in P$, i.e., $g\varGamma=\varGamma g$, i.e., $g$ normalizes $\varGamma$ in $G$. The lifted automorphism also fixes $U$, so belongs to $N$.
 
@@ -5649,11 +5649,11 @@ While Theorem~\ref{thm 1.5.11 Cap} states that an infinitesimal automorphism is 
     We can suppose that $M$ is simply connected. Moving by flows of constant vector fields and by the principal $H$-action, we cover $P$ in open sets on each of which we have defined a vector field. Analyticity ensures that, since $X$ is invariant under all constant vector fields initially, and this is an analytic differential equation, this remains true as we extend the domain of $X$. Microlocality is similarly preserved by analyticity and permutation of the constant vector fields under the $H$-action. Hence, each vector field extends uniquely to a local infinitesimal automorphism. At each step in the process, by invariance under the flows, these local infinitesimal automorphisms agree on overlaps. Our vector field $X$ remains $H$-equivariant as we extend it, again by analyticity, so is a section of $\T P\slash H\to M$, a vector bundle over a simply connected manifold, so it does not become multivalued.
 \end{proof}
 
-Recall that the soldering form of a Cartan connection $\eta$ is $\theta=\eta+\frakh$. Let us denote it by $\underline{\eta}$ instead, and similarly we use this notation for the quotient of any $\frakg$-valued map by $\frakh$. By Cartan's magic formula, it is easy to see that for a smooth function $f:P\to \frakg$, the associated vector field $X=\eta^{-1}\circ f\in \fX(P)$ preserves the Cartan connectio (in particular, is $\frakh$-invariant in the sense that it commutes with $\eta^{-1}(\frakh)$) iff 
+Recall that the soldering form of a Cartan connection $\eta$ is $\theta=\eta+\frakh$. Let us denote it by $\underline{\eta}$ instead, and similarly we use this notation for the quotient of any $\frakg$-valued map by $\frakh$. By Cartan's magic formula, it is easy to see that for a smooth function $f:P\to \frakg$, the associated vector field $X=\eta^{-1}\circ f\in \fX(P)$ preserves the Cartan connection (in particular, is $\frakh$-invariant in the sense that it commutes with $\eta^{-1}(\frakh)$) iff 
 \[\dd f+[\eta,f]=\scrK\circ \underline{f}\wedge\underline{\eta}.\]
-(The right hand side is nothing but $i_X \Omega^\eta$.) Furthermore, $X$ is an infinitesimal automorphism iff $f$ in addition satisfies $\Phi_h^\ast f=\Ad_h^{-1}A$ for at least one $H$ in each path component of $H$, where $\Phi$ is the principal $H$-action.
+(The right hand side is nothing but $i_X \Omega^\eta$.) Furthermore, $X$ is an infinitesimal automorphism iff $f$ in addition satisfies $\Phi_h^\ast f=\Ad_h^{-1}f$ for at least one $h$ in each path component of $H$, where $\Phi$ is the principal $H$-action.
 
-This tells us once again that $X$ is determined by its value at a point since we have a total differential equation for $f$. Any $H$-equivariant vector field $X$ on $P$ descends to a vector field $\underline{X}=\pi_\ast X$ on $M$. Just as $X$ is associated to $f$, $\underline{X}$ is associated to $\underline{f}$.
+This tells us once again that $X$ is determined by its value at a point since we have a total differential equation for $f$. Any $H$-equivariant vector field $X$ on $P$ descends to a vector field $\underline{X}=\pi_\ast X$ on $M$. Just as $X$ is associated to $f$ by $f=\eta(X)$, $\underline{X}$ is associated to $\underline{f}$.
 
 Take two infinitesimal automorphisms $X,Y\in\aut(P,\eta)$ with associated functions $\eta(X),\eta(Y)$. Consider the function $\eta([X,Y])$ corresponding to the bracket $[X,Y]\in \aut(P,\eta)$. The general formula \eqref{eq prop 4.1.6} for the exterior derivative expands to 
 \[\eta([X,Y])=[\eta(X),\eta(Y)]-\scrK(\underline{\eta}(X),\underline{\eta}(Y))+\Lie_X (\eta(Y))-\Lie_{Y}(\eta(X)),\]
@@ -5689,7 +5689,7 @@ Finally, let us discuss the circumstances under which infinitesimal automorphism
 
 \section{Action of the automorphism group}
 
-Automorphisms commute the flows of constant vector fields and with the principal action of the structure group. These flows need not be complete, but if defined for some time at some point, they are defined for the same time throughout the orbit of the automorphism group (\emph{automorphism orbit} for short) through that point. Hence, the orbits of the automorphism group are taken to one another by these flows, and by the structure group. Over a connected manifold, this action on the set of orbits is thereby transitive.
+Automorphisms commute with the flows of constant vector fields and with the principal action of the structure group. These flows need not be complete, but if defined for some time at some point, they are defined for the same time throughout the orbit of the automorphism group (\emph{automorphism orbit} for short) through that point. Hence, the orbits of the automorphism group are taken to one another by these flows, and by the structure group. Over a connected manifold, this action on the set of orbits is thereby transitive.
 
 \begin{thm}[Kobayashi (1957) {{\cite[Thm.~15.18]{McKayCartan}}}]
     The automorphism orbits of any Cartan geometry $(P\to M,\eta)$ are closed.
@@ -5711,7 +5711,7 @@ Since we do not yet know that the automorphism orbits are smooth, we define a pr
 
 The tangent spaces of each automorphism orbit are taken to one another by the automorphism group. Automorphisms preserve every constant vector field, so the tangent spaces to each automorphism orbit $\scrO$ consist of the values of the same constant vector fields at all points of $\scrO$. 
 
-In the following, we assume a fixed Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ and do not specify it every time. We also use the notation 
+In the following, we assume a fixed Cartan geometry $(P\to M,\eta)$ of type $(G,H)$ and do not specify it every time. To each $A\in\frakg$ we also assign the flow of its constant vector field at time $1$:
 \[F^A\coloneqq \Fl^{\eta^{-1}(A)}_1\quad\text{for}\quad  A\in\frakg.\]
 
 \begin{lem}[{{\cite[Lem.~15.19]{McKayCartan}}}]\label{lem 12.19 McKay}
@@ -5906,7 +5906,7 @@ Let $P_S\coloneqq i^\ast P$. Then $P_S\to P$ is an immersed subbundle with $\dim
     S \arrow[r] & M.
 \end{tikzcd}\]
 
-For the proof of the next theorem, the following enrichment of the notion of a Cartan geometry will be useful.
+For the proof of the next theorem, the following enrichment of the notion of a Cartan geometry will be useful. It is a direct analog of the notion of extended coframe from Definition~\ref{def extended coframe} if one thinks of a Cartan connection as a coframe.
 
 \begin{defn}\index{Decorated Cartan geometry}
     A decorated Cartan geometry is a Cartan geometry $(P\to M,\eta)$ equipped with a collection (perhaps infinite) of smooth maps $f_\alpha:P\to M_\alpha$ to some smooth manifolds $M_\alpha$. Each $f_\alpha$ is called a \emph{decoration}.
@@ -6065,7 +6065,7 @@ If $\det K\neq 0$, so $\det K=\pm 1$, taking a determinant tells us that the ele
         r & 0\\0 & \pm r^{-1}
      \end{smallmatrix}\right)$ & $\left\{\pm\left(\begin{smallmatrix}
         a & 0\\0 & a^{-1}
-     \end{smallmatrix}\right),a\in\bbR^\times\right\}$,\\
+     \end{smallmatrix}\right),a\in\bbR^\times\right\}$,\\ [0.5ex]
      \hline
     \end{tabular}
 \end{center}

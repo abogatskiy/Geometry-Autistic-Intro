@@ -1010,18 +1010,18 @@ Consider first a $k$-th order ODE in one independent variable $x$ and one depend
 \[F\left(x,u,u_x,\ldots,u^{(k)}\right)=0.\]
 It can be interpreted as defining a hypersurface in the $(k+2)$-dimensional space $\bbR^{k+2}$ with coordinates $x,u,p_1,\ldots,p_k$:
 \[F(x,u,p_1,\ldots,p_k)=0.\]
-Now we will consider the distribution $\calC<\T^\ast \bbR^{k+2}$ spanned by the contact forms 
+Now we will consider the distribution $\mathrm{Cont}<\T^\ast \bbR^{k+2}$ spanned by the contact forms 
 \[\theta^0=\dd u-p_1\dd x,\quad \theta^i=\dd p_i-p_{i+1}\dd x,\quad i=1,\ldots,k-1.\]
-These forms are everywhere independent, so the rank of $\calC$ is $k$. This distribution is called the \emph{Cartan distribution}.\index{Cartan distribution}
+These forms are everywhere independent, so the rank of $\mathrm{Cont}$ is $k$. Its annihilator $\calC\coloneqq \Ann(\mathrm{Cont})$ is thus of rank $2$ and is called the \emph{Cartan distribution}.\index{Cartan distribution}
 
 Note that a curve in $\bbR^{k+2}$ is the graph of a function $u=f(x)$ and of its derivatives, $x\mapsto (f(x),f_x(x),\ldots,f^{(k)}(x))$, iff it projects to the $x$-axis without degeneration and is an integral curve of the distribution $\calC$.  
 
 Using $\calC$, one can give a geometric interpretation to the well-known method for integrating of ODEs not containing the independent variable in explicit form. 
 
 \begin{example}
-    Consider a second-order equation of the form $F(u,u_x,u_{xx})=0$, or, in other words, a hypersurface $\calE\subset\bbR^4$ defined by $F(u,p_1,p_2)=0$. Restrict the Cartan distribution $\calC=\<\theta^0,\theta^1\>$ to this hypersurface. The resulting distribution is invariant under translations along the $x$-axis. This makes it possible to construct the quotient equation by the variable $x$ of which the equation is independent. More precisely, we will quotient out by the action of the one-parameter group $T\cong \bbR$ of translations $(x,u,p_1,p_2)\mapsto (x+c,u,p_1,p_2)$, $c\in \bbR$. In other words, consider the quotient map 
+    Consider a second-order equation of the form $F(u,u_x,u_{xx})=0$, or, in other words, a hypersurface $\calE\subset\bbR^4$ defined by $F(u,p_1,p_2)=0$. Restrict the Cartan distribution $\calC=\Ann(\<\theta^0,\theta^1\>)$ to this hypersurface, getting a line bundle over $\calE$ (because its rank is $\dim \calE-\rank \restr{\mathrm{Cont}}{\calE}=3-2$). This line bundle is invariant under translations along the $x$-axis. This makes it possible to construct the quotient equation by the variable $x$. More precisely, we will quotient out the action of the one-parameter group $T\cong \bbR$ of translations $(x,u,p_1,p_2)\mapsto (x+c,u,p_1,p_2)$, $c\in \bbR$. In other words, consider the quotient map 
     \[\pi:\bbR^4\to \bbR^4\slash T,\quad (x,u,p_1,p_2)\mapsto (u,p_1,p_2).\]
-    The image of the hypersurface $\calE$ under this map is the hypersurface $\calE\slash T$ in the space $\bbR^4\slash T$ given by the same equation $F(u,p_1,p_2)=0$. The distribution $\calC$ projects without degeneration to the space $\bbR^4\slash T$ and, thus, gives rise to the $2$-dimensional quotient distribution $\calC\slash T$. This distribution can be defined by a single $1$-form on $\bbR^4\slash T$: for example, one can take the following linear combination of $\theta^0,\theta^1$:
+    The image of the hypersurface $\calE$ under this map is the hypersurface $\calE\slash T$ in the space $\bbR^4\slash T$ given by the same equation $F(u,p_1,p_2)=0$. The distribution $\calC$ projects without degeneration to the space $\bbR^4\slash T$ and, thus, gives rise to the rank $1$ quotient distribution $\calC\slash T$ over the $2$-dimensional $\calE\slash T$. This distribution can thus be determined (as the annihilator) by a single $1$-form on $\bbR^4\slash T$: for example, one can take the following linear combination of $\theta^0,\theta^1$ around $p_1\neq 0$:
     \[\wt\theta=\theta^1-\frac{p_2}{p_1}\theta^0=\dd p_1-\frac{p_2}{p_1}\dd u.\]
     Thus, as a result of the factorization, we obtain the $3$-dimensional space $\bbR^4\slash T$, endowed with the $2$-dimensional distribution given by $\wt\theta=0$, and the $2$-dimensional surface $\calE\slash T\subset \bbR^4\slash T$, i.e., a first-order ODE. Introduce the coordinates 
     \[x'\coloneqq u,\quad u'\coloneqq p_1,\quad p'\coloneqq \frac{p_2}{p_1}\label{eq 2.2 Kras}\]
@@ -1032,8 +1032,10 @@ Using $\calC$, one can give a geometric interpretation to the well-known method 
     called the \emph{quotient equation}. Therein lies the geometric meaning of the change of coordinates to $(x',u',p')$.
     
     If we were instead to define 
+    \[\wt\theta=\theta_0-\frac{p_1}{p_2}\theta_1=\dd u-\frac{p_1}{p_2}\dd p_1=\dd u-\frac{1}{p_2}\dd\left(\frac{p_1^2}{2}\right)\]
+    and identify $\wt\theta$ with $\theta_0$ using the new change of coordinates
     \[x'\coloneqq \frac{p_1^2}{2},\quad u'\coloneqq u,\quad p'\coloneqq \frac{1}{p_2},\]
-    we would have found another equivalent first-order equation with $u'$ serving as the independent variable and $x'$ as the dependent one:
+    then we would have found another equivalent first-order equation with $u'$ serving as the independent variable and $x'$ as the dependent one:
     \[F(u',\pm\sqrt{2x'},x'_{u'})=0.\]
 \end{example}
 
@@ -1052,7 +1054,7 @@ Therefore, $p_2'=\frac{p_3}{p_1^2}-\frac{p_2^2}{p_1^3}$. Continuing this line of
 \[F(u,p_1,\ldots,p_k)=0,\]
 we get the quotient equation of order $k-1$.
 
-As it was noted above, the restriction $\calC(\calE)$ of the rank-$2$ Cartan distribution on $\bbR^{k+2}$ to the hypersurface $\calE$ is of rank $1$ at all points except for a nowhere dense set of singular points where the tangent plane to $\calE$ contains the fiber of $\calC$. Therefore, the distribution $\calC(\calE)$ can be defined by a single vector field. Let us describe explicitly such a field and establish the conditions distinguishing between singular and nonsingular points.
+As it was noted above, the restriction $\calC(\calE)$ of the rank $2$ Cartan distribution on $\bbR^{k+2}$ to the hypersurface $\calE$ is of rank $1$ at all points except for a nowhere dense set of singular points where the tangent plane to $\calE$ contains the fiber of $\calC$. Therefore, the distribution $\calC(\calE)$ can be defined by a single vector field. Let us describe explicitly such a field and establish the conditions distinguishing between singular and nonsingular points.
 
 Let 
 \[Y\coloneqq \alpha\partial_x+\beta_0\partial_u+\beta_1\partial_{p_1}+\cdots+\beta_k\partial_{p_k}\]
@@ -1103,7 +1105,7 @@ The vector field $Y_F$ is called a \emph{characteristic vector field} of the equ
 Since solutions of ODEs are integral curves for the corresponding Cartan distributions, we begin the study of symmetries of differential equations with discussing symmetries in a more general context of distributions.
 
 \begin{defn}[Symmetry of a distribution]
-    Let $D<\T M$ be a smooth distribution on a manifold $M$. A diffeomorphism $\varphi:M\to M$ is called a (finite) symmetry of the distribution $D$ if it preserves this distribution, i.e., $\varphi_\ast D=D$. The group of all such diffeomorphism is denoted by $\Aut(D)$.
+    Let $D<\T M$ be a smooth distribution on a manifold $M$. A diffeomorphism $\varphi:M\to M$ is called a (finite) symmetry of the distribution $D$ if it preserves this distribution, i.e., $\varphi_\ast D=D$. The group (not necessarily a Lie group) of all such diffeomorphisms is denoted by $\Aut(D)$.
 \end{defn}
 
 \begin{example}
@@ -1150,8 +1152,8 @@ Note that infinitesimal symmetries may have incomplete flows, in which case they
     $\aut(D)$ is a vector space and a Lie subalgebra of $\fX(M)$.
 \end{cor}
 
-Theorem~\ref{thm 3.1 Kras} lets us write down coordinate conditions for a vector field $X=X^i\partial_{x^i}$ to be a symmetry of the distribution defined by $1$-forms $\theta^j=\sum_s\theta^{js}\dd x^s$.  We have 
-\[\Lie_X\theta^j=\sum_{i,s}\left(X^i\partial_{x^i}\theta^{js}+\partial_{x^s}X^i \theta^{i}_j\right)\dd x^s.\]
+Theorem~\ref{thm 3.1 Kras} lets us write down coordinate conditions for a vector field $X=X^i\partial_{x^i}$ to be a symmetry of the distribution defined by $1$-forms $\theta^j=\sum_s\theta^{j}_s\dd x^s$.  We have 
+\[\Lie_X\theta^j=\sum_{i,s}\left(X^i\partial_{x^i}\theta^{j}_s+\partial_{x^s}X^i \theta^j_i\right)\dd x^s.\]
 This $1$-form is represented as $\sum_i\nu_{ji}\theta^i$, i.e., 
 \[\sum_{i}\left(X^i\partial_{x^i}\theta^{j}_s+\partial_{x^s}X^i \theta^{j}_i\right)=\sum_i\nu_{ji}\theta^{i}_s,\quad j=1,\ldots,k,\; s=1,\ldots,n.\]
 Notably, this system is linear in the components $X^1,\ldots,X^k$ of $X$. It is called the \emph{system of linear Lie equations} corresponding to the nonlinear system of Lie equations $\varphi^\ast\theta^i=\sum_j\lambda_{ij}\theta^j$.
@@ -1161,11 +1163,11 @@ Notably, this system is linear in the components $X^1,\ldots,X^k$ of $X$. It is 
 \end{example}
 
 \begin{example}
-    For an \emph{integrable} distribution $D$ at a generic point there exists a coordinate system $(x^1,\ldots,x^l,\ldots,x^n)$ on $M$ such that $D$ is given by $\partial_{x^1},\ldots,\partial_{x^l}$. Then $[X_j,X]=\sum_i \partial_{x^j}X^i\partial_{x^i}$, so that the condition $[X,X_j]\in \Gamma^\infty(D)$, $j=1,\ldots,l$, is equivalent to the equalities $\partial_{x^j}X^i=0$, $j\leq l<i$. The field $X$ splits into the longitudinal component $\sum_{i\leq l}X^i\partial_{x^i}$ and the transversal component $\sum_{i>l}X^i\partial_{x^i}$. Using this decomposition, we can say that $X$ is a symmetry of $D$ iff the coefficients of its transversal component are constant on the leaves of the foliation determined by $D$. The flows of $X$ then permute the leaves.
+    For an \emph{integrable} distribution $D$ at a generic point there exists a coordinate system $(x^1,\ldots,x^l,\ldots,x^n)$ on $M$ such that $D$ is given by $\partial_{x^1},\ldots,\partial_{x^l}$. Then $[\partial_{x^j},X]=\sum_i \partial_{x^j}X^i\partial_{x^i}$, so that the condition $[X,\partial_{x^j}]\in \Gamma^\infty(D)$, $j=1,\ldots,l$, is equivalent to the equalities $\partial_{x^j}X^i=0$, $j\leq l<i$. The field $X$ splits into the longitudinal component $\sum_{i\leq l}X^i\partial_{x^i}$ and the transversal component $\sum_{i>l}X^i\partial_{x^i}$. Using this decomposition, we can say that $X$ is a symmetry of $D$ iff the coefficients of its transversal component are constant on the leaves of the foliation determined by $D$. The flows of $X$ then permute the leaves.
 \end{example}
 
 \begin{example}\label{ex 3.4 Kras}
-    Let us find all infinitesimal symmetries of the Cartan distribution $\calC=\<\theta=\dd u-p\dd x\>$ on $\bbR^3$. Let 
+    Let us find all infinitesimal symmetries of the Cartan distribution $\calC=\Ann(\theta=\dd u-p\dd x)$ on $\bbR^3$. Let 
     \[X=\alpha\partial_x+\beta\partial_u+\gamma\partial_p\]
     be a symmetry. We have 
     \[\Lie_X\theta=(\beta_x-p\alpha_x-\gamma)\dd x+(\beta_u-p\alpha_u)\dd u+(\beta_p-p\alpha_p)\dd p.\]
@@ -1279,7 +1281,7 @@ A \emph{quadrature} is simply an integral over one variable. Suppose $Y$ is a sy
 We now turn to the applications of nontrivial symmetries for the integration of distributions. Let $X$ be a symmetry of a distribution $D$ and $\Fl^X_t$ the corresponding flow. As the first application, given an integral manifold $L$ of the distribution $D$, we can construct a whole family $\Fl_t^X(L)$ of such manifolds.
 
 \begin{example}\label{ex 4.4 Kras}
-    Consider the equation $(3x-2u)u_x=u$ from Example~\ref{ex 2.2 Kras}. The vector field $X=u^3\partial_x$ obviously commutes with the field $Y_F$ restricted to $\calE$, so $X$ is a symmetry of the rank-$1$ distribution $\calC(\calE)$. Take a solution $L=\{u=x\}$ of the equation under study. Shifts of this solution along the integral curves of $X$ yield all solutions of our equation (except for $u=0$, which is invariant under the flow of $X$). In fact, the shift along the integral curves of $X$ at time $t$ has the form 
+    Consider the equation $(3x-2u)u_x=u$ from Example~\ref{ex 2.2 Kras}. The vector field $X=u^3\partial_x$ obviously commutes with the field $Y_F$ restricted to $\calE$, so $X$ is a symmetry of the rank $1$ distribution $\calC(\calE)$. Take a solution $L=\{u=x\}$ of the equation under study. Shifts of this solution along the integral curves of $X$ yield all solutions of our equation (except for $u=0$, which is invariant under the flow of $X$). In fact, the shift along the integral curves of $X$ at time $t$ has the form 
     \[x=u_0^3t+x_0,\quad u=u_0.\]
     From these formulas it easily follows that the image of the straight line $L=\{u=x\}$ is the curve $\Fl^X_t(L)=\{tu^3+u=x\}$.
 \end{example}
@@ -1342,7 +1344,7 @@ Let $\theta^1,\ldots,\theta^k$ be a set of forms defining the distribution $D$ a
     Under the conditions of the preceding theorem, assume that the Lie algebra $\calY$ is abelian. Then all the forms $\theta^i$ are closed, and thus, by the Poincar\'e Lemma~\ref{lem poincare classic}, locally exact: $\theta^i=\dd h^i$ for some smooth functions locally given by $h^i(m)=\int^m\theta^i$.
 \end{cor}
 
-In particular, since $k$-th order ODEs are identified with rank-$1$ distributions on $(k+1)$-dimensional manifolds, we have the following.
+In particular, since $k$-th order ODEs are identified with rank $1$ distributions on $(k+1)$-dimensional manifolds, we have the following.
 
 \begin{cor}\label{cor 4.3 Kras}
     If the distribution corresponding to a $k$-th order ODE possesses a $k$-dimensional abelian nondegenerate Lie algebra of symmetries, then the ODE is solvable in quadratures.
@@ -1360,7 +1362,7 @@ In particular, since $k$-th order ODEs are identified with rank-$1$ distribution
     Show that on the equation in the previous example, the vector field $X$ coincides with the vector field $f\partial_u+f_u p\partial_p$.
 \end{xca}
 
-The previous example serves to illustrate the following general fact: with the knowledge of one nontrivial symmetry of a completely integrable distribution of corank $1$ (in particular, of a first-order ODE), it is possible to describe the leaves of this distribution (in particular, solutions to the ODE) by means of quadratures. If $X$ is a nontrivial symmetry of $D=\Ann(\theta)$ , then the form $f\theta$ with $f=1/\theta(X)$, which also defines the distribution $D$, is closed. In this case, the leaves of $D$ coincide with the level surfaces of the integral of this form. In other words, the symmetry $X$ in this case provides a way of finding the \emph{integrating factor} described in Proposition~\ref{prop 4.7.13 RS1}. \index{Integrating factor}
+The previous example serves to illustrate the following general fact: with the knowledge of one nontrivial symmetry of a completely integrable distribution of corank $1$ (in particular, of a first-order ODE), it is possible to describe the leaves of this distribution (in particular, solutions to the ODE) by means of quadratures. If $X$ is a nontrivial symmetry of $D=\Ann(\theta)$, then the form $f\theta$ with $f=1/\theta(X)$, which also defines the distribution $D$, is closed. In this case, the leaves of $D$ coincide with the level surfaces of the integral of this form. In other words, the symmetry $X$ in this case provides a way of finding the \emph{integrating factor} described in Proposition~\ref{prop 4.7.13 RS1}. \index{Integrating factor}
 
 \begin{example}
     Any homogeneous first-order ODE $\calE$ of the form
@@ -1389,7 +1391,7 @@ The previous example serves to illustrate the following general fact: with the k
     is a symmetry of the initial equation. Such symmetries comprise a $k$-dimensional abelian Lie algebra, and if one knows its basis, i.e., a fundamental system of solutions $\varphi_1,\ldots,\varphi_k$ of the homogeneous system, then by Corollary~\ref{cor 4.3 Kras}, the inhomogeneous ODE can be integrated by quadratures. Note that $\theta^i(X_\varphi)=\varphi^{(i)}$, where, as before, $\theta^i=\dd p_i-p_{i+1}\dd x$. Therefore, the matrix $\{\theta^i(X_{\varphi_j})\}$, which in the course of solution must be inverted to find an integrating factor, is nothing but the usual \emph{Wronskian matrix}\index{Wronskian matrix} of the fundamental system $\varphi_1,\ldots,\varphi_k$.
 \end{example}
 
-Now, suppose that we know a nondegenerate nonabelian Lie algebra $\calY$ of symmetries of an integrable distribution $D$. Consider its \emph{commutator subalgebra}, also called the \emph{derived Lie algebra}: 
+The full power of Theorem~\ref{thm 4.1 Kras} extends beyond the case of abelian symmetry algebras. Suppose that we know a nondegenerate nonabelian Lie algebra $\calY$ of symmetries of an integrable distribution $D$. Consider its \emph{commutator subalgebra}, also called the \emph{derived Lie algebra}: 
 \[[\calY,\calY]=\left\{[X,Y]\mid X,Y\in\calY\right\},\]
 and assume that $[\calY,\calY]\neq\calY$. Then one can choose a basis $X_1,\ldots,X_k$ of $\calY$ such that $X_1,\ldots,X_r\notin [\calY,\calY]$ while $X_{r+1},\ldots,X_k\in [\calY,\calY]$. In this case, for any pair $X_i,X_j$, we have $[X_i,X_j]\in[\calY,\calY]$, so that $c^s_{ij}=0$ for all $i,j$ if $s\leq r$. Hence, the forms $\theta^1,\ldots,\theta^r$ are closed, and thus, $\theta^i=\dd h^i$, $i=1,\ldots,r$, in some open domain. The level surfaces 
 \[H_{\bf{c}}=\{h_1=c_1,\ldots,h_r=c_r\},\quad \bf{c}\in\bbR^r,\]
@@ -1465,7 +1467,7 @@ It is these results which caused the concept of solvability, originating from th
 
 %     The geometric image associated with this equation is the hypersurface $\calE\subset\bbR^4$ of the space with coordinates $x,u,p,q$, where $p$ corresponds to $u_x$ and $q$ to $u_{xx}$, defined by 
 %     \[q=p+u^n-\frac{2n+2}{(n+3)^2}u,\]
-%     together with the rank-$1$ distribution on $\calE$ given by the forms $\theta^1=\dd u-p\dd x$ and $\theta^2=\dd p-q\dd x$. By computing the matrix $\{\theta^i(X_j)\}$, one can construct the integrating factor for this system and restrict the system to a surface $H_c$ parametrized by a constant $c$ and get a single $1$-form that needs to be integrated on it, giving a solution in quadratures.
+%     together with the rank $1$ distribution on $\calE$ given by the forms $\theta^1=\dd u-p\dd x$ and $\theta^2=\dd p-q\dd x$. By computing the matrix $\{\theta^i(X_j)\}$, one can construct the integrating factor for this system and restrict the system to a surface $H_c$ parametrized by a constant $c$ and get a single $1$-form that needs to be integrated on it, giving a solution in quadratures.
 % \end{example}
 
 
@@ -2347,8 +2349,8 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     \[\wt{u}(x,y;\epsilon)=2\ln \sigma(x,y;\epsilon)+u(x,y),\quad \sigma(x,y;\epsilon)=1-2\epsilon x+\epsilon^2(x^2+y^2).\label{eq 2.31 Gungor}\]
     We note that 
     \[\sigma(x,y;\epsilon)=\sigma(\wt x,\wt y;-\epsilon)^{-1}=1+2\epsilon \wt{x}+\epsilon^2(\wt x^2+\wt y^2).\]
-    Application of the one-parameter group defined by \eqref{eq 2.27 Gungor} and \eqref{eq 2.31 Gungor} to a solution $f(x,y)$, where $(x,y)$ are written in terms of $(\wt x,\wt y)$, leads to the transformed new solution $u(x,y)$ (after the tildes are removed)
-    \[\epsilon(x,y)=-2\ln\sigma(x,y;-\epsilon)+f(\wt x,\wt y),\]
+    Application of the one-parameter group defined by \eqref{eq 2.27 Gungor} and \eqref{eq 2.31 Gungor} to a solution $f(x,y)$, where $(x,y)$ are written in terms of $(\wt x,\wt y)$, leads to the transformed new solution $u_\epsilon(x,y)$ (after the tildes are removed)
+    \[u_\epsilon(x,y)=-2\ln\sigma(x,y;-\epsilon)+f(\wt x,\wt y),\]
     where 
     \[\wt x=\frac{x+\epsilon(x^2+y^2)}{1+2\epsilon x+\epsilon^2(x^2+y^2)},\quad \wt{y}=\frac{y}{1+2\epsilon +\epsilon^2(x^2+y^2)}.\]
 \end{example}
@@ -3922,7 +3924,7 @@ Another common class of problems that can be easily reduced to the classifying m
 \[\theta^k=\sum_{i=1}^nJ^k_i\theta^i,\quad k=n+1,\ldots,n',\]
 for some smooth local functions $J^k_i$. Clearly, an equivalence problem for $\wt\varTheta$ reduces to a simultaneous equivalence problem for $\bm\theta$ and $\{J^k_i\}$, in the sense that, in addition to the regular equivalence condition on $\bm\theta$, we must have $F^\ast \wb J^k_i=J^k_i$. Note that if $\wt\varTheta$ has a symmetry (self-equivalence), then the functions $J^k_i$ are invariant under that symmetry. This leads to the following general definitions.
 
-\begin{defn}[Extended coframe]
+\begin{defn}[Extended coframe]\label{def extended coframe}\index{Coframe!Extended}
     An extended coframe on a manifold $M$ is a collection $\varTheta=\{\bm\theta,I\}$ consisting of a (local) coframe $\bm\theta$ along with a collection $\bm I=(I_1,\ldots,I_l)$ of (local) smooth scalar functions, called \emph{invariants}.
 \end{defn}
 
@@ -4005,7 +4007,7 @@ As before, the involutivity of an extended coframe implies the involutivity of a
     This definition of order slightly differs from the one earlier in this \sect\ because now the structure invariants $T^i_{jk}$ appear only at order $1$, and so, unless the coframe has rank $0$, involutivity will not occur until at least order $2$. However, the exact definition of order is not essential, as long as it is consistent.
 \end{rem}
 
-Let us call an extended coframe $\varTheta$ \emph{fully regular} if it and all its derived coframes are regular. In the fully regular case, the ranks $t_r=\rank \varTheta^{(r)}$ are nondecreasing and bounded by $n=\dim M$. Moreover, if $t_s=t_{s+1}$, then $\varTheta^{(s)}$ is involutive, and hence $\varTheta$ has order $s$ and involutivity rank $t=t_s=t_{s+1}=\cdots$. In particular, a fully regular coframe has order $s\leq n$. Coframes of order greater than $n$ can occur if singularities are present, but can be resolved at some higher order.
+Let us call an extended coframe $\varTheta$ \emph{fully regular} if it and all its derived coframes are regular. In the fully regular case, the ranks $t_r=\rank \varTheta^{(r)}$ are non-decreasing and bounded by $n=\dim M$. Moreover, if $t_s=t_{s+1}$, then $\varTheta^{(s)}$ is involutive, and hence $\varTheta$ has order $s$ and involutivity rank $t=t_s=t_{s+1}=\cdots$. In particular, a fully regular coframe has order $s\leq n$. Coframes of order greater than $n$ can occur if singularities are present, but can be resolved at some higher order.
 
 The fundamental equivalence and symmetry theorems for coframes can now be adapted to extended coframes. The proof is identical.
 
@@ -4102,7 +4104,7 @@ In particular, if $F$ is any function on $M$, then we can produce a lifted invar
     Note that $r^2=y^2+v^2=x^2+u^2$ is an invariant for the lifted action which reduces to the ordinary radial invariant for the action back on $M$. The fact that $r$ has the same formula in terms of $x$ and $y$ as it does in $y,v$ is a simple manifestation of the general Replacement Theorem~\ref{thm 3.7 OlverCo2}.
 \end{example}
 
-A differential form $\theta$ on the principal bundle $P=G\times M$ is (right) $G$-invariant if it satisfies $\wt\rmR_g^\ast\theta=\theta$ for all $g\in G$. Of particular importance are the pulled back Maurer-Cartan forms associated with the Lie group $G$. Using an arbitrary basis $\bf t_1,\ldots,\bf t_d$ of the (right) Lie algebra $\frakg^\rmR$ of $G$, we get the dual basis $\theta^1_G,\ldots,\theta^d_G$ of right-invariant Maurer-Cartan forms on $G$. We shall also use $\bm\theta_G$ to denote the corresponding Maurer-Cartan forms on $P$, namely, the pullbacks $\pi_G^\ast\bm\theta_G$ under the standard projection $\pi_G:P\to G$. The Maurer-Cartan forms $\bm\theta_G$ on $P$ are invariant under the right regularized action of $G$.
+A differential form $\theta$ on the principal bundle $P=G\times M$ is (right) $G$-invariant if it satisfies $\wt\rmR_g^\ast\theta=\theta$ for all $g\in G$. Of particular importance are the pulled back Maurer-Cartan forms associated with the Lie group $G$. Using an arbitrary basis $\bf t_1,\ldots,\bf t_d$ of the (right) Lie algebra $\frakg^\rmR$ of $G$, we get the dual basis $\theta^1_G,\ldots,\theta^d_G$ of right-invariant Maurer-Cartan forms on $G$. We shall also use $\bm\theta_G$ to denote the corresponding Maurer-Cartan forms on $P$, namely, the pullbacks $\pr_G^\ast\bm\theta_G$ under the standard projection $\pr_G:P\to G$. The Maurer-Cartan forms $\bm\theta_G$ on $P$ are invariant under the right regularized action of $G$.
 
 Since $P=G\times M$ is a Cartesian product, its exterior derivative $\dd$ naturally splits into components: $\dd =\dd_G+\dd M$. Moreover, since the regularized action is a Cartesian product action, this splitting is $G$-invariant.
 
@@ -4110,11 +4112,11 @@ Since $P=G\times M$ is a Cartesian product, its exterior derivative $\dd$ natura
     If $\theta$ is a $G$-invariant differential form on $P$, then both $\dd_M\theta$ and $\dd_G \theta$ are invariant forms. In particular, if $L$ is any lifted invariant, then $\dd_M L$ and $\dd_G L$ are invariant $1$-forms on $P$.
 \end{prop}
 
-In particular, the differential $\dd\mu$ of the fundamental lifted invariant $\mu=g\cdot m$ (here we work locally and view $\mu$ as $\bbR^n$-valued using arbitrary local coordinates on $M$) will split into two sets of invariant $1$-forms on $P$, $\dd_M\mu=g\cdot\dd \bf x=g^\ast\dd\bf x$ and $\dd_G \mu$. There is a beautiful explicit formula that expesses the group components $\dd_G\mu$ as invariant linear combinations of the Maurer-Cartan forms $\bm\theta_G$ on $P$.
+In particular, the differential $\dd\mu$ of the fundamental lifted invariant $\mu=g\cdot m$ (here we work locally and view $\mu$ as $\bbR^n$-valued using arbitrary local coordinates on $M$) will split into two sets of invariant $1$-forms on $P$, $\dd_M\mu=g\cdot\dd \bf x=g^\ast\dd\bf x$ and $\dd_G \mu$. There is a beautiful explicit formula that expresses the group components $\dd_G\mu$ as invariant linear combinations of the Maurer-Cartan forms $\bm\theta_G$ on $P$.
 
 \begin{thm}[{\cite[Thm.~3.10]{OlverCo2}}]\label{thm 3.10 OlverCo2}
     Let $G$ act on $M$. Let $\bf t_1,\ldots,\bf t_d$ be a basis for the Lie algebra $\frakg^\rmR$, and let 
-    \[\tilde{\bf t}_\nu=\sum{i=1}^n f_\nu^i(\bf x)\frac{\partial}{\partial x^i},\quad \nu=1,\ldots,d,\label{eq 3.7 OlverCo2}\]
+    \[\tilde{\bf t}_\nu=\sum_{i=1}^n f_\nu^i(\bf x)\frac{\partial}{\partial x^i},\quad \nu=1,\ldots,d,\label{eq 3.7 OlverCo2}\]
     be the corresponding infinitesimal generators on $M$, written in local coordinates $\bf x=(x^1,\ldots,x^n)$ on $M$. Let $\bm\theta_G=(\theta^1_G,\ldots,\theta^d_G)$ be the dual right Maurer-Cartan forms, pulled back to $P$. Let $\bm\mu=\bf{x}\circ\mu=(\mu^1,\ldots,\mu^n)$ be the components of the fundamental lifted invariant $\mu=g\cdot m$. Then the group differential of the components of $\mu$ is given by
     \[\dd_G\mu^i=\sum_{\nu=1}^d f_\nu^i(\bm\mu)\mu^\nu,\quad i=1,\ldots,n.\label{eq 3.8 OlverCo2}\]
     In other words, the coefficients of the Maurer-Cartan forms in \eqref{eq 3.8 OlverCo2} are the lifted invariant counterparts of the coefficients of the infinitesimal generators \eqref{eq 3.7 OlverCo2}, obtained by replacing $\bf{x}$ by the lifted invariant $\bm\mu$.
@@ -4197,7 +4199,7 @@ An alternative way of understanding the moving frame construction presented abov
 of the regularized bundle $P$ over $M$. Given a slice $\varSigma$ to the $G$-orbits, the set 
 \[\scrL\coloneqq \mu^{-1}(\varSigma)\subset P=G\times M\]
 forms a $n$-dimensional submanifold of $P$ that is invariant w.r.t.\ the lifted action of $G$. Projection onto $M$ defines a locally equivariant diffeomorphism $\pi_M:\scrL\to M$ and hence $\scrL$ is the graph of a local section $\sigma=\left(\restr{\pi_M}{\scrL}\right)^{-1}$, called the \emph{moving frame section}. \index{Moving frame section} It is not hard to see that $\sigma$ defines the graph of the moving frame, so $\sigma(m)=(\rho(m),m)$ for $m\in M$, i.e., 
-\[\rho=\pi_G\circ \sigma:\; M\to G.\]
+\[\rho=\pr_G\circ \sigma:\; M\to G.\]
 Since $\sigma:M\to \scrL$ is $G$-equivariant, any invariant object on $P$ pulls back, via $\sigma$, to an invariant object on $M$. In particular, the invariant $I(m)=\rho(m)\cdot m$ constructed in Theorem~\ref{thm 4.5 OlverCo2} is given by 
 \[I=\sigma^\ast\mu=\mu\circ\sigma:\; M\to \varSigma.\]
 
@@ -4219,7 +4221,7 @@ Invariantization \emph{does} depend on the choice of moving frame. Geometrically
 \PRLsep
 
 
-The above construction is intimately tied to Cartan's procedure of ``normalization'' of the group parameters, which is, traditionally, a basic technique in the practical construction of moving frames. It can be interpreted as the restriction of the regularized group action to an invariant submanifold of the regularized bundle $P$. In paricular, when $G$ acts freely on $M$, we can restrict to a local section of $P$ and thereby uniquely specify all of the group parameters, as we now show.
+The above construction is intimately tied to Cartan's procedure of ``normalization'' of the group parameters, which is, traditionally, a basic technique in the practical construction of moving frames. It can be interpreted as the restriction of the regularized group action to an invariant submanifold of the regularized bundle $P$. In particular, when $G$ acts freely on $M$, we can restrict to a local section of $P$ and thereby uniquely specify all of the group parameters, as we now show.
 
 \begin{defn}[Regular lifted invariant]
     A lifted invariant $L:P\supset U\to N$ is called regular if its group differential $\dd_G L$ has maximal rank, $\rank (\dd_G L)=\dim N$, at every point in its domain of definition.
@@ -4265,7 +4267,7 @@ Thus, barring algebraic complications, the normalization procedure provides a si
     \[\phi=-\arctan p,\quad a=-\frac{x+up}{\sqrt{1+p^2}},\quad b=\frac{xp-u}{\sqrt{1+p^2}},\label{eq 4.14 OlverCo2}\]
     which defines the right moving frame $\rho:M\to \SE_2$. The left moving frame is obtained by inverting the group element parametrized by \eqref{eq 4.14 OlverCo2}, whereby 
     \[\wt\phi=\arctan p,\quad \wt a=a,\quad \wt b=u.\label{eq 4.15 OlverCo2}\]
-    Finally, if we sibstitute \eqref{eq 4.14 OlverCo2} into the final lifted invariant $s=(\cos\phi-p\sin\phi)^{-3}q$, we recover the fundamental invariant 
+    Finally, if we substitute \eqref{eq 4.14 OlverCo2} into the final lifted invariant $s=(\cos\phi-p\sin\phi)^{-3}q$, we recover the fundamental invariant 
     \[\kappa=\frac{s}{(1+r^2)^{3/2}}=\frac{q}{(1+p^2)^{3/2}}.\label{eq 4.16 OlverCo2}\]
     Note again the common functional dependency on the coordinates on $M$ and the associated lifted invariants, in accordance with Theorem~\ref{thm 3.7 OlverCo2}. If we identify $p=u_x$, $q=u_{xx}$, then \eqref{eq 4.12 OlverCo2} coincides with the second prolongation of the standard action of $\SE_2$ on graphs of functions $\bbR\to\bbR$, \eqref{eq 4.15 OlverCo2} agrees with the classical left moving frame for Euclidean curves, and the invariant \eqref{eq 4.16 OlverCo2} is, of course, the Euclidean curvature.
 \end{example}
@@ -4335,7 +4337,7 @@ We have thus proved the following basic existence theorem.
     \end{enumerate}
 \end{thm}
 
-There is a second important method that can be used to construct an alternative $G$-coframe for a free group action without appealing to the Maurer-Cartan forms. First, the invariants $\bm I(z)=g\cdot z$ were earlier interpreted as the pullback, via the moving frame section $\sigma:M\to P=G\times M$, of the fundamental lifted invariants $\mu=g\cdot z$. Second, by applying Proposition~\ref{prop 3.9 OlverCo2}, the differential $\dd \mu$ will split into two sets of invariant forms on $P$, namely, $\dd_M\mu=g\cdot \dd z$ and the group component $\dd_G\mu$. Theorem~\ref{thm 3.10 OlverCo2} implies that the latter are invariant linear combinations of the Maurer-Cartan forms $\bm\theta_G^\rmR$ on $P$ (pulled back via $\pi_G:P\to G$, as usual). Therefore, 
+There is a second important method that can be used to construct an alternative $G$-coframe for a free group action without appealing to the Maurer-Cartan forms. First, the invariants $\bm I(z)=g\cdot z$ were earlier interpreted as the pullback, via the moving frame section $\sigma:M\to P=G\times M$, of the fundamental lifted invariants $\mu=g\cdot z$. Second, by applying Proposition~\ref{prop 3.9 OlverCo2}, the differential $\dd \mu$ will split into two sets of invariant forms on $P$, namely, $\dd_M\mu=g\cdot \dd z$ and the group component $\dd_G\mu$. Theorem~\ref{thm 3.10 OlverCo2} implies that the latter are invariant linear combinations of the Maurer-Cartan forms $\bm\theta_G^\rmR$ on $P$ (pulled back via $\pr_G:P\to G$, as usual). Therefore, 
 \[\dd\mu=\dd_M\mu+\dd_G\mu =g\cdot\dd z+F(\mu)\cdot\bm\theta,\label{eq 6.3 OlverCo2}\]
 where the coefficients $F(\mu)\in \GL_n(\bbR)$ are explicitly determined by \eqref{eq 3.8 OlverCo2}. We now pull back $\dd_M\mu$ via our moving frame section $\sigma$ to construct a system of $G$-invariant $1$-forms on $M$.
 
@@ -4343,9 +4345,9 @@ where the coefficients $F(\mu)\in \GL_n(\bbR)$ are explicitly determined by \eqr
     Let $G$ act freely on $M$. Let $\rho:M\supset U\to G$ be a right moving frame. Then the extended coframe $\varGamma=\{\bm\gamma,\bm I\}$ consisting of the invariant functions $\bm I(\bm z)=\rho(\bm z)\cdot \bm z$ along with the $1$-forms $\bm\gamma=\rho(\bm z)\cdot\dd\bm z$ forms a $G$-coframe on $M$.
 \end{thm}
 \begin{proof}
-    The fact that $\bm I=\sigma^\ast\bm \mu$ include a complete sustem of functionally independent invariants was given in Theorem~\ref{thm 4.5 OlverCo2}. Applying $\sigma^\ast$ to \eqref{eq 6.3 OlverCo2}, we find 
+    The fact that $\bm I=\sigma^\ast\bm \mu$ include a complete system of functionally independent invariants was given in Theorem~\ref{thm 4.5 OlverCo2}. Applying $\sigma^\ast$ to \eqref{eq 6.3 OlverCo2}, we find 
     \[\dd\bm I=\sigma^\ast(\dd_M \bm\mu)+\sigma^\ast(F)\cdot\bm\theta=\bm\gamma+(F\circ I)\cdot\bm\theta.\]
-    Therefpre, the $1$-forms $\bm\gamma=\sigma^\ast(\dd_M \bm \mu)$ are invariantly related to the moving coframe forms $(\bm\theta,\dd\bm I)$ as in \eqref{eq 5.3 OlverCo2}. It is easy to see that $\bm\gamma$ is a coframe on $M$, and so the result follows from Corollary~\ref{cor 5.8 OlverCo2}.
+    Therefore, the $1$-forms $\bm\gamma=\sigma^\ast(\dd_M \bm \mu)$ are invariantly related to the moving coframe forms $(\bm\theta,\dd\bm I)$ as in \eqref{eq 5.3 OlverCo2}. It is easy to see that $\bm\gamma$ is a coframe on $M$, and so the result follows from Corollary~\ref{cor 5.8 OlverCo2}.
 \end{proof}
 
 
@@ -4526,7 +4528,7 @@ Note that, by this definition, $\calV^r\neq 0$ and $\calS^r=\rmJ^r$ if $r\leq s_
 
 The characterization of submanifolds that are singular to all orders is of importance for understanding the range of validity of the moving frames method. 
 
-\begin{thm}[{\cite[Thm.~9.20]{OlverCo2}}]
+\begin{thm}[{\cite[Thm.~9.8]{OlverCo2}}]\label{thm 9.8 OlverCo2}
     A submanifold $S<M$ is totally singular iff its stabilizer group $G_S$ does not act locally freely on $S$.
 \end{thm}
 
@@ -4658,7 +4660,7 @@ We will examine the role of independence conditions in detail in the next \chap.
 
 On a transverse submanifold, $\bm\omega=i^\ast\tilde{\bm\theta}$ forms a coframe on the parameter space $X$. Therefore, we can write the remaining pulled back $1$-forms as linear combinations of them:
 \[\omega^k=\sum_{j=1}^p K^k_j(x)\omega^j,\quad k=p+1,\ldots,n.\]
-The coefficients $K=(K^k_j)$ provide additional invariants for the overdetermined system $\varOmega$. Replacing the extra $1$-forms by these invariants reduces $\varOmega$ to an invariantly related extended coframe $\varUpsilon=\{\bm\omega,J,K\}$ on $X$, having the same symmetry and equivalence properties as $\varOmega$ does. We shall call $\varUpsilon$ the \emph{restricted} $G$-coframe on the submanifold $S$. If $\wb S$ is also transverse, we can similarly construct the extended coframe $\wb \varUpsilon=\{\bar{\tilde{\bm\omega}},\wb J,\wb K\}$ on $\wb X$ using the \emph{same} choice of coframe basis $\bar{\bm\omega}=\wb i^\ast\tilde{\bm \omega}$ relative to the given $G$-coframe.
+The coefficients $K=(K^k_j)$ provide additional invariants for the overdetermined system $\varOmega$. Replacing the extra $1$-forms by these invariants reduces $\varOmega$ to an invariantly related extended coframe $\varUpsilon=\{\bm\omega,J,K\}$ on $X$, having the same symmetry and equivalence properties as $\varOmega$ does. We shall call $\varUpsilon$ the \emph{restricted} $G$-coframe on the submanifold $S$. If $\wb S$ is also transverse, we can similarly construct the extended coframe $\wb \varUpsilon=\{\bar{\bm\omega},\wb J,\wb K\}$ on $\wb X$ using the \emph{same} choice of coframe basis $\bar{\bm\omega}=\wb i^\ast\bm \omega$ relative to the given $G$-coframe.
 
 
 \begin{lem}\label{lem 7.5 OlverCo2}
@@ -4667,7 +4669,7 @@ The coefficients $K=(K^k_j)$ provide additional invariants for the overdetermine
 
 Now, even though the original $G$-coframe $\varTheta$ is involutive, the restricted $G$-coframe $\varUpsilon$ is almost never involutive. Thus, one will typically need to replace $\varUpsilon$ by its involutive counterpart $\varUpsilon^{(s)}$, where $s$ is the order of $\varUpsilon$.
 
-\begin{defn}[Regular submanifold]
+\begin{defn}[Regular submanifold]\label{defn regular submanifold}
     A submanifold $S\subset M$ is called \emph{regular of order $s$} w.r.t.\ the $G$-coframe $\varTheta$ if $S$ is transverse and the restricted $G$-coframe $\varUpsilon$ has order $s$. The classifying manifold of $S$ is defined as $\scrC(S)\coloneqq \scrC(\varUpsilon^{(s+1)})$. The \emph{rank} $t$ of $S$ is the dimension of its classifying manifold: $t\coloneqq \dim\scrC(S)$.
 \end{defn}
 
@@ -4689,7 +4691,7 @@ In particular, $S$ has maximal symmetry iff it has rank $0$, meaning that all th
     Later we shall see that the invariants $K$ arising from linear dependencies among the $1$-forms in $\varOmega$ can be identified with the first-order differential invariants for the group action. Moreover, the derived invariants correspond to suitable higher-order differential invariants. Thus, the classifying manifolds used to solve the equivalence problem are identified with those parametrized by the differential invariants for $G$.
 \end{rem}
 
-\begin{example}
+\begin{example}[{\cite[Example~7.9]{OlverCo2}}]\label{ex 7.9 OlverCo2}
     Consider the abelian Lie group $G=\bbR^3$ acting by translation on $M=\bbR^3$. A $G$-coframe is given by the coordinate $1$-forms $\varTheta=(\dd x,\dd y,\dd u)$. The surface $S=\{x^2+2yu= 0\mid y\neq 0\}$ satisfies the transversality condition $\restr{\dd x\wedge \dd y}{S}\neq 0$. Parametrizing $S$ by $i:(x,y)\mapsto (x,y,-\frac12 x^2/y)$, we see that the restricted $1$-forms $\varOmega=i^\ast\varTheta$ satisfy the linear relation $\dd u=-(x/y)\dd x+\frac12(x/y)^2\dd y$, leading to the functionally dependent invariants $-x/y$ and $x^2/(2y^2)$. Therefore, the restricted coframe on $S$ is 
     \[\varUpsilon=\left\{\dd x,\dd y,-\frac{x}{y},\frac{x^2}{2 y^2}\right\}.\]
 
@@ -4762,7 +4764,7 @@ In other words, a moving frame $\lambda$ on $S$ can be realized by the following
 \[\begin{tikzcd}
     & M \arrow[dr,"\rho"]& \\
     X\arrow[ur,"i"] \arrow[rr,"\lambda"] &  & G.
-\end{tikzcd}\]
+\end{tikzcd}\label{eq 4.17 OlverCo2}\]
 The moving frame $\rho$ must, of course, be defined in a neighborhood of some subset $U\subset S$ of the submanifold. As before, we can consider left or right moving frames on $S$, and, as usual, they are related to each other via inversion.
 
 In the rest of this \sect, we will briefly summarize the extension of the  method of moving frames to non-free group actions. If the action is not free, then an ordinary moving frame does not exist, and one needs to prolong to some jet space of suitably high order before the above procedure can be applied. In such cases, the higher-order moving frame naturally leads to the \emph{differential invariants} of the action.
@@ -4784,7 +4786,7 @@ A complete system of functionally independent lifted differential invariants is 
 \[\mu^{(r)}(g,z^{(r)})\coloneqq \mu^{(r)}\cdot z^{(r)},\quad (g,z^{(r)})\in P^{(r)}.\]
 Clearly, $\mu^{(r)}:P^{(r)}\to \rmJ^r$ is an invariant under the lifted action. As in the basic zeroth-order case, every lifted invariant can be locally written as a function of the fundamental lifted differential invariants $\mu^{(r)}$. In particular, any ordinary (i.e., not lifted) differential invariant $I:\rmJ^r\to \bbR$ also defines a lifted differential invariant $L=\pi_r^\ast I$, and hence can also be locally expressed as a function of the $\mu$'s; conversely, any lifted invariant $L(g,z^{(r)})$ that does not depend on $g$ automatically defines an ordinary differential invariant. Our simple Replacement Theorem~\ref{thm 3.7 OlverCo2} immediately applies to the construction of differential invariants from their lifted counterparts.
 
-\begin{thm}[Replacement Theorem {\cite[Thm.~10.3]{OlverCo2}}]
+\begin{thm}[Replacement Theorem {\cite[Thm.~10.3]{OlverCo2}}]\label{thm 10.3 OlverCo2}
     Let $I(z^{(r)})$ be an ordinary differential invariant. Then we can write $I(z^{(r)})=I(g^{(r)}\cdot z^{(r)})=I(\mu^{(r)})$ as the same function of the lifted differential invariants.
 \end{thm}
 
@@ -4801,7 +4803,7 @@ Clearly, $\mu^{(r)}:P^{(r)}\to \rmJ^r$ is an invariant under the lifted action. 
 \end{example}
 
 
-The regularization costruction extends to the infinite-order regularized jet bundle $\pi_\infty:P^{(\infty)}=G\times\rmJ^\infty\to\rmJ^\infty$ in the obvious manner. The pullback of the contact bundle $\calC^{(\infty)}<\T^\ast\rmJ^\infty$ defines the contact subbundle which we denote by the same symbol $\calC^{(\infty)}<\T^\ast P^{(\infty)}$. Similarly, the pullback via $\pi_G:P^{(\infty)}\to G$ of the cotangent bundle of $G$, spanned by its Maurer-Cartan forms, define a second intrinsic subbundle of $\T^\ast P^{(\infty)}$, which we also denote by $\T^\ast G$. The product bundle $\T^\ast G\times\calC^{(\infty)}$ forms a codimension $p$ subbundle of the cotangent bundle $\T^\ast P^{(\infty)}$. Since $P^{(\infty)}=G\times\rmJ^\infty$ is a Cartesian product, the differential on $P^{(\infty)}$ naturally splits into jet and group components, $\dd=\dd_\rmJ+\dd_G$.
+The regularization costruction extends to the infinite-order regularized jet bundle $\pi_\infty:P^{(\infty)}=G\times\rmJ^\infty\to\rmJ^\infty$ in the obvious manner. The pullback of the contact bundle $\calC^{(\infty)}<\T^\ast\rmJ^\infty$ defines the contact subbundle which we denote by the same symbol $\calC^{(\infty)}<\T^\ast P^{(\infty)}$. Similarly, the pullback via $\pr_G:P^{(\infty)}\to G$ of the cotangent bundle of $G$, spanned by its Maurer-Cartan forms, define a second intrinsic subbundle of $\T^\ast P^{(\infty)}$, which we also denote by $\T^\ast G$. The product bundle $\T^\ast G\times\calC^{(\infty)}$ forms a codimension $p$ subbundle of the cotangent bundle $\T^\ast P^{(\infty)}$. Since $P^{(\infty)}=G\times\rmJ^\infty$ is a Cartesian product, the differential on $P^{(\infty)}$ naturally splits into jet and group components, $\dd=\dd_\rmJ+\dd_G$.
 
 \begin{prop}\label{prop 10.5 OlverCo2}
     If $\omega$ is a $G$-invariant differential form on $P^{(\infty)}$, then so are both $\dd_\rmJ \omega$ and $\dd_G \omega$. In particular, if $L(g,z^{(r)})$ is a lifted differential invariantm then its jet and group differentials, $\dd_\rmJ L$ and $\dd_G L$, are $G$-invariant $1$-forms on $P^{(\infty)}$.
@@ -4821,10 +4823,16 @@ The introduction of local independent and dependent coordinates $z=(\bf x,\bf u)
 \[\eta^i\coloneqq\dd_M y^i=\sum_{j=1}^p (D_j y^i)\dd x^j,\quad i=1,\ldots,p,\label{eq 10.7 OlverCo2}\]
 denote the semibasic differentials  of lifted independent variables. The coefficient matrix $\bf D \bf y=(D_j y^i)$ is obtained by total differentiation of the lifted invariants $\bf y$ treating the group parameters as constants, so the lifted semibasic forms $\bm\theta=(\bf D\bf y)\cdot\dd\bf x$ are defined in the first-order regularized jet space $P^{(1)}$. The $\eta$'s are linearly independent iff the $y$'s have nonvanishing total Jacobian:
 \[\det\bf D\bf y=\frac{\bf D(y^1,\ldots,y^p)}{\bf D(x^1,\ldots,x^p)}=\det(D_j y^i)\neq 0.\]
+This condition can be characterized geometrically as follows.
+
+\begin{prop}[{\cite[Prop.~10.7]{OlverCo2}}]\label{prop 10.7 OlverCo2}
+    The semibasic $1$-forms $\bm\eta=(\bf D\bf y)\cdot\dd \bf x$ are linearly independent, $\eta^1\wedge\cdots\wedge\eta^p\neq 0$, on the open subset $W^{(1)}\subset P^{(1)}$ determines by the $1$-jets of submanifolds $S$ such that both $S$ and $g\cdot S$ are tranverse w.r.t.\ the given coordinates on $M$. Thus, $W^{(1)}=\{(g,z^{(1)})\in G\times \rmJ^1 E\mid g^{(1)}\cdot z^{(1)}\in\rmJ^1 E\}$. At such points, we call $\bm\eta=(\eta^1,\ldots,\eta^p)$ \emph{the} lifted (semibasc) contact-invariant coframe for the given coordinate chart.
+\end{prop}
+
 The corresponding invariant differential operators are easily found. As in the unlifted version, \eqref{eq 9.7 OlverCo2}, we write the total differential of any function $f\in C^\infty(P^{(\infty)})$ in invariant form 
 \[\dd_Mf=\sum_{j=1}^p (\calE_jf)\eta^j\label{eq 10.9 OlverCo2}\]
 w.r.t.\ the prescribed contact-invariant frame. The corresponding total differential operators are $\bm\calE=(\bf D\bf y)^{-T}\cdot\bf D$, or, explicitly, 
-\[\calE_jf=\frac{\bf D(y^1,\ldots,y^{j-1},f,y^{j+1},\ldots,y^p)}{\bf D(y^1,\ldots,y^p)}=\sum_{i=1}^p Z^i_j(g,\bf x,\bf u^{(1)})D_i,\]
+\[\calE_jf=\frac{\bf D(y^1,\ldots,y^{j-1},f,y^{j+1},\ldots,y^p)}{\bf D(y^1,\ldots,y^p)}=\sum_{i=1}^p Z^i_j(g,\bf x,\bf u^{(1)})D_i,\label{eq 10.10 OlverCo2}\]
 where $Z=(Z^i_j)=(\bf D\bf y)^{-1}$. Thus, we can identify the \emph{lifted invariant differential operator} $\calE_j=D_{y^j}$ with total differentiation w.r.t.\ the lifted invariant $y^j$; in particular, $\calE_j y^i=\delta^i_j$. Note that the lifted invariant differential operators do not involve differentiation w.r.t.\ the group parameters. A very important point is that, unlike the usual invariant differential operators, the lifted operators \emph{always} commute:
 \[[\calE_i,\calE_j]=0.\label{eq 10.11 OlverCo2}\]
 This follows from the closure of the semibasic differential, $\dd_M^2=0$, and is an immediate consequence of the fact that the lifted contact-invariant coframe \eqref{eq 10.7 OlverCo2} is the semibasic differential of lifted invariants. We let $\calE_K=\calE_1^{k_1}\cdots\calE_p^{j_p}$ denote the higher-order differential operators for multi-indices $K=(j_1,\ldots,j_p)$, $j_\nu\geq 0$; equation \eqref{eq 10.11 OlverCo2} shows that the order of the invariant differentiation is irrelevant.
@@ -4884,6 +4892,271 @@ is an invariant contact form. The resulting collection $\bm\vartheta=\{\vartheta
     \end{multline}
     The identity \eqref{eq 10.19 OlverCo2} follows by pairing \eqref{eq 10.20 OlverCo2} with the total vector field $\calE_j$.
 \end{proof}
+
+
+
+
+\PRLsep
+
+
+The construction of higher-order moving frames proceeds in direct analogy with the zeroth-order version. As uaully, for simplicity, we only treat the case of a right moving frame.
+
+\begin{defn}[Higher-order moving frame]
+    For the jet space $\rmJ^r=\rmJ^r(\bbR^p,M)^{\mathrm{imm}}$ of jets of $p$-dimensional submanifolds, an $r$-th order (right) moving frame is a (local) map $\rho^{(r)}:\rmJ^r\supset U\to G$ which is (locally) $G$-equivariant w.r.t.\ the prolonged action $G^{(r)}\acts \rmJ^r$, and the right multiplication action $h\mapsto h\cdot g^{-1}$ on $G$ itself.
+\end{defn}
+
+The corresponding left moving frame of order $r$ is merely $\wt\rho^{(r)}(z^{(r)})=\rho^{(r)}(z^{(r)})^{-1}$. Note that an $r$-th order moving frame automatically defines a moving frame on the higher-order jet bundles, namely $\rho^{(r)}\circ\pi^{r'}_r:\rmJ^{r'}\to G$, $r'>r$. The fundamental existence theorem for moving frames is an immediate consequence of Theorem~\ref{thm 4.4 OlverCo2}
+
+\begin{thm}\label{thm 11.2 OlverCo2}
+    Given an action $G\acts M$, an $r$-th order moving frame exists in a neighborhood of any point $z^{(r)}\in\calV^r$ in the regular component of $\rmJ^r$.
+\end{thm}
+
+
+Note that a global moving frame will exist only if the prolonged action $G^{r}\acts \calV^r$ is free.
+
+In particular, the monimal order at which any moving frame can be constructed is the stabilization order of the group aciton. Indeed, according to the previous construction, the choise of a slice $\Sigma^{(r)}\subset\rmJ^r$ to the prolonged group orbits serves to define a moving frame $\rho^{(r)}$ in a neighborhood of any point $z^{(r)}\in \Sigma^{(r)}$. The set $\calL^{(r)}=\left(\mu^{(r)}\right)^{-1}\left(\Sigma^{(r)}\right)$ forms the graph of a local $G$-equivariant section $\sigma^{(r)}:\rmJ^{(r)}\to P^{(r)}$, whose moving frame is $\rho^{(r)}=\pr_G\circ \sigma^{(r)}$. Moreover, composing $\sigma^{(r)}$ with $\mu^{(r)}$ produces the corresponding differential invariants.
+
+
+\begin{defn}[Fundamental normalized differential invariants]
+    The fundamental $r$-th order normalized differential invariants associated with an $r$-th order moving frame $\rho^{(r)}$ are given by 
+    \[I^{(r)}\left(z^{(r)}\right)=\mu^{(r)}\circ\sigma^{(r)}\left(z^{(r)}\right)=\rho^{(r)}\left(z^{(r)}\right)\cdot z^{(r)}.\]
+\end{defn}
+
+\begin{thm}\label{thm 11.4 OlverCo2}
+    If $J(x,u^{(r)})$ is any $r$-th order differential invariant, then, locally, $J$ is a function of the normalized $r$-th order differential invariants, $J=H\circ I^{(r)}$.
+\end{thm}
+
+
+\begin{rem}
+    The fundamental normalized differential invariants are not necessarily functionally independent, however, Theorem~\ref{thm 4.5 OlverCo2} does imply that they contain all of the $r$-th order differential invariants. In particular, all lower-order invariants, including those on jet bundles where $G$ does not act freely, will appear as functions of the $I^{(r)}$.
+\end{rem}
+
+
+As in the order zero case, given an arbitrary differential function $f\in C^\infty(\rmJ^r)$, the function $L=f\circ\mu^{(r)}\in C^{(\infty)}(P^{(r)})$ defines a lifted differential invariant, and hence, $J=L\circ \sigma^{(r)}=f\circ I^{(r)}$ defines a differential invariant, called the \emph{invariantization} of $f$ w.r.t.\ the given moving frame. Thus, a moving frame provides a natural way to construct a differential invariant from any differential function. Theorem~\ref{thm 10.3 OlverCo2} just says that if $f$ itself is a differential invariant, then $f\circ\mu^{(r)}$ is independent of the group parameters, hence $J=f$. Thus, invariantization defines a projection, depending on the moving frame, from the space of differential functions to the space of differential invariants. One case of interest is the $j$-th total derivative $(D_j f)(x,u^{(r+1)})$ of a differential function $f(x,u^{(r)})$. The corresponding lifted invariant coincides with the $j$-th invariant derivative of the lifted invariant $L=f\circ \mu^{(r)}$, so that $D_j f\circ\mu^{(r+1)}=\calE_j L$. Consequently, the invariantization of $D_jf$ is given by 
+\[\calE_j L\circ\sigma^{(r)}=D_jf\circ I^{(r+1)}.\]
+
+As in the order zero case, in applications to equivalence problems, one restricts the moving frame to a submanifold.
+
+\begin{defn}[Higher-order moving frames on submanifolds]
+    An $r$-th order moving frame on a $p$-dimensional submanifold $i:X\hookrightarrow S\subset M$ whose $r$-jet $\rmj^r i$ lies in the domain of $\rho^{(r)}$ is defined as the restriction 
+    \[\lambda^{(r)}=\rho^{(r)}\circ\rmj^r i:\; X\to G.\]
+    Equivalently, it is a smooth map $\lambda^{(r)}:X\to G$ which factors through an equivariant map from $\rmJ^r$ to $G$:
+    \[\begin{tikzcd}
+        & \rmJ^r \arrow[dr,"\rho^{(r)}"]& \\
+        X\arrow[ur,"\rmj^r i"] \arrow[rr,"\lambda^{(r)}"] & & G,
+    \end{tikzcd}\]
+    generalizing the order zero construction \eqref{eq 4.17 OlverCo2}. Theorems~\ref{thm 4.4 OlverCo2} and \ref{thm 9.8 OlverCo2} serve to characterize the submanifolds that admit moving frames.
+\end{defn}
+
+\begin{thm}[{\cite[Thm.~11.6]{OlverCo2}}]\label{thm 11.6 OlverCo2}
+    A submanifold $X\overset{i}{\to} M$ admits a (locally defined) $r$-th order moving frame iff $i(X)$ is regular of order $r$, i.e., $\rmj^r i(X)\subset \calV^r$.
+\end{thm}
+
+The practical implementation of the higher-order moving frame construction relies on the higher-order version of the normalization method. Consider a point $z^{(r)}\in \calV^r$ contained in the regular subset of the $r$-th jet space. According to Proposition~\ref{prop 4.10 OlverCo2}, in a neighborhood of $z^{(r)}$, we can choose a regular system of $d=\dim G$ lifted differential invariants $L(g,x,u^{(r)})$ having maximal rank $d=\rank \dd_G L=\dim G$. The \gls{immt} allows us to solve the normalization equations 
+\[L_i(g,z^{(r)})=c_i,\quad i=1,\ldots,d,\]
+for the group parameters $g$ in terms of $z^{(r)}$ provided the normalization constants $\bf c$ belong to the image of $L$. Typically, one chooses $L$ to be $d$ suitable components of the fundamental lifted differential invariant $\mu^{(r)}=g^{(r)}\cdot z^{(r)}$ that have as low an order as possible, subject to the maximal rank condition, although this is by no means essential to the implementation of the method. The solution to the normalization equations determines an $r$-th order moving frame $g=\rho^{(r)}(x,u^{(r)})$. Substituting the formula for the moving frame into the remaining lifted invariants produces a complete system of differential invariants on the open neighborhood of $z^{(r)}\in \calV^r$ where $\rho^{(r)}$ is defined.
+
+In terms of the invariant local coordinates $\mu^{(r)}=(y,v^{(r)})\in P^{(r)}$, the fundamental normalized differential invariants $I^{(r)}=\left(\sigma^{(r)}\right)^\ast\mu^{(r)}$ associated with the given moving frame $g=\rho^{(r)}(x,u^{(r)})$ are 
+\[\begin{aligned}
+    J^i(x,u^{(r)})&=y^i\left(\rho^{(r)}(x,u^{(r)}),x,u\right),\quad & i&=1,\ldots,p,\\
+    I^\alpha_K(x,u^{(l)})&= v^\alpha_K\left(\rho^{(r)}(x,u^{(r)}),x,u^{(|K|)}\right),\quad &\alpha&=1,\ldots,s,\; |K|\geq 0.
+\end{aligned}\label{eq 11.7 OlverCo2}\]
+In the second formula, $l=\max(r,|K|)$. As above, some of these may be constant and/or functionally dependent due to normalization. However,  \eqref{eq 11.7 OlverCo2} do include a complete system of differential invariants, meaning that, provided $k\geq r$, any other $k$-th order differential invariant can be locally expressed as a function of the $J^i$ and $I^\alpha_K$ for $|K|\leq k$.
+
+\begin{example}
+    Consider the elementary similarity group $G=\bbR^+\ltimes \bbR^2$ acting on $M=\bbR^2$ via 
+    \[(x,u)\mapsto (\alpha x+a,\alpha^3 u+b).\label{eq 11.8 OlverCo2}\]
+    If we choose $y=\alpha x+a$ as the lifted independent variable, then $\eta=\dd_M y=\alpha\dd x$ is the corresponding semibasic invariant form, with invariant differential operator $\calE=D_y=\alpha^{-1}D_x$. Successively applying $\calE$ to the dependent order zero lifted invariant $v$ produces the complete system of higher-order lifted invariants: $v_r=\calE^r v=\alpha^{3-r}u_r$, where $u_r=D_x^ru$. and $r\geq 1$. Therefore, on $P^{(4)}$, say, the lifted invariants $\mu^{(r)}$ are 
+    \[y=\alpha x+a,v=\alpha^3u+b,v_y=\alpha^2u_x,v_{yy}=\alpha u_{xx},v_{yyy}=u_{xxx},v_{yyyy}=\alpha^{-1}u_{xxxx}.\]
+    The simplest first-order moving frame is found by normalizing $y=v=0$, $u_x=1$, whereby 
+    \[a=-\frac{x}{\sqrt{u_x}},\quad b=-\frac{u}{u_x^{3/2}},\quad \alpha=\frac{1}{\sqrt{u_x}},\label{eq 11.10 OlverCo2}\]
+    which is well-defined on the subset $\wt\calV^1=\{u_x>0\}$. The resulting normalized fourth-order differential ivnariants $I^{(4)}$ are obtained by substituting \eqref{eq 11.10 OlverCo2} into the lifted invariants:
+    \[J^1=0,\; I_0=0,\; I_1=1,\; I_2=\frac{u_{xx}}{\sqrt{u_x}},\; I_3=u_{xxx},\; I_4=\sqrt{u_x}u_{xxxx}.\]
+    The moving frame \eqref{eq 11.10 OlverCo2} applies to curves $u=f(x)$ provided the tangent is not horizontal, so $u_x\neq 0$. If the curve has a horizontal component, then one can construct a second-order moving frame by using the alternative normalization $v_{yy}=1$, with 
+    \[a=-\frac{x}{u_{xx}},\quad b=-\frac{u}{u_{xx}^2},\quad \alpha=\frac{1}{u_{xx}},\label{eq 11.11 OlverCo2}\]
+    which is well-defined on the subdomain $\calV^2=\{u_{xx}\neq 0\}$, and hence applies to curves with horizontal tangent at a point, but not those with inflection points. (The latter can be treated with a yet higher-order normalization.) The moving frame \eqref{eq 11.11 OlverCo2} leads to a slightly different normalized fourth-order invariant $\wt I^{(4)}$:
+    \[\wt J=0,\; \wt I_0=0,\; \wt I_1=\frac{u_x}{u_{xx}^2},\; \wt I_2=1,\quad \wt I_3=u_{xxx},\; \wt I_4=u_{xx}u_{xxxx},\]
+    all of which are, naturally, functions of the previous normalized invariants on their common domain of definition. Note that the two moving frames correspond to different choices of slices on $\rmJ^2$, namely $\{(0,0,1,t)\}$ for \eqref{eq 11.10 OlverCo2} and $\{(0,0,\wt t,1)\}$ for \eqref{eq 11.11 OlverCo2}.
+ \end{example}
+
+
+
+
+
+ \PRLsep
+
+
+The final ingredient of the general theory is the higher-order counterpart of the moving coframe. This will produce the normalized invariant differential operators that can be used to recursively construct complete systems of higher-order differential invariants, and will govern the equivalence and symmetry properties of submanifolds.
+
+\begin{defn}[Higher-order moving coframe]\index{Moving coframe!Higher-order}
+    The moving coframe of order $r$ associated with an $r$-th order moving frame $\rho^{(r)}:\rmJ^r\supset U\to G$ is the extended differential system $\varTheta^{(r)}=\left(\bm\theta^{(r)},\dd I^{(r)},I^{(r)}\right)$ consisting of the pullback $\bm\theta^{(r)}=\left(\rho^{(r)}\right)^\ast \bm\theta_G$ of the Maurer-Cartan forms $\bm\theta_G$ to $\rmJ^r$, along with the $r$-th order normalized differential invariants $I^{(r)}$ and their differentials.
+\end{defn}
+
+\begin{lem}[{\cite[Lem.~12.2]{OlverCo2}}]\label{lem 12.2 OlverCo2}
+    The $r$-th order moving coframe $\varTheta^{(r)}$ forms a $G^{(r)}$-coframe on $\calV^r$.
+\end{lem}
+
+In other words, $\varTheta^{(r)}$ is involutive and its symmetry group coincides with $G^{(r)}$. Lemma~\ref{lem 12.2 OlverCo2} is a direct consequence of Lemma~\ref{lem 6.4 OlverCo2}. Any other $G^{(r)}$-coframe on $\rmJ^r$ is invariantly related to the moving coframe, meaning that its functions are combinations of the differential invariants, and the $1$-forms are linear combinations of the moving coframe forms, with differential invariant coefficients. A particularly useful $G^{(r)}$-coframe can be constructed using the method in Theorem~\ref{thm 6.6 OlverCo2}.
+
+\begin{thm}[{\cite[Thm.~12.3]{OlverCo2}}]\label{thm 12.3 OlverCo2}
+    Let $\rho^{(r)}:\calV^r\to G$ be a right moving frame on the $r$-th jet bundle over $p$-submanifolds of $M$. The extended coframe $\varGamma^{(r)}=\{\bm\gamma^{(r)},I^{(r)}\}$ consisting of the normalized differential invariants 
+    \[I^{(r)}\left(z^{(r)}\right)=\rho^{(r)}\left(z^{(r)}\right)\cdot z^{(r)}=\left(\sigma^{(r)}\right)^\ast \mu^{(r)},\]
+    and the $1$-forms  
+    \[\bm\gamma^{(r)}=\rho^{(r)}\left(z^{(r)}\right)\cdot \dd z^{(r)}=\left(\sigma^{(r)}\right)^\ast \dd_\rmJ \mu^{(r)}\]
+    form a $G^{(r)}$-coframe on $\rmJ^r$, and hence is invariantly related to the moving coframe $\varTheta^{(r)}$.
+\end{thm}
+
+\begin{example}
+    Consider the elemntary similarity group \eqref{eq 11.8 OlverCo2}. The moving coframe $\varTheta^{(2)}$ is obtained by applying the moving frame map \eqref{eq 11.10 OlverCo2} to the right invariant Maurer-Cartan forms 
+    \[\theta_G^1=\frac{\dd\alpha}{\alpha},\quad \theta_G^2=\dd a-\frac{a}{\alpha}\dd\alpha,\quad \theta_G^3=\dd b-\frac{3b}{a}\dd\alpha.\]
+    The resulting moving coframe forms are 
+    \[\theta^1=-\frac{\dd u_x}{2u_x},\quad \theta^3=-\frac{\dd u}{u_x^{3/2}},\quad \theta^2=-\frac{\dd x}{\sqrt{u_x}},\quad \theta^4=\dd\left(\frac{u_{xx}}{\sqrt{u_x}}\right),\]
+    where the final form is the differential of the fundamental second-order differential invariant $I_2=u_x^{-1/2}u_{xx}$. The second-order extended coframe $\varGamma^{(2)}$ is obtained by applying the moving frame map \eqref{eq 11.10 OlverCo2} to the jet differentials of the lifted invariants 
+    \[\dd_\rmJ y=\alpha\dd x,\quad \dd_\rmJ v=\alpha^3\dd u,\quad \dd_\rmJ v_y=\alpha^2\dd u_x,\quad \dd_\rmJ v_{yy}=\alpha\dd u_{xx},\]
+    leading to 
+    \[\gamma^1=\frac{\dd x}{\sqrt{u_x}},\quad \gamma^2=\frac{\dd u}{u_x^{3/2}},\quad \gamma^3=\frac{\dd u_x}{u_x},\quad \gamma^4=\frac{\dd u_{xx}}{\sqrt{u_x}}.\]
+    The invariant relation 
+    \[\gamma^1=-\theta_G^2,\quad \gamma^2=-\theta^3,\quad \gamma^3=-2\theta^1,\quad \gamma^4=\theta^4-I_2\theta^1,\]
+    between the two $G^{(2)}$-coframes follows from \eqref{eq 6.4 OlverCo2}, using the coefficients of the prolonged infinitesimal generators for the given group action.
+\end{example}
+
+As above, we use the local coordinates $(\bf x,\bf u^{(\infty)})$ on $\rmJ^\infty$ and lifted coordinates $(g,y,v^{(\infty)})$ on $P^{(\infty)}$. The pullback of the lifted contact-invariant coframe $\bm\eta=\dd_M \bm y$ under the moving frame section will produce a contact-invariant coframe, from which we can construct the required differential operators (recall Theorem~\ref{thm 6.6 OlverCo2}).
+
+\begin{defn}[Normalized contact-invariant coframe]\index{Contact-invariant coframe}
+    The normalized contact-invariant coframe is the pullback of the lifted contact-invariant coframe:
+    \[\bm\theta\coloneqq \left(\sigma^{(r)}\right)^\ast\bm\eta=\left(\sigma^{(r)}\right)^\ast\dd_M \bm y.\]
+\end{defn}
+
+\begin{lem}\label{lem 12.6 OlverCo2}
+    The semibasic $1$-forms $\bm\theta=\left(\sigma^{(r)}\right)^\ast\dd_M \bm y$ are linearly independent at a point $z^{(r)}$ in the domain of the moving frame iff $z^{(r)}=\rmj^r_z i$ is the $r$-jet of a transverse submanifold $i:X\to M$.
+\end{lem}
+\begin{proof}
+    In terms of our bundle coordinates (where $\rmJ^r$ becomes locally identified with a jet bundle $\rmj^r E$), the transversality of $S=i(X)$ implies $z^{(r)}\in \rmJ^r E$. According to Proposition~\ref{prop 10.7 OlverCo2}, the $1$-forms $\bm\eta$ will be linearly independent at a point $(g,z^{(r)})\in G\times\rmJ^r E\in P^{(r)}$ iff $g^{(1)}\cdot \pi^r_1(z^{(r)})\in\rmJ^1 E$, which automatically implies $g^{(r)}\cdot z^{(r)}\in\rmJ^r E$. Therefore, $\bm\gamma$ will be lienarly independent iff $k^{(r)}=\rho^{(r)}(z^{(r)})\cdot z^{(r)}\in \rmJ^r E$. But, by construction, $k^{(r)}\in K^{(r)}$ is the slice representative of the orbit of $G^{(r)}$ through $z^{(r)}$, and hence lies in the coordinate chart $\rmJ^r E$ used to construct the moving frame.
+\end{proof}
+
+In local coordinates, the normalized $1$-forms $\bm\theta$ are therefore obtained by using the moving frame to replace the group parameters in \eqref{eq 10.7 OlverCo2}, so 
+\[\gamma^i=\sum_{j=1}^p D_j y^i\left(\rho^{(r)}(x,u^{(r)}),x,u^{(r)}\right)\dd x^j=\sum_{j=1}^p P^i_j(x,u^{(r)})\dd x^j,\label{eq 12.5 OlverCo2}\]
+whose coefficient matrix $P=\left(\sigma^{(r)}\right)^\ast\bf D\bf y$ is the pullback of the total Jacobi matrix of the independent lifted invariants. 
+
+\begin{rem}
+    The coefficients $P^i_j$ \emph{cannot} be obtained by invariantly differentiating the normalized invariants $J^i=\left(\sigma^{(r)}\right)^\ast y^i$; in other words, $\gamma^i\neq \dd_M J^i$. Indeed, in many cases, the $y^i$ are normalized to be constant, whereas the $\gamma^i$ are clearly not zero. This is because the operations of total differentiation and normalization do not commute.
+\end{rem}
+
+The invariant differential operators associated with the semibasic coframe \eqref{eq 12.5 OlverCo2} are obtained by normalizing the lifted invariant differential operators \eqref{eq 10.10 OlverCo2}, so that the $\calE_i$ on $P^{(\infty)}$ project, via $\sigma^{(r)}$, to $G$-invariant total differential operators on $\rmJ^\infty$. In coordinates,
+\[\calD_i=\sum_{j=1}^p Q^j_i(x,u^{(r)})D_j=\sum_{j=1}^p Z^j_i\left(\rho^{(r)}(x,u^{(r)}),x,u^{(1)}\right)D_j,\]
+where $Q=P^{-1}=\left(\sigma^{(r)}\right)^\ast Z$ can be constructed directly from \eqref{eq 10.10 OlverCo2}.
+
+\begin{example}
+    Consider the similarity group \eqref{eq 11.8 OlverCo2}. Under the first-order moving frame \eqref{eq 11.10 OlverCo2}, the lifted semibasic form $\eta=\dd_M y=\alpha\dd x$ reduces to $\gamma=u_x^{-1/2}\dd x$. Similarly, the lifted invariant differential operator $\calE=\alpha^{-1}D_x$ reduces to $\calD=\sqrt{u_x}D_x$, which maps differential invariants to higher-order differential invariants. However, $\calD$ does not directly produce normalized invariants. For example, $v_{yy}$ normalizes to $I_2=u_x^{-1/2}u_{xx}$, but $v_{yyy}=\calE v_{yy}$ normalizes to $I_3=u_{xxx}$, which is not the same as $\calD I_2=u_{xxx}+u_x^{-1}u_{xx}^2$. The second-order moving frame \eqref{eq 11.11 OlverCo2} produces a different semibasic $1$-form, namely $\wt\gamma=u_{xx}^{-1}\dd x$, whose invariant differential operator $\wt\calD=u_{xx}D_x$ produces yet another hierarchy of differential invariants, which, naturally, are functions of the normalized differential invariants. The explicit formulae relating these alternative sets of invariants can be found by studying the \emph{syzygies} between the differential operators, see \cite[\S13]{OlverCo2}.
+\end{example}
+
+
+
+\PRLsep
+
+
+We are finally ready to present the solution to the general equivalence problem for submanifolds. As we have seen, in the zeroth-order case, the answer is provided in Theorems~\ref{thm 7.7 OlverCo2} and \ref{thm 7.8 OlverCo2}. However, in the non-free case, we need to prolong in order to make the group act (locally) freely. Since two submanifolds are equivalent under the aciton of $G$ on $M$ iff their $r$-jets are equivalent under the prolonged action $G^{(r)}\acts\rmJ^r$, we can then readily adapt our earlier results.
+
+When we restrict the $G^{(r)}$-coframe on $\rmJ^r$ to a submanifold, the resulting linear dependencies amonthe restricted $1$-forms lead to additional scalar invariants. In the zeroth-order context, these invariants are not directly predicted by the moving coframe, but appear to depend on the submanifold itself. An important fact is that, in the jet bundle context, they are merely the restrictions of \emph{higher-order differential invariants}! Thus, even in the zeroth-order case, the jet bundle constructions lead to significant new information.
+
+We start with the $G^{(r)}$-coframe $\varGamma^{(r)}=(\bm\gamma,I^{(r)})$ on $\rmJ^r$ constructed in Theorem~\ref{thm 12.3 OlverCo2}. Let $i:X\to M$ parametrize a submanifold $S=i(X)$, so that $\rmj^r i:X\to \rmJ^r$ parametrized the corresponding $r$-jet $\rmj^r S$. We assume that $\rmj^r S$ lies in the domain of our chosen moving frame $\rho^{(r)}$, which implies that $S$ is order $r$ regular. Let $\varXi^{(r)}=\left(\rmj^r i\right)^\ast\varGamma^{(r)}$ denote the restriction of the $r$-th order coframe to $S$. As in the zeroth-order case, the $1$-form system $\varXi^{(r)}$ is overdetermined on $X$, and we need to reduce it to an extended coframe. Now since $\rmj^r i$ annihilates the contact forms, only the semibasic linear dependencies among these $1$-forms will arise from the linear dependencies among the semibasic components of the $1$-forms in the $G^{(r)}$-coframe. The $1$-forms $\bm\gamma^{(r)}=\left(\sigma^{(r)}\right)^\ast\dd_\rmJ\mu^{(r)}$ are, by definition, the pullbacks of the jet differentials of the lifted invariants. We have already used the horizontal components $\dd_M y$ of the ``independent variable'' lifted invariants to construct the contact-invariant coframe $\bm\theta=\left(\sigma^{(r)}\right)^\ast\dd_M y$. The remaining ``dependent variable'' lifted invariants will lead to additional contact-invariant horizontal forms $\bm\delta^{(r)}=\left(\sigma^{(r)}\right)^\ast\dd_M v^{(r)}$, which must be invariant linear combinations of the contact-invariant coframe $\bm\theta$. 
+
+Recall that the relation $I^\alpha=(\sigma^{(r)})^\ast v^\alpha$ by which the normalized differential invariant $I^\alpha$ corresponds to the lifted zeroth-order invariant $v^\alpha$ as \eqref{eq 11.7 OlverCo2}. Applying an invariant differential operator to $I^\alpha$ produces a higher-order differential invariant $\calD_K I^\alpha$, but this is \emph{not}, in general, equal to its normalized counterpart 
+\[I^\alpha_K=\left(\sigma^{(r)}\right)^\ast v^\alpha_K=\left(\sigma^{(r)}\right)^\ast \left[\calE_K v^\alpha\right].\label{eq 31691}\] 
+For example, if we notmalize $v^\alpha=c^\alpha$, then $I^\alpha=c^\alpha$ is contant, and so its derivatives vanish, but the higher-order $I^\alpha_K$ are generally \emph{not} trivial. It is possible to determine a recursive formula for constructing the $I^\alpha_K$ directly without having to appeal to lifted invariants. The reader can find the full procedure for this in \cite[\S13]{OlverCo2}.
+
+Applying a semibasic differential to \eqref{eq 31691}, we have $\left(\sigma^{(r)}\right)^\ast \dd_M v^\alpha_K=\sum_{i=1}^p I^\alpha_{K+1_i}\omega^i$, and hence,
+\[\delta^\alpha_K=\left(\sigma^{(r)}\right)^\ast\dd_M v^\alpha_K=\sum_{i=1}^p I^\alpha_{K+1_i}\omega^i,\quad \alpha=1,\ldots,s,\; |K|\geq 0.\label{eq 14.1 OlverCo2}\]
+The coefficient $I^\alpha_{K+1_i}$ is the normalized differential invariant of order $|K|+1$. Therefore, the linear dependencies among the horizontal forms $\bm\gamma_M^{(r)}=\{\bm\theta,\bm\delta^{(r)}\}$ are the differential invariants of order $r+1$. With this in mind, we make the following definition.
+
+\begin{defn}[Differential invariant coframe]
+    The $r$-th order \emph{differential invariant coframe} on $\rmJ^r$ is the extended semibasic coframe 
+    \[\varDelta^{(r)}=\{\bm\theta,I^{(r)}\}\]
+    consisting of the contact-invariant coframe and the $r$-th order normalized differential invariants.
+\end{defn}
+
+\begin{prop}[{\cite[Prop.~14.2]{OlverCo2}}]\label{prop 14.2 OlverCo2}
+    The horizontal components of the $r$-th order moving coframe $\varTheta^{(r)}_M=\{\bm\theta^{(r)}_M,\dd_M I^{(r)},I^{(r)}\}$ or its normalized counterpart $\varGamma^{(r)}_M=\{\bm\gamma_M^{(r)},I^{(r)}\}$ are invariantly related to the differential invariant coframe $\varDelta^{(r+1)}=\{\bm\theta,I^{(r+1)}\}$ of order $r+1$.
+\end{prop}
+\begin{proof}
+    Formula \eqref{eq 14.1 OlverCo2} shows that $\varGamma^{(r)}_M$ is invariantly related to $\varDelta^{(r+1)}$. Moreover, since $\varTheta^{(r)}$ is invariantly related to $\varGamma^{(r)}$, the same is true for $\varTheta^{(r)}_M$. In particular, the fact that $\dd_M I^{(r)}$ can be written as a linear combination of the $\omega^i$ with $(r+1)$-st order differential invariant coefficients is immediate from \eqref{eq 9.7 OlverCo2}.
+\end{proof}
+
+
+We now restrict the coframes to a regular submanifold $S=i(X)$. Let 
+\[\varUpsilon^{(r)}=\{\bm\omega,\rmJ^r\}=\left(\rmj^r i\right)^\ast \varDelta^{(r)}\] 
+denote the restriction of the differential invariant coframe to $S$. Transversality implies that $\bm\omega=\left(\rmj^r i\right)^\ast\bm\theta$ will form a coframe on the parameter space $X$, while $J^{(r)}=\left(\rmj^r i\right)^\ast I^{(r)}$ corresponds to the pullback of the $r$-th order normalized differential invariants to $X$.
+
+\begin{prop}[{\cite[Prop.~14.3]{OlverCo2}}]\label{prop 14.3 OlverCo2}
+    Let $S=i(X)$ be a submanifold whose $r$-jet lies in the domain of the given moving frame. Then $\varXi^{(r)}=\left(\rmj^r i\right)^\ast \varGamma^{(r)}$ is invariantly related to the restricted $(r+1)$-st order differential invariant coframe $\varUpsilon^{(r+1)}=\left(\rmj^{r+1}i\right)^\ast\varDelta^{(r+1)}$.
+\end{prop}
+
+\begin{rem}
+    By construction, the invariant relation does not depend on the particular submanifold $S$ and hence we can replace $\varXi^{(r)}$ by $\varUpsilon^{(r+1)}$ without altering the equivalence relations between submanifolds.
+\end{rem}
+
+If $\varUpsilon^{(r+1)}$ is not involutive, then we need to extend it by appending additional derived invariants. A second key fact is that the derived invariants are merely the differential invariants of the next order restricted to $S$ (by \cite[(13.4), (13.6)]{OlverCo2}). 
+
+\begin{prop}[{\cite[Prop.~14.4]{OlverCo2}}]\label{prop 14.4 OlverCo2}
+    The derived coframe $\left(\varUpsilon^{(r+1)}\right)^{(k)}$ for the restricted differential invariant coframe $\varUpsilon^{(r+1)}$ are invariantly related to the coframe $\varUpsilon^{r+k+1}$.
+\end{prop}
+
+\begin{rem}
+    We can now interpret the additional invariants that arose in the zeroth-order construction: they are the differential invariants associated with the freely acting transformation group on $M$.
+\end{rem}
+
+
+\begin{defn}[Classifying manifold]
+    The $r$-th order differential invariant classifying manifold $\scrC^{(r)}(S)$ associated with a submanifold $i:X\to M$ is the manifold parametrized by the normalized differential invariants of order $r$, namely $J^{(r)}=I^{(r)}\circ \rmj^r i$. The submanifold $S$ is called \emph{order $r$ regular}  if $\scrC^{(r)}(S)$ is an embedded submanifold of its classifying space $Z^{(r)}$ (which can, in fact, be identified with a jet bundle $\rmJ^r E$).
+\end{defn}
+
+
+\begin{defn}[Order, rank of submanifold]\label{defn rank of submanifold}
+    The \emph{differential invariant order} of $S$ w.r.t.\ an $r$-th order moving frame $\rho^{(r)}$ is the minimal integer $s\geq r$ such that the extended coframe $\varUpsilon^{(s)}$ is involutive. The \emph{differential invariant rank} of $S$ is $t=\rank \varUpsilon^{(s)}=\dim \scrC^{(s)}(S)$.
+\end{defn}
+
+\begin{rem}
+    The differential invariant order defined here is slightly different from the order defined in Definition~\ref{defn regular submanifold}. For instance, if the $(r+1)$-st order differential invariants $I^{(r+1)}$ provide a complete system of invariants on $S$, then $S$ will have differential invriant order $r+1$, but will be an order zero submanifold w.r.t.\ the restricted coframe $\varUpsilon^{(r+1)}$.
+\end{rem}
+
+\begin{thm}[{\cite[Thm.~14.7]{OlverCo2}}]\label{thm 14.7 OlverCo2}
+    Let $S\subset M$ be a regular $p$-dimensional submanifold of differential invariant rank $t$ w.r.t.\ the transformation group $G$. Then its isotropy group $G_S$ is a $(p-t)$-dimensional subgroup of $G$ acting locally freely on $S$.
+\end{thm}
+
+In particular, maximaly symmetric submanifolds are those of rank $0$, where all the differential invariants are constant. In the case when $M=G\slash H$ is a homogeneous space, all such submanifolds can be characterized as group orbits.
+
+In the fully regular case, the ranks $t_k=\rank \dd J^{(k)}=\dim\scrC^{(k)}(S)$ of the $k$-th order fundamental differential invariants on $S$ are all constant for $k\geq r$ and satisfy 
+\[t_r<t_{r+1}<\cdots <t_s=t_{s+1}=\cdots =t\leq p,\]
+where $t$ is the differential invariant rank and $s$ is the differential invariant order. Generically, a $p$-dimensional submanifold will have differential invariant order $s=r$ equal to the stabilization order of the group, provided there are at least $p$ functionally independent differential invariants of order $\leq r$; if $G$ admits less than $p$ independent $r$-th order differential invariants, then the generic differential invariant order will be $r+1$. According to \eqref{eq 9.6 OlverCo2}, the latter situation occurs only when 
+\[q\binom{p+r}{r}<\dim G\leq p+q\binom{p+r}{r}=\dim\rmJ^r,\quad \text{where}\; q=\dim M-p.\]
+If $S$ is fully regular, then its differential invariant order is always bounded by either $r+p-1$ or, possibly, $r+p$; the latter case occurs only if all $r$-th order differential invariants are constant, and there is but one independent differential invariant appearing at each order $r+1\leq k\leq r+p$. In this context, it is instructive to reconsider the higher-order submanifold discussed in Example~\ref{ex 7.9 OlverCo2}.
+
+\begin{example}\label{ex 14.8 OlverCo2}
+    Consider the Lie group $G=\bbR^3$ acting by translations on $M=\bbR^3$. For a moving frame of order zero, the generating differential invariants for surfaces $u=f(x,y)$ are just the derivatives $u_x,u_y$. Any nonplanar solution to the nonlinear PDE $u_y=\frac12 u_x^2$ will define a surface of rank $2$ and differential invariant order $2$. (The function $u(x,y)=-x^2/2y$ discussed in Example~\ref{ex 7.9 OlverCo2} above is a particular case.) Indeed, the second-order differential invariants are $u_{xx}$, $u_{xy}=u_x u_{xx}$, and $u_{yy}=u_x^2 u_{xx}$. The single independent invariant $u_{xx}$ is, however, not a function of the first-order invariant $u_x$, since their Jacobian matrix is 
+    \[\frac{\partial(u_x,u_{xx})}{\partial(x,y)}=\begin{pmatrix}
+        u_{xx} & u_{xy}\\
+        u_{xxx} & u_{xxy}
+    \end{pmatrix}=\begin{pmatrix}
+        u_{xx} & u_x u_{xx}\\
+        u_{xxx} & u_x u_{xxx}+u_{xx}^2
+    \end{pmatrix}=u_{xx}^3\neq 0,\]
+    since $u$ is nonplanar. Thus, one must use the third-order differential invariant classifying manifold to characterize such solutions.
+\end{example}
+
+The fundamental equivalence theorem for submanifolds under geenral transformation group actions is a direct consequence of the corresponding Equivalence Theorem~\ref{thm 7.2 OlverCo2} for submanifolds under free actions.
+
+\begin{thm}[Equivalence of submanifolds {\cite[Thm.~14.9]{OlverCo2}}]\label{thm 14.9 OlverCo2}
+    Let $S,\wb S\subset M$ be regular $p$-submanifolds whose $r$-jets lie in the domain of a moving frame $\rho^{(r)}$. Then $S$ and $\wb S$ are (locally) congruent, $\wb S=g\cdot S$, iff they have the same differential invariant order $s$ and their classifying manifolds of order $s+1$ overlap: $\scrC^{(s+1)}(\wb S)=\scrC^{(s+1)}(S)$.
+\end{thm}
+
+Finally, we discuss rigidity theorems for submanifolds under trasnformation groups. These come in two varieties. Roughly speaking, a rigidity result says that, under certain conditions, a submanifold is uniquely determined by its $k$-jet for some finite order $k$.
+
+\begin{defn}[Order $k$ congruency]
+    A submanifold $S$ is said to be order $k$ congruent to a submanifold $\wb S$ at a point $z\in S$ if there is a group transformation $g\in G$ such that $S$ and $g\cdot S$ have order $k$ contact at the point $z$. We shall call $S$ order $k$ congruent to $\wb S$ if this occurs for every $z\in S$, where the group transformation $g=g(z)$ can vary from point to point.
+\end{defn}
+
+If $G^{(k)}$ acts freely on $\rmJ^r$, then the group transformation $g(z)$ determining the contact is uniquely determined. The first rigidity theorem states that order $k$ congruence implies congruence provided $k$ is sufficiently large. The \emph{rigidity order} of $S$ is the minimal $k$ for which this applies. For example, the rigidity order of a circle under the Euclidean group $\rmE_2$ is two, since the only curves that are second-order congruent to a circle are translates of it. On the other hand, a generic curve in the plane has rigidity order $3$ under $\rmE_2$.
+
 
 
 
@@ -6582,7 +6855,7 @@ where $\pi:\Gr_n(\T M)\to M$ is the Grassmann bundle projection.
 Now $\Gr_n(\T M)$ comes endowed with a canonical \gls{eds} $\calC$ called the \emph{canonical system}. Abstractly, it is defined as follows: 
 
 \begin{defn}[Canonical contact system]\index{Contact system}
-    If $M$ is a manifold, there is a canonical rank-$(n+ns)$ distribution $\calC< \T \Gr_n(\T M)$ defined pointwise by 
+    If $M$ is a manifold, there is a canonical rank $(n+ns)$ distribution $\calC< \T \Gr_n(\T M)$ defined pointwise by 
     \[\calC_E=\pi_\ast^{-1}(E)\subset \T_E\Gr_n(\T M).\]
     Then $\calC\subset\Omega^{\smbullet}(\Gr_n(\T M))$ is the ideal generated by the set of $1$-forms on $\Gr_n(\T M)$ that vanish on $C$. From the canonical nature by definition, it is clear that for any diffeomorphism $F:M\to M'$, the corresponding lifting $F^{(1)}$ will identify the two contact systems.
 \end{defn}
@@ -11339,7 +11612,7 @@ As explained in  \S\ref{sec: hyperbolic EDS}, these pull back to lie in the char
 We now examine a geometrically natural class of surfaces, called \emph{linear Weingarten surfaces}, which are locally equivalent to solutions of a \gls{ma} equation. Recall from Example~\ref{ex Weingarten surfaces} that a linear Weingarten surface is one whose mean and Gauss curvatures $H,K$ satisfy a linear relation $AK+2BH+C=0$. More generally, a \emph{Weingarten surface} is one with $F(H,K)=0$ for some function $F$.
 
 \begin{rem}
-    As we showed in \Chap~\ref{ch equivalence problems}, all differential equations with a given symmetry group can be written in terms of only the differential invariants of that group, which allows one to classify all invariant differential equations. In the context of surfaces, equations written in terms of $H$, $K$, and their covariant derivatives, describe valid conguency-invariant families of surfaces in Euclidean space. Any functional relationship between $H$ and $K$ also imposes functional relationships between all of their derivatives. Weingarten surfaces are thus the simplest such family of surfaces, namely the surfaces with one-dimensional classifying space, see Figure~\ref{fig:weingarten}.
+    As we showed in \Chap~\ref{ch equivalence problems}, all differential equations with a given symmetry group can be written in terms of only the differential invariants of that group, which allows one to classify all invariant differential equations. In the context of surfaces, equations written in terms of $H$, $K$, and their covariant derivatives, describe valid conguency-invariant families of surfaces in Euclidean space. Any functional relationship between $H$ and $K$ also imposes functional relationships between all of their derivatives. Weingarten surfaces are thus the simplest such family of surfaces, namely the surfaces with one-dimensional classifying space (``rank $1$ surfaces'' in the language of Definition~\ref{defn rank of submanifold}), see Figure~\ref{fig:weingarten}.
 \end{rem}
 
 \begin{figure}[tp]
@@ -11579,7 +11852,7 @@ A Riemannian surface $(\varSigma,\sfg)$ is called \emph{(geodesically) complete}
 Hence, even if the sine-Gordon solution is defined for all $x$ and $y$, the corresponding surface will become singular. In fact, $\theta^1\wedge\theta^2=\sin 2u \dd x\wedge \dd y$ shows that the surface will be singular whenever $u$ is a multiple of $\pi/2$, i.e., when the asymptotic lines are tangent to each other. This is why the surfaces in Figure~\ref{fig: SGE 1-soliton} have singularities and are made by joining two pseudospherical surfaces along an edge: the values of the $1$-soliton solution always span $(0,\pi)$.
 
 \begin{rem}
-    The sine-Gordon has an obvious scaling symmetry given by $x\mapsto \lambda x$, $y\mapsto \lambda^{-1}y$. Hence, each immersion of $\varSigma$ belongs to a one-parameter family of isometric immersions. These deformations of pseudospherical surfaces are called \emph{Lie transformations}. In the next \sect\ we will find a similar one-parameter family of deformations of minimal surfaces (but parametrized by an element of $\U_1$ instead of $\bbR$ because the corresponding system is elliptic).
+    The \gls{sge} has an obvious scaling symmetry given by $x\mapsto \lambda x$, $y\mapsto \lambda^{-1}y$. Hence, each immersion of $\varSigma$ belongs to a one-parameter family of isometric immersions. These deformations of pseudospherical surfaces are called \emph{Lie transformations}. In the next \sect\ we will find a similar one-parameter family of deformations of minimal surfaces (but parametrized by an element of $\U_1$ instead of $\bbR$ because the corresponding system is elliptic).
 \end{rem}
 
 \begin{xca}\label{xca 7.4.19 Ivey}
@@ -11614,7 +11887,7 @@ and so if we define
 then the characteristic systems are 
 \[\calM=\<\theta^3,\omega,\theta\>,\quad \wb\calM=\<\theta^3,\wb\omega,\wb\theta\>.\]
 
-When we attempt to apply Darboux's method, we find that neither of these systems contains a rank-$2$ integrable subsystem. In fact, $\dd\omega\equiv 0\pmod{\omega}$, but $\dd\theta\equiv \wb\omega\wedge\theta^3\pmod{\theta}$. However, this shows that the distribution
+When we attempt to apply Darboux's method, we find that neither of these systems contains a rank $2$ integrable subsystem. In fact, $\dd\omega\equiv 0\pmod{\omega}$, but $\dd\theta\equiv \wb\omega\wedge\theta^3\pmod{\theta}$. However, this shows that the distribution
 \[\Re\<\omega,\wb\omega\>=\<\omega^3_1,\omega^3_2\>\eqqcolon J\]
 is a Frobenius system on $\SE_3$. The quotient of $\SE_3$ by the leaves of the distribution dual to $J$ is a $2$-sphere, and the quotient map $\gamma:\SE_3\to \bbS^2$ is given by the unit vector $e_3$. Thus, the restriction of $\gamma$ to an integral surface $M$ of $\calI$ is just the Gauss map of the minimal surface $\varSigma=\pi(M)$, where $\pi:\SE_3\to \bbE^3$ is the bundle projection.
 
@@ -11797,7 +12070,7 @@ If $(B,\calE)$ is an integrable extension of rank $k$ and $N\subset M$ is a $p$-
 
 
 \begin{rem}\label{rem 7.5.4 Ivey}
-    Suppose $\calI$ is a \gls{eds} on a manifold $M$ with a $2$-form $\varPhi\in\calI^2$ closed. Then, by the Poincar\'e Lemma~\ref{lem poincare classic}, in some contractible neighborhood of any given point in $M$ there exists a differential form $\phi$ such that $\dd\phi=\varPhi$. We may define a rank-$1$ integrable extension of $\calI$ by introducing a new coordinate $y$ and letting the Pfaffian system $J$ on $U\times\bbR$ be spanned by $\dd y-\phi$. This is exactly what we did for the Laplace equation in Example~\ref{ex laplace equation backlund}. Because such forms $\varPhi$ are examples of conservations laws for an \gls{eds}, we call this construction an \emph{extension via conservation law}.
+    Suppose $\calI$ is a \gls{eds} on a manifold $M$ with a $2$-form $\varPhi\in\calI^2$ closed. Then, by the Poincar\'e Lemma~\ref{lem poincare classic}, in some contractible neighborhood of any given point in $M$ there exists a differential form $\phi$ such that $\dd\phi=\varPhi$. We may define a rank $1$ integrable extension of $\calI$ by introducing a new coordinate $y$ and letting the Pfaffian system $J$ on $U\times\bbR$ be spanned by $\dd y-\phi$. This is exactly what we did for the Laplace equation in Example~\ref{ex laplace equation backlund}. Because such forms $\varPhi$ are examples of conservations laws for an \gls{eds}, we call this construction an \emph{extension via conservation law}.
 \end{rem}
 
 
@@ -11822,7 +12095,7 @@ Parametric families of integrable extensions are frequently encountered in the s
     \[\eta\coloneqq \dd y-(y^2+u-\mu)\dd x+(r+2py+2(u+2\mu)(y^2+u-\mu))\dd t,\]
     and let $\calE=\<J\cup \calI\>_{\mathrm{alg}}$. It is an exercise to verify that $\calE$ is an integrable extension of $\calI$.
 
-    Since $J$ contains a rank-$1$ Frobenius system, we have a $1$-parameter family of extensions, with $\mu$ as a parameter. Along an integral surface of $\calE$ that satisfies the independence condition, $y(x,t)$ satisfies 
+    Since $J$ contains a rank $1$ Frobenius system, we have a $1$-parameter family of extensions, with $\mu$ as a parameter. Along an integral surface of $\calE$ that satisfies the independence condition, $y(x,t)$ satisfies 
     \[y_y+y_{xxx}+6(\mu-y^2)y_x=0\label{eq 7.34 Ivey}\]
     for some constant $\mu$. This family of equations may be said to be extensions of \gls{kdv}. When $\mu=0$, it is a version of another well-known PDE, the \emph{modified \gls{kdv} equation}, and the passage from $u$ to $y$ is known as the \emph{Miura transformation}.
     % All integrable extensions of \gls{kdv} have been classified, and each of them corresponds to a finite-dimensional representation of a certain infinite-dimensional Lie algebra, known as the \emph{\gls{kdv} prolongation algebra}. Moreover, this algebra has a $1$-parameter family of finite-dimensional quotients, each of which is isomorphic to a semidirect product of $\fraksl_2(\bbR)$ with $\bbR^5$. Representations of the latter algebra allow us to construct $1$-parameter families of \gls{kdv} extensions, the most well-known of which is the AKNS system \eqref{eq AKNS UV pair}
@@ -12001,8 +12274,8 @@ As we wrap up our exploration of the geometry of surfaces, we can make some obse
     \item \emph{A Hamiltonian structure} which describes solutions as Hamiltonian flows on an infinite-dimensional manifold.
     \item \emph{An infinite-dimensional Lie algebra of symmetries}, which generates an infinite number of conserved quantities (analogs of initial data in a Frobenius system).
     \item \emph{Existence of solitonic solutions}, each of which is described by a finite set of parameters related to the conserved quantities. This is another manifestation of the large space of symmetries.
-    \item \emph{Well understood function spaces}, such as special functions (elliptic, hypergeometric, Painlev\'e). One a nonlinear coordinate transformation was found that reduces the problem to a linear one, the space of solutions to the linear problem needs to be highly legible. A standard criterion for this property is the Painlev\'e Test, which is related to the classification of ODE's whose solutions have certain natural analytic properties (such as singularities of Fuchsian type whose location is independent of the initial condition), a generalization of the Cauchy-Kovalevskaya Theorem. Solutions to Painlev\'e equations encompass all classical special functions and are currently the broadest well-studied class of special functions related to integrable PDEs.
-    \item \emph{Lax pair or zero curvature representations}, which pair the original system with a linear time-dependent operator ($L$ in Example~\ref{ex Lax pairs}) whose dynamics is \emph{isospectral}. The existence of a Lax pair is often conflated with integrability, but it alone does not actually imply the rest of the features listed above.
+    \item \emph{Well understood function spaces}, such as special functions (elliptic, hypergeometric, Painlev\'e). Even if a nonlinear coordinate transformation is found that reduces the problem to a linear one, the space of solutions to the resulting linear problem needs to be highly legible. A standard criterion for this property is the \emph{Painlev\'e Test}, which is related to the classification of ODE's whose solutions have certain natural analytic properties (such as singularities only of Fuchsian type whose locations are independent of the initial condition), a generalization of the Cauchy-Kovalevskaya Theorem. Solutions to Painlev\'e equations encompass all classical special functions and are currently the broadest well-studied class of special functions related to integrable PDEs.
+    \item \emph{Lax pair or zero curvature representations}, which couple the original system with a linear time-dependent operator ($L$ in Example~\ref{ex Lax pairs}) whose dynamics is \emph{isospectral}. The existence of a Lax pair is often conflated with integrability, but it alone does not actually imply the rest of the features listed above.
 \end{enumerate} 
 
 For a much more detailed review of the concept of integrable systems, we direct the reader to \cite{deift}. For more on the theory of classical integrable systems, see the books \cite{moser,babelon}.
