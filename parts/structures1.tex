@@ -10465,7 +10465,7 @@ Since $\wt{Q}$ is a $\sfI$-symmetric quadratic form, it can be diagonalized by a
         \item The \emph{Gauss curvature} of $\varSigma$ is $K\coloneqq \kappa_1\kappa_2$. It also satisfies the \emph{Gauss equation}\index{Gauss curvature}\index{Equation!Gauss}
         \[K=\det\left(\sfI^{-1}\circ \wt{Q}\right)=\frac{LN-M^2}{EG-F^2}.\]
         \item The \emph{mean curvature}\index{Mean curvature} of $\varSigma$ is $H\coloneqq \frac12(\kappa_1+\kappa_2)=\frac12\tr\left(\sfI^{-1}\circ \wt{Q}\right)$. Note that its sign depends on the orientation of the surface, so it is a \emph{pseudoscalar}. Surfaces with identically vanishing mean curvature are called \emph{minimal}. $\wt{Q}$ can be uniquely decomposed as
-        \[\wt{Q}=Q+H\sfI,\]
+        \[\wt{Q}=Q+H\cdot \sfI,\]
         where $Q$ is the traceless part of $\wt{Q}$, called the \emph{Hopf differential}.\index{Hopf differential}
     \end{enumerate}
 \end{defn}
@@ -10475,7 +10475,7 @@ Since $\wt{Q}$ is a $\sfI$-symmetric quadratic form, it can be diagonalized by a
 \end{xca}
 
 \begin{rem}
-    If $\varSigma$ is locally represented as a graph of a function $z(x,y)$, i.e., $\bf(x)(x,y)=(x,y,z(x,y))$, then we can use \eqref{eq fff} and \eqref{eq hopf differential components} to compute $K$ and $H$ in terms of $z(x,y)$. Using the unit normal vector 
+    If $\varSigma$ is locally represented as a graph of a function $z(x,y)$, i.e., $\bf{x}(x,y)=(x,y,z(x,y))$, then we can use \eqref{eq fff} and \eqref{eq hopf differential components} to compute $K$ and $H$ in terms of $z(x,y)$. Using the unit normal vector 
     \[e_3=\frac{(-z_x,-z_y,1)}{\sqrt{1+z_x^2+z_y^2}},\]
     we find
     \[(\sfI_{\mu\nu})= \begin{pmatrix}
@@ -10507,14 +10507,14 @@ Since $\wt{Q}$ is a $\sfI$-symmetric quadratic form, it can be diagonalized by a
 
 Note that the values of the local integral $\iint \sqrt{\det \sfg}\dd u\dd v$ are invariant under reparametrizations of the surface due to the transformation rule for the metric tensor $\sfg$. In other words, the local formula 
 \[\sfv_{\sfg}=\sqrt{\det\sfg}\dd u\wedge\dd v\]
-actually defines a global volume form, or \emph{area form}, on $\varSigma$. The following proposition shows how the area of an immersed surface is related to its mean curvature. We will allow the immersion $\bm{x}$ to vary in such a way that the surface $\varSigma\subset\bbE^3$ is deformed, and use a non-orthonormal framing on the deformed surface to see how the area form gets distorted.
+actually defines a global volume form, or \emph{area form}, on $\varSigma$. The following proposition shows how the area of an immersed surface is related to its mean curvature. We will allow the immersion $\bf{x}$ to vary in such a way that the surface $\varSigma\subset\bbE^3$ is deformed, and use a non-orthonormal framing on the deformed surface to see how the area form gets distorted.
 
 \begin{prop}
     An immersed surface $\bf{x}:U\to \bbE^3$ is minimal iff it is a stationary point of the area functional, defined locally in coordinates $(u,v)$ on $U$ in terms of the induced metric $\sfg$ (First Fundamental Form) by
     \[\mathsf{vol}[\bf{x}]\coloneqq \iint \sqrt{EG-F^2}\dd u\dd v=\iint \sqrt{\det\sfg}\dd u\dd v.\]
 \end{prop}
 \begin{proof}
-    The statement is local, so fix an orthonormal framing $(e_1,e_2,e_3)$ along $\bm{x}(U)$ and let $\bf{x}^t(u,v)$ be a deformation of $x$, i.e., a smooth homotopy of immersions with $t\in (-\epsilon,\epsilon)$ for some $\epsilon>0$ and $\bf{x}^0=\bf{x}$. We assume that the deformation is nontrivial, i.e., $\dot{\bf{x}}$ is not tangent to $\varSigma$. Then for small $t$ we have 
+    The statement is local, so fix an orthonormal framing $(e_1,e_2,e_3)$ along $\bf{x}(U)$ and let $\bf{x}^t(u,v)$ be a deformation of $x$, i.e., a smooth homotopy of immersions with $t\in (-\epsilon,\epsilon)$ for some $\epsilon>0$ and $\bf{x}^0=\bf{x}$. We assume that the deformation is nontrivial, i.e., $\dot{\bf{x}}$ is not tangent to $\varSigma$. Then for small $t$ we have 
     \[\bf{x}^t(u,v)=\bf{x}(u,v)+t s(u,v)e_3(u,v)+\calO(t^2),\]
     where $s:U\to \bbR$ is a uniquely determined function. At fixed $t$, calculate 
     \begin{multline}
@@ -10536,7 +10536,7 @@ actually defines a global volume form, or \emph{area form}, on $\varSigma$. The 
     This formula is known as \emph{the first variation of area}, and can be generalized to submanifolds of arbitrary Riemannian manifolds. The stationary point condition for the area functional $\int \sqrt{\det\sfg^t}\dd u\dd v$ is exactly $H=0$.
 \end{proof}
 \begin{rem}
-    Note that while the metric can be considered intrinsic for the surface, in the above statement we assume that this metric is induced from the standard Euclidean metric via the immersion $\bm{x}$. This why, even though the area functional itself is defined in terms of the intrinsic area form, its variation is extrinsic -- because the variation is w.r.t.\ the immersion. Denoting the first variation of functionals by $\delta$, the intrinsic variation of the area is easy to compute:
+    Note that while the metric can be considered intrinsic for the surface, in the above statement we assume that this metric is induced from the standard Euclidean metric via the immersion $\bf{x}$. This is why, even though the area functional itself is defined in terms of the intrinsic area form, its variation is extrinsic -- because the variation is w.r.t.\ the immersion. Denoting the first variation of functionals by $\delta$, the intrinsic variation of the area is easy to compute:
     \[\delta \sqrt{\det\sfg}=\tr (\sfg^{-1}\circ \delta \sfg)\sqrt{\det\sfg},\]
     where $\delta\sfg$ is the variation of the metric and $\sfg^{-1}\circ \delta \sfg$ is a section of $\End(\T M)$, so the trace is well-defined. The proposition above effectively computed the variation $\delta\sfg$ corresponding to a deformation of the surface, namely 
     \[\delta\sfg=-sH\sfg\delta t.\]

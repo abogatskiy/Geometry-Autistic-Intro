@@ -17,12 +17,14 @@ Topics covered (the ones with ellipses are under construction)
 * Smooth manifolds
 * Covering spaces
 * Lie groups and algebras
-* Fiber bundles
-* Lie group actions
+* Fiber bundles, G-structures
+* Lie group actions, homogeneous spaces, principal bundles
+* Lie's and Cartan's theory of symmetries of ODEs and PDEs
+* Cartan's moving frames and equivalence methods...
 * Cartan's approach to PDEs (Exterior Differential Systems)
 * Curves and Surfaces
 * Principal connections
-* Cartan connections...
+* Cartan connections
 * Riemannian geometry, Morse theory...
 * Complex geometry...
 * Symplectic geometry...

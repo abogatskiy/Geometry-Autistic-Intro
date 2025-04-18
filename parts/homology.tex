@@ -876,9 +876,9 @@ Retracing the construction of the connecting homomorphism, we find that
 
 \begin{example}[de Rham cohomology of $\bbS^1$]\label{de Rham of circle}
     Let $M=\bbS^1$ and let $U,V$ be a covering of the circle by two overlapping open arcs. Then we have the exact sequence
-    \[0\to H^0(\bbS^1)\overset\psi\to H^0(U\sqcup V)\overset\partial\to H^0(U\cap V)\overset\delta\to \rmH^1(\bbS^1)\to \rmH^1(U\sqcup V)\to \cdots \]
+    \[0\to \rmH^0(\bbS^1)\overset\psi\to \rmH^0(U\sqcup V)\overset\partial\to \rmH^0(U\cap V)\overset\delta\to \rmH^1(\bbS^1)\to \rmH^1(U\sqcup V)\to \cdots \]
     in which by Proposition~\ref{prop zeroth cohomology} and Poincar\'e Lemma \ref{Poincare lem}
-    \[H^0(\bbS^1)=\bbR,\quad H^0(U\sqcup V)=\bbR^2,\quad H^0(U\cap V)=\bbR^2,\quad \rmH^1(U\sqcup V)=0,\]
+    \[\rmH^0(\bbS^1)=\bbR,\quad \rmH^0(U\sqcup V)=\bbR^2,\quad \rmH^0(U\cap V)=\bbR^2,\quad \rmH^1(U\sqcup V)=0,\]
     thus we get the exact sequence
     \[0\to \bbR\overset\psi\to \bbR^2\overset{\partial}\to \bbR^2\overset\delta\to \rmH^1(\bbS^1)\to 0,\]
     where
@@ -3229,7 +3229,7 @@ This fact was unsurprisingly discovered long before the functors $\Tor_n^R$ were
 
 \section{Torsion submodules}
 
-Recall that an element $a\in A$ of an $R$-module is called a torsion element if $n\cdot a=0$ for some $n$. If $R$ is abelian, then the set of all torsion elements forms a submodule of $A$, denoted $T(A)$ and called the torsion submodule\index{Torsion submodule}. Now let $R$ be an integral domain (a commutative ring where the product of nonzero elements is always nonzero) and let $K=Q(R)$ be its field of fractions. In this case $A\slash T(A)$ is a torsion-free submodule. Any torsion-free $R$-module can be embedded in a $K$-vector space:
+Recall that an element $a\in A$ of an $R$-module is called a torsion element if $n\cdot a=0$ for some $n$. If $R$ is abelian, then the set of all torsion elements forms a submodule of $A$, denoted $T(A)$ and called the torsion submodule\index{Torsion submodule}. Now let $R$ be an integral domain (a commutative ring where the product of nonzero elements is always nonzero) and let $K=\rmQ(R)$ be its field of fractions. In this case $A\slash T(A)$ is a torsion-free submodule. Any torsion-free $R$-module can be embedded in a $K$-vector space:
 \[0\to A\to A\otimes_R K\to B\to 0,\quad B=T(B),\]
 where $B$ is a torsion module.
 
@@ -3302,7 +3302,7 @@ Higher Tor functors don't have such a simple interpretation, but we can at least
 
 \section{(*) Application in class field theory}
 
-Obviously $\Ext^1_\bbZ(\bbZ,\bbQ)=0$ (either because $\bbZ$ is projective or because $\bbQ$ is injective) but after reversing the arguments the result becomes highly nontrivial, and in fact the cardinality of continuum.
+Obviously, $\Ext^1_\bbZ(\bbZ,\bbQ)=0$ (either because $\bbZ$ is projective or because $\bbQ$ is injective), but after reversing the arguments the result becomes highly nontrivial, and in fact has the cardinality of continuum.
 
 \begin{thm} Ext functors respect the following direct sums (coproducts) and direct products for finite \emph{and} infinite index sets:
     \[\Ext_R^n(\oplus_i A_i,B)=\prod_i\Ext_R^n(A_i,B),\quad \Ext_R^n(A,\prod_i B_i)=\prod_i \Ext_R^n(A,B_i).\]
@@ -3311,10 +3311,10 @@ Obviously $\Ext^1_\bbZ(\bbZ,\bbQ)=0$ (either because $\bbZ$ is projective or bec
     Similar proof by dimension shifting, using the fact that direct sums of projectives are projective and products of injectives are injective.
 \end{proof}
 
-However we quickly start to run into issues because, unlike direct sums (which are an example of a directed colimit), other directed colimits of injective modules are not always injective. Generally, limits of injectives/projectives are not injective/projective, so $\Tor$ and $\Ext$ functors commute only with finite  limits. If they did commute with infinite limits, since $\bbQ=\colimit \frac{1}{n}\bbZ$, we would get a trivial $\Ext^1(\bbQ,\bbZ)$ since $\Ext^1(\bbZ,\bbZ)=0$. We present this computation purely ``for fun'', but it is actually foundational in several areas of modern mathematics, such as the Langlands program and the theory of algebraic groups.
+However we quickly start to run into issues because, unlike direct sums (which are an example of a directed colimit), other directed colimits of injective modules are not always injective. Generally, limits of injectives/projectives are not injective/projective, so $\Tor$ and $\Ext$ functors commute only with finite  limits. If they did commute with infinite limits, since $\bbQ=\colimit \frac{1}{n}\bbZ$, we would get a trivial $\Ext^1(\bbQ,\bbZ)$ since $\Ext^1(\bbZ,\bbZ)=0$. However, as we show in this \sect, $\Ext^1(\bbQ,\bbZ)$ is not trivial. We present this computation purely ``for fun'', but it is actually foundational in several areas of modern mathematics, such as the Langlands program and the theory of algebraic groups.
 
 \begin{defn}[Group of adeles]
-    Recall that the $p$-adic integers can be defined as $\bbZ_p=\limit \bbZ\slash p^n\bbZ$. Denote their field of fractions by $\bbQ_p=Q(\bbZ_p)$. The additive group of finite ad\`eles of $\bbQ$ is defined as the \emph{restricted} product of $\bbQ_p$ over all prime numbers $p$, i.e., almost all components must land in $\bbZ_p$:
+    Recall that the $p$-adic integers can be defined as $\bbZ_p=\limit \bbZ\slash p^n\bbZ$. Denote their field of fractions by $\bbQ_p=\rmQ(\bbZ_p)$. The additive group of finite ad\`eles of $\bbQ$ is defined as the \emph{restricted} product of $\bbQ_p$ over all prime numbers $p$, i.e., almost all components must land in $\bbZ_p$:
     \[\bbA_f(\bbQ)={\prod_{p}}^\prime_{\bbZ_p}\bbQ_p=\{(x_2,x_3,x_5,\ldots)\mid x_p\in\bbQ_p \text{ and almost all }x_p\in\bbZ_p \}.\]
 \end{defn}
 
@@ -3362,7 +3362,7 @@ However we quickly start to run into issues because, unlike direct sums (which a
     
     Another way of seeing this is to notice
     \[\Hom(G,G)=\End\left(G\right)=\End\left(\limit \bbZ\slash p^n\bbZ \right)=\limit \End\left(\bbZ\slash p^n\bbZ \right)=\limit \bbZ\slash p^n\bbZ=\bbZ_p,\]
-    where we used the fact that $\End(C_k)=C_k$ for any cyclic group $C_k$. Next, any $f\Hom(\bbZ[p^{-1}],G)$ must satisfy $p^nf(1)=0$ \emph{for some $n$}, so $f$ becomes an element of $\Hom(G,G)$ after being multiplied by some power of $p$, and is thus identified with an element of $\bbZ_p$. Therefore
+    where we used the fact that $\End(C_k)=C_k$ for any cyclic group $C_k$. Next, any $f\in \Hom(\bbZ[p^{-1}],G)$ must satisfy $p^nf(1)=0$ \emph{for some $n$}, so $f$ becomes an element of $\Hom(G,G)$ after being multiplied by some power of $p$, and is thus identified with an element of $\bbZ_p$. Therefore
     \[\Hom(\bbZ[p^{-1}],G)=\colimit p^{-n}\bbZ_p=\bbZ_p[p^{-1}]=\bbQ_p.\]
 
     In summary, we have
@@ -3531,13 +3531,19 @@ A dual result exists for cohomology. This definition shows that this is the poin
     Let $G$ be a group and $R$ a ring. The group ring $R[G]$ is defined as the set of maps $f:G\to R$ with finite support. Pointwise addition and convolution of these maps turn $R[G]$ into a ring. The elements of $R[G]$ can be represented by formal linear combinations of the form $\sum_{g\in G} r_g\cdot g$, $r_g\in R$, with finitely many nonzero terms.
 \end{defn}
 
-To study group (co)homology we will need $G$ to act on an abelian group $A$ so that $A$ becomes a $\bbZ[G]$-module. In the most classical situations, $A=\bbZ$ and the action of $G$ on $A$ is trivial. For simplicity we will assume that the action is a left action, but as usual everything works for right actions too. Some of the first group (co)homologies ($\rmH^1$) were introduced by Hilbert and I.~Schur at the dawn of the 20th century, extended by O.~Schreier and R.~Brauer in the 1920s ($\rmH^2$). The first general definition of $\rmH_n(G,\bbZ)$ was given by W.~Hurewicz in the 1930s. In 1940 O.~Teichm\"uller introduced $\rmH^3(G,A)$, and over the course of the 1940s two parallel teams, Eilenberg and MacLane in the US, along with D.~Faddeev in the USSR, discovered the general theory of group (co)homologies.
+To study group (co)homology we will need $G$ to act on an abelian group $A$ so that $A$ becomes a $\bbZ[G]$-module. In the most classical situations, $A=\bbZ$ and the action of $G$ on $A$ is trivial. For simplicity we will assume that the action is a left action, but as usual everything works for right actions too. 
+
+\begin{hrem*}
+    Some of the first group (co)homologies ($\rmH^1$) were introduced by Hilbert and I.~Schur at the dawn of the 20th century, extended by O.~Schreier and R.~Brauer in the 1920s ($\rmH^2$). The first general definition of $\rmH_n(G,\bbZ)$ was given by W.~Hurewicz in the 1930s. In 1940 O.~Teichm\"uller introduced $\rmH^3(G,A)$, and over the course of the 1940s two parallel teams, Eilenberg and MacLane in the US, along with D.~Faddeev in the USSR, discovered the general theory of group (co)homologies.
+\end{hrem*}
 
 \begin{defn}[$G$-module]
     Let $A$ be an abelian group and $G$ an arbitrary group. The structure of a $G$-module on $A$ is a \emph{linear} action of $G$ on $A$ (which can be seen as a representation of $G$ over $\bbZ$). Linearity of this action is equivalent to saying that $A$ is a $\bbZ[G]$-module.
-
-    Note that $\bbZ$ is canonically a $\bbZ[G]$-module with the trivial action of $G$.
 \end{defn}
+
+\begin{example}
+    $\bbZ$ is canonically a $\bbZ[G]$-module with the trivial action of $G$.
+\end{example} 
 
 \begin{defn}[Group cohomology]
     Let $A$ be an abelian group and $G$ an arbitrary group acting on $A$ from the left, $G\acts A$. The $n$-th cohomology group of $G$ with coefficients in $A$ is
@@ -3548,7 +3554,7 @@ To study group (co)homology we will need $G$ to act on an abelian group $A$ so t
 To interpret this object let us return to the axiomatic characterization of Ext functors.
 
 \begin{enumerate}
-    \item $H^0(G,A)=\Ext^0_{\bbZ[G]}(\bbZ,A)=\Hom_{\bbZ G}(\bbZ,A)$, i.e., the set of $G$-equivariant morphisms $f:\bbZ\to A$. But the action on $\bbZ$ is trivial, so the condition reduces to $f(1)=f(g\cdot 1)=g\cdot f(1)$. Therefore each such $f$ can be identified with an element of the \emph{module of $G$-invariants}
+    \item $\rmH^0(G,A)=\Ext^0_{\bbZ[G]}(\bbZ,A)=\Hom_{\bbZ G}(\bbZ,A)$, i.e., the set of $G$-equivariant morphisms $f:\bbZ\to A$. But the action on $\bbZ$ is trivial, so the condition reduces to $f(1)=f(g\cdot 1)=g\cdot f(1)$. Therefore each such $f$ can be identified with an element of the \emph{module of $G$-invariants}
     \[A^G=\{a\in A:g\cdot a=a\text{ for all }g\in G\}.\]
     We need to confirm that $(G,A)\mapsto A^G$ is in fact a functor contravariant in $G$ and covariant in $A$ (acting $\mathsf{Gr}\times G\mathsf{-Mod}\to \mathsf{Gr}$, and in fact into $G$-modules).
 
@@ -3561,7 +3567,7 @@ To interpret this object let us return to the axiomatic characterization of Ext 
     Thus $A^G$ is a true functor. It's easy to check that this functor is left exact: given a short exact sequence of $G$-modules $0\to A\to B\to C\to 0$, the sequence
     \[0\to A^G\to B^G\to C^G\]
     is also exact. We have
-    \[\boxed{H^0(G,A)=A^G.}\]
+    \[\boxed{\rmH^0(G,A)=A^G.}\]
     
     \item Given a short exact sequence of $G$-modules $0\to A\to B\to C\to 0$, there are connecting homomorphisms that make the following long sequence exact:
     \[0\to A^G\to B^G\to C^G\to \rmH^1(G,A)\to \rmH^1(G,B)\to \rmH^1(G,C)\overset{\delta}{\to}\rmH^2(G,A)\to\cdots \]
@@ -3589,7 +3595,7 @@ We have
 
 The other two axioms defining higher $\rmH_n$'s are analogous and we don't spell them out.
 
-To compute (co)homologies we will need to construct projective (in fact free) of $\bbZ$ as a $\bbZ[G]$-module. The beginning of the resolution is naturally given by the augmentation map $\eta$.
+To compute (co)homologies we will need to construct a projective (in fact free) resolution of $\bbZ$ as a $\bbZ[G]$-module. The beginning of the resolution is naturally given by the augmentation map $\eta$.
 
 \begin{thm}
     $I_G$ is a free $\bbZ$-module generated by $g-1$ with $g\in G^+=G\setminus\{1\}$.
@@ -3646,7 +3652,7 @@ Let $G=C_m$ be a cyclic group of order $m<\infty$ generated by an element $x$. T
 \begin{cor}
     Denote
     \[\prescript{}{N}{A}=\{a\in A\mid Na=0\}.\]
-    If $G=C_m$, then $H^0(G,A)=0$, and for $n\geq 1$, $\rmH^{2n-1}(G,A)=\prescript{}{N}{A}\slash DA$ and $\rmH^{2n}(G,A)=A^G\slash NA$.
+    If $G=C_m$, then $\rmH^0(G,A)=0$, and for $n\geq 1$, $\rmH^{2n-1}(G,A)=\prescript{}{N}{A}\slash DA$ and $\rmH^{2n}(G,A)=A^G\slash NA$.
 \end{cor}
 \begin{cor}
     If $G=C_m$, then $\rmH_0(G,A)=A_G=A\slash (I_G\cdot A)$, $\rmH_{2n-1}(G,A)=A^G\slash NA$ and $\rmH_{2n}(G,A)=\prescript{}{N}{A}\slash DA$ for $n\geq 1$.
@@ -3655,8 +3661,10 @@ Let $G=C_m$ be a cyclic group of order $m<\infty$ generated by an element $x$. T
     \[\rmH_{2n-1}(G,A)=\rmH^{2n}(G,A),\quad \rmH_{2n}(G,A)=\rmH^{2n-1}(G,A).\]
 \end{cor}
 \begin{rem}
-    The periodocity of (co)homologies are quite rare, however the fact that homologies and cohomologies can be expressed in terms of each other is a more general fact that is called ``Tate cohomology'', where both homologies and cohomologies fall into a single exact sequence (after some adjustment of $H^0$ and $\rmH_0$ for finite groups and a more complicated story for infinite groups). 
+    This sort of periodocity of (co)homologies is quite rare, however, the fact that homologies and cohomologies can be expressed in terms of each other is a more general fact that is called ``Tate cohomology'', where both homologies and cohomologies fall into a single exact sequence (after some adjustment of $\rmH^0$ and $\rmH_0$ for finite groups and a more complicated story for infinite groups). 
 \end{rem}
+
+
 
 
 \section{Two resolutions}
@@ -3819,14 +3827,14 @@ It is non-canonically isomorphic to the following object.
     Exercise. On a more fundamental level this arises from the fact that $\{e\}\to R\to F\to G\to \{e\}$ is an exact sequence, and we could develop yet another set of derived functors w.r.t.\ this group argument, as opposed to the module argument ($A$). This leads to the concepts of restriction, corestriction (transfer), inflation, and coinflation.
 \end{proof}
 
-Historically Schur was interested in projective representations of groups, i.e., homomorphisms $\varphi:G\to \PGL_n(K)$. This is equivalent to replacing the homomorphism law for regular linear representations with
+Historically, Schur was interested in \emph{projective} representations of groups, i.e., homomorphisms $\varphi:G\to \PGL_n(K)$. This is equivalent to replacing the homomorphism law for regular linear representations with
 \[\varphi_{gh}=\lambda_{h,g}\varphi_g\varphi_h,\quad\lambda_{h,g}\in K^\times.\]
 Associativity then forces $\lambda$ to be a cocycle. Schur was studying when a projective representation can be lifted to a regular one. 
 
 A group $G$ is called \emph{perfect} if $G=[G,G]$, i.e., $\rmH^1(G,\bbZ)=0$. Topologically this is a requirement that $G$ be ``connected''. The Schur multiplier then explains the algebraic analog of being simply connected. 
 
 \begin{defn}[Central extension]
-    A group epimorphism $\pi:E\to G$ is called a \emph{central extension} if $\ker\pi\leq Z(E)$.  Morphisms of central extensions are homomorphisms $E_1\to E_2$ that create commuting triangles. A \emph{trivial central extension} is one isomorphic to $\pr_1:G\times C\to G$, where $C$ is an abelian group. $G$ is called \emph{centrally closed} if it has no nontrivial central extensions. A central extension is called \emph{universal} if it is the terminal object in the category of central extensions of $G$.
+    A group epimorphism $\pi:E\to G$ is called a \emph{central extension} if $\ker\pi\subset \rmZ(E)$.  Morphisms of central extensions are homomorphisms $E_1\to E_2$ that create commuting triangles. A \emph{trivial central extension} is one isomorphic to $\pr_1:G\times C\to G$, where $C$ is an abelian group. $G$ is called \emph{centrally closed} if it has no nontrivial central extensions. A central extension is called \emph{universal} if it is the terminal object in the category of central extensions of $G$.
 \end{defn}
 
 \begin{thm}[Schur]
@@ -3907,7 +3915,7 @@ The next step is to exhibit a space $X$ satisfying all the conditions above. Fir
     Given a group $G$, there exists an Eilenberg-MacLane space $\rmK(G,1)$ that is path-connected, aspherical ($\pi_n(\rmK(G,1))=0$ for $n\geq 1$), and whose fundamental group is $\pi_1(\rmK(G,1))\cong G$.
 \end{defn}
 
-The desired space $X$ is then the following object.
+Moreover, the Eilenberg-MacLane space is unique up to homotopy equivalence. The desired space $X$ is then the following object.
 
 \begin{defn}[Classifying space]
     The universal covering space of $\rmK(G,1)$ is called the classifying space of $G$, denoted $\bf{B}G$. It is acyclic, $G$ acts properly on $\bf{B}G$, and $\bf{B}G\slash G\cong \rmK(G,1)$.
