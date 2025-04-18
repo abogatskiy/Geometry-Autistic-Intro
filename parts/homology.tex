@@ -1665,11 +1665,11 @@ Unlike with simplicial homology, here it is immediately obvious that homeomorphi
 Sometimes it is very helpful to work with a slightly modified homology that vanishes entirely for a point. The following definition achieves this.
 
 \begin{defn}[Reduced homology]\index{Homology!reduced}
-    The reduced homology groups $\wt{H}_n(X)$ are the homology groups of the \emph{augmented chain complex}
+    The reduced homology groups $\wt{\rmH}_n(X)$ are the homology groups of the \emph{augmented chain complex}
     \[\cdots C_1(X)\overset{\partial_1}\to C_0(X)\overset{\epsilon}\to \bbZ\to 0.\]
 \end{defn}
 
-The reduced homology of a point is trivial in all degrees. Also $\rmH_n(X)\cong \wt{H}_n(X)$ for all $n>0$ and $\rmH_0(X)=\wt{H}_0(X)\oplus \bbZ$ since $\epsilon$ induces a map $\rmH_0(X)\to \bbZ$ with kernel $\wt{H}_0(X)$.
+The reduced homology of a point is trivial in all degrees. Also $\rmH_n(X)\cong \wt{\rmH}_n(X)$ for all $n>0$ and $\rmH_0(X)=\wt{\rmH}_0(X)\oplus \bbZ$ since $\epsilon$ induces a map $\rmH_0(X)\to \bbZ$ with kernel $\wt{\rmH}_0(X)$.
 
 
 
@@ -1701,7 +1701,7 @@ Here we show that singular homology is homotopy invariant.
      The verification of this identity follows easily by direct expansion and use of the definition of the homotopy $F$ and $g\circ\sigma=g_\ast(\sigma)$ (see \cite[Thm.~2.10]{Hatcher} for full details).
 \end{proof}
 \begin{cor}
-    If $X$ is contractible, then $\wt{H}_n(X)=0$ for any $n$.
+    If $X$ is contractible, then $\wt{\rmH}_n(X)=0$ for any $n$.
 \end{cor}
 
 
@@ -1735,14 +1735,14 @@ The same sequence exists in reduced homology. This exact sequence has a natural 
 \begin{cor}
     \begin{enumerate}
         \item $\rmH_n(X,
-        \{x_0\})\cong\wt{H}_n(X)$ for all $n$.
-        \item If $A$ is contractible, then $\rmH_n(X,A)\cong \wt{H}_n(X)$ for all $n$;
-        \item if $X$ is contractible, then $\rmH_{n+1}(X,A)\cong \wt{H}_n(A)$ for all $n$.
+        \{x_0\})\cong\wt{\rmH}_n(X)$ for all $n$.
+        \item If $A$ is contractible, then $\rmH_n(X,A)\cong \wt{\rmH}_n(X)$ for all $n$;
+        \item if $X$ is contractible, then $\rmH_{n+1}(X,A)\cong \wt{\rmH}_n(A)$ for all $n$.
     \end{enumerate}
 \end{cor}
 
 \begin{example}[Homology of a bouquet of circles]
-    Consider $X=\bbR$ and $A\subset \bbR$ a finite subset of size $(k+1)$. Then $X/A$ is homotopy equivalent to a wedge sum of $k$ circles (a.k.a.\ a bouquet of circles). We will later show that $\rmH_1(X,A)\cong \wt{H}_1(X/A)= \rmH_1(X/A)$, so we have $\rmH_1(\bigvee_{i=1}^{k}\bbS^1)=\wt{H}_0(A)=\bbZ^{k}$. We also see that all higher homologies of the bouquet vanish. Another way to obtain this result will be from the Hurewicz theorem.
+    Consider $X=\bbR$ and $A\subset \bbR$ a finite subset of size $(k+1)$. Then $X/A$ is homotopy equivalent to a wedge sum of $k$ circles (a.k.a.\ a bouquet of circles). We will later show that $\rmH_1(X,A)\cong \wt{\rmH}_1(X/A)= \rmH_1(X/A)$, so we have $\rmH_1(\bigvee_{i=1}^{k}\bbS^1)=\wt{\rmH}_0(A)=\bbZ^{k}$. We also see that all higher homologies of the bouquet vanish. Another way to obtain this result will be from the Hurewicz theorem.
 \end{example}
 
 
@@ -1842,7 +1842,7 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 \end{defn}
 
 \begin{prop}
-    For good pairs $(X,A)$ the quotient map $q:(X,A)\to (X/A,A/A)$ induces isomorphisms \[\rmH_n(X,A)\overset{q_\ast}\cong \rmH_n(X/A,A/A)\cong \wt{H}_n(X/A),\quad n\geq 0.\]
+    For good pairs $(X,A)$ the quotient map $q:(X,A)\to (X/A,A/A)$ induces isomorphisms \[\rmH_n(X,A)\overset{q_\ast}\cong \rmH_n(X/A,A/A)\cong \wt{\rmH}_n(X/A),\quad n\geq 0.\]
 \end{prop}
 \begin{proof}
      Let $U$ be a neighborhood of $A$ in $X$ that deformation retracts onto $A$. We have the commutative diagram (the commutativity is easy to check)
@@ -1855,7 +1855,7 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 
 \begin{thm}
     If $(X,A)$ is a good pair, then there is an exact sequence
-    \[\cdots \wt{H}_n(A)\overset{i_\ast}\to \wt{H}_n(X)\overset{\pi_\ast}\to \wt{H}_n(X/A)\overset\partial\to \wt{H}_{n-1}(A)\to \wt{H}_{n-1}(X)\to \cdots \to \wt{H}_0(X/A)\to 0,\]
+    \[\cdots \wt{\rmH}_n(A)\overset{i_\ast}\to \wt{\rmH}_n(X)\overset{\pi_\ast}\to \wt{\rmH}_n(X/A)\overset\partial\to \wt{\rmH}_{n-1}(A)\to \wt{\rmH}_{n-1}(X)\to \cdots \to \wt{\rmH}_0(X/A)\to 0,\]
     where $i:A\hookrightarrow X$ is the inclusion and $\pi:X\to X/A$ is the quotient map.
 \end{thm}
 \begin{proof}
@@ -1864,15 +1864,15 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 
 
 \begin{cor}[Suspension Theorem]\index{Theorem!Suspension}
-    If $\Sigma X$ is the suspension of $X$, then $\wt{H}_n(X)\cong \wt{H}_{n+1}(\Sigma X)$.
+    If $\Sigma X$ is the suspension of $X$, then $\wt{\rmH}_n(X)\cong \wt{\rmH}_{n+1}(\Sigma X)$.
 \end{cor}
 \begin{proof}
     Let $\pi:X\times [-1,1]\to \Sigma X$ be the quotient map defining $\Sigma X$. Let $\Sigma_+ X=\pi(X\times [-\frac 14,1])$, $\Sigma_-X=\pi(X\times [-1,\frac14])$, $S=\pi(X\times \{-1\})$, and $N=\pi(X\times\{1\})$. Then we have the following chain of equalities
     \begin{enumerate}
-        \item $\wt{H}_i(\Sigma X)\cong H_i(\Sigma X,S)$.
+        \item $\wt{\rmH}_i(\Sigma X)\cong H_i(\Sigma X,S)$.
         \item $H_i(\Sigma X,S)\cong \rmH_0(\Sigma X,\Sigma_-X)$ because $\Sigma_-X$ deformation retracts onto $S$ (or alternatively from the exact sequence of the triple $(\Sigma X,\Sigma_- X,S)$ combined with $H_i(\Sigma_-X,S)=0$).
         \item $H_i(\Sigma X,\Sigma_-X)\cong H_i(\Sigma_+X,X)$ be excising $\Int(\Sigma_-X)$ and by homotopy invariance.
-        \item $H_i(\Sigma_+X,X)\cong \wt{H}_{i-1}(X)$ by the long exact sequence of reduced homology for the pair $(\Sigma_+X,X)$ combined with contractibility of $\Sigma_+X$.
+        \item $H_i(\Sigma_+X,X)\cong \wt{\rmH}_{i-1}(X)$ by the long exact sequence of reduced homology for the pair $(\Sigma_+X,X)$ combined with contractibility of $\Sigma_+X$.
     \end{enumerate}
     Combining all four isomorphisms we get the asserted claim.
 \end{proof}
@@ -1880,17 +1880,17 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 
 
 \begin{cor}\label{reduced homology of spheres}
-    $\wt{H}_m(\bbS^n)=\wt{H}_{m-1}(\bbS^{n-1})$ and by induction the only nonzero reduced homology of a sphere is $\wt{H}_n(\bbS^n)\cong \bbZ$.
+    $\wt{\rmH}_m(\bbS^n)=\wt{\rmH}_{m-1}(\bbS^{n-1})$ and by induction the only nonzero reduced homology of a sphere is $\wt{\rmH}_n(\bbS^n)\cong \bbZ$.
 \end{cor}
 \begin{proof}
-     We use induction in the dimension of the sphere. $\wt{H}_0(\bbS^0)\cong\bbZ$ since $\bbS^0$ is two points. For $m>0$ we have $\wt{H}_m(\bbS^0)=H_i(\bbS^0)\cong H_i(\ast)\oplus H_i(\ast)=0$. This proves the statement for $n=0$. Now to go from $n$ to $n+1$, we first note that $\wt{H}_0(\bbS^{n+1})=0$ because $\bbS^{n+1}$ is connected, and for $m>0$, $\wt{H}_{m}(\bbS^{n+1})=\wt{H}_{m-1}(\bbS^n)$ by the Suspension Theorem. By induction, if $m=n+1$, then this is isomorphic to $\bbZ$, otherwise zero.
+     We use induction in the dimension of the sphere. $\wt{\rmH}_0(\bbS^0)\cong\bbZ$ since $\bbS^0$ is two points. For $m>0$ we have $\wt{\rmH}_m(\bbS^0)=H_i(\bbS^0)\cong H_i(\ast)\oplus H_i(\ast)=0$. This proves the statement for $n=0$. Now to go from $n$ to $n+1$, we first note that $\wt{\rmH}_0(\bbS^{n+1})=0$ because $\bbS^{n+1}$ is connected, and for $m>0$, $\wt{\rmH}_{m}(\bbS^{n+1})=\wt{\rmH}_{m-1}(\bbS^n)$ by the Suspension Theorem. By induction, if $m=n+1$, then this is isomorphic to $\bbZ$, otherwise zero.
 \end{proof}
 
 \begin{cor}[Brouwer's fixed point theorem]\index{Theorem!Brouwer's fixed point}
     $\partial \bbD^n$ is not a retract of $\bbD^n$ (i.e., no continuous map $\bbD^n\to \partial \bbD^n$ that restricts to identity on the boundary). Hence every map $f:\bbD^n\to \bbD^n$ has a fixed point.
 \end{cor}
 \begin{proof}
-     If $r:\bbD^n\to \partial \bbD^n$ is a retraction, then $r\circ i=\id$ for $i:\partial \bbD^n\hookrightarrow \bbD^n$ the inclusion map. The composition $\wt{H}_{n-1}(\partial \bbD^n)\overset{i_\ast}\to \wt{H}_{n-1}(\bbD^n)\overset{r_\ast}\to \wt{H}_{n-1}(\partial \bbD^n)$ is then the identity on $\wt{H}_{n-1}(\partial \bbD^n)\cong \bbZ$. But $i_\ast$ and $r_\ast$ are both zero since $\wt{H}_{n-1}(\bbD^n)=0$, which leads to a contradiction.
+     If $r:\bbD^n\to \partial \bbD^n$ is a retraction, then $r\circ i=\id$ for $i:\partial \bbD^n\hookrightarrow \bbD^n$ the inclusion map. The composition $\wt{\rmH}_{n-1}(\partial \bbD^n)\overset{i_\ast}\to \wt{\rmH}_{n-1}(\bbD^n)\overset{r_\ast}\to \wt{\rmH}_{n-1}(\partial \bbD^n)$ is then the identity on $\wt{\rmH}_{n-1}(\partial \bbD^n)\cong \bbZ$. But $i_\ast$ and $r_\ast$ are both zero since $\wt{\rmH}_{n-1}(\bbD^n)=0$, which leads to a contradiction.
      
      An existence of a map $f:\bbD^n\to \bbD^n$ with no fixed points would let us construct a retraction by drawing the straight ray from $f(x)$ to $x$ for all $x$ in the ball and picking its intersection with the boundary as the image of $x$ (this acts as the identity on the boundary).
 \end{proof}
@@ -1899,7 +1899,7 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
 
 \begin{cor}
     For a wedge sum of pointed spaces $\bigvee_{\alpha}X_\alpha$, the inclusions $i_\alpha:X_\alpha\hookrightarrow \bigvee_{\alpha}X_\alpha$ induce an isomorphism 
-    \[\bigoplus_\alpha i_{\alpha\ast}:\bigoplus_\alpha\wt{H}_n(X_\alpha)\to \wt{H}_n\left(\bigvee_{\alpha}X_\alpha\right),\]
+    \[\bigoplus_\alpha i_{\alpha\ast}:\bigoplus_\alpha\wt{\rmH}_n(X_\alpha)\to \wt{\rmH}_n\left(\bigvee_{\alpha}X_\alpha\right),\]
     provided that the base points $x_\alpha\in X_\alpha$ are such that the pairs $(X_\alpha,\{x_\alpha\})$ are good.
 \end{cor}
 \begin{proof}
@@ -1910,7 +1910,7 @@ The \gls{mv} sequence, and excision more generally, allows for inductive computa
     If nonempty open sets $U\subset \bbR^m$ and $V\subset \bbR^n$ are homeomorphic, then $m=n$.
 \end{cor}
 \begin{proof}
-     For $x\in U$, we have $\rmH_k(U,U\setminus \{x\})\cong \rmH_k(\bbR^m,\bbR^m\setminus \{x\})$ by excision. From the long exact sequence for the pair $(\bbR^m,\bbR^m\setminus\{x\})$ we get $\rmH_k(\bbR^m,\bbR^m\setminus\{x\})\cong \wt{H}_{k-1}(\bbR^m\setminus\{x\})$. Since $\bbR^m\setminus\{x\}$ deformation retracts onto the sphere $\bbS^{m-1}$, we have $\rmH_k(U,U\setminus\{x\})$ is $\bbZ$ for $k=m$ and zero otherwise. By the same reasoning $\rmH_k(V,V\setminus\{y\})$ is $\bbZ$ for $k=n$ and zero otherwise. A homeomorphism must induce an isomorphism between these homologies (where $y$ is the image of $x$), therefore $m=n$.
+     For $x\in U$, we have $\rmH_k(U,U\setminus \{x\})\cong \rmH_k(\bbR^m,\bbR^m\setminus \{x\})$ by excision. From the long exact sequence for the pair $(\bbR^m,\bbR^m\setminus\{x\})$ we get $\rmH_k(\bbR^m,\bbR^m\setminus\{x\})\cong \wt{\rmH}_{k-1}(\bbR^m\setminus\{x\})$. Since $\bbR^m\setminus\{x\}$ deformation retracts onto the sphere $\bbS^{m-1}$, we have $\rmH_k(U,U\setminus\{x\})$ is $\bbZ$ for $k=m$ and zero otherwise. By the same reasoning $\rmH_k(V,V\setminus\{y\})$ is $\bbZ$ for $k=n$ and zero otherwise. A homeomorphism must induce an isomorphism between these homologies (where $y$ is the image of $x$), therefore $m=n$.
 \end{proof}
 
 
@@ -1938,7 +1938,7 @@ TODO: Use Hatcher Prop 3.26-29 and  to fill this out.
 \section{Degree}
 
 \begin{defn}[Degree on spheres]\label{Degree}\index{Degree}
-    For a map $f:\bbS^n\to \bbS^n$, the induced map $f_\ast:\wt{H}_n(\bbS^n)\to \wt{H}_n(\bbS^n)$ is a homomorphism that must be of the form $f_\ast(\alpha)=d\cdot \alpha$ for some integer $d\in\bbZ$. This number, denoted $\deg f=d$, is called the degree of $f$.
+    For a map $f:\bbS^n\to \bbS^n$, the induced map $f_\ast:\wt{\rmH}_n(\bbS^n)\to \wt{\rmH}_n(\bbS^n)$ is a homomorphism that must be of the form $f_\ast(\alpha)=d\cdot \alpha$ for some integer $d\in\bbZ$. This number, denoted $\deg f=d$, is called the degree of $f$.
 \end{defn}
 Here are some properties of the degree:
 \begin{enumerate}
@@ -1967,7 +1967,7 @@ Here are some properties of the degree:
     If $p(z)$ is a complex polynomial of positive degree then $p(z)$ has a zero.
 \end{cor}
 \begin{proof}
-     One can think of $p(z)$ as a map on the Riemann sphere $\bbS^2\to \bbS^2$ with a fixed point at infinity, $p(\infty)=\infty$. The critical points of this map are those where $p'(z)=0$ (because this is equivalent to the Jacobian of a holomorphic function vanishing). Clearly there are only finitely many such points because $p'$ is a polynomial. Thus there are only finitely many points that are not regular values. The image of $p$ is connected and $p$ is not constant, therefore there is a regular value in the image. However, the Jacobian of a holomorphic function is always positive, so the local degree at a point mapping into a regular value must be 1. Hence the degree of $p$ is strictly positive by the last Proposition, and hence $p$ is not homotopic to a constant map, and its image must be all of $\bbS^2$, including zero.
+     One can think of $p(z)$ as a map on the Riemann sphere $\bbS^2\to \bbS^2$ with a fixed point at infinity, $p(\infty)=\infty$. The critical points of this map are those where $p'(z)=0$ (because this is equivalent to the Jacobian of a holomorphic function vanishing). Clearly there are only finitely many such points because $p'$ is a polynomial. Thus there are only finitely many points that are not regular values. The image of $p$ is connected and $p$ is not constant, therefore there is a regular value in the image. However, the Jacobian of a holomorphic function is always positive, so the local degree at a point mapping into a regular value must be 1. Hence the degree of $p$ is strictly positive by the last proposition, and hence $p$ is not homotopic to a constant map, and its image must be all of $\bbS^2$, including zero.
 \end{proof}
 
 
@@ -2100,14 +2100,14 @@ Singular homology has two further properties that one may require:
     \item (Compact support.)  For each $c\in h_n(X,A)$ there exists a map $f:(K,L)\to (X,A)$ from a pair $(K,L)$ of compact Hausdorff spaces and $z\in h_n(K,L)$ with $f_\ast(z)=c$.
 \end{enumerate}   
 
-The last axiom holds trivially for singular homology because singular simplices are exactly such maps from the compact standard simplices into $X$.
+The last axiom holds trivially for singular homology because singular simplices are exactly such maps from the compact standard simplices into $X$. The following fundamental theorem establishes the uniqueness of any homology theory satisfying the first four axioms.
 
 
 \begin{thm}[Eilenberg-Steenrod]
-    If two sequences of covariant functors $\rmH_n,G_n:\mathsf{TopPair}\to \mathsf{Ab}, n\geq 0$ and natural maps $\partial_n,\partial_n '$ satisfy the Eilenberg-Steenrod axioms 1--4, then $G_n\cong \rmH_n$ for all $n\geq 0$ (are naturally isomorphic).
+    If two sequences of covariant functors $H_n,G_n:\mathsf{TopPair}\to \mathsf{Ab}, n\geq 0$, and natural maps $\partial_n,\partial_n '$ satisfy the Eilenberg-Steenrod axioms 1--4, then $G_n\cong H_n$ (are naturally isomorphic) for all $n\geq 0$.
 \end{thm}
 
- This theorem implies, for example, that the singular and simplicial homologies of a simplicial complex coincide. It should be note that some important ``homology theories'' do not satisfy even the first three axioms. ``\v Cech homology'' doesn't satisfy exactness, and ``bordism theories'' don't satisfy the dimension axiom.
+ This theorem implies, for example, that the singular and simplicial homologies of a simplicial complex coincide. It should be noted that some important ``homology theories'' do not satisfy even the first three axioms; ``\v Cech homology'' doesn't satisfy exactness, and ``bordism theories'' don't satisfy the dimension axiom.
 
 
 \section{Cellular homology}
@@ -2178,7 +2178,7 @@ since $\partial_n\circ j_n=0$ is a composition of two consecutive maps in an exa
     Finally, the other nontrivial exact segment that we haven't used yet comes from the long exact sequence of the pair $(X^{(n+1)},X^{(n)})$:
     \[\rmH_{n+1}(X^{(n+1)},X^{(n)})\overset{\partial_{n+1}}{\to} \rmH_n(X^{(n)})\overset{i_n}{\to}\rmH_n(X^{(n+1)})\cong \rmH_n(X)\to \rmH_{n}(X^{(n+1)},X^{(n)})=0,\]
     and since the last term vanishes, $i_n$ is surjective and the First Isomorphism Theorem says
-    \[\rmH_n(X)\cong X_n(X^{(n)})\slash \ker i_m\cong \rmH_n(X^{(n)})\slash \im \partial_{n+1}^{\mathrm{CW}},\]
+    \[\rmH_n(X)\cong \rmH_n(X^{(n)})\slash \ker i_n\cong \rmH_n(X^{(n)})\slash \im \partial_{n+1}^{\mathrm{CW}},\]
     where the second equality holds by exactness.
     
     Altogether we have
@@ -2224,15 +2224,15 @@ The following result provides a way of computing the coefficients.
     We will proceed with the proof by chasing on the following diagram:
     \[
     \begin{tikzcd}[column sep=small] 
-    \rmH_n(\bbD^n,\bbS^{n-1})\arrow[r,"\partial","\cong"']\arrow[d,"(f^n_\alpha)_\ast"]& \wt{H}_{n-1}(\bbS^{n-1})\arrow[r,"(\Delta_{\alpha\beta})_\ast"]\arrow[d,"(\varphi^n_\alpha)_\ast"]& \wt{H}_{n-1}(\bbS^{n-1})\\
-    \rmH_n(X^{(n)},X^{(n-1)})\arrow[r,"\partial_n"]\arrow[dr,"\partial_n^{\mathrm{CW}}"]& \wt{H}_{n-1}(X^{(n-1)})\arrow[r,"q_\ast"]\arrow[d,"j_{n-1}"]&\wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\arrow[d,"\cong"]\arrow[u,"q_{\beta\ast}"]\\
-    & \wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\arrow[r,"\cong"]& \rmH_n\left(\frac{X^{(n-1)}}{X^{(n-2)}},\frac{X^{(n-2)}}{X^{(n-2)}}\right),
+    \rmH_n(\bbD^n,\bbS^{n-1})\arrow[r,"\partial","\cong"']\arrow[d,"(f^n_\alpha)_\ast"]& \wt{\rmH}_{n-1}(\bbS^{n-1})\arrow[r,"(\Delta_{\alpha\beta})_\ast"]\arrow[d,"(\varphi^n_\alpha)_\ast"]& \wt{\rmH}_{n-1}(\bbS^{n-1})\\
+    \rmH_n(X^{(n)},X^{(n-1)})\arrow[r,"\partial_n"]\arrow[dr,"\partial_n^{\mathrm{CW}}"]& \wt{\rmH}_{n-1}(X^{(n-1)})\arrow[r,"q_\ast"]\arrow[d,"j_{n-1}"]&\wt{\rmH}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\arrow[d,"\cong"]\arrow[u,"q_{\beta\ast}"]\\
+    & \wt{\rmH}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\arrow[r,"\cong"]& \rmH_n\left(\frac{X^{(n-1)}}{X^{(n-2)}},\frac{X^{(n-2)}}{X^{(n-2)}}\right),
     \end{tikzcd}
     \]
     where 
     \begin{enumerate}
          \item $f_\alpha^n$ is the characteristic map (so $\partial f_\alpha^n=\varphi_\alpha^n$); 
-         \item $q_\ast:\wt{H}_{n-1}(X^{(n-1)})\to \wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})=\bigoplus_\beta \wt{H}_{n-1}(\bbD^{n-1}\slash \partial \bbD^{n-1})$ is induced by the quotient map $q:X^{(n-1)}\to X^{(n-1)}\slash X^{(n-2)}$; 
+         \item $q_\ast:\wt{\rmH}_{n-1}(X^{(n-1)})\to \wt{\rmH}_{n-1}(X^{(n-1)}\slash X^{(n-2)})=\bigoplus_\beta \wt{\rmH}_{n-1}(\bbD^{n-1}\slash \partial \bbD^{n-1})$ is induced by the quotient map $q:X^{(n-1)}\to X^{(n-1)}\slash X^{(n-2)}$; 
          \item $q_\beta:X^{(n-1)}\slash X^{(n-2)}\to \bbS^{(n-1)}$ collapses the complement of the cell $e^{n-1}_\beta$ to a point, the resulting quotient sphere being identified with $\bbS^{n-1}$ via the characteristic map $f^{n-1}_\beta$;
          \item $\Delta_{\alpha\beta}:\bbS^{n-1}\to \bbS^{n-1}$ is the composition $q_\beta\circ q\circ \varphi^n_\alpha$, i.e., the attaching map of $e^n_\alpha$ followed by the quotient map $X^{(n-1)}\to \bbS^{n-1}$ collapsing the complement of $e^{n-1}_\beta$ in $X^{n-1}$ to a point.
     \end{enumerate}
@@ -2240,13 +2240,13 @@ The following result provides a way of computing the coefficients.
     \[(f^n_\alpha)_\ast([\bbD^n])=[e^n_\alpha].\]
     Since the top left square and the bottom left triangle commute, his gives that 
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=\partial_n^{\mathrm{CW}}\circ (f^n_\alpha)_\ast([\bbD^n])=j_{n-1}\circ (\varphi_\alpha^n)_\ast\circ \partial_n([\bbD^n]).\]
-    Looking to the bottom right square, recall that since $X$ is a $CW$-complex, $(X^{(n)},X^{(n-1)})$ is a good pair. This gives the isomorphism $\rmH_{n-1}(X^{(n-1)},X^{(n-2)})\cong \wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})$. Moreover, we also have that $\wt{H}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\cong \rmH_{n-1}(X^{(n-1)}\slash X^{(n-2)},X^{(n-2)}\slash\allowbreak X^{(n-2)})$. The bottom right square commutes by definition of $j_{n-1}$ and $q_\ast$, which combined with the commutativity of the top left square yields that
+    Looking to the bottom right square, recall that since $X$ is a $CW$-complex, $(X^{(n)},X^{(n-1)})$ is a good pair. This gives the isomorphism $\rmH_{n-1}(X^{(n-1)},X^{(n-2)})\cong \wt{\rmH}_{n-1}(X^{(n-1)}\slash X^{(n-2)})$. Moreover, we also have that $\wt{\rmH}_{n-1}(X^{(n-1)}\slash X^{(n-2)})\cong \rmH_{n-1}(X^{(n-1)}\slash X^{(n-2)},X^{(n-2)}\slash\allowbreak X^{(n-2)})$. The bottom right square commutes by definition of $j_{n-1}$ and $q_\ast$, which combined with the commutativity of the top left square yields that
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=q_\ast\circ \partial_n\circ (f_\alpha^n)_\ast([\bbD^n])=q_\ast\circ (\varphi^n_\alpha)_\ast\circ \partial_n([\bbD^n]),\]
-    where formally we should precompose on the left hand side with the isomorphism $\rmH_{n-1}(X^{(n-1)},\allowbreak X^{(n-2)})\cong \wt{H}_{n-1}(X^{(n-1)},X^{(n-2)})$. This last map takes the generator $[\bbD^n]$ to a linear combination of generators in $\bigoplus_\beta \wt{H}_{n-1}(\bbD^{n-1}\slash \partial \bbD^{n-1})$. To see which generators it maps to, we project down to the respective $\beta$ summands to obtain
+    where formally we should precompose on the left hand side with the isomorphism $\rmH_{n-1}(X^{(n-1)},\allowbreak X^{(n-2)})\cong \wt{\rmH}_{n-1}(X^{(n-1)},X^{(n-2)})$. This last map takes the generator $[\bbD^n]$ to a linear combination of generators in $\bigoplus_\beta \wt{\rmH}_{n-1}(\bbD^{n-1}\slash \partial \bbD^{n-1})$. To see which generators it maps to, we project down to the respective $\beta$ summands to obtain
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=\sum_\beta q_{\beta\ast}\circ q_\ast\circ (\varphi^n_\alpha)_\ast\circ \partial_n([\bbD^n]).\]
     As noted before, we have defined $(\Delta_{\alpha\beta})_\ast=q_{\beta\ast}\circ q_\ast\circ (\varphi^n_\alpha)_\ast$. So writing
     \[\partial_n^{\mathrm{CW}}(e^n_\alpha)=\sum_\beta (\Delta_{\alpha\beta})_\ast \circ \partial_n([\bbD^n]),\]
-    we see from the definition of the above maps and the fact that $\partial_n([\bbD^n])$ is a generator of $\wt{H}_{n-1}(\bbS^{n-1})$, that $(\Delta_{\alpha\beta})_\ast$ is multiplication by $d_{\alpha\beta}$.
+    we see from the definition of the above maps and the fact that $\partial_n([\bbD^n])$ is a generator of $\wt{\rmH}_{n-1}(\bbS^{n-1})$, that $(\Delta_{\alpha\beta})_\ast$ is multiplication by $d_{\alpha\beta}$.
 \end{proof}
 
 
@@ -2384,7 +2384,7 @@ The maximally efficient construction of a $CW$-complex for a space that is homot
 
 
 \begin{prop}
-    For any sequence of abelian groups $A_k,k\geq 0$ with $A_0=0$, there exists a $CW$-complex with $\wt{H}_k(X)=A_k$ for all $k\geq 0$.
+    For any sequence of abelian groups $A_k,k\geq 0$ with $A_0=0$, there exists a $CW$-complex with $\wt{\rmH}_k(X)=A_k$ for all $k\geq 0$.
 \end{prop}
 \begin{proof}
     Let $A$ be any abelian group. Pick generators for $A$. They determine a surjection from a free abelian group $F_0$. The kernel $F_1$ of that surjection is free, being a subgroup of a free group. Write $G_0$ for a minimal set of generators of $F_0$, and $G_1$ for a minimal set of generators of $F_1$.
@@ -2393,7 +2393,7 @@ The maximally efficient construction of a $CW$-complex for a space that is homot
     \[\varphi:\;\bigsqcup_{b\in G_1}\bbS^k\to X_k\]
     by specifying it on each summand $\bbS^k$. The generator $b\in G_1$ is given by a linear combination of generators of $F_0$, say $b=\sum_{i=1}^s n_i a_i$. We want to mimic this in topology. To do this, first map $\bbS^k\to \bigwedge\nolimits^s \bbS^k$ by pinching $(s-1)$ tangent circles to points. In homology, this map takes a generator of $\rmH_k(\bbS^k)$ to the sum of the generators of the $k$-th homology of the various spheres in the bouquet. Map the $i$-th sphere in the bouquet to the one corresponding to $a_i$ in $X_k$ by a map of degree $n_i$. The map on the summand $\bbS^k$ corresponding to $b$ then is the composite of these two maps
     \[\bbS^k\to \bigwedge\nolimits^s \bbS^k\to \bigwedge_{a_i\in G_0}=X_k.\]
-    Altogether we get a map $\varphi$ that realizes $F_1\to F_0$ in $\rmH_k$. So using it as an attaching map produces a $CW$-complex $X$ with $\wt{H}_k(X)=A$ and $0$ in other degrees. This space is called a Moore space of type $(A,k)$, denoted $M(A,k)$.
+    Altogether we get a map $\varphi$ that realizes $F_1\to F_0$ in $\rmH_k$. So using it as an attaching map produces a $CW$-complex $X$ with $\wt{\rmH}_k(X)=A$ and $0$ in other degrees. This space is called a Moore space of type $(A,k)$, denoted $M(A,k)$.
 
     Finally, given a full sequence of groups $A_k$, we only need to take a wedge sum of all spaces $M(A_k,k)$ over $k$.
 \end{proof}

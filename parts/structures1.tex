@@ -1010,16 +1010,16 @@ Consider first a $k$-th order ODE in one independent variable $x$ and one depend
 \[F\left(x,u,u_x,\ldots,u^{(k)}\right)=0.\]
 It can be interpreted as defining a hypersurface in the $(k+2)$-dimensional space $\bbR^{k+2}$ with coordinates $x,u,p_1,\ldots,p_k$:
 \[F(x,u,p_1,\ldots,p_k)=0.\]
-Now we will consider the distribution $\mathrm{Cont}<\T^\ast \bbR^{k+2}$ spanned by the contact forms 
+Now we will consider the distribution $\Contact<\T^\ast \bbR^{k+2}$ spanned by the contact forms 
 \[\theta^0=\dd u-p_1\dd x,\quad \theta^i=\dd p_i-p_{i+1}\dd x,\quad i=1,\ldots,k-1.\]
-These forms are everywhere independent, so the rank of $\mathrm{Cont}$ is $k$. Its annihilator $\calC\coloneqq \Ann(\mathrm{Cont})$ is thus of rank $2$ and is called the \emph{Cartan distribution}.\index{Cartan distribution}
+These forms are everywhere independent, so the rank of $\Contact$ is $k$. Its annihilator $\calC\coloneqq \Ann(\Contact)$ is thus of rank $2$ and is called the \emph{Cartan distribution}.\index{Cartan distribution}
 
 Note that a curve in $\bbR^{k+2}$ is the graph of a function $u=f(x)$ and of its derivatives, $x\mapsto (f(x),f_x(x),\ldots,f^{(k)}(x))$, iff it projects to the $x$-axis without degeneration and is an integral curve of the distribution $\calC$.  
 
 Using $\calC$, one can give a geometric interpretation to the well-known method for integrating of ODEs not containing the independent variable in explicit form. 
 
 \begin{example}
-    Consider a second-order equation of the form $F(u,u_x,u_{xx})=0$, or, in other words, a hypersurface $\calE\subset\bbR^4$ defined by $F(u,p_1,p_2)=0$. Restrict the Cartan distribution $\calC=\Ann(\<\theta^0,\theta^1\>)$ to this hypersurface, getting a line bundle over $\calE$ (because its rank is $\dim \calE-\rank \restr{\mathrm{Cont}}{\calE}=3-2$). This line bundle is invariant under translations along the $x$-axis. This makes it possible to construct the quotient equation by the variable $x$. More precisely, we will quotient out the action of the one-parameter group $T\cong \bbR$ of translations $(x,u,p_1,p_2)\mapsto (x+c,u,p_1,p_2)$, $c\in \bbR$. In other words, consider the quotient map 
+    Consider a second-order equation of the form $F(u,u_x,u_{xx})=0$, or, in other words, a hypersurface $\calE\subset\bbR^4$ defined by $F(u,p_1,p_2)=0$. Restrict the Cartan distribution $\calC=\Ann(\<\theta^0,\theta^1\>)$ to this hypersurface, getting a line bundle over $\calE$ (because its rank is $\dim \calE-\rank \restr{\Contact}{\calE}=3-2$). This line bundle is invariant under translations along the $x$-axis. This makes it possible to construct the quotient equation by the variable $x$. More precisely, we will quotient out the action of the one-parameter group $T\cong \bbR$ of translations $(x,u,p_1,p_2)\mapsto (x+c,u,p_1,p_2)$, $c\in \bbR$. In other words, consider the quotient map 
     \[\pi:\bbR^4\to \bbR^4\slash T,\quad (x,u,p_1,p_2)\mapsto (u,p_1,p_2).\]
     The image of the hypersurface $\calE$ under this map is the hypersurface $\calE\slash T$ in the space $\bbR^4\slash T$ given by the same equation $F(u,p_1,p_2)=0$. The distribution $\calC$ projects without degeneration to the space $\bbR^4\slash T$ and, thus, gives rise to the rank $1$ quotient distribution $\calC\slash T$ over the $2$-dimensional $\calE\slash T$. This distribution can thus be determined (as the annihilator) by a single $1$-form on $\bbR^4\slash T$: for example, one can take the following linear combination of $\theta^0,\theta^1$ around $p_1\neq 0$:
     \[\wt\theta=\theta^1-\frac{p_2}{p_1}\theta^0=\dd p_1-\frac{p_2}{p_1}\dd u.\]
@@ -1300,7 +1300,7 @@ It is obvious that if $f$ is a first integral of $D$, then it is constant on eve
 
 \begin{example}
     \begin{enumerate}
-        \item If a completely integrable distribution $D$ is locally spanned by the vector fields $\partial_{x^1},\ldots,\partial{x^l}$, then first integrals must be of the form $f(x_{l+1},\ldots,x_n)$. 
+        \item If a completely integrable distribution $D$ is locally spanned by the vector fields $\partial_{x^1},\ldots,\partial_{x^l}$, then first integrals must be of the form $f(x_{l+1},\ldots,x_n)$. 
         \item Let $f$ be a first integral of the Cartan distribution $\calC=\<\theta=\dd u-p\dd x\>$. Since the vector fields $\partial_p$ and $\partial_x+p\partial_u$ lie in $\calC$, we have $f_p=f_x+pf_u=0$, and all such functions are constant, $f=\const$. Thus, this distribution has no nontrivial first integrals.
     \end{enumerate}
 \end{example}
@@ -1316,10 +1316,10 @@ The problem of finding a first integral can be locally stated as the problem of 
 \end{defn}
 
 It follows that 
-\[\dim \calY=\dim \calY_m\leq \dim M-\rank D.\]
-Let $\theta^1,\ldots,\theta^k$ be a set of forms defining the distribution $D$ and $X_1,\ldots,X_l$ be a basis of a nondegerate subspace $\calY<\sym(D)$. Clearly, $l\leq k$ and the matrix $\{\theta^i(X_j)\}$ has rank $l$ at any point of $M$. If $l=k$, then this matrix is invertible and one can choose another set of forms defining $D$, say $\theta_1',\ldots,\theta_k'$, such that $\theta_i'(X_j)=\delta_{ij}$. To do this, it suffices to multiply the column $(\theta^1,\ldots,\theta^k)^T$ by the matrix inverse of $\{\theta^i(X_j)\}$. Now assume that the space $\calY$ is closed under the Lie bracket, i.e., a Lie subalgebra.
+\[\dim \calY=\dim \calY_m\leq \dim M-\rank D.\label{eq 126491}\]
+Let $\theta^1,\ldots,\theta^k$ be a set of forms defining the distribution $D$ and $X_1,\ldots,X_l$ be a basis of a nondegerate subspace $\calY<\sym(D)$. By \eqref{eq 126491}, $l\leq k$ and the matrix $\{\theta^i(X_j)\}$ has rank $l$ at any point of $M$. If $l=k$, then this matrix is invertible and one can choose another set of forms defining $D$, say $\theta_1',\ldots,\theta_k'$, such that $\theta_i'(X_j)=\delta_{ij}$. To do this, it suffices to multiply the column $(\theta^1,\ldots,\theta^k)^T$ by the matrix inverse of $\{\theta^i(X_j)\}$. Now assume that the space $\calY$ is closed under the Lie bracket, i.e., a Lie subalgebra. Then we have the following dual algebraic structure on the $\theta^i$.
 
-\begin{thm}\label{thm 4.1 Kras}
+\begin{thm}[{\cite[Thm.~1.4.1]{Kras}}]\label{thm 4.1 Kras}
     Let $D$ be an integrable distribution locally defined by the set of $1$-forms $\theta^1,\ldots,\theta^k$. Let $X_1,\ldots,X_k$ be a basis of a nondegenerate Lie algebra $\calY<\sym(D)$. Suppose that $\theta^i(X_j)=\delta^i_{j}$ and $[X_i,X_j]=\sum_s c^s_{ij}X_s$, where $c^s_{ij}$ are the structure constants of $\calY$. Then there holds the \emph{structure equation}\index{Equation!Structure}
     \[\dd\theta^s=-\frac12\sum_{i,j}c^s_{ij}\theta^i\wedge\theta^j.\]
 \end{thm}
@@ -1344,7 +1344,7 @@ Let $\theta^1,\ldots,\theta^k$ be a set of forms defining the distribution $D$ a
     Under the conditions of the preceding theorem, assume that the Lie algebra $\calY$ is abelian. Then all the forms $\theta^i$ are closed, and thus, by the Poincar\'e Lemma~\ref{lem poincare classic}, locally exact: $\theta^i=\dd h^i$ for some smooth functions locally given by $h^i(m)=\int^m\theta^i$.
 \end{cor}
 
-In particular, since $k$-th order ODEs are identified with rank $1$ distributions on $(k+1)$-dimensional manifolds, we have the following.
+In particular, since $k$-th order ODEs are identified with rank $1$ Cartan distributions on $(k+1)$-dimensional manifolds, and all rank $1$ distributions are integrable, we have the following.
 
 \begin{cor}\label{cor 4.3 Kras}
     If the distribution corresponding to a $k$-th order ODE possesses a $k$-dimensional abelian nondegenerate Lie algebra of symmetries, then the ODE is solvable in quadratures.
@@ -1355,7 +1355,7 @@ In particular, since $k$-th order ODEs are identified with rank $1$ distribution
     \[\frac{\dd u}{\dd x}=f(u).\]
     The corresponding distribution is defined on the surface $p=f(u)$ by the $1$-form $\theta=\dd u-p\dd x$. The vector field $X=\partial_x$ is tangent to this surface and is a nontrivial symmetry of the distribution $\calC(\calE)$. By Theorem~\ref{thm 4.1 Kras} and Corollary~\ref{cor 4.2 Kras}, the form $\theta_\calE\slash f$ is exact. Indeed, 
     \[\frac{\theta_\calE}{f}=\frac{1}{f}(\dd u-f\dd x)=\dd\left(\int \frac{\dd u}{f(u)}-x\right).\]
-    In multiplication by $1\slash f$, one easily recognizes the well-known method of separation of variables for solving equations of the considered type. Thus, this method essentially amounts to transforming the $1$-form defining the equation to an exact one.
+    In multiplication by $1\slash f$, one easily recognizes the well-known method of \emph{separation of variables} for solving equations of the considered type. Thus, this method essentially amounts to transforming the $1$-form defining the equation to an exact one.
 \end{example}
 
 \begin{xca}
@@ -1395,34 +1395,34 @@ The full power of Theorem~\ref{thm 4.1 Kras} extends beyond the case of abelian 
 \[[\calY,\calY]=\left\{[X,Y]\mid X,Y\in\calY\right\},\]
 and assume that $[\calY,\calY]\neq\calY$. Then one can choose a basis $X_1,\ldots,X_k$ of $\calY$ such that $X_1,\ldots,X_r\notin [\calY,\calY]$ while $X_{r+1},\ldots,X_k\in [\calY,\calY]$. In this case, for any pair $X_i,X_j$, we have $[X_i,X_j]\in[\calY,\calY]$, so that $c^s_{ij}=0$ for all $i,j$ if $s\leq r$. Hence, the forms $\theta^1,\ldots,\theta^r$ are closed, and thus, $\theta^i=\dd h^i$, $i=1,\ldots,r$, in some open domain. The level surfaces 
 \[H_{\bf{c}}=\{h_1=c_1,\ldots,h_r=c_r\},\quad \bf{c}\in\bbR^r,\]
-are invariant under the derived algebra $[\calY,\calY]$, since $X_j(h^i)=\theta^i(X_j)=0$ if $i\leq r$, $j\geq r+1$.
+are invariant (as a set) under the derived algebra $[\calY,\calY]$, since $X_j(h^i)=\theta^i(X_j)=0$ if $i\leq r$, $j\geq r+1$.
 
 Let $D_{\bf{c}}\coloneqq D\cap \T H_{\bf{c}}$ be the restriction of the distribution $D$ to the surface $H_{\bf{c}}$. The distribution $D_{\bf{c}}$ is integrable: indeed, the foliation of $M$ whose leaves are maximal integral manifolds of $D$ cuts a foliation of the surface $H_{\bf{c}}$. The same effect can be proven analytically. By Theorem~\ref{thm 4.1 Kras}, 
 \[\dd\theta^s=-\frac12\sum_{i,j>r}c^s_{ij}\theta^i\wedge\theta^j,\quad s\geq r+1,\]
 The forms $\theta^i$ vanish on $H_{\bf{c}}$ for $i\leq r$. Hence, by the Frobenius Theorem, the distribution $D_{\bf{c}}$ is integrable.
 
-Observe now that $[\calY,\calY]$ is a nondegenerate Lie algebra of symmetries of the distribution $D_{\bf{c}}$. Actually, the flows of any element $X\in [\calY,\calY]$ permute the leaves of $D_{\bf{c}}$. Nondegeneracy follows from the fact that $\{\theta^i(X_j)\}$, $r<i,j\leq k$, is the identity matrix. Because of this, we can subject $[\calY,\calY]$ to the same procedure that was formerly applied to $\calY$. If $[[\calY,\calY],[\calY,\calY]]\neq [\calY,\calY]$, then some of the $1$-forms $\restr{\theta^{r+1}}{\dd H_{\bf{c}}},\ldots,\restr{\theta^k}{\dd H_{\bf{c}}}$ are closed and give rise to local first integrals of $D_{\bf{c}}$. The distribution $D_{\bf{c}}$ can be restricted to the mutual level set of these integrals, etc.
+Observe now that $[\calY,\calY]$ is a nondegenerate Lie algebra of symmetries of the distribution $D_{\bf{c}}$ since it is transverse to $\T H_{\bf{c}}$. In fact, the flows of any element $X\in [\calY,\calY]$ permute the leaves of $D_{\bf{c}}$. Nondegeneracy follows from the fact that $\{\theta^i(X_j)\}$, $r<i,j\leq k$, is the identity matrix. Because of this, we can subject $[\calY,\calY]$ to the same procedure that was formerly applied to $\calY$. If $[[\calY,\calY],[\calY,\calY]]\neq [\calY,\calY]$, then some of the $1$-forms $\restr{\theta^{r+1}}{\T H_{\bf{c}}},\ldots,\restr{\theta^k}{\T H_{\bf{c}}}$ are closed and give rise to local first integrals of $D_{\bf{c}}$. The distribution $D_{\bf{c}}$ can be restricted to the mutual level set of these integrals, etc.
 
-We continue in this fashion obtaining a so called \emph{derived series} of subalgebras \index{Derived series}
+We continue in this fashion obtaining the so called \emph{derived series} of subalgebras \index{Derived series}
 \[\calY>[\calY,\calY]>[[\calY,\calY],[\calY,\calY]]>[[[\calY,\calY],[\calY,\calY]],[[\calY,\calY],[\calY,\calY]]]>\cdots.\]
 
 \begin{defn}[Solvable Lie algebra]\index{Solvable Lie algebra}
     A Lie algebra $\calY$ is called solvable if its derived series terminates, i.e., after a finite number of steps the derived algebras become abelian and then zero. 
     
-    Equivalently, there exists an \emph{elementary sequence} of subalgebras $\frakg_i$, $i=0,\ldots,n$, such that $0=\frakg_0<\frakg_1<\cdots<\frakg_{n-1}<\frakg_n=\frakg$ and each $\frakg_i$ is a maximal ideal in $\frakg_{i+1}$ (i.e., $[\frakg_i,\frakg_{i+1}]<\frakg_i$ and $\dim\frakg_{i+1}/\frakg_i=1$). 
+    Equivalently, by Proposition~\ref{prop 1.23 Knapp}, there exists an \emph{elementary sequence} of subalgebras $\frakg_i$, $i=0,\ldots,n$, such that $0=\frakg_0\sub \frakg_1\sub \cdots\sub \frakg_{n-1}\sub \frakg_n=\frakg$ and each $\frakg_i$ is a maximal ideal in $\frakg_{i+1}$ (i.e., $[\frakg_i,\frakg_{i+1}]<\frakg_i$ and $\dim\frakg_{i+1}/\frakg_i=1$).\footnote{Equivalently, one may allow the sequence to be shorter than $n$, drop the requirement that $\dim\frakg_{i+1}/\frakg_i=1$, and instead require that $\frakg_{i+1}/\frakg_i$ is an abelian algebra. In other words, solvable Lie algebras are exactly the semidirect products of abelian algebras.} 
 
-    A Lie group $G$ is called solvable if there exists a \emph{normal series} of subgroups $\{e\}=G_0\sub G_1\sub \cdots\sub G_{n-1}\sub G_n=G$ such that each $G_i$ is a normal subgroup of $G_{i+1}$ of codimension $1$.
+    A Lie group $G$ is called solvable if there exists a \emph{normal series} of subgroups $\{e\}=G_0\sub G_1\sub \cdots\sub G_{n-1}\sub G_n=G$ such that each $G_i$ is a normal Lie subgroup of $G_{i+1}$ of codimension $1$.
 \end{defn}
 
 The above argument, in fact, is a consequence of Lie's Theorem~\ref{thm 5.4.8 HN Lie} stating that finite-dimensional solvable matrix Lie algebras can always be brought into upper triangular form. If $\calY$ is solvable, then we can apply Corollary~\ref{cor 4.3 Kras} to the last nonzero subalgebra in its derived series, and complete the resulting quadratures to integral manifolds of $D$ by specifying the constant $\bf{c}$. In summary, we get the following theorem, which also explains the term ``solvable''.
 
-\begin{thm}[{{\cite[Thm.~4.4]{Kras}}}]\label{thm 4.4 Kras}
+\begin{thm}[{{\cite[Thm.~1.4.4]{Kras}}}]\label{thm 4.4 Kras}
     If an integrable distribution $D$ of corank $k$ possesses a $k$-dimensional nondegenerate solvable Lie algebra of symmetries $\calY<\sym(D)$, then $D$ is integrable by quadratures, i.e., one can find a complete set of first integrals for $D$ by integrating closed $1$-forms and solving functional equations.
 
     If $\dim \calY=r<k$, then the general integral manifold of $D$ can be computed by quadratures from the general $(k-r)$-dimensional integral manifold of the reduced distribution $D\slash \calY$.
 \end{thm}
 
-\begin{thm}[Bianchi-Lie {{\cite[Thm.~4.5]{Kras}}}]\label{thm Bianchi-Lie}
+\begin{thm}[Bianchi-Lie {{\cite[Thm.~1.4.5]{Kras}}}]\label{thm Bianchi-Lie}
     If a $k$-th order ODE possesses a $k$-dimensional nondegenerate solvable Lie algebra of symmetries, then it is integrable by quadratures. If the algebra is only of dimension $r<k$, then the general solution can be obtained from quadratures from the general solution of an $(k-r)$-th order ODE.
 \end{thm}
 
@@ -1434,8 +1434,8 @@ It is these results which caused the concept of solvability, originating from th
         \item The simplest non-solvable Lie algebras are $\fraksl_2(\bbR)$ and $\frakso_3$. In fact, the famous \emph{Levi decomposition}\index{Levi decomposition} states that every finite-dimensional real or complex Lie algebra $\frakg$ is the semidirect product of a solvable ideal $\frakr$ and a semisimple subalgebra $\frakh$, so $\frakg=\frakh\ltimes\frakr$. Since the solvable part is an ideal, we can always reduce the symmetry algebra, via a finite sequence of quadratures, to a semisimple one.
         \item The algebra $\fraksl_2(\bbR)$ admits a faithful representation by vector fields on $\bbR^2$ via the basis 
         \[X_-=\partial_x,\quad X_0=x\partial_x,\quad X_+=x^2\partial_x,\label{eq sl2 action on plane}\]
-        with commutation relations $[X_-,X_0]=X_-$, $[X_-,X_0]=2X_+$, $[X_-,X_+]=X_+$. It is the infinitesimal version of the usual action by \glspl{flt}: $(x,u)\mapsto ((\alpha x+\beta)/(\gamma x+\delta),u)$.
-        \item Similarly, $\frakso_3$ has a faithful representation by vector fields on $\bbR^3$ via the basis 
+        with commutation relations $[X_-,X_0]=X_-$, $[X_+,X_0]=-X_+$, $[X_-,X_+]=2X_0$. It is the infinitesimal version of the usual action by \glspl{flt}: $(x,u)\mapsto ((\alpha x+\beta)/(\gamma x+\delta),u)$.
+        \item Similarly, $\frakso_3$ has a faithful representation by vector fields on $\bbR^2$ via the basis 
         \[X_1=(1+x^2)\partial_x+xy\partial_y,\quad X_2=xy\partial_x+(1+y^2)\partial_y,\quad X_3=y\partial_x-x\partial_y,\]
         with commutation relations $[X_i,X_j]=X_k$ for $(i,j,k)$ a cyclic permutation of $(1,2,3)$. In fact, this action can be derived from the stereographic projection of the standard action of $\SO_3$ on $\bbS^2$.
     \end{enumerate}
@@ -2010,7 +2010,7 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
     \[b^j_J=D_J \varphi^j+\sum_{i=1}^n a^i p^j_{J+1_i}\]
     and $D_J=D_1^{j_1}\cdots D_n^{j_n}$ (note that the $D_i$ commute).
 
-    We can simplify these formulas further by noticing that the term $\sum_J a^ip^j_{J+1_i}\frac{\partial}{\partial p^j_J}$ together with the term $a^i\partial_{x^i}$ combines to exactly $a^i D_i$. Using the notation from above, denote $X_1=\sum_j \varphi^j \partial_{u^j}$. Then the prolongation formula is written as \index{Equation!Prolongation formula}\index{Formula!see {Equation}}
+    We can simplify these formulas further by noticing that the term $\sum_J a^ip^j_{J+1_i}\frac{\partial}{\partial p^j_J}$ together with the term $a^i\partial_{x^i}$ combines to exactly $a^i D_i$. Using the notation from above, denote $X_1=\sum_j \varphi^j \partial_{u^j}$. Then the prolongation formula is written as \index{Equation!Prolongation formula}\index{Formula|see {Equation}}
     \[\boxed{X^{(r)}=X_1^{(r)}+\sum_i a^i D_i,\quad \text{where}\quad X_1^{(r)}=\sum_{j=1}^k \sum_{|J|\leq r} D_J \varphi^j \frac{\partial}{\partial p^j_J}.}\label{eq prolongation formula}\]
     As a sanity check, at $r=0$, $n=k=1$, we find $X^{(0)}=\varphi\partial_u+a(\partial_x+p\partial_u)=a\partial_x+b\partial_u=X$.
 \end{rem}
@@ -2073,8 +2073,8 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
 \end{example}
 
 
-\begin{rem}
-    As can be seen in the example with $\fraksl_2(\bbR)$ above, the Lie algebra action can't, strictly speaking, be lifted to a group action: the \gls{flt} blows up when $\gamma x+\delta=0$. This has to do with the fact that the vector fields generating the action are not complete. The resulting collection of flows is generally called a \emph{pseudogroup}.
+\begin{rem}[Lie pseudogroups]
+    As can be seen in the example with $\fraksl_2(\bbR)$ above, the Lie algebra action can't, strictly speaking, be lifted to a group action: the \gls{flt} blows up when $\gamma x+\delta=0$. This has to do with the fact that the vector fields generating the action are not complete. The resulting collection of flows is generally called a \emph{(Lie) pseudogroup}. The following is a simplified definition that will suffice for our purposes.
 
     A pseudogroup $\pzcG$ on a manifold $M$ is a collection of diffeomorphisms of open subsets of $M$ into $M$ such that:\index{Pseudogroup}
     \begin{enumerate}[label=(\arabic*)]
@@ -10720,7 +10720,7 @@ The first one is clearly just $\pi^\ast\sfI$. Meanwhile the second one gives ris
     were $\sfv_\sfg=\theta^1\wedge\theta^2$ is the volume form on $\varSigma$. This can be viewed as the local version of the Gauss-Bonnet Theorem relating curvature to a smooth mapping to the sphere.\index{Theorem!Gauss-Bonnet}
 \end{rem}
 
-Another way to obtain the Gauss curvature is by differentiating $\omega_1^2$. Using the Maurer-Cartan equation, we obtain the \emph{Gauss equation}\index{Equation!Gauss}\index{Formula|see {Equation}}
+Another way to obtain the Gauss curvature is by differentiating $\omega_1^2$. Using the Maurer-Cartan equation, we obtain the \emph{Gauss equation}\index{Equation!Gauss}
 \[\boxed{\dd\omega_1^2=-K\theta^1\wedge\theta^2.}\label{eq 2.14 Ivey}\]
 We will later be able to interpret this equation as an integrability condition (the vanishing of the torsion) for a certain canonical \gls{eds}. In addition, the definition of $\sfh$ \eqref{def h} immediately implies, by multiplying its two rows by $\theta^2$ and $\theta^1$, respectively, that
 \[\omega_1^3\wedge\theta^2+\omega_2^3\wedge\theta^1=2H\theta^1\wedge\theta^2.\]
@@ -10906,7 +10906,7 @@ Thus, Darboux frames provide the necessary unique lifting of $\varSigma$ into $\
 
 Being a union of disjoint straight lines, the helicoid is an example of a \emph{ruled} surface.
 
-\begin{defn}[Flat, ruled, tangential developable surfaces]\index{Developable surface!see {Flat surface}}\index{Ruled surface}\index{Tangential surface}\index{Flat surface}
+\begin{defn}[Flat, ruled, tangential developable surfaces]\index{Developable surface|see {Flat surface}}\index{Ruled surface}\index{Tangential surface}\index{Flat surface}
     A surface is called \emph{developable}, or simply \emph{flat}, if its Gauss curvature vanishes everywhere, $K\equiv 0$.
 
     A surface is called \emph{ruled} if every point of the surface is contained in it along with a segment of a straight line passing through that point, whose ends (if they exist) lie on the boundary of the surface.

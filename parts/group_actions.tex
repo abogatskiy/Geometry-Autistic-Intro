@@ -2613,7 +2613,7 @@ This leads us to the Lie group analog of the homomorphism theorem.
 
 
 
-\section{Semidirect products II}
+\section{Semidirect products II}\label{sec: semidirect prod}
 
 
 Recall from \S\ref{sec: semidirect products i} that a semidirect product of two Lie groups $H$ and $N$ requires a smooth action $H\acts N$ by automorphisms, or a Lie group homomorphism $\alpha:H\to \Aut(N)$ (and the automorphism group was shown to be a Lie group in Corollary~\ref{cor 9.5.11 HN}). In this \sect\ we will examine the opposite direction and obtain a criterion for a Lie group to decompose as a semidirect product. In particular, we will characterize semidirect products as a particularly simple subclass of group \emph{extensions}.
@@ -2734,7 +2734,7 @@ We begin by recalling a few definitions related to actions of Lie groups on mani
     \begin{enumerate}
         \item Two points $m_1,m_2\in M$ are called conjugate under $\Phi$ if $m_2=\Phi_g(m_1)$ for some $g\in G$. Conjugacy is an equivalence relation and its equivalence classes are called \emph{orbits}\index{Orbit} of $G$ under $\Phi$. The set of equivalence classes, equipped with the quotient topology, is called the \emph{orbit space} of $(M,G,\Phi)$ and is denoted by $M\slash G$ (sometimes left and right actions are distinguished so that a quotient by a left action is denoted $G\bslash M$ and by a right action $M\slash G$).\index{Orbit space}
         \item For $m\in M$, the induced mapping $\Phi^m:G\to M$ is called the orbit map of $m$.
-        \item For $m\in M$, the subgroup $G_m=\{g\in G\mid \Phi_g(m)=m\}$ of $G$ is called the \emph{stabilizer}, or the \emph{isotropy group},\index{Isotropy group!see {Stabilizer}}\index{Stabilizer} of $m$.
+        \item For $m\in M$, the subgroup $G_m=\{g\in G\mid \Phi_g(m)=m\}$ of $G$ is called the \emph{stabilizer}, or the \emph{isotropy group},\index{Isotropy group|see {Stabilizer}}\index{Stabilizer} of $m$.
         \item The kernel of $\Phi$ is the subgroup $\ker\Phi=\{g\in G\mid \Phi_g=\id_M\}$ of $G$.
     \end{enumerate}
 \end{defn}
@@ -3910,6 +3910,28 @@ The structure of solvable Lie algebras and groups is significantly more complica
     (iv) We only have to observe that for each ideal $\fraki$, its commutator algebra $[\fraki,\fraki]$ also is an ideal (Exercise~\ref{xca ideals}(5)). Then (iv) follows by induction.
 \end{proof}
 
+\begin{prop}[{\cite[Prop.~1.23]{Knapp}}]\label{prop 1.23 Knapp}
+    An $n$-dimensional Lie algebra $
+    \frakg$ is solvable iff there is a complete flag of \emph{subalgebras} 
+    \[0=\frakg_0<\frakg_1<\cdots <\frakg_n=\frakg,\]
+    such that each is an ideal inside the next, $\frakg_i\sub\frakg_{i+1}$, $i=0,\ldots,n-1$. Such a sequence is called an \emph{elementary sequence}.\index{Elementary sequence}
+\end{prop}
+\begin{proof}
+    Consider the derived series $D^r(\frakg)$ and interpolate the subspaces $\frakg_k$ in the sequence so that $\dim(\frakg_{i+1}/\frakg_{i})=1$ for all $i$. For any $i$, we can find $r$ such that $D^{r+1}(\frakg)<\frakg_i<\frakg_{i+1}<D^r(\frakg)$. Then 
+    \[[\frakg_{i+1},\frakg_{i+1}]<[D^r(\frakg),D^r(\frakg)]=D^{r+1}(\frakg)<\frakg_i.\]
+    Hence, $\frakg_i$ is a subalgebra for each $i$, and $\frakg_{i-1}$ is an ideal in $\frakg_i$.
+
+    Conversely, let the sequence exist. Choose $x_i\in\frakg_i$ so that $\frakg_i=\bbK x_i+\frakg_{i-1}$. We show by induction that $D^i(\frakg)<\frakg_i$, so that $D^n(\frakg)=0$. In fact, $D^n(\frakg)=\frakg_0$. If $D^r(\frakg)<\frakg_r$, then 
+    \[\frakg^{r+1}=[\frakg^r,\frakg^r]<[\bbK x_r+\frakg_{r-1},\bbK x_r+\frakg_{r-1}]<[\bbK x_r,\frakg_{r-1}]+[\frakg_{r-1},\frakg_{r-1}]<\frakg_{r-1},\]
+    and the induction is complete. Hence, $\frakg$ is solvable.
+\end{proof}
+
+Thus, solvability is equivalent to the existence of an elementary sequence. Note that this holds over any field $\bbK$.
+
+\begin{rem}
+    Write $\frakg_i=\bbK x_i\oplus\frakg_{i-1}$. Then $\bbK x_i$ is a $1$-dimensional subspace of $\frakg_i$, hence a subalgebra. Also $\frakg_{i-1}$ is an ideal in $\frakg_{i}$. According to \S\ref{sec: semidirect prod}, this identifies $\frakg_i$ with a semidirect product of a (abelian) $1$-dimensional Lie algebra and $\frakg_{i-1}$. The proposition above says that solvable Lie algebras are exactly those that can be obtained via semidirect products, starting from $0$ and adding one dimension at a time.
+\end{rem}
+
 \begin{example}\label{ex 5.4.4 HN}
     If $F=(V_0<\ldots <V_n)$ is a complete flag in the $n$-dimensional vector space $V$, then $\frakg(F)$ is a solvable Lie algebra. In fact, 
     \[\frakg(F)\cong \frakgl_1(\bbK)^{\mathrm{n}}\ltimes\frakg_{\mathrm{n}}(F)\cong \bbK^n\ltimes \frakg_{\mathrm{n}}(F)\]
@@ -3917,7 +3939,7 @@ The structure of solvable Lie algebras and groups is significantly more complica
 \end{example}
 
 \begin{defn}[Radical]\index{Radical}
-    Proposition~\ref{prop 5.4.3 HN}{iii} shows that in every finite-dimensional Lie algebra $\frakg$, there is a unique maximal solvable ideal (the sum of all solvable ideals). This ideal is called the radical of $\frakg$, denoted $\frakrad(\frakg)$.
+    Proposition~\ref{prop 5.4.3 HN}(iii) shows that in every finite-dimensional Lie algebra $\frakg$, there is a unique maximal solvable ideal (the sum of all solvable ideals). This ideal is called the radical of $\frakg$, denoted $\frakrad(\frakg)$.
 \end{defn}
 
 \begin{rem}
@@ -3967,9 +3989,11 @@ Now we turn to solvable Lie subalgebras $\frakg$ of $\frakgl(V)$ and Lie's Theor
 In the terms of Example~\ref{ex 5.2.20 HN}, Lie's Theorem states that \emph{complex solvable algebras can be faithfully represented by upper triangular matrices} (note that there are no ``blocks'' since the flag is complete now).
 
 \begin{rem}
-    If we apply Lie's Theorem~\ref{thm 5.4.8 HN Lie} to $V=\frakg$ and $\ad(\frakg)$, where $\frakg$ is solvable, we get a complete flag of ideals 
-    \[0=\frakg_0<\frakg_1<\cdots<\frakg_n=\frakg\]
-    of $\frakg$ with $\dim\frakg_k=k$. Such a chain is called a \emph{H\"older series} for $\frakg$.
+    If we apply Lie's Theorem~\ref{thm 5.4.8 HN Lie} to $V=\frakg$ and $\ad(\frakg)$, where $\frakg$ is solvable, we get a complete flag of \emph{ideals of $\frakg$} 
+    \[0=\frakg_0< \frakg_1< \cdots< \frakg_n=\frakg,\quad \frakg_k\sub \frakg,\quad \dim \frakg_k=k.\]
+    Such a chain is called a \emph{H\"older series} for $\frakg$.
+    
+    Solvability of a Lie algebra is equivalent to the existence of such a series, but only over algebraically closed fields. Over other fields, Lie algebras with such a flag are called \emph{completely solvable}. Recall that, by Proposition~\ref{prop 1.23 Knapp}, solvability (over arbitrary fields) is equivalent to the existence of an elementary sequence, which is a sequence of subalgebras, each an ideal inside the next. Complete solvability is a much stronger requirement since $\frakg_i$ has to be an ideal not just in $\frakg_{i+1}$, but in $\frakg$.
 \end{rem}
 
 To derive the last few corollaries of Lie's Theorem, we need the concept of complexification.
