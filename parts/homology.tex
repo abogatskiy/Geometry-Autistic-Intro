@@ -820,7 +820,7 @@ The non-trivial de Rham cohomologies are computed with the help of Poincar\'e's 
 \end{cor}
 \begin{proof}
     We have the homotopy $H:M\times[0,1]\to N$. Let $s_{0,1}:M\to M\times [0,1]$ be two constant sections given by $s_i(m)=(m,i),\;i=0,1$. Then $f=H\circ s_0$ and $g=H\circ s_1$. Their pullback actions are thus
-    \[f^\ast=s_0^\ast H^\ast,\quad g^\ast=s_1^\ast H^\ast.\]
+    \[f^\ast=s_0^\ast \rmH^\ast,\quad g^\ast=s_1^\ast \rmH^\ast.\]
     However, we have shown in the proof of Poincar\'e lemma that $s_i^\ast=(\pi^\ast)^{-1}$ in de Rham cohomology (where $\pi:M\times [0,1]\to M$ is the projection), regardless of the specific section. Thus
     \[s_0^\ast=s_1^\ast\implies f^\ast=g^\ast \text{ in }\rmH^{\smbullet }_{\rm dR}.\]
 \end{proof}
@@ -1379,7 +1379,7 @@ From now on we write
 for the descendants of maps in (co)homology.
 
 \begin{lem}
-    Exact additive covariant functors preserve homology: $H_\ast(F(\bm{C}))\cong F(H_\ast(\bm{C}))$.
+    Exact additive covariant functors preserve homology: $\rmH_\ast(F(\bm{C}))\cong F(\rmH_\ast(\bm{C}))$.
 \end{lem}
 \begin{proof}
     This follows from the fact that exact additive functors preserve kernels and quotients (and all functors preserve images).
@@ -3085,7 +3085,7 @@ Thus $\Ext(A,B)$ is indeed an abelian group, and we can finally establish its is
         0\arrow[r] & \bigslant{P_1}{d_2(P_2)}\arrow[r]\arrow[d] & P_0 \arrow[r]\arrow[d,dashed] & A\arrow[r]\arrow[d,"="] & 0 \\
         0\arrow[r] & B\arrow[r,dashed] & ? \arrow[r,dashed] & A\arrow[r] & 0.
     \end{tikzcd}\]
-    The missing part of this diagram can get recovered by applying the functor $\Ext$, obtaining a pushout object in the bottom row. We then need to check that the equivalence class of the resulting extension depends only on the cohomology class of the vertical dashed morphism, that it's a homomorphism, and that it is the inverse of the first homomorphism on both sides.
+    The missing part of this diagram can get recovered by applying the functor $\Ext$, obtaining a pushout object in the bottom row. We then need to check that the equivalence class of the resulting extension depends only on the cohomology class of the vertical dashed morphism, that it's a homomorphism, and that it is the inverse of the first homomorphism on both sides. This is left as an exercise.
 \end{proof}
 
 
@@ -3380,12 +3380,12 @@ However we quickly start to run into issues because, unlike direct sums (which a
 
 \section{Homology with coefficients}
 
-Suppose that we are given integer homology (e.g, singular homology) $H_\ast(X)$. Clearly instead of having the coefficients of simplices in chains be integers, they could be elements of any ring $R$. This way we can define $H_\ast(X;R)$. It satisfies all Eilenberg-Steenrod axioms with the only change that the zeroth homology of a singleton space is $\rmH_0(\{\ast\};R)=R$. Consider, for example, $H_\ast(\RP^n;\bbZ_2)$. The cellular chain complex has $C_k(\RP^n;\bbZ_2)=\bbZ_2$ for $0\leq k\neq n$, and the boundary operator alternates between multiplication by $2$ and by $0$ (see formula~\ref{eq degree of cells in RPn}). But in $\bbZ_2$, $2=0$, therefore $\partial=0$ and the homology mimics the chain complex itself:
+Suppose that we are given integer homology (e.g, singular homology) $\rmH_\ast(X)$. Clearly instead of having the coefficients of simplices in chains be integers, they could be elements of any ring $R$. This way we can define $\rmH_\ast(X;R)$. It satisfies all Eilenberg-Steenrod axioms with the only change that the zeroth homology of a singleton space is $\rmH_0(\{\ast\};R)=R$. Consider, for example, $\rmH_\ast(\RP^n;\bbZ_2)$. The cellular chain complex has $C_k(\RP^n;\bbZ_2)=\bbZ_2$ for $0\leq k\neq n$, and the boundary operator alternates between multiplication by $2$ and by $0$ (see formula~\ref{eq degree of cells in RPn}). But in $\bbZ_2$, $2=0$, therefore $\partial=0$ and the homology mimics the chain complex itself:
 \[\rmH_k(\RP^n;\bbZ_2)=\begin{cases}
     \bbZ_2,& 0\leq k\leq n,\\
     0, & k>n.
 \end{cases}\]
-On the other hand, suppose $R$ is a ring in which $2$ is invertible, such as $F_p$ for $p$ odd. This time $\partial_{2k+1}=0$ and $\partial_{2k}$ is an isomorphism if $n$ is even, and vice versa if $n$ is odd. Therefore 
+On the other hand, suppose $R$ is a ring in which $2$ is invertible, such as $\bbF_p$ for $p$ odd. This time $\partial_{2k+1}=0$ and $\partial_{2k}$ is an isomorphism if $n$ is even, and vice versa if $n$ is odd. Therefore 
 \[\rmH_k(\RP^{2n};R)=\begin{cases}
     R,&k=0,\\
     0,&k\neq 0,
@@ -3397,9 +3397,9 @@ On the other hand, suppose $R$ is a ring in which $2$ is invertible, such as $F_
 \]
 We get a much simpler result: away from $2$, projective spaces look like points, and odd projective spaces look like spheres.
 
-To pose a more general question: knowing $H_\ast(X)=H_\ast(X;\bbZ)$, can we compute, for example, $H_\ast(X;\bbZ_2)$? One could be tempted to find a map of topological spaces that induces an isomorphism of these homologies. Consider the map $\RP^2\to \bbS^2$ that pinches $\RP^1\subset \RP^2$ to a point. Since $\rmH_2(\RP^2;\bbZ)=0$, this map induces a zero map in $\rmH_2$. But in $\bbZ_2$-coefficients, in dimension 2, this map induces an isomorphism. This shows that there is no \emph{natural} (functorial) determination of $H_\ast(X;\bbZ_2)$ in terms of $H_\ast(X;\bbZ)$: the effect of a map in integer homology does not determine its effect in homology mod $2$. 
+To pose a more general question: knowing $\rmH_\ast(X)=\rmH_\ast(X;\bbZ)$, can we compute, for example, $\rmH_\ast(X;\bbZ_2)$? One could be tempted to find a map of topological spaces that induces an isomorphism of these homologies. Consider the map $\RP^2\to \bbS^2$ that pinches $\RP^1\subset \RP^2$ to a point. Since $\rmH_2(\RP^2;\bbZ)=0$, this map induces a zero map in $\rmH_2$. But in $\bbZ_2$-coefficients, in dimension 2, this map induces an isomorphism. This shows that there is no \emph{natural} (functorial) determination of $\rmH_\ast(X;\bbZ_2)$ in terms of $\rmH_\ast(X;\bbZ)$: the effect of a map in integer homology does not determine its effect in homology mod $2$. 
 
-Even more generally, given $H_\ast(X;R)$ for some ring $R$, can be compute $H_\ast(X;M)$ for some $R$-module $M$? For this we will need to first define the latter object.
+Even more generally, given $\rmH_\ast(X;R)$ for some ring $R$, can be compute $\rmH_\ast(X;M)$ for some $R$-module $M$? For this we will need to first define the latter object.
 
 
 We will now restrict to the case when $R$ is a principal ideal domain (PID), although there are generalizations for other rings as well. Let $(\bm{C},d)$ be a chain complex of $R$-modules.  Given another $R$-module $G$, we can construct the chain complex $\bm{C}\otimes G=(C_n\otimes_R G,d_n\otimes 1)$. First we compute the homologies of this complex in the case of free modules. 

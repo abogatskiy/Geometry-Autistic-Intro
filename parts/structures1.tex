@@ -4025,8 +4025,431 @@ The fundamental equivalence and symmetry theorems for coframes can now be adapte
 
 
 
+\section{Method of moving (co)frames}
 
-\section{Moving frames}
+
+\begin{intu*}
+    This \sect\ presents the classical method of moving frames, as developed by Cartan (building on the work of Frenet, Serret, and most importantly Cartan's advisor Darboux). For the simplest class of applications, consider the problem of deciding whether two submanifolds $S,\wb S$ of a Lie group $G$ are \emph{congruent} in the sense that there exists a $g\in G$ such that $g\cdot S=\wb S$ (at least locally). Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} implies that the submanifold $S$ is completely determined exactly up to an action of $g\in G$ by the pullback (restrictions) of the Maurer-Cartan form $\theta_G$ to $S$. The components of this form comprise an over-complete coframe on $S$, i.e., there are linear dependencies among them. The coefficients of these dependencies are exactly the differential invariants that characterize $S$ up to congruence. By comparing (the relationships among) the differential invariants of $S$ and $\wb S$, one can unambiguously establish congruence. The goal of the method of moving frames is to extend this basic framework to arbitrary Lie group actions $G\acts M$ and congruences of submanifolds under those actions. It starts by (locally) \emph{equivariantly} embedding $M$ or some modification of $M$ into the Lie group $G$. Such an embedding is called a \emph{moving frame}, and the pullback of the Maurer-Cartan form by such a map is a \emph{moving coframe}. This allows one to fully characterize the group action on $M$ (and hence on submanifolds of $M$) in terms of differential invariants as above. 
+    
+    In our exposition, we closely follow Peter Olver's review \cite{OlverCo}. The fundamental idea behind the method is to first turn the given group action $G\acts M$ into a free action $G\acts \wb M$ (where $\wb M$ is usually a higher-dimensional manifold than $M$), and then construct local equivariant maps $\rho:\wb M\to G$ -- moving frames. Then the pullbacks $\rho^\ast \theta_G^a$ of the components of the Maurer-Cartan form $\theta_G$ will comprise a moving coframe, which, when projected back to $M$, produces a set of $1$-forms with potential linear dependencies among them. These dependencies determine the differential invariants of the action and allow one to eliminate extra parameters from the moving frame, ultimately producing a moving frame on the original manifold $M$ or its jet spaces. For example, the most common application of the method is the equivalence (congruence) problem for submanifolds of a homogeneous space $M=G\slash H$. In this case, moving frames are invariant sections of the principal bundle $G\to G\slash H$ (or of its restriction $G\to S$ to the submanifold). 
+
+    The main drawback of the historic version of the method is that it is somewhat ad hoc and sometimes runs into difficulties that have to be resolved on a case-by-case basis. Therefore, this \sect\ is largely devoid of theoretical results, and instead introduces the method by way of numerous examples. A more theoretically palatable version of the method, along with the full solution of the equivalence problem for submanifolds derived from it, will be presented in the \sect s following this one.
+\end{intu*}
+
+
+In our approach to the theory and practical implementation of the method of moving frames, the left-invariant Maurer-Cartan forms on a finite-dimensional Lie group play an essential role. We have previously presented one way of easily computing them using the matrix representation $\theta_G=g^{-1}\dd g$. 
+
+\begin{example}
+    For $G=\GL_2(\bbR)$ parametrized as 
+    \[g=\begin{pmatrix}
+        \alpha & \beta \\\gamma & \delta
+    \end{pmatrix},\]
+    the $\frakgl_2(\bbR)$-valued Maurer-Cartan form reads 
+    \[\theta_G=g^{-1}\dd g=\frac{1}{\det g}\begin{pmatrix}
+        \delta\dd \alpha -\beta\dd\gamma & \delta\dd\beta - \beta\dd\delta\\
+        \alpha\dd\gamma-\gamma\dd\alpha & \alpha\dd\delta-\gamma\dd\beta
+    \end{pmatrix}.\label{eq 3.4 OlverCo}\]
+\end{example}
+
+However, since for equivalence problems we are particularly interested in groups of transformations, another method of computing the Maurer-Cartan form becomes useful. Since the input data include only the action of the group on a manifold, the full Maurer-Cartan form will be recovered only if the action is, at least locally, effective. Given $g\in G$, $m\in M$, with local coordinates $\bf{x}=(x^1,\ldots,x^n)$ near $m$ and $\bf{g}=(g^1,\ldots,g^d)$ near $g$, we can explicitly write the group transformation $\wb m=g\cdot m$ in coordinate form:
+\[\wb x^i=H^i(\bf{x},\bf{g}),\quad i=1,\ldots,n.\]
+We then compute the differentials of the group transformations:
+\[\dd\wb x^i=\sum_{k=1}^n \frac{\partial H^i}{\partial x^k}\dd x^k+\sum_{j=1}^d \dd g^j,\quad i=,1\ldots,n,\]
+or, more compactly, 
+\[\dd\bar{\bf x}=\bf{H}_{\bf{x}}\dd \bf{x}+\bf{H}_{\bf g}\dd \bf{g}.\]
+Next, set $\dd \bar{\bf x}=0$ and solve for the $\dd x^k$:
+\[-\dd\bf{x}=\bf{F}\dd\bf{g}=(\bf{H}_{\bf x}^{-1}\cdot \bf{H}_{\bf g})\dd\bf{g},\label{eq 3.7 OlverCo}\]
+or, in full detail,
+\[-\dd x^k=\sum_{j=1}^d F_j^k(m,g)\dd g^j,\quad k=1,\ldots,n.\]
+Then, for each $k$ and fixed $m_0\in M$, the $1$-form 
+\[\theta_0=\sum_{j=1}^d F^k_j(m_0,g)\dd g^j,\]
+is a left-invariant form on $G$. Alternatively, if one expands the right hand side of \eqref{eq 3.7 OlverCo} in a power series (or Fourier series, etc.) in $\bf{x}$,
+\[\sum_{j=1}^d F^k_j(m,g)\dd g^j=\sum_{I}\bf{x}^I \theta_I,\]
+then each coefficient $\theta_I$ also forms a left-invariant form on $G$. In particular, when $G$ acts locally effectively, the resulting collection of $1$-forms spans the space of left-invariant forms. It only remains to pick a basis in this space to recover the components of the Maurer-Cartan form.
+
+\begin{example}
+    Consider the action of $\GL_2(\bbR)$  on $\bbR^2$ with coordinates $(x,u)$ by 
+    \[(\wb x,\wb u)=\left(\frac{\alpha x+\beta}{\gamma x+\delta},\frac{u}{\gamma x+\delta}\right).\label{eq 3.10 OlverCo}\]
+    This forms a multiplier representation of $\GL_2(\bbR)$ which lies at the heart of classical invariant theory. We can consider the equivalence problem for graphs of functions $u=f(x)$, thereby avoiding issues of parametrization. Two such curves are equivalent iff their defining functions $f$ and $\wb f$ are related by 
+    \[f(x)=(\gamma x+\delta)\wb f\left(\frac{\alpha x+\beta}{\gamma x+\delta}\right)=(\gamma x+\delta)\wb f(\wb x),\label{eq 2.4 OlverCo}\]
+    for some nonsingular matrix $g$. Equation \eqref{eq 2.4 OlverCo} is the fundamental equivalence condition for first-order Lagrangians that depend only on the derivative coordinate. Differentiating \eqref{eq 3.10 OlverCo} we find 
+    \begin{align}
+        \dd \wb x&=\frac{\det g\dd x+(\gamma x+\delta)(x\dd\alpha+\dd\beta)-(\alpha x+\beta)(x\dd\gamma+\dd\delta)}{(\gamma x+\delta)^2},\\
+        \dd \wb u&=\frac{(\gamma x+\delta)\dd u+u(\gamma \dd x+x\dd \gamma+\dd\delta)}{(\gamma x+\delta)^2}.
+    \end{align}
+    Setting $\dd\wb x=0=\dd\wb u$ and solving for $\dd x$ and $\dd u$, we obtain 
+    \begin{align}
+        -\dd x&=\frac{\delta\dd\beta-\beta\dd\delta}{\det g}+\left(\frac{\delta\dd\alpha+\gamma\dd\beta-\alpha\dd\delta-\beta\dd\gamma}{\det g}\right)x+\left(\frac{\gamma \dd \alpha-\alpha\dd\gamma}{\det g}\right)x^2,\\
+        -\dd u&=\left(\frac{\alpha\dd\delta-\gamma\dd\beta}{\det g}\right)u+\left(\frac{\alpha\dd\gamma-\gamma\dd\alpha}{\det g}\right)xu.
+    \end{align}
+    Note that the coefficients of $1$, $x$, and $x^2$ in the first formula, i.e., 
+    \[\theta^1=\frac{\delta\dd\beta-\beta\dd\delta}{\det g},\quad \theta^2=\frac{\delta\dd\alpha+\gamma\dd\beta-\alpha\dd\delta-\beta\dd\gamma}{\det g},\quad \theta^3=\frac{\alpha\dd\delta-\gamma\dd\beta}{\det g},\label{eq 3.12 OlverCo}\]
+    recover three of the Maurer-Cartan forms in \eqref{eq 3.4 OlverCo}, while the coefficient of either $u$ or $xu$ in the second formula provides the remaining one.
+\end{example}
+
+If $G$ does not act faithfully on $M$,  then the forms computed by this method will form a basis for the annihilator 
+\[(\frakg_M)^\perp=\left\{\mu\in\frakg^\ast\mid \mu(A)=0\;\text{for all}\; A\in\frakg_M\right\}\]
+of the Lie algebra $\frakg_M$ of the kernel $G_M=\{g\in G\mid g\cdot m=m\;\text{for all}\; m\in M\}$ of the action, and thus can be identified with the Maurer-Cartan form of the effectively acting quotient $G\slash G_M$. For example, if we only treat the \glspl{flt} in $x$ in \eqref{eq 3.10 OlverCo}, then the resulting three forms \eqref{eq 3.10 OlverCo} all annihilate the generator $A=\alpha\partial_\alpha+\beta\partial_\beta+\delta\partial_\delta$ of the isotropy subgroup $\bbR\cdot\rmI<\GL_2(\bbR)$ consisting of scalar matrices. Hence, the three $1$-forms can be identified with a basis for the Maurer-Cartan form of the effectively acting projective group $\PSL_2(\bbR)=\GL_2(\bbR)\slash (\bbR\rmI)$.
+
+\PRLsep
+
+Now we begin the development of the moving coframe method. Throughout this \sect, assume that $G$ is a $d$-dimensional Lie group that acts \emph{locally effectively and transitively} on an $n$-dimensional manifold $M$. We begin by choosing a basepoint $m_0\in M$.
+
+\begin{defn}[Compatible lift, moving frame]\index{Moving frame}\index{Compatible lift}
+    Let $G\acts M$ be a locally effective and transitive action, where $\dim M=n$, and $\dim G=d$ (so $d\geq n$). A local smooth function $\rho:M\supset U\to G$ is called a \emph{compatible lift} with basepoint $m_0$ if it satisfies 
+    \[\rho(m)\cdot m_0=m.\label{eq 4.1 OlverCo}\]
+    In order to compute the most general compatible lift, we must solve this system of $n$ equations for $n$ of the group parameters in terms of the $n$-dimensional point $m\in M$ and the remaining $d-n=\dim G-\dim M$ group parameters, which we denote collectively by $h$. This leads to a general formula $g=\rho_0(m,h)$ for the solution to the compatibility equations \eqref{eq 4.1 OlverCo}. Thus, by solving \eqref{eq 4.1 OlverCo}, we have effectively ``normalized'' $n$ of the original group parameters.  Since our considerations are always local, in practice, we only need to solve the equations near $m_0$. In accordance with Cartan's terminology, we call the general compatible lift $\rho_0(m,h)$ the \emph{moving frame of order zero} for the given transformation group. 
+\end{defn}
+
+If $\iota:X\to M$ is a parametrized submanifold $N=\iota(X)$, then one can view the composition $\rho_0(\iota(x),h)$ as a restriction of the order zero moving frame to $N$, where the unnormalized parameters $h$ determine the degree of indeterminacy of the moving frame on $N$. In geometrical situations, such restrictions can be identified with the classical moving frames. In this context, a moving frame can be defined alternatively as a $G$-valued function on $X$ that factors through an equivariant $G$-valued function on $M$.
+
+Note that when $G$ acts transitively, we can locally identify $M$ with (subsets of) $G\slash H$, where $H$ is the stabilizer of the basepoint. Therefore, a compatible lift is merely a local section of the canonical principal $H$-bundle $G\to G\slash H$.
+
+\begin{prop}\label{prop 4.3 OlverCo}
+    Assuming a locally effective action $G\acts M$, two maps $\rho,\wh\rho:M\to G$ are compatible lifts with the same basepoint iff they satisfy 
+    \[\wh\rho(m)=\rho(m)\cdot \chi(m),\]
+    where $h:M\to H=G_{m_0}$ is an arbitrary map to the stabilizer subgroup of $m_0$.
+\end{prop}
+
+The order zero moving frame $\rho_0(m,h)$ which is the general solution to the lift equations \eqref{eq 4.1 OlverCo}, defines a map from the \emph{$0$-th order frame bundle} $P_0=M\times H\cong (G\slash H)\times H$, with coordinates $(m,h)$, to the group $G$, which is, in fact, a local diffeomorphism $\rho_0:P_0\to G$. There is an induced action of $G$ on the moving frame bundle $P_0$ that makes $\rho_0$ into a $G$-equivariant map: 
+\[\rho_0(g\cdot (m,h))=g\cdot \rho_0(m,h).\]
+Thus, the action on the unnormalized group parameters $h$ can be explicitly determined by multiplying the moving frame on the left by the group element. The action of $G$ on $P_0$ projects to the original action of $G$ on $M$, so that $g\cdot (m,h)=(g\cdot m,\chi(g,m,h))$ for $g\in G$. In other words, we have constructed a homogeneous $H$-bundle over $G\slash H$. As we will see next, it also carries a $\frakg$-valued differential form that turns it into a true locally Klein geometry.
+
+\begin{example}[{\cite[Example~4.2]{OlverCo}}]
+    Consider the planar action \eqref{eq 3.10 OlverCo} of $\GL_2(\bbR)$. It is transitive on $M=\bbR^2\setminus\{u=0\}$. Choose the basepoint $m_0=(0,1)$. Since $g\cdot m_0=(\beta/\delta,1/\delta)$, any compatible lift $g=\rho(x,u)$ must satisfy $\beta/\delta=x$, $1/\delta=u$, and hence the solution to \eqref{eq 4.1 OlverCo} is 
+    \[\beta=\frac{x}{u},\quad \delta=\frac{1}{u}.\label{eq 4.3 OlverCo}\]
+    The most general compatible lift thus has the form 
+    \[\rho_0(x,u,\alpha,\gamma)=\begin{pmatrix}
+        \alpha & x/u \\ \gamma & 1/u
+    \end{pmatrix},\label{eq 4.4 OlverCo}\]
+    where $\alpha=\alpha(x,u)$, $\gamma=\gamma(x,u)$ are arbitrary functions, subject only to the condition $\alpha\neq x\gamma$, so that the determinant of \eqref{eq 4.4 OlverCo} does not vanish, and hence $\rho_0$ does take its values in $\GL_2(\bbR)$.
+
+    The stabilizer of $m_0$ consists of all invertible lower-triangular matrices $\left(\begin{smallmatrix}
+        \alpha' & 0 \\ \gamma' & 1
+    \end{smallmatrix}\right)$. Indeed, we can write \eqref{eq 4.4 OlverCo} in the factorized form 
+    \[\rho_0(x,u,\alpha,\gamma)=\begin{pmatrix}
+        1 & x/u \\ 0 & 1/u 
+    \end{pmatrix}\begin{pmatrix}
+        \alpha' & 0 \\ \gamma' & 1 
+    \end{pmatrix},\]
+    where $\alpha'=\alpha-x\gamma$, $\gamma'=u\gamma$, reconfirming Proposition~\ref{prop 4.3 OlverCo} in this example.
+
+    Although the remaining unspecified group parameters can be identified with the coordinates on the stabilizer, in any practical implementation it is not necessary to identify the stabilizer explicitly, nor to adopt its particular coordinates. Thus, in the present example, the coordinates $\alpha,\gamma$ are just as effective as the subgroup coordinates $\alpha',\gamma'$. The induced $\GL_2(\bbR)$-action on the unspecified parameters $\alpha,\gamma$ is found by multiplying the moving frame \eqref{eq 4.4 OlverCo} on the left by a group element $\left(\begin{smallmatrix}
+        a & b\\c& d
+    \end{smallmatrix}\right)\in\GL_2(\bbR)$; explicitly, 
+    \[\begin{pmatrix}
+        \wb\alpha & \wb x/\wb u\\ 
+        \wb \gamma & 1/\wb u
+    \end{pmatrix}=\begin{pmatrix}
+        a & b\\c  & d
+    \end{pmatrix}\begin{pmatrix}
+        \alpha & x/u\\ \gamma & 1/u
+    \end{pmatrix}=\begin{pmatrix}
+        a\alpha+b\gamma & (ax+b)/u\\
+        c\alpha+d\gamma & (cx+d)/u
+    \end{pmatrix}.\]
+    Therefore, the action of $G=\GL_2(\bbR)$ on the moving frame bundle $P_0$ is given by 
+    \[\wb x=\frac{a x+b}{cx+d},\quad \wb u=\frac{u}{cx+d},\quad \wb \alpha=a\alpha+b\gamma,\quad \wb\gamma=c\alpha+d\gamma.\label{eq 4.7 OlverCo}\]
+    Note that the $(x,u)$ transformations coincide with the original action \eqref{eq 3.10 OlverCo}, as they should.
+\end{example}
+
+The next step is to characterize the group transformations by a collection of differential forms. In the finite-dimensional situation that we are currently considering, these will be obtained by pulling back the left-invariant Maurer-Cartan forms $\bm\theta_G$ on $G$ to the order zero moving frame bundle $P_0$ using the compatible lift. The resulting one-forms 
+\[\bm\theta_0\coloneqq (\rho_0)^\ast\bm\theta_G\]
+will provide an invariant coframe on $P_0$, which we name the \emph{moving coframe of order zero}. The moving coframe forms $\bm\theta_0$ clearly satisfy the same Maurer-Cartan equations as $\bm\theta_G$, producing a locally Klein geometry. The following is then an immediate consequence of Proposition~\ref{prop 1.5.2 Cap 2}.
+
+\begin{thm}
+    The order zero moving coframe completely characterizes the group transformations on the bundle $P_0$: a map $F:P_0\to P_0$ satisfies $F^\ast \bm\theta_0=\bm\theta_0$ iff it coincides with the action of a group element $g\in G$: $F(m,h)=g\cdot (m,h)$
+\end{thm}
+
+\begin{example}
+    Continuing the above example, we substitute \eqref{eq 4.3 OlverCo} characterizing our compatible lift \eqref{eq 4.4 OlverCo} into the Maurer-Cartan forms \eqref{eq 3.4 OlverCo}. The result is the order zero moving coframe on $P_0=M\times H$:
+    \[
+        \begin{aligned}
+            \theta_0^1&=\frac{\dd\alpha-x\dd\gamma}{\alpha-\gamma x},& \theta_0^2&=\frac{\dd x}{u(\alpha-\gamma x)},\\
+            \theta_0^3&=\frac{u(\alpha\dd\gamma-\gamma\dd\alpha)}{\alpha-\gamma x},& \theta_0^2&=-\frac{\gamma\dd x}{\alpha-\gamma x}-\frac{\dd u}{u}.
+        \end{aligned}\label{eq 4.8 OlverCo}
+    \]
+    The skeptical reader can explicitly check that these four $1$-forms really do completely characterize the group action \eqref{eq 4.7 OlverCo}, as stated in the above theorem.
+\end{example}
+
+
+\begin{intu*}
+    On a fundamental level, the final product of any version of the method of moving frames is a collection of $1$-forms and scalar functions on $M$ (called an \emph{extended invariant coframe}) that ``completely characterize the group action'' in the sense that a local diffeomorphism $F:M\supset U\to M$ represents an action of an element of $G$ iff its action by pullback leaves all of those $1$-forms and functions invariant. For Cartan, this ability to translate arbitrary group actions into a simple set of local data was a crucial step towards the development of his general approach to geometry. In particular, Lie pseudogroups -- even infinite-dimensional ones -- were defined by Cartan as nothing more than the set of local diffeomorphisms that preserve a given set of $0$- and $1$-forms.
+\end{intu*}
+
+
+
+\PRLsep
+
+We will now consider a more complicated problem where the order zero frame bundle will not suffice, and a procedure called \emph{prolongation} will be required. Recall that the semibasic component of a differential form defined on a jet space is generally a differential form on the \emph{next} jet space.
+
+\begin{example}
+    Consider a curve $C\subset M=\bbR^2\setminus\{u=0\}$. For simplicity, we shall assume that the curve coincides with the graph of a function $u=u(x)$. We restrict the moving coframe forms to the curve, which amounts to replacing the differential $\dd u$ by $u_x\dd x$. If we interpret the derivative $u_x$ as a coordinate on the jet space $\rmJ^1(\bbR, M)\cong\bbR^3$ of curves in $M$, then the restriction of a differential form to the curve can be reinterpreted as the natural projection of $\dd u$ on $\rmJ^1$ to its semibasic component, using the canonical decomposition of differential forms on jet bundles into semibasic and contact components. Indeed, the vertical component of the form $\dd u$ is the contact form $\dd u-u_x\dd x$. Therefore, the restricted (or semibasic) moving coframe forms on $C\times H$ are given by 
+    \[\begin{aligned}
+        \eta^1&=\frac{\dd\alpha-x\dd\gamma}{\alpha-\gamma x},& \eta^2&=\frac{\dd x}{u(\alpha-\gamma x)},\\
+        \eta^3&=\frac{u(\alpha\dd\gamma-\gamma\dd\alpha)}{\alpha-\gamma x},& \eta^2&=\frac{\gamma(xu_x-u)-\alpha u_x}{u(\alpha-\gamma x)}\dd x,
+    \end{aligned} \label{eq 4.9 OlverCo}\]
+    which now depend on first-order derivatives. The next step is to look for invariant combinations of coordinates and group parameters. Each such invariant combination will either provide us with a basic differential invariant for the problem, or, in the case that it explicitly depends on the remaining group parameters, a `lifted invariant' which can be normalized and thereby eliminate one of the remaining group parameters, as discussed below. Specifically, in the present example, a function $J(\alpha,\gamma,x,u,u_x)$ will be a \emph{lifted invariant} provided it is unaffected by the group action:
+    \[J(\wb\alpha,\wb\gamma,\wb x,\wb u,\wb u_{\wb x})=J(\alpha,\gamma,x,u,u_x),\label{eq 4.10 OlverCo}\]
+    wherever $\tuple{\wb\alpha,\wb\gamma,\wb x,\wb u}$ are related to $\tuple{\alpha,\gamma,x,u}$ according to the induced action \eqref{eq 4.7 OlverCo}, and $\wb u_{\wb x}$ is related to $u_x$ according to the standard prolongation of the action of $G$ to the first jet bundle. In the present case, if $\wb x,\wb u$ are given by \eqref{eq 4.7 OlverCo}, then a straightforward chain rule computation provides the prolonged action of $\GL_2(\bbR)$ on the derivative coordinate:
+    \[\wb{u}_{\wb x}=\frac{(cx+d)u_x-cu}{\det g},\quad g=\begin{pmatrix}
+        a & b\\c& d
+    \end{pmatrix}\in \GL_2(\bbR).\label{eq 4.11 OlverCo}\]
+    In other words, we interpret $\alpha,\gamma,x,u,u_x$ as coordinates on a bundle $\wt P_0\to\rmJ^1(\bbR,M)$ over the first jet space, which is merely the pullback $\wt P_0=(\pi^1_0)^\ast P_0$ of the $0$-th order moving frame bundle by the standard projection $\pi^1_0:\rmJ^1(\bbR,M)\to M$. There is an induced action of $G$ on $\wt P_0$ which projects to its prolonged action on $\rmJ^1$. A first-order lifted invariant, then, is just a function $J\in C^\infty(\wt P_0)$ which is invariant under the action of $G$ on $\wt P_0$. If the lifted invariant $J=J(x,u,u_x)$ does not, in fact, depend on the group parameters $\alpha,\gamma$, then it will be a first-order differential invariant. (However, in this example, there are no non-constant first-order differential invariant, since the action is transitive on $\rmJ^1$.) Alternatively, if $J$ actually depends on $\alpha$ or $\gamma$, then it can be used in the normalization procedure.
+\end{example}
+
+Fortunately, the lifted invariants can be determined without explicitly computing the prolonged group action or solving any differential equations. They appear in the linear dependencies among the restricted (semibasic) moving coframe forms. Indeed, because the $1$-forms are invariant, each coefficient $J_i$ in a linear relation $\eta_0=J_1\eta_1+\cdots+J_k\eta_k$, in which the forms $\eta_i$ on the right hand side are linear independent, is automatically invariant under the action of the group.
+
+\begin{example}
+    Continuing the above example, among the restricted forms \eqref{eq 4.9 OlverCo}, there is one linear dependency:
+    \[\eta_4=J\eta_2,\quad J=\gamma(xu_x-u)-\alpha u_x.\label{eq 4.12 OlverCo}\]
+    One can explicitly verify that $J$ is indeed a lifted invariant, meaning that it satisfies \eqref{eq 4.10 OlverCo} whenever the coordinates are transformed according to \eqref{eq 4.7 OlverCo}, \eqref{eq 4.11 OlverCo}.
+\end{example}
+
+The ultimate goal of the moving frame method is to eliminate all the ambiguities, i.e., the undetermined group parameters, in the original moving frame, in a suitably invariant manner. Cartan's crucial observation is that we can, \gls{wlog}, \emph{normalize} any lifted invariant $J$ by setting it equal to any convenient constant value, for example,
+\[J(\alpha,\gamma,x,u,u_x)=c=\const,\label{eq 4.13 OlverCo}\]
+without affecting the equivalence problem. In \eqref{eq 4.13 OlverCo}, $c$ can be any constant, subject only to the requirement that the solutions to \eqref{eq 4.13 OlverCo} remain in the group. Typically, $c$ is take to be $0$, $1$, or $-1$. Assuming that $J$ does actually depend on group parameters $\alpha,\gamma$, we can solve the normalization equation \eqref{eq 4.13 OlverCo} for one of them, e.g., $\alpha=\alpha(\gamma,x,u,u_x)$. Because $J$ is invariant, such a normalization will not alter the solution to the equivalence problem, and hence we can use it to eliminate $\alpha$ from the original formulas for the moving frame and coframe. The result is a first-order moving frame, depending on one fewer unnormalized group parameter. This produces a corresponding first-order coframe, to which one can apply the same procedure, leading to a chain of successive normalizations and reductions, eventually enabling one to completely eliminate all undetermined parameters and specify a uniquely defined moving frame on some suitable jet bundle $\rmJ^r (X,M)$, thus establishing a (non-natural) local diffeomorphism between some principal bundle over $\rmJ^r(X,M)$ and the group $G$.
+
+\begin{example}
+    In accordance with the general procedure, then, we can normalize our particular lifted invariant \eqref{eq 4.12 OlverCo} by setting it equal to $0$; the solution to the normalization equation $J=0$ is then given by 
+    \[\alpha=\frac{xu_x-u}{u_x}\gamma.\label{eq 4.14 OlverCo}\]
+    Substituting into \eqref{eq 4.4 OlverCo} produces the \emph{first-order moving frame}
+    \[\rho_1(x,u,u_x,\gamma)=\begin{pmatrix}
+        (xu_x-u)\gamma/u_x & x/u\\
+        \gamma & 1/u
+    \end{pmatrix},\label{eq 4.15 OlverCo}\]
+    which now depends on first-order derivatives of $u$ and just one unnormalized group parameter. We can regard the coordinates $(x,u,u_x,\gamma)$ as parametrizing a bundle $P_1\to \rmJ^1$ sitting over the first jet space, which is realized as a $G$-invariant subbundle of $\wt P_0$, namely $P_1=J^{-1}(0)\subset \wt P_0$. As before, one can restrict the first-order moving frame to a curve $u=u(x)$ by restricting the map $\rho_1$ to the $1$-graph of the curve. There is an induced action of $\GL_2(\bbR)$ on $P_1$, which projects to the usual first prolonged action $G^{(1)}$ of the group on $\rmJ^1$, cf.\ \eqref{eq 4.7 OlverCo}, \eqref{eq 4.11 OlverCo}, and makes the first-order moving frame $\rho_1:P_1\to G$ into a local $G$-equivariant diffeomorphism. In our case, the explicit transformation rules on $P_1$ are given by
+    \[\wb x=\frac{ax+b}{cx+d},\quad \wb u=\frac{u}{cx+d},\quad\wb u_x=\frac{(cx+d)u_x-cu}{\det g},\quad \wb \gamma=\frac{(cx+d)u_x-cu}{\det g}\gamma,\label{eq 4.16 OlverCo}\]
+    which coincide with left multiplication of the first-order moving frame \eqref{eq 4.15 OlverCo} by the given group element. (Again, these explicit formulas are provided for illustration only and are not essential for application of the method.) Furthermore, substituting \eqref{eq 4.14 OlverCo} into \eqref{eq 4.8 OlverCo}, we find the first-order moving coframe 
+    \[\begin{aligned}
+        \theta_1^1&=\frac{\dd \gamma}{\gamma}-\frac{\dd u_x}{u_x}+\frac{\dd u-u_x\dd x}{u}, & \theta_1^2&=-\frac{u_x\dd x}{\gamma u^2},\\
+        \theta_1^3&=\frac{\gamma u\dd u_x}{u_x}-\gamma(\dd u-u_x\dd x), & \theta_1^4&=\frac{\dd u-u_x\dd x}{u}.
+        \end{aligned}\label{eq 4.17 OlverCo}
+    \]
+    As in the order zero case, the first-order moving coframe completely characterizes the group transformations on $P_1$.
+
+    As before, we determine new lifted invariants by restricting the first-order moving coframe $1$-forms to a curve $u=u(x)$. This amounts to replacing $\dd u$ and $\dd u_x$ by their semibasic components $u_x\dd x$ and $u_{xx}\dd x$ respectively, leading to the restricted forms (note that here $u_x,u_{xx}$, etc., are simply independent coordinates on the jet space, not derivatives of a given curve)
+    \[\eta_1^1=\frac{\dd \gamma}{\gamma}-\frac{u_{xx}\dd x}{u_x},\quad \eta_1^2=-\frac{u_x\dd x}{\gamma u^2},\quad \eta_1^3=\frac{\gamma uu_{xx}\dd x}{u_x},\quad \eta_1^4=0,\]
+    that now depend on second-order derivatives. Alternatively, one could deduce these restricted forms by substituting the normalization \eqref{eq 4.14 OlverCo} into the previous restricted forms \eqref{eq 4.9 OlverCo}. Note in particular the fact that $\eta_1^4$ vanishes is an automatic consequence of our normalization condition $\eta^4=J\eta^2=0$; alternatively, we note that $\theta_1^4$ is an invariant contact form, which hence vanishes when restricted to any prolonged graph. Now there is an additional dependency,
+    \[\eta_1^3=K\eta_1^2,\quad K=-\frac{\gamma^2 u^3 u_{xx}}{u_x^2},\label{eq 4.18 OlverCo}\]
+    where $K$ is a new lifted invariant. Again, the reader can check that $K$ is invariant under the prolonged action of $\GL_2(\bbR)$ on the bundle $\wt P_1=(\pi^2_1)^\ast P_1\to \rmJ^2$, where $\pi^2_1:\rmJ^2\to \rmJ^1$ is the natural projection, and is provided by \eqref{eq 4.16 OlverCo} and the second-order prolongation (chain rule) formula 
+    \[\wb u_{\wb x\wb x}=\frac{(cx+d)^3u_{xxx}}{\det g^2}.\]
+    We can normalize $K=-1$ by setting 
+    \[\gamma=\frac{u_x}{\sqrt{u^3q}}.\label{eq 4.20 OlverCo}\]
+    Note that we \emph{cannot} set $K=0$ since this would require $\gamma=0$, but then the lift \eqref{eq 4.15 OlverCo} would have zero determinant, violating the definition of the group. The final lift 
+    \[\rho_2(x,u,u_x,u_{xx})=\begin{pmatrix}
+        \frac{xu_x-u}{\sqrt{u^3u_{xx}}} & \frac{x}{u}\\
+        \frac{u_x}{\sqrt{u^3u_{xx}}} & \frac{1}{u}
+    \end{pmatrix}\label{eq 4.21 OlverCo}\]
+    defines the second-order moving frame.  This provides an explicit $G$-equivariant identification $\rho_2:\calV^2\to G$ of the open subset $\calV^2=\{uu_{xx}\neq 0\}\subset \rmJ^2$ of the second jet bundle with an open subset of $G$, identifying the prolonged action of $G^{(2)}$ on $\rmJ^2$ with the ordinary left multiplication on $G$:
+    \[\rho_2\left(g^{(2)}\cdot m^{(2)}\right)=g\cdot \rho_2\left(m^{(2)}\right),\quad g\in\GL_2(\bbR),\quad m^{(2)}=(x,u,u_x,u_{xx})\in \calV^2.\]
+    Substituting \eqref{eq 4.20 OlverCo} into \ref{eq 4.18 OlverCo} produces the final set of invariant $1$-forms 
+    \[
+    \begin{aligned}
+        \theta_2^1&=-\frac{\dd u_{xx}}{2u_{xx}}-\frac{\dd u}{2u}-\frac{u_x\dd x}{u}, & \theta_2^2&=-\sqrt{\frac{u_{xx}}{u}}\dd x,\\
+        \theta_2^3&=\frac{\dd u_x}{\sqrt{uu_{xx}}}-\frac{u_x(\dd u-u_x\dd x)}{\sqrt{u^3u_{xx}}}, & \theta_2^4&=\frac{\dd u-u_x\dd x}{u},
+    \end{aligned}
+    \]
+    which form a second-order moving coframe. Note that this coframe provides an equivalence, $\rho_2^\ast \theta_G^i=\theta_2^i$, mapping the moving coframe forms on $\rmJ^2$ to the Maurer-Cartan forms \eqref{eq 3.4 OlverCo}. Consequently, the forms $\theta_2^i$ uniquely characterize the second-order prolonged action of $\GL_2(\bbR)$ on $\calV^2\subset\rmJ^2$.
+
+    Finally, the restricted (semibasic) moving coframe forms become 
+    \[\eta_2^1=-\frac{uu_{xxx}+3u_xu_{xx}}{2uu_{xxx}}\dd x,\quad \eta_2^2=\sqrt{\frac{u_{xxx}}{u}}\dd x,\quad \eta_2^3=-\eta_2^2,\quad \eta_2^4=0.\]
+    There is one final linear dependency, namely $\eta_2^1=-I\eta_2^2$, where 
+    \[I=\frac{uu_{xxx}+3u_xu_{xx}}{2\sqrt{uu_{xxx}^3}}\]
+    is the fundamental differential invariant -- \emph{not a lifted one, but a true one,} -- of the transformation group, also known as the \emph{group-invariant curvature}. The remaining $1$-form $\dd s=\eta_2^2$ is the fundamental invariant $1$-form, or group-invariant arclength element. All higher-order differential invariants can be found by differentiating the curvature invariant w.r.t.\ the invariant arclength element; for instance, the fundamental $4$-th order differential invariant is 
+    \begin{multline}
+        J=\frac{\partial I}{\partial \eta_2^2}=\frac{\dd I}{\dd s}=\sqrt{\frac{u}{u_{xxx}}}D_xI=\\=\frac{2u^2u_{xx}u_{xxxx}-3u^2u_{xxx}^2-2uu_xu_{xx}u_{xxx}+6uu_{xx}^3-3u_x^2u_{xx}^2}{4uu_{xx}^3}.
+    \end{multline}
+    From the general theory, we conclude that every differential invariant for the group \eqref{eq 3.10 OlverCo} is a function of the curvature and its successive derivatives w.r.t.\ the arclength. On the regular part $\calV^2$ of the jet space $\rmJ^2$, all $\GL_2(\bbR)$-invariant ODEs can be written in terms of these invariants; for instance, the most general invariant $3$-rd order ODE has the form 
+    \[uu_{xxx}+3u_xu_{xx}=k\sqrt{uu_{xx}^3},\]
+    for some constant $k$.
+\end{example}
+
+\begin{rem}
+    Applications to the equivalence problem for curves (which includes the equivalence problem for first-order Lagrangians as well as that of classical invariant theory) follow directly from the general theorems. Given a function $u=u(x)$, we define its \emph{classifying curve} $\scrC$ to be the planar curve parametrized by the fundamental differential invariants $I(x),J(x)$. The general result states that two curves are mapped to each other by a group transformation \eqref{eq 3.10 OlverCo}, $\wb C=g\cdot C$, iff their classifying curves are identical, $\wb\scrC=\scrC$. A curve $C$ is maximally symmetric iff its classifying curve reduces to a point; in this case, the original curve is, in fact, an orbit of a \gls{ops} of $\GL_2(\bbR)$ (they look, most generally, like logarithmic spirals). Thus, we have, in a very simple and direct manner, recovered the results on the equivalence and symmetry of binary forms.
+\end{rem}
+
+\begin{rem}
+    There are a few technical points that should have been addressed during the preceding discussion. First, one needs to impose certain conditions on the function $u(x)$ in order to ensure that the computation is valid. For instance, the normalization \eqref{eq 4.14 OlverCo} requires $u_x \neq 0$, i.e., the curve does not have a horizontal tangent. (We have already assumed that it does not have a vertical tangent by requiring that it be the graph of a smooth function.) If $u_x = 0$, then we can still normalize $J = 0$ as long as $u\neq xu_x$, in which case  we normalize by solving for $\gamma$ instead of $\alpha$. Actually, both cases can be simultaneously handled by the normalization $\alpha= \lambda(xu_x -u)$, $\gamma=\lambda u_x$, where $\lambda\neq 0$ is a new parameter  whose normalization will be specified at the next stage of the procedure. The reader can check that this alternative procedure leads to the same lift and differential invariants as before. In the second normalization, we have assumed $u_{xx}>0$ in order to take the square root.\footnote{In the complex-valued version of this problem, this sign restriction goes away.} For $u_{xx}<0$, we would need to normalize $K=1$, and use $\sqrt{-u_{xx}}$ instead. Thus the problem actually separates into two branches, with the inflection points $u_{xx} = 0$ being interpreted as singular points for the group action. The straight lines, for which $u_{xx} \equiv 0$, form a special class and must be analyzed separately. Finally, the square root itself has a sign ambiguity (or, in the complex case, an ambiguity in its choice of branch.) Both signs must, in fact, be allowed in the final expression for the lift and the differential invariants. Such branching and ambiguous sign phenomena are ubiquitous in the practice of Cartan's equivalence method.
+\end{rem}
+
+Let us finish by summarizing the basic method of moving coframes in a form which will apply to more general problems.
+\begin{enumerate}[label=(\alph*)]
+    \item Determine the general invariant lift, or moving frame of order zero, by choosing a base point and solving \eqref{eq 4.1 OlverCo} for the given group action.
+    \item Determine the invariant forms. In the finite-dimensional case, they are the Maurer-Cartan forms, which can be computed either by using the matrix approach, or by direct use of the transformation group formulas.
+    \item Use the invariant lift to pull back the invariant forms, leading to the moving coframe of order zero.
+    \item Determine lifted invariants by finding linear dependencies among the restricted or semibasic components of the moving coframe forms. Note that this step, in general, increases the order of the coframe.
+    \item Normalize any group-dependent invariants to convenient constant values by solving for some of the unspecified parameters.
+    \item Successively eliminate parameters by substituting the normalization formulas into the moving coframe and recomputing dependencies.
+    \item After the parameters have all been normalized, the differential invariants will appear through any remaining dependencies among the final moving coframe elements. The invariant differential operators are found as the dual differential operators to a basis for the invariant coframe forms.
+\end{enumerate}
+Note that we do not need the explicit isotropy groups for the transformation group actions, nor do we need compute explicit formulas for the prolonged group action in order to successfully apply the method.
+
+
+\begin{rem}
+    The proposed method of moving coframes has the same basic structure as the Cartan equivalence method, in that one deals with a system of differential forms depending on arbitrary parameters, and seeks to normalize all the parameters by a suitable collection of lifted invariants. One can, indeed, view the two methods as particular cases of a completely general equivalence procedure. However, it is worth pointing out a few of the differences between the two. First, the Cartan method only deals with lifted coframes, whose constituents are linearly independent differential forms, whereas the differential forms occurring in the moving coframe method are linearly dependent. The invariant combinations (lifted invariants) used to normalize the parameters are found via linear dependencies in the moving coframe method, whereas they arise as unabsorbed torsion coefficients in the differentials of the lifted coframe forms in the Cartan equivalence method. In the moving coframe method, the differentials of the moving coframe one-forms satisfy the Maurer-Cartan structure equations, and hence do not provide any non-constant invariants. Finally, and perhaps most significantly, the group parameters $\bf g$ only occur algebraically in the lifted coframe elements in the Cartan equivalence method, whereas in the moving frame problems their differentials $\dd g$ occur as well, since they appear in the Maurer-Cartan forms. One can, of course, imagine solving hybrid equivalence problems, in which aspects of both problems occur during the normalization procedure, although we are not currently aware of any interesting examples where these occur naturally.
+\end{rem}
+
+
+\PRLsep
+
+
+The instructive example we have considered above was conveniently chosen so that the actions of $G$ as well as its prolongations are all transitive, so that after two prolongations the jet space has the same number of dimensions as $G$, and specifying a moving coframe on it determines a local diffeomorphism to $G$. The next task is to extend the method to \emph{intransitive} actions. We still assume that $\dim G=d$ and $G$ acts effectively and regularly, which implies that its orbits, which we take to have dimension $s$, form a foliation of $M$. We choose a local \emph{slice} $\varSigma\subset M$ of this foliation, i.e., a submanifold of dimension $n-s$ intersecting the orbits transversally, and introduce a \emph{compatible lift} $\rho:M\to G$ by requiring that, for each $m$ near $\varSigma$, the lift $\rho$ satisfies 
+\[m=\rho(m)\cdot m_0,\quad \text{for some}\quad m_0\in\varSigma.\label{eq 5.1 OlverCo}\]
+The general solution to the compatible lift equations \eqref{eq 5.1 OlverCo} will be of the form $\rho(m,h)$ depending on $d-s$ group parameters $h$. Note that unless the stabilizer subgroups at each point in $\varSigma$ happen to be identical, we cannot identify the unspecified parameters as local coordinates on any subgroup $H<G$, leading us beyond any principal bundle interpretation of the method. Nevertheless, the \gls{immt} will allow us to locally write the general compatible lift in this form. In addition, the group admits (locally) $n-s$ functionally independent invariants $I_1(m),\ldots,I_{n-s}(m)$, whose level sets characterize the orbits. The $0$-th order moving frame will then be the map 
+\[\rho_0(m,h)=(\rho(m,h),\bm I(m)),\]
+whose first components $g=\rho(m,h)$ are those of the general compatible lift (for the given slice $\varSigma$) and, in addition, has the invariants $\bf w=\bm I(m)=(I_1(m),\ldots,I_{n-s}(m))$ as further components. Note that $\rho_0$ is only locally defined, since $m$ must lie near $\varSigma$, and, moreover, the remaining parameters $h$ are determined in accordance with the \gls{immt}. 
+
+\begin{rem}
+    We can view the range $G\times\bbR^{n-s}$ of $\rho_0$ as having the structure of a product Lie group, the additive group structure on the second factor formalizing the fact that we can add invariants.
+\end{rem}
+
+The moving coframe forms in this case are constructed from the Maurer-Cartan forms $\bm\theta_G$ on $G$, together with the coordinate $1$-forms $\dd\bf w=(\tuple{\dd w_1,\ldots,\dd w_{n-s}})$ on $\bbR^{n-s}$. The group transformations are then characterized by the conditions 
+\[F^\ast\bar{\bf w}=\bf w,\quad F^\ast\dd \bar{\bf w}=\dd \bf w,\quad F^\ast\bar{\bm\theta}_G=\bm\theta_G.\]
+Using the moving frame lift $g=\rho(m,h)$, $w=I(m)$, to pull back these $1$-forms, we are lef to the $0$-th order moving coframe, consisting of the pulled back Maurer-Cartan forms $(\rho_0)^\ast\bm\theta$, along with the differentials $(\rho_0)^\ast\dd\bf w_\nu=\dd I_\nu$ of the group invariants. At this stage, the set up of the intransitive problem is complete, and one proceeds, as in the transitive case, to look for dependencies among the restricted coframe forms, and then normalize the resulting lifted invariants.
+
+\begin{example}
+    The intransitive action 
+    \[a:\quad (x,u)\mapsto \left(x,\frac{\alpha u+\beta}{\gamma u+\delta}\right),\quad a=\begin{pmatrix}
+        \alpha & \beta \\ \gamma & \delta
+    \end{pmatrix}\in\SL_2(\bbR),\label{eq 5.4 OlverCo}\]
+    of the special linear group $\SL_2(\bbR)$ on $M=\bbR^2$ arises in complex function theory. (We restrict to $\SL_2(\bbR)$ to maintain local effectiveness.) The group orbits are vertical lines and so the basic invariant is merely $I(x,u)=x$. We choose the slice $\varSigma=\{u=0\}$. Solving the equation $a(x,u)\cdot m_0=(x,u)$, where $m_0=(y,0)$, leads to the general compatible lift 
+    \[a_0(x,u,\alpha,\delta)=\begin{pmatrix}
+        \alpha & \delta u\\
+        \frac{\alpha\delta-1}{\delta u} & \delta
+    \end{pmatrix},\label{eq 5.5 OlverCo}\]
+    which forms the group component of the $0$-th order moving frame. The other component is just the invariant 
+    \[w=I(x,u)=x.\label{eq 5.6 OlverCo}\]
+    Pulling back the Maurer-Cartan forms $\bm\theta=a^{-1}\dd a$ and $\dd w$ via the lift \eqref{eq 5.5 OlverCo}, \eqref{eq 5.6 OlverCo}, leads to the order zero moving frame 
+    \[\begin{aligned}
+        \theta_0^1&=(\alpha\delta-1)\frac{\dd u}{u}-\frac{\dd\delta}{\delta}, & \theta_0^2&=\delta^2\dd u,\\
+        \theta_0^3&=\frac{u\dd (\alpha\delta)+\alpha\delta(1-\alpha\delta)\dd u}{\delta^2u^2},\quad &\theta_0^4&=\dd x.
+    \end{aligned}\label{eq 5.7 OlverCo}\]
+    As before, we restrict to a curve $u=u(x)$ by replacing $\dd u$ by its semibasic component $u_x\dd x$. Letting $\eta_0^i$ denote the semibasic component of $\theta_0^i$, we find that there is one resulting linear dependency, namely 
+    \[\theta_0^2=\delta^2u_x\dd x=J\dd x=J\theta_0^4.\]
+    This leads to the first normalization $\delta=1/\sqrt{u_x}$ resulting from setting $J=1$. Substituting this normalized value into \eqref{eq 5.5 OlverCo}, \eqref{eq 5.6 OlverCo}, provides the first-order moving frame. Furthermore, substituting into \eqref{eq 5.7 OlverCo} produces the second-order moving coframe, with semibasic components
+    \[\eta_2^1=\frac{2\alpha u_x^{3/2}+uu_{xx}-2u_x^2}{2uu_x}\dd x,\quad \eta_2^2=\eta_2^4=\dd x,\quad \eta_2^3=\frac{\sqrt{u_x}}{u}(\dd\alpha-\alpha\eta_0^1).\]
+    Now we normalize the coefficient of $\eta_0^1$ to $0$ by setting $\alpha=u_x^{-3/2}(u_x^2-\frac12 uu_{xx})$. The final moving frame (of order $2$) is 
+    \[a_2=\frac{1}{u_x^{3/2}}\begin{pmatrix}
+        u_x^2-\frac12 uu_{xx} &  uu_x\\ -\frac12u_{xx} & u_x
+    \end{pmatrix},\quad w=x.\label{eq 5.9 OlverCo}\]
+    The corresponding restricted moving coframe has reduced to 
+    \[\eta_2^2=\eta_2^4=\dd x,\quad \eta_2^3=-\frac12\calS \eta_0^2,\quad \eta_2^1=0,\label{eq 5.10 OlverCo}\]
+    where 
+    \[\calS=\frac{u_{xxx}}{u_x}-\frac32\frac{u_{xx}^2}{u_x^2}\]
+    is the classical Schwarzian derivative \index{Schwarzian derivative} of the function $u(x)$, whose invariance under \glspl{flt} is of fundamental invariance in complex analysis. Since the $1$-form $\dd x$ is invariant, all the higher-order differential invariants are found by differentiating $\calS$ w.r.t.\ $x$.
+\end{example}
+
+Actually, the preceding computation can be slightly simplified by extending our general method to non-effective actions. We consider \eqref{eq 5.4 OlverCo} as defining a non-effective (and intransitive) action of the general linear group $\GL_2(\bbR)$ on $\bbR^2$. We may apply the second algorithm for computing the required Maurer-Cartan forms, leading to the three $1$-forms \eqref{eq 3.12 OlverCo} that annihilate the kernel subalgebra $\frakg_M$. We substitute the compatible lift formulas $\beta=\delta u$ for the order zero moving coframe, which is now $a_0=\left(\begin{smallmatrix}
+    \alpha & \delta u\\\gamma & \delta
+\end{smallmatrix}\right)$, into \eqref{eq 3.12 OlverCo}, leading to the restricted moving coframe forms 
+\[\begin{aligned}
+    \wh\eta_0^1&=\frac{\delta u_x\dd x}{\alpha-u\gamma},\quad &\wh\eta_0^2&=\frac{\dd\alpha-u\dd\gamma+\gamma u_x\dd x}{\alpha-u\gamma}-\frac{\dd\delta}{\delta},\\
+    \wh\eta_0^3&=\frac{\gamma\dd\alpha-\alpha\dd\gamma}{\delta(\alpha-u\gamma)},\quad &\wh\eta_0^4&=\dd x.
+\end{aligned}\label{eq 5.12 OlverCo}\]
+The first dependency between $\wh\eta_0^1$ and $\wh\eta_0^4$ leads to the reduction $\delta=(\alpha-u\gamma)/u_x$. Substituting into $\wh\eta_0^3$ leads to a second dependency, and the resulting normalization yields $\alpha=\gamma(u-2u_x^2/u_{xx})$. At this stage, even though we have not normalized the final parameter $\gamma$, it no longer appears in the coframe, which coincides with our earlier one, \eqref{eq 5.10 OlverCo}. It does, of course, occur in the final moving frame lift, which is obtained by multiplying the matrix $a_2$ in \eqref{eq 5.9 OlverCo} by $\gamma$. However, $\gamma$ plays no other role in the problem, and merely reflects a final indeterminacy stemming from the ineffectiveness of the group action. The main point in this solution method is that one does not have to explicitly implement an effective action, as was done in the original lift \eqref{eq 5.5 OlverCo}, in order to solve the problem. Indeed, in more complicated examples, it may be relatively straightforward to write down the compatible lift for an ineffective group action, whereas doing the same for the effectively acting quotient group $G\slash G_M$ may be considerably more complicated.
+
+\begin{example}
+    Consider the elementary similarity group $G=\bbR_+\times\bbR^2$ acting transitively on $M=\bbR^2$ via 
+    \[g:\quad (x,u)\mapsto (\alpha x+a,\alpha u+b).\]
+    For the basepoint $m_0=(0,0)$, the associated moving frame of order $0$ is the lift with $a=x$, $b=u$. The Maurer-Cartan forms $(\dd\alpha/\alpha,\dd a/\alpha,\dd b/\alpha)$ are pulled back to provide the order zero moving coframe, whose semibasic (or, more precisely, non-contact) components are 
+    \[\eta_0^1=\frac{\dd\alpha}{\alpha},\quad\eta_0^2=\frac{\dd x}{\alpha},\quad \eta_0^3=\frac{u_x\dd x}{\alpha}.\]
+    There is a single linear dependency $\eta_0^3=I\eta_0^2$, but the resulting invariant $I=u_x$ does \emph{not} depend on the remaining group parameter, and hence \emph{cannot} be used to normalize it. To proceed further in such cases, we work in analogy with the preceding intransitive case. Here the intransitivity is on the first-order jet bundle, and is an indication of the fact that this particular group exhibits the pathology of ``pseudo-stabilization'' of its prolonged group orbits. We therefore introduce an additional invariant $1$-form $\dd u_x$, whose semibasic component is 
+    \[\eta_0^4=u_{xx}\dd x=K\eta_0^2.\]
+    The resulting dependency leads to the lifted invariant $K=\alpha u_{xx}$ which yields the desired normalization $\alpha=1/u_{xx}$ and the second-order moving frame. The associated invariant coframe is 
+    \[\eta_1^2=\eta_1^4=u_{xx}\dd x,\quad \eta_1^1=-J\eta_1^2,\quad \eta_1^3=I\eta_1^2,\]
+    yielding two fundamental differential invariants 
+    \[I=u_x,\quad J=u_{xx}^{-2}u_{xxx}.\]
+    The higher-order invariants are found by differentiating $J$ w.r.t.\ $\eta_1^4=u_{xx}\dd x\equiv \dd u_x$, so that a basic $4$-th order invariant is 
+    \[K=\frac{\dd J}{\dd u_x}=\frac{1}{u_{xx}}\frac{\dd J}{\dd x}=\frac{u_{xxxx}}{u_x^2}-2J^2.\]
+    Note that $\dd I/\dd u_x=1$, so that differentiating $I$ produces nothing new. Thus, in this case, we find two fundamental differential invariants, and require three, namely $(I,J,K)$, to parametrize the classifying curve that solves the associated equivalence problem. We conclude that the phenomenon of pseudo-stabilization of group orbits is reflected in the moving coframe procedure by the premature appearance of differential invariants, whose differentials are required to finish the procedure.
+\end{example}
+
+\PRLsep
+
+
+\textbf{Reparametrization pseudogroups.} The classical applications of moving frames to curves and surfaces in Euclidean, affine, and projective geometries can all be readily implemented using the moving coframe algorithm. In each case, we consider the reparametrization equivalence problem for submanifolds, so that the underlying transformation group is the product of an infinite-dimensional Lie pseudogroup, namely the local diffeomorphism group $\mathpzc{Diff}(X)$ of the parameter space, and a finite-dimensional Lie group $G$ acting on the ambient manifold $M$. In this case, in addition to the Maurer-Cartan forms for $G$, one also includes the $1$-forms  defining the diffeomorphism pseudogroup. For simplicity, we just deal with planar curves, although extensions to surfaces and curves in higher dimensional ambient spaces can also be handled without significant complications. Instead, we will treat those problems using Cartan's equivalence method in \Chap~\ref{chap curves and surfaces}.
+
+\begin{example}[Euclidean geometry of curves]
+    The most well-known classical example is the reparametrization equivalence problem for curves in the Euclidean plane, introduced in Example~\ref{ex 2.1 OlverCo}. In this case, we are dealing with a finite-dimensional group, the Euclidean group $\rmE_2$ on the plane, together with the pseudogroup $\mathpzc{Diff}(\bbR)$ consisting of all smooth local diffeomorphisms of the line representing the change of parameter. Thus, the entire pseudogroup $\calG=\mathpzc{Diff}(\bbR)\times\rmE_2$ acts on the total space $M=\bbR\times\bbR^2$ with coordinates $(t,\bf x)=(t,x,y)$. For the Euclidean component, we use a compatible lift 
+    \[a_0(x,y,\varphi)=\begin{pmatrix}
+        R & \bf x\\0 & 1
+    \end{pmatrix}=\begin{pmatrix}
+        \cos\varphi & -\sin\varphi & x\\
+        \sin\varphi & \cos\varphi & y\\
+        0 & 0 & 1
+    \end{pmatrix},\]
+    and compute the pullback of the associated Euclidean Maurer-Cartan forms:
+    \[\bm\theta=a_0^{-1}\dd a_0=\begin{pmatrix}
+        R^{-1}\dd R & R^{-1}\dd\bf{x}\\
+        \bf{0}^T & 0
+    \end{pmatrix}=\begin{pmatrix}
+        0 & -\dd\varphi & \cos\varphi\dd x+\sin\varphi \dd y\\
+        \dd\varphi & 0 & -\sin\varphi \dd x+\cos\varphi\dd y\\
+        0 & 0& 0
+    \end{pmatrix}.\]
+    On the other hand, the pseudogroup $\mathpzc{Diff}(\bbR)$ is characterized by the invariance of the canonical $1$-form $\sigma\dd t$ on the frame bundle $\Fr(\T \bbR)$ (here, $\sigma$ is the fiber coordinate of $\T\bbR$), and hence we include this additional $1$-form in our moving coframe formulation. Restricting these four $1$-forms to a parametrized curve $(x(t),y(t))$ leads to 
+    \[\begin{aligned}
+        \eta_1^1&=\dd \varphi,\quad &\eta_1^2&=(x_t\cos\varphi+y_t\sin\varphi)\dd t,\\\quad\eta_1^3&=(-x_t\sin\varphi+y_t\cos\varphi)\dd t,\quad &\eta_1^4&=\sigma\dd t.\label{eq 6.3 OlverCo}
+    \end{aligned}\]
+    Now $\eta_0^2=J_1\eta_0^4$ and $\eta_0^3=J_2\eta_0^4$ are the linear dependencies with associated lifted invariants 
+    \[J_1=\frac{x_t\cos\varphi+y_t\sin\varphi}{\sigma},\quad J_2=\frac{-x_t\sin\varphi+y_t\cos\varphi}{\sigma}.\]
+    We normalize $J_1=1$, $J_2=0$ by setting 
+    \[\varphi=\arctan\frac{y_t}{x_t},\quad \sigma=\sqrt{x_t^2+y_t^2}.\]
+    This immediately produces the first-order moving frame 
+    \[R=\frac{1}{\sqrt{x_t^2+y_t^2}}\begin{pmatrix}
+        x_t & -y_t\\ y_t & x_t
+    \end{pmatrix},\quad \bf a=\begin{pmatrix}
+        x \\ y
+    \end{pmatrix},\quad \sigma=\sqrt{x_t^2+y_t^2}.\label{eq 6.5 OlverCo}\]
+    The canonical $1$-form $\sigma\dd t$ has been reduced to the fundamental arclength element $\dd s=\sqrt{x_t^2+y_t^2}\dd t$ for the Euclidean group. Substituting the expressions for $\varphi,\sigma$ into \eqref{eq 6.3 OlverCo}, we are left with a final set of semibasic $1$-forms 
+    \[\eta_2^1=\kappa\eta_2^2,\quad \eta_2^2=\eta_2^4=\dd s=\sqrt{x_t^2+y_t^2}\dd t,\quad \eta_2^3=0.\]
+    Here, 
+    \[\kappa=\frac{x_ty_{tt}-x_{tt}y_t}{(x_t^2+y_t^2)^{3/2}}=\frac{\bf{x}_t\wedge \bf{x}_{tt}}{\lVert \bf{x}_t\rVert^3}=\bf{x}_s\wedge \bf{x}_{ss}\]
+    is the fundamental differential invariant for the Euclidean group -- the curvature of the plane curve. All higher-order differential invariants are obtained by successively differentiating the curvature w.r.t.\ the arclength.
+
+    The classical Frenet equations for corves in the Euclidean plane are reformulations of our final moving frame formulas. The rotation component in \eqref{eq 6.5 OlverCo} is traditionally written as $R=(\bf{e}_1,\bf{e}_2)$, where $\bf{e}_1$ is the unit tangent and $\bf{e}_2$ is the unit normal. The translational Maurer-Cartan forms $\eta_2^2=\dd s$, $\eta_2^3=0$ are computed by the original formula as entries of $R^{-1}\dd\bf{x}=\left(\begin{smallmatrix}
+        \dd s\\ 0
+    \end{smallmatrix}\right)$, which reduces to the first Frenet equation $\frac{\dd\bf{x}}{\dd s}=\bf{e}_1$. Similarly, the Maurer-Cartan matrix 
+    \[R^{-1}\dd R=\begin{pmatrix}
+        0 & -\kappa \\ \kappa & 0
+    \end{pmatrix} \quad \text{implies that}\quad \frac{\dd R}{\dd s}=R\cdot\begin{pmatrix}
+        0 & -\kappa \\ \kappa & 0
+    \end{pmatrix}.\]
+    The columns of the latter matrix equation complete the system of Frenet equations:
+    \[\frac{\dd \bf{x}}{\dd s}=\bf{e}_1,\quad \frac{\dd \bf{e}_1}{\dd s}=\kappa\bf{e}_2,\quad \frac{\dd \bf{e}_2}{\dd s}=-\kappa \bf{e}_1.\]
+    Finally, the Maurer-Cartan equations for the Euclidean group reduce to the classical Frenet-Serret equations for curves.\index{Equation!Frenet-Serret}
+\end{example}
+
+\begin{rem}
+    One can also compute, as in our original example, the full moving coframe forms on the jet bundle, leading to a corresponding set of fundamental Euclidean-invariant contact forms.
+\end{rem}
+
+
+\begin{rem}
+    In fact, since we are dealing with the \emph{full} pseudogroup $\mathpzc{Diff}(\bbR)$ of all diffeomorphisms of the line, the final $1$-form $\eta_0^4=\sigma\dd t$ in our moving coframe is irrelevant -- one could perform the same normalization of the angle $\varphi$ based on the dependency between $\eta_0^2$ and $\eta_0^3$, the lifted invariant being $J_2/J_1$, which is normalized to zero by setting $J_2=0$, leading to the same final coframe and curvature invariant. Thus, the calculations for parametrized curves and surfaces can, in fact, be done without invoking the diffeomorphism pseudogroup. Nevertheless, in all examples we have treated, the inclusion of the canonical $1$-form $\eta_0^4$ on the parameter space leads to an immediate identification of the final invariant arclength element. More generally, the restricted reparametrization equivalence problem does require the introduction of suitable $1$-forms that characterize the relevant pseudogroup.
+\end{rem}
+
+\begin{rem}
+    The problem of Euclidean equivalence of curves with \emph{fixed} parametrization, as discussed in Example~\ref{ex 2.1 OlverCo}, can also be formulated and solved in the moving coframe context. Now we are in the intransitive framework, where the parameter $t$ provides a scalar invariant. Consequently, we retain the first three $1$-forms $\eta_0^1,\eta_0^2,\eta_0^3$ in \eqref{eq 6.3 OlverCo}, but replace $\eta_0^4$ by $\dd t$ to form the moving coframe. We normalize $J_1=0$ as before, but now $J_2=v=\sqrt{x_t^2+y_t^2}$ forms a first-order differential invariant -- the speed. The final moving frame has $\eta_2^1=K\dd t$, $\eta_2^2=0$, $\eta_0^3=v\dd t$, $\eta_2^4=\dd t$, where $K=x_ty_{tt}-x_{tt}y_t=v^3\kappa$ is a second-order differential invariant. The higher-order differential invariants are found by differentiating w.r.t.\ $t$. Note that the arclength $\dd s=v\dd t$ is also an invariant $1$-form, being an invariant multiple of $\dd t$, and hence one can, \gls{wlog}, apply the arclength derivative $\dd/\dd s$ to produce the higher-order invariants instead. Thus, in this case, a complete list of differential invariants is provided by $v,\kappa$, and their arclength derivatives.
+\end{rem}
+
+
+
+
+
+
+
+
+
+
+\section{Moving (co)frames via regularization}
+
+
+\begin{intu*}
+    In the next three \sect s, we present a more systematic approach to the method of moving frames (and coframes), developed by Peter Olver in \cite{OlverCo2}. Its basic difference from the classical method as described in the preceding \sect\ is that the action  $G\acts M$ is first lifted to the trivial principal bundle $M\times G$, making the action free and guaranteeing the existence of moving frames. Then the construction of moving frames requires normalization, which can be done after the action on $M$ is \emph{prolonged} sufficiently many times (to an action on a jet space $\rmJ^{(r)}$) to capture a complete set of fundamental differential invariants. In other words, here the normalization step follows prolongation, as opposed to proceeding simultaneously with it. The drawback of this approach is that one may ultimately need to do more prolongations that one would otherwise have to. But the benefit is that this method is guaranteed to work for \emph{any} group action and is very amenable to deriving very general and powerful results about equivalence problems.
+\end{intu*}
+
 
 \begin{defn}[Regular action]\index{Lie group action!regular}
     A Lie group action $G\acts M$ is called \emph{semi-regular} if all its orbits have the same dimension. A semi-regular action is called \emph{regular} if, in addition, each point $m\in M$ admits arbitrarily small open neighborhoods whose intersection with each orbit is a connected subset thereof.
@@ -4435,6 +4858,8 @@ where $I^k(\bm z)$ is the $k$-th component of $\bm I(\bm z)=\rho(\bm z)\cdot\bm 
 \section{Jets of submanifolds}
 
 
+In preparation for the solution of the equivalence problem for submanifolds, we need to better understand the geometry of jet spaces of submanifolds and group actions on them. A lot of this is a straightfoward generalization of the geometry of bundles of jets of sections, since any submanifold can be locally identified with a section of some trivial bundle.
+
 Given a manifold $M$, let $\rmJ^r$ denote the jet space $\rmJ^r_0(\bbR^p,M)^{\mathrm{imm}}$ of jets at the origin of immersions $i:\bbR^p=X\to M$ for some fixed dimension $p\leq n=\dim M$. This space is called the \emph{$r$-th order jet space of $p$-dimensional submanifolds of $M$}, or the \emph{space of $r$-jets of $p$-submanifolds of $M$}. Locally this space is diffeomorphic to the space of jets of sections of some bundle of the form $M\to \bbR^p$, so the following definitions are natural analogs of their counterparts in \S\ref{sec: jets and cartan distr}.
 
 We introduce local coordinates $\bf{z}=(\bf x,\bf u)$ on $M$, considering the first $p$ components $\bf{x}=(x^1,\ldots,x^p)$ as independent variables, and the latter $s=n-p$ components $\bf u=(u^1,\ldots,u^s)$ as dependent variables. Splitting the coordinates this way has the effect of locally identifying $M$ with an open subset of a bundle $E=X\times U\cong \bbR^p\times\bbR^s$. Sections $\bf u=\bf f(\bf x)$ of $E$ correspond to $p$-dimensional submanifolds $S$ that are transverse w.r.t.\ the horizontal forms $\dd\bf x=(\dd x^1,\ldots,\dd x^p)$. The induced coordinates on the jet bundle $\rmJ^r$ are denoted by $\bf z^{(r)}=(\bf x,\bf u^{(r)})$, with components $u^\alpha_J$ representing the partial derivatives of the dependent variables w.r.t.\ the independent variables up to order $r$. Here, $J=(j_1,\ldots,j_p)$ ranges over $0\leq j_\nu \leq r$ and $|J|=j_1+\cdots+j_p\leq r$. The $(\bf x,\bf u^{(r)})$ define local coordinates on the open, dense subbundle $\rmJ^r E\subset \rmJ^r$ determined by the $r$-jets of transverse submanifolds, or, equivalently, local sections of $E$. In the limit, we let $\bf z^{(\infty)}=(\bf x,\bf u^{(\infty)})$ denote the corresponding coordinates on $\rmJ^\infty E\subset \rmJ^\infty$, defined as the usual projective limit of $\cdots \to \rmJ^{r+1}E\to \rmJ^r E\to\cdots\to \rmJ^0 E=E$.
@@ -4620,7 +5045,7 @@ There are two types of syzygies, the first arising from the commutation rules fo
 
 \section{Equivalence of submanifolds}
 
-We now apply out general results to the equivalence problem for submanifolds under a \emph{freely} acting transformation group. (Non-free actions require prolongation, which we will address below.) Given submanifolds $S,\wb S\subset M$, we want to know whether or not they are \emph{congruent} under a group of transformations, meaning that $g\cdot S=\wb S$ for some $g\in G$. In this section, we shall only consider the local problem, so that the cogruence is only required to hold in a neighborhood of a point. Global questions can be handled by continuation processes (e.g., analytic continuation).
+We now apply out general results to the equivalence problem for submanifolds under a \emph{freely} acting transformation group. (Non-free actions require prolongation, which we will address separately below.) Given submanifolds $S,\wb S\subset M$, we want to know whether or not they are \emph{congruent} under a group of transformations, meaning that $g\cdot S=\wb S$ for some $g\in G$. In this section, we shall only consider the local problem, so that the cogruence is only required to hold in a neighborhood of a point. Global questions can be handled by continuation processes (e.g., analytic continuation).
 
 \begin{defn}[Congruence of submanifolds]
     Let $S=i(X)$ and $\wb S=\wb i(\wb X)$ be two embedded $p$-dimensional submanifolds of an $n$-dimensional manifold $M$ parametrized by maps $i:X\to M$ and $\wb i:\wb X\to M$. Let there be a smooth Lie group action $G\acts M$. The two submanifolds are called \emph{(locally) congruent} under $G$ if there exists a group element $g\in G$ and a (local) diffeomorphism $\psi:X\supset U\to \wb U\subset\wb X$ such that 
@@ -5128,7 +5553,7 @@ In particular, maximaly symmetric submanifolds are those of rank $0$, where all 
 In the fully regular case, the ranks $t_k=\rank \dd J^{(k)}=\dim\scrC^{(k)}(S)$ of the $k$-th order fundamental differential invariants on $S$ are all constant for $k\geq r$ and satisfy 
 \[t_r<t_{r+1}<\cdots <t_s=t_{s+1}=\cdots =t\leq p,\]
 where $t$ is the differential invariant rank and $s$ is the differential invariant order. Generically, a $p$-dimensional submanifold will have differential invariant order $s=r$ equal to the stabilization order of the group, provided there are at least $p$ functionally independent differential invariants of order $\leq r$; if $G$ admits less than $p$ independent $r$-th order differential invariants, then the generic differential invariant order will be $r+1$. According to \eqref{eq 9.6 OlverCo2}, the latter situation occurs only when 
-\[q\binom{p+r}{r}<\dim G\leq p+q\binom{p+r}{r}=\dim\rmJ^r,\quad \text{where}\; q=\dim M-p.\]
+\[q\binom{p+r}{r}<\dim G\leq p+q\binom{p+r}{r}=\dim\rmJ^r,\quad \text{where}\; q=\dim M-p.\label{eq 14.4 OlverCo2}\]
 If $S$ is fully regular, then its differential invariant order is always bounded by either $r+p-1$ or, possibly, $r+p$; the latter case occurs only if all $r$-th order differential invariants are constant, and there is but one independent differential invariant appearing at each order $r+1\leq k\leq r+p$. In this context, it is instructive to reconsider the higher-order submanifold discussed in Example~\ref{ex 7.9 OlverCo2}.
 
 \begin{example}\label{ex 14.8 OlverCo2}
@@ -5155,407 +5580,119 @@ Finally, we discuss rigidity theorems for submanifolds under trasnformation grou
     A submanifold $S$ is said to be order $k$ congruent to a submanifold $\wb S$ at a point $z\in S$ if there is a group transformation $g\in G$ such that $S$ and $g\cdot S$ have order $k$ contact at the point $z$. We shall call $S$ order $k$ congruent to $\wb S$ if this occurs for every $z\in S$, where the group transformation $g=g(z)$ can vary from point to point.
 \end{defn}
 
-If $G^{(k)}$ acts freely on $\rmJ^r$, then the group transformation $g(z)$ determining the contact is uniquely determined. The first rigidity theorem states that order $k$ congruence implies congruence provided $k$ is sufficiently large. The \emph{rigidity order} of $S$ is the minimal $k$ for which this applies. For example, the rigidity order of a circle under the Euclidean group $\rmE_2$ is two, since the only curves that are second-order congruent to a circle are translates of it. On the other hand, a generic curve in the plane has rigidity order $3$ under $\rmE_2$.
-
-
-
-
-
-
-
-
-\section{Method of moving (co)frames}
-
-In our approach to the theory and practical implementation of the method of moving frames, the left-invariant Maurer-Cartan forms on a finite-dimensional Lie group play an essential role. We have previously presented one way of easily computing them using the matrix representation $\theta_G=g^{-1}\dd g$. 
+If $G^{(k)}$ acts freely on $\rmJ^r$, then the group transformation $g(z)$ determining the contact is uniquely determined. The first rigidity theorem states that order $k$ congruence implies congruence provided $k$ is sufficiently large. The \emph{rigidity order} of $S$ is the minimal $k$ for which this applies. 
 
 \begin{example}
-    For $G=\GL_2(\bbR)$ parametrized as 
-    \[g=\begin{pmatrix}
-        \alpha & \beta \\\gamma & \delta
-    \end{pmatrix},\]
-    the $\frakgl_2(\bbR)$-valued Maurer-Cartan form reads 
-    \[\theta_G=g^{-1}\dd g=\frac{1}{\det g}\begin{pmatrix}
-        \delta\dd \alpha -\beta\dd\gamma & \delta\dd\beta - \beta\dd\delta\\
-        \alpha\dd\gamma-\gamma\dd\alpha & \alpha\dd\delta-\gamma\dd\beta
-    \end{pmatrix}.\label{eq 3.4 OlverCo}\]
+    The rigidity order of a circle under the Euclidean group $\rmE_2$ is two, since the only curves that are second-order congruent to a circle are translates of it. On the other hand, a generic curve in the plane has rigidity order $3$ under $\rmE_2$.
 \end{example}
 
-However, since for equivalence problems we are particularly interested in groups of transformations, another method of computing the Maurer-Cartan form becomes useful. Since the input data include only the action of the group on a manifold, the full Maurer-Cartan form will be recovered only if the action is, at least locally, effective. Given $g\in G$, $m\in M$, with local coordinates $\bf{x}=(x^1,\ldots,x^n)$ near $m$ and $\bf{g}=(g^1,\ldots,g^d)$ near $g$, we can explicitly write the group transformation $\wb m=g\cdot m$ in coordinate form:
-\[\wb x^i=H^i(\bf{x},\bf{g}),\quad i=1,\ldots,n.\]
-We then compute the differentials of the group transformations:
-\[\dd\wb x^i=\sum_{k=1}^n \frac{\partial H^i}{\partial x^k}\dd x^k+\sum_{j=1}^d \dd g^j,\quad i=,1\ldots,n,\]
-or, more compactly, 
-\[\dd\bar{\bf x}=\bf{H}_{\bf{x}}\dd \bf{x}+\bf{H}_{\bf g}\dd \bf{g}.\]
-Next, set $\dd \bar{\bf x}=0$ and solve for the $\dd x^k$:
-\[-\dd\bf{x}=\bf{F}\dd\bf{g}=(\bf{H}_{\bf x}^{-1}\cdot \bf{H}_{\bf g})\dd\bf{g},\label{eq 3.7 OlverCo}\]
-or, in full detail,
-\[-\dd x^k=\sum_{j=1}^d F_j^k(m,g)\dd g^j,\quad k=1,\ldots,n.\]
-Then, for each $k$ and fixed $m_0\in M$, the $1$-form 
-\[\theta_0=\sum_{j=1}^d F^k_j(m_0,g)\dd g^j,\]
-is a left-invariant form on $G$. Alternatively, if one expands the right hand side of \eqref{eq 3.7 OlverCo} in a power series (or Fourier series, etc.) in $\bf{x}$,
-\[\sum_{j=1}^d F^k_j(m,g)\dd g^j=\sum_{I}\bf{x}^I \theta_I,\]
-then each coefficient $\theta_I$ also forms a left-invariant form on $G$. In particular, when $G$ acts locally effectively, the resulting collection of $1$-forms spans the space of left-invariant forms. It only remains to pick a basis in this space to recover the components of the Maurer-Cartan form.
 
-\begin{example}
-    Consider the action of $\GL_2(\bbR)$  on $\bbR^2$ with coordinates $(x,u)$ by 
-    \[(\wb x,\wb u)=\left(\frac{\alpha x+\beta}{\gamma x+\delta},\frac{u}{\gamma x+\delta}\right).\label{eq 3.10 OlverCo}\]
-    This forms a multiplier representation of $\GL_2(\bbR)$ which lies at the heart of classical invariant theory. We can consider the equivalence problem for graphs of functions $u=f(x)$, thereby avoiding issues of parametrization. Two such curves are equivalent iff their defining functions $f$ and $\wb f$ are related by 
-    \[f(x)=(\gamma x+\delta)\wb f\left(\frac{\alpha x+\beta}{\gamma x+\delta}\right)=(\gamma x+\delta)\wb f(\wb x),\label{eq 2.4 OlverCo}\]
-    for some nonsingular matrix $g$. Equation \eqref{eq 2.4 OlverCo} is the fundamental equivalence condition for first-order Lagrangians that depend only on the derivative coordinate. Differentiating \eqref{eq 3.10 OlverCo} we find 
-    \begin{align}
-        \dd \wb x&=\frac{\det g\dd x+(\gamma x+\delta)(x\dd\alpha+\dd\beta)-(\alpha x+\beta)(x\dd\gamma+\dd\delta)}{(\gamma x+\delta)^2},\\
-        \dd \wb u&=\frac{(\gamma x+\delta)\dd u+u(\gamma \dd x+x\dd \gamma+\dd\delta)}{(\gamma x+\delta)^2}.
-    \end{align}
-    Setting $\dd\wb x=0=\dd\wb u$ and solving for $\dd x$ and $\dd u$, we obtain 
-    \begin{align}
-        -\dd x&=\frac{\delta\dd\beta-\beta\dd\delta}{\det g}+\left(\frac{\delta\dd\alpha+\gamma\dd\beta-\alpha\dd\delta-\beta\dd\gamma}{\det g}\right)x+\left(\frac{\gamma \dd \alpha-\alpha\dd\gamma}{\det g}\right)x^2,\\
-        -\dd u&=\left(\frac{\alpha\dd\delta-\gamma\dd\beta}{\det g}\right)u+\left(\frac{\alpha\dd\gamma-\gamma\dd\alpha}{\det g}\right)xu.
-    \end{align}
-    Note that the coefficients of $1$, $x$, and $x^2$ in the first formula, i.e., 
-    \[\theta^1=\frac{\delta\dd\beta-\beta\dd\delta}{\det g},\quad \theta^2=\frac{\delta\dd\alpha+\gamma\dd\beta-\alpha\dd\delta-\beta\dd\gamma}{\det g},\quad \theta^3=\frac{\alpha\dd\delta-\gamma\dd\beta}{\det g},\label{eq 3.12 OlverCo}\]
-    recover three of the Maurer-Cartan forms in \eqref{eq 3.4 OlverCo}, while the coefficient of either $u$ or $xu$ in the second formula provides the remaining one.
-\end{example}
+\begin{thm}[Rigidity I {\cite[Thm.~14.11]{OlverCo2}}]\label{thm 14.11 OlverCo2}\index{Theorem!Rigidity I}
+    Let $S<M$ be a regular $p$-submanifold which has differential invariant order $s$ w.r.t.\ a given moving frame. Then $S$ has rigidity order at most $s+1$. In other words, a submanifold $\wb S$ is order $s+1$ congruent to $S$ at every point $z\in S$ iff $S=g\cdot \wb S$ for a fixed $g\in G$.
+\end{thm}
+\begin{proof}
+    Note first that $\wb S$ and $\wb S_g=g\cdot \wb S$ have identical classifying manifolds. Moreover, if $S$ and $\wb S_g$ have contact at a common point $z$, then their $(s+1)$-jets coincide, and hence their order $s+1$ differential invariant classifying manifolds agree at the point $z$. Therefore, the two submanifolds are order $s+1$ congruent at every point iff their order $s+1$ differential invariant classifying manifolds overlap, $\scrC^{(s+1)}(\wb S)=\scrC^{(s+1)}(S)$. The result follows by Theorem~\ref{thm 14.9 OlverCo2}.
+\end{proof}
 
-If $G$ does not act faithfully on $M$,  then the forms computed by this method will form a basis for the annihilator 
-\[(\frakg_M)^\perp=\left\{\mu\in\frakg^\ast\mid \mu(A)=0\;\text{for all}\; A\in\frakg_M\right\}\]
-of the Lie algebra $\frakg_M$ of the kernel $G_M=\{g\in G\mid g\cdot m=m\;\text{for all}\; m\in M\}$ of the action, and thus can be identified with the Maurer-Cartan form of the effectively acting quotient $G\slash G_M$. For example, if we only treat the \glspl{flt} in $x$ in \eqref{eq 3.10 OlverCo}, then the resulting three forms \eqref{eq 3.10 OlverCo} all annihilate the generator $A=\alpha\partial_\alpha+\beta\partial_\beta+\delta\partial_\delta$ of the isotropy subgroup $\bbR\cdot\rmI<\GL_2(\bbR)$ consisting of scalar matrices. Hence, the three $1$-forms can be identified with a basis for the Maurer-Cartan form of the effectively acting projective group $\PSL_2(\bbR)=\GL_2(\bbR)\slash (\bbR\rmI)$.
+The simplest case is when the order of the moving frame equals the stabilization order of the group $G$. Generically, the rigidity order of a regular submanifold will be either $r+1$ or $r+2$ depending on whether \eqref{eq 14.4 OlverCo2} holds. Barring higher-order singularities, the maximal rigidity order will be $r+p+1$. 
 
-\PRLsep
+A second type of rigidity theorem shows that one can uniquely characterize the group trasnformation mapping congruent submanifolds by knowing their order of contact.
 
-Now we begin the development of the moving coframe method. Throughout this \sect, assume that $G$ is a $d$-dimensional Lie group that acts \emph{locally effectively and transitively} on an $n$-dimensional manifold $M$. We begin by choosing a basepoint $m_0\in M$.
-
-\begin{defn}[Compatible lift, moving frame]\index{Moving frame}\index{Compatible lift}
-    Let $G\acts M$ be a locally effective and transitive action, where $\dim M=n$, and $\dim G=d$ (so $d\geq n$). A local smooth function $\rho:M\supset U\to G$ is called a \emph{compatible lift} with basepoint $m_0$ if it satisfies 
-    \[\rho(m)\cdot m_0=m.\label{eq 4.1 OlverCo}\]
-    In order to compute the most general compatible lift, we must solve this system of $n$ equations for $n$ of the group parameters in terms of the $n$-dimensional point $m\in M$ and the remaining $d-n=\dim G-\dim M$ group parameters, which we denote collectively by $h$. This leads to a general formula $g=\rho_0(m,h)$ for the solution to the compatibility equations \eqref{eq 4.1 OlverCo}. Thus, by solving \eqref{eq 4.1 OlverCo}, we have effectively ``normalized'' $n$ of the original group parameters.  Since our considerations are always local, in practice, we only need to solve the equations near $m_0$. In accordance with Cartan's terminology, we call the general compatible lift $\rho_0(m,h)$ the \emph{moving frame of order zero} for the given transformation group. 
+\begin{defn}[Order $k$ rigid submanifold]
+    A $p$-submanifold $S<M$ is said to be order $k$ rigid if the only congruent submanifold $\wb S=g\cdot S$ which has $k$-th order contact with $S$ at a point is $S$ itself.
 \end{defn}
 
-If $\iota:X\to M$ is a parametrized submanifold $N=\iota(X)$, then one can view the composition $\rho_0(\iota(x),h)$ as a restriction of the order zero moving frame to $N$, where the unnormalized parameters $h$ determine the degree of indeterminacy of the moving frame on $N$. In geometrical situations, such restrictions can be identified with the classical moving frames. In this context, a moving frame can be defined alternatively as a $G$-valued function on $X$ that factors through an equivariant $G$-valued function on $M$.
+In other words, if $\wb S=g\do S$, then the condition $\rmj^k_{z_0} \wb S=\rmj^k_{z_0}S$ at $z_0\in S\cap \wb S$ implies $g\in G_S$ and so $\wb S=S$. The second rigidity theorem can now be stated.
 
-Note that when $G$ acts transitively, we can locally identify $M$ with (subsets of) $G\slash H$, where $H$ is the stabilizer of the basepoint. Therefore, a compatible lift is merely a local section of the canonical principal $H$-bundle $G\to G\slash H$.
-
-\begin{prop}\label{prop 4.3 OlverCo}
-    Assuming a locally effective action $G\acts M$, two maps $\rho,\wh\rho:M\to G$ are compatible lifts with the same basepoint iff they satisfy 
-    \[\wh\rho(m)=\rho(m)\cdot \chi(m),\]
-    where $h:M\to H=G_{m_0}$ is an arbitrary map to the stabilizer subgroup of $m_0$.
-\end{prop}
-
-The order zero moving frame $\rho_0(m,h)$ which is the general solution to the lift equations \eqref{eq 4.1 OlverCo}, defines a map from the \emph{$0$-th order frame bundle} $P_0=M\times H\cong (G\slash H)\times H$, with coordinates $(m,h)$, to the group $G$, which is, in fact, a local diffeomorphism $\rho_0:P_0\to G$. There is an induced action of $G$ on the moving frame bundle $P_0$ that makes $\rho_0$ into a $G$-equivariant map: 
-\[\rho_0(g\cdot (m,h))=g\cdot \rho_0(m,h).\]
-Thus, the action on the unnormalized group parameters $h$ can be explicitly determined by multiplying the moving frame on the left by the group element. The action of $G$ on $P_0$ projects to the original action of $G$ on $M$, so that $g\cdot (m,h)=(g\cdot m,\chi(g,m,h))$ for $g\in G$. In other words, we have constructed a homogeneous $H$-bundle over $G\slash H$. As we will see next, it also carries a $\frakg$-valued differential form that turns it into a true locally Klein geometry.
-
-\begin{example}[{\cite[Example~4.2]{OlverCo}}]
-    Consider the planar action \eqref{eq 3.10 OlverCo} of $\GL_2(\bbR)$. It is transitive on $M=\bbR^2\setminus\{u=0\}$. Choose the basepoint $m_0=(0,1)$. Since $g\cdot m_0=(\beta/\delta,1/\delta)$, any compatible lift $g=\rho(x,u)$ must satisfy $\beta/\delta=x$, $1/\delta=u$, and hence the solution to \eqref{eq 4.1 OlverCo} is 
-    \[\beta=\frac{x}{u},\quad \delta=\frac{1}{u}.\label{eq 4.3 OlverCo}\]
-    The most general compatible lift thus has the form 
-    \[\rho_0(x,u,\alpha,\gamma)=\begin{pmatrix}
-        \alpha & x/u \\ \gamma & 1/u
-    \end{pmatrix},\label{eq 4.4 OlverCo}\]
-    where $\alpha=\alpha(x,u)$, $\gamma=\gamma(x,u)$ are arbitrary functions, subject only to the condition $\alpha\neq x\gamma$, so that the determinant of \eqref{eq 4.4 OlverCo} does not vanish, and hence $\rho_0$ does take its values in $\GL_2(\bbR)$.
-
-    The stabilizer of $m_0$ consists of all invertible lower-triangular matrices $\left(\begin{smallmatrix}
-        \alpha' & 0 \\ \gamma' & 1
-    \end{smallmatrix}\right)$. Indeed, we can write \eqref{eq 4.4 OlverCo} in the factorized form 
-    \[\rho_0(x,u,\alpha,\gamma)=\begin{pmatrix}
-        1 & x/u \\ 0 & 1/u 
-    \end{pmatrix}\begin{pmatrix}
-        \alpha' & 0 \\ \gamma' & 1 
-    \end{pmatrix},\]
-    where $\alpha'=\alpha-x\gamma$, $\gamma'=u\gamma$, reconfirming Proposition~\ref{prop 4.3 OlverCo} in this example.
-
-    Although the remaining unspecified group parameters can be identified with the coordinates on the stabilizer, in any practical implementation it is not necessary to identify the stabilizer explicitly, nor to adopt its particular coordinates. Thus, in the present example, the coordinates $\alpha,\gamma$ are just as effective as the subgroup coordinates $\alpha',\gamma'$. The induced $\GL_2(\bbR)$-action on the unspecified parameters $\alpha,\gamma$ is found by multiplying the moving frame \eqref{eq 4.4 OlverCo} on the left by a group element $\left(\begin{smallmatrix}
-        a & b\\c& d
-    \end{smallmatrix}\right)\in\GL_2(\bbR)$; explicitly, 
-    \[\begin{pmatrix}
-        \wb\alpha & \wb x/\wb u\\ 
-        \wb \gamma & 1/\wb u
-    \end{pmatrix}=\begin{pmatrix}
-        a & b\\c  & d
-    \end{pmatrix}\begin{pmatrix}
-        \alpha & x/u\\ \gamma & 1/u
-    \end{pmatrix}=\begin{pmatrix}
-        a\alpha+b\gamma & (ax+b)/u\\
-        c\alpha+d\gamma & (cx+d)/u
-    \end{pmatrix}.\]
-    Therefore, the action of $G=\GL_2(\bbR)$ on the moving frame bundle $P_0$ is given by 
-    \[\wb x=\frac{a x+b}{cx+d},\quad \wb u=\frac{u}{cx+d},\quad \wb \alpha=a\alpha+b\gamma,\quad \wb\gamma=c\alpha+d\gamma.\label{eq 4.7 OlverCo}\]
-    Note that the $(x,u)$ transformations coincide with the original action \eqref{eq 3.10 OlverCo}, as they should.
-\end{example}
-
-The next step is to characterize the group transformations by a collection of differential forms. In the finite-dimensional situation that we are currently considering, these will be obtained by pulling back the left-invariant Maurer-Cartan forms $\bm\theta_G$ on $G$ to the order zero moving frame bundle $P_0$ using the compatible lift. The resulting one-forms 
-\[\bm\theta_0\coloneqq (\rho_0)^\ast\bm\theta_G\]
-will provide an invariant coframe on $P_0$, which we name the \emph{moving coframe of order zero}. The moving coframe forms $\bm\theta_0$ clearly satisfy the same Maurer-Cartan equations as $\bm\theta_G$, producing a locally Klein geometry. The following is then an immediate consequence of Proposition~\ref{prop 1.5.2 Cap 2}.
-
-\begin{thm}
-    The order zero moving coframe completely characterizes the group transformations on the bundle $P_0$: a map $F:P_0\to P_0$ satisfies $F^\ast \bm\theta_0=\bm\theta_0$ iff it coincides with the action of a group element $g\in G$: $F(m,h)=g\cdot (m,h)$
+\begin{thm}[Rigidity II {\cite[Thm.~14.13]{OlverCo2}}]\label{thm 14.13 OlverCo2}\index{Theorem!Rigidity II}
+    Let $G$ act freely on $\calV^r\subset \rmJ^r$. Let $S$ be an order $r$ regular $p$-submanifold of differential invariant order $s\geq r$. Then $S$ is rigid of order $s+1$.
 \end{thm}
-
-\begin{example}
-    Continuing the above example, we substitute \eqref{eq 4.3 OlverCo} characterizing our compatible lift \eqref{eq 4.4 OlverCo} into the Maurer-Cartan forms \eqref{eq 3.4 OlverCo}. The result is the order zero moving coframe on $P_0=M\times H$:
-    \[
-        \begin{aligned}
-            \theta_0^1&=\frac{\dd\alpha-x\dd\gamma}{\alpha-\gamma x},& \theta_0^2&=\frac{\dd x}{u(\alpha-\gamma x)},\\
-            \theta_0^3&=\frac{u(\alpha\dd\gamma-\gamma\dd\alpha)}{\alpha-\gamma x},& \theta_0^2&=-\frac{\gamma\dd x}{\alpha-\gamma x}-\frac{\dd u}{u}.
-        \end{aligned}\label{eq 4.8 OlverCo}
-    \]
-    The skeptical reader can explicitly check that these four $1$-forms really do completely characterize the group action \eqref{eq 4.7 OlverCo}, as stated in the above theorem.
-\end{example}
-
-
-\PRLsep
-
-We will now consider a more complicated problem where the order zero frame bundle will not suffice. 
-
-\begin{example}
-    Consider a curve $C\subset M=\bbR^2\setminus\{u=0\}$. For simplicity, we shall assume that the curve coincides with the graph of a function $u=u(x)$. We restrict the moving coframe forms to the curve, which amounts to replacing the differential $\dd u$ by $u_x\dd x$. If we interpret the derivative $u_x$ as a coordinate on the jet space $\rmJ^1(\bbR, M)\cong\bbR^3$ of curves in $M$, then the restriction of a differential form to the curve can be reinterpreted as the natural projection of $\dd u$ on $\rmJ^1$ to its semibasic component, using the canonical decomposition of differential forms on jet bundles into semibasic and contact components. Indeed, the vertical component of the form $\dd u$ is the contact form $\dd u-u_x\dd x$. Therefore, the restricted (or semibasic) moving coframe forms on $C\times H$ are given by 
-    \[\begin{aligned}
-        \eta^1&=\frac{\dd\alpha-x\dd\gamma}{\alpha-\gamma x},& \eta^2&=\frac{\dd x}{u(\alpha-\gamma x)},\\
-        \eta^3&=\frac{u(\alpha\dd\gamma-\gamma\dd\alpha)}{\alpha-\gamma x},& \eta^2&=\frac{\gamma(xu_x-u)-\alpha u_x}{u(\alpha-\gamma x)}\dd x,
-    \end{aligned} \label{eq 4.9 OlverCo}\]
-    which now depend on first-order derivatives. The next step is to look for invariant combinations of coordinates and group parameters. Each such invariant combination will either provide us with a basic differential invariant for the problem, or, in the case that it explicitly depends on the remaining group parameters, a `lifted invariant' which can be normalized and thereby eliminate one of the remaining group parameters, as discussed below. Specifically, in the present example, a function $J(\alpha,\gamma,x,u,u_x)$ will be a \emph{lifted invariant} provided it is unaffected by the group action:
-    \[J(\wb\alpha,\wb\gamma,\wb x,\wb u,\wb u_{\wb x})=J(\alpha,\gamma,x,u,u_x),\label{eq 4.10 OlverCo}\]
-    wherever $\tuple{\wb\alpha,\wb\gamma,\wb x,\wb u}$ are related to $\tuple{\alpha,\gamma,x,u}$ according to the induced action \eqref{eq 4.7 OlverCo}, and $\wb u_{\wb x}$ is related to $u_x$ according to the standard prolongation of the action of $G$ to the first jet bundle. In the present case, if $\wb x,\wb u$ are given by \eqref{eq 4.7 OlverCo}, then a straightforward chain rule computation provides the prolonged action of $\GL_2(\bbR)$ on the derivative coordinate:
-    \[\wb{u}_{\wb x}=\frac{(cx+d)u_x-cu}{\det g},\quad g=\begin{pmatrix}
-        a & b\\c& d
-    \end{pmatrix}\in \GL_2(\bbR).\label{eq 4.11 OlverCo}\]
-    In other words, we interpret $\alpha,\gamma,x,u,u_x$ as coordinates on a bundle $\wt P_0\to\rmJ^1(\bbR,M)$ over the first jet space, which is merely the pullback $\wt P_0=(\pi^1_0)^\ast P_0$ of the $0$-th order moving frame bundle by the standard projection $\pi^1_0:\rmJ^1(\bbR,M)\to M$. There is an induced action of $G$ on $\wt P_0$ which projects to its prolonged action on $\rmJ^1$. A first-order lifted invariant, then, is just a function $J\in C^\infty(\wt P_0)$ which is invariant under the action of $G$ on $\wt P_0$. If the lifted invariant $J=J(x,u,u_x)$ does not, in fact, depend on the group parameters $\alpha,\gamma$, then it will be a first-order differential invariant. (However, in this example, there are no non-constant first-order differential invariant, since the action is transitive on $\rmJ^1$.) Alternatively, if $J$ actually depends on $\alpha$ or $\gamma$, then it can be used in the normalization procedure.
-\end{example}
-
-Fortunately, the lifted invariants can be determined without explicitly computing the prolonged group action or solving any differential equations. They appear in the linear dependencies among the restricted (semibasic) moving coframe forms. Indeed, because the $1$-forms are invariant, each coefficient $J_i$ in a linear relation $\eta_0=J_1\eta_1+\cdots+J_k\eta_k$, in which the forms $\eta_i$ on the right hand side are linear independent, is automatically invariant under the action of the group.
-
-\begin{example}
-    Continuing the above example, among the restricted forms \eqref{eq 4.9 OlverCo}, there is one linear dependency:
-    \[\eta_4=J\eta_2,\quad J=\gamma(xu_x-u)-\alpha u_x.\label{eq 4.12 OlverCo}\]
-    One can explicitly verify that $J$ is indeed a lifted invariant, meaning that it satisfies \eqref{eq 4.10 OlverCo} whenever the coordinates are transformed according to \eqref{eq 4.7 OlverCo}, \eqref{eq 4.11 OlverCo}.
-\end{example}
-
-The ultimate goal of the moving frame method is to eliminate all the ambiguities, i.e., the undetermined group parameters, in the original moving frame, in a suitably invariant manner. Cartan's crucial observation is that we can, \gls{wlog}, \emph{normalize} any lifted invariant $J$ by setting it equal to any convenient constant value, for example,
-\[J(\alpha,\gamma,x,u,u_x)=c=\const,\label{eq 4.13 OlverCo}\]
-without affecting the equivalence problem. In \eqref{eq 4.13 OlverCo}, $c$ can be any constant, subject only to the requirement that the solutions to \eqref{eq 4.13 OlverCo} remain in the group. Typically, $c$ is take to be $0$, $1$, or $-1$. Assuming that $J$ does actually depend on group parameters $\alpha,\gamma$, we can solve the normalization equation \eqref{eq 4.13 OlverCo} for one of them, e.g., $\alpha=\alpha(\gamma,x,u,u_x)$. Because $J$ is invariant, such a normalization will not alter the solution to the equivalence problem, and hence we can use it to eliminate $\alpha$ from the original formulas for the moving frame and coframe. The result is a first-order moving frame, depending on one fewer unnormalized group parameter. This produces a corresponding first-order coframe, to which one can apply the same procedure, leading to a chain of successive normalizations and reductions, eventually enabling one to completely eliminate all undetermined parameters and specify a uniquely defined moving frame on some suitable jet bundle $\rmJ^r (X,M)$, thus establishing a (non-natural) local diffeomorphism between some principal bundle over $\rmJ^r(X,M)$ and the group $G$.
-
-\begin{example}
-    In accordance with the general procedure, then, we can normalize our particular lifted invariant \eqref{eq 4.12 OlverCo} by setting it equal to $0$; the solution to the normalization equation $J=0$ is then given by 
-    \[\alpha=\frac{xu_x-u}{u_x}\gamma.\label{eq 4.14 OlverCo}\]
-    Substituting into \eqref{eq 4.4 OlverCo} produces the \emph{first-order moving frame}
-    \[\rho_1(x,u,u_x,\gamma)=\begin{pmatrix}
-        (xu_x-u)\gamma/u_x & x/u\\
-        \gamma & 1/u
-    \end{pmatrix},\label{eq 4.15 OlverCo}\]
-    which now depends on first-order derivatives of $u$ and just one unnormalized group parameter. We can regard the coordinates $(x,u,u_x,\gamma)$ as parametrizing a bundle $P_1\to \rmJ^1$ sitting over the first jet space, which is realized as a $G$-invariant subbundle of $\wt P_0$, namely $P_1=J^{-1}(0)\subset \wt P_0$. As before, one can restrict the first-order moving frame to a curve $u=u(x)$ by restricting the map $\rho_1$ to the $1$-graph of the curve. There is an induced action of $\GL_2(\bbR)$ on $P_1$, which projects to the usual first prolonged action $G^{(1)}$ of the group on $\rmJ^1$, cf.\ \eqref{eq 4.7 OlverCo}, \eqref{eq 4.11 OlverCo}, and makes the first-order moving frame $\rho_1:P_1\to G$ into a local $G$-equivariant diffeomorphism. In our case, the explicit transformation rules on $P_1$ are given by
-    \[\wb x=\frac{ax+b}{cx+d},\quad \wb u=\frac{u}{cx+d},\quad\wb u_x=\frac{(cx+d)u_x-cu}{\det g},\quad \wb \gamma=\frac{(cx+d)u_x-cu}{\det g}\gamma,\label{eq 4.16 OlverCo}\]
-    which coincide with left multiplication of the first-order moving frame \eqref{eq 4.15 OlverCo} by the given group element. (Again, these explicit formulas are provided for illustration only and are not essential for application of the method.) Furthermore, substituting \eqref{eq 4.14 OlverCo} into \eqref{eq 4.8 OlverCo}, we find the first-order moving coframe 
-    \[\begin{aligned}
-        \theta_1^1&=\frac{\dd \gamma}{\gamma}-\frac{\dd u_x}{u_x}+\frac{\dd u-u_x\dd x}{u}, & \theta_1^2&=-\frac{u_x\dd x}{\gamma u^2},\\
-        \theta_1^3&=\frac{\gamma u\dd u_x}{u_x}-\gamma(\dd u-u_x\dd x), & \theta_1^4&=\frac{\dd u-u_x\dd x}{u}.
-        \end{aligned}\label{eq 4.17 OlverCo}
-    \]
-    As in the order zero case, the first-order moving coframe completely characterizes the group transformations on $P_1$.
-
-    As before, we determine new lifted invariants by restricting the first-order moving coframe $1$-forms to a curve $u=u(x)$. This amounts to replacing $\dd u$ and $\dd u_x$ by their semibasic components $u_x\dd x$ and $u_{xx}\dd x$ respectively, leading to the restricted forms (note that here $u_x,u_{xx}$, etc., are simply independent coordinates on the jet space, not derivatives of a given curve)
-    \[\eta_1^1=\frac{\dd \gamma}{\gamma}-\frac{u_{xx}\dd x}{u_x},\quad \eta_1^2=-\frac{u_x\dd x}{\gamma u^2},\quad \eta_1^3=\frac{\gamma uu_{xx}\dd x}{u_x},\quad \eta_1^4=0,\]
-    that now depend on second-order derivatives. Alternatively, one could deduce these restricted forms by substituting the normalization \eqref{eq 4.14 OlverCo} into the previous restricted forms \eqref{eq 4.9 OlverCo}. Note in particular the fact that $\eta_1^4$ vanishes is an automatic consequence of our normalization condition $\eta^4=J\eta^2=0$; alternatively, we note that $\theta_1^4$ is an invariant contact form, which hence vanishes when restricted to any prolonged graph. Now there is an additional dependency,
-    \[\eta_1^3=K\eta_1^2,\quad K=-\frac{\gamma^2 u^3 u_{xx}}{u_x^2},\label{eq 4.18 OlverCo}\]
-    where $K$ is a new lifted invariant. Again, the reader can check that $K$ is invariant under the prolonged action of $\GL_2(\bbR)$ on the bundle $\wt P_1=(\pi^2_1)^\ast P_1\to \rmJ^2$, where $\pi^2_1:\rmJ^2\to \rmJ^1$ is the natural projection, and is provided by \eqref{eq 4.16 OlverCo} and the second-order prolongation (chain rule) formula 
-    \[\wb u_{\wb x\wb x}=\frac{(cx+d)^3u_{xxx}}{\det g^2}.\]
-    We can normalize $K=-1$ by setting 
-    \[\gamma=\frac{u_x}{\sqrt{u^3q}}.\label{eq 4.20 OlverCo}\]
-    Note that we \emph{cannot} set $K=0$ since this would require $\gamma=0$, but then the lift \eqref{eq 4.15 OlverCo} would have zero determinant, violating the definition of the group. The final lift 
-    \[\rho_2(x,u,u_x,u_{xx})=\begin{pmatrix}
-        \frac{xu_x-u}{\sqrt{u^3u_{xx}}} & \frac{x}{u}\\
-        \frac{u_x}{\sqrt{u^3u_{xx}}} & \frac{1}{u}
-    \end{pmatrix}\label{eq 4.21 OlverCo}\]
-    defines the second-order moving frame.  This provides an explicit $G$-equivariant identification $\rho_2:\calV^2\to G$ of the open subset $\calV^2=\{uu_{xx}\neq 0\}\subset \rmJ^2$ of the second jet bundle with an open subset of $G$, identifying the prolonged action of $G^{(2)}$ on $\rmJ^2$ with the ordinary left multiplication on $G$:
-    \[\rho_2\left(g^{(2)}\cdot m^{(2)}\right)=g\cdot \rho_2\left(m^{(2)}\right),\quad g\in\GL_2(\bbR),\quad m^{(2)}=(x,u,u_x,u_{xx})\in \calV^2.\]
-    Substituting \eqref{eq 4.20 OlverCo} into \ref{eq 4.18 OlverCo} produces the final set of invariant $1$-forms 
-    \[
-    \begin{aligned}
-        \theta_2^1&=-\frac{\dd u_{xx}}{2u_{xx}}-\frac{\dd u}{2u}-\frac{u_x\dd x}{u}, & \theta_2^2&=-\sqrt{\frac{u_{xx}}{u}}\dd x,\\
-        \theta_2^3&=\frac{\dd u_x}{\sqrt{uu_{xx}}}-\frac{u_x(\dd u-u_x\dd x)}{\sqrt{u^3u_{xx}}}, & \theta_2^4&=\frac{\dd u-u_x\dd x}{u},
-    \end{aligned}
-    \]
-    which form a second-order moving coframe. Note that this coframe provides an equivalence, $\rho_2^\ast \theta_G^i=\theta_2^i$, mapping the moving coframe forms on $\rmJ^2$ to the Maurer-Cartan forms \eqref{eq 3.4 OlverCo}. Consequently, the forms $\theta_2^i$ uniquely characterize the second-order prolonged action of $\GL_2(\bbR)$ on $\calV^2\subset\rmJ^2$.
-
-    Finally, the restricted (semibasic) moving coframe forms become 
-    \[\eta_2^1=-\frac{uu_{xxx}+3u_xu_{xx}}{2uu_{xxx}}\dd x,\quad \eta_2^2=\sqrt{\frac{u_{xxx}}{u}}\dd x,\quad \eta_2^3=-\eta_2^2,\quad \eta_2^4=0.\]
-    There is one final linear dependency, namely $\eta_2^1=-I\eta_2^2$, where 
-    \[I=\frac{uu_{xxx}+3u_xu_{xx}}{2\sqrt{uu_{xxx}^3}}\]
-    is the fundamental differential invariant -- \emph{not a lifted one, but a true one,} -- of the transformation group, also known as the \emph{group-invariant curvature}. The remaining $1$-form $\dd s=\eta_2^2$ is the fundamental invariant $1$-form, or group-invariant arclength element. All higher-order differential invariants can be found by differentiating the curvature invariant w.r.t.\ the invariant arclength element; for instance, the fundamental $4$-th order differential invariant is 
-    \begin{multline}
-        J=\frac{\partial I}{\partial \eta_2^2}=\frac{\dd I}{\dd s}=\sqrt{\frac{u}{u_{xxx}}}D_xI=\\=\frac{2u^2u_{xx}u_{xxxx}-3u^2u_{xxx}^2-2uu_xu_{xx}u_{xxx}+6uu_{xx}^3-3u_x^2u_{xx}^2}{4uu_{xx}^3}.
-    \end{multline}
-    From the general theory, we conclude that every differential invariant for the group \eqref{eq 3.10 OlverCo} is a function of the curvature and its successive derivatives w.r.t.\ the arclength. On the regular part $\calV^2$ of the jet space $\rmJ^2$, all $\GL_2(\bbR)$-invariant ODEs can be written in terms of these invariants; for instance, the most general invariant $3$-rd order ODE has the form 
-    \[uu_{xxx}+3u_xu_{xx}=k\sqrt{uu_{xx}^3},\]
-    for some constant $k$.
-\end{example}
-
-\begin{rem}
-    Applications to the equivalence problem for curves (which includes the equivalence problem for first-order Lagrangians as well as that of classical invariant theory) follow directly from the general theorems. Given a function $u=u(x)$, we define its \emph{classifying curve} $\scrC$ to be the planar curve parametrized by the fundamental differential invariants $I(x),J(x)$. The general result states that two curves are mapped to each other by a group transformation \eqref{eq 3.10 OlverCo}, $\wb C=g\cdot C$, iff their classifying curves are identical, $\wb\scrC=\scrC$. A curve $C$ is maximally symmetric iff its classifying curve reduces to a point; in this case, the original curve is, in fact, an orbit of a \gls{ops} of $\GL_2(\bbR)$ (they look, most generally, like logarithmic spirals). Thus, we have, in a very simple and direct manner, recovered the results on the equivalence and symmetry of binary forms.
-\end{rem}
-
-\begin{rem}
-    There are a few technical points that should have been addressed during the preceding discussion. First, one needs to impose certain conditions on the function $u(x)$ in order to ensure that the computation is valid. For instance, the normalization \eqref{eq 4.14 OlverCo} requires $u_x \neq 0$, i.e., the curve does not have a horizontal tangent. (We have already assumed that it does not have a vertical tangent by requiring that it be the graph of a smooth function.) If $u_x = 0$, then we can still normalize $J = 0$ as long as $u\neq xu_x$, in which case  we normalize by solving for $\gamma$ instead of $\alpha$. Actually, both cases can be simultaneously handled by the normalization $\alpha= \lambda(xu_x -u)$, $\gamma=\lambda u_x$, where $\lambda\neq 0$ is a new parameter  whose normalization will be specified at the next stage of the procedure. The reader can check that this alternative procedure leads to the same lift and differential invariants as before. In the second normalization, we have assumed $u_{xx}>0$ in order to take the square root.\footnote{In the complex-valued version of this problem, this sign restriction goes away.} For $u_{xx}<0$, we would need to normalize $K=1$, and use $\sqrt{-u_{xx}}$ instead. Thus the problem actually separates into two branches, with the inflection points $u_{xx} = 0$ being interpreted as singular points for the group action. The straight lines, for which $u_{xx} \equiv 0$, form a special class and must be analyzed separately. Finally, the square root itself has a sign ambiguity (or, in the complex case, an ambiguity in its choice of branch.) Both signs must, in fact, be allowed in the final expression for the lift and the differential invariants. Such branching and ambiguous sign phenomena are ubiquitous in the practice of Cartan's equivalence method.
-\end{rem}
-
-Let us finish by summarizing the basic method of moving coframes in a form which will apply to more general problems.
-\begin{enumerate}[label=(\alph*)]
-    \item Determine the general invariant lift, or moving frame of order zero, by choosing a base point and solving \eqref{eq 4.1 OlverCo} for the given group action.
-    \item Determine the invariant forms. In the finite-dimensional case, they are the MaurerCartan forms, which can be computed either by using the matrix approach, or by direct use of the transformation group formulas.
-    \item Use the invariant lift to pull back the invariant forms, leading to the moving coframe of order zero.
-    \item Determine lifted invariants by finding linear dependencies among the restricted or semibasic components of the moving coframe forms. Note that this step, in general, increases the order of the coframe.
-    \item Normalize any group-dependent invariants to convenient constant values by solving for some of the unspecified parameters.
-    \item Successively eliminate parameters by substituting the normalization formulas into the moving coframe and recomputing dependencies.
-    \item After the parameters have all been normalized, the differential invariants will appear through any remaining dependencies among the final moving coframe elements. The invariant differential operators are found as the dual differential operators to a basis for the invariant coframe forms.
-\end{enumerate}
-Note that we do not need the explicit isotropy groups for the transformation group actions, nor do we need compute explicit formulas for the prolonged group action in order to successfully apply the method.
+\begin{proof}
+    We let $\rho^{(r)}$ be a moving frame defined in a neighborhood of $S$. Let $\wb S=g\cdot S$ have a contact of order $s+1$ at $z_0\in S\cap \wb S$. Let $z_0^{(s+1)}=\rmj^{s+1}_{z_0}\wb S=\rmj^{s+1}_{z_0}S\in\calV^{s+1}$. Congruence implies that $S$ and $\wb S$ have identical invariant classifying manifolds, $\scrC^{(s+1)}(\wb S)=\scrC^{(s+1)}(S)$, which are parametrized by their $(s+1)$-jets. Theorem~\ref{thm 5.16 OlverCo2} implies uniqueness of the group transformation $g$ defining the congruence map once we specify that it fix a common point $z_0^{(s+1)}$. Finally, freeness of the action $G\acts\calV^{s+1}$ implies that $g=e$, proving rigidity.
+\end{proof}
 
 
 \begin{rem}
-    The proposed method of moving coframes has the same basic structure as the Cartan equivalence method, in that one deals with a system of differential forms depending on arbitrary parameters, and seeks to normalize all the parameters by a suitable collection of lifted invariants. One can, indeed, view the two methods as particular cases of a completely general equivalence procedure. However, it is worth pointing out a few of the differences between the two. First, the Cartan method only deals with lifted coframes, whose constituents are linearly independent differential forms, whereas the differential forms occurring in the moving coframe method are linearly dependent. The invariant combinations (lifted invariants) used to normalize the parameters are found via linear dependencies in the moving coframe method, whereas they arise as unabsorbed torsion coefficients in the differentials of the lifted coframe forms in the Cartan equivalence method. In the moving coframe method, the differentials of the moving coframe one-forms satisfy the Maurer-Cartan structure equations, and hence do not provide any non-constant invariants. Finally, and perhaps most significantly, the group parameters $\bf g$ only occur algebraically in the lifted coframe elements in the Cartan equivalence method, whereas in the moving frame problems their differentials $\dd g$ occur as well, since they appear in the Maurer-Cartan forms. One can, of course, imagine solving hybrid equivalence problems, in which aspects of both problems occur during the normalization procedure, although we are not currently aware of any interesting examples where these occur naturally.
+    If $G$ acts only locally freely on $\calV^{s+1}$, then Theorem~\ref{thm 14.13 OlverCo2} reduces to a local rigidity result, i.e., $(s+1)$-st order contact of $\wb S=g\cdot S$ and $S$ implies that $g$ must lie in a discrete subgroup of $G$. However, since the higher-order differential invariants completely determine the higher-order jets of submanifolds, one can eliminate the discrete ambiguity provided $G^{(k)}$ acts freely on the appropriate subset of $\rmJ^k$ for $k$ sufficiently large.
 \end{rem}
 
-
-\PRLsep
-
-
-The instructive example we have considered above was conveniently chosen so that the actions of $G$ as well as its prolongations are all transitive, so that after two prolongations the jet space has the same number of dimensions as $G$, and specifying a moving coframe on it determines a local diffeomorphism to $G$. The next task is to extend the method to \emph{intransitive} actions. We still assume that $\dim G=d$ and $G$ acts effectively and regularly, which implies that its orbits, which we take to have dimension $s$, form a foliation of $M$. We choose a local \emph{slice} $\varSigma\subset M$ of this foliation, i.e., a submanifold of dimension $n-s$ intersecting the orbits transversally, and introduce a \emph{compatible lift} $\rho:M\to G$ by requiring that, for each $m$ near $\varSigma$, the lift $\rho$ satisfies 
-\[m=\rho(m)\cdot m_0,\quad \text{for some}\quad m_0\in\varSigma.\label{eq 5.1 OlverCo}\]
-The general solution to the compatible lift equations \eqref{eq 5.1 OlverCo} will be of the form $\rho(m,h)$ depending on $d-s$ group parameters $h$. Note that unless the stabilizer subgroups at each point in $\varSigma$ happen to be identical, we cannot identify the unspecified parameters as local coordinates on any subgroup $H<G$, leading us beyond any principal bundle interpretation of the method. Nevertheless, the \gls{immt} will allow us to locally write the general compatible lift in this form. In addition, the group admits (locally) $n-s$ functionally independent invariants $I_1(m),\ldots,I_{n-s}(m)$, whose level sets characterize the orbits. The $0$-th order moving frame will then be the map 
-\[\rho_0(m,h)=(\rho(m,h),\bm I(m)),\]
-whose first components $g=\rho(m,h)$ are those of the general compatible lift (for the given slice $\varSigma$) and, in addition, has the invariants $\bf w=\bm I(m)=(I_1(m),\ldots,I_{n-s}(m))$ as further components. Note that $\rho_0$ is only locally defined, since $m$ must lie near $\varSigma$, and, moreover, the remaining parameters $h$ are determined in accordance with the \gls{immt}. 
-
-\begin{rem}
-    We can view the range $G\times\bbR^{n-s}$ of $\rho_0$ as having the structure of a product Lie group, the additive group structure on the second factor formalizing the fact that we can add invariants.
-\end{rem}
-
-The moving coframe forms in this case are constructed from the Maurer-Cartan forms $\bm\theta_G$ on $G$, together with the coordinate $1$-forms $\dd\bf w=(\tuple{\dd w_1,\ldots,\dd w_{n-s}})$ on $\bbR^{n-s}$. The group transformations are then characterized by the conditions 
-\[F^\ast\bar{\bf w}=\bf w,\quad F^\ast\dd \bar{\bf w}=\dd \bf w,\quad F^\ast\bar{\bm\theta}_G=\bm\theta_G.\]
-Using the moving frame lift $g=\rho(m,h)$, $w=I(m)$, to pull back these $1$-forms, we are lef to the $0$-th order moving coframe, consisting of the pulled back Maurer-Cartan forms $(\rho_0)^\ast\bm\theta$, along with the differentials $(\rho_0)^\ast\dd\bf w_\nu=\dd I_\nu$ of the group invariants. At this stage, the set up of the intransitive problem is complete, and one proceeds, as in the transitive case, to look for dependencies among the restricted coframe forms, and then normalize the resulting lifted invariants.
-
 \begin{example}
-    The intransitive action 
-    \[a:\quad (x,u)\mapsto \left(x,\frac{\alpha u+\beta}{\gamma u+\delta}\right),\quad a=\begin{pmatrix}
-        \alpha & \beta \\ \gamma & \delta
-    \end{pmatrix}\in\SL_2(\bbR),\label{eq 5.4 OlverCo}\]
-    of the special linear group $\SL_2(\bbR)$ on $M=\bbR^2$ arises in complex function theory. (We restrict to $\SL_2(\bbR)$ to maintain local effectiveness.) The group orbits are vertical lines and so the basic invariant is merely $I(x,u)=x$. We choose the slice $\varSigma=\{u=0\}$. Solving the equation $a(x,u)\cdot m_0=(x,u)$, where $m_0=(y,0)$, leads to the general compatible lift 
-    \[a_0(x,u,\alpha,\delta)=\begin{pmatrix}
-        \alpha & \delta u\\
-        \frac{\alpha\delta-1}{\delta u} & \delta
-    \end{pmatrix},\label{eq 5.5 OlverCo}\]
-    which forms the group component of the $0$-th order moving frame. The other component is just the invariant 
-    \[w=I(x,u)=x.\label{eq 5.6 OlverCo}\]
-    Pulling back the Maurer-Cartan forms $\bm\theta=a^{-1}\dd a$ and $\dd w$ via the lift \eqref{eq 5.5 OlverCo}, \eqref{eq 5.6 OlverCo}, leads to the order zero moving frame 
-    \[\begin{aligned}
-        \theta_0^1&=(\alpha\delta-1)\frac{\dd u}{u}-\frac{\dd\delta}{\delta}, & \theta_0^2&=\delta^2\dd u,\\
-        \theta_0^3&=\frac{u\dd (\alpha\delta)+\alpha\delta(1-\alpha\delta)\dd u}{\delta^2u^2},\quad &\theta_0^4&=\dd x.
-    \end{aligned}\label{eq 5.7 OlverCo}\]
-    As before, we restrict to a curve $u=u(x)$ by replacing $\dd u$ by its semibasic component $u_x\dd x$. Letting $\eta_0^i$ denote the semibasic component of $\theta_0^i$, we find that there is one resulting linear dependency, namely 
-    \[\theta_0^2=\delta^2u_x\dd x=J\dd x=J\theta_0^4.\]
-    This leads to the first normalization $\delta=1/\sqrt{u_x}$ resulting from setting $J=1$. Substituting this normalized value into \eqref{eq 5.5 OlverCo}, \eqref{eq 5.6 OlverCo}, provides the first-order moving frame. Furthermore, substituting into \eqref{eq 5.7 OlverCo} produces the second-order moving coframe, with semibasic components
-    \[\eta_2^1=\frac{2\alpha u_x^{3/2}+uu_{xx}-2u_x^2}{2uu_x}\dd x,\quad \eta_2^2=\eta_2^4=\dd x,\quad \eta_2^3=\frac{\sqrt{u_x}}{u}(\dd\alpha-\alpha\eta_0^1).\]
-    Now we normalize the coefficient of $\eta_0^1$ to $0$ by setting $\alpha=u_x^{-3/2}(u_x^2-\frac12 uu_{xx})$. The final moving frame (of order $2$) is 
-    \[a_2=\frac{1}{u_x^{3/2}}\begin{pmatrix}
-        u_x^2-\frac12 uu_{xx} &  uu_x\\ -\frac12u_{xx} & u_x
-    \end{pmatrix},\quad w=x.\label{eq 5.9 OlverCo}\]
-    The corresponding restricted moving coframe has reduced to 
-    \[\eta_2^2=\eta_2^4=\dd x,\quad \eta_2^3=-\frac12\calS \eta_0^2,\quad \eta_2^1=0,\label{eq 5.10 OlverCo}\]
-    where 
-    \[\calS=\frac{u_{xxx}}{u_x}-\frac32\frac{u_{xx}^2}{u_x^2}\]
-    is the classical Schwarzian derivative \index{Schwarzian derivative} of the function $u(x)$, whose invariance under \glspl{flt} is of fundamental invariance in complex analysis. Since the $1$-form $\dd x$ is invariant, all the higher-order differential invariants are found by differentiating $\calS$ w.r.t.\ $x$.
+    Consider the translation action $\bf z\mapsto \bf z+\bf a$ of $G=\bbR^2$ on $M=\bbR^2=\rmJ^0(\bbR,\bbR)$. The derivative coordinates $u_x,u_{xx},\ldots $ provide a complete system of differential invariants. The classifying curve of a generic curve $u=f(x)$ is parametrized by $(u_x,u_{xx})$. However, singularities may require us to prolong to higher order to ensure rigidity. For example, the curve $C$ given by $u=x^4-2x^2$ has second-order contact at $\bf z_0=(1,0)$ with its translate by $\bf a=(2,0)$. Moreover, the first two differential invariants $(u_x,u_{xx})$ have rank $1$ on $C$. However, $C$ is not regular of differential invariant order $2$ because its second-order classifying curve intersects itself at the point $(u_x,u_{xx})=(0,8)$, which permits second-order non-rigidity. The curve $C$ is locally rigid at order $1$, and completely rigid at order $3$.
 \end{example}
 
-Actually, the preceding computation can be slightly simplified by extending our general method to non-effective actions. We consider \eqref{eq 5.4 OlverCo} as defining a non-effective (and intransitive) action of the general linear group $\GL_2(\bbR)$ on $\bbR^2$. We may apply the second algorithm for computing the required Maurer-Cartan forms, leading to the three $1$-forms \eqref{eq 3.12 OlverCo} that annihilate the kernel subalgebra $\frakg_M$. We substitute the compatible lift formulas $\beta=\delta u$ for the order zero moving coframe, which is now $a_0=\left(\begin{smallmatrix}
-    \alpha & \delta u\\\gamma & \delta
-\end{smallmatrix}\right)$, into \eqref{eq 3.12 OlverCo}, leading to the restricted moving coframe forms 
-\[\begin{aligned}
-    \wh\eta_0^1&=\frac{\delta u_x\dd x}{\alpha-u\gamma},\quad &\wh\eta_0^2&=\frac{\dd\alpha-u\dd\gamma+\gamma u_x\dd x}{\alpha-u\gamma}-\frac{\dd\delta}{\delta},\\
-    \wh\eta_0^3&=\frac{\gamma\dd\alpha-\alpha\dd\gamma}{\delta(\alpha-u\gamma)},\quad &\wh\eta_0^4&=\dd x.
-\end{aligned}\label{eq 5.12 OlverCo}\]
-The first dependency between $\wh\eta_0^1$ and $\wh\eta_0^4$ leads to the reduction $\delta=(\alpha-u\gamma)/u_x$. Substituting into $\wh\eta_0^3$ leads to a second dependency, and the resulting normalization yields $\alpha=\gamma(u-2u_x^2/u_{xx})$. At this stage, even though we have not normalized the final parameter $\gamma$, it no longer appears in the coframe, which coincides with our earlier one, \eqref{eq 5.10 OlverCo}. It does, of course, occur in the final moving frame lift, which is obtained by multiplying the matrix $a_2$ in \eqref{eq 5.9 OlverCo} by $\gamma$. However, $\gamma$ plays no other role in the problem, and merely reflects a final indeterminacy stemming from the ineffectiveness of the group action. The main point in this solution method is that one does not have to explicitly implement an effective action, as was done in the original lift \eqref{eq 5.5 OlverCo}, in order to solve the problem. Indeed, in more complicated examples, it may be relatively straightforward to write down the compatible lift for an ineffective group action, whereas doing the same for the effectively acting quotient group $G\slash G_M$ may be considerably more complicated.
+
+
 
 \begin{example}
-    Consider the elementary similarity group $G=\bbR_+\times\bbR^2$ acting transitively on $M=\bbR^2$ via 
-    \[g:\quad (x,u)\mapsto (\alpha x+a,\alpha u+b).\]
-    For the basepoint $m_0=(0,0)$, the associated moving frame of order $0$ is the lift with $a=x$, $b=u$. The Maurer-Cartan forms $(\dd\alpha/\alpha,\dd a/\alpha,\dd b/\alpha)$ are pulled back to provide the order zero moving coframe, whose semibasic (or, more precisely, non-contact) components are 
-    \[\eta_0^1=\frac{\dd\alpha}{\alpha},\quad\eta_0^2=\frac{\dd x}{\alpha},\quad \eta_0^3=\frac{u_x\dd x}{\alpha}.\]
-    There is a single linear dependency $\eta_0^3=I\eta_0^2$, but the resulting invariant $I=u_x$ does \emph{not} depend on the remaining group parameter, and hence \emph{cannot} be used to normalize it. To proceed further in such cases, we work in analogy with the preceding intransitive case. Here the intransitivity is on the first-order jet bundle, and is an indication of the fact that this particular group exhibits the pathology of ``pseudo-stabilization'' of its prolonged group orbits. We therefore introduce an additional invariant $1$-form $\dd u_x$, whose semibasic component is 
-    \[\eta_0^4=u_{xx}\dd x=K\eta_0^2.\]
-    The resulting dependency leads to the lifted invariant $K=\alpha u_{xx}$ which yields the desired normalization $\alpha=1/u_{xx}$ and the second-order moving frame. The associated invariant coframe is 
-    \[\eta_1^2=\eta_1^4=u_{xx}\dd x,\quad \eta_1^1=-J\eta_1^2,\quad \eta_1^3=I\eta_1^2,\]
-    yielding two fundamental differential invariants 
-    \[I=u_x,\quad J=u_{xx}^{-2}u_{xxx}.\]
-    The higher-order invariants are found by differentiating $J$ w.r.t.\ $\eta_1^4=u_{xx}\dd x\equiv \dd u_x$, so that a basic $4$-th order invariant is 
-    \[K=\frac{\dd J}{\dd u_x}=\frac{1}{u_{xx}}\frac{\dd J}{\dd x}=\frac{u_{xxxx}}{u_x^2}-2J^2.\]
-    Note that $\dd I/\dd u_x=1$, so that differentiating $I$ produces nothing new. Thus, in this case, we find two fundamental differential invariants, and require three, namely $(I,J,K)$, to parametrize the classifying curve that solves the associated equivalence problem. We conclude that the phenomenon of pseudo-stabilization of group orbits is reflected in the moving coframe procedure by the premature appearance of differential invariants, whose differentials are required to finish the procedure.
-\end{example}
-
-\PRLsep
-
-
-\textbf{Reparametrization pseudogroups.} The classical applications of moving frames to curves and surfaces in Euclidean, affine, and projective geometries can all be readily implemented using the moving coframe algorithm. In each case, we consider the reparametrization equivalence problem for submanifolds, so that the underlying transformation group is the product of an infinite-dimensional Lie pseudogroup, namely the local diffeomorphism group $\mathpzc{Diff}(X)$ of the parameter space, and a finite-dimensional Lie group $G$ acting on the ambient manifold $M$. In this case, in addition to the Maurer-Cartan forms for $G$, one also includes the $1$-forms  defining the diffeomorphism pseudogroup. For simplicity, we just deal with planar curves, although extensions to surfaces and curves in higher dimensional ambient spaces can also be handled without significant complications. Instead, we will treat those problems using Cartan's equivalence method in \Chap~\ref{chap curves and surfaces}.
-
-\begin{example}[Euclidean geometry of curves]
-    The most well-known classical example is the reparametrization equivalence problem for curves in the Euclidean plane, introduced in Example~\ref{ex 2.1 OlverCo}. In this case, we are dealing with a finite-dimensional group, the Euclidean group $\rmE_2$ on the plane, together with the pseudogroup $\mathpzc{Diff}(\bbR)$ consisting of all smooth local diffeomorphisms of the line representing the change of parameter. Thus, the entire pseudogroup $\calG=\mathpzc{Diff}(\bbR)\times\rmE_2$ acts on the total space $M=\bbR\times\bbR^2$ with coordinates $(t,\bf x)=(t,x,y)$. For the Euclidean component, we use a compatible lift 
-    \[a_0(x,y,\varphi)=\begin{pmatrix}
-        R & \bf x\\0 & 1
-    \end{pmatrix}=\begin{pmatrix}
-        \cos\varphi & -\sin\varphi & x\\
-        \sin\varphi & \cos\varphi & y\\
-        0 & 0 & 1
-    \end{pmatrix},\]
-    and compute the pullback of the associated Euclidean Maurer-Cartan forms:
-    \[\bm\theta=a_0^{-1}\dd a_0=\begin{pmatrix}
-        R^{-1}\dd R & R^{-1}\dd\bf{x}\\
-        \bf{0}^T & 0
-    \end{pmatrix}=\begin{pmatrix}
-        0 & -\dd\varphi & \cos\varphi\dd x+\sin\varphi \dd y\\
-        \dd\varphi & 0 & -\sin\varphi \dd x+\cos\varphi\dd y\\
-        0 & 0& 0
-    \end{pmatrix}.\]
-    On the other hand, the pseudogroup $\mathpzc{Diff}(\bbR)$ is characterized by the invariance of the canonical $1$-form $\sigma\dd t$ on the frame bundle $\Fr(\T \bbR)$ (here, $\sigma$ is the fiber coordinate of $\T\bbR$), and hence we include this additional $1$-form in our moving coframe formulation. Restricting these four $1$-forms to a parametrized curve $(x(t),y(t))$ leads to 
+    Consider the intransitive standard action of $\Or_3$ on surfaces in Euclidean space $M=\bbR^3$. Assume that the surface is given as the graph of a funcion $u=f(x^1,x^2)$. The zeroth-order invariants are 
+    \[\begin{pmatrix}
+        y^1\\y^2\\ v
+    \end{pmatrix}=R\cdot \begin{pmatrix}
+        x^1 \\ x^2 \\ u
+    \end{pmatrix},\quad R\in\Or_3.\]
+    The lifted onctact-invariant coframe and associated invariant differential operators are 
     \[\begin{aligned}
-        \eta_1^1&=\dd \varphi,\quad &\eta_1^2&=(x_t\cos\varphi+y_t\sin\varphi)\dd t,\\\quad\eta_1^3&=(-x_t\sin\varphi+y_t\cos\varphi)\dd t,\quad &\eta_1^4&=\sigma\dd t.\label{eq 6.3 OlverCo}
+        \begin{pmatrix}
+            \eta^1\\\eta^2
+        \end{pmatrix}&=\begin{pmatrix}
+            R_1^1+R^1_3u_1 & R_2^1+R_3^1u_2\\
+            R^2_1+R^2_3u_1 & R_2^2+R^2_3u_2
+        \end{pmatrix}\begin{pmatrix}
+            \dd x^1\\ \dd x^2
+        \end{pmatrix},
+        \begin{pmatrix}
+            \calE_1\\ \calE_2
+        \end{pmatrix}&=\begin{pmatrix}
+            R_1^1+R^1_3u_1 & R_2^1+R_3^1u_2\\
+            R^2_1+R^2_3u_1 & R_2^2+R^2_3u_2
+        \end{pmatrix}^{-T}\begin{pmatrix}
+            D_1\\ D_2
+        \end{pmatrix}.
     \end{aligned}\]
-    Now $\eta_0^2=J_1\eta_0^4$ and $\eta_0^3=J_2\eta_0^4$ are the linear dependencies with associated lifted invariants 
-    \[J_1=\frac{x_t\cos\varphi+y_t\sin\varphi}{\sigma},\quad J_2=\frac{-x_t\sin\varphi+y_t\cos\varphi}{\sigma}.\]
-    We normalize $J_1=1$, $J_2=0$ by setting 
-    \[\varphi=\arctan\frac{y_t}{x_t},\quad \sigma=\sqrt{x_t^2+y_t^2}.\]
-    This immediately produces the first-order moving frame 
-    \[R=\frac{1}{\sqrt{x_t^2+y_t^2}}\begin{pmatrix}
-        x_t & -y_t\\ y_t & x_t
-    \end{pmatrix},\quad \bf a=\begin{pmatrix}
-        x \\ y
-    \end{pmatrix},\quad \sigma=\sqrt{x_t^2+y_t^2}.\label{eq 6.5 OlverCo}\]
-    The canonical $1$-form $\sigma\dd t$ has been reduced to the fundamental arclength element $\dd s=\sqrt{x_t^2+y_t^2}\dd t$ for the Euclidean group. Substituting the expressions for $\varphi,\sigma$ into \eqref{eq 6.3 OlverCo}, we are left with a final set of semibasic $1$-forms 
-    \[\eta_2^1=\kappa\eta_2^2,\quad \eta_2^2=\eta_2^4=\dd s=\sqrt{x_t^2+y_t^2}\dd t,\quad \eta_2^3=0.\]
-    Here, 
-    \[\kappa=\frac{x_ty_{tt}-x_{tt}y_t}{(x_t^2+y_t^2)^{3/2}}=\frac{\bf{x}_t\wedge \bf{x}_{tt}}{\lVert \bf{x}_t\rVert^3}=\bf{x}_s\wedge \bf{x}_{ss}\]
-    is the fundamental differential invariant for the Euclidean group -- the curvature of the plane curve. All higher-order differential invariants are obtained by successively differentiating the curvature w.r.t.\ the arclength.
-
-    The classical Frenet equations for corves in the Euclidean plane are reformulations of our final moving frame formulas. The rotation component in \eqref{eq 6.5 OlverCo} is traditionally written as $R=(\bf{e}_1,\bf{e}_2)$, where $\bf{e}_1$ is the unit tangent and $\bf{e}_2$ is the unit normal. The translational Maurer-Cartan forms $\eta_2^2=\dd s$, $\eta_2^3=0$ are computed by the original formula as entries of $R^{-1}\dd\bf{x}=\left(\begin{smallmatrix}
-        \dd s\\ 0
-    \end{smallmatrix}\right)$, which reduces to the first Frenet equation $\frac{\dd\bf{x}}{\dd s}=\bf{e}_1$. Similarly, the Maurer-Cartan matrix 
-    \[R^{-1}\dd R=\begin{pmatrix}
-        0 & -\kappa \\ \kappa & 0
-    \end{pmatrix} \quad \text{implies that}\quad \frac{\dd R}{\dd s}=R\cdot\begin{pmatrix}
-        0 & -\kappa \\ \kappa & 0
+    The lifted invariants are $v_{jk}=(\calE_1)^j (\calE_2)^k v$; in particular, 
+    \[\begin{pmatrix}
+        v_1\\v_2
+    \end{pmatrix}=\begin{pmatrix}
+        R_1^1+R^1_3u_1 & R_2^1+R_3^1u_2\\
+        R^2_1+R^2_3u_1 & R_2^2+R^2_3u_2
+    \end{pmatrix}^{-T}\begin{pmatrix}
+        R_1^3+R_3^3u_1\\ R_2^3+R_3^3u_2
     \end{pmatrix}.\]
-    The columns of the latter matrix equation complete the system of Frenet equations:
-    \[\frac{\dd \bf{x}}{\dd s}=\bf{e}_1,\quad \frac{\dd \bf{e}_1}{\dd s}=\kappa\bf{e}_2,\quad \frac{\dd \bf{e}_2}{\dd s}=-\kappa \bf{e}_1.\]
-    Finally, the Maurer-Cartan equations for the Euclidean group reduce to the classical Frenet-Serret equations for curves.\index{Equation!Frenet-Serret}
+    The normalization 
+    \[y^1=v_1=v_2=0\]
+    leads to a particularly simple first-order moving frame. Introduce the column-vectors 
+    \[\bf z=(x^1,x^2,u)^T,\quad \bf n=\frac{\bf N}{\lVert \bf N\rVert}=\frac{(-u_1,-u_2,1)^T}{\sqrt{1+u_1^2+u_2^2}},\]
+    which respectively define the point on the surface and the unit normal at that point. Then 
+    \[R=\left(\bf t\mid \hat{\bf t}\mid \bf n\right)^T,\quad \text{where } \bf t=\frac{\bf z\times\bf n}{\lVert \bf z\times\bf n\rVert},\quad \hat{\bf t}=\bf n\times\bf t=\frac{\bf z-(\bf z\cdot \bf n)\bf n}{\lVert \bf z\times\bf n\rVert},\label {eq 15.26 OlverCo2}\]
+    define distinguished, orthogonally equivariant, unit tangent vectors. The moving frame \eqref{eq 15.26 OlverCo2} applies to surfaces whose unit normal is not parallel to the point $\bf z$. Pulling back the remaining lifted invariants leads to the first-order differential invariants 
+    \[\begin{aligned}
+        J&=\left(\sigma^{(1)}\right)^\ast y^2=\frac{(\bf z\cdot \bf n)^2-\lVert\bf z\rVert^2}{\lVert \bf z\times\bf n\rVert}=-\lVert \bf z\times\bf n\rVert=-\sqrt{\lVert \bf z\rVert^2-(\bf z\cdot \bf n)^2},\\
+        I&=\left(\sigma^{(1)}\right)^\ast v=\bf z\cdot \bf n.
+    \end{aligned}\]
+
+    The contact-invariant coframe and invariant differential operator are obtained by pulling back the semibasic differentials of the $y^i$:
+    \[
+        \begin{matrix}
+            \bm\eta&=A\cdot \dd\bf x,\\
+            \calD&= A^{-T}\bf D,
+        \end{matrix}
+        \quad\text{where}\quad 
+        A=\begin{pmatrix}
+            \bf t\cdot \bf t_1 & \bf t\cdot \bf t_2\\
+            \hat{\bf t}\cdot \bf t_1 & \hat{\bf t}\cdot\bf t_2
+        \end{pmatrix}.
+    \]
+    Here, $\bf t_1=(1,0,u_1)$, $\bf t_2=(0,1,u_2)$ are the coordinate tangent vectors to the surface, and $A$ is the transpose of their coefficient matrix w.r.t.\ the moving frame tangent vectors $\bf t,\hat{\bf t}$. A generating system of differential invariants requires the corresponding normalized second-order invariants:
+    \[\begin{pmatrix}
+        I_{11} & I_{12}\\
+        I_{12} & I_{22}
+    \end{pmatrix}=\frac{1}{\lVert \bf N\rVert}\calD^2 u=\frac{A^{-T}(\nabla^2 u)A^{-1}}{\sqrt{1+u_1^2+u_2^2}}.\]
+    Here, $\nabla^2 u=(\partial_i\partial_j u)$ is the usual Hessian matrix of $u$, so $\calD^2 u$ represents an ``equivariant Hessian''. However, the recurrence relations (or syzygies) 
+    \[\calD_1 J=II_{12},\quad \calD_2 J=1+II_{22},\quad \calD_1 I=-JI_{12},\quad \calD_2 I=-JI_{22},\]
+    show that just $I,J$, and $I_{11}$ suffice for a set of fundamental differetnial invariants.
 \end{example}
 
-\begin{rem}
-    One can also compute, as in our original example, the full moving coframe forms on the jet bundle, leading to a corresponding set of fundamental Euclidean-invariant contact forms.
-\end{rem}
 
-
-\begin{rem}
-    In fact, since we are dealing with the \emph{full} pseudogroup $\mathpzc{Diff}(\bbR)$ of all diffeomorphisms of the line, the final $1$-form $\eta_0^4=\sigma\dd t$ in our moving coframe is irrelevant -- one could perform the same normalization of the angle $\varphi$ based on the dependency between $\eta_0^2$ and $\eta_0^3$, the lifted invariant being $J_2/J_1$, which is normalized to zero by setting $J_2=0$, leading to the same final coframe and curvature invariant. Thus, the calculations for parametrized curves and surfaces can, in fact, be done without invoking the diffeomorphism pseudogroup. Nevertheless, in all examples we have treated, the inclusion of the canonical $1$-form $\eta_0^4$ on the parameter space leads to an immediate identification of the final invariant arclength element. More generally, the restricted reparametrization equivalence problem does require the introduction of suitable $1$-forms that characterize the relevant pseudogroup.
-\end{rem}
-
-\begin{rem}
-    The problem of Euclidean equivalence of curves with \emph{fixed} parametrization, as discussed in Example~\ref{ex 2.1 OlverCo}, can also be formulated and solved in the moving coframe context. Now we are in the intransitive framework, where the parameter $t$ provides a scalar invariant. Consequently, we retain the first three $1$-forms $\eta_0^1,\eta_0^2,\eta_0^3$ in \eqref{eq 6.3 OlverCo}, but replace $\eta_0^4$ by $\dd t$ to form the moving coframe. We normalize $J_1=0$ as before, but now $J_2=v=\sqrt{x_t^2+y_t^2}$ forms a first-order differential invariant -- the speed. The final moving frame has $\eta_2^1=K\dd t$, $\eta_2^2=0$, $\eta_0^3=v\dd t$, $\eta_2^4=\dd t$, where $K=x_ty_{tt}-x_{tt}y_t=v^3\kappa$ is a second-order differential invariant. The higher-order differential invariants are found by differentiating w.r.t.\ $t$. Note that the arclength $\dd s=v\dd t$ is also an invariant $1$-form, being an invariant multiple of $\dd t$, and hence one can, \gls{wlog}, apply the arclength derivative $\dd/\dd s$ to produce the higher-order invariants instead. Thus, in this case, a complete list of differential invariants is provided by $v,\kappa$, and their arclength derivatives.
-\end{rem}
 
 
 
