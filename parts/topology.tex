@@ -2677,7 +2677,7 @@ The following proposition is the reason why second countability is often substit
 Throughout these notes we also adopt the notation where for any atlas as above, $U_{\alpha\beta}=U_\alpha \cap U_\beta$, $U_{\alpha\beta\gamma}=U_\alpha \cap U_\beta \cap U_\gamma$, etc.
 
 \begin{defn}[Smooth atlas]\index{Atlas!Smooth}
-    An atlas is called smooth (or of class $C^k$ or $C^\omega$) if all of the \emph{transition functions} $\varphi_{\beta\alpha}=\varphi_\beta\circ\varphi_\alpha^{-1}:\varphi_\alpha(U_{\alpha\beta})\to\varphi_\beta(U_{\alpha\beta})$ are smooth/$C^\infty$ (of class $C^k$, or real analytic, respectively) in the sense of multivariate calculus on $\bbR^n$.
+    An atlas is called smooth (or of class $C^k$ or $C^\omega$) if all of the \emph{transition maps} $\varphi_{\beta\alpha}=\varphi_\beta\circ\varphi_\alpha^{-1}:\varphi_\alpha(U_{\alpha\beta})\to\varphi_\beta(U_{\alpha\beta})$ are smooth/$C^\infty$ (of class $C^k$, or real analytic, respectively) in the sense of multivariate calculus on $\bbR^n$.
 \end{defn}
 \begin{defn}[Equivalent atlases]\index{Atlas!Equivalence of}
     Two atlases $\mathcal{A}_1$ and $\mathcal{A}_2$ are called equivalent, or compatible, if $\mathcal{A}_1\cup\mathcal{A}_2$ is still an atlas of the same smoothness class.
@@ -2895,7 +2895,7 @@ Meaning: the equation $\varPhi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for 
 \end{defn}
 
 \begin{enumerate}
-    \item $T_m M$ is imbued with the structure of a real vector space as follows:
+    \item $\T_m M$ is imbued with the structure of a real vector space as follows:
     \begin{enumerate}
         \item $\lambda\cdot [\gamma(t)]_m\coloneqq [\gamma(\lambda t)]_m$ for $\lambda\in\bbR $.
         \item $[\gamma_1(t)]_m+[\gamma_2(t)]_m\coloneqq [\varphi_\alpha^{-1}(\varphi_\alpha(\gamma_1(t))+\varphi_\alpha(\gamma_2(t)))]_m.$
@@ -2922,14 +2922,21 @@ Meaning: the equation $\varPhi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for 
     Check that the definition of a tangent vector and all of the following constructions are consistent, i.e., independent of the choices of charts $\varphi_\alpha$ or representatives $\gamma(t)$ of equivalence classes.
     \end{xca}
     \begin{defn}[Differential/push-forward]\index{Push-forward}
-    Let $F\in C^\infty(M,N)$ and $p\in M$. The push-forward, or the \emph{derivative}, of $F$ at $m$ is the linear map $F_{\ast m}:T_m M\to T_{F(m)} N$ defined via \[F_{\ast m}([\gamma]_m)=[F\circ\gamma]_{F(m)},\] or equivalently \[F_{\ast m}(v)[f]=v[f\circ F]\] for any $f\in C^\infty (N)$.
+    Let $F\in C^\infty(M,N)$ and $p\in M$. The push-forward, or the \emph{derivative}, of $F$ at $m$ is the linear map $F_{\ast m}:\T_m M\to \T_{F(m)} N$ defined via \[F_{\ast m}([\gamma]_m)=[F\circ\gamma]_{F(m)},\] or equivalently \[F_{\ast m}(v)[f]=v[f\circ F]\] for any $f\in C^\infty (N)$.
 \end{defn}
 
 \begin{rem}[Coordinate expressions for derivatives]
-    In local coordinates (i.e., replacing $F$ with some function $\wh{F}:\bbR^m\to\bbR^n$,
+    In local coordinates, where $F$ is represented by a function $\wh{F}:\bbR^m\to\bbR^n$, we have
     \[F_{\ast m}([\gamma]_m)=\restr{\frac{\dd}{\dd t}}{t=0} \wh{F}(\gamma(t)).\label{eq differential in local coordinates}\]
     and 
     \[\wh{F}_{\ast m}(v)[f]=\restr{\frac{\dd}{\dd t}}{t=0}f(F(\gamma(t)).\]
+    In particular, if $\varphi_\alpha,\varphi_\beta$ are two local chart maps, then their actions on tangent vectors are related by
+    \[\varphi_{\alpha\ast m}([\gamma])=\left(\varphi_{\beta\alpha}\right)_{\ast \varphi_\alpha(m)}\cdot \varphi_{\beta\ast m}([\gamma]),\label{eq 1.4.5 RS1}\]
+    where $\left(\varphi_{\beta\alpha}\right)_{\ast \varphi_\alpha(m)}$ is the regular Jacobi matrix at $\varphi_\alpha(m)$ of the transition map $\varphi_{\beta\alpha}:\bbR^n\supset \wh U_\alpha\to \wh U_\beta\subset\bbR^n$. Now the local representative of a tangent vector $X_m\in \T_m M$ w.r.t.\ a chart $(U_\alpha,\varphi_\alpha)$ is defined to be 
+    \[\wh X^\alpha_m\coloneqq \varphi_{\alpha\ast m}(X_m).\label{eq 1.4.8 RS1}\]
+    (In a fixed coordinate system, we will usually omit the chart label $\alpha$.) The relation between two local representatives $\wh X^\alpha_m$ and $\wh X^\beta_m$ can be read off from \eqref{eq 1.4.5 RS1}:
+    \[\wh X^{\beta,i}_m=\left[\left(\varphi_{\beta\alpha}\right)_{\ast \varphi_\alpha(m)}\right]^i_j \wh X^{\alpha,j}_m,\label{eq 1.4.9 RS1}\]
+    that is, the transformation is given by the Jacobi matrix of the coordinate transformation.
 \end{rem}
 
 
@@ -2941,13 +2948,13 @@ Meaning: the equation $\varPhi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for 
     \item $(\id_M)_{\ast m}=\id_{\T_m M}$;
     \item if $f$ is a local diffeomorphism at $x$ then $f_{\ast m}$ is invertible and $(f_{\ast m})^{-1}=(f^{-1})_{\ast m}$ (the converse is also true by \gls{inmt});
     \item In local coordinates, $f_{\ast m}$ is represented by the Jacobi matrix of the local representative $f_{\beta\alpha}$;
-    \item $\dim T_m M=\dim M$, even for points on $\partial M$;
+    \item $\dim \T_m M=\dim M$, even for points on $\partial M$;
     \item \gls{inmt} doesn't hold at the boundary.
 \end{enumerate}
 \end{thm}
 \begin{proof}
     The first few statements are trivial and are left as an exercise.
-    6) A local chart map $\varphi_\alpha$ can be viewed as a local diffeomorphism to an open subset of $\bbR^n$. Since $T_{\varphi_\alpha(m)}(\bbR^n)=\bbR^n$ (because we know that equivalence classes of curves at a point of $\bbR^n$ are uniquely characterized by their tangent vectors), we have a linear map $(\varphi_\alpha)_{\ast m}:\T_m M\to \bbR^n$, which is an isomorphism by 4). Therefore the dimensions coincide. Nothing really changes at the boundary.
+    6) A local chart map $\varphi_\alpha$ can be viewed as a local diffeomorphism to an open subset of $\bbR^n$. Since $\T_{\varphi_\alpha(m)}(\bbR^n)=\bbR^n$ (because we know that equivalence classes of curves at a point of $\bbR^n$ are uniquely characterized by their tangent vectors), we have a linear map $(\varphi_\alpha)_{\ast m}:\T_m M\to \bbR^n$, which is an isomorphism by 4). Therefore the dimensions coincide. Nothing really changes at the boundary.
 
     7) Consider the inclusion map $i:\wb\bbR^n_+\hookrightarrow \bbR^n$. Clearly $i_{\ast 0}=\id$ is invertible, but $i$ itself is not a local diffeomorphism because $i(B^n\cap \wb\bbR^n_+)$ is the image of an open set that is not open in $\bbR^n$.
 \end{proof}
@@ -2955,7 +2962,7 @@ Meaning: the equation $\varPhi(\bf{x},\bf{y})=\bf{c}$ can be locally solved for 
 All of this implies that the map $\T_m:(M,m)\mapsto \T_m M$ extends to a covariant functor $\T_m:\mathsf{Man}_\bullet^\infty\to \mathsf{Vect}_\bbR$. It respects morphisms (smooth maps) $f:M\to N$ between pointed\footnote{The requirement that these manifolds be pointed is a mere technicality for the sake of the definition of a functor. Given a map $f:M\to N$ and a point $f\in M$, we can always create the pairs $(M,m)$ and $(N,f(m))$ and treat $f$ as a pointed map.} manifolds because the following diagram commutes:
 \[
 \begin{tikzcd}[every matrix/.append style={name=m},   
-    execute at end picture={\draw [<-] ([xshift=-2.6em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
+    execute at end picture={\draw [<-] ([xshift=-3em,yshift=1mm]m-2-2.north) arc[start angle=-90,delta angle=270,radius=0.25cm];}]
    M \arrow[r,"f"]\arrow[d,swap,"\T_m"]& N\arrow[d,"\T_{f(m)}"] \\
    \T_m M\arrow[r,swap, "\T_m  f"]& \T_{f(m)}N.
 \end{tikzcd}
@@ -3248,7 +3255,7 @@ We will now show that smooth submersions, as defined in Definition~\ref{def imme
 \begin{proof}
     For the forward direction, we have in some local coordinates $f_{\alpha\beta}(x^1,\ldots,x^m)=(x^1,\ldots,x^n)$, where we assume that $m$ is the origin of the coordinate system. Therefore the map locally defined by $\sigma_{\alpha\beta}(y^1,\ldots,y^n)=(y^1,\ldots,y^n,0,\ldots,0)$ is indeed a local section and its image passes through $m$.
     
-    For the backward direction, let $m\in M$ and find a local section $\sigma$ such that $m\in \sigma(U)$. Then $m=\sigma(q)$ for some $q\in N$ and $\pi\circ\sigma=\id_U$. Therefore, by taking the differential, $\pi_{\ast m} \sigma_{\ast q}=\id_{T_q N}$, which implies that $\pi_\ast$ is surjective.
+    For the backward direction, let $m\in M$ and find a local section $\sigma$ such that $m\in \sigma(U)$. Then $m=\sigma(q)$ for some $q\in N$ and $\pi\circ\sigma=\id_U$. Therefore, by taking the differential, $\pi_{\ast m} \sigma_{\ast q}=\id_{\T_q N}$, which implies that $\pi_\ast$ is surjective.
 \end{proof}
     
 Next, we would like to find the smooth analog for the concept of a quotient map. Recall that a \emph{topological quotient map} is a surjective, strongly continuous map (i.e., $V$ is open iff $f^{-1}(V)$ is open). Openness implies strong continuity, thus open surjective maps are necessarily quotient maps, but not every topological quotient map is open (e.g., the gluing $\bbD^n\slash \partial \bbD^n$ of the boundary of a ball that gives a sphere is not open). In fact, a surjective continuous map $q$ is a quotient map iff it takes open sets that are unions of fibers of $q$ to open sets. However, these subtleties turns out to be irrelevant in the smooth case as the natural smooth analogs of surjective continuous maps, \emph{submersions}, turn out to be open by the following proposition.
@@ -6939,8 +6946,8 @@ The following properties immediately follows from these theorems.
 \end{rem}
 
 \begin{defn}[Infinite-dimensional smooth manifold]\index{Fr\'echet manifold}
-    Let $M$ be a Hausdorff topological space and $E$ a locally convex space. An $E$-chart of an open subset $U\subset M$ is a homeomorphism $\varphi:U\to \varphi(U)\subset E$ into an open subset $\varphi(U)$ of $E$. Two charts $(U_\alpha,\varphi_\alpha)$ and $(U_\beta,\varphi_\beta)$ are called smoothly compatible  if the map
-    \[\varphi_\beta\circ\varphi_\alpha^{-1}:\varphi_\alpha(U_{\alpha\beta})\to \varphi_\beta(U_{\alpha\beta})\]
+    Let $M$ be a Hausdorff topological space and $E$ a locally convex space. An $E$-chart of an open subset $U\subset M$ is a homeomorphism $\varphi:U\to \varphi(U)\subset E$ into an open subset $\varphi(U)$ of $E$. Two charts $(U_\alpha,\varphi_\alpha)$ and $(U_\beta,\varphi_\beta)$ are called smoothly compatible  if the transition map
+    \[\varphi_{\beta\alpha}\coloneqq \varphi_\beta\circ\varphi_\alpha^{-1}:\varphi_\alpha(U_{\alpha\beta})\to \varphi_\beta(U_{\alpha\beta})\]
     is smooth. From the chain rule it follows that compatibility of charts is an equivalence relation on the set of all $E$-charts. An $E$-atlas is a family of pairwise compatible $E$-charts that cover all of $M$. A smooth $E$-structure $\mathcal{A}$ on $M$ is a maximal $E$-atlas. A smooth $E$-manifold is a pair $(M,\mathcal{A})$ where $\mathcal{A}$ is a smooth $E$-structure on $M$.
 
     We call a manifold modeled on a locally convex, resp., Fr\'echet space, resp., Banach space a locally convex, resp., Fr\'echet, resp., Banach manifold.

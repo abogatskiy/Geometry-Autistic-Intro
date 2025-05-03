@@ -874,6 +874,25 @@ The cylinder and the M\"obius band are vector bundles of rank one over $\bbS^1$.
 \end{rem}
 
 
+\begin{defn}[$h$-relation, transport operator]
+    Let $E\to M$, $E'\to M'$ be smooth \glspl{vb}, and let $h:E\to E'$ be a morphism with base map $\underline{h}$. Then sections $s\in\Gamma^\infty(E)$, $s'\in\Gamma^\infty(E')$ are said to be $h$-related if 
+    \[h\circ s=s'\circ \underline{h}.\label{eq def transport op}\]
+    The following mapping of sections is called the transport operator of $h$:
+    \[h_\ast:\Gamma^\infty(E)\to \Gamma^\infty(E'),\quad h_\ast s\coloneqq h\circ s\circ \underline{h}^{-1}.\]
+\end{defn}
+
+Note that $\underline{h}^{-1}$ in the definition of $h_\ast$ is necessary to ensure that the result is a section and not just some map $M'\to E'$. The following proposition lists the properties of the transport operator (exercise).
+
+\begin{prop}[{\cite[Prop.~2.3.7]{RS1}}]
+    Let $E\to M$, $E'\to M'$ be smooth \glspl{vb}, and let $h:E\to E'$ be a morphism with base map $\underline{h}$. The transport operator $h_\ast$ has the following properties:
+    \begin{enumerate}[label=(\alph*)]
+        \item $h_\ast$ is linear. If $h$ is a \gls{vb} isomorphism, then $h_\ast$ is an isomorphism of vector spaces and $\left(h^{-1}\right)_\ast=h_\ast^{-1}$.
+        \item For every $s\in \Gamma^\infty(E)$, $s$ is $h$-related to $h_\ast s$.
+        \item For every $s\in\Gamma^\infty(E)$ and $f\in C^\infty(M)$, there holds $h_\ast(fs)=\left(\left(\underline{h}^{-1}\right)^\ast f\right)h_\ast s$.
+        \item If $h':E'\to E''$ is another \gls{vb} morphism whose base map is a diffeomorphism, then $(h'\circ h)_\ast=h'_\ast\circ h_\ast$.
+    \end{enumerate}
+\end{prop}
+
 \begin{defn}[Extending functors from $\mathsf{FinVect}$ to $\VB$]\label{functors VB}
     Functors acting on vector spaces can be extended to vector bundles. Namely, if we have a functor $\calF :\mathsf{FinVect}\to\mathsf{FinVect}$ that can act at least on isomorphisms and such that its action on morphisms (matrices) is smooth in the standard smooth structure on matrix spaces, then we can construct a new bundle by replacing the typical fiber $V$ with $\calF(C)$ and the transition functions $\tau_{\alpha\beta}:U_{\alpha\beta}\to \GL(V)$ by $\calF\circ \tau_{\alpha\beta}:U_{\alpha\beta}\to \GL(\calF (V))$.
     \begin{enumerate}
@@ -895,7 +914,6 @@ The cylinder and the M\"obius band are vector bundles of rank one over $\bbS^1$.
 \begin{defn}[Frames]\index{Frame of a vector bundle}
     A local frame on a \gls{vb}  $E\overset{\pi}{\to}M$ of rank $k$ is an open set $U\subset M$ and a collection of local sections $e_i:U\to E,i=1,\ldots,k$ such that for every $m\in U$ the set $\{e_i(m)\}_{i=1}^k$ is a basis of the fiber $E_m$. The frame is called global if $U=M$. Similarly, a local $n$-frame is a collection of $n$ pointwise linearly independent sections.
 \end{defn}
-
 
 
 The following is an exercise.
@@ -1058,7 +1076,39 @@ The following is an exercise.
 
 Explicitly, a local trivialization represents a tangent vector $(m,v)$ as $((x^1,\ldots,x^m),v^i\partial_i)$, where $v^i\partial_i=\sum_{i=1}^m v^i\frac{\partial}{\partial x^i}$ is understood as an element of $\bbR^m$ in the symbolic basis $\left\{\frac{\partial}{\partial x^i}\right\}_i$ of $\bbR^m$.
 
-A local chart $\varphi_\alpha$ gives rise to a local frame (the pullback of the standard basis/frame on $\bbR^m$) conventionally denoted by partials, \[\partial_i\coloneqq \varphi_{\alpha\ast}^{-1}\left(\frac{\partial}{\partial x^i}\right).\]
+A local chart $\varphi_\alpha$ gives rise to a local frame (the pullback of the standard basis/frame on $\bbR^m$) conventionally denoted by partials, 
+\[\boxed{\partial_i\coloneqq \varphi_{\alpha\ast}^{-1}\left(\frac{\partial}{\partial x^i}\right).}\label{eq tangent coordinate frame}\]
+
+\begin{rem}[Note of caution]
+    We are simultaneously using the symbol $x^i$ to denote the standard coordinates on $\bbR^n$ and the components of a given chart map $\varphi^i$. Depending on the context, this may not be wise. However, as far as all computations with tensor fields go, this abuse of notation is harmless, as we will demonstrate in Remark~\ref{rem 2.5.3 RS1}.
+\end{rem}
+
+\begin{rem}
+    More explicitly, the derivations 
+    \[(\partial_if)(m)\coloneqq \frac{\partial (f\circ\varphi_\alpha^{-1})}{\partial x^i}(\varphi_\alpha(m))\]
+    form a basis of $\T_m M$. By construction, the components of a tangent vector $X_m\in \T_m M$ w.r.t.\ this basis are given by the components of the \emph{local representative} $\wh X_m=\varphi_{\alpha\ast m}X_m=(X_m^i)\in \bbR^n$:
+    \[X_m=X_m^i \partial_{i,m}.\]
+    Moreover, the original definition $X_m^i=\restr{\frac{\dd}{\dd t}}{t=0}\left(x^i\circ\gamma\right)(t)$ (where $x^i(m)=\varphi_\alpha^i(m)$) of the components in terms of a curve tangent to $X_m$ implies that 
+    \[X_m^i=X_m(x^i).\]
+    If $(U_\beta,\varphi_\beta)$ is another local chart at $m$, then the two bases $\{\partial_{i,m}^\alpha\}$, $\{\partial_{i,m}^\beta\}$ are related by the Jacobi matrix of the transition map $\varphi_{\alpha\beta}=\varphi_\alpha\circ\varphi_\beta^{-1}$:
+    \[\partial_{j,m}^\beta=\left[\left(\varphi_{\alpha\beta}\right)_{\ast \varphi_\beta(m)}\right]^i_j \partial_{i,m}^\alpha.\label{eq 1.4.17 RS1}\]
+\end{rem}
+
+\begin{xca}
+    Prove formula \eqref{eq 1.4.17 RS1}.
+\end{xca}
+
+The following follows straightforwardly from the properties of push-forwards from Theorem~\ref{prop of push-forwards} (exercise).
+
+\begin{prop}[{\cite[Prop.~2.2.9]{RS1}}]\label{prop 2.2.9 RS1}
+    Let $f\in C^\infty(M,M')$ be a smooth map between two manifolds. Then its derivative $f_\ast=\T f:\T M\to \T M'$ has the following properties.
+    \begin{enumerate}
+        \item $f_\ast$ is a \gls{vb} morphism with base map $f$.
+        \item $(\id_M)_\ast=\id_{\T M}$.
+        \item If $N$ is another manifold and $g\in C^\infty(M',N)$, then $(g\circ f)_\ast=g_\ast\circ f_\ast$.
+        \item If $f$ is a diffeomorphism, then $f_\ast$ is an isomorphism and $(f_\ast)^{-1}=(f^{-1})_\ast$.
+    \end{enumerate}
+\end{prop}
 
 
 \begin{example}[Tangent bundle of $\bbS^2$]\label{ex tangent bundle of S2}
@@ -1177,7 +1227,19 @@ A local chart $\varphi_\alpha$ gives rise to a local frame (the pullback of the 
     \[\T^\ast M=\Hom(\T M,M\times\bbR),\]
     where $\pr_1:M\times\bbR\to M$ is the trivial product bundle. The fiber $\T^\ast_m M$ of the cotangent bundle can be naturally identified with the dual of the corresponding fiber $\T_mM$. If $\tau_{\alpha\beta}$ are the transition functions on $\T M$, then the transition functions on $\T^\ast M$ are the inverse transposes, $(\tau_{\alpha\beta}^T)^{-1}$. Elements of the cotangent bundle are called \emph{cotangent vectors}, or simply \emph{covectors} on $M$.
 \end{defn}
-We will return to a more detailed study of the cotangent bundle in the next section.
+
+Since every function $f\in C^\infty(M)$ defines a covector field $\dd f$, we can in particular consider the differentials of the coordinate functions $x^i(m)=\varphi^i(m)$ of a chart $(U,\varphi)=(U_a,\varphi_a)$ and consider their action on a vector $X_m\in \T_m M$:
+\[(\dd x^i)_m(X_m)=X_m(x^i)=X_m^i,\label{eq 1.4.21 RS1}\]
+where $\wh X_m=(X_m^i) \in \bbR^n$ is the local representative of $X_m$ w.r.t.\ the chart. Thus, $\dd x^i$ are exactly the covectors that evaluate the components of vectors w.r.t.\ the given coordinates. As a consequence, the differentials $(\dd x^1,\ldots,\dd x^n)$ yield a local frame for $\T^\ast M$ which is dual to the coordinate frame \eqref{eq tangent coordinate frame} of $\T M$. In particular, every covector (or covector field) $\alpha_m\in \T^\ast_m M$ can be decomposed in this basis:
+\[\alpha_m=\alpha_i(m)(\dd x^i)_m,\quad \alpha_i(m)=\alpha_m(\partial_{i,m}),\label{eq 1.4.22 RS1}\]
+and the system of real numbers $(\alpha_1(m),\ldots,\alpha_n(m))$, viewed as an element of $\bbR^{n\ast}$, is called \emph{the local representative} of $\alpha_m$ w.r.t.\ the local chart $(U,\varphi)$.
+
+\begin{rem}
+    Building on \eqref{eq 1.4.17 RS1}, if $(U_b,\varphi_b)$ is another chart at $m$, then we can use \eqref{eq 1.4.21 RS1} and \eqref{eq 1.4.22 RS1} to read off the transformation laws for the basis and the components from \eqref{eq 1.4.9 RS1} and \eqref{eq 1.4.17 RS1}, respectively:
+    \[\dd \varphi_b^i=\left[\left(\varphi_b\circ\varphi_a^{-1}\right)_{\ast \varphi_a(m)}\right]^i_j \dd \varphi_a^j,\quad \alpha^b_{i,m}=\left[\left(\varphi_a\circ\varphi_b^{-1}\right)_{\ast \varphi_b(m)}\right]^j_i \alpha^a_{j,m}.\label{eq 1.4.23 RS1}\]
+\end{rem}
+
+We will return to a more detailed study of the cotangent bundle in \Chap~\ref{sec: differential forms}.
 
 Another important class of bundles, called jet bundles, are a generalization of the tangent and cotangent bundles. Recall that one way of defining tangent vectors was as directional derivatives acting on smooth functions. Similarly, covectors in $\T_p^\ast M$ are linear functionals on vectors, hence they can be identified with differentials $\dd_p f$ of smooth functions. The differential $\dd_p f$ can be identified with the linear term of the Taylor series for $f$ at $p$ in any local coordinate system. Thinking of functions $C^\infty(M)$ as sections of the trivial bundle $M\times\bbR$, we can alternatively describe covectors at $p\in M$ as equivalence classes of (local) sections of this bundle where two sections are considered equivalent if the order $1$ terms in their Taylor expansions at $p\in M$ in any local coordinate chart coincide. Extending this to higher derivatives naturally leads to the following construction.
 
@@ -1293,7 +1355,7 @@ In other words, a tensor of type $(r,s)$ is a multilinear map that takes in $s$ 
 \begin{defn}[Components of tensors]\index{Tensor!components}
     Let $\{e_i\}_{i=1}^n$ be a basis of $V$ and $\{\alpha^i\}_{i=1}^n$ the dual basis in $V^\ast$. The components of a tensor $t\in \bbT^r_s V$ in these bases are the set of $n^{r+s}$ numbers defined as
     \[
-    t_{i_1\ldots i_s}^{j_1\ldots j_r}=t\left(\alpha^{j_1},\ldots,\alpha^{j_r};e_{i_1},\ldots,e_{i_s}\right).
+    t_{i_1\ldots i_s}^{j_1\ldots j_r}=t\left(\alpha^{j_1},\ldots,\alpha^{j_r};e_{i_1},\ldots,e_{i_s}\right).\label{eq def components}
     \]
 \end{defn}
 
@@ -1302,6 +1364,21 @@ If a linear map $f:V\to V'$ in some bases $\{e_i\},\{e_j'\}$ is represented by a
 \left(\left(\bbT^r_s f\right)(t)\right)^{\bullet\bullet\bullet}_{\bullet\bullet\bullet}=A^\bullet_{j_1}\cdots A_{j_r}^\bullet \left(A^{-1}\right)^{i_1}_\bullet \cdots \left(A^{-1}\right)^{i_s}_\bullet t_{i_1\ldots i_s}^{j_1\ldots j_r},
 \]
 where we use the Einstein summation convention and $\bullet$ denotes unnamed free indices.
+
+
+\begin{defn}[Dual morphism]
+    Let $h:E\to E'$ be a morphism of \glspl{vb} $E\to M$, $E'\to M'$, whose base map $\underline{h}:M\to M'$ is a diffeomorphism (in particular, it can be a morphism of vector spaces). By the transpose symbol we denote the dual morphism 
+    \[h^T:E^{\prime\ast}\to E^\ast,\quad h^T(\xi)(x)\coloneqq \xi(h(x)),\quad x\in m'\in M',\; E_{\underline{h}^{-1}(m')},\; \xi\in E^{\prime\ast}_{m'},\]
+    which has the base map $\underline{h}^{-1}$.
+\end{defn}
+
+\begin{defn}[Pullback morphism]\label{def pullback morphism}
+    Like any morphism, the dual morphism $h^T$ induces its own transport operator $h^\ast\coloneqq h^T_\ast:\Gamma^\infty(E^{\prime\ast})\to \Gamma^\infty(E^\ast)$ via \eqref{eq def transport op}:
+    \[\left(h^T_\ast \sigma\right)_m(x)=(h^T\circ \sigma\circ \underline{h})_m(x)=\sigma_{\underline{h}(m)}(h(x)),\quad m\in M,\; x\in E_m.\]
+    But now, crucially, we notice that this formula actually does \emph{not} require $\underline{h}$ to be invertible. Thus, for \emph{any morphism} $h:E\to E'$, we define its pullback
+    \[h^\ast:\Gamma^\infty(E^{\prime\ast})\to \Gamma^\infty(E^\ast),\quad \left(h^\ast \sigma\right)_m(x)\coloneqq \sigma_{\underline{h}(m)}(h(x)),\quad m\in M,\; x\in E_m.\]
+    In the special case when $\underline h$ is a diffeomorphism, we have the coincidence $h^\ast\sigma=h^T\circ \sigma\circ\underline h=h_\ast^T\sigma$.
+\end{defn}
 
 Now we can use the procedure in Definition \ref{functors VB} to extend the tensor functors to bundles.
 
@@ -1400,12 +1477,79 @@ Now we can use the procedure in Definition \ref{functors VB} to extend the tenso
 \end{defn}
 
 \begin{rem}
-    From properties of $T$-functors, we have 
+    From the properties of $\T$-functors, we have 
     \[
     (f\circ g)_\ast=f_\ast\circ g_\ast,\quad (f\circ g)^\ast=g^\ast\circ f^\ast.
     \]
 \end{rem}
 
+
+\PRLsep
+
+Let us examine the coordinate expressions for the transformation rules of tensors. First, if a \gls{vb}  $E\to M$ has a local frame $(e_1,\ldots,e_k)$ over a domain $U\subset M$, then its dual $E^\ast$ has the unique dual local frame $(\alpha^1,\ldots,\alpha^k)$ defined by $\alpha^i(e_j)=\delta^i_j$. Its tensor bundle $\bbT^r_s E$ then has the induced local frame consisting of the $k^{r+s}$ local sections
+\[e_{i_1}\otimes\cdots\otimes e_{i_r}\otimes \alpha^{j_1}\otimes\cdots\otimes\alpha^{j_s},\quad i_1,\ldots,i_r,j_1,\ldots,j_s=1,\ldots,k.\]
+Every tensor field $t\in \Gamma^\infty(\bbT^r_s E)$ can be decomposed over $U$ as (summation over repeated indices implied as usual)
+\[\restr{t}{U}=t^{i_1,\ldots,i_r}_{j_1,\ldots,j_s}e_{i_1}\otimes\cdots\otimes e_{i_r}\otimes\alpha^{j_1}\otimes\cdots\alpha^{j_s},\]
+where the component functions $t^{i_1,\ldots,i_r}_{j_1,\ldots,j_s}$ are defined as in \eqref{eq def components}. 
+
+Finally, every \gls{vb} isomorphism $h:E\to E'$ induces isomorphisms 
+\[\bbT^r_s h:\bbT^r_s E\to \bbT^r_s E',\quad \bbT^r_s h=h\otimes \overset{r}{\cdots}\otimes h\otimes h^{-T}\otimes\overset{s}{\cdots}\otimes h^{-T},\]
+with the same base map $\underline{h}$. As a $(r+s)$-linear mapping, $\bbT^r_s h$ takes the form 
+\begin{multline}
+    \left(\bbT^r_s h \cdot t\right)(x_1,\ldots,x_s,\xi^1,\ldots,x^r)=\\
+    =t\left(h^{-1}(x_1),\ldots,h^{-1}(x_s),h^T(\xi^1),\ldots,h^T(\xi^r)\right)
+\end{multline}
+for all $t\in \bbT^r_s E_m$, $x_i\in E'_{\underline{h}(m)}$, and $\xi^i\in E^{\prime\ast}_{\underline{h}(m)}$. The corresponding transport operators $\bbT^r_s h_\ast$ (see \eqref{eq def transport op}) satisfy 
+\[\bbT^r_s h_\ast(t_1\otimes t_2)=(\bbT^r_s h_\ast \cdot t_1)\otimes(\bbT^r_s h_\ast \cdot t_2)\label{eq 2.4.15 RS1}\]
+for all $t_i\in \Gamma^\infty(\bbT^r_s E)$, and 
+\begin{multline}
+    \left(\bbT^r_s h_\ast \cdot t\right)(u_1,\ldots,u_s,\sigma_1,\ldots,\sigma_r)=\\
+    =t\left(h_\ast^{-1}u_1,\ldots,h_\ast^{-1}u_s,h^\ast \sigma_1,\ldots,h^\ast \sigma_r\right)\circ \underline{h}^{-1}
+\end{multline}
+for all $t\in \Gamma^\infty(\bbT^r_s E)$, $u_i\in\Gamma^\infty(E')$, $\sigma_i\in \Gamma^\infty(E^{\prime\ast})$ (recall Definition~\ref{def pullback morphism} of the pullback $h^\ast$).
+
+Let $(U,\varphi)$ be a local chart on $M$. Recall that the differentials of the coordinate functions $x^i(m)=\varphi^i(m)$ form a local coframe $(\dd x^1,\ldots,\dd x^n)$ dual to the local tangent frame $(\partial_1,\ldots,\partial_n)$, cf.\ \eqref{eq tangent coordinate frame}. The induced local frame in the tensor bundle $\bbT^r_s M$ consists of the local sections 
+\[\partial_{j_1}\otimes\cdots\otimes \partial_{j_r}\otimes \dd x^{i_1}\otimes\cdots\otimes \dd x^{i_s},\quad i_1,\ldots,i_r,j_1,\ldots,j_s=1,\ldots,n.\]
+Using these local frames, a tensor field $t\in\Gamma^r_s(M)$ can be represented locally as 
+\[\restr{t}{U}=t^{i_1,\ldots,i_r}_{j_1,\ldots,j_s}\partial_{i_1}\otimes\cdots\otimes\partial_{i_r}\otimes\dd x^{j_1}\otimes\cdots\otimes\dd x^{j_s},\]
+where the component functions are 
+\[t^{i_1,\ldots,i_r}_{j_1,\ldots,j_s}=t\left(\partial_{j_1},\ldots,\partial_{j_s},\dd x^{i_1},\ldots,\dd x^{i_r}\right).\label{eq 2.5.3 RS1}\]
+
+We can now determine the transformation laws for the local frames and for the corresponding component functions of tensor fields under a change of local chart. Thus, let $(V,\psi)$ be another local chart on $M$. The following formulas hold over $U\cap V$. From \eqref{eq 1.4.17 RS1} and \eqref{eq 1.4.23 RS1} we read off 
+\[\partial_i^\beta=\wt A^j_i \partial^\alpha_j,\quad \dd\varphi_\beta^i=A^i_j\dd\varphi_\alpha^j,\]
+where 
+\[A^i_j\coloneqq \left[\left(\varphi_{\beta\alpha}\right)_{\ast \varphi_\alpha}\right]^i_j,\quad \wt A^i_j\coloneqq \left[\left(\varphi_{\alpha\beta}\right)_{\ast \varphi_\beta}\right]^i_j,\]
+and an according formula for the induced local frames in $\bbT^r_s M$. Then, \eqref{eq 2.5.3 RS1} implies 
+\[(t^\beta)^{j_1,\ldots,j_r}_{i_1,\ldots,i_s}=\wt A^{k_1}_{i_1}\cdots \wt A^{k_s}_{i_s}A^{j_1}_{l_1}\cdots A^{j_r}_{l_r}(t^\alpha)^{l_1\ldots l_r}_{k_1\ldots k_s}.\label{eq 2.5.4 RS1}\]
+To pass to coefficient functions which depend on the coordinates, denote the elements of $\varphi_\alpha(U_{\alpha\beta})$ by $\bf x$ and the elements of $\varphi_\beta(U_{\alpha\beta})$ by $\bf y$ and write 
+\[y^i(\bf x)\coloneqq \varphi_{\beta\alpha}^i(\bf x),\quad x^i(\bf y)\coloneqq \varphi^i_{\alpha\beta}(\bf y).\]
+Then, from \eqref{eq 2.5.4 RS1} we read off 
+\[(t^\beta)^{j_1\ldots j_r}_{i_1\ldots i_s}\circ\varphi_\beta^{-1}=\frac{\partial x^{k_1}}{\partial y^{i_1}}\cdots \frac{\partial x^{k_s}}{\partial y^{i_s}}\frac{\partial y^{j_1}}{\partial x^{l_1}}\cdots \frac{\partial y^{j_r}}{\partial x^{l_r}}(t^\alpha)^{l_1\ldots l_r}_{k_1\ldots k_s}\circ\varphi_\alpha^{-1}.\label{eq 2.5.5 RS1}\]
+This formula is well known from classical tensor analysis. The argument in \eqref{eq 2.5.5 RS1} can be either $\bf x$, in which case $\partial x^{i_a}/\partial y^{k_a}$ and $(t^\beta)^{j_1,\ldots,j_r}_{i_1,\ldots,i_s}\circ\varphi_\beta^{-1}$ have to be evaluated at $\bf y(\bf x)$, or $\bf y$, in which case $\partial y^{l_a}/\partial x^{j_a}$ and $(t^\alpha)^{l_1\ldots l_r}_{k_1\ldots k_s}\circ\varphi_\alpha^{-1}$ have to be evaluated at $\bf x(\bf y)$.
+
+Next, let $f\in C^\infty(M,M')$ be a smooth map. According to Proposition~\ref{prop 2.2.9 RS1}, $f_\ast:\T M\to \T M'$ is a bundle morphism. Clearly, the transport and pullback operators corresponding to this bundle morphism coincide precisely with the push-forward and pullback operators defined above for tensor bundles. Explicitly, we have 
+\[(f_\ast t)(X_1,\ldots,X_s,\alpha_1,\ldots,\alpha_r)=t\left(f_\ast^{-1}X_1,\ldots,f_\ast^{-1}X_s,f^\ast\alpha_1,\ldots,f^\ast \alpha_r\right)\circ f^{-1}\]
+with $X_i\in\fX(M)$ and $\alpha_i\in\fX^\ast(M)$. Moreover, \eqref{eq 2.4.15 RS1} reads 
+\[f_\ast(t_1\otimes t_2)=(f_\ast t_1)\otimes (f_\ast t_2).\]
+
+
+\begin{rem}\label{rem 2.5.3 RS1}
+    \begin{enumerate}
+        \item Let $t\in \Gamma^r_s(M)$ and let $f:M\to M'$ be a diffeomorphism. Given local charts $(U,\varphi)$ and $(V,\psi)$ on $M$ and $M'$, respectively, the local formula for the push-forward of $t$ is given by \eqref{eq 2.5.4 RS1}, with $t$ replaced by $f_\ast t$ on the left hand side and by $t\circ f^{-1}$ on the right hand side, with $A$ and $\wt A$ given by (exercise)
+        \[A^i_j=\left[\left(\psi\circ f\circ \varphi^{-1}\right)_{\ast \varphi\circ f^{-1}}\right]^i_j,\quad \wt A^i_j=\left[\left(\varphi\circ f^{-1}\circ \psi^{-1}\right)_{\ast \psi}\right]^i_j.\]
+        \item Let $(U,\varphi)$ be a local chart on $M$. We compare the corresponding local representative $\varphi_\ast(\restr{t}{U})$ of a tensor field $t\in\Gamma^r_s(M)$ with the local representative of the mapping $t:M\to \bbT^r_s M$ w.r.t.\ the induced bundle chart $\left(\pi_{\bbT^r_s M}^{-1}(U),\bbT^r_s \varphi_\ast\right)$ on $\bbT^r_s M$, given by (exercise)
+        \[\bbT^r_s\varphi_\ast\circ \restr{t}{U}\circ \varphi^{-1}:\; \varphi(U)\to \varphi(U)\times\bbT^r_s\bbR^n.\]
+        Since 
+        \[\varphi_\ast \partial_i=\frac{\partial}{\partial_{x^i}},\quad\quad \varphi^\ast \dd x^i=\dd\varphi^i,\label{eq 2.5.9 RS1}\] 
+        we have 
+        \[\varphi_\ast\left(\restr{t}{U}\right)=\left(t^{j_1\ldots j_r}_{i_1\ldots i_s}\circ\varphi^{-1}\right)\dd x^{i_1}\otimes\cdots\otimes \frac{\partial}{\partial x^{j_r}}.\]
+        On the other hand, 
+        \[\left(\bbT^r_s\varphi_\ast\circ \restr{t}{U}\circ\varphi^{-1}\right)(\bf x)=\left(\bf x,\left(t^{j_1\ldots j_r}_{i_1\ldots i_s}\circ \varphi^{-1}(\bf x)\right)\bf e^{\ast i_1}\otimes\cdots\otimes \bf e_{j_r}\right),\]
+        where $\bf e_i$ denote the elements of the standard basis of $\bbR^n$ and $\bf e^{\ast i}$ the elements of the dual basis. The relation to $\varphi_\ast(\restr{t}{U})$ us as follows. The natural identifications of the tangent spaces $\T_{\bf x}(\varphi(U))$ with $\bbR^n$ abd of the cotangent spaces $\T_{\bf x}^\ast(\varphi(U))$ with $\bbR^{n\ast }$ induce a natural identification of tensor fields on $\varphi(U)$ with smooth maps $\varphi(U)\to \bbT^r_s\bbR^n$. Since the latter identifies the elements of the global frames $\left\{\frac{\partial}{\partial x^i}\right\}$ in $\T (\varphi(U))$ and $\{\dd x^i\}$ in $\T^\ast(\varphi(U))$ with the constant maps $\bf x\mapsto \bf e_i$ and $\bf x\mapsto \bf e^{\ast i}$, respectively, it identifies $\varphi_{\ast}\left(\restr{t}{U}\right)$ with $\bbT^r_s\varphi_\ast\circ \restr{t}{U}\circ \varphi^{-1}$. Note that for $M=\bbR^n$ and $\varphi=\id$, \eqref{eq 2.5.9 RS1} yields $\partial_i=\frac{\partial}{\partial x^i}$. 
+        
+        For all of these reasons, as is common in the literature, we will usually not distinguish between $\varphi^i$ and $x^i$, or $\partial_i$ and $\frac{\partial}{\partial x^i}$ (going forward also denoted by $\partial_{x^i}$), or $\dd \varphi^i$ and $\dd x^i$.
+    \end{enumerate}
+\end{rem}
 
 
 
@@ -2251,7 +2395,7 @@ For a diffeomorphism $F$,
 \[\Lie_{F_\ast X}(F_\ast t)=F_\ast (\Lie_X t).\]
 \end{prop}
 \begin{proof}
-    Define an operator $\mathbb{D}$ by $\mathbb{D}t=F^\ast \Lie_{F_\ast t}(F_\ast t)$. We know that $\mathbb{D}$ coincides with $\Lie_X$ on $C^\infty$ and $\fX(M)$. It is also easy to check that $\mathbb{D}$ is a tensor differential operator (Exercise). Then, by Willmore's Theorem, is must coincide with $\Lie_X$ on the entire tensor algebra.
+    Define an operator $\mathbb{D}$ by $\mathbb{D}t=F^\ast \Lie_{F_\ast t}(F_\ast t)$. We know that $\mathbb{D}$ coincides with $\Lie_X$ on $C^\infty$ and $\fX(M)$. It is also easy to check that $\mathbb{D}$ is a tensor differential operator (exercise). Then, by Willmore's Theorem, is must coincide with $\Lie_X$ on the entire tensor algebra.
 \end{proof}
 
 
@@ -2902,7 +3046,7 @@ We now extend $\dd$ to differential forms of all degrees.
     \[\wt\dd (f_0\cdot \dd f_1\wedge \cdots \wedge \dd f_p)\overset{(1),(3)}{=}(\wt\dd f_0) \wedge \dd f_1\wedge \cdots \wedge \dd f_p\overset{(2)}{=}(\partial_i f_0)\cdot \dd x^i\wedge \dd f_1\wedge \cdots \wedge \dd f_p.\]
     This formula, in fact, completely determines the action of $\wt\dd$ on all differential forms! Namely, if locally $\omega$ is expressed as \eqref{eq local rep of a p-form}, then
     \[\wt\dd \omega =\sum_{i_0=1}^n\sum_{1\leq i_1<\cdots <i_p\leq n}\partial_{i_0}\omega_{i_1 i_2\cdots i_p}\cdot \dd x^{i_0}\wedge \dd x^{i_1}\wedge\cdots\wedge \dd x^{i_p}.\label{eq local formula for d}\]
-    This formula is easily seen to be coordinate-invariant, and therefore, defines a true differential operator on the algebra of differential forms. All four properties immediately follow (Exercise; only property 3 is nontrivial). This proves the existence and uniqueness.
+    This formula is easily seen to be coordinate-invariant, and therefore, defines a true differential operator on the algebra of differential forms. All four properties immediately follow (exercise; only property 3 is nontrivial). This proves the existence and uniqueness.
 \end{proof}
 
 \begin{defn}[Exterior derivative]\index{Exterior derivative}
@@ -3201,7 +3345,7 @@ Now we can use local charts and the invariance of differentials to define integr
     \[\sum_\alpha\int_{U_\alpha}\chi_\alpha\omega=\sum_\beta\sum_\alpha\int \xi_\beta\chi_\alpha\omega=\sum_\beta\int_{U_\beta}\xi_\beta\omega,\]
     which proves independence on the \gls{pou}.
 
-    Finally, it is easy to combine the two arguments above to show that the integral is invariant when both the atlas and the \gls{pou} get replaced (Exercise).
+    Finally, it is easy to combine the two arguments above to show that the integral is invariant when both the atlas and the \gls{pou} get replaced (exercise).
 \end{proof}
 
 

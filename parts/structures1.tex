@@ -4031,11 +4031,10 @@ The fundamental equivalence and symmetry theorems for coframes can now be adapte
 \begin{intu*}
     This \sect\ presents the classical method of moving frames, as developed by Cartan (building on the work of Frenet, Serret, and most importantly Cartan's advisor Darboux). For the simplest class of applications, consider the problem of deciding whether two submanifolds $S,\wb S$ of a Lie group $G$ are \emph{congruent} in the sense that there exists a $g\in G$ such that $g\cdot S=\wb S$ (at least locally). Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} implies that the submanifold $S$ is completely determined exactly up to an action of $g\in G$ by the pullback (restrictions) of the Maurer-Cartan form $\theta_G$ to $S$. The components of this form comprise an over-complete coframe on $S$, i.e., there are linear dependencies among them. The coefficients of these dependencies are exactly the differential invariants that characterize $S$ up to congruence. By comparing (the relationships among) the differential invariants of $S$ and $\wb S$, one can unambiguously establish congruence. The goal of the method of moving frames is to extend this basic framework to arbitrary Lie group actions $G\acts M$ and congruences of submanifolds under those actions. It starts by (locally) \emph{equivariantly} embedding $M$ or some modification of $M$ into the Lie group $G$. Such an embedding is called a \emph{moving frame}, and the pullback of the Maurer-Cartan form by such a map is a \emph{moving coframe}. This allows one to fully characterize the group action on $M$ (and hence on submanifolds of $M$) in terms of differential invariants as above. 
     
-    In our exposition, we closely follow Peter Olver's review \cite{OlverCo}. The fundamental idea behind the method is to first turn the given group action $G\acts M$ into a free action $G\acts \wb M$ (where $\wb M$ is usually a higher-dimensional manifold than $M$), and then construct local equivariant maps $\rho:\wb M\to G$ -- moving frames. Then the pullbacks $\rho^\ast \theta_G^a$ of the components of the Maurer-Cartan form $\theta_G$ will comprise a moving coframe, which, when projected back to $M$, produces a set of $1$-forms with potential linear dependencies among them. These dependencies determine the differential invariants of the action and allow one to eliminate extra parameters from the moving frame, ultimately producing a moving frame on the original manifold $M$ or its jet spaces. For example, the most common application of the method is the equivalence (congruence) problem for submanifolds of a homogeneous space $M=G\slash H$. In this case, moving frames are invariant sections of the principal bundle $G\to G\slash H$ (or of its restriction $G\to S$ to the submanifold). 
+    In our exposition, we closely follow Peter Olver's review \cite{OlverCo}. The fundamental idea behind the method is to first turn the given group action $G\acts M$ into a free action $G\acts \wb M$ (where $\wb M$ will be a space of jets of submanifolds of $M$), and then construct local equivariant maps $\rho:\wb M\to G$ -- moving frames. Then the pullbacks $\rho^\ast \theta_G^a$ of the components of the Maurer-Cartan form $\theta_G$ will comprise an invariant moving coframe which, when projected back to $M$, produces a set of $1$-forms with potential linear dependencies among them. These dependencies determine the differential invariants of the action and allow one to eliminate extra parameters from the moving frame, ultimately producing a moving frame on the original manifold $M$ or one of its jet spaces. For example, the most common application of the method is the equivalence (congruence) problem for submanifolds of a homogeneous space $M=G\slash H$. In this case, moving frames are invariant sections of the principal bundle $G\to G\slash H$ (or of its restriction $G\to S$ to the submanifold). 
 
-    The main drawback of the historic version of the method is that it is somewhat ad hoc and sometimes runs into difficulties that have to be resolved on a case-by-case basis. Therefore, this \sect\ is largely devoid of theoretical results, and instead introduces the method by way of numerous examples. A more theoretically palatable version of the method, along with the full solution of the equivalence problem for submanifolds derived from it, will be presented in the \sect s following this one.
+    While equivalence problems provide the basic application and justification of the method, its usefulness extends far beyond. Moving frames are a general tool for conducting all sorts of basic geometric computations, as will be copiously demonstrated in \Chap~\ref{chap curves and surfaces}.\footnote{Actually, in the study of surfaces we will mostly be using the intimately related ``Cartan equivalence method'', but the same results can be obtained directly via moving frames.} The main drawback of the historic version of the method is that it is somewhat ad hoc and sometimes runs into difficulties that have to be resolved on a case-by-case basis. Therefore, this \sect\ is largely devoid of theoretical results, and instead introduces the method by way of numerous examples. A more theoretically palatable version of the method, along with the full solution of the equivalence problem for submanifolds derived from it, will be presented in the \sect s following this one.
 \end{intu*}
-
 
 In our approach to the theory and practical implementation of the method of moving frames, the left-invariant Maurer-Cartan forms on a finite-dimensional Lie group play an essential role. We have previously presented one way of easily computing them using the matrix representation $\theta_G=g^{-1}\dd g$. 
 
@@ -5707,7 +5706,7 @@ In general, the geometric structures whose equivalence we might want to establis
 
 If we think of geometric structures as equivariant functions $\varphi:P\to F$ on principal $G$-bundles $P\to M$ (cf.\ Definition~\ref{def geom structure}), then an \emph{equivalence of geometric structures} is simply an isomorphism $h:P\to \wb P$ of the principal bundles which takes one function to the other: $h^\ast \wb\varphi=\varphi$. Since each value $f\in F$ of $\varphi$ determines a reduction of $P$ to a $G_f$-bundle $Q=\varphi^{-1}(f)$, this agrees with the similarly intuitive definition of \emph{equivalence of $G_f$-structures} as equivalence of those $G_f$-structures as submanifolds of their respective $G$-bundles under the action of principal $G$-bundle isomorphisms. These two concepts become completely identical if the geometric structure is \emph{homogeneous}, which means that its image is an orbit of single point $f\in F$: $\im(\varphi)=\scrO_f=G\cdot f$ (in general, $\im(\varphi)$ consists of many orbits).
 
-However, true equivalence problems are \emph{not} referring to mere isomorphisms of principal bundles. Cartan's equivalence problem refers specifically to geometric structures on the \emph{base} $M$, i.e., on its natural bundles. In this case, we are working with the principal bundles of $r$-th order frames (or coframes) on $M$, and $F$ carries an action of the $r$-th order jet group $\GL^r_n(\bbR)$. Equivalences between structures on such bundles require solving an additional \emph{integrability problem}, in the sense that the bundle isomorphism must be naturally determined by a diffeomorphism of the bases as follows.
+However, true equivalence problems are \emph{not} referring to mere isomorphisms of principal bundles. Cartan's equivalence problem refers specifically to geometric structures on the base $M$, i.e., on its \emph{natural bundles}. In this case, according to Theorem~\ref{thm 1.2.8 Cap}, we are working with the principal bundles of $r$-th order frames (or coframes) on $M$, and $F$ carries an action of the $r$-th order jet group $\GL^r_n(\bbR)$. Equivalences between structures on such bundles require solving an additional \emph{integrability problem}, in the sense that the bundle isomorphism must naturally arise from a diffeomorphism of the bases as follows.
 
 \begin{defn}[Holonomic isomorphism]\index{Holonomic isomorphism}
     Let $P<\Fr^r(M)$ and $\wb P<\Fr^r(\wb M)$ be $G$-structures on manifolds $M$ and $\wb M$. An \gls{pfb} isomorphism $h:P\to \wb P$ is called holonomic if it is the lifting (prolongation) of a diffeomorphism $F:M\to \wb M$, so $h=F^{(r)}$.
@@ -5732,10 +5731,23 @@ For example, for $r=1$, this section is simply the local frame made up from the 
 In particular, the standard coordinate system on $\bbR^n$ generates a canonical section of the frame bundle $\bbR^n\times \GL_n^r(\bbR)$. By applying the action of $G$ to this canonical section of $\bbR^n\times \GL_n^r(\bbR)$ from the right, we span the whole ``flat'' $G$-structure $\bbR^n\times G<\bbR^n\times \GL_n^r(\bbR)$. Any choice of local coordinates on $M$ establishes a correspondence between the two canonical, for those coordinates,  frames on $M$ and $\bbR^n$ (which is why both frames are usually denoted by, e.g., $\partial\slash\partial x^i$ in the first-order case).  Since any isomorphism of principal bundles is completely determined by its action on any one section, this leads to the following general definition of integrability.
 
 \begin{defn}[Integrable $G$-structure]\index{Integrable $G$-structure}
-    A $G$-structure $P<\Fr^r(M)$ on a manifold $M$ is called \emph{integrable}, or \emph{locally flat}, if it is locally equivalent to the canonical flat $G$-structure on $\bbR^n$ given by the subbundle $\bbR^n\times G < \bbR^n\times\GL_n^r(\bbR)$. 
+    A $G$-structure $P<\Fr^r(M)$ on a manifold $M$ is called \emph{integrable}, or \emph{flat}, if it is locally equivalent to the canonical flat $G$-structure on $\bbR^n$ given by the subbundle $\bbR^n\times G < \bbR^n\times\GL_n^r(\bbR)$. 
 
     A geometric structure $\varphi:\Fr^r(M)\to F$, where $F$ carries an action (usually a linear representation) of the jet group $\GL_n^r(\bbR)$, and whose image contains a point $f\in F$ with stabilizer $G$, is called integrable, or locally flat, if it is locally equivalent to the canonical flat geometric structure on $\bbR^n$ uniquely determined (via equivariance) by its (constant) value $f$ on the canonical $G$-structure $\bbR^n\times G < \bbR^n\times\GL_n^r(\bbR)$ defined above. 
 \end{defn}
+
+\begin{example}
+    The simplest examples of nontrivial flat $G$-structures are those associated with a foliation, say by $p$-submanifolds, with structure group
+    \[G=\left\{\begin{pmatrix}
+        a & \ast \\
+        0 & b
+    \end{pmatrix}\; \middle|\; a\in \GL_p(\bbR),\; b\in\GL_{n-p}(\bbR)\right\}.\]
+    The flatness of a $G$-structure with this structure group is equivalent to the integrability of a distribution, so the Frobenius Theorem can be interpreted as saying that foliations correspond to flat $G$-structures.
+\end{example}
+
+\begin{example}\label{ex automorphism flat G-struc}
+    Let $G<\GL(V)$ and consider a local diffeomorphism $\varphi:(V,0)\to (V,0)$ defined near the origin. Then $\varphi$ is a local automorphism of the standard flat $G$-structure $\pi:V\times G\to V$ iff $\varphi_{\ast x}:V\to V$ is an element of $G$ for each $x$ in the domain of $\varphi$.
+\end{example}
 
 In particular, a $G_f$-structure defined by a geometric structure $\varphi$ as $\varphi^{-1}(f)$ is integrable iff the geometric structure $\varphi$ is itself integrable.
 
@@ -5747,21 +5759,90 @@ In particular, a $G_f$-structure defined by a geometric structure $\varphi$ as $
 \PRLsep
 
 
-Since Cartan's approach demands that we put every equivalence problem in the language of differential $1$-forms, we need to find a way to identify every $G$-structure with a collection of $1$-forms on some manifold. To this end, let $L^{-1}$ denote the Lie algebra of $\infty$-jets at $0\in\bbR^n$ of arbitrary vector fields on $\bbR^n$ (as maps $\bbR^n\to\bbR^n$). If $X\in\fX(\bbR^n)$, then its $\infty$-jet is represented by the canonical coordinates 
-\[\rmj^\infty_0 X\mapsto (X^i,X^i_j,X^i_{j_1j_2},X^i_{j_1j_2j_3},\ldots).\]
-Similarly, any diffeomorphism $F\in \Diff(\bbR^n)$ such that $F(0)=0$ has an $\infty$-jet $g=\rmj^\infty_0 F\in\GL_n^\infty(\bbR)$ at the origin that is described by the canonical coordinates 
+Since Cartan's approach demands that we recast every equivalence problem in the language of differential $1$-forms, we need to find a way to identify every $G$-structure with a collection of $1$-forms on some manifold. To this end, let $V\cong\bbR^n$ be a vector space and let $L^{-1}=\rmJ^\infty_0(V,V)$ denote the Lie algebra of $\infty$-jets at the origin of arbitrary vector fields on $V$ (viewed as maps $V\to V$; the Lie bracket is $[\rmj_0^\infty X,\rmj_0^\infty Y]=\rmj_0^\infty[X,Y]$). If we pick a basis for $V$ and $X\in\fX(V)$, then its $\infty$-jet is represented by the canonical coordinates 
+\[\rmj^\infty_0 X\mapsto (X^i,X^i_j,X^i_{j_1j_2},X^i_{j_1j_2j_3},\ldots).\label{eq coords on L-1}\]
+Note that these coordinates are constrained only by the condition that each ``tensor'' $X^i_{j_1\ldots j_r}$ must be symmetric in the lower indices. In other words, the space of $r$-jets of vector fields can be identified with the space $\Pol^r(V,V)$ of $V$-valued polynomials on $V$ of degree $\leq r$.
+
+Similarly, any diffeomorphism $F\in \Diff(V)$ such that $F(0)=0$ has an $\infty$-jet $g=\rmj^\infty_0 F\in\GL^\infty(V)$ at the origin that is described by the canonical coordinates 
 \[g=\rmj^\infty_0 F\mapsto  \left(g^i_{j_1\ldots j_r}\coloneqq \frac{\partial F^i(0)}{\partial x^{j_1}\cdots x^{j_r}}\right)_{r\geq 1}.\]
-(The requirement that $F(0)=0$ is necessary for these jets to form a group.)
-The group $\GL_n^\infty(\bbR)$ then naturally acts on $L^{-1}$ via the chain rule applied to the action $X\mapsto g_\ast\circ X\circ g^{-1}$ on vector fields:
-\[(\rmj_0^\infty F)\cdot (\rmj^\infty_0 X)=(g^i_jX^j,g^i_kX^k_j+g^i_{kj}X^j,g^i_kX^k_{j_1j_2}+g^i_{kj_1}X^k_{j_2}+g^i_{kj_2}X^k_{j_1}+g^i_{kj_1j_2}X^k,\ldots).\]
+(The requirement that $F(0)=0$ is necessary for these jets to form a group.) Thus, an $r$-jet $\sigma\in \Pol^r(V,V)$ belongs to the jet group $\GL^r(V)$ iff it is $0$-respecting ($\sigma(0)=0$, or $\sigma^i=0$) and its linear part ($\sigma_{\ast 0}$, or $\sigma^i_j$) is invertible. We thus have the decomposition into homogeneous components
+\[\GL^r(V)\cong \GL(V)\ltimes \prod_{r'=2}^r S^{r'}(V),\quad r=2,3,\ldots,\infty,\]
+where $S^r(V)\coloneqq V\otimes \bigodot^r V^\ast$ is the space of symmetric homogeneous $V$-valued polynomials of degree $r$ on $V$. The fact that the product is semidirect can be derived from the next exercise.
+
+\begin{example}
+    All polynomial maps of the form $F(\bf x)^i=x^i+g^i_{j_1 j_2}x^{j_1}x^{j_2}$ are locally diffeomorphic at $\bf x=0$. 
+\end{example}
+
+\begin{xca}
+    Show that the group law of $\GL^\infty(V)$ is given by 
+    \[(g\circ h)^i_{j_1\ldots j_r}=g^i_{k_1\ldots k_r}h^{k_1}_{j_1}\cdots h^{k_r}_{j_r}+\cdots +g^i_k h^k_{j_1\ldots j_r},\]
+    where the ellipsis includes all possible terms of the form $g^i_{k_1\ldots k_{q}}h^{k_1}_{J_1}\cdots h^{k_q}_{J_q}$, where $J_1,\ldots,J_q$ are non-decreasing multi-indices which together partition the set $1,\ldots,r$ (for example, $r=5$, $q=2$, $J_1=(1,3,4)$, $J_2=(2,5)$). Partitions consisting of the same multi-indices are not distinguished, i.e., every term in the final formula has coefficient $1$. Use this to also express the inversion map $g\mapsto g^{-1}$ in the canonical coordinates.
+
+    Note that $r$-jets only influence $r$- or higher-order jets of the product. 
+\end{xca}
+
+\begin{xca}
+    Show that diffeomorphisms whose $k$-jet at the origin matches the identity element of $\GL^k(V)$ determine a normal subgroup of $\GL^\infty(V)$. Conclude that the above semidirect product decomposition of $\GL^r(V)$ holds and, moreover, is telescopic in the sense that $\prod_{r'\geq k}^r S^{r'}(V)=S^k(V)\ltimes \prod_{r'\geq k+1}^rS^{r'}(V)$ for each $k$. 
+\end{xca}
+
+The group $\GL^\infty(V)$ then naturally acts on $L^{-1}$ via the chain rule applied to the action $X\mapsto g^\ast X=g_\ast^{-1}\circ X\circ g$ on vector fields:
+\[(\rmj_0^\infty F^{-1})\cdot (\rmj^\infty_0 X)=(g^i_jX^j,g^i_kX^k_j+g^i_{kj}X^j,g^i_kX^k_{j_1j_2}+g^i_{kj_1}X^k_{j_2}+g^i_{kj_2}X^k_{j_1}+g^i_{kj_1j_2}X^k,\ldots).\]
 In addition, we denote 
-\[L^r\coloneqq \{\rmj_0^\infty X\mid X\in\fX(\bbR^n): \rmj^r_0X=0\},\quad r\geq 0.\]
-Thus, $L^r$ is the space of $r$-jets of diffeomorphisms of $\bbR^n$ that fix the origin and whose $r$-jet at the origin is the identity. In particular, $L^0$ is the Lie algebra of $\GL_n^\infty(\bbR)$. Note that $L^{r'}$ is naturally included as a subspace into $L^{r}$ for $r'<r$. 
-It is obvious that the above action descends to actions of $(r+1)$-jets of diffeomorphisms on $r$-jets of vector fields. In other words, $\GL_n^{r+1}(\bbR)$ has a natural action on $L^{-1}\slash L^r$. Since the Lie algebra of $\GL_n^\infty(\bbR)$ is exactly $L^0$, the above action on the $r>0$ part with $X^k=0$ is exactly the adjoint action. Crucially, this adjoint action of $\GL_n^\infty(\bbR)$ on $L^0$ can be truncated at finite $r$ to produce the adjoint action of $\GL_n^r(\bbR)$ on $L^0\slash L^r$:
+\[L^r\coloneqq \{\rmj_0^\infty X\mid X\in\fX(V): \rmj^r_0X=0\},\quad r\geq 0.\]
+Thus, $L^r$ is the space of $r$-jets of diffeomorphisms of $\bbR^n$ that fix the origin and whose $r$-jet at the origin is the identity. In particular, $L^0=\frakgl^\infty(V)$ is the Lie algebra of $\GL^\infty(V)$. Note that $L^{r'}$ is naturally included as a subspace into $L^{r}$ for $r'<r$. 
+
+It is obvious that the above action descends to actions of $(r+1)$-jets of diffeomorphisms on $r$-jets of vector fields. In other words, $\GL^{r+1}(V)$ has a natural action on $L^{-1}\slash L^r$. Since the Lie algebra of $\GL^\infty(V)$ is exactly $L^0$, the above action on the $r>0$ part with $X^k=0$ is exactly the adjoint action. Crucially, this adjoint action of $\GL^\infty(V)$ on $L^0$ can be truncated at finite $r$ to produce the adjoint action of $\GL^r(V)$ on $L^0\slash L^r$:
 \[\Ad_{g}\left(X^i_j,\ldots,X^i_{j_1\ldots j_r}\right)=\left(g^i_kX^k_j,\ldots, g^i_kX^k_{j_1\ldots j_r}+\cdots+g^i_{kj_1\ldots j_{r-1}}X^k_{j_r}+\cdots +g^i_{kj_2\ldots j_r}X^k_{j_1}\right).\]
-The quotient spaces $L^0\slash L^r$, therefore, are the Lie algebras $\frakgl_n^r(\bbR)$ of the finite jet groups $\GL^r_n(\bbR)$. The remaining part of $L^{-1}\cong(L^{-1}\slash L^0)\oplus L^0$ is the model tangent space that we denote by
+The quotient spaces $L^0\slash L^r$, therefore, are the Lie algebras $\frakgl^r(V)$ of the finite jet groups $\GL^r(V)$. The remaining part of $L^{-1}\cong(L^{-1}\slash L^0)\oplus L^0$ is the model tangent space that we denote by
 \[V\coloneqq L^{-1}\slash L^0\cong \T_0\bbR^n,\]
-so we have the canonical decompositions $L^{-1}\slash L^r\cong V\oplus(L^0\slash L^r)\cong V\oplus\frakgl_n^r(\bbR)$.
+so we have the canonical decompositions $L^{-1}\slash L^r\cong V\oplus(L^0\slash L^r)\cong V\oplus\frakgl^\infty(V)$. Moreover, \eqref{eq coords on L-1} implies that $\frakgl^\infty(V)$ can be decomposed as the semidirect sum of spaces of $V$-valued homogeneous polynomials (symmetric tensors):
+\[\begin{aligned}
+    \frakgl^r(V)&\cong \frakgl^{r-1}(V)\ltimes S^r(V).
+\end{aligned}\]
+In summary, we have the natural decompositions 
+\[\begin{aligned}
+    L^{-1}&\cong V\oplus \frakgl^\infty(V),\\
+    \frakgl^\infty(V)&\cong \frakgl(V)\ltimes (S^1(V)\ltimes (S^2(V)\ltimes\cdots.
+\end{aligned}\label{eq decomp of L-1}\]
+One says that $\frakgl^\infty(V)$ is the \emph{full prolongation} of $\frakgl(V)$. This terminology is explained by the following discussion.
+
+\begin{defn}[Prolongation of a matrix Lie group]
+    Let $G<\GL(V)$ be a closed linear Lie group. We denote by $G^{(\infty)}<\GL^\infty(V)$ the subgroup of all $\infty$-jets $\rmj^\infty_0 F$ of $0$-respecting local automorphisms $F$ of the standard flat $G$-structure $\pi:V\times G\to V$ (see Example~\ref{ex automorphism flat G-struc}). It is a group with the standard group operations on jets of maps. We omit proving that it is a (potentially infinite-dimensional) Lie group.
+\end{defn}
+
+The infinitesimal $0$-respecting automorphisms of the standard flat $G$-structure on $V$ are then those local vector fields $X\in\fX(V)$ vanishing at $0\in V$ whose local flows $\Fl_t^X$ consist of automorphisms of the $G$-structure. 
+
+\begin{lem}
+    The infinitesimal automorphisms of the standard flat $G$-structure on $V$ are exactly the vector fields $X$ defined near $0$ and vanishing at $0$ such that $X_{\ast x}\in\frakg<\End(V)$ for all $x$ in the domain, where $\frakg$ is the Lie algebra of $G$.
+\end{lem}
+\begin{proof}
+    Defining the curve $\gamma(t)=\left(\Fl^X_t\right)_{\ast x}$ in $\GL(V)$, it takes values in $G$ iff the following expression lies in $\frakg$:
+    \[\begin{aligned}
+        \dot\gamma(t)\gamma(t)^{-1}&=\left(\frac{\dd}{\dd t}\left(\Fl^X_t\right)_{\ast x}\right)\left(\Fl_t^X\right)_{\ast x}^{-1}=\left(X\circ \Fl_t^X\right)_{\ast x}\left(\Fl_t^X\right)_{\ast x}^{-1}=\\
+        &=\left(X(\Fl_t^X(x))\right)_{\ast x}.
+    \end{aligned}\]
+\end{proof}
+
+We consider now the $\infty$-jets $\rmj^\infty_0 X$ of all these infinitesimal $0$-respecting automorphisms. These jets form a subspace $\frakg^{(\infty)}<\frakgl^\infty(V)$ which we may view as the \emph{full prolongation} 
+\[\frakg^{(\infty)}=\frakg\ltimes (\frakg^2\ltimes (\frakg^3\ltimes\cdots,\]
+where $\frakg^r=\frakg^\infty\cap S^r(V)$. (This also defines all finite prolongations $\frakg^{(r)}=\frakg\ltimes \frakg^2\ltimes \cdots\ltimes\frakg^{r+1}$.) Then $\frakg^{(\infty)}$ is a Lie algebra with the bracket 
+\[[\rmj^\infty_0X,\rmj^\infty_0Y]=-\rmj^\infty_0[X,Y],\]
+and with the smooth exponential map given by $\exp(\rmj^\infty_0X)=\rmj_0^\infty(\Fl_1^X)$ (in general, it is not surjective onto any neighborhood of the identity in $G^{(\infty)}$).
+
+\begin{xca}
+    Compute the full prolongation $\frakg^{(\infty)}=\frakg\ltimes\frakg^2\ltimes\cdots $ of $\frakg=\frakso_n$.
+\end{xca}
+
+Finally, we consider the set of \emph{all} (not just $0$-respecting) infinitesimal automorphisms of the standard flat $G$-structure. Clearly, these are just vector fields $X$ such that $X_{\ast x}\in\frakg$ at all $x$. Letting $\fraka^{(\infty)}$ denote the Lie algebra of $\infty$-jets of all such vector fields, with the same bracket, we get a decomposition analogous to \eqref{eq decomp of L-1}:
+\[\fraka^{(\infty)}=V\oplus\frakg^{(\infty)}.\]
+The adjoint representation $G^{(\infty)}\acts \fraka^{(\infty)}$ is again given by 
+\[\Ad_{\rmj_0^\infty F}\rmj_0^\infty X=\rmj_0^\infty(F^\ast X)=\rmj_0^\infty(F_{\ast}^{-1}\circ X\circ F).\]
+
+
+
+\PRLsep
+
+
 We also have the standard bundle projections 
 \[\pi^r:\Fr^r(M)\to \Fr^0(M)\coloneqq M,\]
 and
@@ -9337,7 +9418,8 @@ Now let $A<W\otimes V^\ast$ be a tableau with prolongations $A^{(q)}<W\otimes \b
     A^{(k-1)}\otimes\bigwedge\nolimits^q V^\ast,& k\geq 1,\\
     W\otimes\bigwedge\nolimits^q V^\ast,& k=0.
 \end{cases}\]
-The defining property of prolongations, which is that the \emph{total prolongation} $\bf{A}=\bigoplus_{k\geq 0} A^{(k)}$ is the largest graded subspace of the maximal ideal $W\otimes \bigodot\nolimits^{>0}V^\ast$ that is closed under differentiation and satisfies \[\bf{A}\cap (W\otimes \bigodot\nolimits^{p+1}V^\ast)=A,\quad \bf{A}\cap (W\otimes\bigodot\nolimits^q V^\ast)=0,\quad q\leq p,\]
+The defining property of prolongations, which is that the \emph{total prolongation} $\bf{A}=\bigoplus_{k\geq 0} A^{(k)}$ is the largest graded subspace of the maximal ideal $W\otimes \bigodot\nolimits^{>0}V^\ast$ that is closed under differentiation and satisfies 
+\[\bf{A}\cap \left(W\otimes \bigodot\nolimits^{p+1}V^\ast\right)=A,\quad \bf{A}\cap \left(W\otimes\bigodot\nolimits^q V^\ast\right)=0,\quad q\leq p,\]
 implies that $\delta$ maps
 \[\delta:C^{k,q}(A)\to C^{k-1,q+1}(A),\]
 and we denote by $\rmH^{k,q}(A)$ the resulting \emph{Spencer cohomology}:
