@@ -1,8 +1,11 @@
 % !TEX root = ../geom_autistic_intro.tex
-\chapter{Category Theory II}
-\section{Limits and colimits}\label{Limits and colimits}
 
-Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now generalize their construction to define limits and colimits of $\calJ$-shaped diagrams.
+
+\chapter{Homological Algebra I: Exactness}
+
+\section{Category theory II: limits and colimits}\label{Limits and colimits}
+
+Recall the notions of products and coproducts from \S\ref{Sec.Products}. We now generalize their construction to define limits and colimits of arbitrarily shaped diagrams.
 
 \begin{defn}[Limits and colimits]\index{Limit of a functor}\index{Colimit of a functor}
     Let $\calJ $ be an index category and $F$ a functor into any category $\calC $, $F:\calJ \to \calC $, thus representing a $J$-shaped diagram in $\calC $ (see Def. \ref{categories of diagrams}). Then the limit
@@ -59,9 +62,9 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
 \end{cor}
 \begin{thm}\label{thm diagonal functor adjoint to limit}
     Recall that $\calC ^\calJ $ is the category of $J$-shaped diagrams in $\calC $, i.e., covariant functors from $\calJ $ to $\calC $ (see Example~\ref{categories of diagrams}). Suppose that for each functor $F:\calJ \to\calC $ the limit $\limit F$ exists in $\calC $. Then the \emph{diagonal functor} which assigns to each object $A$ the \emph{constant diagram} $\underline A\in \calC ^\calJ $ (i.e., all objects of $\calJ $ are mapped to $A$ and all morphisms to $\mathrm{id}_A$),
-    \[\Delta: \calC \to \calC ^{\calJ };\; A\mapsto \underline{A},\]
+    \[\Delta: \calC \to \calC ^{\calJ},\quad A\mapsto \underline{A},\]
     is left adjoint to the limit functor
-    \[\limit: \calC ^\calJ \to \calC ;\; F\mapsto \limit F\]
+    \[\limit: \calC ^\calJ \to \calC,\quad F\mapsto \limit F\]
     (this functor forgets the morphisms associated with the limiting object).
 \end{thm}
 \begin{proof}
@@ -104,7 +107,7 @@ Recall the notions of products and coproducts, see \S\ref{Sec.Products}. We now 
     Limits commute with limits (assuming all limits of the necessary shapes exist). Colimits commute with colimits.
 \end{cor}
 \begin{proof}
-    Viewing the limit is a functor  $\limit:\calC^\calJ\to \calC$, we have just shown that it is right adjoint to the diagonal functor (a.k.a.~the constant diagram functor). Therefore it is continuous, i.e., commutes with limits. 
+    Viewing the limit as a functor  $\limit:\calC^\calJ\to \calC$, we have just shown that it is right adjoint to the diagonal functor (a.k.a.~the constant diagram functor). Therefore it is continuous, i.e., commutes with limits. 
 \end{proof}
 
 Note that limits and colimits typically do not commute.
@@ -112,7 +115,7 @@ Note that limits and colimits typically do not commute.
 \begin{example}[Seifert-van Kampen theorem redux]\index{Theorem!Seifert-van~Kampen}
     We've learned by now that contravariant representable (or hom-) functors map colimits to limits, so they're not the functors that preserve colimits. It is the left adjoints that do. Seifert-van~Kampen theorem essentially states that the fundamental functors $\pi_1$ or $\Pi$ preserve \emph{some} colimits (namely pushouts). 
     
-    While not a proof, one categorical source of intuition for this is that both of these functors are left adjoints. The reason $\pi_1$ preserves only pushouts, and not all colimits, is that the functor that maps the category $\mathsf{Top}$ into the homotopy category $\mathsf{hTop}$ doesn't preserve colimits, so $\pi_1$ doesn't either. However, the descended version of this functor, $\pi_1:\mathsf{hTop}\to \mathsf{Gr}$ happens to be the left adjoint of a certain functor that constructs a topological space given a group. Looking far ahead, this is the functor $\rmB:G\mapsto \rmB G$ that constructs the classifying space of $G$. It is so called because $\rmB G$ is the base space of a universal principal $G$-bundle such that any other $G$-bundle is a pullback along some continuous map into $\rmB G$. For example, universal covering spaces are exactly the classifying spaces for the fundamental groups of their base, -- e.g., $B\bbZ=\bbS^1$ and $\rmB(\bbZ\ast \bbZ)=\bbS^1\vee \bbS^1$ etc. $\rmB G$ is in fact the unique (up to ``weak'' homotopy equivalence) space whose fundamental group is $G$ and all other homotopy groups are trivial (which also identifies it with the first  Eilenberg-MacLane space $\rmK(G,1)$).
+    While not a proof, one categorical source of intuition for this is that both of these functors are left adjoints. The reason $\pi_1$ preserves only pushouts, and not all colimits, is that the functor that maps the category $\mathsf{Top}$ into the homotopy category $\mathsf{hTop}$ doesn't preserve colimits, so $\pi_1$ doesn't either. However, the descended version of this functor, $\pi_1:\mathsf{hTop}\to \mathsf{Gr}$, happens to be the left adjoint of a certain functor that constructs a topological space given a group. Looking far ahead, this is the functor $\rmB:G\mapsto \rmB G$ that constructs the classifying space of $G$. It is so called because $\rmB G$ is the base space of a universal principal $G$-bundle such that any other $G$-bundle is a pullback along some continuous map into $\rmB G$. For example, universal covering spaces are exactly the classifying spaces for the fundamental groups of their base, -- e.g., $\rmB\bbZ=\bbS^1$ and $\rmB(\bbZ\ast \bbZ)=\bbS^1\vee \bbS^1$ etc. $\rmB G$ is in fact the unique (up to weak homotopy equivalence) space whose fundamental group is $G$ and all other homotopy groups are trivial (which also identifies it with the first  Eilenberg-MacLane space $\rmK(G,1)$).
 
     So, by a happy coincidence, pushouts in the homotopy category lined up with pushouts in the original topological category.
 \end{example}
@@ -285,11 +288,6 @@ The ellipsis indicates that one can keep requiring various extra properties of t
 
 
 
-
-
-\clearpage
-\chapter{Homological Algebra I: Exactness}
-
 \section{Exact sequences and functors}
 
 From now on in this \partt\ we work only with abelian categories. In fact, homological algebra can be viewed as the extension of linear algebra to all abelian categories (most importantly, ring modules). As we have already seen, it arises inevitably in geometric problems, where the spaces of functions, differential forms, etc., form modules over the ring of smooth functions, and so the classic tools of the linear algebra of fields and vector spaces do not suffice.
@@ -460,7 +458,7 @@ For the Hom functor, the obstruction to right exactness is evaluated by the Ext-
     \scriptstyle
     0\to \Hom(X,A)\to \Hom(X,B)\to\Hom(X,C)\to \Ext^1(X,A)\to \Ext^1(X,B)\to\Ext^1(X,C)\to\cdots,\\
     \scriptstyle
-    0\to \Hom(C,Y)\to \Hom(B,Y)\to\Hom(A,Y)\to \Ext^1(C,Y)\to \Ext^1(B,Y)\to\Ext^1(A,Y)\to\cdots
+    0\to \Hom(C,Y)\to \Hom(B,Y)\to\Hom(A,Y)\to \Ext^1(C,Y)\to \Ext^1(B,Y)\to\Ext^1(A,Y)\to\cdots.
 \end{gather}
 Finally, for the tensor functor, the obstruction to left exactness is evaluated by the Tor-functors (``torsion''):
 \[
