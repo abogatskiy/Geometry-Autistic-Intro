@@ -1494,9 +1494,11 @@ There is a set of natural projections $\pi^r_{s}:\rmJ^r(M,M')\to \rmJ^s(M,M')$ f
 
 Recall that the \emph{differential group of order $r$}, or just the \emph{$r$-jet group},  $\GL_n^r(\bbR)$ is defined as the set of $r$-jets at the origin of diffeomorphisms $\bbR^n\to \bbR^n$ that fix the origin. Clearly, under a change of coordinates on $M$, the canonical coordinates transform under an action of the differential group. This makes $\rmJ^r(M,M')$ into a \gls{vb} over $M\times M'$ with structure group $\GL_n^r(\bbR)$. 
 
-We can describe the Lie algebra of $\GL^r_n(\bbR)$. Consider the set of all vector fields $X\in\fX(\bbR^n)$ on $\bbR^n$ such that $X_0=0$. Denote by $\frakgl^r_n(\bbR)$ the set of all $r$-jets at $0$ of these vector fields. This is a vector space, and there is a natural Lie algebra structure on it, inherited from the Lie bracket of vector fields:
-\[[\rmj_0^r X,\rmj_0^r Y]=\rmj^r_0[X,Y].\]
-By looking at the flows of these vector fields, it is easy to confirm that this is the Lie algebra of $\GL^r_n(\bbR)$.
+\begin{rem}
+    We can describe the Lie algebra of $\GL^r_n(\bbR)$. Consider the set of all vector fields $X\in\fX(\bbR^n)$ on $\bbR^n$ such that $X_0=0$. Denote by $\frakgl^r_n(\bbR)$ the set of all $r$-jets at $0$ of these vector fields. This is a vector space, and there is a natural Lie algebra structure on it, inherited from the Lie bracket of vector fields:
+    \[[\rmj_0^r X,\rmj_0^r Y]=\rmj^r_0[X,Y].\]
+    By looking at the flows of these vector fields, it is easy to confirm that this is the Lie algebra of $\GL^r_n(\bbR)$.
+\end{rem}
 
 Consider on $\rmJ^r(\bbR^n,\bbR^{n'})$ the \emph{Cartan distribution} $\calC$ defined as the annihilator of the \emph{contact bundle} spanned by the \emph{canonical Cartan forms}, or just \emph{$r$-th order contact forms} \index{Cartan distribution}\index{Contact form}\index{Contact bundle}
 \[\theta^j_I=\dd p^j_I-\sum_{i=1}^n p^j_{I+1_i}\dd x^i,\quad 1\leq j\leq n,\quad |I|\leq r-1,\]
@@ -1507,7 +1509,7 @@ and they are all obviously linearly independent at each point. Thus, the rank of
 The next theorem shows that the Cartan distribution allows one to recognize sections of the jet bundle $\pi^r:\rmJ^r(\bbR^n,\bbR^{n'})\to \bbR^n$ that are prolongations of smooth functions $\bbR^n\to \bbR^{n'}$.
 
 \begin{thm}[{{\cite[Thm.~3.1.1]{Kras}}}]\label{thm 3.1.1 Kras}
-    Let $Q\subset\rmJ^r(\bbR^n,\bbR^{n'})$ be an $n$-dimensional surface projecting immersively to the space of independent variables $\bbR^n$ in a neighborhood of a point $p\in Q$ (we call such submanifolds \emph{transverse}). The surface $Q$ is an integral manifold of the Cartan distribution $\calC$ in that neighborhood iff it can be given by relations of the form 
+    Let $Q\subset\rmJ^r(\bbR^n,\bbR^{n'})$ be an $n$-dimensional surface projecting immersively to the space of independent variables $\bbR^n$ in a neighborhood of a point $p\in Q$ (we call such submanifolds \emph{transverse}). The surface $Q$ is an integral manifold of the Cartan distribution $\calC$ in that neighborhood iff it is the $r$-th order prolongation of some map, i.e., it can be written as
     \[u^i=f^i(\bf{x}),\quad p^j_I=\frac{\partial^{|I|}f^j}{(\partial x^1)^{i_1}\cdots (\partial x^n)^{i_n}}(\bf{x}),\]
     for some smooth functions $f^1,\ldots,f^{n'}$, where $I=(i_1,\ldots,i_n)$ and $|I|\leq r$.
 \end{thm}
@@ -1519,7 +1521,7 @@ The next theorem shows that the Cartan distribution allows one to recognize sect
     which is equivalent to the equalities $f^j_I=\frac{\partial^{|I|}f^j}{(\partial x^1)^{i_1}\cdots(\partial x^n)^{i_n}}$ for all $j=1,\ldots,n'$ and $|I|\leq r$.
 \end{proof}
 
-For us it will be important to consider jets not of arbitrary maps, but of sections of a vector bundle. Let $\pi:E\to M$ be a \gls{vb} and denote by $\rmJ^rE$ the space of $r$-jets of sections $s:M\to E$. It is easy to see that the space of such jets is still a \gls{vb} over $\rmJ^0(E)=E$ with the same structure group. There are projection maps $\pi^r_s:\rmJ^rE\to \rmJ^s(E)$ for $r>s$, in particular $\pi^r_0:\rmJ^rE\to E$. Moreover, there are projections $\pi^r\coloneqq \pi\circ \pi^r_0:\rmJ^rE\to M$.
+We will only study local properties of differential systems, so $M'$ can always safely be replaced with an $\bbR^k$. In that case, any map $M\to M'$ can be thought of as a section of a vector bundle $M\times\bbR^k\to M$. In other words, it will be convenient to study \emph{jets of sections} of \glspl{vb}. Thus, let $\pi:E\to M$ be a \gls{vb} of rank $k$ and denote by $\rmJ^rE$ the space of $r$-jets of sections $s:M\to E$. It is easy to see that the space of such jets is still a \gls{vb} over $\rmJ^0E=E$ with the same structure group. There are projection maps $\pi^r_s:\rmJ^rE\to \rmJ^sE$ for $r>s$, in particular $\pi^r_0:\rmJ^rE\to E$. Moreover, there are projections $\pi^r\coloneqq \pi\circ \pi^r_0:\rmJ^rE\to M$.
 
 For a section $s\in \Gamma^\infty(E)$, its \emph{$r$-prolongation} is the section $\rmj^r s\in \Gamma^\infty(\rmJ^rE\to M)$ defined pointwise as $(\rmj^r s)(m)=\rmj_m^r s$. We will denote the graph of the prolonged section by $\graph^r(s)\subset \rmJ^rE$ and call it the \emph{$r$-graph} of $s$.
 
@@ -1528,20 +1530,20 @@ For a section $s\in \Gamma^\infty(E)$, its \emph{$r$-prolongation} is the sectio
 \end{defn}
 
 \begin{rem}\label{jets and R-planes}
-    Obviously, every R-plane is transversal to the fibers of $\pi^r$. Note that a point $p'\in \rmJ^{r+1}E$ in the fiber over $m\in M$ can be considered as the pair consisting of the point $p=\pi^{r+1}_r(p')\in \rmJ^rE$ and an R-plane $L_{p'}<\T_p \rmJ^rE$ defined as the plane tangent to $\graph^r(s)$ for some section $s\in\Gamma^\infty(E)$ such that $\rmj^{r+1}_m s=p'$. (It is easily seen that this plane is uniquely determined by the jet $\rmj^{r+1}_m s$). In other words, $p'$ is the set of values of derivatives up to order $r+1$ while the plane $L_{p'}<\T_p \rmJ^rE$ is determined by the values of first derivatives of $r$-th derivatives.
+    Obviously, every R-plane is transversal to the fibers of $\pi^r$. Note that a point $p'\in \rmJ^{r+1}E$ in the fiber over $m\in M$ can be considered as the pair consisting of the point $p=\pi^{r+1}_r(p')\in \rmJ^rE$ and an R-plane $L_{p'}<\T_p \rmJ^rE$ defined as the plane tangent to $\graph^r(s)$ for some section $s\in\Gamma^\infty(E)$ such that $\rmj^{r+1}_m s=p'$. It is easily seen that this plane is uniquely determined by the jet $\rmj^{r+1}_m s$. In other words, $p'$ is the set of values of derivatives up to order $r+1$ while the plane $L_{p'}<\T_p \rmJ^rE$ is determined by the values of first derivatives of $r$-th derivatives.
 \end{rem}
 
 Fix a point $p\in \rmJ^rE$ and consider various points $p'\in \rmJ^{r+1}E$ projecting to $p$ under $\pi^{r+1}_r$, i.e., in the fiber $(\rmJ^{r+1}E)_p\coloneqq (\pi^{r+1}_r)^{-1}(p)$. As $p'$ moves in this fiber, the corresponding $n$-plane $L_{p'}<\T_p\rmJ^rE$ rotates somehow around the point $p$, but always remains transversal w.r.t.\ the projection $\pi^r:\rmJ^rE\to M$. 
 
-We are ready to define the extend the definition of the Cartan distribution to jets of arbitrary vector bundles.
+As a result of these observations, we can give a coordinate-invariant definition of the Cartan distribution.
 
 \begin{defn}[Canonical contact system/Cartan distribution]\index{Contact system}\index{Cartan distribution}
     Let $E\overset{\pi}{\to} M$ be a \gls{vb} and fix an integer $r>0$. The Cartan distribution, or the \emph{$r$-th order canonical contact system}, $\calC<\T \rmJ^rE$ is defined as follows: for a point $p\in \rmJ^rE$, the fiber $\calC_p$ is defined as the span of all R-planes $L_{p'}$ for $p'\in (\rmJ^{r+1}E)_p$. In other words, $\calC$ is the union of all tangent spaces of $r$-graphs of all sections $s$ such that $\rmj^r_m s=p$.
-
-    As we will show below, in the canonical coordinates $\calC$ is locally generated as the annihilator of the contact forms $\theta^j_I=\dd p^j_I-\sum_{i=1}^n \dd x^i$, $|I|\leq r-1$. All sections of the annihilator of the Cartan distribution are called \emph{contact forms}. Theorem~\ref{thm 3.1.1 Kras} shows that contact forms are exactly the $1$-forms that vanish along $r$-graphs of all sections.
 \end{defn}
 
-Let us give a coordinate description of the distribution. Namely, we will write down a basis of the plane $L_{p'}$ corresponding to the point $p'\in \rmJ^{r+1}E$ in an bundle coordinate system $x^1,\ldots,x^n,u^1,\ldots,u^k$ on $E$, where $u^1,\ldots,u^k$ are the coordinates along the fiber of $E$. The canonical coordinates of the point $p'$ will be denoted by $x^i(p')$, $u^j(p')$ and $p^j_I(p')$.
+As we will show below, in the canonical coordinates $\calC$ is locally generated as the annihilator of the contact forms $\theta^j_I=\dd p^j_I-\sum_{i=1}^n \dd x^i$, $|I|\leq r-1$. However, \emph{all} sections of the annihilator of the Cartan distribution (the contact bundle) are called \emph{contact forms}. Theorem~\ref{thm 3.1.1 Kras} shows that contact forms are exactly the $1$-forms that vanish along $r$-graphs of all sections.
+
+Let us give a coordinate description of the Cartan distribution. Namely, we will write down a basis of the plane $L_{p'}$ corresponding to the point $p'\in \rmJ^{r+1}E$ in an bundle coordinate system $x^1,\ldots,x^n,u^1,\ldots,u^k$ on $E$, where $u^1,\ldots,u^k$ are the coordinates along the fiber of $E$. The canonical coordinates of the point $p'$ will be denoted by $x^i(p')$, $u^j(p')$, and $p^j_I(p')$, where for $I=\varnothing$ we set $p^j=u^j$.
 
 Let $s$ be a section such that $\rmj^{r+1}_m s=p'$, and let the R-plane $L_{p'}$ be tangent to $\graph^r(s)$. Let us choose a basis in $L_{p'}$ consisting of the vectors $X_1^p,\ldots,X_n^p$ whose projections to $M$ coincide with $\partial_{x^1}(m),\ldots,\partial_{x^n}(m)$. From the definition of the canonical coordinates, it is easy to deduce the formulas for the basis vectors $X^p_i$:
 \[X^p_i=\frac{\partial}{\partial x^i}+\sum_{|I|\leq r}\sum_{j=1}^k p^j_{I+1_i}(p')\frac{\partial}{\partial p^j_I}\quad \in L_{p'}<\T_p \rmJ^rE,\]
@@ -1563,7 +1565,7 @@ Denote the space of vertical vectors at the point $p$ by
 \[\calV_p\rmJ^rE\coloneqq \T_p\left(\rmJ^rE_{\pi^r_{r-1}(p)}\right)<\T_p \rmJ^rE.\]
 The vectors $\partial/\partial p_I^j$, $|I|=r$, form a basis in this space. Note that any vertical tangent vector $X\in \calV_p\rmJ^rE$ can be considered as a shift vector: for a basis vector $\partial/\partial p_I^j$, $|I|=r$, it suffices to take a point $\wt p'\in \rmJ^rE_p$ such that all its coordinates except one coincide with the corresponding coordinates of $p'$, while $p^j_{I+1_i}(\wt p')=p^j_{I+1_i}(p')+1$. Then $\delta_i=X_i^{\wt p'}-X_i^{p'}=\partial/\partial p^j_I$.
 
-We have thus shown that the space of $(r+1)$-jets that project to a given $r$-jet is not a vector space, but rather an affine space. This makes sense because there is no canonical choice of a section with a given $r$-jet at a point, unless this jet is zero (then we can use the zero section). This stands in contrast with the fibers of the jet bundles $\pi^r:\rmJ^rE\to M$ themselves, where the jets of the zero section always provide a natural choice of origin in each fiber. We have the following theorem.
+We have thus shown that the space of $(r+1)$-jets that project to a given $r$-jet is not a vector space, but rather an affine space. This makes sense because there is no canonical choice of a section with a given $r$-jet at a point, unless this jet is zero (then we can use the zero section). This stands in contrast with the fibers of the jet bundles $\pi^r:\rmJ^rE\to M$ themselves, where the jets of the zero section always provide a natural choice of origin in each fiber. Finally, we note that the jet coordinates $p^j_I$ of a given order $|I|=r$ can be interpreted as coefficients of homogeneous polynomials in $\bf{x}$, and as such can be identified with the components of symmetric covariant tensors on $M$ with values in $\calV E$. We thus have the following theorem.
 
 \begin{thm}[{{\cite[Thm.~3.2.1]{Kras}}}]\label{thm 3.2.1 Kras}
     Let $\calC$ be the Cartan distribution on $\rmJ^rE$. Then:
@@ -1571,7 +1573,7 @@ We have thus shown that the space of $(r+1)$-jets that project to a given $r$-je
         \item The fiber $(\pi^{r+1}_{r})^{-1}(p)$ of $\rmJ^{r+1}E$ over a given $r$-jet $p\in \rmJ^rE$ is naturally an affine space modeled on the vector space $\bigodot\nolimits^{r+1}\T^\ast_m M\otimes \calV_{\pi^r_0(p)}E$, where $m=\pi^r(p)$. 
         
         Consequently, the bundle $\pi^{r+1}_r:\rmJ^{r+1}E\to \rmJ^rE$ is an \emph{affine bundle} modeled on the \gls{vb} 
-        \[\left((\pi^r)^\ast \bigodot\nolimits^{r+1}(\T^\ast M)\right)\otimes (\pi^r_0)^\ast (\calV E);\]        
+        \[\left((\pi^r)^\ast \bigodot\nolimits^{r+1}\T^\ast M\right)\otimes (\pi^r_0)^\ast (\calV E);\]        
         \item The Cartan plane $\calC_p<\T_p \rmJ^rE$ can be written as the direct sum
         \[\calC_p=\calV_p\rmJ^rE\oplus L_{p'},\label{eq 3.2.2 Kras}\]
         where $\calV_p\rmJ^rE$ is the tangent space to the fiber of the projection $\pi^r_{r-1}$ and $L_{p'}$ is the R-plane corresponding to an arbitrary $(r+1)$-jet $p'\in(\pi^{r+1}_r)^{-1}(p)$. In canonical coordinates, the vertical component is spanned by the basis
@@ -1615,16 +1617,16 @@ The Cartan distribution $\calC$ on $\rmJ^r E$ is \emph{not} integrable since, fo
 is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifolds of $\calC$ are of dimension less than $\rank \calC$. To obtain a completely integrable distribution, we must restrict $\calC$ to a submanifold of that dimension or lower.
 
 \begin{rem}
-    The above discussion shows that the Cartan distribution is spanned by all possible vectors $D_i^p$ parametrized by all $(r+1)$-jets $p$. As the order $r$ increases, the rank of the distribution grows. However, the commutator above fails to vanish only because the vectors $\partial/\partial p^j_{I+1_i}$ get in the way. On the infinite jet bundle $\rmJ^\infty E$, defined as the \emph{projective (codirected) limit} 
+    The above discussion shows that the Cartan distribution is spanned by all possible vectors $D_i^p$ parametrized by all $(r+1)$-jets $p$. As the order $r$ increases, the rank of the distribution grows. However, the commutator above fails to vanish only because the vectors $\partial/\partial p^j_{I+1_i}$ get in the way. The situation is radically different on the infinite jet bundle $\rmJ^\infty E$, defined as the \emph{projective (codirected) limit} 
     \[
     \begin{tikzcd}
         & & & \arrow[dll,"\pi^{\infty}_{r+1}",swap]\arrow[dl]\rmJ^\infty E\arrow[dr]\arrow[drr]\arrow[drrr,"\pi^\infty"] & & &
         \\
-        \cdots \arrow[r] & \rmJ^{r+1} E\arrow[r] & \rmJ^rE \arrow[r] & \cdots \arrow[r]& \rmJ^1 E\arrow[r] &  E\arrow[r] & M,
+        \cdots \arrow[r] & \rmJ^{r+1} E\arrow[r] & \rmJ^rE \arrow[r] & \cdots \arrow[r]& \rmJ^1 E\arrow[r,"\pi^1_0"] &  E\arrow[r,"\pi"] & M,
     \end{tikzcd}
     \]
     which means that points of $\rmJ^\infty E$ are infinite sequences $\theta_l \in\rmJ^l E$, $l\geq 0$, such that $\pi^{l+1}_l(\theta_{l+1})=\theta_l$ for all $l$. In other words, this is the bundle of the full Taylor series of all possible smooth sections of $E$.
-    The Cartan distribution $\calC^\infty$ on $\rmJ^\infty E$ is intuitively constructed in the same way as above, and as a result it doesn't involve \emph{any} vertical directions and at every point it is complementary to the vertical subspace. For the same reason, its rank turns out to be simply $n=\dim M$. Finally, since the commutator written above doesn't occur, it also ends up being involutive. Using an argument akin to the Frobenius Theorem, one can then show that all integral manifolds of $\calC^\infty$ are locally the graphs of infinite prolongations of sections of $E$. In other words, integral manifolds of $\calC^\infty$ are locally one to one with sections of $E$. This is why the geometric description of differential equations becomes most intuitive after infinitely many prolongations.
+    The Cartan distribution $\calC^\infty$ on $\rmJ^\infty E$ is intuitively constructed in the same way as above, and as a result it doesn't involve \emph{any} vertical directions and at every point it is complementary to the vertical subspace. For the same reason, its rank turns out to be simply $n=\dim M$. Finally, since the commutator written above doesn't occur, it also ends up being involutive. Using an argument akin to the Frobenius Theorem, one can then show that all integral manifolds of $\calC^\infty$ are locally the graphs of infinite prolongations of sections of $E$. In other words, integral manifolds of $\calC^\infty$ are locally one-to-one with sections of $E$. This is why the geometric description of differential equations becomes most intuitive after infinitely many prolongations.
 \end{rem}
 
 \begin{rem}[Contact structures]
@@ -2882,9 +2884,9 @@ In fact, even more common is the equivalence problem for differential equations,
     where in the latter expression $r$ is meant to be the solution of the transcendental equation $UV = \left(\frac{r}{2M} - 1\right)e^{r/2M}$, and the full coordinate transformation reads 
     \[
         U = \pm\sqrt{\frac{r}{2M} - 1}e^{r/4M}\sinh\left(\frac{t}{4M}\right), \quad\quad 
-        V = \pm\sqrt{\frac{r}{2M} - 1}e^{r/4M}\cosh\left(\frac{t}{4M}\right)
+        V = \pm\sqrt{\frac{r}{2M} - 1}e^{r/4M}\cosh\left(\frac{t}{4M}\right).
     \]
-    Without knowing this coordinate transformation beforehand, finding the correct equivalence map $(t,r)\mapsto (U,V)$ would require solving a system of coupled first-order PDEs. Meanwhile, Cartan's method of equivalence reduces such problems to a very general and purely algorithmic procedure in linear algebra. Part of the procedure consists in finding the relevant differential invariants. In this case, both solutions are stationary (invariant under time translations or Lorentz boosts in the $(U,V)$-plane) rotationally invariant, so we can consider the point symmetry group $\SO_3\times\bbR$ pulling back the metric tensor by spatial rotations and time translations. Due to the structure of Einstein's Field Equations, this assumption leaves room for only one differential invariant, called the \emph{Kretschmann scalar} $K=\sfR_{abcd}\sfR^{abcd}= \frac{48 M^2}{r^6}$. For the equivalence to hold, it turns out to be sufficient that this invariant be the same for both solutions, and since $K$ is a monotonic function of $r$, we can recover the unique change of coordinates by matching the points with the same value of $K$: $K(r)=\wb K(UV)$. This method is often used to ``detect'' true singularities in solutions to the field equations, as opposed to singularities in the coordinate system. If $K$ remains bounded in the vicinity of the suspected singularity, there can't actually be a singularity at that point since the values of $K$ must be invariant under changes of coordinates (point transformations).
+    Without knowing this coordinate transformation beforehand, finding the correct equivalence map $(t,r)\mapsto (U,V)$ would require solving a system of coupled first-order PDEs. Meanwhile, Cartan's method of equivalence reduces such problems to a very general and purely algorithmic procedure in linear algebra. Part of the procedure consists in finding the relevant differential invariants. In this case, both solutions are stationary (invariant under time translations or Lorentz boosts in the $(U,V)$-plane) and rotationally invariant, so we can consider the point symmetry group $\SO_3\times\bbR$ pulling back the metric tensor by spatial rotations and time translations. Due to the structure of Einstein's Field Equations, this assumption leaves room for only one differential invariant, called the \emph{Kretschmann scalar} $K=\sfR_{abcd}\sfR^{abcd}= \frac{48 M^2}{r^6}$. For the equivalence to hold, it turns out to be sufficient that this invariant be the same for both solutions, and since $K$ is a monotonic function of $r$, we can recover the unique change of coordinates by matching the points with the same value of $K$: $K(r)=\wb K(UV)$. This method is often used to ``detect'' true singularities in solutions to the field equations, as opposed to singularities in the coordinate system. If $K$ remains bounded in the vicinity of the suspected singularity, there can't actually be a singularity at that point since the values of $K$ must be invariant under changes of coordinates (point transformations).
 \end{example}
 
 
@@ -4025,7 +4027,7 @@ The fundamental equivalence and symmetry theorems for coframes can now be adapte
 
 
 
-\section{Method of moving (co)frames}
+\section{Method of moving (co)frames I}
 
 
 \begin{intu*}
@@ -4290,7 +4292,11 @@ Note that we do not need the explicit isotropy groups for the transformation gro
 \end{rem}
 
 
-\PRLsep
+
+
+
+
+\section{Method of moving (co)frames II}
 
 
 The instructive example we have considered above was conveniently chosen so that the actions of $G$ as well as its prolongations are all transitive, so that after two prolongations the jet space has the same number of dimensions as $G$, and specifying a moving coframe on it determines a local diffeomorphism to $G$. The next task is to extend the method to \emph{intransitive} actions. We still assume that $\dim G=d$ and $G$ acts effectively and regularly, which implies that its orbits, which we take to have dimension $s$, form a foliation of $M$. We choose a local \emph{slice} $\varSigma\subset M$ of this foliation, i.e., a submanifold of dimension $n-s$ intersecting the orbits transversally, and introduce a \emph{compatible lift} $\rho:M\to G$ by requiring that, for each $m$ near $\varSigma$, the lift $\rho$ satisfies 
@@ -4446,7 +4452,7 @@ The first dependency between $\wh\eta_0^1$ and $\wh\eta_0^4$ leads to the reduct
 
 
 \begin{intu*}
-    In the next three \sect s, we present a more systematic approach to the method of moving frames (and coframes), developed by Peter Olver in \cite{OlverCo2}. Its basic difference from the classical method as described in the preceding \sect\ is that the action  $G\acts M$ is first lifted to the trivial principal bundle $M\times G$, making the action free and guaranteeing the existence of moving frames. Then the construction of moving frames requires normalization, which can be done after the action on $M$ is \emph{prolonged} sufficiently many times (to an action on a jet space $\rmJ^{(r)}$) to capture a complete set of fundamental differential invariants. In other words, here the normalization step follows prolongation, as opposed to proceeding simultaneously with it. The drawback of this approach is that one may ultimately need to do more prolongations that one would otherwise have to. But the benefit is that this method is guaranteed to work for \emph{any} group action and is very amenable to deriving very general and powerful results about equivalence problems.
+    In the next few \sect s, we present a more systematic approach to the method of moving frames (and coframes), developed by Peter Olver in \cite{OlverCo2}. Its basic difference from the classical method as described in the preceding two \sect s is that the action  $G\acts M$ is first lifted to the trivial principal bundle $M\times G$, making the action free and guaranteeing the existence of moving frames. Then the construction of moving frames requires normalization, which can be done after the action on $M$ is \emph{prolonged} sufficiently many times (to an action on a jet space $\rmJ^{(r)}$) to capture a complete set of fundamental differential invariants. In other words, here the normalization step follows prolongation, as opposed to proceeding simultaneously with it. The drawback of this approach is that one may ultimately need to do more prolongations that one would otherwise have to. But the benefit is that this method is guaranteed to work for \emph{any} Lie group action and is very amenable to deriving very general and powerful results about equivalence problems. In this section we present the general regularization technique and the construction of moving frames. After that, we devote several sections to solving (in the sense of reducing to comparison of classifying manifolds) the equivalence problem for submanifolds using this method.
 \end{intu*}
 
 
@@ -5042,7 +5048,7 @@ There are two types of syzygies, the first arising from the commutation rules fo
 
 
 
-\section{Equivalence of submanifolds}
+\section{Equivalence of submanifolds I}
 
 We now apply out general results to the equivalence problem for submanifolds under a \emph{freely} acting transformation group. (Non-free actions require prolongation, which we will address separately below.) Given submanifolds $S,\wb S\subset M$, we want to know whether or not they are \emph{congruent} under a group of transformations, meaning that $g\cdot S=\wb S$ for some $g\in G$. In this section, we shall only consider the local problem, so that the cogruence is only required to hold in a neighborhood of a point. Global questions can be handled by continuation processes (e.g., analytic continuation).
 
@@ -5175,7 +5181,10 @@ The proof is similar to that of Proposition~\ref{prop 7.11 OlverCo2}.
 In summary, regularization can be used to replace the equivalence of $p$-dimensional submanifolds $S<M$ under a non-free action of $G$ by the equivalence of $(p+d)$-dimensional submanifolds $S_G<P$ under the free regularized $G$-action. This approach avoids the use of differential invariants, and will also take care of singular submanifolds, since the lifted submanifold $R$ is always regular. Incidentally, Proposition~\ref{prop 7.12 OlverCo2} can be used to justify partial normalization, while the preceding remark can be used to justify complete normalization. 
 
 
-\PRLsep
+
+
+
+\section{Moving frames for submanifolds}
 
 
 In applications to equivalence problems, one restricts the moving frame to a submanifold of the underlying space $M$. The resulting maps from the submanifold to the group agree with the traditional definition of a moving frame in classical geometrical situations. Assume that $(X,i)$ is an immersed submanifold, so $i:X\hookrightarrow M$ is an immersion with $S=i(X)$.
@@ -5323,7 +5332,7 @@ is an invariant contact form. The resulting collection $\bm\vartheta=\{\vartheta
 \PRLsep
 
 
-The construction of higher-order moving frames proceeds in direct analogy with the zeroth-order version. As uaully, for simplicity, we only treat the case of a right moving frame.
+The construction of higher-order moving frames proceeds in direct analogy with the zeroth-order version. As usual, we only treat the case of a right moving frame for simplicity.
 
 \begin{defn}[Higher-order moving frame]
     For the jet space $\rmJ^r=\rmJ^r(\bbR^p,M)^{\mathrm{imm}}$ of jets of $p$-dimensional submanifolds, an $r$-th order (right) moving frame is a (local) map $\rho^{(r)}:\rmJ^r\supset U\to G$ which is (locally) $G$-equivariant w.r.t.\ the prolonged action $G^{(r)}\acts \rmJ^r$, and the right multiplication action $h\mapsto h\cdot g^{-1}$ on $G$ itself.
@@ -5476,7 +5485,11 @@ where $Q=P^{-1}=\left(\sigma^{(r)}\right)^\ast Z$ can be constructed directly fr
 
 
 
-\PRLsep
+
+
+
+
+\section{Equivalence of submanifolds II}
 
 
 We are finally ready to present the solution to the general equivalence problem for submanifolds. As we have seen, in the zeroth-order case, the answer is provided in Theorems~\ref{thm 7.7 OlverCo2} and \ref{thm 7.8 OlverCo2}. However, in the non-free case, we need to prolong in order to make the group act (locally) freely. Since two submanifolds are equivalent under the aciton of $G$ on $M$ iff their $r$-jets are equivalent under the prolonged action $G^{(r)}\acts\rmJ^r$, we can then readily adapt our earlier results.
@@ -5702,6 +5715,14 @@ In other words, if $\wb S=g\do S$, then the condition $\rmj^k_{z_0} \wb S=\rmj^k
 
 \section{Equivalence of \texorpdfstring{$G$}{G}-structures}
 
+
+\begin{intu*}
+    As we have seen, the outcome of the method of moving frames is typically an \emph{overdetermined} collection of $1$-forms on a manifold, so they have linear dependencies which produce differential invariants whose values then need to be fixed to \emph{normalize} the frame. In the remaining \sect\ s of the chapter, we will discuss an alternative method, called \emph{Cartan's method of equivalence}, whose outcome is typically an \emph{undertermined} collection of invariant $1$-forms, which doesn't include the Maurer-Cartan components. The differential invariants are then found in the components of the structure function (intrinsic torsion) of the corresponding exterior differential system. 
+
+    While this method is a bit less intuitive, its practice is a lot more straightforward because it uses only the language of differential forms. In fact, the moving frame and the equivalence methods can be seen as largely analogous but also complementary parts of a larger unified method for computing differential invariants of Lie pseudogroups and solving general equivalence problems. 
+\end{intu*}
+
+
 In general, the geometric structures whose equivalence we might want to establish are not directly represented by a coframe. In Cartan's approach, the equivalence conditions must be reformulated in terms of a collection of $1$-forms which need not comprise a coframe. Correspondingly, an equivalence between such structures is required to be not just a general diffeomorphism, but a diffeomorphism belonging to a special class of transformations that respect the geometric structures under consideration. These restrictions on transformations must also be encoded in terms of $1$-forms. 
 
 If we think of geometric structures as equivariant functions $\varphi:P\to F$ on principal $G$-bundles $P\to M$ (cf.\ Definition~\ref{def geom structure}), then an \emph{equivalence of geometric structures} is simply an isomorphism $h:P\to \wb P$ of the principal bundles which takes one function to the other: $h^\ast \wb\varphi=\varphi$. Since each value $f\in F$ of $\varphi$ determines a reduction of $P$ to a $G_f$-bundle $Q=\varphi^{-1}(f)$, this agrees with the similarly intuitive definition of \emph{equivalence of $G_f$-structures} as equivalence of those $G_f$-structures as submanifolds of their respective $G$-bundles under the action of principal $G$-bundle isomorphisms. These two concepts become completely identical if the geometric structure is \emph{homogeneous}, which means that its image is an orbit of single point $f\in F$: $\im(\varphi)=\scrO_f=G\cdot f$ (in general, $\im(\varphi)$ consists of many orbits).
@@ -5736,7 +5757,7 @@ In particular, the standard coordinate system on $\bbR^n$ generates a canonical 
     A geometric structure $\varphi:\Fr^r(M)\to F$, where $F$ carries an action (usually a linear representation) of the jet group $\GL_n^r(\bbR)$, and whose image contains a point $f\in F$ with stabilizer $G$, is called integrable, or locally flat, if it is locally equivalent to the canonical flat geometric structure on $\bbR^n$ uniquely determined (via equivariance) by its (constant) value $f$ on the canonical $G$-structure $\bbR^n\times G < \bbR^n\times\GL_n^r(\bbR)$ defined above. 
 \end{defn}
 
-\begin{example}
+\begin{example}\label{ex foliation g-structure}
     The simplest examples of nontrivial flat $G$-structures are those associated with a foliation, say by $p$-submanifolds, with structure group
     \[G=\left\{\begin{pmatrix}
         a & \ast \\
@@ -5804,7 +5825,7 @@ In summary, we have the natural decompositions
     L^{-1}&\cong V\oplus \frakgl^\infty(V),\\
     \frakgl^\infty(V)&\cong \frakgl(V)\ltimes (S^1(V)\ltimes (S^2(V)\ltimes\cdots.
 \end{aligned}\label{eq decomp of L-1}\]
-One says that $\frakgl^\infty(V)$ is the \emph{full prolongation} of $\frakgl(V)$. This terminology is explained by the following discussion.
+One says that $\frakgl^\infty(V)$ is the \emph{total prolongation} of $\frakgl(V)$. This terminology is explained by the following discussion.
 
 \begin{defn}[Prolongation of a matrix Lie group]
     Let $G<\GL(V)$ be a closed linear Lie group. We denote by $G^{(\infty)}<\GL^\infty(V)$ the subgroup of all $\infty$-jets $\rmj^\infty_0 F$ of $0$-respecting local automorphisms $F$ of the standard flat $G$-structure $\pi:V\times G\to V$ (see Example~\ref{ex automorphism flat G-struc}). It is a group with the standard group operations on jets of maps. We omit proving that it is a (potentially infinite-dimensional) Lie group.
@@ -5817,20 +5838,18 @@ The infinitesimal $0$-respecting automorphisms of the standard flat $G$-structur
 \end{lem}
 \begin{proof}
     Defining the curve $\gamma(t)=\left(\Fl^X_t\right)_{\ast x}$ in $\GL(V)$, it takes values in $G$ iff the following expression lies in $\frakg$:
-    \[\begin{aligned}
-        \dot\gamma(t)\gamma(t)^{-1}&=\left(\frac{\dd}{\dd t}\left(\Fl^X_t\right)_{\ast x}\right)\left(\Fl_t^X\right)_{\ast x}^{-1}=\left(X\circ \Fl_t^X\right)_{\ast x}\left(\Fl_t^X\right)_{\ast x}^{-1}=\\
-        &=\left(X(\Fl_t^X(x))\right)_{\ast x}.
-    \end{aligned}\]
+    \[\dot\gamma(t)\gamma(t)^{-1}=\left(\frac{\dd}{\dd t}\left(\Fl^X_t\right)_{\ast x}\right)\left(\Fl_t^X\right)_{\ast x}^{-1}=\left(X\circ \Fl_t^X\right)_{\ast x}\left(\Fl_t^X\right)_{\ast x}^{-1}=X_{\ast \Fl_t^X(x)}.\]
+    Setting $t=0$, we get the asserted claim.
 \end{proof}
 
-We consider now the $\infty$-jets $\rmj^\infty_0 X$ of all these infinitesimal $0$-respecting automorphisms. These jets form a subspace $\frakg^{(\infty)}<\frakgl^\infty(V)$ which we may view as the \emph{full prolongation} 
+We consider now the $\infty$-jets $\rmj^\infty_0 X$ of all these infinitesimal $0$-respecting automorphisms. These jets form a subspace $\frakg^{(\infty)}<\frakgl^\infty(V)$ which we may view as the \emph{total prolongation} 
 \[\frakg^{(\infty)}=\frakg\ltimes (\frakg^2\ltimes (\frakg^3\ltimes\cdots,\]
 where $\frakg^r=\frakg^\infty\cap S^r(V)$. (This also defines all finite prolongations $\frakg^{(r)}=\frakg\ltimes \frakg^2\ltimes \cdots\ltimes\frakg^{r+1}$.) Then $\frakg^{(\infty)}$ is a Lie algebra with the bracket 
 \[[\rmj^\infty_0X,\rmj^\infty_0Y]=-\rmj^\infty_0[X,Y],\]
 and with the smooth exponential map given by $\exp(\rmj^\infty_0X)=\rmj_0^\infty(\Fl_1^X)$ (in general, it is not surjective onto any neighborhood of the identity in $G^{(\infty)}$).
 
 \begin{xca}
-    Compute the full prolongation $\frakg^{(\infty)}=\frakg\ltimes\frakg^2\ltimes\cdots $ of $\frakg=\frakso_n$.
+    Compute the total prolongation $\frakg^{(\infty)}=\frakg\ltimes\frakg^2\ltimes\cdots $ of $\frakg=\frakso_n$.
 \end{xca}
 
 Finally, we consider the set of \emph{all} (not just $0$-respecting) infinitesimal automorphisms of the standard flat $G$-structure. Clearly, these are just vector fields $X$ such that $X_{\ast x}\in\frakg$ at all $x$. Letting $\fraka^{(\infty)}$ denote the Lie algebra of $\infty$-jets of all such vector fields, with the same bracket, we get a decomposition analogous to \eqref{eq decomp of L-1}:
@@ -5923,7 +5942,7 @@ which is clearly identified with the coframe dual to the frame $s(m)$. More gene
 \end{rem}
 
 The equivariance property of $\iota_p$ implies the equivariance of $\theta$ w.r.t.\ the standard action $\GL(V)\overset{\sigma^0}{\acts}V$:
-\[\Phi_g^\ast\theta=\sigma^0_{g^{-1}} \theta,\quad g\in \GL(V).\]
+\[\Phi_g^\ast\theta=\sigma^0_{g^{-1}} \theta,\quad g\in \GL(V).\label{eq soldering equivariance}\]
 Now let $\pi:P\to M$ be a first-order $G$-structure, so $G$ is a subgroup of $\GL(V)$ and $P<\Fr(\T M)$. 
 
 \begin{rem}
@@ -6165,41 +6184,148 @@ In other words, the matrix function $g\cdot a(m)g^{\prime-1}$ defined on $G\time
 
 \section{Cartan's equivalence method}
 
+As shown in the preceding \sect, many general equivalence problems can be restated as $G$-equivalence problems for appropriate groups $G$. We have also seen that $G$-equivalence problems are essentially regular equivalence problems for $G$-structures under the action of holonomic isomorphisms. This turns out to be computationally convenient. In other words, even when a $G$-equivalence problem is stated in the form \eqref{eq G-equivalence problem}, we will \emph{lift} it (at least locally) to the $G$-bundle $P=M\times G$ (since we will not address global equivalence problems, we use the fact that every principal bundle is locally isomorphic to the trivial one). If $\dim M=n$, then the soldering form is seen as a collection of $n$ $1$-forms on this bundle.
 
-If $p\in P$, then the soldering form $\theta$ maps $\T_p P$ surjectively onto $V$ and its kernel is exactly the vertical subspace $\ker\pi_{\ast}$. Thus, restricted to any subspace $\calH_p<\T_p P$ complementary to the vertical, $\theta$ becomes an isomorphism. 
+The major complication in $G$-equivalence problems, as compared to regular equivalence problems, is that the $n$ differential forms encoding a $G$-structure do not comprise a coframe on the bundle. For us to be able to use the solution to the equivalence problem for coframes, they need to be completed to a coframe by the addition of $\dim G$ other $1$-forms, and the solution to the equivalence problem must be made independent of the choice of these forms. One way to eliminate the dependence on such a choice is to try to devise a procedure for identifying a \emph{canonical coframe} on any $G$-structure. Cartan's method of equivalence provides a practical algorithm for achieving exactly this, and the resulting canonical ${e}$-structure (coframe) is called a \emph{Cartan geometry}. (Importantly, however, the equivalence method is not always guaranteed to succeed in producing a Cartan geometry, and it is still an open question when exactly it fails.)
 
-\begin{defn}[Horizontal subspace]\index{Horizontal subspace}
-    Let $E\to M$ be a \gls{fb}. A subspace $\calH_p<\T_p E$ is called horizontal if it is complementary to the vertical subspace: $\calH_p\oplus\calV_p E=\T_p E$.
+Since we need to find $\dim G$ forms to complete our coframe, it is natural to use the Maurer-Cartan forms on $G$ as the foundation for constructing them. However, Maurer-Cartan forms are uniquely defined only on each fiber of a principal bundle separately, whereas our forms need to be forms on the bundle itself. In other words, we can demand that our forms match the values of the Maurer-Cartan forms on \emph{vertical} directions (along the $G$-like fibers), but their values on the remaining ``horizontal'' directions are a free parameter. This leads to the following concept.
+
+\begin{defn}[Pseudo-connection form]
+    Let $P\to M$ be a principal $G$-bundle. A pseudo-connection form on $P$ is a $\frakg$-valued $1$-form $\omega\in\Omega^1(P;\frakg)$ which matches the Maurer-Cartan forms on vertical directions, i.e., satisfies the reproducing property on the $G$-Killing vector fields:
+    \[\omega(A_\ast)=A\quad \text{for}\quad A\in\frakg.\]
 \end{defn}
 
-\begin{prop}[{{\cite[p.~316]{Sternberg}}}]
+The existence of such a form can be proven by a standard \gls{pou} argument (gluing together pullbacks of the Maurer-Cartan form to local trivial pieces $P_\alpha=U_\alpha\times G$). Since the kernel of $\theta$ is exactly the space on which $\omega$ is never zero, once a pseudo-connection is chosen, the $n+\dim G$ scalar forms $(\bm\theta,\bm\omega)$ together form a \emph{global} coframing on $P$. Incidentally, this also proves that \emph{the total space of any $G$-structure is parallelizable}. Note that this does not hold for general principal bundles since the existence of a soldering form is a strong topological condition.
+
+By counting dimensions, the kernel of any pseudo-connection $\omega$ at any point $p\in P$ must be an $n$-dimensional tangent subspace complementary to the vertical subspace. In fact, $\omega$ itself is completely described by the choice of such a \emph{horizontal space} at every point $p$.
+
+\begin{defn}[Horizontal subspace, distribution]\index{Horizontal subspace}
+    Let $E\to M$ be a \gls{fb}. A subspace $\calH_p<\T_p E$ is called horizontal if it is complementary to the vertical subspace: $\calH_p\oplus\calV_p E=\T_p E$. A horizontal distribution $\calH P$ is a smooth subbundle consisting of horizontal subspaces. 
+    
+    Horizontal distributions are one-to-one with pseudo-connections $\omega$: $\calH^\omega P=\ker\omega$.
+\end{defn}
+
+On the other hand, if $p\in P$, then the soldering form $\theta$ maps $\T_p P$ surjectively onto $V$ and its kernel is exactly the vertical subspace $\ker\pi_{\ast}$. Thus, restricted to any horizontal subspace $\calH_p<\T_p P$, $\theta$ becomes an isomorphism. In other words, a pseudo-connection specifies ``horizontal'' directions in the bundle, and the soldering form identifies them with directions in the model tangent space of $M$, which we call $V$. Let us now show that the space of all possible choices of pseudo-connection is an affine space.
+
+\begin{prop}[{{\cite[p.~316]{Sternberg}}}]\label{eq affine hor spaces}
     Let $\pi:P\to M$ be a first-order $G$-structure, let $V$ be the model tangent space of $M$, and $\theta\in\Omega^1(P;V)$ the soldering form. Then the space of all horizontal subspaces at $p\in P$ is naturally an affine space modeled on the space of linear maps $\Lin(V,\frakg)$.
 \end{prop}
 \begin{proof}
-    Let $\calH_p$ and $\calH_p'$ are two horizontal subspaces at $p$ and let $X\in \calH_p$, $X'\in\calH_p'$ be such that $\theta(X_1)=\theta(X_2)=v\in V$. Then, by definition of $\theta$, $\iota_p^{-1}(v)=\pi_\ast(X)=\pi_\ast(X')$, so $\pi_\ast(X-X')=0$ and $X-X'$ is vertical. Since $\calV_p P$ is naturally identified with the Lie algebra $\frakg$ of $G$ via the map $\psi_p$ from Proposition~\ref{prop 8.1 Yuma}, we have constructed a linear map $V\to \frakg$ given by $v\mapsto \psi_p^{-1}(X-X')$. Since, in any given horizontal space at $p$, there is only one vector projecting onto $\iota_p^{-1}(v)$, this map depends only on $\calH_p$ and $\calH_p'$. Let is denote the map by $f_{\calH_p,\calH_p'}$. It is easy to see that, with $\calH_p$ fixed and $f\in \Lin(V,\frakg)$, there exists an $\calH_p'$ such that $f\in f_{\calH_p,\calH_p'}$.
+    Let $\calH_p$ and $\calH_p'$ are two horizontal subspaces at $p$ and let $X\in \calH_p$, $X'\in\calH_p'$ be such that $\theta(X_1)=\theta(X_2)=v\in V$. Then, by definition of $\theta$, $\iota_p^{-1}(v)=\pi_\ast(X)=\pi_\ast(X')$, so $\pi_\ast(X-X')=0$ and $X-X'$ is vertical. Since $\calV_p P$ is naturally identified with the Lie algebra $\frakg$ of $G$ via the map $\psi_p$ from Proposition~\ref{prop 8.1 Yuma}, we have constructed a linear map $V\to \frakg$ given by $v\mapsto \psi_p^{-1}(X-X')$. Since, in any given horizontal space at $p$, there is only one vector projecting onto $\iota_p^{-1}(v)$, this map depends only on $\calH_p$ and $\calH_p'$. Let us denote the map by $f_{\calH_p,\calH_p'}$. It is easy to see that, with $\calH_p$ fixed and $f\in \Lin(V,\frakg)$, there exists an $\calH_p'$ such that $f\in f_{\calH_p,\calH_p'}$.
 \end{proof}
 
+According to the solution of the equivalence problem for coframes, we need to start by looking at the exterior derivatives of the coframe components. Only $\theta$ is important to our problem, so we examine $\dd\theta$. For each $p\in P$, it supplies a linear map $(\dd\theta)_p:\bigwedge^2 \T_p P\to V$. Let $\calH$ be a horizontal subspace at $p$. Then we have the restricted map $\bigwedge^2\calH\to V$. However, as discussed above, $\theta$ also identifies $\calH$ with $V$, so we can turn it into a map $\bigwedge^2 V\to V$:
+\[c_{\calH}:V\wedge V\to V,\quad u\wedge v\mapsto \dd \theta\left(\restr{\theta}{\calH}^{-1}(u),\restr{\theta}{\calH}^{-1}(v)\right).\]
+We have thus assigned a tensor $c_{\calH}\in \Hom\left(V\wedge V,V\right)$ to each horizontal subspace $\calH$ at $p$. Next, since only $\calH$-invariant quantities can be relevant to our problem, we need to examine how $c_{\calH}$ depends on $\calH$.
 
-We can use this to produce an analogous isomorphism $\vartheta$ for arbitrary $G$-structures. Let $\pi:P\to M$ be an $r$-th order $G$-structure. Then the bundle $\pi':\rmJ^1 P\to P$ of jets of sections of $P$ can be considered as a $G'$-structure on $P$, where $G'=\Lin(V,\frakg)$ is the abelian group of linear maps, $\frakg$ is the Lie algebra of $G$. $G'$ is faithfully represented on $V\oplus\frakg$ by the formula 
-\[G'\acts (V\oplus\frakg):\quad a\cdot (\bf{x},A)\coloneqq (\bf{x},A+a(\bf{x})),\quad a\in G',\; \bf{x}\in V,\; A\in\frakg,\]
-and acts on the manifold $P'$ via the formula
-\[L_{a\cdot p'}\coloneqq \{\psi_p(a(\theta(X)))+X\mid a\in G',\; p=\pi'(p'),\; X\in L_{p'}\},\]
-where $\psi_p:\frakg\to \calV_p P$ is the canonical isomorphism from Proposition~\ref{prop 8.1 Yuma}, and $L_{p'}<\T_p P$ is the R-plane at $p$ determined by $p'$. Thus, the point $p'\in P$ above $p\in P$ determines a coframe $\theta_{p'}:\T_p P\to V\oplus \frakg$, which is given on the vertical subspace by $\psi_p$ and on the complementary R-plane $L_{p'}$ by the soldering $\theta_p$. The vector function 
-\[c':P'\to W\coloneqq \Hom\left(\bigwedge\nolimits^2 V,V\right),\quad p'\mapsto c_{p'},\quad c_{p'}(u,v)=\dd \theta(\theta_p^{-1}(u),\theta_p^{-1}(v)),\]
-is called the \emph{torsion function} of the $G$-structure $P$. 
+\begin{prop}[{\cite[p.~317]{Sternberg}}]
+    Let $P\to M$ be a first-order $G$-structure with corresponding Lie algebra $\frakg<\End(V)$ and the function $\calH\mapsto c_{\calH}$ as above. Define the antisymmetrization operator $\delta$, called the \emph{Spencer differential},\index{Spencer differential} as follows:
+    \[\delta:\Lin(V,\frakg)\to \Hom(V\wedge V,V),\quad \delta(f)(u\wedge v)=f(u)\cdot v-f(v)\cdot u,\]
+    where $\cdot$ is the standard matrix action. Then, for any two horizontal spaces $\calH_1$ and $\calH_2$ at $p\in P$, we have 
+    \[c_{\calH_2}-c_{\calH_1}=-\delta\left(f_{\calH_1,\calH_2}\right).\]
+\end{prop}
+\begin{proof}
+    Then 
+    \[(c_{\calH_2}-c_{\calH_1})(u\wedge v)=\dd\theta\left(X_2\wedge Y_2-X_1\wedge Y_1\right),\]
+    where $X_i$ and $Y_i$ are the unique pre-images in $\calH_i$ of $u$ and $v$, respectively, under $\theta$. We can rewrite this as 
+    \[\begin{aligned}
+        (c_{\calH^2}-c_{\calH^1})(u\wedge v)&=\dd\theta\left((X_2-X_1)\wedge Y_1+X_1\wedge(Y_2-Y_1)\right)\\
+        &=(i_{X_2-X_1}\dd\theta)(Y_2)-(i_{Y_2-Y_1}\dd\theta)(X_1).
+    \end{aligned}\]
+    Now, $X_2-X_1$ is a vertical vector and is, by definition, given by $f_{\calH_1,\calH_2}(u)_{\ast p}$ (the value of the vertical Killing vector field generated by $f_{\calH_1,\calH_2}(u)\in\frakg$). Now, since $\theta$ 
+    has the equivariance property \eqref{eq soldering equivariance}, we also have its infinitesimal version
+    \[\Lie_{A_\ast}\theta=-\sigma_{\ast e}^0(A)\cdot \theta,\quad A\in\frakg.\]
+    We will omit now the homomorphism $\sigma_{\ast e}^0$, implying the standard linear action $\frakg\acts V$ induced by the inclusion $\frakg<\End(V)$. Since $A_\ast$ is vertical, $\theta(A_\ast)=0$, so by Cartan's magic formula, 
+    \[i_{A_\ast}\dd\theta=-A\cdot\theta.\label{eq vii.2.5 Sternberg}\]
+    Therefore, $i_{f_{\calH_1,\calH_2}(u)_{\ast p}}=-f_{\calH_1,\calH_2}(u)\cdot\theta$. Applying the same argument to $Y_1-Y_2$, we get, since $\theta(X_1)=u$ and $\theta(Y_2)=v$,
+    \[(c_{\calH_2}-c_{\calH_1})(u\wedge v)=f_{\calH_1,\calH_2}(v)\cdot u-f_{\calH_1,\calH_2}(u)\cdot v.\label{eq vii.2.7 Sternberg}\]
+\end{proof}
 
-% A section $s:M\to P'$ of the bundle $\pi\circ \pi':P'\to M$ defines a \emph{principal connection} on $P\to M$, while the restriction 
+\begin{rem}
+    One can put all of this in the language of jets. Let $\pi:P\to M$ be an $r$-th order $G$-structure. Then the bundle $\pi':P'\coloneqq \rmJ^1 P\to P$ of jets of sections of $P$ can be considered as a $G'$-structure on $P$, where $G'=\Lin(V,\frakg)$ is the abelian group of linear maps, and $\frakg$ is the Lie algebra of $G$. $G'$ is faithfully represented on $V\oplus\frakg$ by the formula 
+    \[G'\acts (V\oplus\frakg):\quad a\cdot (\bf{x},A)\coloneqq (\bf{x},A+a(\bf{x})),\quad a\in G',\; \bf{x}\in V,\; A\in\frakg,\]
+    and acts on the manifold $P'=\rmJ^1 P$ via the formula
+    \[L_{a\cdot p'}\coloneqq \{\psi_p(a(\theta(X)))+X\mid a\in G',\; p=\pi'(p'),\; X\in L_{p'}\},\quad p'\in P',\]
+    where $\psi_p:\frakg\to \calV_p P$ is the canonical isomorphism from Proposition~\ref{prop 8.1 Yuma}, and $L_{p'}<\T_p P$ is the R-plane at $p$ determined by $p'$. R-planes are exactly the horizontal spaces, and so the fact that $P'\to P$ is naturally an affine bundle explains Proposition~\ref{eq affine hor spaces}. Thus, the point $p'\in P'$ above $p\in P$ determines a coframe $\theta_{p'}:\T_p P\to V\oplus \frakg$, which is given on the vertical subspace by $\psi_p$ and on the complementary R-plane $L_{p'}$ by the soldering $\theta_p$. Identifying $p'$ with a horizontal space $\calH$ at $p$, the function $\calH\mapsto c_{\calH}$ can be turned into a function of $p'$:
+    \[c':P'\to \Hom\left(V\wedge V,V\right),\quad c'(p')\coloneqq c_{p'}.\]
+    Note that $c'$ is $G'$-equivariant w.r.t.\ the above-mentioned action $G'\acts P$ and the affine action
+    \[G'\acts \Hom \left(V\wedge V,V\right),\quad a\cdot \beta\coloneqq \beta+\delta(a).\]
+    Thus, we can quotient out the part of $\Hom(V\wedge V,V)$ spanned by the values of $\delta$ and thus project $c'$ down to a function on $P$, which we do after this remark.
+\end{rem}
 
-The mapping $c:P'\to W$ is $G'$-equivariant w.r.t.\ the above-mentioned action of $G'$ on $P$ and the action of $G'$ on $W$ given by 
-\[G'\times W\to W,\quad a,w\mapsto a\cdot w\coloneqq w+\delta a,\]
-where the linear map 
-\[\delta:G'\to W,\quad (\delta a)(u,v)=a(u)v-a(v)u.\]
-is called the \emph{Spencer differential}. 
+In conclusion, the tensor $c_\calH$ depends on the choice of horizontal space at a given point $p$ only up to the image of $\delta$, so in the trivially exact kernel-cokernel \emph{Spencer sequence} (where $\coker\delta=\Hom(V\wedge V,V)\slash \im(\delta)$)
+\[0\to \ker\delta\hookrightarrow V^\ast\otimes\frakg\overset{\delta}{\to} V^\ast\wedge V^\ast\otimes V\overset{\pr}{\to} \coker\delta\to 0,\]
+we can form an \emph{invariant} function $c:P\to \coker\delta$.
 
-\begin{defn}
-    Let $P<\Fr^r(M)$ be an $r$-th order $G$-structure for some Lie group $G<\GL_n^r(\bbR)$. Then the first prolongation $P^{(1)}$ of $P$ is defined as the space of $1$-jets of local sections of $P$:
-    \[P^{(1)}\coloneqq \rmJ^1(P\to M).\]
+\begin{defn}[First-order structure function]\index{Structure function!of a $G$-structure}\index{Intrinsic torsion}
+    Given a first-order $G$-structure $P\to M$, its first-order structure function, also called \emph{intrinsic torsion}, is 
+    \[c:P\to \coker(\delta),\quad c(p)\coloneqq \left[c_{\calH_p}\right]=c_{\calH_p}+\im\delta,\]
+    where $\calH_p$ is an abitrary horizontal space at $p$.
 \end{defn}
+
+\begin{rem}
+    The reason for the name is, of course, that $c$ is a generalization of our structure functions $T^i_{jk}$ from the equivalence problem for coframes, but it preserves only the part that is independent of the pseudo-connection part of the coframe. In fact, if $G=\{e\}$, then $\frakg=0$ and $c$ maps $P\cong M$ into $\Hom(V\wedge V,V)$. If, moreover, $P\cong M$ is itself a Lie group (and the $\{e\}$-structure in question the standard Maurer-Cartan coframe), this function is constant, and can be verified to coincide with the Lie bracket of that Lie group (exercise).
+\end{rem}
+
+Next we can see how $c$ varies along the fibers of $P$. The following is a simple exercise.
+
+\begin{prop}[{\cite[p.~318]{Sternberg}}]
+    The structure function is equivariant under the principal $G$-action:
+    \[c_{\Phi_{g\ast}(\calH)}=\sigma_g^{-1}c_\calH,\]
+    where $\sigma$ is the standard induced action $G\acts \Hom(V\wedge V,V)$ given by $(\sigma_g \beta)(u\wedge v)=g\cdot \beta(g^{-1}\cdot u\wedge g^{-1}\cdot v)$.
+\end{prop}
+
+The reader can also easily check that the space $\im(\delta)$ is a $G$-invariant subspace of $\Hom(V\wedge V,V)$. Therefore, the quotient space $\coker\delta$ still carries a $G$-representation which we also denote by $\sigma$. In summary, we have 
+\[c(p\cdot g)=\sigma_g^{-1}c(p).\]
+
+\begin{rem}
+    Recall that equivariant functions on a principal bundle correspond to sections of the associated bundle. In this case, since $V$ is the model tangent space of $M$, the associated bundle with fiber $\Hom(V\wedge V,V)$ is literally the bundle of $V$-valued $2$-forms on $M$. Thus, $c$ can be identified with a tensor field of type $(1,2)$ on $M$, called the \emph{(intrinsic) torsion tensor} of the $G$-structure.
+\end{rem}
+
+Finally, since the structure function is clearly a natural (intrinsic) quantity of the $G$-structure, equivalent $G$-structures have equivalent structure functions.
+
+\begin{prop}[{\cite[Thm.~VII.2.1]{Sternberg}}]
+    If $F:M\to \wb M$ is a local diffeomorphism establishing an equivalence of two $G$-structures $P\to M$ and $\wb P\to \wb M$, then the structure functions are also $F$-related: $c=\wb c\circ F_\ast$.
+\end{prop}
+
+In particular, we immediately get
+
+\begin{cor}[{\cite[Thm.~VII.2.2]{Sternberg}}]\label{thm vii.2.2 Sternberg}
+    If a $G$-structure is locally flat, then its structure function vanishes identically.
+\end{cor}
+\begin{proof}
+    We need to show that the structure function of the standard flat $G$-structre $P=V\times G$ is zero. It suffices to find \emph{any} horizontal subspace $\calH$ at, say, $p=(0,e)$, such that $c_\calH=0$. Naturally, we let $\calH$ be tangent to the horizontal slice $P_{\{e\}}=V\times \{e\}$, which is in fact an $\{e\}$-substructure, namely the canonical absolute parallelism on $V$. It now suffices to show that $\dd\theta$ vanishes identically on the canonical absolute parallelism of $V$. Since the group is $\{e\}$, the projection $\pi:P_{\{e\}}\to V$ is a diffeomorphism. Then $(\pi^{-1})^\ast \theta$ is a form on $V$. By definition, $(\pi^{-1})^\ast\theta=\dd \id_V$. Therefore, $\dd\theta=0$.
+\end{proof}
+
+The converse is not true in general. In fact, as we will see, for many important groups $G$, the first-order structure function vanishes \emph{regardless} of the $G$-structure $P$. When this happens, the first-order structure function gives no information and we must look for higher-order invariants.
+
+The converse of Corollary~\ref{thm vii.2.2 Sternberg} is true for \emph{some} groups, however, and we now give some examples.
+
+\begin{rem}\label{rem p320 Sternberg}
+    Suppose $G$ leaves invariant a subspace $V_1<V$. There is an obvious projection $\tau:\Hom(V\wedge V,V)\to \Hom(V_1\wedge V_1,V\slash V_1)$, namely, for $t\in \Hom(V\wedge V,V)$ and $v_1,v_2\in V_1$, we put \[\tau(t)(v_1\wedge v_2)\coloneqq t(v_1\wedge v_2)+V_1.\] 
+    Then 
+    \[\ker\tau=\{t\in\Hom(V\wedge V,V)\mid t(V_1\wedge V_1)\subset V_1\}.\]
+    Now, if $\frakg$ leaves $V_1$ invariant, $\frakg\cdot V_1<V_1$, then for any $f\in \Lin(V,\frakg)$,
+    \[\delta(f)(V_1\wedge V_1)=f(V_1)\cdot V_1-f(V_1)\cdot V_1\quad < \quad V_1.\]
+    Thus, $\delta(f)\in \ker\tau$. We therefore have a quotient map
+    \[\eta:\coker\delta\to \Hom(V_1\wedge V_1,V\slash V_1),\]
+    and so $\eta\circ c:P\to \Hom(V_1\wedge V_1,V\slash V_1)$.
+\end{rem}
+
+\begin{example}
+    Suppose $V_1<V$ is a $k$-dimensional subspace and $G<\GL(V)$ is the group of \emph{all} linear transformations leaving $V_1$ invariant, $G\cdot V_1<V_1$. One can immediately notice that that $G$ has exactly the structure of the group in Example~\ref{ex foliation g-structure}, so a $G$-structure is the same as a rank $k$ distribution on $M$. Let us also give an explicit proof of this correspondence. Consider a $G$-structure $P\overset{\pi}{\to} M$, viewed as a subbundle of the frame bundle $\Fr(\T M)$. Let $p\in P$ and $m=\pi (P)$. Define the subspace $D_m<\T_m M$ by $D_m=p(V_1)$, where $p$ is interpreted as a frame, i.e., a linear isomorphism $V\to \T_m M$. For any $g\in G$, we have $(p\cdot g)(V_1)=p(g\cdot V_1)=p(V_1)$, so $D_m$ doesn't depend of the choice of $p\in P_m$. Thus, $P$ determines a rank $k$ distribution on $M$. Conversely, let $D$ be a  rank $k$ distribution on $M$ and let $P$ be the submanifold of $\Fr(\T M)$ consisting of those frames $p$ with $p^{-1}(D_m)=V_1$, where $m=\pi(p)$. Then $P$ is easily seen to be a $G$-structure.
+
+    Now, it is easy to check that for this $G$, in terms of Remark~\ref{rem p320 Sternberg}, $\im\delta=\ker\tau$, so $\eta$ is an isomorphism. But the vanishing of $\eta\circ c$ is \emph{precisely} the statement of involutivity of the distribution $D$, so by the Frobenius Theorem, $D$ is integrable in this case, and $P$ is locally flat. So for this group $G$, the converse of Corollary~\ref{thm vii.2.2 Sternberg} holds.
+\end{example}
+
+\begin{example}
+    Let $P\to M$ be an almost symplectic structure given by an almost symplectic form $\omega\in\Omega^2(M)$. We will now show that the first-order structure function on $P$ vanishes iff $\dd\omega=0$. First recall that the soldering form $\theta_p$ on the frame bundle $\Fr(\T M)$ is defined as $p^{-1}\circ \pi_\ast$, where $p\in P\subset \Fr(\T^\ast M)$ is treated as a linear isomorphism $p:V\to \T_m M$. Since $P$ is an almost symplectic structure, $p$ is actually an isomorphism of symplectic vector spaces, where $V$ carries a standard symplectic structure, which we denote by $\omega_0$, and $\T_m M$ carries $\omega_m$. Thus, letting $\calH$ be a horizontal space at $p\in P_m$,
+    \[c_\calH(u,v)=\dd\theta_p(p(u)^h_p,p(v)^h_p),\quad u,v,\in V,\] 
+    where $X^h_p$ for any $X\in \T_m M$ denotes the unique horizontal vector in $\calH$ such that $\pi_\ast(X^h_p)=X$. 
+    
+     Thus, the Darboux Theorem implies the converse of Corollary~\ref{thm vii.2.2 Sternberg} for almost symplectic structures. In other words, torsion-free almost symplectic structures are integrable, and are called \emph{symplectic structures}.
+\end{example}
+
 
 
 % Note that the Lie bracket of vector fields induces the relations $[L^r,L^q]=L^{r+q}$, $r,g\geq -1$, and so the bracket can be restricted to form maps 
@@ -6450,8 +6576,8 @@ Crucially, for the Cauchy-Kovalevskaya Theorem to be applicable, the first-order
 \end{example}
 
 \begin{example}[Self-dual equations]\label{ex self-dual equations}
-    A more interesting problem is to consider the so-called self-dual equations in $4$ dimensions. Recall the Hodge star operator $\ast:\Omega^p(\bbR^n)\to \Omega^{n-p}(\bbR^n)$, which is defined by 
-    \[\alpha\wedge(\star \beta)=\<\alpha,\beta\>\dd x^1\wedge\cdots\dd x^n,\]
+    A more interesting problem is to consider the so-called self-dual equations in $4$ dimensions. Recall the Hodge star operator $\star:\Omega^p(\bbR^n)\to \Omega^{n-p}(\bbR^n)$, which is defined by 
+    \[\alpha\wedge(\star \beta)=\<\alpha,\beta\>\dd x^1\wedge\cdots\wedge\dd x^n,\]
     where $\<\alpha,\beta\>$ is the Euclidean inner product extended to differential forms (so all the standard basis elements $\dd x^I$ of the same degree are orthonormal, and those of differing degrees are orthogonal). It satisfies 
     \[{\star}{\star}\alpha=(-1)^{p(n-p)}\alpha,\quad \alpha\in\Omega^p(\bbR^n).\]
     In particular, when $n=4$ and $p=2$, the $2$-forms can be split into \emph{self-dual} forms that satisfy $\star\alpha=\alpha$ and \emph{anti-self-dual} forms that satisfy $\star\alpha=-\alpha$. These two spaces are denoted $\Omega^2_\pm(\bbR^4)$, respectively. For example, every $\phi\in\Omega^2_+(\bbR^4)$ is of the form 
