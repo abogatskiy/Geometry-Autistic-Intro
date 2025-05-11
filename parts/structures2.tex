@@ -4751,11 +4751,11 @@ The fundamental fact about constant-cruvature Cartan geometries is that, at leas
     We will need the general fact that $\scrK(\frakg,\frakh)=0$, stemming from the fact that $\Omega$ is horizontal and $\frakh$ corresponds to vertical vector fields.
 
     First we verify the Jacobi identity for the new bracket. Its Jacobi identity differs from the one for $[\,,\,]$ by a symmetrization of $-[\scrK(A,B),C]-\scrK([A,B],C)+\scrK(\scrK(A,B),C)$. The terms $\scrK(\scrK(A,B),C)$ are of the form $\scrK(\frakg,\frakh)$ and thus vanish. The remaining is the symmetrization of $-[\scrK(A,B),C]-\scrK([A,B],C)$. We show that this is a consequence of the Bianchi identity $\dd \Omega+[\eta,\Omega]=0$. Indeed, if $X,Y,Z$ are three $\eta$-constant vector fields, then the Bianchi identity reads 
-    \[\Sym(\Omega([\_,\_],\_)+[\Omega(\_,\_),\eta(\_)])=0.\label{eq 5.6.11 Sharpe}\]
+    \[\cyclic(\Omega([\_,\_],\_)+[\Omega(\_,\_),\eta(\_)])=0.\label{eq 5.6.11 Sharpe}\]
     If $\eta(X)=A$, $\eta(Y)=B$, and $\eta(Z)=C$, then $\dd\eta(X,Y)=-\eta([X,Y])$, and so 
     \[\scrK(A,B)=\Omega(X,Y)=\dd\eta(X,Y)+[\eta(X),\eta(Y)]=-\eta([X,Y])+[A,B].\]
     Thus, $\Omega([X,Y],Z)=\scrK(\eta([X,Y]),\eta(C))=\Omega([A,B]-\scrK(A,B),C)=\Omega([A,B],C)$. This identity allows us to rewrite \eqref{eq 5.6.11 Sharpe} as 
-    \[\Sym(\scrK([\_,\_],\_)+[\scrK(\_,\_),\_])=0,\]
+    \[\cyclic(\scrK([\_,\_],\_)+[\scrK(\_,\_),\_])=0,\]
     which is exactly what we needed.
 
     Finally, we show the $H$-equivariance property. Recall that the curvature is a horizontal form of type $\Ad(H)$, so $\scrK(\Ad_h A,\Ad_h B)=\Ad_h \scrK(A,B)$. Then 
@@ -6324,9 +6324,9 @@ Now we can use the fundamental derivative to derive a formula for homogeneous co
     Let $(P\overset{\pi}{\to}M,\eta)$ be a Cartan geometry of type $(G,H)$ with curvature $\scrK\in\Omega^2(M,\calT M)$, let $\nabla^\calT$ be the adjoint tractor connection and $\{\,,\,\}$ the algebraic bracket on $\calT M$.
     \begin{enumerate}[label=(\arabic*)]
         \item (Bianchi identity) The curvature $\scrK$ satisfies 
-        \[\Sym \left(\nabla^\calT_{\_}\left(\scrK(\_,\_)\right)-\scrK([\_,\_],\_)\right)=0,\label{eq 1.24 Cap}\]
-        where $\Sym$ is the symmetrization over the three vector field arguments from $\fX(M)$. Equivalently, 
-        \[\Sym\left(\{\_,\scrK(\_,\_)\}-\scrK(\{\_,\_\},\_)+\scrK(\scrK(\_,\_),\_)+(\D_{\_}\scrK)(\_,\_)\right)=0\label{eq 1.25 Cap}\]
+        \[\cyclic \left(\nabla^\calT_{\_}\left(\scrK(\_,\_)\right)-\scrK([\_,\_],\_)\right)=0,\label{eq 1.24 Cap}\]
+        where $\cyclic$ is the cyclic sum over the three vector field arguments living in $\fX(M)$. Equivalently, 
+        \[\cyclic\left(\{\_,\scrK(\_,\_)\}-\scrK(\{\_,\_\},\_)+\scrK(\scrK(\_,\_),\_)+(\D_{\_}\scrK)(\_,\_)\right)=0\label{eq 1.25 Cap}\]
         for arguments from $\Gamma^\infty(\calT M)$.
         \item (Ricci identity) For any natural \gls{vb} $E$ and any section $\psi\in\Gamma^\infty(E)$ the alternation of the square of the fundamental derivative is given by 
         \[(\D^2\psi)(s_1,s_2)-(\D^2\psi)(s_2,s_1)=-\D_{\scrK(s_1,s_2)}\psi+\D_{\{s_1,s_2\}}\psi.\]
@@ -6347,7 +6347,7 @@ Now we can use the fundamental derivative to derive a formula for homogeneous co
     Forming the cyclic sum, the last two terms cancel by the antisymmetry of $\scrK$, and we obtain \eqref{eq 1.25 Cap}.
 
     Now, \eqref{eq 1.25 Cap} is visibly linear over smooth functions in all arguments $s_i$, so it can be verified at a point. We may view $\scrK$ as the curvature function $P\to \Lin\left(\bigwedge\nolimits^2 \frakg,\frakg\right)$ (recalling that the result vanishes if one entry is from $\frakh$). In these terms, the claimed identity has the form 
-    \[0=\Sym\left(\left[\scrK(A,B),C\right]+\scrK([A,B],C)-\scrK(\scrK(A,B),C)-\eta^{-1}(C)\cdot \scrK(A,B)\right)\]
+    \[0=\cyclic_{A,B,C}\left(\left[\scrK(A,B),C\right]+\scrK([A,B],C)-\scrK(\scrK(A,B),C)-\eta^{-1}(C)\cdot \scrK(A,B)\right)\]
     for all $A,B,C\in\frakg$. (Observe that since evaluation on $(A,B)$ is a linear map, there is no difference between $(\eta^{-1}(C)\cdot\scrK)(A,B)$ and $\eta^{-1}(C)\cdot (\scrK(A,B))$.) Let us evaluate the structure equation on the vector fields $[X,Y]$ and $Z$, where $\wt X=\eta^{-1}(A)$, $\wt Y=\eta^{-1}(B)$, $\wt Z=\eta^{-1}(C)$. Remember, in particular, $\scrK(A,B)=\Omega(X,Y)$ and $\eta([X,Y])=-\scrK(A,B)+[A,B]$. Thus, 
     \begin{multline}
         \Omega([X,Y],Z)=-Z\cdot \eta([X,Y])-\eta([[X,Y],Z])+[\eta([X,Y]),C]=\\
@@ -6373,9 +6373,9 @@ To get the classical versions of the Bianchi and Ricci identities, let us specia
     Let $(P\to M,\eta)$ be a Cartan geometry of type $(G,H)$, where $(G,H)$ is a reductive Klein geometry with $H$-invariant decomposition $\frakg=\frakh\oplus\frakn$. Let $\sfR$ be the curvature of te natural principal connection on $P$ and let $\sfT$ be the torsion of the induced connection on $\T M$. Denoting by $\nabla$ the natural covariant derivatives we have: 
     \begin{enumerate}[label=(\arabic*)]
         \item The algebraic Bianchi identity for $X_i\in\fX(M)$:
-        \[\Sym\left(\sfR(\_,\_)(\_)+\sfT(\sfT(\_,\_),\_)+(\nabla_{\_}\sfT)(\_,\_)\right)=0.\]
+        \[\cyclic\left(\sfR(\_,\_)(\_)+\sfT(\sfT(\_,\_),\_)+(\nabla_{\_}\sfT)(\_,\_)\right)=0.\]
         \item The differential Bianchi identity 
-        \[\Sym\left((\nabla_{\_}\sfR)(\_,\_)+\sfR(\sfT(\_,\_),\_)\right)=0.\]
+        \[\cyclic\left((\nabla_{\_}\sfR)(\_,\_)+\sfR(\sfT(\_,\_),\_)\right)=0.\]
         \item The Ricci identity for a section $\psi$ of an arbitrary natural \gls{vb} and $X,Y\in\fX(M)$,
         \[(\nabla^2\psi)(X,Y)-(\nabla^2\psi)(Y,X)=\sfR(X,Y)(\psi)-\nabla_{\sfT(X,Y)}\psi.\]
     \end{enumerate}
@@ -6422,11 +6422,11 @@ To get the classical versions of the Bianchi and Ricci identities, let us specia
         (\nabla_{X_1}(\sfT-\sfT_0))(X_2,X_3)
     \end{pmatrix}.\]
     Collecting the $P\times^H\frakg$-components, we see that the terms containing $\sfR_0$ and $\sfT$ cancel, and we conclude that vanishing of this component is equivalent to 
-    \[\Sym\left((\nabla_{\_}\sfR)(\_,\_)+\sfR(\sfT(\_,\_),\_)\right)=\Sym\left((\nabla_{\_}\sfR_0)(\_,\_)+\sfR_0(\sfT_0(\_,\_),\_)\right).\]
+    \[\cyclic\left((\nabla_{\_}\sfR)(\_,\_)+\sfR(\sfT(\_,\_),\_)\right)=\cyclic\left((\nabla_{\_}\sfR_0)(\_,\_)+\sfR_0(\sfT_0(\_,\_),\_)\right).\]
     Similarly, collecting the $\T M$-components we see that the terms mixing $\sfT$ and $\sfT_0$ cancel and vanishing of the $\T M$-component is equivalent to 
     \begin{multline}
-        \Sym\left(-\sfR(\_,\_)(\_)+\sfT(\sfT(\_,\_),\_)+(\nabla_{\_}\sfT)(\_,\_)\right)=\\
-        \Sym\left(-\sfR_0(\_,\_)(\_)+\sfT_0(\sfT_0(\_,\_),\_)+(\nabla_{\_}\sfT_0)(\_,\_)\right).
+        \cyclic\left(-\sfR(\_,\_)(\_)+\sfT(\sfT(\_,\_),\_)+(\nabla_{\_}\sfT)(\_,\_)\right)=\\
+        \cyclic\left(-\sfR_0(\_,\_)(\_)+\sfT_0(\sfT_0(\_,\_),\_)+(\nabla_{\_}\sfT_0)(\_,\_)\right).
     \end{multline}
     To complete the proof, it suffices to show that the right hand sides of these two equations vanish automatically. But this can be easily concluded as follows. Define a new Lie algebra structure on $\frakh\oplus\frakm$ by keeping the brackets $\frakh\times\frakh\to\frakh$ and $\frakh\times\frakm\to\frakm$ and declaring the bracket to be zero on $\frakm\times\frakm$. One immediately verifies that this defines a Lie algebra $\wt\frakg$, and $\wt\frakg\cong \frakg$ as $\frakh$-modules. Taking as a Lie group $\wt G$ with this Lie algebra the affine extension of $H$, we may view $(G\to G\slash H,\theta_G)$ as a (non-flat) Cartan geometry of type $(\wt G,H)$. Now the curvature and torsion of this geometry is by construction given by $\sfR_0$ and $\sfT_0$ from before, while for the new geometry the canonical connection of the homogeneous model is torsion-free and flat, so the result follows by using the above formulas in this case.
 

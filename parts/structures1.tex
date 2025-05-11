@@ -1578,7 +1578,7 @@ We have thus shown that the space of $(r+1)$-jets that project to a given $r$-je
         \[\calC_p=\calV_p\rmJ^rE\oplus L_{p'},\label{eq 3.2.2 Kras}\]
         where $\calV_p\rmJ^rE$ is the tangent space to the fiber of the projection $\pi^r_{r-1}$ and $L_{p'}$ is the R-plane corresponding to an arbitrary $(r+1)$-jet $p'\in(\pi^{r+1}_r)^{-1}(p)$. In canonical coordinates, the vertical component is spanned by the basis
         \[\frac{\partial}{\partial p^j_{I}}, \quad |I|=r,\] 
-        whereas the R-plane is spanned by the basis
+        whereas the R-plane is spanned by the \emph{total derivatives}
         \[D^p_i=\frac{\partial}{\partial x^i}+\sum_{|I|\leq r-1}\sum_{j=1}^k p^j_{I+1_i}\frac{\partial}{\partial p^j_I},\quad i=1,\ldots,n;\]
         \item The Cartan plane $\calC_p$ consists of tangent vectors at $p$ that project to $L_p$ under the projection $\pi^r_{r-1}$, i.e.,
         \[\calC_p=\left(\pi^r_{r-1}\right)_\ast^{-1}(L_p).\]
@@ -1614,7 +1614,7 @@ Let us find a coordinate representation for a vector field $X\in\fX(\rmJ^r E)$ l
 \[X_p=\sum_{i=1}^n a^i D_i^p+\sum_{|I|=r}b^j_I \frac{\partial}{\partial p^j_I}.\label{eq 3.2.5 Kras}\]
 The Cartan distribution $\calC$ on $\rmJ^r E$ is \emph{not} integrable since, for example, for $|I|=r-1$, the commutator 
 \[\left[\frac{\partial}{\partial p^j_{I+1_i}},D_i^p\right]=\frac{\partial}{\partial p^j_I}\]
-is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifolds of $\calC$ are of dimension less than $\rank \calC$. To obtain a completely integrable distribution, we must restrict $\calC$ to a submanifold of that dimension or lower.
+is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifolds of $\calC$ are of dimension less than $\rank \calC$. If we hope to obtain a completely integrable distribution, we must restrict $\calC$ to a submanifold of that dimension or lower. We shall study the $n$-dimensional integral manifolds of Cartan distributions after the following few remarks.
 
 \begin{rem}
     The above discussion shows that the Cartan distribution is spanned by all possible vectors $D_i^p$ parametrized by all $(r+1)$-jets $p$. As the order $r$ increases, the rank of the distribution grows. However, the commutator above fails to vanish only because the vectors $\partial/\partial p^j_{I+1_i}$ get in the way. The situation is radically different on the infinite jet bundle $\rmJ^\infty E$, defined as the \emph{projective (codirected) limit} 
@@ -1639,8 +1639,8 @@ is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifol
     \[\theta\wedge(\dd\theta)^{\wedge n}\neq 0 \quad \text{(a volume form)}.\]
     
     More generally, an \emph{almost contact structure}\index{Almost contact manifold} is an odd-dimensional manifold with a closed $2$-form of maximal rank (analog of $\dd\theta$). The canonical examples of such structures come from classical mechanics, where one starts out with a symplectic manifold $(M,\omega)$, $\dim M=2n$ and a smooth function (Hamiltonian) $H\in C^\infty(M)$. Then one defines on $E=M\times \bbR\overset{\pi}{\to}M$, where the coordinate on $\bbR$ is time $t$, the $2$-form
-    \[\omega_H\coloneqq \pi^\ast \omega+\dd H\wedge\dd t.\]
-    It is easy to check that this is an almost contact form and the Hamiltonian vector field $X_H\coloneqq \omega^{-1}\circ \dd H$ spans the \emph{characteristic distribution} $\ker\omega_H$. If there exists a \emph{symplectic potential} $\theta\in \Omega^1(M)$, i.e., $\omega=\dd\theta$, then $\omega_H=\dd\theta_H$, where $\theta_H=\pi^\ast\theta+H\dd t$. If $H+(\pi^\ast\theta)(X_H)$ is nowhere zero, then $\theta_H$ is a contact form on $M\times \bbR$.
+    \[\omega_H\coloneqq \pi^\ast \omega-\dd H\wedge\dd t.\]
+    It is easy to check that this is an almost contact form and the Hamiltonian vector field $X_H\coloneqq \omega^{-1}\circ \dd H$ spans the \emph{characteristic distribution} $\ker\omega_H$. If there exists a \emph{symplectic potential} $\theta\in \Omega^1(M)$, i.e., $\omega=\dd\theta$, then $\omega_H=\dd\theta_H$, where $\theta_H=\pi^\ast\theta-H\dd t$. If $H-(\pi^\ast\theta)(X_H)$ is nowhere zero, then $\theta_H$ is a contact form on $M\times \bbR$. In the classic canonical setting where $M=\T^\ast Q$ with coordinates $(\bf q,\bf p)$, one has the canonical tautological form $\theta=\bf p\cdot \dd\bf q$, so $\theta_H=\bf p\cdot\dd\bf q-H\dd t$ becomes the famous Poincar\'e-Cartan form.
 \end{rem}
 
 
@@ -1649,7 +1649,12 @@ is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifol
     For a canonical example of a contact structure, let $E=\bbR^n\times \bbR\to \bbR^n$ be the bundle of values of functions of $n$ variables $x^1,\ldots,x^n$. The canonical coordinates on the first jet bundle $\rmJ^1 E$ are $(x^1,\ldots,x^n,u,p_1,\ldots,p_n)$, and the only contact form is $\theta=\dd u-\sum_{i=1}^n p_i\dd x^i$. It is easy to see that $\theta\wedge(\dd\theta)^{\wedge n}$ is a volume form on $\rmJ^1 E$. 
 \end{example}
 
-Note that, in general, $E$ can be a completely arbitrary \gls{fb}, not necessarily a vector bundle. However, since we will be mostly interested in local properties of differential equations, we will essentially always assume that $E$ is a product bundle of the form $\bbR^n\times\bbR^s\to \bbR^n$, so $\rmJ^r E$ can be identified with $\rmJ^r(\bbR^n,\bbR^k)$. Here, $n$ is the number of independent variables, and $k$ is the number of dependent variables.
+Note that, in general, $E$ can be a completely arbitrary \gls{fb}, not necessarily a vector bundle. However, since we will be mostly interested in local properties of differential equations, we will essentially always assume that $E$ is a product bundle of the form $\bbR^n\times\bbR^k\to \bbR^n$, so $\rmJ^r E$ can be identified with $\rmJ^r(\bbR^n,\bbR^k)$. Here, $n$ is the number of independent variables, and $k$ is the number of dependent variables.
+
+
+\PRLsep
+
+
 
 \begin{defn}[Differential equation]\index{Differential equation}
     An $r$-th order differential equation on a \gls{fb} $E\to M$ is a submanifold $\calE\subset \rmJ^r E$ endowed with the restricted Cartan distribution $\calC(\calE)=\calC\cap \T \calE$. A maximal integral manifold (of dimension $\dim M$) of the Cartan distribution $\calC(\calE)$ is called a (generalized) solution of the equation $\calE$.
@@ -1794,7 +1799,7 @@ The following important notion of symmetries of the Cartan distribution (or the 
         \[t\mapsto t,\quad x\mapsto x-vt,\quad u\mapsto u.\]
         The prolongation of this to $1$-jets is of the form 
         \[u_t\mapsto u_t+vu_x,\quad u_x\mapsto u_x.\]
-        \item An arbitrary diffeomorphism of the plane $(x,u)\mapsto (\lambda(x,u),\mu(x,u))$ induces a \gls{flt} in $p$ of the $3$-dimensional $xup$-space. It is easily checked that
+        \item An arbitrary diffeomorphism of the plane $(x,u)\mapsto (\lambda(x,u),\mu(x,u))$ induces a \gls{flt} in $p$ of the $3$-dimensional $(x,u,p)$-space. It is easily checked that
         \[p\mapsto \frac{\dd \mu}{\dd \lambda}=\frac{\mu_x\dd x+\mu_u\dd u}{\lambda_x\dd x+\lambda_u\dd u}=\frac{\mu_x+\mu_up}{\lambda_x+\lambda_up}.\]
         \item For a general point transformation 
         \[\wt{\bf{x}}\mapsto \bf{f}(\bf{x},\bf{u}),\quad \wt{\bf{u}}=\bf{g}(\bf{x},\bf{u}),\]
@@ -3723,7 +3728,7 @@ for the most general \emph{structure invariant} associated with the coframe. The
 for all $\sigma$. As we shall see, the algebraic solvability of the system of invariance equations is, in the ``regular'' case, both necessary and sufficient for the equivalence of the two coframes.
 
 \begin{defn}[Classifying space]
-    The $r$-th order classifying space $K^{(r)}=K^{(r)}(n)$ associated with an $n$-dimensional manifold $M$ is the Euclidean space of dimension $q_r(n)=\frac12 n^2(n-1)\binom{n+r}{n}$, which is parametrized by the coordinates $\bf{z}^{(r)}=(\ldots,z_\sigma,\ldots )$. The entries of $\wb{z}^{(r)}$ are labeled by non-decreasing multi-indices $\sigma=(i,j,k,l_1,\ldots,l_{r'})$, $j<k$, $1\leq l_1\leq l_2\leq \cdots \leq l_{r'}\leq n$, $0\leq r'\leq r$. The $r$-th order \emph{structure map} associated with a coframe $\bm\theta$ on $M$ is the map $\bf{T}^{(r)}:M\to K^{(r)}$ whose components are the structure invariants: $z_\sigma=T_\sigma(m)$, for $\sigma$ of order $\leq r$.\footnote{Note that $K^{(r)}$ forms the fiber of the $r$-th order jet bundle $\rmJ^r\left(\T M\otimes \bigwedge\nolimits^2 \T^\ast M\right)$. The coframe provides a natural local connection on the anti-symmetric tensor bundle $\T M\otimes \bigwedge\nolimits^2 \T^\ast M$ of type $(1,2)$ whose fiber coordinates are given by the structure invariants. This allows one to project $K^{(r)}$ and thus define the structure map intrinsically. However, the local definition presented above suffices for practical purposes.}
+    The $r$-th order classifying space $K^{(r)}=K^{(r)}(n)$ associated with an $n$-dimensional manifold $M$ is the Euclidean space of dimension $q_r(n)=\frac12 n^2(n-1)\binom{n+r}{n}$, which is parametrized by the coordinates $\bf{z}^{(r)}=(\ldots,z_\sigma,\ldots )$. The entries of $\wb{z}^{(r)}$ are labeled by non-decreasing multi-indices $\sigma=(i,j,k,l_1,\ldots,l_{r'})$, $j<k$, $1\leq l_1\leq l_2\leq \cdots \leq l_{r'}\leq n$, $0\leq r'\leq r$. The $r$-th order \emph{structure map} associated with a coframe $\bm\theta$ on $M$ is the map $\bf{T}^{(r)}:M\to K^{(r)}$ whose components are the structure invariants: $z_\sigma=T_\sigma(m)$, for $\sigma$ of order $\leq r$.\footnote{Note that $K^{(r)}$ forms the fiber of the $r$-th order jet bundle $\rmJ^r\left(\T M\otimes \bigwedge\nolimits^2 \T^\ast M\right)$. The coframe provides a natural local connection on the antisymmetric tensor bundle $\T M\otimes \bigwedge\nolimits^2 \T^\ast M$ of type $(1,2)$ whose fiber coordinates are given by the structure invariants. This allows one to project $K^{(r)}$ and thus define the structure map intrinsically. However, the local definition presented above suffices for practical purposes.}
 \end{defn}
 
 This concept takes care of the fact that not all of the equations in \eqref{eq 8.23 Olver93} are independent. In particular, the commutation identities \eqref{eq 8.10 Olver93} allow us to permute the coframe derivatives, so we need only consider the $q_r(n)$ derived invariants corresponding to non-decreasing multi-indices. The Jacobi identities, which must also automatically hold, could be used to further reduce the collection of ``basic'' structure invariants, but we shall ignore them for now.
@@ -6312,21 +6317,49 @@ The converse of Corollary~\ref{thm vii.2.2 Sternberg} is true for \emph{some} gr
     and so $\eta\circ c:P\to \Hom(V_1\wedge V_1,V\slash V_1)$.
 \end{rem}
 
-\begin{example}
+\begin{example}[Intrinsic torsion of distributions]
     Suppose $V_1<V$ is a $k$-dimensional subspace and $G<\GL(V)$ is the group of \emph{all} linear transformations leaving $V_1$ invariant, $G\cdot V_1<V_1$. One can immediately notice that that $G$ has exactly the structure of the group in Example~\ref{ex foliation g-structure}, so a $G$-structure is the same as a rank $k$ distribution on $M$. Let us also give an explicit proof of this correspondence. Consider a $G$-structure $P\overset{\pi}{\to} M$, viewed as a subbundle of the frame bundle $\Fr(\T M)$. Let $p\in P$ and $m=\pi (P)$. Define the subspace $D_m<\T_m M$ by $D_m=p(V_1)$, where $p$ is interpreted as a frame, i.e., a linear isomorphism $V\to \T_m M$. For any $g\in G$, we have $(p\cdot g)(V_1)=p(g\cdot V_1)=p(V_1)$, so $D_m$ doesn't depend of the choice of $p\in P_m$. Thus, $P$ determines a rank $k$ distribution on $M$. Conversely, let $D$ be a  rank $k$ distribution on $M$ and let $P$ be the submanifold of $\Fr(\T M)$ consisting of those frames $p$ with $p^{-1}(D_m)=V_1$, where $m=\pi(p)$. Then $P$ is easily seen to be a $G$-structure.
 
     Now, it is easy to check that for this $G$, in terms of Remark~\ref{rem p320 Sternberg}, $\im\delta=\ker\tau$, so $\eta$ is an isomorphism. But the vanishing of $\eta\circ c$ is \emph{precisely} the statement of involutivity of the distribution $D$, so by the Frobenius Theorem, $D$ is integrable in this case, and $P$ is locally flat. So for this group $G$, the converse of Corollary~\ref{thm vii.2.2 Sternberg} holds.
 \end{example}
 
-\begin{example}
-    Let $P\to M$ be an almost symplectic structure given by an almost symplectic form $\omega\in\Omega^2(M)$. We will now show that the first-order structure function on $P$ vanishes iff $\dd\omega=0$. First recall that the soldering form $\theta_p$ on the frame bundle $\Fr(\T M)$ is defined as $p^{-1}\circ \pi_\ast$, where $p\in P\subset \Fr(\T^\ast M)$ is treated as a linear isomorphism $p:V\to \T_m M$. Since $P$ is an almost symplectic structure, $p$ is actually an isomorphism of symplectic vector spaces, where $V$ carries a standard symplectic structure, which we denote by $\omega_0$, and $\T_m M$ carries $\omega_m$. Thus, letting $\calH$ be a horizontal space at $p\in P_m$,
+\begin{example}[Intrinsic torsion of almost symplectic structures]
+    Let $P\to M$ be an almost symplectic structure given by an almost symplectic form $\omega\in\Omega^2(M)$ (so $\dim M=n$ is even). We will now show that the first-order structure function on $P$ vanishes iff $\dd\omega=0$. First recall that the soldering form $\theta_p$ on the frame bundle $\Fr(\T M)$ is defined as $p^{-1}\circ \pi_\ast$, where $p\in P\subset \Fr(\T^\ast M)$ is treated as a linear isomorphism $p:V\to \T_m M$. Since $P$ is an almost symplectic structure, $p$ is actually an isomorphism of symplectic vector spaces, where $V$ carries a standard symplectic structure, which we denote by $\omega_0$, and $\T_m M$ carries $\omega_m$. Thus, letting $\calH$ be a horizontal space at $p\in P_m$,
     \[c_\calH(u,v)=\dd\theta_p(p(u)^h_p,p(v)^h_p),\quad u,v,\in V,\] 
     where $X^h_p$ for any $X\in \T_m M$ denotes the unique horizontal vector in $\calH$ such that $\pi_\ast(X^h_p)=X$. 
-    
-     Thus, the Darboux Theorem implies the converse of Corollary~\ref{thm vii.2.2 Sternberg} for almost symplectic structures. In other words, torsion-free almost symplectic structures are integrable, and are called \emph{symplectic structures}.
+
+    The intrinsic torsion of a $G$-structure is a section of a bundle associated to the frame bundle with fiber $\coker\delta$, and therefore, can \emph{always} be represented by a tensor, provided some convenient choice of complement to $\im\delta$  inside the space of vector-valued $2$-forms $\Hom(V\wedge V,V)$. Thus, the identification of $c$ as a tensor typically proceeds in two steps. First, an algebraic step where $\ker\delta$ and $\coker\delta$ are computed. The second step is the construction of a natural tensor field on $M$ that takes values in the subbundle correponding to $\coker\delta$. 
+
+    We begin by describing the Spencer differential \[\delta:V^\ast\otimes\fraksp(V)\to V^\ast\wedge V^\ast\otimes V.\]
+    Here, $\fraksp(V)$ is the Lie algebra of the group of symplectomorphisms of $(V,\omega_0)$ (its elements are called \emph{Hamiltonian matrices}). Thus, we have the inclusion $\fraksp(V)<\frakgl(V)=V^\ast\otimes V$, and $\delta$ acts by antisymmetrizing over the two $V^\ast$ factors. Note that $\dim \fraksp(V)=n(n+1)/2$, which is also the dimensionality of the space of symmetric matrices on $V$. In fact, there is a natural isomorphism 
+    \[\psi:V\odot V\to \fraksp(V),\quad \psi(v\odot w)\cdot u=\omega_0(v,u)w+\omega_0(w,u)v.\]
+    In simpler terms, using the symplectic form to lower one index on a symmetric bivector gives a Hamiltonian matrix. In even simpler terms, $\rmJ\cdot S$ is Hamiltonian for any symmetric matrix $S$, where $\rmJ$ is the matrix representing $\omega_0$. With this isomorphism, and also by using $\omega_0$ as an isomorphism $V\to V^\ast$, the Spencer differential becomes 
+    \[\delta:V\otimes V\odot V\to V\wedge V \otimes V.\]
+    Now, since $\delta$ merely antisymmetrizes over the first two components, it becomes obvious that $\ker\delta\cong V\odot V\odot V$ and $\im\delta=V\wedge V\odot V$. We end up with a very convenient representation for the cokernel: 
+    \[\coker\delta\cong (V\wedge V\otimes V)\slash \im V\cong V\wedge V\wedge V,\] 
+    so the exact Spencer sequence reads
+    \[0\to V\odot V\odot V\to V\otimes V\odot V \to V\wedge V\otimes V\to V\wedge V\wedge V\to 0.\]
+
+    Thus, intrinsic torsion will be identified with a differential $3$-form on $M$. To identify this form, we can act with the intrisic torsion on an arbitrary collection of vector fields. Suppose $u,v,w\in V$ and we pick a smooth horizontal distribution $\calH P$ locally around $p\in P$. Then there are local horizontal vector fields $X^h$, $Y^h$, $Z^h$ around $p$, uniquely defined by taking values in $\calH P$ and satisfying $\theta(X^h)=u$, $\theta(Y^h)=v$, $\theta(Z^h)=w$. Using the standard formula \eqref{eq prop 4.1.6} for the exterior derivative of a $1$-form, we have
+    \[\dd\theta(X^h,Y^h)=-\theta([X^h,Y^h]).\]
+    To construct the necessary $3$-form as above, we need to apply $\omega_0$ to this vector together with $\theta(Z^h)$ and then antisymmetrize. By construction, $\theta$ identifies the symplectic structure of $\T M$ (lifted to each horizontal space) with the symplectic structure of $V$, thus,
+    \[\omega_0(-\theta([X^h,Y^h]),\theta(Z^h))=(\pi^\ast\omega)(-[X^h,Y^h],Z^h).\]
+    But since $(\pi^\ast\omega)(X_1^h,X_2^h)=\omega_0(u_1,u_2)$ for any pair of horizontal vector fields as above, we once again use the general formula \eqref{eq d in terms of Lie} for the exterior derivative of a $2$-form to see that the antisymmetrization of $(\pi^\ast\omega)(-[X^h,Y^h],Z^h)$ gives, up to some unimportant normalization factor depending on the definition of ``antisymmetrization'', exactly 
+    \[\dd (\pi^\ast\omega)_p(X^h,Y^h,Z^h)=(\pi^\ast\dd\omega)_p(X^h,Y^h,Z^h)=\dd\omega(p(u),p(v),p(w)).\]
+
+    Lastly, the Darboux Theorem implies the converse of Corollary~\ref{thm vii.2.2 Sternberg} for almost symplectic structures. In other words, \emph{torsion-free almost symplectic structures are integrable}, and are called \emph{symplectic structures}.
 \end{example}
 
 
+\begin{rem}
+    The above example becomes much more straightfoward if one allows the usage of affine connections. With an affine connection $\nabla$ on $\T M$, one has the general identity
+    \[\dd\omega (\_,\_,\_)=\cyclic \left[\nabla_{\_}\omega(\_,\_)+\omega\left(T^\nabla(\_,\_),\_\right)\right],\]
+    where $\cyclic$ is the sum over the $3$ cyclic permutations of the arguments and $T^\nabla\in\Gamma^1_2(M)$ is the torsion tensor of the connection. Then it is easy to show that $\nabla$ can be chosen so as to be \emph{almost symplectic} (i.e., $\nabla\omega=0$) and so that $\omega\left(T^\nabla(\_,\_),\_\right)=\frac13\dd\omega(\_,\_,\_)$, see \cite[Thm.~2.1]{Albuquerque2015}. Combined with the above argument computing $\coker\delta$, this once again identifies the intrinsic torsion of the $G$-structure with $\dd\omega$ by explicitly constructing a connection (i.e., a choice of horizontal distribution $\calH P$) such that the torsion tensor takes values in the subbundle corresponding to $\coker\delta$.
+\end{rem}
+
+\begin{rem}
+    Torsion-free $G$-structures are not the only distinguished structures. If $\coker\delta$ is not an irreducible representation of $G$, then it decomposes into a direct sum of irreducible components. One may then define special subclasses of $G$-structures whose intrinsic torsion takes values only in one of these irreducible components. In Riemannian geometry, intrinsic torsion is always zero, but the second-order structure function (related to curvature) is not, and the classification of Riemannian geometries based on the representation of $\frakso_n$ in which the second-order structure function takes values was a major problem in geometry in the 20-th century, solved by Marcel Berger, Jim Simons, Robert Bryant, and others.
+\end{rem}
 
 % Note that the Lie bracket of vector fields induces the relations $[L^r,L^q]=L^{r+q}$, $r,g\geq -1$, and so the bracket can be restricted to form maps 
 % \begin{align}
@@ -11846,7 +11879,7 @@ Another geometric structure closely related to the \gls{eds} for immersed surfac
     \[y_x=f(x,y),\quad \text{ and }\quad Y_X=F(X,Y),\]
     w.r.t.\ coordinate transformations that don't mix the coordinates:
     \[\wh{x}=X(x),\quad \wh{y}=Y(y).\label{6914}\]
-    This transformation leaves invariant the coordinate lines $x=a$, $y=b$ in the $xy$-plane as well as the integral lines of the equations. These three families of lines form a $3$-web \emph{in the plane}. Intuitively, the ODE, viewed only up to diffeomorphism, fixes the curvature of the integral curves at all points, which suffices for recovering the curves in two dimensions. Thus, the problem considered by Cartan is equivalent to classifying curvilinear $3$-webs in the plane. He distinguished $3$ classes of ODE's of the above type: those admitting a $3$-parameter group of transformations \eqref{6914}, those admitting a $1$-parameter such group, and those not admitting any such symmetries. This corresponds to $3$ classes of $3$-webs in the plane.
+    This transformation leaves invariant the coordinate lines $x=a$, $y=b$ in the $(x,y)$-plane as well as the integral lines of the equations. These three families of lines form a $3$-web \emph{in the plane}. Intuitively, the ODE, viewed only up to diffeomorphism, fixes the curvature of the integral curves at all points, which suffices for recovering the curves in two dimensions. Thus, the problem considered by Cartan is equivalent to classifying curvilinear $3$-webs in the plane. He distinguished $3$ classes of ODE's of the above type: those admitting a $3$-parameter group of transformations \eqref{6914}, those admitting a $1$-parameter such group, and those not admitting any such symmetries. This corresponds to $3$ classes of $3$-webs in the plane.
 \end{hrem*}
 
 
