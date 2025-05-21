@@ -1487,10 +1487,14 @@ It is these results which caused the concept of solvability, originating from th
 With the preceding \sect s serving as inspiration, we will now put the study of differential equations in the language of jet bundles, following \cite[\S3.2]{Kras}. The reader should note that there are many slightly different jet bundles, so the nomenclature can get confusing. We thus begin with a refresher on jets, based on Definition~\ref{def jet bundles}.
 
 Recall that an $r$-jet $\rmj^r_m f$ of a smooth map $f:M\to M'$ at point $m\in M$ is simply the equivalence class of all maps $M\to M'$ whose order $\leq r$ terms of the Taylor series  at $m$ coincide with those of $f$ in any local coordinates around $m$ and $f(m)$. The jet space $\rmJ^r(M,M')$ is the set of all such jets at all points of $m$. For example, $\rmJ^0(M,M')=M\times M'$. If we have a set of local coordinates $\bf{x}=(x^1,\ldots,x^n)$ on $M$ and $\bf{u}=(u^1,\ldots,u^{n'})$ on $M'$, then, much like in the definition of tensor bundles, we can obtain \emph{canonical coordinates} $p^j_I$ on the jet space by 
-\[p^j_I\left(\rmj^r_mf\right)\coloneqq \partial^I_{\bf{x}}f^j(\bf{x})=\frac{\partial^{|I|}f^j}{\partial x_1^{i_1}\cdots\partial x_n^{i_n}}(\bf{x}),\quad j=1,\ldots,n',\quad |I|\leq r,\] 
+\[p^j_I\left(\rmj^r_mf\right)\coloneqq \partial^I_{\bf{x}}f^j(\bf{x})=\frac{\partial^{|I|}f^j}{(\partial x^1)^{i_1}\cdots(\partial x^n)^{i_n}}(\bf{x}),\quad j=1,\ldots,n',\quad |I|\leq r,\] 
 where $I=(i_1,\ldots,i_n)$, $|I|=i_1+\cdots+i_n$, and $f^j(\bf{x})=u^j(f(\bf{x}^{-1}(\bf{x})))$ is a component of a local representative of $f$. In particular, when $|I|=0$, we get $p^j=u^j$. These coordinates have smooth transition functions and thus turn $\rmJ^r(M,M')$ into a smooth manifold. By counting the coordinates, we find 
 \[\dim \rmJ^r (M,M')=n+n'\sum_{i=0}^r\binom{n+i-1}{n-1}=n+n'\binom{n+r}{r}.\]
 There is a set of natural projections $\pi^r_{s}:\rmJ^r(M,M')\to \rmJ^s(M,M')$ for $r>s$ which simply keep only the first $s$ monomials, $|I|\leq s$. From the construction of the canonical coordinates it is clear that these projections are locally trivial submersions, and thus \glspl{vb}.
+
+\begin{rem}
+    Some authors use an alternative indexing scheme for jet coordinates, where the multi-index $I=(i_1,\ldots,i_l)$ can be of any length $l$, but $1\leq i_j\leq n$, and each index indicates a \emph{single} partial derivative w.r.t.\ $x^{i_j}$, so $\partial_{\bf x}^I=\partial_{x^{i_1}}\cdots \partial_{x^{i_l}}$. We avoid this notation since it requires additional accounting for the commutativity of partials.
+\end{rem}
 
 Recall that the \emph{differential group of order $r$}, or just the \emph{$r$-jet group},  $\GL_n^r(\bbR)$ is defined as the set of $r$-jets at the origin of diffeomorphisms $\bbR^n\to \bbR^n$ that fix the origin. Clearly, under a change of coordinates on $M$, the canonical coordinates transform under an action of the differential group. This makes $\rmJ^r(M,M')$ into a \gls{vb} over $M\times M'$ with structure group $\GL_n^r(\bbR)$. 
 
@@ -1622,11 +1626,11 @@ is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifol
     \begin{tikzcd}
         & & & \arrow[dll,"\pi^{\infty}_{r+1}",swap]\arrow[dl]\rmJ^\infty E\arrow[dr]\arrow[drr]\arrow[drrr,"\pi^\infty"] & & &
         \\
-        \cdots \arrow[r] & \rmJ^{r+1} E\arrow[r] & \rmJ^rE \arrow[r] & \cdots \arrow[r]& \rmJ^1 E\arrow[r,"\pi^1_0"] &  E\arrow[r,"\pi"] & M,
+        \cdots \arrow[r] & \rmJ^{r+1} E\arrow[r] & \rmJ^rE \arrow[r] & \cdots \arrow[r]& \rmJ^1 E\arrow[r,swap,"\pi^1_0"] &  E\arrow[r,swap,"\pi"] & M,
     \end{tikzcd}
     \]
     which means that points of $\rmJ^\infty E$ are infinite sequences $\theta_l \in\rmJ^l E$, $l\geq 0$, such that $\pi^{l+1}_l(\theta_{l+1})=\theta_l$ for all $l$. In other words, this is the bundle of the full Taylor series of all possible smooth sections of $E$.
-    The Cartan distribution $\calC^\infty$ on $\rmJ^\infty E$ is intuitively constructed in the same way as above, and as a result it doesn't involve \emph{any} vertical directions and at every point it is complementary to the vertical subspace. For the same reason, its rank turns out to be simply $n=\dim M$. Finally, since the commutator written above doesn't occur, it also ends up being involutive. Using an argument akin to the Frobenius Theorem, one can then show that all integral manifolds of $\calC^\infty$ are locally the graphs of infinite prolongations of sections of $E$. In other words, integral manifolds of $\calC^\infty$ are locally one-to-one with sections of $E$. This is why the geometric description of differential equations becomes most intuitive after infinitely many prolongations.
+    The Cartan distribution $\calC^\infty$ on $\rmJ^\infty E$ is intuitively constructed in the same way as above, and as a result it doesn't involve \emph{any} vertical directions and at every point it is complementary to the vertical subspace. For the same reason, its rank turns out to be simply $n=\dim M$. Finally, since the commutator written above doesn't occur, it also ends up being involutive. Using an argument akin to the Frobenius Theorem, one can then show that all integral manifolds of $\calC^\infty$ are locally the graphs of infinite prolongations of sections of $E$. In other words, integral manifolds of $\calC^\infty$ are locally one-to-one with sections of $E$. This is why the geometric description of differential equations becomes most intuitive after infinitely many prolongations. The trade-off is that the topology of the infinite jet bundle is such that an integral manifold is \emph{not} uniquely determined by a single point ($\infty$-jet) through which it passes. This has to do with the well known fact that a smooth function is not necessarily determined -- even locally -- by its Taylor series at a point, since the series need not be convergent. In the analytic category, however, this issue does not arise.
 \end{rem}
 
 \begin{rem}[Contact structures]
@@ -1710,7 +1714,7 @@ For clarity let us denote by $\calC^r$ the Cartan distribution on $\rmJ^r E$.
 
 As we will prove below, the above construction is of a universal nature. We now describe the local structure of transverse integral manifolds $N$ and deduce a formula to compute $\dim L(N)$ in terms of $\dim N$.
 
-\begin{prop}\label{prop 3.2.4 Kras}
+\begin{prop}[{\cite[Prop.~3.2.4]{Kras}}]\label{prop 3.2.4 Kras}
     Any transverse integral manifold $N$ of the Cartan distribution on $\rmJ^rE$ locally lies in the $r$-graph $\graph^r(s)$ of some section $s$.
 \end{prop}
 \begin{proof}
@@ -1735,7 +1739,7 @@ As we will prove below, the above construction is of a universal nature. We now 
     \end{enumerate}
 \end{cor}
 
-\begin{thm}\label{thm 3.2.7 Kras}
+\begin{thm}[{\cite[Thm.~3.2.7]{Kras}}]\label{thm 3.2.7 Kras}
     An integral manifold $Q$ of the Cartan distribution on $\rmJ^r E$ is maximal iff everywhere, except possibly for a manifold of lower dimension, it is locally of the form $L(N)$ for some transverse integral manifold $N\embweak\rmJ^{r-1}E$. 
 \end{thm}
 \begin{proof}
@@ -1754,7 +1758,7 @@ Note that if $N$ is the $(r-1)$-graph of some section of $E$, then the manifold 
 
 From the above theorem and Corollary~\ref{cor 3.2.6 Kras}, we get the following.
 
-\begin{cor}\label{cor 3.2.9 Kras}
+\begin{cor}[{\cite[Cor.~3.2.9]{Kras}}]\label{cor 3.2.9 Kras}
     Except for the cases $k=n=1$ ($1$ function of $1$ variable) and $r=k=1$ ($1$-jets of $1$ function), manifolds of the form $L(N)$, where $\dim N=0$, are of the maximal dimension among all integral manifolds of $\calC^r$. In other words, the fibers of $\pi^r_{r-1}$ are integral manifolds of maximal dimension.
 \end{cor}
 
@@ -1913,7 +1917,7 @@ The following surprising theorem gives a complete description of contact transfo
 \end{proof}
 
 \begin{rem}
-    In fact, B\"acklund proved this result not just for infinitesimal transformations, but for actual contact transformations. The restrictions imposed by B\"acklund's theorem severely limit the range of applicability of contact transformations. The core issue is that we have been considering symmetries of the full Cartan distribution $\calC$, whereas for a particular differential equation $\calE$ only the restricted distribution $\calC(\calE)$ matters. It is possible that, on the submanifold $\calE$ of the jet bundle defined by a system of differential equations, there exist additional higher-order symmetries, known as \emph{internal symmetries}, which are not merely restrictions of contact transformations of the jet bundle. We will not consider such symmetries here and instead direct the reader to \cite[\S3.7]{Kras} and \cite{Olver}.
+    In fact, B\"acklund proved this result not just for infinitesimal transformations, but for actual contact transformations. The restrictions imposed by B\"acklund's theorem severely limit the range of applicability of contact transformations. The core issue is that we have been considering symmetries of the full Cartan distribution $\calC$, whereas for a particular differential equation $\calE$ only the restricted distribution $\calC(\calE)$ matters. It is possible that $\calC(\calE)$ possesses additional non-contact higher-order symmetries, known as \emph{internal symmetries}, which are not merely restrictions of contact transformations of the jet bundle. We will not consider such symmetries here and instead direct the reader to \cite[\S3.7]{Kras} and \cite{Olver}.
 \end{rem}
 
 
@@ -3537,7 +3541,7 @@ The extension of the Cartan form to multi-dimensional variational problems is no
 \chapter{Equivalence problems \texorpdfstring{\ucmark}{}}\label{ch equivalence problems}
 
 
-This \chap\ is devoted to a topic that is underrepresented in differential geometry books due its sophistication, but is actually foundational for the modern view of geometry. As we have noted before, for Felix Klein all of geometry was rooted in the study of invariants of group actions. In Klein geometry, all such invariants are related to the Maurer-Cartan form of the principal group, specifically the structure constants of its Lie algebra. However, when it comes to non-homogeneous geometries, which are usually described by $G$-structures, the correct analog of these objects is difficult to identify, as it is not even clear which group action one should study. This is where our study of differential invariants from the preceding \chap\ steps in. Indeed, Gauss', Riemann's, and Christoffel's famous work was not just about finding invariants of a finite-dimensional group (say, Euclidean group $\rmE_n$ acting on $\bbE^n$), but rather about objects (and relations between objects, i.e., equations) that are invariant under \emph{changes of local coordinates}, which is not an action that can be described by a Lie group. Instead, local diffeomorphisms comprise an infinite-dimensional \emph{Lie pseudogroup}. Hence, to reconcile Klein's view of geometry with that of the Riemannian geometers, one needs to conceptualize invariants of Lie pseudogroups. In this \chap\ we begin to present the resolution to this puzzle, due largely to \'Elie Cartan. 
+This \chap\ is devoted to a topic that is underrepresented in differential geometry books due its theoretical nature, but is actually foundational to the modern view of geometry. As we have noted before, for Felix Klein all of geometry was rooted in the study of invariants of group actions. In Klein geometry, all such invariants are related to the Maurer-Cartan form of the principal group, specifically the structure constants of its Lie algebra. However, when it comes to non-homogeneous geometries, which are usually described by $G$-structures, the correct analog of these objects is difficult to identify, as it is not even obvious which group action one should study. This is where our study of differential invariants from the preceding \chap\ steps in. Indeed, Gauss', Riemann's, and Christoffel's famous work was not just about finding invariants of a finite-dimensional group (say, Euclidean group $\rmE_n$ acting on $\bbE^n$), but rather about objects (and relations between objects, i.e., equations) that are invariant under \emph{changes of local coordinates}, which is not an action that can be described by a Lie group. Instead, local diffeomorphisms comprise an infinite-dimensional \emph{Lie pseudogroup}. Hence, to reconcile Klein's view of geometry with that of the Riemannian geometers, one needs to conceptualize invariants of Lie pseudogroups. In this \chap\ we begin to present the resolution of this puzzle, due largely to \'Elie Cartan. 
 
 In \S\ref{sec topological manifolds}, we have defined differential geometry as the study of functors on categories of manifolds (with geometric structures on them). That definition, while valid, is probably too broad to capture the essence of classic differential geometry, which is the focus of this book, since it includes many constructions that are fundamentally of purely topological or algebraic nature. Now that we have a much more narrow definition of geometric structures in the language of Lie group actions, we can correspondingly hone the definition of geometry itself. Starting with his seminal 1908 paper on subgroups of groups of transformations, Cartan viewed differential geometry as follows:
 \begin{gather*}
@@ -3560,17 +3564,17 @@ Finally, note the remarkable similarity between this definition of geometry and 
 
 \section{Basic equivalence problems}
 
-We begin our exposition with a discussion of the basic equivalence problems which can be handled by the method of moving frames. Suppose $G$ is a transformation group acting smoothly on an $(n+s)$-dimensional manifold $M$. In classical applications, $G$ is a finite-dimensional Lie group, but, as we shall see, the method can be extended to infinite-dimensional Lie pseudogroup actions, e.g., the group of conformal transformations on a Riemannian surface, the group of canonical transformations on a symplectic space, or the group of contact transformations on a jet space.
+We begin our exposition with a discussion of the basic equivalence problems which can be handled by the method of moving frames or Cartan's equivalence method. Suppose $G$ is a transformation group acting smoothly on an $(n=p+s)$-dimensional manifold $M$. In classical applications, $G$ is a finite-dimensional Lie group, but, as we shall see, the method can be extended to infinite-dimensional Lie pseudogroup actions, e.g., the group of conformal transformations on a Riemannian surface, the group of canonical transformations on a symplectic space, or the group of contact transformations on a jet space.
 
 In either situation, a basic equivalence problem is to determine whether two given submanifolds are congruent modulo a group transformation. We shall divide the basic problem into two different versions, depending on whether one allows reparametrizations of the submanifolds in question. Formally, these can be stated as follows.
 
-\textbf{The Fixed Parameter Equivalence Problem:} Given two immersions $\iota: X \to M$ and $\wb{\iota}: X \to M$ of an $n$-dimensional manifold $X$ into $M$ does there exist a group transformation $g \in G$ such that
+\textbf{The Fixed Parameter Equivalence Problem:} Given two immersions $\iota: X \to M$ and $\wb{\iota}: X \to M$ of a $p$-dimensional manifold $X$ into $M$ does there exist a group transformation $g \in G$ such that
 \begin{equation}
     \wb{\iota}(x) = g \cdot \iota(x) \quad \text{for all} \quad x \in X.
     \label{eq 2.1 OlverCo}
 \end{equation}
 
-\textbf{The Unparametrized Equivalence Problem:} Given two submanifolds $N, \wb{N} < M$ of the same dimension $n$, determine whether there exists a group transformation $g \in G$ such that
+\textbf{The Unparametrized Equivalence Problem:} Given two submanifolds $N, \wb{N} < M$ of the same dimension $p$, determine whether there exists a group transformation $g \in G$ such that
 \begin{equation}
 g \cdot N = \wb{N}.
 \label{eq 2.2 OlverCo}
@@ -3593,7 +3597,7 @@ Note that the problem of determining the symmetries of a submanifold, meaning th
 
 In the general unparametrized equivalence problem, typically, the submanifolds $N$ and $\wb{N}$ are formulated via explicit parametrizations $\iota: X \to M$, with image $N = \iota(X)$ and $\wb{\iota}: X \to M$, with $\wb{N} = \wb{\iota}(X)$, where, for simplicity, the parameter spaces are taken to be the same. (Indeed, since our considerations are always local, we shall not lose any generality by assuming that $X=U \subset\bbR^n$ is an open subset of Euclidean space.) In such cases, we can easily reformulate the unparametrized equivalence problem in the following form.
 
-\textbf{The Reparametrization Equivalence Problem:} Given two embeddings $\iota: U \to M$ and $\wb{\iota}: U \to M$ of an $n$-dimensional manifold $U$ (\gls{wlog}, $U\subset\bbR^n$) into $M$, does there exist a local diffeomorphism $\varPhi: U \to U$, i.e., a change of parameter, and a group transformation $g \in G$ such that
+\textbf{The Reparametrization Equivalence Problem:} Given two embeddings $\iota: U \to M$ and $\wb{\iota}: U \to M$ of an $p$-dimensional manifold $U$ (\gls{wlog}, $U\subset\bbR^n$) into $M$, does there exist a local diffeomorphism $\varPhi: U \to U$, i.e., a change of parameter, and a group transformation $g \in G$ such that
 \begin{equation}
     \wb{\iota}(\varPhi(x)) = g \cdot \iota(x) \quad \text{for all} \quad x \in U?
     \label{eq 2.6 OlverCo}
@@ -3607,7 +3611,7 @@ We shall see that by solving the fixed parametrization problem, first in the cas
 
 The formulation of the reparametrization problem in the form \eqref{eq 2.6 OlverCo} indicates an intermediate extension of the two cases, in which one only allows a subclass of all possible reparametrizations.
 
-\textbf{The Restricted Reparametrization Equivalence Problem:} Given two embeddings $\iota: U \to M$ and $\wb{\iota}: U \to M$ of an $n$-dimensional manifold $U$ (\gls{wlog}, $U\subset\bbR^n$) into $M$ and a Lie pseudogroup of transformations $\calH$ acting on $U$, determine whether there exists a group transformation $g \in G$ such that \eqref{eq 2.6 OlverCo} holds for some reparametrization $\varPhi \in \calH$ in the prescribed pseudogroup.
+\textbf{The Restricted Reparametrization Equivalence Problem:} Given two embeddings $\iota: U \to M$ and $\wb{\iota}: U \to M$ of an $p$-dimensional manifold $U$ (\gls{wlog}, $U\subset\bbR^n$) into $M$ and a Lie pseudogroup of transformations $\calH$ acting on $U$, determine whether there exists a group transformation $g \in G$ such that \eqref{eq 2.6 OlverCo} holds for some reparametrization $\varPhi \in \calH$ in the prescribed pseudogroup.
 
 \begin{example}
     For example, one might consider the problem of equivalence of surfaces in Euclidean space, in which one is only allowed conformal, or area preserving, or Euclidean reparametrizations. The general reparametrization equivalence problem is, of course, a special case when the pseudogroup $\calH = \mathpzc{Diff}(U)$ is the entire local diffeomorphism pseudogroup.
@@ -5781,6 +5785,16 @@ In particular, a $G_f$-structure defined by a geometric structure $\varphi$ as $
     Integrability is fundamental in defining special \emph{types of geometries} on $M$. While, in general, a choice of a $G$-structure as a subbundle of the frame bundle is an additional free choice separated from the base manifold, an integrable $G$-structure is completely determined by a particular atlas on $M$. Thus, integrable $G$-structures \emph{become natural} (functorial) when restricted to the category of manifolds with the corresponding special kind of atlas. For example, an integrable almost complex structure is the same as a complex manifold, which is defined by an atlas with holomorphic transition maps. An integrable $\{e\}$-structure, as we have seen, is a coframe with constant structure functions, hence a local Lie group. Thus, integrable $G$-structures can be seen as a generalization of Klein manifolds or $(G,H)$-structures from \Chap~\ref{chap: Klein geom}. In fact, as we will see, integrable $G$-structures are nothing but locally Klein geometries, a.k.a.\ flat Cartan geometries.
 \end{intu*}
 
+\begin{rem}
+    One can also define an analog of integrable $G$-structures for Lie pseudogroups. Namely, if $\varGamma$ is a Lie pseudogroup on a manifold $X$ and $M$ is another manifold of the same dimension, then a $\varGamma$-structure on $M$ is a maximal $\varGamma$-atlas on it, defined as a collection of $X$-valued charts with transition maps that are elements of $\varGamma\subset \Diff_{\mathrm{loc}}(X)$.
+
+    For every matrix group $G<\GL_n(\bbR)$ we can define a canonical Lie pseudogroup $\varGamma_G$ associated to it as the set of all locally defined diffeomorphisms $\varphi\in \Diff_{\mathrm{loc}}(\bbR^n)$ whose Jacobi matrix at every point is an element of $G$. This is in fact the full pseudogroup of symmetries of the canonical $G$-structure $\bbR^n\times G$. Then it is not hard to see that $\varGamma_G$-structures on $M$ are in one-to-one correspondence with (isomorphism classes of) integrable $G$-structures on $M$, see \cite[Prop.~5.1.4]{Cataffi}. In the same way, the pseudogroup $\varGamma_{G,H}$ associated to the natural $G$-action on a Klein geometry $(G,H)$ (so $X=G\slash H$) gives rise to $(G,H)$-structures, which we identified with effective (first-order) locally Klein geometries in \S\ref{sec: locally Klein geom}.
+
+    One may find it confusing that some types of geometric structures, such as $\varGamma$-structures and $(G,H)$-structures, are \emph{defined} as certain integrable structures, whereas $G$-structures need not be integrable. Indeed, $\varGamma$-structures also have a non-integrable generalization, called \emph{almost $\varGamma$-structures} and first introduced by Guillemin and Sternberg. Suppose $\varGamma$ acts on $X$ transitively. Then for every order $r>0$ we can define the \emph{isotropy group of order $r$} as the subgroup of the jet group $\GL^r_n(\bbR)$ consisting of $r$-jets at a basepoint $x_0$ of those elements of $\varGamma$ whose $(r-1)$-jet at $x_0$ is trivial. Alternatively, it is the isotropy group of the prolonged action $\varGamma^{(r)}\acts \rmJ^r(X,X)$. Suppose this isotropy group is $G$. An almost $\varGamma$-structure on $M$ of order $r$ is defined as a principal $G$-subbundle $P\subset \rmJ^r_{x_0}(X,M)\to M$. 
+
+    The above definition can be further relaxed to completely arbitrary pseudogroups $\varGamma$ by defining almost $\varGamma$-structures (of order $r$) as $\varGamma^{(r)}$-subbundles of $\rmJ^r(X,M)$. Such a structure is called integrable if it is the prolongation of some $\varGamma$-structure. For details see \cite{Cataffi}.
+\end{rem}
+
 
 \PRLsep
 
@@ -6262,7 +6276,7 @@ In conclusion, the tensor $c_\calH$ depends on the choice of horizontal space at
 \[0\to \ker\delta\hookrightarrow V^\ast\otimes\frakg\overset{\delta}{\to} V^\ast\wedge V^\ast\otimes V\overset{\pr}{\to} \coker\delta\to 0,\]
 we can form an \emph{invariant} function $c:P\to \coker\delta$.
 
-\begin{defn}[First-order structure function]\index{Structure function!of a $G$-structure}\index{Intrinsic torsion}
+\begin{defn}[First-order structure function]\index{Structure function!of a $G$-structure}\index{Torsion!Intrinsic ($G$-structure)}
     Given a first-order $G$-structure $P\to M$, its first-order structure function, also called \emph{intrinsic torsion}, is 
     \[c:P\to \coker(\delta),\quad c(p)\coloneqq \left[c_{\calH_p}\right]=c_{\calH_p}+\im\delta,\]
     where $\calH_p$ is an abitrary horizontal space at $p$.
@@ -6289,7 +6303,7 @@ The reader can also easily check that the space $\im(\delta)$ is a $G$-invariant
 
 Finally, since the structure function is clearly a natural (intrinsic) quantity of the $G$-structure, equivalent $G$-structures have equivalent structure functions.
 
-\begin{prop}[{\cite[Thm.~VII.2.1]{Sternberg}}]
+\begin{prop}[{\cite[Thm.~VII.2.1]{Sternberg}}]\label{thm vii.2.1 Sternberg}
     If $F:M\to \wb M$ is a local diffeomorphism establishing an equivalence of two $G$-structures $P\to M$ and $\wb P\to \wb M$, then the structure functions are also $F$-related: $c=\wb c\circ F_\ast$.
 \end{prop}
 
@@ -6317,13 +6331,13 @@ The converse of Corollary~\ref{thm vii.2.2 Sternberg} is true for \emph{some} gr
     and so $\eta\circ c:P\to \Hom(V_1\wedge V_1,V\slash V_1)$.
 \end{rem}
 
-\begin{example}[Intrinsic torsion of distributions]
+\begin{example}[Intrinsic torsion of a distribution]
     Suppose $V_1<V$ is a $k$-dimensional subspace and $G<\GL(V)$ is the group of \emph{all} linear transformations leaving $V_1$ invariant, $G\cdot V_1<V_1$. One can immediately notice that that $G$ has exactly the structure of the group in Example~\ref{ex foliation g-structure}, so a $G$-structure is the same as a rank $k$ distribution on $M$. Let us also give an explicit proof of this correspondence. Consider a $G$-structure $P\overset{\pi}{\to} M$, viewed as a subbundle of the frame bundle $\Fr(\T M)$. Let $p\in P$ and $m=\pi (P)$. Define the subspace $D_m<\T_m M$ by $D_m=p(V_1)$, where $p$ is interpreted as a frame, i.e., a linear isomorphism $V\to \T_m M$. For any $g\in G$, we have $(p\cdot g)(V_1)=p(g\cdot V_1)=p(V_1)$, so $D_m$ doesn't depend of the choice of $p\in P_m$. Thus, $P$ determines a rank $k$ distribution on $M$. Conversely, let $D$ be a  rank $k$ distribution on $M$ and let $P$ be the submanifold of $\Fr(\T M)$ consisting of those frames $p$ with $p^{-1}(D_m)=V_1$, where $m=\pi(p)$. Then $P$ is easily seen to be a $G$-structure.
 
     Now, it is easy to check that for this $G$, in terms of Remark~\ref{rem p320 Sternberg}, $\im\delta=\ker\tau$, so $\eta$ is an isomorphism. But the vanishing of $\eta\circ c$ is \emph{precisely} the statement of involutivity of the distribution $D$, so by the Frobenius Theorem, $D$ is integrable in this case, and $P$ is locally flat. So for this group $G$, the converse of Corollary~\ref{thm vii.2.2 Sternberg} holds.
 \end{example}
 
-\begin{example}[Intrinsic torsion of almost symplectic structures]
+\begin{example}[Intrinsic torsion of an almost symplectic structure]
     Let $P\to M$ be an almost symplectic structure given by an almost symplectic form $\omega\in\Omega^2(M)$ (so $\dim M=n$ is even). We will now show that the first-order structure function on $P$ vanishes iff $\dd\omega=0$. First recall that the soldering form $\theta_p$ on the frame bundle $\Fr(\T M)$ is defined as $p^{-1}\circ \pi_\ast$, where $p\in P\subset \Fr(\T^\ast M)$ is treated as a linear isomorphism $p:V\to \T_m M$. Since $P$ is an almost symplectic structure, $p$ is actually an isomorphism of symplectic vector spaces, where $V$ carries a standard symplectic structure, which we denote by $\omega_0$, and $\T_m M$ carries $\omega_m$. Thus, letting $\calH$ be a horizontal space at $p\in P_m$,
     \[c_\calH(u,v)=\dd\theta_p(p(u)^h_p,p(v)^h_p),\quad u,v,\in V,\] 
     where $X^h_p$ for any $X\in \T_m M$ denotes the unique horizontal vector in $\calH$ such that $\pi_\ast(X^h_p)=X$. 
@@ -6353,13 +6367,33 @@ The converse of Corollary~\ref{thm vii.2.2 Sternberg} is true for \emph{some} gr
 
 \begin{rem}
     The above example becomes much more straightfoward if one allows the usage of affine connections. With an affine connection $\nabla$ on $\T M$, one has the general identity
-    \[\dd\omega (\_,\_,\_)=\cyclic \left[\nabla_{\_}\omega(\_,\_)+\omega\left(T^\nabla(\_,\_),\_\right)\right],\]
-    where $\cyclic$ is the sum over the $3$ cyclic permutations of the arguments and $T^\nabla\in\Gamma^1_2(M)$ is the torsion tensor of the connection. Then it is easy to show that $\nabla$ can be chosen so as to be \emph{almost symplectic} (i.e., $\nabla\omega=0$) and so that $\omega\left(T^\nabla(\_,\_),\_\right)=\frac13\dd\omega(\_,\_,\_)$, see \cite[Thm.~2.1]{Albuquerque2015}. Combined with the above argument computing $\coker\delta$, this once again identifies the intrinsic torsion of the $G$-structure with $\dd\omega$ by explicitly constructing a connection (i.e., a choice of horizontal distribution $\calH P$) such that the torsion tensor takes values in the subbundle corresponding to $\coker\delta$.
+    \[\dd\omega (\_,\_,\_)=\cyclic \left[\nabla_{\_}\omega(\_,\_)+\omega\left(\sfT^\nabla(\_,\_),\_\right)\right],\]
+    where $\cyclic$ is the sum over the $3$ cyclic permutations of the arguments and $\sfT^\nabla\in\Gamma^1_2(M)$ is the torsion tensor of the connection. Then it is easy to show that $\nabla$ can be chosen so as to be \emph{almost symplectic} (i.e., $\nabla\omega=0$) and so that $\omega\left(\sfT^\nabla(\_,\_),\_\right)=\frac13\dd\omega(\_,\_,\_)$, see \cite[Thm.~2.1]{Albuquerque2015}. Combined with the above argument computing $\coker\delta$, this once again identifies the intrinsic torsion of the $G$-structure with $\dd\omega$ by explicitly constructing a connection (i.e., a choice of horizontal distribution $\calH P$) such that the torsion tensor takes values in the subbundle corresponding to $\coker\delta$.
 \end{rem}
+
+Indeed, in the context of equivalence problems, affine connections, despite not being intrinsic to the problems themselves, turn out to be an essential tool that allows one to reduce complex questions like that in the above example to straightforward and universal algebraic algorithms. Hence, the reader should not feel discouraged by the complexity of the above arguments. The following \chap\ will be devoted to Cartan's systematic algebraic approach for finding the differential invariants intrinsic to \emph{any} system of differential equations, including ones describing equivalences of $G$-structures.
+
+\begin{example}[Complex structures]
+    A final classical example where the converse to Corollary~\ref{thm vii.2.2 Sternberg} holds is the case of almost complex ($\GL_n(\bbC)$-) structures. The first-order structure function of such a structure is called the \emph{Nijenhuis tensor}, and the Newlander-Nirenberg Theorem \index{Theorem!Newlander-Nirenberg} shows that its vanishing is equivalent to the integrability of the structure, i.e., to the existence of a corresponding complex-analytic atlas on $M$. The proof relies heavily on functional analysis, but if one assumes that the structure is real-analytic, there is a relatively simple geometric proof which we will provide later.
+\end{example}
 
 \begin{rem}
     Torsion-free $G$-structures are not the only distinguished structures. If $\coker\delta$ is not an irreducible representation of $G$, then it decomposes into a direct sum of irreducible components. One may then define special subclasses of $G$-structures whose intrinsic torsion takes values only in one of these irreducible components. In Riemannian geometry, intrinsic torsion is always zero, but the second-order structure function (related to curvature) is not, and the classification of Riemannian geometries based on the representation of $\frakso_n$ in which the second-order structure function takes values was a major problem in geometry in the 20-th century, solved by Marcel Berger, Jim Simons, Robert Bryant, and others.
 \end{rem}
+
+
+\PRLsep
+
+
+Let us return to the general equivalence problem for $G$-structures. Theorem~\ref{thm vii.2.1 Sternberg} asserts that if we want to find an isomorphism between two $G$-structures $P$ and $\wb P$, then we must \emph{at least} be able to find a map $F_\ast:P\to \wb P$ such that $F^\ast \wb c=c$. In general, this kind of problem is very difficult. The one easy case is where one of the functions is constant. Then the other function must also be the same constant. 
+
+
+\begin{cor}[{\cite[Cor.~VII.2.1]{Sternberg}}]\label{cor vii.2.1 Sternberg}
+    Let $P$ be a $G$-structure with a constant structure function. Any $G$-structure locally equivalent to $P$ must have the same constant as its structure function.
+\end{cor}
+
+
+
 
 % Note that the Lie bracket of vector fields induces the relations $[L^r,L^q]=L^{r+q}$, $r,g\geq -1$, and so the bracket can be restricted to form maps 
 % \begin{align}
@@ -6394,7 +6428,7 @@ The converse of Corollary~\ref{thm vii.2.2 Sternberg} is true for \emph{some} gr
 
 
 This \chap\ is devoted to the first side of Cartan geometry, namely as a study of geometric structures described by systems of PDEs.
-Much like in the Frobenius Theorem, which is the basic special case, the goal is to reduce the problem of the existence of solutions to a certain problem of linear algebra on the $C^\infty(M)$-module of differential forms on $M$. Since linear algebra on modules is exactly what homological algebra studies, it should not come as a surprise that this \chap\ will also see our first encounter with cohomology.
+Much like in the Frobenius Theorem, which is the basic special case, the goal is to reduce the problem of the existence of solutions to a certain problem of linear algebra on the $C^\infty(M)$-module of differential forms on $M$. Since linear algebra on ring modules is exactly what homological algebra studies, it should not come as a surprise that this \chap\ will also see our first encounter with cohomology (in fact, we already got a glimps of it in the preceding \sect).
 
 Why, one might ask, would we be interested in existence results for solutions of PDEs when doing geometry? The main question that Cartan's theory answers for a given PDE is \emph{which initial value problems for it are well-posed}. In geometric context, we will think of a PDE with a well-posed initial condition as a \emph{compressed form} of its unique solution. The ``initial values'' will be the \emph{differential invariants} describing certain geometric structures, and the PDE itself will be some form of a \emph{structure equation} (related to the Maurer-Cartan equation). The unique solution then will be a geometric structure on the underlying manifold. Thus, Cartan's analysis of PDEs will allow us to ``distill'' very general geometric structures down to a minimal set of quantities that suffice to describe them (for example, isometric embeddings of Riemannian surfaces are described by two scalar curvatures subject to a certain compatibility condition).
 
@@ -7174,7 +7208,7 @@ As a final example, we apply the Cauchy characteristics to prove the following i
     where $\bf{a}$ and $b$ are constants satisfying $\lVert a\rVert=1$.
 \end{thm}
 \begin{proof}
-    We will denote by $M$ the space of $(\bf{x},u)$ and identify $\bbE^n$ with the hyperplane $u=0$. The solution can be interpreted as the graph $\varGamma < M$ of a section $\bbE^n\to M$. For the eikonal equation the denominators in the middle of \eqref{eq 14 Bryant} are zero, so the Cauchy characteristics satisfy 
+    We will denote by $E$ the space of $(\bf{x},u)$ and identify $\bbE^n$ with the hyperplane $u=0$. The solution can be interpreted as the graph $\varGamma < E$ of a section $\bbE^n\to E$. For the eikonal equation the denominators in the middle of \eqref{eq 14 Bryant} are zero, so the Cauchy characteristics satisfy 
     \[p_i=\const.\]
     The equations \eqref{eq 14 Bryant} can be integrated and the Cauchy characteristic curves, when projected to $M$, are the straight lines 
     \[x^i=x^i_0+p_i t,\quad u=u_0+t,\label{eq 16 Bryant}\]
@@ -8694,16 +8728,16 @@ Since the system is homogeneous with constant coefficients, $u$ is a solution if
 so that 
 \[p^a_{ij}\partial_{u^a}\otimes \dd x^j\otimes \dd x^i \;\in A\otimes V^\ast.\]
 Since mixed partials commute, $p^a_{ij}\partial_{u^a}\otimes \dd x^i\otimes \dd x^j$ is also an element of $W\otimes \bigodot\nolimits^2 V^\ast$; in indices this means $p^a_{ij}=p^a_{ji}$. Combining these two conditions gives 
-\[p^a_{ij}\partial_{u^a}\otimes \dd x^i\otimes \dd x^j \; \in (A\otimes V^\ast)\cap (W\otimes \bigodot\nolimits^2 V^\ast)\eqqcolon A^{(1)},\]
+\[p^a_{ij}\partial_{u^a}\otimes \dd x^i\otimes \dd x^j \; \in (A\otimes V^\ast)\cap \left(W\otimes \bigodot\nolimits^2 V^\ast\right)\eqqcolon A^{(1)},\]
 where the first factor is due to the equations and the second to the commuting derivatives. The space $A^{(1)}$ is called the \emph{(first) prolongation} of $A$. In geometric terms, \emph{$A^{(1)}$ is the space of integral elements at any point of the associated \gls{eds}}. We will later generalize this to all linear Pfaffian systems. Hence, we expect to be able to examine the involutivity of a system by studying its first prolongation. 
 
 Similarly, the condition on the cubic term is 
-\[p^a_{ijk}\partial_{u^a}\otimes \dd x^i\otimes\dd x^j\otimes\dd x^k\; \in(A\otimes V^\ast\otimes V^\ast)\cap (W\otimes \bigodot\nolimits^3 V^\ast)\eqqcolon A^{(2)},\]
+\[p^a_{ijk}\partial_{u^a}\otimes \dd x^i\otimes\dd x^j\otimes\dd x^k\; \in \left(A\otimes V^\ast\otimes V^\ast\right)\cap (W\otimes \bigodot\nolimits^3 V^\ast)\eqqcolon A^{(2)},\]
 and so on for all $l$. In general, we define 
 
 \begin{defn}[Prolongation]\index{Prolongation}
     Let $V,W$ be vector spaces and $A<W\otimes V^\ast$ a subspace (a tableau). The $l$-th prolongation of $A$ is the subspace $A^{(l)}<W\otimes \bigodot\nolimits^{l+1}V^\ast$ defined as
-    \[A^{(l)}\coloneqq (A\otimes V^{\ast\otimes l})\cap (W\otimes \bigodot\nolimits^{l+1} V^\ast)=(A^{(l-1)}\otimes V^\ast)\cap (W\otimes \bigodot\nolimits^{l+1} V^\ast).\]
+    \[A^{(l)}\coloneqq (A\otimes V^{\ast\otimes l})\cap \left(W\otimes \bigodot\nolimits^{l+1} V^\ast\right)=(A^{(l-1)}\otimes V^\ast)\cap \left(W\otimes \bigodot\nolimits^{l+1} V^\ast\right).\]
     In terms of constant-coefficient first-order systems of PDEs, $A^{(l)}$ is the set of homogeneous polynomial solutions of degree $l+1$.
 \end{defn}
 
