@@ -1653,7 +1653,7 @@ is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifol
     For a canonical example of a contact structure, let $E=\bbR^n\times \bbR\to \bbR^n$ be the bundle of values of functions of $n$ variables $x^1,\ldots,x^n$. The canonical coordinates on the first jet bundle $\rmJ^1 E$ are $(x^1,\ldots,x^n,u,p_1,\ldots,p_n)$, and the only contact form is $\theta=\dd u-\sum_{i=1}^n p_i\dd x^i$. It is easy to see that $\theta\wedge(\dd\theta)^{\wedge n}$ is a volume form on $\rmJ^1 E$. 
 \end{example}
 
-Note that, in general, $E$ can be a completely arbitrary \gls{fb}, not necessarily a vector bundle. However, since we will be mostly interested in local properties of differential equations, we will essentially always assume that $E$ is a product bundle of the form $\bbR^n\times\bbR^k\to \bbR^n$, so $\rmJ^r E$ can be identified with $\rmJ^r(\bbR^n,\bbR^k)$. Here, $n$ is the number of independent variables, and $k$ is the number of dependent variables.
+% Note that, in general, $E$ can be a completely arbitrary \gls{fb}, not necessarily a \gls{vb}. However, since we will be mostly interested in local properties of differential equations, we will essentially always assume that $E$ is a product bundle of the form $\bbR^n\times\bbR^k\to \bbR^n$, so $\rmJ^r E$ can be identified with $\rmJ^r(\bbR^n,\bbR^k)$. Here, $n$ is the number of independent variables, and $k$ is the number of dependent variables.
 
 
 \PRLsep
@@ -1680,9 +1680,9 @@ Note that, in general, $E$ can be a completely arbitrary \gls{fb}, not necessari
 In Theorem~\ref{thm 3.1.1 Kras} we showed that $r$-graphs of sections are integral manifolds of the Cartan distribution. Now we will describe the structure of arbitrary maximal integral manifolds.
 
 \begin{defn}[Prolongation of submanifold]
-    Let $P<\calC_p^{r-1}$ be a plane of dimension $s\leq \dim M$. The subset 
+    Let $P<\calC_p^{r-1}$ be a subspace of dimension $s\leq \dim M$. The subset 
     \[\ell(P)\coloneqq \{p'\in \rmJ^r E\mid P<L_{p'}\}\] 
-    of the fiber over $p$ is called the \emph{ray submanifold} (or just \emph{ray}) corresponding to the plane $P$. If $N<\rmJ^{r-1}E$ is a submanifold, then the set 
+    of the fiber over $p$ is called the \emph{ray submanifold} (or just \emph{ray}) corresponding to the subspace $P$. If $N<\rmJ^{r-1}E$ is a submanifold, then the set 
     \[L(N)\coloneqq \bigcup_{q\in N}\ell(\T_q N)\]
     is called the \emph{prolongation} (or \emph{lifting}) of the submanifold of $N$.
 \end{defn}
@@ -1759,7 +1759,7 @@ Note that if $N$ is the $(r-1)$-graph of some section of $E$, then the manifold 
 From the above theorem and Corollary~\ref{cor 3.2.6 Kras}, we get the following.
 
 \begin{cor}[{\cite[Cor.~3.2.9]{Kras}}]\label{cor 3.2.9 Kras}
-    Except for the cases $k=n=1$ ($1$ function of $1$ variable) and $r=k=1$ ($1$-jets of $1$ function), manifolds of the form $L(N)$, where $\dim N=0$, are of the maximal dimension among all integral manifolds of $\calC^r$. In other words, the fibers of $\pi^r_{r-1}$ are integral manifolds of maximal dimension.
+    Except for the cases $k=n=1$ ($1$ function of $1$ variable) and $r=k=1$ ($1$-jets of $1$ function), manifolds of the form $L(N)$, where $\dim N=0$, are of the maximal dimension among all integral manifolds of $\calC^r$. In other words, the fibers of $\pi^r_{r-1}$ are the only integral manifolds of maximal dimension.
 \end{cor}
 
 This fact is of fundamental importance in the description of the symmetries of the Cartan distribution, which we do next.
@@ -1806,12 +1806,12 @@ The following important notion of symmetries of the Cartan distribution (or the 
         \item An arbitrary diffeomorphism of the plane $(x,u)\mapsto (\lambda(x,u),\mu(x,u))$ induces a \gls{flt} in $p$ of the $3$-dimensional $(x,u,p)$-space. It is easily checked that
         \[p\mapsto \frac{\dd \mu}{\dd \lambda}=\frac{\mu_x\dd x+\mu_u\dd u}{\lambda_x\dd x+\lambda_u\dd u}=\frac{\mu_x+\mu_up}{\lambda_x+\lambda_up}.\]
         \item For a general point transformation 
-        \[\wt{\bf{x}}\mapsto \bf{f}(\bf{x},\bf{u}),\quad \wt{\bf{u}}=\bf{g}(\bf{x},\bf{u}),\]
-        its prolongation to the space of $1$-jets $p^i_j\mapsto \wt p^{i}_j$ is given by the system of $n k$ linear equations 
-        \[\sum_{l=1}^n D_i(\wt x^{ l})\wt p_l^{j}=D_i(\wt u^{j}),\quad i=1,\ldots,n,\; j=1,\ldots,k,\]
+        \[\wb{\bf{x}}= \bf{f}(\bf{x},\bf{u}),\quad \wb{\bf{u}}=\bf{g}(\bf{x},\bf{u}),\]
+        its prolongation to the space of $1$-jets $p^i_j\mapsto \wb p^{i}_j$ is given by the system of $n k$ linear equations 
+        \[\sum_{l=1}^n D_i(\wb x^{ l})\wb p_l^{j}=D_i(\wb u^{j}),\quad i=1,\ldots,n,\; j=1,\ldots,k,\]
         where $D_i$ is the \emph{total derivative operator} along $x^i$, defined by \index{Total derivative operator}
         \[(D_i f)(\bf{x},\bf{u},\bf{p})\coloneqq\frac{\partial f}{\partial x^i}+\sum_{j=1}^k p^j_i\frac{\partial f}{\partial u^j}.\label{def total deriv}\]
-        (Note that it produces a function of 1-jets; its extensions to higher-order jets will be defined below.) The determinant of the matrix $\{D_i(\wt x^{j})\}_{i,j}$ is unsurprisingly called the ``total Jacobian'' of the system of functions $\wt x^{j}$. Note that the vanishing of this Jacobian on some open set implies functional dependence of the functions $\wt x^{j}$. Since the point transformation is a local diffeomorphism, the Jacobian is almost never zero, so the above linear equations determine the $\wt p^{j}_i$ uniquely almost everywhere.
+        (Note that it produces a function of 1-jets; its extensions to higher-order jets will be defined below.) The determinant of the matrix $\{D_i(\wb x^{j})\}_{i,j}$ is unsurprisingly called the ``total Jacobian'' of the system of functions $\wb x^{j}$. Note that the vanishing of this Jacobian on some open set implies functional dependence of the functions $\wb x^{j}$. Since the point transformation is a local diffeomorphism, the Jacobian is almost never zero, so the above linear equations determine the $\wb p^{j}_i$ uniquely almost everywhere.
     \end{enumerate}
 \end{example}
 
@@ -1888,9 +1888,9 @@ The following surprising theorem gives a complete description of contact transfo
     \end{enumerate}
 \end{thm}
 \begin{proof}
-    The proof is based on the above established fact: the fibers of $\pi^r_{r-1}$ are integral manifolds of maximal dimension of the Cartan distribution $\calC^r$ (cf.\ Corollary~\ref{cor 3.2.9 Kras}). The case $k=n=1$ needs a special treatment.
+    The proof is based on the above established fact: the fibers of $\pi^r_{r-1}$ are integral manifolds of maximal dimension of the Cartan distribution $\calC^r$ when $kn>1$ and $rk>1$ (cf.\ Corollary~\ref{cor 3.2.9 Kras}). The case $r=k=1$ is tautological. The case $k=n=1$ needs a special treatment.
 
-    Assume that $kn>1$. Let $F:\rmJ^rE\to \rmJ^rE$ be a contact transformation and $r\geq 2$ if $k=1$, and $r\geq 1$ if $k>1$. Since $F$ preserves the Cartan distribution, it must take its maximal integral manifolds to maximal integral manifolds. Since $F$ is a diffeomorphism, the dimension of these manifolds is preserved. Consequently, $F$ takes a fiber of $\pi^r_{r-1}$ to another fiber. Hence, $F$ induces a transformation $\underline{F}$ of $\rmJ^{r-1}E$: if $F\left((\pi^r_{r-1})^{-1}(p)\right)=(\pi^r_{r-1})^{-1}(p')$ for $p,p'\in\rmJ^{r-1}E$, then $\underline{F}(p)=p'$.
+    Assume that $kn>1$ and $rk>1$. Let $F:\rmJ^rE\to \rmJ^rE$ be a contact transformation. Since $F$ preserves the Cartan distribution, it must take its maximal integral manifolds to maximal integral manifolds. Since $F$ is a diffeomorphism, the dimension of these manifolds is preserved. Consequently, according to Corollary~\ref{cor 3.2.9 Kras}, $F$ takes a fiber of $\pi^r_{r-1}$ to another fiber. Hence, $F$ induces a transformation $\underline{F}$ of $\rmJ^{r-1}E$: if $F\left((\pi^r_{r-1})^{-1}(p)\right)=(\pi^r_{r-1})^{-1}(p')$ for $p,p'\in\rmJ^{r-1}E$, then $\underline{F}(p)=p'$.
 
     Since $\underline{F}$ is the projection of the contact transformation $F$, it is itself a contact transformation. Let us consider the transformation $F$ and the prolongation $\underline{F}^{(1)}$ of $\underline{F}$. They both are symmetries of the Cartan distribution $\calC^r$, preserve the fibers of $\pi^r_{r-1}$, and induce the same transformation of $\rmJ^{r-1}E$. Therefore, the diffeomorphism $F'\coloneqq F^{(1)}\circ F^{-1}$ is a contact transformation of $\rmJ^rE$ inducing the identity map on $\rmJ^{r-1}E$.
 
@@ -1942,7 +1942,8 @@ The above theorem implies the following infinitesimal analog.
 Note that any contact vector field on $\rmJ^1E$ can be lifted to a Lie field on any $\rmJ^r E$ by prolongation. Also, unlike for contact transformations, the prolongation of contact vector fields is always well-defined globally, since it suffices to know an arbitrarily small part of the integral curve of $X^{(1)}$ through a point, and R-planes necessarily get mapped to R-planes by the flow $\Fl^X_t$ for sufficiently small $t$.
 
 Another advantage of contact vector fields is that there are explicit formulas for their prolongations, and one can use the techniques of generating functions (see below). To this end, we first note that a vector field $X\in\fX(\rmJ^r E)$ is a contact vector field iff its inner product with any of the standard contact forms $\theta^j_I$ satisfies
-\[i_X \theta^j_I=\sum_{l=1}^k\sum_{|K|\leq r-1}\lambda^{jK}_{Il}\theta^l_K.\]
+\[\Lie_X \theta^j_I=\sum_{l=1}^k\sum_{|K|\leq r-1}\lambda^{jK}_{Il}\theta^l_K\] 
+for some set of functions $\lambda^{jK}_{Il}$.
 
 \begin{defn}[Total derivative operator]\index{Total derivative operator}
     Fixing a bundle $E\to M$ of rank $k$ with coordinates $(\bf{x},\bf{u})$ as above, the total derivative operators $D_i$, $i=1,\ldots,n$, acting on functions on any jet bundle $\rmJ^rE$ and producing functions on $\rmJ^{r+1}E$ are defined in canonical coordinates by 
@@ -1962,7 +1963,7 @@ Another advantage of contact vector fields is that there are explicit formulas f
     \[\Lie_X \theta^j_I=(\dd i_X+i_X\dd)\left(\dd p^j_I-\sum_i p^j_{I+1_i}\dd x^i\right)=\dd b^j_I-\sum\left(b^j_{I+1_i}\dd x^i+p^j_{I+1_i}\dd a^i\right)\label{eq 3.3.10 Kras}\]
     are still contact forms.  According to Remark~\ref{rem semibasic and contact forms}, for any smooth function $\varphi$ on $\rmJ^rE$ one can locally decompose its differential into semibasic and contact components as
     \[\dd \varphi=\sum_i D_i(\varphi)\dd x^i+\sum_{j,I}\frac{\partial\varphi}{\partial p^j_I}\theta^j_I.\]
-    Note that $\dd\phi$ vanishes on the Cartan distribution iff the first term is zero. Applying this observation to \eqref{eq 3.3.10 Kras}, we obtain 
+    Note that $\dd\varphi$ vanishes on the Cartan distribution iff the first term is zero. Applying this observation to \eqref{eq 3.3.10 Kras}, we obtain 
     \[\Lie_X \theta^j_I=\sum_i \left(D_i(b^j_I)-b^j_{I+1_i}-\sum_s p^j_{I+1_i}D_i(a^s)\right)\dd x^i+\theta\]
     for some contact form $\theta$. Since this must be a contact form, the first (semibasic) term must vanish, implying \eqref{eq 3.3.9 Kras}.
 \end{proof}
@@ -1983,8 +1984,8 @@ Consider the evolution of the graphs of sections of $E$ under the action of the 
 
 Thus, the contact transformations $F_t$ generate the evolution $s_t$ of $s$. Let us find the velocity $\dot s_t$ of this evolution at $t=0$. To compute it, let us represent $X$ as the sum of two fields
 \[X=X_1+X_2,\quad X_1\in\Gamma^\infty(\calV\rmJ^r E),\quad X_2\in\fX(\graph^r(s)),\]
-one vertical and the other tangent to $\graph^r(s)$. If $s$ is locally represented by $u^j=s^j(\bf{x})$, $j=1,\ldots,k$, then a basis of vector fields tangent to $\graph^r(s)$ can be written in the following form (note that $p^j_I=\partial^{|I|}s^j/\partial x^I$ on this manifold):
-\[D_i^{(s)}=\frac{\partial}{\partial x^i}+\sum_{j=1}^k \left(\sum_{|I|< r}p^j_{I+1_i}\frac{\partial}{\partial p^j_I}+\sum_{|I|=r}\frac{\partial^{|I|+1}s^j}{\partial x^I\partial x^i}\frac{\partial}{\partial p^j_I}\right).\]
+one vertical and the other tangent to $\graph^r(s)$. If $s$ is locally represented by $u^j=s^j(\bf{x})$, $j=1,\ldots,k$, then a basis of vector fields tangent to $\graph^r(s)$ can be written in the following form (note that $p^j_I=\partial^{|I|}s^j/\partial \bf x^I$ on this manifold):
+\[D_i^{(s)}=\frac{\partial}{\partial x^i}+\sum_{j=1}^k \left(\sum_{|I|< r}p^j_{I+1_i}\frac{\partial}{\partial p^j_I}+\sum_{|I|=r}\frac{\partial^{|I|+1}s^j}{\partial \bf x^I\partial x^i}\frac{\partial}{\partial p^j_I}\right).\]
 Therefore, a vector field tangent to the $r$-graph is of the form 
 \[X_2=\sum_i a^i D_i^{(s)},\]
 while the vertical component of the contact vector field $X$ equals 
@@ -2034,21 +2035,21 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
 
 \begin{example}\label{ex prolongation SO2}
     Consider the one-parameter group of rotations 
-    \[(\wt x,\wt u)=(x\cos \epsilon-u\sin\epsilon,x\sin\epsilon+u\cos\epsilon)\]
-    acting on the $(x,u)$-plane. Such a rotation transforms the graph of a function $u=f(x)$ into the graph of a transformed function $\wt f$ given implicitly by 
-    \[\wt x=x\cos \epsilon-f(x)\sin \epsilon,\quad \wt u=x\sin\epsilon+f(x)\cos\epsilon,\]
-    so that $\wt u=\wt f(\wt x)$ is satisfied by eliminating $x$. To get the first prolongation of this action, it suffices to consider affine functions $f(x)=u_0+p_0(x-x_0)$. The transformed function is then also affine:
-    \[\wt{f}(\wt x)=\frac{\sin \epsilon+p_0\cos\epsilon}{\cos\epsilon-p_0\sin\epsilon}\wt x+\frac{u_0-p_0 x_0}{\cos\epsilon-p_0\sin\epsilon}.\]
-    Then $\wt x_0=x_0\cos\epsilon-u_0\sin\epsilon$, so $\wt f(\wt x_0)=\wt u_0=x_0\sin\epsilon+u_0\cos\epsilon$, as we already knew, and $\wt p_0=\wt f_{\wt x}(\wt x_0)=(\sin \epsilon +p_0\cos\epsilon)/(\cos\epsilon-p_0\sin\epsilon)$, which os defined provided $p_0\neq \cot\epsilon$. Therefore, dropping the $0$ subscripts, the first prolongation of the $\SO_2$ action is given by 
-    \[(\wt x,\wt u,\wt p)=\left(x\cos\epsilon-u\sin\epsilon,x\sin\epsilon+u\cos\epsilon,\frac{\sin\epsilon+p\cos\epsilon}{\cos\epsilon-p\sin\epsilon}\right),\]
+    \[(\wb x,\wb u)=(x\cos \epsilon-u\sin\epsilon,x\sin\epsilon+u\cos\epsilon)\]
+    acting on the $(x,u)$-plane. Such a rotation transforms the graph of a function $u=f(x)$ into the graph of a transformed function $\wb f$ given implicitly by 
+    \[\wb x=x\cos \epsilon-f(x)\sin \epsilon,\quad \wb u=x\sin\epsilon+f(x)\cos\epsilon,\]
+    so that $\wb u=\wb f(\wb x)$ is satisfied by eliminating $x$. To get the first prolongation of this action, it suffices to consider affine functions $f(x)=u_0+p_0(x-x_0)$. The transformed function is then also affine:
+    \[\wb{f}(\wb x)=\frac{\sin \epsilon+p_0\cos\epsilon}{\cos\epsilon-p_0\sin\epsilon}\wb x+\frac{u_0-p_0 x_0}{\cos\epsilon-p_0\sin\epsilon}.\]
+    Then $\wb x_0=x_0\cos\epsilon-u_0\sin\epsilon$, so $\wb f(\wb x_0)=\wb u_0=x_0\sin\epsilon+u_0\cos\epsilon$, as we already knew, and $\wb p_0=\wb f_{\wb x}(\wb x_0)=(\sin \epsilon +p_0\cos\epsilon)/(\cos\epsilon-p_0\sin\epsilon)$, which is defined provided $p_0\neq \cot\epsilon$. Therefore, dropping the $0$ subscripts, the first prolongation of the $\SO_2$ action is given by 
+    \[(\wb x,\wb u,\wb p)=\left(x\cos\epsilon-u\sin\epsilon,x\sin\epsilon+u\cos\epsilon,\frac{\sin\epsilon+p\cos\epsilon}{\cos\epsilon-p\sin\epsilon}\right),\]
     defined for $p\neq \cot\epsilon$. Note, in particular, that even though the original group action is globally defined, its first prolongation is only a pseudogroup.
 
-    More generally, for a point transformation $\wt x=\chi(x,u)$, $\wt u=\psi(x,u)$, we have 
-    \[\wt p=\frac{\dd \wt u}{\dd \wt x}=\frac{D_x \psi}{D_x\chi}.\]
+    More generally, for a point transformation $\wb x=\chi(x,u)$, $\wb u=\psi(x,u)$, we have 
+    \[\wb p=\frac{\dd \wb u}{\dd \wb x}=\frac{D_x \psi}{D_x\chi}.\]
     One can continue the process of prolongation using the total derivative operator:
-    \[\wt q=\frac{\dd^2\wt u}{\dd \wt x^2}=\frac{1}{D_x\chi}D_x\left(\frac{D_x\psi}{D_x\chi}\right)=\frac{D_x\chi \cdot D_x^2 \psi-D_x\psi \cdot D_x^2\chi}{(D_x\chi)^3}.\]
+    \[\wb q=\frac{\dd^2\wb u}{\dd \wb x^2}=\frac{1}{D_x\chi}D_x\left(\frac{D_x\psi}{D_x\chi}\right)=\frac{D_x\chi \cdot D_x^2 \psi-D_x\psi \cdot D_x^2\chi}{(D_x\chi)^3}.\]
     For example, for the above $\SO_2$ action, we get 
-    \[\wt q=\frac{q}{(\cos\epsilon-p\sin\epsilon)^3}.\]
+    \[\wb q=\frac{q}{(\cos\epsilon-p\sin\epsilon)^3}.\]
 \end{example}
 
 \begin{example}[{{\cite[Example~4.20]{Olver93}}}]
@@ -2095,14 +2096,14 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
         \item $\pzcG$ is closed under composition: if $f\in U\to f(U)\subset M$ and $f:f(U)\to M$ belong to $\pzcG$, then $g\circ f\in\pzcG$.
         \item The identity $\id_M$ belongs to $\pzcG$.
     \end{enumerate}
-    By $\rmJ^r(M)$ denote the manifold of all $r$-jets of diffeomorphisms of open subsets of $M$ into $M$. By $\rmJ^r \pzcG$ we denote the set of all $r$-jets of diffeomorphisms belonging to $\pzcG$. Then $\pzcG$ is further called a \emph{Lie pseudogroup} if there exists a $r\geq 0$, called the \emph{order of $\pzcG$}, such that \index{Lie pseudogroup}
+    By $\rmJ^r(M)$ denote the manifold of all $r$-jets of diffeomorphisms of open subsets of $M$ into $M$. By $\rmJ^r \pzcG$ we denote the set of all $r$-jets of diffeomorphisms belonging to $\pzcG$. Then $\pzcG$ is further called a \emph{Lie pseudogroup} if there exists a $r\geq 0$, called the \emph{order of $\pzcG$}, such that \index{Lie pseudogroup|see {Pseudogroup}}
     \begin{enumerate}[label=(\arabic*)]
         \item The set $\rmJ^r \pzcG$ is a smooth submanifold of $\rmJ^r(M)$, called the \emph{defining equation of $\pzcG$};
         \item A diffeomorphism $f:U\to M$ belongs to $\pzcG$ iff $\rmj^r_m f\in \rmJ^r \pzcG$ for all $m\in U$.
     \end{enumerate}
     A vector field $X\in\fX(M)$ is called a \emph{$\pzcG$-vector field} if all of its flow boxes belong to $\pzcG$. An important criterion is that a vector field on $M$ is a $\pzcG$-vector field iff its $r$-prolongation is tangent to $\rmJ^r\pzcG$. With this, it is easy to verify that the set of all $\pzcG$-vector fields forms a Lie subalgebra of $\fX(M)$, called the \emph{Lie algebra of $\pzcG$}.
 
-    So, for example, the ``action'' of $\SL_2(\bbR)$ on $\bbR$ by \glspl{flt} is only a Lie pseudogroup. Unfortunately, the rigorous theory of Lie pseudogroups, starting with their general definition, is quite algebraic and involved, and would not fit well within our scope. Thus, in the study of differential equations we will typically gloss over these caveats and talk about flows of infinitesimal symmetries as if they form group actions.
+    So, for example, the ``action'' of $\SL_2(\bbR)$ on $\bbR$ by \glspl{flt} is only a Lie pseudogroup. Unfortunately, the rigorous theory of Lie pseudogroups, starting with their general definition, is quite algebraic and involved, and would not fit well within our scope. Thus, in the study of differential equations we will typically gloss over these caveats and treat Lie pseudogroups as little more than groups of diffeomorphisms.
 \end{rem}
 
 
@@ -2201,10 +2202,10 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     Clearly, solving the determining equation is a much more difficult problem than solving the first-order ODE. However, inspired guesswork or geometric intuition can allow one to find particular symmetries that suffice to integrate the original equation. This is where the art of Lie's method comes in.
 
     Note that if $a$, $b$ are any functions such that $b/a=\omega$, then the determining equation is automatically satisfied. In other words, $\partial_x+\omega\partial_u$ and its multiples are always symmetries of the ODE. Let us show that they correspond to infinitesimal reparametrizations of the form
-    \[F_\epsilon:\quad (x,u)\mapsto (\wt x,\wt u)\coloneqq \left(x+\epsilon(x),u+\epsilon(x)\omega(x,u)\right),\]
+    \[F_\epsilon:\quad (x,u)\mapsto (\wb x,\wb u)\coloneqq \left(x+\epsilon(x),u+\epsilon(x)\omega(x,u)\right),\]
     where $\epsilon(x)$ is an arbitrary infinitesimal shift. To first order in $\epsilon$, this mapping takes the graph of a solution $u(x)$ to itself since $u(x+\epsilon)\approx u+u_x\epsilon=u+\epsilon\omega$. We can show that this is a symmetry more explicitly. The prolongation of this map is computed by considering a solution $u(x)$ such that $u_x(x)=p=\omega(x,u(x))$ at a fixed point $x$, and computing the jet at $x$ of the transformed graph:
-    \[\wt{p}=(u(x-\epsilon)+\epsilon\omega)_x=u_x-u_x\epsilon_x+u_x\epsilon_x+\epsilon\omega_x+\epsilon\omega_u\omega\approx p+\epsilon\cdot (\omega_x+\omega\omega_u).\]
-    To see that this is a symmetry of the equation, we only need to observe that $\omega+\epsilon\cdot (\omega_x+\omega\omega_u)$, to first order, is exactly $\omega(F_\epsilon(x,u(x)))$. Thus, after the application of $F_\epsilon$, the equation $\wt p=\omega(\wt x,\wt u)$ is satisfied by the image of the original solution. Since this symmetry takes each solution to itself, it is trivial. Trivial infinitesimal symmetries are not helpful because finding their integral curves is exactly the same problem as the original equation.
+    \[\wb{p}=(u(x-\epsilon)+\epsilon\omega)_x=u_x-u_x\epsilon_x+u_x\epsilon_x+\epsilon\omega_x+\epsilon\omega_u\omega\approx p+\epsilon\cdot (\omega_x+\omega\omega_u).\]
+    To see that this is a symmetry of the equation, we only need to observe that $\omega+\epsilon\cdot (\omega_x+\omega\omega_u)$, to first order, is exactly $\omega(F_\epsilon(x,u(x)))$. Thus, after the application of $F_\epsilon$, the equation $\wb p=\omega(\wb x,\wb u)$ is satisfied by the image of the original solution. Since this symmetry takes each solution to itself, it is trivial. Trivial infinitesimal symmetries are not helpful because finding their integral curves is exactly the same problem as the original equation.
 
     However, once a \emph{nontrivial} symmetry is found (and there is no general formula, but one always exists), it only remains to rectify $X$ (which is done by computing its integral curves by separation of variables or the method of characteristics), and then in the resulting coordinates $(y,v)$, in which $X=X^{(1)}=\partial_v$, the original ODE takes the form $v_y=H(y)$, which is integrated by quadrature. Note that for this method to be feasible the symmetry needs to have a simpler form than the original problem.
 \end{example}
@@ -2290,7 +2291,7 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     \[X_\alpha=\alpha(t,x)\partial_u.\]
     Since all of these vector fields must form a Lie algebra, the commutation relations between them imply, in particular, that $\alpha_x,\alpha_t,$ as well as $\alpha'\coloneqq x\alpha_x+2t\alpha_t$, $\alpha''\coloneqq 2t\alpha_x+x\alpha$, and $\alpha'''\coloneqq 4tx\alpha_x+4t^2\alpha_t+(x^2+2t)\alpha$, are also solutions of the heat equation as long as $\alpha$ is.
     
-    The \glspl{ops} $G_i$ generated by the $X_i$ are described below by the transformed values $\exp(\epsilon X_i)(t,x,u)=(\wt t,\wt x,\wt u)$:
+    The \glspl{ops} $G_i$ generated by the $X_i$ are described below by the transformed values $\exp(\epsilon X_i)(t,x,u)=(\wb t,\wb x,\wb u)$:
     \[\begin{split}
         G_1&:\quad (t,x+\epsilon,u),\\
         G_2&:\quad (t+\epsilon,x,u),\\
@@ -2327,26 +2328,26 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     (The remaining equations $\Delta a=\Delta b=0$ are then satisfied automatically.) Thus, any harmonic vector field $X=\Re(\xi(z)\partial_z)$, where $z=x+\i y$, $\partial_z=\frac12(\partial_x-\i \partial_y)$, and $\xi(z)$ is a complex analytic function, is an infinitesimal symmetry. This demonstrates the conformal invariance of the Laplace equation. The linearity of the equation implies that it also admits the additional trivial symmetries $u\partial_u$ and $c(x,y)\partial_u$ with $\Delta c=0$.
 
     In particular, the vector field $\bf{c}_x\coloneqq (x^2-y^2)\partial_x+2xy\partial_y$ corresponding to the flow $\dot z=z^2$ generates the ``special conformal transformation'':
-    \[\wt z=\frac{z}{1-\epsilon z}=\frac{z-\epsilon |z|^2}{(1-\epsilon z)(1-\epsilon \wb{z})}.\]
+    \[\wb z=\frac{z}{1-\epsilon z}=\frac{z-\epsilon |z|^2}{(1-\epsilon z)(1-\epsilon \wb{z})}.\]
     In real coordinates, this reads 
-    \[\wt{x}=\frac{x-\epsilon(x^2+y^2)}{1-2\epsilon x+\epsilon^2(x^2+y^2)},\quad \wt y=\frac{y}{1-2\epsilon x+\epsilon^2(x^2+y^2)}.\label{eq 2.27 Gungor}\]
-    This transformation admits the invariant function $\zeta(x,y)=\frac{y}{x^2+y^2}$, satisfying the relation $\zeta(\wt x,\wt y)=\zeta(x,y)$ on $\bbR^2\setminus\{0\}$. It is readily obtained by eliminating the group parameter $\epsilon$ in \eqref{eq 2.27 Gungor}.
+    \[\wb{x}=\frac{x-\epsilon(x^2+y^2)}{1-2\epsilon x+\epsilon^2(x^2+y^2)},\quad \wb y=\frac{y}{1-2\epsilon x+\epsilon^2(x^2+y^2)}.\label{eq 2.27 Gungor}\]
+    This transformation admits the invariant function $\zeta(x,y)=\frac{y}{x^2+y^2}$, satisfying the relation $\zeta(\wb x,\wb y)=\zeta(x,y)$ on $\bbR^2\setminus\{0\}$. It is readily obtained by eliminating the group parameter $\epsilon$ in \eqref{eq 2.27 Gungor}.
 
     One may notice that $\bf{c}_x$ is related to $\partial_x$ via the complex inversion map $I(x,y)\coloneqq \frac{(x,y)}{(x^2+y^2)^2}$. It is well known that, away from the origin, $I$ is a discrete (not path-connected to the identity) symmetry of the Laplace equation. It is easy to see that $I$ also provides the coordinates rectifying $\bf{c}_x$ to $-\partial_x$.
 
-    Conjugating any symmetry by $I$ will produce another symmetry. For example, as we already saw, $I_\ast(-\partial_x)=\wt{\bf{c}}_{\wt x}$, where tilde means that the vector field is written in the new coordinates $(\wt x,\wt y)=I(x,y)$. Thus, $\rme^{\epsilon \bf{c}_x}(x,y)$ can be recovered by conjugating the translational group along the $x$-axis by $I$:
+    Conjugating any symmetry by $I$ will produce another symmetry. For example, as we already saw, $I_\ast(-\partial_x)=\wb{\bf{c}}_{\wb x}$, where tilde means that the vector field is written in the new coordinates $(\wb x,\wb y)=I(x,y)$. Thus, $\rme^{\epsilon \bf{c}_x}(x,y)$ can be recovered by conjugating the translational group along the $x$-axis by $I$:
     \[\rme^{\epsilon\bf{c}_x}(x,y)=I\circ\rme^{-\epsilon\partial_x}\circ I(x,y).\]
-    Similarly, since $I_\ast(-\partial_y)=\wt{\bf{c}}_{\wt y}=2\wt x\wt y\partial_{\wt x}+(\wt y^2-\wt x^2)\partial_{\wt y}$, conjugating $-\partial_y$ by $I$,
+    Similarly, since $I_\ast(-\partial_y)=\wb{\bf{c}}_{\wb y}=2\wb x\wb y\partial_{\wb x}+(\wb y^2-\wb x^2)\partial_{\wb y}$, conjugating $-\partial_y$ by $I$,
     \[\rme^{\epsilon\bf{c}_y}(x,y)=I\circ\rme^{-\epsilon\partial_y}\circ I(x,y),\]
     generates another special conformal transformation 
-    \[\wt x=\frac{x}{1-2\epsilon y+\epsilon^2(x^2+y^2)},\quad \wt y=\frac{y-\epsilon(x^2+y^2)}{1-2\epsilon y+\epsilon^2(x^2+y^2)}.\]
+    \[\wb x=\frac{x}{1-2\epsilon y+\epsilon^2(x^2+y^2)},\quad \wb y=\frac{y-\epsilon(x^2+y^2)}{1-2\epsilon y+\epsilon^2(x^2+y^2)}.\]
     The transformations generated by elements of the abelian subalgebra $\<\bf{c}_x,\bf{c}_y\>$ are conformal because they leave invariant the planar metric:
-    \[\dd \wt{x}^{\otimes 2}+\dd\wt y^{\otimes 2}=\lambda(x,y;\epsilon)(\dd x^{\otimes 2}+\dd y^{\otimes 2})\]
+    \[\dd \wb{x}^{\otimes 2}+\dd\wb y^{\otimes 2}=\lambda(x,y;\epsilon)(\dd x^{\otimes 2}+\dd y^{\otimes 2})\]
     for some function $\lambda$ (conformal factor). For $\bf{c}_x$, $\lambda=(1-2\epsilon x+\epsilon^2(x^2+y^2))^{-2}$. Note that the inversion itself is also a conformal map with $\lambda=(x^2+y^2)^{-2}$. The full group of special conformal transformations is given by the translation group conjugated with $I$, $I\circ\rme^{\epsilon_1\partial_x+\epsilon_2\partial_y}\circ I$:
-    \[\bf{x}=(\wt x,\wt y)=\frac{\bf{x}-\bf{\epsilon}(x^2+y^2)}{1-2\bf{\epsilon}\cdot\bf{x}+\epsilon^2(x^2+y^2)},\quad \bf{\epsilon}=(\epsilon_1,\epsilon_2),\quad \bf{x}=(x,y).\]
+    \[\bf{x}=(\wb x,\wb y)=\frac{\bf{x}-\bf{\epsilon}(x^2+y^2)}{1-2\bf{\epsilon}\cdot\bf{x}+\epsilon^2(x^2+y^2)},\quad \bf{\epsilon}=(\epsilon_1,\epsilon_2),\quad \bf{x}=(x,y).\]
     Note that this transformation is not globally defined because the conformal factor $\lambda=1-2\bf{\epsilon}\cdot\bf{x}+\epsilon^2(x^2+y^2)$ vanishes at $\bf{x}=\bf{\epsilon}/\epsilon^2$.
 
-    We conclude that for any transformation from this conformal group $u(x,y)=f(\wt x,\wt y)$ is a solution whenever $f$ is. For example, with the help of the invariant $\zeta$, the radial solution $f=\ln(x^2+y^2)$ or the angular solution $f=\arctan(y/x)$, among many others (homogeneous harmonics) can be mapped to produce the new solutions 
+    We conclude that for any transformation from this conformal group $u(x,y)=f(\wb x,\wb y)$ is a solution whenever $f$ is. For example, with the help of the invariant $\zeta$, the radial solution $f=\ln(x^2+y^2)$ or the angular solution $f=\arctan(y/x)$, among many others (homogeneous harmonics) can be mapped to produce the new solutions 
     \[u=\ln\frac{x^2+y^2}{1-2\epsilon x+\epsilon^2(x^2+y^2)},\quad u=\arctan\frac{y}{x-\epsilon(x^2+y^2)}.\]
 
     Adding to $\bf{c}_x$ and $\bf{c}_y$ the subalgebras obtained by other choices of $(a,b)$ equal to $(1,0)$, $(0,1)$ (translations), $(-y,x)$ (rotation), and $(x,y)$ (scaling), we obtain the $6$-dimensional Lie algebra of the conformal group $\CO_2$ of the Euclidean plane, isomorphic to Lorentz group $\SO_{3,1}$. Obviously, the subalgebra spanned by $\partial_x,x\partial_x+y\partial_y,\bf{c}_x$ is $\fraksl_2(\bbR)$. This symmetry group is the two-dimensional analog of the full conformal group in $\geq 3$ dimensions. Note that the full conformal group of the plane is infinite-dimensional, with $\SO_{3,1}$ as its maximal finite-dimensional Lie subgroup, because any analytic function $f:\bbC\to\bbC$ leads to a conformal transformation (in our case $f=z,\i z,z^2$). We have excluded the trivial symmetry algebra stemming from the linearity of the PDE.
@@ -2356,14 +2357,14 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     \[u_{xx}+u_{yy}=K\rme^{u},\]
     where $K$ is a real constant. The conformal symmetry structure of this equation on the plane is preserved. The vector field generating the symmetry group $G$ of the equation is given by 
     \[X=a\partial_x+b\partial_y-2a_x\partial_u,\]
-    where $a,b$ satisfy the Cauchy-Riemann equations. For $(a,b)=(x^2-y^2,2xy)$, we solve the initial value problem $\dd \wt u/\dd\epsilon=-4\wt x$, $\wt{u}(x,y;0)=u(x,y)$ and find the flow 
-    \[\wt{u}(x,y;\epsilon)=2\ln \sigma(x,y;\epsilon)+u(x,y),\quad \sigma(x,y;\epsilon)=1-2\epsilon x+\epsilon^2(x^2+y^2).\label{eq 2.31 Gungor}\]
+    where $a,b$ satisfy the Cauchy-Riemann equations. For $(a,b)=(x^2-y^2,2xy)$, we solve the initial value problem $\dd \wb u/\dd\epsilon=-4\wb x$, $\wb{u}(x,y;0)=u(x,y)$ and find the flow 
+    \[\wb{u}(x,y;\epsilon)=2\ln \sigma(x,y;\epsilon)+u(x,y),\quad \sigma(x,y;\epsilon)=1-2\epsilon x+\epsilon^2(x^2+y^2).\label{eq 2.31 Gungor}\]
     We note that 
-    \[\sigma(x,y;\epsilon)=\sigma(\wt x,\wt y;-\epsilon)^{-1}=1+2\epsilon \wt{x}+\epsilon^2(\wt x^2+\wt y^2).\]
-    Application of the one-parameter group defined by \eqref{eq 2.27 Gungor} and \eqref{eq 2.31 Gungor} to a solution $f(x,y)$, where $(x,y)$ are written in terms of $(\wt x,\wt y)$, leads to the transformed new solution $u_\epsilon(x,y)$ (after the tildes are removed)
-    \[u_\epsilon(x,y)=-2\ln\sigma(x,y;-\epsilon)+f(\wt x,\wt y),\]
+    \[\sigma(x,y;\epsilon)=\sigma(\wb x,\wb y;-\epsilon)^{-1}=1+2\epsilon \wb{x}+\epsilon^2(\wb x^2+\wb y^2).\]
+    Application of the one-parameter group defined by \eqref{eq 2.27 Gungor} and \eqref{eq 2.31 Gungor} to a solution $f(x,y)$, where $(x,y)$ are written in terms of $(\wb x,\wb y)$, leads to the transformed new solution $u_\epsilon(x,y)$ (after the tildes are removed)
+    \[u_\epsilon(x,y)=-2\ln\sigma(x,y;-\epsilon)+f(\wb x,\wb y),\]
     where 
-    \[\wt x=\frac{x+\epsilon(x^2+y^2)}{1+2\epsilon x+\epsilon^2(x^2+y^2)},\quad \wt{y}=\frac{y}{1+2\epsilon +\epsilon^2(x^2+y^2)}.\]
+    \[\wb x=\frac{x+\epsilon(x^2+y^2)}{1+2\epsilon x+\epsilon^2(x^2+y^2)},\quad \wb{y}=\frac{y}{1+2\epsilon +\epsilon^2(x^2+y^2)}.\]
 \end{example}
 
 \begin{example}[Laplace equation in $\geq 3$ dimensions]
@@ -2919,7 +2920,7 @@ This means that the function $\restr{I}{\graph^r(s)}$ is constant along integral
 
 Note that this leads to complete integrability (solutions are completely described by a set of constants), provided we can find sufficiently many differential invariants. Say, if $\dim E=n+k$ and there is an $n$-dimensional trivial symmetry (so it takes each solution to itself), and we have found $k$ functionally independent scalar differential invariants, then the level sets of this collection of functions provide the solutions.
 
-The starting idea of Cartan's method of equivalence is to reformulate any given equivalence problem in terms of a set of differential $1$-forms. An equivalence is then a diffeomorphism (usually restricted to belong to a particular group) that takes one given set of $1$-forms to another, potentially up to certain additional linear transformations of the set of forms. Clearly, the obvious set of differential forms that should be preserved by any equivalence of differential equations or their solutions is the set of contact forms defining the Cartan distribution. Thus, we begin the next \chap\ by examining equivalence problems of collections of $1$-forms.
+The starting idea of Cartan's method of equivalence is to reformulate any given equivalence problem in terms of a set of differential $1$-forms. An equivalence is then a diffeomorphism (usually restricted to belong to a particular group) that takes one given set of $1$-forms to another, potentially up to certain additional linear transformations of the set of forms. Clearly, the obvious set of differential forms that should be preserved by any equivalence of differential equations or their solutions is the set of contact forms defining the Cartan distribution. Thus, we begin the next \chap\ by examining equivalence problems for collections of $1$-forms.
 
 % \begin{example}[First-order ODE]
 %     Let us illustrate the general method of calculation of scalar differential invariants by the calculation of invariants of linear ODEs of the form 
@@ -5806,7 +5807,7 @@ Note that these coordinates are constrained only by the condition that each ``te
 Similarly, any diffeomorphism $F\in \Diff(V)$ such that $F(0)=0$ has an $\infty$-jet $g=\rmj^\infty_0 F\in\GL^\infty(V)$ at the origin that is described by the canonical coordinates 
 \[g=\rmj^\infty_0 F\mapsto  \left(g^i_{j_1\ldots j_r}\coloneqq \frac{\partial F^i(0)}{\partial x^{j_1}\cdots x^{j_r}}\right)_{r\geq 1}.\]
 (The requirement that $F(0)=0$ is necessary for these jets to form a group.) Thus, an $r$-jet $\sigma\in \Pol^r(V,V)$ belongs to the jet group $\GL^r(V)$ iff it is $0$-respecting ($\sigma(0)=0$, or $\sigma^i=0$) and its linear part ($\sigma_{\ast 0}$, or $\sigma^i_j$) is invertible. We thus have the decomposition into homogeneous components
-\[\GL^r(V)\cong \GL(V)\ltimes \prod_{r'=2}^r S^{r'}(V),\quad r=2,3,\ldots,\infty,\]
+\[\GL^r(V)\cong \GL(V)\ltimes \left(S^2(V)\ltimes \left( \cdots S^r(V)\right)\right),\quad r=2,3,\ldots,\infty,\]
 where $S^r(V)\coloneqq V\otimes \bigodot^r V^\ast$ is the space of symmetric homogeneous $V$-valued polynomials of degree $r$ on $V$. The fact that the product is semidirect can be derived from the next exercise.
 
 \begin{example}
@@ -6235,7 +6236,10 @@ On the other hand, if $p\in P$, then the soldering form $\theta$ maps $\T_p P$ s
 
 According to the solution of the equivalence problem for coframes, we need to start by looking at the exterior derivatives of the coframe components. Only $\theta$ is important to our problem, so we examine $\dd\theta$. For each $p\in P$, it supplies a linear map $(\dd\theta)_p:\bigwedge^2 \T_p P\to V$. Let $\calH$ be a horizontal subspace at $p$. Then we have the restricted map $\bigwedge^2\calH\to V$. However, as discussed above, $\theta$ also identifies $\calH$ with $V$, so we can turn it into a map $\bigwedge^2 V\to V$:
 \[c_{\calH}:V\wedge V\to V,\quad u\wedge v\mapsto \dd \theta\left(\restr{\theta}{\calH}^{-1}(u),\restr{\theta}{\calH}^{-1}(v)\right).\]
-We have thus assigned a tensor $c_{\calH}\in \Hom\left(V\wedge V,V\right)$ to each horizontal subspace $\calH$ at $p$. Next, since only $\calH$-invariant quantities can be relevant to our problem, we need to examine how $c_{\calH}$ depends on $\calH$.
+We have thus assigned a tensor $c_{\calH}\in \Hom\left(V\wedge V,V\right)$ to each horizontal subspace $\calH$ at $p$. Since the space of such horizontal subspaces can be identified with $\rmJ^1 P$, we have defined a smooth function 
+\[c:\rmJ^1 P\to \Hom(V\wedge V,V),\quad \calH\mapsto c_\calH.\] 
+Next, since only $\calH$-invariant quantities can be relevant to our problem, we need to examine how $c_{\calH}$ depends on $\calH$. This will allow us to produce a function on $P$ instead of $\rmJ^1 P$.
+
 
 \begin{prop}[{\cite[p.~317]{Sternberg}}]
     Let $P\to M$ be a first-order $G$-structure with corresponding Lie algebra $\frakg<\End(V)$ and the function $\calH\mapsto c_{\calH}$ as above. Define the antisymmetrization operator $\delta$, called the \emph{Spencer differential},\index{Spencer differential} as follows:
@@ -6278,15 +6282,15 @@ we can form an \emph{invariant} function $c:P\to \coker\delta$.
 
 \begin{defn}[First-order structure function]\index{Structure function!of a $G$-structure}\index{Torsion!Intrinsic ($G$-structure)}
     Given a first-order $G$-structure $P\to M$, its first-order structure function, also called \emph{intrinsic torsion}, is 
-    \[c:P\to \coker(\delta),\quad c(p)\coloneqq \left[c_{\calH_p}\right]=c_{\calH_p}+\im\delta,\]
+    \[[c]:P\to \coker(\delta),\quad [c](p)\coloneqq \left[c_{\calH_p}\right]=c_{\calH_p}+\im\delta,\]
     where $\calH_p$ is an abitrary horizontal space at $p$.
 \end{defn}
 
 \begin{rem}
-    The reason for the name is, of course, that $c$ is a generalization of our structure functions $T^i_{jk}$ from the equivalence problem for coframes, but it preserves only the part that is independent of the pseudo-connection part of the coframe. In fact, if $G=\{e\}$, then $\frakg=0$ and $c$ maps $P\cong M$ into $\Hom(V\wedge V,V)$. If, moreover, $P\cong M$ is itself a Lie group (and the $\{e\}$-structure in question the standard Maurer-Cartan coframe), this function is constant, and can be verified to coincide with the Lie bracket of that Lie group (exercise).
+    The reason for the name is, of course, that $[c]$ is a generalization of our structure functions $T^i_{jk}$ from the equivalence problem for coframes, but it preserves only the part that is independent of the pseudo-connection part of the coframe. In fact, if $G=\{e\}$, then $\frakg=0$ and $[c]$ maps $P\cong M$ into $\Hom(V\wedge V,V)$. If, moreover, $P\cong M$ is itself a Lie group (and the $\{e\}$-structure in question the standard Maurer-Cartan coframe), this function is constant, and can be verified to coincide with the Lie bracket of that Lie group (exercise).
 \end{rem}
 
-Next we can see how $c$ varies along the fibers of $P$. The following is a simple exercise.
+Next we can see how $[c]$ varies along the fibers of $P$. The following is a simple exercise.
 
 \begin{prop}[{\cite[p.~318]{Sternberg}}]
     The structure function is equivariant under the principal $G$-action:
@@ -6295,7 +6299,7 @@ Next we can see how $c$ varies along the fibers of $P$. The following is a simpl
 \end{prop}
 
 The reader can also easily check that the space $\im(\delta)$ is a $G$-invariant subspace of $\Hom(V\wedge V,V)$. Therefore, the quotient space $\coker\delta$ still carries a $G$-representation which we also denote by $\sigma$. In summary, we have 
-\[c(p\cdot g)=\sigma_g^{-1}c(p).\]
+\[[c](p\cdot g)=\sigma_g^{-1}[c](p).\]
 
 \begin{rem}
     Recall that equivariant functions on a principal bundle correspond to sections of the associated bundle. In this case, since $V$ is the model tangent space of $M$, the associated bundle with fiber $\Hom(V\wedge V,V)$ is literally the bundle of $V$-valued $2$-forms on $M$. Thus, $c$ can be identified with a tensor field of type $(1,2)$ on $M$, called the \emph{(intrinsic) torsion tensor} of the $G$-structure.
@@ -6304,7 +6308,7 @@ The reader can also easily check that the space $\im(\delta)$ is a $G$-invariant
 Finally, since the structure function is clearly a natural (intrinsic) quantity of the $G$-structure, equivalent $G$-structures have equivalent structure functions.
 
 \begin{prop}[{\cite[Thm.~VII.2.1]{Sternberg}}]\label{thm vii.2.1 Sternberg}
-    If $F:M\to \wb M$ is a local diffeomorphism establishing an equivalence of two $G$-structures $P\to M$ and $\wb P\to \wb M$, then the structure functions are also $F$-related: $c=\wb c\circ F_\ast$.
+    If $F:M\to \wb M$ is a local diffeomorphism establishing an equivalence of two $G$-structures $P\to M$ and $\wb P\to \wb M$, then the structure functions are also $F$-related: $[c]=[\wb c]\circ F_\ast$.
 \end{prop}
 
 In particular, we immediately get
@@ -6385,7 +6389,7 @@ Indeed, in the context of equivalence problems, affine connections, despite not 
 \PRLsep
 
 
-Let us return to the general equivalence problem for $G$-structures. Theorem~\ref{thm vii.2.1 Sternberg} asserts that if we want to find an isomorphism between two $G$-structures $P$ and $\wb P$, then we must \emph{at least} be able to find a map $F_\ast:P\to \wb P$ such that $F^\ast \wb c=c$. In general, this kind of problem is very difficult. The one easy case is where one of the functions is constant. Then the other function must also be the same constant. 
+Let us return to the general equivalence problem for $G$-structures. Theorem~\ref{thm vii.2.1 Sternberg} asserts that if we want to find an isomorphism between two $G$-structures $P$ and $\wb P$, then we must \emph{at least} be able to find a map $F_\ast:P\to \wb P$ such that $F^\ast [\wb c]=[c]$. In general, this kind of problem is very difficult. The one easy case is where one of the functions is constant. Then the other structure function must also be equal to the same constant. 
 
 
 \begin{cor}[{\cite[Cor.~VII.2.1]{Sternberg}}]\label{cor vii.2.1 Sternberg}
@@ -6394,6 +6398,75 @@ Let us return to the general equivalence problem for $G$-structures. Theorem~\re
 
 
 
+
+\PRLsep 
+
+
+
+Recall that the affine bundle $\pi^1_0:\rmJ^1 \Fr(\T M)\to \Fr(\T M)$ can be identified with a subbundle of the second frame bundle $\Fr(\T \Fr(M))\cong\Fr^2(M)$, and thus can be interpreted as a $\Hom(V,\frakgl(V))$-structure on the manifold $\Fr(M)$, where we view the vector group $\Hom(V,\frakgl(V))<\GL(V\oplus\frakgl(V))$ ($V\oplus\frakgl(V)$ being the model tangent space of $\Fr(M)$) as the subgroup formed by the ``vertical shifts''
+\[(v,\xi)\mapsto (v,\xi+t(v)),\quad t\in \Hom(V,\frakgl(V)).\]
+
+Thus, by the same argument, any first-order $G$-structure $P\subset \Fr(M)$ on $M$ also gives rise to an interpretation of the affine bundle $\pi^1_0:\rmJ^1 P\to P$ as a $\Hom(V,\frakg)$-structure on $P$.
+
+
+\begin{example}
+    Consider the standard flat $G$-structure on $\bbR^n$:
+    \[P\coloneqq \bbR^n\times G<\Fr(\bbR^n)=\bbR^n\times\GL_n(\bbR).\]
+    Given a vector field $X\in\fX(\bbR^n)=C^\infty(\bbR^n,\bbR^n)$, we can observe that $X$ is an infinitesimal automorphism of $P$ iff its flow $\Fl^X_t$ lifts to an automorphism $(\Fl^X_t)_\ast:P\to P$. The lifted flow is the flow of a lifted vector field $\wt X\in\fX(P)$: in coordinates $\bf x$, so that $X=X^i\partial_i$, the lifted vector field is 
+    \[\wt X=\frac{\partial X^i}{\partial x^j}\frac{\partial}{\partial p^i_j},\]
+    where $p^i_j$ are the associated coordinates on $\Fr(\bbR^n)$ so that a frame $p\in \Fr(\bbR^n)$ is written as the collection of $n$ tangent vectors
+    \[p=\left(p^i_1\partial_i,\ldots,p^i_n\partial_i\right).\]
+    It follows that $X$ is an infinitesimal automorphism iff 
+    \[\left[\frac{\partial X^i}{\partial x^j}\right]_{i,j=1,\ldots,n}\in\frakg <\frakgl_n(\bbR),\]
+    i.e., iff the Jacobi matrix of the flow of $X$ at every point belongs to $G$. Let us assume now that the lifted flow fixes the basepoint $(0,e)\in \bbR^n\times\GL_n(\bbR)$. The lifted vector field $\wt X$ vanishes at this point. If we now prolong to the jet bundle $\rmJ^1 P$, we obtain a flow which is generated by the vector field 
+    \[\rmj^1\wt X=\frac{\partial X^i}{\partial x^{j_1}\partial x^{j_2}}\frac{\partial}{\partial p^i_{j_1,j_2}}\eqqcolon \wt X^i_{j_1,j_2}\frac{\partial}{\partial p^i_{j_1,j_2}},\]
+    where $(x^i,p^i_j,p^i_{j_1,j_2})$ are the canonical coordinates on the jet bundle. Note that the components $\wt X^i_{j_1,j_2}$ satisfy 
+    \[\left[\wt X^i_{j_1,j_2}\right]_{i,j_1=1,\ldots,n}\in\frakg<\frakgl_n(\bbR),\quad j_2=1,\ldots,n,\]
+    and are symmetric in the lower indices $j_1,j_2$. We conclude that:
+    \begin{lem}
+        The lifts of the infinitesimal automorphisms of the standard flat $G$-structure $P=V\times G$ to the jet space $\rmJ^1 P$ generate a Lie subgroup $G^{(1)}<\Hom(V,\frakg)$ with Lie algebra 
+        \[\frakg^{(1)}\coloneqq \{t\in\Hom(V,\frakg):t(u)v=t(v)u\text{ for all }u,v\in V\}.\]
+    \end{lem}
+\end{example}
+
+The above example motivates the following definition.
+
+\begin{defn}
+    Let $\frakg<\frakgl(V)$ be a matrix Lie algebra (here, $V$ is a finite-dimensional vector space). The first prolongation of $\frakg$ is the subspace $\frakg^{(1)}<\Hom(V,\frakg)$ consisting of those $t:V\to\frakg$ such that $t(u)v=t(v)u$ for any $u,v\in V$. The $r$-th prolongation of $\frakg$ is the subspace $\frakg^{(r)}<\Hom(V,\frakg^{(r-1)})$ defined inductively by 
+    \[\frakg^{(k)}=\left(\frakg^{(r-1)}\right)^{(1)}.\]
+    A Lie algebra $\frakg$ is said to be of \emph{finite type $r\geq 1$} if  $\frakg^{(r-1)}\neq 0$ and $\frakg^{(r)}=0$.
+\end{defn}
+
+\begin{defn}
+    Let $G<\GL(V)$ be a matrix Lie group. The first prolongation of $G$ is the subgroup $G^{(1)}<\GL(V\oplus\frakg)$ consisting of transformations of the form 
+    \[(v,\xi)\mapsto (v,\xi+t(v)),\quad t\in\frakg^{(1)}.\]
+    Similarly, the $r$-th prolongation of $G$ is the subgroup $G^{(r)}<\GL(V\oplus \frakg\oplus \frakg^{(1)}\oplus\cdots\oplus \frakg^{(r)})$ defined inductively by 
+    \[\frakg^{(r)}\coloneqq \left(G^{(r-1)}\right)^{(1)}.\]
+\end{defn}
+
+Note that all of the prolongations $G^{(r)}$ are abelian groups. Now, for each $G$-structure $P\to M$ we can always reduce the structure group of $\rmJ^1 P$ to $G^{(1)}$, obtaining a $G^{(1)}$-structure.
+
+\begin{prop}[{\cite[Prop.~2.11]{Fernandes}}]
+    Let $P\to M$ be a $G$-structure on $M$ with first-order structure function $c:\rmJ^1 P\to \Hom(V\wedge V,V)$. Each choice of complement $C$ to $\im\delta$ in $\Hom(V\wedge V,V)$ (so $\Hom(V\wedge V,V)=\im\delta\oplus C$) determines a smooth subbundle 
+    \[P^{(1)}\coloneqq \{\calH\in \rmJ^1 P:c_{\calH}\in C\}=c^{-1}(C)<\rmJ^1 P,\]
+    which is a reduction of the affine bundle $\pi^1_0:\rmJ^1 P\to P$ to the structure group $G^{(1)}$. Different choices of $C$ determine subbundles related via a principal right translation by an element in $\Hom(V,\frakg)$.
+\end{prop}
+
+The $G^{(1)}$-structure $P^{(1)}\to P$ is called the \emph{first prolongation} of $P$. Of course, working inductively, one defines the $r$-th prolongation:
+\[P^{(r)}\coloneqq \left(P^{(r-1)}\right)^{(1)}<\rmJ^r P<\Fr^r(M),\]
+which is a $G^{(r)}$-structure on the manifold $P^{(r-1)}$. The relevance of the prolongation to the equivalence problem is explained by the following basic result.
+
+\begin{thm}[{\cite[Prop.~2.12]{Fernandes}}]\label{thm 2.12 Fernandes}
+    Let $P\to M$ and $\wb P\to \wb M$ be $G$-structures. They are equivalent iff their first prolongations $P^{(1)}\to P$ and $\wb P^{(1)}\to \wb P$ are equivalent as $G^{(1)}$-structures.
+\end{thm}
+
+We can use this to obtain genuinely new necessary conditions for equivalence (so far we only have $c$) by looking at the structure function of the prolongation $P^{(1)}$:
+\[c^{(1)}:P^{(1)}\to \frac{\Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus \frakg\right)}{\delta(\Hom(V\oplus\frakg,\frakg^{(1)}))},\]
+called the \emph{second-order structure function of $P$}. Then one continues this process by constructing higher and higher prolongations and analyzing their structure functions. The importance of structures of finite type is that we can reduce the set of necessary conditions for equivalence of $G$-structures to a finite amount. In fact, by the method of prolongation, the equivalence problem for finite type $G$-structures reduces to an equivalence problem for $\{e\}$-structures (coframes), since $G^{(r)}=\{e\}$ for some $r$, which we already know how to solve. Moreover, one can show that $G$-structures of finite type always have finite-dimensional symmetry groups (this will follow from the rigidity result for general Cartan geometries, of which any $\{e\}$-structure is a trivial example, see Theorem~\ref{thm 1.5.11 Cap}).
+
+\begin{rem}
+    As we will see, an $\{e\}$-structure, also known as an absolute parallelism, defines a unique connection. Thus, for finite-type $G$-structures our method guarantees the construction of a canonical affine connection on $P^{(r-1)}$, which is a specific type of Cartan geometry. In other words, finite type $G$-structures end up being special Cartan geometries, and by virtue of Theorem~\ref{thm 2.12 Fernandes} their equivalence can be established using the general procedure for the equivalence of coframes. For an explicit description of the canonical Cartan geometry associated with a $G$-structure of type $1$ or $2$ see \cite{Alekseevsky}.
+\end{rem}
 
 % Note that the Lie bracket of vector fields induces the relations $[L^r,L^q]=L^{r+q}$, $r,g\geq -1$, and so the bracket can be restricted to form maps 
 % \begin{align}

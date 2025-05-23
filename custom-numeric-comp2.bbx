@@ -67,7 +67,7 @@
     not test {\ifnameundef{author}}
   }
     {\usebibmacro{author}\iffieldundef{collaboration}{}{  on behalf of\usebibmacro{collaboration}}}
-    {\textsc{\thefield{collaboration}}. }} % Jan: should find more elegant solution to the period and space
+    {\textsc{\thefield{collaboration}}. }} %  should find more elegant solution to the period and space
 
 % like regular doi+eprint+url, but doesn't give url if others are provided
 \renewbibmacro*{doi+eprint+url}{%
@@ -103,8 +103,8 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author+collaboration}% change to author+collaboration, but needs fixing for case of no collab (currently running into indentation/space-buffer issues)
-  \setunit{\labelnamepunct}\newblock% % Jan: Adds period at end of name
-  %\addperiod% % Jan: Commenting this out, seems unnecessary?
+  \setunit{\labelnamepunct}\newblock% %  Adds period at end of name
+  %\addperiod% %  Commenting this out, seems unnecessary?
   \usebibmacro{title}%
   \addperiod%
   \newunit\newblock%
@@ -123,8 +123,8 @@
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author+collaboration}%
-  % \setunit{\labelnamepunct}\newblock% % Jan: Adds period at end of name
-  \addperiod% % Jan: Commenting this out, seems unnecessary?
+  % \setunit{\labelnamepunct}\newblock% %  Adds period at end of name
+  \addperiod% %  Commenting this out, seems unnecessary?
   \usebibmacro{titlequote}%
   \addperiod%
   \newunit\newblock%
@@ -141,7 +141,7 @@
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
 
-\DeclareBibliographyDriver{misc}{% % Jan: Currently a copy of article
+\DeclareBibliographyDriver{misc}{% %  Currently a copy of article
   \usebibmacro{bibindex}%
   \usebibmacro{begentry}%
   \usebibmacro{author/translator+others}%
@@ -440,7 +440,13 @@
   \newunit%
   \usebibmacro{institution+location+date}%
   \addperiod%
-  \newunit%
+  \newunit\newblock%
+  \iftoggle{bbx:isbn}%
+    {\printfield{issn}}%
+    {}%
+  \newunit\newblock%
+  \addperiod%
+  \usebibmacro{doi+eprint+url}%
   \usebibmacro{pageref}%
   \usebibmacro{finentry}}
 
