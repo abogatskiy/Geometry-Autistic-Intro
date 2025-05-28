@@ -2136,26 +2136,11 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
 \end{rem}
 
 
+\PRLsep
 
+We finish this \sect\ by briefly introducing some \emph{brackets} that can be defined using the formalism of generating sections. We will not use them in the rest of the text, but the reader may be able to connect them to similar objects in classical mechanics. The basic idea is that since infinitesimal contact transformations have been linearly identified with their generating sections, the Lie algebra of the former must translate to some Lie algebra of the latter.
 
-
-
-\section{Classical symmetries of equations}
-
-Let $\calE\subset \rmJ^rE$ be a differential equation of order $r$. As defined above, a classical symmetry of $\calE$ is a contact transformation $F:\rmJ^rE\to \rmJ^rE$ such that $F(\calE)\subset\calE$.
-
-A direct consequence of the considerations of the last \sect\ is the following.
-
-\begin{prop}[{{\cite[Prop.~3.4.1]{Kras}}}]
-    \begin{enumerate}
-        \item Let $F:\rmJ^rE\to \rmJ^rE$ be a symmetry of the equation $\calE\subset\rmJ^rE$ and $f$ a (local) solution of this equation, i.e., a section of $E$ whose $r$-graph lies in $\calE$. Then $F(\graph^r(f))$ is a generalized solution of $\calE$. In particular, if the manifold $F(\graph^r(f))$ is of the form $\graph^r(f')$ for some (local) section $f'=F^\ast f$, then $f'$ is also a solution of $\calE$.
-        \item If $X$ is an infinitesimal symmetry of $\calE$ and $f$ is a solution, then any point $p\in \graph^r(f)$ has a neighborhood $U$ such that for any sufficiently small $t$ the manifold $\Fl^X_t(U)$ is locally of the form $\graph^r(f_t)$, where $f_t=(\Fl^X_t)^\ast f$. In other words, $X$ determines a flow on the set of solutions of $\calE$.
-    \end{enumerate}
-\end{prop}
-
-Since contact vector fields are described by generating sections, there is a concrete algorithm for finding all classical infinitesimal symmetries of an equation. 
-
-As usual, $k$ will be the rank of the bundle $E$ (the number of dependent variables). Let $\varphi$ and $\psi$ be the sections generating two symmetries of the equation $\calE\subset\rmJ^rE$, i.e., the contact vector fields $X_\varphi^{(q)}$ and $X_\psi^{(q)}$ are tangent to $\calE$ ($s=r$ for $k>1$ and $s=r-1$ for $k=1$). 
+As usual, $k$ denotes the rank of the bundle $E$ (the number of dependent variables). Let $\varphi$ and $\psi$ be the sections generating two symmetries of the equation $\calE\subset\rmJ^rE$, i.e., the contact vector fields $X_\varphi^{(q)}$ and $X_\psi^{(q)}$ are tangent to $\calE$ ($q=r$ for $k>1$ and $q=r-1$ for $k=1$). 
 
 \begin{defn}[Jacobi bracket]\index{Jacobi bracket}
     The commutator $[X_\varphi^{(q)},X_\psi^{(q)}]$ is obviously also a symmetry of the equation $\calE$, and consequently is of the form $X_\rho^{(q)}$ for some generating section $\rho$. This section is called the Jacobi bracket of the generating sections $\varphi,\psi$, and is denoted by $\{\varphi,\psi\}$. The set of infinitesimal symmetries of an equation forms a Lie algebra w.r.t.\ the Jacobi bracket.
@@ -2173,6 +2158,14 @@ As usual, $k$ will be the rank of the bundle $E$ (the number of dependent variab
     \[\{f,g\}=\sum_i \left(f_{x^i}g_{p_i}-f_{p_i}g_{x^i}\right)+\sum_i p_i\left(f_u g_{p_i}-g_uf_{p_i}\right)+fg_u-gf_u.\label{eq jacobi br}\]
 \end{example}
 
+In canonical coordinates on $\rmJ^rE$, we have from \eqref{eq 3.3.9 Kras} the general formula
+\begin{multline}
+    \{\varphi,\psi\}^j=\sum_{\alpha=1}^k\left(\varphi^\alpha\frac{\partial\psi^j}{\partial u^\alpha}-\psi^\alpha \frac{\partial \varphi^j}{\partial u^\alpha}\right)+\\ 
+    +\sum_{i=1}^n\sum_{\alpha=1}^k \left(\left[\frac{\partial\varphi^\alpha}{\partial x^i}+\sum_{\beta=1}^k p^\beta_i\frac{\partial \varphi^\alpha}{\partial u^\beta}\right]\frac{\partial \psi^j}{\partial p^\alpha_i}-
+    \left[\frac{\partial \psi^\alpha}{\partial x^i}+\sum_{\beta=1}^k p^\beta_i\frac{\partial \psi^\alpha}{\partial u^\beta}\right]\frac{\partial \varphi^j}{\partial p^\alpha_i}
+    \right).\label{eq ex 3.3.7 Kras}
+\end{multline}
+
 \begin{rem}
     The $r=k=1$ Jacobi bracket is closely related to two other brackets. The \emph{Mayer bracket} $[f,g]$ of functions on $\rmJ^1 (M\times\bbR\to M)$ is defined by \index{Mayer bracket}
     \[[f,g]\coloneqq \dd\theta(X_f,X_g),\]
@@ -2185,15 +2178,22 @@ As usual, $k$ will be the rank of the bundle $E$ (the number of dependent variab
 \end{rem}
 
 
-In canonical coordinates on $\rmJ^rE$, we have from \eqref{eq 3.3.9 Kras} the general formula
-\begin{multline}
-    \{\varphi,\psi\}^j=\sum_{\alpha=1}^k\left(\varphi^\alpha\frac{\partial\psi^j}{\partial u^\alpha}-\psi^\alpha \frac{\partial \varphi^j}{\partial u^\alpha}\right)+\\ 
-    +\sum_{i=1}^n\sum_{\alpha=1}^k \left(\left[\frac{\partial\varphi^\alpha}{\partial x^i}+\sum_{\beta=1}^k p^\beta_i\frac{\partial \varphi^\alpha}{\partial u^\beta}\right]\frac{\partial \psi^j}{\partial p^\alpha_i}-
-    \left[\frac{\partial \psi^\alpha}{\partial x^i}+\sum_{\beta=1}^k p^\beta_i\frac{\partial \psi^\alpha}{\partial u^\beta}\right]\frac{\partial \varphi^j}{\partial p^\alpha_i}
-    \right).\label{eq ex 3.3.7 Kras}
-\end{multline}
 
-Let us now deduce local conditions for a contact vector field $X$ to be a symmetry of the equation $\calE\subset\rmJ^rE$. To do this, let us choose canonical coordinates in $\rmJ^rE$ and assume that the submanifold $\calE$ in these coordinates is described by the relations
+
+\section{Classical symmetries of equations}
+
+Let $\calE\subset \rmJ^rE$ be a differential equation of order $r$. As defined above, a classical symmetry of $\calE$ is a contact transformation $F:\rmJ^rE\to \rmJ^rE$ such that $F(\calE)\subset\calE$.
+
+A direct consequence of the considerations of the last \sect\ is the following.
+
+\begin{prop}[{{\cite[Prop.~3.4.1]{Kras}}}]
+    \begin{enumerate}
+        \item Let $F:\rmJ^rE\to \rmJ^rE$ be a symmetry of the equation $\calE\subset\rmJ^rE$ and $f$ a (local) solution of this equation, i.e., a section of $E$ whose $r$-graph lies in $\calE$. Then $F(\graph^r(f))$ is a generalized solution of $\calE$. In particular, if the manifold $F(\graph^r(f))$ is of the form $\graph^r(f')$ for some (local) section $f'=F^\ast f$, then $f'$ is also a solution of $\calE$.
+        \item If $X$ is an infinitesimal symmetry of $\calE$ and $f$ is a solution, then any point $p\in \graph^r(f)$ has a neighborhood $U$ such that for any sufficiently small $t$ the manifold $\Fl^X_t(U)$ is locally of the form $\graph^r(f_t)$, where $f_t=(\Fl^X_t)^\ast f$. In other words, $X$ determines a flow on the set of solutions of $\calE$.
+    \end{enumerate}
+\end{prop}
+
+Since contact vector fields are described by generating sections, there is a concrete algorithm for finding all classical infinitesimal symmetries of an equation. Let us deduce the local conditions for a contact vector field $X$ to be a symmetry of the equation $\calE\subset\rmJ^rE$. To do this, let us choose canonical coordinates in $\rmJ^rE$ and assume that the submanifold $\calE$ in these coordinates is described by the relations
 \[F^\alpha=0,\quad \alpha=1,\ldots,R,\]
 where the $F^\alpha$ are smooth functions on $\rmJ^rE$. Suppose that this system is locally of maximal rank. Then the condition that $X$ is tangent to the manifold $\calE=\{\bf{F}=0\}$, where $\bf{F}=(F^1,\ldots,F^R)$, is of the form 
 \[X(F^\alpha)=\sum_{\beta=1}^R \lambda^\alpha_\beta F^\beta,\quad \alpha=1,\ldots,R,\label{eq 3.4.3 Kras}\]
@@ -10264,7 +10264,7 @@ Thus, the retracting space of such a system has dimension $k+4$. For this reason
 
 \section{Darboux's method}
 
-We now turn to \emph{Darboux's method}, which gives a recipe for solving certain second-order PDEs using ODE techniques. If the equation passes a certain test, we may specify two arbitrary functions of one variable, and construct (some) solutions by solving systems of ODE's. The test is carried out by calculating the derived flag for each of the characteristic systems defined above. The dimensions of the spaces in the derived flag are differential invariants that classify Pfaffian systems. These dimensions satisfy certain systems of inequalities, see \cite{Bryant}.
+We now turn to \emph{Darboux's method}, which gives a recipe for solving certain second-order PDEs using ODE techniques. If the equation passes a certain test, we may specify two arbitrary functions of one variable, and construct (some) solutions by solving systems of ODEs. The test is carried out by calculating the derived flag for each of the characteristic systems defined above. The dimensions of the spaces in the derived flag are differential invariants that classify Pfaffian systems. These dimensions satisfy certain systems of inequalities, see \cite{Bryant}.
 
 \begin{example}
     On $\bbR^4$ with coordinates $(u,v,x,y)$ let $I$ be spanned by 
@@ -10297,7 +10297,7 @@ Then $W$ and $X$ are both constant along the integral curves of $\calM_i$ (such 
     \]
     The characteristic system $\calM_1$ contains two exact derivatives, $\dd x$ and $\dd (r-\frac12 p^2)$, the latter obtained by adding multiples of $\dd x$ and $\theta_1$ to $\dd r-p\rme^z\dd y$. Similarly, $\dd y$ and $\dd(t-\frac12 q^2)$ are in $\calM_2$. Hence, 
     \[r-\frac12 p^2=f(x),\quad t-\frac12 q^2=g(y)\label{eq 7.14 Ivey}\]
-    for some functions that depend on the particular solution of Liouville's equation defining our integral surface. Again, we may use these functions to determine the solution. For, if we choose $f$ and $g$ arbitrarily, and then restrict $\calI$ to the codimension-two submanifold defined by \eqref{eq 7.14 Ivey}, then the restriction is a Frobenius system. This means that we can solve for $z(x,y)$ by solving systems of ODE's. In this example, we can solve the system 
+    for some functions that depend on the particular solution of Liouville's equation defining our integral surface. Again, we may use these functions to determine the solution. For, if we choose $f$ and $g$ arbitrarily, and then restrict $\calI$ to the codimension-two submanifold defined by \eqref{eq 7.14 Ivey}, then the restriction is a Frobenius system. This means that we can solve for $z(x,y)$ by solving systems of ODEs. In this example, we can solve the system 
     \[z_x=p,\quad p_x=f(x)+\frac12 p^2\label{eq 7.15 Ivey}\]
     and a similar system in the $y$-direction, and be guaranteed by the Frobenius condition that we have generated a solution to the original PDE.
 \end{example}
@@ -10404,7 +10404,7 @@ Lastly, the following intuitive application of the Pfaffian normal form plays a 
 
 \section{(*) Monge equations}\label{sec: monge equations}
 
-Here we present an application of the derived flag of Pfaffian systems to demonstrate Engel's and Goursat's normal forms for certain PDEs. Consider again a Pfaffian system defined by $I=\<\theta^1,\ldots,\theta^s\>$ (where the $\theta^a$ are pointwise linearly independent) on a $n$-dimensional manifold $M$. If $s=n-1$, then this system is completely integrable. In fact, on the choice of an independent variable, it becomes a system of ODE's describing the integral curves of some vector field (determined up to multiplication by a scalar function).
+Here we present an application of the derived flag of Pfaffian systems to demonstrate Engel's and Goursat's normal forms for certain PDEs. Consider again a Pfaffian system defined by $I=\<\theta^1,\ldots,\theta^s\>$ (where the $\theta^a$ are pointwise linearly independent) on a $n$-dimensional manifold $M$. If $s=n-1$, then this system is completely integrable. In fact, on the choice of an independent variable, it becomes a system of ODEs describing the integral curves of some vector field (determined up to multiplication by a scalar function).
 
 In this section we study the case $s=n-2$, which is already a rich subject with diverse phenomena. The case $n=5,s=3$ is the content of Cartan's 1910 ``five variables'' paper and the general case has barely been touched.
 
@@ -10490,7 +10490,7 @@ Now the conditions of Theorem~\ref{thm 5.1 Bryant} are satisfied and we get the 
     where $f(\varphi)$ is an arbitrary function.
 \end{example}
 
-The applications to ODE's of higher order lead to the Pfaffian contact system 
+The applications to ODEs of higher order lead to the Pfaffian contact system 
 \[\theta_1=\dd u-p\dd x,\quad \theta_2=\dd p-p_1\dd x,\quad\cdots,\quad \theta_{s}=\dd p_{s-1}-p_s\dd x,\]
 the jet space being parametrized by $(x,u,p_1,\ldots,p_s)$. This system is of corank two. It satisfies the relations 
 \begin{align}
@@ -12011,11 +12011,11 @@ Another geometric structure closely related to the \gls{eds} for immersed surfac
 \end{example}
 
 \begin{hrem*}
-    The classification of webs is equivalent to Cartan's equivalence problem for certain differential equations. In 1908 he posed the problem of the equivalence of two ODE's:
+    The classification of webs is equivalent to Cartan's equivalence problem for certain differential equations. In 1908 he posed the problem of the equivalence of two ODEs:
     \[y_x=f(x,y),\quad \text{ and }\quad Y_X=F(X,Y),\]
     w.r.t.\ coordinate transformations that don't mix the coordinates:
     \[\wh{x}=X(x),\quad \wh{y}=Y(y).\label{6914}\]
-    This transformation leaves invariant the coordinate lines $x=a$, $y=b$ in the $(x,y)$-plane as well as the integral lines of the equations. These three families of lines form a $3$-web \emph{in the plane}. Intuitively, the ODE, viewed only up to diffeomorphism, fixes the curvature of the integral curves at all points, which suffices for recovering the curves in two dimensions. Thus, the problem considered by Cartan is equivalent to classifying curvilinear $3$-webs in the plane. He distinguished $3$ classes of ODE's of the above type: those admitting a $3$-parameter group of transformations \eqref{6914}, those admitting a $1$-parameter such group, and those not admitting any such symmetries. This corresponds to $3$ classes of $3$-webs in the plane.
+    This transformation leaves invariant the coordinate lines $x=a$, $y=b$ in the $(x,y)$-plane as well as the integral lines of the equations. These three families of lines form a $3$-web \emph{in the plane}. Intuitively, the ODE, viewed only up to diffeomorphism, fixes the curvature of the integral curves at all points, which suffices for recovering the curves in two dimensions. Thus, the problem considered by Cartan is equivalent to classifying curvilinear $3$-webs in the plane. He distinguished $3$ classes of ODEs of the above type: those admitting a $3$-parameter group of transformations \eqref{6914}, those admitting a $1$-parameter such group, and those not admitting any such symmetries. This corresponds to $3$ classes of $3$-webs in the plane.
 \end{hrem*}
 
 
@@ -12316,7 +12316,7 @@ More explicitly, if we let $\frake=(e_1,e_2,e_3)$, then the structure equations 
     \sin u& -\cos u & 0
 \end{pmatrix}.\label{eq 7.21 Ivey}
 \]
-This is an overdetermined system for the matrix $\frake(x,y)$, and its Frobenius integrability condition is \gls{sge} for $u$. In fact, the above pair of equations is a $UV$-pair for \gls{sge} (see Example~\ref{ex UV pairs}; in fact, this $UV$-pair is equivalent to the one in Example~\ref{ex sine-gordon} under the isomorphism of Lie algebras $\frakso_3\cong\fraksu_2$). So, given a solution to sine-Gordon, we may obtain the framing $\frake$ by solving linear systems of ODE's, and then solve for the surface $\bf{x}(x,y)\in\bbR^3$ by integrating 
+This is an overdetermined system for the matrix $\frake(x,y)$, and its Frobenius integrability condition is \gls{sge} for $u$. In fact, the above pair of equations is a $UV$-pair for \gls{sge} (see Example~\ref{ex UV pairs}; in fact, this $UV$-pair is equivalent to the one in Example~\ref{ex sine-gordon} under the isomorphism of Lie algebras $\frakso_3\cong\fraksu_2$). So, given a solution to sine-Gordon, we may obtain the framing $\frake$ by solving linear systems of ODEs, and then solve for the surface $\bf{x}(x,y)\in\bbR^3$ by integrating 
 \[\bf{x}_x=e_1\cos u-e_2\sin u,\quad \bf{x}_y=e_1\cos u+e_2\sin u.\label{eq 7.22 Ivey}\]
 For example, the famous \emph{1-soliton}\index{soliton} solution (also called a \emph{traveling wave} due to its translational invariance, or in the context of the sine-Gordon, a \emph{kink})
 \[u=2\arctan(c\exp(\lambda x+\lambda^{-1}y)),\quad c\neq 0, \lambda\neq 0,\label{eq SGE 1-soliton}\]
@@ -12624,7 +12624,7 @@ B\"acklund transformations are a particular form of integrable extension which a
         u_x-\wb{u}_x=\lambda&\sin(u+\wb{u}),\\
         u_y+\wb{u}_y=\frac{1}{\lambda}&\sin(u-\wb{u}).
     \end{align}
-    If $u(x,y),\wb{u}(x,y)$ are smooth functions that satisfy this system for some $\lambda\neq 0$, the differentiating and equating mixed partials implies that $u$ and $\wb{u}$ must be solutions of sine-Gordon $u_{xy}=\sin u\cos u$. Conversely, given a solution $u(x,y)$ of sine-Gordon, we can determine $\wb{u}_x$ and $\wb{u}_y$ from the above, and integrate to get the new solution $\wb{u}(x,y)$ (since we are guaranteed that mixed partials commute). Since this can be done for any $\lambda$, and there will be a constant of integration of the first-order ODE, we get a $2$-parameter family of solutions. For example, the kink solution \eqref{eq SGE 1-soliton} can be produced in this way by starting with $u\equiv 0$. However, the constants of integration amount to translating the solution in the plane, so we can omit them, keeping the translational invariance in mind. Thus, the kink has one parameter $\lambda$. By iterating this procedure, we get a $2$-parameter family of $2$-soliton solutions, a $3$-parameter family of $3$-soliton solutions, and so on. All of them can be obtained by solving simple ODE's and are expressed in terms of trigonometric and exponential functions. For example, the $2$-soliton solution (Figure~\ref{fig:2-soliton}) is 
+    If $u(x,y),\wb{u}(x,y)$ are smooth functions that satisfy this system for some $\lambda\neq 0$, the differentiating and equating mixed partials implies that $u$ and $\wb{u}$ must be solutions of sine-Gordon $u_{xy}=\sin u\cos u$. Conversely, given a solution $u(x,y)$ of sine-Gordon, we can determine $\wb{u}_x$ and $\wb{u}_y$ from the above, and integrate to get the new solution $\wb{u}(x,y)$ (since we are guaranteed that mixed partials commute). Since this can be done for any $\lambda$, and there will be a constant of integration of the first-order ODE, we get a $2$-parameter family of solutions. For example, the kink solution \eqref{eq SGE 1-soliton} can be produced in this way by starting with $u\equiv 0$. However, the constants of integration amount to translating the solution in the plane, so we can omit them, keeping the translational invariance in mind. Thus, the kink has one parameter $\lambda$. By iterating this procedure, we get a $2$-parameter family of $2$-soliton solutions, a $3$-parameter family of $3$-soliton solutions, and so on. All of them can be obtained by solving simple ODEs and are expressed in terms of trigonometric and exponential functions. For example, the $2$-soliton solution (Figure~\ref{fig:2-soliton}) is 
     \[u=2\arctan \frac{\lambda_1+\lambda_2}{\lambda_1-\lambda_2}\frac{\rme^{\lambda_1x+\lambda_1^{-1}y}-\rme^{\lambda_2 x+\lambda_2^{-1}y}}{1+\rme^{(\lambda_1+\lambda_2)x+(\lambda_1^{-1}+\lambda_2^{-1})y}}.\label{eq sge 2-soliton}\]
     One can also obtain other interesting exact solutions from these formulas. While $\lambda_1$ and $\lambda_2$ are real, we can put $\lambda_1=\rme^{\i t}=-\lambda_2^{-1}$ for $t\in \bbR$, and discover that the formula for the $2$-soliton solution gives another real solution of sine-Gordon, which is periodic in $x-y$ and is called a \emph{breather} (Figure~\ref{fig:breather}).
 \end{example}
@@ -12788,7 +12788,7 @@ As we wrap up our exploration of the geometry of surfaces, we can make some obse
     \item \emph{A Hamiltonian structure} which describes solutions as Hamiltonian flows on an infinite-dimensional manifold.
     \item \emph{An infinite-dimensional Lie algebra of symmetries}, which generates an infinite number of conserved quantities (analogs of initial data in a Frobenius system).
     \item \emph{Existence of solitonic solutions}, each of which is described by a finite set of parameters related to the conserved quantities. This is another manifestation of the large space of symmetries.
-    \item \emph{Well understood function spaces}, such as special functions (elliptic, hypergeometric, Painlev\'e). Even if a nonlinear coordinate transformation is found that reduces the problem to a linear one, the space of solutions to the resulting linear problem needs to be highly legible. A standard criterion for this property is the \emph{Painlev\'e Test}, which is related to the classification of ODE's whose solutions have certain natural analytic properties (such as singularities only of Fuchsian type whose locations are independent of the initial condition), a generalization of the Cauchy-Kovalevskaya Theorem. Solutions to Painlev\'e equations encompass all classical special functions and are currently the broadest well-studied class of special functions related to integrable PDEs.
+    \item \emph{Well understood function spaces}, such as special functions (elliptic, hypergeometric, Painlev\'e). Even if a nonlinear coordinate transformation is found that reduces the problem to a linear one, the space of solutions to the resulting linear problem needs to be highly legible. A standard criterion for this property is the \emph{Painlev\'e Test}, which is related to the classification of ODEs whose solutions have certain natural analytic properties (such as singularities only of Fuchsian type whose locations are independent of the initial condition), a generalization of the Cauchy-Kovalevskaya Theorem. Solutions to Painlev\'e equations encompass all classical special functions and are currently the broadest well-studied class of special functions related to integrable PDEs.
     \item \emph{Lax pair or zero curvature representations}, which couple the original system with a linear time-dependent operator ($L$ in Example~\ref{ex Lax pairs}) whose dynamics is \emph{isospectral}. The existence of a Lax pair is often conflated with integrability, but it alone does not actually imply the rest of the features listed above.
 \end{enumerate} 
 
