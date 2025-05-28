@@ -1547,7 +1547,7 @@ As a result of these observations, we can give a coordinate-invariant definition
 
 As we will show below, in the canonical coordinates $\calC$ is locally generated as the annihilator of the contact forms $\theta^j_I=\dd p^j_I-\sum_{i=1}^n \dd x^i$, $|I|\leq r-1$. However, \emph{all} sections of the annihilator of the Cartan distribution (the contact bundle) are called \emph{contact forms}. Theorem~\ref{thm 3.1.1 Kras} shows that contact forms are exactly the $1$-forms that vanish along $r$-graphs of all sections.
 
-Let us give a coordinate description of the Cartan distribution. Namely, we will write down a basis of the plane $L_{p'}$ corresponding to the point $p'\in \rmJ^{r+1}E$ in an bundle coordinate system $x^1,\ldots,x^n,u^1,\ldots,u^k$ on $E$, where $u^1,\ldots,u^k$ are the coordinates along the fiber of $E$. The canonical coordinates of the point $p'$ will be denoted by $x^i(p')$, $u^j(p')$, and $p^j_I(p')$, where for $I=\varnothing$ we set $p^j=u^j$.
+Let us give a coordinate description of the Cartan distribution. Namely, we will write down a basis of the plane $L_{p'}$ corresponding to the point $p'\in \rmJ^{r+1}E$ in an bundle coordinate system $x^1,\ldots,x^n,u^1,\ldots,u^k$ on $E$, where $u^1,\ldots,u^k$ are the coordinates along the fiber of $E$. The canonical coordinates of the point $p'$ will be denoted by $x^i(p')$, $u^j(p')$, and $p^j_I(p')$, where for $I=(0,\ldots,0)$ we set $p^j_I=u^j$.
 
 Let $s$ be a section such that $\rmj^{r+1}_m s=p'$, and let the R-plane $L_{p'}$ be tangent to $\graph^r(s)$. Let us choose a basis in $L_{p'}$ consisting of the vectors $X_1^p,\ldots,X_n^p$ whose projections to $M$ coincide with $\partial_{x^1}(m),\ldots,\partial_{x^n}(m)$. From the definition of the canonical coordinates, it is easy to deduce the formulas for the basis vectors $X^p_i$:
 \[X^p_i=\frac{\partial}{\partial x^i}+\sum_{|I|\leq r}\sum_{j=1}^k p^j_{I+1_i}(p')\frac{\partial}{\partial p^j_I}\quad \in L_{p'}<\T_p \rmJ^rE,\]
@@ -1836,7 +1836,7 @@ Defining the notion of symmetry for a differential equation $\calE$ is a subtle 
     Two equations $\calE,\calE'\subset\rmJ^r E$ are called (locally) equivalent if there is a contact transformation $F\in\Aut(\calC^r)$ such that the image of $\calE$ is $\calE'$. The transformation $F$ is called a \emph{contact, or classical, symmetry} of $\calE$ if $F(\calE)=\calE$.
 \end{defn}
 
-The next few examples show the power of contact symmetries for solving differential equations.
+The next few examples show the power of contact symmetries for solving differential equations. Note, however, that they belong to the special case $r=k=1$, where the maximal-dimensional integral manifolds of the Cartan distribution are not necessarily vertical, which makes symmetries much more useful for solving equations.
 
 \begin{example}[Legendre transform]\index{Legendre transform}
     The Legendre transform is a contact symmetry of the equation 
@@ -1970,27 +1970,20 @@ for some set of functions $\lambda^{jK}_{Il}$.
 
 Thus, a contact vector field is a point vector field iff it depends on the $p$-variables only in a prescribed polynomial way. In particular, it has to depend on the first-order derivatives $p^j_i$ affinely.
 
-\begin{xca}
-    Check that in the case $r=1$ the above theorem provides the following representation of arbitrary contact vector fields on $\rmJ^1(M\times\bbR\to M)$ in terms of a smooth function $\varphi$:
-    \[X_\varphi=-\sum_i \varphi_{p_i}\frac{\partial}{\partial x^i}+\left(\varphi-\sum_i p_i \varphi_{p_i}\right)\frac{\partial}{\partial u}+\sum_i \left(\varphi_{x^i}+p_i\varphi_u\right)\frac{\partial}{\partial p_i}.\label{eq Xf}\]
-    (This also trivially extends to $k>1$.) In particular, such a field generates point transformations iff $\varphi$ is affine in the $p_i$, so we can write $\varphi=b-\sum_i p_ia^i$, and then 
-    \[X_\varphi=\sum_i a^i\partial_{x^i}+b\partial_u+\sum_i\left(b_{x^i}-\sum_l p_l a^l_{x^i}\right)\partial_{p_i}.\]
-\end{xca}
-
 This exercise, combined with the fact that all contact vector fields are the prolongations of at most first-order contact vector fields, means that all contact vector fields are fully parametrized by some set of coefficients that are functions on $\rmJ^1E$. These coefficients can be formed into a single geometric object. To this end, we now introduce the concept of the \emph{generating section} of a contact vector field. 
 
 Consider the evolution of the graphs of sections of $E$ under the action of the corresponding \gls{ops} of (local) contact transformations. Let $X=a^i\partial_{x^i}+b^j\partial_{u^j}+\cdots $ be a contact vector field on $\rmJ^r E$ and let $F_t$ be the corresponding local flow. Consider a local section $s\in\Gamma^\infty(E)$. The $r$-graph $\graph^r(s)\subset \rmJ^rE$ is a transverse $n$-dimensional integral manifold of the Cartan distribution on $\rmJ^rE$. As was already pointed out, for sufficiently small $t$, the manifold $F_t(\graph^r(s))$ is also an $r$-graph of some other local section $s_t$:
 \[F_t(\graph^r(s))=\graph^r(s_t).\]
 
 Thus, the contact transformations $F_t$ generate the evolution $s_t$ of $s$. Let us find the velocity $\dot s_t$ of this evolution at $t=0$. To compute it, let us represent $X$ as the sum of two fields
-\[X=X_1+X_2,\quad X_1\in\Gamma^\infty(\calV\rmJ^r E),\quad X_2\in\fX(\graph^r(s)),\]
-one vertical and the other tangent to $\graph^r(s)$. If $s$ is locally represented by $u^j=s^j(\bf{x})$, $j=1,\ldots,k$, then a basis of vector fields tangent to $\graph^r(s)$ can be written in the following form (note that $p^j_I=\partial^{|I|}s^j/\partial \bf x^I$ on this manifold):
-\[D_i^{(s)}=\frac{\partial}{\partial x^i}+\sum_{j=1}^k \left(\sum_{|I|< r}p^j_{I+1_i}\frac{\partial}{\partial p^j_I}+\sum_{|I|=r}\frac{\partial^{|I|+1}s^j}{\partial \bf x^I\partial x^i}\frac{\partial}{\partial p^j_I}\right).\]
+\[X=X_1+Y,\quad X_1\in\Gamma^\infty(\calV\rmJ^r E),\quad Y\in\fX(\graph^r(s)),\]
+one vertical and the other tangent to $\graph^r(s)$. If $s$ is locally represented by $u^j=s^j(\bf{x})$, $j=1,\ldots,k$, then a basis of vector fields tangent to $\graph^r(s)$ can be written in the following form (note that $p^j_I=\partial^{|I|}s^j/(\partial \bf x)^I$ on this manifold):
+\[D_i^{(s)}=\frac{\partial}{\partial x^i}+\sum_{j=1}^k \left(\sum_{|I|< r}p^j_{I+1_i}\frac{\partial}{\partial p^j_I}+\sum_{|I|=r}\frac{\partial^{|I|+1}s^j}{(\partial \bf x)^I\partial x^i}\frac{\partial}{\partial p^j_I}\right).\]
 Therefore, a vector field tangent to the $r$-graph is of the form 
-\[X_2=\sum_i a^i D_i^{(s)},\]
+\[Y=\sum_i a^i D_i^{(s)},\]
 while the vertical component of the contact vector field $X$ equals 
 \[X_1=X-\sum_i a^i D_i^{(s)}=\sum_j\left(b^j-\sum_i a^ip^j_i\right)\frac{\partial}{\partial u^j}+\cdots.\]
-Since $X_2$ shifts the manifold $\graph^r(s)$ along itself, it does not influence the evolution. On the other hand, the coefficients of the field $X_1$ at $\partial/\partial u^j$ exactly coincide with the velocities of the components of $s_t$:
+Since $Y$ shifts the manifold $\graph^r(s)$ along itself, it does not influence the evolution. On the other hand, the coefficients of the field $X_1$ at $\partial/\partial u^j$ exactly coincide with the velocities of the components of $s_t$:
 \[\dot s^j_0=\restr{\left(b^j-\sum_i a^i p^j_i\right)}{\graph^r(s)}.\]
 Recall from Theorem~\ref{thm 3.3.4 Kras} that $a^i,b^j$ depend (at worst) only on $1$-jets, so these velocities actually depend only on the $1$-graph of $s$. Moreover, they are exactly the coefficients of $\partial_{u^j}$ in $X_1$. Thus, they can be interpreted as the components of a section of the pullback bundle $(\pi^1_0)^\ast E\to \rmJ^1 E$ whose fiber over a point $p\in \rmJ^1 E$ is a copy of the corresponding fiber $\pi^{-1}(\pi^1_0(p))$ of $E$. 
 % Note that these are exactly the vertical components of the projected vector field $(\pi^r_0)_\ast X_1\in\fX(E)$. Since the vertical bundle of a \gls{vb} $E$, restricted to a section, can be canonically identified with $E$ itself, $s^\ast \calV E\cong E$, these velocities describe a unique section of $E$. Since the values of the velocities don't depend on the choice of the section $s$ (only on the point in its graph), by applying this procedure to arbitrary sections of $E$, we get an $E$-valued $0$-form on $E$, i.e., a section of the pullback of $E$ along itself.
@@ -1999,11 +1992,47 @@ Recall from Theorem~\ref{thm 3.3.4 Kras} that $a^i,b^j$ depend (at worst) only o
     Let $\pi:E\to M$ be a \gls{vb} of rank $k$. The section $\varphi\in\Gamma^\infty((\pi^1_0)^\ast E)$ whose components (in any local frame of $E$ and its lift) are 
     \[\varphi^j=\theta^j_{(0,\ldots,0)}(X)=b^j-\sum_i a^ip^j_i,\quad j=1,\ldots,k,\]
     is called the \emph{generating section}, or the \emph{characteristic}, of the contact vector field 
-    \[X=\sum_{i=1}^n a^i \frac{\partial}{\partial x^i}+\sum_{j=1}^k b^j\frac{\partial}{\partial u^j}+\cdots.\]
+    \[X=\sum_{i=1}^n a^i \frac{\partial}{\partial x^i}+\sum_{j=1}^k b^j\frac{\partial}{\partial u^j}+\cdots=\sum_j \varphi^j \frac{\partial}{\partial u^j}+Y,\quad \theta^j_{(0,\ldots,0)}(Y)=0.\]
     Upon restriction to the $1$-graph of a section of $E$, the resulting vertical vector field $X_1\coloneqq \sum_j \varphi^j \frac{\partial}{\partial u^j}$ on $E$ is called the \emph{evolutionary component} of $X$.
 \end{defn}
 
-By virtue of Theorem~\ref{thm 3.3.3 Kras}, each contact vector field is uniquely determined by its generating section. Indeed, if $k>1$, this is obvious since the $a^i$ and $b^j$ provide the components of the point vector field whose prolongation recovers $X$. In the case $k=1$, $a^i$ and $b^j$ determine uniquely the remaining coefficients $b^i_j=D_i(b^j)-\sum_l p^j_l D_i(a^l)$ of the contact vector field on $\rmJ^1E$ whose prolongation recovers $X$. 
+By virtue of Theorem~\ref{thm 3.3.3 Kras}, each contact vector field is uniquely determined by its generating section. Indeed, if $k>1$, this is obvious since the $a^i$ and $b^j$ provide the components of the point vector field whose prolongation recovers $X$. In the case $k=1$, $a^i$ and $b^j$ determine uniquely the remaining coefficients $b^i_j=D_i(b^j)-\sum_l p^j_l D_i(a^l)$ of the contact vector field on $\rmJ^1E$ whose prolongation recovers $X$. In other words, the ``horizontal'' (total derivative, or Cartan distribution) part of a contact vector field is uniquely determined by the vertical part given by the $0$-th order contact forms $\theta^j_{(0,\ldots,0)}=\dd u^j-\sum_i p^j_i\dd x^i$. We give a more detailed proof below.
+
+\begin{cor}\label{thm 2.2.1 Kras}
+    The correspondence $\varphi\mapsto X_\varphi$ between generating sections $\varphi=\theta_{(0,\ldots,0)}(X)$ and contact vector fields $X_\varphi$ is one-to-one and linear.
+\end{cor}
+\begin{proof}
+    We consider the case $k=1$ for ease of notation, but the general argument is the same. We claim that on the jet space $\rmJ^1 E$ the $2$-form $\restr{\dd\theta_{(0,\ldots,0)}}{\calC}$ is nondegenerate when restricted to the Cartan distribution $\calC$. Indeed, the coordinate expression for $\dd\theta_{(0,\ldots,0)}$ contains no $\dd u$ and hence $i_{\partial_u}\theta_{(0,\ldots,0)}=0$, so $\dd\theta_{(0,\ldots,0)}$ is nondegenerate on all hyperplanes not containing $\partial_u$, including all of $\calC$. 
+
+    Thus, the map $Y\mapsto i_Y \dd \theta_{(0,\ldots,0)}$ establishes an isomorphism between vector fields that lie in the Cartan distribution (i.e., which are annihilated by the form $\theta_{(0,\ldots,0)}$ and other contact forms) and $1$-forms that annihilate $\partial_u$. From the definition $X=\varphi \partial_u+Y$, we get 
+    \[i_Y\dd\theta_{(0,\ldots,0)}=i_X\dd \theta_{(0,\ldots,0)}=\Lie_X\theta_{(0,\ldots,0)}-\dd i_X \theta_{(0,\ldots,0)}.\]
+    By virtue of $X$ being a contact vector field, it preserves $\theta_{(0,\ldots,0)}$ up to a factor, say, $\Lie_X\theta_{(0,\ldots,0)}=h\theta_{(0,\ldots,0)}$. Then 
+    \[i_Y\dd \theta_{(0,\ldots,0)}=h\theta_{(0,\ldots,0)}-\dd\varphi.\label{eq 3.2.4 Kras}\]
+    Applying both sides \eqref{eq 3.2.4 Kras} to $\partial_u$, we get $h=\varphi_u$.
+
+    The equality $\theta_{(0,\ldots,0)}(Y)=0$ means that $Y$ takes values in $\calC$. Since the $2$-form $\dd\theta_{(0,\ldots,0)}$ is nondegenerate on $\calC$, the vector $Y$ can be recovered by means \eqref{eq 3.2.4 Kras}. Hence, $X$ is uniquely determined by the function $\varphi$. Conversely, for any function $\varphi$, we can define $Y$ by \eqref{eq 3.2.4 Kras} with $h=\varphi_u$. Then $X=\varphi\partial_u+Y$ is the contact vector field whose generating function is $\varphi$.
+\end{proof}
+
+\begin{xca}\label{xca 2.2.3 Kras}
+    Using \eqref{eq 3.2.4 Kras}, show that if $\varphi_1,\ldots,\varphi_l\in C^\infty(\rmJ^1)$ and $f\in C^\infty(\bbR^l)$ are arbitrary smooth functions, then the ``horizontal'' component $Y$ corresponding to the composite generating function $f(\varphi_1,\ldots,\varphi_l)$ is expressed in terms of the original components $Y_{\varphi_i}$ as
+    \[Y_{f(\varphi_1,\ldots,\varphi_l)}=\sum_{i=1}^l \frac{\partial f}{\partial \varphi_i}Y_{\varphi_i}.\label{eq 2.2.5 Kras}\]
+\end{xca}
+
+\begin{rem}
+    The explicit expression for the contact vector field can be obtained using Exercise~\ref{xca 2.2.3 Kras}, which reduces the problem to obtaining the coordinate formulas for $Y_{x^i}$, $Y_u$, and $Y_{p_i}$, where the subscript prescribes the generating function. Formula \eqref{eq 3.2.4 Kras} reads in coordinates 
+    \[i_{Y_\varphi}\sum_i\dd p_i\wedge \dd x^i=\sum_i (\varphi_{x^i}+p_i\varphi_u)\dd x^i+\varphi_{p_i}\dd p_i.\]
+    By solving these linear equations with $\varphi=x^i$, $u$ or $p_i$ and with the constraint $\theta_{(0,\ldots,0)}(Y)=0$, we find
+    \[Y_{x^i}=\partial_{p_i},\quad Y_u=\sum_i p_i\partial_{p_i},\quad Y_{p_i}=-\partial_{x^i}-p_i\partial_u.\]
+    Using \eqref{eq 2.2.5 Kras}, we get 
+    \[Y_\varphi=-\sum_i \varphi_{p_i}\partial_{x^i}-\sum_i p_i \varphi_{p_i}\partial_u+\sum_i \left(\varphi_{x^i}+p_i\varphi_u\right)\partial_{p_i}.\]
+    Since $X_\varphi=Y_\varphi+\varphi\partial_u$, we obtain 
+    \[\boxed{X_\varphi=-\sum_i \varphi_{p_i}\frac{\partial}{\partial x^i}+\left(\varphi-\sum_i p_i \varphi_{p_i}\right)\frac{\partial}{\partial u}+\sum_i \left(\varphi_{x^i}+p_i\varphi_u\right)\frac{\partial}{\partial p_i}.}\label{eq Xf}\]
+    (This also trivially extends to $k>1$.) Note that this implies $\varphi=b-\sum_i p_i a^i$ and $a^i=-\varphi_{p_i}$. The reader can verify that the third term agrees with the application of the prolongation formula to the first two (but remember that the total derivative operator will include derivatives w.r.t.\ $p_i$). Finally, note that the flow of $Y_\varphi$ preserves the values of $\varphi$ (i.e., flows along its level sets), whereas that of $X_\varphi$ doesn't:
+    \[\Lie_{Y_\varphi}\varphi=0,\quad\quad \Lie_{X_\varphi}\varphi=\varphi\cdot\varphi_u.\]
+    
+    In particular, $X_\varphi$ generates point transformations iff $\varphi$ is affine in the $p_i$, so we can write $\varphi=b-\sum_i p_ia^i$, and then 
+    \[X_\varphi=\sum_i a^i\partial_{x^i}+b\partial_u+\sum_i\left(b_{x^i}-\sum_l p_l a^l_{x^i}\right)\partial_{p_i}.\]
+\end{rem}
 
 Thus, \emph{the correspondence between generating sections and contact vector fields is bijective}. 
 The only caveat is that, when $k>1$, not every section of $(\pi^1_0)^\ast E$ is a generating section. Indeed, if $k>1$, then the $a^i$ and the $b^j$ are functions only of the $x^i$ and the $u^j$, so the generating section depends affinely on the variables $p^j_i$, and moreover, for all $i,j,l$ we have 
@@ -2030,7 +2059,7 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
 
 \begin{example}
     If $k=1$, then the only contact form is $\theta_0=\dd u-\sum_ip_i\dd x^i$, so the generating function of the contact vector field \eqref{eq Xf} associated with a function (or section) $f$ is given by $f$ itself:
-    \[\varphi=\theta_0(X_f)=f.\]
+    \[\varphi=\theta_{(0,\ldots,0)}(X_f)=f.\]
 \end{example}
 
 \begin{example}\label{ex prolongation SO2}
@@ -2134,7 +2163,7 @@ As usual, $k$ will be the rank of the bundle $E$ (the number of dependent variab
 
 
 \begin{example}
-    Taking $r=k=1$ and contact vector fields of the form \eqref{eq Xf}, we can compute the Jacobi bracket of two generating functions $f,g$ by computing the commutator $[X_f,X_g]$. Let $\theta\coloneqq \theta^1_{(0,\ldots,0)}$ be the contact form. Then $\Lie_{X_f}\theta=i_{X_f}\dd\theta+\dd(i_{X_f}\theta)=i_{X_f}\dd\theta+\dd f$ and $\Lie_{X_f}\theta=f_u\cdot \theta$, it follows that 
+    Taking $r=k=1$ and contact vector fields of the form \eqref{eq Xf}, we can compute the Jacobi bracket of two generating functions $f,g$ by computing the commutator $[X_f,X_g]$. Let $\theta\coloneqq \theta^1_{(0,\ldots,0)}$ be the standard contact form. Then $\Lie_{X_f}\theta=i_{X_f}\dd\theta+\dd(i_{X_f}\theta)=i_{X_f}\dd\theta+\dd f$ and $\Lie_{X_f}\theta=f_u\cdot \theta$, it follows that 
     \[\dd \theta(X_f,X_g)=gf_u-X_g(f).\]
     Hence, 
     \begin{multline}
