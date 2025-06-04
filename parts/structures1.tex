@@ -2445,7 +2445,7 @@ We now introduce differential invariants of the action of a Lie (pseudo)group on
     The total algebra $\bigcup_{r=0}^\infty \calI^r(\calY)$ is called the \emph{algebra of (scalar) differential invariants}.
 \end{defn}
 
-We will be especially interested in the differential invariants of (pseudo)groups of symmetries of differential equations, which act by contact transformations. Since in most cases contact transformations are point transformations, it often suffices to consider actions on the original bundle $E\to M$.
+We will be especially interested in the differential invariants of (pseudo)groups of symmetries of differential equations, which act by contact transformations. Since in most cases contact transformations are point transformations, it often suffices to consider actions on the original bundle $E\to M$. In either case, for uniformity of notation, we will denote by $g^{(r)}$ the prolonged transformation of $\rmJ^r E$ obtained from $g\in \calG$ whether $g$ is a point transformation of $E$ (in which case $g=g^{(0)}$) or a contact transformation of $\rmJ^1 E$ (so $g=g^{(1)}$).
 
 The following infinitesimal invariance criterion for differential invariants is obvious but serves to determine differential invariants of a given connected group of transformations in a simple manner just by solving a system of linear first-order ODEs.
 
@@ -2511,31 +2511,32 @@ For example, if $r=0$, then simply by rectifying any vector field $X\in\calY$, s
     Consequently, any finite-dimensional group of transformations has an infinite number of differential invariants of arbitrarily large order, and the problem of classification of invariants cannot be handled by purely algebraic means.
 \end{rem}
 
-Recall that effectiveness of a group action is measured by its kernel, or global isotropy group, $G_M=\{g\in G\mid \forall m\in M\;\; g\cdot m=m\}$. An effective (faithful) action is one with a trivial kernel. An action is called \emph{locally effective} if the kernel is discrete. Since $G_M$ is a normal subgroup, a locally effective action of $G$ is locally equivalent to the faithful action of $G\slash G_M$.
+Recall that effectiveness of a group action is measured by its kernel, or global isotropy group, $G_M=\{g\in G\mid \forall m\in M\;\; g\cdot m=m\}$. An effective (faithful) action is one with a trivial kernel. An action is called \emph{locally effective} if the kernel is discrete. Since $G_M$ is a normal subgroup, a locally effective action of $G$ is locally equivalent to the faithful action of $G\slash G_M$. We provide the following theorem without proof.
 
 \begin{thm}[Ovsiannikov {{\cite[Thm.~5.11]{OlverEquiv}}}]\label{thm 5.11 OlverEquiv Ovsiannikov}
     Let $G$ be a Lie group of point or contact transformations. Then $G$ acts locally effectively iff its stable orbit dimension equals its dimension, so $s_m=\dim G$ for sufficiently large $m$.
 \end{thm}
 
-We also call the action \emph{effectively free} if $G\slash G_M$ acts freely, so every stabilizer equals the kernel, $G_m=G_M$. We provide the following theorem without proof.
+We also call the action \emph{effectively free} if $G\slash G_M$ acts freely, so every stabilizer equals the kernel, $G_m=G_M$. 
 
-\begin{cor}
+\begin{cor}[{\cite[Cor.~5.13]{OlverEquiv}}]\label{cor 5.13 OlverEquiv}
     If $G$ is a transformation group with kernel $G_\calE$, then the stable orbit dimension of $G$ is $s=\dim G-\dim G_\calE$. Consequently, for each $r'\geq r$, where $r$ is the order of stabilization, $G$ acts effectively freely on the open subset $V^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve their maximal dimension $s$.
 \end{cor}
 
 If $G$ does not act effectively, then we can replace it by the effectively acting quotient group $G\slash G_\calE$ without any appreciable loss of generality. Therefore, to avoid unnecessary computations, we can always assume that the action of $G$ is locally effective, and so the stable orbit dimension is $s=\dim G$.
 
-\begin{cor}
+\begin{cor}[{\cite[Cor.~5.14]{OlverEquiv}}]\label{cor 5.14 OlverEquiv}
     If $G$ acts (locally) effectively on an open subset $U\subset \calE$, then $G$ acts (locally) freely on the open subset $V^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve the stable orbit dimension $\dim G$.
 \end{cor}
 
-Thus, assuming that the action of the symmetry group stabilizes, it can be turned into a (locally) free action after a finite number of prolongations. In other words, sufficiently high-order jet spaces gain a structure similar to that of principal bundles (with some new base manifold). Once the action has been reduced to a (locally) free one, finding a complete set of (ordinary) invariants is trivial via Cartan's moving frame method. The key is to construct an arbitrary (local) equivariant function (local $G$-frame) $\frake:V^{r'}\to G$. A particularly straightforward way of doing this is by choosing an arbitrary slice $S$ of the action, i.e., a submanifold that is transversal to all the orbits. Then, due to freeness, each $m\in V^{r'}$ has a unique $g(m)\in G$ such that $g\cdot m\in S$. Then the \emph{invariantized coordinates} $x^i(g(m)\cdot m)$ obviously provide a complete set of functionally independent invariants.
+\PRLsep
 
-Even after the problem has been solved at the order of stabilization, it still remains to describe the higher-order invariants.To this end, Lie and Tresse introduced the notion of ``invariant'' differential operators to obtain $(r+1)$-st order invariants from $r$-th order ones. This enables one to produce all the higher-order independent invariants by successive application of the invariant operators to lower-order ones.
+\paragraph{Invariant differential operators.} Thus, assuming that the action of the symmetry group stabilizes, it can be turned into a (locally) free action after a finite number of prolongations. In other words, sufficiently high-order jet spaces gain a structure similar to that of principal bundles (with some new base manifold). Once the action has been reduced to a (locally) free one, finding a complete set of (ordinary) invariants is trivial via Cartan's moving frame method. The key is to construct an arbitrary (local) equivariant function (local $G$-frame) $\frake:V^{r'}\to G$. A particularly straightforward way of doing this is by choosing an arbitrary slice $S$ of the action, i.e., a submanifold that is transversal to all the orbits. Then, due to freeness, each $m\in V^{r'}$ has a unique $g(m)\in G$ such that $g\cdot m\in S$. Then the \emph{invariantized coordinates} $x^i(g(m)\cdot m)$ obviously provide a complete set of functionally independent invariants.
 
+Even after the problem has been solved at the order of stabilization, it still remains to describe the higher-order invariants.To this end, Lie and Tresse introduced the notion of ``invariant'' differential operators to obtain $(r+1)$-st order invariants from $r$-th order ones. This enables one to produce all the higher-order independent invariants by successive application of the invariant operators to lower-order ones. To define these operators, first we define a special class of differential forms whose values are $G$-invariant, but \emph{only} on the Cartan distribution.
 
 \begin{defn}[Contact-invariant $1$-form]\index{Contact-invariant $1$-form}\label{def 5.25 OlverEquiv}
-    A differential $1$-form $\omega$ on $\rmJ^rE$ is called contact-invariant under a transformation group $G$ iff, for every $g\in G$, $(g^{(n)})^\ast \omega=\omega+\theta_g$ for some contact form $\theta_g$.
+    A differential $1$-form $\omega$ on $\rmJ^rE$ is called contact-invariant under a (point or contact) transformation group $G$ iff, for every $g\in G$, $(g^{(r)})^\ast \omega=\omega+\theta_g$ for some contact form $\theta_g$.
 \end{defn}
 
 Contact forms are trivially contact-invariant, so only the semibasic contact-invariant forms are of interest (recall Remark~\ref{rem semibasic and contact forms}). 
@@ -2593,7 +2594,7 @@ In practice, it is often convenient to use the method of Cartan's moving frame t
     Let us consider the smooth projective vector field 
     \[X=x^2\partial_x+xu\partial_u\]
     generating the one-parameter local projective group 
-    \[\varPhi_\epsilon(x,u):\quad \wt x=\frac{x}{1-\epsilon x}\quad \wt u=\frac{u}{1-\epsilon x},\]
+    \[\varPhi_\epsilon(x,u):\quad \wt x=\frac{x}{1-\epsilon x},\quad \wt u=\frac{u}{1-\epsilon x},\]
     whenever $1-\epsilon x\neq 0$. The first and second prolonged transformations are derived by the usual chain rule for derivatives:
     \[\varPhi^{(1)}(x,u,p)=(\wt x,\wt u,\wt p),\quad \wt p=p+\epsilon(u-xp),\]
     and 
@@ -2619,8 +2620,10 @@ Finally, in the most general case of $n$ independent variables, we need to const
     Let $G$ be a transformation group with stabilization order $r$. Then there exists a contact-invariant coframe of order at most $\max\{1,r\}$.
 \end{thm}
 
+It is also clear that such a coframe \emph{uniquely characterizes} the transformation group $G$ in the sense that $G$ is exactly the pseudogroup of local contact transformations that leave the coframe's values on the Cartan distribution invariant. As we will see in the next \chap, this kind of reduction of a geometric structure to a set of invariant $1$-forms is the essence of Cartan's approach to equivalence problems.
+
 Suppose $\omega^1,\ldots,\omega^n$ is such a coframe. Then the total differential of a differential invariant $I$ can be decomposed as 
-\[\rmD I=\sum_{i=1}^n \calD_i I\omega^i,\]
+\[\rmD I=\sum_{i=1}^n (\calD_i I) \omega^i,\]
 thus defining invariant differential operators $\calD_1,\ldots,\calD_n$. 
 
 Now write $\omega^i=\sum_j J^i_j \dd x^j$, $i=1,\ldots,n$. Since this is an $n$-coframe, the $n\times n$ matrix $\bf{J}=(J^i_j)$ is invertible. The associated invariant differential operators are $\calD_j=\sum_i K^i_j D_i$, $j=1,\ldots,n$, where $\bf{K}=\bf{J}^{-T}$ is the inverse transpose of $\bf{J}$. In particular, if the $\omega^i=\rmD I_i$ are obtained from $n$ independent differential invariants $I_1,\ldots,I_n$, then $\bf{J}=(D_j I_i)$ is their total Jacobian matrix, and the invariant differential operators are given by 
@@ -2647,7 +2650,10 @@ where $D(I_1,\ldots,I_n)=\det (D_i I_j)$ denotes the total Jacobian determinant.
 \end{xca}
 
 
-\paragraph{Invariant equations} One of the most important uses of differential invariants is in the construction of general systems of differential equations (and variational problems) which admit a prescribed symmetry group. The following theorem shows that finding a complete set of differential invariants for a given symmetry $\frakg$ suffices to classify all differential equations with that symmetry algebra.
+\PRLsep
+
+
+\paragraph{Invariant equations.} One of the most important uses of differential invariants is in the construction of general systems of differential equations (and variational problems) which admit a prescribed symmetry group. The following theorem shows that finding a complete set of differential invariants for a given symmetry $\frakg$ suffices to classify all differential equations with that symmetry algebra.
 
 \begin{thm}
     Let the differential functions $I_1,\ldots,I_k\in\calI^r(\frakg)$ form a complete set of functionally independent $r$-th order differential invariants of $G$. Then a system of $r$-th order PDEs $\calE$ is invariant under $G$ iff it can be written in terms of the differential invariants:
@@ -3828,7 +3834,7 @@ Crucially, unlike in the definition of a fully regular coframe, we do not requir
     Suppose $M=\bbR$ and we have just one invariant $I(x)$ with coframe derivative $I'(x)$. If $I(x)=x^n$, then $I'(x)=nx^{n-1}$, $I''(x)=n(n-1)x^{n-2}$, etc. In this case the coframe has rank $1$ everywhere since, upon taking $n$ derivatives, we get a structure map of constant rank $1$. However, at $x=0$, $\rho_r=0$ for $r<n$, and $n$ can be made arbitrarily large.
 \end{example}
 
-Nevertheless, just as before, the ranks must stabilize as soon as they stop increasing (notice that Proposition~\ref{prop 8.18 OlverEquiv} was formulated and proven for general regular frames). As a consequence, one we have fixed a set of fundamental invariants $I_1,\ldots,I_\rho$, we need only determine the classifying functions associated with a) any other $0$-th order structure functions $T^i_{jk}$, and b) the first-order coframe derivatives $\partial I_\nu/\partial\theta^j$ of the fundamental invariants. The chain rule formula \eqref{eq 8.37 OlverEquiv} implies that all other classifying functions for the associated derived invariants are automatically determined.
+Nevertheless, just as before, the ranks must stabilize as soon as they stop increasing -- indeed, Proposition~\ref{prop 8.18 OlverEquiv} was formulated and proven for general regular frames. As a consequence, once we have fixed a set of fundamental invariants $I_1,\ldots,I_\rho$, we need only determine the classifying functions associated with (a) any other $0$-th order structure functions $T^i_{jk}$, and (b) the first-order coframe derivatives $\partial I_\nu/\partial\theta^j$ of the fundamental invariants. The chain rule formula \eqref{eq 8.37 OlverEquiv} implies that all other classifying functions for the associated derived invariants are automatically determined.
 
 In summary, regular coframes allow us to reduce our analysis to a finite number of classifying manifolds. The following is immediate.
 
@@ -5089,7 +5095,7 @@ There are two types of syzygies, the first arising from the commutation rules fo
 
 \section{Equivalence of submanifolds I}
 
-We now apply out general results to the equivalence problem for submanifolds under a \emph{freely} acting transformation group. (Non-free actions require prolongation, which we will address separately below.) Given submanifolds $S,\wb S\subset M$, we want to know whether or not they are \emph{congruent} under a group of transformations, meaning that $g\cdot S=\wb S$ for some $g\in G$. In this section, we shall only consider the local problem, so that the cogruence is only required to hold in a neighborhood of a point. Global questions can be handled by continuation processes (e.g., analytic continuation).
+We now apply our general results to the equivalence problem for submanifolds under a \emph{freely} acting transformation group. (Non-free actions require prolongation, which we will address separately below.) Given submanifolds $S,\wb S\subset M$, we want to know whether or not they are \emph{congruent} under a group of transformations, meaning that $g\cdot S=\wb S$ for some $g\in G$. In this section, we shall only consider the local problem, so that the cogruence is only required to hold in a neighborhood of a point. Global questions can be handled by continuation processes (e.g., analytic continuation).
 
 \begin{defn}[Congruence of submanifolds]
     Let $S=i(X)$ and $\wb S=\wb i(\wb X)$ be two embedded $p$-dimensional submanifolds of an $n$-dimensional manifold $M$ parametrized by maps $i:X\to M$ and $\wb i:\wb X\to M$. Let there be a smooth Lie group action $G\acts M$. The two submanifolds are called \emph{(locally) congruent} under $G$ if there exists a group element $g\in G$ and a (local) diffeomorphism $\psi:X\supset U\to \wb U\subset\wb X$ such that 
@@ -5740,7 +5746,7 @@ In other words, if $\wb S=g\do S$, then the condition $\rmj^k_{z_0} \wb S=\rmj^k
     \end{pmatrix}=\frac{1}{\lVert \bf N\rVert}\calD^2 u=\frac{A^{-T}(\nabla^2 u)A^{-1}}{\sqrt{1+u_1^2+u_2^2}}.\]
     Here, $\nabla^2 u=(\partial_i\partial_j u)$ is the usual Hessian matrix of $u$, so $\calD^2 u$ represents an ``equivariant Hessian''. However, the recurrence relations (or syzygies) 
     \[\calD_1 J=II_{12},\quad \calD_2 J=1+II_{22},\quad \calD_1 I=-JI_{12},\quad \calD_2 I=-JI_{22},\]
-    show that just $I,J$, and $I_{11}$ suffice for a set of fundamental differetnial invariants.
+    show that just $I,J$, and $I_{11}$ suffice for a set of fundamental differential invariants.
 \end{example}
 
 
@@ -5892,13 +5898,13 @@ The infinitesimal $0$-respecting automorphisms of the standard flat $G$-structur
 \end{proof}
 
 We consider now the $\infty$-jets $\rmj^\infty_0 X$ of all these infinitesimal $0$-respecting automorphisms. These jets form a subspace $\frakg^{(\infty)}<\frakgl^\infty(V)$ which we may view as the \emph{total prolongation} 
-\[\frakg^{(\infty)}=\frakg\ltimes (\frakg^2\ltimes (\frakg^3\ltimes\cdots,\]
-where $\frakg^r=\frakg^\infty\cap S^r(V)$. (This also defines all finite prolongations $\frakg^{(r)}=\frakg\ltimes \frakg^2\ltimes \cdots\ltimes\frakg^{r+1}$.) Then $\frakg^{(\infty)}$ is a Lie algebra with the bracket 
+\[\frakg^{(\infty)}\coloneqq \frakg\ltimes (\frakg^{(2)}\ltimes (\frakg^{(3)}\ltimes\cdots,\quad \quad \frakg^{(r)}\coloneqq \frakg^\infty\cap S^r(V).\]
+Then $\frakg^{(\infty)}$ is a Lie algebra with the bracket 
 \[[\rmj^\infty_0X,\rmj^\infty_0Y]=-\rmj^\infty_0[X,Y],\]
 and with the smooth exponential map given by $\exp(\rmj^\infty_0X)=\rmj_0^\infty(\Fl_1^X)$ (in general, it is not surjective onto any neighborhood of the identity in $G^{(\infty)}$).
 
 \begin{xca}
-    Compute the total prolongation $\frakg^{(\infty)}=\frakg\ltimes\frakg^2\ltimes\cdots $ of $\frakg=\frakso_n$.
+    Show that $\frakso_n^{(1)}=0$.
 \end{xca}
 
 Finally, we consider the set of \emph{all} (not just $0$-respecting) infinitesimal automorphisms of the standard flat $G$-structure. Clearly, these are just vector fields $X$ such that $X_{\ast x}\in\frakg$ at all $x$. Letting $\fraka^{(\infty)}$ denote the Lie algebra of $\infty$-jets of all such vector fields, with the same bracket, we get a decomposition analogous to \eqref{eq decomp of L-1}:
@@ -5955,7 +5961,7 @@ where $s:\bbR^n\to M$ is a local diffeomorphism with $s(0)=m$ (recall the defini
     \end{enumerate} 
 \end{rem}
 
-\begin{cor}
+\begin{cor}\label{cor T of Frame bundles}
     There is a natural isomorphism of \glspl{vb} 
     \[\vartheta:\T \Fr^r(M) \to \Fr^{r+1}(M)\times^{\GL_n^{r+1}(\bbR)}\left(L^{-1}\slash L^r\right).\]
 \end{cor}
@@ -5975,7 +5981,7 @@ where $P_{i-1}=\pi^i_{i-1}(P_i)\subset \Fr^{i-1}(M)$. Consequently, the study of
 
 \PRLsep
 
-Therefore, let us focus on first-order $G$-structures for the moment. In the first-order case, the isomorphism $\vartheta$ can be identified with the following important differential form on the frame bundle.
+Therefore, let us focus on first-order $G$-structures for the moment. In the first-order case, the isomorphism $\vartheta$ from Corollary~\ref{cor T of Frame bundles} for $r=0$ can be identified with the following important differential form on the frame bundle.
 
 \begin{defn}[Soldering form]\index{Soldering form}
     Let $M$ be a manifold with model tangent space $V\cong\bbR^n$. The soldering form, or the \emph{displacement form}, on the frame bundle $\Fr(\T M)$ is the $V$-valued $1$-form $\theta\in \Omega^1(\Fr(\T M);V)$ defined by 
@@ -6054,7 +6060,7 @@ Thus, in terms of the above coframes, this equivalence condition translates to
 where we think of $g(m)$ as an $n\times n$ matrix-valued function acting on the values of $\bm{\theta}$ via the standard action $\sigma^0$ of $G$ on $V$. The $G$-equivalence problem is thus a simple generalization of the original equivalence problem for coframes, where now there is an additional possibility of the appearance of an arbitrary $G$-valued function $g$.
 
 \begin{cor}
-    Two first-order $G$-structures $(P\to M,\theta)$, $(P'\to M',\theta')$ are locally equivalent iff some local coframes $\bm\theta$, $\bar{\bm\theta}$ on $U\subset M$ and $\wb U\subset \wb M$, respectively, defined as the local representatives \eqref{eq 1780135} of their soldering forms are $G$-equivalent, i.e., there exists a diffeomorphism $F:U\to \wb U$ and a smooth function $g:U\to G$ such that $(F^\ast \bar{\bm\theta})_m=\sigma^0_{g(m)}\circ \bm\theta_m$ for all $m\in U$.
+    Two first-order $G$-structures $(P\to M,\theta)$, $(P'\to M',\theta')$ are locally equivalent iff some local coframes $\bm\theta$, $\bar{\bm\theta}$ on $U\subset M$ and $\wb U\subset \wb M$, respectively, defined as the local representatives \eqref{eq 1780135} of their soldering forms, are $G$-equivalent, i.e., there exists a diffeomorphism $F:U\to \wb U$ and a smooth function $g:U\to G$ such that $(F^\ast \bar{\bm\theta})_m=\sigma^0_{g(m)}\circ \bm\theta_m$ for all $m\in U$.
 \end{cor}
 
 \begin{rem}
@@ -6231,9 +6237,9 @@ In other words, the matrix function $g\cdot a(m)g^{\prime-1}$ defined on $G\time
 
 
 
-\section{Cartan's equivalence method}
+\section{Torsion of \texorpdfstring{$G$}{G}-structures}
 
-As shown in the preceding \sect, many general equivalence problems can be restated as $G$-equivalence problems for appropriate groups $G$. We have also seen that $G$-equivalence problems are essentially regular equivalence problems for $G$-structures under the action of holonomic isomorphisms. This turns out to be computationally convenient. In other words, even when a $G$-equivalence problem is stated in the form \eqref{eq G-equivalence problem}, we will \emph{lift} it (at least locally) to the $G$-bundle $P=M\times G$ (since we will not address global equivalence problems, we use the fact that every principal bundle is locally isomorphic to the trivial one). If $\dim M=n$, then the soldering form is seen as a collection of $n$ $1$-forms on this bundle.
+As shown in the preceding \sect, many general equivalence problems can be restated as $G$-equivalence problems for appropriate groups $G$. We have also seen that $G$-equivalence problems are essentially regular equivalence problems for $G$-structures under the action of holonomic isomorphisms. This turns out to be computationally convenient. In other words, even when a $G$-equivalence problem is stated in the form \eqref{eq G-equivalence problem}, we will \emph{lift} it (at least locally) to the $G$-bundle $P=M\times G$ (since we will not address global equivalence problems, we use the fact that every principal bundle is locally isomorphic to the trivial one). If $\dim M=n$, then the soldering form is seen as an $n$-tuple of $1$-forms on this bundle.
 
 The major complication in $G$-equivalence problems, as compared to regular equivalence problems, is that the $n$ differential forms encoding a $G$-structure do not comprise a coframe on the bundle. For us to be able to use the solution to the equivalence problem for coframes, they need to be completed to a coframe by the addition of $\dim G$ other $1$-forms, and the solution to the equivalence problem must be made independent of the choice of these forms. One way to eliminate the dependence on such a choice is to try to devise a procedure for identifying a \emph{canonical coframe} on any $G$-structure. Cartan's method of equivalence provides a practical algorithm for achieving exactly this, and the resulting canonical ${e}$-structure (coframe) is called a \emph{Cartan geometry}. (Importantly, however, the equivalence method is not always guaranteed to succeed in producing a Cartan geometry, and it is still an open question when exactly it fails.)
 
@@ -6244,7 +6250,7 @@ Since we need to find $\dim G$ forms to complete our coframe, it is natural to u
     \[\omega(A_\ast)=A\quad \text{for}\quad A\in\frakg.\]
 \end{defn}
 
-The existence of such a form can be proven by a standard \gls{pou} argument (gluing together pullbacks of the Maurer-Cartan form to local trivial pieces $P_\alpha=U_\alpha\times G$). Since the kernel of $\theta$ is exactly the space on which $\omega$ is never zero, once a pseudo-connection is chosen, the $n+\dim G$ scalar forms $(\bm\theta,\bm\omega)$ together form a \emph{global} coframing on $P$. Incidentally, this also proves that \emph{the total space of any $G$-structure is parallelizable}. Note that this does not hold for general principal bundles since the existence of a soldering form is a strong topological condition.
+The existence of such a form can be proven by a standard \gls{pou} argument (gluing together pullbacks of the Maurer-Cartan form to local trivial pieces $P_\alpha=U_\alpha\times G$). Since the kernel of $\theta$ is exactly the space on which $\omega$ is never zero, once a pseudo-connection is chosen, the $n+\dim G$ scalar forms $(\bm\theta,\bm\omega)$ together form a \emph{global} coframing on $P$. Incidentally, this also proves that \emph{the total space of any $G$-structure is parallelizable} (where we define $G$-structures as principal subbundles of natural frame bundles). Note that this does not hold for general principal bundles since the existence of a soldering form is a strong topological constraint.
 
 By counting dimensions, the kernel of any pseudo-connection $\omega$ at any point $p\in P$ must be an $n$-dimensional tangent subspace complementary to the vertical subspace. In fact, $\omega$ itself is completely described by the choice of such a \emph{horizontal space} at every point $p$.
 
@@ -6257,15 +6263,21 @@ By counting dimensions, the kernel of any pseudo-connection $\omega$ at any poin
 On the other hand, if $p\in P$, then the soldering form $\theta$ maps $\T_p P$ surjectively onto $V$ and its kernel is exactly the vertical subspace $\ker\pi_{\ast}$. Thus, restricted to any horizontal subspace $\calH_p<\T_p P$, $\theta$ becomes an isomorphism. In other words, a pseudo-connection specifies ``horizontal'' directions in the bundle, and the soldering form identifies them with directions in the model tangent space of $M$, which we call $V$. Let us now show that the space of all possible choices of pseudo-connection is an affine space.
 
 \begin{prop}[{{\cite[p.~316]{Sternberg}}}]\label{eq affine hor spaces}
-    Let $\pi:P\to M$ be a first-order $G$-structure, let $V$ be the model tangent space of $M$, and $\theta\in\Omega^1(P;V)$ the soldering form. Then the space of all horizontal subspaces at $p\in P$ is naturally an affine space modeled on the space of linear maps $\Lin(V,\frakg)$.
+    Let $\pi:P\to M$ be a first-order $G$-structure, let $V$ be the model tangent space of $M$, and $\theta\in\Omega^1(P;V)$ the soldering form. Then the space of all horizontal subspaces at $p\in P$ is naturally an affine space modeled on the space of linear maps $\Hom(V,\frakg)$.
 \end{prop}
 \begin{proof}
-    Let $\calH_p$ and $\calH_p'$ are two horizontal subspaces at $p$ and let $X\in \calH_p$, $X'\in\calH_p'$ be such that $\theta(X_1)=\theta(X_2)=v\in V$. Then, by definition of $\theta$, $\iota_p^{-1}(v)=\pi_\ast(X)=\pi_\ast(X')$, so $\pi_\ast(X-X')=0$ and $X-X'$ is vertical. Since $\calV_p P$ is naturally identified with the Lie algebra $\frakg$ of $G$ via the map $\psi_p$ from Proposition~\ref{prop 8.1 Yuma}, we have constructed a linear map $V\to \frakg$ given by $v\mapsto \psi_p^{-1}(X-X')$. Since, in any given horizontal space at $p$, there is only one vector projecting onto $\iota_p^{-1}(v)$, this map depends only on $\calH_p$ and $\calH_p'$. Let us denote the map by $f_{\calH_p,\calH_p'}$. It is easy to see that, with $\calH_p$ fixed and $f\in \Lin(V,\frakg)$, there exists an $\calH_p'$ such that $f\in f_{\calH_p,\calH_p'}$.
+    Let $\calH_p$ and $\calH_p'$ are two horizontal subspaces at $p$ and let $X\in \calH_p$, $X'\in\calH_p'$ be such that $\theta(X_1)=\theta(X_2)=v\in V$. Then, by definition of $\theta$, $\iota_p^{-1}(v)=\pi_\ast(X)=\pi_\ast(X')$, so $\pi_\ast(X-X')=0$ and $X-X'$ is vertical. Since $\calV_p P$ is naturally identified with the Lie algebra $\frakg$ of $G$ via the map $\psi_p$ from Proposition~\ref{prop 8.1 Yuma}, we have constructed a linear map $V\to \frakg$ given by $v\mapsto \psi_p^{-1}(X-X')$. Since, in any given horizontal space at $p$, there is only one vector projecting onto $\iota_p^{-1}(v)$, this map depends only on $\calH_p$ and $\calH_p'$. Let us denote the map by $f_{\calH_p,\calH_p'}$. It is easy to see that, with $\calH_p$ fixed and $f\in \Hom(V,\frakg)$, there exists an $\calH_p'$ such that $f\in f_{\calH_p,\calH_p'}$.
 \end{proof}
 
-According to the solution of the equivalence problem for coframes, we need to start by looking at the exterior derivatives of the coframe components. Only $\theta$ is important to our problem, so we examine $\dd\theta$. For each $p\in P$, it supplies a linear map $(\dd\theta)_p:\bigwedge^2 \T_p P\to V$. Let $\calH$ be a horizontal subspace at $p$. Then we have the restricted map $\bigwedge^2\calH\to V$. However, as discussed above, $\theta$ also identifies $\calH$ with $V$, so we can turn it into a map $\bigwedge^2 V\to V$:
+Based on our discussion of the jet bundles in the preceding \chap, the total space of all horizontal subspaces is exactly the jet bundle $\rmJ^1 P\to P$.
+
+\PRLsep
+
+We have succefully lifted the coframe on $M$ to form a local coframe on $P$ in ``as close to canonical'' a way as possible and described the total space $\rmJ^1 P$ such liftings. From here, we can essentially follow the solution of the equivalence problem for coframes: we compute the derivatives of the coframe on $P$ and extract the structure functions. The crucial complication is that, in a $G$-equivalence problem, there is \emph{no single coframe} on $P$, but rather a continuum of different liftings of the local coframe on $M$. Only the parts of the structure functions of these coframes on $P$ that are independent of the choice of this lifting (i.e., of the pseudo-connection) are intrinsic quantities of the $G$-structure. It is \emph{these} quantities that are called the \emph{structure functions of the $G$-structure}, or sometimes the \emph{intrinsic structure functions}. In common cases, it turns out to be possible to identify a \emph{canonical coframe} (potentially not on $P$ by on some prolongation) known as a \emph{Cartan geometry}, in which case these \emph{are} the structure functions of that coframe.\index{Cartan geometry}
+
+According to the solution of the equivalence problem for coframes, we need to start by looking at the exterior derivatives of the coframe components. Naturally, we start with the ``zeroth-order'' part of the coframe, $\theta$, and examine $\dd\theta$. For each $p\in P$, it supplies a linear map $(\dd\theta)_p:\bigwedge^2 \T_p P\to V$. Let $\calH$ be a horizontal subspace at $p$. Then we have the restricted map $\bigwedge^2\calH\to V$. However, as discussed above, $\theta$ also identifies $\calH$ with $V$, so we can turn it into a map $\bigwedge^2 V\to V$:
 \[c_{\calH}:V\wedge V\to V,\quad u\wedge v\mapsto \dd \theta\left(\restr{\theta}{\calH}^{-1}(u),\restr{\theta}{\calH}^{-1}(v)\right).\]
-We have thus assigned a tensor $c_{\calH}\in \Hom\left(V\wedge V,V\right)$ to each horizontal subspace $\calH$ at $p$. Since the space of such horizontal subspaces can be identified with $\rmJ^1 P$, we have defined a smooth function 
+We have thus assigned a tensor $c_{\calH}\in \Hom\left(V\wedge V,V\right)$ to each horizontal subspace $\calH$ at $p$. Since the space of such horizontal subspaces is identified with $\rmJ^1 P$, we have defined a smooth function 
 \[c:\rmJ^1 P\to \Hom(V\wedge V,V),\quad \calH\mapsto c_\calH.\] 
 Next, since only $\calH$-invariant quantities can be relevant to our problem, we need to examine how $c_{\calH}$ depends on $\calH$. This will allow us to produce a function on $P$ instead of $\rmJ^1 P$.
 
@@ -6306,8 +6318,8 @@ Next, since only $\calH$-invariant quantities can be relevant to our problem, we
 \end{rem}
 
 In conclusion, the tensor $c_\calH$ depends on the choice of horizontal space at a given point $p$ only up to the image of $\delta$, so in the trivially exact kernel-cokernel \emph{Spencer sequence} (where $\coker\delta=\Hom(V\wedge V,V)\slash \im(\delta)$)
-\[0\to \ker\delta\hookrightarrow V^\ast\otimes\frakg\overset{\delta}{\to} V^\ast\wedge V^\ast\otimes V\overset{\pr}{\to} \coker\delta\to 0,\]
-we can form an \emph{invariant} function $c:P\to \coker\delta$.
+\[0\to \ker\delta\hookrightarrow V^\ast\otimes\frakg\overset{\delta}{\to} V^\ast\wedge V^\ast\otimes V\overset{\pr}{\to} \coker\delta\to 0,\label{eq spencer kernel-cokernel seq}\]
+we can form an \emph{invariant} function $[c]:P\to \coker\delta$.
 
 \begin{defn}[First-order structure function]\index{Structure function!of a $G$-structure}\index{Torsion!Intrinsic ($G$-structure)}
     Given a first-order $G$-structure $P\to M$, its first-order structure function, also called \emph{intrinsic torsion}, is 
@@ -6317,6 +6329,35 @@ we can form an \emph{invariant} function $c:P\to \coker\delta$.
 
 \begin{rem}
     The reason for the name is, of course, that $[c]$ is a generalization of our structure functions $T^i_{jk}$ from the equivalence problem for coframes, but it preserves only the part that is independent of the pseudo-connection part of the coframe. In fact, if $G=\{e\}$, then $\frakg=0$ and $[c]$ maps $P\cong M$ into $\Hom(V\wedge V,V)$. If, moreover, $P\cong M$ is itself a Lie group (and the $\{e\}$-structure in question the standard Maurer-Cartan coframe), this function is constant, and can be verified to coincide with the Lie bracket of that Lie group (exercise).
+\end{rem}
+
+
+\begin{figure}[tp]
+    \begin{center}
+        \begin{tikzpicture}
+            % Draw axes
+            \draw[gray, thick] (-2.5,0) -- (2.5,0);
+            \draw[gray, thick] (0,-2.5) -- (0,2.5);
+            
+            % Line C: passes through origin with slope -2
+            \draw[thick] (-1.25,2.5) -- (1.25,-2.5);
+            \node at (-1.2,1.8) {$C$};
+            
+            % Line im(delta): dashed, passes through origin with slope 1.5
+            \draw[thick, dashed] ({-2.5/1.5},-2.5) -- ({2.5/1.5},2.5);
+            \node at (1,2.3) {$\im \delta$};
+            
+            % Line im(c): parallel to im(delta), equation y = 1.5x - 1.5
+            \draw[thick] (-0.67,-2.5) -- (2.5,{1.5*2.5-1.5});
+            \node at (2.2,1.0) {$\im c$};
+            \node at ({3/7 + 0.3},{-6/7 - 0.1}) {$c_0$};
+        \end{tikzpicture} 
+    \end{center}
+    \caption{The values of the (representative of the) structure function $c$ inside $\Hom(V\wedge V,V)$ span an affine subspace modeled on $\im\delta$, and any complement $C$ is (non-canonically) isomorphic to $\coker\delta$. A choice of $C$ is equivalent to a choice of a $c_0\in \im c$. Conversely, if $C$ is chosen, $c_0$ can be identified with the equivalence class $[c]=\im c=c+\im \delta$. \label{fig: imc in hom(vv,v)}}
+\end{figure}
+           
+\begin{rem}
+    Since the fibers of $\rmJ^1 P$ are only affine spaces, the image of $c$ inside $\Hom(V\wedge V,V)$ is generally an \emph{affine subspace}, not a vector subspace, see Figure~\ref{fig: imc in hom(vv,v)}. As we have just established, it is modeled on the vector space $\im(\delta)$. Despite it being an affine space, the quotient $\Hom(V\wedge V,V)\slash \im(c)$ is still well-defined and is also an affine space, modeled on $\coker\delta$. If we identify $\coker\delta$ with some arbitrarily chosen complement $C$ of $\im\delta$ such that $\Hom(V\wedge V,V)=\im\delta\oplus C$, then we can visualize $c$ as taking values in the affine plane $c_0+\im\delta$, where $\{c_0\}=C\cap \im c$. Thus, $C\cong \coker\delta$ is the ``space of possible offsets'' of the space of torsions away from the origin. The $G$-structure is characterized, to first order, by the value of these offset at each point, i.e., $[c]$, which can also be called the ``irreducible part'' of the torsion.
 \end{rem}
 
 Next we can see how $[c]$ varies along the fibers of $P$. The following is a simple exercise.
@@ -6331,7 +6372,7 @@ The reader can also easily check that the space $\im(\delta)$ is a $G$-invariant
 \[[c](p\cdot g)=\sigma_g^{-1}[c](p).\]
 
 \begin{rem}
-    Recall that equivariant functions on a principal bundle correspond to sections of the associated bundle. In this case, since $V$ is the model tangent space of $M$, the associated bundle with fiber $\Hom(V\wedge V,V)$ is literally the bundle of $V$-valued $2$-forms on $M$. Thus, $c$ can be identified with a tensor field of type $(1,2)$ on $M$, called the \emph{(intrinsic) torsion tensor} of the $G$-structure.
+    Recall that equivariant functions on a principal bundle correspond to sections of the associated bundle. In this case, since $V$ is the model tangent space of $M$, the associated bundle with fiber $\Hom(V\wedge V,V)$ is literally the bundle of $\T M$-valued $2$-forms on $M$. Thus, $c$ can be identified with a tensor field of type $(1,2)$ on $M$, called the \emph{torsion tensor}, and upon a choice of complement $C\cong \coker\delta$, the part $c_0$ of this tensor belonging to $C$ is the \emph{intrinsic torsion tensor}. One has to be careful, however, to always specify the choice of $C$ because, depending on that choice, $c_0$ can be any point of $\im c$.
 \end{rem}
 
 Finally, since the structure function is clearly a natural (intrinsic) quantity of the $G$-structure, equivalent $G$-structures have equivalent structure functions.
@@ -6415,25 +6456,23 @@ Indeed, in the context of equivalence problems, affine connections, despite not 
 \end{rem}
 
 
-\PRLsep
+
+
+
+
+\section{Cartan's equivalence method}
 
 
 Let us return to the general equivalence problem for $G$-structures. Theorem~\ref{thm vii.2.1 Sternberg} asserts that if we want to find an isomorphism between two $G$-structures $P$ and $\wb P$, then we must \emph{at least} be able to find a map $F_\ast:P\to \wb P$ such that $F^\ast [\wb c]=[c]$. In general, this kind of problem is very difficult. The one easy case is where one of the functions is constant. Then the other structure function must also be equal to the same constant. 
-
 
 \begin{cor}[{\cite[Cor.~VII.2.1]{Sternberg}}]\label{cor vii.2.1 Sternberg}
     Let $P$ be a $G$-structure with a constant structure function. Any $G$-structure locally equivalent to $P$ must have the same constant as its structure function.
 \end{cor}
 
+In general, we have to resort to the method of classifying spaces, as in \S\ref{sec: equiv of coframes}, to establish equivalence. In any case, the first-order structure function typically does not suffice. We continue by constructing the second-order structure function.
 
-
-
-\PRLsep 
-
-
-
-Recall that the affine bundle $\pi^1_0:\rmJ^1 \Fr(\T M)\to \Fr(\T M)$ can be identified with a subbundle of the second frame bundle $\Fr(\T \Fr(M))\cong\Fr^2(M)$, and thus can be interpreted as a $\Hom(V,\frakgl(V))$-structure on the manifold $\Fr(M)$, where we view the vector group $\Hom(V,\frakgl(V))<\GL(V\oplus\frakgl(V))$ ($V\oplus\frakgl(V)$ being the model tangent space of $\Fr(M)$) as the subgroup formed by the ``vertical shifts''
-\[(v,\xi)\mapsto (v,\xi+t(v)),\quad t\in \Hom(V,\frakgl(V)).\]
+Recall that the affine bundle $\pi^1_0:\rmJ^1 \Fr(\T M)\to \Fr(\T M)$ can be identified with a subbundle of the second frame bundle $\Fr(\T \Fr(M))\cong\Fr^2(M)$, and thus can be interpreted as a $\Hom(V,\frakgl(V))$-structure on the manifold $\Fr(M)$, where we view the vector group $\Hom(V,\frakgl(V))<\GL(V\oplus\frakgl(V))$ (where $V\oplus\frakgl(V)$ serves as the model tangent space of $\Fr(M)$) as the subgroup formed by the ``vertical shifts''
+\[(v,A)\mapsto (v,A+\omega(v)),\quad \omega\in \Hom(V,\frakgl(V)).\]
 
 Thus, by the same argument, any first-order $G$-structure $P\subset \Fr(M)$ on $M$ also gives rise to an interpretation of the affine bundle $\pi^1_0:\rmJ^1 P\to P$ as a $\Hom(V,\frakg)$-structure on $P$.
 
@@ -6453,49 +6492,248 @@ Thus, by the same argument, any first-order $G$-structure $P\subset \Fr(M)$ on $
     \[\left[\wt X^i_{j_1,j_2}\right]_{i,j_1=1,\ldots,n}\in\frakg<\frakgl_n(\bbR),\quad j_2=1,\ldots,n,\]
     and are symmetric in the lower indices $j_1,j_2$. We conclude that:
     \begin{lem}
-        The lifts of the infinitesimal automorphisms of the standard flat $G$-structure $P=V\times G$ to the jet space $\rmJ^1 P$ generate a Lie subgroup $G^{(1)}<\Hom(V,\frakg)$ with Lie algebra 
-        \[\frakg^{(1)}\coloneqq \{t\in\Hom(V,\frakg):t(u)v=t(v)u\text{ for all }u,v\in V\}.\]
+        The lifts of the infinitesimal automorphisms of the standard flat $G$-structure $P=V\times G$ to the jet space $\rmJ^1 P$ generate a Lie subgroup $G^{(1)}<\Hom(V,\frakg)$ with Lie algebra\footnote{Readers familiar with the theory of connections may recognize this as the torsion-free condition for $G$-connections $\omega$, akin to the symmetry of the Christoffel symbols in Riemannian geometry. More precisely, however, it is the \emph{first-order compatibility condition}. The $0$-th order compatibility condition simply requires the connection to be $\frakg$-valued, whereas $\frakg^{(1)}$-valuedness means that the connection is a section of $P^{(1)}$ rather than just $\rmJ^1 P$. As we will see, $\frakg^{(1)}$ is the model for the affine space of connections with a given value of torsion, so in particular, if we want no torsion, the connection must be $P^{(1)}$-valued. On the other hand, the \emph{existence} question of whether vanishing torsion is actually attainable will be answered later in this \sect.}
+        \[\frakg^{(1)}\coloneqq \ker\delta=\{\omega\in\Hom(V,\frakg):\omega(u)v=\omega(v)u\;\text{ for all }u,v\in V\},\]
+        where $\delta$ is the Spencer antisymmetrization operator from \eqref{eq spencer kernel-cokernel seq}.
     \end{lem}
 \end{example}
 
 The above example motivates the following definition.
 
-\begin{defn}
-    Let $\frakg<\frakgl(V)$ be a matrix Lie algebra (here, $V$ is a finite-dimensional vector space). The first prolongation of $\frakg$ is the subspace $\frakg^{(1)}<\Hom(V,\frakg)$ consisting of those $t:V\to\frakg$ such that $t(u)v=t(v)u$ for any $u,v\in V$. The $r$-th prolongation of $\frakg$ is the subspace $\frakg^{(r)}<\Hom(V,\frakg^{(r-1)})$ defined inductively by 
-    \[\frakg^{(k)}=\left(\frakg^{(r-1)}\right)^{(1)}.\]
+\begin{defn}[Prolongation of a Lie algebra]\index{Prolongation!of Lie algebras}
+    Let $\frakg<\frakgl(V)$ be a matrix Lie algebra (here, $V$ is a finite-dimensional vector space). The first prolongation of $\frakg$ is the subspace $\frakg^{(1)}<\Hom(V,\frakg)$ defined by
+    \[\frakg^{(1)}\coloneqq \ker\delta=\{\omega\in\Hom(V,\frakg):\omega(u)v=\omega(v)u\;\text{ for all }u,v\in V\}.\]
+    It is a Lie algebra by virtue of the faithful matrix representation 
+    \[\frakg^{(1)}\acts(V\oplus\frakg): \quad \omega^1\cdot (v,A)\coloneqq (0,\omega(v)),\quad \omega\in \frakg^{(1)}<\Hom(V,\frakg),\]
+    which can also be written as a block matrix 
+    \[\begin{pmatrix}
+        0 & 0 \\
+        \omega & 0
+    \end{pmatrix}\in\End(V\oplus \frakg).\label{eq g(1) action}\]
+    This identifies $\frakg^{(1)}$ with a Lie subalgebra of $\frakgl(V\oplus\frakg)$, allowing us to iterate the definition. The $r$-th prolongation of $\frakg$ is the subspace 
+    \[\frakg^{(r)}<\Hom(V\oplus\frakg\oplus\cdots\oplus \frakg^{(r-2)},\frakg^{(r-1)}),\] defined inductively by 
+    \[\frakg^{(k)}=\left(\frakg^{(r-1)}\right)^{(1)}, \quad\quad \frakg^{(-1)}\coloneqq V,\;\frakg^{(0)}\coloneqq \frakg.\]
     A Lie algebra $\frakg$ is said to be of \emph{finite type $r\geq 1$} if  $\frakg^{(r-1)}\neq 0$ and $\frakg^{(r)}=0$.
 \end{defn}
 
-\begin{defn}
+Importantly, prolongations are \emph{not intrinsic} to the Lie algebra $\frakg$. Even under the above assumption that the representation $\frakg\acts V$ is faithful, different representations can produce different prolongations.
+
+\begin{xca}
+    Consider $\frakg=\bbR$ and $V=\bbR^2$, but one action by scalings $(x,y)\mapsto (tx,ty)$, and another one by shears $(x,y)\mapsto (ty,0)$. Show that $\frakg^{(1)}=0$ in the former case and $\frakg^{(1)}\cong \bbR$ in the latter.
+\end{xca}
+
+In addition, without explaining the notation for now, we name the important space $\coker\delta$:
+\[\rmH^{0,2}(\frakg)\coloneqq \coker\delta=\frac{\Hom(V\wedge V,V)}{\delta\left(\Hom(V,\frakg)\right)},\]
+which lets us rewrite the kernel-cokernel sequence \eqref{eq spencer kernel-cokernel seq} as 
+\[0\to \frakg^{(1)}\to \Hom(V,\frakg)\overset{\delta}{\to}\Hom(V\wedge V,V)\to \rmH^{0,2}(\frakg)\to 0. \]
+
+
+\begin{defn}[Prolongation of a Lie group]\index{Prolongation!of Lie groups}
     Let $G<\GL(V)$ be a matrix Lie group. The first prolongation of $G$ is the subgroup $G^{(1)}<\GL(V\oplus\frakg)$ consisting of transformations of the form 
-    \[(v,\xi)\mapsto (v,\xi+t(v)),\quad t\in\frakg^{(1)}.\]
+    \[(v,A)\mapsto (v,A+\omega(v)),\quad \omega\in\frakg^{(1)}.\]
     Similarly, the $r$-th prolongation of $G$ is the subgroup $G^{(r)}<\GL(V\oplus \frakg\oplus \frakg^{(1)}\oplus\cdots\oplus \frakg^{(r)})$ defined inductively by 
-    \[\frakg^{(r)}\coloneqq \left(G^{(r-1)}\right)^{(1)}.\]
+    \[G^{(r)}\coloneqq \left(G^{(r-1)}\right)^{(1)}.\]
 \end{defn}
 
-Note that all of the prolongations $G^{(r)}$ are abelian groups. Now, for each $G$-structure $P\to M$ we can always reduce the structure group of $\rmJ^1 P$ to $G^{(1)}$, obtaining a $G^{(1)}$-structure.
+Thus, $G^{(1)}$ is faithfully represented on $V\oplus\frakg$ by block matrices of the form 
+\[\begin{pmatrix}
+    \id_V & 0 \\
+    \omega & \id_\frakg
+\end{pmatrix}\in\End(V\oplus \frakg),\quad\quad  \omega\in\frakg^{(1)}<\Hom(V,\frakg).\label{eq G(1) action}\]
+Note that all prolongations $G^{(r)}$ are abelian groups. Now, for each $G$-structure $P\to M$ we can always reduce the structure group of $\rmJ^1 P$ to $G^{(1)}$, obtaining a $G^{(1)}$-structure.
 
 \begin{prop}[{\cite[Prop.~2.11]{Fernandes}}]
-    Let $P\to M$ be a $G$-structure on $M$ with first-order structure function $c:\rmJ^1 P\to \Hom(V\wedge V,V)$. Each choice of complement $C$ to $\im\delta$ in $\Hom(V\wedge V,V)$ (so $\Hom(V\wedge V,V)=\im\delta\oplus C$) determines a smooth subbundle 
+    Let $P\to M$ be a $G$-structure on $M$ with (pre-quotient) first-order structure function $c:\rmJ^1 P\to \Hom(V\wedge V,V)$. Each choice of complement $C$ to $\im\delta$ in $\Hom(V\wedge V,V)$ (so $\Hom(V\wedge V,V)=\im\delta\oplus C$) determines a smooth subbundle 
     \[P^{(1)}\coloneqq \{\calH\in \rmJ^1 P:c_{\calH}\in C\}=c^{-1}(C)<\rmJ^1 P,\]
     which is a reduction of the affine bundle $\pi^1_0:\rmJ^1 P\to P$ to the structure group $G^{(1)}$. Different choices of $C$ determine subbundles related via a principal right translation by an element in $\Hom(V,\frakg)$.
 \end{prop}
 
-The $G^{(1)}$-structure $P^{(1)}\to P$ is called the \emph{first prolongation} of $P$. Of course, working inductively, one defines the $r$-th prolongation:
+The $G^{(1)}$-structure $P^{(1)}\to P$ is called the \emph{first prolongation} of $P$. Of course, working inductively, one defines the $r$-th prolongation:\index{Prolongation!of $G$-structures}
 \[P^{(r)}\coloneqq \left(P^{(r-1)}\right)^{(1)}<\rmJ^r P<\Fr^r(M),\]
 which is a $G^{(r)}$-structure on the manifold $P^{(r-1)}$. The relevance of the prolongation to the equivalence problem is explained by the following basic result.
 
 \begin{thm}[{\cite[Prop.~2.12]{Fernandes}}]\label{thm 2.12 Fernandes}
-    Let $P\to M$ and $\wb P\to \wb M$ be $G$-structures. They are equivalent iff their first prolongations $P^{(1)}\to P$ and $\wb P^{(1)}\to \wb P$ are equivalent as $G^{(1)}$-structures.
+    Let $P\to M$ and $\wb P\to \wb M$ be $G$-structures. They are equivalent iff their first prolongations $P^{(1)}\to P$ and $\wb P^{(1)}\to \wb P$ are equivalent as $G^{(1)}$-structures (assuming identical choice of complement $C$).
 \end{thm}
 
 We can use this to obtain genuinely new necessary conditions for equivalence (so far we only have $c$) by looking at the structure function of the prolongation $P^{(1)}$:
-\[c^{(1)}:P^{(1)}\to \frac{\Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus \frakg\right)}{\delta(\Hom(V\oplus\frakg,\frakg^{(1)}))},\]
+\[[c^{(1)}]:P^{(1)}\to \frac{\Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus \frakg\right)}{\delta(\Hom(V\oplus\frakg,\frakg^{(1)}))},\]
 called the \emph{second-order structure function of $P$}. Then one continues this process by constructing higher and higher prolongations and analyzing their structure functions. The importance of structures of finite type is that we can reduce the set of necessary conditions for equivalence of $G$-structures to a finite amount. In fact, by the method of prolongation, the equivalence problem for finite type $G$-structures reduces to an equivalence problem for $\{e\}$-structures (coframes), since $G^{(r)}=\{e\}$ for some $r$, which we already know how to solve. Moreover, one can show that $G$-structures of finite type always have finite-dimensional symmetry groups (this will follow from the rigidity result for general Cartan geometries, of which any $\{e\}$-structure is a trivial example, see Theorem~\ref{thm 1.5.11 Cap}).
 
 \begin{rem}
-    As we will see, an $\{e\}$-structure, also known as an absolute parallelism, defines a unique connection. Thus, for finite-type $G$-structures our method guarantees the construction of a canonical affine connection on $P^{(r-1)}$, which is a specific type of Cartan geometry. In other words, finite type $G$-structures end up being special Cartan geometries, and by virtue of Theorem~\ref{thm 2.12 Fernandes} their equivalence can be established using the general procedure for the equivalence of coframes. For an explicit description of the canonical Cartan geometry associated with a $G$-structure of type $1$ or $2$ see \cite{Alekseevsky}.
+    As we will see, an $\{e\}$-structure, also known as an absolute parallelism, defines a unique connection. Thus, for finite-type $G$-structures our method guarantees the construction of a canonical affine connection on $P^{(r-1)}$, which is a specific type of Cartan geometry. In other words, finite type $G$-structures end up being special Cartan geometries, and by virtue of Theorem~\ref{thm 2.12 Fernandes} their equivalence can be established using the general procedure for the equivalence of coframes. For an explicit description of the canonical Cartan geometry associated with a $G$-structure of type $2$ see \cite{Alekseevsky}. We treat the case of type $1$ next.
 \end{rem}
+
+The function $c^{(1)}$ always contains certain components that carry no information, so we will now examine its decomposition. Let $p'=\calH_p\in P^{(1)}$ and let $p''=\calH_{p'}$ be a horizontal subspace of $\T_{p'} P^{(1)}$ (horizontal w.r.t.\ $\pi^1_0:P^{(1)}\to P$). Then $c_{p''}^{(1)}\in \Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus\frakg\right)$ can be naturally decomposed into three components:
+\begin{multline}
+    \Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus\frakg\right)\cong \\
+    \cong \Hom\left(V\wedge V,V\oplus\frakg\right)\oplus \Hom\left(V\otimes\frakg,V\oplus\frakg\right)^2_{\mathrm{asym}}\oplus\Hom\left(\frakg\wedge\frakg,V\oplus\frakg\right).
+\end{multline}
+(There are two copies of $\Hom\left(V\otimes\frakg,V\oplus\frakg\right)$ and we antisymmetrize them at the end.) Let us describe each of the components of the (representative of the) second-order structure function. We fix $u,v\in V$ and $A,B\in\frakg$:
+\begin{enumerate}
+    \item The first component of $c_{p''}^{(1)}$ further decomposes into a $V$-valued and a $\frakg$-valued component, the first one being the (lift of the) first-order structure function of $P$:
+    \[u\wedge v\mapsto c_{p'}(u,v)\oplus\rho_{p''}(u,v),\quad \rho_{p''}\in\Hom(V\wedge V,\frakg).\]
+    \item The $\Hom\left(V\otimes\frakg,V\oplus\frakg\right)$ component of $c_{p''}^{(1)}$ is similarly decomposed into a $V$-valued and a $\frakg$-valued component:
+    \[(u,A)\mapsto -A\cdot u\oplus S_{p''}(A,u),\quad S_{p''}\in\Hom(\frakg\otimes V,\frakg).\]
+    The first term is fixed because $\theta$ is equivariant, $\Lie_{A_\ast}\theta=-A\cdot\theta$, cf.~\eqref{eq vii.2.5 Sternberg}.
+    \item The last component of $c_{p''}^{(1)}$ must be purely $\frakg$-valued and is simply the Lie bracket:
+    \[A\wedge B\mapsto -[A,B],\]
+    corresponding to the Lie bracket of Killing vector fields: $[A_\ast,B_\ast]=-[A,B]_\ast$.
+\end{enumerate}
+Thus, in total, we have 
+\begin{multline}
+    c_{p''}^{(1)}(u,A,v,B)=\left(c_{p'}(u,v)-A\cdot u+B\cdot v\right)\oplus\\\oplus\left(\rho_{p''}(u,v)+S_{p''}(A,u)-S_{p''}(B,v)-[A,B]\right).
+\end{multline}
+Thus, only $\rho_{p''}$ and $S_{p''}$ contain any new (second-order) differential invariants. 
+
+
+\begin{rem}[$G$-structures of type $1$]\label{rem g-structures of type 1}
+    An important special case occurs when $G^{(1)}=\{e\}$ (for instance, in Riemannian geometry, where $G=\SO_n$). In this case, $P^{(1)}$ is an $\{e\}$-structure, i.e., a global coframe on $P$, and $\pi^1_0:P^{(1)}\to P$ is a diffeomorphism, which therefore prescribes a unique horizontal space $\calH_p$ at each $p\in P$ by virtue of $p''=\calH_{p'}=\calV_pP\oplus (\pi^1_0)^\ast \calH_p$. In other words, every $G$-structure of finite type $1$ carries a \emph{canonical pseudoconnection} $\omega\in\Omega^1(P,\frakg)$. The pair $(\theta,\omega)$ is the corresponding global coframe on $P$. Since $P^{(1)}\cong P$, we may view the second-order function as a function on $P$. Upon doing so, the above decompositions are equivalent to the following form of the structure equations for the coframe $(\theta,\omega)$ in terms of $c,\rho$, and $S$:
+    \[
+    \begin{aligned}
+        \dd\theta & = c\circ \theta\wedge\theta-\omega\wedge\theta,\\
+        \dd\omega & = \rho\circ \theta\wedge\theta+S\circ \omega\wedge\theta-\omega\wedge\omega,
+    \end{aligned}
+    \]
+    where $\omega\wedge\theta$ is the $V$-valued $2$-form obtained from the $\frakg$-action on $V$ and $\omega\wedge\omega=\frac12[\omega,\omega]$. Note that the first equation is the $V$-valued component and involves only first-order structure functions, whereas the second is the $\frakg$-valued component and involves only second-order structure functions. Had we not assumed that $G^{(1)}=\{e\}$, we would have also had $\frakg^{(r)}$-valued components of the coframe for each $r>1$ (in addition to $\theta$ and $\omega$), which would show up even in the $V$-valued and $\frakg$-valued parts of the structure equations.
+
+    By looking at the second structure equation and taking its interior product with a Killing vector field $A_\ast$, and using $\theta(A_\ast)=0$ and $\omega(A_\ast)=A$, we see that the function $S$ measures the non-equivariance of the pseudo-connection $\omega$:
+    \[\Lie_{A_\ast}\omega=i_{A_\ast}\dd\omega=-[A,\omega]+S(A,\theta),\]
+    where $S=0$ would produce exactly the infinitesimal version of the equivariance condition $\Phi_g^\ast\omega=\Ad_g^{-1}\omega$.
+\end{rem}
+
+\begin{rem}
+    If $\frakg^{(1)}\neq 0$, then we have to find a larger coframe on the space $P^{(1)}$. Luckily, there exists a canonical soldering form on the principal bundle $P^{(1)}\to M$. This is not surprising since it is a subbundle of the second-order frame bundle $\Fr^2(\T M)\cong \Fr(\T \Fr(M))$, which carries a $V\oplus\frakgl(V)$-valued soldering form by Corollary~\ref{cor T of Frame bundles} with $r=1$. Its restriction to $P^{(1)}$ produces the needed $V\oplus\frakg$-valued soldering form. Let us give an explicit description here. 
+
+    Let $p'=\calH_p\in P^{(1)}$ be a horizontal space at $p\in P$ and let $\calV^{p'}:\T_p P\to \calV_p P$ denote the natural projection onto the vertical component associated with the decomposition $\T_p P=\calH_p\oplus\calV_p P$. Then there is a well-defined $\pi^1_0$-horizontal, equivariant $1$-form $\omega^1\in\Omega^1(P^{(1)},\frakg)^G$, uniquely determined by
+    \[\omega^1(X)_\ast(p)=\calV^{p'}\circ (\pi^1_0)_\ast (X),\quad X\in \T_{p'}P^{(1)},\]
+    where on the left hand side is the value of the Killing vector field on $P$ generated by $\omega^1(X)$. This form is part of the \emph{universal connection} on the bundle of all pseudo-connections, $\rmJ^1 P$. Now, the $1$-form 
+    \[\theta^1\coloneqq \omega^1+\theta\circ (\pi^1_0)_\ast\quad :\T P^{(1)}\to V\rtimes\frakg\]
+    with values in the semidirect product $V\rtimes \frakg$ is the desired soldering form. It is equivariant w.r.t.\ the principal action of the semidirect product $G\ltimes G^{(1)}$, where $G^{(1)}$ acts on $V\oplus \frakg$, as usual, by $g^1\cdot (v,A)=(v,A+g^1(v))$.
+\end{rem}
+
+By the above remark, there is already a canonical $V\oplus\frakg$-valued soldering form on $P^{(1)}$. Thus, to complete it to a coframe, we only need to find a canonical $\frakg^{(1)}$-valued form, i.e., a canonical pseudo-connection on the principal $G^{(1)}$-bundle $P^{(1)}\to P$. Clearly, just like in Remark~\ref{rem g-structures of type 1}, the vanishing of $\frakg^{(2)}$ will suffice for this, otherwise we prolong to $P^{(2)}$ and repeat.
+
+\begin{rem}
+    In addition to quotienting out the freedom in the choice of pseudo-connection, we need to make sure that our choice of $C$ is not affecting the structure functions. The set of possible choices of $C$ is another affine space (this time modeled on $\Hom(\coker\delta,\Hom(V\wedge V,V))$). In fact, we can choose a different $C$ for every point $p\in P$, so really this describes a section of another affine bundle over $P$. Recall that a choice of $C$ is equivalent to a choice of a value of torsion $c_0\in \im c$. Thus, for each ``field of $C$'', the definition $P^{(1)}_p=c^{-1}(C_p)$ (the preimage is now taken fiberwise) describes $P^{(1)}$ as \emph{the bundle of pseudo-connections whose torsion is exactly $c_0$}. We should thus be \emph{simultaneously} quotienting out two sections of affine bundles over $P$, namely, $\omega$ and $c_0$. 
+
+    First, $c$ obviously doesn't depend on $c_0$. The second-order function $\rho$ does depend on $c_0$, but $[\rho]$ doesn't because it is already an equivalence class over \emph{all} pseudo-connections, not only those with torsion $c_0$. The only part that may genuinely depend on $c_0$ is $S$. Even here, however, the solution is trivial: it is \emph{always possible} to choose $c_0$ so that it is a $G$-equivariant function on $P$. And if $c_0$ is $G$-equivariant, then $P^{(1)}$ is a $G$-invariant subset of $\rmJ^1 P$, and thus $\omega$ can also be chosen so that it is equivariant, $\Phi_g^\ast \omega=\Ad_g^{-1}\omega$, in which case $S=0$. Hence, \emph{the intrinsic $\omega$- and $c_0$-independent part of $S$ is zero}. In particular, any ``canonical'' pseudo-connection on any $G$-structure of type $1$ has to be equivariant. (We will see below that the same applies to all $G$-structures.) 
+\end{rem}
+
+This explains why equivariant connections are such a fundamental object of study in differential geometry (see \Chap~\ref{ch: connections}), and they have a special name.
+
+\begin{defn}[Principal connection]\index{Connection!Principal}
+    A pseudo-connection $\omega\in \Omega^1(P;\frakg)$ on a principal $G$-bundle $P\to M$ is called a principal connection if it is equivariant, $\Phi_g^\ast \omega=\Ad_g^{-1}\omega$, thus defining a $G$-invariant horizontal distribution $\calH P$.
+\end{defn}
+
+\begin{rem}
+    In practice, there is rarely reason to vary $C$ from point to point. In all common cases it is possible to choose a $G$-invariant $C$, so that $\Hom(V\wedge V,V)=\im\delta\oplus C$ is a direct sum of $G$-representations. Then $P^{(1)}$ is the bundle of pseudo-connections with constant torsion $c_0$. Obviously, this is also the most convenient choice from the point of view of the equivalence problem. The construction that follows will produce a canonical coframe on $P^{(1)}$ for \emph{any} choice of $c_0$, and Theorem~\ref{thm 2.12 Fernandes} then reduces the original equivalence problem to equivalence of $G^{(1)}$-structures \emph{regardless} of what $c_0$ is. Thus, the dependence on $C$ is not a serious issue, and having made some choice of $G$-invariant $C$, one need not worry about it again, and one can safely disregard $S$ in the analysis.
+\end{rem}
+
+In summary, the only intrinsic second-order structure function for a $G$-structure is $[\rho]$. Let us take a closer look at the space it takes values in:
+\[[\rho]:P^{(1)}\to \frac{\Hom(V\wedge V,\frakg)}{\delta\left(\Hom(V\oplus \frakg,\frakg^{(1)})\right)}.\]
+We can simplify the denominator. Recall that $\frakg^{(1)}$ is viewed as a subalgebra of $\frakgl(V\oplus\frakg)$ by virtue of the group embedding \eqref{eq g(1) action}, and $\delta$ antisymmetrizes $\frakg^{(1)}\otimes (V\oplus\frakg)^\ast$ over the two factors of $(V\oplus\frakg)^\ast$. We can decompose 
+\[\Hom(V\oplus \frakg,\frakg^{(1)})=\Hom(V,\frakg^{(1)})\oplus \Hom(\frakg,\frakg^{(1)}).\]
+The numerator $\Hom(V\wedge V,\frakg)$ corresponds effectively to setting all $\frakg$-arguments of the structure functions to zero. Thus, the quotient by $\Hom(\frakg,\frakg^{(1)})$ doesn't change the result, and we can replace the denominator with $\delta\left(\Hom(V,\frakg^{(1)})\right)$. 
+
+Furthermore, the numerator is still larger than it has to be. First note that the Spencer differential on $P^{(1)}$, which naively acts as $\delta:\frakg^{(1)}\otimes (V\oplus\frakg)^\ast\to (V\oplus\frakg)\otimes \bigwedge^2 (V\oplus\frakg)^\ast$, produces the component $\rho$ only when the $\frakg$-arguments are set to $0$ and the corresponding component in the target space is selected. This motivates us to define a more restricted Spencer differential 
+\[\delta_1:\frakg^{(1)}\otimes V^\ast\to \frakg\otimes \bigwedge^2 V^\ast,\]
+so we have 
+\[\rho=\delta_1\circ \omega,\]
+where now $\omega\in\Omega^1(P^{(1)},\frakg^{(1)})\cong \Hom_{G\ltimes G^{(1)}}(P^{(1)},\frakg^{(1)}\otimes(V+\frakg)^\ast)$ is any pseudo-connection on the $G^{(1)}$-bundle $P^{(1)}\to P$ (here, the action of $G\ltimes G^{(1)}$ on $\frakg^{(1)}$ is trivial). Again, we implicitly restrict $\omega$ only to the horizontal subspace tangent to $P$ determined by the point $p'$ of $P^{(1)}$, so that its $\frakg$ component vanishes (as established above, that component measures $G$-equivariance of $\omega$), and $\delta_1$ can be applied to the remaining component.
+
+Now consider the second-order version of the original $\delta$,
+\[\delta_2:\frakg\otimes \bigwedge^2 V^\ast\to V\otimes \bigwedge^3 V^\ast,\]
+which antisymmetrizes over the three $V^\ast$ components. Note that the domain of $\delta_2$ is the target space of $\delta_1$. We will need the following crucial lemma.
+
+\begin{lem}\label{lem spencer complex}
+    $\delta_2\circ\delta_1=0.$
+\end{lem}
+\begin{proof}
+    Suppose $\phi\in \Hom(V,\frakg^{(1)})$, which is the domain of $\delta_1$. We need to check that $\delta_2(\delta_1(\phi))=0$. First compute $\delta_1(\phi)$:
+    \[\delta_1(\phi)(u,v)=\phi(u)(v)-\phi(v)(u)\quad \in\frakg.\]
+    Secondly, we compute $\delta_2(\delta_1(\phi))$:
+    \[\delta_2(\delta_1(\phi))(u,v,w)=\acyclic_{u,v,w}\left(\phi(u)(v)-\phi(v)(u)\right)\cdot w\quad \in V,\]
+    where $\acyclic_{u,v,w}$ denotes the alternating sum over all $6$ permutations of the arguments. We can always perform a cyclic permutation in any of the terms within the alternating sum:
+    \[\delta_2(\delta_1(\phi))(u,v,w)=\acyclic_{u,v,w}\left(\phi(u)(v)\cdot w-\phi(u)(v)\cdot w\right),\]
+    and the summand vanishes by definition of $\frakg^{(1)}$, since $\phi(u)\in\frakg^{(1)}$.
+\end{proof}
+
+\begin{cor}[Bianchi identity]\index{Formula!Bianchi identity}
+    $\delta_2\circ\rho=0$.
+\end{cor}
+
+Thus, $\rho$ always takes values in $\ker\delta_2$, i.e., is symmetric w.r.t.\ exchanges of two arguments, and antisymmetrized over another pair (note that this does \emph{not} produce a tensor antisymmetric in the latter pair -- that would be zero). This is true regardless of any conditions on the pseudo-connection such as equivariance or being torsion-free. As a result, we can treat $[\rho]$ as taking values in the space 
+\[[\rho]:P^{(1)}\to \rmH^{1,2}(\frakg)\coloneqq \frac{\ker\left(\delta_2:\frakg\otimes \bigwedge^2 V^\ast\to V\otimes\bigwedge^3 V^\ast\right)}{\im\left(\delta_1:\frakg^{(1)}\otimes V^\ast\to \frakg\otimes\bigwedge V^\ast\right)}.\]
+This quantity (which is also $G$-equivariant by the same argument about the dependence on $c_0$ in the definition of $P^{(1)}$), is called the \emph{intrinsic curvature of the $G$-structure} $P$.
+
+\begin{xca}\label{xca cohomology of prolongation}
+    Show that $\rmH^{1,2}(\frakg)=\rmH^{0,2}(\frakg^{(1)})$.
+\end{xca}
+
+Note that $\frakg^{(1)}$ parametrizes the (fiber of the) space of fixed-torsion deformations of a pseudo-connection. Thus, $[\rho]$ is the offset from the origin of the space of curvatures of all pseudo-connections with fixed torsion $c_0$. By the same argument as for $[S]$, upon quotienting out the additional dependence on $c_0$ this quantity is automatically $G$-equivariant. 
+
+Now, if $\frakg^{(1)}\neq 0$ but $\frakg^{(2)}=0$, then $P^{(2)}$ becomes an equivariant $\{e\}$-structure on $P^{(1)}$, which is the same as a (second-order) $G\ltimes G^{(1)}$-connection on $M$. It is uniquely characterized by its vanishing curvature, $\rho=0$, but it need not be torsion-free. Note that if $\frakg^{(1)}=0$, then this kind of connection is not guaranteed to exist because the domain of $\delta_1$ is empty, so there is no freedom to vary the curvature.
+
+\begin{example}
+    In Riemannian geometry, $\frakg=\frakso_n$ and $\frakg^{(r)}=0$ for $r>0$, and we have already computed $\rmH^{0,2}=0$. The latter implies the existence of a torsion-free connection, and the former implies its uniqueness. Moreover, $P^{(1)}\cong P$, so curvature $\rho$ can be treated as a function on $P$ itself, namely it is the curvature of the unique torsion-free connection (the Levi-Civita connection). By Exercise~\ref{xca cohomology of prolongation}, $\rmH^{1,2}(\frakg)=0$ as well, but this time it does \emph{not} imply the existence of a curvature-free connection because that would require a non-zero $\frakg^{(1)}$ or $\rmH^{0,2}$ to have some freedom to vary connections.
+\end{example}
+
+
+
+
+\PRLsep
+
+The remainder of this \sect\ provides more context on the origins of Spencer cohomology and its general definition. All of this will be revisited in much greater detail in the next \chap.
+
+The origin of Spencer cohomology lies in the de Rham cohomology, which is the sequence generated by the exterior derivative $\dd$ acting on differential forms of every degree. To define Spencer cohomology, one defines the ``free Spencer complex'' $C^{p,q}\coloneqq \bigodot^p V^\ast\otimes \bigwedge^q V^\ast$ for each pair of integers $p,q\geq 0$. These spaces can be naturally interpreted as the spaces of differential $q$-forms with values in homogeneous polynomials of degree $p$, spanned by elements
+\[P\otimes \dd x^{i_1}\wedge\dd x^{i_2}\wedge\cdots\wedge\dd x^{i_q}\quad \in C^{p,q},\]
+where $P$ is a homogeneous polynomial of $x^1,\ldots,x^n$ of degree $p$. Then we can define the operator $\dd:C^{p,q}\to C^{p-1,q+1}$ as the usual exterior derivative:
+\[\dd \left(P\otimes \dd x^{i_1}\wedge\dd x^{i_2}\wedge\cdots\wedge\dd x^{i_q}\right)=\sum_{i=1}^n \frac{\partial P}{\partial x^i}\otimes \dd x^i\wedge\dd x^{i_1}\wedge\dd x^{i_2}\wedge\cdots\wedge\dd x^{i_q}.\]
+It is easy to see that under the identification of $\bigodot^p V^\ast$ with $\bbR[x^1,\ldots,x^n]$, this is exactly the Spencer differential $\delta_q$ (we have been omitting $p$ in the notation). The collection of spaces $C^{p,q}$ with maps $\delta_q$ acting between them so that $\delta_q\circ\delta_{q-1}=0$ is known as the \emph{Spencer complex} $\bm C$. The \emph{Spencer cohomology} of this complex consists of the vector spaces \index{Spencer cohomology}
+\[\rmH^{p,q}(\bm C)=\frac{\ker \left(\delta_q:C^{p,q}\to C^{p-1,q+1}\right)}{\im\left(\delta_{q-1}:C^{p+1,q-1}\to C^{p,q}\right)}.\]
+\begin{lem}[Polynomial Poincar\'e Lemma]\index{Lemma!Poincar\'e (polynomial)}
+    $\rmH^{p,q}(\bm C)=0$ for $p+q>0$ and $\rmH^{0,0}(\bm C)=\bbR$.
+\end{lem}
+\begin{proof}
+    Consider a vector field $X=X^i\partial_i$ on $\bbR^n$. By Cartan's magic formula for a form $\omega\in C^{p,q}$, we have 
+    \[\dd i_X \omega+i_X\dd \omega=\Lie_X\omega=(p+q)\omega.\]
+    For $p+q>0$, we can divide both sides by $p+q$ and conclude that the identity map is $\omega\mapsto \omega$ is ``chain homotopic to zero'', which immediately implies that the cohomology is trivial, see Theorem~\ref{thm chain homotopy in homology}. The case $p=q=0$ is trivial because $\rmH^{0,0}=C^{0,0}\cong\bbR$.
+\end{proof}
+We can further allow the polynomials $P$ to take values in another vector space $W$, i.e., we replace $C^{p,q}$ with $C^{p,q}\otimes W$, treating elements of $W$ as constants. The Poincar\'e Lemma still holds with the only difference that $\rmH^{0,0}(\bm C\otimes W)=W$.
+
+Things get more interesting when we restrict the Spencer differentials to smaller subspaces of $C^{p,q}\otimes W$. The origin of the following considerations in the theory of analytic PDEs. The PDEs characterizing integrable $G$-structures are first-order linear equations. Prolongations arise naturally in the process of constructing solutions to such equations in the form of a \emph{power series ansatz}. Suppose $V,W$ are given vector spaces with respective  coordinates $(x^1,\ldots,x^n)$ and $(u^1,\ldots,u^s)$. Given a system of constant coefficient, first-order, homogeneous PDEs on functions $f:V\to W$,
+\[B^\lambda(f)=B^{\lambda i}_a \frac{\partial f^a}{\partial x^i}=0,\quad \lambda=1,\ldots,R,\]
+we define a linear subspace $B<W^\ast\otimes V$ spanned by elements $B^{\lambda i}_a \dd u^a\otimes \partial_{x^i}$. $B$ is the space of equations (linear relations) describing our PDE, and the dual space $A\coloneqq \Ann(B)<W\otimes V^\ast$ is the space of linear solutions, called a \emph{tableau}. Each of these steps can be reversed, so a tableau is the same data as a constant coefficient, first-order, homogeneous PDE. The reason for considering tableaux is that the existence of analytic solutions becomes a problem in linear algebra. Indeed, if the Taylor series 
+\[f(x)=(p^a+p^a_ix^i+p^a_{ij}x^ix^j+\cdots)\partial_{u^a}\]
+is a solution, then each homogeneous term must be as well. The identification of the space $\bbR[x^1,\ldots,x^n]$ of polynomials on $V$ with the symmetric algebra $\bigodot V^\ast=\bigoplus_{k=0}^\infty\bigodot^k V^\ast$ suggests the following definition.
+
+\begin{defn}[Tableau, prolongation]\index{Tableau}\index{Prolongation!of a tableau}
+    Let $V,W$ be two vector spaces. A tableau is a vector subspace $A<W\otimes V^\ast$. It's $q$-th prolongation is defined as the projection of the space of $A$-valued polynomials to the space of $W$-valued polynomials
+    \[A^{(q)}=\left(A\otimes \left(V^\ast\right)^{\otimes q}\right)\cap \left(W\otimes \bigodot^{q+1}V^\ast\right).\]
+    An alternative, equivalent definition is to let $A^{(0)}\coloneqq A$ and compute inductively 
+    \[A^{(q+1)}=\left\{P\in W\otimes\bigodot^{q+1}V^\ast\mid \partial_{x^i}P\in A^{(q)}\text{ for }i=1,\ldots,n\right\}.\]
+    Thus, $A^{(q)}$ is the space of homogeneous degree $q$ solutions to the PDE associated with $A$.
+\end{defn}
+
+Since the space $C^{p+1,q}(A)\coloneqq A^{(p)}\otimes\bigwedge^q V^\ast$ is a subspace of $W\otimes C^{p+1,q}$, we may view the collection of spaces $C^{p+1,q}(A)$ as a subcomplex of $\bm C\otimes W$. It is straightforward from the second definition of prolongation that the Spencer differential is still well-defined on the restriction. The cohomology of this complex is defined just as above and denoted by $\rmH^{p,q}(A)$. Obstructions to flatness (or to the ability to extend a degree $q$ solution to one of degree $q+1$) will live in these spaces. 
+
+Considering $A=\frakg<V\otimes V^\ast$, we get the following diagram:
+\[
+    \begin{tikzcd}
+        \frakg^{(2)} \arrow[dr,swap,"\delta_0"] & \frakg^{(2)} \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg^{(2)} \otimes \bigwedge^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg^{(2)} \otimes \bigwedge^3 V^\ast \arrow[dr] & \cdots \\
+        \frakg^{(1)} \arrow[dr,swap,"\delta_0"] & \frakg^{(1)} \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg^{(1)} \otimes \bigwedge^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg^{(1)} \otimes \bigwedge^3 V^\ast \arrow[dr] & \cdots \\
+        \frakg \arrow[dr,swap,"\delta_0"] & \frakg \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg \otimes \bigwedge^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg \otimes \bigwedge^3 V^\ast \arrow[dr] & \cdots \\
+        V & V \otimes V^\ast & V \otimes \bigwedge^2 V^\ast & V \otimes \bigwedge^3 V^\ast & \cdots
+    \end{tikzcd}
+\]
+In particular, note that $\delta_2$ acting on $V\otimes\bigwedge^2 V^\ast$ is the zero operator, which explains why $\rmH^{0,2}(\frakg)$ had all of $\Hom(V\wedge V,V)$ in its numerator.
+
+The most general statement on equivalence of $G$-structures that can be made here is that all of the obstructions to equivalence or integrability of $G$-structures (their structure functions) take values in $\rmH^{p,2}(\frakg)$, $p\geq 0$. In particular, a $G$-structure is locally flat (integrable) iff all of its structure functions are zero in some neighborhood of a point. This is caveated by the fact that if there are infinitely many structure functions, this may not be sufficient, but in practice most $G$-structures are of finite type.
+
+\begin{intu*}
+    This is our first encounter with cohomology in this book. Spencer cohomology is not as simple to describe as, say, de Rham cohomology, but its role here is characteristic of \emph{all} cohomology theories: \emph{cohomologies always measure obstructions to the existence of structures}. These structures can be solutions to differential equations, integrable $G$-structures, $G$-structures in general (this is a global question that leads to characteristic classes), certain continuous mappings (as in the definition of homotopy groups), certain fiber bundles, certain connections, and so on.
+\end{intu*}
 
 % Note that the Lie bracket of vector fields induces the relations $[L^r,L^q]=L^{r+q}$, $r,g\geq -1$, and so the bracket can be restricted to form maps 
 % \begin{align}
@@ -6529,12 +6767,12 @@ called the \emph{second-order structure function of $P$}. Then one continues thi
 \chapter{Exterior Differential Systems}\label{chap: EDSs}
 
 
-This \chap\ is devoted to the first side of Cartan geometry, namely as a study of geometric structures described by systems of PDEs.
-Much like in the Frobenius Theorem, which is the basic special case, the goal is to reduce the problem of the existence of solutions to a certain problem of linear algebra on the $C^\infty(M)$-module of differential forms on $M$. Since linear algebra on ring modules is exactly what homological algebra studies, it should not come as a surprise that this \chap\ will also see our first encounter with cohomology (in fact, we already got a glimps of it in the preceding \sect).
+This \chap\ wraps up the first side of Cartan geometry which we have already partially explored in the last two \chap s, namely as a study of geometric structures described by systems of PDEs.
+Much like in the Frobenius Theorem, which is the basic special case, the goal is to reduce the problem of the existence of solutions to a certain problem of linear algebra on the $C^\infty(M)$-module of differential forms on $M$. Since linear algebra on ring modules is exactly what homological algebra studies, it should not come as a surprise that this \chap\ will also see our first serious encounter with cohomology (we already got a glimps of it in the preceding \sect).
 
 Why, one might ask, would we be interested in existence results for solutions of PDEs when doing geometry? The main question that Cartan's theory answers for a given PDE is \emph{which initial value problems for it are well-posed}. In geometric context, we will think of a PDE with a well-posed initial condition as a \emph{compressed form} of its unique solution. The ``initial values'' will be the \emph{differential invariants} describing certain geometric structures, and the PDE itself will be some form of a \emph{structure equation} (related to the Maurer-Cartan equation). The unique solution then will be a geometric structure on the underlying manifold. Thus, Cartan's analysis of PDEs will allow us to ``distill'' very general geometric structures down to a minimal set of quantities that suffice to describe them (for example, isometric embeddings of Riemannian surfaces are described by two scalar curvatures subject to a certain compatibility condition).
 
-Since this theory will be concerned specifically with \emph{analytic} solutions to differential equations (i.e., those expressed by convergent Taylor series), we start with the most classical setting -- finding the flow of an analytic vector field. The next natural step will be to look for integral manifolds of a system of many analytic vector fields, which is the setting for the Frobenius Theorem. Its analytic version will be subsumed by the Cartan-K\"ahler theory presented below. Unfortunately, there are few quality sources on this topic, so the material in this \chap\ is mainly synthesized from the excellent books \cite{Bryant,Ivey,McKayEDS}. In particular, the book by Bryant, who is an ``academic grandchild'' of \'Elie Cartan, is the most detailed reference on \glspl{eds}.
+Since this theory will be concerned specifically with \emph{analytic} solutions to differential equations (i.e., those expressed by convergent Taylor series), we start with the most classical setting -- finding the flow of an analytic vector field. The next natural step will be to look for integral manifolds of a system of many analytic vector fields, which is the setting for the Frobenius Theorem. Its analytic version will be subsumed by the Cartan-K\"ahler theory presented below. Unfortunately, there are few pedagogic sources on this topic, so the material in this \chap\ is mainly synthesized from the books \cite{Bryant,Ivey,McKayEDS}. In particular, the book by Bryant, who is an ``academic grandchild'' of \'Elie Cartan, is the most detailed monograph on \glspl{eds}.
 
 
 
@@ -6747,7 +6985,7 @@ Crucially, for the Cauchy-Kovalevskaya Theorem to be applicable, the first-order
 \begin{example}[Self-dual equations]\label{ex self-dual equations}
     A more interesting problem is to consider the so-called self-dual equations in $4$ dimensions. Recall the Hodge star operator $\star:\Omega^p(\bbR^n)\to \Omega^{n-p}(\bbR^n)$, which is defined by 
     \[\alpha\wedge(\star \beta)=\<\alpha,\beta\>\dd x^1\wedge\cdots\wedge\dd x^n,\]
-    where $\<\alpha,\beta\>$ is the Euclidean inner product extended to differential forms (so all the standard basis elements $\dd x^I$ of the same degree are orthonormal, and those of differing degrees are orthogonal). It satisfies 
+    where $\<\alpha,\beta\>$ is the Euclidean inner product extended to differential forms (so all the standard basis elements $\dd x^{i_1}\wedge\cdots\dd x^{i_p}$, $1\leq i_1<i_2<\cdots<i_p\leq n$, of the same degree are orthonormal, and those of differing degrees are orthogonal). It satisfies 
     \[{\star}{\star}\alpha=(-1)^{p(n-p)}\alpha,\quad \alpha\in\Omega^p(\bbR^n).\]
     In particular, when $n=4$ and $p=2$, the $2$-forms can be split into \emph{self-dual} forms that satisfy $\star\alpha=\alpha$ and \emph{anti-self-dual} forms that satisfy $\star\alpha=-\alpha$. These two spaces are denoted $\Omega^2_\pm(\bbR^4)$, respectively. For example, every $\phi\in\Omega^2_+(\bbR^4)$ is of the form 
     \begin{multline}
@@ -6795,7 +7033,7 @@ Thus, our assumption of analyticity of solutions automatically discards a lot of
 \section{Differential operators}\label{sec: diff operators}
 
 
-The Cauchy-Kovalevskaya Theorem states that analytic solutions exist if we can resolve our system of PDEs for the highest derivatives in a single variable. If this is not possible right away, it might be possible after a change of variables (both independent and unknown). Thus, we need a coordinate-free description of ``how many derivatives'' are taken in a given direction.
+The Cauchy-Kovalevskaya Theorem states that analytic solutions exist if we can resolve our system of PDEs for the highest derivatives in a single variable. If this is not possible right away, it might be possible after a change of variables (both independent and dependent). Thus, we need a coordinate-free description of ``how many derivatives'' are taken in a given direction.
 
 Any linear differential operator 
 \[P=\sum_{|\bm{\alpha}|\leq m}c_{\bm{\alpha}}(\bf{x})\partial^{\bm{\alpha}}\]
@@ -6878,7 +7116,7 @@ where each $B_{\bm{\alpha}}$ is a local section of the endomorphism (or vertical
 \[\partial_{x^{i_1}}\cdots \partial_{x^{i_k}}=\frac{\partial y^{j_1}}{\partial x^{i_1}}\cdots \frac{\partial y^{j_k}}{\partial x^{i_k}}\partial_{y^{j_1}}\cdots \partial_{y^{j_k}}+\cdots ,\]
 where $\cdots$ stands for a differential operator of order $k-1$. Thus we see that the leading term transforms as a symmetric contravariant tensor of rank $k$. The rest of this \sect\ is dedicated to formalizing this observation in a coordinate-free language.
 
-We will identify $C^\infty(M)$ with the set of multiplication operators which form the center of $\PDO^0(E)$. Since $\PDO(E)$ is an algebra, it also has a Lie algebra structure with the Lie bracket given by the commutator.
+We will identify $C^\infty(M)$ with the set of multiplication operators which form the center of $\PDO^0(E)$. Since $\PDO(E)$ is an associative algebra, it also has a Lie algebra structure with the Lie bracket given by the commutator.
 This allows us to give the following, purely algebraic, inductive definition of differential operators (due to Grothendieck). It is also an extremely useful criterion for showing that a given operator is a differential operator, similar to how Theorem~\ref{thm tensor characterization} characterized tensor fields.
 
 \begin{prop}
@@ -6930,7 +7168,7 @@ Therefore, the set of bundle morphisms \eqref{eq 1803} is completely determined 
     \[(\ad_{f_1}\cdots \ad_{f_k}D)s(m)=h(m)(\ad_g P)s(m)+g(m)(\ad_h P)s(m)=0.\]
 \end{proof}
 
-This shows that at each point $m\in M$ we have a symmetric, $k$-linear map (also known as a \emph{homogeneous polynomial} of degree $k$)
+This shows that we can quotient out $I_m^2$, so at each point $m\in M$ we have a symmetric, $k$-linear map (also known as a \emph{homogeneous polynomial} of degree $k$)
 \begin{align}
     \sigma(D)_m:(I_m\slash I_m^2)^k &\to \Hom(E_m,E_m'),\\
     (\xi_1,\ldots,\xi_k)&\mapsto \frac{(-1)^k}{k!}(\ad_{f_1}\cdots \ad_{f_k}D)_m,\quad f_i\in I_m,\quad f_i\equiv \xi_i\mod I^2_m. \label{eq 104}
@@ -7188,10 +7426,10 @@ It is easy to see that, as long as the flow is well-defined, $N_t$ is a smooth i
 
 Unfortunately, enumerating the Killing vector fields (also called \emph{Lie point symmetries}, or simply \emph{symmetries}) for a given system of PDEs is usually harder than solving the system itself. We direct the reader to \cite{Olver} for an comprehensive exploration of this subject.
 
-\begin{defn}[Cauchy characteristics]
+\begin{defn}[Cauchy characteristics]\index{Cauchy characteristic line field}
     Let $\calI$ be an \gls{eds} on $M$. A vector field $X\in\fX(M)$ is a Cauchy characteristic vector field of $\calI$ if 
     \[i_X (\calI)\subset \calI.\]
-    Since $i_X$ is a $\wedge$-derivation, it suffices to show that $i_X\theta\in\calI$ for a set $\{\theta^a\}$ of \emph{algebraic} generators of $\calI$. Since Cauchy vector fields are preserved by multiplications by arbitrary scalar function, we can talk of \emph{Cauchy characteristic line fields}. Since $\calI$ is a differential ideal, each Cauchy characteristic vector field is automatically a Killing vector field. Moreover, Cauchy characteristic vector fields also form a Lie subalgebra of $\fX(M)$ (see the exercise below).
+    Since $i_X$ is a $\wedge$-derivation, it suffices to show that $i_X\theta\in\calI$ for a set $\{\theta^a\}$ of \emph{algebraic} generators of $\calI$. Since Cauchy vector fields are preserved by multiplications by arbitrary scalar function, we can talk of \emph{Cauchy characteristic line fields}. Since $\calI$ is a differential ideal, each Cauchy characteristic vector field is automatically a Killing vector field. Moreover, Cauchy characteristic vector fields also form a Lie subalgebra of $\fX(M)$ (see the exercise below), denoted $\cha(\calI)$.
 \end{defn}
 
 \begin{xca}
@@ -7220,19 +7458,19 @@ The condition for finding Cauchy characteristics is thus algebraic, which makes 
     up to a multiple. Integral surfaces of $\calI$ are constructed by translating integral curves along curves where $u,p$, and $x+t$ are constant.
 \end{example}
 
-All Cauchy characteristics (vector fields) together span a well-defined distribution $\calA(\calI)< \T M$ given by 
-\[\calA(\calI)_m\coloneqq \{X\in \T_mM\mid i_X(\calI)\subset \calI\},\quad m\in M.\]
-The rank of $\calA(\calI)$ is upper semicontinuous on $M$ (in an open neighborhood of $m$ it can only decrease), so we can restrict to an open set on which it is constant. The dual of $\calA(\calI)$ is a Pfaffian system that we define next.
+All Cauchy characteristics (vector fields) together span a well-defined distribution $\<\cha(\calI)\>< \T M$ given by 
+\[\<\cha(\calI)\>_m\coloneqq \{X\in \T_mM\mid i_X(\calI)\subset \calI\},\quad m\in M.\]
+The rank of $\<\cha(\calI)\>$ is upper semicontinuous on $M$ (in an open neighborhood of $m$ it can only decrease), so we can restrict to an open set on which it is constant. The dual of $\cha(\calI)$ is a Pfaffian system that we define next.
 
 \begin{defn}[Retracting space of $\calI$]\index{Retracting space}
-    Let $\calI$ be an \gls{eds} on $M$ with characteristic distribution $\calA(\calI)$. The retracting space, or Cartan system, of $\calI$ is the Pfaffian system $\calC(\calI)<\T^\ast M$ defined by 
-    \[\calC(\calI)_m\coloneqq \{\theta\in \T^\ast_m M\mid i_X\theta=0 \text{ for all }X\in \calA(\calI)_m\}.\]
+    Let $\calI$ be an \gls{eds} on $M$ with characteristic distribution $\<\cha(\calI)\>$. The retracting space, or Cartan system, of $\calI$ is the Pfaffian system $\calC(\calI)<\T^\ast M$ defined by 
+    \[\calC(\calI)_m\coloneqq \{\theta\in \T^\ast_m M\mid i_X\theta=0 \text{ for all }X\in \cha(\calI)_m\}.\]
 \end{defn}
 
-Assume $\calC(\calI)$ is regular, i.e., it has constant rank. Since the space of sections $\Gamma^\infty(\calA(\calI))$ (taken locally) is closed under Lie brackets of vector fields, $\calC(\calI)$ is closed under $\dd$, so it is Frobenius.\footnote{Because $\dd\theta(X,Y)=-\theta([X,Y])$ for $\theta\in\Gamma^\infty(\calC(\calI))$ and $X,Y\in\Gamma^\infty(\calA(\calI))$.} 
+Assume $\calC(\calI)$ is regular, i.e., it has constant rank. Since its space of sections $\cha(\calI)$ (taken locally) is closed under Lie brackets of vector fields, $\calC(\calI)$ is closed under $\dd$, so it is Frobenius.\footnote{Because $\dd\theta(X,Y)=-\theta([X,Y])$ for $\theta\in\Gamma^\infty(\calC(\calI))$ and $X,Y\in\cha(\calI)$.} 
 
-\begin{defn}[Cauchy characteristics]
-    The leaves of the foliation defined by the distribution $\calA(\calI)$ (assuming it is regular) are called the Cauchy characteristics of $\calI$.
+\begin{defn}[Cauchy characteristics]\index{Cauchy characteristic}
+    The leaves of the foliation defined by the distribution $\<\cha(\calI)\>$ (assuming it is regular) are called the Cauchy characteristics of $\calI$.
 \end{defn}
 
 Now, by the Frobenius Theorem, there exist local coordinates $(x^1,\ldots,x^n,y^1,\ldots,y^s)$ on a neighborhood $U\subset M$ such that $\restr{\calC(\calI)}{U}=\<\dd y^1,\ldots,\dd y^s\>_{C^\infty(U)}$. The following theorem, which we provide without proof, shows that the same holds for $\calI$ itself.
@@ -7250,7 +7488,7 @@ Note that for a generic \gls{eds}, $r=0$, because generally there are no nontriv
 \begin{proof}
     Let $\dim E=N$. By the Rank Theorem, there are local coordinates such that 
     \[\pi(x^1,\ldots,x^p,x^{p+1},\ldots,x^N)=(x^1,\ldots,x^p).\]
-    Then $\calV E$ is locally spanned by $\{\partial_{x^{p+1}},\ldots,\partial_{x^N}\}$. Now considering the \gls{eds} $\calI\coloneqq \<\alpha\>_{\mathrm{diff}}$, we see that $\calV\subset\calA(\calI)$. Therefore, by Theorem~\ref{thm 2.2 Bryant}, there is a generator for $\calI$ independent of $(x^{p+1},\ldots,x^N)$, and hence of the form $\pi^\ast \alpha_M'$ with $\alpha_M'\in \Omega^{\smbullet}(M)$. Thus, there is a function $\mu$ such that 
+    Then $\calV E$ is locally spanned by $\{\partial_{x^{p+1}},\ldots,\partial_{x^N}\}$. Now considering the \gls{eds} $\calI\coloneqq \<\alpha\>_{\mathrm{diff}}$, we see that $\calV\subset\<\cha(\calI)\>$. Therefore, by Theorem~\ref{thm 2.2 Bryant}, there is a generator for $\calI$ independent of $(x^{p+1},\ldots,x^N)$, and hence of the form $\pi^\ast \alpha_M'$ with $\alpha_M'\in \Omega^{\smbullet}(M)$. Thus, there is a function $\mu$ such that 
     \[\mu\alpha=\pi^\ast \alpha_M'.\]
     Since 
     \[0=i_X(\dd \mu\wedge\alpha_M'+\mu\dd\alpha_M')=(\Lie_X \mu)\alpha_M'\text{ for all }X\in\calV E,\]
@@ -7265,9 +7503,9 @@ In what follows we work on a local neighborhood $U\subset M$ where everything ab
 \begin{proof}
     Let $D<\T^\ast M$ be a Frobenius system such that there exist a finite collection of forms $\psi_1,\ldots,\psi_k\in \Omega^{\smbullet}_D$ which generate $\calI$ algebraically. Then any $\xi\in \calI$ can be written as
     \[\xi=\sum_{i=1}^k \beta_i\wedge \psi_i.\]
-    Let $X$ be a vector field annihilated by $D$. Then $i_X \xi=\sum_i (i_X \beta_i)\wedge\psi_i$, which belongs to $\calI$. Hence $X\in\Gamma^\infty(\calA(\calI))$. Since $X$ and $\xi$ are arbitrary, we conclude that $\calC(\calI)\subset D$.
+    Let $X$ be a vector field annihilated by $D$. Then $i_X \xi=\sum_i (i_X \beta_i)\wedge\psi_i$, which belongs to $\calI$. Hence $X\in\cha(\calI)$. Since $X$ and $\xi$ are arbitrary, we conclude that $\calC(\calI)\subset D$.
 
-    Furthermore, the smallest such $D$ cannot be larger than $\calC(\calI)$. For, suppose $\calC(\calI)$ has co-rank $l>0$ within $D$, and let $\pi_1,\ldots,\pi_l$ be linearly independent $D$-valued forms with $\pi_i\notin \calC(\calI)$. Partition the generators for $\calI$ into $\varphi_1,\ldots,\varphi_k\in \Omega^{\smbullet}_{\calC(\calI)}$, plus generators $\psi_1,\ldots,\psi_n$ involving the $\pi_i$. If $X$ is any vector in $\calA(\calI)$, and $\psi_1$ has the lowest degree among the $\psi$, then $i_X\psi_1$ must be expressible in terms of the $\varphi_i$. In particular, any term in $\psi_1$ involving one of the $\pi_i$ may be omitted since that term already is generated by the $\varphi_j$. It follows that we may take all generators to be in $\Omega^{\smbullet}_{\calC(\calI)}$.
+    Furthermore, the smallest such $D$ cannot be larger than $\calC(\calI)$. For, suppose $\calC(\calI)$ has co-rank $l>0$ within $D$, and let $\pi_1,\ldots,\pi_l$ be linearly independent $D$-valued forms with $\pi_i\notin \calC(\calI)$. Partition the generators for $\calI$ into $\varphi_1,\ldots,\varphi_k\in \Omega^{\smbullet}_{\calC(\calI)}$, plus generators $\psi_1,\ldots,\psi_n$ involving the $\pi_i$. If $X$ is any vector in $\<\cha(\calI)\>$, and $\psi_1$ has the lowest degree among the $\psi$, then $i_X\psi_1$ must be expressible in terms of the $\varphi_i$. In particular, any term in $\psi_1$ involving one of the $\pi_i$ may be omitted since that term already is generated by the $\varphi_j$. It follows that we may take all generators to be in $\Omega^{\smbullet}_{\calC(\calI)}$.
 \end{proof}
 
 This means that we can calculate the retracting space by finding a minimal set of algebraic generators for the ideal. This theorem has many applications involving finding normal forms of various classes of differential forms, see \cite[\S I.1]{Bryant} for examples.
@@ -7292,7 +7530,7 @@ This means that we can calculate the retracting space by finding a minimal set o
     \[\frac{\dd x^i}{F_{p_i}}=-\frac{\dd p_i}{F_{x^i}+F_u p_i}=\frac{\dd u}{\sum_i p_i F_{p_i}},\label{eq 14 Bryant}\]
     where the subscripts on $F$ indicate partial derivatives.
 
-    This fundamental fact, that first-order PDEs have one-dimensional Cauchy characteristics, $\rank \calA(\calI)=1$, allows us to reduce the PDE to an ODE. We do this by choosing an integral $(n-1)$-manifold $L$ of $\calI$ (corresponding to some initial data), and then using the flow of $X$ to get an integral $n$-manifold. If $F$ may be solved for $p_n$, then $X$ is transverse to the hyperplanes $x^n=\const$. Thus, we obtain a starting manifold $L$ by letting $x^n=C$, $u=f(x^1,\ldots,x^{n-1})$ for an arbitrary function, and $p_i=\partial_{x^i}f$. To obtain a solution to the original PDE we only need to integrate the ODE system defining the flow of $X$.
+    This fundamental fact, that first-order PDEs have one-dimensional Cauchy characteristics, $\dim\cha(\calI)=1$, allows us to reduce the PDE to an ODE. We do this by choosing an integral $(n-1)$-manifold $L$ of $\calI$ (corresponding to some initial data), and then using the flow of $X$ to get an integral $n$-manifold. If $F$ may be solved for $p_n$, then $X$ is transverse to the hyperplanes $x^n=\const$. Thus, we obtain a starting manifold $L$ by letting $x^n=C$, $u=f(x^1,\ldots,x^{n-1})$ for an arbitrary function, and $p_i=\partial_{x^i}f$. To obtain a solution to the original PDE we only need to integrate the ODE system defining the flow of $X$.
 \end{example}
 
 \begin{xca}
@@ -9846,8 +10084,8 @@ where $s_0=\rank I$. It is clear that $\varXi_m$ is defined by homogeneous polyn
 \end{rem}
 
 \begin{rem}
-    There is a very simple relation between the Cauchy characteristics and the characteristic variety of a linear Pfaffian differential systems. Let $\calA(\calI)<\T M$ denote the Cauchy characteristic subbundle. Since $\calA(\calI)<\Ann(I)$ the map 
-    \[\calA(\calI)\to L^\ast,\quad X\to \left(\omega^1(X),\ldots,\omega^n(X)\right)\]
+    There is a very simple relation between the Cauchy characteristics and the characteristic variety of a linear Pfaffian differential systems. Let $\<\cha(\calI)\><\T M$ denote the Cauchy characteristic subbundle. Since $\<\cha(\calI)\><\Ann(I)$ the map 
+    \[\<\cha(\calI)\>\to L^\ast,\quad X\to \left(\omega^1(X),\ldots,\omega^n(X)\right)\]
     is well-defined, and we denote its image by $S<L^\ast$. Then $\Ann(S)<L$ and we shall show that 
     \[\varXi \subset\bbP \Ann(S).\label{eq v.19 Bryant}\]
     In particular, if $S\neq 0$ then it follows that the fibers $\varXi_m$ of the characteristic variety lie in the proper linear subspaces $\bbP \Ann(S_m)\subset \bbP L_m$. Clearly, \eqref{eq v.19 Bryant} also remains valid when we complexify. In the involutive case, there is a converse to the complex version of \eqref{eq v.19 Bryant}, so $\varXi^\bbC=\bbP\Ann(S^\bbC)$ for involutive systems.
@@ -9868,7 +10106,7 @@ where $s_0=\rank I$. It is clear that $\varXi_m$ is defined by homogeneous polyn
     \[\pi^a_\rho \equiv 0\pmod{J},\quad \rho=k+1,\ldots,n.\]
     From this it is easy to see that a characteristic vector $\xi=\xi_i\omega^i$ must have $\xi_{k+1}=\cdots=\xi_k=0$. This proves \eqref{eq v.19 Bryant}.
 
-    We remark that whenever we may choose bases so that the tableau matrix has the block form \eqref{eq v.20 Bryant}, then the zeros correspond to the image $S< L^\ast$ of Cauchy characteristics as described above. We also note that the map $\calA(\calI)\to S$ may not be injective; using the structure equations $\dd\theta^a\equiv \pi^a_i\wedge\omega^i\pmod{I}$ it is easy to see that this is the case exactly when $\theta^a,\omega^i,\pi^a_i$ fail to span $\T^\ast M$. Examples of this arise by adding extra dummy variables to any Pfaffian system.
+    We remark that whenever we may choose bases so that the tableau matrix has the block form \eqref{eq v.20 Bryant}, then the zeros correspond to the image $S< L^\ast$ of Cauchy characteristics as described above. We also note that the map $\<\cha(\calI)\>\to S$ may not be injective; using the structure equations $\dd\theta^a\equiv \pi^a_i\wedge\omega^i\pmod{I}$ it is easy to see that this is the case exactly when $\theta^a,\omega^i,\pi^a_i$ fail to span $\T^\ast M$. Examples of this arise by adding extra dummy variables to any Pfaffian system.
 \end{rem}
 
 

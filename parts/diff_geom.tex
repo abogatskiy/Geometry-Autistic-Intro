@@ -121,7 +121,7 @@ The following fundamental theorem gives us a useful sufficient condition for a m
 
 \section{Structure groups}\label{sec: structure groups}
 
-So far we have only given a purely topological (or geometric in the smooth case) description of \glspl{fb}. The fascinating thing about \glspl{fb}, however, is that the requirement of local triviality gives rise to an alternative \emph{algebraic} description of \glspl{fb}, which will eventually lead us into the realm of cohomology. A similar, but more cumbersome, description appears for general topological fibrations as well. We now characterize smooth \glspl{fb} in terms of their systems of local trivializations and identify their transition maps with certain Lie group actions. Note that everything here easily translates to the category of topological \glspl{fb} as well.
+So far we have only given a purely topological (or geometric in the smooth case) description of \glspl{fb}. The fascinating thing about \glspl{fb}, however, is that the requirement of local triviality gives rise to an alternative \emph{algebraic} description of \glspl{fb}, which will eventually lead us into the realm of cohomology. A similar, albeit more cumbersome, description appears for general topological fibrations as well. We now characterize smooth \glspl{fb} in terms of their systems of local trivializations and identify their transition maps with certain Lie group actions. Note that everything here easily translates to the category of topological \glspl{fb} as well.
 
 
 \begin{defn}[Bundle atlas]\label{def G-bundle}\index{Atlas!Bundle}
@@ -181,9 +181,9 @@ Since the structure group of a bundle acts on its typical fiber $F$, that is, it
 \begin{rem}
     \begin{enumerate}
         \item The intuition behind the definition of $G$-structures is the following. A fiber $G$-structure on $F$ is a choice of a $G$-invariant subset of all diffeomorphisms from $F$ to a ``standard'', or ``model'', space $F_0$, namely an orbit of the action of $G$ on all such diffeomorphisms by compositions. This can be interpreted as $F_0$ having some kind of ``structure'' that is invariant under actions of $G$, and a fiber $G$-structure allows us to transplant this structure to $F$. A $G$-structure on a fiber bundle, then, is a collection of structures on each fiber that, in a sense, vary smoothly with the base point $m\in M$. These structures are defined consistently because all local trivializations belonging to the same $G$-bundle atlas differ from each other by an action of $G$ on $F_0$, hence this additional structure is independent of the local bundle chart. 
-        \item Morphisms between bundles with the same structure group are also defined so as to ``respect'' this structure. Thus the smaller the $G$, the more structure the morphisms of this category preserve. We will use this rough idea when introducing vector bundles, orientations, and complex bundles. For example, vector bundles will have group structure $\GL(V)$ for some vector space $V$, and, as we will see, the corresponding fiber $G$-structure is the structure of vector space.
+        \item Morphisms between bundles with the same structure group are also defined so as to ``respect'' this structure. Thus the smaller the $G$, the more structure the morphisms of this category preserve. We will use this rough idea when introducing vector bundles, orientations, and complex bundles. For example, vector bundles will have structure group $\GL(V)$ for some vector space $V$, and, as we will see, the corresponding fiber $G$-structure is the structure of vector space.
         
-        \item There is one extremely special class of $G$-bundles that will be distinguished by the fact that their typical fiber supports \emph{two} commuting actions of $G$, a left one and a right one (because the typical fiber will be $G$ itself). After using one of them up to define the bundle, we will be able to use the above procedure to lift the other one to a global action of $G$ on $E$. These bundles are called \emph{principal}. In \S\ref{sec: free proper actions} we will show that principal $G$-bundles can be defined without reference to local trivializations, and in \S\ref{sec: principal bundles} that will lead us to a chart-free definition of \emph{all} \glspl{fb}.
+        \item There is one extremely special class of $G$-bundles that will be distinguished by the fact that their typical fiber supports \emph{two commuting actions} of $G$, a left one and a right one -- because the typical fiber will be $G$ itself. After using one of them up to define the bundle, we will be able to use the above procedure to lift the other one to a global action of $G$ on $E$. These bundles are called \emph{principal}. In \S\ref{sec: free proper actions} we will show that principal $G$-bundles can be defined without reference to local trivializations, and in \S\ref{sec: principal bundles} that will lead us to a chart-free definition of \emph{all} \glspl{fb}.
     \end{enumerate}
 \end{rem}
 \begin{example}
@@ -959,13 +959,13 @@ The following is an exercise.
     \[\Gamma^\infty(E\otimes E')\cong \Gamma^\infty(E)\otimes_{C^\infty(M)}\Gamma^\infty(E').\]
 \end{prop}
 \begin{proof}
-    For simplicity we will write $\Gamma$ instead of $\Gamma^\infty$. Consider the map $\alpha:\Gamma^\infty(E)\times\Gamma^\infty(E')\to\Gamma^\infty(E\otimes E')$ defined by $\alpha(\sigma,\sigma')(m)=\sigma(m)\otimes\sigma'(m)$. Since this map is clearly $C^\infty(M)$-bilinear, it can be interpreted as a map on $\Gamma^\infty(E)\otimes\Gamma^\infty(E')$. We need to show it is an isomorphism.
+    For brevity we will write $\Gamma$ instead of $\Gamma^\infty$. Consider the map $\alpha:\Gamma(E)\times\Gamma(E')\to\Gamma(E\otimes E')$ defined by $\alpha(\sigma,\sigma')(m)=\sigma(m)\otimes\sigma'(m)$. Since this map is clearly $C^\infty(M)$-bilinear, it can be interpreted as a map on $\Gamma(E)\otimes\Gamma(E')$. We need to show it is an isomorphism.
     
-    First if $E$ and $E'$ are trivial, then $\Gamma^\infty(E)$ and $\Gamma^\infty(E')$ are both free $C^\infty(M)$ modules because every section is a linear combination of a global frame of sections $\{e_i\}$ (or $\{e_i'\}$ for $E'$) with coefficients that are smooth functions on $M$. Then a global frame on $E\otimes E'$ is $e_i\otimes e_j'$ and $\alpha$ is clearly an isomorphism.
+    First if $E$ and $E'$ are trivial, then $\Gamma(E)$ and $\Gamma(E')$ are both free $C^\infty(M)$ modules because every section is a linear combination of a global frame of sections $\{e_i\}$ (or $\{e_i'\}$ for $E'$) with coefficients that are smooth functions on $M$. Then a global frame on $E\otimes E'$ is $e_i\otimes e_j'$ and $\alpha$ is clearly an isomorphism.
     
     Now, if $E$ and $E'$ are still trivial but $E=E_1\oplus E_2$, then we have 
     \begin{multline}
-        (\Gamma^\infty(E_1)\otimes\Gamma^\infty(E'))\oplus(\Gamma^\infty(E_2)\otimes\Gamma^\infty(E'))\cong (\Gamma^\infty(E_1)\oplus\Gamma^\infty(E_2))\otimes\Gamma^\infty(E')\cong\\ \cong \Gamma^\infty(E\otimes E')\cong \Gamma^\infty(E_1\otimes E')\oplus\Gamma^\infty(E_2\otimes E'),
+        (\Gamma(E_1)\otimes\Gamma(E'))\oplus(\Gamma(E_2)\otimes\Gamma(E'))\cong (\Gamma(E_1)\oplus\Gamma(E_2))\otimes\Gamma(E')\cong\\ \cong \Gamma(E\otimes E')\cong \Gamma(E_1\otimes E')\oplus\Gamma(E_2\otimes E'),
     \end{multline}
     which implies that the statement holds for $E_1\otimes E'$ and $E_2\otimes E'$ separately. All isomorphisms here remain natural because we use nothing but the natural projections coming with the definitions of direct sums and tensor products.
     
@@ -1748,7 +1748,7 @@ We claim that $f\pitchfork \sigma$. To see this, let $x\in M'$ and $p\in M$ be s
 Clearly $\sigma$ can be made arbitrarily close to the zero section because the neighborhood $U_0$ necessarily contains another neighborhood $E_0\subset U\mathring{\subset} U_0$ such that $E\cong U$ as bundles, and then the proof still applies to $U$ viewed as a bundle, with $f$ restricted to $f:f^{-1}(U)\to U$ (here $f^{-1}(U)$ is a smooth manifold being an open subset of $M'$).
 \end{proof}
 
-\begin{cor}[Zeros of generic sections of \glspl{vb}]
+\begin{cor}[Zeros of generic sections of \glspl{vb}, J.P.~Serre {\cite[Thm.~2]{Atiyah}}]
 Let $E\overset{\pi}{\to} M$ be a \gls{vb} of rank $k$, and $\dim M=m$. Then:
 \begin{enumerate}
     \item If $k>m$, then there exists a section $\sigma$ that is nowhere zero (doesn't intersect with the zero section). Moreover, by induction there exists a global $(k-m)$-frame, which spans a trivial subbundle of rank $k-m$. We say that a ``generic section'' of this bundle has no zeros.
@@ -1757,7 +1757,7 @@ Let $E\overset{\pi}{\to} M$ be a \gls{vb} of rank $k$, and $\dim M=m$. Then:
 \end{enumerate}
 \end{cor}
 \begin{proof}
-    We prove claim 1, the rest are trivial via a similar argument. Take the zero section $o:M\to E$ and find a   section $\sigma$ transversal to it by Theorem~\ref{transverse section thm}. Then $\codim(\im (\sigma)\cap E_0)=2k>m+k$, which means that this intersection is empty (two submanifolds whose dimensions add up to less than the dimension of the ambient manifold can only be transverse if they are disjoint; e.g., the intersection of two curves in $\bbR^3$ is generically empty). This theorem is due to J.P.~Serre \cite[Thm.~2]{Atiyah}.
+    We prove claim 1, the rest are trivial via a similar argument. Take the zero section $o:M\to E$ and find a   section $\sigma$ transversal to it by Theorem~\ref{transverse section thm}. Then $\codim(\im (\sigma)\cap E_0)=2k>m+k$, which means that this intersection is empty (two submanifolds whose dimensions add up to less than the dimension of the ambient manifold can only be transverse if they are disjoint; e.g., the intersection of two curves in $\bbR^3$ is generically empty).
 \end{proof}
 
 
@@ -1776,7 +1776,7 @@ Another equivalence relation which we will denote simply $\sim$ is defined by th
 \end{defn}
 
 \begin{example}
-    Stably trivial bundles don't have to be trivial. Consider the (non-trivial) tangent bundle of the sphere, $\T\bbS^n$, and  the normal line bundle $N\bbS^n$ of the embedding $\bbS^n\subset \bbR^{n+1}$. Then $\T\bbS^n$ is stably trivial because the direct sum $\T\bbS^n\oplus N\bbS^n$ is trivial and $N\bbS^n$ is trivial.
+    Stably trivial bundles don't have to be trivial. Consider the (non-trivial) tangent bundle of the sphere, $\T\bbS^n$, and  the normal line bundle $\rmN\bbS^n$ of the embedding $\bbS^n\subset \bbR^{n+1}$. Then $\T\bbS^n$ is stably trivial because the direct sum $\T\bbS^n\oplus \rmN\bbS^n$ is trivial and $\rmN\bbS^n$ is trivial.
 
     More broadly, one can show that the question of the triviality of the normal bundle of an embedding $M\hookrightarrow \bbR^n$ for sufficiently high $n$ does not depend on the embedding. Thus, if $M$ admits an embedding into an $\bbR^n$ with a trivial normal bundle, there is a well defined equivalence class called a \emph{stably trivial normal bundle}.
 \end{example}
@@ -1807,7 +1807,7 @@ $\widetilde{\mathrm{KO}}(\bbS^{n})$ & $\bbZ_{2}$ & $\bbZ_{2}$ & $0$ & $\bbZ$ & $
 \end{tabular}\]
 The first column is this table confirms what we've discovered in Example~\ref{line bundles over S1}: up to addition of trivial bundles, there is only one non-trivial vector bundle over a circle -- the M\"obius band ($\GL_n(\bbR)$ has two connected components). However, this also encodes the information that the direct sum of two M\"obius bands is a trivial plane bundle (any plane bundle over the circle is trivial). In general the proof of the Bott periodicity by Corollary~\ref{HLP cor} comes down to the computation of the homotopy groups of the orthogonal matrix groups, $\pi_{n-1}(\Or_k)$ for sufficiently large $k$ (since $\GL_k(\bbR)$ is homotopy equivalent to $\Or_k$). This is a very deep result originally obtained by John Milnor using Morse theory. One finds that $\pi_{n+8}(\Or_\infty)=\pi_n(\Or_\infty)$. More generally, one can show that $\widetilde{\mathrm{KO}}(M)\cong \widetilde{\mathrm{KO}}(\Sigma^8 M)$ where $\Sigma$ is the suspension functor. An even stronger source of this statement is the homotopy equivalence $\Omega^8\Or_\infty\simeq \Or_\infty$, where $\Omega^8$ is the eight-fold loop space functor.
 
-For complex vector bundles Bott periodicity ends up being simpler, with a period of $2$:
+For complex \glspl{vb} Bott periodicity ends up being simpler, with a period of $2$:
 \[\begin{tabular}{|c|c|c|}
 \hline 
 $n\,\mathrm{mod}\,2$ & 1 & 2 \tabularnewline
@@ -1895,7 +1895,7 @@ One final homotopy invariant coming from the algebra of vector bundles derives f
     This abelian group is called the Picard group of the manifold, $\mathrm{Pic}(M)$.
 \end{defn}
 \begin{rem}
-    The Picard group is especially important for complex manifolds, where it is the group of complex line bundles (with fiber $\mathbb{C}$). For instance, the Picard group of a Riemann surface is a discrete group whose elements are enumerated by their first Chern number\index{Chern number}. More generally, for nice spaces (say, smooth manifolds or CW-complexes) the Picard group is isomorphic to the second integral cohomology group $H^2(M,\bbZ)$, and the isomorphism is provided by the first Chern class\index{Chern class}.
+    The Picard group is especially important for complex manifolds, where it is the group of complex line bundles (with fiber $\mathbb{C}$). For instance, the Picard group of a Riemann surface is a discrete group whose elements are enumerated by their first Chern number\index{Chern number}. More generally, for nice spaces (say, smooth manifolds or CW-complexes) the Picard group is isomorphic to the second integral cohomology group $\rmH^2(M,\bbZ)$, and the isomorphism is provided by the first Chern class\index{Chern class}.
 \end{rem}
 
 
@@ -3271,6 +3271,8 @@ Exercise.
 
     This determinant is still multiplicative: $\det_{\sfv,\sfv''}(f\circ g)(p)=(\det_{\sfv,\sfv'} f)(g(p))\cdot \det_{\sfv',\sfv''} g(p)$ for maps $M\overset{f}{\to}M'\overset{g}{\to}M''$.
 \end{defn}
+
+Tensor bundles are not the only ``natural bundles'', i.e., bundles whose structure is completely determined by the base manifold $M$. The orientation bundle belongs to this class. The following definition provides a few other common examples.
 
 \begin{defn}[Tensor densities]\label{def tensor densities}
     One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $\bbT^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $\bbT^r_s M$) are called \emph{tensor densities}\index{Tensor density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $\T M$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions are $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}

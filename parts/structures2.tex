@@ -1,4 +1,4 @@
-\chapter{Connections}
+\chapter{Connections}\label{ch: connections}
 
 Connections are an enormous topic that can be approached from many directions. Their basic practical use is in performing parallel transport and taking derivatives of sections of bundles. However, in geometry and topology they also provide a class of geometric structures that can be used as powerful computational tools for computing quantities that don't inherently depend on the choice of connection (e.g., certain topological invariants of bundles). Our exposition is based on a combination of \cite{Vakar,RS2,Kolar} but is also, in part, structured with an eye towards the study of $G$-structures and Cartan geometry.
 
@@ -31,15 +31,15 @@ A splitting of the above exact sequence is equivalent to choosing a particular s
 
 As we will see later, determining what the ``horizontal'' directions in a bundle are, in particular, provides one with a \emph{unique} way of lifting paths $\gamma$ in $M$ to paths $\wt\gamma$ in $E$. Doing this for every starting point $p\in E_{\gamma(0)}$, we get a map $E_{\gamma(0)}\to E_{\gamma(1)}$. This map has to be bijective because the lifting clearly respects inverses of paths. Moreover, it will depend only on the \emph{shape} of $\gamma$ and not on how exactly it is parametrized. The next three definitions formalize the concept of \emph{reparametrization invariance} of paths.
 
-\begin{defn}[Sitting instants]
+\begin{defn}[Sitting instants]\index{Sitting instants}
     A path $\gamma:I\to M$ in a topological space $M$ is said to have sitting instants if there is a neighborhood of the points $0,1$ in $I$ on which $\gamma$ is locally constant.
 \end{defn}
 
-\begin{defn}[Thin homotopy]
+\begin{defn}[Thin homotopy]\index{Thin homotopy}
     A thin homotopy between two smooth paths $\gamma_0,\gamma_1:I\to M$ in a smooth manifold $M$ is a smooth homotopy $H:I^2\to M$ between them such that the rank of its derivative $H_\ast:\T(I^2)\to \T M$ is everywhere at most $1$. Equivalently, for any $2$-form $\omega\in\Omega^2(M)$, its pullback must vanish: $H^\ast \omega=0$ on $I^2$.
 \end{defn}
 
-\begin{defn}[Path groupoid]
+\begin{defn}[Path groupoid]\index{Path groupoid}
     The path groupoid $\rmP_1(M)$ of a smooth manifold $M$ is the groupoid whose objects are points of $M$ and morphisms $\mor(p,q)$ are the thin homotopy classes of paths $p\leadsto q$ with sitting instants. Composition of paths is defined via concatenation and reparametrization as usual. The quotient by thin homotopies ensures that this is an associative product with inverses for each path.
 \end{defn}
 
@@ -57,7 +57,7 @@ This groupoid can in fact be understood as smooth in a certain sense (it is a ``
 
 Note that in the case of principal bundles the complicated condition on the values of $\tra$ can be replaced by simply saying that it is a functor into the category $G\mathsf{-Tor}$ of $G$-torsors. This definition can be made significantly neater by introducing a few extra functors, but we direct the reader to \cite{schreiber} for that.
 
-\begin{defn}[Flat connection]
+\begin{defn}[Flat connection]\index{Connection!Flat}
     A connection defined via a transport functor $\tra$ on a bundle $E$ is called flat if for any path $\gamma$ in $M$, the map $\tra_\gamma$ is invariant under homotopies of $\gamma$ with fixed endpoints.
 \end{defn}
 
@@ -84,7 +84,7 @@ Note that in the case of principal bundles the complicated condition on the valu
 An obvious consequence of the definition of parallel transport is that it endows the bundle with \emph{unique horizontal path liftings}: given a path $\gamma:I\to M$ and a point $p\in\pi^{-1}(\gamma(0))$, its horizontal lifting is the smooth path $\wt{\gamma}(t)=\tra_{\restr{\gamma}{[0,t]}}(p)$. By doing this for all paths through $m\in M$ and all $p\in E_m$, each parallel transport functor induces a distribution $\calH E<\T E$ consisting of ``horizontal'' vectors. This leads to our second definition of a connection (as we will see, it is a bit more general than Definition I).
 
 
-\begin{defn}[Connection II: general connection]
+\begin{defn}[Connection II: general connection]\index{Connection!General}
     Given a $G$-bundle $(\tuple{E\overset{\pi}{\to}M,G\acts F,\calG})$, an general connection on it is a smooth vector subbundle $\calH E<\T E$ such that $\calH E\oplus \calV E=\T E$. The decomposition $\T_pE=\calH_pE\oplus \calV_pE$ induces the natural projections which we denote by two pairs of symbols:
     \[\T_pE\to \calH_pE\oplus \calV_pE,\quad X_p\mapsto (\hor X_p,\ver X_p).\]
     For any smooth vector field $X\in\fX(E)$, the assignments $p\mapsto \hor X_p$ and $p\mapsto \ver X_p$ are also smooth vector fields, denoted $\hor X$ and $\ver X$, respectively.
@@ -193,7 +193,7 @@ where $\pr_2:\T U_\alpha\times \T F\to \T F$ is the projection onto the second c
 
 Finally, it is essential to discuss how connections interact with pullbacks of bundles. Recall that categorical pullbacks of smooth fiber bundles exist due to the fact that a fiber bundle is a submersion, and a submersion is transversal to any smooth map (since the topological pullback of a pair of transversal maps $(f,\pi):N\times E\to M$ is a smooth submanifold of $N\times E$).
 
-\begin{prop}[Pullback connection {{\cite[1.2.7]{Vakar}}}]
+\begin{prop}[Pullback connection {{\cite[1.2.7]{Vakar}}}]\index{Connection!Pullback}
    Let $E\overset{\pi}{\to}M$ be a \gls{fb} and $f:N\to M$ a smooth map. Let $\pi':f^\ast E\to M$ be the pullback bundle and let $\wt f:f^\ast E\to E$ be its other natural projection. Let $E$ be equipped with a general connection $\calV$. Then the pullback induces a unique connection denoted (confusingly) $f^\ast\calV$ on $f^\ast E$ such that $\wt{f}_\ast\circ (f^\ast \calV)=\calV\circ {\wt f}_\ast$.
 \end{prop}
 \begin{proof}
@@ -214,7 +214,7 @@ Finally, let us connect general connections to parallel transport, since that is
 
 We now examine to what extent a connection $\calV$ determines parallel transports.
 
-\begin{thm}[Parallel transport]\label{prop parallel tra}
+\begin{thm}[Parallel transport]\label{prop parallel tra}\index{Parallel transport}
     Let $\calH E$ be a general connection on a fiber bundle $E\overset{\pi}{\to}M$ and let $\gamma:(a,b)\to M$ be a smooth path with $0\in(a,b)$. Then there exists an open neighborhood $\calD_\gamma\in E\times I$ of $E_{\gamma(0)}\times\{0\}$ and a smooth map $T_\gamma:\calD_\gamma\to E$ such that for all $(p,t)\in \calD_\gamma$: 
     \begin{enumerate}[label=(\arabic*)]
         \item $\pi(T_\gamma(p,t)=\gamma(t)$;
@@ -234,7 +234,7 @@ We now examine to what extent a connection $\calV$ determines parallel transport
 
 For this to extend to a proper parallel transport functor, we need to be able to lift paths globally. This leads us to the following definition.
 
-\begin{defn}[Connection IV: Ehresmann connection]
+\begin{defn}[Connection IV: Ehresmann connection]\index{Connection!Ehresmann}
     A general connection $\calH E$ on a bundle $E\overset{\pi}{\to}M$ is called an Ehresmann connection if it is \emph{complete} in the sense that the parallel transport $T_\gamma$ for any smooth curve $\gamma:(a,b)\to M$ (with $0\in (a,b)$) is defined on all of $E_{\gamma(0)}\times (a,b)$. 
 \end{defn}
 We provide the following theorem without proof.
@@ -463,7 +463,7 @@ Let us understand this condition in terms of the $1$-form $\omega$.
 
 We can thus give the following definition.
 
-\begin{defn}[Principal connection]
+\begin{defn}[Principal connection]\index{Connection!Principal}
     A principal connection on a (right) \gls{pfb} $(P\overset{\pi}{\to}M,G,\Phi)$ is a general connection $\calH P$ that is equivariant in the following sense:
     \[\Phi_{g\ast}(\calH_pP)=\calH_{\Phi_g(p)}P.\]
     A \emph{principal connection form} on $P$ is a $\frakg$-valued $1$-form $\omega\in \Omega^1(P;\frakg)$ such that
@@ -2750,8 +2750,8 @@ The function $\wt{\varphi}$ encodes the local information defining the $G$-struc
     Based on the symplectic case, some authors use the term ``integrable $G$-structure'' to mean ``torsion-free $G$-structure'', but it is important to keep in mind that in general there are higher-order obstructions to integrability that are not captured by torsion. These obstructions are measured by the \emph{Spencer cohomology groups} $\rmH^{i,j}(\frakg)$ with $j=2$, of which we have only described the lowest one, $\rmH^{0,2}(\frakg)$. \index{Cohomology!Spencer}
 
     Let $\frakg$ be realized as a Lie subalgebra of $\frakgl(V)$ for some finite-dimensional vector space $V$ (which is possible for any finite-dimensional Lie algebra by Ado's Theorem). Define the \emph{$k$-th prolongation of $\frakg$} iteratively, starting with $\frakg^{(0)}\coloneqq \frakg$, by
-    \[\frakg^{(k)}=\left\{\kappa \in\Lin(V,\frakg^{(k-1)}):\forall v,w\in V\;\; \kappa_v(w)-\kappa_w(v)=0\right\},\]
-    where $\kappa_v\in\frakgl(V)$ denotes the image of $v$ under $\kappa$. Note that this makes sense since $\frakg^{(k-1)}\subset \Lin(V,\frakg^{(k-2)})$ by recurrence, thus $\frakg^{(k)}$ is contained in $\frakg$ for $k$ even and in $\frakg^\ast$ for $k$ odd, so all of these sets are represented by matrices from $\frakgl(V)$, which can then act on $v$ and $w$. Finally, one can check that this construction is independent of the representation $V$.
+    \[\frakg^{(1)}=\left\{\kappa \in\Lin(V,\frakg):\forall v,w\in V\;\; \kappa_v(w)-\kappa_w(v)=0\right\},\]
+    where $\kappa_v\in\frakgl(V)$ denotes the image of $v$ under $\kappa$. Then $\frakg^{(1)}$ acts faithfully on $V\oplus\frakg$ by $A^1\cdot (v,A)=(v,A+A^1(v))$ for $A^1\in\frakg^{(1)}$, thus becoming a subalgebra of $\frakgl(V\oplus\frakg)$, so the definition can be iterated, replacing $V$ with $V\oplus\frakg$, then with $V\oplus\frakg\oplus\frakg^{(1)}$, and so on. Note that the prolongation \emph{does} depend on the specific representation $V$. \index{Prolongation!of Lie algebras}
     
     If one restricts to the case of $G$-structures of \emph{finite type}, which simply means that $\frakg^{(k)}=0$ for some finite $k$, then Spencer showed that the question of integrability can be answered in a finite number of steps, i.e., by computing a finite number of obstructions $\rmH^{i,2}(\frakg)$. The program of fully describing integrability conditions for $G$-structures, which is part of \emph{Cartan's equivalence method}, was launched by Cartan himself and greatly advanced by Victor Guillemin and Schlomo Sternberg.\index{Cartan's equivalence method}
 \end{rem}

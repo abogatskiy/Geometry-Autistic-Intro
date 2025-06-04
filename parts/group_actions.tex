@@ -467,6 +467,8 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
 
 \section{Cartan's fundamental theorem}\label{sec: Cartan's fundamental}
 
+In this \sect\ we study how Lie group structures arise from local data. These results will be of central importance in the study of geometric structures in \Part\ \ref{Part Structured Geom I}.
+
 The Maurer-Cartan form provides the infinitesimal information about the group structure while the Maurer-Cartan equation gives the only local obstruction to its integrability. The explicit local formulation is contained in the following theorem, which is a consequence of the Frobenius Theorem.
 
 \begin{defn}[Logarithmic derivative of group-valued functions]\index{Logarithmic derivative}
@@ -600,7 +602,7 @@ The following theorem is the main result of this \sect, and it is remarkable in 
     Every equation of Lie type for a smooth (or even a $\rmL^1_{\mathrm{loc}}$) curve $A:I\to \frakg$ has a unique global solution for any initial condition. Solutions with different initial conditions differ on their common domain of definition only by a left translation in $G$.
 \end{cor}
 
-\begin{example}[Linear ODE's of Lie type]\index{Equation!of Lie type}
+\begin{example}[Linear ODEs of Lie type]\index{Equation!of Lie type}
     If $\dim M=1$, then every $\frakg$-valued $1$-form satisfies the Structure equation because there are no nonzero $2$-forms. Say $M=\bbR$ with coordinate $t$, then $\omega(t)=\xi(t)\dd t$ for some $\xi:\bbR\to \frakg$. The Fundamental Theorem then guarantees unique global solutions of initial value problems for all equations of the form $(f^{-1}f')(t)=\xi(t)$ or $(f'f^{-1})(t)=\xi(t)$. If $G$ is a matrix Lie group, then the latter equation is a linear ODE, called an \emph{equation of Lie type}:
     \[f'(t)=\xi(t)f(t).\]
     In fact, equations of Lie type also can describe trajectories on any manifold $M$ with a smooth action of $G$, not just $M=G$, however uniqueness is guaranteed only if the action is faithful. An important particular case of this situation is the following, where $M=\frakg$. In Example~\ref{ex adjoint group} we will show that the \emph{adjoint group}\index{Adjoint group} $\Ad(G)\subset \GL(\frakg)$ consisting of the operators $\Ad_g,g\in G$, has a natural Lie group structure. Therefore, equations of Lie type also include equations on a function $f:\bbR\to \Ad(G)$ of the form $f^{-1}f'(t)=\ad_{\xi(t)}$, where $\xi:\bbR\to \frakg$ and $\ad_{\xi(t)}\in \frakgl(\frakg)$. Again considering the case of matrix groups and acting with boths sides of this equation on some element $y(0)\in \frakg$, equations of this type can be written using matrix commutators as 
@@ -1157,7 +1159,7 @@ This gives us a new interpretation of the Lie bracket as the  commutator of infi
         \delta_A\exp= \left(\rmL_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(-\ad_{A}\right)^n}{(n+1)!}=\frac{\rmI-\rme^{-\ad_A}}{\ad_A},\\
         \delta^\rmR_A\exp= \left(\rmR_{\rme^{-A}}\right)_{\ast e}\circ \exp_{\ast A}&=\sum_{n=0}^\infty \frac{\left(\ad_{A}\right)^n}{(n+1)!}=\frac{\rme^{\ad_A}-\rmI}{\ad_A},
     \end{aligned}\label{dexp series}\]
-    where for non-invertible matrices $\ad_A\in\frakgl(\frakg)$ the series should be taken as the \emph{definition} of this latter expression. Indeed, $\ad_A$ is never invertible because it always contains $A$ itself in its kernel, $\ad_A A=0$. By looking at the location of the zeros of the function $f(z)=(\rme^z-1)/z$, we conclude that the differential $\exp_{\ast A}$ is bijective iff no eigenvalue of $\ad_A$ lies in $2\pi \rmi\bbZ\setminus\{0\}$. Conversely, the singular points of the exponential map are precisely those $A\in \frakg$ such that $\ad_A\in \End(V)$ has an eigenvalue of the form $2\pi \rmi k,$ $k\in\bbZ\setminus\{0\}$.
+    where for non-invertible matrices $\ad_A\in\frakgl(\frakg)$ the series should be taken as the \emph{definition} of this latter expression. Indeed, $\ad_A$ is never invertible because its kernel always contains $A$ itself: $\ad_A A=0$. By looking at the location of the zeros of the function $f(z)=(\rme^z-1)/z$, we conclude that the differential $\exp_{\ast A}$ is bijective iff no eigenvalue of $\ad_A$ lies in $2\pi \rmi\bbZ\setminus\{0\}$. Conversely, the singular points of the exponential map are precisely those $A\in \frakg$ such that $\ad_A\in \End(V)$ has an eigenvalue of the form $2\pi \rmi k,$ $k\in\bbZ\setminus\{0\}$.
 \end{rem}
 
 \begin{example}[Exponential map of $\SO_3(\bbR)$]
@@ -1397,7 +1399,7 @@ For the second example we need a minor lemma. Recall that a \emph{Banach algebra
 \section{(*) Technical lemmas}
 
 
-Here we provide a slightly longer proof of Theorem~\ref{thm differential of exp} that doesn't use the Maurer-Cartan equation. It is essentially the same proof, but it rederives the basic results on developments of Lie algebra-valued $1$-forms from \S\ref{sec: existence of homs} as statements about the existence of solutions for certain ODE's. First we will need the following technical lemma about ODE's dependent on a parameter.
+Here we provide a slightly longer proof of Theorem~\ref{thm differential of exp} that doesn't use the Maurer-Cartan equation. It is essentially the same proof, but it rederives the basic results on developments of Lie algebra-valued $1$-forms from \S\ref{sec: existence of homs} as statements about the existence of solutions for certain ODEs. First we will need the following technical lemma about ODEs dependent on a parameter.
 \begin{lem}[{{\cite[Lem.~B.4, Thm.~B.3]{DK}}}]\label{lem variation formula}
     Consider an ODE of the form $\dot \gamma(t)=f(\gamma(t))$ on some domain in $\bbR^n$ with a differentiable $f$. Fix an initial value $\gamma(0)=x$. As is well known, this problem has a unique solution $\gamma(t,x)$ defined for sufficiently small $t$, $C^1$ in $t$, and of the same smoothness class as $f$ in $x$. If $f$ in addition depends differentiably on a parameter $\epsilon$, then 
     \[\partial_\epsilon \gamma(t,x,\epsilon)=\int_0^t \frac{\partial \gamma}{\partial x}(t-s,\gamma(s,x,\epsilon),\epsilon)\frac{\partial f}{\partial\epsilon}(\gamma(s,x,\epsilon),\epsilon)\dd s.\]
@@ -1542,7 +1544,7 @@ The exponential map introduces a canonical (logarithmic) coordinate system in a 
 \[\mu(A,B)=\ln(\rme^A\rme^B),\quad A,B\in\frakg.\]
 As we will show, $\mu$ has the -- perhaps unsurprising but definitely not obvious -- property that it can be expressed only in terms of repeated Lie brackets of $A$ and $B$, or, in other words, only in terms of the operators $\ad_A$ and $\ad_B$. Explicit expressions for $\mu(A,B)$ in terms of these operators are collectively called the \emph{Baker-Campbell-Hausdorff formula}, although the first complete and explicit version was obtained by Dynkin.
 
-We will later show that every finite-dimensional real Lie algebra is the Lie algebra of some Lie group. Therefore it will be worthwhile to give an independent definition of $\mu(A,B)$ on an abstract Lie algebra. This is a bit tricky because in the absence of a Lie group there is no exponential map. The only object we have access to in the Lie algebra is a Lie bracket, or the adjoint operator $\ad$. Therefore let us proceed in the following roundabout way. 
+We will later show that every finite-dimensional real Lie algebra is the Lie algebra of some Lie group. Therefore it will be worthwhile to give an independent definition of $\mu(A,B)$ on an abstract Lie algebra. This is a bit tricky because in the absence of a Lie group there is no exponential map. The only object we have access to in the Lie algebra is a Lie bracket, or the adjoint operator $\ad$. Hence, let us proceed in the following roundabout way. 
 
 To define $\mu(A,B)$ without using the exponential map, we recall that the curve $t\mapsto \rme^{tA}\rme^B$ is the integral curve of the right-invariant vector field $A_\rmR$ starting at $\rme^B$. Thus, if we define the analog of $A_\rmR$ in logarithmic coordinates, which is a vector field on (part of) the Lie algebra, then the value of the corresponding integral curve through $B$ at $t=1$ will determine $\mu(A,B)$. Now, on to the details.
 
@@ -1680,7 +1682,7 @@ Dynkin's formula shows why certain classes of Lie algebras are particularly spec
     
     Crucially, the proof of the invertibility of $\exp$ above relied on the fact that the exponential map in matrix groups coincides with the matrix exponential, allowing us to explicitly write down its inverse. For general nilpotent Lie algebras, $\exp$ is not invertible. The above corollary is then a special case of a general statement that the exponential map is a universal covering map for any \emph{nilpotent} Lie algebra, and thus any connected nilpotent Lie group is diffeomorphic to a quotient of a vector space by a lattice.  \emph{Unipotent linear groups}\index{Unipotent group} are a special class of nilpotent groups defined as matrix groups consisting of unipotent matrices, and we have just proven that all unipotent groups $G$ are diffeomorphic to a vector space, and the exponential map identifies the Lie group structure with $(\frakg,\mu)$, where $\mu$ is the product defined via the \gls{bch} formula.
 
-    Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''. See \S\ref{sec: nilpotent groups} for more on them. The next simplest class of Lie groups are solvable Lie groups, which we will study later in the book.
+    Nilpotent Lie algebras and groups are a very important class because all of the group structure is polynomial, making it ``almost abelian''. See \S\ref{sec: nilpotent groups} for more on them. The next simplest class of Lie groups are solvable Lie groups, followed by parabolic groups.
 \end{rem}
 
 
@@ -1946,7 +1948,7 @@ It is almost obvious that the definition of the exponential map together with it
     In particular, the collection of flows $\{\Fl^A_1\}_{A\in\frakg}$ defines a local Lie group with Lie algebra equal to $\frakg$.
 \end{thm}
 \begin{proof}
-    Since we are only interested in time $t=1$, let us drop the subscript $1$ and just write $\Fl^A,\Fl^B$ and $\calD^A$. Assertion (a) follows from the local existence theorem for solutions of ODE's, combined with the locally uniform estimates for the domains of existence w.r.t.\ the parameters on which the vector fields depend continuously. Similarly we obtain $\Fl^B(V)\subset \calD^A$ for all $A,B\in U$, by sufficiently shrinking $U$.
+    Since we are only interested in time $t=1$, let us drop the subscript $1$ and just write $\Fl^A,\Fl^B$ and $\calD^A$. Assertion (a) follows from the local existence theorem for solutions of ODEs, combined with the locally uniform estimates for the domains of existence w.r.t.\ the parameters on which the vector fields depend continuously. Similarly we obtain $\Fl^B(V)\subset \calD^A$ for all $A,B\in U$, by sufficiently shrinking $U$.
 
     In order to prove (b), consider, for $A,B\in\frakg$, the vector field on $M$:
     \[B(t)=(\Fl^{tA})_\ast^{-1}\left(\rme^{t\ad_A}B\right);\label{13794}\]
@@ -3887,7 +3889,7 @@ We are ready to extend the description of the structure of connected abelian Lie
 \PRLsep 
 
 
-The structure of solvable Lie algebras and groups is significantly more complicated than that of the nilpotent ones. Although it can be derived by elementary means (see, e.g., \cite{HN}), it becomes much easier to study once one developes some basic tools of homological algebra. For this reason, we delay the full discussion until \Part~\ref{part Lie Theory}. For now, we only derive the most classic result on the structure of solvable Lie algebras -- Lie's Theorem, which was crucial in his study of symmetries of ODE's (in fact, the name of solvable algebras comes from solvability of ODE's with solvable symmetry groups). We will see it at work in \S\ref{sec: integration by quadratures}.
+The structure of solvable Lie algebras and groups is significantly more complicated than that of the nilpotent ones. Although it can be derived by elementary means (see, e.g., \cite{HN}), it becomes much easier to study once one developes some basic tools of homological algebra. For this reason, we delay the full discussion until \Part~\ref{part Lie Theory}. For now, we only derive the most classic result on the structure of solvable Lie algebras -- Lie's Theorem, which was crucial in his study of symmetries of ODEs (in fact, the name of solvable algebras comes from solvability of ODEs with solvable symmetry groups). We will see it at work in \S\ref{sec: integration by quadratures}.
 
 \begin{prop}[{\cite[Prop.~5.4.3]{HN}}]\label{prop 5.4.3 HN}
     For a Lie algebra $\frakg$, the following assertions hold:
@@ -4199,7 +4201,7 @@ We now briefly review how other structural results extend to the infinite-dimens
 \end{defn}
 \begin{rem}
     \begin{enumerate}[label=(\alph*)]
-        \item As a direct consequence of the existence of solutions to ODE's on open domains of Banach spaces and their smooth dependence on parameters, every Banach-Lie group is regular.
+        \item As a direct consequence of the existence of solutions to ODEs on open domains of Banach spaces and their smooth dependence on parameters, every Banach-Lie group is regular.
         \item Let $A$ be a unital Banach algebra and $A^\times$ its unit group (group of invertible elements). Since $A$ is a CIA (\emph{continuous inverse algebra}: Hausdorff locally convex unital algebra such that $A^\times$ is open and the inversion map $A^\times\to A$ is continuous), $A^\times$ is a Lie group. For $x\in A$ the corresponding left-invariant vector field on $A^\times$ is given by $x_\rmL(a)=ax$, and the unique solutions of the above initial value problem are given by $\gamma(t)=\exp tx$ given by the convergent exponential Taylor series. This implies that $\exp_A$ is a smooth exponential function of the Lie group $A$. This remains true for each Mackey complete CIA: the exponential series converges and $\exp_A$ defines a smooth exponential map on $A^\times$.
         \item Although it might be hard to verify it in concrete situations, all ``known'' Lie groups modeled on Mackey complete spaces are regular. For example we do not know if all unit groups of Mackey complete CIAs are regular, but we have just seen in (b) that they always have a smooth exponential function. If the model space is not Mackey complete, one can easily obtain non-regular groups. E.g., the unit Lie group of the algebra of rational functions on $[0,1]$ is not regular because $e^f$ is not rational for a rational $f$.
         \item A locally convex space $V$ is a Lie group under the addition operation iff it is Mackey complete. Regularity is then inherited by all abelian Lie groups $V\slash \varGamma$ where $\varGamma$ is a discrete subgroup of $V$.
