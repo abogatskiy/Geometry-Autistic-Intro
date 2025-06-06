@@ -605,7 +605,7 @@ The following theorem is the main result of this \sect, and it is remarkable in 
 \begin{example}[Linear ODEs of Lie type]\index{Equation!of Lie type}
     If $\dim M=1$, then every $\frakg$-valued $1$-form satisfies the Structure equation because there are no nonzero $2$-forms. Say $M=\bbR$ with coordinate $t$, then $\omega(t)=\xi(t)\dd t$ for some $\xi:\bbR\to \frakg$. The Fundamental Theorem then guarantees unique global solutions of initial value problems for all equations of the form $(f^{-1}f')(t)=\xi(t)$ or $(f'f^{-1})(t)=\xi(t)$. If $G$ is a matrix Lie group, then the latter equation is a linear ODE, called an \emph{equation of Lie type}:
     \[f'(t)=\xi(t)f(t).\]
-    In fact, equations of Lie type also can describe trajectories on any manifold $M$ with a smooth action of $G$, not just $M=G$, however uniqueness is guaranteed only if the action is faithful. An important particular case of this situation is the following, where $M=\frakg$. In Example~\ref{ex adjoint group} we will show that the \emph{adjoint group}\index{Adjoint group} $\Ad(G)\subset \GL(\frakg)$ consisting of the operators $\Ad_g,g\in G$, has a natural Lie group structure. Therefore, equations of Lie type also include equations on a function $f:\bbR\to \Ad(G)$ of the form $f^{-1}f'(t)=\ad_{\xi(t)}$, where $\xi:\bbR\to \frakg$ and $\ad_{\xi(t)}\in \frakgl(\frakg)$. Again considering the case of matrix groups and acting with boths sides of this equation on some element $y(0)\in \frakg$, equations of this type can be written using matrix commutators as 
+    In fact, equations of Lie type also can describe trajectories on any manifold $M$ with a smooth action of $G$, not just $M=G$, however uniqueness is guaranteed only if the action is faithful. An important particular case of this situation is the following, where $M=\frakg$. In Example~\ref{ex adjoint group} we will show that the \emph{adjoint group}\index{Adjoint group} $\Ad(G)\subset \GL(\frakg)$ consisting of the operators $\Ad_g,g\in G$, has a natural Lie group structure. Therefore, equations of Lie type also include equations on a function $f:\bbR\to \Ad(G)$ of the form $f^{-1}f'(t)=\ad_{\xi(t)}$, where $\xi:\bbR\to \frakg$ and $\ad_{\xi(t)}\in \frakgl(\frakg)$. Again considering the case of matrix groups and acting with both sides of this equation on some element $y(0)\in \frakg$, equations of this type can be written using matrix commutators as 
     \[y'(t)=[\xi(t),y(t)],\quad y(0)\in\frakg.\label{394}\]
     By looking for solutions in the form $y(t)=g(t)y(0)g^{-1}(t)$, we find that $y'(t)=[g'g^{-1},y]$, and so if $g(t)$ is the unique solution of $g'(t)=\xi(t)g(t)$, $g(0)=e$, then $y(t)$ is a solution of \eqref{394}. Note that while $y$ is unique, different $y$'s may correspond to the same $f(t)$ if $G$ is not simple (then $G$ has a non-discrete center, and $\Ad(G)$ strongly differs from $G$). Equations of the form \eqref{394} are also called \emph{isospectral flows} (since the eigenvalues of $y(t)$ are clearly independent of $t$), or Lax equations (cf.\ Example~\ref{ex Lax pairs}).\index{Equation!Lax}\index{Isospectral flow}
 \end{example}
@@ -2789,8 +2789,8 @@ That is, the stabilizers of any two points lying on the same orbit are conjugate
     Let $(M,G,\Phi)$ be a Lie group action. The type of an orbit $\scrO$ is defined to be the conjugacy class of subgroups of $G$ given by $\{G_m:m\in \scrO\}$. The set of conjugacy classes of subgroups of $G$ which appear as types of orbits under $\Phi$ is called the set of orbit types of $(M,G,\Phi)$. For a given orbit type $[H]$, the subset of $M$ of orbit type $[H]$ will be denoted by $M_{[H]}$.
 \end{defn}
 
-\begin{defn}
-    For a closed subgroup $H\subset G$, define
+\begin{defn}\label{def isotropy type}
+    For a closed subgroup $H\emb G$, define
     \begin{align}
         M_H&=\{m\in M:H=G_m\},\\
         M^H&=\{m\in M:H\subset G_m\}.
