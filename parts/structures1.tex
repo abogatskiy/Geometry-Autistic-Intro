@@ -1991,7 +1991,7 @@ Recall from Theorem~\ref{thm 3.3.4 Kras} that $a^i,b^j$ depend (at worst) only o
 \begin{defn}[Generating section]
     Let $\pi:E\to M$ be a \gls{vb} of rank $k$. The section $\varphi\in\Gamma^\infty((\pi^1_0)^\ast E)$ whose components (in any local frame of $E$ and its lift) are 
     \[\varphi^j=\theta^j_{(0,\ldots,0)}(X)=b^j-\sum_i a^ip^j_i,\quad j=1,\ldots,k,\]
-    is called the \emph{generating section}, or the \emph{characteristic}, of the contact vector field 
+    is called the \emph{generating section}, or the \emph{characteristic}, of the first-order contact vector field 
     \[X=\sum_{i=1}^n a^i \frac{\partial}{\partial x^i}+\sum_{j=1}^k b^j\frac{\partial}{\partial u^j}+\cdots=\sum_j \varphi^j \frac{\partial}{\partial u^j}+Y,\quad \theta^j_{(0,\ldots,0)}(Y)=0.\]
     Upon restriction to the $1$-graph of a section of $E$, the resulting vertical vector field $X_1\coloneqq \sum_j \varphi^j \frac{\partial}{\partial u^j}$ on $E$ is called the \emph{evolutionary component} of $X$.
 \end{defn}
@@ -1999,7 +1999,7 @@ Recall from Theorem~\ref{thm 3.3.4 Kras} that $a^i,b^j$ depend (at worst) only o
 By virtue of Theorem~\ref{thm 3.3.3 Kras}, each contact vector field is uniquely determined by its generating section. Indeed, if $k>1$, this is obvious since the $a^i$ and $b^j$ provide the components of the point vector field whose prolongation recovers $X$. In the case $k=1$, $a^i$ and $b^j$ determine uniquely the remaining coefficients $b^i_j=D_i(b^j)-\sum_l p^j_l D_i(a^l)$ of the contact vector field on $\rmJ^1E$ whose prolongation recovers $X$. In other words, the ``horizontal'' (total derivative, or Cartan distribution) part of a contact vector field is uniquely determined by the vertical part given by the $0$-th order contact forms $\theta^j_{(0,\ldots,0)}=\dd u^j-\sum_i p^j_i\dd x^i$. We give a more detailed proof below.
 
 \begin{cor}\label{thm 2.2.1 Kras}
-    The correspondence $\varphi\mapsto X_\varphi$ between generating sections $\varphi=\theta_{(0,\ldots,0)}(X)$ and contact vector fields $X_\varphi$ is one-to-one and linear.
+    The correspondence $\varphi\mapsto X_\varphi$ between generating sections $\varphi=\theta_{(0,\ldots,0)}(X)$ and contact vector fields $X_\varphi$ on $\rmJ^1 E$ is one-to-one and linear.
 \end{cor}
 \begin{proof}
     We consider the case $k=1$ for ease of notation, but the general argument is the same. We claim that on the jet space $\rmJ^1 E$ the $2$-form $\restr{\dd\theta_{(0,\ldots,0)}}{\calC}$ is nondegenerate when restricted to the Cartan distribution $\calC$. Indeed, the coordinate expression for $\dd\theta_{(0,\ldots,0)}$ contains no $\dd u$ and hence $i_{\partial_u}\theta_{(0,\ldots,0)}=0$, so $\dd\theta_{(0,\ldots,0)}$ is nondegenerate on all hyperplanes not containing $\partial_u$, including all of $\calC$. 
@@ -2014,7 +2014,7 @@ By virtue of Theorem~\ref{thm 3.3.3 Kras}, each contact vector field is uniquely
 \end{proof}
 
 \begin{xca}\label{xca 2.2.3 Kras}
-    Using \eqref{eq 3.2.4 Kras}, show that if $\varphi_1,\ldots,\varphi_l\in C^\infty(\rmJ^1)$ and $f\in C^\infty(\bbR^l)$ are arbitrary smooth functions, then the ``horizontal'' component $Y$ corresponding to the composite generating function $f(\varphi_1,\ldots,\varphi_l)$ is expressed in terms of the original components $Y_{\varphi_i}$ as
+    Using \eqref{eq 3.2.4 Kras}, show that if $\varphi_1,\ldots,\varphi_l\in C^\infty(\rmJ^1 E)$ and $f\in C^\infty(\bbR^l)$ are arbitrary smooth functions, then the ``horizontal'' component $Y$ corresponding to the composite generating function $f(\varphi_1,\ldots,\varphi_l)$ is expressed in terms of the original components $Y_{\varphi_i}$ as
     \[Y_{f(\varphi_1,\ldots,\varphi_l)}=\sum_{i=1}^l \frac{\partial f}{\partial \varphi_i}Y_{\varphi_i}.\label{eq 2.2.5 Kras}\]
 \end{xca}
 
@@ -2031,7 +2031,7 @@ By virtue of Theorem~\ref{thm 3.3.3 Kras}, each contact vector field is uniquely
     \[\Lie_{Y_\varphi}\varphi=0,\quad\quad \Lie_{X_\varphi}\varphi=\varphi\cdot\varphi_u.\]
     
     In particular, $X_\varphi$ generates point transformations iff $\varphi$ is affine in the $p_i$, so we can write $\varphi=b-\sum_i p_ia^i$, and then 
-    \[X_\varphi=\sum_i a^i\partial_{x^i}+b\partial_u+\sum_i\left(b_{x^i}-\sum_l p_l a^l_{x^i}\right)\partial_{p_i}.\]
+    \[X_\varphi=\sum_i a^i\partial_{x^i}+b\partial_u+\sum_i\left(\varphi_{x^i}+p_i \varphi_{u}\right)\partial_{p_i}.\]
 \end{rem}
 
 Thus, \emph{the correspondence between generating sections and contact vector fields is bijective}. 
@@ -2119,7 +2119,7 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
 
     A pseudogroup $\pzcG$ on a manifold $M$ is a collection of diffeomorphisms of open subsets of $M$ into $M$ such that:\index{Pseudogroup}
     \begin{enumerate}[label=(\arabic*)]
-        \item $\pzcG$ is closed under restriction: if $f\in \pzcG$ and $U$ is the domain of $F$, then $\restr{f}{V}\in\pzcG$ for any open $V\subset U$.
+        \item $\pzcG$ is closed under restriction: if $f\in \pzcG$ and $U$ is the domain of $f$, then $\restr{f}{V}\in\pzcG$ for any open $V\subset U$.
         \item if $f:U\to U'\subset M$ is a diffeomorphism, $U=\bigcup_\alpha U_\alpha$, and $\restr{f}{U_\alpha}\in\pzcG$, then $f\in \pzcG$.
         \item $\pzcG$ is closed under inversion: $f\in\pzcG\Rightarrow f^{-1}\in\pzcG$.
         \item $\pzcG$ is closed under composition: if $f\in U\to f(U)\subset M$ and $f:f(U)\to M$ belong to $\pzcG$, then $g\circ f\in\pzcG$.
@@ -2195,7 +2195,7 @@ A direct consequence of the considerations of the last \sect\ is the following.
 
 Since contact vector fields are described by generating sections, there is a concrete algorithm for finding all classical infinitesimal symmetries of an equation. Let us deduce the local conditions for a contact vector field $X$ to be a symmetry of the equation $\calE\subset\rmJ^rE$. To do this, let us choose canonical coordinates in $\rmJ^rE$ and assume that the submanifold $\calE$ in these coordinates is described by the relations
 \[F^\alpha=0,\quad \alpha=1,\ldots,R,\]
-where the $F^\alpha$ are smooth functions on $\rmJ^rE$. Suppose that this system is locally of maximal rank. Then the condition that $X$ is tangent to the manifold $\calE=\{\bf{F}=0\}$, where $\bf{F}=(F^1,\ldots,F^R)$, is of the form 
+where the $F^\alpha$ are smooth functions on $\rmJ^rE$. Suppose that this system is locally of maximal rank (i.e., the $1$-forms $\dd F^\alpha$ satisfy the minimal possible number of linear relations). Then the condition that $X$ is tangent to the manifold $\calE=\{\bf{F}=0\}$, where $\bf{F}=(F^1,\ldots,F^R)$, is of the form 
 \[X(F^\alpha)=\sum_{\beta=1}^R \lambda^\alpha_\beta F^\beta,\quad \alpha=1,\ldots,R,\label{eq 3.4.3 Kras}\]
 for some smooth functions $\lambda^\alpha_\beta$, or equivalently, 
 \[\restr{X(F^\alpha)}{\calE}=0,\quad \alpha=1,\ldots,R.\label{eq 3.4.4 Kras}\]
@@ -2406,7 +2406,7 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
 
     The nonlinear analog of the wave equation, known as the Klein-Gordon equation, 
     \[u_{tt}-u_{xx}=F(u),\]
-    is invariant under the Poincar\'e group of $1+1$-dimensional Minkowski plane for any potential $F(u)$ with $F_{uu}\neq 0$. Its Lie symmetry algebra uis generated by the translational vector fields and Lorentz boost 
+    is invariant under the Poincar\'e group of $1+1$-dimensional Minkowski plane for any potential $F(u)$ with $F_{uu}\neq 0$. Its Lie symmetry algebra is generated by the translational vector fields and Lorentz boost 
     \[\partial_t,\quad \partial_x,\quad t\partial_x+x\partial_t.\]
     For two specific forms of $F(u)$, the symmetry algebra is larger. The additional vector field for $F(u)=F_0u^k$ is $t\partial_t+x\partial_x+\frac{2}{1-k}u\partial_u$, and for $F(u)=F_0\rme^{\lambda u}$ it is $t\partial_t+x\partial_x-\frac{2}{\lambda}\partial_u$.
 
