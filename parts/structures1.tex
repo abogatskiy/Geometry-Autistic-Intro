@@ -2132,7 +2132,22 @@ Only sections that depend on the $p^j_i$ affinely \emph{and} satisfy these relat
     \end{enumerate}
     A vector field $X\in\fX(M)$ is called a \emph{$\pzcG$-vector field} if all of its flow boxes belong to $\pzcG$. An important criterion is that a vector field on $M$ is a $\pzcG$-vector field iff its $r$-prolongation is tangent to $\rmJ^r\pzcG$. With this, it is easy to verify that the set of all $\pzcG$-vector fields forms a Lie subalgebra of $\fX(M)$, called the \emph{Lie algebra of $\pzcG$}.
 
-    So, for example, the ``action'' of $\SL_2(\bbR)$ on $\bbR$ by \glspl{flt} is only a Lie pseudogroup. Unfortunately, the rigorous theory of Lie pseudogroups, starting with their general definition, is quite algebraic and involved, and would not fit well within our scope. Thus, in the study of differential equations we will typically gloss over these caveats and treat Lie pseudogroups as little more than groups of diffeomorphisms.
+    So, for example, the ``action'' of $\SL_2(\bbR)$ on $\bbR$ by \glspl{flt} is only a Lie pseudogroup. The prototypical Lie pseudogroup (of infinite order) that includes all other pseudogroups is the Lie pseudogroup $\mathpzc{Diff}(M)$ consisting of all diffeomorphisms of all open subsets of $M$. The pseudogroup most relevant in the theory of differential equations is the Lie pseudogroup $\mathpzc{Cont}(\rmJ^\infty E)$ of all contact transformations, which is at most of order $1$.
+
+    As we have seen, one way to think of the contact forms $\theta^j_J$ on $\rmJ^\infty(M,M)$ is as components of the canonical Maurer-Cartan form for the Lie pseudogroup $\mathpzc{Diff}(M)$. Thus, it is not surprising that they must also satisfy a Maurer-Cartan equation
+    \[\dd \theta^j_J =\sum c^{j,K,L}_{J,k,l}\theta^k_K\wedge\theta^l_L,\]
+    with some structure constants $c^{j,K,L}_{J,k,l}$.
+    To write this equation out explicitly, one defines a ``formal Maurer-Cartan series''
+    \[\theta^j\llbracket\bf t\rrbracket\coloneqq \sum_J \frac{1}{J!}\theta^j_J \bf{t}^J,\]
+    where $\bf t=(t^1,\ldots ,t^n)$ are formal parameters. Aside from the contact forms, we also have the \emph{invariant horizontal forms} $\sigma^j\coloneqq \sum_i p^j_i\dd x^i$, so that $\dd u^j=\theta^j_{(0,\ldots ,0)}+\sigma^j$. Then the structure equations of the Lie pseudogroup $\mathpzc{Diff}(M)$ take the form 
+    \[\begin{aligned}
+        \dd\bm\theta\llbracket\bf t\rrbracket&= \nabla\bm\theta\llbracket\bf t\rrbracket\wedge \left(\bm\theta\llbracket\bf t\rrbracket-\dd \bf u\right),\\
+        \dd\bm\sigma &= -\dd\bm\theta\llbracket\bf t\rrbracket=\nabla\bm\theta\llbracket\bf t\rrbracket\wedge \bm\sigma,
+    \end{aligned}\]
+    where $\nabla\bm\theta\llbracket\bf t\rrbracket=(\partial\theta^j\llbracket\bf t\rrbracket\slash \partial t^k)$ denotes the $n\times n$ Jacobi matrix. 
+    From here, it is easy to argue that any Lie pseudogroup $\pzcG$ on $M$ also has Maurer-Cartan forms obtained by restriction of the universal contact forms to $\rmJ^\infty \pzcG$, which satisfy structure equations also obtained by restriction of the above equations. We refer to \cite{OlverPseudogroups} for details.
+    
+    Unfortunately, the rigorous theory of Lie pseudogroups, starting with their general definition, is quite algebraic and involved, and would not fit well within our scope. Thus, in the study of differential equations we will typically gloss over these caveats and treat Lie pseudogroups as little more than groups of diffeomorphisms.
 \end{rem}
 
 
@@ -2445,7 +2460,7 @@ We now introduce differential invariants of the action of a Lie (pseudo)group on
     The total algebra $\bigcup_{r=0}^\infty \calI^r(\calY)$ is called the \emph{algebra of (scalar) differential invariants}.
 \end{defn}
 
-We will be especially interested in the differential invariants of (pseudo)groups of symmetries of differential equations, which act by contact transformations. Since in most cases contact transformations are point transformations, it often suffices to consider actions on the original bundle $E\to M$. In either case, for uniformity of notation, we will denote by $g^{(r)}$ the prolonged transformation of $\rmJ^r E$ obtained from $g\in \calG$ whether $g$ is a point transformation of $E$ (in which case $g=g^{(0)}$) or a contact transformation of $\rmJ^1 E$ (so $g=g^{(1)}$).
+We will be especially interested in the differential invariants of (pseudo)groups of symmetries of differential equations, which act by contact transformations. Since in most cases contact transformations are point transformations, it often suffices to consider actions on the original bundle $E\to M$. In either case, for uniformity of notation, we will denote by $g^{(r)}$ the prolonged transformation of $\rmJ^r E$ obtained from $g\in \pzcG$ whether $g$ is a point transformation of $E$ (in which case $g=g^{(0)}$) or a contact transformation of $\rmJ^1 E$ (so $g=g^{(1)}$).
 
 The following infinitesimal invariance criterion for differential invariants is obvious but serves to determine differential invariants of a given connected group of transformations in a simple manner just by solving a system of linear first-order ODEs.
 
@@ -3642,7 +3657,7 @@ In the general unparametrized equivalence problem, typically, the submanifolds $
 We shall see that by solving the fixed parametrization problem, first in the case of $G$ being a finite dimensional Lie transformation group, then extending this to the case of $G$ being an infinite Lie pseudo-group of transformations, we will then be able to solve the reparametrization problem. 
 
 \begin{example}
-    For instance, we can reformulate the unparametrized equivalence problem for curves in the Euclidean plane as a fixed parametrization problem for curves in the extended space $E = \bbR \times \bbR^2$, which has coordinates $(t,\bf{x}) = (t,x,y)$. The extended curve is given as the graph $\{(t,\bf{x}(t))\}$ of the original parametrized curve, and the pseudo-group $\calG = \mathpzc{Diff}(\bbR) \times \rmE_2$ acting on $E$ consists of a finite-dimensional group, the Euclidean group $\rmE_2$ acting on $\bbR^2$, together with the infinite-dimensional pseudo-group $\mathpzc{Diff}(\bbR)$ consisting of all smooth (local) diffeomorphisms $\wb{t} = \tau(t)$ of the parameter space $\bbR$.
+    For instance, we can reformulate the unparametrized equivalence problem for curves in the Euclidean plane as a fixed parametrization problem for curves in the extended space $E = \bbR \times \bbR^2$, which has coordinates $(t,\bf{x}) = (t,x,y)$. The extended curve is given as the graph $\{(t,\bf{x}(t))\}$ of the original parametrized curve, and the pseudo-group $\pzcG = \mathpzc{Diff}(\bbR) \times \rmE_2$ acting on $E$ consists of a finite-dimensional group, the Euclidean group $\rmE_2$ acting on $\bbR^2$, together with the infinite-dimensional pseudo-group $\mathpzc{Diff}(\bbR)$ consisting of all smooth (local) diffeomorphisms $\wb{t} = \tau(t)$ of the parameter space $\bbR$.
 \end{example}
 
 The formulation of the reparametrization problem in the form \eqref{eq 2.6 OlverCo} indicates an intermediate extension of the two cases, in which one only allows a subclass of all possible reparametrizations.
@@ -4421,7 +4436,7 @@ The first dependency between $\wh\eta_0^1$ and $\wh\eta_0^4$ leads to the reduct
 \textbf{Reparametrization pseudogroups.} The classical applications of moving frames to curves and surfaces in Euclidean, affine, and projective geometries can all be readily implemented using the moving coframe algorithm. In each case, we consider the reparametrization equivalence problem for submanifolds, so that the underlying transformation group is the product of an infinite-dimensional Lie pseudogroup, namely the local diffeomorphism group $\mathpzc{Diff}(X)$ of the parameter space, and a finite-dimensional Lie group $G$ acting on the ambient manifold $M$. In this case, in addition to the Maurer-Cartan forms for $G$, one also includes the $1$-forms  defining the diffeomorphism pseudogroup. For simplicity, we just deal with planar curves, although extensions to surfaces and curves in higher dimensional ambient spaces can also be handled without significant complications. Instead, we will treat those problems using Cartan's equivalence method in \Chap~\ref{chap curves and surfaces}.
 
 \begin{example}[Euclidean geometry of curves]
-    The most well-known classical example is the reparametrization equivalence problem for curves in the Euclidean plane, introduced in Example~\ref{ex 2.1 OlverCo}. In this case, we are dealing with a finite-dimensional group, the Euclidean group $\rmE_2$ on the plane, together with the pseudogroup $\mathpzc{Diff}(\bbR)$ consisting of all smooth local diffeomorphisms of the line representing the change of parameter. Thus, the entire pseudogroup $\calG=\mathpzc{Diff}(\bbR)\times\rmE_2$ acts on the total space $M=\bbR\times\bbR^2$ with coordinates $(t,\bf x)=(t,x,y)$. For the Euclidean component, we use a compatible lift 
+    The most well-known classical example is the reparametrization equivalence problem for curves in the Euclidean plane, introduced in Example~\ref{ex 2.1 OlverCo}. In this case, we are dealing with a finite-dimensional group, the Euclidean group $\rmE_2$ on the plane, together with the pseudogroup $\mathpzc{Diff}(\bbR)$ consisting of all smooth local diffeomorphisms of the line representing the change of parameter. Thus, the entire pseudogroup $\pzcG=\mathpzc{Diff}(\bbR)\times\rmE_2$ acts on the total space $M=\bbR\times\bbR^2$ with coordinates $(t,\bf x)=(t,x,y)$. For the Euclidean component, we use a compatible lift 
     \[a_0(x,y,\varphi)=\begin{pmatrix}
         R & \bf x\\0 & 1
     \end{pmatrix}=\begin{pmatrix}
@@ -5292,7 +5307,7 @@ Let us now discuss the local coordinate expressions for the regularized action a
 Note also that 
 \[\begin{gathered}
     \dd_\calH^2=\dd_\calV^2=\dd_G^2=0,\\
-    \dd_\calH\circ\dd_\calV+\dd_\calV\circ\dd_\calH=\dd_\calH\circ\dd_\calG+\dd_\calG\circ\dd_\calH=\dd_\calG\circ\dd_\calV+\dd_\calV\circ\dd_\calG=0.
+    \dd_\calH\circ\dd_\calV+\dd_\calV\circ\dd_\calH=\dd_\calH\circ\dd_G+\dd_G\circ\dd_\calH=\dd_G\circ\dd_\calV+\dd_\calV\circ\dd_G=0.
 \end{gathered}\label{eq 10.6 OlverCo2}\]
 
 Now the usual procedure can be used to compute invariant differential operators and to produce the full set of differential invariants. 
