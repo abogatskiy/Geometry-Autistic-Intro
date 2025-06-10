@@ -1,5 +1,5 @@
 % !TEX root = ../geom_autistic_intro.tex
-\chapter{Category Theory I}
+\chapter{Category Theory I}\label{ch category I}
 
 
 \section{Categories}
@@ -14,7 +14,7 @@ The language of category theory is extremely useful throughout all modern mathem
     \item For any $X,Y\in\ob(\mathcal{C})$ there is a set $\mor_{\mathcal{C}}(X,Y)$ (also denoted by $\Hom_{\mathcal{C}}(X,Y)$) of \emph{morphisms (arrows)} \index{Morphism} from $X$ to $Y$ with the following properties:
     \begin{enumerate}
     \item There is a partial binary operation on morphisms called the \emph{composition}: $\forall f\in\mor(A,B)$
-    and $\forall g\in\mor(B,C)$, $\exists fg=g\circ f\in\mor(A,C)$.\footnote{The notation $fg$ for the composition where $f$ acts first and $g$ second is more natural for category theory than it is for set theory, because we usually don't refer to arguments of functions here, which means that we'll never have to write strange-looking formulas like $(fg)(x)=g(f(x))$. This style also matches the representation of morphisms as arrows in diagrams. In the cases where we do need arguments, we will use the set-theoretical notation $g\circ f$. We will always use the set-theoretical notation outside of this \chap\ on categories.}
+    and $\forall g\in\mor(B,C)$, $\exists fg=g\circ f\in\mor(A,C)$.\footnote{The notation $fg$ for the composition where $f$ acts first and $g$ second is more natural for category theory than it is for set theory, because we usually don't refer to arguments of functions here, which means that we'll never have to write strange-looking formulas like $(fg)(x)=g(f(x))$. This style also matches the representation of morphisms as arrows in diagrams. In the cases where we do need arguments, we will use the set-theoretical notation $g\circ f$. We will always use the set-theoretical notation outside of this \chap\ and other \sect s devoted specifically to categories or homological algebra.}
     \item The composition is associative, $\left(fg\right)h=f\left(gh\right)$.
     \item There is an identity morphism for every object: $\forall A\in\ob(\mathcal{C})$
     $\exists\,\id_{A}\in\mor(A,A)$ such that for any morphisms $f,g$ with
@@ -1538,14 +1538,14 @@ Two categories are anti-equivalent if $\mathcal{C}\simeq\mathcal{D}^{\ast}$.
     \[
     \mathsf{LocCompGr}\simeq\left(\mathsf{LocCompGr}\right)^{\ast},
     \]
-    where the mapping is $G\mapsto\wh{G}$, where $\wh{G}=\Hom(G,\U_1)$ is the \emph{Pontryagin dual group}. \index{Pontryagin dual group} For instance, $\wh{\U_1}=\bbZ$, which means that the
+    where the mapping is $G\mapsto\wh{G}$, where $\wh{G}=\Hom(G,\U_1)$ is the \emph{Pontryagin dual group}. \index{Pontryagin dual group} For instance, $\wh\U_1=\bbZ$, which means that the
     Fourier transform maps functions on the circle to functions on $\bbZ$
     (i.e., sequences of numbers). Similarly, $\wh{\bbR }=\bbR $,
     so Fourier transforms here are continuous. Pontryagin's theory shows
     how to define Fourier transforms for functions on an arbitrary topological
     abelian group.
 
-    See \cite[II.2]{GelMan} for more details on these and other examples
+    See \cite[\S II.2]{GelMan} for more details on these and other examples
     of equivalences of categories.
 \end{example}
 \begin{thm}[Yoneda Lemma]\index{Lemma!Yoneda}\label{Yoneda}
@@ -1709,7 +1709,7 @@ Properties of topological spaces that are preserved by homeomorphisms (and more 
     \text{If not, what \emph{topological invariant} distinguishes them?}
     \end{array}}
 \end{gather*}
-Since there is no universal algorithm that allows one to answer the first question, most of the hard work in topology goes into constructing new topological invariants that help us define certain classes of topological spaces and then computing them. The part of topology that is especially efficient in finding these invariants is \emph{algebraic topology}, which we will not discuss in this part (but it is the subject of \Part~\ref{Part II}).
+Since there is no universal algorithm that allows one to answer the first question, most of the hard work in topology goes into constructing new topological invariants that help us define certain classes of topological spaces and then computing them. The part of topology that is especially efficient in finding these invariants is \emph{algebraic topology}, which we will not discuss in this part (but it is the subject of \Part~\ref{Part Homology}).
 
 \begin{rem}
     In some applications, like knot theory, we are interested in \emph{isotopies} of embedded topological subspaces, which are essentially smooth deformations of embeddings without self-intersections. Isotopy is an even stronger condition than homotopy or homeomorphism, which allows for more interesting invariants like knot polynomials, which would not be invariant under homotopies or homeomorphisms (every knot can be ``untied'' by a homeomorphism!). In particular, there are more chances to find a complete system of isotopy invariants for certain classes of embeddings, therefore completely classifying all such objects by a fixed set of topological invariants. 
@@ -2264,7 +2264,7 @@ The first argument of $F(t,x)$ is essentially ``time'', and $F(t,\cdot)$ continu
     The sphere $\bbS^n$ is not contractible.
 \end{thm}
 \begin{proof}
-    There is a plethora of different ways to prove this theorem, from pure analytical to algebraic. We will delay the proof until we compute the homology groups of the spheres in Part \ref{Part II} and observe that they differ from those of a contractible space (and homology groups are topological invariants).
+    There is a plethora of different ways to prove this theorem, from pure analytical to algebraic. We will delay the proof until we compute the homology groups of the spheres in \Part~\ref{Part Homology} and observe that they differ from those of a contractible space (and homology groups are topological invariants).
 \end{proof}
 \begin{thm}[Brouwer's fixed point theorem]\index{Theorem!Brouwer's fixed point}\label{thm Brouwer's fixed point}
     Any continuous map $f\in C\left(\widebar{B^n},\widebar{B^n}\right)$  from the closed unit ball to itself has at least one fixed point ($x_0$ such that $f(x_0)=x_0$).
@@ -2600,7 +2600,9 @@ The following is a straightforward consequence of the Seifert-van~Kampen Theorem
 
 \clearpage
 
-\chapter{Manifolds}
+\chapter{Manifolds}\label{ch manifolds}
+
+Like the preceding \chap, this one is not written as a deep or comprehensive introduction into smooth manifolds, which is why many of the theorems lack proofs (this may change in the future). We refer the reader to the book \cite{Lee} for the best general introduction on this topic.
 
 \section{Topological manifolds}\label{sec topological manifolds}
 \begin{defn}[Locally Euclidean Space]\index{Locally Euclidean Space}
@@ -4018,7 +4020,7 @@ We can now use the theory of covering spaces to prove a very important basic the
 
 
 \clearpage
-\chapter{Homotopy Theory}
+\chapter{Homotopy Theory}\label{ch homotopy theory}
 
 \section{Homotopy groups}
 
@@ -5302,7 +5304,7 @@ Since $\id_{\bbS^n}$ generates the $n$-th homotopy group of $\bbS^n$, this allow
 
 \clearpage 
 
-\chapter{Lie Theory I: Basics}
+\chapter{Lie Theory I: Basics}\label{ch Lie I}
 
 \section{Lie groups}
 
