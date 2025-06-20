@@ -2628,8 +2628,8 @@ In practice, it is often convenient to use the method of Cartan's moving frames 
 In the presence of several dependent variables, $k>1$, but still with $\dim M=1$, one needs $k+1$ fundamental differential invariants to generate all higher-order ones. Say, $K_1,\ldots,K_k$ are functionally independent $r$-th order differential invariants. Then one also needs one more invariant $I$ which is either of order less than $r$, or of order $r$ and functionally independent with the $K_i$. Then the invariant operator $\calD=(D_x I)^{-1}D_x$ is such that $\calD K_i$, $i=1,\ldots,k$ are independent $(r+1)$-st order invariants. For the full proof, see \cite[Lem.~5.34]{OlverEquiv}.
 
 \begin{example}[Differential invariants of $\SO_3$]
-    Consider $\SO_3$ acting by rotations on  $E=\bbR\times\bbR^2$ with coordinates $x,u,v$ and $1$-jet coordinates $(p,q)$ and $2$-jet coordinates $(p_{xx},q_{xx})$. The orbit dimensions are $s_0=2$, $s_r=3$, $r\geq 1$. Therefore, $i_0=1$, $i_1=2$, $i_2=4$, etc., so we have one ordinary invariant, which we can take to be the radius $r=\sqrt{x^2+u^2+v^2}$, and one first-order invariant $w=\sqrt{1+p^2+q^2}^{-1/2}(x+up+vq)$. There are two second-order invariants, namely 
-    \[D_rw,\quad z=(1+p^2+q^2)^{-3/2}\left[(v-xq)p_{xx}+(xp-u)q_{xx}\right].\]
+    Consider $\SO_3$ acting by rotations on  $E=\bbR\times\bbR^2$ with coordinates $x,u,v$ and $1$-jet coordinates $(p,q)$ and $2$-jet coordinates $(p_2,q_2)$. The orbit dimensions are $s_0=2$ and $s_r=3$, $r\geq 1$. Therefore, $i_0=1$, $i_1=2$, $i_2=4$, etc., so we have one ordinary invariant, which we can take to be the radius $r=\sqrt{x^2+u^2+v^2}$, and one first-order invariant $w=\sqrt{1+p^2+q^2}^{-1/2}(x+up+vq)$. There are two second-order invariants, namely 
+    \[D_rw,\quad z=(1+p^2+q^2)^{-3/2}\left[(v-xq)p_2+(xp-u)q_2\right].\]
     Every other differential invariant can be written as a function of the derivatives $D_r^l w,D_r^{l-1}z$, $l\geq 0$. We could also use the alternative contact-invariant $1$-form $\dd r/w=\sqrt{1+p^2+q^2}\dd x$, and associated operator $(1+p^2+q^2)^{-3/2}D_x$.
 \end{example}
 
@@ -2937,7 +2937,7 @@ When it comes to finding not just invariant but also general solutions of a diff
     Suppose $s_1,s_2$ are two local sections of the bundle $E\overset{\pi}{\to}M$. Suppose we are given a (pseudo)group $G$ acting on $E$. The equivalence problem for these two sections w.r.t.\ $G$ is the problem of finding a transformation $f\in G$ such that it transforms $s_1$ to $s_2$ (on the domain of $s_1$).
 \end{defn}
 
-In fact, even more common is the equivalence problem for differential equations, which asks whether two given differential equations $\calE \subset\rmJ^r E$, $\calE'\subset\rmJ^r E'$ can be mapped to each other (at least locally) by some contactomorphism $\rmJ^r E\to \rmJ6r E'$. This is a crucial question in many applications where differential equations are merely representations of some physical system, and equivalent equations lead to the same physical behaviors. For example, in General Relativity, the geometry of spacetime is described by the solutions of Einstein's Field Equations, but two such solutions can only be physically distinguishable if they are not equivalent under the contact symmetries of the equations.
+In fact, even more common is the equivalence problem for differential equations, which asks whether two given differential equations $\calE \subset\rmJ^r E$, $\calE'\subset\rmJ^r E'$ can be mapped to each other (at least locally) by some contactomorphism $\rmJ^r E\to \rmJ^r E'$. This is a crucial question in many applications where differential equations are inherently redundant representations of some physical system, which means that they possess non-physical symmetries, and equivalent equations lead to the same physical behaviors. For example, in General Relativity, the geometry of spacetime is described by the solutions of Einstein's Field Equations, but two such solutions can only be physically distinguishable if they are not equivalent under the contact symmetries of the equations.
 
 \begin{example}
     If the reader is familiar with the basics of General Relativity, where the spacetime metric tensor is a solution of Einstein's Field Equations, they may recognize the following Schwarzschild metric (describing a type of stationary and spherically symmetric black holes) written in two different sets of coordinates $(t,r,\theta,\varphi)$ (standard spherical coordinates) and $(U,V,\theta,\varphi)$ (Kruskal-Szekeres coordinates):
@@ -3001,6 +3001,7 @@ The starting idea of Cartan's method of equivalence is to reformulate any given 
 
 \section{Lagrangian systems}
 
+The remainder of this \chap\ is optional. These \sect s address the formalism of symmetries of Lagrangian systems, which is significantly more complicated than that for differential equations. On the one hand, this will explain the highly nontrivial nature of Noether's Theorem. On the other hand, in anticipation of the next \chap\ it will provide us with one more source of interesting equivalence problems that can be solved by the same method of Cartan that we will examine.
 
 \begin{defn}[Lagrangian system]
     A Lagrangian system is a pair $(E\overset{\pi}{\to}M,\calL)$, where $E\overset{\pi}{\to}M$ is a smooth \gls{fb} over an $n$-dimensional manifold $M$ and $\calL$ is a semibasic $n$-form on the $r$-th jet space $\rmJ^r E$, called a \emph{Lagrangian density}.
@@ -3407,7 +3408,7 @@ where $I_1,\ldots,I_k$ are a complete set of functionally independent $r$-th ord
 
 
 
-\section{Conservation laws}
+\section{(*) Conservation laws}
 
 
 For systems of ``conservative'' ODEs -- meaning systems of Euler-Lagrange equations -- the power of Lie's symmetry method for reducing the order is effectively doubled. This is due to a fundamental result of E.~Noether, that relates symmetries and first integrals of Euler-Lagrange equations. 
@@ -3526,7 +3527,7 @@ The following is a more general version of Noether's Theorem, which is most fami
 
 
 
-\section{Cartan form}
+\section{(*) Cartan form}
 
 As we have seen, if we restrict our attention to fiber-preserving transformation groups, then the Lagrangian density associated with an invariant variational problem defines an invariant differential form on the jet space. This result does not extend to more general point or contact transformation groups owing to the presence of contact forms in the general change of variables formula \eqref{eq:7.19:OlverEquiv}. We now describe, in the simplest case of a first order Lagrangian in one independent variable and one dependent variable, an important modification of the Lagrangian density that does remain invariant under general point transformations. This $1$-form, commonly known as the Cartan form, plays a significant role in the geometric theory of the calculus of variations, including the connection between symmetries and conservation laws. Hilbert's invariant integral, which is of central importance in the classical field theory governing the existence of extrema, is found by integrating the Cartan form along a solution to the Euler-Lagrange equation. The utility of the Cartan form was emphasized by Cartan, and Goldschmidt and Sternberg.
 
@@ -3582,7 +3583,7 @@ Equation \eqref{eq:7.47:OlverEquiv} shows that the second term vanishes on solut
     If $X$ is an infinitesimal variational symmetry of the variational problem with Lagrangian $L(x,u,p)$ and Cartan form $\eta_L$, then the function $\eta_L(X^{(1)})$ is a first integral of the Euler-Lagrange equation.
 \end{prop}
 
-The extension of the Cartan form to multi-dimensional variational problems is not so straightforward. There is a commonly accepted definition of a Cartan form for higher-order problems with one independent variable and several dependent variables. However, for variational problems involving multiple independent variables, the situation is far from clear. It is possible to produce a definition for general first-order and second-order problems, but a higher-order definition is still lacking.
+The extension of the Cartan form to multi-dimensional variational problems is not so straightforward. There is a commonly accepted definition of a Cartan form for higher-order problems with one independent variable and several dependent variables. However, for variational problems involving multiple independent variables, the situation is far from clear. It is possible to produce a definition for general first-order and second-order problems, but according to \cite{OlverEquiv} a higher-order definition is still lacking.
 
 
 
