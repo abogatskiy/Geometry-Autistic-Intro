@@ -2391,7 +2391,7 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     \[\dd \wb{x}^{\otimes 2}+\dd\wb y^{\otimes 2}=\lambda(x,y;\epsilon)(\dd x^{\otimes 2}+\dd y^{\otimes 2})\]
     for some function $\lambda$ (conformal factor). For $\bf{c}_x$, $\lambda=(1-2\epsilon x+\epsilon^2(x^2+y^2))^{-2}$. Note that the inversion itself is also a conformal map with $\lambda=(x^2+y^2)^{-2}$. The full group of special conformal transformations is given by the translation group conjugated with $I$, $I\circ\rme^{\epsilon_1\partial_x+\epsilon_2\partial_y}\circ I$:
     \[\bf{x}=(\wb x,\wb y)=\frac{\bf{x}-\bf{\epsilon}(x^2+y^2)}{1-2\bf{\epsilon}\cdot\bf{x}+\epsilon^2(x^2+y^2)},\quad \bf{\epsilon}=(\epsilon_1,\epsilon_2),\quad \bf{x}=(x,y).\]
-    Note that this transformation is not globally defined because the conformal factor $\lambda=1-2\bf{\epsilon}\cdot\bf{x}+\epsilon^2(x^2+y^2)$ vanishes at $\bf{x}=\bf{\epsilon}/\epsilon^2$.
+    Note that this transformation is not globally defined because the conformal factor $\lambda=1-2\bf{\epsilon}\cdot\bf{x}+\epsilon^2(x^2+y^2)$ vanishes at $\bf{x}=\bm{\epsilon}/\epsilon^2$.
 
     We conclude that for any transformation from this conformal group $u(x,y)=f(\wb x,\wb y)$ is a solution whenever $f$ is. For example, with the help of the invariant $\zeta$, the radial solution $f=\ln(x^2+y^2)$ or the angular solution $f=\arctan(y/x)$, among many others (homogeneous harmonics) can be mapped to produce the new solutions 
     \[u=\ln\frac{x^2+y^2}{1-2\epsilon x+\epsilon^2(x^2+y^2)},\quad u=\arctan\frac{y}{x-\epsilon(x^2+y^2)}.\]
@@ -2451,18 +2451,18 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
 
 \section{Differential invariants}
 
-We now introduce differential invariants of the action of a Lie (pseudo)group on the jet bundles of a bundle $\pi:E\to M$ and differential invariants of sections of $E$. We then formulate the equivalence problem. 
+We now introduce differential invariants of the action of a Lie (pseudo)group. These are fundamental objects in all of geometry, and their purpose is to completely characterize submanifolds \emph{up to the (pseudo)group action}. Remember that the bundle structure is not essential -- one can repeat all the same constructions on jet spaces $\rmJ^r(M,F)$ for any two manifolds $M,F$, by locally identifying $M\times F$ with a \gls{vb}.
 
 
 \begin{defn}[Differential invariant]\index{Differential invariant}
-    Let $M$ be manifold and let $\pzcG$ be a Lie pseudogroup acting on $M$ with Lie algebra $\calY$. The action of $\pzcG$ naturally lifts to every jet space $\rmJ^r M$ as well. A (local) function or a tensor field defined on $\rmJ^r M$ is an \emph{order $r$ differential invariant} of the action of $\pzcG$ if for every $f\in\pzcG$ the action of $f^{(r)}_\ast$ maps that object to itself.
+    Let $E\to M$ be a \gls{vb} and let $\pzcG$ be a Lie pseudogroup acting on $E$ with Lie algebra $\calY$. The action of $\pzcG$ naturally lifts to every jet space $\rmJ^r E$ as well. A (local) function or a tensor field defined on $\rmJ^r E$ is an \emph{order $r$ differential invariant} of the action of $\pzcG$ if for every $f\in\pzcG$ the action of $f^{(r)}_\ast$ maps that object to itself.
 
     The set of $r$-th order \emph{scalar} differential invariants of $\calY$ will be denoted by $\calI^r(\calY)$.\footnote{This is a slight abuse of notation since they are invariants of the action, not the Lie algebra itself} This is a real algebra w.r.t.\ the pointwise multiplication of functions, since any function of invariants is an invariant. These sets also satisfy the inclusions 
     \[\calI^0(\calY)\subset\calI^1(\calY)\subset\cdots\subset\calI^r(\calY)\subset\cdots.\]
     The total algebra $\bigcup_{r=0}^\infty \calI^r(\calY)$ is called the \emph{algebra of (scalar) differential invariants}.
 \end{defn}
 
-We will be especially interested in the differential invariants of (pseudo)groups of symmetries of differential equations, which act by contact transformations. Since in most cases contact transformations are point transformations, it often suffices to consider actions on the original bundle $E\to M$. In either case, for uniformity of notation, we will denote by $g^{(r)}$ the prolonged transformation of $\rmJ^r E$ obtained from $g\in \pzcG$ whether $g$ is a point transformation of $E$ (in which case $g=g^{(0)}$) or a contact transformation of $\rmJ^1 E$ (so $g=g^{(1)}$).
+We will be especially interested in the differential invariants of (pseudo)groups consisting of contact transformations. Since in most cases contact transformations are point transformations, it often suffices to consider actions on the original bundle $E\to M$. In either case, for uniformity of notation, we will denote by $g^{(r)}$ the prolonged transformation of $\rmJ^r E$ obtained from $g\in \pzcG$ whether $g$ is a point transformation of $E$ (in which case $g=g^{(0)}$) or a contact transformation of $\rmJ^1 E$ (so $g=g^{(1)}$).
 
 The following infinitesimal invariance criterion for differential invariants is obvious but serves to determine differential invariants of a given connected group of transformations in a simple manner just by solving a system of linear first-order ODEs.
 
@@ -2479,7 +2479,7 @@ For example, if $r=0$, then simply by rectifying any vector field $X\in\calY$, s
     \[X^{(1)}=-u\partial_x+x\partial_u+(1+p^2)\partial_p,\] 
     has one-dimensional orbits at each point of $\rmJ^1$, thus by Remark~\ref{rem 6.2.10 RS1}(1-2), besides the radius, there is one additional first-order differential invariant. We can find it by solving the characteristic system for this vector field:
     \[\frac{\dd x}{-u}=\frac{\dd u}{x}=\frac{\dd p}{1+p^2}.\]
-    The first two equations aren't new: their solutions are $x^2+u^2=\const=r^2$, giving the radial invariant $r$. To find the other invariant, note that $r$ is a constant for all solutions of the characteristic system, so we can replace $x$ by $\sqrt{x^2-u^2}$ before integrating:
+    The first two equations aren't new: their solutions are $x^2+u^2=\const=r^2$, giving the radial invariant $r$. To find the other invariant, note that $r$ is a constant for all solutions of the characteristic system, so we can replace $x$ by $\sqrt{r^2-u^2}$ before integrating:
     \[\frac{\dd u}{\sqrt{r^2-u^2}}=\frac{\dd p}{1+p^2},\]
     which has solution 
     \[\arcsin\frac{u}{r}=\arctan p+\const,\]
@@ -2510,13 +2510,15 @@ For example, if $r=0$, then simply by rectifying any vector field $X\in\calY$, s
     \[i_r=\dim \rmJ^r E-\rank Z\geq 0,\]
     where $Z$ is the matrix of size $\dim G\times \dim \rmJ^rE$ formed by the coefficients of the $r$-th prolongations $X_\nu^{(r)}$, $\nu=1,\ldots,\dim G$ of the basis vector fields $X_\nu \in\frakg$, as rows 
     \[X_\nu=\sum_{i=1}^n a_{i,\nu}(x,u)\partial_{x^i}+\sum_{j=1}^k b_{j,\nu}(x,u)\partial_{u^j},\quad \nu=1,\ldots,\dim G.\]
-    The rank $m$ of $Z$ is calculated at a generic point of $\rmJ^r E$ (so it is at its highest). For example, in the case of $n=k=1$ we have $\dim\rmJ^r E=r+2$ and the number of functionally independent invariants is $i_r=n+2-m$.
+    The rank $m$ of $Z$ is calculated at a generic point of $\rmJ^r E$ (so it is at its highest). For example, in the case of $n=k=1$ we have $\dim\rmJ^r E=r+2$ and the number of functionally independent invariants is $i_r=r+2-m$.
 
-    Via prolongation of sections, the action of $G$ can be (locally) lifted to any higher-order jet space. By a slight abuse of notation, we will denote the resulting pseudogroup on $\rmJ^r$ by $G^{(r)}$. If $\scrO^{(r)}\subset \rmJ^r E$ is a generic orbit of $G^{(r)}$, then its projection to $\rmJ^{r'}E$ with $r'<r$ is an orbit of $G^{(r')}$. Therefore, the maximal orbit dimension $s_r$ of $G^{(r)}$ is also a non-decreasing function of $r$, bounded by $\dim G$:
+    For clarity of exposition, let us focus on actions of a finite-dimensional Lie group $G$ with Lie algebra $\frakg$. Via prolongation of sections, the action of $G$ can be (locally) lifted to any higher-order jet space. By a slight abuse of notation, we will denote the resulting pseudogroup (whose Lie algebra is still $\frakg$) on $\rmJ^r E$ by $G^{(r)}$. If $\scrO^{(r)}\subset \rmJ^r E$ is a generic orbit of $G^{(r)}$, then its projection to $\rmJ^{r'}E$ with $r'<r$ is an orbit of $G^{(r')}$. Therefore, the maximal orbit dimension $s_r$ of $G^{(r)}$ is also a non-decreasing function of $r$, bounded by $\dim G$:
     \[s_0\leq s_1\leq s_2\leq \cdots \leq \dim G.\]
     On the other hand, since the orbits cannot increase in dimension any more than the increase in dimension of the jet spaces themselves, we have the elementary inequalities 
     \[s_{r-1}\leq s_r\leq s_{r-1}+k^{(r)},\]
-    governing the orbit dimensions. We also have $i_n=n+\dim \rmJ^r E-s_r$, and thus the growth in the number of differential invariants with order is constrained by
+    governing the orbit dimensions. We also have $i_r=\dim \rmJ^r E-s_r$, and thus the growth in the number of differential invariants with order is constrained by
+    \[\dim \rmJ^r E-s_{r-1}\geq \dim \rmJ^r E-s_r\geq \dim\rmJ^r E-k^{(r)}-s_{r-1},\]
+    which simplifies to
     \[i_{r-1}\leq i_r\leq i_{r-1}+k^{(r)}.\]
     Since the orbit dimension is limited by that of $\dim G$, it eventually stabilizes at some value $s$.
     In particular, if the orbit dimension is ever the same as that of $G$, $s_r=\dim G$ for some $r$, then $s_{r'}=\dim G$ for all $r'\geq r$. We shall call $s$ the \emph{stable orbit dimension}, and the minimal order $r$ for which $s_r=s$, the \emph{order of stabilization} of the group. Once we've reached the stabilization order, the number of higher-order differential invariants is immediate.
@@ -2528,29 +2530,31 @@ For example, if $r=0$, then simply by rectifying any vector field $X\in\calY$, s
     Consequently, any finite-dimensional group of transformations has an infinite number of differential invariants of arbitrarily large order, and the problem of classification of invariants cannot be handled by purely algebraic means.
 \end{rem}
 
-Recall that effectiveness of a group action is measured by its kernel, or global isotropy group, $G_M=\{g\in G\mid \forall m\in M\;\; g\cdot m=m\}$. An effective (faithful) action is one with a trivial kernel. An action is called \emph{locally effective} if the kernel is discrete. Since $G_M$ is a normal subgroup, a locally effective action of $G$ is locally equivalent to the faithful action of $G\slash G_M$. We provide the following theorem without proof.
+Recall that effectiveness of a group action is measured by its kernel, or ``global isotropy group'', $G_E=\{g\in G\mid \forall p\in E\;\; g\cdot p=p\}$. An effective (faithful) action is one with a trivial kernel. An action is called \emph{locally effective} if the kernel is discrete. Since $G_E$ is a normal subgroup, a locally effective action of $G$ is locally equivalent to the faithful action of $G\slash G_E$. We provide the following theorem without proof.
 
 \begin{thm}[Ovsiannikov {{\cite[Thm.~5.11]{OlverEquiv}}}]\label{thm 5.11 OlverEquiv Ovsiannikov}
-    Let $G$ be a Lie group of point or contact transformations. Then $G$ acts locally effectively iff its stable orbit dimension equals its dimension, so $s_m=\dim G$ for sufficiently large $m$.
+    Let $G$ be a Lie (pseudo)group acting on $E\to M$. Then $G$ acts locally effectively iff its stable orbit dimension equals its dimension, so $s_r=\dim G$ for sufficiently large $r$.
 \end{thm}
 
-We also call the action \emph{effectively free} if $G\slash G_M$ acts freely, so every stabilizer equals the kernel, $G_m=G_M$. 
+We also call the action \emph{effectively free} if $G\slash G_E$ acts freely, so every stabilizer equals the kernel, $G_p=G_E$. 
 
 \begin{cor}[{\cite[Cor.~5.13]{OlverEquiv}}]\label{cor 5.13 OlverEquiv}
-    If $G$ is a transformation group with kernel $G_\calE$, then the stable orbit dimension of $G$ is $s=\dim G-\dim G_\calE$. Consequently, for each $r'\geq r$, where $r$ is the order of stabilization, $G$ acts effectively freely on the open subset $V^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve their maximal dimension $s$.
+    If $G$ is a transformation group with kernel $G_E$, then the stable orbit dimension of $G$ is $s=\dim G-\dim G_E$. Consequently, for each $r'\geq r$, where $r$ is the order of stabilization, $G$ acts effectively freely on the open subset $\calV^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve their maximal dimension $s$.
 \end{cor}
 
-If $G$ does not act effectively, then we can replace it by the effectively acting quotient group $G\slash G_\calE$ without any appreciable loss of generality. Therefore, to avoid unnecessary computations, we can always assume that the action of $G$ is locally effective, and so the stable orbit dimension is $s=\dim G$.
+If $G$ does not act effectively, then we can replace it by the effectively acting quotient group $G\slash G_E$ without any appreciable loss of generality. Therefore, to avoid unnecessary computations, we can always assume that the action of $G$ is locally effective, and so the stable orbit dimension is $s=\dim G$.
 
 \begin{cor}[{\cite[Cor.~5.14]{OlverEquiv}}]\label{cor 5.14 OlverEquiv}
-    If $G$ acts (locally) effectively on an open subset $U\subset \calE$, then $G$ acts (locally) freely on the open subset $V^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve the stable orbit dimension $\dim G$.
+    If $G$ acts (locally) effectively on an open subset $U\subset E$, then $G$ acts (locally) freely on the open subset $\calV^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve the stable orbit dimension $\dim G$.
 \end{cor}
+
+To summarize, in practice, we will assume local effectiveness, and then \emph{the action of any finite-dimensional Lie (pseudo)group will necessarily become locally free after a finite number of prolongations}. A complete set of differential invariants at or above the order of stabilization is then given by any choice of local coordinates on any slice of the prolonged action.
 
 \PRLsep
 
-\paragraph{Invariant differential operators.} Thus, assuming that the action of the symmetry group stabilizes, it can be turned into a (locally) free action after a finite number of prolongations. In other words, sufficiently high-order jet spaces gain a structure similar to that of principal bundles (with some new base manifold). Once the action has been reduced to a (locally) free one, finding a complete set of (ordinary) invariants is trivial via Cartan's moving frame method. The key is to construct an arbitrary (local) equivariant function (local $G$-frame) $\frake:V^{r'}\to G$. A particularly straightforward way of doing this is by choosing an arbitrary slice $S$ of the action, i.e., a submanifold that is transversal to all the orbits. Then, due to freeness, each $m\in V^{r'}$ has a unique $g(m)\in G$ such that $g\cdot m\in S$. Then the \emph{invariantized coordinates} $x^i(g(m)\cdot m)$ obviously provide a complete set of functionally independent invariants.
+\paragraph{Invariant differential operators.} Thus, under mild assumptions the group action can be turned into a (locally) free action after a finite number of prolongations. In other words, sufficiently high-order jet spaces gain a local structure similar to that of principal bundles (with some new base manifold and projection). Once the action has been reduced to a (locally) free one, finding a complete set of (ordinary) invariants is trivial via Cartan's moving frame method, which will be detailed in the next \chap. On an abstract level, this amounts to picking a slice for the group action and lifting an arbitrary coordinate system on it back to the full jet space. % The key is to construct an arbitrary (local) equivariant function (local $G$-frame) $\frake:\calV^{r'}\to G$. A particularly straightforward way of doing this is by choosing an arbitrary slice $S$ of the action, i.e., a submanifold that is transversal to all the orbits. Then, due to freeness, each $m\in \calV^{r'}$ has a unique $g(m)\in G$ such that $g\cdot m\in S$. Then the \emph{invariantized coordinates} $x^i(g(m)\cdot m)$ obviously provide a complete set of functionally independent invariants.
 
-Even after the problem has been solved at the order of stabilization, it still remains to describe the higher-order invariants.To this end, Lie and Tresse introduced the notion of ``invariant'' differential operators to obtain $(r+1)$-st order invariants from $r$-th order ones. This enables one to produce all the higher-order independent invariants by successive application of the invariant operators to lower-order ones. To define these operators, first we define a special class of differential forms whose values are $G$-invariant, but \emph{only} on the Cartan distribution.
+However, even after the problem has been solved at the order of stabilization, it still remains to describe the higher-order invariants. To this end, Lie and Tresse introduced the notion of ``invariant'' differential operators to obtain $(r+1)$-st order invariants from $r$-th order ones. This enables one to produce all the higher-order invariants by successive application of the invariant operators to lower-order ones. To define these operators, first we define a special class of differential forms whose values are $G$-invariant, but \emph{only} on the Cartan distribution. This is a natural notion of invariance since we only care about the values of differential forms along the $r$-graphs of sections (and maps in general).
 
 \begin{defn}[Contact-invariant $1$-form]\index{Contact-invariant $1$-form}\label{def 5.25 OlverEquiv}
     A differential $1$-form $\omega$ on $\rmJ^rE$ is called contact-invariant under a (point or contact) transformation group $G$ iff, for every $g\in G$, $(g^{(r)})^\ast \omega=\omega+\theta_g$ for some contact form $\theta_g$.
@@ -2575,7 +2579,7 @@ By recalling the definition of the basic contact forms $\theta^j_I$, we immediat
     $\rmD I=\dd I-\theta_I$ and both terms on the right hand side are contact-invariant.
 \end{proof}
 
-From here, the process for generating higher-order invariants is particularly simple when there is only one independent variable, $n=1$. In the scalar case $n=k=1$, if $\omega=P\dd x$ (e.g., $\omega=\rmD I=D_xI$ for some differential invariant $I$), then every other horizontal contact-invariant $1$-form is of the form $J\omega=JP\dd x$, where $J$ is an arbitrary differential invariant. Thus, if we know two horizontal contact-invariant one-forms $P\dd x$, $\wt P\dd x$, their ratio $\wt P/P$ defines a differential invariant. We have shown the following theorem.
+From here, the process for generating higher-order invariants is particularly simple when there is only one independent variable, $n=1$. In the scalar case $n=k=1$, if $\omega=P\dd x$ (e.g., $\omega=\rmD I=D_xI \dd x$ for some differential invariant $I$), then every other horizontal contact-invariant $1$-form is of the form $J\omega=JP\dd x$, where $J$ is an arbitrary differential invariant. Thus, if we know two horizontal contact-invariant one-forms $P\dd x$, $\wt P\dd x$, their ratio $\wt P/P$ defines a differential invariant. We have shown the following theorem.
 
 \begin{thm}[Lie-Tresse {{\cite[Prop.~5.15]{OlverEquiv}}}]\index{Theorem!Lie-Tresse}
     Consider the case $\dim M=1$, and the local coordinate on $M$ is $x$. Let there be some (pseudo)group $G$ acting on $E$. Suppose that $I,J$ are two functionally independent invariants, at least one of which has order exactly $r$. Then the \emph{Tresse derivative} $D_x J/D_x I$  \index{Tresse derivative} is an $(r+1)$-st order differential invariant.
@@ -2585,7 +2589,7 @@ In other words, a contact-invariant $1$-form serves to define an \emph{invariant
 \[\calD\coloneqq \frac{\dd}{\dd I}= (D_x I)^{-1}D_x\] 
 is such an operator. Iterating $\calD$, one can generate a hierarchy $\calD^r J$, $r=0,1,2,\ldots$, of higher-order differential invariants.
 
-If $I(x,u)$ and $J(x,u,p)$ are a complete set of functionally independent invariants of the first prolongation $G^{(1)}$, i.e., they form a basis of $\calI^1(\frakg)$, then $I,J$ together with the derivatives $\calD^r J=\dd ^rJ/\dd I^r$, $r=1,\ldots,r-1$, generate a complete set of functionally independent invariants for the prolonged algebra $\frakg^{(r)}$ for $r\geq 1$. They all satisfy the infinitesimal invariant condition $X^{(r)}(\calD^r J)=0$ for all $X\in\frakg$.
+Consider first one simple case. If $I(x,u)$ and $J(x,u,p)$ are a complete set of functionally independent invariants of the first prolongation $G^{(1)}$, i.e., they form a basis of $\calI^1(\frakg)$, then $I,J$ together with the derivatives $\calD^r J=\dd ^rJ/\dd I^r$, $r=1,\ldots,r-1$, generate a complete set of functionally independent invariants for the prolonged algebra $\frakg^{(r)}$ for $r\geq 1$. They all satisfy the infinitesimal invariant condition $X^{(r)}(\calD^r J)=0$ for all $X\in\frakg$.
 
 More generally, since in the scalar case we expect at most one new functionally independent differential invariant at every order (cf.\ Remark~\ref{rem counting differential invariants}), there exists an $r\geq 1$ such that there are exactly two functionally independent differential invariants $I,J$ of order $r$. Without loss of generality, suppose $J$ is genuinely of order $r$ (i.e.\ it depends on the $r$-jets). Then, by the same argument, a complete system of invariants of order $r+l$ is provided by $I,J,\calD J,\ldots,\calD^l J$, where $\calD=\dd/\dd I$. For this reason, we call the differential invariants $I,J$ the \emph{fundamental differential invariants} for the group $G$. Note that the invariants constructed by this method are well-defined on the open subset of $\rmJ^{r+l}$ where $I$ and $J$ are defined and $D_x I\neq 0$. At other points, one must used an alternative differential invariant to avoid singularities.
 
@@ -2597,7 +2601,7 @@ More generally, since in the scalar case we expect at most one new functionally 
     If we replace $w=\tan\phi$ by the angle $\phi$, then we find the interesting $\SO_2$-invariant formula $\kappa=\phi_r\cos\phi+r^{-1}\sin\phi$ expressing the curvature of a curve in terms of the radial variation of the angle $\phi$. Higher-order differential invariants are given by the successive derivatives $\dd^l w/\dd r^l$ (or $\dd^l\phi/\dd r^l$). These can be rewritten explicitly in terms of $x$ and $u$ using the invariant differential operator $\calD_r=r(x+up)^{-1}D_x$, or, more simply, the alternative invariant operator $r^{-1}\calD_r=(x+up)^{-1}D_x$.
 \end{example}
 
-In practice, it is often convenient to use the method of Cartan's moving frame to help construct the necessary coframe. Assuming the action of $G$ becomes locally free at some order of stabilization, its orbits are locally equivalent to $G$ itself, so the components of the Maurer-Cartan form provide independent contact-invariant $1$-forms. If the action is also locally transitive, then this will suffice to get a full $n$-coframe.
+In practice, it is often convenient to use the method of Cartan's moving frames (detailed in the next \chap) to find at least some nontrivial contact-invariant forms. Assuming the action of $G$ becomes locally free at some order of stabilization, its orbits are locally equivalent to $G$ itself, so the components of the Maurer-Cartan form provide independent contact-invariant $1$-forms. If the action is also locally transitive, then this will suffice to get a full $n$-coframe.
 
 \begin{example}[Differential invariants of $\SE_2$]
     The Euclidean group $\SE_2=\SO_2\ltimes\bbR^2$ acts via rotations and translations on $E=\bbR\times\bbR$. Every $(x,u)$-independent rotational differential invariant, as given in the preceding example, will provide a Euclidean differential invariant. The simplest contact-invariant $1$-form is $\omega=\sqrt{1+p^2}\dd x$, which is the Euclidean arc length element, often denoted $\dd s$.
@@ -2621,7 +2625,6 @@ In practice, it is often convenient to use the method of Cartan's moving frame t
     We already know that $I=u/x$ is a projective invariant, and by rectifying $X^{(1)}$ it is easy to see that $J=xp-u$ is a first-order differential invariant. Then $DJ/DI=J^{-1}(x^3q)$ is a second-order invariant. We can take it as $J_2=J\cdot DJ/DI=x^3 q$. Iterating the Tresse derivatives and multiplying by $J$ we get the sequence of all other differential invariants $J_r=x^2 D_x J_{r-1}$, $r=3,4,\ldots$.
 \end{example}
 
-
 In the presence of several dependent variables, $k>1$, but still with $\dim M=1$, one needs $k+1$ fundamental differential invariants to generate all higher-order ones. Say, $K_1,\ldots,K_k$ are functionally independent $r$-th order differential invariants. Then one also needs one more invariant $I$ which is either of order less than $r$, or of order $r$ and functionally independent with the $K_i$. Then the invariant operator $\calD=(D_x I)^{-1}D_x$ is such that $\calD K_i$, $i=1,\ldots,k$ are independent $(r+1)$-st order invariants. For the full proof, see \cite[Lem.~5.34]{OlverEquiv}.
 
 \begin{example}[Differential invariants of $\SO_3$]
@@ -2629,7 +2632,6 @@ In the presence of several dependent variables, $k>1$, but still with $\dim M=1$
     \[D_rw,\quad z=(1+p^2+q^2)^{-3/2}\left[(v-xq)p_{xx}+(xp-u)q_{xx}\right].\]
     Every other differential invariant can be written as a function of the derivatives $D_r^l w,D_r^{l-1}z$, $l\geq 0$. We could also use the alternative contact-invariant $1$-form $\dd r/w=\sqrt{1+p^2+q^2}\dd x$, and associated operator $(1+p^2+q^2)^{-3/2}D_x$.
 \end{example}
-
 
 Finally, in the most general case of $n$ independent variables, we need to construct $n$ invariant differential operators. This can be done with the help of a \emph{contact-invariant coframe} on $\rmJ^r E$, which is simply an $n$-coframe consisting of contact-invariant $1$-forms. As the following theorem shows (we direct the reader to the cited source for a proof), such a frame is guaranteed to exist at least at the order of stabilization of $G$ (unless it is $0$, in which case at $r=1$). 
 
@@ -2645,7 +2647,7 @@ thus defining invariant differential operators $\calD_1,\ldots,\calD_n$.
 
 Now write $\omega^i=\sum_j J^i_j \dd x^j$, $i=1,\ldots,n$. Since this is an $n$-coframe, the $n\times n$ matrix $\bf{J}=(J^i_j)$ is invertible. The associated invariant differential operators are $\calD_j=\sum_i K^i_j D_i$, $j=1,\ldots,n$, where $\bf{K}=\bf{J}^{-T}$ is the inverse transpose of $\bf{J}$. In particular, if the $\omega^i=\rmD I_i$ are obtained from $n$ independent differential invariants $I_1,\ldots,I_n$, then $\bf{J}=(D_j I_i)$ is their total Jacobian matrix, and the invariant differential operators are given by 
 \[\calD_j J=\frac{D(I_1,\ldots,I_{j-1},J,I_{j+1},\ldots,I_n)}{D(I_1,\ldots,I_n)},\quad j=1,\ldots,n,\]
-where $D(I_1,\ldots,I_n)=\det (D_i I_j)$ denotes the total Jacobian determinant. For a proof that these operators suffice to generate all differential invariants from a set of fundamental ones, see \cite[Thm.~5.48]{OlverEquiv}. In particular, the fundamental differential invariants can be chosen to be of order $r+2$, where $r$ is the order of stabilization of $G$. Moreover, if the stable orbit dimension $s_r$ satisfies $\dim G=s_r\leq \dim \rmJ^r E$, so there are at least $n$ independent invariants $I_1,\ldots,I_n$ of order $r$, then the contact-invariant coframe $\rmD I_1,\ldots,\rmD I_n$ lives on $\rmJ^{r+1}E$, so the fundamental invariants have order at most $r+1$.
+where $D(I_1,\ldots,I_n)=\det (D_i I_j)$ denotes the total Jacobian determinant. For a proof that these operators suffice to generate all differential invariants from a set of fundamental ones, see \cite[Thm.~5.48]{OlverEquiv}. In particular, it turns out that the fundamental differential invariants can be chosen to be of order $r+2$, where $r$ is the order of stabilization of $G$. Moreover, if the stable orbit dimension $s_r$ satisfies $\dim G=s_r\leq \dim \rmJ^r E$, so there are at least $n$ independent invariants $I_1,\ldots,I_n$ of order $r$, then the contact-invariant coframe $\rmD I_1,\ldots,\rmD I_n$ lives on $\rmJ^{r+1}E$, so the fundamental invariants have order at most $r+1$.
 
 \begin{example}[{{\cite[Ex.~5.50]{OlverEquiv}}}]\label{ex 5.50 OlverEquiv}
     Consider the group $\SO_n$ acting on $\bbR^n\times\bbR=E\to M=\bbR^n$ by rotating the independent variables. There are two ordinary invariants: the radius $r=\lVert \bf{x}\rVert$ and the dependent variable $u$ itself. Their total differentials 
@@ -11805,7 +11807,7 @@ We are now ready to prove that $K$ is an intrisic quantity, i.e., it depends onl
     \[\dd\eta^1=a\eta^1\wedge\eta^2,\quad \dd\eta^2=b\eta^1\wedge \eta^2.\]
     By antisymmetrizing these two formulas, we find that there exists a $1$-form $\alpha$ such that 
     \[\dd\eta^1=-\alpha\wedge\eta^2,\quad \dd\eta^2=\alpha\wedge\eta^1.\]
-    Now, if $\wt\frake$ is a different adapted lifting with $\wt\eta^j=\wt\frake^\ast\theta^j$, then it is easy to show that $\dd\wt\alpha=\dd\alpha$. Thus the function $\kappa$ uniquely determined by $\dd\alpha=\kappa\eta^1\wedge\eta^2$ is also invariant under the change of the lift, and hence depends only on the Riemannian metric $(\eta^1)^2+(\eta^2)^2$.
+    Now, if $\wt\frake$ is a different adapted lifting with $\wt\eta^j=\wt\frake^\ast\theta^j$, then it is easy to show that $\dd\wt\alpha=\dd\alpha$. Thus the function $\kappa$ uniquely determined by $\dd\alpha=\kappa\eta^1\wedge\eta^2$ is also invariant under the change of the lift, and hence depends only on the Riemannian metric $(\eta^1)^{\otimes 2}+(\eta^2)^{\otimes 2}$.
 
     Finally, we check that $\alpha=\frake^\ast\omega_2^1$, so, by \eqref{eq 2.14 Ivey}, $\kappa=\frake^\ast K$.
 \end{proof}
@@ -11994,7 +11996,7 @@ These derivatives must vanish along the integral manifolds. Thus, $\sfh$ must sa
 \]
 where $[\,,\,]$ is the commutator of matrices. (Note that in this equation a pullback to the adapted frame bundle of a surface is implied, otherwise it holds only modulo $\calI$.)
 
-The proof of Gauss' Theorema Egregium~\ref{thm egregium} showed that, given a metric $\sfg$ on $\varSigma$ and an orthonormal frame $\frake$, $\frake^\ast \omega_1^2$ is uniquely determined. Thus, \eqref{eq Gauss-Codazzi} is a system of equations for the possible fundamental forms $\sfII=h_{ij}\theta^i\otimes \theta^j\otimes e_3$ for embdeddings of $\varSigma$ into $\bbE^3$ that induce the metric $\sfg$. These equations are well-defined, since \eqref{eq Gauss-Codazzi} is invariant under changes of the frame $\frake$. Thus, the Frobenius theorem guarantees existence, while uniqueness up to a rigid motion is guaranteed only for a fixed parametrization.
+The proof of Gauss' Theorema Egregium~\ref{thm egregium} showed that, given a metric $\sfg$ on $\varSigma$ and an orthonormal frame $\frake$, $\frake^\ast \omega_1^2$ is uniquely determined. Thus, \eqref{eq Gauss-Codazzi} is a system of equations for the possible fundamental forms $\sfII=h_{ij}\theta^i\otimes \theta^j\otimes e_3$ for embeddings of $\varSigma$ into $\bbE^3$ that induce the same metric $\sfg$. These equations are well-defined since \eqref{eq Gauss-Codazzi} is invariant under changes of the frame $\frake$. Thus, the Frobenius theorem guarantees existence, while uniqueness up to a rigid motion is guaranteed only for a fixed parametrization.
 
 \begin{thm}[Bonnet's Fundamental Theorem of Surfaces]\index{Theorem!Bonnet's Fundamental Theorem}
     Let $U$ be an open domain in $\bbR^2$. Two parametric surfaces $\bf{x},\wt{\bf{x}}:U\to \bbE^3$ are congruent (via an element of $\SE_3$) iff they have the same first and second fundamental forms at corresponding points:

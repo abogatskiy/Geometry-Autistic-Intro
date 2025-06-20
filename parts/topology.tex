@@ -30,7 +30,7 @@ being the objects of the category and the arrows being the morphisms.
 \begin{enumerate}
     \item A category with no objects is called the empty, or trivial, category: $\calC=\varnothing$.
     \item A category with only identity morphisms is called \emph{discrete}.
-    \item A category with only one object is called \emph{monoidal}.
+    \item A category with only one object is called a \emph{monoid}.\index{Monoid}
 \end{enumerate}
     
 \end{example}
@@ -55,8 +55,7 @@ being the objects of the category and the arrows being the morphisms.
 \end{example}
 %
 \begin{example}
-    We can also consider $\mathsf{Set}_{\bullet}$ \index{Category!of pointed sets}, the category of \emph{pointed
-    sets}. The objects of the category are doubles $(A,x)$ where $A$
+    We can also consider $\mathsf{Set}_{\bullet}$ \index{Category!of pointed sets}, the category of \emph{pointed sets}. The objects of the category are doubles $(A,x)$ where $A$
     is a set and $x\in A$ is an element of the set, called the \emph{basepoint}.
     The morphisms $\mor((A,x),(B,y))$ are restricted to those maps $f:A\rightarrow B$
     such that $f(x)=y$, called \emph{pointed maps}.
@@ -387,10 +386,10 @@ multiplication and an identity element.} with the morphisms being group homomorp
 \end{defn}
 Some examples of rings include the ring of integers $(\bbZ,+,\cdot)$,
 and the ring $\bbR [x]$ of polynomials in a variable $x$ with
-real coefficients. Note that requirement associativity of multiplication
+real coefficients. The requirement of associativity of multiplication
 is sometimes relaxed in the definition of a ring.
 
-We can define two categories:
+We can define three categories of rings:
 \begin{itemize}
     \item $\mathsf{Ring}$ of all rings, associative or not, with morphisms
     being ring homomorphisms (maps that preserve addition, multiplication).
@@ -419,7 +418,7 @@ We can define two categories:
     define square matrices with coefficients taken from a commutative
     ring $R$, the set of matrices being denoted by $\Mat_n(R)$,
     $n$ being the size of the matrix. $\Mat_n(R)$ forms an associative
-    ring. Hence, we have a covariant functor $F:\mathsf{CommRing}\rightarrow\mathsf{AssRing}$
+    ring. Hence, we have a covariant functor $\Mat_n:\mathsf{CommRing}\rightarrow\mathsf{AssRing}$
     that takes a commutative ring to the associative ring of matrices consisting of elements of that ring. 
 \end{example}
 \begin{xca}
@@ -428,7 +427,7 @@ We can define two categories:
 \begin{example}
     If we restrict to invertible matrices the associative ring $\Mat_n(R)$
     reduces to the group $\GL_n(R)$ of invertible matrices with
-    coefficients in $R$ and we have a functor $F:\mathsf{CommRing}\rightarrow\mathsf{Gr}$.
+    coefficients in $R$ and we have a functor $\GL_n:\mathsf{CommRing}\rightarrow\mathsf{Gr}$.
 \end{example}
 %
 \begin{example}
@@ -571,15 +570,15 @@ being surjective, injective or both, i.e., bijective. In this section
 we introduce the analogs of such maps in category theory. Surjective
 maps are those whose image spans the entire codomain, while for injective
 maps, every element of the range of the map has a unique preimage.
-these definitions can't be generalized to categories, since the objects
+These definitions can't be generalized to categories, since the objects
 of a category may not have any internal structure similar to that
-of a set. However, there is an alternate way to define surjective
+of a set. However, there is an alternative way to define surjective
 and injective maps that does not rely upon the internal structure
 of sets, and is equivalent to the previous definitions.
 
 \[\text{"Epic" property:}\; 
 \begin{tikzcd} 
-X \arrow[r, "f"] & Y \arrow[r, bend left, "g"] \arrow[r, bend right, "h"'] & Z 
+X \arrow[r, "f"] & Y \arrow[r, bend left, "g"] \arrow[r, bend right, "h"'] & Z. 
 \end{tikzcd}\]
 
 Suppose $f:X\rightarrow Y$ is a surjective map. Consider two maps
@@ -694,9 +693,9 @@ while the converse don't. Here are some counterexamples.
     and $H=\ker(f)$ is a normal subgroup of $G$. Hence we can construct
     the following sequence of maps
     \begin{equation}
-        1\xhookrightarrow{\text{mono}}H\xhookrightarrow{\text{mono}}G\xrightarrow{f}G/H\xrightarrow{\text{epi}}1
+        \{e\}\xhookrightarrow{\text{mono}}H\xhookrightarrow{\text{mono}}G\xrightarrow{f}G/H\xrightarrow{\text{epi}}\{e\}
     \end{equation}
-    The first map is unique because $1$ has to map to $e\in H$. The second map is the inclusion of the subgroup $H\hookrightarrow G$. These two maps are monomorphisms because they are injective, while
+    The first map is unique because $e$ has to map to $e\in H$. The second map is the inclusion of the subgroup $H\hookrightarrow G$. These two maps are monomorphisms because they are injective, while
     the other two are epimorphisms because they are surjective. The question
     we seek to answer is whether the group $G$ can always be written as
     a direct product of its normal subgroup $H$ and the quotient group $G/H$.
@@ -704,9 +703,9 @@ while the converse don't. Here are some counterexamples.
     $g:G/H\rightarrow G$ such that $gf=\id_{G/H}$, i.e., $g$ is a section
     of the split epimorphism $f$. 
 
-    We already know from the last example that not every epimorphism has a section, but for another example let us go back to the kindergarten and
-    re-learn how to add integer numbers in their decimal representation. For simplicity we will restrict ourselves
-    to two digit numbers, i.e., elements of the cyclic group $\bbZ/100\bbZ$.
+    We already know from the last example that not every epimorphism has a section, but for another example let us remember elementary school and
+    re-learn how to add integer numbers in their decimal representation. For simplicity, we will restrict ourselves
+    to two-digit numbers, i.e., elements of the cyclic group $\bbZ/100\bbZ$.
     The units and tens digits of these numbers both form their own cyclic
     groups $\bbZ/10\bbZ=\{0,1,\ldots,9\}$ and we have the following
     sequence of maps 
@@ -719,7 +718,7 @@ while the converse don't. Here are some counterexamples.
     from the units digit to the tens digit. Clearly, that is not true
     and this isomorphism doesn't exist. 
 
-    When $f$ above isn't split, we say that $G$ is a nontrivial \emph{extension}
+    When $f$ above isn't split, we say that $G$ is a \emph{nontrivial extension}
     of the group $H$.\footnote{The concept of extensions of symmetry groups often shows up in quantum
     mechanics where the Hilbert space is a \emph{projective} representation of
     the symmetry group. Every projective representation is equivalent to a representation of a central
@@ -3926,12 +3925,12 @@ Let $\pi:E\to B$ be a connected covering. The subgroup $\pi_\ast(\pi_1(E,p_0))\s
 \end{example}
 
 \begin{example}[Universal covers of graphs]
-    Let $M=\Gamma$ be a connected graph with $V$ vertices and $E$ edges, i.e., a topological space consisting of $E$ copies of the interval $[0,1]$ some of which are glued to each other at their ends. Such a graph always has a maximal tree, i.e., a subgraph of $\Gamma$ that is a tree and is not contained in any other sub-tree of $\Gamma$. One can show that a maximal tree must contain all vertices of $\Gamma$. Since every tree is a contractible topological space, by retracting a maximal tree of $\Gamma$ into one point we identify all vertices of $\Gamma$ into one point. This shows that $\Gamma$ is homotopy equivalent to the wedge sum of some number of circles, each corresponding to a cycle in the graph. Namely, the number $l$ of cycles in $\Gamma$ equals the number of edges in $\Gamma$ minus the number of edges in a maximal tree of $\Gamma$. This is also equal to $1-\chi(\Gamma)$, where $\chi(\Gamma)=V-E$ is the Euler characteristic. Then by Proposition~\ref{prop computing pi1}, $\pi_1(\Gamma)$  is a free group with $l$ generators. Finally, from the above results it is easy to see that $\wt{\Gamma}$ is the \href{https://en.wikipedia.org/wiki/Cayley_graph}{Cayley graph} of this free group, i.e., the graph whose vertices are all the elements of the group, and the edges incident to a vertex correspond to the generators of the group and their inverses. The vertex on the other end of an edge is the result of the multiplication of the current vertex by the edge's generator (say, from the right). In the case of a free group with $l$ generators, this is a regular tree whose root represents the identity element and each vertex has valency/degree (number of incident edges) equal to $l$. See Fig.~\ref{Fig. Cayley} for an example of a Cayley graph.
+    Let $M=\varGamma$ be a connected graph with $V$ vertices and $E$ edges, i.e., a topological space consisting of $E$ copies of the interval $[0,1]$ some of which are glued to each other at their ends. Such a graph always has a maximal tree, i.e., a subgraph of $\varGamma$ that is a tree and is not contained in any other sub-tree of $\varGamma$. One can show that a maximal tree must contain all vertices of $\varGamma$. Since every tree is a contractible topological space, by retracting a maximal tree of $\varGamma$ into one point we identify all vertices of $\varGamma$ into one point. This shows that $\varGamma$ is homotopy equivalent to the wedge sum of some number of circles, each corresponding to a cycle in the graph. Namely, the number $l$ of cycles in $\varGamma$ equals the number of edges in $\varGamma$ minus the number of edges in a maximal tree of $\varGamma$. This is also equal to $1-\chi(\varGamma)$, where $\chi(\varGamma)=V-E$ is the Euler characteristic. Then by Proposition~\ref{prop computing pi1}, $\pi_1(\varGamma)$  is a free group with $l$ generators. Finally, from the above results it is easy to see that $\wt{\varGamma}$ is the \href{https://en.wikipedia.org/wiki/Cayley_graph}{Cayley graph} of this free group, i.e., the graph whose vertices are all the elements of the group, and the edges incident to a vertex correspond to the generators of the group and their inverses. The vertex on the other end of an edge is the result of the multiplication of the current vertex by the edge's generator (say, from the right). In the case of a free group with $l$ generators, this is a regular tree whose root represents the identity element and each vertex has valency/degree (number of incident edges) equal to $l$. See Fig.~\ref{Fig. Cayley} for an example of a Cayley graph.
 \end{example}
 \begin{figure}[tp]
     \centering
         \includegraphics[scale=0.15]{figures/Cayley.pdf}
-    \caption{This graph is the universal cover of the figure eight, which is $\Gamma=\bbS^1 \vee \bbS^1$. It is also the Cayley graph of the fundamental group of $\Gamma$, i.e., the free group with two generators $a$ and $b$, $\pi_1(\Gamma)=F(\{a,b\})\cong\bbZ\ast\bbZ$. \label{Fig. Cayley}}
+    \caption{This graph is the universal cover of the figure eight, which is $\varGamma=\bbS^1 \vee \bbS^1$. It is also the Cayley graph of the fundamental group of $\varGamma$, i.e., the free group with two generators $a$ and $b$, $\pi_1(\varGamma)=F(\{a,b\})\cong\bbZ\ast\bbZ$. \label{Fig. Cayley}}
 \end{figure}
 
 We can now use the theory of covering spaces to prove a very important basic theorem about free groups. 
@@ -3951,10 +3950,10 @@ We can now use the theory of covering spaces to prove a very important basic the
     If $G$ is a free group of finite rank $r_G$ and $H \leq G$ is a subgroup of finite index $n$, then $H$ is free of rank $r_H=n(r_G-1)+1$.
 \end{thm}
 \begin{proof}
-    Let $G=F(x_1,\ldots,x_{r_G})$. This follows from examining the covering graph constructed in Theorem~\ref{thm Nielsen-Schreier}. It has one vertex for each right coset $Hg$ and exactly $2r_G$ edges at each vertex ($r_G$ going in and $r_G$ going out) with the outgoing edge going from $Hg$ to $Hgx_i=(Hg)\cdot x_i$ labeled by the generator $x_i$. Therefore this graph has $V=n$ vertices and $E=nr_G$ edges. The fundamental group of this graph $\wt\Gamma$ is isomorphic to $H$ and is generated by $1-\chi(\wt\Gamma)=1-V+E=n(r_G-1)+1$ loops.
+    Let $G=F(x_1,\ldots,x_{r_G})$. This follows from examining the covering graph constructed in Theorem~\ref{thm Nielsen-Schreier}. It has one vertex for each right coset $Hg$ and exactly $2r_G$ edges at each vertex ($r_G$ going in and $r_G$ going out) with the outgoing edge going from $Hg$ to $Hgx_i=(Hg)\cdot x_i$ labeled by the generator $x_i$. Therefore this graph has $V=n$ vertices and $E=nr_G$ edges. The fundamental group of this graph $\wt\varGamma$ is isomorphic to $H$ and is generated by $1-\chi(\wt\varGamma)=1-V+E=n(r_G-1)+1$ loops.
 \end{proof}
 \begin{cor}
-    Let $\Gamma$ be a covering graph of $\bigvee_{i=1}^r \bbS^1$ (with $r>1)$ that corresponds to a subgroup generated by $r'>1$ generators. If $n=(r'-1)/(r-1)$ is a positive integer then $\Gamma$ has $n$ sheets, otherwise $\Gamma$ has infinitely many sheets.
+    Let $\varGamma$ be a covering graph of $\bigvee_{i=1}^r \bbS^1$ (with $r>1)$ that corresponds to a subgroup generated by $r'>1$ generators. If $n=(r'-1)/(r-1)$ is a positive integer then $\varGamma$ has $n$ sheets, otherwise $\varGamma$ has infinitely many sheets.
 \end{cor}
 \begin{cor}
     The free group of two generators, $F(a,b)$, contains free subgroups of any integer rank $r_H$. 
@@ -5356,7 +5355,7 @@ We will show that any twice differentiable Lie group has a unique compatible rea
         \item The inclusion map $\bbS^1\hookrightarrow \mathbb{C}^\ast$ is a Lie group homomorphism.
         \item The exponential map $\exp:(\bbR ,+)\to (\bbR_+,*)$ is a Lie group homomorphism since $\exp(x+y)=\exp(x)\cdot \exp(y)$.
         \item The determinant function $\det:\GL_n(\bbR )\to \bbR^\times$ is a Lie group homomorphism.
-        \item The adjoint action $\Adg_g:G\to G$ is a Lie group homomorphism for any $g\in G$.
+        \item The conjugation action $\Adg_g:G\to G$ is a Lie group homomorphism for any $g\in G$.
     \end{enumerate}
 \end{example}
 
@@ -5551,33 +5550,33 @@ First recall the following fundamental theorem that classifies all finitely gene
 \end{defn}
 
 \begin{prop}\label{prop discrete normal subgroup}
-    Suppose $G$ is a connected topological group and $\Gamma\subset G$ is a discrete normal subgroup. Then $\Gamma\subset \rmZ(G)$.
+    Suppose $G$ is a connected topological group and $\varGamma\subset G$ is a discrete normal subgroup. Then $\varGamma\subset \rmZ(G)$.
 \end{prop}
 \begin{proof}
-    Let $\gamma\in\Gamma$ and consider the continuous map $g\mapsto \Adg_g(\gamma)=g\gamma g^{-1}$ for $g\in G$. Since $\Gamma$ is normal, $\Adg_G(\gamma)\subset \Gamma$. Since $G$ is connected, the map is continuous, and $\Gamma$ is discrete, the image $\Adg_G(\gamma)$ must be a single point, and it must be $\gamma$ since we can choose $g=e$.
+    Let $\gamma\in\varGamma$ and consider the continuous map $g\mapsto \Adg_g(\gamma)=g\gamma g^{-1}$ for $g\in G$. Since $\varGamma$ is normal, $\Adg_G(\gamma)\subset \varGamma$. Since $G$ is connected, the map is continuous, and $\varGamma$ is discrete, the image $\Adg_G(\gamma)$ must be a single point, and it must be $\gamma$ since we can choose $g=e$.
 \end{proof}
 This gives us yet another way of proving that $\pi_1(G)$ is always abelian.
 \begin{cor}\label{cor G=wt G/Gamma}
-    Every connected Lie group $G$ has the form $\wt{G}\slash\Gamma$, where $\wt{G}$ is simply connected and $\Gamma\cong \pi_1(G)$ is a discrete subgroup of the center $\rmZ(\wt{G})$. In particular, $\pi_1(G)$ is abelian.
+    Every connected Lie group $G$ has the form $\wt{G}\slash\varGamma$, where $\wt{G}$ is simply connected and $\varGamma\cong \pi_1(G)$ is a discrete subgroup of the center $\rmZ(\wt{G})$. In particular, $\pi_1(G)$ is abelian.
 \end{cor}
 \begin{cor}[Classification of discrete subgroups of $\bbR^n$]\label{cor discrete subgroups of Rn}
-    Any discrete subgroup $\Gamma$ of $\bbR^n$ is a free abelian subgroup, i.e., a lattice generated by a set of linearly independent vectors $x_1\ldots,x_k$.
+    Any discrete subgroup $\varGamma$ of $\bbR^n$ is a free abelian subgroup, i.e., a lattice generated by a set of linearly independent vectors $x_1\ldots,x_k$.
 \end{cor}
 \begin{proof}
-    Indeed, consider the subspace $V\subset \bbR^n$ spanned by $\Gamma$. Let its dimension be $k$ and let $v_1,\ldots,v_k\in \Gamma$ be a set of elements of $\Gamma$ that forms a basis for $V$, and let $Z=\{\bbZ v_1+\cdots +\bbZ v_k\cong \bbZ^k\}\cong\bbZ^k$. Consider the quotient map $q:V\to V/Z$ (this is a quotient by a subgroup, not just a topological quotient: its fibers are $q^{-1}(v)=v+Z$). It is open and the quotient space is compact (being homeomorphic to a torus $\bbT^k$). The fact that $\Gamma$ is discrete and $q$-saturated (i.e., $q^{-1}(q(\Gamma))=\Gamma$) implies that $q(\Gamma)$ is discrete. 
+    Indeed, consider the subspace $V\subset \bbR^n$ spanned by $\varGamma$. Let its dimension be $k$ and let $v_1,\ldots,v_k\in \varGamma$ be a set of elements of $\varGamma$ that forms a basis for $V$, and let $Z=\{\bbZ v_1+\cdots +\bbZ v_k\cong \bbZ^k\}\cong\bbZ^k$. Consider the quotient map $q:V\to V/Z$ (this is a quotient by a subgroup, not just a topological quotient: its fibers are $q^{-1}(v)=v+Z$). It is open and the quotient space is compact (being homeomorphic to a torus $\bbT^k$). The fact that $\varGamma$ is discrete and $q$-saturated (i.e., $q^{-1}(q(\varGamma))=\varGamma$) implies that $q(\varGamma)$ is discrete. 
     
-    Moreover, $\Gamma$ is closed because otherwise there would exist a Cauchy sequence $(\gamma_k)\in\Gamma$, i.e., $\gamma_k-\gamma_{k+1}\to 0$ (the existence of a limit is irrelevant for this proof, a mere existence of a Cauchy sequence is enough), which would contradict the fact that $0$ is isolated in $\Gamma$. Therefore, by definition of the quotient topology and since $\Gamma$ is $q$-saturated, $q(\Gamma)$ is also closed.  Therefore $q(\Gamma)\cong \Gamma\slash \bbZ^k$ is compact and discrete, hence finite. Since $\bbZ^k$ and $\Gamma\slash \bbZ^k$ are both finitely generated, it follows that $\Gamma$ is also finitely generated (by the union of the generators of $\bbZ^k$ and $\Gamma\slash \bbZ^k$). Since $V$ is torsion-free, we obtain that $\Gamma$ is free abelian.  The fact that $\Gamma\slash \bbZ^k$ is finite then implies that $\rank \Gamma=k$. Therefore there exists a set of generators $x_1,\ldots,x_k$ for $\Gamma$ which also provide a basis for $V$.
-    % In summary, $G$ is the quotient of its universal covering group, which must be abelian and simply connected, hence isomorphic to $\bbR^n$, by a discrete subgroup. As we just showed, this produces a decomposition $\bbR^n\slash\Gamma \cong (\bbR^k\slash\Gamma) \oplus \bbR^{n-k}\cong \bbT^k\oplus \bbR^{n-k}$.
+    Moreover, $\varGamma$ is closed because otherwise there would exist a Cauchy sequence $(\gamma_k)\in\varGamma$, i.e., $\gamma_k-\gamma_{k+1}\to 0$ (the existence of a limit is irrelevant for this proof, a mere existence of a Cauchy sequence is enough), which would contradict the fact that $0$ is isolated in $\varGamma$. Therefore, by definition of the quotient topology and since $\varGamma$ is $q$-saturated, $q(\varGamma)$ is also closed.  Therefore $q(\varGamma)\cong \varGamma\slash \bbZ^k$ is compact and discrete, hence finite. Since $\bbZ^k$ and $\varGamma\slash \bbZ^k$ are both finitely generated, it follows that $\varGamma$ is also finitely generated (by the union of the generators of $\bbZ^k$ and $\varGamma\slash \bbZ^k$). Since $V$ is torsion-free, we obtain that $\varGamma$ is free abelian.  The fact that $\varGamma\slash \bbZ^k$ is finite then implies that $\rank \varGamma=k$. Therefore there exists a set of generators $x_1,\ldots,x_k$ for $\varGamma$ which also provide a basis for $V$.
+    % In summary, $G$ is the quotient of its universal covering group, which must be abelian and simply connected, hence isomorphic to $\bbR^n$, by a discrete subgroup. As we just showed, this produces a decomposition $\bbR^n\slash\varGamma \cong (\bbR^k\slash\varGamma) \oplus \bbR^{n-k}\cong \bbT^k\oplus \bbR^{n-k}$.
 \end{proof}
 
 \begin{rem}
-    The topology of $\Gamma$ here is assumed to be the relative topology induced from $\bbR^n$. Otherwise, we could take $\Gamma=\bbQ^n$ with the discrete topology on it.
+    The topology of $\varGamma$ here is assumed to be the relative topology induced from $\bbR^n$. Otherwise, we could take $\varGamma=\bbQ^n$ with the discrete topology on it.
 \end{rem}
 
 \begin{rem}
     We will later show that $\bbR^n$ are the only simply connected abelian Lie groups, and it will follow that any other connected abelian Lie group $G$ is a quotient of $\bbR^n$ by a lattice of rank $k\leq n$, so $G\cong \bbT^k\oplus \bbR^{n-k}$.
     
-    This gives us another way of proving the Fundamental Theorem of Algebra. If $\bbF/\bbR$ is a field extension, then the identity component $(\bbF^\ast)_0$ is abelian and connected. Then for extension of degree $d=1$, this is $\bbR$; for $d=2$ this is $\bbS^1\times\bbR\cong\bbC^\ast$, and for $d\geq 3$ this is $\bbS^{d-1}\times\bbR$, but none of these can be abelian Lie groups. Hence $\bbC$ is the largest extension of $\bbR$ and hence algebraically closed.
+    This gives us another way of proving the Fundamental Theorem of Algebra. If $\bbF/\bbR$ is a field extension, then the identity component $(\bbF^\ast)_0$ is abelian and connected. Then for extension of degree $d=1$, this is $\bbR$; for $d=2$ this is $\bbS^1\times\bbR\cong\bbC^\ast$, and for $d\geq 3$ this is $\bbS^{d-1}\times\bbR$, but none of these can be abelian Lie groups. Hence $\bbC$ is the largest extension of $\bbR$ and hence algebraically closed.\index{Theorem!Fundamental Theorem of Algebra}
 \end{rem}
 
 
@@ -5922,7 +5921,7 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
     \[\rmL_g\circ \rmR_h=\rmR_h\circ \rmL_g.\]
     In general, there is no reason why a left and a right action on a manifold have to commute, and this property is inseparable from the very definition of a group.\footnote{An interesting question here is whether one can come up with algebraic structures that allow more than two commuting actions. Such sets with \emph{$n$-ary operations} do exist, but it turns out that as soon as one requires the existence of an identity element, the operation can be expressed in terms of a binary one.}
 
-    In addition, the adjoint operator $\Adg_g$ defines the \emph{adjoint action} of $G$ on itself since 
+    In addition, the conjugation operator $\Adg_g$ defines the \emph{adjoint action} of $G$ on itself since 
     \[\Adg_{gh}=\Adg_g\circ \Adg_h,\]
     which makes it a left action. Similarly, $\Adg_{g^{-1}}$ is a right action.
 \end{example}
@@ -5930,7 +5929,7 @@ The notions of orbits, stabilizers, transitive actions and free actions transfer
 \begin{example}[Lie group actions]
     \begin{enumerate}[label=(\alph*)]
         \item The natural action of $\GL_n(V)$ on $V$ via $(A,x)\mapsto Ax$ is a smooth left action.
-        \item An action of a discrete group $\Gamma$ on a manifold is smooth iff every $\Phi_g$ is smooth. e.g, $\bbZ^n$ acts smoothly and freely on $\bbR^n$ by translations $(n,x)\mapsto x+n$.
+        \item An action of a discrete group $\varGamma$ on a manifold is smooth iff every $\Phi_g$ is smooth. e.g, $\bbZ^n$ acts smoothly and freely on $\bbR^n$ by translations $(n,x)\mapsto x+n$.
         \item The automorphism group $\Aut(\pi)$ of a smooth covering map $\pi:E\to M$ is a zero-dimensional Lie group acting smoothly and freely on $E$.
     \end{enumerate}
 \end{example}
@@ -6130,12 +6129,11 @@ Note that one can also define infinite-dimensional representations even of finit
 Every Lie group has a canonical representation on its own tangent space at the identity.
 
 \begin{defn}[Adjoint representation]\index{Adjoint representation}
-    The derivative of the adjoint action at the identity, $\T_e\Adg_g:\T_e G\to \T_e G$, is a linear representation of $G$. We use the same symbol without boldface to denote it:
+    The derivative of the adjoint action at the identity, $\T_e\Adg_g:\T_e G\to \T_e G$, is a linear representation of $G$ called its adjoint representation. We use the same symbol without boldface to denote it:
     \[\Ad_g X=(\Adg_g)_{\ast e}(X).\]
-    To further differentiate them, we will omit parentheses when writing the linear map $\Ad_g X$ but keep them when writing $\Adg_g(h)$.
 \end{defn}
 
-    Note that any abelian Lie group has a trivial adjoint representation ($\Ad_g=0$ for all $g\in G$).
+Note that any abelian Lie group has a trivial adjoint representation ($\Ad_g=0$ for all $g\in G$). The converse is not necessarily true unless $G$ is connected.
 
 \begin{example}[Adjoint representation of matrix groups]
     Let $G\subset \GL(V)$ be a matrix group. Then $\T_e G\cong \Mat(V)$ and we can explicitly compute the adjoint representation. Since $\GL(V)$ is open in $\Mat(V)$, we can define a straight path $\gamma(t)=A+tX$ for any $A\in \GL(V)$ and $X\in \Mat(V)$. In particular, let $h(t)=\rmI+tX$. Then for any $A\in \GL(V)$, using formula \eqref{eq differential in local coordinates} for the action of a differential of a smooth map,
@@ -6222,9 +6220,9 @@ This indicates the existence of a natural antisymmetric bilinear form $\T_e G\ti
     We antisymmetrize the equation from Lemma~\ref{3975} w.r.t.\ permutations of all three arguments. First we notice that the antisymmetrization of $\gamma(\bf{x},\bf{y})$ will be the same as that of $\gamma(\bf{y},\bf{z})$ since they are related to each other by a cyclic (and thus even) permutation. Moreover, the antisymmetrizations of both $\gamma(\bf{x}+\bf{y},\bf{z})$ and $\gamma(\bf{x},\bf{y}+\bf{z})$ vanish since both of these are symmetric under a transposition of two of the arguments, and the only function that is both symmetric and antisymmetric is zero.
 
     What remains is 
-    \[\Alt \beta(\beta(\bf{x},\bf{y}),\bf{z})=\Alt \beta(\bf{x},\beta(\bf{y},\bf{z})),\label{eq 15135}\]
-    where $\Alt$ is the antisymmetrization operator 
-    \[\Alt f(\bf{x}_1,\bf{x}_2,\bf{x}_3)=\sum_{\sigma\in \rmS_3}\sign(\sigma)f(\bf{x}_{\sigma(1)},\bf{x}_{\sigma(2)},\bf{x}_{\sigma(3)}).\]
+    \[\acyclic_{\bf x,\bf y,\bf z} \beta(\beta(\bf{x},\bf{y}),\bf{z})=\acyclic_{\bf x,\bf y,\bf z} \beta(\bf{x},\beta(\bf{y},\bf{z})),\label{eq 15135}\]
+    where $\acyclic_{\bf x,\bf y,\bf z}$ is the alternating sum over all $6$ permutations of the arguments:
+    \[\acyclic_{\bf x_1,\bf x_2,\bf x_3} f(\bf{x}_1,\bf{x}_2,\bf{x}_3)=\sum_{\sigma\in \rmS_3}\sign(\sigma)f(\bf{x}_{\sigma(1)},\bf{x}_{\sigma(2)},\bf{x}_{\sigma(3)}).\]
     Equation \eqref{eq 15135} has six terms on each side, and we are going to group them into three groups of four by gathering terms that have the same variable standing alone. We start with those having $\bf{z}$ as a lone variable. On the left hand side we combine two terms coming from the transposition $(1\Leftrightarrow2)$
     \[\beta(\beta(\bf{x},\bf{y}),\bf{z})-\beta(\beta(\bf{y},\bf{x}),\bf{z})=\beta(b(\bf{x},\bf{y}),\bf{z}),\]
     whereas on the right hand side we find
@@ -6363,7 +6361,7 @@ Knowing from Construction I that $\ad_A B$ satisfies the properties of a Lie bra
 
 
 \begin{example}[$\mathfrak{gl}_n(R)$]
-    The so called \emph{general linear Lie algebra} constructed in Lemma \ref{lem gl(V)} is denoted $\mathfrak{gl}(V)=\End(V)^{(-)}$ (recall that $R\mapsto R^{(-)}$ is the forgetful functor that turns a ring into its associated Lie ring by defining the Lie bracket as the commutator). In fact it can be defined over all associative rings. Usually we use the standard basis consisting of the \emph{standard matrix units} $e_{ij},i\leq j$. Since $e_{jh}e_{ik}=\delta_{jh}e_{ik}$, the commutator reads
+    The so called \emph{general linear Lie algebra} constructed in Lemma \ref{lem gl(V)} is denoted $\mathfrak{gl}(V)=\End(V)^{(-)}$ (recall that $R\mapsto R^{(-)}$ is the forgetful functor that turns a ring into its associated Lie ring by defining the Lie bracket as the commutator). In fact it can be defined over all associative rings. Usually we use the standard basis consisting of the \emph{standard matrix units} $e_{ij},i\leq j$, each of which has a $1$ in position $ij$ and $0$ everywhere else. Since $e_{jh}e_{ik}=\delta_{jh}e_{ik}$, the commutator reads
     \[[e_{ij},e_{hk}]=\delta_{jh}e_{ij}-\delta_{ki}e_{hj}.\]
 
     Later we will see that the Poincar\'e-Birkhoff-Witt Theorem implies that any Lie algebra $L$ is isomorphic to a subalgebra of some commutator Lie algebra $\calA^{(-)}$ of some associative algebra $\calA$. Moreover, the theorem of Ado and Iwasawa implies that for a finite-dimensional $L$ the algebra $\calA$ can be taken to be finite-dimensional.
