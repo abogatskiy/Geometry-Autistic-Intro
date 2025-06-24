@@ -2434,11 +2434,11 @@ Note that, as mentioned above, contact transformations locally take $r$-graphs o
     where $a(r)$ and $b(s)$ are arbitrary functions. This is true for any $K$ because 
     \[X^{(2)}(u_{rs}-K\rme^u)=-(u_{rs}-K\rme^u)(a_r+b_s).\]
     (Here by $u_{rs}$ we mean the jet coordinate corresponding to this derivative.) $X$ generates the infinite-dimensional symmetry group depending on two arbitrary functions 
-    \[\wt r=f(r),\quad \wt s=g(s),\quad \wt u=u-\ln(f_r(r)g_s(s)),\quad f_rg_s\neq 0.\]
-    The group action implies that if $F(r,s)$ is a solution, so is the function $u=F(\wt r,\wt s)+\ln(f_rg_s)$. The general solution for $K\neq 0$ can be found by acting on a particular solution of the form 
+    \[\wb r=f(r),\quad \wb s=g(s),\quad \wb u=u-\ln(f_r(r)g_s(s)),\quad f_rg_s\neq 0.\]
+    The group action implies that if $F(r,s)$ is a solution, so is the function $u=F(\wb r,\wb s)+\ln(f_rg_s)$. The general solution for $K\neq 0$ can be found by acting on a particular solution of the form 
     \[u=F(r+s)=\ln\frac{2}{K(r+s)^2}\]
     as 
-    \[u=F(\wt r+\wt s)+\ln (f_rg_s)=\ln\frac{2f_rg_s}{a(f(r)+g(s))^2}.\]
+    \[u=F(\wb r+\wb s)+\ln (f_rg_s)=\ln\frac{2f_rg_s}{a(f(r)+g(s))^2}.\]
     So the general solution is expressed in terms of two arbitrary functions as
     \[u=\ln\frac{8 f'(t+x)g'(t-x)}{K(f(t+x)+g(t-x))^2}.\]
     This solution was obtained by Liouville in 1853. The linear case $F''=0$ is quite different, the symmetry group is the infinite-dimensional conformal group (much like for the 2D Laplace equation above.)
@@ -2539,7 +2539,7 @@ Recall that effectiveness of a group action is measured by its kernel, or ``glob
 We also call the action \emph{effectively free} if $G\slash G_E$ acts freely, so every stabilizer equals the kernel, $G_p=G_E$. 
 
 \begin{cor}[{\cite[Cor.~5.13]{OlverEquiv}}]\label{cor 5.13 OlverEquiv}
-    If $G$ is a transformation group with kernel $G_E$, then the stable orbit dimension of $G$ is $s=\dim G-\dim G_E$. Consequently, for each $r'\geq r$, where $r$ is the order of stabilization, $G$ acts effectively freely on the open subset $\calV^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve their maximal dimension $s$.
+    If $G$ is a transformation group with kernel $G_E$, then the stable orbit dimension of $G$ is $s=\dim G-\dim G_E$. Consequently, for each $r'\geq r$, where $r$ is the order of stabilization, $G$ acts effectively freely on the open subset $\calV^{r'}\subset \rmJ^{r'}E$ where the prolonged group orbits achieve their maximal dimension $s$.
 \end{cor}
 
 If $G$ does not act effectively, then we can replace it by the effectively acting quotient group $G\slash G_E$ without any appreciable loss of generality. Therefore, to avoid unnecessary computations, we can always assume that the action of $G$ is locally effective, and so the stable orbit dimension is $s=\dim G$.
@@ -2548,7 +2548,7 @@ If $G$ does not act effectively, then we can replace it by the effectively actin
     If $G$ acts (locally) effectively on an open subset $U\subset E$, then $G$ acts (locally) freely on the open subset $\calV^{r'}\subset \rmJ^{r'}$ where the prolonged group orbits achieve the stable orbit dimension $\dim G$.
 \end{cor}
 
-To summarize, in practice, we will assume local effectiveness, and then \emph{the action of any finite-dimensional Lie (pseudo)group will necessarily become locally free after a finite number of prolongations}. A complete set of differential invariants at or above the order of stabilization is then given by any choice of local coordinates on any slice of the prolonged action.
+To summarize, in practice, we will assume local effectiveness and restrict ourselves to the space spanned by generic orbits, and then \emph{the action of any finite-dimensional Lie (pseudo)group will necessarily become locally free after a finite number of prolongations}. A complete set of differential invariants at or above the order of stabilization is then given by any choice of local coordinates on any slice of the prolonged action. The special cases of singular (non-generic) orbits have to be treated by more refined methods that we will not discuss here but will be superseded by the regularized method of moving coframes in the next \chap.
 
 \PRLsep
 
@@ -2615,11 +2615,11 @@ In practice, it is often convenient to use the method of Cartan's moving frames 
     Let us consider the smooth projective vector field 
     \[X=x^2\partial_x+xu\partial_u\]
     generating the one-parameter local projective group 
-    \[\varPhi_\epsilon(x,u):\quad \wt x=\frac{x}{1-\epsilon x},\quad \wt u=\frac{u}{1-\epsilon x},\]
+    \[\varPhi_\epsilon(x,u):\quad \wb x=\frac{x}{1-\epsilon x},\quad \wb u=\frac{u}{1-\epsilon x},\]
     whenever $1-\epsilon x\neq 0$. The first and second prolonged transformations are derived by the usual chain rule for derivatives:
-    \[\varPhi^{(1)}(x,u,p)=(\wt x,\wt u,\wt p),\quad \wt p=p+\epsilon(u-xp),\]
+    \[\varPhi^{(1)}(x,u,p)=(\wb x,\wb u,\wb p),\quad \wb p=p+\epsilon(u-xp),\]
     and 
-    \[\varPhi^{(2)}(x,u,p,q)=(\wt x,\wt u,\wt p,\wt q),\quad \wt q=(1-\epsilon x)^3 q.\]
+    \[\varPhi^{(2)}(x,u,p,q)=(\wb x,\wb u,\wb p,\wb q),\quad \wb q=(1-\epsilon x)^3 q.\]
     The corresponding vector fields are 
     \[X^{(1)}=X+(u-xp)\partial_p,\quad X^{(2)}=X^{(1)}-3xq\partial_q.\]
     We already know that $I=u/x$ is a projective invariant, and by rectifying $X^{(1)}$ it is easy to see that $J=xp-u$ is a first-order differential invariant. Then $DJ/DI=J^{-1}(x^3q)$ is a second-order invariant. We can take it as $J_2=J\cdot DJ/DI=x^3 q$. Iterating the Tresse derivatives and multiplying by $J$ we get the sequence of all other differential invariants $J_r=x^2 D_x J_{r-1}$, $r=3,4,\ldots$.
@@ -2774,7 +2774,7 @@ If a higher-order ODE admits several symmetries, then it may be reducible in ord
 \begin{example}
     Consider a second-order equation of the form 
     \[x^2 u_{xx}=F(xu_x-u),\label{eq 6.29 Olver}\]
-    which admits the two-parameter symmetry group $(x,u)\mapsto (\lambda x,u+\mu x)$ with generators $X=x\partial_x$, $Y=x\partial_u$. Since $[X,Y]=Y$, if we reduce w.r.t.\ $Y$, then the resulting first-order ODE will retain a symmetry corresponding to $X$, and hence by Theorem~\ref{thm 6.23 Olver} it can be integrated. In this case, we set $v=u/x$, $w=v_x=x^{-2}(xu_x-u)$, so that the equation reduces to $x^3w=F(x^2w)+2x^2w$. This admits a scaling symmetry generated by the reduced vector field $\wh X=x\partial_x-2w\partial_w$, which means that it is of homogeneous form \eqref{eq 6.26 Olver} and can be integrated as before. On the other hand, if we try to reduce the original equation w.r.t.\ $X$ first, using the variables $\wt y=u$, $\wt v=\ln x$, equation \eqref{eq 6.29 Olver} reduces to a first-order equation $w_y=-w(1+F(w^{-1}-y))$ having no obvious symmetry. Had we started with this equation, the best way to solve it would be to transform back to the original equation and start over.
+    which admits the two-parameter symmetry group $(x,u)\mapsto (\lambda x,u+\mu x)$ with generators $X=x\partial_x$, $Y=x\partial_u$. Since $[X,Y]=Y$, if we reduce w.r.t.\ $Y$, then the resulting first-order ODE will retain a symmetry corresponding to $X$, and hence by Theorem~\ref{thm 6.23 Olver} it can be integrated. In this case, we set $v=u/x$, $w=v_x=x^{-2}(xu_x-u)$, so that the equation reduces to $x^3w=F(x^2w)+2x^2w$. This admits a scaling symmetry generated by the reduced vector field $\wh X=x\partial_x-2w\partial_w$, which means that it is of homogeneous form \eqref{eq 6.26 Olver} and can be integrated as before. On the other hand, if we try to reduce the original equation w.r.t.\ $X$ first, using the variables $\wb y=u$, $\wb v=\ln x$, equation \eqref{eq 6.29 Olver} reduces to a first-order equation $w_y=-w(1+F(w^{-1}-y))$ having no obvious symmetry. Had we started with this equation, the best way to solve it would be to transform back to the original equation and start over.
 \end{example}
 
 Finally, from Theorem~\ref{thm 6.23 Olver} we may also observe that the most efficient way to reduce equations would be to find a sequence of symmetry groups such that each is a normal subgroup of the next with an abelian (or $1$-dimensional) quotients. This is exactly the definition of a solvable symmetry group, so we get the Bianchi-Lie Theorem~\ref{thm Bianchi-Lie} as a corollary. In particular, since all $2$-dimensional Lie algebras are solvable, any second-order ODE with a $2$-dimensional symmetry group can be solved in quadratures. Any higher-order ODE with a $2$-dimensional symmetry group can be reduced to one two orders lower so that the original solutions are recovered from the reduced ones via two quadratures.
@@ -2784,7 +2784,11 @@ Finally, from Theorem~\ref{thm 6.23 Olver} we may also observe that the most eff
     \[\frac{u_{xxx}}{u_x}-\frac32\left(\frac{u_{xx}}{u_x}\right)^2=F(x),\label{eq schwarz}\]
     where $F$ is an arbitrary smooth function. This equation admits the non-solvable symmetry algebra $\fraksl_2(\bbR)$ spanned by 
     \[X_1=\partial_u,\quad X_2=u\partial_u,\quad X_3=u^2\partial_u,\]
-    which generates the \glspl{flt} acting on $u$: $u\mapsto (au+b)/(cu+d)$, with $x$ unchanged. The expression on the left hand side of \eqref{eq schwarz} is the \emph{Schwarzian derivative} of $u$ that we will study more closely in Example~\ref{ex projective structures and schwarzians}. It is invariant under \glspl{flt}. The $2$-dimensional solvable subalgebra $\frakg_0=\<X_1,X_2\>$ can be used to reduce the equation to a first-order one. The second-order differential invariants of $\frakg_0$ are $x$ and $w=u_{xx}/u_x$, in terms of which the reduced equation becomes 
+    which generates the \glspl{flt} acting on $u$: $u\mapsto (au+b)/(cu+d)$, with $x$ unchanged. The expression on the left hand side of \eqref{eq schwarz} is the \emph{Schwarzian derivative} of $u$. It is invariant under \glspl{flt} (which is easy enough to check by hand). 
+    
+    In fact, the stabilization order is $3$ (since a generic quadruple $u(x_0),u_x(x_0),u_{xx}(x_0),u_{xxx}(x_0)$ has no \gls{flt} stabilizer) and the orbit dimension is $\dim \fraksl_2(\bbR)=3$, so we need $2$ differential invariants, with one of them being third-order. There are several ways of obtaining the Schwarzian derivative as a third-order differential invariant  -- see, e.g., \cite[Exercise~5.22]{OlverEquiv}. We will see how it can be constructed via the moving frame method in Example~\ref{ex projective structures and schwarzians}. Thus, the Schwarzian equation is the most general \gls{flt}-invariant third-order differential equation (assuming it's non-singular in the Schwarzian derivative).
+    
+    Let us return to reduction of this equation. The $2$-dimensional solvable subalgebra $\frakg_0=\<X_1,X_2\>$ can be used to reduce the equation to a first-order one. The second-order differential invariants of $\frakg_0$ are $x$ and $w=u_{xx}/u_x$, in terms of which the reduced equation becomes 
     \[w_x=\frac12 w^2+F(x),\]
     which is a Riccati equation. This equation does not inherit the symmetry $X_3$ of the original equation. Indeed, the reduced vector field $\wt X_3$ in terms of the invariants $x$ and $w$ is nonlocal (a so called \emph{exponential vector field}):
     \[\wt X_3=2\rme^{\int w\dd x}\partial_w.\]
@@ -2794,7 +2798,7 @@ Finally, from Theorem~\ref{thm 6.23 Olver} we may also observe that the most eff
 
     When $F=0$, the resulting equation is known as the Kummer-Schwarz equation (it comes up in the study of geodesic curves in spaces of constant curvature) and it has an enlarged $6$-dimensional symmetry algebra $\frakg\cong \fraksl_2(\bbR)\oplus\fraksl_2(\bbR)$ with the additional generators 
     \[X_4=\partial_x,\quad X_5=x\partial_x,\quad X_6=x^2\partial_x.\]
-    The symmetry group is then a group of \glspl{flt} of both $x$ and $u$ coordinates. The corresponding solutions are the linear fractional functions of $x$: $u=(ax+b)/(cx+d)$, $ad-bc\neq 0$.
+    The symmetry group is then a group of \glspl{flt} of both $x$ and $u$ coordinates. The corresponding solutions are the linear fractional functions of $x$: $u=(ax+b)/(cx+d)$, $ad-bc\neq 0$. The Schwarzian derivative can be thus interpreted as measuring the deviation of $u(x)$ from a \gls{flt}.
 \end{example}
 
 
@@ -2807,12 +2811,12 @@ Finally, from Theorem~\ref{thm 6.23 Olver} we may also observe that the most eff
 
 The situation with symmetry reduction is very different in PDEs and we only touch on it briefly. Since a generic PDE includes partial derivatives w.r.t.\ multiple variables, even upon finding rectifying coordinates such that $X=\partial_v$ we will not be able to reduce the order of the equation. Instead, the reduced equation is usually of the same order.
 
-Let $\calE\subset\rmJ^r E$ be an equation with a symmetry group $G$. The Cartan distribution $\calC=\calC^r$ is invariant w.r.t.\ the symmetries and the solutions are $n$-dimensional maximal integral manifolds of $\calC^r(\calE)$. Consider the orbit space of $G$ and denote by $\mu$ the corresponding quotient map:
+Let $\calE\subset\rmJ^r E$ be an equation with a symmetry (pseudo)group $G$. The Cartan distribution $\calC=\calC^r$ is invariant w.r.t.\ the symmetries and the solutions are $n$-dimensional maximal integral manifolds of $\calC^r(\calE)$. Consider the orbit space of $G$ and denote by $\mu$ the corresponding quotient map:
 \[\begin{tikzcd}
     \calE \arrow[r,hookrightarrow]\arrow[d,"\restr{\mu}{\calE}"] & \rmJ^rE \arrow[d,"\mu"]\\
     \calE'\arrow[r] & \rmJ^rE\slash G.
 \end{tikzcd}\]
-As we will now show, the quotient distribution $\calC'$ is defined on $\calE'$ and almost everywhere it is of the same rank as $\calC$. Let $\calC'_p=\mu_\ast(\calC_{\mu^{-1}(p)})$ for $p\in\rmJ^r E\slash G$. It is a well-defined construction since $\calC$ is $G$-invariant. Besides, vectors tangent to the orbits of $G$ almost everywhere do not belong to $\calC$. In fact, let $p\in\rmJ^rE$ and $\scrO_p$ be the orbit of the point $p$ under the action of $G$. Then the orbit map $G\mapsto \scrO_p$, $g\mapsto g\cdot p$, generates an epimorphism of the corresponding Lie algebra $\frakg$ onto the tangent space $\T_p \scrO_p$. Therefore, any vector $X_p\in\T_p \scrO_p$ is of the form $\restr{X_\varphi}(p)$, where $\varphi$ is the generating section of an element $X_\varphi\in \frakg$.  Let $X_p\in\calC_p$. This means, in particular, that 
+As we will now show, the quotient distribution $\calC'$ is defined on $\calE'$ and almost everywhere it is of the same rank as $\calC$. Let $\calC'_p=\mu_\ast(\calC_{\mu^{-1}(p)})$ for $p\in\rmJ^r E\slash G$. It is a well-defined construction since $\calC$ is $G$-invariant. Besides, vectors tangent to the orbits of $G$ almost everywhere do not belong to $\calC$. In fact, let $p\in\rmJ^rE$ and $\scrO_p$ be the orbit of the point $p$ under the action of $G$. Then the orbit map $G\mapsto \scrO_p$, $g\mapsto g\cdot p$, generates an epimorphism of the corresponding Lie algebra $\frakg$ onto the tangent space $\T_p \scrO_p$. Therefore, any vector $X_p\in\T_p \scrO_p$ is of the form $X_\varphi(p)$, where $\varphi$ is the generating section of an element $X_\varphi\in \frakg$.  Let $X_p\in\calC_p$. This means, in particular, that 
 \[i_{X_\varphi}\left(\dd u^j-\sum_{i=1}^n p^j_i\dd x^i\right)_p=\varphi^j(p)=0.\]
 Therefore, for almost all $p\in \rmJ^rE$, one has $\calC_p\cap \ker\mu_{\ast p}=0$, and consequently $\rank \calC=\rank\calC'$.
 
@@ -2820,23 +2824,23 @@ Solutions of $\calE$ are maximal integral $n$-dimensional manifolds of $\calC$ a
 
 Let $L'\subset\calE'$ be the image of some solution $L$ of the equation $\calE$. Then 
 \[\mu^{-1}(L')=G\cdot L=\bigcup_{g\in G}g\cdot L.\]
-Denote by $i_{L'}$ the immersion $\mu^{-1}(L')\hookrightarrow \rmJ^rE$. Then the restriction of $\calC$ to $\mu^{-1}(L')$ is determined by the Pfaffian contact system $\calD_{L'}=i^\ast_{L'}\calD$, where $\calD=\Ann(\calC)\subset \T^\ast(\rmJ^rE)$ is the Pfaffian system spanned by the contact forms and determining $\calC$. It is easily seen that the distribution $\calD_{L'}$ is completely integrable: any $g\cdot L$ is its integral manifold and the union of these manifolds is $\mu^{-1}(L')$. The Frobenius integrability condition $\dd \calD_{L'}\subset \calD_{L'}$ (cf.\ Theorem~\ref{thm 4.7.8 RS1}) of the distribution $\calD_{L'}$ is exactly the condition defining those $L'$ which are the images of solutions of the initial equation under the factorization w.r.t.\ $G$. Thus, precisely these conditions constitute the quotient equation. We have proven the following.
+Denote by $i_{L'}$ the immersion $\mu^{-1}(L')\hookrightarrow \rmJ^rE$. Then the restriction of $\calC$ to $\mu^{-1}(L')$ is determined by the Pfaffian contact system $\Contact_{L'}=i^\ast_{L'}\Contact$, where $\Contact=\Ann(\calC)\subset \T^\ast(\rmJ^rE)$ is the contact system determining $\calC$. It is easily seen that the distribution $\Contact_{L'}$ is completely integrable: any $g\cdot L$ is its integral manifold and the union of these manifolds is $\mu^{-1}(L')$. The Frobenius integrability condition $\dd \Contact_{L'}\subset \Contact_{L'}$ (cf.\ Theorem~\ref{thm 4.7.8 RS1}) of the distribution $\Contact_{L'}$ is exactly the condition defining those $L'$ which are the images of solutions of the initial equation under the factorization w.r.t.\ $G$. Thus, precisely these conditions constitute the quotient equation. We have proven the following.
 
 \begin{prop}
-    Let $G$ be a group of point symmetries of a differential equation $\calE\subset\rmJ^r E$. Then the \emph{reduced equation} (working locally and assuming smoothness) $\calE'\subset \rmJ^rE\slash G$ is defined as the Frobenius integrability condition $\dd \calD_{L'}\subset \calD_{L'}$ on its solutions $L'\subset\calE'$. If $\dim G=s$, then each solution of $\calE'$ corresponds to a $s$-parameter family of solutions of $\calE$ which can be recovered by solving a system of first-order PDEs.
+    Let $G$ be a group of point symmetries of a differential equation $\calE\subset\rmJ^r E$. Then the \emph{reduced equation} (working locally and assuming smoothness) $\calE'\subset \rmJ^rE\slash G$ is defined as the Frobenius integrability condition $\dd \Contact_{L'}\subset \Contact_{L'}$ on its solutions $L'\subset\calE'$. If $\dim G=s$, then each solution of $\calE'$ corresponds to a $s$-parameter family of solutions of $\calE$ which can be recovered by solving a system of first-order PDEs.
 \end{prop}
 
 For concreteness, consider a second-order equation in two independent variables and one dependent variable, where a $2$-dimensional group $G$ acts freely. In other words, $E=\rmJ^2(\bbR^2,\bbR)$ and let $x,y,u,p,q,r,s,t$ be the canonical coordinates. Then $\dim\calE=7$, $\dim \calE\slash G=5$. In the same coordinates, a basis of the contact system defining the Cartan distribution is 
 \[\theta_0=\dd u-p\dd x-q\dd y,\quad \theta_1=\dd p-r\dd x-s\dd y,\quad \theta_2=\dd q-s\dd x-t\dd y,\]
 and consequently the rank of $\calC$ at a generic point is $7-3=4$.
 
-As already explained, the vector fields forming the Lie algebra $\frakg$ do not intersect the Cartan distribution almost everywhere, so the quotient Cartan distribution $\calC'$ on the $5$-dimensional $\calE\slash H$ is also of rank $4$. Hence, the Pfaffian system $\calD'$ determining this distribution is of rank $1$, spanned by a single differential form $\omega$. In the generic situation, a $1$-form on an even-dimensional manifold determines a contact structure and by the Darboux Theorem~\ref{thm darboux normal forms} can be written as 
+As already explained, the vector fields forming the Lie algebra $\frakg$ do not intersect the Cartan distribution almost everywhere, so the quotient Cartan distribution $\calC'$ on the $5$-dimensional $\calE\slash H$ is also of rank $4$. Hence, the Pfaffian system $\Contact'$ determining this distribution is of rank $1$, spanned by a single differential form $\omega$. In the generic situation, a $1$-form on an even-dimensional manifold determines a contact structure and by the Darboux Theorem~\ref{thm darboux normal forms} can be written as 
 \[\omega=\dd v-p_1 \dd q_1-p_2\dd q_2 \]
 in appropriate coordinates $q_1,q_2,p_1,p_2,v$ on $\calE\slash H$. 
 
 In these coordinates, ``almost all'' integral manifolds of $\omega$ can be represented as $1$-graphs of functions of two variables:
 \[v=g(q_1,q_2),\quad p_1=g_{q_1},\quad p_2=g_{q_2}.\]
-Let us denote such a manifold by $V_g$. The Frobenius conditions $\dd\calD_{V_g}\subset\calD_{V_g}$ are first-order PDEs for the functions determining the graph of $\rmj^1 g$. Hence, they are second-order equations for the function $g$. Actually, in the examples below a scalar second-order equation arises and this is the desired quotient equation. Its solutions then correspond to two-parameter families of solutions of the initial equation.
+Let us denote such a manifold by $V_g$. The Frobenius conditions $\dd\Contact_{V_g}\subset\Contact_{V_g}$ are first-order PDEs for the functions determining the graph of $\rmj^1 g$. Hence, they are second-order equations for the function $g$. Actually, in the examples below a scalar second-order equation arises and this is the desired quotient equation. Its solutions then correspond to two-parameter families of solutions of the initial equation.
 
 
 \begin{example}[{{\cite[Example~3.6.2]{Kras}}}]
@@ -2916,9 +2920,9 @@ Let $G$ be a local Lie group of symmetry transformations with generators $X_1,\l
 \[\varphi^j_l(\bf{x},\bf{p})=0,\quad j=1,\ldots,k,\quad l=1,\ldots,s.\label{eq 178 Gungor}\]
 Any invariant solution will satisfy both the original system $\calE$ and these invariance constraints, which form an overdetermined system of PDEs. The method of symmetry reduction consists of solving \eqref{eq 178 Gungor} in terms of invariant coordinates and substituting these into the original system. In the final step all non-invariant coordinates will drop out of the resulting reduced system. What remains to derive invariant solutions is to solve the reduced system with fewer independent variables.
 
-Let $G$ be the full (perhaps infinite-dimensional) symmetry group of $\calE$.Given a solution invariant under any subgroup $H<G$, it can be transformed into other $gHg^{-1}$-invariant solutions by arbitrary elements $g\in G$. For example, the stationary solutions $u=f(x)$ of an evolution equation such as the heat equation invariant under the Galilean transformations $X_b=-t\partial_x+\partial_u$ can be conjugated by the Galilean boosts $\rme^{-c X_b}\partial_t\rme^{c X_b}$ to map to traveling wave solutions $u=f(x-ct)$ and vice versa. This motivates one to classify all solutions based on the conjugacy classes of their symmetry groups.
+Let $G$ be the full (perhaps infinite-dimensional) symmetry group of $\calE$. Given a solution invariant under any subgroup $H<G$, it can be transformed into other $gHg^{-1}$-invariant solutions by arbitrary elements $g\in G$. For example, the stationary solutions $u=f(x)$ of an evolution equation such as the heat equation invariant under the Galilean transformations $X_b=-t\partial_x+\partial_u$ can be conjugated by the Galilean boosts $\rme^{-c X_b}\partial_t\rme^{c X_b}$ to map to traveling wave solutions $u=f(x-ct)$ and vice versa. This motivates one to classify all solutions based on the conjugacy classes of their symmetry groups.
 
-\begin{defn}
+\begin{defn}[Optimal system]\index{Optimal system}
     Let $G$ be a Lie group with Lie algebra $\frakg$. An optimal system of $G$, resp.\ $\frakg$, is a choice of a single representative for each conjugacy class of Lie subgroups of $G$, resp.\ Lie subalgebras of $\frakg$. (Lie subalgebras are conjugated via the action of the adjoint representation, $H\mapsto \Ad_g(H)$.)
 \end{defn}
 
@@ -2964,7 +2968,7 @@ As indicated by the above example, differential invariants of the symmetry group
 
 In particular, if $F$ realizes the equivalence between $s_1$ and $s_2$, then $F^{(r)}$ transforms any $r$-th order differential invariant $\restr{I}{\graph^{r}(s_1)}$ to $\restr{I}{\graph^{r}(s_2)}$. Thus, the matching of differential invariants of sections gives necessary conditions for equivalence. In many cases, computing the invariants is also sufficient for solving the equivalence problem, i.e., they completely describe the sections \emph{up to the action of $\pzcG$}. In the next \chap\ we will discover a set of reasonable conditions under which this holds.
 
-Differential invariants are also a powerful tool for obtaining the reduced equations describing invariant solutions. Suppose $s\in\Gamma^\infty(E)$ is a solution of our differential equation and $X\in\fX(E)$ is an infinitesimal point symmetry of the solution (so $X$ is a symmetry of the equation that is also tangent to the graph of $s$). Let $\restr{I}{\graph^r(s)}$ be a scalar differential invariant of $s$. Then the prolongation of $X$ is tangent to the $r$-graph of the solution, so
+Differential invariants are also a powerful tool for obtaining the reduced equations describing invariant solutions. In fact, \emph{invariant solutions are characterized by constant values of differential invariants along them}. Suppose $s\in\Gamma^\infty(E)$ is a solution of our differential equation and $X\in\fX(E)$ is an infinitesimal point symmetry of the solution (so $X$ is a symmetry of the equation that is also tangent to the graph of $s$). Let $\restr{I}{\graph^r(s)}$ be a scalar differential invariant of $s$. Then the prolongation of $X$ is tangent to the $r$-graph of the solution, so
 \[\restr{X^{(r)}}{\graph^r(s)}\left(\restr{I}{\graph^r(s)}\right)=0.\]
 This means that the function $\restr{I}{\graph^r(s)}$ is constant along integral lines of the vector field $\restr{X^{(r)}}{\graph^r(s)}$. The following is now obvious.
 
@@ -3001,7 +3005,7 @@ The starting idea of Cartan's method of equivalence is to reformulate any given 
 
 \section{Lagrangian systems}
 
-The remainder of this \chap\ is optional. These \sect s address the formalism of symmetries of Lagrangian systems, which is significantly more complicated than that for differential equations. On the one hand, this will explain the highly nontrivial nature of Noether's Theorem. On the other hand, in anticipation of the next \chap\ it will provide us with one more source of interesting equivalence problems that can be solved by the same method of Cartan that we will examine.
+The remainder of this \chap\ is optional. These \sect s address the formalism of symmetries of Lagrangian systems, which is significantly more complicated than that for differential equations. On the one hand, this will explain the highly nontrivial nature of Noether's Theorem. On the other hand, in anticipation of the next \chap\ it will provide us with one more source of interesting equivalence problems that can be solved by the general method of Cartan that we will examine.
 
 \begin{defn}[Lagrangian system]
     A Lagrangian system is a pair $(E\overset{\pi}{\to}M,\calL)$, where $E\overset{\pi}{\to}M$ is a smooth \gls{fb} over an $n$-dimensional manifold $M$ and $\calL$ is a semibasic $n$-form on the $r$-th jet space $\rmJ^r E$, called a \emph{Lagrangian density}.
@@ -3059,13 +3063,13 @@ Isolated points at which this condition fails constitute singular points of the 
 Of particular interest are the \emph{null Lagrangians}, which, by definition, are Lagrangians whose Euler-Lagrange equations are satisfied identically: $\sfE(L)\equiv 0$. The associated variational problem is trivial, since $\calS[\bf{u}]$ depends only on the boundary values of $\bf{u}$, so every valid function provides a solution.
 
 \begin{thm}[{{\cite[Thm.~7.3]{OlverEquiv}}}]
-    A differential function $L(\bf{x},\bf{u}^{(r)})$ defines a null Lagrangian, $\sfE(L)\equiv 0$, iff it is a total divergence, so $L=\div P=D_1 P_1+\cdots D_n P_n$, for some $n$-tuple $P=(\tuple{P_1,\ldots,P_n})$ of differential functions.
+    A differential function $L\left(\bf{x},\bf{u}^{(r)}\right)$ defines a null Lagrangian, $\sfE(L)\equiv 0$, iff it is a total divergence, so $L=\div P=D_1 P_1+\cdots D_n P_n$, for some $n$-tuple $P=(\tuple{P_1,\ldots,P_n})$ of differential functions.
 \end{thm}
 \begin{proof}
     Clearly, if $L=\div P$, the Divergence Theorem implies that the integral $\calS[\bf{u}]$ depends only on the boundary values of $\bf{u}$, so the Euler-Lagrange equations are identically satisfied. Conversely, if $\sfE(L)\equiv 0$, then we can consider the expression 
-    \[\frac{\dd }{\dd t}L(\bf{x},t\bf{u}^{(r)})=\sum_{j,J}p^j_J\frac{\partial L}{\partial p^j_J}(\bf{x},t\bf{u}^{(r)}).\]
+    \[\frac{\dd }{\dd t}L\left(\bf{x},t\bf{u}^{(r)}\right)=\sum_{j,J}p^j_J\frac{\partial L}{\partial p^j_J}\left(\bf{x},t\bf{u}^{(r)}\right).\]
     Each term here can be integrated by parts, using \eqref{eq 7.5 OlverEquiv} repeatedly. The net result is, as in the proof of Theorem~\ref{thm 7.2 OlverEquiv},  
-    \[\frac{\dd }{\dd t}L(\bf{x},t\bf{u}^{(r)})=\sum_{j=1}^k u^j\sfE_j(L)(\bf{x},t\bf{u}^{(r)})+\div \bf{R}(t,\bf{x},\bf{u}^{(2r)}),\]
+    \[\frac{\dd }{\dd t}L\left(\bf{x},t\bf{u}^{(r)}\right)=\sum_{j=1}^k u^j\sfE_j(L)\left(\bf{x},t\bf{u}^{(r)}\right)+\div \bf{R}\left(t,\bf{x},\bf{u}^{(2r)}\right),\]
     for some well-defined $n$-tuple of differential functions $R=(R_1,\ldots,R_n)$ depending on $L$ and its derivatives. Since $\sfE(L)=0$ by assumption, we can integrate this w.r.t.\ $t$ from $0$ to $1$, producing the desired identity,
     \[L(\bf{x},\bf{u}^{(r)})=L(\bf{x},0)+\div \hat{\bf{P}}=\div\bf{P}.\]
     Here, $\hat{\bf{P}}(\bf{x},\bf{u}^{(2r)})=\int_0^1 \bf{P}(t,\bf{x},\bf{u}^{(2r)})\dd t$, and $\bf{P}=\bf{P}_0+\hat{\bf{P}}$, where $\bf{P}_0(\bf{x})$ is any $n$-tuple such that $\div \bf{P}_0=L(\bf{x},0)$.
@@ -3085,7 +3089,7 @@ Of particular interest are the \emph{null Lagrangians}, which, by definition, ar
 
 \begin{example}[{{\cite[Example~7.5]{OlverEquiv}}}]
     In the scalar case, every null Lagrangian is a total derivative, 
-    \[L(\bf{x},\bf{u}^{(r)})=D_xP(\bf{x},\bf{u}^{(r-1)})=p_n\frac{\partial P}{\partial p_{r-1}}+\wt L(\bf{x},\bf{u}^{(r-1)}),\]
+    \[L\left(\bf{x},\bf{u}^{(r)}\right)=D_xP\left(\bf{x},\bf{u}^{(r-1)}\right)=p_n\frac{\partial P}{\partial p_{r-1}}+\wt L\left(\bf{x},\bf{u}^{(r-1)}\right),\]
     and hence an affine function of the top derivative $p_r$. This is no longer the case for several independent variables; for example, the Hessian covariant 
     \[H=p_{xx}p_{yy}-u^2_{xy}=D_x(p_xp_{yy})-D_y(p_xp_{xy})\]
     is a divergence, and hence a null Lagrangian, even though it is quadratic in the top order derivatives. In fact, it can be shown that any null Lagrangian is a ``total Jacobian polynomial'' function of the top order jet variables.
@@ -3105,12 +3109,12 @@ Consider a fiber-preserving transformation $g$, whose first prolongation is give
 
 A function $u = f(x)$ defined on a domain $\varOmega \subset M$ will be mapped under \eqref{eq:7.11:OlverEquiv} to the function $\wb{u} = \wb{f}(\wb{x})$ defined on the transformed domain $\wb{\varOmega} = g\cdot\varOmega$. We require that the two functionals have the same values, $\calS_\varOmega[f] = \wb{\calS}_{\wb{\varOmega}}[\wb{f}]$, or, more explicitly,
 \begin{equation}
-   \int_\varOmega L(x,f(x),f'(x))\dd x = \int_{\wb{\varOmega}} \wb{L}(\wb{x},\wb{f}(\wb{x}),\wb{f}'(\wb{x}))\dd\wb{x}. \label{eq:7.12:OlverEquiv}
+   \int_\varOmega L\left(x,f(x),f'(x)\right)\dd x = \int_{\wb{\varOmega}} \wb{L}\left(\wb{x},\wb{f}(\wb{x}),\wb{f}'(\wb{x})\right)\dd\wb{x}. \label{eq:7.12:OlverEquiv}
 \end{equation}
 
 Since \eqref{eq:7.12:OlverEquiv} is required to hold for all functions $f$ and subdomains $\varOmega$ where $f$ is defined, the usual change of variables formula for integrals implies that the associated integrands must satisfy
 \begin{equation}
-   L(x,u,p) = \wb{L}(\wb{x},\wb{u},\wb{p})\chi_x. \label{eq:7.13:OlverEquiv}
+   L(x,u,p) = \wb{L}\left(\wb{x},\wb{u},\wb{p}\right)\chi_x. \label{eq:7.13:OlverEquiv}
 \end{equation}
 Thus, two functionals are equivalent under a fiber-preserving transformation iff their Lagrangian forms are equivalent under the prolonged transformation: $(g^{(1)})^\ast(\wb{L}\dd\wb{x}) = L\dd x$.
 
@@ -3142,20 +3146,20 @@ for some function $\mu(x,u,p)$, which, for the point transformation \eqref{eq:7.
 Let us now consider more general variational problems. The standard notion of equivalence can be readily extended to multiple and higher-order variational problems.
 
 \begin{defn}[Equivalence of variational problems]\index{Equivalence!of variational problems}
-    Two functionals are said to be equivalent under a contact transformation $(\bar{\bf x},\bar{\bf u}^{(r)})=g^{(r)}\cdot (\bf{x},\bf{u}^{(r)})$ if 
-    \[\calS_\varOmega=\wb\calS_{\wb\varOmega}[\bar{\bf u}],\quad\text{i.e.,}\quad \int_\varOmega L(\bf{x},\bf{u}^{(r)})\sfv_{\bf{x}}=\int_{\wb\varOmega}\wb L(\bar{\bf{x}},\bar{\bf{u}}^{(r)})\sfv_{\bar{\bf{x}}}\]
+    Two functionals are said to be equivalent under a contact transformation $\left(\bar{\bf x},\bar{\bf u}^{(r)}\right)=g^{(r)}\cdot \left(\bf{x},\bf{u}^{(r)}\right)$ if 
+    \[\calS_\varOmega=\wb\calS_{\wb\varOmega}[\bar{\bf u}],\quad\text{i.e.,}\quad \int_\varOmega L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf{x}}=\int_{\wb\varOmega}\wb L\left(\bar{\bf{x}},\bar{\bf{u}}^{(r)}\right)\sfv_{\bar{\bf{x}}}\]
     for every smooth function $\bf{u}=\bf{f}(\bf{x})$, $\bf{x}\in\varOmega$, with transformed counterpart $\bf{u}=\bar{\bf f}(\bar{\bf x})$, $\bar{\bf x}\in\wb\varOmega$.
 \end{defn}
 
 \begin{prop}[{{\cite[Prop.~7.9]{OlverEquiv}}}]\label{prop 7.9 OlverEquiv}
     Two $r$-th order variational problems are equivalent under a contact transformation $g^{(r)}:\rmJ^r\to \rmJ^r$ iff their Lagrangian forms are contact-equivalent:
-    \[\left(g^{(r)}\right)^\ast(\wb L\sfv_{\bar{\bf x}})=L\sfv_{\bf x}+\varTheta,\label{eq:7.19:OlverEquiv}\]
+    \[\left(g^{(r)}\right)^\ast\left(\wb L\sfv_{\bar{\bf x}}\right)=L\sfv_{\bf x}+\varTheta,\label{eq:7.19:OlverEquiv}\]
     where $\varTheta$ is a contact form.
 \end{prop}
 
 In coordinates, this requires that the Lagrangian obey the transformation rule 
-\[L(\bf{x},\bf{u}^{(r)})=\wb L(\bar{\bf x},\bar{\bf u}^{(r)})\det J=\wb L(g^{(r)}\cdot (\bf{x},\bf{u}^{(r)}))\det J,\]
-where $J=J(\bf{x},\bf{u}^{(2)})=(D_j\chi^i)$ is the total Jacobian matrix of the base transformation $\bar{\bf x}=\chi(\bf{x},\bf{u}^{(1)})$; the determinantal factor comes from the basic pullback formula for volume forms (the intrinsic definition of the determinant). Note that, for point transformations, the total Jacobian depends on first-order derivatives of $\bf{u}$, whereas for contact transformations, $J$ has order $2$. Thus, a first-order Lagrangian does \emph{not}, in general, map to a first-order Lagrangian under a contact transformation. On the other hand, contact transformations do take second-order Lagrangians to second-order Lagrangians, and so the standard equivalence problem under contact transformations makes sense only for higher-order variational problems.
+\[L\left(\bf{x},\bf{u}^{(r)}\right)=\wb L\left(\bar{\bf x},\bar{\bf u}^{(r)}\right)\det J=\wb L\left(g^{(r)}\cdot (\bf{x},\bf{u}^{(r)})\right)\det J,\]
+where $J=J\left(\bf{x},\bf{u}^{(2)}\right)=(D_j\chi^i)$ is the total Jacobian matrix of the base transformation $\bar{\bf x}=\chi\left(\bf{x},\bf{u}^{(1)}\right)$; the determinantal factor comes from the basic pullback formula for volume forms (the intrinsic definition of the determinant). Note that, for point transformations, the total Jacobian depends on first-order derivatives of $\bf{u}$, whereas for contact transformations, $J$ has order $2$. Thus, a first-order Lagrangian does \emph{not}, in general, map to a first-order Lagrangian under a contact transformation. On the other hand, contact transformations do take second-order Lagrangians to second-order Lagrangians, and so the standard equivalence problem under contact transformations makes sense only for higher-order variational problems.
 
 
 
@@ -3166,9 +3170,9 @@ where $J=J(\bf{x},\bf{u}^{(2)})=(D_j\chi^i)$ is the total Jacobian matrix of the
 Our definition of the Euler operator relies on a choice of coordinates. Since the conditions for extremality are obviously coordinate-independent, the above theorem also proves that the Euler operator is, in some sense, a well-defined invariant operator on the jet space. The explicit formula relating the Euler-Lagrange equations obtained in different coordinates (most generally, under a contact transformation) is obtained in the following theorem.
 
 \begin{thm}[{{\cite[Thm.~7.11]{OlverEquiv}}}, {{\cite[Thm.~4.8]{Olver}}}]\label{thm 7.11 OlverEquiv}
-    Let $L(\bf{x},\bf{u}^{(r)})$ be an $r$-th order Lagrangian with Euler-Lagrange expression $\sfE(L)=(\sfE_1(L),\ldots,\sfE_k(L))$. Consider a contact transformation $\bar{\bf{x}}=\chi(\bf{x},\bf{u}^{(1)})$, $\bar{\bf u}=\psi(\bf{x},\bf{u}^{(1)})$, and let $\wb L(\bar{\bf x},\bar{\bf u}^{(r)})$ be the transformed Lagrangian defined by 
-    \[L(\bf{x},\bf{u}^{(r)})=\wb L(\bar{\bf x},\bar{\bf u}^{(r)}) \det J,\label{eq:7.20:OlverEquiv}\]
-    where $J=J(\bf{x},\bf{u}^{(2)})=(D_j\chi^i)$ is the total Jacobian matrix of the base transformation $\chi$. Then the Euler-Lagrange expression $\wb\sfE(\wb L)$ for $\wb L$ is related to that of $L$ via the formula 
+    Let $L(\bf{x},\bf{u}^{(r)})$ be an $r$-th order Lagrangian with Euler-Lagrange expression $\sfE(L)=(\sfE_1(L),\ldots,\sfE_k(L))$. Consider a contact transformation $\bar{\bf{x}}=\chi\left(\bf{x},\bf{u}^{(1)}\right)$, $\bar{\bf u}=\psi\left(\bf{x},\bf{u}^{(1)}\right)$, and let $\wb L\left(\bar{\bf x},\bar{\bf u}^{(r)}\right)$ be the transformed Lagrangian defined by 
+    \[L\left(\bf{x},\bf{u}^{(r)}\right)=\wb L\left(\bar{\bf x},\bar{\bf u}^{(r)}\right) \det J,\label{eq:7.20:OlverEquiv}\]
+    where $J=J\left(\bf{x},\bf{u}^{(2)}\right)=(D_j\chi^i)$ is the total Jacobian matrix of the base transformation $\chi$. Then the Euler-Lagrange expression $\wb\sfE(\wb L)$ for $\wb L$ is related to that of $L$ via the formula 
     \[\sfE(L)=F\cdot \wb\sfE(\wb L),\label{eq:7.21:OlverEquiv}\]
     where $F=(F_{\alpha\beta})$ is the $k\times k$ matrix of differential functions 
     \[F_{\alpha\beta}=\det\begin{pmatrix}
@@ -3200,7 +3204,7 @@ Our definition of the Euler operator relies on a choice of coordinates. Since th
     \]
     This relationship clearly generalizes to arbitrary contact forms. We have shown 
     \begin{lem}[{{\cite[Lem.~7.15]{OlverEquiv}}}]\label{lem 7.15 OlverEquiv}
-        If $\varTheta$ is any contact form on $J^n$, then, on $J^{n+1}$,
+        If $\varTheta$ is any contact form on $\rmJ^r$, then, on $\rmJ^{r+1}$,
         \[
         \dd\varTheta = -\rmD\varTheta + \varUpsilon,
         \]
@@ -3225,12 +3229,12 @@ Our definition of the Euler operator relies on a choice of coordinates. Since th
     \end{proof}
     Let $g^{(r)}$ denote the $r$-th prolongation of a contact transformation to $\rmJ^r$. Then, according to \eqref{eq:7.19:OlverEquiv},
     \begin{multline}
-        (g^{(2r)})^\ast\left[(\wb{\sfE}(\wb{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}} + \rmD\wb{\varOmega}\right] = (g^{(n)})^\ast\dd(\wb{L}\sfv_{\bar{\bf x}}) = \dd\left\{(g^{(n)})^\ast[\wb{L}\sfv_{\bf x}]\right\}\\
+        (g^{(2r)})^\ast\left[(\wb{\sfE}(\wb{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}} + \rmD\wb{\varOmega}\right] = (g^{(n)})^\ast\dd(\wb{L}\sfv_{\bar{\bf x}}) = \dd\left\{(g^{(n)})^\ast\left[\wb{L}\sfv_{\bf x}\right]\right\}\\
         = \dd[L\sfv_{\bf{x}} + \varTheta] = (\sfE(L)\cdot\theta) \wedge \sfv_{\bf{x}} + \rmD\varOmega + \dd\varTheta,
     \end{multline}
     where $\wb{\varOmega}$ and $\varOmega$ are $n$-forms, and $\varTheta$ is a contact form. Lemma~\ref{lem 7.15 OlverEquiv} and the invariance of the total differential imply that
     \[
-    (g^{(2r)})^\ast[(\wb{\sfE}(\bar{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}}] = (\sfE(L)\cdot\theta) \wedge \sfv_{\bf{x}} + \rmD\wh{\varOmega} + \varUpsilon,
+    (g^{(2r)})^\ast\left[(\wb{\sfE}(\bar{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}}\right] = (\sfE(L)\cdot\theta) \wedge \sfv_{\bf{x}} + \rmD\wh{\varOmega} + \varUpsilon,
     \]
     where $\varUpsilon$ is a quadratic contact form. The local coordinate formula for the behavior of the Euler-Lagrange expressions under the change of variables follows immediately from the formulas in Exercise~\ref{xca 4.31 OlverEquiv}, showing how the contact forms behave under a contact transformation. The remaining details are left to the reader.
 \end{proof}
@@ -3280,13 +3284,13 @@ Maps that preserve variational problems serve to define variational symmetries. 
 
 \begin{defn}[Variational symmetry]
     A point or contact transformation $g$ is called a variational symmetry of the functional \eqref{eq:7.1:OlverEquiv} iff the transformed functional agrees with the original one, which means that for every smooth function $g$ defined on a domain $\varOmega$, with transformed counterpart $\wb f=g\cdot f$ defined on $\wb\varOmega$, we have 
-    \[\int_\varOmega L(\bf{x},f^{(r)}(\bf{x}))\sfv_{\bf x}=\int_{\wb\varOmega}L(\bar{\bf x},\wb f^{(r)}(\bar{\bf x}))\sfv_{\bar{\bf x}}.\label{eq:7.30:OlverEquiv}\]
+    \[\int_\varOmega L\left(\bf{x},f^{(r)}(\bf{x})\right)\sfv_{\bf x}=\int_{\wb\varOmega}L\left(\bar{\bf x},\wb f^{(r)}\left(\bar{\bf x}\right)\right)\sfv_{\bar{\bf x}}.\label{eq:7.30:OlverEquiv}\]
 \end{defn}
 
-In other words, a variational symmetry is merely a standard self-equivalence of a functional. Setting $\wb L=L$ in the equivalence condition \eqref{eq:7.19:OlverEquiv}. we see that a transformation group $G$ is a variational symmetry group iff the Lagrangian form $L(\bf{x}.\bf{u}^{(r)})\sfv_{\bf x}$ is a contact-invariant $n$-form, so 
-\[\left(g^{(r)}\right)^\ast\left[L(\bar{\bf x}.\bar{\bf u}^{(r)})\sfv_{\bar{\bf x}}\right]=L(\bf{x},\bf{u}^{(r)})\sfv_{\bf{x}}+\varTheta,\quad g\in G,\label{eq:7.31:OlverEquiv}\]
+In other words, a variational symmetry is merely a standard self-equivalence of a functional. Setting $\wb L=L$ in the equivalence condition \eqref{eq:7.19:OlverEquiv}. we see that a transformation group $G$ is a variational symmetry group iff the Lagrangian form $L\left(\bf{x}.\bf{u}^{(r)}\right)\sfv_{\bf x}$ is a contact-invariant $n$-form, so 
+\[\left(g^{(r)}\right)^\ast\left[L\left(\bar{\bf x}.\bar{\bf u}^{(r)}\right)\sfv_{\bar{\bf x}}\right]=L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf{x}}+\varTheta,\quad g\in G,\label{eq:7.31:OlverEquiv}\]
 for some contact form $\varTheta=\varTheta_g$, possibly depending on $g$. In particular, if the group transformation $g$ is fiber-preserving, then $\varTheta=0$, and the Lagrangian form is strictly invariant. In local coordinates, the contact invariants condition \eqref{eq:7.31:OlverEquiv} takes the form 
-\[L(\bf{x},\bf{u}^{(r)})=L(\bar{\bf x},\bar{\bf u}^{(r)})\det J,\quad \text{when}\quad (\bar{\bf x},\bar{\bf u}^{(r)})=g^{(r)}\cdot (\bf{x},\bf{u}^{(r)}),\]
+\[L\left(\bf{x},\bf{u}^{(r)}\right)=L\left(\bar{\bf x},\bar{\bf u}^{(r)}\right)\det J,\quad \text{when}\quad \left(\bar{\bf x},\bar{\bf u}^{(r)}\right)=g^{(r)}\cdot \left(\bf{x},\bf{u}^{(r)}\right),\]
 where $J=(D_i\chi^j)$ is the total Jacobian matrix, cf.\ \eqref{eq:7.20:OlverEquiv}. 
 
 Recall that a multiplier representation of a group $G$ is a linear representation on the space of functions $f$ on some manifold $M$ which simultaneously transforms the arguments and multiplies the value by a weight function: $\wb f(\wb m)=\mu(g,m)f(m)$, where $\wb m=g\cdot m$ and $\wb f=g\cdot f$ (the latter being the multiplier representation's action).\footnote{Such representations can be seen as a generalization of projective representations.} The multiplier is a function on $G\times M$ that satisfies $\mu(e,m)\equiv 1$ and $\mu(gh,m)\equiv\mu(g,h\cdot m)\mu(h,m)$. Since differential invariants are defined as functions on a jet space, the following concept of \emph{relative invariants} is a natural generalization that allows the invariants to belong to a multiplier representation.
@@ -3320,18 +3324,18 @@ where $\Div X_{\bf x}=D_1X_{\bf x}^1+\cdots+D_nX_{\bf x}^n$ denotes the total di
     For each $g\in G$, the group transformation 
     \[(\bar{\bf x},\bar{\bf u})=g\cdot (\bf{x},\bf{u})=\left(\varXi_g(\bf{x},\bf{u}),\varPhi_g(\bf{x},\bf{u})\right)\]
     can be regarded as a change of variables, so by the same reasoning as led to \eqref{eq:7.21:OlverEquiv}, we can rewrite the symmetry condition \eqref{eq:7.30:OlverEquiv} in the form 
-    \[\int_\varOmega L(\bar{\bf x},(g\cdot \bf{f})^{(r)}(\bar{\bf x}))\det J_g(\bf{x},\bf{f}^{(1)}(\bf{x}))\sfv_{\bf x}=\int_\varOmega L(\bf{x},\bf{f}^{(r)}(\bf{x}))\sfv_{\bf x},\]
+    \[\int_\varOmega L\left(\bar{\bf x},(g\cdot \bf{f})^{(r)}(\bar{\bf x})\right)\det J_g\left(\bf{x},\bf{f}^{(1)}(\bf{x})\right)\sfv_{\bf x}=\int_\varOmega L\left(\bf{x},\bf{f}^{(r)}(\bf{x})\right)\sfv_{\bf x},\]
     where the Jacobian matrix has entries 
-    \[J_g^{\alpha\beta}(\bf{x},\bf{u}^{(1)})=D_\alpha \varXi^\beta_g(\bf{x},\bf{u}^{(1)}).\]
+    \[J_g^{\alpha\beta}\left(\bf{x},\bf{u}^{(1)}\right)=D_\alpha \varXi^\beta_g\left(\bf{x},\bf{u}^{(1)}\right).\]
     Since this is required to hold for all subdomains $\varOmega$ and all functions $u=\bf{f}(\bf{x})$, the integrands must agree pointwise:
-    \[L(g^{(r)}\cdot(\bf{x},\bf{u}^{(r)}))\det J_g(\bf{x},\bf{u}^{(1)})=L(\bf{x},\bf{u}^{(1)})\label{eq:4.16:Olver}\]
+    \[L\left(g^{(r)}\cdot\left(\bf{x},\bf{u}^{(r)}\right)\right)\det J_g\left(\bf{x},\bf{u}^{(1)}\right)=L\left(\bf{x},\bf{u}^{(1)}\right)\label{eq:4.16:Olver}\]
     for all $(\bf{x},\bf{u}^{(r)})\in \rmJ^r E$. To obtain the infinitesimal version of this formula, we set $g=g_\epsilon=\rme^{\epsilon X}$ and differentiate w.r.t.\ $\epsilon$. We need the formula 
-    \[\frac{\dd}{\dd\epsilon}\det J_{g_\epsilon}(\bf{x},\bf{u}^{(1)})=\Div X_{\bf x}(g_\epsilon^{(1)}\cdot (\bf{x},\bf{u}^{(1)}))\det J_{g_\epsilon}(\bf{x},\bf{u}^{(1)})\label{eq:4.17:Olver}\]
+    \[\frac{\dd}{\dd\epsilon}\det J_{g_\epsilon}\left(\bf{x},\bf{u}^{(1)}\right)=\Div X_{\bf x}\left(g_\epsilon^{(1)}\cdot \left(\bf{x},\bf{u}^{(1)}\right)\right)\det J_{g_\epsilon}\left(\bf{x},\bf{u}^{(1)}\right)\label{eq:4.17:Olver}\]
     expressing the fact that the divergence of a vector field measures the rate of change of volume under the induced flow. Indeed, if we replace $\bf{u}$ by a function $\bf{f}(\bf{x})$, then \eqref{eq:4.17:Olver} reduces to the identity defining the divergence for the reduced vector field $X_{\bf x}=\sum_{i=1}^n X_m^i(\bf{x},\bf{f}(\bf{x}))\partial/\partial x^i$.
 
     Using \eqref{eq:4.17:Olver} and the definition of prolonged vector fields, the derivative of \eqref{eq:4.16:Olver} w.r.t.\ $\epsilon$ when $g=g_\epsilon=\rme^{\epsilon X}$ is 
     \[\left(X^{(r)}(L)+L\Div X_{\bf x}\right)\det J_{g_\epsilon}=0,\label{eq:4.18:Olver}\]
-    the expression in parentheses being evaluated at $(\bar{\bf x},\bar{\bf u}^{(r)})=g_\epsilon^{(r)}\cdot(\bf{x},\bf{u}^{(r)})$. In particular, at $\epsilon=0$, $g_\epsilon$ is the identity map and we have proved the necessity of \eqref{eq:4.15:Olver} for $G$ to be a variational symmetry group. Conversely, if \eqref{eq:4.15:Olver} holds everywhere, then \eqref{eq:4.18:Olver} holds for sufficiently small $\epsilon$. The left hand side of \eqref{eq:4.18:Olver}, though, is just the derivative of the left hand side of \eqref{eq:4.16:Olver} (for $g=g_\epsilon$) w.r.t.\ $\epsilon$; thus, integrating from $0$ to $\epsilon$ we prove \eqref{eq:4.16:Olver} for $g$ sufficiently near the identity. The usual connectivity argument completes the proof of \eqref{eq:4.16:Olver} for all $g\in G$, and hence the theorem.
+    the expression in parentheses being evaluated at $\left(\bar{\bf x},\bar{\bf u}^{(r)}\right)=g_\epsilon^{(r)}\cdot\left(\bf{x},\bf{u}^{(r)}\right)$. In particular, at $\epsilon=0$, $g_\epsilon$ is the identity map and we have proved the necessity of \eqref{eq:4.15:Olver} for $G$ to be a variational symmetry group. Conversely, if \eqref{eq:4.15:Olver} holds everywhere, then \eqref{eq:4.18:Olver} holds for sufficiently small $\epsilon$. The left hand side of \eqref{eq:4.18:Olver}, though, is just the derivative of the left hand side of \eqref{eq:4.16:Olver} (for $g=g_\epsilon$) w.r.t.\ $\epsilon$; thus, integrating from $0$ to $\epsilon$ we prove \eqref{eq:4.16:Olver} for $g$ sufficiently near the identity. The usual connectivity argument completes the proof of \eqref{eq:4.16:Olver} for all $g\in G$, and hence the theorem.
 \end{proof}
 
 \begin{example}[Boussinesq equation]\index{Equation!Boussinesq}
@@ -3380,11 +3384,11 @@ A divergence symmetry is a divergence self-equivalence of the Lagrangian density
 As with differential equations, the most general variational problem admitting a given symmetry group can be readily characterized using the differential invariants of the prolonged group action. The key additional requirement is the existence of a suitable contact-invariant $n$-form, where $n$ is the number of independent variables. The following theorem is a straightforward consequence of the infinitesimal variational symmetry criterion \eqref{eq:4.15:Olver}, and dates back to Lie.
 
 \begin{thm}[{\cite[Thm.~7.27]{OlverEquiv}}]\label{thm 7.27 OlverEquiv}
-    Let $G$ be a transformation group and assume that the $r$-th prolongation of $G$ acts regularly on (an open subset of) $\rmJ^r E$. Assume further that there exists a nonzero contact-invariant (that is, $G$-invariant up to addition of a contact form) semibasic $n$-form $\omega_0=L_0(\bf{x},\bf{u}^{(r)})\sfv_{\bf x}$ on $\rmJ^r E$. A variational problem admits $G$ as a variational symmetry iff it can be written in the form $\int I\omega_0=\int IL_0\sfv_{\bf x}$, where $I$ is a differential invariant of $G$.
+    Let $G$ be a transformation group and assume that the $r$-th prolongation of $G$ acts regularly on (an open subset of) $\rmJ^r E$. Assume further that there exists a nonzero contact-invariant (that is, $G$-invariant up to addition of a contact form) semibasic $n$-form $\omega_0=L_0\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf x}$ on $\rmJ^r E$. A variational problem admits $G$ as a variational symmetry iff it can be written in the form $\int I\omega_0=\int IL_0\sfv_{\bf x}$, where $I$ is a differential invariant of $G$.
 \end{thm}
 
-In particular, any contact-invariant coframe $\theta^1,\ldots,\theta^n$ on $M$ provides a contact-invariant $n$-form $\omega_0=\theta^1\wedge\cdots\theta^n$. Hence, every $G$-invariant variational problem has the form 
-\[\calS[u]=\int L(\bf{x},\bf{u}^{(r)})\sfv_{\bf x}=\int F(I_1,\ldots,I_k)\theta^1\wedge\cdots\wedge\theta^n,\]
+In particular, any contact-invariant coframe $\theta^1,\ldots,\theta^n$ on $M$ provides a contact-invariant $n$-form $\omega_0=\theta^1\wedge\cdots\wedge\theta^n$. Hence, every $G$-invariant variational problem has the form 
+\[\calS[u]=\int L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf x}=\int F(I_1,\ldots,I_k)\theta^1\wedge\cdots\wedge\theta^n,\]
 where $I_1,\ldots,I_k$ are a complete set of functionally independent $r$-th order differential invariants. Theorem~\ref{thm 5.41 OlverEquiv} implies that there exists a contact-invariant coframe of order $r_G$ or less, where $r_G$ denotes the stabilization order of $G$.
 
 \begin{example}[{\cite[Example~7.28]{OlverEquiv}}]\label{ex 7.28 OlverEquiv}
@@ -3415,11 +3419,11 @@ For systems of ``conservative'' ODEs -- meaning systems of Euler-Lagrange equati
 
 \begin{defn}[First integral] \index{First integral}
     For a system of ODEs 
-    \[\bm\varDelta(x,u^{(r)})=0,\label{eq system of ODEs}\] 
-    a \emph{first integral (of motion)} is a function $P(x,u^{(r)})$ which is constant on solutions.
+    \[\bm\varDelta\left(x,u^{(r)}\right)=0,\label{eq system of ODEs}\] 
+    a \emph{first integral (of motion)} is a function $P\left(x,u^{(r)}\right)$ which is constant on solutions.
 \end{defn}
 
-The fact that $P$ is constant on solutions is equivalent to the statement that its total derivative vanishes on solutions, so $D_x P=0$ whenever $u=f(x)$ is a solution to $\bm\varDelta=0$. In the regular case, this requires that $P$ satisfy an identity of the form $D_xP=\sum_i Q_iD_x^i\varDelta$ for some differential functions $Q_i$. The following is Noether's Theorem for ODEs.
+The fact that $P$ is constant on solutions is equivalent to the statement that its total derivative vanishes on solutions, so $\restr{D_x P}{\graph^r(f)}=0$ whenever $u=f(x)$ is a solution to $\bm\varDelta=0$. In the regular case, this requires that $P$ satisfy an identity of the form $D_xP=\sum_i Q_iD_x^i\varDelta$ for some differential functions $Q_i$. The following is Noether's Theorem for ODEs.
 
 \begin{thm}[E.~Noether (1918) {{\cite[Thm.~7.36]{OlverEquiv}}}]\label{thm 7.36 OlverEquiv}\label{Theorem!Noether}
     If $X$ is an infinitesimal variational symmetry of \eqref{eq system of ODEs} with generating function $Q$, then the product $Q\sfE(L)=D_x P$ is a total derivative, and thus a first integral of the Euler-Lagrange equation $\sfE(L)=0$.
@@ -3465,7 +3469,7 @@ Conservations laws of the above form are called \emph{trivial conservation laws}
 
 \PRLsep
 
-We now describe the analog of first integrals in multi-dimensional problems. Consider a conservation law of a totally nondegenerate system\footnote{A totally nondegenerate system of differential equations is such that it and all of its prolongations are of maximal rank and locally solvable.} of PDEs $\bm\varDelta(\bf{x},\bf{u}^{(r)})=0$ with components of $\bm\varDelta$ denoted by $\varDelta_\nu$, $\nu=1,\ldots,l$. As is easy to show using the nondegeneracy assumption, $\Div\bf{P}$ vanishes on all solutions of the system iff there exist functions $Q_j^J(\bf{x},\bf{u}^{(r)})$ such that
+We now describe the analog of first integrals in multi-dimensional problems. Consider a conservation law of a totally nondegenerate system\footnote{A totally nondegenerate system of differential equations is such that it and all of its prolongations are of maximal rank and locally solvable.} of PDEs $\bm\varDelta\left(\bf{x},\bf{u}^{(r)}\right)=0$ with components of $\bm\varDelta$ denoted by $\varDelta_\nu$, $\nu=1,\ldots,l$. As is easy to show using the nondegeneracy assumption, $\Div\bf{P}$ vanishes on all solutions of the system iff there exist functions $Q_j^J\left(\bf{x},\bf{u}^{(r)}\right)$ such that
 \[\Div\bf{P}=\sum_{\nu,J}Q^J_\nu D_J\varDelta_\nu.\label{eq:4.27:Olver}\]
 Now, each of the terms here can be integrated by parts; for example, if $1\leq j\leq n$, 
 \[Q^j_\nu D_j\varDelta_\nu = D_j(Q_\nu^j \varDelta_\nu)-D_j(Q^j_\nu)\varDelta_\nu.\]
@@ -3527,7 +3531,7 @@ The following is a more general version of Noether's Theorem, which is most fami
 
 
 
-\section{(*) Cartan form}
+\section{Cartan form}
 
 As we have seen, if we restrict our attention to fiber-preserving transformation groups, then the Lagrangian density associated with an invariant variational problem defines an invariant differential form on the jet space. This result does not extend to more general point or contact transformation groups owing to the presence of contact forms in the general change of variables formula \eqref{eq:7.19:OlverEquiv}. We now describe, in the simplest case of a first order Lagrangian in one independent variable and one dependent variable, an important modification of the Lagrangian density that does remain invariant under general point transformations. This $1$-form, commonly known as the Cartan form, plays a significant role in the geometric theory of the calculus of variations, including the connection between symmetries and conservation laws. Hilbert's invariant integral, which is of central importance in the classical field theory governing the existence of extrema, is found by integrating the Cartan form along a solution to the Euler-Lagrange equation. The utility of the Cartan form was emphasized by Cartan, and Goldschmidt and Sternberg.
 
@@ -3576,7 +3580,7 @@ where $\theta_x=\dd p-q\dd x$ is the second contact form on $\rmJ^2$.
 \end{prop}
 
 As a consequence of Corollary~\ref{cor 7.41 OlverEquiv} and Cartan's magic formula, we find that if $X$ is any variational symmetry, then 
-\[0=\Lie_{X^{(1)}}\eta_L=\dd \left(\eta_L(X^{(1)})\right)+i_{X^{(1)}}\dd\eta_L.\]
+\[0=\Lie_{X^{(1)}}\eta_L=\dd \left(\eta_L\left(X^{(1)}\right)\right)+i_{X^{(1)}}\dd\eta_L.\]
 Equation \eqref{eq:7.47:OlverEquiv} shows that the second term vanishes on solutions to the Euler-Lagrange equation, and hence the first term vanishes on solutions of the Euler-Lagrange equation, and hence the first term defines a first integral. Thus, our earlier version of Noether's Theorem relating symmetry groups of variational problems and first integrals of the associated Euler-Lagrange equations has the following formulation.
 
 \begin{prop}[Noether {\cite[Prop.~7.43]{OlverEquiv}}]
@@ -3617,7 +3621,7 @@ Cartan's algorithm provides a powerful step-by-step method for solving \emph{all
 
 It will take us several \chap s to see the full scope of this fascinating project which was very well understood by Cartan but took decades for other mathematicians to digest. In this \chap, we set up the general equivalence problem and translate it into the language of differential forms. In the next \chap, we study Cartan's algorithm for analyzing the resulting differential systems and finding an equivalence (if one exists). After that, we demonstrate these methods on the relatively simple yet surprisingly rich example of Gauss' theory of surfaces.
 
-Finally, note the remarkable similarity between this definition of geometry and the definition of topology in \Chap~\ref{ch: general topology}. Crucially, unlike its topological counterpart, the geometric equivalence problem is, to a significant extent, solved. This makes local geometric tools surprisingly valuable for addressing global topological questions.  Indeed, \Part~\ref{Part III} will be devoted to the deep relationship between geometry and topology, namely how (local) differential invariants can be used to compute (global) topological invariants.
+Finally, note the remarkable similarity between this definition of geometry and the definition of topology in \Chap~\ref{ch: general topology}. Crucially, unlike its topological counterpart, the geometric equivalence problem is, at least at the level of developing sufficient methods, solved. This makes local geometric tools surprisingly valuable for addressing global topological questions.  Indeed, \Part~\ref{Part III} will be devoted to the deep relationship between geometry and topology, namely how (local) differential invariants can be used to compute (global) topological invariants.
 
 
 
@@ -3699,7 +3703,7 @@ See \cite{Calabi1998} for applications of the classifying curve to the problem o
 \end{rem}
 
 \begin{rem}
-    Differential invariants can be used to construct general invariant differential equations admitting the given transformation group. Specifically, suppose $J_1,\ldots,J_N$ form a complete system of functionally independent $r$-th order differential invariants, defined on an open subset $V^r \subset \rmJ^r$ of the jet space where the prolonged group action is regular. Then, on $V^r$, any $r$-th order system of differential equations admitting $G$ as a symmetry group can be written in terms of the differential invariants: $H_\nu(J_1,\ldots,J_N) = 0$. For example, the most general Euclidean-invariant third order differential equation has the form $\dd\kappa/\dd s = H(\kappa)$, equating the derivative of curvature w.r.t.\ arc length to a function of curvature. 
+    Differential invariants can be used to construct general invariant differential equations admitting the given transformation group. Specifically, suppose $J_1,\ldots,J_N$ form a complete system of functionally independent $r$-th order differential invariants, defined on an open subset $\calV^r \subset \rmJ^r$ of the jet space where the prolonged group action is regular. Then on $\calV^r$ any $r$-th order system of differential equations admitting $G$ as a symmetry group can be written in terms of the differential invariants: $H_\nu(J_1,\ldots,J_N) = 0$. For example, the most general Euclidean-invariant third-order differential equation has the form $\dd\kappa/\dd s = H(\kappa)$,\footnote{Strictly speaking, the most general form is $F(\kappa,\dd\kappa/\dd s)=0$, but near generic (non-singular) points we can solve this for $\dd\kappa/\dd s$.} equating the derivative of curvature w.r.t.\ arc length to a function of curvature. 
 \end{rem}
 
 Similar comments apply to invariant variational problems, and we refer the reader to \cite{Olver,OlverEquiv} for details. These results form the foundations of modern physical field theories, in which one bases the differential equation of motion, or variational principle, on its invariance w.r.t.\ the theory's underlying symmetry group. The groups in question range from basic Poincaré and conformal invariance, to the exceptional simple Lie groups lying at the foundations of string theory, as well as infinite-dimensional gauge groups and groups of Kac--Moody type. Remarkably, complete systems of differential invariants are known for only a small handful of transformation groups arising in physical applications --- a collection that includes \emph{none} of the above mentioned groups! The moving coframe algorithm provides a direct and effective means for providing such classifications.
@@ -3710,6 +3714,8 @@ Similar comments apply to invariant variational problems, and we refer the reade
 
 
 \section{Equivalence of coframes}\label{sec: equiv of coframes}
+
+Before tackling general equivalence problems, which we will do via the moving frame and coframe methods, we will first address a basic equivalence problem to which every equivalence problem will eventually be reduced -- the problem of equivalence of coframes. In this \sect, we will present the complete solution to this problem following \cite{OlverEquiv,OlverCo2,Sternberg}.
 
 Recall that a local coframe on a manifold $M$ is a maximal collection of pointwise linearly independent local $1$-forms. Alternatively, it is a local section of the coframe bundle $\Fr(\T^\ast M)$. Suppose $(x^1,\ldots,x^n)$ are local coordinates on $M$, so that the coframe $\theta^1,\ldots,\theta^n$ can be written in components as 
 \[\theta^i=\sum_j a^i_j\dd x^j.\]
@@ -3732,6 +3738,10 @@ Suppose we are given two coframes, one $\bm\theta$ on a manifold $M$, and $\bar{
 Here we shall only look at \emph{local} equivalence, so $F$ is required to be defined only on a suitable open subset of $M$. Cartan made the fundamental observation that the naturality of the exterior derivative $\dd$ is the key to the solution of the equivalence problem. If \eqref{eq 8.7 OlverEquiv} holds, then we also have 
 \[F^\ast\dd\wb{\theta}^i=\dd\theta^i,\quad i=1,\ldots,n.\]
 The solution to the coframe equivalence problem lies in the detailed analysis of these differentiated conditions.
+
+\begin{rem}
+    Note that, although this equivalence problem may look different from any of the equivalence problems for submanifolds introduced in the preceding \sect, it is actually a special case: a coframe is a section, hence a submanifold, of the coframe bundle $\Fr^\ast(M)$, and the relevant pseudogroup on $\Fr^\ast(M)$ is the pseudogroup of diffeomorphisms $\mathpzc{Diff}(M)$ whose action is naturally lifted to $\Fr^\ast(M)$ by prolongation (differentiation).
+\end{rem}
 
 Since the $\theta^i$ form a coframe, we can rewrite their exterior derivatives in terms of wedge products of themselves. This produces the fundamental \emph{structure equations}\index{Equation!Structure}
 \[\boxed{\dd\theta^i=\sum_{1\leq j<k\leq n}T^i_{jk}\theta^j\wedge\theta^k,\quad i=1,\ldots,n.}\label{eq structure eq for coframes}\]
