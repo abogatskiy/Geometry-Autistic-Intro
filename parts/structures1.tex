@@ -3211,21 +3211,21 @@ Our definition of the Euler operator relies on a choice of coordinates. Since th
         where $\varUpsilon$ is a ``quadratic contact form'', i.e., a sum of terms each of which contains the wedge product of two or more contact forms.
     \end{lem}
     \begin{lem}[{{\cite[Lem.~7.16]{OlverEquiv}}}]\label{lem 7.16 OlverEquiv}
-        Let $L\sfv_{\bf{x}}$ be a Lagrangian form of degree $r$. Then the Euler-Lagrange expression $\sfE(L)$ is the uniquely defined $p$-tuple of differential functions satisfying
+        Let $L\sfv_{\bf{x}}$ be a Lagrangian form of order $r$. Then the Euler-Lagrange expression $\sfE(L)$ is the uniquely defined $n$-tuple of differential functions satisfying
         \begin{equation}
-            \dd[L\dd x] = [\sfE(L)\cdot\theta]\wedge \dd x + \rmD\Omega = \sum_{\alpha=1}^k \sfE_\alpha(L)\theta^\alpha\wedge\dd x^1\wedge\cdots\wedge\dd x^n + \rmD\varOmega. \label{eq 7.26 OlverEquiv}
+            \dd[L\sfv_{\bf{x}}] = [\sfE(L)\cdot\bm\theta]\wedge \sfv_{\bf{x}} + \rmD\Omega = \sum_{\alpha=1}^k \sfE_\alpha(L)\theta^\alpha\wedge\dd x^1\wedge\cdots\wedge\dd x^n + \rmD\varOmega. \label{eq 7.26 OlverEquiv}
         \end{equation}
         for some $n$-form $\varOmega$ on $\rmJ^{2r}$.
     \end{lem}
     \begin{proof}
         We compute
         \[
-        \dd[L\dd x] = \sum_{\alpha=1}^q \sum_{\#J=1}^n \frac{\partial L}{\partial u_J^\alpha} \dd u_J^\alpha \wedge \dd x = \sum_{\alpha=1}^q \sum_{\#J=1}^n \frac{\partial L}{\partial u_J^\alpha} \theta_J^\alpha \wedge \dd x
+        \dd[L\sfv_{\bf{x}}] = \sum_{\alpha=1}^q \sum_{|J|\leq r} \frac{\partial L}{\partial u_J^\alpha} \dd u_J^\alpha \wedge \sfv_{\bf{x}} = \sum_{\alpha=1}^q \sum_{|J|\leq r} \frac{\partial L}{\partial u_J^\alpha} \theta_J^\alpha \wedge \sfv_{\bf{x}}
         \]
         \[
-        = \sum_{\alpha=1}^q \sum_{\#J=1}^n \frac{\partial L}{\partial u_J^\alpha} D_J[\theta^\alpha \wedge \dd x].
+        = \sum_{\alpha=1}^q \sum_{|J|\leq r} \frac{\partial L}{\partial u_J^\alpha} D_J[\theta^\alpha \wedge \sfv_{\bf{x}}].
         \]
-        A straightforward integration by parts, using the differential form analog of the basic formula \eqref{eq 7.5 OlverEquiv}, completes the demonstration of \eqref{eq 7.26 OlverEquiv}. The fact that the Euler-Lagrange expression is uniquely determined by such a formula is demonstrated by noting that a differential form of the form $\sum_\alpha P_\alpha \theta^\alpha \wedge \dd x$ lies in the image of the total differential $\rmD$ if and only if it is identically zero.
+        A straightforward integration by parts, using the differential form analog of the basic formula \eqref{eq 7.5 OlverEquiv}, completes the demonstration of \eqref{eq 7.26 OlverEquiv}. The fact that the Euler-Lagrange expression is uniquely determined by such a formula is demonstrated by noting that a differential form of the form $\sum_\alpha P_\alpha \theta^\alpha \wedge \sfv_{\bf{x}}$ lies in the image of the total differential $\rmD$ if and only if it is identically zero.
     \end{proof}
     Let $g^{(r)}$ denote the $r$-th prolongation of a contact transformation to $\rmJ^r$. Then, according to \eqref{eq:7.19:OlverEquiv},
     \begin{multline}
