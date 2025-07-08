@@ -2786,7 +2786,7 @@ Finally, from Theorem~\ref{thm 6.23 Olver} we may also observe that the most eff
     \[X_1=\partial_u,\quad X_2=u\partial_u,\quad X_3=u^2\partial_u,\]
     which generates the \glspl{flt} acting on $u$: $u\mapsto (au+b)/(cu+d)$, with $x$ unchanged. The expression on the left hand side of \eqref{eq schwarz} is the \emph{Schwarzian derivative} of $u$. It is invariant under \glspl{flt} (which is easy enough to check by hand). 
     
-    In fact, the stabilization order is $3$ (since a generic quadruple $u(x_0),u_x(x_0),u_{xx}(x_0),u_{xxx}(x_0)$ has no \gls{flt} stabilizer) and the orbit dimension is $\dim \fraksl_2(\bbR)=3$, so we need $2$ differential invariants, with one of them being third-order. There are several ways of obtaining the Schwarzian derivative as a third-order differential invariant  -- see, e.g., \cite[Exercise~5.22]{OlverEquiv}. We will see how it can be constructed via the moving frame method in Example~\ref{ex projective structures and schwarzians}. Thus, the Schwarzian equation is the most general \gls{flt}-invariant third-order differential equation (assuming it's non-singular in the Schwarzian derivative).
+    In fact, the stabilization order is $3$ (since a generic quadruple $u(x_0),u_x(x_0),u_{xx}(x_0),u_{xxx}(x_0)$ has no \gls{flt} stabilizer) and the orbit dimension is $\dim \fraksl_2(\bbR)=3$, so we need $2$ differential invariants, with one of them being third-order. There are several ways of obtaining the Schwarzian derivative as a third-order differential invariant  -- see, e.g., \cite[Exercise~5.22]{OlverEquiv}. We will see how it can be constructed via the moving coframe method in Example~\ref{ex schwarian der via coframe}, and via another variation of it in Example~\ref{ex projective structures and schwarzians}. Thus, the Schwarzian equation is the most general \gls{flt}-invariant third-order differential equation (assuming it's non-singular in the Schwarzian derivative).
     
     Let us return to reduction of this equation. The $2$-dimensional solvable subalgebra $\frakg_0=\<X_1,X_2\>$ can be used to reduce the equation to a first-order one. The second-order differential invariants of $\frakg_0$ are $x$ and $w=u_{xx}/u_x$, in terms of which the reduced equation becomes 
     \[w_x=\frac12 w^2+F(x),\]
@@ -3037,7 +3037,7 @@ As defined, this operator clearly depends on the choice of coordinates. The intr
     \[PD_i Q=-QD_i P+D_i(PQ),\quad i=1,\ldots,n,\label{eq 7.5 OlverEquiv}\]
     for total derivatives implies, using the Divergence Theorem, the general integration by parts formula 
     \[
-        \int_\varOmega PD_iQ\sfv_{\bf{x}}=-\int_\varOmega QD_iP\sfv_{\bf{x}}+\int_{\partial\varOmega} (-1)^{i-1}PQ\dd x^1\wedge\cdots\widehat{\dd x^i}\wedge\cdots \wedge\dd x^n, 
+        \int_\varOmega PD_iQ\sfv_{\bf{x}}=-\int_\varOmega QD_iP\sfv_{\bf{x}}+\int_{\partial\varOmega} (-1)^{i-1}PQ\dd x^1\wedge\cdots\wedge\widehat{\dd x^i}\wedge\cdots \wedge\dd x^n, 
     \]
     which holds for any smooth $P(\bf{x})$, $Q(\bf{x})$. Repeatedly applying this formula to the integrand in the above expression, and using the fact that $\bf{v}$ and its derivatives vanish on $\partial\varOmega$, we obtain
     \begin{align}
@@ -3412,7 +3412,7 @@ where $I_1,\ldots,I_k$ are a complete set of functionally independent $r$-th ord
 
 
 
-\section{(*) Conservation laws}
+\section{Conservation laws}
 
 
 For systems of ``conservative'' ODEs -- meaning systems of Euler-Lagrange equations -- the power of Lie's symmetry method for reducing the order is effectively doubled. This is due to a fundamental result of E.~Noether, that relates symmetries and first integrals of Euler-Lagrange equations. 
@@ -3580,7 +3580,7 @@ where $\theta_x=\dd p-q\dd x$ is the second contact form on $\rmJ^2$.
 \end{prop}
 
 As a consequence of Corollary~\ref{cor 7.41 OlverEquiv} and Cartan's magic formula, we find that if $X$ is any variational symmetry, then 
-\[0=\Lie_{X^{(1)}}\eta_L=\dd \left(\eta_L\left(X^{(1)}\right)\right)+i_{X^{(1)}}\dd\eta_L.\]
+\[0=\Lie_{X^{(1)}}\eta_L=\dd \left[\eta_L\left(X^{(1)}\right)\right]+i_{X^{(1)}}\dd\eta_L.\]
 Equation \eqref{eq:7.47:OlverEquiv} shows that the second term vanishes on solutions to the Euler-Lagrange equation, and hence the first term vanishes on solutions of the Euler-Lagrange equation, and hence the first term defines a first integral. Thus, our earlier version of Noether's Theorem relating symmetry groups of variational problems and first integrals of the associated Euler-Lagrange equations has the following formulation.
 
 \begin{prop}[Noether {\cite[Prop.~7.43]{OlverEquiv}}]
@@ -3602,7 +3602,7 @@ The extension of the Cartan form to multi-dimensional variational problems is no
 
 
 \begin{intu*}
-    This \chap\ is in many ways the culmination of the entire book. It is devoted to a topic that is underrepresented in differential geometry books due its theoretical nature, but is actually foundational to the modern view of geometry. As we have noted before, for Felix Klein all of geometry was rooted in the study of invariants of group actions. In Klein geometry, all such invariants are related to the Maurer-Cartan form of the principal group, specifically the structure constants of its Lie algebra. However, when it comes to non-homogeneous geometries, which are usually described by $G$-structures, the correct analog of these objects is difficult to identify, as it is not even obvious which group action one should study. This is where our study of differential invariants from the preceding \chap\ steps in. Indeed, Gauss', Riemann's, and Christoffel's famous work was not just about finding invariants of a finite-dimensional group (say, Euclidean group $\rmE_n$ acting on $\bbE^n$), but rather about objects (and relations between objects, i.e., equations) that are invariant under \emph{changes of local coordinates}, which is not an action that can be described by a Lie group. Instead, local diffeomorphisms comprise an infinite-dimensional \emph{Lie pseudogroup}. Hence, to reconcile Klein's view of geometry with that of the Riemannian geometers, one needs to conceptualize invariants of Lie pseudogroups. In this \chap\ we begin to present the resolution of this puzzle, due largely to \'Elie Cartan. 
+    This \chap\ is in many ways the cornerstone of the entire book's narrative. It is devoted to a topic that is underrepresented in differential geometry books due its theoretical nature, but is actually foundational to the modern view of geometry. As we have noted before, for Felix Klein all of geometry was rooted in the study of invariants of group actions. In Klein geometry, all such invariants are related to the Maurer-Cartan form of the principal group, specifically the structure constants of its Lie algebra. However, when it comes to non-homogeneous geometries, which are usually described by $G$-structures, the correct analog of these objects is difficult to identify, as it is not even obvious which group action one should study. This is where our study of differential invariants from the preceding \chap\ steps in. Indeed, Gauss', Riemann's, and Christoffel's seminal work was not just about finding invariants of a finite-dimensional group (say, Euclidean group $\rmE_n$ acting on $\bbE^n$), but rather about objects (and relations between objects, i.e., equations) that are invariant under \emph{changes of local coordinates}, which is not an action that can be described by a Lie group. Instead, local diffeomorphisms comprise an infinite-dimensional \emph{Lie pseudogroup}. Hence, to reconcile Klein's view of geometry with that of the Riemannian geometers, one needs to conceptualize invariants of Lie pseudogroups. In this \chap\ we begin to present the resolution of this puzzle, due largely to \'Elie Cartan. 
 \end{intu*}
 
 
@@ -3617,7 +3617,7 @@ In \S\ref{sec topological manifolds}, we have defined differential geometry as t
 \end{gather*}
 In this paradigm, for example, Gauss' theory of surfaces would be reformulated as the study of the differential invariants of maps from $\bbR^2$ to $\bbE^3$ under a simultaneous action of the pseudogroup of local diffeomorphisms of $\bbR^2$ and of the Euclidean rigid motions on $\bbE^3$. The resolution, established by Gauss himself, is that such maps, under some regularity assumptions, are completely characterized by just two fundamental scalar differential invariants -- the Gauss and the mean curvature. Knowing the values of these invariants, and their appropriate derivatives, allows one to decide whether two surfaces are \emph{equivalent} under Euclidean congruences or not. Similarly, Lie's theory of ODEs is subsumed by this definition since the relevant pseudogroup is the pseudogroup of local contact transformations.
 
-Cartan's algorithm provides a powerful step-by-step method for solving \emph{all} equivalence problems of this sort by computing the differential invariants. Moreover, each equivalence problem gets re-interpreted as an equivalence problem for $G$-structures, to be defined below, and Cartan's algorithm usually (but not always) produces a canonical geometric structure on a given $G$-structure that is called a \emph{Cartan geometry}. Cartan geometry is to Klein geometry exactly what Riemannian geometry is to Euclidean geometry: a local deformation of a Lie group structure on the total space of a $G$-frame bundle ($G$-structure), in the sense that there is an analog of the Maurer-Cartan equation, but with a potentially nonzero right hand side called \emph{Cartan curvature}. 
+Cartan's algorithm provides a powerful step-by-step method for solving \emph{all} equivalence problems of this sort by computing the differential invariants. Moreover, each equivalence problem gets re-interpreted as an equivalence problem for $G$-structures, to be defined below, and Cartan's algorithm usually (but perhaps not always) produces a canonical geometric structure on a given $G$-structure that is called a \emph{Cartan geometry}. Cartan geometry is to Klein geometry exactly what Riemannian geometry is to Euclidean geometry: a local deformation of a Lie group structure on the total space of a $G$-frame bundle ($G$-structure), in the sense that there is an analog of the Maurer-Cartan equation, but with a potentially nonzero right hand side called \emph{Cartan curvature}. 
 
 It will take us several \chap s to see the full scope of this fascinating project which was very well understood by Cartan but took decades for other mathematicians to digest. In this \chap, we set up the general equivalence problem and translate it into the language of differential forms. In the next \chap, we study Cartan's algorithm for analyzing the resulting differential systems and finding an equivalence (if one exists). After that, we demonstrate these methods on the relatively simple yet surprisingly rich example of Gauss' theory of surfaces.
 
@@ -3627,7 +3627,9 @@ Finally, note the remarkable similarity between this definition of geometry and 
 
 \section{Basic equivalence problems}
 
-We begin our exposition with a discussion of the basic equivalence problems which can be handled by the method of moving frames or Cartan's equivalence method. Suppose $G$ is a transformation group acting smoothly on an $(n=p+s)$-dimensional manifold $M$. In classical applications, $G$ is a finite-dimensional Lie group, but, as we shall see, the method can be extended to infinite-dimensional Lie pseudogroup actions, e.g., the group of conformal transformations on a Riemannian surface, the group of canonical transformations on a symplectic space, or the group of contact transformations on a jet space.
+Throughout this \chap, we will encounter several flavors of equivalence problems: equivalence of submanifolds, equivalence of coframes, equivalence of $G$-structures, $G$-equivalence. All of them can be put in terms of the first one, and tackled by the same general constellation of methods, namely the method of moving frames/coframes, Cartan's equivalence method, or some hybrid of the two. 
+
+In this \sect, we introduce the fundamental notion of equivalence problems for submanifolds. Suppose $G$ is a transformation group acting smoothly on an $(n=p+s)$-dimensional manifold $M$. In basic applications, $G$ is a finite-dimensional Lie group, but, as we shall see, the method can be extended to infinite-dimensional Lie pseudogroups, e.g., the group of conformal transformations on a Riemannian surface, the group of canonical transformations on a symplectic space, or the group of contact transformations on a jet space.
 
 In either situation, a basic equivalence problem is to determine whether two given submanifolds are congruent modulo a group transformation. We shall divide the basic problem into two different versions, depending on whether one allows reparametrizations of the submanifolds in question. Formally, these can be stated as follows.
 
@@ -3666,7 +3668,7 @@ In the general unparametrized equivalence problem, typically, the submanifolds $
     \label{eq 2.6 OlverCo}
 \end{equation}
 
-We shall see that by solving the fixed parametrization problem, first in the case of $G$ being a finite dimensional Lie transformation group, then extending this to the case of $G$ being an infinite Lie pseudogroup of transformations, we will then be able to solve the reparametrization problem. 
+We shall see that the reparametrization problem can be treated as a special case of the unparametrized problem by extending it to the case of $G$ being a Lie pseudogroup such as the pseudogroup of all diffeomorphisms.
 
 \begin{example}
     For instance, we can reformulate the unparametrized equivalence problem for curves in the Euclidean plane as a fixed parametrization problem for curves in the extended space $E = \bbR \times \bbR^2$, which has coordinates $(t,\bf{x}) = (t,x,y)$. The extended curve is given as the graph $\{(t,\bf{x}(t))\}$ of the original parametrized curve, and the Lie pseudogroup $\pzcG = \mathpzc{Diff}(\bbR) \times \rmE_2$ acting on $E$ consists of a finite-dimensional group, the Euclidean group $\rmE_2$ acting on $\bbR^2$, together with the infinite-dimensional pseudogroup $\mathpzc{Diff}(\bbR)$ consisting of all smooth (local) diffeomorphisms $\wb{t} = \tau(t)$ of the parameter space $\bbR$.
@@ -3695,7 +3697,7 @@ The functional relationships between the fundamental differential invariants wil
 See \cite{Calabi1998} for applications of the classifying curve to the problem of object recognition in computer vision. Of course, this ``solution'' reduces one to another potentially difficult \emph{identification problem} --- when do two parametrized submanifolds coincide? One approach to the latter problem is to use the \gls{immt} to realize the classifying submanifold as the graph of a function, which eliminates the reparametrization ambiguity. Alternatively, in an algebraic context, a solution can be provided by Gr\"obner basis techniques. Neither approach completely resolves the general identification problem, but particular cases can often be handled effectively.
 
 \begin{rem}
-    A more standard solution to the equivalence problem depends on the choice of a base point $\bf{x}_0 = \bf{x}(t_0)$ on the curve. Then the curvature $\kappa(s)$ as a function of arc length $s = \int_{t_0}^t ds$ uniquely characterizes the curve up to Euclidean congruence, see \S\ref{sec: curves}. The classifying curve approach has two distinct advantages: first, there is no choice of base point required, which eliminates the translational ambiguity inherent in the curvature function $\kappa(s)$; second, the classifying curve is completely local, whereas the arc length $s$ is a nonlocal function of the curve. Note that the classifying curve can be computed directly, without appealing to the arc length parametrization.
+    A more standard solution to the equivalence problem depends on the choice of a base point $\bf{x}_0 = \bf{x}(t_0)$ on the curve. Then the curvature $\kappa(s)$ as a function of arc length $s = \int_{t_0}^t \dd s$ uniquely characterizes the curve up to Euclidean congruence, see \S\ref{sec: curves}. The classifying curve approach has two distinct advantages: first, there is no choice of base point required, which eliminates the translational ambiguity inherent in the curvature function $\kappa(s)$; second, the classifying curve is completely local, whereas the arc length $s$ is a nonlocal function of the curve. Note that the classifying curve can be computed directly, without appealing to the arc length parametrization.
 \end{rem}
 
 \begin{rem}
@@ -3747,7 +3749,11 @@ Since the $\theta^i$ form a coframe, we can rewrite their exterior derivatives i
 \[\boxed{\dd\theta^i=\sum_{1\leq j<k\leq n}T^i_{jk}\theta^j\wedge\theta^k,\quad i=1,\ldots,n.}\label{eq structure eq for coframes}\]
 The $n^2(n-1)/2$ \emph{structure functions} $T^i_{jk}(m)=-T^i_{kj}(m)$ are uniquely defined. We note that the structure functions measure the degree to which the coframe derivatives $\partial/\partial\theta^i$ fail to commute:
 \[\left[\frac{\partial}{\partial\theta^j},\frac{\partial}{\partial\theta^k}\right]=-\sum_i T^i_{jk}\frac{\partial}{\partial\theta^i}.\label{eq 8.10 OlverEquiv}\]
-The last two equations are equivalent owing to formula \eqref{eq prop 4.1.6} relating differentials and Lie brackets. For example, if $\bm\theta$ is the Maurer-Cartan coframe for a Lie group $G$ relative to some choice of basis for the Lie algebra $\frakg$, then the structure equations coincide with the Maurer-Cartan equations \eqref{eq 5.5.4 RS1 MC in coords}. Thus, in this case, the structure functions agree (up to a sign) with the structure constants for $\frakg$: $T^i_{jk}=-c^i_{jk}$. The commutation formula, therefore, reduces to the standard bracket formula for the Lie algebra.
+The last two equations are equivalent owing to formula \eqref{eq prop 4.1.6} relating differentials and Lie brackets. 
+
+\begin{example}
+    If $\bm\theta$ is the Maurer-Cartan coframe for a Lie group $G$ relative to some choice of basis for the Lie algebra $\frakg$, then the structure equations coincide with the Maurer-Cartan equations \eqref{eq 5.5.4 RS1 MC in coords}. Thus, in this case, the structure functions agree (up to a sign) with the structure constants for $\frakg$: $T^i_{jk}=-c^i_{jk}$. The commutation formula, therefore, reduces to the standard bracket formula for the Lie algebra.
+\end{example}
 
 Any equivalent coframe $\bar{\bm\theta}$ will have its own structure equations 
 \[\dd\wb\theta^i=\sum_{j<k}\wb T^i_{jk}\wb\theta^j\wedge\wb\theta^k,\quad i=1,\ldots,n,\]
@@ -3796,7 +3802,7 @@ The crucial question now is whether these necessary conditions are also sufficie
 
 Let us continue by introducing the notation 
 \[T_\sigma\coloneqq \frac{\partial^r T^i_{jk}}{\partial\theta^{l_r}\partial\theta^{l_{r-1}}\cdots\partial\theta^{l_1}},\quad\text{where}\quad \sigma=(i,j,k,l_1,\ldots,l_r),\]
-for the most general \emph{structure invariant} associated with the coframe. The indices $i,j,k,l_\kappa$ run from $1$ to $n$, with $j<k$. The integer $r$ is called the \emph{order} of the derived invariant $T_\sigma$. If two coframes are equivalent via a diffeomorphism $\wb{m}=F(m)$, then the following \emph{invariance equations} are satisfied:
+for the most general \emph{structure invariant} associated with the coframe. The indices $i,j,k,l_\kappa$ run from $1$ to $n$, with $j<k$. The integer $\ord(\sigma)\coloneqq r$ is called the \emph{order} of the derived invariant $T_\sigma$. If two coframes are equivalent via a diffeomorphism $\wb{m}=F(m)$, then the following \emph{invariance equations} are satisfied:
 \[\wb{T}_\sigma(\wb m)=T_\sigma (m),\quad \text{when}\quad \wb{m}=F(m),\label{eq 8.23 OlverEquiv}\]
 for all $\sigma$. As we shall see, the algebraic solvability of the system of invariance equations is, in the ``regular'' case, both necessary and sufficient for the equivalence of the two coframes.
 
@@ -3828,7 +3834,7 @@ We now impose an additional condition that ensures that the classifying sets are
 
 In the fully regular case, we let 
 \[\rho_r\coloneqq \rank \bf{T}^{(r)}\]  
-be the (constant) rank of the structure map, which is computed as the rank of its Jacobian matrix. By The Regular Level Set Theorem~\ref{thm regular level set}, the classifying set $\scrC^{(r)}$ is a $\rho_r$-dimensional submanifold (possibly with self-intersections) of the classifying space $K^{(r)}$. From now on, to emphasize the regularity assumption, we will refer to $\scrC^{(r)}$ as the $r$-th order \emph{classifying manifold} associated with the coframe $\bm\theta$. Furthermore, $\rho_r$ equals the number of functionally independent structure invariants up to order $r$. Let 
+be the (constant) rank of the structure map, which is computed as the rank of its Jacobian matrix. By the Regular Level Set Theorem~\ref{thm regular level set}, the classifying set $\scrC^{(r)}$ is a $\rho_r$-dimensional submanifold (possibly with self-intersections) of the classifying space $K^{(r)}$. From now on, to emphasize the regularity assumption, we will refer to $\scrC^{(r)}$ as the $r$-th order \emph{classifying manifold} associated with the coframe $\bm\theta$. Furthermore, $\rho_r$ equals the number of functionally independent structure invariants up to order $r$. Let 
 \[\calF^{(r)}=\calF^{(r)}(\bm\theta)\coloneqq \{T_\sigma\mid \ord(\sigma)\leq r\},\quad r\geq 0,\]
 denote the family of functions consisting of all the structure invariants up to order $r$, so $\calF^{(0)}\subset\calF^{(1)}\subset\cdots$. Then, locally, we can choose $\rho_s$ functionally independent \emph{fundamental structure invariants} $I_\nu=T_{\sigma_\nu}$, $\nu=1,\ldots,\rho_r$, which \emph{generate} the full set of $r$-th order structure invariants $\calF^{(r)}$, in the sense that all other invariants of order $\leq r$ can be expressed as functions of the fundamental ones:
 \[T_\sigma=H_\sigma(I_1,\ldots,I_{\rho_r}),\quad \ord(\sigma)\leq r.\]
@@ -3841,9 +3847,9 @@ Since we are primarily interested in local equivalence of coframes, the classify
 The fundamental theorem underlying the solution to the local equivalence problem for coframes states that, in the fully regular case, these necessary conditions are also sufficient. The obvious difficulty with this criterion is that it requires one to look at an infinite number of manifolds, one for each order $r$. Luckily, as in the rank $0$ case, we can reduce the problem to one of finite order. Since the structure invariants of order $r$ also appear as components of $\bf{T}^{(r+1)}$, the ranks are non-decreasing, $\rho_r\leq \rho_{r+1}$, and bounded by $n=\dim M$. Therefore, the ranks must eventually stabilize, and, in fact, once they stabilize they remain fixed. 
 
 \begin{prop}[{{\cite[Props.~8.18, 14.22]{OlverEquiv}}}]\label{prop 8.18 OlverEquiv}
-    Let $\bm\theta$ be a coframe on $M$, and let $\rho_r$ denote the rank of its $r$-th order structure map $\bf{T}^{(r)}$ (potentially varying across $M$). The smallest $r$ for which $\rho_r=\rho_{r+1}$ are equal and \emph{constant} is called the \emph{rank of the coframe}, and we have 
+    Let $\bm\theta$ be a coframe on $M$, and let $\rho_r$ denote the rank of its $r$-th order structure map $\bf{T}^{(r)}$ (potentially varying across $M$). The smallest $r$ for which $\rho_r=\rho_{r+1}$ are equal and \emph{constant} is called the \emph{order of the coframe}, and we have 
     \[0\leq \rho_0< \rho_1< \cdots <\rho_r=\rho_{r+1}=\rho_{r+2}=\cdots=\rho\leq n.\] 
-    The stabilizing rank $r$ (bounded by $n$ if $\bm\theta$ is \emph{fully regular}) will be referred to as the \emph{order of the coframe}. \index{Order of a coframe} \index{Rank of a coframe}
+    The stabilizing rank $\rho_r$ will be referred to as the \emph{rank of the coframe}. If the coframe is \emph{fully regular}, then its order is also bounded by $n$. \index{Order of a coframe} \index{Rank of a coframe}
 \end{prop}
 \begin{proof}
     If we know the classifying function for any structure invariant $T_\sigma$ in terms of some conveniently chosen set of fundamental invariants $I_1,\ldots,I_\rho$, then we automatically know the classifying functions for all derived invariants thereof, and so those coordinates on $K^{(r)}$ are completely redundant for describing the classifying manifold $\scrC^{(r)}(\bm\theta)$. Indeed, given the functional dependency $T_\sigma=H_\sigma(I_1,\ldots,I_\rho)$ specified by the classifying function $H_\sigma(z^1,\ldots,z^\rho)$, we evaluate its differential using the chain rule and formula \eqref{eq 8.2 OlverEquiv}:
@@ -3894,7 +3900,7 @@ The following main theorem is a direct consequence of the Frobenius Theorem and 
     \[\calS=\left\{(m,\wb m)\mid \wb{\bf T}^{(r+1)}(\wb m)=\bf{T}^{(r+1)}(m)\right\}\subset M\times\wb M,\]
     defined by the vanishing of the functions $F_\sigma(m,\wb m)$ for $\ord(\sigma)\leq r+1$. Thus, we should first restrict the Pfaffian system $\calI$ to $\calS$, and \emph{then} prove involutivity.
 
-    First we need to prove that $\calS$ is locally a smooth submanifold of $M\times \wb M$. This is tricky since the functions $F_\sigma$ almost never form a regular family and so the \gls{immt} is not immediately applicable.\footnote{A regular family is a collection of functions whose differentials form a map of constant rank, so that the \gls{immt} can be used. For a full discussion of regular families see Definition~\ref{def ordinary zero}.}\index{Regular family} To see why, suppose $\wb x$ and $x$ are scalar variables. Then the two functions $\wb x-x$ and $\wb x^2-x^2$ arising from the functionally independent functions $x,x^2$ and $\wb x,\wb x^2$, do \emph{not} form a regular family since their Jacobian matrix has rank $1$ on the associated variety $\calS=\{\wb x=x\}$, but has rank $2$ elsewhere. However, the first function $\wb x-x$ by itself is regular, and hence its variety, which is also $\calS$, is indeed a submanifold. In general, we proceed in a similar cautious fashion.
+    First we need to prove that $\calS$ is locally a smooth submanifold of $M\times \wb M$. This is tricky since the functions $F_\sigma$ almost never form a regular family and so the \gls{immt} is not immediately applicable.\footnote{A regular family is a collection of functions whose differentials form a map of constant rank, so that the \gls{immt} can be used. For a full discussion of regular families see Definition~\ref{def ordinary zero}.}\index{Regular family} To see why, suppose $\wb x$ and $x$ are scalar variables. Then the two functions $\wb x-x$ and $\wb x^2-x^2$ arising from the functionally independent functions $x$, $x^2$ and $\wb x$, $\wb x^2$, do \emph{not} form a regular family since their Jacobian matrix has rank $1$ on the associated variety $\calS=\{\wb x=x\}$, but has rank $2$ elsewhere. However, the first function $\wb x-x$ by itself is regular, and hence its variety, which is also $\calS$, is indeed a submanifold. In general, we proceed in a similar cautious fashion.
 
     Let $m_0\in M$, $\wb m_0\in \wb M$, and $z_0$ be as in the assumption. Since $\scrC^{(r)}$ is a $\rho$-dimensional submanifold of the Euclidean space $K^{(r)}$, we can choose $\rho$ of the local coordinate functions $z_{\sigma_1},\ldots,z_{\sigma_\rho}$, $\ord(\sigma_\nu)\leq r$, such that $\restr{\dd z_{\sigma_1}\wedge\cdots\wedge\dd z_{\sigma_\rho}}{\scrC^{(r)}}\neq 0$ in some neighborhood of $z_0$. This implies that the $z_{\sigma_\nu}$ provide local coordinates on $\scrC^{(r)}$, which is equivalent to the statement that the invariants $T_{\sigma_1},\ldots,T_{\sigma_\rho}$ are functionally independent in a neighborhood of $m_0\in M$. Moreover, since $\scrC^{(r+1)}$ is also $\rho$-dimensional, and projects to $\scrC^{(r)}$, the \emph{same} coordinate functions remain independent when restricted to $\scrC^{(r+1)}$. Furthermore, the corresponding barred invariants $\wb T_{\sigma_\nu}$ must also be functionally independent in a neighborhood of $\wb m_0\in \wb M$ since they locally parametrize the same classifying manifold inside $K^{(r)}$.  This clearly implies that the differences $F_{\sigma_\nu}$, $\nu=1,\ldots,\rho$, are functionally independent in a neighborhood of $(m_0,\wb m_0)$, and hence form a regular family there. Therefore, we can now use the \gls{immt} to conclude that the variety $\wt\calS=\{(m,\wb m)\mid F_{\sigma_\nu}(m,\wb m)=0,\; \nu=1,\ldots,\rho\}$ forms a $(2n-\rho)$-dimensional submanifold of $M\times \wb M$.
 
@@ -3974,7 +3980,7 @@ At the other extreme, if a regular coframe $\bm\theta$ has \emph{maximal rank} $
 The solution to the equivalence problem for coframes also determines the structure of the symmetry group of a given coframe.
 
 \begin{defn}[Symmetry of a coframe]
-    Let $\bm\theta=(\theta^1,\ldots,\theta^n)$ be a coframe on a manifold $M$. The symmetry (pseudo)group of $\bm\theta$ is the (pseudo)group of self-equivalences, meaning local diffeomorphisms $F:M\supset U\to M$ satisfying $F^\ast \theta^i=\theta^i$, $i=1,\ldots,n$. An \emph{infinitesimal symmetry} of $\bm\theta$ is a vector field $X\in\fX(M)$ such that $\Lie_X \bf{\theta}=0$.
+    Let $\bm\theta=(\theta^1,\ldots,\theta^n)$ be a coframe on a manifold $M$. The symmetry (pseudo)group of $\bm\theta$ is the (pseudo)group of self-equivalences, meaning local diffeomorphisms $F:M\supset U\to M$ satisfying $F^\ast \theta^i=\theta^i$, $i=1,\ldots,n$. An \emph{infinitesimal symmetry} of $\bm\theta$ is a vector field $X\in\fX(M)$ such that $\Lie_X \bm{\theta}=0$.
 \end{defn}
 
 For any equivalence problem that can be formulated as an equivalence problem for coframes, this definition coincides with the usual notion of symmetry group, the symmetries in question being, of course, restricted to lie in the prescribed class of automorphisms. Here we will only consider the \emph{local symmetry group}, i.e., the group of symmetries generated by short-time flows of infinitesimal symmetries.
@@ -4005,7 +4011,7 @@ Another common class of problems that can be easily reduced to the classifying m
 for some smooth local functions $J^k_i$. Clearly, an equivalence problem for $\wt\varTheta$ reduces to a simultaneous equivalence problem for $\bm\theta$ and $\{J^k_i\}$, in the sense that, in addition to the regular equivalence condition on $\bm\theta$, we must have $F^\ast \wb J^k_i=J^k_i$. Note that if $\wt\varTheta$ has a symmetry (self-equivalence), then the functions $J^k_i$ are invariant under that symmetry. This leads to the following general definitions.
 
 \begin{defn}[Extended coframe]\label{def extended coframe}\index{Coframe!Extended}
-    An extended coframe on a manifold $M$ is a collection $\varTheta=\{\bm\theta,I\}$ consisting of a (local) coframe $\bm\theta$ along with a collection $\bm I=(I_1,\ldots,I_l)$ of (local) smooth scalar functions, called \emph{invariants}.
+    An extended coframe on a manifold $M$ is a collection $\varTheta=\{\bm\theta,\bm I\}$ consisting of a (local) coframe $\bm\theta$ along with a collection $\bm I=(I_1,\ldots,I_l)$ of (local) smooth scalar functions, called \emph{invariants}.
 \end{defn}
 
 \begin{defn}[Equivalence of extended coframes]
@@ -4111,9 +4117,9 @@ The fundamental equivalence and symmetry theorems for coframes can now be adapte
 \begin{intu*}
     This \sect\ presents the classical method of moving frames, as developed by Cartan (building on the work of Frenet, Serret, and most importantly Cartan's advisor Darboux). For the simplest class of applications, consider the problem of deciding whether two submanifolds $S,\wb S$ of a Lie group $G$ are \emph{congruent} in the sense that there exists a $g\in G$ such that $g\cdot S=\wb S$ (at least locally). Cartan's Fundamental Theorem~\ref{thm 6.1 Sharpe fundamental local} implies that the submanifold $S$ is completely determined exactly up to an action of $g\in G$ by the pullback (restrictions) of the Maurer-Cartan form $\theta_G$ to $S$. The components of this form comprise an over-complete coframe on $S$, i.e., there are linear dependencies among them. The coefficients of these dependencies are exactly the differential invariants that characterize $S$ up to congruence. By comparing (the relationships among) the differential invariants of $S$ and $\wb S$, one can unambiguously establish congruence. The goal of the method of moving frames is to extend this basic framework to arbitrary Lie group actions $G\acts M$ and congruences of submanifolds under those actions. It starts by (locally) \emph{equivariantly} embedding $M$ or some modification of $M$ into the Lie group $G$. Such an embedding is called a \emph{moving frame}, and the pullback of the Maurer-Cartan form by such a map is a \emph{moving coframe}. This allows one to fully characterize the group action on $M$ (and hence on submanifolds of $M$) in terms of differential invariants as above. 
     
-    In our exposition, we closely follow Peter Olver's review \cite{OlverCo}. The fundamental idea behind the method is to first turn the given group action $G\acts M$ into a free action $G\acts \wb M$ (where $\wb M$ will be a space of jets of submanifolds of $M$), and then construct local equivariant maps $\rho:\wb M\to G$ -- moving frames. Then the pullbacks $\rho^\ast \theta_G^a$ of the components of the Maurer-Cartan form $\theta_G$ will comprise an invariant moving coframe which, when projected back to $M$, produces a set of $1$-forms with potential linear dependencies among them. These dependencies determine the differential invariants of the action and allow one to eliminate extra parameters from the moving frame, ultimately producing a moving frame on the original manifold $M$ or one of its jet spaces. For example, the most common application of the method is the equivalence (congruence) problem for submanifolds of a homogeneous space $M=G\slash H$. In this case, moving frames are invariant sections of the principal bundle $G\to G\slash H$ (or of its restriction $G\to S$ to the submanifold). 
+    In our exposition, we closely follow Peter Olver's review \cite{OlverCo}. The fundamental idea behind the method is to first turn the given group action $G\acts M$ into a free action $G\acts \rmJ^r$ (where $\rmJ^r$ will be a certain space of jets of submanifolds of $M$), and then construct local equivariant maps $\rho:\rmJ^r\to G$ -- moving frames. Then the pullbacks $\rho^\ast \theta_G^a$ of the components of the Maurer-Cartan form $\theta_G$ will comprise an invariant moving coframe which, when projected back to $M$, produces a set of $1$-forms with potential linear dependencies among them. These dependencies determine the differential invariants of the action and allow one to eliminate extra parameters from the moving frame, ultimately producing a moving frame on the original manifold $M$ or one of its jet spaces. For example, the most common application of the method is the equivalence (congruence) problem for submanifolds of a homogeneous space $M=G\slash H$. In this case, moving frames are invariant sections of the principal bundle $G\to G\slash H$ (or of its restriction $G\to S$ to the submanifold). 
 
-    While equivalence problems provide the basic application and justification of the method, its usefulness extends far beyond. Moving frames are a general tool for conducting all sorts of basic geometric computations, as will be copiously demonstrated in \Chap~\ref{chap curves and surfaces}.\footnote{Actually, in the study of surfaces we will mostly be using the intimately related ``Cartan equivalence method'', but the same results can be obtained directly via moving frames.} The main drawback of the historic version of the method is that it is somewhat ad hoc and sometimes runs into difficulties that have to be resolved on a case-by-case basis. Therefore, this \sect\ is largely devoid of theoretical results, and instead introduces the method by way of numerous examples. A more theoretically palatable version of the method, along with the full solution of the equivalence problem for submanifolds derived from it, will be presented in the \sect s following this one.
+    While equivalence problems provide the basic application and justification of the method, its usefulness extends far beyond. Moving frames are a general tool for conducting all sorts of basic geometric computations, as will be copiously demonstrated in \Chap~\ref{chap curves and surfaces}.\footnote{Actually, in the study of surfaces we will mostly be using the intimately related ``Cartan equivalence method'', but the same results can be obtained directly via moving frames.} The main drawback of the historic version of the method is that it is somewhat ad hoc and sometimes runs into difficulties that have to be resolved on a case-by-case basis. Therefore, this \sect\ is largely devoid of theoretical results, and instead introduces the method by way of numerous examples. A more theoretically palatable version of the method, along with the full solution of the equivalence problem for submanifolds derived from it, will be presented in the \sect s starting with \S\ref{sec: moving coframes via reg}.
 \end{intu*}
 
 In our approach to the theory and practical implementation of the method of moving frames, the left-invariant Maurer-Cartan forms on a finite-dimensional Lie group play an essential role. We have previously presented one way of easily computing them using the matrix representation $\theta_G=g^{-1}\dd g$. 
@@ -4147,7 +4153,7 @@ is a left-invariant form on $G$. Alternatively, if one expands the right hand si
 then each coefficient $\theta_I$ also forms a left-invariant form on $G$. In particular, when $G$ acts locally effectively, the resulting collection of $1$-forms spans the space of left-invariant forms. It only remains to pick a basis in this space to recover the components of the Maurer-Cartan form.
 
 \begin{example}
-    Consider the action of $\GL_2(\bbR)$  on $\bbR^2$ with coordinates $(x,u)$ by 
+    Consider the action of $\GL_2(\bbR)$ on $E=\bbR^2$ with coordinates $(x,u)$ by 
     \[(\wb x,\wb u)=\left(\frac{\alpha x+\beta}{\gamma x+\delta},\frac{u}{\gamma x+\delta}\right).\label{eq 3.10 OlverCo}\]
     This forms a multiplier representation of $\GL_2(\bbR)$ which lies at the heart of classical invariant theory. We can consider the equivalence problem for graphs of functions $u=f(x)$, thereby avoiding issues of parametrization. Two such curves are equivalent iff their defining functions $f$ and $\wb f$ are related by 
     \[f(x)=(\gamma x+\delta)\wb f\left(\frac{\alpha x+\beta}{\gamma x+\delta}\right)=(\gamma x+\delta)\wb f(\wb x),\label{eq 2.4 OlverCo}\]
@@ -4168,14 +4174,14 @@ then each coefficient $\theta_I$ also forms a left-invariant form on $G$. In par
 
 If $G$ does not act faithfully on $M$,  then the forms computed by this method will form a basis for the annihilator 
 \[(\frakg_M)^\perp=\left\{\mu\in\frakg^\ast\mid \mu(A)=0\;\text{for all}\; A\in\frakg_M\right\}\]
-of the Lie algebra $\frakg_M$ of the kernel $G_M=\{g\in G\mid g\cdot m=m\;\text{for all}\; m\in M\}$ of the action, and thus can be identified with the Maurer-Cartan form of the effectively acting quotient $G\slash G_M$. For example, if we only treat the \glspl{flt} in $x$ in \eqref{eq 3.10 OlverCo}, then the resulting three forms \eqref{eq 3.10 OlverCo} all annihilate the generator $A=\alpha\partial_\alpha+\beta\partial_\beta+\delta\partial_\delta$ of the isotropy subgroup $\bbR\cdot\rmI<\GL_2(\bbR)$ consisting of scalar matrices. Hence, the three $1$-forms can be identified with a basis for the Maurer-Cartan form of the effectively acting projective group $\PSL_2(\bbR)=\GL_2(\bbR)\slash (\bbR\rmI)$.
+of the Lie algebra $\frakg_M$ of the kernel $G_M=\{g\in G\mid g\cdot m=m\;\text{for all}\; m\in M\}$ of the action, and thus can be identified with the Maurer-Cartan form of the effectively acting quotient $G\slash G_M$. For example, if we only treat the \glspl{flt} in $x$ in \eqref{eq 3.10 OlverCo}, then the resulting three forms \eqref{eq 3.10 OlverCo} all annihilate the generator $A=\alpha\partial_\alpha+\beta\partial_\beta+\delta\partial_\delta$ of the isotropy subgroup $\bbR\rmI<\GL_2(\bbR)$ consisting of scalar matrices. Hence, the three $1$-forms can be identified with a basis for the Maurer-Cartan form of the effectively acting projective group $\PSL_2(\bbR)=\GL_2(\bbR)\slash (\bbR\rmI)$.
 
 \PRLsep
 
 Now we begin the development of the moving coframe method. Throughout this \sect, assume that $G$ is a $d$-dimensional Lie group that acts \emph{locally effectively and transitively} on an $n$-dimensional manifold $M$. We begin by choosing a basepoint $m_0\in M$.
 
 \begin{defn}[Compatible lift, moving frame]\index{Moving frame}\index{Compatible lift}
-    Let $G\acts M$ be a locally effective and transitive action, where $\dim M=n$, and $\dim G=d$ (so $d\geq n$). A local smooth function $\rho:M\supset U\to G$ is called a \emph{compatible lift} with basepoint $m_0$ if it satisfies 
+    Let $G\acts M$ be a locally effective and locally transitive action, where $\dim M=n$, and $\dim G=d$ (so $d\geq n$). A local smooth function $\rho:M\supset U\to G$ is called a \emph{compatible lift} with basepoint $m_0$ if it satisfies 
     \[\rho(m)\cdot m_0=m.\label{eq 4.1 OlverCo}\]
     In order to compute the most general compatible lift, we must solve this system of $n$ equations for $n$ of the group parameters in terms of the $n$-dimensional point $m\in M$ and the remaining $d-n=\dim G-\dim M$ group parameters, which we denote collectively by $h$. This leads to a general formula $g=\rho_0(m,h)$ for the solution to the compatibility equations \eqref{eq 4.1 OlverCo}. Thus, by solving \eqref{eq 4.1 OlverCo}, we have effectively ``normalized'' $n$ of the original group parameters.  Since our considerations are always local, in practice, we only need to solve the equations near $m_0$. In accordance with Cartan's terminology, we call the general compatible lift $\rho_0(m,h)$ the \emph{moving frame of order zero} for the given transformation group. 
 \end{defn}
@@ -4195,7 +4201,7 @@ The order zero moving frame $\rho_0(m,h)$ which is the general solution to the l
 Thus, the action on the unnormalized group parameters $h$ can be explicitly determined by multiplying the moving frame on the left by the group element. The action of $G$ on $P_0$ projects to the original action of $G$ on $M$, so that $g\cdot (m,h)=(g\cdot m,\chi(g,m,h))$ for $g\in G$. In other words, we have constructed a homogeneous $H$-bundle over $G\slash H$. As we will see next, it also carries a $\frakg$-valued differential form that turns it into a true locally Klein geometry.
 
 \begin{example}[{\cite[Example~4.2]{OlverCo}}]
-    Consider the planar action \eqref{eq 3.10 OlverCo} of $\GL_2(\bbR)$. It is transitive on $M=\bbR^2\setminus\{u=0\}$. Choose the basepoint $m_0=(0,1)$. Since $g\cdot m_0=(\beta/\delta,1/\delta)$, any compatible lift $g=\rho(x,u)$ must satisfy $\beta/\delta=x$, $1/\delta=u$, and hence the solution to \eqref{eq 4.1 OlverCo} is 
+    Consider the planar action \eqref{eq 3.10 OlverCo} of $\GL_2(\bbR)$. It is transitive on $E=\bbR^2\setminus\{u=0\}$. Choose the basepoint $m_0=(0,1)$. Since $g\cdot m_0=(\beta/\delta,1/\delta)$, any compatible lift $g=\rho(x,u)$ must satisfy $\beta/\delta=x$, $1/\delta=u$, and hence the solution to \eqref{eq 4.1 OlverCo} is 
     \[\beta=\frac{x}{u},\quad \delta=\frac{1}{u}.\label{eq 4.3 OlverCo}\]
     The most general compatible lift thus has the form 
     \[\rho_0(x,u,\alpha,\gamma)=\begin{pmatrix}
@@ -4263,7 +4269,7 @@ will provide an invariant coframe on $P_0$, which we name the \emph{moving cofra
 We will now consider a more complicated problem where the order zero frame bundle will not suffice, and a procedure called \emph{prolongation} will be required. Recall that the semibasic component of a differential form defined on a jet space is generally a differential form on the \emph{next} jet space.
 
 \begin{example}
-    Consider a curve $C\subset M=\bbR^2\setminus\{u=0\}$. For simplicity, we shall assume that the curve coincides with the graph of a function $u=u(x)$. We restrict the moving coframe forms to the curve, which amounts to replacing the differential $\dd u$ by $u_x\dd x$. If we interpret the derivative $u_x$ as a coordinate on the jet space $\rmJ^1(\bbR, M)\cong\bbR^3$ of curves in $M$, then the restriction of a differential form to the curve can be reinterpreted as the natural projection of $\dd u$ on $\rmJ^1$ to its semibasic component, using the canonical decomposition of differential forms on jet bundles into semibasic and contact components. Indeed, the vertical component of the form $\dd u$ is the contact form $\dd u-u_x\dd x$. Therefore, the restricted (or semibasic) moving coframe forms on $C\times H$ are given by 
+    Consider a curve $C\subset E=\bbR^2\setminus\{u=0\}$ in the $(x,u)$-plane. For simplicity, we shall assume that the curve coincides with the graph of a function $u=u(x)$. We restrict the moving coframe forms to the curve, which amounts to replacing the differential $\dd u$ by $u_x\dd x$. If we interpret the derivative $u_x$ as a coordinate on the jet space $\rmJ^1\coloneqq \rmJ^1 E\cong\bbR^3$ of curves in $E$, then the restriction of a differential form to the curve can be reinterpreted as the natural projection of $\dd u$ on $\rmJ^1$ to its semibasic component, using the canonical decomposition of differential forms on jet bundles into semibasic and contact components. Indeed, the vertical component of the form $\dd u$ is the contact form $\dd u-u_x\dd x$. Therefore, the restricted (or semibasic) moving coframe forms on $C\times H$ are given by 
     \[\begin{aligned}
         \eta^1&=\frac{\dd\alpha-x\dd\gamma}{\alpha-\gamma x},& \eta^2&=\frac{\dd x}{u(\alpha-\gamma x)},\\
         \eta^3&=\frac{u(\alpha\dd\gamma-\gamma\dd\alpha)}{\alpha-\gamma x},& \eta^2&=\frac{\gamma(xu_x-u)-\alpha u_x}{u(\alpha-\gamma x)}\dd x,
@@ -4274,7 +4280,7 @@ We will now consider a more complicated problem where the order zero frame bundl
     \[\wb{u}_{\wb x}=\frac{(cx+d)u_x-cu}{\det g},\quad g=\begin{pmatrix}
         a & b\\c& d
     \end{pmatrix}\in \GL_2(\bbR).\label{eq 4.11 OlverCo}\]
-    In other words, we interpret $\alpha,\gamma,x,u,u_x$ as coordinates on a bundle $\wt P_0\to\rmJ^1(\bbR,M)$ over the first jet space, which is merely the pullback $\wt P_0=(\pi^1_0)^\ast P_0$ of the $0$-th order moving frame bundle by the standard projection $\pi^1_0:\rmJ^1(\bbR,M)\to M$. There is an induced action of $G$ on $\wt P_0$ which projects to its prolonged action on $\rmJ^1$. A first-order lifted invariant, then, is just a function $J\in C^\infty(\wt P_0)$ which is invariant under the action of $G$ on $\wt P_0$. If the lifted invariant $J=J(x,u,u_x)$ does not, in fact, depend on the group parameters $\alpha,\gamma$, then it will be a first-order differential invariant. (However, in this example, there are no non-constant first-order differential invariant, since the action is transitive on $\rmJ^1$.) Alternatively, if $J$ actually depends on $\alpha$ or $\gamma$, then it can be used in the normalization procedure.
+    In other words, we interpret $\alpha,\gamma,x,u,u_x$ as coordinates on a bundle $\wt P_0\to\rmJ^1$ over the first jet space, which is merely the pullback $\wt P_0=(\pi^1_0)^\ast P_0$ of the $0$-th order moving frame bundle by the standard projection $\pi^1_0:\rmJ^1\to E$. There is an induced action of $G$ on $\wt P_0$ which projects to its prolonged action on $\rmJ^1$. A first-order lifted invariant, then, is just a function $J\in C^\infty(\wt P_0)$ which is invariant under the action of $G$ on $\wt P_0$. If the lifted invariant $J=J(x,u,u_x)$ does not, in fact, depend on the group parameters $\alpha,\gamma$, then it will be a first-order differential invariant. (However, in this example, there are no non-constant first-order differential invariant, since the action is transitive on $\rmJ^1$.) Alternatively, if $J$ actually depends on $\alpha$ or $\gamma$, then it can be used in the normalization procedure.
 \end{example}
 
 Fortunately, the lifted invariants can be determined without explicitly computing the prolonged group action or solving any differential equations. They appear in the linear dependencies among the restricted (semibasic) moving coframe forms. Indeed, because the $1$-forms are invariant, each coefficient $J_i$ in a linear relation $\eta_0=J_1\eta_1+\cdots+J_k\eta_k$, in which the forms $\eta_i$ on the right hand side are linear independent, is automatically invariant under the action of the group.
@@ -4391,12 +4397,12 @@ The moving coframe forms in this case are constructed from the Maurer-Cartan for
 \[F^\ast\bar{\bf w}=\bf w,\quad F^\ast\dd \bar{\bf w}=\dd \bf w,\quad F^\ast\bar{\bm\theta}_G=\bm\theta_G.\]
 Using the moving frame lift $g=\rho(m,h)$, $w=I(m)$, to pull back these $1$-forms, we are lef to the $0$-th order moving coframe, consisting of the pulled back Maurer-Cartan forms $(\rho_0)^\ast\bm\theta$, along with the differentials $(\rho_0)^\ast\dd\bf w_\nu=\dd I_\nu$ of the group invariants. At this stage, the set up of the intransitive problem is complete, and one proceeds, as in the transitive case, to look for dependencies among the restricted coframe forms, and then normalize the resulting lifted invariants.
 
-\begin{example}
+\begin{example}[Schwarzian derivative]\label{ex schwarian der via coframe}
     The intransitive action 
     \[a:\quad (x,u)\mapsto \left(x,\frac{\alpha u+\beta}{\gamma u+\delta}\right),\quad a=\begin{pmatrix}
         \alpha & \beta \\ \gamma & \delta
     \end{pmatrix}\in\SL_2(\bbR),\label{eq 5.4 OlverCo}\]
-    of the special linear group $\SL_2(\bbR)$ on $M=\bbR^2$ arises in complex function theory. (We restrict to $\SL_2(\bbR)$ to maintain local effectiveness.) The group orbits are vertical lines and so the basic invariant is merely $I(x,u)=x$. We choose the slice $\varSigma=\{u=0\}$. Solving the equation $a(x,u)\cdot m_0=(x,u)$, where $m_0=(y,0)$, leads to the general compatible lift 
+    of the special linear group $\SL_2(\bbR)$ on $E=\bbR^2$ arises in complex function theory. (We restrict to $\SL_2(\bbR)$ to maintain local effectiveness.) The group orbits are vertical lines and so the basic invariant is merely $I(x,u)=x$. We choose the slice $\varSigma=\{u=0\}$. Solving the equation $a(x,u)\cdot m_0=(x,u)$, where $m_0=(y,0)$, leads to the general compatible lift 
     \[a_0(x,u,\alpha,\delta)=\begin{pmatrix}
         \alpha & \delta u\\
         \frac{\alpha\delta-1}{\delta u} & \delta
@@ -4420,7 +4426,7 @@ Using the moving frame lift $g=\rho(m,h)$, $w=I(m)$, to pull back these $1$-form
     \[\eta_2^2=\eta_2^4=\dd x,\quad \eta_2^3=-\frac12\calS \eta_0^2,\quad \eta_2^1=0,\label{eq 5.10 OlverCo}\]
     where 
     \[\calS=\frac{u_{xxx}}{u_x}-\frac32\frac{u_{xx}^2}{u_x^2}\]
-    is the classical Schwarzian derivative \index{Schwarzian derivative} of the function $u(x)$, whose invariance under \glspl{flt} is of fundamental invariance in complex analysis. Since the $1$-form $\dd x$ is invariant, all the higher-order differential invariants are found by differentiating $\calS$ w.r.t.\ $x$.
+    is the classical Schwarzian derivative \index{Schwarzian derivative} of the function $u(x)$, whose invariance under \glspl{flt} is of fundamental invariance in complex analysis (where the only difference is that $u$ and $x$ are complex and $u(x)$ is assumed analytic). Since the $1$-form $\dd x$ is invariant, all the higher-order differential invariants are found by differentiating $\calS$ w.r.t.\ $x$.
 \end{example}
 
 Actually, the preceding computation can be slightly simplified by extending our general method to non-effective actions. We consider \eqref{eq 5.4 OlverCo} as defining a non-effective (and intransitive) action of the general linear group $\GL_2(\bbR)$ on $\bbR^2$. We may apply the second algorithm for computing the required Maurer-Cartan forms, leading to the three $1$-forms \eqref{eq 3.12 OlverCo} that annihilate the kernel subalgebra $\frakg_M$. We substitute the compatible lift formulas $\beta=\delta u$ for the order zero moving coframe, which is now $a_0=\left(\begin{smallmatrix}
@@ -4526,7 +4532,7 @@ The first dependency between $\wh\eta_0^1$ and $\wh\eta_0^4$ leads to the reduct
 
 
 
-\section{Moving (co)frames via regularization}
+\section{Moving (co)frames via regularization}\label{sec: moving coframes via reg}
 
 
 \begin{intu*}
@@ -4786,7 +4792,7 @@ Thus, barring algebraic complications, the normalization procedure provides a si
 \end{defn}
 
 \begin{example}
-    Consider the joint action $(x,y)\mapsto (Rx+a,Ry+a)$ of the Euclidean group $(R,a)\in\SE_2$ on pairs of vectors $(x,y)\in M=\bbR^2\times\bbR^2$. The action is free on $M\setminus \varDelta$, where $\varDelta=\{x=y\}$ is the diagonal. The lifted invariants are the components of $z=Rx+a$, $w=Ry+a$. We normalize $z=0$ by setting $a=-Rx$. The remaining normalized invariant now reduces to $w=R(y-x)$. Away from the diagonal, we can further normalize the second component of $w$ to be zero by specifying the rotation matrix $R$ to have angle normalizations specify the right moving frame for the joint Euclidean action. The first component of $w$ then reduces to the distance $\lVert x-y\rVert$, which forms the fundamental joint invariant for the Euclidean group. A similar construction for the $n$-dimensional Euclidean group $\rmE_n$ provides a simple proof of an analytical version of a theorem by Weyl that the only joint Euclidean invariants are functions of the distances between points. Extensions to joint invariants for other transformation groups are straightforward.
+    Consider the joint action $(\bf x,\bf y)\mapsto (R\bf x+\bf a,R\bf y+\bf a)$ of the Euclidean group $(R,\bf a)\in\SE_2$ on pairs of vectors $(\bf x,\bf y)\in M=\bbR^2\times\bbR^2$. The action is free on $M\setminus \varDelta$, where $\varDelta=\{\bf x=\bf y\}$ is the diagonal. The lifted invariants are the components of $\bf z=R\bf x+\bf a$, $\bf w=R\bf y+\bf a$. We normalize $\bf z=0$ by setting $\bf a=-R\bf x$. The remaining normalized invariant now reduces to $\bf w=R(\bf y-\bf x)$. Away from the diagonal, we can further normalize the second component of $\bf w$ to be zero by specifying the rotation matrix $R$ to have angle normalizations specify the right moving frame for the joint Euclidean action. The first component of $\bf w$ then reduces to the distance $\lVert \bf x-\bf y\rVert$, which forms the fundamental joint invariant for the Euclidean group. A similar construction for the $n$-dimensional Euclidean group $\rmE_n$ provides a simple proof of an analytical version of a theorem by Weyl that the only joint Euclidean invariants are functions of the distances between points. Extensions to joint invariants for other transformation groups are straightforward.
 \end{example}
 
 
@@ -4794,7 +4800,7 @@ Thus, barring algebraic complications, the normalization procedure provides a si
 \PRLsep
 
 
-Another often computationally preferrable method for constructing moving frames is the \emph{method of moving coframes}, which was already employed by Cartan and generalized by P.~Olver to general transformation groups. The following definition is based on Cartan's approach to equivalence problems, which always begins by characterising the (pseudo)group of allowable transformations by a suitable collection of differential forms.
+Another often computationally preferrable method for finding differential invariants is the \emph{method of moving coframes}, which was already employed by Cartan and generalized by P.~Olver to general transformation groups. The following definition is based on Cartan's approach to equivalence problems, which always begins by characterising the (pseudo)group of allowable transformations by a suitable collection of differential forms.
 
 \begin{defn}[$G$-coframe]\index{$G$-coframe}
     Let $G$ be a finite-dimensional Lie group acting on a manifold $M$. A $G$-coframe is a regular, involutive extended coframe $\varTheta=(\bm\theta,\bm I)$ on $M$, whose symmetry group coincides with the transformation group $G$.
@@ -4950,12 +4956,12 @@ We introduce local coordinates $\bf{z}=(\bf x,\bf u)$ on $M$, considering the fi
 \begin{defn}[Contact bundle]
     A differential form $\theta$ on the jet space $\rmJ^r=\rmJ^r(\bbR^p,M)$ is called a contact form if it is annihilated by all $r$-jets of submanifolds, so $(\rmj^r_0 i)^\ast\theta=0$ for any immersion $i:\bbR^p\to M$.
 
-    The subbundle of $\T^\ast\rmJ^r$ spanned by contact $1$-forms is called the $r$-th order \emph{contact bundle}, denoted $\calC^{(r)}$. The infinite contact bundle $\calC^{(\infty)}\subset\T^\ast\rmJ^\infty$ is a a corank $p$ subbundle of $\T^\ast\rmJ^\infty$.
+    The subbundle of $\T^\ast\rmJ^r$ spanned by contact $1$-forms is called the $r$-th order \emph{contact bundle}, denoted $\Contact^{(r)}$. The infinite contact bundle $\Contact^{(\infty)}\subset\T^\ast\rmJ^\infty$ is a a corank $p$ subbundle of $\T^\ast\rmJ^\infty$.
 \end{defn}
 
 As always, in the canonical jet coordinates $(\bf{x},\bf{u}^{(\infty)})$ induced by local coordinates $(\bf{x},\bf{u})$ on $X\times M$, the basic contact forms are 
 \[\theta_J^\alpha=\dd u^\alpha_J-\sum_{i=1}^p u^\alpha_{J,i}\dd x^i,\quad \alpha=1,\ldots,q,\quad |J|\geq 0.\]
-Combining the semibasic coordinate one-forms $\dd x^i$ with the basic contact forms $\theta^\alpha_J$ produces the local coordinate coframe $\{\dd x^i,\theta^\alpha_J\}_{i,\alpha,J}$ on $\rmJ^\infty$. Therefore, choosing local coordinates on $M$ induces a splitting $\T^\ast\rmJ^\infty=\calH\oplus\calC^{(\infty)}$ of the cotangent bundle into \emph{semibasic} and contact or \emph{vertical} subbundles, with $\calH$ spanned by the horizontal $1$-forms $\dd x^i$. Let $\calH:\T^\ast\rmJ^\infty \to\calH$ and $\calV:\T^\ast\rmJ^\infty\to \calC^{(\infty)}$ be the induced projections, so that any $1$-form $\omega=\omega_M+\vartheta$ splits into uniquely defined semibasic and contact components, where 
+Combining the semibasic coordinate one-forms $\dd x^i$ with the basic contact forms $\theta^\alpha_J$ produces the local coordinate coframe $\{\dd x^i,\theta^\alpha_J\}_{i,\alpha,J}$ on $\rmJ^\infty$. Therefore, choosing local coordinates on $M$ induces a splitting $\T^\ast\rmJ^\infty=\calH\oplus\Contact^{(\infty)}$ of the cotangent bundle into \emph{semibasic} and contact or \emph{vertical} subbundles, with $\calH$ spanned by the horizontal $1$-forms $\dd x^i$. Let $\calH:\T^\ast\rmJ^\infty \to\calH$ and $\calV:\T^\ast\rmJ^\infty\to \Contact^{(\infty)}$ be the induced projections, so that any $1$-form $\omega=\omega_M+\vartheta$ splits into uniquely defined semibasic and contact components, where 
 \[\omega_M= \calH\circ \omega=\sum_{i=1}^p P_i\left(\bf{x},\bf{u}^{(\infty)}\right)\dd x^i,\quad \vartheta=\calV\circ \omega=\sum_{\alpha,J}Q_J^\alpha\left(\bf{x},\bf{u}^{(\infty)}\right)\theta^\alpha_J,\]
 cf.\ Remark~\ref{rem semibasic and contact forms}. If $\omega$ is a $1$-form on $\rmJ^r$ then, typically, its semibasic component $\omega_M$ is a $1$-form on $\rmJ^{r+1}$.
 
@@ -4967,7 +4973,7 @@ denotes the usual total derivative w.r.t.\ $x^i$, which can be viewed as a vecto
 \[\dd_\calV f=\sum_{i=1}^p\sum_K \frac{\partial f}{\partial u^\alpha_K}\theta^\alpha_K.\]
 
 \begin{defn}[Total differential operator]
-    A total differential operator is a vector field on $\rmJ^\infty$ which lies in the annihilator of the contact bundle $\calC^{(\infty)}$, i.e., a section of the infinite-order Cartan distribution.
+    A total differential operator is a vector field on $\rmJ^\infty$ which lies in the annihilator of the contact bundle $\Contact^{(\infty)}$, i.e., a section of the infinite-order Cartan distribution.
 \end{defn}
 
 As we saw in \S\ref{sec: jets and cartan distr}, the Cartan distribution is spanned by total derivatives, thus, we have the following.
@@ -4987,7 +4993,7 @@ The existence of two differentials $\dd_M,\dd_\calV$ is the foundation of the \e
 Any transformation group $G$ acting on $M$ preserves the \emph{order of contact} between submanifolds (defined as the minimal order $r$ at which the $r$-jets of the submanifolds disagree). Therefore, there is an induced action of $G$ on the $r$-th order jet bundle $\rmJ^r$ known as the \emph{$r$-th prolongation of $G$}. Alternatively, one can characterize the prolonged group transformations as the unique lifted maps on the jet bundle that preserve the space of contact forms.
 
 \begin{defn}[Contact transformation]\index{Contact transformation}
-    A map $\varPsi:\rmJ^r\to \rmJ^r$ is a contact transformation if it preserves the order $r$ contact bundle: $\varPsi^\ast\calC^{(r)}\subset\calC^{(r)}$.
+    A map $\varPsi:\rmJ^r\to \rmJ^r$ is a contact transformation if it preserves the order $r$ contact bundle: $\varPsi^\ast\Contact^{(r)}\subset\Contact^{(r)}$.
 \end{defn}
 
 \begin{prop}
@@ -5001,7 +5007,7 @@ Let us choose a basis $\bf t_1,\ldots,\bf t_d$ for the Lie algebra $\frakg$ of n
 at order $r$. The coefficients here are explicitly determined by the standard prolongation formula \eqref{eq prolongation formula}:
 \[b^\alpha_{J+1_\nu}=D_JQ^\alpha_\nu+\sum_{i=1}^p a^i_\nu u^\alpha_{J+1_i},\]
 where 
-\[Q^\alpha_\nu(\bf x,\bf u^{(1)})=b^\alpha_\nu(\bf x,\bf u)-\sum_{i=1}^p a^i_\nu(\bf x,\bf u)u^\alpha_i\]
+\[Q^\alpha_\nu\left(\bf x,\bf u^{(1)}\right)=b^\alpha_\nu(\bf x,\bf u)-\sum_{i=1}^p a^i_\nu(\bf x,\bf u)u^\alpha_i\]
 is the \emph{generating function} of $X_\nu$.
 
 The moving frame construction can be applied to the prolonged group action $G^{(r)}$ provided it is (locally) free on $\rmJ^r$. Therefore, we need to understand the basic geometry of the prolonged action in order to understand the full range of applicability of the higher-order moving frame construction.
@@ -5060,7 +5066,7 @@ The characterization of submanifolds that are singular to all orders is of impor
     where $u_r$ is the coordinate for $\dd^r u/\dd x^r$. A curve $u=f(x)$ is totally singular at a point $(x_0,f(x_0))$ iff $f^{(r)}(x_0)=0$ for all $r\geq 2$. In particular, an analytic curve that is totally singular at a point is necessarily a straight line.
 
     The full affine group $\Aff_2(\bbR)$ is more interesting. Here, the totally singular curves are the parabolas and straight lines. The stabilizer of a parabolar, say $u=x^2$, is the $2$-dimensional nonabelian subgroup $(x,u)\mapsto (\lambda x+\mu,\lambda^2 u+2\lambda\mu x+\mu^2)$. In this case, the singular subset of $\rmJ^r$ is also determined by the total derivatives of the Lie determinant 
-    \[\calS^r\left\{(x,u^{(r)})\mid D_x^{r-4}\left[u_{xx}u_{xxxx}-\frac53 u_{xxx}^2\right]=0\right\}.\]
+    \[\calS^r\left\{(x,u^{(r)})\middle| D_x^{r-4}\left[u_{xx}u_{xxxx}-\frac53 u_{xxx}^2\right]=0\right\}.\]
     The parabolas and straight lines form the general solution to the ODE $u_{xx}u_{xxxx}-\frac53 u_{xxx}^2=0$.
 \end{example}
 
@@ -5090,10 +5096,10 @@ The resulting $G$-invariant total differential operators $\calD_j$ are the jet s
 
 \begin{rem}
     In local coordinates, suppose 
-    \[\omega^i=\sum_{j=1}^p P^i_j\left(\bf x,\bf u^{(r)}\right)\dd x^j,\quad i=1,\ldots,p,\label{eq 9.8 OlverCo2}\]
-    where the coefficient matrix $P=(P^i_j)$ is nonsingular. The corresponding invariant differential operators are then given by 
-    \[\calD_j=\sum_{i=1}^p Q^i_j\left(\bf x,\bf u^{(r)}\right)D_i,\quad j=1,\ldots,p,\label{eq 9.9 OlverCo2}\]
-    with inverse coefficient matrix $Q=(Q^i_j)=P^{-1}$. If we consider the coordinate $1$-forms $\dd \bf x=(\dd x^1,\ldots,\dd x^p)^\sfT $ and total derivatives $\bf D=(D_1,\ldots,D_p)^\sfT $ as column vectors, then \eqref{eq 9.8 OlverCo2} can be written as $\bm\omega=P\cdot\dd \bf x$, while \eqref{eq 9.9 OlverCo2} becomes $\calD=Q^\sfT \cdot \bf D=P^{-\sfT}\cdot \bf D$. The invariant differential operators form an invariant ``horizontal frame'' on $\rmJ^\infty$.
+    \[\omega^i=\sum_{j=1}^p P^i_j\left(\bf x,\bf u^{(r)}\right)\dd x^j=(\bf P\cdot \dd\bf x)^i,\quad i=1,\ldots,p,\label{eq 9.8 OlverCo2}\]
+    where the coefficient matrix $\bf P=(P^i_j)$ is nonsingular. The corresponding invariant differential operators are then given by 
+    \[\calD_j=\sum_{i=1}^p Q^i_j\left(\bf x,\bf u^{(r)}\right)D_i=(\bf Q\cdot \bf D)_j,\quad j=1,\ldots,p,\label{eq 9.9 OlverCo2}\]
+    with inverse coefficient matrix $\bf Q=(Q^i_j)=\bf P^{-1}$. The invariant differential operators $\bm\calD=\bf Q^\sfT\cdot \bf D=\bf P^{-\sfT}\cdot\bf D$ form an invariant ``horizontal frame'' on $\rmJ^\infty$.
 \end{rem}
 
 
@@ -5314,7 +5320,7 @@ Clearly, $\mu^{(r)}:P^{(r)}\to \rmJ^r$ is an invariant under the lifted action. 
 \end{example}
 
 
-The regularization costruction extends to the infinite-order regularized jet bundle $\pi_\infty:P^{(\infty)}=G\times\rmJ^\infty\to\rmJ^\infty$ in the obvious manner. The pullback of the contact bundle $\calC^{(\infty)}<\T^\ast\rmJ^\infty$ defines the contact subbundle which we denote by the same symbol $\calC^{(\infty)}<\T^\ast P^{(\infty)}$. Similarly, the pullback via $\pr_G:P^{(\infty)}\to G$ of the cotangent bundle of $G$, spanned by its Maurer-Cartan forms, define a second intrinsic subbundle of $\T^\ast P^{(\infty)}$, which we also denote by $\T^\ast G$. The product bundle $\T^\ast G\times\calC^{(\infty)}$ forms a codimension $p$ subbundle of the cotangent bundle $\T^\ast P^{(\infty)}$. Since $P^{(\infty)}=G\times\rmJ^\infty$ is a Cartesian product, the differential on $P^{(\infty)}$ naturally splits into jet and group components, $\dd=\dd_\rmJ+\dd_G$.
+The regularization costruction extends to the infinite-order regularized jet bundle $\pi_\infty:P^{(\infty)}=G\times\rmJ^\infty\to\rmJ^\infty$ in the obvious manner. The pullback of the contact bundle $\Contact^{(\infty)}<\T^\ast\rmJ^\infty$ defines the contact subbundle which we denote by the same symbol $\Contact^{(\infty)}<\T^\ast P^{(\infty)}$. Similarly, the pullback via $\pr_G:P^{(\infty)}\to G$ of the cotangent bundle of $G$, spanned by its Maurer-Cartan forms, define a second intrinsic subbundle of $\T^\ast P^{(\infty)}$, which we also denote by $\T^\ast G$. The product bundle $\T^\ast G\times\Contact^{(\infty)}$ forms a codimension $p$ subbundle of the cotangent bundle $\T^\ast P^{(\infty)}$. Since $P^{(\infty)}=G\times\rmJ^\infty$ is a Cartesian product, the differential on $P^{(\infty)}$ naturally splits into jet and group components, $\dd=\dd_\rmJ+\dd_G$.
 
 \begin{prop}\label{prop 10.5 OlverCo2}
     If $\omega$ is a $G$-invariant differential form on $P^{(\infty)}$, then so are both $\dd_\rmJ \omega$ and $\dd_G \omega$. In particular, if $L(g,z^{(r)})$ is a lifted differential invariantm then its jet and group differentials, $\dd_\rmJ L$ and $\dd_G L$, are $G$-invariant $1$-forms on $P^{(\infty)}$.
@@ -5546,7 +5552,7 @@ As above, we use the local coordinates $\left(\bf x,\bf u^{(\infty)}\right)$ on 
 \end{proof}
 
 In local coordinates, the normalized $1$-forms $\bm\theta$ are therefore obtained by using the moving frame to replace the group parameters in \eqref{eq 10.7 OlverCo2}, so 
-\[\gamma^i=\sum_{j=1}^p D_j y^i\left(\rho^{(r)}(x,u^{(r)}),x,u^{(r)}\right)\dd x^j=\sum_{j=1}^p P^i_j(x,u^{(r)})\dd x^j,\label{eq 12.5 OlverCo2}\]
+\[\gamma^i=\sum_{j=1}^p D_j y^i\left(\rho^{(r)}\left(x,u^{(r)}\right),x,u^{(r)}\right)\dd x^j=\sum_{j=1}^p P^i_j\left(x,u^{(r)}\right)\dd x^j,\label{eq 12.5 OlverCo2}\]
 whose coefficient matrix $P=\left(\sigma^{(r)}\right)^\ast\bf D\bf y$ is the pullback of the total Jacobi matrix of the independent lifted invariants. 
 
 \begin{rem}
@@ -5554,7 +5560,7 @@ whose coefficient matrix $P=\left(\sigma^{(r)}\right)^\ast\bf D\bf y$ is the pul
 \end{rem}
 
 The invariant differential operators associated with the semibasic coframe \eqref{eq 12.5 OlverCo2} are obtained by normalizing the lifted invariant differential operators \eqref{eq 10.10 OlverCo2}, so that the $\calE_i$ on $P^{(\infty)}$ project, via $\sigma^{(r)}$, to $G$-invariant total differential operators on $\rmJ^\infty$. In coordinates,
-\[\calD_i=\sum_{j=1}^p Q^j_i(x,u^{(r)})D_j=\sum_{j=1}^p Z^j_i\left(\rho^{(r)}(x,u^{(r)}),x,u^{(1)}\right)D_j,\]
+\[\calD_i=\sum_{j=1}^p Q^j_i\left(x,u^{(r)}\right)D_j=\sum_{j=1}^p Z^j_i\left(\rho^{(r)}\left(x,u^{(r)}\right),x,u^{(1)}\right)D_j,\]
 where $Q=P^{-1}=\left(\sigma^{(r)}\right)^\ast Z$ can be constructed directly from \eqref{eq 10.10 OlverCo2}.
 
 \begin{example}
@@ -5572,9 +5578,9 @@ where $Q=P^{-1}=\left(\sigma^{(r)}\right)^\ast Z$ can be constructed directly fr
 
 We are finally ready to present the solution to the general equivalence problem for submanifolds. As we have seen, in the zeroth-order case, the answer is provided in Theorems~\ref{thm 7.7 OlverCo2} and \ref{thm 7.8 OlverCo2}. However, in the non-free case, we need to prolong in order to make the group act (locally) freely. Since two submanifolds are equivalent under the aciton of $G$ on $M$ iff their $r$-jets are equivalent under the prolonged action $G^{(r)}\acts\rmJ^r$, we can then readily adapt our earlier results.
 
-When we restrict the $G^{(r)}$-coframe on $\rmJ^r$ to a submanifold, the resulting linear dependencies amonthe restricted $1$-forms lead to additional scalar invariants. In the zeroth-order context, these invariants are not directly predicted by the moving coframe, but appear to depend on the submanifold itself. An important fact is that, in the jet bundle context, they are merely the restrictions of \emph{higher-order differential invariants}! Thus, even in the zeroth-order case, the jet bundle constructions lead to significant new information.
+When we restrict the $G^{(r)}$-coframe on $\rmJ^r$ to a submanifold, the resulting linear dependencies among the restricted $1$-forms lead to additional scalar invariants. In the zeroth-order context, these invariants are not directly predicted by the moving coframe, but appear to depend on the submanifold itself. An important fact is that, in the jet bundle context, they are merely the restrictions of \emph{higher-order differential invariants}! Thus, even in the zeroth-order case, the jet bundle constructions lead to significant new information.
 
-We start with the $G^{(r)}$-coframe $\varGamma^{(r)}=\left(\bm\gamma,I^{(r)}\right)$ on $\rmJ^r$ constructed in Theorem~\ref{thm 12.3 OlverCo2}. Let $i:X\to M$ parametrize a submanifold $S=i(X)$, so that $\rmj^r i:X\to \rmJ^r$ parametrized the corresponding $r$-jet $\rmj^r S$. We assume that $\rmj^r S$ lies in the domain of our chosen moving frame $\rho^{(r)}$, which implies that $S$ is order $r$ regular. Let $\varXi^{(r)}=\left(\rmj^r i\right)^\ast\varGamma^{(r)}$ denote the restriction of the $r$-th order coframe to $S$. As in the zeroth-order case, the $1$-form system $\varXi^{(r)}$ is overdetermined on $X$, and we need to reduce it to an extended coframe. Now since $\rmj^r i$ annihilates the contact forms, only the semibasic linear dependencies among these $1$-forms will arise from the linear dependencies among the semibasic components of the $1$-forms in the $G^{(r)}$-coframe. The $1$-forms $\bm\gamma^{(r)}=\left(\sigma^{(r)}\right)^\ast\dd_\rmJ\mu^{(r)}$ are, by definition, the pullbacks of the jet differentials of the lifted invariants. We have already used the horizontal components $\dd_M y$ of the ``independent variable'' lifted invariants to construct the contact-invariant coframe $\bm\theta=\left(\sigma^{(r)}\right)^\ast\dd_M y$. The remaining ``dependent variable'' lifted invariants will lead to additional contact-invariant horizontal forms $\bm\delta^{(r)}=\left(\sigma^{(r)}\right)^\ast\dd_M v^{(r)}$, which must be invariant linear combinations of the contact-invariant coframe $\bm\theta$. 
+We start with the $G^{(r)}$-coframe $\varGamma^{(r)}=\left(\bm\gamma,I^{(r)}\right)$ on $\rmJ^r$ constructed in Theorem~\ref{thm 12.3 OlverCo2}. Let $i:X\to M$ parametrize a submanifold $S=i(X)$, so that $\rmj^r i:X\to \rmJ^r$ parametrize the corresponding $r$-jet $\rmj^r S$. We assume that $\rmj^r S$ lies in the domain of our chosen moving frame $\rho^{(r)}$, which implies that $S$ is order $r$ regular. Let $\varXi^{(r)}=\left(\rmj^r i\right)^\ast\varGamma^{(r)}$ denote the restriction of the $r$-th order coframe to $S$. As in the zeroth-order case, the $1$-form system $\varXi^{(r)}$ is overdetermined on $X$, and we need to reduce it to an extended coframe. Now since $\rmj^r i$ annihilates the contact forms, only the semibasic linear dependencies among these $1$-forms will arise from the linear dependencies among the semibasic components of the $1$-forms in the $G^{(r)}$-coframe. The $1$-forms $\bm\gamma^{(r)}=\left(\sigma^{(r)}\right)^\ast\dd_\rmJ\mu^{(r)}$ are, by definition, the pullbacks of the jet differentials of the lifted invariants. We have already used the horizontal components $\dd_M y$ of the ``independent variable'' lifted invariants to construct the contact-invariant coframe $\bm\theta=\left(\sigma^{(r)}\right)^\ast\dd_M y$. The remaining ``dependent variable'' lifted invariants will lead to additional contact-invariant horizontal forms $\bm\delta^{(r)}=\left(\sigma^{(r)}\right)^\ast\dd_M v^{(r)}$, which must be invariant linear combinations of the contact-invariant coframe $\bm\theta$. 
 
 Recall that the relation $I^\alpha=(\sigma^{(r)})^\ast v^\alpha$ by which the normalized differential invariant $I^\alpha$ corresponds to the lifted zeroth-order invariant $v^\alpha$ as \eqref{eq 11.7 OlverCo2}. Applying an invariant differential operator to $I^\alpha$ produces a higher-order differential invariant $\calD_K I^\alpha$, but this is \emph{not}, in general, equal to its normalized counterpart 
 \[I^\alpha_K=\left(\sigma^{(r)}\right)^\ast v^\alpha_K=\left(\sigma^{(r)}\right)^\ast \left[\calE_K v^\alpha\right].\label{eq 31691}\] 
@@ -5664,13 +5670,17 @@ The fundamental equivalence theorem for submanifolds under general transformatio
     Let $S,\wb S\subset M$ be regular $p$-submanifolds whose $r$-jets lie in the domain of a moving frame $\rho^{(r)}$. Then $S$ and $\wb S$ are (locally) congruent, $\wb S=g\cdot S$, iff they have the same differential invariant order $s$ and their classifying manifolds of order $s+1$ overlap: $\scrC^{(s+1)}(\wb S)=\scrC^{(s+1)}(S)$.
 \end{thm}
 
-Finally, we discuss rigidity theorems for submanifolds under trasnformation groups. These come in two varieties. Roughly speaking, a rigidity result says that, under certain conditions, a submanifold is uniquely determined by its $k$-jet for some finite order $k$.
+Finally, we discuss rigidity theorems for submanifolds under transformation groups. These come in two varieties. Roughly speaking, a rigidity result says that, under certain conditions, a submanifold is uniquely determined by its $r$-jet for some finite order $r$.
 
-\begin{defn}[Order $k$ congruency]
-    A submanifold $S$ is said to be order $k$ congruent to a submanifold $\wb S$ at a point $z\in S$ if there is a group transformation $g\in G$ such that $S$ and $g\cdot S$ have order $k$ contact at the point $z$. We shall call $S$ order $k$ congruent to $\wb S$ if this occurs for every $z\in S$, where the group transformation $g=g(z)$ can vary from point to point.
+\begin{defn}[Contact of order $r$]\index{Contact of submanifolds}
+    Two $p$-submanifolds $S,\wb S<M$ of an $n$-manifold $M$ are said to have contact of order $r$ at a point $m\in S\cap \wb S$ if there exist local parametrizations $i,\wb i:\bbR^p\to M$ of $S$ and $\wb S$, respectively, such that $\rmj^r_m i=\rmj^r_m \wb i$.
 \end{defn}
 
-If $G^{(k)}$ acts freely on $\rmJ^r$, then the group transformation $g(z)$ determining the contact is uniquely determined. The first rigidity theorem states that order $k$ congruence implies congruence provided $k$ is sufficiently large. The \emph{rigidity order} of $S$ is the minimal $k$ for which this applies. 
+\begin{defn}[Order $r$ congruency]\index{Congruency of submanifolds}
+    A submanifold $S$ is said to be order $r$ congruent to a submanifold $\wb S$ at a point $z\in S$ if there is a group transformation $g\in G$ such that $S$ and $g\cdot S$ have order $r$ contact at the point $z$. We shall call $S$ order $r$ congruent to $\wb S$ if this occurs for every $z\in S$, where the group transformation $g=g(z)$ can vary from point to point.
+\end{defn}
+
+If $G^{(r)}$ acts freely on $\rmJ^r$, then the group transformation $g(z)$ determining the contact is uniquely determined. The first rigidity theorem states that order $k$ congruence implies congruence provided $k$ is sufficiently large. The \emph{rigidity order} of $S$ is the minimal $k$ for which this applies. \index{Rigidity order}
 
 \begin{example}
     The rigidity order of a circle under the Euclidean group $\rmE_2$ is two, since the only curves that are second-order congruent to a circle are translates of it. On the other hand, a generic curve in the plane has rigidity order $3$ under $\rmE_2$.
@@ -5688,7 +5698,7 @@ The simplest case is when the order of the moving frame equals the stabilization
 
 A second type of rigidity theorem shows that one can uniquely characterize the group trasnformation mapping congruent submanifolds by knowing their order of contact.
 
-\begin{defn}[Order $k$ rigid submanifold]
+\begin{defn}[Order $k$ rigid submanifold]\index{Rigid submanifold}
     A $p$-submanifold $S<M$ is said to be order $k$ rigid if the only congruent submanifold $\wb S=g\cdot S$ which has $k$-th order contact with $S$ at a point is $S$ itself.
 \end{defn}
 
@@ -5779,7 +5789,7 @@ In other words, if $\wb S=g\do S$, then the condition $\rmj^k_{z_0} \wb S=\rmj^k
     \end{pmatrix}=\frac{1}{\lVert \bf N\rVert}\calD^2 u=\frac{A^{-\sfT}(\nabla^2 u)A^{-1}}{\sqrt{1+u_1^2+u_2^2}}.\]
     Here, $\nabla^2 u=(\partial_i\partial_j u)$ is the usual Hessian matrix of $u$, so $\calD^2 u$ represents an ``equivariant Hessian''. However, the recurrence relations (or syzygies) 
     \[\calD_1 J=II_{12},\quad \calD_2 J=1+II_{22},\quad \calD_1 I=-JI_{12},\quad \calD_2 I=-JI_{22},\]
-    show that just $I,J$, and $I_{11}$ suffice for a set of fundamental differential invariants.
+    show that just $I,J$, and $I_{11}$ suffice for a set of fundamental differential invariants. On the other hand, $I_{ij}$ are also translation-invariant and thus relate to the fundamental differential invariants of the Euclidean group $\rmE_3$ -- namely, the principal curvatures of the surface, -- as we shall see in \Chap~\ref{chap curves and surfaces}.
 \end{example}
 
 
@@ -6309,7 +6319,7 @@ Based on our discussion of the jet bundles in the preceding \chap, the total spa
 
 We have succefully lifted the coframe on $M$ to form a local coframe on $P$ in ``as close to canonical'' a way as possible and described the total space $\rmJ^1 P$ such liftings. From here, we can essentially follow the solution of the equivalence problem for coframes: we compute the derivatives of the coframe on $P$ and extract the structure functions. The crucial complication is that, in a $G$-equivalence problem, there is \emph{no single coframe} on $P$, but rather a continuum of different liftings of the local coframe on $M$. Only the parts of the structure functions of these coframes on $P$ that are independent of the choice of this lifting (i.e., of the pseudo-connection) are intrinsic quantities of the $G$-structure. It is \emph{these} quantities that are called the \emph{structure functions of the $G$-structure}, or sometimes the \emph{intrinsic structure functions}. In common cases, it turns out to be possible to identify a \emph{canonical coframe} (potentially not on $P$ by on some prolongation) known as a \emph{Cartan geometry}, in which case these \emph{are} the structure functions of that coframe.\index{Cartan geometry}
 
-According to the solution of the equivalence problem for coframes, we need to start by looking at the exterior derivatives of the coframe components. Naturally, we start with the ``zeroth-order'' part of the coframe, $\theta$, and examine $\dd\theta$. For each $p\in P$, it supplies a linear map $(\dd\theta)_p:\bigwedge^2 \T_p P\to V$. Let $\calH$ be a horizontal subspace at $p$. Then we have the restricted map $\bigwedge^2\calH\to V$. However, as discussed above, $\theta$ also identifies $\calH$ with $V$, so we can turn it into a map $\bigwedge^2 V\to V$:
+According to the solution of the equivalence problem for coframes, we need to start by looking at the exterior derivatives of the coframe components. Naturally, we start with the ``zeroth-order'' part of the coframe, $\theta$, and examine $\dd\theta$. For each $p\in P$, it supplies a linear map $(\dd\theta)_p:\bigwedge\nolimits^2 \T_p P\to V$. Let $\calH$ be a horizontal subspace at $p$. Then we have the restricted map $\bigwedge\nolimits^2\calH\to V$. However, as discussed above, $\theta$ also identifies $\calH$ with $V$, so we can turn it into a map $\bigwedge\nolimits^2 V\to V$:
 \[c_{\calH}:V\wedge V\to V,\quad u\wedge v\mapsto \dd \theta\left(\restr{\theta}{\calH}^{-1}(u),\restr{\theta}{\calH}^{-1}(v)\right).\]
 We have thus assigned a tensor $c_{\calH}\in \Hom\left(V\wedge V,V\right)$ to each horizontal subspace $\calH$ at $p$. Since the space of such horizontal subspaces is identified with $\rmJ^1 P$, we have defined a smooth function 
 \[c:\rmJ^1 P\to \Hom(V\wedge V,V),\quad \calH\mapsto c_\calH.\] 
@@ -6562,7 +6572,7 @@ which lets us rewrite the kernel-cokernel sequence \eqref{eq spencer kernel-coke
 \[0\to \frakg^{(1)}\to \Hom(V,\frakg)\overset{\delta}{\to}\Hom(V\wedge V,V)\to \rmH^{0,2}(\frakg)\to 0. \]
 
 \begin{example}[$\frakso_n^{(1)}$ and $\rmH^{(0,2)}(\frakso_n)$]\label{ex so(n) prolongation}
-    Consider $G=\SO_n<\GL_n(\bbR)$, which is the setting of Riemannian geometry. Since such a structure is equivalent to a Riemannian metric $\sfg$ on $M$, which is modeled on a fixed inner product on $V$, we can use this inner product to identify $V$ with $V^\ast$. Under this identification, the algebra $\frakso_n$ becomes the space $\bigwedge^2 V$ of $2$-forms. Now, $\frakso_n^{(1)}=\left(\bigwedge^2 V^\ast\otimes V^\ast\right)\cap \left(V^\ast\otimes \bigodot^2 V^\ast\right)$. An element $A_{ijk}\dd x^i\otimes \dd x^j\otimes \dd x^k$ of this space is antisymmetric in the first two indices and symmetric in the last two, so
+    Consider $G=\SO_n<\GL_n(\bbR)$, which is the setting of Riemannian geometry. Since such a structure is equivalent to a Riemannian metric $\sfg$ on $M$, which is modeled on a fixed inner product on $V$, we can use this inner product to identify $V$ with $V^\ast$. Under this identification, the algebra $\frakso_n$ becomes the space $\bigwedge\nolimits^2 V$ of $2$-forms. Now, $\frakso_n^{(1)}=\left(\bigwedge\nolimits^2 V^\ast\otimes V^\ast\right)\cap \left(V^\ast\otimes \bigodot^2 V^\ast\right)$. An element $A_{ijk}\dd x^i\otimes \dd x^j\otimes \dd x^k$ of this space is antisymmetric in the first two indices and symmetric in the last two, so
     \[A_{ijk}=-A_{jik}=-A_{jki}=A_{kji}=A_{kij}=-A_{ikj}=-A_{ijk}.\]
     Thus, $\frakso_n^{(1)}=0$. 
     
@@ -6614,16 +6624,16 @@ which is a $G^{(r)}$-structure on the manifold $P^{(r-1)}$. The relevance of the
 \end{thm}
 
 We can use this to obtain genuinely new necessary conditions for equivalence (so far we only have $c$) by looking at the structure function of the prolongation $P^{(1)}$:
-\[[c^{(1)}]:P^{(1)}\to \frac{\Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus \frakg\right)}{\delta(\Hom(V\oplus\frakg,\frakg^{(1)}))},\]
+\[[c^{(1)}]:P^{(1)}\to \frac{\Hom\left(\bigwedge\nolimits^2(V\oplus\frakg),V\oplus \frakg\right)}{\delta(\Hom(V\oplus\frakg,\frakg^{(1)}))},\]
 called the \emph{second-order structure function of $P$}. Then one continues this process by constructing higher and higher prolongations and analyzing their structure functions. The importance of structures of finite type is that we can reduce the set of necessary conditions for equivalence of $G$-structures to a finite amount. In fact, by the method of prolongation, the equivalence problem for finite type $G$-structures reduces to an equivalence problem for $\{e\}$-structures (coframes), since $G^{(r)}=\{e\}$ for some $r$, which we already know how to solve. Moreover, one can show that $G$-structures of finite type always have finite-dimensional symmetry groups (this will follow from the rigidity result for general Cartan geometries, of which any $\{e\}$-structure is a trivial example, see Theorem~\ref{thm 1.5.11 Cap}).
 
 \begin{rem}
     As we will see, an $\{e\}$-structure, also known as an absolute parallelism, defines a unique connection. Thus, for finite-type $G$-structures our method guarantees the construction of a canonical affine connection on $P^{(r-1)}$, which is a specific type of Cartan geometry. In other words, finite type $G$-structures end up being special Cartan geometries, and by virtue of Theorem~\ref{thm 2.12 Fernandes} their equivalence can be established using the general procedure for the equivalence of coframes. For an explicit description of the canonical Cartan geometry associated with a $G$-structure of type $2$ see \cite{Alekseevsky}. We treat the case of type $1$ next.
 \end{rem}
 
-The function $c^{(1)}$ always contains certain components that carry no information, so we will now examine its decomposition. Let $p'=\calH_p\in P^{(1)}$ and let $p''=\calH_{p'}$ be a horizontal subspace of $\T_{p'} P^{(1)}$ (horizontal w.r.t.\ $\pi^1_0:P^{(1)}\to P$). Then $c_{p''}^{(1)}\in \Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus\frakg\right)$ can be naturally decomposed into three components:
+The function $c^{(1)}$ always contains certain components that carry no information, so we will now examine its decomposition. Let $p'=\calH_p\in P^{(1)}$ and let $p''=\calH_{p'}$ be a horizontal subspace of $\T_{p'} P^{(1)}$ (horizontal w.r.t.\ $\pi^1_0:P^{(1)}\to P$). Then $c_{p''}^{(1)}\in \Hom\left(\bigwedge\nolimits^2(V\oplus\frakg),V\oplus\frakg\right)$ can be naturally decomposed into three components:
 \begin{multline}
-    \Hom\left(\bigwedge^2(V\oplus\frakg),V\oplus\frakg\right)\cong \\
+    \Hom\left(\bigwedge\nolimits^2(V\oplus\frakg),V\oplus\frakg\right)\cong \\
     \cong \Hom\left(V\wedge V,V\oplus\frakg\right)\oplus \Hom\left(V\otimes\frakg,V\oplus\frakg\right)^2_{\mathrm{asym}}\oplus\Hom\left(\frakg\wedge\frakg,V\oplus\frakg\right).
 \end{multline}
 (There are two copies of $\Hom\left(V\otimes\frakg,V\oplus\frakg\right)$ and we antisymmetrize them at the end.) Let us describe each of the components of the (representative of the) second-order structure function. We fix $u,v\in V$ and $A,B\in\frakg$:
@@ -6705,14 +6715,14 @@ We can simplify the denominator. Recall that $\frakg^{(1)}$ is viewed as a subal
 \[\Hom(V\oplus \frakg,\frakg^{(1)})=\Hom(V,\frakg^{(1)})\oplus \Hom(\frakg,\frakg^{(1)}).\]
 The numerator $\Hom(V\wedge V,\frakg)$ corresponds effectively to setting all $\frakg$-arguments of the structure functions to zero. Thus, the quotient by $\Hom(\frakg,\frakg^{(1)})$ doesn't change the result, and we can replace the denominator with $\delta\left(\Hom(V,\frakg^{(1)})\right)$. 
 
-Furthermore, the numerator is still larger than it has to be. First note that the Spencer differential on $P^{(1)}$, which naively acts as $\delta:\frakg^{(1)}\otimes (V\oplus\frakg)^\ast\to (V\oplus\frakg)\otimes \bigwedge^2 (V\oplus\frakg)^\ast$, produces the component $\rho$ only when the $\frakg$-arguments are set to $0$ and the corresponding component in the target space is selected. This motivates us to define a more restricted Spencer differential 
-\[\delta_1:\frakg^{(1)}\otimes V^\ast\to \frakg\otimes \bigwedge^2 V^\ast,\]
+Furthermore, the numerator is still larger than it has to be. First note that the Spencer differential on $P^{(1)}$, which naively acts as $\delta:\frakg^{(1)}\otimes (V\oplus\frakg)^\ast\to (V\oplus\frakg)\otimes \bigwedge\nolimits^2 (V\oplus\frakg)^\ast$, produces the component $\rho$ only when the $\frakg$-arguments are set to $0$ and the corresponding component in the target space is selected. This motivates us to define a more restricted Spencer differential 
+\[\delta_1:\frakg^{(1)}\otimes V^\ast\to \frakg\otimes \bigwedge\nolimits^2 V^\ast,\]
 so we have 
 \[\rho=\delta_1\circ \omega_1,\]
 where now $\omega_1\in\Omega^1(P^{(1)},\frakg^{(1)})\cong \Hom_{G^{(1)}}(P^{(1)},\frakg^{(1)}\otimes(V+\frakg)^\ast)$ is any pseudo-connection on the $G^{(1)}$-bundle $P^{(1)}\to P$ (here, the action of $G^{(1)}$ on $\frakg^{(1)}$ is trivial). Again, we implicitly restrict $\omega_1$ only to the $\pi$-horizontal subspace tangent to $P$ determined by the point $p'$ of $P^{(1)}$, so that its $\frakg$-component vanishes (as established above, that component measures $G$-equivariance of $\omega_1$), and $\delta_1$ can be applied to the remaining component.
 
 Now consider the second-order version of the original $\delta$,
-\[\delta_2:\frakg\otimes \bigwedge^2 V^\ast\to V\otimes \bigwedge^3 V^\ast,\]
+\[\delta_2:\frakg\otimes \bigwedge\nolimits^2 V^\ast\to V\otimes \bigwedge\nolimits^3 V^\ast,\]
 which antisymmetrizes over the three $V^\ast$ components. Note that the domain of $\delta_2$ is the target space of $\delta_1$. We will need the following crucial lemma.
 
 \begin{lem}\label{lem spencer complex}
@@ -6733,7 +6743,7 @@ which antisymmetrizes over the three $V^\ast$ components. Note that the domain o
 \end{cor}
 
 Thus, $\rho$ always takes values in $\ker\delta_2$, i.e., is symmetric w.r.t.\ exchanges of two arguments, and antisymmetrized over another pair (note that this does \emph{not} produce a tensor antisymmetric in the latter pair -- that would be zero). This is true regardless of any conditions on the pseudo-connection such as equivariance or being torsion-free. As a result, we can treat $[\rho]$ as taking values in the ``curvature module'' $\rmH^{1,2}(\frakg)$:
-\[[\rho]:P^{(1)}\to \rmH^{1,2}(\frakg)\coloneqq \frac{\ker\left(\delta_2:\frakg\otimes \bigwedge^2 V^\ast\to V\otimes\bigwedge^3 V^\ast\right)}{\im\left(\delta_1:\frakg^{(1)}\otimes V^\ast\to \frakg\otimes\bigwedge V^\ast\right)}.\]
+\[[\rho]:P^{(1)}\to \rmH^{1,2}(\frakg)\coloneqq \frac{\ker\left(\delta_2:\frakg\otimes \bigwedge\nolimits^2 V^\ast\to V\otimes\bigwedge\nolimits^3 V^\ast\right)}{\im\left(\delta_1:\frakg^{(1)}\otimes V^\ast\to \frakg\otimes\bigwedge V^\ast\right)}.\]
 This quantity (which is also $G$-equivariant by the same argument about the dependence on $c_0$ in the definition of $P^{(1)}$), is called the \emph{intrinsic curvature of the $G$-structure} $P$.
 
 Note that $\frakg^{(1)}$ parametrizes the (fiber of the) space of fixed-torsion deformations of a pseudo-connection. Thus, $[\rho]$ is the offset from the origin of the space of curvatures of all pseudo-connections with fixed torsion $c_0$. By the same argument as for $[S]$, upon quotienting out the additional dependence on the representative $c_0$ this quantity is automatically $G$-equivariant. We can now see what happens if $\frakg^{(2)}=0$.
@@ -6750,7 +6760,7 @@ So, if $\frakg^{(1)}\neq 0$ but $\frakg^{(2)}=0$, then $P^{(2)}$ defines a canon
     In Riemannian geometry, $\frakg=\frakso_n$ and $\frakg^{(r)}=0$ for $r>0$, and in Example~\ref{ex so(n) prolongation} we found $\rmH^{0,2}=0$. The latter implies the existence of a torsion-free connection, and the former implies its uniqueness. This is the definition of the \emph{Levi-Civita connection} $\omega^{\text{LC}}$.\index{Connection!Levi-Civita} Moreover, $P^{(1)}\cong P$, so the curvature function $\rho=[\rho]$ can be treated as a function on $P$ itself, namely it is the curvature of the Levi-Civita connection, given by 
     \[\dd \omega^{\text{LC}}+\omega^{\text{LC}}\wedge \omega^{\text{LC}}=[\rho]\circ\theta\wedge\theta.\] 
     (Similarity with the Maurer-Cartan equation is not accidental, as we will see in \Chap~\ref{ch: cartan geom}.) This curvature is intrinsic to the Riemannian structure and typically not zero. Indeed, the curvature module is not trivial: since $\frakso_n^{(1)}=0$, we immediately see that 
-    \[\rmH^{1,2}(\frakg)=\ker\delta_2=\left(\frakg\otimes \bigwedge^2 V^\ast\right)\cap \left(V\otimes 
+    \[\rmH^{1,2}(\frakg)=\ker\delta_2=\left(\frakg\otimes \bigwedge\nolimits^2 V^\ast\right)\cap \left(V\otimes 
     \rmS_{\mbox{\scriptsize\young(21,3)}}
     V^\ast\right),\]
     and one can show that every point in this space can be attained by Riemannian curvatures. 
@@ -6828,7 +6838,7 @@ In other words, \emph{for an integrable $G$-structure, its total prolongation $P
 
 This \sect\ provides more context on the origins of Spencer cohomology and its general definition. Some familiarity with cohomology is recommended. All of this will be revisited in much greater detail in the next \chap.
 
-The origin of Spencer cohomology lies in the de Rham cohomology, which is the sequence generated by the exterior derivative $\dd$ acting on differential forms of every degree. To define Spencer cohomology, one defines the ``free Spencer complex'' $C^{p,q}\coloneqq \bigodot^p V^\ast\otimes \bigwedge^q V^\ast$ for each pair of integers $p,q\geq 0$. These spaces can be naturally interpreted as the spaces of differential $q$-forms with values in homogeneous polynomials of degree $p$, spanned by elements
+The origin of Spencer cohomology lies in the de Rham cohomology, which is the sequence generated by the exterior derivative $\dd$ acting on differential forms of every degree. To define Spencer cohomology, one defines the ``free Spencer complex'' $C^{p,q}\coloneqq \bigodot^p V^\ast\otimes \bigwedge\nolimits^q V^\ast$ for each pair of integers $p,q\geq 0$. These spaces can be naturally interpreted as the spaces of differential $q$-forms with values in homogeneous polynomials of degree $p$, spanned by elements
 \[P\otimes \dd x^{i_1}\wedge\dd x^{i_2}\wedge\cdots\wedge\dd x^{i_q}\quad \in C^{p,q},\]
 where $P$ is a homogeneous polynomial of $x^1,\ldots,x^n$ of degree $p$. Then we can define the operator $\dd:C^{p,q}\to C^{p-1,q+1}$ as the usual exterior derivative:
 \[\dd \left(P\otimes \dd x^{i_1}\wedge\dd x^{i_2}\wedge\cdots\wedge\dd x^{i_q}\right)=\sum_{i=1}^n \frac{\partial P}{\partial x^i}\otimes \dd x^i\wedge\dd x^{i_1}\wedge\dd x^{i_2}\wedge\cdots\wedge\dd x^{i_q}.\]
@@ -6858,7 +6868,7 @@ is a solution, then each homogeneous term must be as well. The identification of
     Thus, $A^{(q)}$ is the space of homogeneous degree $q$ solutions to the PDE associated with $A$.
 \end{defn}
 
-Since the space $C^{p+1,q}(A)\coloneqq A^{(p)}\otimes\bigwedge^q V^\ast$ is a subspace of $W\otimes C^{p+1,q}$, we may view the collection of spaces $C^{p+1,q}(A)$ as a subcomplex of $\bm C\otimes W$. It is straightforward from the second definition of prolongation that the Spencer differential is still well-defined on the restriction. The cohomology of this complex is defined just as above and denoted by $\rmH^{p,q}(A)$. Obstructions to flatness (or to the ability to extend a degree $q$ solution to one of degree $q+1$) will live in these spaces. 
+Since the space $C^{p+1,q}(A)\coloneqq A^{(p)}\otimes\bigwedge\nolimits^q V^\ast$ is a subspace of $W\otimes C^{p+1,q}$, we may view the collection of spaces $C^{p+1,q}(A)$ as a subcomplex of $\bm C\otimes W$. It is straightforward from the second definition of prolongation that the Spencer differential is still well-defined on the restriction. The cohomology of this complex is defined just as above and denoted by $\rmH^{p,q}(A)$. Obstructions to flatness (or to the ability to extend a degree $q$ solution to one of degree $q+1$) will live in these spaces. 
 
 \begin{xca}\label{xca cohomology of prolongation}
     Show that $\rmH^{1,2}(A)=\rmH^{0,2}(A^{(1)})$, where $A^{(1)}$ is considered as a tableau in $(A\oplus W)\otimes V^\ast$ with the $W\otimes V^\ast$ block zero.
@@ -6867,13 +6877,13 @@ Since the space $C^{p+1,q}(A)\coloneqq A^{(p)}\otimes\bigwedge^q V^\ast$ is a su
 Considering $A=\frakg<V\otimes V^\ast$, we get the following diagram:
 \[
     \begin{tikzcd}
-        \frakg^{(2)} \arrow[dr,swap,"\delta_0"] & \frakg^{(2)} \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg^{(2)} \otimes \bigwedge^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg^{(2)} \otimes \bigwedge^3 V^\ast \arrow[dr] & \cdots \\
-        \frakg^{(1)} \arrow[dr,swap,"\delta_0"] & \frakg^{(1)} \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg^{(1)} \otimes \bigwedge^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg^{(1)} \otimes \bigwedge^3 V^\ast \arrow[dr] & \cdots \\
-        \frakg \arrow[dr,swap,"\delta_0"] & \frakg \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg \otimes \bigwedge^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg \otimes \bigwedge^3 V^\ast \arrow[dr] & \cdots \\
-        V & V \otimes V^\ast & V \otimes \bigwedge^2 V^\ast & V \otimes \bigwedge^3 V^\ast & \cdots
+        \frakg^{(2)} \arrow[dr,swap,"\delta_0"] & \frakg^{(2)} \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg^{(2)} \otimes \bigwedge\nolimits^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg^{(2)} \otimes \bigwedge\nolimits^3 V^\ast \arrow[dr] & \cdots \\
+        \frakg^{(1)} \arrow[dr,swap,"\delta_0"] & \frakg^{(1)} \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg^{(1)} \otimes \bigwedge\nolimits^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg^{(1)} \otimes \bigwedge\nolimits^3 V^\ast \arrow[dr] & \cdots \\
+        \frakg \arrow[dr,swap,"\delta_0"] & \frakg \otimes V^\ast \arrow[dr,swap,"\delta_1"] & \frakg \otimes \bigwedge\nolimits^2 V^\ast \arrow[dr,swap,"\delta_2"] & \frakg \otimes \bigwedge\nolimits^3 V^\ast \arrow[dr] & \cdots \\
+        V & V \otimes V^\ast & V \otimes \bigwedge\nolimits^2 V^\ast & V \otimes \bigwedge\nolimits^3 V^\ast & \cdots
     \end{tikzcd}
 \]
-In particular, note that $\delta_2$ acting on $V\otimes\bigwedge^2 V^\ast$ is the zero operator, which explains why $\rmH^{0,2}(\frakg)$ had all of $\Hom(V\wedge V,V)$ in its numerator.
+In particular, note that $\delta_2$ acting on $V\otimes\bigwedge\nolimits^2 V^\ast$ is the zero operator, which explains why $\rmH^{0,2}(\frakg)$ had all of $\Hom(V\wedge V,V)$ in its numerator.
 
 The most general statement on equivalence of $G$-structures that can be made here is that all of the obstructions to equivalence or integrability of $G$-structures (their structure functions) take values in $\rmH^{p,2}(\frakg)$, $p\geq 0$. In particular, a $G$-structure is locally flat (integrable) iff all of its structure functions are zero in some neighborhood of a point. This is caveated by the fact that if there are infinitely many structure functions, this may not be sufficient, but in practice most $G$-structures are of finite type.
 
@@ -6907,7 +6917,7 @@ The most general statement on equivalence of $G$-structures that can be made her
 
 In 1893, Cartan found certain algebraic spaces that carry transitive actions of the exceptional Lie groups such as $\rmG_2$. This was the first explicit description of the group $\rmG_2$, following Killing's and Cartan's discovery of the Lie algebra $\frakg_2$. We refer the reader to \cite{Bryant2000} for a pedagogical summary of that description. Then, in the famous 1910 ``five variables'' paper \cite{Cartan5}, Cartan studied certain $G$-structures whose first-order integrability amounts to $\rmG_2$-invariance. These structures are very simple: distributions of rank $2$ on $5$-dimensional manifolds. The reasons for these specific dimensions are explained in some detail in \S\ref{sec: pfaff darboux thms} and \S\ref{sec: monge equations}. Here, following \cite{Sternberg}, we will illustrate the method of normalization of torsion (part of the equivalence method) by retracing a small part the ``five variables'' paper.
 
-As we have already seen, a distribution on $M$ is a $G$-structure for $G$ the group of marices leaving invariant a subspace $V_1<V$. Then the space $\coker\delta$ can be identified with $\Hom(V_1\wedge V_1,V\slash V_1)$. The group $G$ acts on $V_1$ by restriction and by projection on $V\slash V_1$, thus also on $\Hom(V_1\wedge V_1,V\slash V_1)$. Let us first look at the case where $\codim V_1=1$. Then $V\slash V_1$ is a line and $G$ acts by multiplication. Thus, $\Hom(V_1\wedge V_1,V\slash V_1)\cong \bigwedge^2 V_1^\ast$. Two such forms $\omega_1,\omega_2$ lie in the same $G$-orbit if there is a scalar $\lambda$, and a non-singular linear transformation $T\in \GL(V_1)$ such that $\omega_1(u,v)=\lambda\omega_2(Tu,Tv)$ for all $u,v\in V_1$. Viewing $\omega_1$ and $\omega_2$ as square matrices, this holds iff they have the same rank. Thus, there are a finite number of orbits. The orbit of maximal dimension corresponds to maximal rank, and the orbit of zero dimension is the origin. 
+As we have already seen, a distribution on $M$ is a $G$-structure for $G$ the group of marices leaving invariant a subspace $V_1<V$. Then the space $\coker\delta$ can be identified with $\Hom(V_1\wedge V_1,V\slash V_1)$. The group $G$ acts on $V_1$ by restriction and by projection on $V\slash V_1$, thus also on $\Hom(V_1\wedge V_1,V\slash V_1)$. Let us first look at the case where $\codim V_1=1$. Then $V\slash V_1$ is a line and $G$ acts by multiplication. Thus, $\Hom(V_1\wedge V_1,V\slash V_1)\cong \bigwedge\nolimits^2 V_1^\ast$. Two such forms $\omega_1,\omega_2$ lie in the same $G$-orbit if there is a scalar $\lambda$, and a non-singular linear transformation $T\in \GL(V_1)$ such that $\omega_1(u,v)=\lambda\omega_2(Tu,Tv)$ for all $u,v\in V_1$. Viewing $\omega_1$ and $\omega_2$ as square matrices, this holds iff they have the same rank. Thus, there are a finite number of orbits. The orbit of maximal dimension corresponds to maximal rank, and the orbit of zero dimension is the origin. 
 
 Now, the Darboux Theorem~\ref{thm darboux normal forms} implies that this rank is the only invariant of the Pfaffian system defined by our distribution, that is, any two distributions with the same rank are equivalent. Notice that in this theorem we \emph{do} allow the structure function $[c]$ to take values in a singular orbit (i.e., an orbit of non-maximal dimension). What we do require to apply the Darboux Theorem is that if $[c]$ has values in a singular orbit that it have values in that orbit on a whole open set. Thus, for instance, in the case $[c]=0$ the system is completely integrable and the Darboux Theorem reduces to the Frobenius Theorem. If $[c]$ is allowed to take on singular values at isolated points the situation becomes complicated and very little is known.
 
@@ -9131,7 +9141,7 @@ The following examples are generated by forms in degrees $p\geq 2$. The very imp
     We will now use the Cartan-K\"ahler Theorem to provide another proof of Lie's Third Fundamental Theorem~\ref{thm local Lie's third}. Let $\bbR^n$ be endowed with a Lie algebra structure $[~,~]$. It suffices to show that there exists a $0$-neighborhood  $U\subset\bbR^n$ and an $\bbR^n$-valued $1$-form $\theta$ on $U$ such that $\eta_0:\T_0\bbR^n\to\bbR^n$ is an isomorphism and $\dd \theta+\frac12[\theta,\theta]=0$. Then, Cartan's Fundamental Theorem can be employed to derive a local Lie group structure (by repeating parts of the proof of Theorem~\ref{thm 8.7 Sharpe}).
 
     Choose a basis $e_1,\ldots,e_n$ in $\bbR^n$ and let $c_{ij}^k$ be the structure constants in this basis. We need to find a $1$-form with components $\theta^i=\theta^i_j(\bf{x})\dd x^j$, with $\theta^i_j(\bf{x})$ an invertible matrix at each $\bf{x}(U)$. We want $\theta$ to satisfy $0=\dd\theta^i+\frac12 c^i_{jk}\theta^j\wedge\theta^k$. Let $M\coloneqq \bbR^n\times\GL_n(\bbR)$ with coordinates $x^i,\theta^i_j$. Take the \gls{eds} $(M,\calI)$ generated by the components $\vartheta^i$ of the form 
-    \[\vartheta=\dd(\theta_j\dd x^j)+\frac12[\theta_j\dd x^j,\theta_i\dd x^i].\]
+    \[\vartheta=\dd(\theta_j\dd x^j)+\frac12\left[\theta_j\dd x^j,\theta_i\dd x^i\right].\]
     It is easy to check, using the Jacobi identity, that $\dd\vartheta\equiv 0\pmod{\vartheta}$ is satisfied. This confirms that $\calI$ is a differential ideal. As independence condition, we take $J=\<\dd x^1,\ldots,\dd x^n\>$. Note that $\calI$ is linearly generated: we have $\vartheta^i=\dd p^i_j\wedge\dd x^j+(\text{terms quadratic in }\dd x^i)\in\Omega^{\smbullet,1}(M)$. More explicitly, we may write 
     \[\vartheta^i=\dd p^i_j\wedge\dd x^j+\frac12 T^i_{jk}\dd x^k\wedge\dd x^j=\pi^i_j\wedge\dd x^j,\]
     where $\pi^i_j=\dd\theta^i_j+\frac12 T^i_{jk}\dd x^k$ and $T^i_{jk}$ is some quadratic polynomial expression in the structure constants $c^k_{ij}$. Note that $\{\dd x^i,\pi^i_j\}$ form a coframe on $M$. We have 
@@ -9184,7 +9194,7 @@ This describes the splitting of the space of all forms that contain at least one
 When expressed in a set of linear coordinates on $E\oplus Q$, the elements of $\calI_E$ have constant coefficients and hence are closed forms. In order to see that $(\calI_E,\sfv_E)$ is linearly generated, it is instructive to see what this construction means in coordinates. For this we choose a local coframe $\omega^1,\ldots,\omega^n,\pi^1,\ldots,\pi^s$ on $M$ so that $\Ann(E)=\<\pi^1_m,\ldots,\pi^s_m\>$. We then choose linear coordinates $x^1,\ldots,x^n$ on $E$ and $u^1,\ldots,u^s$ on $Q$ such that $\restr{\omega^i_m}{E}=\dd x^i$ and $\restr{\pi^\lambda_m}{Q}=\dd u^\lambda$. Let $\psi\in\calI$ and write locally
 \[\psi=f_I\omega^I+f_{\lambda J}\pi^\lambda\wedge\omega^J+f_{\lambda\mu K}\pi^\lambda\wedge\pi^\mu\wedge\omega^K+\cdots.\]
 We note that, because $\restr{\psi}{E}=0$, $f_I(m)=0$, and we define 
-\[\wb\psi\coloneqq (f_{\lambda J}\dd u^\lambda\wedge\dd x^J)_m\in Q^\ast \otimes \bigwedge E^\ast < \bigwedge(Q^\ast\oplus E^\ast).\label{eq iv.17 Bryant}\]
+\[\wb\psi\coloneqq (f_{\lambda J}\dd u^\lambda\wedge\dd x^J)_m\quad \in Q^\ast \otimes \bigwedge E^\ast < \bigwedge(Q^\ast\oplus E^\ast).\label{eq iv.17 Bryant}\]
 Intuitively, $\wb\psi$ is obtained by substituting $m$, i.e., by freezing coefficients, and ignoring higher order terms in the $\pi^\lambda$, that is, terms that vanish to second order on $E$. It is clear that 
 \[P_E=\{\wb\psi\mid \psi\in\calI\}\label{eq iv.3.18 Bryant}\]
 is the above set of algebraic generators of $\calI_E$. Thus, $(\calI_E,\sfv_E)$ is linearly generated. Moreover, the following is an immediate consequence of Proposition~\ref{prop iii.1.13, 2.4 Bryant}.
@@ -9302,12 +9312,12 @@ Since mixed partials commute, $p^a_{ij}\partial_{u^a}\otimes \dd x^i\otimes \dd 
 where the first factor is due to the equations and the second to the commuting derivatives. The space $A^{(1)}$ is called the \emph{(first) prolongation} of $A$. In geometric terms, \emph{$A^{(1)}$ is the space of integral elements at any point of the associated \gls{eds}}. We will later generalize this to all linear Pfaffian systems. Hence, we expect to be able to examine the involutivity of a system by studying its first prolongation. 
 
 Similarly, the condition on the cubic term is 
-\[p^a_{ijk}\partial_{u^a}\otimes \dd x^i\otimes\dd x^j\otimes\dd x^k\; \in \left(A\otimes V^\ast\otimes V^\ast\right)\cap (W\otimes \bigodot\nolimits^3 V^\ast)\eqqcolon A^{(2)},\]
+\[p^a_{ijk}\partial_{u^a}\otimes \dd x^i\otimes\dd x^j\otimes\dd x^k\; \in \left(A\otimes V^\ast\otimes V^\ast\right)\cap \left(W\otimes \bigodot\nolimits^3 V^\ast\right)\eqqcolon A^{(2)},\]
 and so on for all $l$. In general, we define 
 
 \begin{defn}[Prolongation]\index{Prolongation}
     Let $V,W$ be vector spaces and $A<W\otimes V^\ast$ a subspace (a tableau). The $l$-th prolongation of $A$ is the subspace $A^{(l)}<W\otimes \bigodot\nolimits^{l+1}V^\ast$ defined as
-    \[A^{(l)}\coloneqq (A\otimes V^{\ast\otimes l})\cap \left(W\otimes \bigodot\nolimits^{l+1} V^\ast\right)=(A^{(l-1)}\otimes V^\ast)\cap \left(W\otimes \bigodot\nolimits^{l+1} V^\ast\right).\]
+    \[A^{(l)}\coloneqq \left(A\otimes V^{\ast\otimes l}\right)\cap \left(W\otimes \bigodot\nolimits^{l+1} V^\ast\right)=\left(A^{(l-1)}\otimes V^\ast\right)\cap \left(W\otimes \bigodot\nolimits^{l+1} V^\ast\right).\]
     In terms of constant-coefficient first-order systems of PDEs, $A^{(l)}$ is the set of homogeneous polynomial solutions of degree $l+1$.
 \end{defn}
 
@@ -9432,7 +9442,7 @@ One can visualize $A_k(F)$ as the subspace of matrices in $A$ for which the firs
 We fix an $A$-generic flag $F$ induced by a basis $b$, and will suppress further reference to it. Given $U< W\otimes \bigodot\nolimits^d V^\ast$, we define 
 \[U_k\coloneqq U\cap \left(W\otimes \bigodot\nolimits^{n-k}\<\dd x^{k+1},\ldots,\dd x^n\>\right).\]
 Note that 
-\[(A_k)^{(1)}=(A^{(1)})_k.\]
+\[(A_k)^{(1)}=\left(A^{(1)}\right)_k.\]
 
 \begin{prop}[{{\cite[Prop.~5.5.3]{Ivey}},\cite[Prop.~IV.3.6]{Bryant}}]\label{prop 5.5.3 Ivey}
     \[\dim A^{(1)}\leq s'_1+2s'_2+3s'_3+\cdots +ns'_n. \label{eq 5.18 Ivey}\]
@@ -9779,7 +9789,7 @@ Importantly, since the coframe $\{\theta^a,\omega^i,\pi^\lambda\}$ is defined up
     If $A$ is not involutive, we need to examine third-order information. The test will be to compare a naive estimate for the dimension of $\dim A^{(2)}$ with its actual dimension (recall that $A^{(2)}$ can be interpreted as the space of admissible third-order terms in the Taylor series of a solution). 
 
     We start with a new system, which is the pullback of the tautological linear Pfaffian system on the second order jet space 
-    \[\rmJ^2(V,W)\cong V\oplus W\oplus (W\otimes V^\ast)\oplus (W\otimes \bigodot\nolimits^2 V^\ast)\]
+    \[\rmJ^2(V,W)\cong V\oplus W\oplus (W\otimes V^\ast)\oplus \left(W\otimes \bigodot\nolimits^2 V^\ast\right)\]
     to $\wt{M}\cong V\oplus W\oplus A\oplus A^{(1)}$. This new system is called the \emph{(first) prolongation} of $(I,J)$ on $M$.
 
     Recall that, in coordinates $(x^i,u^a,p^a_i,p^a_{ij})$, the contact system on $\rmJ^2(V,W)$ is generated by 
@@ -10077,30 +10087,30 @@ This \sect\ will be easier to read having some familiarity with homological alge
 \end{proof}
 
 
-Let $V,W$ be vector spaces and consider a linear map $\Omega:V\to W$ with dual $\Omega^\ast:W^\ast\to V^\ast$. We set 
+Let $V,W$ be vector spaces and consider a linear map $\varOmega:V\to W$ with dual $\varOmega^\ast:W^\ast\to V^\ast$. We set 
 \[C^{p,q}\coloneqq \bigodot\nolimits^p W^\ast\otimes \bigwedge\nolimits^q V^\ast.\]
 In short, $C^{p,q}$ consists of polynomial exterior forms having polynomial degree $p$ and exterior degree $q$. We now define the \emph{boundary operator}
 \begin{gather}
-    \delta_\Omega:C^{p,q}\to C^{p-1,q+1},\\
-    \delta_\Omega(w_1^\ast\otimes\cdots\otimes w_p^\ast\otimes \psi)=\sum_{i=1}^p w_1^\ast\otimes\cdots\otimes \wh{w}_i^\ast\otimes\cdots\otimes w_p^\ast \otimes \Omega^\ast(w_i^\ast)\wedge\psi,
+    \delta_\varOmega:C^{p,q}\to C^{p-1,q+1},\\
+    \delta_\varOmega(w_1^\ast\otimes\cdots\otimes w_p^\ast\otimes \psi)=\sum_{i=1}^p w_1^\ast\otimes\cdots\otimes \wh{w}_i^\ast\otimes\cdots\otimes w_p^\ast \otimes (\varOmega^\ast(w_i^\ast)\wedge\psi),
 \end{gather}
-where $w_i^\ast\in W^\ast$ and $\psi\in \bigwedge\nolimits^q V^\ast$. As we will see below, this operator is nothing but a the usual exterior derivative which differentiates the $W$-valued coefficients via the map $\Omega$. It is clear that $\delta_\Omega^2=0$, which allows us to define the resulting \emph{cohomology spaces} (quantifying the non-exactness of the sequence) by 
-\[\rmH^{p,q}=\bigslant{\ker\left(C^{p,q}\overset{\delta_\Omega}{\to}C^{p-1,q+1}\right)}{\im \left(C^{p+1,q-1}\overset{\delta_\Omega}{\to}C^{p,q}\right)}.\]
+where $w_i^\ast\in W^\ast$ and $\psi\in \bigwedge\nolimits^q V^\ast$. As we will see below, this operator is nothing but a the usual exterior derivative which differentiates the $W$-valued coefficients via the map $\varOmega$. It is clear that $\delta_\varOmega^2=0$, which allows us to define the resulting \emph{cohomology spaces} (quantifying the non-exactness of the sequence) by 
+\[\rmH^{p,q}=\bigslant{\ker\left(C^{p,q}\overset{\delta_\varOmega}{\to}C^{p-1,q+1}\right)}{\im \left(C^{p+1,q-1}\overset{\delta_\varOmega}{\to}C^{p,q}\right)}.\]
 The following important result is, as we will see, a generalization of both the Poincar\'e Lemma~\ref{lem poincare classic} and of the Cartan Lemma~\ref{lem cartan}.
 
 \begin{prop}[Cartan-Poincar\'e Lemma {{\cite[Prop.~VIII.2.1]{Bryant}}}]\index{Lemma!Cartan-Poincar\'e}
     There are isomorphisms
-    \[\rmH^{p,q}(\Omega)\cong \bigodot\nolimits^p(\ker \Omega^\ast)\otimes \bigwedge\nolimits^q(\coker\Omega^\ast).\]
+    \[\rmH^{p,q}(\varOmega)\cong \bigodot\nolimits^p(\ker \varOmega^\ast)\otimes \bigwedge\nolimits^q(\coker\varOmega^\ast).\]
 \end{prop}
 \begin{proof}
-    \emph{Step One.} First suppose that $\Omega$ is an isomorphism and use it to identify $V$ with $W$. If we choose linear coordinates $x^1,\ldots,x^n$ on $V$, the elements in $C^{p,q}$ are 
+    \emph{Step One.} First suppose that $\varOmega$ is an isomorphism and use it to identify $V$ with $W$. If we choose linear coordinates $x^1,\ldots,x^n$ on $V$, the elements in $C^{p,q}$ are 
     \[\varphi=\sum_{i_1<\cdots<i_q}\varphi_{i_1\ldots i_q}\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_q},\]
-    where $\varphi_{i_1\ldots i_q}(\bf{x})\in \bigodot\nolimits^p W^\ast$ is a polynomial of degree $p$. For polynomials, we will simply write $x^i$ instead of $\dd x^i$ because then the commutative product is automatically implied. Thinking of $\Omega$ as the identity map, we have 
-    \[\delta_\Omega(x^{j_1}\cdots x^{j_p}\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_q})=\sum_\alpha x^{j_1}\cdots \wh{x}^{j_\alpha}\cdots x^{j_p}\dd x^{j_\alpha}\wedge \dd x^{i_1}\wedge\cdots \wedge\dd x^{i_q}.\]
+    where $\varphi_{i_1\ldots i_q}(\bf{x})\in \bigodot\nolimits^p W^\ast$ is a polynomial of degree $p$. For polynomials, we will simply write $x^i$ instead of $\dd x^i$ because then the commutative product is automatically implied. Thinking of $\varOmega$ as the identity map, we have 
+    \[\delta_\varOmega(x^{j_1}\cdots x^{j_p}\dd x^{i_1}\wedge\cdots\wedge\dd x^{i_q})=\sum_\alpha x^{j_1}\cdots \wh{x}^{j_\alpha}\cdots x^{j_p}\dd x^{j_\alpha}\wedge \dd x^{i_1}\wedge\cdots \wedge\dd x^{i_q}.\]
     This implies that
-    \[\delta_\Omega(\varphi)=\dd\varphi\]
+    \[\delta_\varOmega(\varphi)=\dd\varphi\]
     is the usual exterior derivative. We must show that 
-    \[\rmH^{p,q}(\Omega)=\begin{cases}
+    \[\rmH^{p,q}(\varOmega)=\begin{cases}
         0, & p+q>0,\\
         \bbR, & p=q=0.
     \end{cases}\label{eq viii.13 Bryant}\]
@@ -10112,24 +10122,24 @@ The following important result is, as we will see, a generalization of both the 
     \[(p+q)\varphi=i_e\dd\varphi+\dd i_e \varphi,\]
     and this implies \eqref{eq viii.13 Bryant}.
 
-    \emph{Step Two.} In the general case, we may choose bases for $V,W$ so that $\Omega$ is a matrix whose top left block is an identity matrix and the rest is zero. Thus, in suitable linear coordinates $(x^i,y^\alpha)$ on $W$ and $(u^\alpha,w^\lambda)$ on $V$ we have 
-    \[\Omega^\ast(\dd x^i)=0,\quad \Omega^\ast(\dd y^\alpha)=\dd u^\alpha.\]
+    \emph{Step Two.} In the general case, we may choose bases for $V,W$ so that $\varOmega$ is a matrix whose top left block is an identity matrix and the rest is zero. Thus, in suitable linear coordinates $(x^i,y^\alpha)$ on $W$ and $(u^\alpha,w^\lambda)$ on $V$ we have 
+    \[\varOmega^\ast(\dd x^i)=0,\quad \varOmega^\ast(\dd y^\alpha)=\dd u^\alpha.\]
     Using multi-index notations, we may write a typical element in $C^{p,q}$ as 
     \[\wt\varphi=\sum_{I,A}\varphi_{IA}(\bf{x},\bf{y})\dd \bf{u}^I\wedge\dd \bf{w}^A,\]
-    where $\varphi_{IA}(\bf{x},\bf{y})$ is a polynomial such that $\deg\varphi_{IA}=p$ and $\ord I+\ord A=q$. We shall identify $\wt\varphi$ with the expression 
+    where $\varphi_{IA}(\bf{x},\bf{y})$ is a polynomial such that $\deg\varphi_{IA}=p$ and $\deg I+\deg A=q$. We shall identify $\wt\varphi$ with the expression 
     \[\varphi=\sum_{I,A}\varphi_{IA}(\bf{x},\bf{y})\dd \bf{y}^I\wedge\dd \bf{w}^A.\]
     When this is done, 
-    \[\delta_\Omega(\varphi)=\sum_{I,A}\partial_{y^\alpha}\varphi_{IA}(\bf{x},\bf{y})\dd y^\alpha\wedge\dd \bf{y}^I\wedge\dd \bf{w}^A.\]
-    In other words, $\delta_\Omega$ is the exterior derivative w.r.t.\ the $\bf{y}$ variables, treating $\bf{x}$ and $\bf{w}$ as parameters. This suggests that we set 
-    \[C^{r,s,\rho,\sigma}\coloneqq \{\varphi\mid \deg_{\bf{x}}\varphi_{IA}=r,\deg_{\bf{y}}\varphi_{IA}=s,\ord I=\rho,\ord A=\sigma\}.\]
-    Then $\delta_\Omega:C^{r,s,\rho,\sigma}\to C^{r,s-1,\rho+1,\sigma}$ and with the obvious notation, 
-    \[\rmH^{p,q}(\Omega)\cong \bigoplus_{
+    \[\delta_\varOmega(\varphi)=\sum_{I,A}\partial_{y^\alpha}\varphi_{IA}(\bf{x},\bf{y})\dd y^\alpha\wedge\dd \bf{y}^I\wedge\dd \bf{w}^A.\]
+    In other words, $\delta_\varOmega$ is the exterior derivative w.r.t.\ the $\bf{y}$ variables, treating $\bf{x}$ and $\bf{w}$ as parameters. This suggests that we set 
+    \[C^{r,s,\rho,\sigma}\coloneqq \{\varphi\mid \deg_{\bf{x}}\varphi_{IA}=r,\deg_{\bf{y}}\varphi_{IA}=s,\deg I=\rho,\deg A=\sigma\}.\]
+    Then $\delta_\varOmega:C^{r,s,\rho,\sigma}\to C^{r,s-1,\rho+1,\sigma}$ and with the obvious notation, 
+    \[\rmH^{p,q}(\varOmega)\cong \bigoplus_{
         \begin{smallmatrix}
             r+s=p\\
             \rho+\sigma=q
-        \end{smallmatrix}}\rmH^{r,s,\rho,\sigma}(\Omega).\]
+        \end{smallmatrix}}\rmH^{r,s,\rho,\sigma}(\varOmega).\]
         On the other hand, the proof of Step One gives 
-        \[\rmH^{r,s,\rho,\sigma}(\Omega)=\begin{cases}
+        \[\rmH^{r,s,\rho,\sigma}(\varOmega)=\begin{cases}
             0, & \text{unless }s=\rho=0,\\
             C^{r,s,\rho,\sigma}, & \text{when }s=\rho=0.
         \end{cases}\]
@@ -10155,21 +10165,21 @@ We will use the Cartan-Poincar\'e Lemma in the following form, which makes it a 
     \right.\]
 \end{cor}
 \begin{proof}
-    In this case $W=\bbR^n$ and $\Omega:V\to W$ is given by $\Omega(v)=(\omega^1(v),\ldots,\omega^n(v))$, which is surjective. In particular, by the Cartan-Poincar\'e Lemma,
-    \[\rmH^{q,r}(\Omega)=0,\quad r>0.\label{eq viii.21 Bryant}\]
+    In this case $W=\bbR^n$ and $\varOmega:V\to W$ is given by $\varOmega(v)=(\omega^1(v),\ldots,\omega^n(v))$, which is surjective. In particular, by the Cartan-Poincar\'e Lemma,
+    \[\rmH^{q,r}(\varOmega)=0,\quad r>0.\label{eq viii.21 Bryant}\]
     The assumptions of the corollary are 
-    \[\delta_\Omega(\varphi)=0,\quad \varphi\in \bigodot\nolimits^q W^\ast\otimes \bigwedge\nolimits^r V^\ast,\]
+    \[\delta_\varOmega(\varphi)=0,\quad \varphi\in \bigodot\nolimits^q W^\ast\otimes \bigwedge\nolimits^r V^\ast,\]
     and the assertion is that 
-    \[\delta_\Omega (\psi)=\varphi,\quad \psi\in \bigodot\nolimits^{q+1}W^\ast\otimes \bigwedge\nolimits^{r-1}V^\ast.\]
+    \[\delta_\varOmega (\psi)=\varphi,\quad \psi\in \bigodot\nolimits^{q+1}W^\ast\otimes \bigwedge\nolimits^{r-1}V^\ast.\]
     Thus, the corollary is equivalent to \eqref{eq viii.21 Bryant}.
 \end{proof}
 
-When $r=q=1$, this corollary is the usual \emph{Cartan Lemma}~\ref{lem cartan}. When $\Omega$ is an isomorphism, it is the Poincar\'e Lemma for polynomial forms.
+When $r=q=1$, this corollary is the usual \emph{Cartan Lemma}~\ref{lem cartan}. When $\varOmega$ is an isomorphism, it is the Poincar\'e Lemma for polynomial forms.
 
 We now discuss a variant of the lemma relevant to prolongation theory. Let us redefine the spaces $C^{p,q}$ as 
 \[C^{p,q}\coloneqq W\otimes \bigodot\nolimits^k V^\ast\otimes \bigwedge\nolimits^q V^\ast.\]
 Choosing bases $\{w_a\}$ for $W$ and $\{x^i=\dd x^i\}$ for $V^\ast$ we may think of $\varphi\in C^{k,q}$ as a $W$-valued polynomial form 
-\[\varphi=\sum_{\ord I=k,\ord J=q}w_a\otimes \varphi^a_{IJ}\bf{x}^I \dd \bf{x}^J.\]
+\[\varphi=\sum_{\deg I=k,\deg J=q}w_a\otimes \varphi^a_{IJ}\bf{x}^I \dd \bf{x}^J.\]
 We define $\delta:C^{k,q}\to C^{k-1,q+1}$ to be the usual exterior derivative treating the $w_a$ as constants. Denoting the resulting cohomology by $\rmH^{k,q}$, we have from Cartan-Poincar\'e Lemma, namely \eqref{eq viii.13 Bryant}, 
 \[\rmH^{k,q}=\begin{cases}
     W,& k=q=0,\\
@@ -10190,7 +10200,7 @@ and we denote by $\rmH^{k,q}(A)$ the resulting \emph{Spencer cohomology}:
 
 \begin{rem}\index{Spencer cohomology}
     More explicitly, the Spencer cohomology groups $\rmH^{i,j}(A)$ of a tableau $A<W\otimes V^\ast$ are defined as follows. Let 
-    \[\delta_j:(W\otimes \bigodot\nolimits^iV^\ast)\otimes \bigwedge\nolimits^j V^\ast\to W\otimes \bigodot\nolimits^{i-1}V^\ast\otimes \bigwedge\nolimits^{j+1}V^\ast\]
+    \[\delta_j:\left(W\otimes \bigodot\nolimits^iV^\ast\right)\otimes \bigwedge\nolimits^j V^\ast\to W\otimes \bigodot\nolimits^{i-1}V^\ast\otimes \bigwedge\nolimits^{j+1}V^\ast\]
     be defined by 
     \[\delta_j(f\otimes \alpha)=\dd f\wedge \alpha,\]
     where, for $f\in W\otimes \bigodot\nolimits^i V^\ast$, $\alpha\in \bigwedge\nolimits^j V^\ast$, we define $\dd f$ by considering $f$ as an element of $\Hom(V^{\otimes i},W)$, and extend $\delta_j$ by linearity. In simpler terms, $\delta_j$ takes the last index of $f$ and antisymmetrizes over the union of that index with the indices of $\alpha$. Note that $\delta_j(A^{(i)}\otimes \bigwedge\nolimits^j V^\ast)\subset A^{(i-1)}\otimes\bigwedge\nolimits^{j+1}V^\ast$.
@@ -10207,15 +10217,15 @@ The main theorem about Spencer cohomology and prolongation, whose proof we omit,
 
 From here, it is easy to see that the prolongations of an involutive tableau are involutive. Let $\wt W=A\oplus W$. Then $A^{(1)}$ can be considered as a tableau in $\wt W\otimes V^\ast$ with the $W\otimes V^\ast$ block zero. Consider:
 \begin{align}
-    \rmH^{0,2}(A^{(1)})&= \frac{\wt W\otimes \bigwedge\nolimits^2 V^\ast}{\delta\left(A^{(1)}\otimes V^\ast\right)}\\
+    \rmH^{0,2}\left(A^{(1)}\right)&= \frac{\wt W\otimes \bigwedge\nolimits^2 V^\ast}{\delta\left(A^{(1)}\otimes V^\ast\right)}\\
     &= \frac{W\otimes V^\ast\otimes \bigwedge\nolimits^2 V^\ast}{\delta\left(\left((A\otimes V^\ast)\cap (W\otimes \bigodot\nolimits^2 V^\ast)\right)\otimes V^\ast\right)}\\
     &=\rmH^{1,2}(A).
 \end{align}
 Since prolongations can be defined iteratively, this easily implies that 
-\[\rmH^{0,2}(A^{(p)})\cong \rmH^{p,2}(A).\]
+\[\rmH^{0,2}\left(A^{(p)}\right)\cong \rmH^{p,2}(A).\]
 In fact, the same argument gives more generally that 
-\[\rmH^{k,q}(A^{(p)})\cong \rmH^{k+p,q}(A),\quad k\geq 1.\]
-The above theorem then implies that prolongations preserve involutivity. This can be immediately used to show that the prolongation of an involutive linear Pfaffian system is involutive. This is based on the facts, established in \S\ref{sec: lin Pfaffian systems}, that the intrinsic torsion of a linear Pfaffian system  $(\calI,\sfv)$ naturally takes values in $\rmH^{0,2}(A_m)$ and the intrinsic torsion of $(\calI^{(1)},\sfv)$ takes values in $\rmH^{0,2}(A_m^{(1)})\cong \rmH^{1,2}(A_m)$, and if the former vanishes, then so does the latter.
+\[\rmH^{k,q}\left(A^{(p)}\right)\cong \rmH^{k+p,q}(A),\quad k\geq 1.\]
+The above theorem then implies that prolongations preserve involutivity. This can be immediately used to show that the prolongation of an involutive linear Pfaffian system is involutive. This is based on the facts, established in \S\ref{sec: lin Pfaffian systems}, that the intrinsic torsion of a linear Pfaffian system  $(\calI,\sfv)$ naturally takes values in $\rmH^{0,2}(A_m)$ and the intrinsic torsion of $(\calI^{(1)},\sfv)$ takes values in $\rmH^{0,2}\left(A_m^{(1)}\right)\cong \rmH^{1,2}(A_m)$, and if the former vanishes, then so does the latter.
 
 \begin{rem}
     The \emph{Cartan-Kuranishi Prolongation Theorem (1957)}, originally conjectured by Cartan based on numerous examples, implies that after a finite number of prolongations a tableau will become involutive (perhaps by becoming empty, in which case there are no integral manifolds). This implies that, for a linear Pfaffian system on an analytic manifold $M$, if $\rmH^{p,2}(A_m)=0$ for all $p$, then there exist integral manifolds through $m$. This statement is the \emph{Goldschmidt version of Cartan-K\"ahler Theorem}. It is useful because sometimes one can show the vanishing of all groups $\rmH^{p,2}$ without having to compute the prolongations.
@@ -10742,7 +10752,7 @@ We now turn to \emph{Darboux's method}, which gives a recipe for solving certain
     Since $\dd\omega=2\dd x\wedge\theta_2$, $I_{(1)}$ is not Frobenius. Hence the derived flag terminates in $I_{(2)}=0$.
 \end{example}
 
-The generic Pfaffian system of rank $2$ on a $4$-dimensional manifold has derived length $2$. Such systems are said to define an Engel structure. Engel's normal form shows that all such systems are locally diffeomorphic (see \S\ref{sec: monge equations}). By contrast, a generic Pfaffian system of rank $3$ in $5$ variables has derived length two but contains no Frobenius system. Unlike Engel structures, such systems are not all locally diffeomorphic to each other. Their classification was the subject of Cartan's ``five variables'' paper. 
+The generic Pfaffian system of rank $2$ on a $4$-dimensional manifold has derived length $2$. Such systems are said to define an Engel structure. Engel's normal form shows that all such systems are locally equivalent (see \S\ref{sec: monge equations}). By contrast, a generic Pfaffian system of rank $3$ in $5$ variables has derived length two but contains no Frobenius system. Unlike Engel structures, such systems are not all locally equivalent to each other. Their classification was the subject of Cartan's ``five variables'' paper. 
 
 Let $\calI$ be the \gls{eds} we constructed for the PDE \eqref{eq 7.10 Ivey} for one function of two variables. On any integral surface of $\calI$ satisfying the independence condition, the Monge characteristic curves form two foliations which are transverse at each point of the surface. Suppose one characteristic system $\calM_i$ happens to contain two linearly independent $1$-forms that are exact derivatives:
 \[\dd W,\dd X\in\calM_i.\]
@@ -10806,10 +10816,10 @@ The problem of classifying which second-order PDEs become Darboux-integrable aft
 
 This \sect\ summarizes, without proof, a few classical results about specific Pfaffian systems which can be seen as a result of the classification of a certain class of systems up to diffeomorphism. Each differential system is described by a set of \emph{differential invariants}, which are quantities that remain invariant under diffeomorphisms (changes of coordinates). Among them are Cartan characters, ranks of derived systems, and so on. If two systems have a differing set of differential invariants, they can't be \emph{equivalent} (i.e., related by a diffeomorphism). By a \emph{normal form} we mean a specific differential system such that any other differential system in the same class (i.e., with the same values of some specified differential invariants) is equivalent to it. \emph{Cartan's problem of equivalence} is, broadly speaking, the problem of finding the differential invariants that describe various classes of differential systems, and explicitly establishing the equivalences between different systems.
 
-In this \sect\ we deal with Pfaffian systems on a manifold $M$ generated by a single $1$-form. The integrability condition from Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1} in the special case of $\dim M=3$ was first obtained by Euler in 1755. It was Pfaff who posed, in 1814-1815, the general problem of studying PDEs of the form $\theta=0$ for $\theta\in\Omega^1(M)$ in any number of dimensions.
+In this \sect\ we deal with Pfaffian systems on a manifold $M$ generated by a single $1$-form. The integrability condition from Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1} in the special case of $\dim M=3$ was first obtained by Euler in 1755. It was Pfaff who in 1814-15 posed the general problem of studying PDEs of the form $\theta=0$ for $\theta\in\Omega^1(M)$ in any number of dimensions.
 
-Let $\theta\in\Omega^1(M)$ and consider the $2$-form $\dd\theta\in\Omega^2(M)$. In local coordinates its matrix has a rank which is independent of the choice of coordinates, i.e., it is a differential invariant of the Pfaffian system spanned by $\theta$. First let us assume that this rank is even and equal to $2k$. The integer $k$ is called the \emph{Pfaff rank} of $\theta$. We denote by $(\dd\theta)^l\coloneqq \dd\theta\wedge\cdots\wedge\dd\theta$ the $l$-th exterior power of $\dd\theta$. Then it is easy to see that 
-\[\theta\wedge(\dd\theta)^{k}\neq 0,\quad \theta\wedge(\dd\theta)^{k+1}=0,\]
+Let $\theta\in\Omega^1(M)$ and consider the $2$-form $\dd\theta\in\Omega^2(M)$. In local coordinates its matrix has a rank which is independent of the choice of coordinates, i.e., it is a differential invariant of the Pfaffian system spanned by $\theta$. First let us assume that this rank is even and equal to $2k$. The integer $k$ is called the \emph{Pfaff rank} of $\theta$. We denote by $(\dd\theta)^{\wedge l}\coloneqq \dd\theta\wedge\cdots\wedge\dd\theta$ the $l$-th exterior power of $\dd\theta$. Then it is easy to see that 
+\[\theta\wedge(\dd\theta)^{\wedge k}\neq 0,\quad \theta\wedge(\dd\theta)^{\wedge (k+1)}=0,\]
 that is, $k$ is the highest integer such that $\theta\wedge(\dd\theta)^{k}$ is not identically zero. 
 
 The integer $2k+1$ is called the \emph{class of the Pfaffian equation} $\theta=0$. Note that it is well-defined as a property of the equation because any form $f\theta$, $f\in C^\infty(M)$, has the same Pfaff rank as $\theta$. Proposition~\ref{prop 4.7.6 RS1 pfaffian rank 1} can then be restated as saying that the Pfaffian equation $\theta=0$ has integral manifolds iff $\theta$ has Pfaff rank $0$.
@@ -10817,7 +10827,7 @@ The integer $2k+1$ is called the \emph{class of the Pfaffian equation} $\theta=0
 However, it is still useful to study equations of nonzero Pfaffian rank $k>0$. Darboux showed that instead of having true integral manifolds $S$ with $\T S=\ker\theta$, such a system will have non-unique integral manifolds of dimension at most $n-k-1$ such that $\T S<\ker\theta$. Darboux showed this by bringing any $1$-form to a certain \emph{normal form} (this can be seen as an analog of the Rectification Theorem for $k$-frames). The proofs of the theorems in this \sect{} are rather algebraic and unenlightening, so we direct the reader to \cite{Bryant} for details.
 
 \begin{thm}[Pfaff normal form, odd class, Darboux 1882]
-    Let $\dim M=n$ and let $\theta\in\Omega^1(M)$ have Pfaff rank $k\geq 0$. Denote the class of $\theta$ by $p\coloneqq 2k+1$. Then at any point in $M$ where $\theta\wedge(\dd\theta)^k\neq 0$ there exist local coordinates $\{x^1,\ldots,x^n\}$ and a non-vanishing smooth local function $f$ such that in the case $k>0$,
+    Let $\dim M=n$ and let $\theta\in\Omega^1(M)$ have Pfaff rank $k\geq 0$. Denote the class of $\theta$ by $p\coloneqq 2k+1$. Then at any point in $M$ where $\theta\wedge(\dd\theta)^{\wedge k}\neq 0$ there exist local coordinates $\{x^1,\ldots,x^n\}$ and a non-vanishing smooth local function $f$ such that in the case $k>0$,
     \[\theta=f\cdot (\dd x^{n-p+1}\underbrace{-x^{n-p+2}\dd x^{n-p+3}-x^{n-p+4}\dd x^{n-p+5}-\cdots -x^{n-1}\dd x^n}_{k\text{ terms}}),\]
     and in the case $k=0$, $\theta=f \dd x^n$. The maximum possible dimension of an integral manifold through $m$ is $(n-k-1)$, and for each such manifold the above coordinates can be adjusted so that it is described by 
     \[x^{n-p+1}=x^{n-p+2}=x^{n-p+4}=\cdots=x^{n-1}=0.\]
@@ -10841,20 +10851,20 @@ Another important theorem by Darboux provides a normal form for \emph{closed $2$
 
 \begin{thm}[Darboux]
     Let $\omega\in\Omega^2(M)$ be closed, $\dd\omega=0$, and let $k$ be the highest integer such that the $k$-the exterior power of $\omega$ is not identically zero:
-    \[\omega^k\neq 0,\quad \omega^{k+1}=0.\]
-    Then at every point where $\omega^k\neq 0$ there exist local coordinates $\{x^1,\ldots,x^n\}$, $n=\dim M$, such that 
+    \[\omega^{\wedge k}\neq 0,\quad \omega^{\wedge(k+1)}=0.\]
+    Then at every point where $\omega^{\wedge k}\neq 0$ there exist local coordinates $\{x^1,\ldots,x^n\}$, $n=\dim M$, such that 
     \[\omega=\dd x^1\wedge \dd x^2+\cdots \dd x^{2k-1}\wedge\dd x^{2k}.\]
 \end{thm}
 
 We will later prove the symplectic case of this theorem, which is just the case of $2k=n$, i.e., when $\omega$ is non-degenerate. By combining the three theorems above, one can further simplify the normal form for $\theta$.
 
 \begin{thm}[Darboux]\label{thm darboux normal forms}
-    Let $\theta\in\Omega^1(M)$ have Pfaff rank $k$ near $m\in M$. Necessarily either $(\dd\theta)^{k+1}$ vanishes at $m$ or it is nonzero near $m$. Then there exist local coordinates $\{w^0,\ldots,w^n\}$ near $m$ such that $\<\theta\>_{\mathrm{diff}}$ is locally generated by 
+    Let $\theta\in\Omega^1(M)$ have Pfaff rank $k$ near $m\in M$. Necessarily either $(\dd\theta)^{\wedge(k+1)}$ vanishes at $m$ or it is nonzero near $m$. Then there exist local coordinates $\{w^0,\ldots,w^n\}$ near $m$ such that $\<\theta\>_{\mathrm{diff}}$ is locally generated by 
     \[\wt\theta=\dd w^0+w^{k+1}\dd w^1+\cdots +w^{2k}\dd w^k\]
     (i.e., $\theta$ is locally a nonzero multiple of $\wt\theta$). Moreover, there exist local coordinates $\{x^0,\ldots,x^{n-1}\}$ near $m\in M$ such that
     \begin{align}
-        \theta&= x^0 \dd x^1+\cdots +x^{2k}\dd x^{2k+1}, &\text{ if }(\dd\theta)^{k+1}\neq 0\text{ at }m,\\
-        \theta&= \dd x^1+ x^2\dd x^3+\cdots +x^{2k} \dd x^{2k+1}, &\text{ if }(\dd\theta)^{k+1}=0 \text{ at }m.
+        \theta&= x^0 \dd x^1+\cdots +x^{2k}\dd x^{2k+1}, &\text{ if }(\dd\theta)^{\wedge(k+1)}\neq 0\text{ at }m,\\
+        \theta&= \dd x^1+ x^2\dd x^3+\cdots +x^{2k} \dd x^{2k+1}, &\text{ if }(\dd\theta)^{\wedge(k+1)}=0 \text{ at }m.
     \end{align}
 \end{thm}
 
@@ -11353,7 +11363,7 @@ In this \sect\ we will describe a classical application of the Frobenius Theorem
 
 Let $\varSigma$ be an oriented\footnote{The assumption of orientability is not essential because we will mostly focus on local results about surfaces, while global results for non-orientable surfaces can be obtained by passing to a double cover (the orientation bundle).} $2$-dimensional manifold and let $i:\varSigma\hookrightarrow \bbE^3$ be an immersion, where $\bbE^3$ is the affine space $\rmA(\bbR^3)$ with the standard Euclidean structure, i.e., it is the homogeneous space 
 \[\bbE^3=\SE_3(\bbR)\slash \SO_3(\bbR).\]
-We will often view $\varSigma$ as a subset of $\bbE^3$, and describe this setting as an \emph{immersed surface}, although non-injective immersions are allowed. The standard Euclidean dot product of (tangent) vectors will be denoted by $\<\,,\,\>$. This dot product can be restricted to tangent vectors of $\varSigma$ to produce a metric $\sfg\in\Gamma^\infty(\bigodot\nolimits^2\T\varSigma)$ on $\T\varSigma$ that has a special name for historic reasons.
+We will often view $\varSigma$ as a subset of $\bbE^3$, and describe this setting as an \emph{immersed surface}, although non-injective immersions are allowed. The standard Euclidean dot product of (tangent) vectors will be denoted by $\<\,,\,\>$. This dot product can be restricted to tangent vectors of $\varSigma$ to produce a metric $\sfg\in\Gamma^\infty\left(\bigodot\nolimits^2\T\varSigma\right)$ on $\T\varSigma$ that has a special name for historic reasons.
 
 \begin{defn}[First Fundamental Form]\index{First Fundamental Form}
     The First Fundamental Form of an immersed surface $i:\varSigma\hookrightarrow \bbR^3$ is the non-degenerate quadratic form $\sfI\in\Gamma^0_2(\varSigma)$ defined by 
@@ -11415,7 +11425,7 @@ The Gauss map is clearly differentiable and thus we have $(e_3)_\ast:\T\varSigma
 Therefore the shape operator can be viewed as a quadratic form (symmetric tensor of type $(0,2)$) on $\T\varSigma$.
 
 \begin{defn}[Second Fundamental Form]\index{Second Fundamental Form}
-    The scalar Second Fundamental Form of a surface $\varSigma\subset\bbR^3$ is the quadratic form $Q\in\Gamma^0_2(\varSigma)$ defined by 
+    The scalar Second Fundamental Form of a surface $\varSigma\subset\bbR^3$ is the quadratic form $\wt Q\in\Gamma^0_2(\varSigma)$ defined by 
     \[\wt{Q}_p(X,Y)=-\<(\dd e_3)_{p}X,Y\>.\]
     From the above proof, in local parametrization $\bf{x}(u^1,u^2)$ indexed by $\mu,\nu=1,2$, the components of $\wt{Q}$ read 
     \[(\wt{Q}_{\mu\nu})=
@@ -11794,7 +11804,7 @@ Christoffel went a step further and also examined the compatibility condition on
 
     Let us go back to our adapted orthonormal frame $\{e_i\}$ and compute its covariant derivative:
     \[\nabla e_\alpha=\dd e_\alpha-\<\dd e_\alpha,e_3\>e_3=\omega^i_\alpha e_i-\omega^3_\alpha e_3=\omega^\beta_\alpha e_\beta,\]
-    where Greek indices range over $1,2$. Any vector field $X\in\fX(\varSigma)$ can be decomposed as $X=X^\alpha e_\alpha$, so the Leibniz rule implies 
+    where Greek indices range over $\{1,2\}$. Any vector field $X\in\fX(\varSigma)$ can be decomposed as $X=X^\alpha e_\alpha$, so the Leibniz rule implies 
     \[\nabla(X^\alpha e_\alpha)=(\dd X^\alpha)e_\alpha+\omega^\beta_\alpha e_\beta.\]
     Much like in Christoffel's original setting, we get the miraculous result that the covariant derivative is expressed purely intrinsically, i.e., only in terms of tensor fields on $\varSigma$ itself.
     Willmore's Theorem~\ref{Willmore} helps us extend this operator to all tensor fields on $\varSigma$ via the tensorial Leibniz rule, and we see that
@@ -11803,6 +11813,7 @@ Christoffel went a step further and also examined the compatibility condition on
     \[\nabla\sfg=-(\omega^\alpha_3\wedge\theta^3)\odot \theta^\alpha=0\]
     by antisymmetry of $\omega^i_j$. This is another form of equation \eqref{eq 180512} saying that $\sfg$ is parallel.
 
+    Finally, the normal component $\<\Lie_X\wt Y,e_3\>e_3$ is exactly the Second Fundamental Form $\sfII(X,Y)$. As we have seen, its determinant $K$ is intrinsic to the surface and its metric, whereas its half-trace $H$ is the other differential invariant characterizing the isometric embedding up to congruence. In higher-dimension or higher-codimension situations, these differential invariants become tensorial, so the fundamental differential invariants become the Riemann curvature tensor $\sfR$, the normal bundle-valued Second Fundamental Form $\sfII$, and the curvature tensor of the normal bundle $\sfR^\perp$. For example, curves in $\bbE^3$ are described by ``curvature'' $\kappa$, which is the Second Fundamental Form, and torsion $\tau$, which is $\sfR^\perp$.
 
 
 
@@ -12055,7 +12066,7 @@ Note that the immersion $\bf{x}$ needs to be specified to claim uniqueness up to
 \end{rem}
 
 \begin{rem}
-    We can put the Gauss-Codazzi equations in an even more suggestive form by splitting up the components of all objects into tangent and normal to $\varSigma$. Let Greek indices range only over tangent directions ($1,2$), and this time we will be careful to put the row (top) index before the column (bottom) index in $\omega^i{}_j$. Then we have the two defining equations on the adapted frame bundle $P$:
+    We can put the Gauss-Codazzi equations in an even more suggestive form by splitting up the components of all objects into tangent and normal to $\varSigma$. Let Greek indices range only over tangent directions $\{1,2\}$, and this time we will be careful to put the row (top) index before the column (bottom) index in $\omega^i{}_j$. Then we have the two defining equations on the adapted frame bundle $P$:
     \[\dd e_\mu=e_3\omega^3{}_\mu + e_\nu\omega^\nu{}_\mu,\quad \dd e_3=e_\mu\omega^\mu{}_3.\]
     By definition of $h$ \eqref{def h}, we have $\omega^3_\mu=h_{\mu\nu}\omega^\nu$, and therefore the system becomes 
     \[\dd e_\mu= e_3 h_{\mu\nu}\omega^\nu+ e_\nu\omega^\nu{}_\mu ,\quad \dd e_3=e_\mu\omega^\mu{}_3.\]
