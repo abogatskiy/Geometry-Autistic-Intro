@@ -1050,9 +1050,9 @@ Indeed, define $x'$, $u'$, and $p'=p_1'$ by \eqref{eq 2.2 Kras}. Since
 \[\dd p_1'=\dd \frac{p_2}{p_1}=\frac{1}{p_1}\dd p_2-\frac{p_2}{p_1^2}\dd p_1,\]
 we can put 
 \[\wt\theta_1'=\frac{1}{p_1}\wt\theta^1-\frac{p_2}{p_1^2}\wt\theta^0=\dd p_1'-\left(\frac{p_3}{p_1^2}-\frac{p_2^2}{p_1^3}\right)\dd u.\]
-Therefore, $p_2'=\frac{p_3}{p_1^2}-\frac{p_2^2}{p_1^3}$. Continuing this line of reasoning, we obtain the desired change of variables. If we replace the variables $u,\ldots,p_k$ in the initial $k$-th order equation by $\tuple{x',u',\ldots,p'_{k-1}}$
-\[F(u,p_1,\ldots,p_k)=0,\]
-we get the quotient equation of order $k-1$.
+Therefore, $p_2'=\frac{p_3}{p_1^2}-\frac{p_2^2}{p_1^3}$. Continuing this line of reasoning, we obtain the desired change of variables. If we replace the variables $u,\ldots,p_k$ in the initial $k$-th order equation 
+\[F(u,p_1,\ldots,p_k)=0\]
+by $\tuple{x',u',\ldots,p'_{k-1}}$, we get the quotient equation of order $k-1$.
 
 As it was noted above, the restriction $\calC(\calE)$ of the rank $2$ Cartan distribution on $\bbR^{k+2}$ to the hypersurface $\calE$ is of rank $1$ at all points except for a nowhere dense set of singular points where the tangent plane to $\calE$ contains the fiber of $\calC$. Therefore, the distribution $\calC(\calE)$ can be defined by a single vector field. Let us describe explicitly such a field and establish the conditions distinguishing between singular and nonsingular points.
 
@@ -1676,6 +1676,10 @@ is not of the form \eqref{eq 3.2.5 Kras}. Consequently, maximal integral manifol
     \[\left(\frac{\partial S}{\partial q}\right)^2+q^2=C=\const\]
     describing a $1$-dimensional harmonic oscillator. The corresponding locus $\calE:p^2+q^2=C$ is a cylinder in the $(q,u,p)$-space. The Cartan distribution $\calC(\calE)$ is a direction field on this cylinder, described by $\dd u=p\dd q$. Integral curves are generalized solutions of the equation. It is obvious that these curves project to the $q$-axis with degeneration, see Figure~\ref{fig:oscillator}.
 \end{example}
+
+\begin{rem}
+    The rank of the restricted distribution $\calC(\calE)$ can still be higher than $n$. However, if $\calE$ is \emph{regular and fully determined}, i.e., it (locally) uniquely expresses \emph{each} of the $r$-th order derivatives as a function of lower-order ones and of $x$, then $\calC(\calE)$ is of rank $n$, and the local existence (and hence uniqueness) of solutions through every point amounts to the Frobenius (complete) integrability of $\calC(\calE)$. In other words, for regular fully determined equations local existence of solutions is equivalent to Frobenius integrability of $\calC(\calE)$. The cases $\rank \calC(\calE)<n$, $\rank \calC(\calE)=n$, $\rank \calC(\calE)>n$ can be called ``formally underdetermined'', ``formally determined'', and ``formally overdetermined'', with the middle case being the closest to the Frobenius setting. However, even formally determined equations are not necessarily formally integrable. A more careful definition of determined systems will be a major subject of \Chap~\ref{chap: EDSs}.
+\end{rem}
 
 In Theorem~\ref{thm 3.1.1 Kras} we showed that $r$-graphs of sections are integral manifolds of the Cartan distribution. Now we will describe the structure of arbitrary maximal integral manifolds.
 
@@ -2728,24 +2732,24 @@ Sophus Lie observed that virtually all the classical methods for solving specifi
 \end{example}
 
 \begin{thm}[{{\cite[Thm.~6.19]{OlverEquiv}}}]\label{thm 6.19 OlverEquiv}
-    Let $\calE\subset \rmJ^r (\bbR\times\bbR)$ be an order $r$ scalar ODE admitting a regular one-parameter point symmetry group $G$. Then all solutions whose graphs are nowhere tangential to $\frakg$ can be found by quadrature from the solutions of a so called \emph{symmetry reduced equation} of order $r-1$, denoted by $\calE\slash G$.
+    Let $\calE\subset \rmJ^r (\bbR,\bbR)$ be an order $r$ scalar ODE admitting a regular one-parameter point symmetry group $G$. Then all solutions whose graphs are nowhere tangential to $\frakg$ can be found by quadrature from the solutions of a so called \emph{symmetry reduced equation} of order $r-1$, denoted by $\calE\slash G$.
 \end{thm}
 \begin{proof}
-    Let us introduce rectifying coordinates $u=\chi(x,u)$, $v=\psi(x,u)$, in terms of which the infinitesimal generator of $G$ is $X=\partial_v$. If $X$ is not tangent to the graph of a solution $u=f(x)$, then, in terms of the new coordinates, it remains transverse, and therefore will locally coincide with the graph of a smooth function $v=h(y)$. In the new coordinates, the group transformations and their prolongations are simply given by translation $v\mapsto v+\epsilon$. Therefore, the variety $\calE$ is invariant iff it does not depend on the variable $v$, and hence the equation is equivalent to one that does not depend explicitly on $y$ itself  (although it does depend on the derivatives $v_y,v_{yy}$ etc.). Therefore, replacing $v$ by $w=v_y$ reduces the equation to one of order $r-1$ for $w=w(y)$. We recover the original solution by quadrature: $v=\int w(y)\dd y$.
+    Let us introduce rectifying coordinates $y=\chi(x,u)$, $v=\psi(x,u)$, in terms of which the infinitesimal generator of $G$ is $X=\partial_v$. If $X$ is not tangent to the graph of a solution $u=f(x)$, then, in terms of the new coordinates, it remains transverse, and therefore will locally coincide with the graph of a smooth function $v=h(y)$. In the new coordinates, the group transformations and their prolongations are simply given by translation $v\mapsto v+\epsilon$. Therefore, the variety $\calE$ is invariant iff it does not depend on the variable $v$, and hence the equation is equivalent to one that does not depend explicitly on $y$ itself  (although it does depend on the derivatives $v_y,v_{yy}$ etc.). Therefore, replacing $v$ by $w=v_y$ reduces the equation to one of order $r-1$ for $w=w(y)$. We recover the original solution by quadrature: $v=\int w(y)\dd y$.
 \end{proof}
 
 \begin{rem}
     Note that a solution is everywhere tangential iff it is $G$-invariant, so this method will not, in particular, produce invariant solutions. However, in the scalar case, the graph of an invariant function must locally coincide with an orbit of the group, and hence the invariant solutions can be determined by inspection.
 \end{rem}
 
-In particular, a first-order ODE $u_x=f(x,u)$ admitting a one-parameter symmetry group can be solved by quadrature. However, the symmetry must be nontrivial in the sense of Example~\ref{ex first-order ODE}: the trivial symmetries $X\propto \partial_x+f\partial_u$ are everywhere tangential to the solutions. Moreover, the characteristic method for finding the rectifying coordinates of such a vector fields is equivalent to the ODE itself, so the reduction method is of no help. Indeed, the problem of determining the most general symmetry group of a first-order ODE is more complicated than solving the equation itself, so we can only successfully apply Lie's method if we can detect a relatively simple symmetry group.
+In particular, a first-order ODE $u_x=f(x,u)$ admitting a one-parameter symmetry group can be solved by quadrature. However, the symmetry must be nontrivial in the sense of Example~\ref{ex first-order ODE}: the trivial symmetries $X\propto \partial_x+f\partial_u$ are everywhere tangential to the solutions. Moreover, the characteristic method for finding the rectifying coordinates of such a vector field is equivalent to the ODE itself, so the reduction method is of no help. Indeed, the problem of determining the most general symmetry group of a first-order ODE is more complicated than solving the equation itself, so we can only successfully apply Lie's method if we can detect a relatively simple symmetry group.
 
 \begin{example}
     A classical example is provided by the homogeneous equation 
     \[u_x=x^{m-1}\varphi\left(\frac{u}{x^m}\right),\label{eq 6.26 Olver}\]
-    which admits the scaling symmetry $(x,u)\mapsto (\lambda x,\lambda^m u)$ with infinitesimal generator $x\partial_x+mu\partial_u$. For $x\neq 0$, rectifying coordinates are $y=u/x^m$, $v=\ln x$, in terms of which the equation reduces to 
+    which admits the scaling symmetry $(x,u)\mapsto (\lambda x,\lambda^m u)$ with infinitesimal generator $X=x\partial_x+mu\partial_u$. For $x\neq 0$, rectifying coordinates are $y=u/x^m$, $v=\ln x$, in terms of which the equation reduces to 
     \[v_y=\frac{1}{\varphi(y)-my}.\]
-    This can be integrated, $v=h(y)=\int \dd y/(\varphi(y)-my)$, thereby defining $u$ implicitly: $\ln x=h(u/x^m)$. The non-tangentiality condition requires that $u_x\neq mu/x$, meaning that $\varphi(y)\neq my$, and this method breaks down at such singularities. In particular, the scale-invariant function $u=cx^m$, which will be a solution provided $\varphi(c)=mc$, cannot be recovered by this approach, and constitutes a singular solution to the equation.
+    This can be integrated, $v=h(y)=\int \dd y/(\varphi(y)-my)$, thereby defining $u$ implicitly: $\ln x=h(u/x^m)$. The non-tangentiality condition $\restr{X\cdot(u-u(x))}{u=u(x)}\neq 0$ requires that $u_x\neq mu/x$, meaning that $\varphi(y)\neq my$, and this method breaks down at such singularities. In particular, the scale-invariant function $u=cx^m$, which is a solution for any $c$ such that $\varphi(c)=mc$, cannot be recovered by this approach, and constitutes a singular solution to the equation.
 \end{example}
 
 \begin{example}
@@ -2765,10 +2769,10 @@ In particular, a first-order ODE $u_x=f(x,u)$ admitting a one-parameter symmetry
 If a higher-order ODE admits several symmetries, then it may be reducible in order more than once. However, unless the symmetry group has additional structure, we may not be able to make a full reduction since the reduced equations may not inherit the full symmetry group of the original equation.
 
 \begin{thm}[{{\cite[Thm.~6.23]{OlverEquiv}}}]\label{thm 6.23 Olver}
-    Suppose $\calE\subset\rmJ^r(\bbR\times\bbR)$ is an order $r$ ODE admitting a symmetry group $G$. Let $H<G$ be a \gls{ops}. Then $\calE\slash H$ admits as a symmetry group the normalizer $\rmN_G(H)=\{g\in G\mid gHg^{-1}\subset H\}$.
+    Suppose $\calE\subset\rmJ^r(\bbR,\bbR)$ is an order $r$ ODE admitting a symmetry group $G$. Let $H<G$ be a \gls{ops}. Then $\calE\slash H$ admits as a symmetry group the normalizer $\rmN_G(H)=\{g\in G\mid gHg^{-1}\subset H\}$.
 \end{thm}
 \begin{proof}
-    Let $y=\chi(x,u)$, $v=\psi(x,u)$ be the rectifying coordinates for the generator $X=\partial_v$ of $H$. According to Theorem~\ref{thm 6.19 OlverEquiv}, $\calE$ reduces to an order $r-1$ equation for $w=v_y$. Consider an infinitesimal symmetry $Y\in\frakg$ of the original equation, say $Y=\eta(y,v)\partial_y+\zeta(y,v)\partial_v$. Clearly, $Y$ will induce a point symmetry of the reduced equation iff its prolongation $Y^{(1)}=\eta\partial_y+\zeta\partial_v+\zeta^y\partial_{v_y}$ can be reduced to a local vector field $\wh Y=\eta(y,w)\partial_y+\theta(y,w)\partial_w$ depending on just $y$ and $w$. This will happen iff $\eta$ and $\zeta^y$ are independent of $v$. According to the prolongation formula, this occurs iff $\zeta=\alpha(y)+cv$ for $c$ constant. Since $X=\partial_y$, this condition is equivalent to $[X,Y]=cX$. This is precisely the requirement for $Y$ to belong to the Lie algebra of the normalizer of $H$.
+    Let $y=\chi(x,u)$, $v=\psi(x,u)$ be the rectifying coordinates for the generator $X=\partial_v$ of $H$. According to Theorem~\ref{thm 6.19 OlverEquiv}, $\calE$ reduces to an order $r-1$ equation for $w=v_y$. Consider an infinitesimal symmetry $Y\in\frakg$ of the original equation, say $Y=\eta(y,v)\partial_y+\zeta(y,v)\partial_v$. Clearly, $Y$ will induce a point symmetry of the reduced equation iff its prolongation $Y^{(1)}=\eta\partial_y+\zeta\partial_v+\zeta^y\partial_{v_y}$ can be reduced to a local vector field $\wh Y=\eta(y,w)\partial_y+\theta(y,w)\partial_w$ depending on just $y$ and $w$. This will happen iff $\eta$ and $\zeta^y$ are independent of $v$. According to the prolongation formula, this occurs iff $\zeta=\alpha(y)+cv$ for $c$ constant. Since $X=\partial_v$, this condition is equivalent to $[X,Y]=cX$. This is precisely the requirement for $Y$ to belong to the Lie algebra of the normalizer of $H$.
 \end{proof}
 
 \begin{example}
@@ -2816,18 +2820,20 @@ Let $\calE\subset\rmJ^r E$ be an equation with a symmetry (pseudo)group $G$. The
     \calE \arrow[r,hookrightarrow]\arrow[d,"\restr{\mu}{\calE}"] & \rmJ^rE \arrow[d,"\mu"]\\
     \calE'\arrow[r] & \rmJ^rE\slash G.
 \end{tikzcd}\]
-As we will now show, the quotient distribution $\calC'$ is defined on $\calE'$ and almost everywhere it is of the same rank as $\calC$. Let $\calC'_p=\mu_\ast(\calC_{\mu^{-1}(p)})$ for $p\in\rmJ^r E\slash G$. It is a well-defined construction since $\calC$ is $G$-invariant. Besides, vectors tangent to the orbits of $G$ almost everywhere do not belong to $\calC$. In fact, let $p\in\rmJ^rE$ and $\scrO_p$ be the orbit of the point $p$ under the action of $G$. Then the orbit map $G\mapsto \scrO_p$, $g\mapsto g\cdot p$, generates an epimorphism of the corresponding Lie algebra $\frakg$ onto the tangent space $\T_p \scrO_p$. Therefore, any vector $X_p\in\T_p \scrO_p$ is of the form $X_\varphi(p)$, where $\varphi$ is the generating section of an element $X_\varphi\in \frakg$.  Let $X_p\in\calC_p$. This means, in particular, that 
+As we will now show, the quotient distribution $\calC'$ is defined on $\calE'$ and almost everywhere it is of the same rank as $\calC$. Let $\calC'_p=\mu_\ast(\calC_{\mu^{-1}(p)})$ for $p\in\rmJ^r E\slash G$. It is a well-defined construction since $\calC$ is $G$-invariant. Besides, \emph{vectors tangent to the orbits of $G$ almost everywhere do not belong to $\calC$}. In fact, let $p\in\rmJ^rE$ and $\scrO_p$ be the orbit of the point $p$ under the action of $G$. Then any vector $X_p\in\T_p \scrO_p$ is of the form $X_\varphi(p)$, where $\varphi$ is the generating section of an element $X_\varphi\in \frakg$.  Let $X_p\in\calC_p$. This means, in particular, that 
 \[i_{X_\varphi}\left(\dd u^j-\sum_{i=1}^n p^j_i\dd x^i\right)_p=\varphi^j(p)=0.\]
 Therefore, for almost all $p\in \rmJ^rE$, one has $\calC_p\cap \ker\mu_{\ast p}=0$, and consequently $\rank \calC=\rank\calC'$.
 
 Solutions of $\calE$ are maximal integral $n$-dimensional manifolds of $\calC$ and in general they project to $n$-dimensional integral manifolds of $\calC'$ lying inside $\calE'$. It should be stressed that we are not interested in \emph{all} integral manifolds of $\calC'$, but only in those which are images of solutions of $\calE$. Therefore, the desired condition defining in $\calE'$ the integral manifolds of $\calC'$ will be the quotient equation (assuming, of course, that it can be realized, at least locally, as a submanifold of some jet space $\rmJ^{r'}E'$ for some $r'$ and $E'$).
 
-Let $L'\subset\calE'$ be the image of some solution $L$ of the equation $\calE$. Then 
+Let $L'\subset\calE'$ be the image of some solution $L$ of the equation $\calE$. Then its preimage is the orbit
 \[\mu^{-1}(L')=G\cdot L=\bigcup_{g\in G}g\cdot L.\]
-Denote by $i_{L'}$ the immersion $\mu^{-1}(L')\hookrightarrow \rmJ^rE$. Then the restriction of $\calC$ to $\mu^{-1}(L')$ is determined by the Pfaffian contact system $\Contact_{L'}=i^\ast_{L'}\Contact$, where $\Contact=\Ann(\calC)\subset \T^\ast(\rmJ^rE)$ is the contact system determining $\calC$. It is easily seen that the distribution $\Contact_{L'}$ is completely integrable: any $g\cdot L$ is its integral manifold and the union of these manifolds is $\mu^{-1}(L')$. The Frobenius integrability condition $\dd \Contact_{L'}\subset \Contact_{L'}$ (cf.\ Theorem~\ref{thm 4.7.8 RS1}) of the distribution $\Contact_{L'}$ is exactly the condition defining those $L'$ which are the images of solutions of the initial equation under the factorization w.r.t.\ $G$. Thus, precisely these conditions constitute the quotient equation. We have proven the following.
+Denote by $i_{L'}$ the immersion $\mu^{-1}(L')\hookrightarrow \rmJ^rE$. Then the restriction $\calC(\mu^{-1}(L'))$ of $\calC$ to $\mu^{-1}(L')$ is determined by the Pfaffian contact system $\Contact_{L'}=i^\ast_{L'}\Contact$, where $\Contact=\Ann(\calC)\subset \T^\ast(\rmJ^rE)$ is the contact system determining $\calC$. As shown above, the Lie algebra directions almost nowhere overlap with the Cartan distribution, so by restricting to an open subset we can assume \emph{transversality} of the Lie algebra: 
+\[\frakg_p\cap \calC_p(\mu^{-1}(L'))=0\quad \text{for all }p\in \mu^{-1}(L').\] 
+This way, the only directions tangent to $\mu^{-1}(L')$ that Lie in the Cartan distribution are those tangent to one of the translates $g\cdot L$, and so the rank of $\calC(\mu^{-1}(L'))$ must be $n=\dim L=\dim M$. With this assumption, it follows then that the system $\Contact_{L'}$ (or, equivalently, the distribution $\calC(\mu^{-1}(L'))$) is completely integrable: any $g\cdot L$ is its integral manifold (in the Frobenius sense, so $\T(g\cdot L)=\restr{\calC(\mu^{-1}(L'))}{g\cdot L}$, and the union of these manifolds is $\mu^{-1}(L')$. The Frobenius integrability condition $\dd \Contact_{L'}\subset \Contact_{L'}$ (cf.\ Theorem~\ref{thm 4.7.8 RS1}) is exactly the condition picking out those submanifolds $L'<\calE'$ which are the images of solutions of the original equation under the factorization w.r.t.\ $G$. Thus, precisely these conditions constitute the quotient equation. We have proven the following.
 
 \begin{prop}
-    Let $G$ be a group of point symmetries of a differential equation $\calE\subset\rmJ^r E$. Then the \emph{reduced equation} (working locally and assuming smoothness) $\calE'\subset \rmJ^rE\slash G$ is defined as the Frobenius integrability condition $\dd \Contact_{L'}\subset \Contact_{L'}$ on its solutions $L'\subset\calE'$. If $\dim G=s$, then each solution of $\calE'$ corresponds to a $s$-parameter family of solutions of $\calE$ which can be recovered by solving a system of first-order PDEs.
+    Let $G$ be a group of point symmetries of a differential equation $\calE\subset\rmJ^r E$. Then the \emph{reduced equation} (working locally and assuming smoothness) on the quotient space $\calE'\subset \rmJ^rE\slash G$ is defined as the Frobenius integrability condition $\dd \Contact_{L'}\subset \Contact_{L'}$ on its solutions $L'\subset\calE'$, provided that the transversality condition described above is also satisfied (and generically it is). If $\dim G=s$, then each solution of $\calE'$ corresponds to a $s$-parameter family of solutions of $\calE$ which can be recovered by solving a system of first-order PDEs.
 \end{prop}
 
 For concreteness, consider a second-order equation in two independent variables and one dependent variable, where a $2$-dimensional group $G$ acts freely. In other words, $E=\rmJ^2(\bbR^2,\bbR)$ and let $x,y,u,p,q,r,s,t$ be the canonical coordinates. Then $\dim\calE=7$, $\dim \calE\slash G=5$. In the same coordinates, a basis of the contact system defining the Cartan distribution is 
@@ -2978,7 +2984,7 @@ This means that the function $\restr{I}{\graph^r(s)}$ is constant along integral
 
 Note that this leads to complete integrability (solutions are completely described by a set of constants), provided we can find sufficiently many differential invariants. Say, if $\dim E=n+k$ and there is an $n$-dimensional trivial symmetry (so it takes each solution to itself), and we have found $k$ functionally independent scalar differential invariants, then the level sets of this collection of functions provide the solutions.
 
-The starting idea of Cartan's method of equivalence is to reformulate any given equivalence problem in terms of a set of differential $1$-forms. An equivalence is then a diffeomorphism (usually restricted to belong to a particular group) that takes one given set of $1$-forms to another, potentially up to certain additional linear transformations of the set of forms. Clearly, the obvious set of differential forms that should be preserved by any equivalence of differential equations or their solutions is the set of contact forms defining the Cartan distribution. Thus, we begin the next \chap\ by examining equivalence problems for collections of $1$-forms.
+The starting idea of Cartan's method of equivalence is to reformulate any given equivalence problem in terms of a set of differential $1$-forms. An equivalence is then a diffeomorphism (usually restricted to belong to a particular group) that takes one given set of $1$-forms to another, potentially up to certain additional linear transformations of the set of forms. Clearly, the obvious set of differential forms that should be preserved by any equivalence of differential equations or their solutions is the set of contact forms defining the Cartan distribution. Thus, in the next \chap\ we shall examine equivalence problems for collections of $1$-forms.
 
 % \begin{example}[First-order ODE]
 %     Let us illustrate the general method of calculation of scalar differential invariants by the calculation of invariants of linear ODEs of the form 
@@ -3014,8 +3020,8 @@ The remainder of this \chap\ is optional. These \sect s address the formalism of
     \[\calS[s]=\calS_\varOmega[s]\coloneqq \int_\varOmega \left(\rmj^r s\right)^\ast\calL.\label{eq:7.1:OlverEquiv}\]
 \end{defn}
 
-Since we will be concerned only with local aspects of variational aspects, we might as well assume that $\varOmega=M$ is a domain in $\bbR^n$ and $E=M\times\bbR^k$ with coordinates $\bf{x}=(x^1,\ldots,x^n)$ and $\bf{u}=(u^1,\ldots,u^k)$, as usual, generating canonical coordinates $p^i_{j_1\ldots j_r}$ on $\rmJ^r E$. We will denote the fiber variables $p^j_I$, $j=1,\ldots,k$, $0\leq |I|\leq r$, collectively by $\bf{u}^{(r)}$. Then the Lagrangian density, by virtue of being semibasic, can be written in terms of a \emph{Lagrangian function} $L(\bf{x},\bf{u}^{(r)})$ as 
-\[\calL =L(\bf{x},\bf{u}^{(r)})\sfv_{\bf{x}},\quad \sfv_{\bf{x}}\coloneqq\dd x^1\wedge\cdots\wedge\dd x^n.\]
+Since we will be concerned only with local aspects of variational aspects, we might as well assume that $\varOmega=M$ is a domain in $\bbR^n$ and $E=M\times\bbR^k$ with coordinates $\bf{x}=(x^1,\ldots,x^n)$ and $\bf{u}=(u^1,\ldots,u^k)$, as usual, generating canonical coordinates $p^i_{j_1\ldots j_r}$ on $\rmJ^r E$. We will denote the fiber variables $p^j_I$, $j=1,\ldots,k$, $0\leq |I|\leq r$, collectively by $\bf{u}^{(r)}$. Then the Lagrangian density, by virtue of being semibasic, can be written in terms of a \emph{Lagrangian function} $L\left(\bf{x},\bf{u}^{(r)}\right)$ as 
+\[\calL =L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf{x}},\quad \sfv_{\bf{x}}\coloneqq\dd x^1\wedge\cdots\wedge\dd x^n.\]
 The precise space of functions (sections) upon which the functional $\calS$ is to be extremized will depend on any boundary conditions which may be imposed on top of any smoothness requirements. More generally, although beyond our scope, one may also impose additional constraints -- holonomic, non-holonomic, integral, etc. For our local discussion, the precise nature of the boundary conditions will be irrelevant, and we will always restrict our attention to smooth extrema.
 
 \begin{defn}[Euler operator]
@@ -3229,12 +3235,12 @@ Our definition of the Euler operator relies on a choice of coordinates. Since th
     \end{proof}
     Let $g^{(r)}$ denote the $r$-th prolongation of a contact transformation to $\rmJ^r$. Then, according to \eqref{eq:7.19:OlverEquiv},
     \begin{multline}
-        (g^{(2r)})^\ast\left[(\wb{\sfE}(\wb{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}} + \rmD\wb{\varOmega}\right] = (g^{(n)})^\ast\dd(\wb{L}\sfv_{\bar{\bf x}}) = \dd\left\{(g^{(n)})^\ast\left[\wb{L}\sfv_{\bf x}\right]\right\}\\
+        \left(g^{(2r)}\right)^\ast\left[(\wb{\sfE}(\wb{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}} + \rmD\wb{\varOmega}\right] = \left(g^{(n)}\right)^\ast\dd(\wb{L}\sfv_{\bar{\bf x}}) = \dd\left\{\left(g^{(n)}\right)^\ast\left[\wb{L}\sfv_{\bf x}\right]\right\}\\
         = \dd[L\sfv_{\bf{x}} + \varTheta] = (\sfE(L)\cdot\theta) \wedge \sfv_{\bf{x}} + \rmD\varOmega + \dd\varTheta,
     \end{multline}
     where $\wb{\varOmega}$ and $\varOmega$ are $n$-forms, and $\varTheta$ is a contact form. Lemma~\ref{lem 7.15 OlverEquiv} and the invariance of the total differential imply that
     \[
-    (g^{(2r)})^\ast\left[(\wb{\sfE}(\bar{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}}\right] = (\sfE(L)\cdot\theta) \wedge \sfv_{\bf{x}} + \rmD\wh{\varOmega} + \varUpsilon,
+    \left(g^{(2r)}\right)^\ast\left[(\wb{\sfE}(\bar{L})\cdot\wb{\theta}) \wedge \sfv_{\bf{x}}\right] = (\sfE(L)\cdot\theta) \wedge \sfv_{\bf{x}} + \rmD\wh{\varOmega} + \varUpsilon,
     \]
     where $\varUpsilon$ is a quadratic contact form. The local coordinate formula for the behavior of the Euler-Lagrange expressions under the change of variables follows immediately from the formulas in Exercise~\ref{xca 4.31 OlverEquiv}, showing how the contact forms behave under a contact transformation. The remaining details are left to the reader.
 \end{proof}
@@ -3287,8 +3293,8 @@ Maps that preserve variational problems serve to define variational symmetries. 
     \[\int_\varOmega L\left(\bf{x},f^{(r)}(\bf{x})\right)\sfv_{\bf x}=\int_{\wb\varOmega}L\left(\bar{\bf x},\wb f^{(r)}\left(\bar{\bf x}\right)\right)\sfv_{\bar{\bf x}}.\label{eq:7.30:OlverEquiv}\]
 \end{defn}
 
-In other words, a variational symmetry is merely a standard self-equivalence of a functional. Setting $\wb L=L$ in the equivalence condition \eqref{eq:7.19:OlverEquiv}. we see that a transformation group $G$ is a variational symmetry group iff the Lagrangian form $L\left(\bf{x}.\bf{u}^{(r)}\right)\sfv_{\bf x}$ is a contact-invariant $n$-form, so 
-\[\left(g^{(r)}\right)^\ast\left[L\left(\bar{\bf x}.\bar{\bf u}^{(r)}\right)\sfv_{\bar{\bf x}}\right]=L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf{x}}+\varTheta,\quad g\in G,\label{eq:7.31:OlverEquiv}\]
+In other words, a variational symmetry is merely a standard self-equivalence of a functional. Setting $\wb L=L$ in the equivalence condition \eqref{eq:7.19:OlverEquiv}. we see that a transformation group $G$ is a variational symmetry group iff the Lagrangian form $L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf x}$ is a contact-invariant $n$-form, so 
+\[\left(g^{(r)}\right)^\ast\left[L\left(\bar{\bf x},\bar{\bf u}^{(r)}\right)\sfv_{\bar{\bf x}}\right]=L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf{x}}+\varTheta,\quad g\in G,\label{eq:7.31:OlverEquiv}\]
 for some contact form $\varTheta=\varTheta_g$, possibly depending on $g$. In particular, if the group transformation $g$ is fiber-preserving, then $\varTheta=0$, and the Lagrangian form is strictly invariant. In local coordinates, the contact invariants condition \eqref{eq:7.31:OlverEquiv} takes the form 
 \[L\left(\bf{x},\bf{u}^{(r)}\right)=L\left(\bar{\bf x},\bar{\bf u}^{(r)}\right)\det J,\quad \text{when}\quad \left(\bar{\bf x},\bar{\bf u}^{(r)}\right)=g^{(r)}\cdot \left(\bf{x},\bf{u}^{(r)}\right),\]
 where $J=(D_i\chi^j)$ is the total Jacobian matrix, cf.\ \eqref{eq:7.20:OlverEquiv}. 
@@ -3329,7 +3335,7 @@ where $\Div X_{\bf x}=D_1X_{\bf x}^1+\cdots+D_nX_{\bf x}^n$ denotes the total di
     \[J_g^{\alpha\beta}\left(\bf{x},\bf{u}^{(1)}\right)=D_\alpha \varXi^\beta_g\left(\bf{x},\bf{u}^{(1)}\right).\]
     Since this is required to hold for all subdomains $\varOmega$ and all functions $u=\bf{f}(\bf{x})$, the integrands must agree pointwise:
     \[L\left(g^{(r)}\cdot\left(\bf{x},\bf{u}^{(r)}\right)\right)\det J_g\left(\bf{x},\bf{u}^{(1)}\right)=L\left(\bf{x},\bf{u}^{(1)}\right)\label{eq:4.16:Olver}\]
-    for all $(\bf{x},\bf{u}^{(r)})\in \rmJ^r E$. To obtain the infinitesimal version of this formula, we set $g=g_\epsilon=\rme^{\epsilon X}$ and differentiate w.r.t.\ $\epsilon$. We need the formula 
+    for all $\left(\bf{x},\bf{u}^{(r)}\right)\in \rmJ^r E$. To obtain the infinitesimal version of this formula, we set $g=g_\epsilon=\rme^{\epsilon X}$ and differentiate w.r.t.\ $\epsilon$. We need the formula 
     \[\frac{\dd}{\dd\epsilon}\det J_{g_\epsilon}\left(\bf{x},\bf{u}^{(1)}\right)=\Div X_{\bf x}\left(g_\epsilon^{(1)}\cdot \left(\bf{x},\bf{u}^{(1)}\right)\right)\det J_{g_\epsilon}\left(\bf{x},\bf{u}^{(1)}\right)\label{eq:4.17:Olver}\]
     expressing the fact that the divergence of a vector field measures the rate of change of volume under the induced flow. Indeed, if we replace $\bf{u}$ by a function $\bf{f}(\bf{x})$, then \eqref{eq:4.17:Olver} reduces to the identity defining the divergence for the reduced vector field $X_{\bf x}=\sum_{i=1}^n X_m^i(\bf{x},\bf{f}(\bf{x}))\partial/\partial x^i$.
 
@@ -3509,7 +3515,7 @@ The following is a more general version of Noether's Theorem, which is most fami
 \begin{thm}[E.~Noether (1918) {{\cite[Thm.~4.29]{Olver}}}]\label{thm 4.29 Olver}
     Suppose $G$ is a (local) one-parameter group of symmetries of the variational problem $\calS[u]=\int L\left(\bf{x},\bf{u}^{(r)}\right)\sfv_{\bf x}$. Let 
     \[X=\sum_{i=1}^n a^i(\bf{x},\bf{u})\frac{\partial }{\partial x^i}+\sum_{j=1}^k b_j(\bf{x},\bf{u})\frac{\partial }{\partial u^j}\]
-    be the infinitesimal generator of $G$, and 
+    be the infinitesimal first-order generator of $G$, and 
     \[Q_j(\bf{x},\bf{u})=b_j-\sum_{i=1}^n a^ip^j_i,\quad j=1,\ldots,k,\]
     the generating function of $X$. Then $\bf{Q}=(\tuple{Q_1,\ldots,Q_k})$ is also the generating function of a conservation law for the Euler-Lagrange equations $\sfE(L)=0$; in other words, there is an $n$-tuple $\bf{P}\left(\bf{x},\bf{u}^{(r)}\right)=(\tuple{P_1,\ldots,P_n})$ such that 
     \[\Div \bf{P}=\bf{Q}\cdot\sfE(L)=\sum_{j=1}^k Q_j\sfE_j(L)\]
@@ -3533,11 +3539,11 @@ The following is a more general version of Noether's Theorem, which is most fami
 
 \section{Cartan form}
 
-As we have seen, if we restrict our attention to fiber-preserving transformation groups, then the Lagrangian density associated with an invariant variational problem defines an invariant differential form on the jet space. This result does not extend to more general point or contact transformation groups owing to the presence of contact forms in the general change of variables formula \eqref{eq:7.19:OlverEquiv}. We now describe, in the simplest case of a first order Lagrangian in one independent variable and one dependent variable, an important modification of the Lagrangian density that does remain invariant under general point transformations. This $1$-form, commonly known as the Cartan form, plays a significant role in the geometric theory of the calculus of variations, including the connection between symmetries and conservation laws. Hilbert's invariant integral, which is of central importance in the classical field theory governing the existence of extrema, is found by integrating the Cartan form along a solution to the Euler-Lagrange equation. The utility of the Cartan form was emphasized by Cartan, and Goldschmidt and Sternberg.
+As we have seen, if we restrict our attention to fiber-preserving transformation groups, then the Lagrangian density associated with an invariant variational problem defines an invariant differential form on the jet space. This result does not extend to more general point or contact transformation groups owing to the presence of contact forms in the general change of variables formula \eqref{eq:7.19:OlverEquiv}. We now describe, in the simplest case of a first order Lagrangian in one independent variable and one dependent variable, an important modification of the Lagrangian density that does remain invariant under general point transformations. This $1$-form, commonly known as the Cartan form, plays a significant role in the geometric theory of the calculus of variations, including the connection between symmetries and conservation laws. Hilbert's invariant integral, which is of central importance in the classical field theory governing the existence of extrema, is found by integrating the Cartan form along a solution to the Euler-Lagrange equation. The utility of the Cartan form was emphasized by Cartan, as well as Goldschmidt and Sternberg.
 
 \begin{defn}
     Let $L(x,u,p)$ be a first-order Lagrangian in one independent variable and one dependent variable. The Cartan form associated with $L$ is the $1$-form 
-    \[\eta_L\coloneqq L\dd x+\frac{\partial L}{\partial L}\theta=L\dd x+\frac{\partial L}{\partial p}(\dd u-p\dd x).\label{eq:7.43:OlverEquiv}\]
+    \[\eta_L\coloneqq L\dd x+\frac{\partial L}{\partial p}\theta=L\dd x+\frac{\partial L}{\partial p}(\dd u-p\dd x).\label{eq:7.43:OlverEquiv}\]
 \end{defn}
 
 \begin{thm}
