@@ -3299,7 +3299,7 @@ Tensor bundles are not the only ``natural bundles'', i.e., bundles whose structu
 
 
 \begin{defn}[Divergence of a vector field]\index{Divergence}
-    Let $\sfv$ be a volume form on $M$ and $X\in \fX(M)$. The divergence of $X$ w.r.t.\ $\sfv$ is defined by the equality
+    Let $\sfv$ be a volume form on $M$ and $X\in \fX(M)$. The divergence of $X$ w.r.t.\ $\sfv$ is the function $\div_\sfv X\in C^\infty(M)$ defined by the equality
     \[\Lie_X\sfv =(\div_{\sfv} X)\cdot \sfv.\label{eq def divergence}\]
     $X$ is called \emph{incompressible}, or \emph{volume-preserving}, if $\div_\sfv X=0$ (or if $(\Fl^X_\lambda)^\ast\sfv=\sfv$ where $\Fl^X$ is the flow of $X$).
 \end{defn}
@@ -3645,13 +3645,13 @@ Also, by $\<\theta_1,\ldots,\theta_k\>$ we will mean, as usual, the span of thes
     \<\theta^1,\theta^2\>_{\mathrm{alg}}&=\{\alpha\wedge\theta^1+\beta\wedge\theta^2\mid \alpha,\beta\in\Omega^{\smbullet }(M)\}=\Omega^{\smbullet}(M)\wedge\<\theta^1,\theta^2\>,\\
     \<\theta^1,\theta^2\>_{\mathrm{diff}}&=\{\alpha\wedge\theta^1+\beta\wedge\theta^2+\gamma\wedge\dd\theta^1+\delta\wedge\dd\theta^2\mid \alpha,\beta,\gamma,\delta\in\Omega^{\smbullet }(M)\}.
 \end{align}
-Note that both of these sets are algebraic ideals of $\Omega^{\smbullet }(M)$ but only the latter one is guaranteed to be closed under the action of $\dd$. 
+Note that both of these sets are algebraic ideals of $\Omega^{\smbullet }(M)$ but only the latter one is guaranteed to be closed under the action of $\dd$. All of these spans can also be thought of as subbundles. 
 
 \begin{defn}[Exterior differential system]\index{Exterior differential system}
     Given a differential algebra $(A,\dd)$, an (algebraic) ideal $J\subset A$ is called a \emph{differential ideal} if $\dd J\subset J$.\index{Differential ideal}
     A differential ideal $\calJ$ of $\Omega^{\smbullet }(M)$ is called an \gls{eds} on $M$. An \emph{integral manifold} of $\calJ$ is an immersed submanifold $i:S\hookrightarrow M$ such that $i^\ast\alpha=0$ for all $\alpha\in \calJ$. 
 
-    An \gls{eds} with an \emph{independence condition} on $M$ is a pair $(\calJ,\omega)$ where $\calJ$ is an \gls{eds} on $M$ and an $n$-form $\omega\in\Omega^n (M)$ which is \emph{decomposable} as a wedge-product of $n$ $1$-forms $\mod \calJ^n$, and is pointwise not an element of $\calJ$. Integral manifolds of $(\calJ,\omega)$ are integral $n$-manifolds of $\calJ$ such that $i^\ast \omega$ is nowhere-vanishing (i.e., a volume form). By an abuse of notation, we sometimes describe this problem as ``$\theta=0,\theta\in \calJ$, and $\omega\neq 0$''.
+    An \gls{eds} with an \emph{independence condition} on $M$ is a pair $(\calJ,\omega)$ where $\calJ$ is an \gls{eds} on $M$ and an $n$-form $\omega\in\Omega^n (M)$ which is \emph{decomposable} as a wedge-product of $n$ $1$-forms $\mod \calJ^n$, and is pointwise not an element of $\calJ$. Integral manifolds of $(\calJ,\omega)$ are integral $n$-manifolds of $\calJ$ such that $i^\ast \omega$ is nowhere-vanishing (i.e., a volume form). By an abuse of notation, we sometimes describe this problem as ``$\theta=0$, $\theta\in \calJ$, and $\omega\neq 0$''.
 \end{defn}
 
 Now, we are going to derive Frobenius' integrability criterion for regular Pfaffian systems in the general case. For a Pfaffian system $\Delta$, let $\Omega^{\smbullet }_\Delta(M)$ denote the subspace of $\Omega^{\smbullet }(M)$ spanned by the forms $\alpha\in\Omega^r(M)$, $r\geq 1$, which satisfy $\alpha_m(X_1,\ldots,X_r)=0$ for all $X_1,\ldots,X_r\in \Delta^0_m$ and $m\in M$. $\Omega^{\smbullet }_\Delta(M)$ is an algebraic ideal in the exterior algebra $\Omega^{\smbullet }(M)$.
