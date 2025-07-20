@@ -1677,7 +1677,7 @@ Dynkin's formula shows why certain classes of Lie algebras are particularly spec
 
 \begin{rem}[Nilpotent Lie algebras]\label{rem nilpotent Lie alg}
     A Lie algebra is called \emph{nilpotent}\index{Nilpotent!Lie algebra}\index{Nilpotent!Lie group} if there exists an $n\in\bbN$ such that $\ad_{A_1}\ad_{A_2}\cdots \ad_{A_n}=0$ for any sequence $A_1,\ldots,A_n\in\frakg$. In other words, the so called \emph{lower central series} of subalgebras \index{Central series}
-    \[\frakg>[\frakg,\frakg]>[\frakg,[\frakg,\frakg]]>[\frakg,[\frakg,[\frakg]]]>\cdots\]
+    \[\frakg>[\frakg,\frakg]>[\frakg,[\frakg,\frakg]]>[\frakg,[\frakg,[\frakg,\frakg]]]>\cdots\]
     terminates in zero at some point. A fundamental theorem of Engel\index{Theorem!Engel} states that a finite-dimensional Lie algebra is nilpotent iff each adjoint operator is nilpotent, i.e., $\ad_A^n=0$ for all $A$. A Lie group $G$ is called nilpotent if $\Adg_{g_1}\cdots \Adg_{g_n}g=e$ for all $g_1\ldots,g_n,g\in G$. Assuming $G$  is connected, this is equivalent to its Lie algebra being nilpotent. 
     
     Crucially, the proof of the invertibility of $\exp$ above relied on the fact that the exponential map in matrix groups coincides with the matrix exponential, allowing us to explicitly write down its inverse. For general nilpotent Lie algebras, $\exp$ is not invertible. The above corollary is then a special case of a general statement that the exponential map is a universal covering map for any \emph{nilpotent} Lie algebra, and thus any connected nilpotent Lie group is diffeomorphic to a quotient of a vector space by a lattice.  \emph{Unipotent linear groups}\index{Unipotent group} are a special class of nilpotent groups defined as matrix groups consisting of unipotent matrices, and we have just proven that all unipotent groups $G$ are diffeomorphic to a vector space, and the exponential map identifies the Lie group structure with $(\frakg,\mu)$, where $\mu$ is the product defined via the \gls{bch} formula.
@@ -2142,9 +2142,9 @@ So far to prove the uniqueness of analytic structures on Lie groups we only had 
     \[\lim_{n\to\infty} t_n \ln h_n=A\;\text{ in }\;\frakg.\]
     We first show that there is a neighborhood $U\subset \frakh$ of $0\in\frakh$ such that $\exp(U)\subset H_0$. By continuity of $\exp$ at $0$, there is an $\delta>0$ such that $\rme^A\in V$ whenever $|A|<\delta$. Choose $0<\epsilon<\delta$ and select $A\in U=\{A\in\frakh\mid |A|\leq \epsilon\}$. Let $h_n,t_n$ be as above. Since $\lim_n \ln h_n=0$, we get $(t_n-\lfloor t_n\rfloor)\ln h_n\to 0$; so $\lfloor t_n\rfloor \ln h_n\to A$. If $0\leq k\leq \lfloor t_n\rfloor -1$, then:
     \begin{multline}
-        |k\ln h_n|=\frac{k}{\lfloor t_n\rfloor}|\lfloor t_n\rfloor \ln h_n|\leq 
-    \frac{k}{\lfloor t_n\rfloor}(|A|+|\lfloor t_n\rfloor \ln h_n-A|)\leq \\
-    \leq \epsilon+|\lfloor t_n\rfloor \ln h_n-A|<\delta,
+        \left|k\ln h_n\right|=\frac{k}{\lfloor t_n\rfloor}|\lfloor t_n\rfloor \ln h_n|\leq 
+    \frac{k}{\lfloor t_n\rfloor}\left(|A|+\left|\lfloor t_n\rfloor \ln h_n-A\right|\right)\leq \\
+    \leq \epsilon+\left|\lfloor t_n\rfloor \ln h_n-A\right|<\delta,
     \end{multline}
     for sufficiently large $n$. So $h_n^k=\exp(k\ln h_n)\in V$, for $0\leq k\leq \lfloor t_n\rfloor -1$; but now $h_n\in H_0\cap V$ yields that $h_n^{\lfloor t_n\rfloor}\in H_0$ because of the assumptions. Using the continuity of $\exp$, we get that
     \[\exp A=\lim_{n\to \infty}\exp\left(\lfloor t_n\rfloor \ln h_n\right)=\lim_{n\to\infty} h_n^{\lfloor t_n\rfloor},\]
@@ -2979,7 +2979,7 @@ As a consequence of the Orbit Theorem and since, by Theorem~\ref{thm 5.33 Lee}, 
     \[\dim M_N\slash \Or_n=Nn-\dim \Or_n=\frac12\left[(2N+1)n-n^2\right],\quad N\geq n.\]
     As shown by Hermann Weyl in \cite{Weyl}, an overcomplete set of invariants is given by the components of the Gram matrix $\{\bf{x}_i\cdot\bf{x}_j\}_{i,j}$. Due to this, the orbit space $M_N\slash \Or_n$ is connected. Note that actually finding a minimal set of invariants is quite difficult: the Gram matrix is highly constrained by the fact that all of its $(n+1)\times (n+1)$ minors must have zero determinant (because any $n+1$ vectors in $\bbR^n$ are linearly dependent). 
 
-    When the orbit space consists of many connected components, there is an additional nonlocal invariant given by the label of the component. For instance, the orbit space $M_N\slash \SO_n$, in addition to the Gram matrix and its functions, allows extra $\SO_n$-invariants that depend on (the signs of) the $n\times n$ determinants composed of $n$-tuples of vectors $(\bf{x}_{i_1},\ldots,\bf{x}_{i_n})$, $i_1,\ldots,i_n\in \{1,\ldots,N\}$. These signs are not all independent: the true number of connected components of $M_N\slash \SO_n$ grows only factorially with $N$. This nonlocal invariant distinguishes orbits by \emph{parity}, i.e., orbits that are mapped to each other under any fixed reflection of $\bbR^n$, say $P=\diag(1,1,\ldots,1,-1)\in\Or_n$, which is not an element of $\SO_n$. 
+    When the orbit space consists of many connected components, there is an additional nonlocal invariant given by the label of the component. For instance, the orbit space $M_N\slash \SO_n$, in addition to the Gram matrix and its functions, allows extra $\SO_n$-invariants that depend on (the signs of) the $n\times n$ determinants composed of $n$-tuples of vectors $(\bf{x}_{i_1},\ldots,\bf{x}_{i_n})$, $i_1,\ldots,i_n\in \{1,\ldots,N\}$. These signs are not all independent: the true number of connected components of $M_N\slash \SO_n$ grows only linearly with $N$. This nonlocal invariant distinguishes orbits by \emph{parity}, i.e., orbits that are mapped to each other under any fixed reflection of $\bbR^n$, say $P=\diag(1,1,\ldots,1,-1)\in\Or_n$, which is not an element of $\SO_n$. 
     
     Similar overcomplete sets of invariants for many classical groups acting in the standard way on $(\bbR^n)^N$ or $(\bbC^n)^N$ were originally computed in \cite{Weyl}. Minimal sets of (global) invariants are, in most cases, unknown to this day.
 
