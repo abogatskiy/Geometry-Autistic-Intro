@@ -124,8 +124,8 @@ The following fundamental theorem gives us a useful sufficient condition for a m
 So far we have only given a purely topological (or geometric in the smooth case) description of \glspl{fb}. The fascinating thing about \glspl{fb}, however, is that the requirement of local triviality gives rise to an alternative \emph{algebraic} description of \glspl{fb}, which will eventually lead us into the realm of cohomology. A similar, albeit more cumbersome, description appears for general topological fibrations as well. We now characterize smooth \glspl{fb} in terms of their systems of local trivializations and identify their transition maps with certain Lie group actions. Note that everything here easily translates to the category of topological \glspl{fb} as well.
 
 
-\begin{defn}[Bundle atlas]\label{def G-bundle}\index{Atlas!Bundle}
-    Let $E\overset{\pi}{\to}M$ be a smooth \gls{fb} with typical fiber $F$, and let $\{U_\alpha\}_\alpha$ be an open covering of $M$ such that the restrictions $\restr{E}{U_\alpha}$ are trivial. By definition of local triviality, we have some diffeomorphisms $\chi_\alpha: \restr{E}{U_\alpha}\to U_\alpha\times F$, called \emph{local trivializations}. Then:
+\begin{defn}[Bundle atlas]\label{def G-bundle}\index{Atlas!Bundle}\index{Bundle!atlas}\index{Bundle!chart}\index{Bundle!structure}\index{Transition functions}
+    Let $E\overset{\pi}{\to}M$ be a smooth \gls{fb} with typical fiber $F$, and let $\{U_\alpha\}_\alpha$ be an open covering of $M$ such that the restrictions $\restr{E}{U_\alpha}$ are trivial. By definition of local triviality, we have some diffeomorphisms $\chi_\alpha: \restr{E}{U_\alpha}\to U_\alpha\times F$, called \emph{local trivializations} or \emph{bundle charts}. Then:
 \begin{enumerate}
     \item The collection $\{(U_\alpha,\chi_\alpha)\}$ is called a \emph{\gls{fb} atlas} for $E\overset{\pi}{\to}M$. Two bundle atlases are \emph{equivalent} if their union is still a bundle atlas. A \emph{bundle structure} on $E$ is an equivalence class of bundle atlases, or, alternatively, a \emph{maximal atlas} given by the union of all atlases belonging to an equivalence class.
     \item For any point $(m,f)\in U_{\alpha\beta}\times F$, the transition maps in this atlas have the form \[\chi_\beta\circ\chi_\alpha^{-1} (m,f)=(m, t_{\beta\alpha}(m,f)),\label{eq transition functions}\]
@@ -135,7 +135,7 @@ So far we have only given a purely topological (or geometric in the smooth case)
 \end{defn}
 
 \begin{defn}[$G$-structure]
-    If the bundle structure of $E$ contains a bundle atlas whose transition functions take values in a Lie subgroup $G<\Diff(F)$,\footnote{We will formalize the concept of Lie subgroups in \S\ref{sec: Lie theory iii}. For now all we need to know is that Lie subgroups are weakly embedded, which means that restricting a smooth map into $\Diff(F)$ whose image lies in $G<\Diff(F)$ in its range produces a smooth map into $G$. In fact, all subgroups of a Lie group are Lie subgroups.} then such an atlas is called a \emph{$G$-atlas} for $E$. Two $G$-atlases are called \emph{$G$-equivalent} if their union is still a $G$-atlas. A $G$-equivalence class of $G$-atlases, or, alternatively, the maximal $G$-atlas equal to their union, is called a \emph{$G$-structure}, denoted $\calG$.\index{$G$-structure} If a $G$-structure is fixed on $E$, we say that $G$ is the \emph{structure group} of the bundle. \index{Structure group} The tuple $(E\overset{\pi}{\to}M,G\acts F,\calG)$ is called a \emph{$G$-bundle}.\index{$G$-bundle}
+    If the bundle structure of $E$ contains a bundle atlas whose transition functions take values in a Lie subgroup $G<\Diff(F)$,\footnote{We will formalize the concept of Lie subgroups in \S\ref{sec: Lie theory iii}. For now all we need to know is that finite-dimensional Lie subgroups $G$ of any (even infinite-dimensional) Lie group are weakly embedded, which means that restricting a smooth map into $\Diff(F)$ whose image lies in $G<\Diff(F)$ in its range produces a smooth map into $G$.} then such an atlas is called a \emph{$G$-atlas} for $E$. Two $G$-atlases are called \emph{$G$-equivalent} if their union is still a $G$-atlas. A $G$-equivalence class of $G$-atlases, or, alternatively, the maximal $G$-atlas equal to their union, is called a \emph{$G$-structure}, denoted $\calG$.\index{$G$-structure} If a $G$-structure is fixed on $E$, we say that $G$ is the \emph{structure group} of the bundle. \index{Structure group} The tuple $(E\overset{\pi}{\to}M,G\acts F,\calG)$ is called a \emph{$G$-bundle}.\index{$G$-bundle}
     
     If $H<G$ is a Lie subgroup and a given $G$-structure on $E$ contains an $H$-atlas, then a choice of an $H$-structure (which is a subset of the given $G$-structure) is called a \emph{reduction of the structure group}, or simply a \emph{bundle reduction}\index{Bundle reduction} from $G$ to $H$.
 \end{defn}    
@@ -339,10 +339,12 @@ Then every $\hat{h}_{\alpha a}:U_{\alpha a}\times F\to F'$ can be used to define
 It is easy to see that this map is $G\times G'$-equivariant (with $G\times G'$ acting on itself from the left). Moreover, every fiberwise $G\times G'$-equivariant map arises this way ($\hat{h}_{\alpha a}$ can be recovered by substituting $g=g'=e$), although the correspondence of course is not bijective.\footnote{Note how the fact that $\varPhi_{\alpha a}$ are defined on sets of the form $U_{\alpha a}\times (G\times G')$ hints that they themselves represent a function defined globally on some \gls{fb} with typical fiber $G\times G'$. We will return to this in our discussion of principal bundles.} The transformation rule \eqref{eq transformation of hab} now becomes
 \[\boxed{\varPhi_{\beta b}(m,g,g')=\varPhi_{\alpha a}\left(m,gt_{\beta\alpha}(m),g't_{ba}'(\underline{h}(m))\right).}\label{eq transformation of Phiab}\]
 We would like to put some restriction on the values of these maps in $C^\infty(F,F')$ that produces a well-defined class of bundle morphisms $h$ which can be interpreted as ``respecting'' the given $G$- and $G'$-structures. This can be easily done by analogy with how we interpreted the structure of a $G$-fiber:
-\begin{gather}
-    \text{All maps }\{\varPhi_{\alpha a}\}_{\alpha\in A,a\in A'}\text{, at fixed }m\text{, should be required to take values}\\
-    \text{in a single orbit of the }G\times G'\text{-action on }C^\infty(F,F').
-\end{gather}
+\begin{equation*}
+    \begin{gathered}
+        \text{All maps }\{\varPhi_{\alpha a}\}_{\alpha\in A,a\in A'}\text{, at fixed }m\text{, should be required to take values}\\
+        \text{in a single orbit of the }G\times G'\text{-action on }C^\infty(F,F').
+    \end{gathered}
+\end{equation*}
 This is a well-defined constraint because, due to the equivariance of $\varPhi_{\alpha a}$, the transformation law \eqref{eq transformation of Phiab} implies that the fiber above $m$ gets mapped to the same orbit regardless of the values of the indices $\alpha,a$.
 
 \begin{defn}[Category ${\calS \mFB}^\infty$]\label{def S-bundle}
@@ -413,7 +415,7 @@ Given two bundle atlases over $M$, we can always take all possible pairwise inte
 This correspondence can actually be restated as an equivalence of the category $\FB^\sigma$ and a certain category of cocycles, see \cite{Vakar}.
 
 \begin{rem}\label{rem: faithfulness of action on F}
-    Faithfulness of the action is crucial here. As we noted in Remark~\ref{rem: faithful action on F 0}, any structure group defined as a subgroup of $\Diff(F)$ acts on $F$ faithfully. We can see the importance of this property when reconstructing a bundle from a cocycle acting on a model fiber. If, for example, $F$ is a single point, then every group action on $F$ is trivial and there is only one \gls{fb} over $M$ with fiber $F$ regardless of the structure group $G$, whereas there are still many non-equivalent $G$-valued cocycles on $M$. Therefore, faithfulness is needed so that the cocycle is well-defined in this sense. In the future we will run into important situations where, for instance, $F$ is a finite-dimensional vector space with an action of a nonlinear group $G$ (namely a spin group), so that this action cannot be faithful, and thus the correspondence with (classes of) cocycles will not be one-to-one.
+    Faithfulness of the action is crucial here. As we noted in Remark~\ref{rem: faithful action on F 0}, any structure group defined as a subgroup of $\Diff(F)$ acts on $F$ faithfully. We can see the importance of this property when reconstructing a bundle from a cocycle acting on a model fiber. If, for example, $F$ is a single point, then every group action on $F$ is trivial and there is only one \gls{fb} over $M$ with fiber $F$ regardless of the structure group $G$, whereas there are still many non-equivalent $G$-valued cocycles on $M$. Therefore, faithfulness is needed so that the cocycle is well-defined in this sense. In the future we will run into important situations where, for instance, $F$ is a finite-dimensional vector space with an action of a nonlinear group $G$ (namely some spin groups), so that this action cannot be faithful, and thus the correspondence with (classes of) cocycles will not be one-to-one. In such cases, the concept of $G$-structure is still useful but more subtle.
 \end{rem}
 
 
@@ -714,11 +716,13 @@ We've established that \glspl{fb} are, roughly speaking, classified by homotopy-
 
 
 The above corollary shows the importance of the computation of homotopy groups of at least the classical Lie groups. Interestingly, many of these groups can be computed \emph{using} certain \glspl{fb}. We will begin to do this in \S\ref{sec: flag manifolds}.
-\[\boxed{\begin{array}{c}
-    \text{Our ultimate goal for Part \ref{Part III} will be to extend \eqref{FB(G) and homotopy(G)}}\\
-    \text{to arbitrary base manifolds using the theory of characteristic classes.}
-\end{array}}
-\] 
+\begin{equation*}
+    \boxed{\begin{array}{c}
+        \text{Our ultimate goal for Part \ref{Part III} will be to extend \eqref{FB(G) and homotopy(G)}}\\
+        \text{to arbitrary base manifolds using the theory of characteristic classes.}
+    \end{array}}
+\end{equation*}
+
 
 
 \begin{example}[Vector bundles over $\bbS^1$]
@@ -1045,8 +1049,8 @@ The following is an exercise.
 
 
 
-\begin{example}[Tautological bundles of Grassmannians]\index{Grassmannian}\index{Tautological bundle}\index{Grassmannian}
-    Let $V$ be a topological vector space and define its Grassmannian $\Gr_k(V)$ as the topological space whose points are the $k$-dimensional vector subspaces of $V$. It can be constructed as the quotient of the subset of the direct product $V^{\times k}$ consisting of $k$-tuples of linearly independent elements of $V$ (i.e., $k$-frames in $V$) by the action of $\GL_k$ on it, as we will see in \S\ref{sec: flag manifolds}.
+\begin{example}[Tautological bundles of Grassmannians]\index{Grassmannian (space)}\index{Tautological bundle}
+    Let $V$ be a topological vector space and define its \emph{Grassmannian} $\Gr_k(V)$ as the topological space whose points are the $k$-dimensional vector subspaces of $V$. It can be constructed as the quotient of the subset of the direct product $V^{\times k}$ consisting of $k$-tuples of linearly independent elements of $V$ (i.e., $k$-frames in $V$) by the action of $\GL_k$ on it, as we will see in \S\ref{sec: flag manifolds}.
     
     In the case $k=1$ we get the projective space of $V$. When $V=\bbK^n$ for some field $\bbK$, we have the homeomorphisms $\KP^{n-1}\cong \Gr_1(\bbK^n)$.
     
@@ -1722,7 +1726,7 @@ For each $p\in N$, the restriction of $F$ to $\{p\}\times D$ is the composition 
 \begin{proof}
     Embed a neighborhood $U\subset E$ of the zero section of $E$ into $\bbR^n$ by Whitney embedding. Let $\tau_U$ and $\nu_U$ be the tangent and the normal bundles of $U\subset \bbR^n$, respectively. Then $\tau_U\oplus \nu_U$ is trivial over $U$.
     
-    Vectors along the fibers of $E$ become tangent vectors to $U$ with nonzero projections onto $(\T_x M)^\perp\subset \T_x U$. This projection provides an isomorphism $E\cong N_U M\subset TU$ (by $N_U M$ we mean the normal bundle of $M$ as a manifold embedded into $U\subset \bbR^n$, not straight into $\bbR^n$). But $N_U M\oplus (\restr{\nu_U}{M})\cong \nu_M$ (where $\nu_M$ is the normal bundle of $M$ taken in $\bbR^n$). Therefore, $N_U M\oplus (\restr{\nu_U}{M})\oplus \tau_M\cong \nu_M\oplus \tau_M $, which is trivial! We can take $E'=\restr{\nu_U}{M}\oplus \tau_M$.
+    Vectors along the fibers of $E$ become tangent vectors to $U$ with nonzero projections onto $(\T_x M)^\perp\subset \T_x U$. This projection provides an isomorphism $E\cong \rmN_U M\subset \T U$ (by $\rmN_U M$ we mean the normal bundle of $M$ as a manifold embedded into $U\subset \bbR^n$, not straight into $\bbR^n$). But $\rmN_U M\oplus (\restr{\nu_U}{M})\cong \nu_M$ (where $\nu_M$ is the normal bundle of $M$ taken in $\bbR^n$). Therefore, $\rmN_U M\oplus (\restr{\nu_U}{M})\oplus \tau_M\cong \nu_M\oplus \tau_M $, which is trivial! We can take $E'=\restr{\nu_U}{M}\oplus \tau_M$.
 \end{proof}
 
 \begin{rem}
@@ -1766,6 +1770,8 @@ Let $E\overset{\pi}{\to} M$ be a \gls{vb} of rank $k$, and $\dim M=m$. Then:
 
 
 \section{K-theory}
+
+The theorems of the last \sect\ imply the existence of an intuitive sort of equivalence relation on \glspl{vb}, whereby two bundles are equivalent if they differ only by an addition of a trivial bundle to one of them. This observation is the basis of K-theory, which is a large topic of its own and is mostly beyond our scope. Thus, we only briefly introduce it here.
 
 We will denote a trivial vector bundle of rank $k$ by $\varepsilon^k$. We only care about its isomorphism class, so we can safely assume the typical fiber is $\bbK^k$. In the following discussion the base manifold $M$ is fixed.
 
@@ -2522,7 +2528,7 @@ The following shows that this definition of holonomic frames agrees with the one
 \end{proof}
 
 \begin{cor}
-    A helpful way to reformulate this theorem for $k=\dim M$ is: a given local frame is a coordinate frame for some local coordinates if and only if it is holonomic.
+    A helpful way to reformulate this theorem for $k=\dim M$ is: a given local frame is a coordinate frame for some local coordinates iff it is holonomic.
 \end{cor}
 
 The analog of this corollary for $k<\dim M$ is a famous theorem that deserves its own section.
@@ -2532,6 +2538,10 @@ The analog of this corollary for $k<\dim M$ is a famous theorem that deserves it
 
 
 \section{Frobenius theorem I}\label{sec: frobenius i}
+
+\begin{intu*}
+    Rectification of vector fields and finding local coordinates generating a given holonomic frame are special instances of a general class of problems in geometry, where one seeks a special set of coordinates that in some sense encode the given geometric structure. Such problems are known as \emph{integrability problems}. The Frobenius Theorem lies at the foundation of the study of integrability, and thus of much of the rest of this book. Even though it may not seem like the search for a set of coordinates is a geometric problem (after all, wasn't the entire theory of manifolds developed to move away from choices of coordinates?), it actually becomes essential in any real-life application where geometric structures ultimately have to be described by particular mappings in particular coordinate systems. One way to think about integrability is as a generalization of the concept of a linearizing diffeomorphism that takes a given nonlinear differential equation to a linear one, thus making it solvable. Once again, we see that the problem of atlases cannot be reduced away from differential geometry.
+\end{intu*}
 
 We have just established that in the presence of a local holonomic $r$-frame $\{e_i\}_{i=1}^r$ transversal to a submanifold $S$, each point $m\in S$ admits a $r$-dimensional embedded submanifold $N$ passing through $m$ (defined by holding the values of $s^{r+1},\ldots,s^n$ constant) transversally to $S$ such that $\{e_i\}_{i=1}^r$ is a frame for $\T N$. In this \sect\ we will replace holonomic frames by the subspaces of tangent spaces that they span and derive the corresponding \emph{integrability condition}. Namely, while we can think of vector fields as fields of velocities, let us instead think of them as fields of lines, or directions. Then it is easy to generalize the problem as follows: given a field of hyperplanes (subspaces of tangent spaces), what does it mean for a submanifold to be integral for this field, and what is the condition for this kind of integrability?
 
@@ -3275,7 +3285,7 @@ Exercise.
 Tensor bundles are not the only ``natural bundles'', i.e., bundles whose structure is completely determined by the base manifold $M$. The orientation bundle belongs to this class. The following definition provides a few other common examples.
 
 \begin{defn}[Tensor densities]\label{def tensor densities}
-    One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $\bbT^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $\bbT^r_s M$) are called \emph{tensor densities}\index{Tensor density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $\T M$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions are $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}
+    One can generalize the notion of a tensor field in the following way. Let $w\in\bbZ$ and consider the bundle $(\det M)^{\otimes w}$, where a negative power means $(\det M)^{\ast\otimes |w|}$. Then the sections of the bundle $\bbT^r_s M\otimes (\det M)^{\otimes w}$ (it has the same rank as $\bbT^r_s M$) are called \emph{tensor densities}\index{Tensor!density} of weight $w$. An alternative definition uses the bundle $\left|\det M\right|^{w}$ whose transition functions are $|\det\tau_{\alpha\beta}|^w$ if $\tau_{\alpha\beta}$ are the transition functions of $\T M$, and $w$ in this case can be any real number $w\in\bbR $. In addition, one can introduce ``pseudotensor densities'' whose transition functions are $(\sign\det\tau_{\alpha\beta})\cdot |\det\tau_{\alpha\beta}|^w$.\index{Pseudotensor density}\index{Density}
 \end{defn}
 
 \begin{thm}\label{thm orientation via normal vector}
@@ -3965,7 +3975,7 @@ The most important for us special case applies to the bracket of bundle endomorp
     \begin{enumerate}
         \item $P\in\Omega^1(M;\T M)$ such that $P\circ P=P$. Then $[P,P]=2R+2\wb{R}$, where $R,\wb{R}\in\Omega^2(M;\T M)$ are given by 
         \[R(X,Y)=P[(I-P)X,(I-P)Y],\quad \wb{R}(X,Y)=(I-P)[PX,PY],\]
-        with $I=\id_{\T M}$. In this case it is easy to show the so called \emph{Bianchi identities}:\index{Equation!Bianchi} 
+        with $I=\id_{\T M}$. In this case it is easy to show the so called \emph{Bianchi identities}:\index{Equation!Bianchi identity} 
         \[[P,R+\wb{R}]=0,\quad [R,P]=\frac14i_{[P,P]}[P,P]=i_R \wb{R}+i_{\wb{R}}R.\]
         \item $J\in\Omega^1(M;\T M)$ such that $J\circ J=-\id_{\T M}$ (i.e., an almost complex structure). Then 
         \[[J,J](X,Y)=2([JX,JY]-[X,Y]-J[X,JY]-J[JX,Y]).\]

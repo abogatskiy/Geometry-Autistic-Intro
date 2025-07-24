@@ -129,9 +129,9 @@ The following is an elementary form of the celebrated Maurer-Cartan equation whi
 
 \begin{defn}[Coadjoint representation]
     The duals of the adjoint representations of $G$ and $\frakg$ are called the coadjoint representations of $G$ and $\frakg$ and are denoted by $\Ad^\ast$ and $\ad^\ast$, respectively. By definition,
-    \[(\Ad^\ast_g \xi)(B)=\xi\left(\Ad_g^{-1}B\right),\quad  g\in G,\;B\in\frakg,\xi\in\frakg^\ast,\]
+    \[(\Ad^\ast_g \xi)(B)=\xi\left(\Ad_g^{-1}B\right),\quad  g\in G,\;B\in\frakg,\;\xi\in\frakg^\ast,\]
     and 
-    \[\left(\ad_A^\ast \xi\right)(B)=-\xi\left([A,B]\right),\quad A,B\in\frakg,\xi\in\frakg^\ast.\]
+    \[\left(\ad_A^\ast \xi\right)(B)=-\xi\left([A,B]\right),\quad A,B\in\frakg,\;\xi\in\frakg^\ast.\]
 \end{defn}
 
 
@@ -182,7 +182,7 @@ We will thus identify left-invariant differential $r$-forms with elements of $\b
 Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-invariant $n$-forms (where $n=\dim G$) is one-dimensional and is spanned by $\alpha^1\wedge\ldots\wedge\alpha^n$ for any basis $\{\alpha^i\}$ in $\frakg^\ast$. By left-invariance, every nonzero element of this space is a volume form.
 
 \begin{cor}
-    On every Lie group there exists a left-invariant volume form $\mathsf{v}_G$.\footnote{Invariant volume forms on Lie groups are also sometimes denoted by $\dd g$, but we will avoid this notation due to its likely confusion with the identity tensor on $\T G$.} This form is unique up to multiplication by a nonzero scalar. 
+    On every Lie group there exists a left-invariant volume form $\sfv_G$.\footnote{Invariant volume forms on Lie groups are also sometimes denoted by $\dd g$, but we will avoid this notation due to its likely confusion with the identity tensor on $\T G$.} This form is unique up to multiplication by a nonzero scalar. 
 \end{cor}
 
 \begin{defn}[Haar measure]\index{Haar measure}
@@ -192,8 +192,9 @@ Proposition~\ref{prop 5.5.2 RS1} implies, in particular, that the space of left-
 \begin{rem}\label{rem biinvariant measures}
     \begin{enumerate}
         \item If $G$ is compact, one way to single out a unique left-invariant volume form is to require that the volume of $G$ be equal to $1$.
-        \item Naturally, there is also a right-invariant volume form $\mathsf{w}_G$, unique up to multiplication by a scalar, and a measure $\dd\mu_\rmR$ associated with it. The natural question thus is how the two Haar measures are related. Clearly,
-        \[\mathsf{v}_G(g)=\Ad_g^\ast \mathsf{w}_G(g)=\det(\Ad_g)\mathsf{w}_G(g).\]
+        \item Naturally, there is also a right-invariant volume form $\sfw_G$, unique up to multiplication by a scalar, and a measure $\dd\mu_\rmR$ associated with it. The natural question thus is how the two Haar measures are related. Up to a multiplicative constant, we have $\rmL_g^\ast (\sfv_G)_g=(\sfv_G)_e=(\sfw_G)_e=\rmR_g^\ast (\sfw_G)_g$, so
+        \[(\sfw_G)_g=\Adg_{g}^\ast (\sfv_G)_g=\det(\Ad_g)(\sfv_G)_g,\]
+        where the last equality follows from $\Adg_{g\ast g}(A_\rmL)_g=(A_\rmR)_g=((\Ad_g A)_\rmL)_g$, hence $\det\Adg_{g\ast g}=\det\Ad_g$.
         Since the adjoint representation is a homomorphism $\Ad:G\to\GL(\frakg)$, the determinant of $\Ad_g$ is always nonzero and is called the \emph{modular quasicharacter}:\index{Modular quasicharacter}
         \[\Delta: G\to \bbK,\quad \Delta(g)\coloneqq\det(\Ad_g).\]
         (Here, $\bbK$ is the underlying field of $G$, i.e., either $\bbR$ or $\bbC$.)
@@ -306,7 +307,7 @@ The following remark summarizes the basic properties of the Maurer-Cartan form.
         This is the Maurer-Cartan equation \eqref{eq 5.5.4 RS1 MC in coords}\index{Equation!Maurer-Cartan} in a basis-free form. It is also equivalent to our original Maurer-Cartan equation \eqref{eq Maurer-Cartan left xi eta}, which is nothing but the pullback of this one along a map $g:[0,1]^2\to G$.
         \item The Maurer-Cartan equation also follows immediately via formula \eqref{eq 5.5.3 RS1} for the exterior derivative of a Lie algebra-valued form:
         \[\dd\theta_G(X,Y)=-\theta_G([X,Y])=-[\theta_G(X),\theta_G(Y)].\]
-        \item Hence, the Maurer-Cartan equation describes how the left-invariant $\theta_G$ transforms under infinitesimal right translations. When thinking of Lie groups as transformation groups (acting from the left on some manifold), left translations can be interpreted as ``active transformations'', whereas right translations are ``passive transformations'' that simply changes coordinates on the manifold. If, by analogy with $\frakso_3$, we call elements of $\frakg$ ``angular velocities'', then the Maurer-Cartan equation expresses the change of these velocities under passive transformations in terms of the Lie bracket.
+        \item Hence, the Maurer-Cartan equation describes how the left-invariant $\theta_G$ transforms under infinitesimal right translations. When thinking of Lie groups as transformation groups (acting from the left on some manifold), left translations can be interpreted as ``active transformations'', whereas right translations are ``passive transformations'' that simply change coordinates on the manifold. If, by analogy with $\frakso_3$, we call elements of $\frakg$ ``angular velocities'', then the Maurer-Cartan equation expresses the change of these velocities under passive transformations in terms of the Lie bracket.
         \item Hence, the Maurer-Cartan equation relates mixed second-order derivatives ($2$-forms) on a Lie group to first derivatives, and thus, as we will see, allows us to express \emph{all} higher-order derivatives on a Lie group only in terms of the first-order ones. This is the key property of \emph{involutivity} that we will relate to the \emph{integrability} of Lie groups in the next \sect, and which is responsible for the fundamental Baker-Campbell-Hausdorff-Dynkin formula.
     \end{enumerate}
 \end{rem}
@@ -3485,7 +3486,7 @@ For real orthogonal groups $d=1$ and thus the isomorphism $\pi_q(\Or_n)=\pi_q(\O
 
 Each Stiefel $\calO_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$ comes with a closely related (we will see how later) vector bundle.
 
-\begin{defn}[Tautological vector bundles]\index{Tautological bundles}\label{def tautological bundles}
+\begin{defn}[Tautological vector bundles]\index{Tautological bundle}\label{def tautological bundles}
     Let $\Gr_k(V)$ be the Grassmann manifold of the vector space $V=\bbK^n$. The tautological vector bundle $\gamma_k(V)\to \Gr_k(V)$ is defined as the following subbundle of the trivial bundle $\Gr_k(V)\times V$:
     \[\gamma_k(V)=\{(W,v)\in \Gr_k(V)\times V: v\in W\},\]
     i.e., the fiber over $W\in \Gr_k(V)$ is $W$ itself.
@@ -4605,7 +4606,7 @@ Therefore, in this special case, we have a functor of the categories of principa
         
         \item The ``antipodal quotient'' of the total space $\bbS^3$ of the Hopf bundle (Chern number $-1$) produces the bundle $\SO_3\to \bbS^2$ (Chern number $-2$), which can be written as $\pi(A)=A_1$, where $A\in\SO_3$ and $A_1\in \bbS^2\subset \bbR^3$ is the first row of $A$ viewed as a unit vector. This bundle is the orthonormal frame bundle of the sphere, $\Fr_{\SO_2}(\T\bbS^2)$.
         
-        \item Recall the principal Stiefel $\calO_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$, cf.\ \eqref{eq Stiefel pfb}. Its projection map takes an orthonormal $k$-frame and produces the $k$-dimensional subspace $W$ of $\bbK^n$ spanned by that $k$-frame. Meanwhile, this very subspace is the fiber above $W\in \Gr_k(\bbK^n)$ in the tautological bundle $\gamma_k(\bbK^n)\to \Gr_k(\bbK^n)$. It is obvious that the transition functions of these two bundles coincide. Therefore, the tautological bundle is associated to the Stiefel principal bundle:\index{Stiefel manifolds}\index{Grassmannian manifolds}
+        \item Recall the principal Stiefel $\calO_k$-bundle $\St_k(\bbK^n)\to \Gr_k(\bbK^n)$, cf.\ \eqref{eq Stiefel pfb}. Its projection map takes an orthonormal $k$-frame and produces the $k$-dimensional subspace $W$ of $\bbK^n$ spanned by that $k$-frame. Meanwhile, this very subspace is the fiber above $W\in \Gr_k(\bbK^n)$ in the tautological bundle $\gamma_k(\bbK^n)\to \Gr_k(\bbK^n)$. It is obvious that the transition functions of these two bundles coincide. Therefore, the tautological bundle is associated to the Stiefel principal bundle:\index{Stiefel manifolds}\index{Grassmann manifolds}
         \[\gamma_k(\bbK^n)=\St_k(\bbK^n)\times^{\calO_k}\bbK^k.\]
 
         \item The structure group of the tangent bundle $\T\bbS^n$ can be reduced to $\Or_n$, and the corresponding orthonormal frame bundle $\Fr_{\SO_n}(\T\bbS^n)$ is the space of pairs $(x,\underline{v})$ where $x\in\bbS^n\subset\bbR^{n+1}$ and $\underline{v}$ is an orthonormal $n$-frame in $\bbR^{n+1}$ perpendicular to $x$. But this space is nothing but $\St_{n+1}(\bbR^{n+1})$, which is a $\Or_{n+1}$-torsor. This once again confirms that $\bbS^n$ is the homogeneous space $\Or_{n+1}\slash \Or_n$.
