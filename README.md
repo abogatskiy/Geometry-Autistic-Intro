@@ -6,7 +6,7 @@ This is an attempt at an intuitive, bottom-up approach to modern differential ge
 
 **Prerequisites**: although a short reference section on point set topology is included, it is not comprehensive. Thus, apart from general calculus, some familiarity with basic topology definitely helps. In certain applications and examples, other subjects such as PDEs, complex analysis, or physics will come in handy.
 
-**Reading guidance**: top-level ``parts'' of the book (Roman numerals) are well separated in themes so that cross-references between them are pretty minimal. Thus, for example, if you are broadly familiar with the topics in parts 1-3, you are probably safe reading from part 4.
+**Reading guidance**: top-level ``parts'' of the book (Roman numerals) are well separated in themes so that cross-references between them are pretty minimal. Thus, for example, if you are broadly familiar with the topics in parts 1-3, you are probably safe reading from part 4. The text includes a chapter guide with some suggested paths through the book.
 
 
 ##    If you would like to support the continuing work on this book, consider buying me a coffee:  ☕ https://buymeacoffee.com/abogatskiy ☕
